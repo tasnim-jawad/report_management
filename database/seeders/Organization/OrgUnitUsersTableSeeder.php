@@ -2,7 +2,7 @@
 
 namespace Database\Seeders\Organization;
 
-use App\Models\User\OrgUnitUser;
+use App\Models\Organization\OrgUnitUser;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

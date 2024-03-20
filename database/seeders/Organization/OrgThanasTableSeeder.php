@@ -2,7 +2,7 @@
 
 namespace Database\Seeders\Organization;
 
-use App\Models\User\OrgThana;
+use App\Models\Organization\OrgThana;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

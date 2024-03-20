@@ -3,6 +3,20 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+
+use App\Models\Organization\OrgCityResponsible;
+use App\Models\Organization\OrgCityUser;
+use App\Models\Organization\OrgThanaResponsible;
+use App\Models\Organization\OrgThanaUser;
+use App\Models\Organization\OrgUnitResponsible;
+use App\Models\Organization\OrgUnitUser;
+use App\Models\Organization\OrgWardResponsible;
+use App\Models\Organization\OrgWardUser;
+use App\Models\User\ReportUploader;
+use App\Models\User\UserClass;
+use App\Models\User\UserContact;
+use App\Models\User\UserRole;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -43,5 +57,59 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+
+    public function user_role()                             //A user can have only one user_role
+    {
+        return $this->belongsTo(UserRole::class);
+    }
+
+    public function report_uploader()                       //A user can have only one report uploader id
+    {
+        return $this->hasOne(ReportUploader::class);
+    }
+    public function user_class()                            //A user can have only one user_class
+    {
+        return $this->hasOne(UserClass::class);
+    }
+    public function user_contact()                          //A user can have multiple contacts
+    {
+        return $this->hasMany(UserContact::class);
+    }
+    public function org_city_responsible()                  //A user can have multiple responsibilities
+    {
+        return $this->hasMany(OrgCityResponsible::class);
+    }
+    public function org_thana_responsible()
+    {
+        return $this->hasMany(OrgThanaResponsible::class);
+    }
+    public function org_ward_responsible()
+    {
+        return $this->hasMany(OrgWardResponsible::class);
+    }
+    public function org_unit_responsible()
+    {
+        return $this->hasMany(OrgUnitResponsible::class);
+    }
+
+
+    public function org_city_user()                         //A user can have only one org_city_user
+    {
+        return $this->hasOne(OrgCityUser::class);
+    }
+    public function org_thana_user()
+    {
+        return $this->hasOne(OrgThanaUser::class);
+    }
+    public function org_ward_user()
+    {
+        return $this->hasOne(OrgWardUser::class);
+    }
+    public function org_unit_user()
+    {
+        return $this->hasOne(OrgUnitUser::class);
     }
 }
