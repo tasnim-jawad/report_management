@@ -9,7 +9,7 @@ class OrgType extends Model
 {
     use HasFactory;
 
-    public function org_city()                  //A Responsibility can have multiple org_city
+    public function org_city()                  //A OrgType can have multiple org_city
     {
         return $this->hasMany(OrgCity::class);
     }
