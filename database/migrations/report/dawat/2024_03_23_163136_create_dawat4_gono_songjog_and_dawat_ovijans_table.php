@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('dawat4_gono_songjog_and_dawat_ovijans', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('total_gono_songjog_mens_group')->nullable();
+            $table->bigInteger('total_gono_songjog_group')->nullable();
             $table->bigInteger('total_attended')->nullable();
             $table->bigInteger('how_many_have_been_invited')->nullable();
             $table->bigInteger('how_many_associate_members_created')->nullable();
@@ -38,7 +38,7 @@ return new class extends Migration
             $table->bigInteger('other_how_many_have_been_invited')->nullable();
             $table->bigInteger('other_how_many_associate_members_created')->nullable();
 
-            $table->string('creator', 50)->nullable();
+            $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

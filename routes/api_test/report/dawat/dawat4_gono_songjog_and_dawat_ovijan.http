@@ -28,7 +28,7 @@ POST {{url}}/store HTTP/1.1
 content-type: application/json
 
 {
-    "total_gono_songjog_mens_group": 60,
+    "total_gono_songjog_group": 60,
     "total_attended": 64,
     "how_many_have_been_invited": 56,
     "how_many_associate_members_created": 60,
@@ -77,7 +77,7 @@ content-type: application/json
 
 {
     "id": "{{id}}",
-    "total_gono_songjog_mens_group": 60,
+    "total_gono_songjog_group": 60,
     "total_attended": 64,
     "how_many_have_been_invited": 56,
     "how_many_associate_members_created": 50,

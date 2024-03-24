@@ -28,7 +28,7 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
             $key = request()->search_key;
             $query->where(function ($q) use ($key) {
                 return $q->where('id', '%' . $key . '%')
-                ->orWhere('total_gono_songjog_mens_group', '%' . $key . '%')
+                ->orWhere('total_gono_songjog_group', '%' . $key . '%')
                 ->orWhere('total_attended', '%' . $key . '%')
                 ->orWhere('how_many_have_been_invited', '%' . $key . '%')
                 ->orWhere('how_many_associate_members_created', '%' . $key . '%')
@@ -84,7 +84,7 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
     public function store()
     {
         $validator = Validator::make(request()->all(), [
-            'total_gono_songjog_mens_group' => ['required'],
+            'total_gono_songjog_group' => ['required'],
             'total_attended' => ['required'],
             'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
@@ -121,7 +121,7 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
         }
 
         $data = new Dawat4GonoSongjogAndDawatOvijan();
-        $data->total_gono_songjog_mens_group = request()->total_gono_songjog_mens_group;
+        $data->total_gono_songjog_group = request()->total_gono_songjog_group;
         $data->total_attended = request()->total_attended;
         $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
@@ -164,7 +164,7 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
         }
 
         $validator = Validator::make(request()->all(), [
-            'total_gono_songjog_mens_group' => ['required'],
+            'total_gono_songjog_group' => ['required'],
             'total_attended' => ['required'],
             'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
@@ -201,7 +201,7 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
         }
 
 
-        $data->total_gono_songjog_mens_group = request()->total_gono_songjog_mens_group;
+        $data->total_gono_songjog_group = request()->total_gono_songjog_group;
         $data->total_attended = request()->total_attended;
         $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;

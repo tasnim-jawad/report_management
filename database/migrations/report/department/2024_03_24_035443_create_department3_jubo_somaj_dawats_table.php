@@ -25,7 +25,7 @@ return new class extends Migration
             $table->bigInteger('stablished_club_total_invited')->nullable();
             $table->bigInteger('stablished_club_total_increased')->nullable();
 
-            $table->string('creator', 50)->nullable();
+            $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

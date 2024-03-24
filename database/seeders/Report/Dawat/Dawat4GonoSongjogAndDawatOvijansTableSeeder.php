@@ -15,7 +15,7 @@ class Dawat4GonoSongjogAndDawatOvijansTableSeeder extends Seeder
     {
         Dawat4GonoSongjogAndDawatOvijan::truncate();
         Dawat4GonoSongjogAndDawatOvijan::create([
-            'total_gono_songjog_mens_group' => 20,
+            'total_gono_songjog_group' => 20,
             'total_attended' => 24,
             'how_many_have_been_invited' => 52,
             'how_many_associate_members_created' => 20,
@@ -44,7 +44,7 @@ class Dawat4GonoSongjogAndDawatOvijansTableSeeder extends Seeder
             'status' => 1,
         ]);
         Dawat4GonoSongjogAndDawatOvijan::create([
-            'total_gono_songjog_mens_group' => 30,
+            'total_gono_songjog_group' => 30,
             'total_attended' => 14,
             'how_many_have_been_invited' => 51,
             'how_many_associate_members_created' => 10,
@@ -73,7 +73,7 @@ class Dawat4GonoSongjogAndDawatOvijansTableSeeder extends Seeder
             'status' => 1,
         ]);
         Dawat4GonoSongjogAndDawatOvijan::create([
-            'total_gono_songjog_mens_group' => 10,
+            'total_gono_songjog_group' => 10,
             'total_attended' => 54,
             'how_many_have_been_invited' => 55,
             'how_many_associate_members_created' => 50,
@@ -102,7 +102,7 @@ class Dawat4GonoSongjogAndDawatOvijansTableSeeder extends Seeder
             'status' => 1,
         ]);
         Dawat4GonoSongjogAndDawatOvijan::create([
-            'total_gono_songjog_mens_group' => 50,
+            'total_gono_songjog_group' => 50,
             'total_attended' => 94,
             'how_many_have_been_invited' => 59,
             'how_many_associate_members_created' => 90,

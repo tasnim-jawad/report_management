@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigInteger('number_of_participants')->nullable();
             $table->bigInteger('how_many_have_been_invited')->nullable();
             $table->bigInteger('how_many_associate_members_created')->nullable();
-            $table->string('creator', 50)->nullable();
+            $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

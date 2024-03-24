@@ -45,7 +45,7 @@ return new class extends Migration
             $table->bigInteger('vinno_dormalombi_been_associated')->nullable();
             $table->bigInteger('vinno_dormalombi_target')->nullable();
 
-            $table->string('creator', 50)->nullable();
+            $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
