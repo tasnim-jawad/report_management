@@ -17,6 +17,8 @@ return new class extends Migration
             $table->bigInteger('city_id')->nullable();
             $table->bigInteger('thana_id')->nullable();
             $table->bigInteger('ward_id')->nullable();
+            $table->string('creator', 50)->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('ward',50)->nullable();
             $table->string('pourosova',50)->nullable();
             $table->string('thana',50)->nullable();
+            $table->string('creator', 50)->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

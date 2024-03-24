@@ -13,6 +13,7 @@ class UserRolesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        UserRole::truncate();
         UserRole::insert([
             [
                 'serial' =>"1",

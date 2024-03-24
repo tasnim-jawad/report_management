@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('org_type', 50)->nullable();
             $table->bigInteger('org_id')->nullable();
             $table->bigInteger('user_id')->nullable();
+            $table->string('creator', 50)->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->boolean('is_active')->default(false);
             $table->timestamps();
         });

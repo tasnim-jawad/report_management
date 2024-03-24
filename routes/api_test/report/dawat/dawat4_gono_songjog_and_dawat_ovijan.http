@@ -1,0 +1,152 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/dawat4-gono-songjog-and-dawat-ovijan
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+
+{
+    "total_gono_songjog_mens_group": 60,
+    "total_attended": 64,
+    "how_many_have_been_invited": 56,
+    "how_many_associate_members_created": 60,
+    "jela_mohanogor_delared_gonosonjog_group": 36,
+    "jela_mohanogor_delared_gonosonjog_attended": 46,
+    "jela_mohanogor_delared_gonosonjog_invited": 86,
+    "jela_mohanogor_delared_gonosonjog_associated_created": 106,
+    "election_gono_songjog_group": 65,
+    "election_attended": 56,
+    "election_how_many_have_been_invited": 36,
+    "election_how_many_associate_members_created": 66,
+    "olama_gono_songjog_group": 46,
+    "olama_attended": 56,
+    "olama_how_many_have_been_invited": 76,
+    "olama_how_many_associate_members_created": 36,
+    "other_gono_songjog_group": 67,
+    "other_attended": 64,
+    "other_how_many_have_been_invited": 63,
+    "other_how_many_associate_members_created": 31,
+    "creator": "{{creator}}",
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "total_gono_songjog_mens_group": 60,
+    "total_attended": 64,
+    "how_many_have_been_invited": 56,
+    "how_many_associate_members_created": 50,
+    "jela_mohanogor_delared_gonosonjog_group": 36,
+    "jela_mohanogor_delared_gonosonjog_attended": 46,
+    "jela_mohanogor_delared_gonosonjog_invited": 86,
+    "jela_mohanogor_delared_gonosonjog_associated_created": 106,
+    "election_gono_songjog_group": 65,
+    "election_attended": 56,
+    "election_how_many_have_been_invited": 36,
+    "election_how_many_associate_members_created": 66,
+    "olama_gono_songjog_group": 46,
+    "olama_attended": 56,
+    "olama_how_many_have_been_invited": 76,
+    "olama_how_many_associate_members_created": 36,
+    "other_gono_songjog_group": 67,
+    "other_attended": 64,
+    "other_how_many_have_been_invited": 63,
+    "other_how_many_associate_members_created": 31,
+    "creator": "shaikhul islam",
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

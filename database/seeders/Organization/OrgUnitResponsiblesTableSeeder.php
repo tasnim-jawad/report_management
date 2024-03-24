@@ -13,17 +13,9 @@ class OrgUnitResponsiblesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        OrgUnitResponsible::truncate();
         OrgUnitResponsible::insert([
-            [
-                'user_id' => 7,
-                'responsibility_id' => 1,
-                'org_unit_id' => 1,
-            ],
-            [
-                'user_id' => 8,
-                'responsibility_id' => 2,
-                'org_unit_id' => 1,
-            ],
+
             [
                 'user_id' => 9,
                 'responsibility_id' => 3,
@@ -32,6 +24,16 @@ class OrgUnitResponsiblesTableSeeder extends Seeder
             [
                 'user_id' => 10,
                 'responsibility_id' => 4,
+                'org_unit_id' => 1,
+            ],
+            [
+                'user_id' => 11,
+                'responsibility_id' => 1,
+                'org_unit_id' => 1,
+            ],
+            [
+                'user_id' => 12,
+                'responsibility_id' => 2,
                 'org_unit_id' => 1,
             ],
         ]);

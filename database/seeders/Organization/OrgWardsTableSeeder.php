@@ -13,6 +13,7 @@ class OrgWardsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        OrgWard::truncate();
         OrgWard::insert([
             [
                 'title' =>"1no south",
@@ -20,6 +21,7 @@ class OrgWardsTableSeeder extends Seeder
                 'description' => "1no south is a ward",
                 'org_type_id' => 1,
                 'org_area_id' => 1,
+                'org_gender' => 'men',
             ],
             [
                 'title' =>"1 north",
@@ -27,6 +29,7 @@ class OrgWardsTableSeeder extends Seeder
                 'description' => "1 north is a ward",
                 'org_type_id' => 2,
                 'org_area_id' => 2,
+                'org_gender' => 'men',
             ],
             [
                 'title' =>"shantipur",
@@ -34,6 +37,7 @@ class OrgWardsTableSeeder extends Seeder
                 'description' => "shantipur is a ward",
                 'org_type_id' => 3,
                 'org_area_id' => 3,
+                'org_gender' => 'men',
             ],
             [
                 'title' =>"olama",
@@ -41,6 +45,7 @@ class OrgWardsTableSeeder extends Seeder
                 'description' => "olama is a ward",
                 'org_type_id' => 1,
                 'org_area_id' => "4",
+                'org_gender' => 'men',
             ],
             [
                 'title' =>"sipahibag",
@@ -48,6 +53,7 @@ class OrgWardsTableSeeder extends Seeder
                 'description' => "sipahibag is a ward",
                 'org_type_id' => 2,
                 'org_area_id' => 1,
+                'org_gender' => 'women',
             ],
             [
                 'title' =>"golapbag",
@@ -55,6 +61,7 @@ class OrgWardsTableSeeder extends Seeder
                 'description' => "golapbag is a ward",
                 'org_type_id' => 3,
                 'org_area_id' => 2,
+                'org_gender' => 'women',
             ],
             [
                 'title' =>"kurmitola",
@@ -62,6 +69,7 @@ class OrgWardsTableSeeder extends Seeder
                 'description' => "kurmitola is a ward",
                 'org_type_id' => 1,
                 'org_area_id' => 3,
+                'org_gender' => 'women',
             ],
         ]);
     }

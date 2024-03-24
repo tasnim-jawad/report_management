@@ -13,6 +13,27 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
+        User::truncate();
+        User::create([
+            'role' => 1,
+            'full_name' =>"super admin",
+            'gender' => "male",
+            'telegram_name' => "superAdmin",
+            'telegram_id' => "1313",
+            'email' => "superadmin@gmail.com",
+            'password' => "12345678",
+            'blood_group' => "K+",
+        ]);
+        User::create([
+            'role' => 2,
+            'full_name' =>"admin",
+            'gender' => "female",
+            'telegram_name' => "admin",
+            'telegram_id' => "1212",
+            'email' => "admin@gmail.com",
+            'password' => "1414",
+            'blood_group' => "L+",
+        ]);
         User::create([
             'role' => 3,
             'full_name' =>"selim uddin",
@@ -114,26 +135,7 @@ class UsersTableSeeder extends Seeder
             'password' => "12345678",
             'blood_group' => "J+",
         ]);
-        User::create([
-            'role' => 1,
-            'full_name' =>"super admin",
-            'gender' => "male",
-            'telegram_name' => "superAdmin",
-            'telegram_id' => "1313",
-            'email' => "superadmin@gmail.com",
-            'password' => "12345678",
-            'blood_group' => "K+",
-        ]);
-        User::create([
-            'role' => 2,
-            'full_name' =>"admin",
-            'gender' => "female",
-            'telegram_name' => "admin",
-            'telegram_id' => "1212",
-            'email' => "admin@gmail.com",
-            'password' => "1414",
-            'blood_group' => "L+",
-        ]);
+
         // User::create([
         //     [
         //         'role' => 3,

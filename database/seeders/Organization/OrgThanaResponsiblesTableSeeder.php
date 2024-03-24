@@ -13,14 +13,15 @@ class OrgThanaResponsiblesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        OrgThanaResponsible::truncate();
         OrgThanaResponsible::insert([
             [
-                'user_id' => 3,
+                'user_id' => 5,
                 'responsibility_id' => 1,
                 'org_thana_id' => 1,
             ],
             [
-                'user_id' => 4,
+                'user_id' => 6,
                 'responsibility_id' => 2,
                 'org_thana_id' => 1,
             ],

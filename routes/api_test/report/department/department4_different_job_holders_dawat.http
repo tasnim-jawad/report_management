@@ -1,0 +1,160 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/department4-different-job-holders-dawat
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+
+{
+    "political_and_special_invited": 63,
+    "political_and_special_been_associated": 16,
+    "political_and_special_target": 36,
+    "pesha_jibi_invited": 65,
+    "pesha_jibi_been_associated": 60,
+    "pesha_jibi_target": 46,
+    "olama_masayekh_invited": 69,
+    "olama_masayekh_been_associated": 61,
+    "olama_masayekh_target": 56,
+    "kormo_jibi_mohila_invited": 68,
+    "kormo_jibi_mohila_been_associated": 66,
+    "kormo_jibi_mohila_target": 66,
+    "sromo_jibi_invited": 67,
+    "sromo_jibi_been_associated": 16,
+    "sromo_jibi_target": 66,
+    "media_kormi_invited": 66,
+    "media_kormi_been_associated": 63,
+    "media_kormi_target": 56,
+    "prantik_jonogosti_invited": 65,
+    "prantik_jonogosti_been_associated": 61,
+    "prantik_jonogosti_target": 46,
+    "vinno_dormalombi_invited": 64,
+    "vinno_dormalombi_been_associated": 60,
+    "vinno_dormalombi_target": 56,
+    "creator": "{{creator}}",
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "political_and_special_invited": 63,
+    "political_and_special_been_associated": 16,
+    "political_and_special_target": 36,
+    "pesha_jibi_invited": 65,
+    "pesha_jibi_been_associated": 60,
+    "pesha_jibi_target": 46,
+    "olama_masayekh_invited": 69,
+    "olama_masayekh_been_associated": 61,
+    "olama_masayekh_target": 56,
+    "kormo_jibi_mohila_invited": 68,
+    "kormo_jibi_mohila_been_associated": 66,
+    "kormo_jibi_mohila_target": 66,
+    "sromo_jibi_invited": 67,
+    "sromo_jibi_been_associated": 16,
+    "sromo_jibi_target": 66,
+    "media_kormi_invited": 66,
+    "media_kormi_been_associated": 63,
+    "media_kormi_target": 56,
+    "prantik_jonogosti_invited": 65,
+    "prantik_jonogosti_been_associated": 61,
+    "prantik_jonogosti_target": 46,
+    "vinno_dormalombi_invited": 64,
+    "vinno_dormalombi_been_associated": 60,
+    "vinno_dormalombi_target": 56,
+    "creator": "shaikhul islam",
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

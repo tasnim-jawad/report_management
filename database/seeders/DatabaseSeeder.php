@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Report\Department\Department2MohollaVittikDawat;
 use Database\Seeders\Organization\OrgAreasTableSeeder;
 use Database\Seeders\Organization\OrgCitiesTableSeeder;
 use Database\Seeders\Organization\OrgCityResponsiblesTableSeeder;
@@ -18,6 +18,16 @@ use Database\Seeders\Organization\OrgWardResponsiblesTableSeeder;
 use Database\Seeders\Organization\OrgWardsTableSeeder;
 use Database\Seeders\Organization\OrgWardUsersTableSeeder;
 use Database\Seeders\Organization\ResponsibilitiesTableSeeder;
+use Database\Seeders\Report\Dawat\Dawat1RegularGroupWisesTableSeeder;
+use Database\Seeders\Report\Dawat\Dawat2PersonalAndTargetsTableSeeder;
+use Database\Seeders\Report\Dawat\Dawat3GeneralProgramAndOthersTableSeeder;
+use Database\Seeders\Report\Dawat\Dawat4GonoSongjogAndDawatOvijansTableSeeder;
+use Database\Seeders\Report\Department\Department1TalimulQuransTableSeeder;
+use Database\Seeders\Report\Department\Department2MohollaVittikDawatsTableSeeder;
+use Database\Seeders\Report\Department\Department3JuboSomajDawatsTableSeeder;
+use Database\Seeders\Report\Department\Department4DifferentJobHoldersDawatsTableSeeder;
+use Database\Seeders\Report\Department\Department5ParibarikDawatsTableSeeder;
+use Database\Seeders\Report\ReportInfosTableSeeder;
 use Database\Seeders\User\ReportUploadersTableSeeder;
 use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
@@ -66,7 +76,19 @@ class DatabaseSeeder extends Seeder
             OrgThanaResponsiblesTableSeeder::class,
             OrgWardResponsiblesTableSeeder::class,
             OrgUnitResponsiblesTableSeeder::class,
-
+            //report table
+            ReportInfosTableSeeder::class,
+            // dawat
+            Dawat1RegularGroupWisesTableSeeder::class,
+            Dawat2PersonalAndTargetsTableSeeder::class,
+            Dawat3GeneralProgramAndOthersTableSeeder::class,
+            Dawat4GonoSongjogAndDawatOvijansTableSeeder::class,
+            // department
+            Department1TalimulQuransTableSeeder::class,
+            Department2MohollaVittikDawatsTableSeeder::class,
+            Department3JuboSomajDawatsTableSeeder::class,
+            Department4DifferentJobHoldersDawatsTableSeeder::class,
+            Department5ParibarikDawatsTableSeeder::class,
         ]);
     }
 }

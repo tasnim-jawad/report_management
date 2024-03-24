@@ -13,36 +13,27 @@ class UserClassesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        UserClass::truncate();
         UserClass::insert([
             [
                 'type' => 'rokon',
-                'user_id' => 1,
-                'added_type' => 'agomon',
-            ],
-            [
-                'type' => 'rokon',
-                'user_id' => 2,
-                'added_type' => 'manonnoyon',
-            ],
-            [
-                'type' => 'rokon',
                 'user_id' => 3,
-                'added_type' => 'manonnoyon',
+                'added_type' => 'agomon',
             ],
             [
                 'type' => 'rokon',
                 'user_id' => 4,
-                'added_type' => 'agomon',
-            ],
-            [
-                'type' => 'worker',
-                'user_id' => 5,
-                'added_type' => 'agomon',
-            ],
-            [
-                'type' => 'worker',
-                'user_id' => 6,
                 'added_type' => 'manonnoyon',
+            ],
+            [
+                'type' => 'rokon',
+                'user_id' => 5,
+                'added_type' => 'manonnoyon',
+            ],
+            [
+                'type' => 'rokon',
+                'user_id' => 6,
+                'added_type' => 'agomon',
             ],
             [
                 'type' => 'worker',
@@ -50,18 +41,28 @@ class UserClassesTableSeeder extends Seeder
                 'added_type' => 'agomon',
             ],
             [
-                'type' => 'supporter',
+                'type' => 'worker',
                 'user_id' => 8,
                 'added_type' => 'manonnoyon',
             ],
             [
-                'type' => 'supporter',
+                'type' => 'worker',
                 'user_id' => 9,
                 'added_type' => 'agomon',
             ],
             [
                 'type' => 'supporter',
                 'user_id' => 10,
+                'added_type' => 'manonnoyon',
+            ],
+            [
+                'type' => 'supporter',
+                'user_id' => 11,
+                'added_type' => 'agomon',
+            ],
+            [
+                'type' => 'supporter',
+                'user_id' => 12,
                 'added_type' => 'manonnoyon',
             ],
         ]);

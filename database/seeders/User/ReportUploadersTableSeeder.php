@@ -13,52 +13,41 @@ class ReportUploadersTableSeeder extends Seeder
      */
     public function run(): void
     {
+        ReportUploader::truncate();
         ReportUploader::insert([
             [
                 'org_type' => 'city',
                 'org_id' => 1,     //city_id
-                'user_id' => 1,
+                'user_id' => 3,
                 'is_active' => true,
             ],
             [
                 'org_type' => 'city',
                 'org_id' => 1,     //city_id
-                'user_id' => 2,
-                'is_active' => true,
-            ],
-            [
-                'org_type' => 'thana',
-                'org_id' => 1,     //thana_id
-                'user_id' => 3,
-                'is_active' => true,
-            ],
-            [
-                'org_type' => 'thana',
-                'org_id' => 1,     //thana_id
                 'user_id' => 4,
-                'is_active' => false,
+                'is_active' => true,
             ],
             [
-                'org_type' => 'ward',
-                'org_id' => 1,     //ward_id
+                'org_type' => 'thana',
+                'org_id' => 1,     //thana_id
                 'user_id' => 5,
                 'is_active' => true,
             ],
             [
-                'org_type' => 'ward',
-                'org_id' => 1,     //ward_id
+                'org_type' => 'thana',
+                'org_id' => 1,     //thana_id
                 'user_id' => 6,
                 'is_active' => false,
             ],
             [
-                'org_type' => 'unit',
-                'org_id' => 1,     //unit_id
+                'org_type' => 'ward',
+                'org_id' => 1,     //ward_id
                 'user_id' => 7,
                 'is_active' => true,
             ],
             [
-                'org_type' => 'unit',
-                'org_id' => 1,     //unit_id
+                'org_type' => 'ward',
+                'org_id' => 1,     //ward_id
                 'user_id' => 8,
                 'is_active' => false,
             ],
@@ -66,12 +55,24 @@ class ReportUploadersTableSeeder extends Seeder
                 'org_type' => 'unit',
                 'org_id' => 1,     //unit_id
                 'user_id' => 9,
-                'is_active' => false,
+                'is_active' => true,
             ],
             [
                 'org_type' => 'unit',
                 'org_id' => 1,     //unit_id
                 'user_id' => 10,
+                'is_active' => false,
+            ],
+            [
+                'org_type' => 'unit',
+                'org_id' => 1,     //unit_id
+                'user_id' => 11,
+                'is_active' => false,
+            ],
+            [
+                'org_type' => 'unit',
+                'org_id' => 1,     //unit_id
+                'user_id' => 12,
                 'is_active' => false,
             ],
         ]);

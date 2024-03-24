@@ -16,6 +16,8 @@ return new class extends Migration
             $table->bigInteger('user_id')->nullable();
             $table->bigInteger('responsibility_id')->nullable();
             $table->bigInteger('org_unit_id')->nullable();
+            $table->string('creator', 50)->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

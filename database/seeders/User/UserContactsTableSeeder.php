@@ -13,6 +13,7 @@ class UserContactsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        UserContact::truncate();
         UserContact::insert([
             [
                 'type' => 'whatsapp',

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->tinyInteger('serial')->nullable();
             $table->string('title',50)->nullable();
+            $table->string('creator', 50)->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

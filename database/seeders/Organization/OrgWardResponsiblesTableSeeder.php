@@ -13,14 +13,15 @@ class OrgWardResponsiblesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        OrgWardResponsible::truncate();
         OrgWardResponsible::insert([
             [
-                'user_id' => 5,
+                'user_id' => 7,
                 'responsibility_id' => 1,
                 'org_ward_id' => 1,
             ],
             [
-                'user_id' => 6,
+                'user_id' => 8,
                 'responsibility_id' => 2,
                 'org_ward_id' => 1,
             ],

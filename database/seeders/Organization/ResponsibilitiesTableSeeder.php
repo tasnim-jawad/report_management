@@ -13,6 +13,7 @@ class ResponsibilitiesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        Responsibility::truncate();
         Responsibility::insert([
             [
                 'title' =>"president",

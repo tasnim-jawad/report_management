@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title',100)->nullable();
             $table->text('description')->nullable();
+            $table->string('creator', 50)->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

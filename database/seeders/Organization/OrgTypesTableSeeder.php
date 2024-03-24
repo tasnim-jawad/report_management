@@ -13,6 +13,7 @@ class OrgTypesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        OrgType::truncate();
         OrgType::insert([
             [
                 'title' => "sromik kollan",

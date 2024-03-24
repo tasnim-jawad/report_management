@@ -14,6 +14,7 @@ class OrgAreasTableSeeder extends Seeder
     public function run(): void
     {
 
+        OrgArea::truncate();
         OrgArea::insert([
             [
                 'ward' => "mirpur 6",
