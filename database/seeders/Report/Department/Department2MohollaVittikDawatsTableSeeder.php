@@ -33,7 +33,7 @@ class Department2MohollaVittikDawatsTableSeeder extends Seeder
             'how_many_been_invited' => 23,
             'how_many_associated_created' => 2,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department2MohollaVittikDawat::create([
@@ -55,7 +55,7 @@ class Department2MohollaVittikDawatsTableSeeder extends Seeder
             'how_many_been_invited' => 33,
             'how_many_associated_created' => 3,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department2MohollaVittikDawat::create([
@@ -77,7 +77,7 @@ class Department2MohollaVittikDawatsTableSeeder extends Seeder
             'how_many_been_invited' => 43,
             'how_many_associated_created' => 4,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department2MohollaVittikDawat::create([
@@ -99,7 +99,7 @@ class Department2MohollaVittikDawatsTableSeeder extends Seeder
             'how_many_been_invited' => 53,
             'how_many_associated_created' => 5,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
     }

@@ -39,7 +39,7 @@ content-type: application/json
     "how_much_been_associated": 13,
     "total_muallim": 13,
     "total_muallim_increased": 3,
-    "creator": "{{creator}}",
+    "creator": 3,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -79,7 +79,7 @@ content-type: application/json
     "how_much_been_associated": 13,
     "total_muallim": 13,
     "total_muallim_increased": 3,
-    "creator": "shaikhul islam",
+    "creator": 3,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

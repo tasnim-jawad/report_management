@@ -31,7 +31,7 @@ content-type: application/json
     "user_id": 3,
     "responsibility_id": 1,
     "org_city_id": 1,
-    "creator": "tasnimul",
+    "creator": 3,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -63,7 +63,7 @@ content-type: application/json
     "user_id": 3,
     "responsibility_id": 1,
     "org_city_id": 1,
-    "creator": "tasnimul",
+    "creator": 3,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

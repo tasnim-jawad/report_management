@@ -48,7 +48,7 @@ content-type: application/json
     "other_attended": 64,
     "other_how_many_have_been_invited": 63,
     "other_how_many_associate_members_created": 31,
-    "creator": "{{creator}}",
+    "creator": 3,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -97,7 +97,7 @@ content-type: application/json
     "other_attended": 64,
     "other_how_many_have_been_invited": 63,
     "other_how_many_associate_members_created": 31,
-    "creator": "shaikhul islam",
+    "creator": 4,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

@@ -31,7 +31,7 @@ content-type: application/json
     "type": "{{type}}",
     "user_id": 13,
     "added_type": "agomon",
-    "creator": "tasnimul",
+    "creator": 7,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -63,7 +63,7 @@ content-type: application/json
     "type": "worker",
     "user_id": 13,
     "added_type": "agomon",
-    "creator": "tasnimul",
+    "creator": 7,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -79,7 +79,7 @@ content-type: application/json
 #     "type": "worker",
 #     "user_id": 13,
 #     "added_type": "agomon",
-#     "creator": "tasnimul",
+#     "creator": 7,
 #     "status": 1,
 #     "created_at": "{{createdAt}}"
 # }

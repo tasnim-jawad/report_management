@@ -30,7 +30,7 @@ class Department1TalimulQuransTableSeeder extends Seeder
             'total_muallim' => 12,
             'total_muallim_increased' => 2,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department1TalimulQuran::create([
@@ -49,7 +49,7 @@ class Department1TalimulQuransTableSeeder extends Seeder
             'total_muallim' => 13,
             'total_muallim_increased' => 3,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department1TalimulQuran::create([
@@ -68,7 +68,7 @@ class Department1TalimulQuransTableSeeder extends Seeder
             'total_muallim' => 14,
             'total_muallim_increased' => 4,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department1TalimulQuran::create([
@@ -87,7 +87,7 @@ class Department1TalimulQuransTableSeeder extends Seeder
             'total_muallim' => 15,
             'total_muallim_increased' => 5,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
     }

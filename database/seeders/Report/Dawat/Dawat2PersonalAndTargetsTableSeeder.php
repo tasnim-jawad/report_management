@@ -20,7 +20,7 @@ class Dawat2PersonalAndTargetsTableSeeder extends Seeder
             'how_many_were_give_dawat' => 10,
             'how_many_have_been_invited' => 23,
             'how_many_associate_members_created' => 25,
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat2PersonalAndTarget::create([
@@ -29,7 +29,7 @@ class Dawat2PersonalAndTargetsTableSeeder extends Seeder
             'how_many_were_give_dawat' => 30,
             'how_many_have_been_invited' => 65,
             'how_many_associate_members_created' => 35,
-            'creator' => 'hasan',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat2PersonalAndTarget::create([
@@ -38,7 +38,7 @@ class Dawat2PersonalAndTargetsTableSeeder extends Seeder
             'how_many_were_give_dawat' => 30,
             'how_many_have_been_invited' => 40,
             'how_many_associate_members_created' => 12,
-            'creator' => 'jamil',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat2PersonalAndTarget::create([
@@ -47,7 +47,7 @@ class Dawat2PersonalAndTargetsTableSeeder extends Seeder
             'how_many_were_give_dawat' => 20,
             'how_many_have_been_invited' => 15,
             'how_many_associate_members_created' => 5,
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
     }

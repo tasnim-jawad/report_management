@@ -33,7 +33,7 @@ content-type: application/json
     "how_many_were_give_dawat": 17,
     "how_many_have_been_invited": 63,
     "how_many_associate_members_created": 87,
-    "creator": "{{creator}}",
+    "creator": 4,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -67,7 +67,7 @@ content-type: application/json
     "how_many_were_give_dawat": 13,
     "how_many_have_been_invited": 43,
     "how_many_associate_members_created": 85,
-    "creator": "kalam",
+    "creator": 4,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

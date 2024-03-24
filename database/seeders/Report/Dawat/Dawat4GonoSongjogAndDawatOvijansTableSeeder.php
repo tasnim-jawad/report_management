@@ -40,7 +40,7 @@ class Dawat4GonoSongjogAndDawatOvijansTableSeeder extends Seeder
             'other_how_many_have_been_invited' => 23,
             'other_how_many_associate_members_created' => 13,
 
-            'creator' => 'ahid',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat4GonoSongjogAndDawatOvijan::create([
@@ -69,7 +69,7 @@ class Dawat4GonoSongjogAndDawatOvijansTableSeeder extends Seeder
             'other_how_many_have_been_invited' => 13,
             'other_how_many_associate_members_created' => 13,
 
-            'creator' => 'ajmol',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat4GonoSongjogAndDawatOvijan::create([
@@ -98,7 +98,7 @@ class Dawat4GonoSongjogAndDawatOvijansTableSeeder extends Seeder
             'other_how_many_have_been_invited' => 53,
             'other_how_many_associate_members_created' => 33,
 
-            'creator' => 'jamil',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat4GonoSongjogAndDawatOvijan::create([
@@ -127,7 +127,7 @@ class Dawat4GonoSongjogAndDawatOvijansTableSeeder extends Seeder
             'other_how_many_have_been_invited' => 93,
             'other_how_many_associate_members_created' => 43,
 
-            'creator' => 'tasnim hasan',
+            'creator' => 3,
             'status' => 1,
         ]);
     }

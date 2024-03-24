@@ -22,7 +22,7 @@ class ReportInfosTableSeeder extends Seeder
                 'responsibility_name' => 'president',
                 'month_year' => '2024-12-01',
                 'report_type' => 'monthly',
-                'creator' => 'tasnimul',
+                'creator' => 3,
                 'status' => 1,
             ],
             [
@@ -32,7 +32,7 @@ class ReportInfosTableSeeder extends Seeder
                 'responsibility_name' => 'secretary',
                 'month_year' => '2024-12-01',
                 'report_type' => 'sixmonth',
-                'creator' => 'tasnimul',
+                'creator' => 3,
                 'status' => 1,
             ],
             [
@@ -42,7 +42,7 @@ class ReportInfosTableSeeder extends Seeder
                 'responsibility_name' => 'Organizing Secretary',
                 'month_year' => '2024-12-01',
                 'report_type' => 'yearly',
-                'creator' => 'tasnimul',
+                'creator' => 3,
                 'status' => 1,
             ],
         ]);

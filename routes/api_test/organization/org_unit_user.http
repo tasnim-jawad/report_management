@@ -33,7 +33,7 @@ content-type: application/json
     "thana_id": 3,
     "ward_id": 4,
     "unit_id": 5,
-    "creator": "{{creator}}",
+    "creator": 5,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -67,7 +67,7 @@ content-type: application/json
     "thana_id": 3,
     "ward_id": 4,
     "unit_id": 5,
-    "creator": "tasnimul",
+    "creator": 5,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

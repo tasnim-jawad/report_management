@@ -30,7 +30,7 @@ content-type: application/json
 {
     "title": "{{title}}",
     "description": "{{title}} of a organization",
-    "creator": "tasnimul",
+    "creator": 7,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -61,7 +61,7 @@ content-type: application/json
     "id": "{{id}}",
     "title": "sports Secretary",
     "description": "sports Secretary of a organization",
-    "creator": "tasnimul",
+    "creator": 7,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

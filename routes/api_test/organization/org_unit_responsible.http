@@ -30,7 +30,7 @@ content-type: application/json
 {
     "serial": 6,
     "title": "{{title}}",
-    "creator": "tasnimul",
+    "creator": 4,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -61,7 +61,7 @@ content-type: application/json
     "id": "{{id}}",
     "serial": 7,
     "title": "pouroshova",
-    "creator": "tasnimul",
+    "creator": 4,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

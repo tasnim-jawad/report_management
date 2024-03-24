@@ -34,7 +34,7 @@ content-type: application/json
     "org_type_id": 1,
     "org_area_id": 1,
     "org_gender": "men",
-    "creator": "tasnimul",
+    "creator": 6,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -69,7 +69,7 @@ content-type: application/json
     "org_type_id": 1,
     "org_area_id": 1,
     "org_gender": "men",
-    "creator": "tasnimul",
+    "creator": 6,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

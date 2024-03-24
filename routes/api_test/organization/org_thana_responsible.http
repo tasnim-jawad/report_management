@@ -30,7 +30,7 @@ content-type: application/json
 {
     "serial": 6,
     "title": "{{title}}",
-    "creator": "tasnimul",
+    "creator": 5,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -61,7 +61,7 @@ content-type: application/json
     "id": "{{id}}",
     "serial": 7,
     "title": "pouroshova",
-    "creator": "tasnimul",
+    "creator": 5,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -72,15 +72,15 @@ POST {{url}}/canvas-update HTTP/1.1
 content-type: application/json
 # Authorization: {{token}}
 
-{
-    "id": "{{id}}",
-    "title": "title canvas update",
-    "image": "web.jpg",
-    "short_description": "gaitgrji canvous",
-    "description": "bangla desh is a small couctry",
-    "published": "1",
-    "created_at": "{{createdAt}}"
-}
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
 
 #### soft delete
 # @prompt id enter id

@@ -32,7 +32,7 @@ content-type: application/json
     "number_of_participants": 23,
     "how_many_have_been_invited": 35,
     "how_many_associate_members_created": 25,
-    "creator": "{{creator}}",
+    "creator": 7,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -65,7 +65,7 @@ content-type: application/json
     "number_of_participants": 23,
     "how_many_have_been_invited": 35,
     "how_many_associate_members_created": 25,
-    "creator": "ajmol",
+    "creator": 7,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

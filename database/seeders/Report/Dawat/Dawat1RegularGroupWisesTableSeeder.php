@@ -19,7 +19,7 @@ class Dawat1RegularGroupWisesTableSeeder extends Seeder
             'number_of_participants' => 20,
             'how_many_have_been_invited' => 30,
             'how_many_associate_members_created' => 5,
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat1RegularGroupWise::create([
@@ -27,7 +27,7 @@ class Dawat1RegularGroupWisesTableSeeder extends Seeder
             'number_of_participants' => 22,
             'how_many_have_been_invited' => 20,
             'how_many_associate_members_created' => 4,
-            'creator' => 'hasan',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat1RegularGroupWise::create([
@@ -35,7 +35,7 @@ class Dawat1RegularGroupWisesTableSeeder extends Seeder
             'number_of_participants' => 42,
             'how_many_have_been_invited' => 40,
             'how_many_associate_members_created' => 14,
-            'creator' => 'fahim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Dawat1RegularGroupWise::create([
@@ -43,7 +43,7 @@ class Dawat1RegularGroupWisesTableSeeder extends Seeder
             'number_of_participants' => 22,
             'how_many_have_been_invited' => 10,
             'how_many_associate_members_created' => 1,
-            'creator' => 'ajmol',
+            'creator' => 3,
             'status' => 1,
         ]);
     }

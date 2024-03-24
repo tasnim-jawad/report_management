@@ -34,7 +34,7 @@ content-type: application/json
     "responsibility_name": "bm",
     "month_year": "2024-12-02",
     "report_type": "yearly",
-    "creator": "tasnimul",
+    "creator": 7,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -69,7 +69,7 @@ content-type: application/json
     "responsibility_name": "secretary",
     "month_year": "2024-12-02",
     "report_type": "yearly",
-    "creator": "tasnimul hasan",
+    "creator": 7,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

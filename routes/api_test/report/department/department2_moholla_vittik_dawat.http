@@ -40,7 +40,7 @@ content-type: application/json
     "special_dawat_included_moholla_increased": 6,
     "how_many_been_invited": 63,
     "how_many_associated_created": 6,
-    "creator": "{{creator}}",
+    "creator": 4,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -81,7 +81,7 @@ content-type: application/json
     "special_dawat_included_moholla_increased": 6,
     "how_many_been_invited": 63,
     "how_many_associated_created": 6,
-    "creator": "shaikhul islam",
+    "creator": 4,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

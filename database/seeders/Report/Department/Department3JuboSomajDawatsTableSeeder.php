@@ -27,7 +27,7 @@ class Department3JuboSomajDawatsTableSeeder extends Seeder
             'stablished_club_total_invited' => 29,
             'stablished_club_total_increased' => 21,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department3JuboSomajDawat::create([
@@ -43,7 +43,7 @@ class Department3JuboSomajDawatsTableSeeder extends Seeder
             'stablished_club_total_invited' => 39,
             'stablished_club_total_increased' => 31,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department3JuboSomajDawat::create([
@@ -59,7 +59,7 @@ class Department3JuboSomajDawatsTableSeeder extends Seeder
             'stablished_club_total_invited' => 49,
             'stablished_club_total_increased' => 41,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department3JuboSomajDawat::create([
@@ -75,7 +75,7 @@ class Department3JuboSomajDawatsTableSeeder extends Seeder
             'stablished_club_total_invited' => 59,
             'stablished_club_total_increased' => 51,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
     }

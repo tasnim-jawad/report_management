@@ -30,7 +30,7 @@ content-type: application/json
 {
     "title": "{{title}}",
     "description": "{{title}} is an organization",
-    "creator": "tasnimul",
+    "creator": 3,
     "status": 1,
     "created_at": "{{createdAt}}"
 }
@@ -61,7 +61,7 @@ content-type: application/json
     "id": "{{id}}",
     "title": "peshajibis",
     "description": "peshajibis is an organization",
-    "creator": "tasnimul",
+    "creator": 3,
     "status": 1,
     "created_at": "{{createdAt}}"
 }

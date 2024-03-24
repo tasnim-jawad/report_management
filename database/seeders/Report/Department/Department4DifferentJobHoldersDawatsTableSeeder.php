@@ -47,7 +47,7 @@ class Department4DifferentJobHoldersDawatsTableSeeder extends Seeder
             'vinno_dormalombi_been_associated' => 20,
             'vinno_dormalombi_target' => 52,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department4DifferentJobHoldersDawat::create([
@@ -83,7 +83,7 @@ class Department4DifferentJobHoldersDawatsTableSeeder extends Seeder
             'vinno_dormalombi_been_associated' => 30,
             'vinno_dormalombi_target' => 53,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department4DifferentJobHoldersDawat::create([
@@ -119,7 +119,7 @@ class Department4DifferentJobHoldersDawatsTableSeeder extends Seeder
             'vinno_dormalombi_been_associated' => 40,
             'vinno_dormalombi_target' => 54,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
         Department4DifferentJobHoldersDawat::create([
@@ -155,7 +155,7 @@ class Department4DifferentJobHoldersDawatsTableSeeder extends Seeder
             'vinno_dormalombi_been_associated' => 50,
             'vinno_dormalombi_target' => 55,
 
-            'creator' => 'tasnim',
+            'creator' => 3,
             'status' => 1,
         ]);
     }
