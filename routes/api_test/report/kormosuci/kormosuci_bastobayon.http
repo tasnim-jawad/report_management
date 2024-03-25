@@ -1,0 +1,180 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/kormosuci-bastobayon
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+
+{
+    "unit_masik_sadaron_sova_total": 81,
+    "unit_masik_sadaron_sova_target": 89,
+    "dawati_sova_total": 88,
+    "dawati_sova_target": 88,
+    "alochona_sova_total": 18,
+    "alochona_sova_target": 83,
+    "sudhi_somabesh_total": 81,
+    "sudhi_somabesh_target": 89,
+    "siratunnabi_mahfil_total": 84,
+    "siratunnabi_mahfil_target": 87,
+    "eid_reunion_total": 80,
+    "eid_reunion_target": 84,
+    "dars_total": 84,
+    "dars_target": 88,
+    "tafsir_total": 88,
+    "tafsir_target": 87,
+    "dawati_jonosova_total": 88,
+    "dawati_jonosova_target": 83,
+    "iftar_mahfil_personal_total": 83,
+    "iftar_mahfil_personal_target": 84,
+    "iftar_mahfil_samostic_total": 88,
+    "iftar_mahfil_samostic_target": 89,
+    "cha_chakra_total": 84,
+    "cha_chakra_target": 87,
+    "samostic_khawa_total": 87,
+    "samostic_khawa_target": 86,
+    "sikkha_sofor_total": 83,
+    "sikkha_sofor_target": 87,
+    "kirat_protijogita_total": 83,
+    "kirat_protijogita_target": 87,
+    "hamd_nat_protijogita_total": 88,
+    "hamd_nat_protijogita_target": 88,
+    "others_total": 18,
+    "others_target": 84,
+    "creator": 5,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "unit_masik_sadaron_sova_total": 91,
+    "unit_masik_sadaron_sova_target": 99,
+    "dawati_sova_total": 99,
+    "dawati_sova_target": 98,
+    "alochona_sova_total": 19,
+    "alochona_sova_target": 93,
+    "sudhi_somabesh_total": 91,
+    "sudhi_somabesh_target": 99,
+    "siratunnabi_mahfil_total": 94,
+    "siratunnabi_mahfil_target": 97,
+    "eid_reunion_total": 90,
+    "eid_reunion_target": 94,
+    "dars_total": 94,
+    "dars_target": 98,
+    "tafsir_total": 99,
+    "tafsir_target": 97,
+    "dawati_jonosova_total": 98,
+    "dawati_jonosova_target": 93,
+    "iftar_mahfil_personal_total": 93,
+    "iftar_mahfil_personal_target": 94,
+    "iftar_mahfil_samostic_total": 98,
+    "iftar_mahfil_samostic_target": 99,
+    "cha_chakra_total": 94,
+    "cha_chakra_target": 97,
+    "samostic_khawa_total": 97,
+    "samostic_khawa_target": 96,
+    "sikkha_sofor_total": 93,
+    "sikkha_sofor_target": 97,
+    "kirat_protijogita_total": 93,
+    "kirat_protijogita_target": 97,
+    "hamd_nat_protijogita_total": 99,
+    "hamd_nat_protijogita_target": 98,
+    "others_total": 19,
+    "others_target": 94,
+    "creator": 4,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_roles', function (Blueprint $table) {
+        Schema::create('department7_dawat_in_technologies', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('serial')->nullable();
-            $table->string('title',50)->nullable();
+            $table->bigInteger('total_well_known')->nullable();
+            $table->bigInteger('total_attended')->nullable();
+
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_roles');
+        Schema::dropIfExists('department7_dawat_in_technologies');
     }
 };

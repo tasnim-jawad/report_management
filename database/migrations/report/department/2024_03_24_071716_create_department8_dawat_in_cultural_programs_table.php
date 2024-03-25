@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_roles', function (Blueprint $table) {
+        Schema::create('department8_dawat_in_cultural_programs', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('serial')->nullable();
-            $table->string('title',50)->nullable();
+            $table->bigInteger('total_cultural_team')->nullable();
+            $table->bigInteger('total_program')->nullable();
+            $table->bigInteger('total_invited')->nullable();
+
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_roles');
+        Schema::dropIfExists('department8_dawat_in_cultural_programs');
     }
 };

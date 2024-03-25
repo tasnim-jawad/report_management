@@ -1,0 +1,182 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/dawah-and-prokashona
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+
+{
+    "total_pathagar": 28,
+    "total_pathagar_increase": 8,
+    "total_pathagar_target": 80,
+    "total_online_pathagar": 88,
+    "total_online_pathagar_increase": 88,
+    "total_online_pathagar_target": 88,
+    "books_in_pathagar": 48,
+    "books_in_pathagar_increase": 84,
+    "books_in_pathagar_target": 58,
+    "books_in_online_pathagar": null,
+    "books_in_online_pathagar_increase": null,
+    "books_in_online_pathagar_target": null,
+    "book_distribution": null,
+    "book_distribution_increase": 85,
+    "book_distribution_target": 85,
+    "unit_book_distribution_center": 68,
+    "unit_book_distribution_center_increase": 86,
+    "unit_book_distribution_center_target": 78,
+    "unit_book_distribution": 38,
+    "unit_book_distribution_increase": 84,
+    "unit_book_distribution_target": 58,
+    "ward_book_sales_center": 83,
+    "ward_book_sales_center_increase": 8,
+    "ward_book_sales": 48,
+    "ward_book_sales_increase": 85,
+    "soft_copy_book_distribution": 68,
+    "soft_copy_book_distribution_increase": 85,
+    "dawat_link_distribution": 58,
+    "dawat_link_distribution_increase": 84,
+    "sonar_bangla": 84,
+    "sonar_bangla_increase": 8,
+    "songram": 98,
+    "songram_increase": 87,
+    "prithibi": 38,
+    "prithibi_increase": 83,
+    "creator": 5,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "total_pathagar": 42,
+    "total_pathagar_increase": 4,
+    "total_pathagar_target": 40,
+    "total_online_pathagar": 24,
+    "total_online_pathagar_increase": 42,
+    "total_online_pathagar_target": 24,
+    "books_in_pathagar": 44,
+    "books_in_pathagar_increase": 44,
+    "books_in_pathagar_target": 54,
+    "books_in_online_pathagar": null,
+    "books_in_online_pathagar_increase": null,
+    "books_in_online_pathagar_target": null,
+    "book_distribution": null,
+    "book_distribution_increase": 45,
+    "book_distribution_target": 45,
+    "unit_book_distribution_center": 64,
+    "unit_book_distribution_center_increase": 46,
+    "unit_book_distribution_center_target": 74,
+    "unit_book_distribution": 34,
+    "unit_book_distribution_increase": 44,
+    "unit_book_distribution_target": 54,
+    "ward_book_sales_center": 43,
+    "ward_book_sales_center_increase": 4,
+    "ward_book_sales": 44,
+    "ward_book_sales_increase": 45,
+    "soft_copy_book_distribution": 64,
+    "soft_copy_book_distribution_increase": 45,
+    "dawat_link_distribution": 54,
+    "dawat_link_distribution_increase": 44,
+    "sonar_bangla": 44,
+    "sonar_bangla_increase": 4,
+    "songram": 94,
+    "songram_increase": 47,
+    "prithibi": 34,
+    "prithibi_increase": 43,
+    "creator": 4,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

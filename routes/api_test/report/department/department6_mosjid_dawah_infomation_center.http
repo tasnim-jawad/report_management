@@ -1,0 +1,140 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/department6-mosjid-dawah-infomation-center
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+
+{
+    "total_mosjid": 11,
+    "total_mosjid_increase": 1,
+    "dawat_included_mosjid": 11,
+    "dawat_included_mosjid_increase": 11,
+    "mosjid_wise_dawah_center": 13,
+    "mosjid_wise_dawah_center_increase": 11,
+    "general_dawah_center": 16,
+    "general_dawah_center_increase": 10,
+    "mosjid_information_center": 11,
+    "mosjid_information_center_increase": 1,
+    "general_information_center": 15,
+    "general_information_center_increase": 14,
+    "trained_educated_dayee": 15,
+    "trained_educated_dayee_increase": 15,
+    "creator": 5,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "total_mosjid": 11,
+    "total_mosjid_increase": 1,
+    "dawat_included_mosjid": 11,
+    "dawat_included_mosjid_increase": 11,
+    "mosjid_wise_dawah_center": 13,
+    "mosjid_wise_dawah_center_increase": 11,
+    "general_dawah_center": 16,
+    "general_dawah_center_increase": 10,
+    "mosjid_information_center": 11,
+    "mosjid_information_center_increase": 1,
+    "general_information_center": 15,
+    "general_information_center_increase": 14,
+    "trained_educated_dayee": 15,
+    "trained_educated_dayee_increase": 15,
+    "creator": 4,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

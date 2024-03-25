@@ -18,6 +18,7 @@ use Database\Seeders\Organization\OrgWardResponsiblesTableSeeder;
 use Database\Seeders\Organization\OrgWardsTableSeeder;
 use Database\Seeders\Organization\OrgWardUsersTableSeeder;
 use Database\Seeders\Organization\ResponsibilitiesTableSeeder;
+use Database\Seeders\Report\DawahAndProkashona\DawahAndProkashonasTableSeeder;
 use Database\Seeders\Report\Dawat\Dawat1RegularGroupWisesTableSeeder;
 use Database\Seeders\Report\Dawat\Dawat2PersonalAndTargetsTableSeeder;
 use Database\Seeders\Report\Dawat\Dawat3GeneralProgramAndOthersTableSeeder;
@@ -27,7 +28,14 @@ use Database\Seeders\Report\Department\Department2MohollaVittikDawatsTableSeeder
 use Database\Seeders\Report\Department\Department3JuboSomajDawatsTableSeeder;
 use Database\Seeders\Report\Department\Department4DifferentJobHoldersDawatsTableSeeder;
 use Database\Seeders\Report\Department\Department5ParibarikDawatsTableSeeder;
+use Database\Seeders\Report\Department\Department6MosjidDawahInfomationCentersTableSeeder;
+use Database\Seeders\Report\Department\Department7DawatInTechnologiesTableSeeder;
+use Database\Seeders\Report\Department\Department8DawatInCulturalProgramsTableSeeder;
+use Database\Seeders\Report\Kormosuci\KormosuciBastobayonsTableSeeder;
 use Database\Seeders\Report\ReportInfosTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon1JonosoktisTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon2AssociateMembersTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon3DepartmentalInformationTableSeeder;
 use Database\Seeders\User\ReportUploadersTableSeeder;
 use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
@@ -89,6 +97,19 @@ class DatabaseSeeder extends Seeder
             Department3JuboSomajDawatsTableSeeder::class,
             Department4DifferentJobHoldersDawatsTableSeeder::class,
             Department5ParibarikDawatsTableSeeder::class,
+            Department6MosjidDawahInfomationCentersTableSeeder::class,
+            Department7DawatInTechnologiesTableSeeder::class,
+            Department8DawatInCulturalProgramsTableSeeder::class,
+            // DawahAndProkashona
+            DawahAndProkashonasTableSeeder::class,
+            // kormosuci
+            KormosuciBastobayonsTableSeeder::class,
+            //songothon
+            Songothon1JonosoktisTableSeeder::class,
+            Songothon2AssociateMembersTableSeeder::class,
+            Songothon3DepartmentalInformationTableSeeder::class,
+
+
         ]);
     }
 }

@@ -397,6 +397,119 @@ Route::group(['prefix' => 'v1'], function(){
         Route::post('/restore', [App\Http\Controllers\Report\Department\Department5ParibarikDawatController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Report\Department\Department5ParibarikDawatController::class,'bulk_import']);
     });
+
+    Route::group(['prefix' => 'department6-mosjid-dawah-infomation-center'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Department\Department6MosjidDawahInfomationCenterController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Department\Department6MosjidDawahInfomationCenterController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Department\Department6MosjidDawahInfomationCenterController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Department\Department6MosjidDawahInfomationCenterController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Department\Department6MosjidDawahInfomationCenterController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Department\Department6MosjidDawahInfomationCenterController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Department\Department6MosjidDawahInfomationCenterController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Department\Department6MosjidDawahInfomationCenterController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'department7-dawat-in-technology'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Department\Department7DawatInTechnologyController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Department\Department7DawatInTechnologyController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Department\Department7DawatInTechnologyController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Department\Department7DawatInTechnologyController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Department\Department7DawatInTechnologyController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Department\Department7DawatInTechnologyController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Department\Department7DawatInTechnologyController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Department\Department7DawatInTechnologyController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'department8-dawat-in-cultural-program'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Department\Department8DawatInCulturalProgramController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Department\Department8DawatInCulturalProgramController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Department\Department8DawatInCulturalProgramController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Department\Department8DawatInCulturalProgramController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Department\Department8DawatInCulturalProgramController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Department\Department8DawatInCulturalProgramController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Department\Department8DawatInCulturalProgramController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Department\Department8DawatInCulturalProgramController::class,'bulk_import']);
+    });
+
+
+
+
+
+
+
+
+
+
+
+    Route::group(['prefix' => 'dawah-and-prokashona'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'bulk_import']);
+    });
+
+
+
+    Route::group(['prefix' => 'kormosuci-bastobayon'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'bulk_import']);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Route::group(['prefix' => 'songothon1-jonosokti'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'songothon2-associate-member'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'songothon3-departmental-information'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'bulk_import']);
+    });
 });
 
 

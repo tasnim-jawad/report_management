@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_roles', function (Blueprint $table) {
+        Schema::create('songothon4_unit_songothons', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('serial')->nullable();
-            $table->string('title',50)->nullable();
-            $table->bigInteger('creator')->nullable();
-            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_roles');
+        Schema::dropIfExists('songothon4_unit_songothons');
     }
 };
