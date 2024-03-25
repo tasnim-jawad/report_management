@@ -1,0 +1,352 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/songothon9-sangothonik-boithok
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+
+{
+    "word_sura_boithok_man_total": 82,
+    "word_sura_boithok_man_target": 82,
+    "word_sura_boithok_man_uposthiti": 82,
+    "word_sura_boithok_women_total": 82,
+    "word_sura_boithok_women_target": 82,
+    "word_sura_boithok_women_uposthiti": 82,
+    "kormoporishod_boithok_man_total": 82,
+    "kormoporishod_boithok_man_target": 82,
+    "kormoporishod_boithok_man_uposthiti": 82,
+    "kormoporishod_boithok_women_total": 82,
+    "kormoporishod_boithok_women_target": 82,
+    "kormoporishod_boithok_women_uposthiti": 82,
+    "upozilla_rokon_boithok_man_total": 82,
+    "upozilla_rokon_boithok_man_target": 82,
+    "upozilla_rokon_boithok_man_uposthiti": 82,
+    "upozilla_rokon_boithok_women_total": 82,
+    "upozilla_rokon_boithok_women_target": 82,
+    "upozilla_rokon_boithok_women_uposthiti": 82,
+    "thana_rokon_boithok_man_total": 82,
+    "thana_rokon_boithok_man_target": 82,
+    "thana_rokon_boithok_man_uposthiti": 82,
+    "thana_rokon_boithok_women_total": 82,
+    "thana_rokon_boithok_women_target": 82,
+    "thana_rokon_boithok_women_uposthiti": 82,
+    "division_committee_boithok_man_total": 82,
+    "division_committee_boithok_man_target": 82,
+    "division_committee_boithok_man_uposthiti": 82,
+    "division_committee_boithok_women_total": 82,
+    "division_committee_boithok_women_target": 82,
+    "division_committee_boithok_women_uposthiti": 82,
+    "pourosova_boithok_man_total": 82,
+    "pourosova_boithok_man_target": 82,
+    "pourosova_boithok_man_uposthiti": 82,
+    "pourosova_boithok_women_total": 82,
+    "pourosova_boithok_women_target": 82,
+    "pourosova_boithok_women_uposthiti": 82,
+    "union_boithok_man_total": 82,
+    "union_boithok_man_target": 82,
+    "union_boithok_man_uposthiti": 82,
+    "union_boithok_women_total": 82,
+    "union_boithok_women_target": 82,
+    "union_boithok_women_uposthiti": 82,
+    "word_boithok_man_total": 82,
+    "word_boithok_man_target": 82,
+    "word_boithok_man_uposthiti": 82,
+    "word_boithok_women_total": 82,
+    "word_boithok_women_target": 82,
+    "word_boithok_women_uposthiti": 82,
+    "team_boithok_man_total": 82,
+    "team_boithok_man_target": 82,
+    "team_boithok_man_uposthiti": 82,
+    "team_boithok_women_total": 82,
+    "team_boithok_women_target": 82,
+    "team_boithok_women_uposthiti": 82,
+    "masik_sodosso_boithok_man_total": 82,
+    "masik_sodosso_boithok_man_target": 82,
+    "masik_sodosso_boithok_man_uposthiti": 82,
+    "masik_sodosso_boithok_women_total": 82,
+    "masik_sodosso_boithok_women_target": 82,
+    "masik_sodosso_boithok_women_uposthiti": 82,
+    "pourosova_masik_sodosso_boithok_man_total": 82,
+    "pourosova_masik_sodosso_boithok_man_target": 82,
+    "pourosova_masik_sodosso_boithok_man_uposthiti": 82,
+    "pourosova_masik_sodosso_boithok_women_total": 82,
+    "pourosova_masik_sodosso_boithok_women_target": 82,
+    "pourosova_masik_sodosso_boithok_women_uposthiti": 82,
+    "union_masik_sodosso_boithok_man_total": 82,
+    "union_masik_sodosso_boithok_man_target": 82,
+    "union_masik_sodosso_boithok_man_uposthiti": 82,
+    "union_masik_sodosso_boithok_women_total": 82,
+    "union_masik_sodosso_boithok_women_target": 82,
+    "union_masik_sodosso_boithok_women_uposthiti": 82,
+    "unit_kormi_boithok_man_total": 82,
+    "unit_kormi_boithok_man_target": 82,
+    "unit_kormi_boithok_man_uposthiti": 82,
+    "unit_kormi_boithok_women_total": 82,
+    "unit_kormi_boithok_women_target": 82,
+    "unit_kormi_boithok_women_uposthiti": 82,
+    "ulama_somabesh_man_total": 82,
+    "ulama_somabesh_man_target": 82,
+    "ulama_somabesh_man_uposthiti": 82,
+    "ulama_somabesh_women_total": 82,
+    "ulama_somabesh_women_target": 82,
+    "ulama_somabesh_women_uposthiti": 82,
+    "jubok_somabesh_man_total": 82,
+    "jubok_somabesh_man_target": 82,
+    "jubok_somabesh_man_uposthiti": 82,
+    "jubok_somabesh_women_total": 82,
+    "jubok_somabesh_women_target": 82,
+    "jubok_somabesh_women_uposthiti": 82,
+    "sromik_somabesh_man_total": 82,
+    "sromik_somabesh_man_target": 82,
+    "sromik_somabesh_man_uposthiti": 82,
+    "sromik_somabesh_women_total": 82,
+    "sromik_somabesh_women_target": 82,
+    "sromik_somabesh_women_uposthiti": 82,
+    "trimasik_rokon_sommelon_man_total": 82,
+    "trimasik_rokon_sommelon_man_target": 82,
+    "trimasik_rokon_sommelon_man_uposthiti": 82,
+    "trimasik_rokon_sommelon_women_total": 82,
+    "trimasik_rokon_sommelon_women_target": 82,
+    "trimasik_rokon_sommelon_women_uposthiti": 82,
+    "sammasik_rokon_sommelon_man_total": 82,
+    "sammasik_rokon_sommelon_man_target": 82,
+    "sammasik_rokon_sommelon_man_uposthiti": 82,
+    "sammasik_rokon_sommelon_women_total": 82,
+    "sammasik_rokon_sommelon_women_target": 82,
+    "sammasik_rokon_sommelon_women_uposthiti": 82,
+    "barsik_rokon_sommelon_man_total": 82,
+    "barsik_rokon_sommelon_man_target": 82,
+    "barsik_rokon_sommelon_man_uposthiti": 82,
+    "barsik_rokon_sommelon_women_total": 82,
+    "barsik_rokon_sommelon_women_target": 82,
+    "barsik_rokon_sommelon_women_uposthiti": 82,
+    "upozila_word_sovapoti_sommelon_man_total": 82,
+    "upozila_word_sovapoti_sommelon_man_target": 82,
+    "upozila_word_sovapoti_sommelon_man_uposthiti": 82,
+    "upozila_word_sovapoti_sommelon_women_total": 82,
+    "upozila_word_sovapoti_sommelon_women_target": 82,
+    "upozila_word_sovapoti_sommelon_women_uposthiti": 82,
+    "creator": 5,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "word_sura_boithok_man_total": 53,
+    "word_sura_boithok_man_target": 53,
+    "word_sura_boithok_man_uposthiti": 53,
+    "word_sura_boithok_women_total": 53,
+    "word_sura_boithok_women_target": 53,
+    "word_sura_boithok_women_uposthiti": 53,
+    "kormoporishod_boithok_man_total": 53,
+    "kormoporishod_boithok_man_target": 53,
+    "kormoporishod_boithok_man_uposthiti": 53,
+    "kormoporishod_boithok_women_total": 53,
+    "kormoporishod_boithok_women_target": 53,
+    "kormoporishod_boithok_women_uposthiti": 53,
+    "upozilla_rokon_boithok_man_total": 53,
+    "upozilla_rokon_boithok_man_target": 53,
+    "upozilla_rokon_boithok_man_uposthiti": 53,
+    "upozilla_rokon_boithok_women_total": 53,
+    "upozilla_rokon_boithok_women_target": 53,
+    "upozilla_rokon_boithok_women_uposthiti": 53,
+    "thana_rokon_boithok_man_total": 53,
+    "thana_rokon_boithok_man_target": 53,
+    "thana_rokon_boithok_man_uposthiti": 53,
+    "thana_rokon_boithok_women_total": 53,
+    "thana_rokon_boithok_women_target": 53,
+    "thana_rokon_boithok_women_uposthiti": 53,
+    "division_committee_boithok_man_total": 53,
+    "division_committee_boithok_man_target": 53,
+    "division_committee_boithok_man_uposthiti": 53,
+    "division_committee_boithok_women_total": 53,
+    "division_committee_boithok_women_target": 53,
+    "division_committee_boithok_women_uposthiti": 53,
+    "pourosova_boithok_man_total": 53,
+    "pourosova_boithok_man_target": 53,
+    "pourosova_boithok_man_uposthiti": 53,
+    "pourosova_boithok_women_total": 53,
+    "pourosova_boithok_women_target": 53,
+    "pourosova_boithok_women_uposthiti": 53,
+    "union_boithok_man_total": 53,
+    "union_boithok_man_target": 53,
+    "union_boithok_man_uposthiti": 53,
+    "union_boithok_women_total": 53,
+    "union_boithok_women_target": 53,
+    "union_boithok_women_uposthiti": 53,
+    "word_boithok_man_total": 53,
+    "word_boithok_man_target": 53,
+    "word_boithok_man_uposthiti": 53,
+    "word_boithok_women_total": 53,
+    "word_boithok_women_target": 53,
+    "word_boithok_women_uposthiti": 53,
+    "team_boithok_man_total": 53,
+    "team_boithok_man_target": 53,
+    "team_boithok_man_uposthiti": 53,
+    "team_boithok_women_total": 53,
+    "team_boithok_women_target": 53,
+    "team_boithok_women_uposthiti": 53,
+    "masik_sodosso_boithok_man_total": 53,
+    "masik_sodosso_boithok_man_target": 53,
+    "masik_sodosso_boithok_man_uposthiti": 53,
+    "masik_sodosso_boithok_women_total": 53,
+    "masik_sodosso_boithok_women_target": 53,
+    "masik_sodosso_boithok_women_uposthiti": 53,
+    "pourosova_masik_sodosso_boithok_man_total": 53,
+    "pourosova_masik_sodosso_boithok_man_target": 53,
+    "pourosova_masik_sodosso_boithok_man_uposthiti": 53,
+    "pourosova_masik_sodosso_boithok_women_total": 53,
+    "pourosova_masik_sodosso_boithok_women_target": 53,
+    "pourosova_masik_sodosso_boithok_women_uposthiti": 53,
+    "union_masik_sodosso_boithok_man_total": 53,
+    "union_masik_sodosso_boithok_man_target": 53,
+    "union_masik_sodosso_boithok_man_uposthiti": 53,
+    "union_masik_sodosso_boithok_women_total": 53,
+    "union_masik_sodosso_boithok_women_target": 53,
+    "union_masik_sodosso_boithok_women_uposthiti": 53,
+    "unit_kormi_boithok_man_total": 53,
+    "unit_kormi_boithok_man_target": 53,
+    "unit_kormi_boithok_man_uposthiti": 53,
+    "unit_kormi_boithok_women_total": 53,
+    "unit_kormi_boithok_women_target": 53,
+    "unit_kormi_boithok_women_uposthiti": 53,
+    "ulama_somabesh_man_total": 53,
+    "ulama_somabesh_man_target": 53,
+    "ulama_somabesh_man_uposthiti": 53,
+    "ulama_somabesh_women_total": 53,
+    "ulama_somabesh_women_target": 53,
+    "ulama_somabesh_women_uposthiti": 53,
+    "jubok_somabesh_man_total": 53,
+    "jubok_somabesh_man_target": 53,
+    "jubok_somabesh_man_uposthiti": 53,
+    "jubok_somabesh_women_total": 53,
+    "jubok_somabesh_women_target": 53,
+    "jubok_somabesh_women_uposthiti": 53,
+    "sromik_somabesh_man_total": 53,
+    "sromik_somabesh_man_target": 53,
+    "sromik_somabesh_man_uposthiti": 53,
+    "sromik_somabesh_women_total": 53,
+    "sromik_somabesh_women_target": 53,
+    "sromik_somabesh_women_uposthiti": 53,
+    "trimasik_rokon_sommelon_man_total": 53,
+    "trimasik_rokon_sommelon_man_target": 53,
+    "trimasik_rokon_sommelon_man_uposthiti": 53,
+    "trimasik_rokon_sommelon_women_total": 53,
+    "trimasik_rokon_sommelon_women_target": 53,
+    "trimasik_rokon_sommelon_women_uposthiti": 53,
+    "sammasik_rokon_sommelon_man_total": 53,
+    "sammasik_rokon_sommelon_man_target": 53,
+    "sammasik_rokon_sommelon_man_uposthiti": 53,
+    "sammasik_rokon_sommelon_women_total": 53,
+    "sammasik_rokon_sommelon_women_target": 53,
+    "sammasik_rokon_sommelon_women_uposthiti": 53,
+    "barsik_rokon_sommelon_man_total": 53,
+    "barsik_rokon_sommelon_man_target": 53,
+    "barsik_rokon_sommelon_man_uposthiti": 53,
+    "barsik_rokon_sommelon_women_total": 53,
+    "barsik_rokon_sommelon_women_target": 53,
+    "barsik_rokon_sommelon_women_uposthiti": 53,
+    "upozila_word_sovapoti_sommelon_man_total": 53,
+    "upozila_word_sovapoti_sommelon_man_target": 53,
+    "upozila_word_sovapoti_sommelon_man_uposthiti": 53,
+    "upozila_word_sovapoti_sommelon_women_total": 53,
+    "upozila_word_sovapoti_sommelon_women_target": 53,
+    "upozila_word_sovapoti_sommelon_women_uposthiti": 53,
+    "creator": 4,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

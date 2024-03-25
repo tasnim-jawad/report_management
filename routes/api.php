@@ -510,6 +510,74 @@ Route::group(['prefix' => 'v1'], function(){
         Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon3DepartmentalInformationController::class,'bulk_import']);
     });
+
+    Route::group(['prefix' => 'songothon4-unit-songothon'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon4UnitSongothonController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon4UnitSongothonController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon4UnitSongothonController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon4UnitSongothonController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon4UnitSongothonController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon4UnitSongothonController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon4UnitSongothonController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon4UnitSongothonController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'songothon5-dawat-and-paribarik-unit'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'songothon6-bidayi-students-connect'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon6BidayiStudentsConnectController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon6BidayiStudentsConnectController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon6BidayiStudentsConnectController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon6BidayiStudentsConnectController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon6BidayiStudentsConnectController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon6BidayiStudentsConnectController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon6BidayiStudentsConnectController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon6BidayiStudentsConnectController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'songothon7-sofor'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'songothon8-iyanot-data'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'songothon9-sangothonik-boithok'] , function(){
+        Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'bulk_import']);
+    });
+
+
 });
 
 

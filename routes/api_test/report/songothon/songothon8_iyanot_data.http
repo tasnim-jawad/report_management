@@ -1,0 +1,120 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/songothon8-iyanot-data
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+
+{
+    "associate_member_total": 70,
+    "associate_member_total_iyanot_amounts": 77000,
+    "sudhi_total": 73,
+    "sudi_total_iyanot_amounts": 74000,
+    "creator": 5,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "associate_member_total": 80,
+    "associate_member_total_iyanot_amounts": 88000,
+    "sudhi_total": 83,
+    "sudi_total_iyanot_amounts": 84000,
+    "creator": 4,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

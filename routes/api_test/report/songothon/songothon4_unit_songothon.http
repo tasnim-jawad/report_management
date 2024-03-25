@@ -1,0 +1,182 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/songothon4-unit-songothon
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+
+{
+    "general_unit_men_previous": 23,
+    "general_unit_men_present": 23,
+    "general_unit_men_increase": 23,
+    "general_unit_men_gatti": 23,
+    "general_unit_men_target": 23,
+    "general_unit_women_previous": 23,
+    "general_unit_women_present": 23,
+    "general_unit_women_increase": 23,
+    "general_unit_women_gatti": 23,
+    "general_unit_women_target": 23,
+    "ulama_unit_previous": 23,
+    "ulama_unit_present": 23,
+    "ulama_unit_increase": 23,
+    "ulama_unit_gatti": 23,
+    "ulama_unit_target": 23,
+    "peshajibi_unit_previous": 23,
+    "peshajibi_unit_present": 23,
+    "peshajibi_unit_increase": 23,
+    "peshajibi_unit_gatti": 23,
+    "peshajibi_unit_target": 23,
+    "sromik_kollyan_unit_previous": 23,
+    "sromik_kollyan_unit_present": 23,
+    "sromik_kollyan_unit_increase": 23,
+    "sromik_kollyan_unit_gatti": 23,
+    "sromik_kollyan_unit_target": 23,
+    "jubo_unit_previous": 23,
+    "jubo_unit_present": 23,
+    "jubo_unit_increase": 23,
+    "jubo_unit_gatti": 23,
+    "jubo_unit_target": 23,
+    "media_unit_previous": 23,
+    "media_unit_present": 23,
+    "media_unit_increase": 23,
+    "media_unit_gatti": 23,
+    "media_unit_target": 23,
+    "creator": 5,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "general_unit_men_previous": 23,
+    "general_unit_men_present": 23,
+    "general_unit_men_increase": 23,
+    "general_unit_men_gatti": 23,
+    "general_unit_men_target": 23,
+    "general_unit_women_previous": 23,
+    "general_unit_women_present": 23,
+    "general_unit_women_increase": 23,
+    "general_unit_women_gatti": 23,
+    "general_unit_women_target": 23,
+    "ulama_unit_previous": 23,
+    "ulama_unit_present": 23,
+    "ulama_unit_increase": 23,
+    "ulama_unit_gatti": 23,
+    "ulama_unit_target": 23,
+    "peshajibi_unit_previous": 23,
+    "peshajibi_unit_present": 23,
+    "peshajibi_unit_increase": 23,
+    "peshajibi_unit_gatti": 23,
+    "peshajibi_unit_target": 23,
+    "sromik_kollyan_unit_previous": 23,
+    "sromik_kollyan_unit_present": 23,
+    "sromik_kollyan_unit_increase": 23,
+    "sromik_kollyan_unit_gatti": 23,
+    "sromik_kollyan_unit_target": 23,
+    "jubo_unit_previous": 23,
+    "jubo_unit_present": 23,
+    "jubo_unit_increase": 23,
+    "jubo_unit_gatti": 23,
+    "jubo_unit_target": 23,
+    "media_unit_previous": 23,
+    "media_unit_present": 23,
+    "media_unit_increase": 23,
+    "media_unit_gatti": 23,
+    "media_unit_target": 23,
+    "creator": 4,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

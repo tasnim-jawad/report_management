@@ -36,6 +36,12 @@ use Database\Seeders\Report\ReportInfosTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon1JonosoktisTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon2AssociateMembersTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon3DepartmentalInformationTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon4UnitSongothonsTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon5DawatAndParibarikUnitsTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon6BidayiStudentsConnectsTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon7SoforsTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon8IyanotDataTableSeeder;
+use Database\Seeders\Report\Songothon\Songothon9SangothonikBoithoksTableSeeder;
 use Database\Seeders\User\ReportUploadersTableSeeder;
 use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
@@ -108,7 +114,12 @@ class DatabaseSeeder extends Seeder
             Songothon1JonosoktisTableSeeder::class,
             Songothon2AssociateMembersTableSeeder::class,
             Songothon3DepartmentalInformationTableSeeder::class,
-
+            Songothon4UnitSongothonsTableSeeder::class,
+            Songothon5DawatAndParibarikUnitsTableSeeder::class,
+            Songothon6BidayiStudentsConnectsTableSeeder::class,
+            Songothon7SoforsTableSeeder::class,
+            Songothon8IyanotDataTableSeeder::class,
+            Songothon9SangothonikBoithoksTableSeeder::class,
 
         ]);
     }
