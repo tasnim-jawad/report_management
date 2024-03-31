@@ -8,6 +8,8 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+
+                'resources/js/report_management/unit/main.js',
             ],
             refresh: true,
         }),
