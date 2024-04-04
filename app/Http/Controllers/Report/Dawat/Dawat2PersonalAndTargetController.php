@@ -31,7 +31,8 @@ class Dawat2PersonalAndTargetController extends Controller
                 return $q->where('id', '%' . $key . '%')
                 ->orWhere('total_rokon', '%' . $key . '%')
                 ->orWhere('total_worker', '%' . $key . '%')
-                ->orWhere('how_many_were_give_dawat', '%' . $key . '%')
+                ->orWhere('how_many_were_give_dawat_rokon', '%' . $key . '%')
+                ->orWhere('how_many_were_give_dawat_worker', '%' . $key . '%')
                 ->orWhere('how_many_have_been_invited', '%' . $key . '%')
                 ->orWhere('how_many_associate_members_created', '%' . $key . '%');
 
@@ -68,7 +69,8 @@ class Dawat2PersonalAndTargetController extends Controller
         $validator = Validator::make(request()->all(), [
             'total_rokon' => ['required'],
             'total_worker' => ['required'],
-            'how_many_were_give_dawat' => ['required'],
+            'how_many_were_give_dawat_rokon' => ['required'],
+            'how_many_were_give_dawat_worker' => ['required'],
             'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
             'creator' => ['required'],
@@ -85,7 +87,8 @@ class Dawat2PersonalAndTargetController extends Controller
         $data = new Dawat2PersonalAndTarget();
         $data->total_rokon = request()->total_rokon;
         $data->total_worker = request()->total_worker;
-        $data->how_many_were_give_dawat = request()->how_many_were_give_dawat;
+        $data->how_many_were_give_dawat_rokon = request()->how_many_were_give_dawat_rokon;
+        $data->how_many_were_give_dawat_worker = request()->how_many_were_give_dawat_worker;
         $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
         $data->creator = request()->creator;
@@ -108,7 +111,8 @@ class Dawat2PersonalAndTargetController extends Controller
         $validator = Validator::make(request()->all(), [
             'total_rokon' => ['required'],
             'total_worker' => ['required'],
-            'how_many_were_give_dawat' => ['required'],
+            'how_many_were_give_dawat_rokon' => ['required'],
+            'how_many_were_give_dawat_worker' => ['required'],
             'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
             'creator' => ['required'],
@@ -124,7 +128,8 @@ class Dawat2PersonalAndTargetController extends Controller
 
         $data->total_rokon = request()->total_rokon;
         $data->total_worker = request()->total_worker;
-        $data->how_many_were_give_dawat = request()->how_many_were_give_dawat;
+        $data->how_many_were_give_dawat_rokon = request()->how_many_were_give_dawat_rokon;
+        $data->how_many_were_give_dawat_worker = request()->how_many_were_give_dawat_worker;
         $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
         $data->creator = request()->creator;

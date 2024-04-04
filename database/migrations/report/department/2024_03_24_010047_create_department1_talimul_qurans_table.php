@@ -16,17 +16,20 @@ return new class extends Migration
             $table->bigInteger('teacher_rokon')->nullable();
             $table->bigInteger('teacher_worker')->nullable();
 
-            $table->bigInteger('samostic_quran_learning_total_group')->nullable();
-            $table->bigInteger('samostic_quran_learning_total_students')->nullable();
-            $table->bigInteger('samostic_total_forkania_madrasah')->nullable();
-            $table->bigInteger('samostic_total_forkania_madrasah_students')->nullable();
+            $table->bigInteger('student_rokon')->nullable();
+            $table->bigInteger('student_worker')->nullable();
+
+            // $table->bigInteger('samostic_quran_learning_total_group')->nullable();
+            // $table->bigInteger('samostic_quran_learning_total_students')->nullable();
+            // $table->bigInteger('samostic_total_forkania_madrasah')->nullable();
+            // $table->bigInteger('samostic_total_forkania_madrasah_students')->nullable();
 
             $table->bigInteger('how_much_learned_quran')->nullable();
             $table->bigInteger('how_much_invited')->nullable();
             $table->bigInteger('how_much_been_associated')->nullable();
 
-            $table->bigInteger('total_muallim')->nullable();
-            $table->bigInteger('total_muallim_increased')->nullable();
+            // $table->bigInteger('total_muallim')->nullable();
+            // $table->bigInteger('total_muallim_increased')->nullable();
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

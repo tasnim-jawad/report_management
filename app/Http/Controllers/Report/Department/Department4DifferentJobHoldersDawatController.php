@@ -32,25 +32,25 @@ class Department4DifferentJobHoldersDawatController extends Controller
                 ->orWhere('political_and_special_been_associated', '%' . $key . '%')
                 ->orWhere('political_and_special_target', '%' . $key . '%')
 
-                ->orWhere('pesha_jibi_invited', '%' . $key . '%')
-                ->orWhere('pesha_jibi_been_associated', '%' . $key . '%')
-                ->orWhere('pesha_jibi_target', '%' . $key . '%')
+                // ->orWhere('pesha_jibi_invited', '%' . $key . '%')
+                // ->orWhere('pesha_jibi_been_associated', '%' . $key . '%')
+                // ->orWhere('pesha_jibi_target', '%' . $key . '%')
 
-                ->orWhere('olama_masayekh_invited', '%' . $key . '%')
-                ->orWhere('olama_masayekh_been_associated', '%' . $key . '%')
-                ->orWhere('olama_masayekh_target', '%' . $key . '%')
+                // ->orWhere('olama_masayekh_invited', '%' . $key . '%')
+                // ->orWhere('olama_masayekh_been_associated', '%' . $key . '%')
+                // ->orWhere('olama_masayekh_target', '%' . $key . '%')
 
-                ->orWhere('kormo_jibi_mohila_invited', '%' . $key . '%')
-                ->orWhere('kormo_jibi_mohila_been_associated', '%' . $key . '%')
-                ->orWhere('kormo_jibi_mohila_target', '%' . $key . '%')
+                // ->orWhere('kormo_jibi_mohila_invited', '%' . $key . '%')
+                // ->orWhere('kormo_jibi_mohila_been_associated', '%' . $key . '%')
+                // ->orWhere('kormo_jibi_mohila_target', '%' . $key . '%')
 
-                ->orWhere('sromo_jibi_invited', '%' . $key . '%')
-                ->orWhere('sromo_jibi_been_associated', '%' . $key . '%')
-                ->orWhere('sromo_jibi_target', '%' . $key . '%')
+                // ->orWhere('sromo_jibi_invited', '%' . $key . '%')
+                // ->orWhere('sromo_jibi_been_associated', '%' . $key . '%')
+                // ->orWhere('sromo_jibi_target', '%' . $key . '%')
 
-                ->orWhere('media_kormi_invited', '%' . $key . '%')
-                ->orWhere('media_kormi_been_associated', '%' . $key . '%')
-                ->orWhere('media_kormi_target', '%' . $key . '%')
+                // ->orWhere('media_kormi_invited', '%' . $key . '%')
+                // ->orWhere('media_kormi_been_associated', '%' . $key . '%')
+                // ->orWhere('media_kormi_target', '%' . $key . '%')
 
                 ->orWhere('prantik_jonogosti_invited', '%' . $key . '%')
                 ->orWhere('prantik_jonogosti_been_associated', '%' . $key . '%')
@@ -95,25 +95,25 @@ class Department4DifferentJobHoldersDawatController extends Controller
             'political_and_special_been_associated' => ['required'],
             'political_and_special_target' => ['required'],
 
-            'pesha_jibi_invited' => ['required'],
-            'pesha_jibi_been_associated' => ['required'],
-            'pesha_jibi_target' => ['required'],
+            // 'pesha_jibi_invited' => ['required'],
+            // 'pesha_jibi_been_associated' => ['required'],
+            // 'pesha_jibi_target' => ['required'],
 
-            'olama_masayekh_invited' => ['required'],
-            'olama_masayekh_been_associated' => ['required'],
-            'olama_masayekh_target' => ['required'],
+            // 'olama_masayekh_invited' => ['required'],
+            // 'olama_masayekh_been_associated' => ['required'],
+            // 'olama_masayekh_target' => ['required'],
 
-            'kormo_jibi_mohila_invited' => ['required'],
-            'kormo_jibi_mohila_been_associated' => ['required'],
-            'kormo_jibi_mohila_target' => ['required'],
+            // 'kormo_jibi_mohila_invited' => ['required'],
+            // 'kormo_jibi_mohila_been_associated' => ['required'],
+            // 'kormo_jibi_mohila_target' => ['required'],
 
-            'sromo_jibi_invited' => ['required'],
-            'sromo_jibi_been_associated' => ['required'],
-            'sromo_jibi_target' => ['required'],
+            // 'sromo_jibi_invited' => ['required'],
+            // 'sromo_jibi_been_associated' => ['required'],
+            // 'sromo_jibi_target' => ['required'],
 
-            'media_kormi_invited' => ['required'],
-            'media_kormi_been_associated' => ['required'],
-            'media_kormi_target' => ['required'],
+            // 'media_kormi_invited' => ['required'],
+            // 'media_kormi_been_associated' => ['required'],
+            // 'media_kormi_target' => ['required'],
 
             'prantik_jonogosti_invited' => ['required'],
             'prantik_jonogosti_been_associated' => ['required'],
@@ -139,25 +139,25 @@ class Department4DifferentJobHoldersDawatController extends Controller
         $data->political_and_special_been_associated = request()->political_and_special_been_associated;
         $data->political_and_special_target = request()->political_and_special_target;
 
-        $data->pesha_jibi_invited = request()->pesha_jibi_invited;
-        $data->pesha_jibi_been_associated = request()->pesha_jibi_been_associated;
-        $data->pesha_jibi_target = request()->pesha_jibi_target;
+        // $data->pesha_jibi_invited = request()->pesha_jibi_invited;
+        // $data->pesha_jibi_been_associated = request()->pesha_jibi_been_associated;
+        // $data->pesha_jibi_target = request()->pesha_jibi_target;
 
-        $data->olama_masayekh_invited = request()->olama_masayekh_invited;
-        $data->olama_masayekh_been_associated = request()->olama_masayekh_been_associated;
-        $data->olama_masayekh_target = request()->olama_masayekh_target;
+        // $data->olama_masayekh_invited = request()->olama_masayekh_invited;
+        // $data->olama_masayekh_been_associated = request()->olama_masayekh_been_associated;
+        // $data->olama_masayekh_target = request()->olama_masayekh_target;
 
-        $data->kormo_jibi_mohila_invited = request()->kormo_jibi_mohila_invited;
-        $data->kormo_jibi_mohila_been_associated = request()->kormo_jibi_mohila_been_associated;
-        $data->kormo_jibi_mohila_target = request()->kormo_jibi_mohila_target;
+        // $data->kormo_jibi_mohila_invited = request()->kormo_jibi_mohila_invited;
+        // $data->kormo_jibi_mohila_been_associated = request()->kormo_jibi_mohila_been_associated;
+        // $data->kormo_jibi_mohila_target = request()->kormo_jibi_mohila_target;
 
-        $data->sromo_jibi_invited = request()->sromo_jibi_invited;
-        $data->sromo_jibi_been_associated = request()->sromo_jibi_been_associated;
-        $data->sromo_jibi_target = request()->sromo_jibi_target;
+        // $data->sromo_jibi_invited = request()->sromo_jibi_invited;
+        // $data->sromo_jibi_been_associated = request()->sromo_jibi_been_associated;
+        // $data->sromo_jibi_target = request()->sromo_jibi_target;
 
-        $data->media_kormi_invited = request()->media_kormi_invited;
-        $data->media_kormi_been_associated = request()->media_kormi_been_associated;
-        $data->media_kormi_target = request()->media_kormi_target;
+        // $data->media_kormi_invited = request()->media_kormi_invited;
+        // $data->media_kormi_been_associated = request()->media_kormi_been_associated;
+        // $data->media_kormi_target = request()->media_kormi_target;
 
         $data->prantik_jonogosti_invited = request()->prantik_jonogosti_invited;
         $data->prantik_jonogosti_been_associated = request()->prantik_jonogosti_been_associated;
@@ -189,25 +189,25 @@ class Department4DifferentJobHoldersDawatController extends Controller
             'political_and_special_been_associated' => ['required'],
             'political_and_special_target' => ['required'],
 
-            'pesha_jibi_invited' => ['required'],
-            'pesha_jibi_been_associated' => ['required'],
-            'pesha_jibi_target' => ['required'],
+            // 'pesha_jibi_invited' => ['required'],
+            // 'pesha_jibi_been_associated' => ['required'],
+            // 'pesha_jibi_target' => ['required'],
 
-            'olama_masayekh_invited' => ['required'],
-            'olama_masayekh_been_associated' => ['required'],
-            'olama_masayekh_target' => ['required'],
+            // 'olama_masayekh_invited' => ['required'],
+            // 'olama_masayekh_been_associated' => ['required'],
+            // 'olama_masayekh_target' => ['required'],
 
-            'kormo_jibi_mohila_invited' => ['required'],
-            'kormo_jibi_mohila_been_associated' => ['required'],
-            'kormo_jibi_mohila_target' => ['required'],
+            // 'kormo_jibi_mohila_invited' => ['required'],
+            // 'kormo_jibi_mohila_been_associated' => ['required'],
+            // 'kormo_jibi_mohila_target' => ['required'],
 
-            'sromo_jibi_invited' => ['required'],
-            'sromo_jibi_been_associated' => ['required'],
-            'sromo_jibi_target' => ['required'],
+            // 'sromo_jibi_invited' => ['required'],
+            // 'sromo_jibi_been_associated' => ['required'],
+            // 'sromo_jibi_target' => ['required'],
 
-            'media_kormi_invited' => ['required'],
-            'media_kormi_been_associated' => ['required'],
-            'media_kormi_target' => ['required'],
+            // 'media_kormi_invited' => ['required'],
+            // 'media_kormi_been_associated' => ['required'],
+            // 'media_kormi_target' => ['required'],
 
             'prantik_jonogosti_invited' => ['required'],
             'prantik_jonogosti_been_associated' => ['required'],
@@ -233,25 +233,25 @@ class Department4DifferentJobHoldersDawatController extends Controller
         $data->political_and_special_been_associated = request()->political_and_special_been_associated;
         $data->political_and_special_target = request()->political_and_special_target;
 
-        $data->pesha_jibi_invited = request()->pesha_jibi_invited;
-        $data->pesha_jibi_been_associated = request()->pesha_jibi_been_associated;
-        $data->pesha_jibi_target = request()->pesha_jibi_target;
+        // $data->pesha_jibi_invited = request()->pesha_jibi_invited;
+        // $data->pesha_jibi_been_associated = request()->pesha_jibi_been_associated;
+        // $data->pesha_jibi_target = request()->pesha_jibi_target;
 
-        $data->olama_masayekh_invited = request()->olama_masayekh_invited;
-        $data->olama_masayekh_been_associated = request()->olama_masayekh_been_associated;
-        $data->olama_masayekh_target = request()->olama_masayekh_target;
+        // $data->olama_masayekh_invited = request()->olama_masayekh_invited;
+        // $data->olama_masayekh_been_associated = request()->olama_masayekh_been_associated;
+        // $data->olama_masayekh_target = request()->olama_masayekh_target;
 
-        $data->kormo_jibi_mohila_invited = request()->kormo_jibi_mohila_invited;
-        $data->kormo_jibi_mohila_been_associated = request()->kormo_jibi_mohila_been_associated;
-        $data->kormo_jibi_mohila_target = request()->kormo_jibi_mohila_target;
+        // $data->kormo_jibi_mohila_invited = request()->kormo_jibi_mohila_invited;
+        // $data->kormo_jibi_mohila_been_associated = request()->kormo_jibi_mohila_been_associated;
+        // $data->kormo_jibi_mohila_target = request()->kormo_jibi_mohila_target;
 
-        $data->sromo_jibi_invited = request()->sromo_jibi_invited;
-        $data->sromo_jibi_been_associated = request()->sromo_jibi_been_associated;
-        $data->sromo_jibi_target = request()->sromo_jibi_target;
+        // $data->sromo_jibi_invited = request()->sromo_jibi_invited;
+        // $data->sromo_jibi_been_associated = request()->sromo_jibi_been_associated;
+        // $data->sromo_jibi_target = request()->sromo_jibi_target;
 
-        $data->media_kormi_invited = request()->media_kormi_invited;
-        $data->media_kormi_been_associated = request()->media_kormi_been_associated;
-        $data->media_kormi_target = request()->media_kormi_target;
+        // $data->media_kormi_invited = request()->media_kormi_invited;
+        // $data->media_kormi_been_associated = request()->media_kormi_been_associated;
+        // $data->media_kormi_target = request()->media_kormi_target;
 
         $data->prantik_jonogosti_invited = request()->prantik_jonogosti_invited;
         $data->prantik_jonogosti_been_associated = request()->prantik_jonogosti_been_associated;

@@ -10,6 +10,18 @@
     --white: white;
     --color7: #394190;
 }
+@keyframes dropdownAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
 .icon_margin{
     margin-right: 12px;
 }
@@ -26,10 +38,12 @@
     background-color: var(--dark);
 }
 .side_nav{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: column; */
     height: 100vh;
+    overflow: scroll;
+    padding-bottom: 30px;
 }
 .side_nav .logo{
     display: flex;
@@ -97,6 +111,7 @@
     display: grid;
     grid-template-rows: 60px 1fr;
     background-color: var(--color2);
+    overflow: scroll;
 }
 
 .side_nav .options .block_title{
@@ -105,7 +120,7 @@
     font-family: sans-serif;
     padding: 24px 24px 6px;
 }
-.side_nav .options li{}
+/* .side_nav .options li{} */
 .side_nav .options li a{
     text-decoration: none;
     color: var(--color6);
@@ -139,6 +154,16 @@
 }
 .report_app_right .report_app_right_top .right a{
     color: var(--dark);
+    border: none;
+}
+.report_app_right .report_app_right_top .right{
+    /* color: var(--dark); */
+    position: relative;
+}
+.report_app_right .report_app_right_top .right ul{
+    /* color: var(--dark); */
+    /* position: relative; */
+    top: 60px;
 }
 /* .report_app_right header .left{} */
 .route_body{
@@ -149,4 +174,48 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    padding: 10px;
 }
+.form_label{
+    width: 200px;
+}
+.form_input{
+    flex: 1;
+}
+/* .dofa_heading{
+    font-size: 18px;
+    margin-bottom: 10px;
+} */
+.dropdown-menu {
+    background-color: var(--white);
+    position: absolute;
+    border-radius: 0;
+    box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,.05);
+    /* top: 161px; */
+}
+
+.dropdown-menu.show{
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: dropdownAnimation;
+    animation-timing-function: ease;
+    top: 30px !important;
+}
+.dropdown-menu .dropdown-item{
+    background-color: transparent;
+    border: 0;
+    border-radius: 5px;
+    clear: both;
+    color: var(--color6);
+    display: block;
+    font-weight: 400;
+    padding: 5px 20px;
+    text-align: inherit;
+    white-space: nowrap;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background .1s ease-in-out, color .1s ease-in-out;
+}
+
+

@@ -28,17 +28,21 @@ class Songothon5DawatAndParibarikUnitController extends Controller
                 $key = request()->search_key;
                 $query->where(function ($q) use ($key) {
                     return $q->where('id', '%' . $key . '%')
-                    ->orWhere('dawati_unit_previous', '%' . $key . '%')
-                    ->orWhere('dawati_unit_present', '%' . $key . '%')
-                    ->orWhere('dawati_unit_increase', '%' . $key . '%')
-                    ->orWhere('dawati_unit_gatti', '%' . $key . '%')
-                    ->orWhere('dawati_unit_target', '%' . $key . '%')
-
-                    ->orWhere('paribarik_unit_previous', '%' . $key . '%')
-                    ->orWhere('paribarik_unit_present', '%' . $key . '%')
-                    ->orWhere('paribarik_unit_increase', '%' . $key . '%')
-                    ->orWhere('paribarik_unit_gatti', '%' . $key . '%')
+                    ->orWhere('paribarik_unit_total', '%' . $key . '%')
+                    ->orWhere('paribarik_unit_uposthiti', '%' . $key . '%')
                     ->orWhere('paribarik_unit_target', '%' . $key . '%');
+
+                    // ->orWhere('dawati_unit_previous', '%' . $key . '%')
+                    // ->orWhere('dawati_unit_present', '%' . $key . '%')
+                    // ->orWhere('dawati_unit_increase', '%' . $key . '%')
+                    // ->orWhere('dawati_unit_gatti', '%' . $key . '%')
+                    // ->orWhere('dawati_unit_target', '%' . $key . '%')
+
+                    // ->orWhere('paribarik_unit_previous', '%' . $key . '%')
+                    // ->orWhere('paribarik_unit_present', '%' . $key . '%')
+                    // ->orWhere('paribarik_unit_increase', '%' . $key . '%')
+                    // ->orWhere('paribarik_unit_gatti', '%' . $key . '%')
+                    // ->orWhere('paribarik_unit_target', '%' . $key . '%');
 
                 });
             }
@@ -71,17 +75,21 @@ class Songothon5DawatAndParibarikUnitController extends Controller
         public function store()
         {
             $validator = Validator::make(request()->all(), [
-                'dawati_unit_previous' => ['required'],
-                'dawati_unit_present' => ['required'],
-                'dawati_unit_increase' => ['required'],
-                'dawati_unit_gatti' => ['required'],
-                'dawati_unit_target' => ['required'],
-
-                'paribarik_unit_previous' => ['required'],
-                'paribarik_unit_present' => ['required'],
-                'paribarik_unit_increase' => ['required'],
-                'paribarik_unit_gatti' => ['required'],
+                'paribarik_unit_total' => ['required'],
+                'paribarik_unit_uposthiti' => ['required'],
                 'paribarik_unit_target' => ['required'],
+
+                // 'dawati_unit_previous' => ['required'],
+                // 'dawati_unit_present' => ['required'],
+                // 'dawati_unit_increase' => ['required'],
+                // 'dawati_unit_gatti' => ['required'],
+                // 'dawati_unit_target' => ['required'],
+
+                // 'paribarik_unit_previous' => ['required'],
+                // 'paribarik_unit_present' => ['required'],
+                // 'paribarik_unit_increase' => ['required'],
+                // 'paribarik_unit_gatti' => ['required'],
+                // 'paribarik_unit_target' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -95,17 +103,21 @@ class Songothon5DawatAndParibarikUnitController extends Controller
             }
 
             $data = new Songothon5DawatAndParibarikUnit();
-            $data->dawati_unit_previous = request()->dawati_unit_previous;
-            $data->dawati_unit_present = request()->dawati_unit_present;
-            $data->dawati_unit_increase = request()->dawati_unit_increase;
-            $data->dawati_unit_gatti = request()->dawati_unit_gatti;
-            $data->dawati_unit_target = request()->dawati_unit_target;
-
-            $data->paribarik_unit_previous = request()->paribarik_unit_previous;
-            $data->paribarik_unit_present = request()->paribarik_unit_present;
-            $data->paribarik_unit_increase = request()->paribarik_unit_increase;
-            $data->paribarik_unit_gatti = request()->paribarik_unit_gatti;
+            $data->paribarik_unit_total = request()->paribarik_unit_total;
+            $data->paribarik_unit_uposthiti = request()->paribarik_unit_uposthiti;
             $data->paribarik_unit_target = request()->paribarik_unit_target;
+
+            // $data->dawati_unit_previous = request()->dawati_unit_previous;
+            // $data->dawati_unit_present = request()->dawati_unit_present;
+            // $data->dawati_unit_increase = request()->dawati_unit_increase;
+            // $data->dawati_unit_gatti = request()->dawati_unit_gatti;
+            // $data->dawati_unit_target = request()->dawati_unit_target;
+
+            // $data->paribarik_unit_previous = request()->paribarik_unit_previous;
+            // $data->paribarik_unit_present = request()->paribarik_unit_present;
+            // $data->paribarik_unit_increase = request()->paribarik_unit_increase;
+            // $data->paribarik_unit_gatti = request()->paribarik_unit_gatti;
+            // $data->paribarik_unit_target = request()->paribarik_unit_target;
 
             $data->creator = request()->creator;
             $data->status = request()->status;
@@ -125,17 +137,21 @@ class Songothon5DawatAndParibarikUnitController extends Controller
             }
 
             $validator = Validator::make(request()->all(), [
-                'dawati_unit_previous' => ['required'],
-                'dawati_unit_present' => ['required'],
-                'dawati_unit_increase' => ['required'],
-                'dawati_unit_gatti' => ['required'],
-                'dawati_unit_target' => ['required'],
-
-                'paribarik_unit_previous' => ['required'],
-                'paribarik_unit_present' => ['required'],
-                'paribarik_unit_increase' => ['required'],
-                'paribarik_unit_gatti' => ['required'],
+                'paribarik_unit_total' => ['required'],
+                'paribarik_unit_uposthiti' => ['required'],
                 'paribarik_unit_target' => ['required'],
+
+                // 'dawati_unit_previous' => ['required'],
+                // 'dawati_unit_present' => ['required'],
+                // 'dawati_unit_increase' => ['required'],
+                // 'dawati_unit_gatti' => ['required'],
+                // 'dawati_unit_target' => ['required'],
+
+                // 'paribarik_unit_previous' => ['required'],
+                // 'paribarik_unit_present' => ['required'],
+                // 'paribarik_unit_increase' => ['required'],
+                // 'paribarik_unit_gatti' => ['required'],
+                // 'paribarik_unit_target' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -149,17 +165,21 @@ class Songothon5DawatAndParibarikUnitController extends Controller
             }
 
 
-            $data->dawati_unit_previous = request()->dawati_unit_previous;
-            $data->dawati_unit_present = request()->dawati_unit_present;
-            $data->dawati_unit_increase = request()->dawati_unit_increase;
-            $data->dawati_unit_gatti = request()->dawati_unit_gatti;
-            $data->dawati_unit_target = request()->dawati_unit_target;
-
-            $data->paribarik_unit_previous = request()->paribarik_unit_previous;
-            $data->paribarik_unit_present = request()->paribarik_unit_present;
-            $data->paribarik_unit_increase = request()->paribarik_unit_increase;
-            $data->paribarik_unit_gatti = request()->paribarik_unit_gatti;
+            $data->paribarik_unit_total = request()->paribarik_unit_total;
+            $data->paribarik_unit_uposthiti = request()->paribarik_unit_uposthiti;
             $data->paribarik_unit_target = request()->paribarik_unit_target;
+
+            // $data->dawati_unit_previous = request()->dawati_unit_previous;
+            // $data->dawati_unit_present = request()->dawati_unit_present;
+            // $data->dawati_unit_increase = request()->dawati_unit_increase;
+            // $data->dawati_unit_gatti = request()->dawati_unit_gatti;
+            // $data->dawati_unit_target = request()->dawati_unit_target;
+
+            // $data->paribarik_unit_previous = request()->paribarik_unit_previous;
+            // $data->paribarik_unit_present = request()->paribarik_unit_present;
+            // $data->paribarik_unit_increase = request()->paribarik_unit_increase;
+            // $data->paribarik_unit_gatti = request()->paribarik_unit_gatti;
+            // $data->paribarik_unit_target = request()->paribarik_unit_target;
 
             $data->creator = request()->creator;
             $data->status = request()->status;

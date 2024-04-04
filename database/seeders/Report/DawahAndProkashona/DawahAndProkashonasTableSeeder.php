@@ -15,35 +15,35 @@ class DawahAndProkashonasTableSeeder extends Seeder
     {
         DawahAndProkashona::truncate();
         DawahAndProkashona::create([
-            'total_pathagar' => 22,
-            'total_pathagar_increase' => 2,
-            'total_pathagar_target' => 20,
+            // 'total_pathagar' => 22,
+            // 'total_pathagar_increase' => 2,
+            // 'total_pathagar_target' => 20,
 
-            'total_online_pathagar' => 22,
-            'total_online_pathagar_increase' => 22,
-            'total_online_pathagar_target' => 22,
+            // 'total_online_pathagar' => 22,
+            // 'total_online_pathagar_increase' => 22,
+            // 'total_online_pathagar_target' => 22,
 
             'books_in_pathagar' => 42,
             'books_in_pathagar_increase' => 24,
-            'books_in_pathagar_target' => 42,
+            // 'books_in_pathagar_target' => 42,
 
-            'books_in_pathagar_target' => 52,
-            'book_distribution_increase' => 25,
-            'book_distribution_target' => 25,
+            // 'books_in_pathagar_target' => 52,
+            // 'book_distribution_increase' => 25,
+            // 'book_distribution_target' => 25,
 
             'unit_book_distribution_center' => 62,
             'unit_book_distribution_center_increase' => 26,
-            'unit_book_distribution_center_target' => 72,
+            // 'unit_book_distribution_center_target' => 72,
 
             'unit_book_distribution' => 32,
             'unit_book_distribution_increase' => 24,
-            'unit_book_distribution_target' => 52,
+            // 'unit_book_distribution_target' => 52,
 
-            'ward_book_sales_center' => 23,
-            'ward_book_sales_center_increase' => 2,
+            // 'ward_book_sales_center' => 23,
+            // 'ward_book_sales_center_increase' => 2,
 
-            'ward_book_sales' => 42,
-            'ward_book_sales_increase' => 25,
+            // 'ward_book_sales' => 42,
+            // 'ward_book_sales_increase' => 25,
 
             'soft_copy_book_distribution' => 62,
             'soft_copy_book_distribution_increase' => 25,
@@ -64,35 +64,35 @@ class DawahAndProkashonasTableSeeder extends Seeder
             'status' => 1,
         ]);
         DawahAndProkashona::create([
-            'total_pathagar' => 32,
-            'total_pathagar_increase' => 3,
-            'total_pathagar_target' => 30,
+            // 'total_pathagar' => 32,
+            // 'total_pathagar_increase' => 3,
+            // 'total_pathagar_target' => 30,
 
-            'total_online_pathagar' => 23,
-            'total_online_pathagar_increase' => 32,
-            'total_online_pathagar_target' => 23,
+            // 'total_online_pathagar' => 23,
+            // 'total_online_pathagar_increase' => 32,
+            // 'total_online_pathagar_target' => 23,
 
             'books_in_pathagar' => 43,
             'books_in_pathagar_increase' => 34,
-            'books_in_pathagar_target' => 43,
+            // 'books_in_pathagar_target' => 43,
 
-            'books_in_pathagar_target' => 53,
-            'book_distribution_increase' => 35,
-            'book_distribution_target' => 35,
+            // 'books_in_pathagar_target' => 53,
+            // 'book_distribution_increase' => 35,
+            // 'book_distribution_target' => 35,
 
             'unit_book_distribution_center' => 63,
             'unit_book_distribution_center_increase' => 36,
-            'unit_book_distribution_center_target' => 73,
+            // 'unit_book_distribution_center_target' => 73,
 
             'unit_book_distribution' => 33,
             'unit_book_distribution_increase' => 34,
-            'unit_book_distribution_target' => 53,
+            // 'unit_book_distribution_target' => 53,
 
-            'ward_book_sales_center' => 33,
-            'ward_book_sales_center_increase' => 3,
+            // 'ward_book_sales_center' => 33,
+            // 'ward_book_sales_center_increase' => 3,
 
-            'ward_book_sales' => 43,
-            'ward_book_sales_increase' => 35,
+            // 'ward_book_sales' => 43,
+            // 'ward_book_sales_increase' => 35,
 
             'soft_copy_book_distribution' => 63,
             'soft_copy_book_distribution_increase' => 35,
@@ -113,35 +113,35 @@ class DawahAndProkashonasTableSeeder extends Seeder
             'status' => 1,
         ]);
         DawahAndProkashona::create([
-            'total_pathagar' => 42,
-            'total_pathagar_increase' => 4,
-            'total_pathagar_target' => 40,
+            // 'total_pathagar' => 42,
+            // 'total_pathagar_increase' => 4,
+            // 'total_pathagar_target' => 40,
 
-            'total_online_pathagar' => 24,
-            'total_online_pathagar_increase' => 42,
-            'total_online_pathagar_target' => 24,
+            // 'total_online_pathagar' => 24,
+            // 'total_online_pathagar_increase' => 42,
+            // 'total_online_pathagar_target' => 24,
 
             'books_in_pathagar' => 44,
             'books_in_pathagar_increase' => 44,
-            'books_in_pathagar_target' => 44,
+            // 'books_in_pathagar_target' => 44,
 
-            'books_in_pathagar_target' => 54,
-            'book_distribution_increase' => 45,
-            'book_distribution_target' => 45,
+            // 'books_in_pathagar_target' => 54,
+            // 'book_distribution_increase' => 45,
+            // 'book_distribution_target' => 45,
 
             'unit_book_distribution_center' => 64,
             'unit_book_distribution_center_increase' => 46,
-            'unit_book_distribution_center_target' => 74,
+            // 'unit_book_distribution_center_target' => 74,
 
             'unit_book_distribution' => 34,
             'unit_book_distribution_increase' => 44,
-            'unit_book_distribution_target' => 54,
+            // 'unit_book_distribution_target' => 54,
 
-            'ward_book_sales_center' => 43,
-            'ward_book_sales_center_increase' => 4,
+            // 'ward_book_sales_center' => 43,
+            // 'ward_book_sales_center_increase' => 4,
 
-            'ward_book_sales' => 44,
-            'ward_book_sales_increase' => 45,
+            // 'ward_book_sales' => 44,
+            // 'ward_book_sales_increase' => 45,
 
             'soft_copy_book_distribution' => 64,
             'soft_copy_book_distribution_increase' => 45,
@@ -162,35 +162,35 @@ class DawahAndProkashonasTableSeeder extends Seeder
             'status' => 1,
         ]);
         DawahAndProkashona::create([
-            'total_pathagar' => 62,
-            'total_pathagar_increase' => 6,
-            'total_pathagar_target' => 60,
+            // 'total_pathagar' => 62,
+            // 'total_pathagar_increase' => 6,
+            // 'total_pathagar_target' => 60,
 
-            'total_online_pathagar' => 26,
-            'total_online_pathagar_increase' => 62,
-            'total_online_pathagar_target' => 26,
+            // 'total_online_pathagar' => 26,
+            // 'total_online_pathagar_increase' => 62,
+            // 'total_online_pathagar_target' => 26,
 
             'books_in_pathagar' => 46,
             'books_in_pathagar_increase' => 64,
-            'books_in_pathagar_target' => 46,
+            // 'books_in_pathagar_target' => 46,
 
-            'books_in_pathagar_target' => 56,
-            'book_distribution_increase' => 65,
-            'book_distribution_target' => 65,
+            // 'book_distribution' => 56,
+            // 'book_distribution_increase' => 65,
+            // 'book_distribution_target' => 65,
 
             'unit_book_distribution_center' => 66,
             'unit_book_distribution_center_increase' => 66,
-            'unit_book_distribution_center_target' => 76,
+            // 'unit_book_distribution_center_target' => 76,
 
             'unit_book_distribution' => 36,
             'unit_book_distribution_increase' => 64,
-            'unit_book_distribution_target' => 56,
+            // 'unit_book_distribution_target' => 56,
 
-            'ward_book_sales_center' => 63,
-            'ward_book_sales_center_increase' => 6,
+            // 'ward_book_sales_center' => 63,
+            // 'ward_book_sales_center_increase' => 6,
 
-            'ward_book_sales' => 46,
-            'ward_book_sales_increase' => 65,
+            // 'ward_book_sales' => 46,
+            // 'ward_book_sales_increase' => 65,
 
             'soft_copy_book_distribution' => 66,
             'soft_copy_book_distribution_increase' => 65,

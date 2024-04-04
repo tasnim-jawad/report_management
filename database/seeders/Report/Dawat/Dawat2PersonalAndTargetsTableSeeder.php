@@ -17,7 +17,8 @@ class Dawat2PersonalAndTargetsTableSeeder extends Seeder
         Dawat2PersonalAndTarget::create([
             'total_rokon' => 2,
             'total_worker' => 32,
-            'how_many_were_give_dawat' => 10,
+            'how_many_were_give_dawat_rokon' => 2,
+            'how_many_were_give_dawat_worker' => 12,
             'how_many_have_been_invited' => 23,
             'how_many_associate_members_created' => 25,
             'creator' => 3,
@@ -26,7 +27,8 @@ class Dawat2PersonalAndTargetsTableSeeder extends Seeder
         Dawat2PersonalAndTarget::create([
             'total_rokon' => 3,
             'total_worker' => 40,
-            'how_many_were_give_dawat' => 30,
+            'how_many_were_give_dawat_rokon' => 7,
+            'how_many_were_give_dawat_worker' => 17,
             'how_many_have_been_invited' => 65,
             'how_many_associate_members_created' => 35,
             'creator' => 3,
@@ -35,7 +37,8 @@ class Dawat2PersonalAndTargetsTableSeeder extends Seeder
         Dawat2PersonalAndTarget::create([
             'total_rokon' => 4,
             'total_worker' => 30,
-            'how_many_were_give_dawat' => 30,
+            'how_many_were_give_dawat_rokon' => 4,
+            'how_many_were_give_dawat_worker' => 14,
             'how_many_have_been_invited' => 40,
             'how_many_associate_members_created' => 12,
             'creator' => 3,
@@ -44,7 +47,8 @@ class Dawat2PersonalAndTargetsTableSeeder extends Seeder
         Dawat2PersonalAndTarget::create([
             'total_rokon' => 2,
             'total_worker' => 24,
-            'how_many_were_give_dawat' => 20,
+            'how_many_were_give_dawat_rokon' => 4,
+            'how_many_were_give_dawat_worker' => 14,
             'how_many_have_been_invited' => 15,
             'how_many_associate_members_created' => 5,
             'creator' => 3,

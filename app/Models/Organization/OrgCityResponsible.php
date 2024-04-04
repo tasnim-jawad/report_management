@@ -19,7 +19,7 @@ class OrgCityResponsible extends Model
     {
         return $this->belongsTo(Responsibility::class);
     }
-    public function org_thana()
+    public function org_city()
     {
         return $this->belongsTo(OrgCity::class);
     }

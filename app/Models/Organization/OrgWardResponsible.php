@@ -19,7 +19,7 @@ class OrgWardResponsible extends Model
     {
         return $this->belongsTo(Responsibility::class);
     }
-    public function org_thana()
+    public function org_unit()
     {
         return $this->belongsTo(OrgWard::class);
     }

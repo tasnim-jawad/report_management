@@ -29,7 +29,7 @@ class Dawat3GeneralProgramAndOthersController extends Controller
             $query->where(function ($q) use ($key) {
                 return $q->where('id', '%' . $key . '%')
                 ->orWhere('how_many_were_give_dawat', '%' . $key . '%')
-                ->orWhere('how_many_have_been_invited', '%' . $key . '%')
+                // ->orWhere('how_many_have_been_invited', '%' . $key . '%')
                 ->orWhere('how_many_associate_members_created', '%' . $key . '%');
 
             });
@@ -64,7 +64,7 @@ class Dawat3GeneralProgramAndOthersController extends Controller
     {
         $validator = Validator::make(request()->all(), [
             'how_many_were_give_dawat' => ['required'],
-            'how_many_have_been_invited' => ['required'],
+            // 'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
             'creator' => ['required'],
             'status' => ['required'],
@@ -79,7 +79,7 @@ class Dawat3GeneralProgramAndOthersController extends Controller
 
         $data = new Dawat3GeneralProgramAndOthers();
         $data->how_many_were_give_dawat = request()->how_many_were_give_dawat;
-        $data->how_many_have_been_invited = request()->how_many_have_been_invited;
+        // $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
         $data->creator = request()->creator;
         $data->status = request()->status;
@@ -100,7 +100,7 @@ class Dawat3GeneralProgramAndOthersController extends Controller
 
         $validator = Validator::make(request()->all(), [
             'how_many_were_give_dawat' => ['required'],
-            'how_many_have_been_invited' => ['required'],
+            // 'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
             'creator' => ['required'],
             'status' => ['required'],
@@ -115,7 +115,7 @@ class Dawat3GeneralProgramAndOthersController extends Controller
 
 
         $data->how_many_were_give_dawat = request()->how_many_were_give_dawat;
-        $data->how_many_have_been_invited = request()->how_many_have_been_invited;
+        // $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
         $data->creator = request()->creator;
         $data->status = request()->status;

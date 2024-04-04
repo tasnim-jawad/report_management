@@ -17,25 +17,25 @@ return new class extends Migration
             $table->bigInteger('political_and_special_been_associated')->nullable();
             $table->bigInteger('political_and_special_target')->nullable();
 
-            $table->bigInteger('pesha_jibi_invited')->nullable();
-            $table->bigInteger('pesha_jibi_been_associated')->nullable();
-            $table->bigInteger('pesha_jibi_target')->nullable();
+            // $table->bigInteger('pesha_jibi_invited')->nullable();
+            // $table->bigInteger('pesha_jibi_been_associated')->nullable();
+            // $table->bigInteger('pesha_jibi_target')->nullable();
 
-            $table->bigInteger('olama_masayekh_invited')->nullable();
-            $table->bigInteger('olama_masayekh_been_associated')->nullable();
-            $table->bigInteger('olama_masayekh_target')->nullable();
+            // $table->bigInteger('olama_masayekh_invited')->nullable();
+            // $table->bigInteger('olama_masayekh_been_associated')->nullable();
+            // $table->bigInteger('olama_masayekh_target')->nullable();
 
-            $table->bigInteger('kormo_jibi_mohila_invited')->nullable();
-            $table->bigInteger('kormo_jibi_mohila_been_associated')->nullable();
-            $table->bigInteger('kormo_jibi_mohila_target')->nullable();
+            // $table->bigInteger('kormo_jibi_mohila_invited')->nullable();
+            // $table->bigInteger('kormo_jibi_mohila_been_associated')->nullable();
+            // $table->bigInteger('kormo_jibi_mohila_target')->nullable();
 
-            $table->bigInteger('sromo_jibi_invited')->nullable();
-            $table->bigInteger('sromo_jibi_been_associated')->nullable();
-            $table->bigInteger('sromo_jibi_target')->nullable();
+            // $table->bigInteger('sromo_jibi_invited')->nullable();
+            // $table->bigInteger('sromo_jibi_been_associated')->nullable();
+            // $table->bigInteger('sromo_jibi_target')->nullable();
 
-            $table->bigInteger('media_kormi_invited')->nullable();
-            $table->bigInteger('media_kormi_been_associated')->nullable();
-            $table->bigInteger('media_kormi_target')->nullable();
+            // $table->bigInteger('media_kormi_invited')->nullable();
+            // $table->bigInteger('media_kormi_been_associated')->nullable();
+            // $table->bigInteger('media_kormi_target')->nullable();
 
             $table->bigInteger('prantik_jonogosti_invited')->nullable();
             $table->bigInteger('prantik_jonogosti_been_associated')->nullable();

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('total_rokon')->nullable();
             $table->bigInteger('total_worker')->nullable();
-            $table->bigInteger('how_many_were_give_dawat')->nullable();
+            $table->bigInteger('how_many_were_give_dawat_rokon')->nullable();
+            $table->bigInteger('how_many_were_give_dawat_worker')->nullable();
             $table->bigInteger('how_many_have_been_invited')->nullable();
             $table->bigInteger('how_many_associate_members_created')->nullable();
             $table->bigInteger('creator')->nullable();

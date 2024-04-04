@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('songothon2_associate_members', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('men_previous')->nullable();
-            $table->bigInteger('men_present')->nullable();
-            $table->bigInteger('men_briddhi')->nullable();
-            $table->bigInteger('men_target')->nullable();
-            $table->bigInteger('women_previous')->nullable();
-            $table->bigInteger('women_present')->nullable();
-            $table->bigInteger('women_briddhi')->nullable();
-            $table->bigInteger('women_target')->nullable();
-            $table->bigInteger('vinno_dormalombi_previous')->nullable();
-            $table->bigInteger('vinno_dormalombi_present')->nullable();
-            $table->bigInteger('vinno_dormalombi_briddhi')->nullable();
-            $table->bigInteger('vinno_domalombi_target')->nullable();
+            $table->bigInteger('associate_member_previous')->nullable();
+            $table->bigInteger('associate_member_present')->nullable();
+            $table->bigInteger('associate_member_briddhi')->nullable();
+            $table->bigInteger('associate_member_target')->nullable();
+            $table->bigInteger('vinno_dormalombi_worker_previous')->nullable();
+            $table->bigInteger('vinno_dormalombi_worker_present')->nullable();
+            $table->bigInteger('vinno_dormalombi_worker_briddhi')->nullable();
+            $table->bigInteger('vinno_dormalombi_worker_target')->nullable();
+            $table->bigInteger('vinno_dormalombi_associate_member_previous')->nullable();
+            $table->bigInteger('vinno_dormalombi_associate_member_present')->nullable();
+            $table->bigInteger('vinno_dormalombi_associate_member_briddhi')->nullable();
+            $table->bigInteger('vinno_dormalombi_associate_member_target')->nullable();
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

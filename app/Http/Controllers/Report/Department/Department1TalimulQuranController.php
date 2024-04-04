@@ -31,17 +31,20 @@ class Department1TalimulQuranController extends Controller
                 ->orWhere('teacher_rokon', '%' . $key . '%')
                 ->orWhere('teacher_worker', '%' . $key . '%')
 
-                ->orWhere('samostic_quran_learning_total_group', '%' . $key . '%')
-                ->orWhere('samostic_quran_learning_total_students', '%' . $key . '%')
-                ->orWhere('samostic_total_forkania_madrasah', '%' . $key . '%')
-                ->orWhere('samostic_total_forkania_madrasah_students', '%' . $key . '%')
+                ->orWhere('student_rokon', '%' . $key . '%')
+                ->orWhere('student_worker', '%' . $key . '%')
+
+                // ->orWhere('samostic_quran_learning_total_group', '%' . $key . '%')
+                // ->orWhere('samostic_quran_learning_total_students', '%' . $key . '%')
+                // ->orWhere('samostic_total_forkania_madrasah', '%' . $key . '%')
+                // ->orWhere('samostic_total_forkania_madrasah_students', '%' . $key . '%')
 
                 ->orWhere('how_much_learned_quran', '%' . $key . '%')
                 ->orWhere('how_much_invited', '%' . $key . '%')
-                ->orWhere('how_much_been_associated', '%' . $key . '%')
+                ->orWhere('how_much_been_associated', '%' . $key . '%');
 
-                ->orWhere('total_muallim', '%' . $key . '%')
-                ->orWhere('total_muallim_increased', '%' . $key . '%');
+                // ->orWhere('total_muallim', '%' . $key . '%')
+                // ->orWhere('total_muallim_increased', '%' . $key . '%');
 
             });
         }
@@ -77,17 +80,20 @@ class Department1TalimulQuranController extends Controller
             'teacher_rokon' => ['required'],
             'teacher_worker' => ['required'],
 
-            'samostic_quran_learning_total_group' => ['required'],
-            'samostic_quran_learning_total_students' => ['required'],
-            'samostic_total_forkania_madrasah' => ['required'],
-            'samostic_total_forkania_madrasah_students' => ['required'],
+            'student_rokon' => ['required'],
+            'student_worker' => ['required'],
+
+            // 'samostic_quran_learning_total_group' => ['required'],
+            // 'samostic_quran_learning_total_students' => ['required'],
+            // 'samostic_total_forkania_madrasah' => ['required'],
+            // 'samostic_total_forkania_madrasah_students' => ['required'],
 
             'how_much_learned_quran' => ['required'],
             'how_much_invited' => ['required'],
             'how_much_been_associated' => ['required'],
 
-            'total_muallim' => ['required'],
-            'total_muallim_increased' => ['required'],
+            // 'total_muallim' => ['required'],
+            // 'total_muallim_increased' => ['required'],
 
             'creator' => ['required'],
             'status' => ['required'],
@@ -104,17 +110,20 @@ class Department1TalimulQuranController extends Controller
         $data->teacher_rokon = request()->teacher_rokon;
         $data->teacher_worker = request()->teacher_worker;
 
-        $data->samostic_quran_learning_total_group = request()->samostic_quran_learning_total_group;
-        $data->samostic_quran_learning_total_students = request()->samostic_quran_learning_total_students;
-        $data->samostic_total_forkania_madrasah = request()->samostic_total_forkania_madrasah;
-        $data->samostic_total_forkania_madrasah_students = request()->samostic_total_forkania_madrasah_students;
+        $data->student_rokon = request()->student_rokon;
+        $data->student_worker = request()->student_worker;
+
+        // $data->samostic_quran_learning_total_group = request()->samostic_quran_learning_total_group;
+        // $data->samostic_quran_learning_total_students = request()->samostic_quran_learning_total_students;
+        // $data->samostic_total_forkania_madrasah = request()->samostic_total_forkania_madrasah;
+        // $data->samostic_total_forkania_madrasah_students = request()->samostic_total_forkania_madrasah_students;
 
         $data->how_much_learned_quran = request()->how_much_learned_quran;
         $data->how_much_invited = request()->how_much_invited;
         $data->how_much_been_associated = request()->how_much_been_associated;
 
-        $data->total_muallim = request()->total_muallim;
-        $data->total_muallim_increased = request()->total_muallim_increased;
+        // $data->total_muallim = request()->total_muallim;
+        // $data->total_muallim_increased = request()->total_muallim_increased;
 
         $data->creator = request()->creator;
         $data->status = request()->status;
@@ -137,17 +146,20 @@ class Department1TalimulQuranController extends Controller
             'teacher_rokon' => ['required'],
             'teacher_worker' => ['required'],
 
-            'samostic_quran_learning_total_group' => ['required'],
-            'samostic_quran_learning_total_students' => ['required'],
-            'samostic_total_forkania_madrasah' => ['required'],
-            'samostic_total_forkania_madrasah_students' => ['required'],
+            'student_rokon' => ['required'],
+            'student_worker' => ['required'],
+
+            // 'samostic_quran_learning_total_group' => ['required'],
+            // 'samostic_quran_learning_total_students' => ['required'],
+            // 'samostic_total_forkania_madrasah' => ['required'],
+            // 'samostic_total_forkania_madrasah_students' => ['required'],
 
             'how_much_learned_quran' => ['required'],
             'how_much_invited' => ['required'],
             'how_much_been_associated' => ['required'],
 
-            'total_muallim' => ['required'],
-            'total_muallim_increased' => ['required'],
+            // 'total_muallim' => ['required'],
+            // 'total_muallim_increased' => ['required'],
 
             'creator' => ['required'],
             'status' => ['required'],
@@ -164,17 +176,20 @@ class Department1TalimulQuranController extends Controller
         $data->teacher_rokon = request()->teacher_rokon;
         $data->teacher_worker = request()->teacher_worker;
 
-        $data->samostic_quran_learning_total_group = request()->samostic_quran_learning_total_group;
-        $data->samostic_quran_learning_total_students = request()->samostic_quran_learning_total_students;
-        $data->samostic_total_forkania_madrasah = request()->samostic_total_forkania_madrasah;
-        $data->samostic_total_forkania_madrasah_students = request()->samostic_total_forkania_madrasah_students;
+        $data->student_rokon = request()->student_rokon;
+        $data->student_worker = request()->student_worker;
+
+        // $data->samostic_quran_learning_total_group = request()->samostic_quran_learning_total_group;
+        // $data->samostic_quran_learning_total_students = request()->samostic_quran_learning_total_students;
+        // $data->samostic_total_forkania_madrasah = request()->samostic_total_forkania_madrasah;
+        // $data->samostic_total_forkania_madrasah_students = request()->samostic_total_forkania_madrasah_students;
 
         $data->how_much_learned_quran = request()->how_much_learned_quran;
         $data->how_much_invited = request()->how_much_invited;
         $data->how_much_been_associated = request()->how_much_been_associated;
 
-        $data->total_muallim = request()->total_muallim;
-        $data->total_muallim_increased = request()->total_muallim_increased;
+        // $data->total_muallim = request()->total_muallim;
+        // $data->total_muallim_increased = request()->total_muallim_increased;
 
         $data->creator = request()->creator;
         $data->status = request()->status;

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('dawat1_regular_group_wises', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
             $table->bigInteger('how_many_groups_are_out')->nullable();
             $table->bigInteger('number_of_participants')->nullable();
             $table->bigInteger('how_many_have_been_invited')->nullable();

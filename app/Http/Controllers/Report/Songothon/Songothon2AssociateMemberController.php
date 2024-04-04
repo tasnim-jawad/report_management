@@ -28,20 +28,20 @@ class Songothon2AssociateMemberController extends Controller
                 $key = request()->search_key;
                 $query->where(function ($q) use ($key) {
                     return $q->where('id', '%' . $key . '%')
-                    ->orWhere('men_previous', '%' . $key . '%')
-                    ->orWhere('men_present', '%' . $key . '%')
-                    ->orWhere('men_briddhi', '%' . $key . '%')
-                    ->orWhere('men_target', '%' . $key . '%')
+                    ->orWhere('associate_member_previous', '%' . $key . '%')
+                    ->orWhere('associate_member_present', '%' . $key . '%')
+                    ->orWhere('associate_member_briddhi', '%' . $key . '%')
+                    ->orWhere('associate_member_target', '%' . $key . '%')
 
-                    ->orWhere('women_previous', '%' . $key . '%')
-                    ->orWhere('women_present', '%' . $key . '%')
-                    ->orWhere('women_briddhi', '%' . $key . '%')
-                    ->orWhere('women_target', '%' . $key . '%')
+                    ->orWhere('vinno_dormalombi_worker_previous', '%' . $key . '%')
+                    ->orWhere('vinno_dormalombi_worker_present', '%' . $key . '%')
+                    ->orWhere('vinno_dormalombi_worker_briddhi', '%' . $key . '%')
+                    ->orWhere('vinno_dormalombi_worker_target', '%' . $key . '%')
 
-                    ->orWhere('vinno_dormalombi_previous', '%' . $key . '%')
-                    ->orWhere('vinno_dormalombi_present', '%' . $key . '%')
-                    ->orWhere('vinno_dormalombi_briddhi', '%' . $key . '%')
-                    ->orWhere('vinno_domalombi_target', '%' . $key . '%');
+                    ->orWhere('vinno_dormalombi_associate_member_previous', '%' . $key . '%')
+                    ->orWhere('vinno_dormalombi_associate_member_present', '%' . $key . '%')
+                    ->orWhere('vinno_dormalombi_associate_member_briddhi', '%' . $key . '%')
+                    ->orWhere('vinno_dormalombi_associate_member_target', '%' . $key . '%');
 
 
                 });
@@ -75,20 +75,20 @@ class Songothon2AssociateMemberController extends Controller
         public function store()
         {
             $validator = Validator::make(request()->all(), [
-                'men_previous' => ['required'],
-                'men_present' => ['required'],
-                'men_briddhi' => ['required'],
-                'men_target' => ['required'],
+                'associate_member_previous' => ['required'],
+                'associate_member_present' => ['required'],
+                'associate_member_briddhi' => ['required'],
+                'associate_member_target' => ['required'],
 
-                'women_previous' => ['required'],
-                'women_present' => ['required'],
-                'women_briddhi' => ['required'],
-                'women_target' => ['required'],
+                'vinno_dormalombi_worker_previous' => ['required'],
+                'vinno_dormalombi_worker_present' => ['required'],
+                'vinno_dormalombi_worker_briddhi' => ['required'],
+                'vinno_dormalombi_worker_target' => ['required'],
 
-                'vinno_dormalombi_previous' => ['required'],
-                'vinno_dormalombi_present' => ['required'],
-                'vinno_dormalombi_briddhi' => ['required'],
-                'vinno_domalombi_target' => ['required'],
+                'vinno_dormalombi_associate_member_previous' => ['required'],
+                'vinno_dormalombi_associate_member_present' => ['required'],
+                'vinno_dormalombi_associate_member_briddhi' => ['required'],
+                'vinno_dormalombi_associate_member_target' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -102,18 +102,18 @@ class Songothon2AssociateMemberController extends Controller
             }
 
             $data = new Songothon2AssociateMember();
-            $data->men_previous = request()->men_previous;
-            $data->men_present = request()->men_present;
-            $data->men_briddhi = request()->men_briddhi;
-            $data->men_target = request()->men_target;
-            $data->women_previous = request()->women_previous;
-            $data->women_present = request()->women_present;
-            $data->women_briddhi = request()->women_briddhi;
-            $data->women_target = request()->women_target;
-            $data->vinno_dormalombi_previous = request()->vinno_dormalombi_previous;
-            $data->vinno_dormalombi_present = request()->vinno_dormalombi_present;
-            $data->vinno_dormalombi_briddhi = request()->vinno_dormalombi_briddhi;
-            $data->vinno_domalombi_target = request()->vinno_domalombi_target;
+            $data->associate_member_previous = request()->associate_member_previous;
+            $data->associate_member_present = request()->associate_member_present;
+            $data->associate_member_briddhi = request()->associate_member_briddhi;
+            $data->associate_member_target = request()->associate_member_target;
+            $data->vinno_dormalombi_worker_previous = request()->vinno_dormalombi_worker_previous;
+            $data->vinno_dormalombi_worker_present = request()->vinno_dormalombi_worker_present;
+            $data->vinno_dormalombi_worker_briddhi = request()->vinno_dormalombi_worker_briddhi;
+            $data->vinno_dormalombi_worker_target = request()->vinno_dormalombi_worker_target;
+            $data->vinno_dormalombi_associate_member_previous = request()->vinno_dormalombi_associate_member_previous;
+            $data->vinno_dormalombi_associate_member_present = request()->vinno_dormalombi_associate_member_present;
+            $data->vinno_dormalombi_associate_member_briddhi = request()->vinno_dormalombi_associate_member_briddhi;
+            $data->vinno_dormalombi_associate_member_target = request()->vinno_dormalombi_associate_member_target;
 
             $data->creator = request()->creator;
             $data->status = request()->status;
@@ -133,20 +133,20 @@ class Songothon2AssociateMemberController extends Controller
             }
 
             $validator = Validator::make(request()->all(), [
-                'men_previous' => ['required'],
-                'men_present' => ['required'],
-                'men_briddhi' => ['required'],
-                'men_target' => ['required'],
+                'associate_member_previous' => ['required'],
+                'associate_member_present' => ['required'],
+                'associate_member_briddhi' => ['required'],
+                'associate_member_target' => ['required'],
 
-                'women_previous' => ['required'],
-                'women_present' => ['required'],
-                'women_briddhi' => ['required'],
-                'women_target' => ['required'],
+                'vinno_dormalombi_worker_previous' => ['required'],
+                'vinno_dormalombi_worker_present' => ['required'],
+                'vinno_dormalombi_worker_briddhi' => ['required'],
+                'vinno_dormalombi_worker_target' => ['required'],
 
-                'vinno_dormalombi_previous' => ['required'],
-                'vinno_dormalombi_present' => ['required'],
-                'vinno_dormalombi_briddhi' => ['required'],
-                'vinno_domalombi_target' => ['required'],
+                'vinno_dormalombi_associate_member_previous' => ['required'],
+                'vinno_dormalombi_associate_member_present' => ['required'],
+                'vinno_dormalombi_associate_member_briddhi' => ['required'],
+                'vinno_dormalombi_associate_member_target' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -160,18 +160,18 @@ class Songothon2AssociateMemberController extends Controller
             }
 
 
-            $data->men_previous = request()->men_previous;
-            $data->men_present = request()->men_present;
-            $data->men_briddhi = request()->men_briddhi;
-            $data->men_target = request()->men_target;
-            $data->women_previous = request()->women_previous;
-            $data->women_present = request()->women_present;
-            $data->women_briddhi = request()->women_briddhi;
-            $data->women_target = request()->women_target;
-            $data->vinno_dormalombi_previous = request()->vinno_dormalombi_previous;
-            $data->vinno_dormalombi_present = request()->vinno_dormalombi_present;
-            $data->vinno_dormalombi_briddhi = request()->vinno_dormalombi_briddhi;
-            $data->vinno_domalombi_target = request()->vinno_domalombi_target;
+            $data->associate_member_previous = request()->associate_member_previous;
+            $data->associate_member_present = request()->associate_member_present;
+            $data->associate_member_briddhi = request()->associate_member_briddhi;
+            $data->associate_member_target = request()->associate_member_target;
+            $data->vinno_dormalombi_worker_previous = request()->vinno_dormalombi_worker_previous;
+            $data->vinno_dormalombi_worker_present = request()->vinno_dormalombi_worker_present;
+            $data->vinno_dormalombi_worker_briddhi = request()->vinno_dormalombi_worker_briddhi;
+            $data->vinno_dormalombi_worker_target = request()->vinno_dormalombi_worker_target;
+            $data->vinno_dormalombi_associate_member_previous = request()->vinno_dormalombi_associate_member_previous;
+            $data->vinno_dormalombi_associate_member_present = request()->vinno_dormalombi_associate_member_present;
+            $data->vinno_dormalombi_associate_member_briddhi = request()->vinno_dormalombi_associate_member_briddhi;
+            $data->vinno_dormalombi_associate_member_target = request()->vinno_dormalombi_associate_member_target;
 
             $data->creator = request()->creator;
             $data->status = request()->status;

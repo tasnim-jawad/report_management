@@ -31,7 +31,6 @@ class Proshikkhon1TarbiatController extends Controller
                     ->orWhere('tarbiati_boithok_total', '%' . $key . '%')
                     ->orWhere('tarbiati_boithok_target', '%' . $key . '%')
                     ->orWhere('tarbiati_boithok_uposthiti', '%' . $key . '%');
-
                 });
             }
 

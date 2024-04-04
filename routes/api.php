@@ -9,7 +9,7 @@ Route::get('/user', function (Request $request) {
 
 
 
-Route::group(['prefix' => 'v1'], function(){
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => '/user'] , function(){
         Route::get('/all', [App\Http\Controllers\User\UserController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\User\UserController::class,'show']);
@@ -295,6 +295,7 @@ Route::group(['prefix' => 'v1'], function(){
         Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'store']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'store_single']);
         Route::post('/update', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'update']);
         Route::post('/soft_delete', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'soft_delete']);
         Route::post('/destroy', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'destroy']);

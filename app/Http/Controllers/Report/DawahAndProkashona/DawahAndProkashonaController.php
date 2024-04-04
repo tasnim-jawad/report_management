@@ -28,35 +28,35 @@ class DawahAndProkashonaController extends Controller
                 $key = request()->search_key;
                 $query->where(function ($q) use ($key) {
                     return $q->where('id', '%' . $key . '%')
-                    ->orWhere('total_pathagar', '%' . $key . '%')
-                    ->orWhere('total_pathagar_increase', '%' . $key . '%')
-                    ->orWhere('total_pathagar_target', '%' . $key . '%')
+                    // ->orWhere('total_pathagar', '%' . $key . '%')
+                    // ->orWhere('total_pathagar_increase', '%' . $key . '%')
+                    // ->orWhere('total_pathagar_target', '%' . $key . '%')
 
-                    ->orWhere('total_online_pathagar', '%' . $key . '%')
-                    ->orWhere('total_online_pathagar_increase', '%' . $key . '%')
-                    ->orWhere('total_online_pathagar_target', '%' . $key . '%')
+                    // ->orWhere('total_online_pathagar', '%' . $key . '%')
+                    // ->orWhere('total_online_pathagar_increase', '%' . $key . '%')
+                    // ->orWhere('total_online_pathagar_target', '%' . $key . '%')
 
-                    ->orWhere('books_in_pathagar', '%' . $key . '%')
-                    ->orWhere('books_in_pathagar_increase', '%' . $key . '%')
-                    ->orWhere('books_in_pathagar_target', '%' . $key . '%')
+                    // ->orWhere('books_in_pathagar', '%' . $key . '%')
+                    // ->orWhere('books_in_pathagar_increase', '%' . $key . '%')
+                    // ->orWhere('books_in_pathagar_target', '%' . $key . '%')
 
-                    ->orWhere('books_in_pathagar_target', '%' . $key . '%')
-                    ->orWhere('book_distribution_increase', '%' . $key . '%')
-                    ->orWhere('book_distribution_target', '%' . $key . '%')
+                    // ->orWhere('books_in_pathagar_target', '%' . $key . '%')
+                    // ->orWhere('book_distribution_increase', '%' . $key . '%')
+                    // ->orWhere('book_distribution_target', '%' . $key . '%')
 
                     ->orWhere('unit_book_distribution_center', '%' . $key . '%')
                     ->orWhere('unit_book_distribution_center_increase', '%' . $key . '%')
-                    ->orWhere('unit_book_distribution_center_target', '%' . $key . '%')
+                    // ->orWhere('unit_book_distribution_center_target', '%' . $key . '%')
 
                     ->orWhere('unit_book_distribution', '%' . $key . '%')
                     ->orWhere('unit_book_distribution_increase', '%' . $key . '%')
-                    ->orWhere('unit_book_distribution_target', '%' . $key . '%')
+                    // ->orWhere('unit_book_distribution_target', '%' . $key . '%')
 
-                    ->orWhere('ward_book_sales_center', '%' . $key . '%')
-                    ->orWhere('ward_book_sales_center_increase', '%' . $key . '%')
+                    // ->orWhere('ward_book_sales_center', '%' . $key . '%')
+                    // ->orWhere('ward_book_sales_center_increase', '%' . $key . '%')
 
-                    ->orWhere('ward_book_sales', '%' . $key . '%')
-                    ->orWhere('ward_book_sales_increase', '%' . $key . '%')
+                    // ->orWhere('ward_book_sales', '%' . $key . '%')
+                    // ->orWhere('ward_book_sales_increase', '%' . $key . '%')
 
                     ->orWhere('soft_copy_book_distribution', '%' . $key . '%')
                     ->orWhere('soft_copy_book_distribution_increase', '%' . $key . '%')
@@ -104,35 +104,35 @@ class DawahAndProkashonaController extends Controller
         public function store()
         {
             $validator = Validator::make(request()->all(), [
-                'total_pathagar' => ['required'],
-                'total_pathagar_increase' => ['required'],
-                'total_pathagar_target' => ['required'],
+                // 'total_pathagar' => ['required'],
+                // 'total_pathagar_increase' => ['required'],
+                // 'total_pathagar_target' => ['required'],
 
-                'total_online_pathagar' => ['required'],
-                'total_online_pathagar_increase' => ['required'],
-                'total_online_pathagar_target' => ['required'],
+                // 'total_online_pathagar' => ['required'],
+                // 'total_online_pathagar_increase' => ['required'],
+                // 'total_online_pathagar_target' => ['required'],
 
                 'books_in_pathagar' => ['required'],
                 'books_in_pathagar_increase' => ['required'],
-                'books_in_pathagar_target' => ['required'],
+                // 'books_in_pathagar_target' => ['required'],
 
-                'books_in_pathagar_target' => ['required'],
-                'book_distribution_increase' => ['required'],
-                'book_distribution_target' => ['required'],
+                // 'books_in_pathagar_target' => ['required'],
+                // 'book_distribution_increase' => ['required'],
+                // 'book_distribution_target' => ['required'],
 
                 'unit_book_distribution_center' => ['required'],
                 'unit_book_distribution_center_increase' => ['required'],
-                'unit_book_distribution_center_target' => ['required'],
+                // 'unit_book_distribution_center_target' => ['required'],
 
                 'unit_book_distribution' => ['required'],
                 'unit_book_distribution_increase' => ['required'],
-                'unit_book_distribution_target' => ['required'],
+                // 'unit_book_distribution_target' => ['required'],
 
-                'ward_book_sales_center' => ['required'],
-                'ward_book_sales_center_increase' => ['required'],
+                // 'ward_book_sales_center' => ['required'],
+                // 'ward_book_sales_center_increase' => ['required'],
 
-                'ward_book_sales' => ['required'],
-                'ward_book_sales_increase' => ['required'],
+                // 'ward_book_sales' => ['required'],
+                // 'ward_book_sales_increase' => ['required'],
 
                 'soft_copy_book_distribution' => ['required'],
                 'soft_copy_book_distribution_increase' => ['required'],
@@ -161,35 +161,35 @@ class DawahAndProkashonaController extends Controller
             }
 
             $data = new DawahAndProkashona();
-            $data->total_pathagar = request()->total_pathagar;
-            $data->total_pathagar_increase = request()->total_pathagar_increase;
-            $data->total_pathagar_target = request()->total_pathagar_target;
+            // $data->total_pathagar = request()->total_pathagar;
+            // $data->total_pathagar_increase = request()->total_pathagar_increase;
+            // $data->total_pathagar_target = request()->total_pathagar_target;
 
-            $data->total_online_pathagar = request()->total_online_pathagar;
-            $data->total_online_pathagar_increase = request()->total_online_pathagar_increase;
-            $data->total_online_pathagar_target = request()->total_online_pathagar_target;
+            // $data->total_online_pathagar = request()->total_online_pathagar;
+            // $data->total_online_pathagar_increase = request()->total_online_pathagar_increase;
+            // $data->total_online_pathagar_target = request()->total_online_pathagar_target;
 
             $data->books_in_pathagar = request()->books_in_pathagar;
             $data->books_in_pathagar_increase = request()->books_in_pathagar_increase;
-            $data->books_in_pathagar_target = request()->books_in_pathagar_target;
+            // $data->books_in_pathagar_target = request()->books_in_pathagar_target;
 
-            $data->books_in_pathagar_target = request()->books_in_pathagar_target;
-            $data->book_distribution_increase = request()->book_distribution_increase;
-            $data->book_distribution_target = request()->book_distribution_target;
+            // $data->books_in_pathagar_target = request()->books_in_pathagar_target;
+            // $data->book_distribution_increase = request()->book_distribution_increase;
+            // $data->book_distribution_target = request()->book_distribution_target;
 
             $data->unit_book_distribution_center = request()->unit_book_distribution_center;
             $data->unit_book_distribution_center_increase = request()->unit_book_distribution_center_increase;
-            $data->unit_book_distribution_center_target = request()->unit_book_distribution_center_target;
+            // $data->unit_book_distribution_center_target = request()->unit_book_distribution_center_target;
 
             $data->unit_book_distribution = request()->unit_book_distribution;
             $data->unit_book_distribution_increase = request()->unit_book_distribution_increase;
-            $data->unit_book_distribution_target = request()->unit_book_distribution_target;
+            // $data->unit_book_distribution_target = request()->unit_book_distribution_target;
 
-            $data->ward_book_sales_center = request()->ward_book_sales_center;
-            $data->ward_book_sales_center_increase = request()->ward_book_sales_center_increase;
+            // $data->ward_book_sales_center = request()->ward_book_sales_center;
+            // $data->ward_book_sales_center_increase = request()->ward_book_sales_center_increase;
 
-            $data->ward_book_sales = request()->ward_book_sales;
-            $data->ward_book_sales_increase = request()->ward_book_sales_increase;
+            // $data->ward_book_sales = request()->ward_book_sales;
+            // $data->ward_book_sales_increase = request()->ward_book_sales_increase;
 
             $data->soft_copy_book_distribution = request()->soft_copy_book_distribution;
             $data->soft_copy_book_distribution_increase = request()->soft_copy_book_distribution_increase;
@@ -224,35 +224,35 @@ class DawahAndProkashonaController extends Controller
             }
 
             $validator = Validator::make(request()->all(), [
-                'total_pathagar' => ['required'],
-                'total_pathagar_increase' => ['required'],
-                'total_pathagar_target' => ['required'],
+                // 'total_pathagar' => ['required'],
+                // 'total_pathagar_increase' => ['required'],
+                // 'total_pathagar_target' => ['required'],
 
-                'total_online_pathagar' => ['required'],
-                'total_online_pathagar_increase' => ['required'],
-                'total_online_pathagar_target' => ['required'],
+                // 'total_online_pathagar' => ['required'],
+                // 'total_online_pathagar_increase' => ['required'],
+                // 'total_online_pathagar_target' => ['required'],
 
                 'books_in_pathagar' => ['required'],
                 'books_in_pathagar_increase' => ['required'],
-                'books_in_pathagar_target' => ['required'],
+                // 'books_in_pathagar_target' => ['required'],
 
-                'books_in_pathagar_target' => ['required'],
-                'book_distribution_increase' => ['required'],
-                'book_distribution_target' => ['required'],
+                // 'books_in_pathagar_target' => ['required'],
+                // 'book_distribution_increase' => ['required'],
+                // 'book_distribution_target' => ['required'],
 
                 'unit_book_distribution_center' => ['required'],
                 'unit_book_distribution_center_increase' => ['required'],
-                'unit_book_distribution_center_target' => ['required'],
+                // 'unit_book_distribution_center_target' => ['required'],
 
                 'unit_book_distribution' => ['required'],
                 'unit_book_distribution_increase' => ['required'],
-                'unit_book_distribution_target' => ['required'],
+                // 'unit_book_distribution_target' => ['required'],
 
-                'ward_book_sales_center' => ['required'],
-                'ward_book_sales_center_increase' => ['required'],
+                // 'ward_book_sales_center' => ['required'],
+                // 'ward_book_sales_center_increase' => ['required'],
 
-                'ward_book_sales' => ['required'],
-                'ward_book_sales_increase' => ['required'],
+                // 'ward_book_sales' => ['required'],
+                // 'ward_book_sales_increase' => ['required'],
 
                 'soft_copy_book_distribution' => ['required'],
                 'soft_copy_book_distribution_increase' => ['required'],
@@ -281,35 +281,35 @@ class DawahAndProkashonaController extends Controller
             }
 
 
-            $data->total_pathagar = request()->total_pathagar;
-            $data->total_pathagar_increase = request()->total_pathagar_increase;
-            $data->total_pathagar_target = request()->total_pathagar_target;
+            // $data->total_pathagar = request()->total_pathagar;
+            // $data->total_pathagar_increase = request()->total_pathagar_increase;
+            // $data->total_pathagar_target = request()->total_pathagar_target;
 
-            $data->total_online_pathagar = request()->total_online_pathagar;
-            $data->total_online_pathagar_increase = request()->total_online_pathagar_increase;
-            $data->total_online_pathagar_target = request()->total_online_pathagar_target;
+            // $data->total_online_pathagar = request()->total_online_pathagar;
+            // $data->total_online_pathagar_increase = request()->total_online_pathagar_increase;
+            // $data->total_online_pathagar_target = request()->total_online_pathagar_target;
 
             $data->books_in_pathagar = request()->books_in_pathagar;
             $data->books_in_pathagar_increase = request()->books_in_pathagar_increase;
-            $data->books_in_pathagar_target = request()->books_in_pathagar_target;
+            // $data->books_in_pathagar_target = request()->books_in_pathagar_target;
 
-            $data->books_in_pathagar_target = request()->books_in_pathagar_target;
-            $data->book_distribution_increase = request()->book_distribution_increase;
-            $data->book_distribution_target = request()->book_distribution_target;
+            // $data->books_in_pathagar_target = request()->books_in_pathagar_target;
+            // $data->book_distribution_increase = request()->book_distribution_increase;
+            // $data->book_distribution_target = request()->book_distribution_target;
 
             $data->unit_book_distribution_center = request()->unit_book_distribution_center;
             $data->unit_book_distribution_center_increase = request()->unit_book_distribution_center_increase;
-            $data->unit_book_distribution_center_target = request()->unit_book_distribution_center_target;
+            // $data->unit_book_distribution_center_target = request()->unit_book_distribution_center_target;
 
             $data->unit_book_distribution = request()->unit_book_distribution;
             $data->unit_book_distribution_increase = request()->unit_book_distribution_increase;
-            $data->unit_book_distribution_target = request()->unit_book_distribution_target;
+            // $data->unit_book_distribution_target = request()->unit_book_distribution_target;
 
-            $data->ward_book_sales_center = request()->ward_book_sales_center;
-            $data->ward_book_sales_center_increase = request()->ward_book_sales_center_increase;
+            // $data->ward_book_sales_center = request()->ward_book_sales_center;
+            // $data->ward_book_sales_center_increase = request()->ward_book_sales_center_increase;
 
-            $data->ward_book_sales = request()->ward_book_sales;
-            $data->ward_book_sales_increase = request()->ward_book_sales_increase;
+            // $data->ward_book_sales = request()->ward_book_sales;
+            // $data->ward_book_sales_increase = request()->ward_book_sales_increase;
 
             $data->soft_copy_book_distribution = request()->soft_copy_book_distribution;
             $data->soft_copy_book_distribution_increase = request()->soft_copy_book_distribution_increase;

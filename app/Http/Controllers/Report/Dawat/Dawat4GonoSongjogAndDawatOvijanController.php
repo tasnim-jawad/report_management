@@ -33,25 +33,25 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
                 ->orWhere('how_many_have_been_invited', '%' . $key . '%')
                 ->orWhere('how_many_associate_members_created', '%' . $key . '%')
 
-                ->orWhere('jela_mohanogor_delared_gonosonjog_group', '%' . $key . '%')
-                ->orWhere('jela_mohanogor_delared_gonosonjog_attended', '%' . $key . '%')
-                ->orWhere('jela_mohanogor_delared_gonosonjog_invited', '%' . $key . '%')
-                ->orWhere('jela_mohanogor_delared_gonosonjog_associated_created', '%' . $key . '%')
+                ->orWhere('jela_mohanogor_declared_gonosonjog_group', '%' . $key . '%')
+                ->orWhere('jela_mohanogor_declared_gonosonjog_attended', '%' . $key . '%')
+                ->orWhere('jela_mohanogor_declared_gonosonjog_invited', '%' . $key . '%')
+                ->orWhere('jela_mohanogor_declared_gonosonjog_associated_created', '%' . $key . '%');
 
-                ->orWhere('election_gono_songjog_group', '%' . $key . '%')
-                ->orWhere('election_attended', '%' . $key . '%')
-                ->orWhere('election_how_many_have_been_invited', '%' . $key . '%')
-                ->orWhere('election_how_many_associate_members_created', '%' . $key . '%')
+                // ->orWhere('election_gono_songjog_group', '%' . $key . '%')
+                // ->orWhere('election_attended', '%' . $key . '%')
+                // ->orWhere('election_how_many_have_been_invited', '%' . $key . '%')
+                // ->orWhere('election_how_many_associate_members_created', '%' . $key . '%')
 
-                ->orWhere('olama_gono_songjog_group', '%' . $key . '%')
-                ->orWhere('olama_attended', '%' . $key . '%')
-                ->orWhere('olama_how_many_have_been_invited', '%' . $key . '%')
-                ->orWhere('olama_how_many_associate_members_created', '%' . $key . '%')
+                // ->orWhere('olama_gono_songjog_group', '%' . $key . '%')
+                // ->orWhere('olama_attended', '%' . $key . '%')
+                // ->orWhere('olama_how_many_have_been_invited', '%' . $key . '%')
+                // ->orWhere('olama_how_many_associate_members_created', '%' . $key . '%')
 
-                ->orWhere('other_gono_songjog_group', '%' . $key . '%')
-                ->orWhere('other_attended', '%' . $key . '%')
-                ->orWhere('other_how_many_have', '%' . $key . '%')
-                ->orWhere('other_how_many_associate_members_created', '%' . $key . '%');
+                // ->orWhere('other_gono_songjog_group', '%' . $key . '%')
+                // ->orWhere('other_attended', '%' . $key . '%')
+                // ->orWhere('other_how_many_have', '%' . $key . '%')
+                // ->orWhere('other_how_many_associate_members_created', '%' . $key . '%');
 
             });
         }
@@ -89,25 +89,25 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
             'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
 
-            'jela_mohanogor_delared_gonosonjog_group' => ['required'],
-            'jela_mohanogor_delared_gonosonjog_attended' => ['required'],
-            'jela_mohanogor_delared_gonosonjog_invited' => ['required'],
-            'jela_mohanogor_delared_gonosonjog_associated_created' => ['required'],
+            'jela_mohanogor_declared_gonosonjog_group' => ['required'],
+            'jela_mohanogor_declared_gonosonjog_attended' => ['required'],
+            'jela_mohanogor_declared_gonosonjog_invited' => ['required'],
+            'jela_mohanogor_declared_gonosonjog_associated_created' => ['required'],
 
-            'election_gono_songjog_group' => ['required'],
-            'election_attended' => ['required'],
-            'election_how_many_have_been_invited' => ['required'],
-            'election_how_many_associate_members_created' => ['required'],
+            // 'election_gono_songjog_group' => ['required'],
+            // 'election_attended' => ['required'],
+            // 'election_how_many_have_been_invited' => ['required'],
+            // 'election_how_many_associate_members_created' => ['required'],
 
-            'olama_gono_songjog_group' => ['required'],
-            'olama_attended' => ['required'],
-            'olama_how_many_have_been_invited' => ['required'],
-            'olama_how_many_associate_members_created' => ['required'],
+            // 'olama_gono_songjog_group' => ['required'],
+            // 'olama_attended' => ['required'],
+            // 'olama_how_many_have_been_invited' => ['required'],
+            // 'olama_how_many_associate_members_created' => ['required'],
 
-            'other_gono_songjog_group' => ['required'],
-            'other_attended' => ['required'],
-            'other_how_many_have_been_invited' => ['required'],
-            'other_how_many_associate_members_created' => ['required'],
+            // 'other_gono_songjog_group' => ['required'],
+            // 'other_attended' => ['required'],
+            // 'other_how_many_have_been_invited' => ['required'],
+            // 'other_how_many_associate_members_created' => ['required'],
 
             'creator' => ['required'],
             'status' => ['required'],
@@ -126,25 +126,25 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
         $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
 
-        $data->jela_mohanogor_delared_gonosonjog_group = request()->jela_mohanogor_delared_gonosonjog_group;
-        $data->jela_mohanogor_delared_gonosonjog_attended = request()->jela_mohanogor_delared_gonosonjog_attended;
-        $data->jela_mohanogor_delared_gonosonjog_invited = request()->jela_mohanogor_delared_gonosonjog_invited;
-        $data->jela_mohanogor_delared_gonosonjog_associated_created = request()->jela_mohanogor_delared_gonosonjog_associated_created;
+        $data->jela_mohanogor_declared_gonosonjog_group = request()->jela_mohanogor_declared_gonosonjog_group;
+        $data->jela_mohanogor_declared_gonosonjog_attended = request()->jela_mohanogor_declared_gonosonjog_attended;
+        $data->jela_mohanogor_declared_gonosonjog_invited = request()->jela_mohanogor_declared_gonosonjog_invited;
+        $data->jela_mohanogor_declared_gonosonjog_associated_created = request()->jela_mohanogor_declared_gonosonjog_associated_created;
 
-        $data->election_gono_songjog_group = request()->election_gono_songjog_group;
-        $data->election_attended = request()->election_attended;
-        $data->election_how_many_have_been_invited = request()->election_how_many_have_been_invited;
-        $data->election_how_many_associate_members_created = request()->election_how_many_associate_members_created;
+        // $data->election_gono_songjog_group = request()->election_gono_songjog_group;
+        // $data->election_attended = request()->election_attended;
+        // $data->election_how_many_have_been_invited = request()->election_how_many_have_been_invited;
+        // $data->election_how_many_associate_members_created = request()->election_how_many_associate_members_created;
 
-        $data->olama_gono_songjog_group = request()->olama_gono_songjog_group;
-        $data->olama_attended = request()->olama_attended;
-        $data->olama_how_many_have_been_invited = request()->olama_how_many_have_been_invited;
-        $data->olama_how_many_associate_members_created = request()->olama_how_many_associate_members_created;
+        // $data->olama_gono_songjog_group = request()->olama_gono_songjog_group;
+        // $data->olama_attended = request()->olama_attended;
+        // $data->olama_how_many_have_been_invited = request()->olama_how_many_have_been_invited;
+        // $data->olama_how_many_associate_members_created = request()->olama_how_many_associate_members_created;
 
-        $data->other_gono_songjog_group = request()->other_gono_songjog_group;
-        $data->other_attended = request()->other_attended;
-        $data->other_how_many_have_been_invited = request()->other_how_many_have_been_invited;
-        $data->other_how_many_associate_members_created = request()->other_how_many_associate_members_created;
+        // $data->other_gono_songjog_group = request()->other_gono_songjog_group;
+        // $data->other_attended = request()->other_attended;
+        // $data->other_how_many_have_been_invited = request()->other_how_many_have_been_invited;
+        // $data->other_how_many_associate_members_created = request()->other_how_many_associate_members_created;
 
         $data->creator = request()->creator;
         $data->status = request()->status;
@@ -169,25 +169,25 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
             'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
 
-            'jela_mohanogor_delared_gonosonjog_group' => ['required'],
-            'jela_mohanogor_delared_gonosonjog_attended' => ['required'],
-            'jela_mohanogor_delared_gonosonjog_invited' => ['required'],
-            'jela_mohanogor_delared_gonosonjog_associated_created' => ['required'],
+            'jela_mohanogor_declared_gonosonjog_group' => ['required'],
+            'jela_mohanogor_declared_gonosonjog_attended' => ['required'],
+            'jela_mohanogor_declared_gonosonjog_invited' => ['required'],
+            'jela_mohanogor_declared_gonosonjog_associated_created' => ['required'],
 
-            'election_gono_songjog_group' => ['required'],
-            'election_attended' => ['required'],
-            'election_how_many_have_been_invited' => ['required'],
-            'election_how_many_associate_members_created' => ['required'],
+            // 'election_gono_songjog_group' => ['required'],
+            // 'election_attended' => ['required'],
+            // 'election_how_many_have_been_invited' => ['required'],
+            // 'election_how_many_associate_members_created' => ['required'],
 
-            'olama_gono_songjog_group' => ['required'],
-            'olama_attended' => ['required'],
-            'olama_how_many_have_been_invited' => ['required'],
-            'olama_how_many_associate_members_created' => ['required'],
+            // 'olama_gono_songjog_group' => ['required'],
+            // 'olama_attended' => ['required'],
+            // 'olama_how_many_have_been_invited' => ['required'],
+            // 'olama_how_many_associate_members_created' => ['required'],
 
-            'other_gono_songjog_group' => ['required'],
-            'other_attended' => ['required'],
-            'other_how_many_have_been_invited' => ['required'],
-            'other_how_many_associate_members_created' => ['required'],
+            // 'other_gono_songjog_group' => ['required'],
+            // 'other_attended' => ['required'],
+            // 'other_how_many_have_been_invited' => ['required'],
+            // 'other_how_many_associate_members_created' => ['required'],
 
             'creator' => ['required'],
             'status' => ['required'],
@@ -206,25 +206,25 @@ class Dawat4GonoSongjogAndDawatOvijanController extends Controller
         $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
 
-        $data->jela_mohanogor_delared_gonosonjog_group = request()->jela_mohanogor_delared_gonosonjog_group;
-        $data->jela_mohanogor_delared_gonosonjog_attended = request()->jela_mohanogor_delared_gonosonjog_attended;
-        $data->jela_mohanogor_delared_gonosonjog_invited = request()->jela_mohanogor_delared_gonosonjog_invited;
-        $data->jela_mohanogor_delared_gonosonjog_associated_created = request()->jela_mohanogor_delared_gonosonjog_associated_created;
+        $data->jela_mohanogor_declared_gonosonjog_group = request()->jela_mohanogor_declared_gonosonjog_group;
+        $data->jela_mohanogor_declared_gonosonjog_attended = request()->jela_mohanogor_declared_gonosonjog_attended;
+        $data->jela_mohanogor_declared_gonosonjog_invited = request()->jela_mohanogor_declared_gonosonjog_invited;
+        $data->jela_mohanogor_declared_gonosonjog_associated_created = request()->jela_mohanogor_declared_gonosonjog_associated_created;
 
-        $data->election_gono_songjog_group = request()->election_gono_songjog_group;
-        $data->election_attended = request()->election_attended;
-        $data->election_how_many_have_been_invited = request()->election_how_many_have_been_invited;
-        $data->election_how_many_associate_members_created = request()->election_how_many_associate_members_created;
+        // $data->election_gono_songjog_group = request()->election_gono_songjog_group;
+        // $data->election_attended = request()->election_attended;
+        // $data->election_how_many_have_been_invited = request()->election_how_many_have_been_invited;
+        // $data->election_how_many_associate_members_created = request()->election_how_many_associate_members_created;
 
-        $data->olama_gono_songjog_group = request()->olama_gono_songjog_group;
-        $data->olama_attended = request()->olama_attended;
-        $data->olama_how_many_have_been_invited = request()->olama_how_many_have_been_invited;
-        $data->olama_how_many_associate_members_created = request()->olama_how_many_associate_members_created;
+        // $data->olama_gono_songjog_group = request()->olama_gono_songjog_group;
+        // $data->olama_attended = request()->olama_attended;
+        // $data->olama_how_many_have_been_invited = request()->olama_how_many_have_been_invited;
+        // $data->olama_how_many_associate_members_created = request()->olama_how_many_associate_members_created;
 
-        $data->other_gono_songjog_group = request()->other_gono_songjog_group;
-        $data->other_attended = request()->other_attended;
-        $data->other_how_many_have_been_invited = request()->other_how_many_have_been_invited;
-        $data->other_how_many_associate_members_created = request()->other_how_many_associate_members_created;
+        // $data->other_gono_songjog_group = request()->other_gono_songjog_group;
+        // $data->other_attended = request()->other_attended;
+        // $data->other_how_many_have_been_invited = request()->other_how_many_have_been_invited;
+        // $data->other_how_many_associate_members_created = request()->other_how_many_associate_members_created;
 
         $data->creator = request()->creator;
         $data->status = request()->status;

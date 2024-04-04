@@ -28,15 +28,15 @@ class Songothon7SoforController extends Controller
                 $key = request()->search_key;
                 $query->where(function ($q) use ($key) {
                     return $q->where('id', '%' . $key . '%')
-                    ->orWhere('upper_leader_sofor', '%' . $key . '%')
-                    ->orWhere('ward_sovapotir_sofor', '%' . $key . '%')
-                    ->orWhere('word_sura_sodosso_sofor', '%' . $key . '%')
-                    ->orWhere('zilla_mohanogor_leader_sofor', '%' . $key . '%')
-                    ->orWhere('upozilla_thana_amir_leader_sofor', '%' . $key . '%')
-                    ->orWhere('upozilla_thana_kormoporisod_team_sodosso_sofor', '%' . $key . '%')
-                    ->orWhere('zilla_mohanogor_woman_deparment_leader_sofor', '%' . $key . '%')
-                    ->orWhere('upozilla_thana_woman_deparment_secretariate_sofor', '%' . $key . '%')
-                    ->orWhere('upozilla_thana_woman_deparment_team_member_sofor', '%' . $key . '%');
+                    ->orWhere('upper_leader_sofor', '%' . $key . '%');
+                    // ->orWhere('ward_sovapotir_sofor', '%' . $key . '%')
+                    // ->orWhere('word_sura_sodosso_sofor', '%' . $key . '%')
+                    // ->orWhere('zilla_mohanogor_leader_sofor', '%' . $key . '%')
+                    // ->orWhere('upozilla_thana_amir_leader_sofor', '%' . $key . '%')
+                    // ->orWhere('upozilla_thana_kormoporisod_team_sodosso_sofor', '%' . $key . '%')
+                    // ->orWhere('zilla_mohanogor_woman_deparment_leader_sofor', '%' . $key . '%')
+                    // ->orWhere('upozilla_thana_woman_deparment_secretariate_sofor', '%' . $key . '%')
+                    // ->orWhere('upozilla_thana_woman_deparment_team_member_sofor', '%' . $key . '%');
 
                 });
             }
@@ -70,14 +70,14 @@ class Songothon7SoforController extends Controller
         {
             $validator = Validator::make(request()->all(), [
                 'upper_leader_sofor' => ['required'],
-                'ward_sovapotir_sofor' => ['required'],
-                'word_sura_sodosso_sofor' => ['required'],
-                'zilla_mohanogor_leader_sofor' => ['required'],
-                'upozilla_thana_amir_leader_sofor' => ['required'],
-                'upozilla_thana_kormoporisod_team_sodosso_sofor' => ['required'],
-                'zilla_mohanogor_woman_deparment_leader_sofor' => ['required'],
-                'upozilla_thana_woman_deparment_secretariate_sofor' => ['required'],
-                'upozilla_thana_woman_deparment_team_member_sofor' => ['required'],
+                // 'ward_sovapotir_sofor' => ['required'],
+                // 'word_sura_sodosso_sofor' => ['required'],
+                // 'zilla_mohanogor_leader_sofor' => ['required'],
+                // 'upozilla_thana_amir_leader_sofor' => ['required'],
+                // 'upozilla_thana_kormoporisod_team_sodosso_sofor' => ['required'],
+                // 'zilla_mohanogor_woman_deparment_leader_sofor' => ['required'],
+                // 'upozilla_thana_woman_deparment_secretariate_sofor' => ['required'],
+                // 'upozilla_thana_woman_deparment_team_member_sofor' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -92,16 +92,16 @@ class Songothon7SoforController extends Controller
 
             $data = new Songothon7Sofor();
             $data->upper_leader_sofor = request()->upper_leader_sofor;
-            $data->ward_sovapotir_sofor = request()->ward_sovapotir_sofor;
-            $data->word_sura_sodosso_sofor = request()->word_sura_sodosso_sofor;
+            // $data->ward_sovapotir_sofor = request()->ward_sovapotir_sofor;
+            // $data->word_sura_sodosso_sofor = request()->word_sura_sodosso_sofor;
 
-            $data->zilla_mohanogor_leader_sofor = request()->zilla_mohanogor_leader_sofor;
-            $data->upozilla_thana_amir_leader_sofor = request()->upozilla_thana_amir_leader_sofor;
-            $data->upozilla_thana_kormoporisod_team_sodosso_sofor = request()->upozilla_thana_kormoporisod_team_sodosso_sofor;
+            // $data->zilla_mohanogor_leader_sofor = request()->zilla_mohanogor_leader_sofor;
+            // $data->upozilla_thana_amir_leader_sofor = request()->upozilla_thana_amir_leader_sofor;
+            // $data->upozilla_thana_kormoporisod_team_sodosso_sofor = request()->upozilla_thana_kormoporisod_team_sodosso_sofor;
 
-            $data->zilla_mohanogor_woman_deparment_leader_sofor = request()->zilla_mohanogor_woman_deparment_leader_sofor;
-            $data->upozilla_thana_woman_deparment_secretariate_sofor = request()->upozilla_thana_woman_deparment_secretariate_sofor;
-            $data->upozilla_thana_woman_deparment_team_member_sofor = request()->upozilla_thana_woman_deparment_team_member_sofor;
+            // $data->zilla_mohanogor_woman_deparment_leader_sofor = request()->zilla_mohanogor_woman_deparment_leader_sofor;
+            // $data->upozilla_thana_woman_deparment_secretariate_sofor = request()->upozilla_thana_woman_deparment_secretariate_sofor;
+            // $data->upozilla_thana_woman_deparment_team_member_sofor = request()->upozilla_thana_woman_deparment_team_member_sofor;
 
             $data->creator = request()->creator;
             $data->status = request()->status;
@@ -122,14 +122,14 @@ class Songothon7SoforController extends Controller
 
             $validator = Validator::make(request()->all(), [
                 'upper_leader_sofor' => ['required'],
-                'ward_sovapotir_sofor' => ['required'],
-                'word_sura_sodosso_sofor' => ['required'],
-                'zilla_mohanogor_leader_sofor' => ['required'],
-                'upozilla_thana_amir_leader_sofor' => ['required'],
-                'upozilla_thana_kormoporisod_team_sodosso_sofor' => ['required'],
-                'zilla_mohanogor_woman_deparment_leader_sofor' => ['required'],
-                'upozilla_thana_woman_deparment_secretariate_sofor' => ['required'],
-                'upozilla_thana_woman_deparment_team_member_sofor' => ['required'],
+                // 'ward_sovapotir_sofor' => ['required'],
+                // 'word_sura_sodosso_sofor' => ['required'],
+                // 'zilla_mohanogor_leader_sofor' => ['required'],
+                // 'upozilla_thana_amir_leader_sofor' => ['required'],
+                // 'upozilla_thana_kormoporisod_team_sodosso_sofor' => ['required'],
+                // 'zilla_mohanogor_woman_deparment_leader_sofor' => ['required'],
+                // 'upozilla_thana_woman_deparment_secretariate_sofor' => ['required'],
+                // 'upozilla_thana_woman_deparment_team_member_sofor' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -144,14 +144,14 @@ class Songothon7SoforController extends Controller
 
 
             $data->upper_leader_sofor = request()->upper_leader_sofor;
-            $data->ward_sovapotir_sofor = request()->ward_sovapotir_sofor;
-            $data->word_sura_sodosso_sofor = request()->word_sura_sodosso_sofor;
-            $data->zilla_mohanogor_leader_sofor = request()->zilla_mohanogor_leader_sofor;
-            $data->upozilla_thana_amir_leader_sofor = request()->upozilla_thana_amir_leader_sofor;
-            $data->upozilla_thana_kormoporisod_team_sodosso_sofor = request()->upozilla_thana_kormoporisod_team_sodosso_sofor;
-            $data->zilla_mohanogor_woman_deparment_leader_sofor = request()->zilla_mohanogor_woman_deparment_leader_sofor;
-            $data->upozilla_thana_woman_deparment_secretariate_sofor = request()->upozilla_thana_woman_deparment_secretariate_sofor;
-            $data->upozilla_thana_woman_deparment_team_member_sofor = request()->upozilla_thana_woman_deparment_team_member_sofor;
+            // $data->ward_sovapotir_sofor = request()->ward_sovapotir_sofor;
+            // $data->word_sura_sodosso_sofor = request()->word_sura_sodosso_sofor;
+            // $data->zilla_mohanogor_leader_sofor = request()->zilla_mohanogor_leader_sofor;
+            // $data->upozilla_thana_amir_leader_sofor = request()->upozilla_thana_amir_leader_sofor;
+            // $data->upozilla_thana_kormoporisod_team_sodosso_sofor = request()->upozilla_thana_kormoporisod_team_sodosso_sofor;
+            // $data->zilla_mohanogor_woman_deparment_leader_sofor = request()->zilla_mohanogor_woman_deparment_leader_sofor;
+            // $data->upozilla_thana_woman_deparment_secretariate_sofor = request()->upozilla_thana_woman_deparment_secretariate_sofor;
+            // $data->upozilla_thana_woman_deparment_team_member_sofor = request()->upozilla_thana_woman_deparment_team_member_sofor;
 
             $data->creator = request()->creator;
             $data->status = request()->status;

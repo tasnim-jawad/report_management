@@ -30,16 +30,16 @@ class Shomajsheba2UnitSocialWorkController extends Controller
                     return $q->where('id', '%' . $key . '%')
                     ->orWhere('shamajik_onusthane_ongshogrohon', '%' . $key . '%')
                     ->orWhere('shamajik_onusthane_shohayota_prodan', '%' . $key . '%')
+
                     ->orWhere('shamajik_birodh_mimangsha', '%' . $key . '%')
 
                     ->orWhere('manobik_shohayota_prodan', '%' . $key . '%')
                     ->orWhere('korje_hasana_prodan', '%' . $key . '%')
-                    ->orWhere('rogir_poricorja', '%' . $key . '%')
 
+                    ->orWhere('rogir_poricorja', '%' . $key . '%')
                     ->orWhere('medical_shohayota_prodan', '%' . $key . '%')
                     ->orWhere('nobojatokke_gift_prodan', '%' . $key . '%')
                     ->orWhere('voluntarily_blood_donation_kotojon', '%' . $key . '%')
-
                     ->orWhere('voluntarily_blood_donation_kotojonke', '%' . $key . '%')
                     ->orWhere('matrikalin_sheba_prodan_kotojon', '%' . $key . '%')
                     ->orWhere('matrikalin_sheba_prodan_kotojonke', '%' . $key . '%')

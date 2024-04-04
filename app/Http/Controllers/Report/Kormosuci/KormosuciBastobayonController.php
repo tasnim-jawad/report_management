@@ -30,54 +30,60 @@ class KormosuciBastobayonController extends Controller
                     return $q->where('id', '%' . $key . '%')
                     ->orWhere('unit_masik_sadaron_sova_total', '%' . $key . '%')
                     ->orWhere('unit_masik_sadaron_sova_target', '%' . $key . '%')
+                    ->orWhere('unit_masik_sadaron_sova_uposthiti', '%' . $key . '%')
 
-                    ->orWhere('dawati_sova_total', '%' . $key . '%')
-                    ->orWhere('dawati_sova_target', '%' . $key . '%')
+                    // ->orWhere('dawati_sova_total', '%' . $key . '%')
+                    // ->orWhere('dawati_sova_target', '%' . $key . '%')
 
-                    ->orWhere('alochona_sova_total', '%' . $key . '%')
-                    ->orWhere('alochona_sova_target', '%' . $key . '%')
+                    // ->orWhere('alochona_sova_total', '%' . $key . '%')
+                    // ->orWhere('alochona_sova_target', '%' . $key . '%')
 
-                    ->orWhere('sudhi_somabesh_total', '%' . $key . '%')
-                    ->orWhere('sudhi_somabesh_target', '%' . $key . '%')
+                    // ->orWhere('sudhi_somabesh_total', '%' . $key . '%')
+                    // ->orWhere('sudhi_somabesh_target', '%' . $key . '%')
 
-                    ->orWhere('siratunnabi_mahfil_total', '%' . $key . '%')
-                    ->orWhere('siratunnabi_mahfil_target', '%' . $key . '%')
+                    // ->orWhere('siratunnabi_mahfil_total', '%' . $key . '%')
+                    // ->orWhere('siratunnabi_mahfil_target', '%' . $key . '%')
 
-                    ->orWhere('eid_reunion_total', '%' . $key . '%')
-                    ->orWhere('eid_reunion_target', '%' . $key . '%')
+                    // ->orWhere('eid_reunion_total', '%' . $key . '%')
+                    // ->orWhere('eid_reunion_target', '%' . $key . '%')
 
-                    ->orWhere('dars_total', '%' . $key . '%')
-                    ->orWhere('dars_target', '%' . $key . '%')
+                    // ->orWhere('dars_total', '%' . $key . '%')
+                    // ->orWhere('dars_target', '%' . $key . '%')
 
-                    ->orWhere('tafsir_total', '%' . $key . '%')
-                    ->orWhere('tafsir_target', '%' . $key . '%')
+                    // ->orWhere('tafsir_total', '%' . $key . '%')
+                    // ->orWhere('tafsir_target', '%' . $key . '%')
 
-                    ->orWhere('dawati_jonosova_total', '%' . $key . '%')
-                    ->orWhere('dawati_jonosova_target', '%' . $key . '%')
+                    // ->orWhere('dawati_jonosova_total', '%' . $key . '%')
+                    // ->orWhere('dawati_jonosova_target', '%' . $key . '%')
 
                     ->orWhere('iftar_mahfil_personal_total', '%' . $key . '%')
                     ->orWhere('iftar_mahfil_personal_target', '%' . $key . '%')
+                    ->orWhere('iftar_mahfil_personal_uposthiti', '%' . $key . '%')
 
                     ->orWhere('iftar_mahfil_samostic_total', '%' . $key . '%')
                     ->orWhere('iftar_mahfil_samostic_target', '%' . $key . '%')
+                    ->orWhere('iftar_mahfil_samostic_uposthiti', '%' . $key . '%')
 
                     ->orWhere('cha_chakra_total', '%' . $key . '%')
                     ->orWhere('cha_chakra_target', '%' . $key . '%')
+                    ->orWhere('cha_chakra_uposthiti', '%' . $key . '%')
 
                     ->orWhere('samostic_khawa_total', '%' . $key . '%')
                     ->orWhere('samostic_khawa_target', '%' . $key . '%')
+                    ->orWhere('samostic_khawa_uposthiti', '%' . $key . '%')
 
                     ->orWhere('sikkha_sofor_total', '%' . $key . '%')
                     ->orWhere('sikkha_sofor_target', '%' . $key . '%')
+                    ->orWhere('sikkha_sofo_uposthiti', '%' . $key . '%');
 
-                    ->orWhere('kirat_protijogita_total', '%' . $key . '%')
-                    ->orWhere('kirat_protijogita_target', '%' . $key . '%')
+                    // ->orWhere('kirat_protijogita_total', '%' . $key . '%')
+                    // ->orWhere('kirat_protijogita_target', '%' . $key . '%')
 
-                    ->orWhere('hamd_nat_protijogita_total', '%' . $key . '%')
-                    ->orWhere('hamd_nat_protijogita_target', '%' . $key . '%')
+                    // ->orWhere('hamd_nat_protijogita_total', '%' . $key . '%')
+                    // ->orWhere('hamd_nat_protijogita_target', '%' . $key . '%')
 
-                    ->orWhere('others_total', '%' . $key . '%')
-                    ->orWhere('others_target', '%' . $key . '%');
+                    // ->orWhere('others_total', '%' . $key . '%')
+                    // ->orWhere('others_target', '%' . $key . '%');
 
                 });
             }
@@ -112,44 +118,52 @@ class KormosuciBastobayonController extends Controller
             $validator = Validator::make(request()->all(), [
                 'unit_masik_sadaron_sova_total' => ['required'],
                 'unit_masik_sadaron_sova_target' => ['required'],
-                'dawati_sova_total' => ['required'],
-                'dawati_sova_target' => ['required'],
-                'alochona_sova_total' => ['required'],
-                'alochona_sova_target' => ['required'],
-                'sudhi_somabesh_total' => ['required'],
-                'sudhi_somabesh_target' => ['required'],
-                'siratunnabi_mahfil_total' => ['required'],
-                'siratunnabi_mahfil_target' => ['required'],
-                'eid_reunion_total' => ['required'],
-                'eid_reunion_target' => ['required'],
-                'dars_total' => ['required'],
-                'dars_target' => ['required'],
-                'tafsir_total' => ['required'],
-                'tafsir_target' => ['required'],
-                'dawati_jonosova_total' => ['required'],
-                'dawati_jonosova_target' => ['required'],
+                'unit_masik_sadaron_sova_uposthiti' => ['required'],
+
+                // 'dawati_sova_total' => ['required'],
+                // 'dawati_sova_target' => ['required'],
+                // 'alochona_sova_total' => ['required'],
+                // 'alochona_sova_target' => ['required'],
+                // 'sudhi_somabesh_total' => ['required'],
+                // 'sudhi_somabesh_target' => ['required'],
+                // 'siratunnabi_mahfil_total' => ['required'],
+                // 'siratunnabi_mahfil_target' => ['required'],
+                // 'eid_reunion_total' => ['required'],
+                // 'eid_reunion_target' => ['required'],
+                // 'dars_total' => ['required'],
+                // 'dars_target' => ['required'],
+                // 'tafsir_total' => ['required'],
+                // 'tafsir_target' => ['required'],
+                // 'dawati_jonosova_total' => ['required'],
+                // 'dawati_jonosova_target' => ['required'],
                 'iftar_mahfil_personal_total' => ['required'],
                 'iftar_mahfil_personal_target' => ['required'],
+                'iftar_mahfil_personal_uposthiti' => ['required'],
+
                 'iftar_mahfil_samostic_total' => ['required'],
                 'iftar_mahfil_samostic_target' => ['required'],
+                'iftar_mahfil_samostic_uposthiti' => ['required'],
 
                 'cha_chakra_total' => ['required'],
                 'cha_chakra_target' => ['required'],
+                'cha_chakra_uposthiti' => ['required'],
 
                 'samostic_khawa_total' => ['required'],
                 'samostic_khawa_target' => ['required'],
+                'samostic_khawa_uposthiti' => ['required'],
 
                 'sikkha_sofor_total' => ['required'],
                 'sikkha_sofor_target' => ['required'],
+                'sikkha_sofor_uposthiti' => ['required'],
 
-                'kirat_protijogita_total' => ['required'],
-                'kirat_protijogita_target' => ['required'],
+                // 'kirat_protijogita_total' => ['required'],
+                // 'kirat_protijogita_target' => ['required'],
 
-                'hamd_nat_protijogita_total' => ['required'],
-                'hamd_nat_protijogita_target' => ['required'],
+                // 'hamd_nat_protijogita_total' => ['required'],
+                // 'hamd_nat_protijogita_target' => ['required'],
 
-                'others_total' => ['required'],
-                'others_target' => ['required'],
+                // 'others_total' => ['required'],
+                // 'others_target' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -165,43 +179,51 @@ class KormosuciBastobayonController extends Controller
             $data = new KormosuciBastobayon();
             $data->unit_masik_sadaron_sova_total = request()->unit_masik_sadaron_sova_total;
             $data->unit_masik_sadaron_sova_target = request()->unit_masik_sadaron_sova_target;
-            $data->dawati_sova_total = request()->dawati_sova_total;
-            $data->dawati_sova_target = request()->dawati_sova_target;
-            $data->alochona_sova_total = request()->alochona_sova_total;
-            $data->alochona_sova_target = request()->alochona_sova_target;
-            $data->sudhi_somabesh_total = request()->sudhi_somabesh_total;
-            $data->sudhi_somabesh_target = request()->sudhi_somabesh_target;
-            $data->siratunnabi_mahfil_total = request()->siratunnabi_mahfil_total;
-            $data->siratunnabi_mahfil_target = request()->siratunnabi_mahfil_target;
-            $data->eid_reunion_total = request()->eid_reunion_total;
-            $data->eid_reunion_target = request()->eid_reunion_target;
-            $data->dars_total = request()->dars_total;
-            $data->dars_target = request()->dars_target;
-            $data->tafsir_total = request()->tafsir_total;
-            $data->tafsir_target = request()->tafsir_target;
-            $data->dawati_jonosova_total = request()->dawati_jonosova_total;
-            $data->dawati_jonosova_target = request()->dawati_jonosova_target;
+            $data->unit_masik_sadaron_sova_uposthiti = request()->unit_masik_sadaron_sova_uposthiti;
+            // $data->dawati_sova_total = request()->dawati_sova_total;
+            // $data->dawati_sova_target = request()->dawati_sova_target;
+            // $data->alochona_sova_total = request()->alochona_sova_total;
+            // $data->alochona_sova_target = request()->alochona_sova_target;
+            // $data->sudhi_somabesh_total = request()->sudhi_somabesh_total;
+            // $data->sudhi_somabesh_target = request()->sudhi_somabesh_target;
+            // $data->siratunnabi_mahfil_total = request()->siratunnabi_mahfil_total;
+            // $data->siratunnabi_mahfil_target = request()->siratunnabi_mahfil_target;
+            // $data->eid_reunion_total = request()->eid_reunion_total;
+            // $data->eid_reunion_target = request()->eid_reunion_target;
+            // $data->dars_total = request()->dars_total;
+            // $data->dars_target = request()->dars_target;
+            // $data->tafsir_total = request()->tafsir_total;
+            // $data->tafsir_target = request()->tafsir_target;
+            // $data->dawati_jonosova_total = request()->dawati_jonosova_total;
+            // $data->dawati_jonosova_target = request()->dawati_jonosova_target;
             $data->iftar_mahfil_personal_total = request()->iftar_mahfil_personal_total;
             $data->iftar_mahfil_personal_target = request()->iftar_mahfil_personal_target;
+            $data->iftar_mahfil_personal_uposthiti = request()->iftar_mahfil_personal_uposthiti;
+
             $data->iftar_mahfil_samostic_total = request()->iftar_mahfil_samostic_total;
             $data->iftar_mahfil_samostic_target = request()->iftar_mahfil_samostic_target;
+            $data->iftar_mahfil_samostic_uposthiti = request()->iftar_mahfil_samostic_uposthiti;
+
             $data->cha_chakra_total = request()->cha_chakra_total;
             $data->cha_chakra_target = request()->cha_chakra_target;
+            $data->cha_chakra_uposthiti = request()->cha_chakra_uposthiti;
 
             $data->samostic_khawa_total = request()->samostic_khawa_total;
             $data->samostic_khawa_target = request()->samostic_khawa_target;
+            $data->samostic_khawa_uposthiti = request()->samostic_khawa_uposthiti;
 
             $data->sikkha_sofor_total = request()->sikkha_sofor_total;
             $data->sikkha_sofor_target = request()->sikkha_sofor_target;
+            $data->sikkha_sofor_uposthiti = request()->sikkha_sofor_uposthiti;
 
-            $data->kirat_protijogita_total = request()->kirat_protijogita_total;
-            $data->kirat_protijogita_target = request()->kirat_protijogita_target;
+            // $data->kirat_protijogita_total = request()->kirat_protijogita_total;
+            // $data->kirat_protijogita_target = request()->kirat_protijogita_target;
 
-            $data->hamd_nat_protijogita_total = request()->hamd_nat_protijogita_total;
-            $data->hamd_nat_protijogita_target = request()->hamd_nat_protijogita_target;
+            // $data->hamd_nat_protijogita_total = request()->hamd_nat_protijogita_total;
+            // $data->hamd_nat_protijogita_target = request()->hamd_nat_protijogita_target;
 
-            $data->others_total = request()->others_total;
-            $data->others_target = request()->others_target;
+            // $data->others_total = request()->others_total;
+            // $data->others_target = request()->others_target;
 
             $data->creator = request()->creator;
             $data->status = request()->status;
@@ -223,43 +245,52 @@ class KormosuciBastobayonController extends Controller
             $validator = Validator::make(request()->all(), [
                 'unit_masik_sadaron_sova_total' => ['required'],
                 'unit_masik_sadaron_sova_target' => ['required'],
-                'dawati_sova_total' => ['required'],
-                'dawati_sova_target' => ['required'],
-                'alochona_sova_total' => ['required'],
-                'alochona_sova_target' => ['required'],
-                'sudhi_somabesh_total' => ['required'],
-                'sudhi_somabesh_target' => ['required'],
-                'siratunnabi_mahfil_total' => ['required'],
-                'siratunnabi_mahfil_target' => ['required'],
-                'eid_reunion_total' => ['required'],
-                'eid_reunion_target' => ['required'],
-                'dars_total' => ['required'],
-                'dars_target' => ['required'],
-                'tafsir_total' => ['required'],
-                'tafsir_target' => ['required'],
-                'dawati_jonosova_total' => ['required'],
-                'dawati_jonosova_target' => ['required'],
+                'unit_masik_sadaron_sova_uposthiti' => ['required'],
+
+                // 'dawati_sova_total' => ['required'],
+                // 'dawati_sova_target' => ['required'],
+                // 'alochona_sova_total' => ['required'],
+                // 'alochona_sova_target' => ['required'],
+                // 'sudhi_somabesh_total' => ['required'],
+                // 'sudhi_somabesh_target' => ['required'],
+                // 'siratunnabi_mahfil_total' => ['required'],
+                // 'siratunnabi_mahfil_target' => ['required'],
+                // 'eid_reunion_total' => ['required'],
+                // 'eid_reunion_target' => ['required'],
+                // 'dars_total' => ['required'],
+                // 'dars_target' => ['required'],
+                // 'tafsir_total' => ['required'],
+                // 'tafsir_target' => ['required'],
+                // 'dawati_jonosova_total' => ['required'],
+                // 'dawati_jonosova_target' => ['required'],
                 'iftar_mahfil_personal_total' => ['required'],
                 'iftar_mahfil_personal_target' => ['required'],
+                'iftar_mahfil_personal_uposthiti' => ['required'],
+
                 'iftar_mahfil_samostic_total' => ['required'],
                 'iftar_mahfil_samostic_target' => ['required'],
+                'iftar_mahfil_samostic_uposthiti' => ['required'],
+
                 'cha_chakra_total' => ['required'],
                 'cha_chakra_target' => ['required'],
+                'cha_chakra_uposthiti' => ['required'],
 
                 'samostic_khawa_total' => ['required'],
                 'samostic_khawa_target' => ['required'],
+                'samostic_khawa_uposthiti' => ['required'],
 
                 'sikkha_sofor_total' => ['required'],
                 'sikkha_sofor_target' => ['required'],
+                'sikkha_sofor_uposthiti' => ['required'],
 
-                'kirat_protijogita_total' => ['required'],
-                'kirat_protijogita_target' => ['required'],
+                // 'kirat_protijogita_total' => ['required'],
+                // 'kirat_protijogita_target' => ['required'],
 
-                'hamd_nat_protijogita_total' => ['required'],
-                'hamd_nat_protijogita_target' => ['required'],
+                // 'hamd_nat_protijogita_total' => ['required'],
+                // 'hamd_nat_protijogita_target' => ['required'],
 
-                'others_total' => ['required'],
-                'others_target' => ['required'],
+                // 'others_total' => ['required'],
+                // 'others_target' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -275,43 +306,51 @@ class KormosuciBastobayonController extends Controller
 
             $data->unit_masik_sadaron_sova_total = request()->unit_masik_sadaron_sova_total;
             $data->unit_masik_sadaron_sova_target = request()->unit_masik_sadaron_sova_target;
-            $data->dawati_sova_total = request()->dawati_sova_total;
-            $data->dawati_sova_target = request()->dawati_sova_target;
-            $data->alochona_sova_total = request()->alochona_sova_total;
-            $data->alochona_sova_target = request()->alochona_sova_target;
-            $data->sudhi_somabesh_total = request()->sudhi_somabesh_total;
-            $data->sudhi_somabesh_target = request()->sudhi_somabesh_target;
-            $data->siratunnabi_mahfil_total = request()->siratunnabi_mahfil_total;
-            $data->siratunnabi_mahfil_target = request()->siratunnabi_mahfil_target;
-            $data->eid_reunion_total = request()->eid_reunion_total;
-            $data->eid_reunion_target = request()->eid_reunion_target;
-            $data->dars_total = request()->dars_total;
-            $data->dars_target = request()->dars_target;
-            $data->tafsir_total = request()->tafsir_total;
-            $data->tafsir_target = request()->tafsir_target;
-            $data->dawati_jonosova_total = request()->dawati_jonosova_total;
-            $data->dawati_jonosova_target = request()->dawati_jonosova_target;
+            $data->unit_masik_sadaron_sova_uposthiti = request()->unit_masik_sadaron_sova_uposthiti;
+            // $data->dawati_sova_total = request()->dawati_sova_total;
+            // $data->dawati_sova_target = request()->dawati_sova_target;
+            // $data->alochona_sova_total = request()->alochona_sova_total;
+            // $data->alochona_sova_target = request()->alochona_sova_target;
+            // $data->sudhi_somabesh_total = request()->sudhi_somabesh_total;
+            // $data->sudhi_somabesh_target = request()->sudhi_somabesh_target;
+            // $data->siratunnabi_mahfil_total = request()->siratunnabi_mahfil_total;
+            // $data->siratunnabi_mahfil_target = request()->siratunnabi_mahfil_target;
+            // $data->eid_reunion_total = request()->eid_reunion_total;
+            // $data->eid_reunion_target = request()->eid_reunion_target;
+            // $data->dars_total = request()->dars_total;
+            // $data->dars_target = request()->dars_target;
+            // $data->tafsir_total = request()->tafsir_total;
+            // $data->tafsir_target = request()->tafsir_target;
+            // $data->dawati_jonosova_total = request()->dawati_jonosova_total;
+            // $data->dawati_jonosova_target = request()->dawati_jonosova_target;
             $data->iftar_mahfil_personal_total = request()->iftar_mahfil_personal_total;
             $data->iftar_mahfil_personal_target = request()->iftar_mahfil_personal_target;
+            $data->iftar_mahfil_personal_uposthiti = request()->iftar_mahfil_personal_uposthiti;
+
             $data->iftar_mahfil_samostic_total = request()->iftar_mahfil_samostic_total;
             $data->iftar_mahfil_samostic_target = request()->iftar_mahfil_samostic_target;
+            $data->iftar_mahfil_samostic_uposthiti = request()->iftar_mahfil_samostic_uposthiti;
+
             $data->cha_chakra_total = request()->cha_chakra_total;
             $data->cha_chakra_target = request()->cha_chakra_target;
+            $data->cha_chakra_uposthiti = request()->cha_chakra_uposthiti;
 
             $data->samostic_khawa_total = request()->samostic_khawa_total;
             $data->samostic_khawa_target = request()->samostic_khawa_target;
+            $data->samostic_khawa_uposthiti = request()->samostic_khawa_uposthiti;
 
             $data->sikkha_sofor_total = request()->sikkha_sofor_total;
             $data->sikkha_sofor_target = request()->sikkha_sofor_target;
+            $data->sikkha_sofor_uposthiti = request()->sikkha_sofor_uposthiti;
 
-            $data->kirat_protijogita_total = request()->kirat_protijogita_total;
-            $data->kirat_protijogita_target = request()->kirat_protijogita_target;
+            // $data->kirat_protijogita_total = request()->kirat_protijogita_total;
+            // $data->kirat_protijogita_target = request()->kirat_protijogita_target;
 
-            $data->hamd_nat_protijogita_total = request()->hamd_nat_protijogita_total;
-            $data->hamd_nat_protijogita_target = request()->hamd_nat_protijogita_target;
+            // $data->hamd_nat_protijogita_total = request()->hamd_nat_protijogita_total;
+            // $data->hamd_nat_protijogita_target = request()->hamd_nat_protijogita_target;
 
-            $data->others_total = request()->others_total;
-            $data->others_target = request()->others_target;
+            // $data->others_total = request()->others_total;
+            // $data->others_target = request()->others_target;
 
             $data->creator = request()->creator;
             $data->status = request()->status;
