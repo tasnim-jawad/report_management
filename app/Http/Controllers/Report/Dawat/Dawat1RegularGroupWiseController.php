@@ -19,6 +19,86 @@ use Illuminate\Support\Facades\Hash;
 
 class Dawat1RegularGroupWiseController extends Controller
 {
+    protected $report_info = false;
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $this->init();
+            return $next($request);
+        });
+    }
+
+    public function init()
+    {
+        $this->report_info = check_and_get_unit_info(auth()->user()->id);
+    }
+
+    public function get_data()
+    {
+        return common_get(Dawat1RegularGroupWise::class);
+    }
+
+    public function store_single()
+    {
+        return common_store($this, Dawat1RegularGroupWise::class, $this->report_info);
+    }
+
+    // public function get_data()
+    // {
+    //     $responsibilities = auth_user_unit_responsibilites_info(auth()->user()->id);
+    //     $report_info = unit_report_header_info($responsibilities, null, request()->month);
+    //     if($report_info ){
+    //         $data = Dawat1RegularGroupWise::where('report_info_id', $report_info->id)->first();
+    //         if ($data) {
+    //             return $data;
+    //         }
+    //     }
+    //     return [];
+    // }
+
+    // public function store_single()
+    // {
+    //     $this->validate(request(), [
+    //         'month' => ['required']
+    //     ], [
+    //         "month.required" => ["মাস সিলেক্ট করুন"]
+    //     ]);
+    //     if ($this->report_info) {
+    //         $col_name = request()->name;
+    //         $col_value = request()->value;
+
+    //         $data = Dawat1RegularGroupWise::where('report_info_id', $this->report_info->id)
+    //             // ->where('creator', auth()->user()->id)
+    //             ->first();
+
+    //         if ($data) {
+    //             $data->report_info_id = $this->report_info->id;
+    //             $data->$col_name = $col_value;
+    //             $data->creator = auth()->user()->id;
+    //             $data->save();
+    //         } else {
+    //             $data = new Dawat1RegularGroupWise();
+    //             $data->report_info_id = $this->report_info->id;
+    //             $data->$col_name = $col_value;
+    //             $data->creator = auth()->user()->id;
+    //             $data->save();
+    //         }
+
+    //         return response()->json([
+    //             "data" => $data,
+    //             "message" => "data uploaded",
+    //         ], 201);
+    //     }
+
+    //     return response()->json([
+    //         "message" => "permission denied.",
+    //         "errors" => [
+    //             "message" => ["report edit permission is closed."]
+    //         ]
+
+    //     ], 403);
+    // }
+
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;
@@ -38,10 +118,10 @@ class Dawat1RegularGroupWiseController extends Controller
             $key = request()->search_key;
             $query->where(function ($q) use ($key) {
                 return $q->where('id', '%' . $key . '%')
-                ->orWhere('how_many_groups_are_out', '%' . $key . '%')
-                ->orWhere('number_of_participants', '%' . $key . '%')
-                ->orWhere('how_many_have_been_invited', '%' . $key . '%')
-                ->orWhere('how_many_associate_members_created', '%' . $key . '%');
+                    ->orWhere('how_many_groups_are_out', '%' . $key . '%')
+                    ->orWhere('number_of_participants', '%' . $key . '%')
+                    ->orWhere('how_many_have_been_invited', '%' . $key . '%')
+                    ->orWhere('how_many_associate_members_created', '%' . $key . '%');
             });
         }
 
@@ -99,58 +179,8 @@ class Dawat1RegularGroupWiseController extends Controller
 
         return response()->json($data, 200);
     }
-    public function store_single()
-    {
-        // $user = User::where('id',auth()->user()->id)->first();
-        // $orgUnitResponsible = $user->org_unit_responsible()->first();
-        // $orgUnit = $orgUnitResponsible->org_unit;
-        // $orgType = $orgUnit->org_type;
-        // $responsibility = $orgUnitResponsible->responsibility;
-
-        $permission = ReportManagementControl::whereYear('month_year',Carbon::now()->year)
-        ->whereMonth('month_year',Carbon::now()->month)
-        ->where('is_active',1)
-        ->where('report_type','unit')->first();
-
-        if($permission){
-            $org_unit_responsible = OrgUnitResponsible::where('user_id',auth()->user()->id)->first();
-            $org_unit = OrgUnit::where('id',$org_unit_responsible->org_unit_id)->first();
-            $org_type = OrgType::where('id',$org_unit->org_type_id)->first();
-            $resposibilities = Responsibility::where('id',$org_unit_responsible->responsibility_id)->first();
-
-            $check_info = ReportInfo::whereYear('month_year',Carbon::now()->year)
-            ->whereMonth('month_year',Carbon::now()->month)
-            ->where('responsibility_id', $org_unit_responsible->responsibility_id)
-            ->where('org_type_id',$org_unit->org_type_id)
-            ->where('creator',auth()->user()->id)->first();
-
-            if($check_info){
-
-            }else{
-                // dd('info is not present');
-                ReportInfo::create([
-                    'org_type' => $org_type->title,
-                    'org_type_id' => $org_unit->org_type_id,
-                    'responsibility_id' => $org_unit_responsible->responsibility_id,
-                    'responsibility_name' => $resposibilities->title,
-                    'month_year' => $permission->month_year,
-                    'report_type' =>  $permission->report_type,
-                    'creator' => auth()->user()->id,
-                    'status' => 1,
-                ]);
-                return response()->json([
-                    'message' => 'Report info created successfully'
-                ], 200);
-            }
 
 
-        }
-
-        // return response()->json($data, 200);
-        return response()->json([
-            'message' => 'Report info created successfully'
-        ], 200);
-    }
 
     public function update()
     {

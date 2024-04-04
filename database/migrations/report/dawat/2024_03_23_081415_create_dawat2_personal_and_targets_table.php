@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('dawat2_personal_and_targets', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('total_rokon')->nullable();
-            $table->bigInteger('total_worker')->nullable();
-            $table->bigInteger('how_many_were_give_dawat_rokon')->nullable();
-            $table->bigInteger('how_many_were_give_dawat_worker')->nullable();
-            $table->bigInteger('how_many_have_been_invited')->nullable();
-            $table->bigInteger('how_many_associate_members_created')->nullable();
-            $table->bigInteger('creator')->nullable();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
+            $table->integer('total_rokon')->unsigned()->nullable();
+            $table->integer('total_worker')->unsigned()->nullable();
+            $table->integer('how_many_were_give_dawat_rokon')->unsigned()->nullable();
+            $table->integer('how_many_were_give_dawat_worker')->unsigned()->nullable();
+            $table->integer('how_many_have_been_invited')->unsigned()->nullable();
+            $table->integer('how_many_associate_members_created')->unsigned()->nullable();
+            $table->integer('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

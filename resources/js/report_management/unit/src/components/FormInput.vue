@@ -4,7 +4,7 @@
             <label for="">{{label}}</label>
         </div>
         <div class="form_input">
-            <input type="text" @change="onchange" :name="name" class="form-control">
+            <input type="text" :id="unique_key+name" @change="onchange(endpoint)" :name="name" class="form-control">
         </div>
     </div>
 </template>
@@ -12,7 +12,7 @@
 <script>
 export default {
     props:[
-        'label','name','onchange'
+        'label','name','onchange','unique_key', 'endpoint',
     ]
 }
 </script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Report\Dawat;
 
 use App\Http\Controllers\Controller;
+use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use App\Models\Report\Dawat\Dawat2PersonalAndTarget;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -10,6 +11,31 @@ use Illuminate\Support\Facades\Hash;
 
 class Dawat2PersonalAndTargetController extends Controller
 {
+
+    protected $report_info = false;
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $this->init();
+            return $next($request);
+        });
+    }
+
+    public function init()
+    {
+        $this->report_info = check_and_get_unit_info(auth()->user()->id);
+    }
+
+    public function get_data()
+    {
+        return common_get(Dawat2PersonalAndTarget::class);
+    }
+
+    public function store_single()
+    {
+        return common_store($this, Dawat2PersonalAndTarget::class, $this->report_info);
+    }
+
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;

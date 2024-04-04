@@ -292,10 +292,13 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
 
     Route::group(['prefix' => 'dawat1-regular-group-wise'] , function(){
+
+        Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'store_single']);
+
         Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'store']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'store_single']);
         Route::post('/update', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'update']);
         Route::post('/soft_delete', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'soft_delete']);
         Route::post('/destroy', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'destroy']);
@@ -304,6 +307,9 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'dawat2-personal-and-target'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'store_single']);
+
         Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'store']);
@@ -315,6 +321,9 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'dawat3-general-program-and-others'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'store_single']);
+
         Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'store']);
