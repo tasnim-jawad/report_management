@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('songothon5_dawat_and_paribarik_units', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('paribarik_unit_total')->nullable();
             $table->bigInteger('paribarik_unit_uposthiti')->nullable();
             $table->bigInteger('paribarik_unit_target')->nullable();

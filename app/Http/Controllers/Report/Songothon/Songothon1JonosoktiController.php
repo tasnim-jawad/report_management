@@ -9,6 +9,30 @@ use Illuminate\Support\Facades\Validator;
 
 class Songothon1JonosoktiController extends Controller
 {
+    protected $report_info = false;
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $this->init();
+            return $next($request);
+        });
+    }
+
+    public function init()
+    {
+        $this->report_info = check_and_get_unit_info(auth()->user()->id);
+    }
+
+    public function get_data()
+    {
+        return common_get(Songothon1Jonosokti::class);
+    }
+
+    public function store_single()
+    {
+        return common_store($this, Songothon1Jonosokti::class, $this->report_info);
+    }
+
     public function all()
         {
             $paginate = (int) request()->paginate ?? 10;

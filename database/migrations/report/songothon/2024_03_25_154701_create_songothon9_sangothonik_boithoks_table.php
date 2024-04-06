@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('songothon9_sangothonik_boithoks', function (Blueprint $table) {
             $table->id();
-
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('unit_kormi_boithok_total')->nullable();
             $table->bigInteger('unit_kormi_boithok_uposthiti')->nullable();
 

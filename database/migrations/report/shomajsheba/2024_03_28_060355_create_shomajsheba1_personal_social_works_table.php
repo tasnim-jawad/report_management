@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('shomajsheba1_personal_social_works', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('how_many_people_did')->nullable();
             $table->bigInteger('service_received_total')->nullable();
 

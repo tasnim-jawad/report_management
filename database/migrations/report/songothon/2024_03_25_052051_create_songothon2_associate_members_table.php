@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('songothon2_associate_members', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('associate_member_previous')->nullable();
             $table->bigInteger('associate_member_present')->nullable();
             $table->bigInteger('associate_member_briddhi')->nullable();

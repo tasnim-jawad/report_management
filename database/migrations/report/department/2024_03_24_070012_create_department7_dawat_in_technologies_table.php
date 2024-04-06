@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('department7_dawat_in_technologies', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('total_well_known')->nullable();
             $table->bigInteger('total_attended')->nullable();
 

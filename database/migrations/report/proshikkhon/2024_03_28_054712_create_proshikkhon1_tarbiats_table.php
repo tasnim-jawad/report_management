@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('proshikkhon1_tarbiats', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('tarbiati_boithok_total')->nullable();
             $table->bigInteger('tarbiati_boithok_target')->nullable();
             $table->bigInteger('tarbiati_boithok_uposthiti')->nullable();

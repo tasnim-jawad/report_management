@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('department1_talimul_qurans', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('teacher_rokon')->nullable();
             $table->bigInteger('teacher_worker')->nullable();
 

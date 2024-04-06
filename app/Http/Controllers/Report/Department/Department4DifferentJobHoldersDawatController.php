@@ -9,6 +9,30 @@ use Illuminate\Support\Facades\Validator;
 
 class Department4DifferentJobHoldersDawatController extends Controller
 {
+    protected $report_info = false;
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $this->init();
+            return $next($request);
+        });
+    }
+
+    public function init()
+    {
+        $this->report_info = check_and_get_unit_info(auth()->user()->id);
+    }
+
+    public function get_data()
+    {
+        return common_get(Department4DifferentJobHoldersDawat::class);
+    }
+
+    public function store_single()
+    {
+        return common_store($this, Department4DifferentJobHoldersDawat::class, $this->report_info);
+    }
+
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;

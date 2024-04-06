@@ -13,9 +13,9 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name"
-                        :onchange="dawat_upload" :endpoint="'dawat1-regular-group-wise'" :unique_key="1"
-                        :key="index"></form-input>
+                    <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
+                        :onchange="dawat_upload" :endpoint="'dawat1-regular-group-wise'"
+                        :unique_key="1" ></form-input>
                 </form>
             </div>
         </div>
@@ -49,8 +49,9 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.label"
-                        :key="index"></form-input>
+                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
+                    :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -184,6 +185,7 @@ export default {
             this.get_data_by_api('dawat1-regular-group-wise', 1);
             this.get_data_by_api('dawat2-personal-and-target', 2);
             this.get_data_by_api('dawat3-general-program-and-others', 3);
+            this.get_data_by_api('dawat4-gono-songjog-and-dawat-ovijan', 4);
         }
     }
 

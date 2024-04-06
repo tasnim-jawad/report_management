@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('songothon8_iyanot_data', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('associate_member_total')->nullable();
             $table->bigInteger('associate_member_total_iyanot_amounts')->nullable();
             $table->bigInteger('sudhi_total')->nullable();

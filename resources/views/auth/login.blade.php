@@ -107,7 +107,6 @@
                                     target.children[1].classList.remove('d-none')
                                     target.children[2].classList.remove('visually-hidden')
                                 }
-
                             }
                         </script>
                     </div>

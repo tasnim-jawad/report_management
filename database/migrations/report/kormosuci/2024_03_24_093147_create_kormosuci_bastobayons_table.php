@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('kormosuci_bastobayons', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('unit_masik_sadaron_sova_total')->nullable();
             $table->bigInteger('unit_masik_sadaron_sova_target')->nullable();
             $table->bigInteger('unit_masik_sadaron_sova_uposthiti')->nullable();

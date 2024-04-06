@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('songothon3_departmental_information', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('women_rokon_previous')->nullable();
             $table->bigInteger('women_rokon_present')->nullable();
             $table->bigInteger('women_rokon_increase')->nullable();

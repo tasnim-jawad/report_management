@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('department6_mosjid_dawah_infomation_centers', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('total_mosjid')->nullable();
             $table->bigInteger('total_mosjid_increase')->nullable();
 

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('songothon7_sofors', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('upper_leader_sofor')->nullable();
             // $table->bigInteger('ward_sovapotir_sofor')->nullable();
             // $table->bigInteger('word_sura_sodosso_sofor')->nullable();

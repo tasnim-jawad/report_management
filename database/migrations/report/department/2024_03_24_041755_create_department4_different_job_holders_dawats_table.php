@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('department4_different_job_holders_dawats', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('political_and_special_invited')->nullable();
             $table->bigInteger('political_and_special_been_associated')->nullable();
             $table->bigInteger('political_and_special_target')->nullable();

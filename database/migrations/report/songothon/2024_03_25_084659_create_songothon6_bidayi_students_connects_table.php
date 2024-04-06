@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('songothon6_bidayi_students_connects', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('Joined_student_man_member')->nullable();
             $table->bigInteger('Joined_student_man_associate')->nullable();
             $table->bigInteger('Joined_student_man_worker')->nullable();

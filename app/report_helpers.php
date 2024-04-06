@@ -65,6 +65,7 @@ function unit_report_header_info($resposibilities, $permission, $month)
 function check_and_get_unit_info($user_id)
 {
     $check_info = false;
+    // dd($user_id);
     $permission = is_unit_report_upload_permitted(request()->month);
     if ($permission) {
         $resposibilities = auth_user_unit_responsibilites_info($user_id);
