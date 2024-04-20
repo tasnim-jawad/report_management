@@ -11,6 +11,12 @@ Route::get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => '/user'] , function(){
+        Route::get('/user_info', [App\Http\Controllers\User\UserController::class,'user_info']);
+
+        Route::get('/show_unit_user', [App\Http\Controllers\User\UserController::class,'show_unit_user']);
+        Route::post('/store_unit_user', [App\Http\Controllers\User\UserController::class,'store_unit_user']);
+        Route::post('/update_unit_user', [App\Http\Controllers\User\UserController::class,'update_unit_user']);
+
         Route::get('/all', [App\Http\Controllers\User\UserController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\User\UserController::class,'show']);
         Route::post('/store', [App\Http\Controllers\User\UserController::class,'store']);
@@ -237,6 +243,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/bulk_import', [App\Http\Controllers\Organization\OrgWardResponsibleController::class,'bulk_import']);
     });
     Route::group(['prefix' => 'org-unit-responsible'] , function(){
+        Route::get('/show_user/{user_id}', [App\Http\Controllers\Organization\OrgUnitResponsibleController::class,'show_user']);
+
         Route::get('/all', [App\Http\Controllers\Organization\OrgUnitResponsibleController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Organization\OrgUnitResponsibleController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Organization\OrgUnitResponsibleController::class,'store']);

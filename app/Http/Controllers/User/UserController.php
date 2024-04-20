@@ -3,14 +3,34 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgUnitResponsible;
+use App\Models\Organization\OrgUnitUser;
+use App\Models\Organization\OrgWard;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+    public function user_info(){
+        // dd(auth()->user());
+        $user = auth()->user();
+        $user_responsibility = auth_user_unit_responsibilites_info(auth()->id());
+        $Org_unit_user = OrgUnitUser::where('user_id', auth()->id())->get()->first();
+        $ward_id = $Org_unit_user->ward_id;
+        $ward = OrgWard::find($ward_id);
+        // return [$user,$user_responsibility];
+        return response()->json([
+            'user' => $user,
+            'responsibility' => $user_responsibility,
+            'ward_id' => $ward_id,
+            'ward' => $ward,
+        ]);
+    }
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;
@@ -45,7 +65,6 @@ class UserController extends Controller
 
     public function show($id)
     {
-
         $select = ["*"];
         if (request()->has('select_all') && request()->select_all) {
             $select = "*";
@@ -64,19 +83,151 @@ class UserController extends Controller
             ], 404);
         }
     }
+    public function show_unit_user(){
+        // $all_unit_users = User::whereExist("id")
+        $unit_id = auth()->user()->org_unit_user["unit_id"];
+        // dd($unit_id);
+        $result = User::whereExists(function ($query) use ($unit_id) {
+            $query->select("*")
+                ->from('org_unit_users')
+                ->whereRaw('org_unit_users.user_id = users.id')
+                ->where('org_unit_users.unit_id', $unit_id);
+        })->get();
+
+        // dd($result);
+
+        return response()->json($result);
+    }
+
+    public function store_unit_user(){
+        // dd(request()->all(),auth()->user(),auth()->user()->role);
+        $validator = Validator::make(request()->all(), [
+            'full_name' => ['required'],
+            'gender' => ['required','in:male,female'],
+            'email' => ['required','unique:users'],
+            // 'telegram_id' => ['numeric'],
+            'password' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $auth_unit_all = OrgUnitUser::where('user_id', auth()->id())->first();
+        $auth_user_unit = $auth_unit_all->unit_id;
+        $auth_user_ward = $auth_unit_all->ward_id;
+        $auth_user_thana = $auth_unit_all->thana_id;
+        $auth_user_city = $auth_unit_all->city_id;
+
+        $user = new User();
+        $user->role = auth()->user()->role;
+        $user->full_name = request()->full_name;
+        $user->gender = request()->gender;
+        $user->telegram_name = request()->telegram_name;
+        $user->telegram_id = request()->telegram_id;
+        $user->email = request()->email;
+        $user->password = Hash::make(request()->password);
+        $user->blood_group = request()->blood_group;
+        $user->creator = auth()->id();
+        $user->save();
+
+        if ($user->save()){
+            $user_id = User::where('email', request()->email)->latest()->first()->id;
+
+            $org_unit_user = new OrgUnitUser();
+            $org_unit_user->user_id = $user_id;
+            $org_unit_user->city_id =$auth_user_city;
+            $org_unit_user->thana_id =$auth_user_thana;
+            $org_unit_user->ward_id =$auth_user_ward;
+            $org_unit_user->unit_id =$auth_user_unit;
+            $org_unit_user->creator = auth()->id();
+            $org_unit_user->save();
+
+            $org_unit_responsibles = new OrgUnitResponsible();
+            $org_unit_responsibles->user_id = $user_id;
+            $org_unit_responsibles->responsibility_id = request()->responsibility_id;
+            $org_unit_responsibles->org_unit_id = $auth_user_unit;
+            $org_unit_responsibles->creator = auth()->id();
+            $org_unit_responsibles->save();
+
+            return response()->json([$org_unit_user,$user,$org_unit_responsibles], 200);
+        }
+
+
+    }
+    public function update_unit_user(){
+
+        $user = User::find(request()->id);
+        $org_unit_responsibles = OrgUnitResponsible::where('user_id', request()->id)->get()->first();
+        // dd($user,$org_unit_responsibles);
+        if (!$user) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => ['name' => ['data not found by given id ' . (request()->id ? request()->id : 'null')]],
+            ], 422);
+        }
+
+        $validator = Validator::make(request()->all(), [
+            'full_name' => ['required'],
+            'gender' => ['required','in:male,female'],
+            'email' => ['required',Rule::unique('users')->ignore($user->id)],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+
+        $user->full_name = request()->full_name;
+        $user->gender = request()->gender;
+        $user->telegram_name = request()->telegram_name;
+        $user->telegram_id = request()->telegram_id;
+        $user->email = request()->email;
+        $user->blood_group = request()->blood_group;
+        $user->creator = auth()->id();
+        $user->save();
+
+        if($org_unit_responsibles){
+
+            $org_unit_responsibles->responsibility_id = request()->responsibility_id;
+            $org_unit_responsibles->save();
+
+            return response()->json([$user,$org_unit_responsibles], 200);
+
+        }else if(!$org_unit_responsibles){
+            $auth_unit_all = OrgUnitUser::where('user_id', auth()->id())->first();
+            $auth_user_unit = $auth_unit_all->unit_id;
+
+            $org_unit_responsibles = new OrgUnitResponsible();
+            $org_unit_responsibles->user_id = request()->id;
+            $org_unit_responsibles->responsibility_id = request()->responsibility_id;
+            $org_unit_responsibles->org_unit_id = $auth_user_unit;
+            $org_unit_responsibles->creator = auth()->id();
+            $org_unit_responsibles->save();
+
+            return response()->json([$user,$org_unit_responsibles], 200);
+        }
+    }
+
     public function store()
     {
+        // dd(request()->all());
         $validator = Validator::make(request()->all(), [
             'role' => ['required'],
             'full_name' => ['required'],
-            'gender' => ['required'],
+            'gender' => ['required','in:male,female'],
             'telegram_name' => ['required'],
             'telegram_id' => ['required'],
             'email' => ['required'],
             'password' => ['required'],
             'blood_group' => ['required'],
             'creator' => ['required'],
-            'status' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -96,7 +247,6 @@ class UserController extends Controller
         $data->password = Hash::make(request()->password);
         $data->blood_group = request()->blood_group;
         $data->creator = request()->creator;
-        $data->status = request()->status;
         $data->save();
 
         if (request()->hasFile('image')) {
@@ -178,6 +328,7 @@ class UserController extends Controller
 
     public function destroy()
     {
+        // dd(request()->all());
         $validator = Validator::make(request()->all(), [
             'id' => ['required', 'exists:users,id'],
         ]);
@@ -190,7 +341,14 @@ class UserController extends Controller
         }
 
         $data = User::find(request()->id);
-        $data->delete();
+        $deleted = $data->delete();
+
+        if($deleted){
+            $org_unit_user = OrgUnitUser::where('user_id',request()->id)->get()->first();
+            $org_unit_user->delete();
+            $org_unit_responsible = OrgUnitResponsible::where('user_id',request()->id)->get()->first();
+            $org_unit_responsible->delete();
+        }
 
         return response()->json([
             'result' => 'deleted',

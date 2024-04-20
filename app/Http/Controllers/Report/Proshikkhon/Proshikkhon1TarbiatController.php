@@ -52,9 +52,30 @@ class Proshikkhon1TarbiatController extends Controller
                 $key = request()->search_key;
                 $query->where(function ($q) use ($key) {
                     return $q->where('id', '%' . $key . '%')
-                    ->orWhere('tarbiati_boithok_total', '%' . $key . '%')
-                    ->orWhere('tarbiati_boithok_target', '%' . $key . '%')
-                    ->orWhere('tarbiati_boithok_uposthiti', '%' . $key . '%');
+                    ->orWhere('sohi_quran_onushilon', '%' . $key . '%')
+                    ->orWhere('sohi_quran_onushilon_target', '%' . $key . '%')
+                    ->orWhere('sohi_quran_onushilon_uposthiti', '%' . $key . '%')
+
+                    ->orWhere('masala_masayel', '%' . $key . '%')
+                    ->orWhere('masala_masayel_target', '%' . $key . '%')
+                    ->orWhere('masala_masayel_uposthiti', '%' . $key . '%')
+
+                    ->orWhere('darsul_quran', '%' . $key . '%')
+                    ->orWhere('darsul_quran_target', '%' . $key . '%')
+                    ->orWhere('darsul_quran_uposthiti', '%' . $key . '%')
+
+                    ->orWhere('darsul_hadis', '%' . $key . '%')
+                    ->orWhere('darsul_hadis_target', '%' . $key . '%')
+                    ->orWhere('darsul_hadis_uposthiti', '%' . $key . '%')
+
+                    ->orWhere('samostik_path', '%' . $key . '%')
+                    ->orWhere('samostik_path_target', '%' . $key . '%')
+                    ->orWhere('samostik_path_uposthiti', '%' . $key . '%')
+
+                    ->orWhere('bishoy_vittik_onushilon', '%' . $key . '%')
+                    ->orWhere('bishoy_vittik_onushilon_target', '%' . $key . '%')
+                    ->orWhere('bishoy_vittik_onushilon_uposthiti', '%' . $key . '%');
+
                 });
             }
 
@@ -86,9 +107,24 @@ class Proshikkhon1TarbiatController extends Controller
         public function store()
         {
             $validator = Validator::make(request()->all(), [
-                'tarbiati_boithok_total' => ['required'],
-                'tarbiati_boithok_target' => ['required'],
-                'tarbiati_boithok_uposthiti' => ['required'],
+                'sohi_quran_onushilon' => ['required'],
+                'sohi_quran_onushilon_target' => ['required'],
+                'sohi_quran_onushilon_uposthiti' => ['required'],
+                'masala_masayel' => ['required'],
+                'masala_masayel_target' => ['required'],
+                'masala_masayel_uposthiti' => ['required'],
+                'darsul_quran' => ['required'],
+                'darsul_quran_target' => ['required'],
+                'darsul_quran_uposthiti' => ['required'],
+                'darsul_hadis' => ['required'],
+                'darsul_hadis_target' => ['required'],
+                'darsul_hadis_uposthiti' => ['required'],
+                'samostik_path' => ['required'],
+                'samostik_path_target' => ['required'],
+                'samostik_path_uposthiti' => ['required'],
+                'bishoy_vittik_onushilon' => ['required'],
+                'bishoy_vittik_onushilon_target' => ['required'],
+                'bishoy_vittik_onushilon_uposthiti' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -124,9 +160,24 @@ class Proshikkhon1TarbiatController extends Controller
             }
 
             $validator = Validator::make(request()->all(), [
-                'tarbiati_boithok_total' => ['required'],
-                'tarbiati_boithok_target' => ['required'],
-                'tarbiati_boithok_uposthiti' => ['required'],
+                'sohi_quran_onushilon' => ['required'],
+                'sohi_quran_onushilon_target' => ['required'],
+                'sohi_quran_onushilon_uposthiti' => ['required'],
+                'masala_masayel' => ['required'],
+                'masala_masayel_target' => ['required'],
+                'masala_masayel_uposthiti' => ['required'],
+                'darsul_quran' => ['required'],
+                'darsul_quran_target' => ['required'],
+                'darsul_quran_uposthiti' => ['required'],
+                'darsul_hadis' => ['required'],
+                'darsul_hadis_target' => ['required'],
+                'darsul_hadis_uposthiti' => ['required'],
+                'samostik_path' => ['required'],
+                'samostik_path_target' => ['required'],
+                'samostik_path_uposthiti' => ['required'],
+                'bishoy_vittik_onushilon' => ['required'],
+                'bishoy_vittik_onushilon_target' => ['required'],
+                'bishoy_vittik_onushilon_uposthiti' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],

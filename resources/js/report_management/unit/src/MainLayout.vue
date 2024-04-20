@@ -15,8 +15,10 @@
                             </div>
                         </div>
                         <div class="profile_info">
-                            <h5 class="m-0">Tasnimul Hasan</h5>
-                            <p class="m-0">Admin</p>
+                            <h5 class="m-0">{{this.user.user.full_name}}</h5>
+                            <p class="m-0">{{this.user.responsibility.resposibilities.title}}</p>
+                            <p class="m-0">unit: {{this.user.responsibility.org_unit.title}}</p>
+                            <p class="m-0">ward: {{this.user.ward.title}}</p>
                         </div>
                     </div>
                     <ul class="options">
@@ -27,10 +29,15 @@
                             </router-link>
                         </li>
                         <li>
+                            <router-link :to="{name:'Jonoshokti'}">
+                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>Jonoshokti
+                            </router-link>
+                        </li>
+                        <!-- <li>
                             <router-link :to="{name:'ReportInfo'}">
                                 <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Monthly Report Info
                             </router-link>
-                        </li>
+                        </li> -->
                         <li>
                             <router-link :to="{name:'Dawat'}">
                                 <span class="icon_margin"><i class="fa-regular fa-comment"></i></span>দাওয়াত ও তাবলিগ
@@ -68,7 +75,7 @@
                         </li>
                         <li>
                             <router-link :to="{name:'Rastrio'}">
-                                <span class="icon_margin"><i class="fa-solid fa-share-from-square"></i></span>রাষ্ট্রীয় সংস্কার ও সংশোধন
+                                <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও সংশোধন
                             </router-link>
                         </li>
                     </ul>
@@ -101,11 +108,29 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+    data: function(){
+        return {
+            user:[],
+        }
+    },
     created: function(){
         let token = localStorage.getItem('token')
         if(!token){
             window.location.href = '/login'
+        }
+        this.auth_user();
+        console.log(this.user);
+    },
+    methods:{
+        auth_user: function(){
+            axios.get("/user/user_info")
+                .then(responce =>{
+                    console.log(responce);
+                    this.user = responce.data
+                    console.log(this.user);
+                })
         }
     }
 }

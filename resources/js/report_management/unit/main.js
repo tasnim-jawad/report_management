@@ -39,11 +39,11 @@ axios.interceptors.response.use(function (response) {
     }else{
         window.toaster('Faild!! Something is wrong.', 'error');
     }
+    return Promise.reject(error);
 });
 
 const pinia = createPinia()
 const app = createApp({});
 app.component('app', App);
 app.component('form-input', FormInput);
-
 app.use(routes).use(pinia).mount('#app');
