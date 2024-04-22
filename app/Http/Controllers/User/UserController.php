@@ -87,14 +87,14 @@ class UserController extends Controller
         // $all_unit_users = User::whereExist("id")
         $unit_id = auth()->user()->org_unit_user["unit_id"];
         // dd($unit_id);
-        $result = User::whereExists(function ($query) use ($unit_id) {
+        $result = User::with('org_unit_responsible.responsibility')->whereExists(function ($query) use ($unit_id) {
             $query->select("*")
                 ->from('org_unit_users')
                 ->whereRaw('org_unit_users.user_id = users.id')
                 ->where('org_unit_users.unit_id', $unit_id);
         })->get();
 
-        // dd($result);
+        // dd($result->toArray());
 
         return response()->json($result);
     }

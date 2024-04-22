@@ -1,0 +1,130 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/bm-category-user
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+@token =Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTMxNjkwNDRhZTE0M2I0ZmFjYTE2OWE2YjI2NzRmMTY3MTAzZDZkMzk1NzhmYTAwNzdlYmZhMDZjZjgyZmNhNTRmM2U4M2U2M2JkOGZlZDAiLCJpYXQiOjE3MTM2MTA2NTcuNDE2MTc2LCJuYmYiOjE3MTM2MTA2NTcuNDE2MTgsImV4cCI6MTcyOTQyMTg1Ny40MDU4Mywic3ViIjoiOSIsInNjb3BlcyI6W119.IpNYppdfszKFx65N4QDRaWXLftumF3LRwosP8PJrj0gMnuDcsOZcB9KV2Q60fVMx637KbWVN-EHf3VmXhocv_OeswqEZHHQZMFKmvnFuszc770M_eZ5XuNcIq_HI4-Oiv5ch-iHFBrdXi4sIB3xKyIl13s0SyM-ScnTSi2XVPH3LrK1WNGKtr_AfvhvYjUb4pthAxTGMHNPZVr0IeQ2HlJOmo2oOphlkoTclnheRZGGOwd1zp7N7S1Vv9iIvNZbSNxY17NaG4nIZNY9xIyFpAybh5jHnlUyJPMcmcTyeCDgQYmUKXHdY8wFsKlTOXLXTBmkDa1OO76o-40OysPL7HjeNqBY2ctdFIns3QA15FYxqShDgjmuaMd7YSRi0Q9LRL-0cCKYP9GZf2vwrOoP0D7vIW0hJTFPa8zQp5b2byITRbG-bwZVSF6bAtgJoTsHYgugL2TrLul7gREtCK28SmhzVz4tFSqmcuDeG7eiLIAgHT9d9D5x3w3zvBTTrcngNpOJKGPiOJ_vBfKYVqPEHmNvTbQux_8pwiNfaBdFuyLyLhoTJdam-saYFFzfIracLo8p7dqpBkjSgbRBBItqIc3yF9K63jzNrjjO4TBL9fC4KvZJlcXbkVucW7Nw55CQaMeGM3CIEhm1zXDjorOpuw4qYaU6SZ_14fcFj5SHgwPM
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+### store data
+# @prompt title enter titler
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "user_id": 5,
+    "unit_id": 5,
+    "ward_id": 5,
+    "thana_id": 5,
+    "city_id": 5,
+    "amount": 5000,
+    "bm_category_id": 5,
+    "creator": 7,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "user_id": 6,
+    "unit_id": 6,
+    "ward_id": 6,
+    "thana_id": 6,
+    "city_id": 6,
+    "amount": 6000,
+    "bm_category_id": 6,
+    "creator": 7,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+# POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+Authorization: {{token}}

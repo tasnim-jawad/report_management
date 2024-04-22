@@ -78,6 +78,21 @@
                                 <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও সংশোধন
                             </router-link>
                         </li>
+                        <li>
+                            <router-link :to="{name:'BmCategoryAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>BM Category
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'BmEntryAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>BM entry
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'BmCategoryUserAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>BM Category User
+                            </router-link>
+                        </li>
                     </ul>
                 </nav>
             </aside>

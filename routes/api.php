@@ -719,6 +719,75 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
 
+
+
+
+
+
+    Route::group(['prefix' => 'bm-expense-category'] , function(){
+        Route::get('/all', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'bm-expense'] , function(){
+        Route::get('/all', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'bulk_import']);
+    });
+
+
+
+
+
+
+
+    Route::group(['prefix' => 'bm-category'] , function(){
+        Route::get('/all', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'bm-category-user'] , function(){
+        Route::get('/single-unit', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'single_unit']);
+
+        Route::get('/all', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'bm-paid'] , function(){
+        Route::get('/single-unit', [App\Http\Controllers\Bm\Income\BmPaidController::class,'single_unit']);
+
+        Route::get('/all', [App\Http\Controllers\Bm\Income\BmPaidController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmPaidController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Income\BmPaidController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Income\BmPaidController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Income\BmPaidController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Income\BmPaidController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Bm\Income\BmPaidController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\BmPaidController::class,'bulk_import']);
+    });
 });
 
 

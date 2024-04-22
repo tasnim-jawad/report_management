@@ -2,6 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Bm\BmExpenseCategory;
+use Database\Seeders\Bm\Income\BmCategoriesTableSeeder;
+use Database\Seeders\Bm\Expense\BmExpenseCategoriesTableSeeder;
+use Database\Seeders\Bm\Expense\BmExpensesTableSeeder;
+use Database\Seeders\Bm\Income\BmCategoryUsersTableSeeder;
+use Database\Seeders\Bm\Income\BmPaidsTableSeeder;
 use Database\Seeders\Organization\OrgAreasTableSeeder;
 use Database\Seeders\Organization\OrgCitiesTableSeeder;
 use Database\Seeders\Organization\OrgCityResponsiblesTableSeeder;
@@ -124,12 +130,18 @@ class DatabaseSeeder extends Seeder
             Songothon8IyanotDataTableSeeder::class,
             Songothon9SangothonikBoithoksTableSeeder::class,
             // proshikkhon
-            Proshikkhon1TarbiatsTableSeeder::class,
+            // Proshikkhon1TarbiatsTableSeeder::class,
             // shomajsheba
             Shomajsheba1PersonalSocialWorksTableSeeder::class,
             Shomajsheba2UnitSocialWorksTableSeeder::class,
             // rastrio
             Rastrio1BishishtoBektisTableSeeder::class,
+            // bm
+            BmExpenseCategoriesTableSeeder::class,
+            BmCategoriesTableSeeder::class,
+            BmCategoryUsersTableSeeder::class,
+            BmPaidsTableSeeder::class,
+            BmExpensesTableSeeder::class,
         ]);
     }
 }
