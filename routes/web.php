@@ -16,6 +16,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix' => 'dashboard' , 'namespace' =>'\App\Http\Controllers\Dashboard' ],function(){
     Route::get('unit','DashboardController@unit');
 });
+Route::group(['prefix' => 'unit' , 'namespace' =>'\App\Http\Controllers\Unit' ],function(){
+    Route::get('report','UnitController@report');
+});
 
 
 // Route::get('/t', function(){

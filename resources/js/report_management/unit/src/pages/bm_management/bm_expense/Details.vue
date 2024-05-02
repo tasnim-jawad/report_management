@@ -18,11 +18,11 @@
                     <tbody>
                         <tr>
                             <td>Title</td>
-                            <td>{{category_user_info?.bm_category?.title}}</td>
+                            <td>{{expense_info?.bm_expense_category?.title}}</td>
                         </tr>
                         <tr>
                             <td>Amount</td>
-                            <td>{{category_user_info?.amount}}</td>
+                            <td>{{expense_info?.amount}}</td>
                         </tr>
 
                     </tbody>
@@ -35,24 +35,24 @@
 <script>
 import axios from 'axios';
 export default {
-    props:['category_user_id'],
+    props:['expense_id'],
     data:function(){
         return {
-            category_user_info:[],
+            expense_info:[],
         }
     },
     created:function(){
-        this.show_category_user();
+        this.show_expense();
     },
     methods:{
-        show_category_user : function(){
-            axios.get(`/bm-category-user/show/${this.category_user_id}`)
+        show_expense : function(){
+            axios.get(`/bm-expense/show/${this.expense_id}`)
                 .then(responce => {
-                    console.log("category_user---" ,responce);
                     if(responce.data.status == "success"){
-                        this.category_user_info = responce.data.data
-                        console.log(this.category_user_info);
+                        this.expense_info = responce?.data?.data
+                        console.log('expense---',this.expense_info );
                     }
+
                 })
         }
     }

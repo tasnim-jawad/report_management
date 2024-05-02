@@ -11,6 +11,7 @@
                 <table class="table table-striped table-bordered text-start">
                     <thead>
                         <tr class="table-dark">
+                            <th>Name</th>
                             <th>Category</th>
                             <th>Amount</th>
                             <th>Action</th>
@@ -18,6 +19,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(category_user,index) in bm_category_user" :key="index">
+                            <td>{{category_user.user.full_name}}</td>
                             <td>{{category_user.bm_category.title}}</td>
                             <td>{{category_user.amount}}</td>
                             <td>
@@ -60,8 +62,8 @@ export default {
     methods:{
         show_bm_category_user : function(){
             axios.get('/bm-category-user/single-unit')
-                .then(responce => {
-                    this.bm_category_user = responce.data
+                .then(response => {
+                    this.bm_category_user = response.data
                     console.log(this.bm_category_user);
 
                 })
@@ -78,8 +80,8 @@ export default {
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_category_user_form_'+category_user_id));
             axios.post("/bm-category-user/destroy",formData)
-                    .then(responce => {
-                        // console.log(responce);
+                    .then(response => {
+                        // console.log(response);
                         window.toaster('Category User delete successfuly', 'success');
                         this.show_bm_category_user();
                     })

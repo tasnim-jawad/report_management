@@ -217,5 +217,10 @@
     font-family: Arial, Helvetica, sans-serif;
     transition: background .1s ease-in-out, color .1s ease-in-out;
 }
-
+.action{
+    min-width: 160px;
+}
+.label_width{
+    width: 215px;
+}
 

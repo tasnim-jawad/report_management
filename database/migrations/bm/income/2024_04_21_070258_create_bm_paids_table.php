@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('thana_id')->nullable();
             $table->bigInteger('city_id')->nullable();
             $table->integer('amount')->nullable();
-            $table->date('date')->nullable();
+            $table->date('month')->nullable();
             $table->bigInteger('bm_category_id')->nullable();
 
             $table->bigInteger('creator')->nullable();

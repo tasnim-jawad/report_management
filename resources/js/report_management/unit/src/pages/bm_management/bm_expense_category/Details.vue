@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Bm Entry Info
+            Bm Expense Category
             <!-- <div class="btn btn-info btn-sm">
                 <router-link :to="{name:'CreateUser'}" class="text-dark">Edit</router-link>
             </div> -->
@@ -18,11 +18,11 @@
                     <tbody>
                         <tr>
                             <td>Title</td>
-                            <td>{{category_user_info?.bm_category?.title}}</td>
+                            <td>{{category_info?.title}}</td>
                         </tr>
                         <tr>
-                            <td>Amount</td>
-                            <td>{{category_user_info?.amount}}</td>
+                            <td>Description</td>
+                            <td>{{category_info?.description}}</td>
                         </tr>
 
                     </tbody>
@@ -35,23 +35,24 @@
 <script>
 import axios from 'axios';
 export default {
-    props:['category_user_id'],
+    props:['expense_category_id'],
     data:function(){
         return {
-            category_user_info:[],
+            category_info:[],
         }
     },
     created:function(){
-        this.show_category_user();
+        this.show_category();
     },
     methods:{
-        show_category_user : function(){
-            axios.get(`/bm-category-user/show/${this.category_user_id}`)
-                .then(responce => {
-                    console.log("category_user---" ,responce);
-                    if(responce.data.status == "success"){
-                        this.category_user_info = responce.data.data
-                        console.log(this.category_user_info);
+        show_category : function(){
+            // console.log(this.expense_category_id);
+            axios.get(`/bm-expense-category/show/${this.expense_category_id}`)
+                .then(response => {
+                    // console.log(response);
+                    if(response.data.status == 'success'){
+                        this.category_info = response?.data?.data
+                        // console.log(this.category_info);
                     }
                 })
         }

@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Show All Bm Entry
+            Show All Bm Category
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'BmEntryCreate'}" class="text-dark">Create Entry</router-link>
+                <router-link :to="{name:'BmExpenseCreate'}" class="text-dark">Create Expense</router-link>
             </div>
         </div>
         <div class="card-body">
@@ -11,32 +11,28 @@
                 <table class="table table-striped table-bordered text-start">
                     <thead>
                         <tr class="table-dark">
-                            <th>Name</th>
                             <th>Category</th>
-                            <th>Month</th>
                             <th>Amount</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(entry,index) in bm_entry" :key="index">
-                            <td>{{entry.user.full_name}}</td>
-                            <td>{{entry.bm_category.title}}</td>
-                            <td>{{ new Date(entry.month).toLocaleString('default', { month: 'long' }) +' ' + new Date(entry.month).getFullYear().toString().slice(-2)}}</td>
-                            <td>{{entry.amount}}</td>
+                        <tr v-for="(expense,index) in bm_expense" :key="index">
+                            <td>{{expense?.bm_expense_category?.title}}</td>
+                            <td>{{expense?.amount}}</td>
                             <td>
                                 <div class="action">
                                     <div class="btn btn-success btn-sm me-2">
-                                        <router-link :to="{name:'BmEntryDetails',params: { entry_id: entry.id }}"  class="text-dark">show</router-link>
+                                        <router-link :to="{name:'BmExpenseDetails',params: { expense_id: expense.id }}"  class="text-dark">show</router-link>
                                     </div>
                                     <div class="btn btn-warning btn-sm me-2">
-                                        <router-link :to="{name:'BmEntryEdit',params: { entry_id: entry.id }}"  class="text-dark">Edit</router-link>
+                                        <router-link :to="{name:'BmExpenseEdit',params: { expense_id: expense.id }}"  class="text-dark">Edit</router-link>
                                     </div>
                                     <div class="btn btn-danger btn-sm">
-                                        <a @click="delete_entry(entry.id)" class="text-dark">Delete</a>
+                                        <a @click="delete_expense(expense.id)" class="text-dark">Delete</a>
 
-                                        <form :id="'delete_entry_form_'+entry.id" >
-                                            <input type="text" name="id" :value="entry.id" class="d-none">
+                                        <form :id="'delete_expense_form_'+expense.id" >
+                                            <input type="text" name="id" :value="expense.id" class="d-none">
                                         </form>
                                     </div>
                                 </div>
@@ -54,38 +50,41 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            bm_entry:[],
+            bm_expense:[],
         }
     },
 
     created:function(){
-        this.show_bm_entry()
+        this.show_bm_expense()
     },
     methods:{
-        show_bm_entry : function(){
-            axios.get('/bm-paid/single-unit')
+        show_bm_expense : function(){
+            axios.get('/bm-expense/single-unit')
                 .then(response => {
-                    this.bm_entry = response.data
-                    console.log(this.bm_entry);
+                    console.log('bm expense', response);
+                    if(response.data.status == 'success'){
+                        this.bm_expense = response?.data?.data
+                    }
+                    // console.log('bm_expense',this.bm_expense);
 
                 })
         },
-        delete_entry : function(entry_id){
-            if (window.confirm("Are you sure you want to delete this Entry?")) {
-                this.submit_delete_form(entry_id);
+        delete_expense : function(expense_id){
+            if (window.confirm("Are you sure you want to delete this Expense?")) {
+                this.submit_delete_form(expense_id);
             } else {
                 window.toaster('Entry is safe', 'info');
             }
 
         },
-        submit_delete_form : function(entry_id){
+        submit_delete_form : function(expense_id){
             event.preventDefault();
-            const formData = new FormData(document.getElementById('delete_entry_form_'+entry_id));
-            axios.post("/bm-paid/destroy",formData)
+            const formData = new FormData(document.getElementById('delete_expense_form_'+expense_id));
+            axios.post("/bm-expense/destroy",formData)
                     .then(response => {
                         // console.log(response);
-                        window.toaster('Entry delete successfuly', 'success');
-                        this.show_bm_entry();
+                        window.toaster('Exponse delete successfuly', 'success');
+                        this.show_bm_expense();
                     })
                     .catch(error => {
                         console.error(error);

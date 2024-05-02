@@ -35,7 +35,10 @@ class BmExpenseCategoryController extends Controller
         }
 
         $datas = $query->paginate($paginate);
-        return response()->json($datas);
+        return response([
+            'data' => $datas,
+            'status' => 'success'
+        ]);
     }
 
     public function show($id)
@@ -49,7 +52,10 @@ class BmExpenseCategoryController extends Controller
             ->select($select)
             ->first();
         if ($data) {
-            return response()->json($data, 200);
+            return response([
+                'data' => $data,
+                'status' => 'success'
+            ]);
         } else {
             return response()->json([
                 'err_message' => 'data not found',
@@ -64,8 +70,6 @@ class BmExpenseCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
-            'creator' => ['required'],
-            'status' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -78,8 +82,7 @@ class BmExpenseCategoryController extends Controller
         $data = new BmExpenseCategory();
         $data->title = request()->title;
         $data->description = request()->description;
-        $data->creator = request()->creator;
-        $data->status = request()->status;
+        $data->creator = auth()->id();
         $data->save();
 
         return response()->json($data, 200);
@@ -98,8 +101,6 @@ class BmExpenseCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
-            'creator' => ['required'],
-            'status' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -111,8 +112,7 @@ class BmExpenseCategoryController extends Controller
 
         $data->title = request()->title;
         $data->description = request()->description;
-        $data->creator = request()->creator;
-        $data->status = request()->status;
+        $data->creator = auth()->id();
         $data->save();
 
         if (request()->hasFile('image')) {

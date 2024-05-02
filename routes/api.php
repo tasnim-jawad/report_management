@@ -736,6 +736,9 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'bm-expense'] , function(){
+        Route::get('/single-unit', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'single_unit']);
+        Route::get('/bm-total-expense/{month}', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'bm_total_expense']);
+
         Route::get('/all', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'store']);
@@ -765,6 +768,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'bm-category-user'] , function(){
         Route::get('/single-unit', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'single_unit']);
+        Route::get('/show_target/{user_id}/{bm_category_id}', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'show_target']);
 
         Route::get('/all', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmCategoryUserController::class,'show']);
@@ -778,6 +782,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'bm-paid'] , function(){
         Route::get('/single-unit', [App\Http\Controllers\Bm\Income\BmPaidController::class,'single_unit']);
+        Route::get('/bm-paid-report/{user_id}/{bm_category_id}', [App\Http\Controllers\Bm\Income\BmPaidController::class,'bm_paid_report']);
+        Route::get('/bm-total/{month}', [App\Http\Controllers\Bm\Income\BmPaidController::class,'bm_total']);
 
         Route::get('/all', [App\Http\Controllers\Bm\Income\BmPaidController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmPaidController::class,'show']);

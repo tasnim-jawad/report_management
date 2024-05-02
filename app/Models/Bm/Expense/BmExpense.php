@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class BmExpense extends Model
 {
     use HasFactory;
+
+    public function bm_expense_category()
+    {
+        return $this->belongsTo(BmExpenseCategory::class);
+    }
 }

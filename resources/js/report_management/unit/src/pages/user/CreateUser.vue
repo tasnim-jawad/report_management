@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import FormInput from '../components/FormInput.vue'
+import FormInput from '../../components/FormInput.vue'
 
 export default {
     components:{

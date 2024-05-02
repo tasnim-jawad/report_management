@@ -21,16 +21,20 @@ axios.interceptors.request.use(function (config) {
 
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
-    console.log(response);
+    // console.log(response);
     return response;
 }, function (error) {
     console.log(error);
+    console.log(error.response?.data?.errors);
+    console.log(Object.keys(error.response?.data?.errors));
     // return Promise.reject(error);
     if(Object.keys(error.response?.data?.errors).length){
         var object = error.response?.data?.errors;
+        console.log(object);
         for (const key in error.response?.data?.errors) {
             if (Object.hasOwnProperty.call(object, key)) {
                 const element = object[key];
+                // console.log(element[0],element);
                 window.toaster(element[0], 'error');
             }
         }
@@ -40,6 +44,12 @@ axios.interceptors.response.use(function (response) {
         window.toaster('Faild!! Something is wrong.', 'error');
     }
     return Promise.reject(error);
+});
+
+// store prevous url
+routes.beforeEach((to, from, next) => {
+    to.href.length > 2 && window.sessionStorage.setItem("prevurl", to.href);
+    next();
 });
 
 const pinia = createPinia()

@@ -18,11 +18,11 @@
                     <tbody>
                         <tr>
                             <td>Title</td>
-                            <td>{{entry_info.bm_category.title}}</td>
+                            <td>{{entry_info?.bm_category?.title}}</td>
                         </tr>
                         <tr>
                             <td>Amount</td>
-                            <td>{{entry_info.amount}}</td>
+                            <td>{{entry_info?.amount}}</td>
                         </tr>
 
                     </tbody>
@@ -46,13 +46,12 @@ export default {
     },
     methods:{
         show_entry : function(){
-            console.log();
-            console.log(this.entry_id);
             axios.get(`/bm-paid/show/${this.entry_id}`)
                 .then(responce => {
-                    console.log(responce);
-                    this.entry_info = responce.data
-                    console.log(this.entry_info);
+                    if(responce.data.status == "success"){
+                        this.entry_info = responce.data?.data
+                    }
+
                 })
         }
     }

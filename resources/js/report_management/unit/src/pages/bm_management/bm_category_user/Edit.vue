@@ -58,23 +58,26 @@ export default {
         show_category_user : function(){
             axios.get(`/bm-category-user/show/${this.category_user_id}`)
                 .then(responce => {
-                    this.category_user = responce.data
-                    console.log(this.category_user);
+                    if(responce.data.status == "success"){
+                        this.category_user = responce.data.data
+                    }
                 })
         },
         edit_category_user:function(){
             event.preventDefault();
             let formData = new FormData(event.target);
-            for (const entry of formData.entries()) {
-                console.log(entry);
+            // for (const entry of formData.entries()) {
+            //     console.log(entry);
+            // }
+            if(window.confirm("Are you sure you want to Edit this Category User?")){
+                axios.post(`/bm-category-user/update`,formData)
+                    .then(function (response) {
+                        window.toaster('BM Entry Updated successfuly', 'success');
+                    })
+                    .catch(function (error) {
+                        console.log(error.response);
+                    });
             }
-            axios.post(`/bm-category-user/update`,formData)
-                .then(function (response) {
-                    window.toaster('BM Entry Updated successfuly', 'success');
-                })
-                .catch(function (error) {
-                    console.log(error.response);
-                });
 
         }
     }

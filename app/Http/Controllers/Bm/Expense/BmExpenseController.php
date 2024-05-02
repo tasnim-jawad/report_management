@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Bm\Expense;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Expense\BmExpense;
+use App\Models\Bm\Expense\BmExpenseCategory;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -41,8 +43,62 @@ class BmExpenseController extends Controller
             }
 
             $datas = $query->paginate($paginate);
-            return response()->json($datas);
+            return response([
+                'data' => $datas,
+                'status' => 'success'
+            ]);
         }
+
+        public function single_unit(){
+            $unit_id = auth()->user()->org_unit_user["unit_id"];
+            // dd($month);
+            $data = BmExpense::with('bm_expense_category')->where('unit_id',$unit_id)->get()->all();
+            // dd($data);
+            return response([
+                'data' => $data,
+                'status' => 'success'
+            ]);
+        }
+
+        public function bm_total_expense($month){
+            $date = Carbon::parse($month);
+            $query = BmExpense::query();
+            $filter = $query->whereYear('date',$date->clone()->year)->whereMonth('date',$date->clone()->month);
+            $total_expense = $filter->sum('amount');
+            $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
+            // dd($total_expense,$category_id);
+            $category_unique_id = array_values(array_unique($category_id));
+            // dd($category_unique_id);
+
+            $data=[];
+            // dd($category_all_id);
+            foreach($category_unique_id as $index => $item){
+                $testQuery = BmExpense::query();
+                $totalAmount = $testQuery->whereYear('date',$date->clone()->year)->whereMonth('date',$date->clone()->month)->where('bm_expense_category_id',$item)->sum('amount');
+                $bmCategory= BmExpenseCategory::find($item);
+                $data[$index]['amount']= $totalAmount;
+                $data[$index]['category'] = $bmCategory->title;
+            }
+            // dd($category_unique_id,$data,$total_expense);
+            // dd($total_income);
+
+            if ($data) {
+                return response([
+                    'status'=> "success",
+                    'data' => $data,
+                    'total_expense' => $total_expense,
+                ],200);
+            } else {
+                return response()->json([
+                    'err_message' => 'data not found',
+                    'errors' => [
+                        'user' => [],
+                    ],
+                ], 200);
+            }
+
+        }
+
 
         public function show($id)
         {
@@ -51,11 +107,14 @@ class BmExpenseController extends Controller
             if (request()->has('select_all') && request()->select_all) {
                 $select = "*";
             }
-            $data = BmExpense::where('id', $id)
+            $data = BmExpense::with('bm_expense_category')->where('id', $id)
                 ->select($select)
                 ->first();
             if ($data) {
-                return response()->json($data, 200);
+                return response([
+                    'data' => $data,
+                    'status' => 'success'
+                ]);
             } else {
                 return response()->json([
                     'err_message' => 'data not found',
@@ -68,17 +127,8 @@ class BmExpenseController extends Controller
         public function store()
         {
             $validator = Validator::make(request()->all(), [
-                'user_id' => ['required'],
-                'unit_id' => ['required'],
-                'ward_id' => ['required'],
-                'thana_id' => ['required'],
-                'city_id' => ['required'],
                 'amount' => ['required'],
-                'date' => ['required'],
                 'bm_expense_category_id' => ['required'],
-
-                'creator' => ['required'],
-                'status' => ['required'],
             ]);
 
             if ($validator->fails()) {
@@ -88,18 +138,19 @@ class BmExpenseController extends Controller
                 ], 422);
             }
 
+            $unit_info = (object) auth()->user()->org_unit_user;
+
             $data = new BmExpense();
-            $data->user_id = request()->user_id;
-            $data->unit_id = request()->unit_id;
-            $data->ward_id = request()->ward_id;
-            $data->thana_id = request()->thana_id;
-            $data->city_id = request()->city_id;
+            $data->user_id = $unit_info->user_id;
+            $data->unit_id = $unit_info->unit_id;
+            $data->ward_id = $unit_info->ward_id;
+            $data->thana_id = $unit_info->thana_id;
+            $data->city_id = $unit_info->city_id;
             $data->amount = request()->amount;
-            $data->date = request()->date;
+            $data->date = Carbon::now();
             $data->bm_expense_category_id = request()->bm_expense_category_id;
 
-            $data->creator = request()->creator;
-            $data->status = request()->status;
+            $data->creator = auth()->id();
             $data->save();
 
             return response()->json($data, 200);
@@ -116,17 +167,8 @@ class BmExpenseController extends Controller
             }
 
             $validator = Validator::make(request()->all(), [
-                'user_id' => ['required'],
-                'unit_id' => ['required'],
-                'ward_id' => ['required'],
-                'thana_id' => ['required'],
-                'city_id' => ['required'],
                 'amount' => ['required'],
-                'date' => ['required'],
                 'bm_expense_category_id' => ['required'],
-
-                'creator' => ['required'],
-                'status' => ['required'],
             ]);
 
             if ($validator->fails()) {
@@ -137,17 +179,10 @@ class BmExpenseController extends Controller
             }
 
 
-            $data->user_id = request()->user_id;
-            $data->unit_id = request()->unit_id;
-            $data->ward_id = request()->ward_id;
-            $data->thana_id = request()->thana_id;
-            $data->city_id = request()->city_id;
             $data->amount = request()->amount;
-            $data->date = request()->date;
             $data->bm_expense_category_id = request()->bm_expense_category_id;
 
-            $data->creator = request()->creator;
-            $data->status = request()->status;
+            $data->creator = auth()->id();
             $data->save();
 
             if (request()->hasFile('image')) {

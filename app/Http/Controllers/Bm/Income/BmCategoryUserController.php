@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Bm\Income;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Income\BmCategoryUser;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -47,9 +48,38 @@ class BmCategoryUserController extends Controller
         public function single_unit(){
             $unit_id = auth()->user()->org_unit_user["unit_id"];
             // dd($month);
-            $data = BmCategoryUser::with('bm_category')->where('unit_id',$unit_id)->get()->all();
+            $data = BmCategoryUser::with('bm_category')->with('user')->where('unit_id',$unit_id)->get()->all();
             return response()->json($data);
         }
+
+
+        public function show_target($user_id,$bm_category_id){
+
+            $select = ["*"];
+            if (request()->has('select_all') && request()->select_all) {
+                $select = "*";
+            }
+            $data = BmCategoryUser::where('user_id', $user_id)->where('bm_category_id',$bm_category_id)
+                ->select($select)
+                ->first();
+
+            // dd($data);
+            if ($data) {
+                return response([
+                    'status' => "success",
+                    'data' => $data,
+                ],200);
+            } else {
+                // return "data not found";
+                return response()->json([
+                    'err_message' => 'data not found',
+                    'errors' => [
+                        'user' => [],
+                    ],
+                ],200);
+            }
+        }
+
 
         public function show($id)
         {
@@ -62,7 +92,10 @@ class BmCategoryUserController extends Controller
                 ->select($select)
                 ->first();
             if ($data) {
-                return response()->json($data, 200);
+                return response([
+                    'status' => "success",
+                    'data' => $data,
+                ],200);
             } else {
                 return response()->json([
                     'err_message' => 'data not found',
@@ -88,19 +121,35 @@ class BmCategoryUserController extends Controller
 
             $unit_info = (object) auth()->user()->org_unit_user;
             // dd($unit_info);
-            $data = new BmCategoryUser();
-            $data->user_id = $unit_info->user_id;
-            $data->unit_id = $unit_info->unit_id;
-            $data->ward_id = $unit_info->ward_id;
-            $data->thana_id = $unit_info->thana_id;
-            $data->city_id = $unit_info->city_id;
-            $data->amount = request()->amount;
-            $data->bm_category_id = request()->bm_category_id;
+            $check = BmCategoryUser::where('user_id',request()->user_id)->where('bm_category_id',request()->bm_category_id)->get()->first();
+            if(!$check){
+                $data = new BmCategoryUser();
+                $data->user_id = request()->user_id;
+                $data->unit_id = $unit_info->unit_id;
+                $data->ward_id = $unit_info->ward_id;
+                $data->thana_id = $unit_info->thana_id;
+                $data->city_id = $unit_info->city_id;
+                $data->amount = request()->amount;
+                $data->bm_category_id = request()->bm_category_id;
+                $data->is_active = request()->is_active;
 
-            $data->creator = auth()->id();
-            $data->save();
+                $data->creator = auth()->id();
+                $data->save();
 
-            return response()->json($data, 200);
+                return response([
+                    'status' => 'success',
+                    'data' => $data,
+
+                ],200);
+            }else {
+                return response()->json([
+                    'err_message' => 'data not found',
+                    'errors' => [
+                        'user' => [],
+                    ],
+                ], 200);
+            }
+
         }
 
         public function update()

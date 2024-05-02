@@ -4,7 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-
+use App\Models\Bm\Income\BmCategoryUser;
+use App\Models\Bm\Income\BmPaid;
 use App\Models\Organization\OrgCityResponsible;
 use App\Models\Organization\OrgCityUser;
 use App\Models\Organization\OrgThanaResponsible;
@@ -111,5 +112,14 @@ class User extends Authenticatable
     public function org_unit_user()
     {
         return $this->hasOne(OrgUnitUser::class);
+    }
+
+    public function bm_paid()
+    {
+        return $this->hasMany(BmPaid::class);
+    }
+    public function bm_category_user()
+    {
+        return $this->hasMany(BmCategoryUser::class);
     }
 }

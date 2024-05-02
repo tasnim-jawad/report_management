@@ -15,10 +15,10 @@
                             </div>
                         </div>
                         <div class="profile_info">
-                            <h5 class="m-0">{{this.user.user.full_name}}</h5>
-                            <p class="m-0">{{this.user.responsibility.resposibilities.title}}</p>
-                            <p class="m-0">unit: {{this.user.responsibility.org_unit.title}}</p>
-                            <p class="m-0">ward: {{this.user.ward.title}}</p>
+                            <h5 class="m-0">{{this.user?.user?.full_name}}</h5>
+                            <p class="m-0">{{this.user?.responsibility?.resposibilities?.title}}</p>
+                            <p class="m-0">unit: {{this.user?.responsibility?.org_unit?.title}}</p>
+                            <p class="m-0">ward: {{this.user?.ward?.title}}</p>
                         </div>
                     </div>
                     <ul class="options">
@@ -84,13 +84,33 @@
                             </router-link>
                         </li>
                         <li>
+                            <router-link :to="{name:'BmCategoryUserAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>BM User's Target
+                            </router-link>
+                        </li>
+                        <li>
                             <router-link :to="{name:'BmEntryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>BM entry
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{name:'BmCategoryUserAll'}">
-                                <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>BM Category User
+                            <router-link :to="{name:'BmExpenseCategoryAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-layer-group"></i></span>BM Expense Category
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'BmExpenseAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>BM Expense
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'BmUserReport'}">
+                                <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM User Report
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'BmTotalReport'}">
+                                <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM Total Report
                             </router-link>
                         </li>
                     </ul>
@@ -105,9 +125,9 @@
                 <div class="right">
                     <a class="btn " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     <ul class="dropdown-menu ">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#" @click="logout">Logout</a></li>
+                        <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                     </ul>
                 </div>
             </header>
@@ -132,20 +152,33 @@ export default {
     },
     created: function(){
         let token = localStorage.getItem('token')
+
         if(!token){
             window.location.href = '/login'
         }
+        // this.$router.push({name:`Dashboard`})
+        let prevUrl = window.sessionStorage.getItem('prevurl');
+        window.location.hash = prevUrl || "#/dashboard";
+
         this.auth_user();
-        console.log(this.user);
+        // console.log(this.user);
     },
     methods:{
         auth_user: function(){
             axios.get("/user/user_info")
                 .then(responce =>{
-                    console.log(responce);
+                    // console.log(responce);
                     this.user = responce.data
-                    console.log(this.user);
+                    // console.log(this.user);
                 })
+        },
+        logout: function(){
+            // console.log("clicked");
+            localStorage.removeItem('token');
+            let token = localStorage.getItem('token');
+            if(!token){
+                window.location.href = '/login'
+            }
         }
     }
 }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Bm\Income;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Income\BmCategory;
+use App\Models\Bm\Income\BmCategoryUser;
 use App\Models\Bm\Income\BmPaid;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -48,9 +50,71 @@ class BmPaidController extends Controller
 
         public function single_unit(){
             $unit_id = auth()->user()->org_unit_user["unit_id"];
-            // dd($month);
-            $data = BmPaid::with('bm_category')->where('unit_id',$unit_id)->get()->all();
+            $data = BmPaid::with('bm_category')->with('user')->where('unit_id',$unit_id)->get()->all();
+            // dd($data);
             return response()->json($data);
+        }
+
+        public function bm_paid_report($user_id,$bm_category_id){
+
+            $year = Carbon::now()->year;
+            $filter = BmPaid::where('user_id',$user_id)->where('bm_category_id',$bm_category_id)
+                            ->whereYear('month',$year );
+            $tatal = $filter->sum('amount');
+            $data = $filter->with('bm_category')->with('user')->get();
+            $month_count = $data->count();
+
+            // dd($user_id,$bm_category_id,$year ,$filter ,$tatal ,$data,$month_count);
+            if ($data) {
+                return response([
+                    'status'=> "success",
+                    'data' => $data,
+                    'total' => $tatal,
+                    'month_count' => $month_count,
+                ],200);
+            } else {
+                return response()->json([
+                    'err_message' => 'data not found',
+                    'errors' => [
+                        'user' => [],
+                    ],
+                ], 200);
+            }
+        }
+
+        public function bm_total($month){
+            $date = Carbon::parse($month);
+            $query = BmPaid::query();
+            $filter = $query->whereYear('month',$date->clone()->year)->whereMonth('month',$date->clone()->month);
+            $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
+            $category_all_id = array_values(array_unique($category));
+            $total_income = $filter->sum('amount');
+
+            $data=[];
+            // dd($category_all_id);
+            foreach($category_all_id as $index => $item){
+                $testQuery = BmPaid::query();
+                $totalAmount = $testQuery->whereYear('month',$date->clone()->year)->whereMonth('month',$date->clone()->month)->where('bm_category_id',$item)->sum('amount');
+                $bmCategory= BmCategory::find($item);
+                $data[$index]['amount']= $totalAmount;
+                $data[$index]['category'] = $bmCategory->title;
+            }
+            // dd($total_income);
+
+            if ($data) {
+                return response([
+                    'status'=> "success",
+                    'data' => $data,
+                    'total_income' => $total_income,
+                ],200);
+            } else {
+                return response()->json([
+                    'err_message' => 'data not found',
+                    'errors' => [
+                        'user' => [],
+                    ],
+                ], 200);
+            }
         }
 
         public function show($id)
@@ -64,7 +128,10 @@ class BmPaidController extends Controller
                 ->select($select)
                 ->first();
             if ($data) {
-                return response()->json($data, 200);
+                return response([
+                    'status'=> "success",
+                    'data' => $data,
+                ],200);
             } else {
                 return response()->json([
                     'err_message' => 'data not found',
@@ -79,6 +146,8 @@ class BmPaidController extends Controller
             $validator = Validator::make(request()->all(), [
                 'amount' => ['required'],
                 'bm_category_id' => ['required'],
+                'user_id' => ['required'],
+                'month' => ['required'],
             ]);
 
             if ($validator->fails()) {
@@ -92,13 +161,13 @@ class BmPaidController extends Controller
             // dd($unit_info->user_id);
 
             $data = new BmPaid();
-            $data->user_id = $unit_info->user_id;
+            $data->user_id = request()->user_id;
             $data->unit_id = $unit_info->unit_id;
             $data->ward_id = $unit_info->ward_id;
             $data->thana_id = $unit_info->thana_id;
             $data->city_id = $unit_info->city_id;
             $data->amount = request()->amount;
-            $data->date = Carbon::now();
+            $data->month = request()->month . '-01';
             $data->bm_category_id = request()->bm_category_id;
 
             $data->creator =  $unit_info->user_id;
