@@ -19,7 +19,7 @@ class UserController extends Controller
     public function user_info(){
         // dd(auth()->user());
         $user = auth()->user();
-        $user_responsibility = auth_user_unit_responsibilites_info(auth()->id());
+        $user_responsibility = auth_user_unit_responsibilities_info(auth()->id());
         $Org_unit_user = OrgUnitUser::where('user_id', auth()->id())->get()->first();
         $ward_id = $Org_unit_user->ward_id;
         $ward = OrgWard::find($ward_id);

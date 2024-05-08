@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Bm\Expense;
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Expense\BmExpenseCategory;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -61,9 +62,11 @@ class BmExpenseController extends Controller
         }
 
         public function bm_total_expense($month){
+            $org_unit_user = User::where('id', auth()->user()->id)->with('org_unit_user')->get()->first()->org_unit_user;
+            // dd($org_unit_user->unit_id);
             $date = Carbon::parse($month);
             $query = BmExpense::query();
-            $filter = $query->whereYear('date',$date->clone()->year)->whereMonth('date',$date->clone()->month);
+            $filter = $query->whereYear('date',$date->clone()->year)->whereMonth('date',$date->clone()->month)->where('unit_id',$org_unit_user->unit_id);
             $total_expense = $filter->sum('amount');
             $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
             // dd($total_expense,$category_id);
@@ -74,7 +77,11 @@ class BmExpenseController extends Controller
             // dd($category_all_id);
             foreach($category_unique_id as $index => $item){
                 $testQuery = BmExpense::query();
-                $totalAmount = $testQuery->whereYear('date',$date->clone()->year)->whereMonth('date',$date->clone()->month)->where('bm_expense_category_id',$item)->sum('amount');
+                $totalAmount = $testQuery->whereYear('date',$date->clone()->year)
+                                    ->whereMonth('date',$date->clone()->month)
+                                    ->where('bm_expense_category_id',$item)
+                                    ->where('unit_id',$org_unit_user->unit_id)
+                                    ->sum('amount');
                 $bmCategory= BmExpenseCategory::find($item);
                 $data[$index]['amount']= $totalAmount;
                 $data[$index]['category'] = $bmCategory->title;

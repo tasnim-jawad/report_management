@@ -14,6 +14,7 @@ import Rastrio from '../pages/Rastrio.vue'
 import ReportInfo from '../pages/ReportInfo.vue'
 import BmUserReport from '../pages/bm_management/BmUserReport.vue'
 import BmTotalReport from '../pages/bm_management/BmTotalReport.vue'
+import PrintReport from '../pages/bm_management/PrintReport.vue'
 
 import Jonoshokti from '../pages/Jonoshokti.vue'
 import CreateUser from '../pages/user/CreateUser.vue'
@@ -287,6 +288,11 @@ const routes = createRouter({
                     name: "BmTotalReport",
                     path: 'bm-total-report',
                     component: BmTotalReport,
+                },
+                {
+                    name: "PrintReport",
+                    path: 'print-report',
+                    component: PrintReport,
                 },
 
             ]

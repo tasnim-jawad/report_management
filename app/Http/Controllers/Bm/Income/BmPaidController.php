@@ -83,9 +83,10 @@ class BmPaidController extends Controller
         }
 
         public function bm_total($month){
+            $org_unit_user = User::where('id', auth()->user()->id)->with('org_unit_user')->get()->first()->org_unit_user;
             $date = Carbon::parse($month);
             $query = BmPaid::query();
-            $filter = $query->whereYear('month',$date->clone()->year)->whereMonth('month',$date->clone()->month);
+            $filter = $query->whereYear('month',$date->clone()->year)->whereMonth('month',$date->clone()->month)->where('unit_id',$org_unit_user->unit_id);
             $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
             $category_all_id = array_values(array_unique($category));
             $total_income = $filter->sum('amount');
@@ -94,7 +95,11 @@ class BmPaidController extends Controller
             // dd($category_all_id);
             foreach($category_all_id as $index => $item){
                 $testQuery = BmPaid::query();
-                $totalAmount = $testQuery->whereYear('month',$date->clone()->year)->whereMonth('month',$date->clone()->month)->where('bm_category_id',$item)->sum('amount');
+                $totalAmount = $testQuery->whereYear('month',$date->clone()->year)
+                                        ->whereMonth('month',$date->clone()->month)
+                                        ->where('bm_category_id',$item)
+                                        ->where('unit_id',$org_unit_user->unit_id)
+                                        ->sum('amount');
                 $bmCategory= BmCategory::find($item);
                 $data[$index]['amount']= $totalAmount;
                 $data[$index]['category'] = $bmCategory->title;

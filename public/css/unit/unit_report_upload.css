@@ -32,11 +32,35 @@ body{
 .width-33{
     width: 33%;
 }
+.width-35{
+    width: 35%;
+}
+
 .width-40{
     width: 40%;
 }
+.width-45{
+    width: 45%;
+}
+.width-55{
+    width: 55%;
+}
+.width-60{
+    width: 60%;
+}
+.width-65{
+    width: 65%;
+}
+.width-70{
+    width: 70%;
+}
+.width-80{
+    width: 80%;
+}
 
-
+.bg-input{
+    background-color: #d5f3ff;
+}
 /* width by px */
 .width-10px{
     width: 15px;
@@ -68,7 +92,7 @@ td,th{
     padding-bottom: 2px;
 
 }
-#heading p{
+#heading label{
     font-size: 18px;
 }
 .org_gender{

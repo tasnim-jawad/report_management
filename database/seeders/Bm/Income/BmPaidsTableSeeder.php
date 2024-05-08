@@ -21,7 +21,7 @@ class BmPaidsTableSeeder extends Seeder
             'thana_id' => 1,
             'city_id' => 1,
             'amount' => 1000,
-            'date' => "2024-04-21",
+            'month' => "2024-04-21",
             'bm_category_id' => 1,
 
             'creator' => 2,
@@ -34,7 +34,7 @@ class BmPaidsTableSeeder extends Seeder
             'thana_id' => 2,
             'city_id' => 2,
             'amount' => 2000,
-            'date' => "2024-04-21",
+            'month' => "2024-04-21",
             'bm_category_id' => 2,
 
             'creator' => 3,
@@ -47,7 +47,7 @@ class BmPaidsTableSeeder extends Seeder
             'thana_id' => 3,
             'city_id' => 3,
             'amount' => 3000,
-            'date' => "2024-04-21",
+            'month' => "2024-04-21",
             'bm_category_id' => 3,
 
             'creator' => 3,
@@ -60,7 +60,7 @@ class BmPaidsTableSeeder extends Seeder
             'thana_id' => 4,
             'city_id' => 4,
             'amount' => 4000,
-            'date' => "2024-04-21",
+            'month' => "2024-04-21",
             'bm_category_id' => 4,
 
             'creator' => 3,

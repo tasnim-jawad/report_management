@@ -83,7 +83,7 @@ export default {
                 name:'nobojatokke_gift_prodan',
             },
             {
-                label:'স্বেচ্ছায় রক্ত দান (কতজন) ',
+                label:'স্বেচ্ছায় রক্ত দান (কতজন)',
                 name:'voluntarily_blood_donation_kotojon',
             },
             {
@@ -97,6 +97,14 @@ export default {
             {
                 label:'মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজনকে) ',
                 name:'matrikalin_sheba_prodan_kotojonke',
+            },
+            {
+                label:'মাইয়্যেতের গোসল (কতজনকে)',
+                name:'mayeter_gosol',
+            },
+            {
+                label:'অন্যান্য',
+                name:'others',
             },
         ],
 

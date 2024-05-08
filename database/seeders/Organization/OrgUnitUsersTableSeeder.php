@@ -35,14 +35,14 @@ class OrgUnitUsersTableSeeder extends Seeder
                 'city_id' => 1,
                 'thana_id' => 1,
                 'ward_id' => 1,
-                'unit_id' => 1,
+                'unit_id' => 2,
             ],
             [
                 'user_id' => 12,
                 'city_id' => 1,
                 'thana_id' => 1,
                 'ward_id' => 1,
-                'unit_id' => 1,
+                'unit_id' => 2,
             ],
         ]);
     }

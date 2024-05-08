@@ -19,7 +19,7 @@ function is_unit_report_upload_permitted($month)
     return $permission;
 }
 
-function auth_user_unit_responsibilites_info($user_id)
+function auth_user_unit_responsibilities_info($user_id)
 {
     $org_unit_responsible = OrgUnitResponsible::where('user_id', $user_id)->first();
     $org_unit = OrgUnit::where('id', $org_unit_responsible->org_unit_id)->first();
@@ -36,20 +36,21 @@ function auth_user_unit_responsibilites_info($user_id)
 
 function unit_report_header_info($resposibilities, $permission, $month)
 {
+    // dd($resposibilities);
     $month = Carbon::parse($month);
     $check_info = ReportInfo::whereYear('month_year', $month->clone()->year)
         ->whereMonth('month_year', $month->clone()->month)
         // ->where('responsibility_id', $resposibilities->org_unit_responsible->responsibility_id)
-        ->where('org_type_id', $resposibilities->org_unit->org_type_id)
+        ->where('org_type_id', $resposibilities->org_unit_responsible->org_unit_id)
         // ->where('creator', auth()->user()->id)
         ->where('report_type', 'unit')
         ->orderBy('id', 'DESC')
         ->first();
-
+    // dd($check_info );
     if (!$check_info && $permission) {
         $check_info = ReportInfo::create([
-            'org_type' => $resposibilities->org_type->title,
-            'org_type_id' => $resposibilities->org_unit->org_type_id,
+            'org_type' => 'unit',
+            'org_type_id' => $resposibilities->org_unit_responsible->org_unit_id,
             'responsibility_id' => $resposibilities->org_unit_responsible->responsibility_id,
             'responsibility_name' => $resposibilities->resposibilities->title,
             'month_year' => $permission->month_year,
@@ -68,7 +69,7 @@ function check_and_get_unit_info($user_id)
     // dd($user_id);
     $permission = is_unit_report_upload_permitted(request()->month);
     if ($permission) {
-        $resposibilities = auth_user_unit_responsibilites_info($user_id);
+        $resposibilities = auth_user_unit_responsibilities_info($user_id);
         $check_info = unit_report_header_info($resposibilities, $permission, request()->month);
     }
     return $check_info;
@@ -76,7 +77,7 @@ function check_and_get_unit_info($user_id)
 
 function common_get($model, $user_id=null)
 {
-    $responsibilities = auth_user_unit_responsibilites_info(auth()->user()->id ?? $user_id);
+    $responsibilities = auth_user_unit_responsibilities_info(auth()->user()->id ?? $user_id);
     $report_info = unit_report_header_info($responsibilities, null, request()->month);
     if ($report_info) {
         $data = $model::where('report_info_id', $report_info->id)->first();
@@ -89,6 +90,7 @@ function common_get($model, $user_id=null)
 
 function common_store($bind, $class, $report_info)
 {
+
     $bind->validate(request(), [
         'month' => ['required']
     ], [

@@ -16,7 +16,7 @@ class ReportInfosTableSeeder extends Seeder
         ReportInfo::truncate();
         ReportInfo::insert([
             [
-                'org_type' => 'sromik kollan',
+                'org_type' => 'unit',
                 'org_type_id' => 1,
                 'responsibility_id' => 1,
                 'responsibility_name' => 'president',
@@ -26,7 +26,7 @@ class ReportInfosTableSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'org_type' => 'engineers forum',
+                'org_type' => 'thana',
                 'org_type_id' => 2,
                 'responsibility_id' => 2,
                 'responsibility_name' => 'secretary',
@@ -36,7 +36,7 @@ class ReportInfosTableSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'org_type' => 'doctors forum',
+                'org_type' => 'word',
                 'org_type_id' => 3,
                 'responsibility_id' => 3,
                 'responsibility_name' => 'Organizing Secretary',

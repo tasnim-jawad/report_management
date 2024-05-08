@@ -40,12 +40,13 @@ class Dawat1RegularGroupWiseController extends Controller
 
     public function store_single()
     {
+
         return common_store($this, Dawat1RegularGroupWise::class, $this->report_info);
     }
 
     // public function get_data()
     // {
-    //     $responsibilities = auth_user_unit_responsibilites_info(auth()->user()->id);
+    //     $responsibilities = auth_user_unit_responsibilities_info(auth()->user()->id);
     //     $report_info = unit_report_header_info($responsibilities, null, request()->month);
     //     if($report_info ){
     //         $data = Dawat1RegularGroupWise::where('report_info_id', $report_info->id)->first();

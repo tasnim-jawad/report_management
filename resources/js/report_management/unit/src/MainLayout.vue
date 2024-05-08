@@ -25,12 +25,12 @@
                         <div class="block_title">Pages</div>
                         <li>
                             <router-link :to="{name:'Dashboard'}">
-                                <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Dashboard
+                                <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>ড্যাশবোর্ড
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{name:'Jonoshokti'}">
-                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>Jonoshokti
+                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>জনশক্তি
                             </router-link>
                         </li>
                         <!-- <li>
@@ -111,6 +111,11 @@
                         <li>
                             <router-link :to="{name:'BmTotalReport'}">
                                 <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM Total Report
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'PrintReport'}">
+                                <span class="icon_margin"><i class="fa-solid fa-print"></i></span>Report Print
                             </router-link>
                         </li>
                     </ul>

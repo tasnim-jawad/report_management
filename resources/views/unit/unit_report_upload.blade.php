@@ -8,7 +8,7 @@
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{ asset('css/unit/default.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/unit/unit_report.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/unit/unit_report_upload.css') }}">
 
     </head>
     <body>
@@ -21,18 +21,39 @@
                 </div>
             </div>
             <div class="unit_info">
-                <div class="line d-flex flex-wrap mb-1">
-                    <p class="w-75">মাস: </p>
-                    <p class="w-25">সন:</p>
+                <div class="line d-flex flex-wrap justify-content-between mb-1">
+                    <div class="d-flex">
+                        <label for=""  class="me-2">মাস: </label>
+                        <input class="border_dot bg-input" type="month">
+                    </div>
+                    <div class="d-flex">
+                        <label for=""  class="me-2">সন: </label>
+                        <input class="border_dot bg-input" type="text">
+                    </div>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between mb-1">
-                    <p>ইউনিটের নাম: </p>
-                    <p>ওয়ার্ড নং ও নাম:</p>
-                    <p class="w-25">উপজেলা/থানা:</p>
+                    <div class="d-flex width-35">
+                        <label for=""  class="">ইউনিটের নাম: </label>
+                        <input class="border_dot bg-input" type="text">
+                    </div>
+                    <div class="d-flex width-33">
+                        <label for=""  class="width-40">ওয়ার্ড নং ও নাম: </label>
+                        <input class="border_dot width-60 bg-input" type="text">
+                    </div>
+                    <div class="d-flex width-30">
+                        <label for=""  class="width-35">উপজেলা/থানা: </label>
+                        <input class="border_dot width-65 bg-input" type="text">
+                    </div>
                 </div>
-                <div class="line d-flex flex-wrap justify-content-between ">
-                    <p>ইউনিট সভানেত্রীর নাম: </p>
-                    <p class="width-30">ইউনিটের ধরন:</p>
+                <div class="line d-flex flex-wrap justify-content-between mb-1">
+                    <div class="d-flex justify-content-start width-60">
+                        <label for=""  class="">ইউনিট সভানেত্রীর নাম: </label>
+                        <input class="border_dot width-70 bg-input" type="text">
+                    </div>
+                    <div class="d-flex width-40">
+                        <label for=""  class="width-30">ইউনিটের ধরন: </label>
+                        <input class="border_dot width-70 bg-input" type="text">
+                    </div>
                 </div>
             </div>
         </section>
@@ -41,8 +62,16 @@
                 <div class="dawat mt-1">
                     <h1 class="font-18">দাওয়াত ও তাবলিগ :</h1>
                     <div class="jonoshadharon d-flex flex-wrap justify-content-between mb-2">
-                        <p class="fw-bold w-75">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :</p>
-                        <p class="fw-bold w-25">টার্গেট:</p>
+                        <div class="d-flex justify-content-start width-70">
+                            <label for=""  class="">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :</label>
+                            <input class="border_dot w-50 bg-input" type="text">
+                        </div>
+                        <div class="d-flex width-30">
+                            <label for=""  class="ms-1">টার্গেট:</label>
+                            <input class="border_dot width-80 bg-input" type="text">
+                        </div>
+                        {{-- <p class="fw-bold w-75">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :</p>
+                        <p class="fw-bold w-25">টার্গেট:</p> --}}
                         <p class="mt-1 ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান সংখ্যা যোগ করে এখানে বসাতে হবে ।</p>
                     </div>
                     <div class="group_dawat mb-2">
@@ -50,18 +79,18 @@
                         <table class="text-center  ">
                             <thead>
                                 <tr>
-                                    <th >কতটি গ্রুপ বের হয়েছে</th>
-                                    <th >অংশগ্রহণকারীর সংখ্যা </th>
+                                    <th class="width-20">কতটি গ্রুপ বের হয়েছে</th>
+                                    <th class="width-20">অংশগ্রহণকারীর সংখ্যা </th>
                                     <th >কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</th>
                                     <th >কতজন সহযোগী সদস্য হয়েছেন</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td >{{$dawat1->how_many_groups_are_out?? ""}}</td>
-                                    <td >{{$dawat1->number_of_participants?? ""}}</td>
-                                    <td >{{$dawat1->how_many_have_been_invited?? ""}}</td>
-                                    <td >{{$dawat1->how_many_associate_members_created?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -81,17 +110,17 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">মোট জনশক্তি সংখ্যা</td>
-                                    <td >{{$dawat2->total_rokon?? ""}}</td>
-                                    <td >{{$dawat2->total_worker?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                     <td class="text-start px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
-                                    <td >{{$dawat2->how_many_have_been_invited?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন</td>
-                                    <td >{{$dawat2->how_many_were_give_dawat_rokon?? ""}}</td>
-                                    <td >{{$dawat2->how_many_were_give_dawat_worker?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                     <td class="text-start px-2">কতজন সহযোগী সদস্য হয়েছেন</td>
-                                    <td >{{$dawat2->how_many_associate_members_created?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -107,8 +136,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td >{{$dawat3->how_many_were_give_dawat?? ""}}</td>
-                                    <td >{{$dawat3->how_many_associate_members_created?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -128,17 +157,17 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">গণসংযোগ দশক / পক্ষ</td>
-                                    <td >{{$dawat4->total_gono_songjog_group?? ""}}</td>
-                                    <td >{{$dawat4->total_attended?? ""}}</td>
-                                    <td >{{$dawat4->how_many_have_been_invited?? ""}}</td>
-                                    <td >{{$dawat4->how_many_associate_members_created?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান</td>
-                                    <td >{{$dawat4->jela_mohanogor_declared_gonosonjog_group?? ""}}</td>
-                                    <td >{{$dawat4->jela_mohanogor_declared_gonosonjog_attended?? ""}}</td>
-                                    <td >{{$dawat4->jela_mohanogor_declared_gonosonjog_invited?? ""}}</td>
-                                    <td >{{$dawat4->jela_mohanogor_declared_gonosonjog_associated_created?? ""}}</td>
+                                    <td class=""><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -161,15 +190,15 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">কতজন কুরআন শিক্ষা প্রদান করেছেন</td>
-                                    <td >{{$department1->teacher_rokon?? ""}}</td>
-                                    <td >{{$department1->teacher_worker?? ""}}</td>
-                                    <td >{{$department1->teacher_rokon + $department1->teacher_worker ?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে</td>
-                                    <td >{{$department1->student_rokon?? ""}}</td>
-                                    <td >{{$department1->student_worker?? ""}}</td>
-                                    <td >{{$department1->student_rokon + $department1->student_worker ?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -183,9 +212,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td >{{$department1->how_much_learned_quran?? ""}}</td>
-                                    <td >{{$department1->how_much_invited?? ""}}</td>
-                                    <td >{{$department1->how_much_been_associated?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -204,21 +233,21 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ</td>
-                                    <td >{{$department4->political_and_special_invited?? ""}}</td>
-                                    <td >{{$department4->political_and_special_been_associated?? ""}}</td>
-                                    <td >{{$department4->political_and_special_target?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)</td>
-                                    <td >{{$department4->prantik_jonogosti_invited?? ""}}</td>
-                                    <td >{{$department4->prantik_jonogosti_been_associated?? ""}}</td>
-                                    <td >{{$department4->prantik_jonogosti_target?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">ভিন্নধর্মাবলম্বী</td>
-                                    <td >{{$department4->vinno_dormalombi_invited?? ""}}</td>
-                                    <td >{{$department4->vinno_dormalombi_been_associated?? ""}}</td>
-                                    <td >{{$department4->vinno_dormalombi_target?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -234,8 +263,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td >{{$department5->total_attended_family?? ""}}</td>
-                                    <td >{{$department5->how_many_new_family_invited?? ""}}</td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                    <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -257,38 +286,30 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">বই বিলিকেন্দ্ৰ</td>
-                                <td >{{$dawah_prokashona->unit_book_distribution_center?? ""}}</td>
-                                <td >{{$dawah_prokashona->unit_book_distribution_center_increase?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
 
                                 <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
-                                <td >{{$dawah_prokashona->soft_copy_book_distribution?? ""}}</td>
-                                <td >{{$dawah_prokashona->soft_copy_book_distribution_increase?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">বই</td>
-                                <td >{{$dawah_prokashona->books_in_pathagar?? ""}}</td>
-                                <td >{{$dawah_prokashona->books_in_pathagar_increase?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
 
                                 <td class="text-start px-2">দাওয়াতি লিংক বিতরণ<span>(সংগঠন অনুমোদিত)</span></td>
-                                <td >{{$dawah_prokashona->dawat_link_distribution?? ""}}</td>
-                                <td >{{$dawah_prokashona->dawat_link_distribution_increase?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">বই বিলি/বিক্রি</td>
-                                <td >{{$dawah_prokashona->unit_book_distribution?? ""}}</td>
-                                <td >{{$dawah_prokashona->unit_book_distribution_increase?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
 
                                 <td class="text-start px-2">সোনার বাংলা/সংগ্রাম/ পৃথিবী কত কপি চলে</td>
-                                <td >
-                                    {{$dawah_prokashona->sonar_bangla?? ""}} /
-                                    {{$dawah_prokashona->songram?? ""}} /
-                                    {{$dawah_prokashona->prithibi?? ""}}
-                                </td>
-                                <td >
-                                    {{$dawah_prokashona->sonar_bangla_increase?? ""}} /
-                                    {{$dawah_prokashona->songram_increase?? ""}} /
-                                    {{$dawah_prokashona->prithibi_increase?? ""}}
-                                </td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -309,45 +330,55 @@
                             <tr>
                                 <td >১.</td>
                                 <td class="text-start px-2">মাসিক সাধারণ সভা</td>
-                                <td >{{$kormosuci->unit_masik_sadaron_sova_total?? ""}}</td>
-                                <td >{{$kormosuci->unit_masik_sadaron_sova_target?? ""}}</td>
-                                <td >
-                                    {{number_format($kormosuci->unit_masik_sadaron_sova_uposthiti / $kormosuci->unit_masik_sadaron_sova_total?? "",1)}}
-                                </td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td >২.</td>
                                 <td class="text-start px-2">ইফতার মাহফিল (ব্যক্তিগত/সাংগঠনিক)</td>
                                 <td >
-                                    {{$kormosuci->iftar_mahfil_personal_total?? ""}} /
-                                    {{$kormosuci->iftar_mahfil_samostic_total?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td >
-                                    {{$kormosuci->iftar_mahfil_personal_target?? ""}} /
-                                    {{$kormosuci->iftar_mahfil_samostic_target?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td >
-                                    {{number_format($kormosuci->iftar_mahfil_personal_uposthiti / $kormosuci->iftar_mahfil_personal_total?? "",1)}} /
-                                    {{number_format($kormosuci->iftar_mahfil_samostic_uposthiti / $kormosuci->iftar_mahfil_samostic_total?? "",1)}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td >৩.</td>
                                 <td class="text-start px-2">চা চক্র/সামষ্টিক খাওয়া/শিক্ষা সফর</td>
                                 <td >
-                                    {{$kormosuci->cha_chakra_total?? ""}} /
-                                    {{$kormosuci->samostic_khawa_total?? ""}} /
-                                    {{$kormosuci->sikkha_sofor_total?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td >
-                                    {{$kormosuci->cha_chakra_target?? ""}} /
-                                    {{$kormosuci->samostic_khawa_target?? ""}} /
-                                    {{$kormosuci->sikkha_sofor_target?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td >
-                                    {{number_format($kormosuci->cha_chakra_uposthiti / $kormosuci->cha_chakra_total?? "",1)}} /
-                                    {{number_format($kormosuci->samostic_khawa_uposthiti / $kormosuci->samostic_khawa_total?? "",1)}} /
-                                    {{number_format($kormosuci->sikkha_sofor_uposthiti / $kormosuci->sikkha_sofor_total?? "",1)}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -373,19 +404,19 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সদস্য (রুকন)</td>
-                                <td >{{$songothon1->rokon_previous?? ""}} </td>
-                                <td >{{$songothon1->rokon_present?? ""}} </td>
-                                <td >{{$songothon1->rokon_briddhi?? ""}} </td>
-                                <td >{{$songothon1->rokon_gatti?? ""}} </td>
-                                <td >{{$songothon1->rokon_target?? ""}} </td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কর্মী</td>
-                                <td >{{$songothon1->worker_previous?? ""}} </td>
-                                <td >{{$songothon1->worker_present?? ""}} </td>
-                                <td >{{$songothon1->worker_briddhi?? ""}} </td>
-                                <td >{{$songothon1->worker_gatti?? ""}} </td>
-                                <td >{{$songothon1->worker_target?? ""}} </td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -405,28 +436,36 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সহযোগী সদস্য*</td>
-                                <td >{{$songothon2->associate_member_previous?? ""}}</td>
-                                <td >{{$songothon2->associate_member_present?? ""}}</td>
-                                <td >{{$songothon2->associate_member_briddhi?? ""}}</td>
-                                <td >{{$songothon2->associate_member_target?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">ভিন্নধর্মাবলম্বী কর্মী/সহযোগী সদস্য</td>
                                 <td >
-                                    {{$songothon2->vinno_dormalombi_worker_previous?? ""}} /
-                                    {{$songothon2->vinno_dormalombi_associate_member_previous?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td >
-                                    {{$songothon2->vinno_dormalombi_worker_present?? ""}} /
-                                    {{$songothon2->vinno_dormalombi_associate_member_present?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td >
-                                    {{$songothon2->vinno_dormalombi_worker_briddhi?? ""}} /
-                                    {{$songothon2->vinno_dormalombi_associate_member_briddhi?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td >
-                                    {{$songothon2->vinno_dormalombi_worker_target?? ""}} /
-                                    {{$songothon2->vinno_dormalombi_associate_member_target?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -434,8 +473,14 @@
                     <p>*দাওয়াত ও তাবলিগের 'ক' এর অধীনে উল্লেখিত সকল সহযোগী সদস্যের সংখ্যা এ ছকে সহযোগী সদস্যের ঘরে বসাতে হবে।</p>
                 </div>
                 <div class="kormi_boithok d-flex flex-wrap justify-content-between mb-1">
-                    <p class="fw-bold fs-6 w-50 ">৩. মাসিক কর্মী বৈঠক সংখ্যা :  {{$songothon9->unit_kormi_boithok_total?? ""}}</p>
-                    <p class="fw-bold fs-6 w-50">, উপস্থিতি:  {{$songothon9->unit_kormi_boithok_uposthiti?? ""}}</p>
+                    <div class="d-flex justify-content-start w-50">
+                        <label for=""  class="fw-bold fs-6">৩. মাসিক কর্মী বৈঠক সংখ্যা :</label>
+                        <input class="border_dot width-60 bg-input" type="text">
+                    </div>
+                    <div class="d-flex justify-content-start w-50">
+                        <label for=""  class="fw-bold fs-6">, উপস্থিতি:</label>
+                        <input class="border_dot width-80 bg-input" type="text">
+                    </div>
                 </div>
                 <div class="paribaik_unit mb-2">
                     <h4 class="fs-6">৪. পারিবারিক ইউনিট*</h4>
@@ -449,16 +494,19 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td >{{$songothon5->paribarik_unit_total?? ""}}</td>
-                                <td >{{$songothon5->paribarik_unit_uposthiti?? ""}}</td>
-                                <td >{{$songothon5->paribarik_unit_target?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                         </tbody>
                     </table>
                     <p>* পরিবারের জনশক্তি পুরুষ ও মহিলা উভয় হলে পারিবারিক ইউনিটের হিসাব একবারই আসবে।</p>
                 </div>
                 <div class="urdotono mb-1">
-                    <p class="fw-bold fs-6 w-50 ">৫. ঊর্ধ্বতন দায়িত্বশীলদের সফর সংখ্যা :  {{$songothon7->upper_leader_sofor?? ""}}</p>
+                    <div class="d-flex justify-content-start ">
+                        <label for=""  class="fw-bold fs-6">৫. ঊর্ধ্বতন দায়িত্বশীলদের সফর সংখ্যা :</label>
+                        <input class="border_dot bg-input w-75" type="text">
+                    </div>
                 </div>
                 <div class="ianot mb-2">
                     <h4 class="fs-6">৬. ইয়ানত দাতা বৃদ্ধি :</h4>
@@ -473,13 +521,13 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সহযোগী সদস্য</td>
-                                <td >{{$songothon8->associate_member_total?? ""}}</td>
-                                <td >{{$songothon8->associate_member_total_iyanot_amounts?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">সুধী</td>
-                                <td >{{$songothon8->sudhi_total?? ""}}</td>
-                                <td >{{$songothon8->sudi_total_iyanot_amounts?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -501,28 +549,34 @@
                         <tr>
                             <td class="text-start px-2">তারবিয়াতী বৈঠক (সহীহ কুরআন অনুশীলন/মাসয়ালা-মাসায়েল/ দারসে কুরআন/ দারসে হাদীস / সামষ্টিক পাঠ/বিষয়ভিত্তিক আলোচনা)</td>
                             <td >
-                                {{$proshikkhon->sohi_quran_onushilon?? ""}} /
-                                {{$proshikkhon->masala_masayel?? ""}} /
-                                {{$proshikkhon->darsul_quran?? ""}} /
-                                {{$proshikkhon->darsul_hadis?? ""}} /
-                                {{$proshikkhon->samostik_path?? ""}} /
-                                {{$proshikkhon->bishoy_vittik_onushilon?? ""}}
+                                <div class="d-flex">
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center">
+                                </div>
                             </td>
                             <td >
-                                {{$proshikkhon->sohi_quran_onushilon_target?? ""}} /
-                                {{$proshikkhon->masala_masayel_target?? ""}} /
-                                {{$proshikkhon->darsul_quran_target?? ""}} /
-                                {{$proshikkhon->darsul_hadis_target?? ""}} /
-                                {{$proshikkhon->samostik_path_target?? ""}} /
-                                {{$proshikkhon->bishoy_vittik_onushilon_target?? ""}}
+                                <div class="d-flex">
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center">
+                                </div>
                             </td>
                             <td >
-                                {{$proshikkhon->sohi_quran_onushilon_uposthiti?? ""}} /
-                                {{$proshikkhon->masala_masayel_uposthiti?? ""}} /
-                                {{$proshikkhon->darsul_quran_uposthiti?? ""}} /
-                                {{$proshikkhon->darsul_hadis_uposthiti?? ""}} /
-                                {{$proshikkhon->samostik_path_uposthiti?? ""}} /
-                                {{$proshikkhon->bishoy_vittik_onushilon_uposthiti?? ""}}
+                                <div class="d-flex">
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center"> /
+                                    <input type="text" class="bg-input w-100 text-center">
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -535,9 +589,9 @@
                     <table class="text-center  mb-1">
                         <tr>
                             <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
-                            <td class="width-20">{{$shomajsheba1->how_many_people_did?? ""}}</td>
+                            <td class="width-20"><input type="text" class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
-                            <td class="width-20">{{$shomajsheba1->service_received_total?? ""}}</td>
+                            <td class="width-20"><input type="text" class="bg-input w-100 text-center"></td>
                         </tr>
                     </table>
                 </div>
@@ -556,45 +610,55 @@
                             <tr>
                                 <td class="text-start px-2">সামাজিক অনুষ্ঠানে অংশগ্রহন/সহায়তা প্রদান</td>
                                 <td >
-                                    {{$shomajsheba2->shamajik_onusthane_ongshogrohon?? ""}} /
-                                    {{$shomajsheba2->shamajik_onusthane_shohayota_prodan?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">স্বেচ্ছায় রক্ত দান (কতজন/কতজনকে)</td>
                                 <td >
-                                    {{$shomajsheba2->voluntarily_blood_donation_kotojon?? ""}} /
-                                    {{$shomajsheba2->voluntarily_blood_donation_kotojonke?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">সামাজিক বিরোধ মীমাংসা</td>
-                                <td >{{$shomajsheba2->shamajik_birodh_mimangsha?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 <td class="text-start px-2">মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজন/কতজনকে)</td>
                                 <td >
-                                    {{$shomajsheba2->matrikalin_sheba_prodan_kotojon?? ""}} /
-                                    {{$shomajsheba2->matrikalin_sheba_prodan_kotojonke?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">মানবিক সহায়তা/কর্জে হাসানা প্রদান (কতজনকে)</td>
                                 <td >
-                                    {{$shomajsheba2->manobik_shohayota_prodan?? ""}} /
-                                    {{$shomajsheba2->korje_hasana_prodan?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে)</td>
-                                <td >{{$shomajsheba2->mayeter_gosol?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">রোগীর পরিচর্যা/চিকিৎসা সহায়তা প্রদান (কতজনকে)</td>
                                 <td >
-                                    {{$shomajsheba2->rogir_poricorja?? ""}} /
-                                    {{$shomajsheba2->medical_shohayota_prodan?? ""}}
+                                    <div class="d-flex">
+                                        <input type="text" class="bg-input w-100 text-center"> /
+                                        <input type="text" class="bg-input w-100 text-center">
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">অন্যান্য</td>
-                                <td >{{$shomajsheba2->others?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">নবজাতককে গিফ্ট প্রদান (কতজনকে )</td>
-                                <td >{{$shomajsheba2->nobojatokke_gift_prodan?? ""}}</td>
+                                <td ><input type="text" class="bg-input w-100 text-center"></td>
                                 <td class="text-start px-2"></td>
                                 <td ></td>
                             </tr>
@@ -604,15 +668,22 @@
             </div>
             <div class="rartrio">
                 <h1 class="font-18">রাষ্ট্রীয় সংস্কার ও সংশোধন :</h1>
-                <div class="bisistomb-2">
-                    <p>বিশিষ্ট ব্যক্তিবর্গের সাথে যোগাযোগ সংখ্যা :   <span>{{$rastrio->bishishto_bekti_jogajog?? ""}}</span></p>
+                <div class="bisisto mb-2">
+                    <div class="d-flex justify-content-start">
+                        <label for=""  class="">বিশিষ্ট ব্যক্তিবর্গের সাথে যোগাযোগ সংখ্যা :</label>
+                        <input class="border_dot  bg-input" type="text">
+                    </div>
                 </div>
             </div>
             <div class="baytulmal">
                 <div class="title">
                     <h1>বাইতুলমাল</h1>
                 </div>
-                <p class="fs-6">মাসিক ওয়াদার পরিমাণ :</p>
+                <div class="d-flex justify-content-start mb-1">
+                    <label for=""  class="fs-6">মাসিক ওয়াদার পরিমাণ :</label>
+                    <input class="border_dot  bg-input" type="text">
+                </div>
+                {{-- <p class="fs-6">মাসিক ওয়াদার পরিমাণ :</p> --}}
                 <table class="text-center  mb-1 table_layout_fixed">
                     <thead>
                         <tr>
@@ -623,43 +694,43 @@
                     <tbody>
                         <tr>
                             <td class="text-start px-2">ইয়ানত আদায়</td>
-                            <td >4300</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2">ইয়ানত জমা</td>
-                            <td >340</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">এককালীন</td>
-                            <td >4000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2">এককালীন</td>
-                            <td >30000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">নির্বাচনী ফান্ড</td>
-                            <td >4000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2">নির্বাচনী ফান্ড</td>
-                            <td >30000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">শহীদ ফান্ড কল্যাণ তহবিল</td>
-                            <td >4000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2">শহীদ ফান্ড কল্যাণ তহবিল</td>
-                            <td >30000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">সমাজসেবা</td>
-                            <td >4000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2">সমাজসেবা</td>
-                            <td >30000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">বই বিক্রি</td>
-                            <td >4000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2">অন্যান্য</td>
-                            <td >30000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">অন্যান্য</td>
-                            <td >4000</td>
+                            <td ><input type="text" class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2"></td>
                             <td ></td>
                         </tr>
@@ -674,7 +745,7 @@
             </div>
             <div class="montobbo">
                 <h1 class="fs-6">ইউনিট সভানেত্রীর মন্তব্য :</h1>
-                <p></p>
+                <textarea name="" id="" cols="30" class="w-100 bg-input" rows="5"></textarea>
             </div>
         </section>
 

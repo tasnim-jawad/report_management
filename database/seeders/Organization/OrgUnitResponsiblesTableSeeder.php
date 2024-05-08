@@ -29,12 +29,12 @@ class OrgUnitResponsiblesTableSeeder extends Seeder
             [
                 'user_id' => 11,
                 'responsibility_id' => 1,
-                'org_unit_id' => 1,
+                'org_unit_id' => 2,
             ],
             [
                 'user_id' => 12,
                 'responsibility_id' => 2,
-                'org_unit_id' => 1,
+                'org_unit_id' => 2,
             ],
         ]);
     }

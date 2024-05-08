@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('report_infos', function (Blueprint $table) {
             $table->id();
-            $table->enum('org_type',['sromik kollan', 'engineers forum', 'doctors forum'])->nullable();
+            $table->enum('org_type',['city', 'thana', 'ward', 'unit'])->nullable();
             $table->bigInteger('org_type_id')->nullable();
             $table->bigInteger('responsibility_id')->nullable();
             $table->string('responsibility_name',50)->nullable();
