@@ -794,6 +794,20 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/restore', [App\Http\Controllers\Bm\Income\BmPaidController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\BmPaidController::class,'bulk_import']);
     });
+
+    Route::group(['prefix' => 'montobbo'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'store_single']);
+
+        Route::get('/all', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'bulk_import']);
+    });
 });
 
 

@@ -1,0 +1,120 @@
+@protocol = http://
+# @hostname = qbank.techparkit.org
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/montobbo
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@createdAt = {{$timestamp}}
+@token =Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDNjNThmM2E1MmFiNjFjMmQzNzNhNjU1OWUyYTVkNTIxZTJhNDMxNWE2OGY4MzRkZjAxOTg3NzYxYjdjMzliMmYxZmY2M2Y4ZDAwN2IzNDciLCJpYXQiOjE3MTUxNTIyNDcuMDYxNDcxLCJuYmYiOjE3MTUxNTIyNDcuMDYxNDc4LCJleHAiOjE3MzEwNDk4NDcuMDQ2MjUsInN1YiI6IjkiLCJzY29wZXMiOltdfQ.HdWf1wWcM0D6bROaWC0xuMNByFnpjqoXyc42Vgz4bCJRMKXgJ-tYBfXi6qns9bSgb5FsPMMSZmDcry904L-7UrqgNXQKuXQjaoT5aivKNu-X0tmSyXOThtgAL6NrIwQfoaad98jlthZGuZf9TEir1p5ubCSQgTCzW1woKEpGjAFY-mf1K9TqX1mQPdMLP4EJMcJgr3-99AbftuTj2Wd5zqt5gTEYCv-2vmoWJOPyabJ4eXGee1vWDImT5mnVTPS0_JVgHYjbAav3L0XKBEd9Sz2K5ucMbLJlwd0DA6Q3MypV5DgM3SVcubkmv_T01Jm9bg1X5QWFGj9C2WyxNFesj5qD4Xh2z4OUtErSER4BaE864FzprIF3UHpWwaz8p_wgIq42DC5aocJR0LVwojv-lEM5ilOwvrRgELxPAySjX5AnDHgfNKQJDeKuFFhjTK96XjEsRjwF6UMMpOdOubwaLXcL_Fd2EuHAzQMoRI87kqrUb1muQouLICuYNC74RNeFZVnkq_KxGYVzW_s4ev8wkUoML7IhBWpjtXMKMCnlj9qhCNo-lw2ioNYNa3KuYR-zVKG1O04H2XWp-GHtY4LnSL_ZI7ck_j7vZ2DP4RGbbQnlWlDguHPFx0EJKXyRYjMQIJd5leoQG94ROJR0Z4_7RBIfvXp4brt9EJZ9o9vjsvg
+# @modifiedBy = {{$processEnv USERNAME}}
+
+#                                               #
+#------------------ API TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  { full_name: '', email: '', token: '' }
+GET {{url}}/all HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+### get single data
+# @prompt id enter id
+GET {{url}}/show/{{id}} HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+### store data
+# @prompt creator enter creator
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "montobbo": "“আমরা আরম্ভ করি, শেষ করি না; আড়ম্বর করি, কাজ করি না; যাহা অনুষ্ঠান করি তাহা বিশ্বাস করি না; যাহা বিশ্বাস করি তাহা পালন করি না; ভূরিপরিমাণ বাক্যরচনা করিতে পারি, তিলপরিমাণ আত্মত্যাগ করিতে পারি না; আমরা অহংকার দেখাইয়া পরিতৃপ্ত থাকি, যোগ্যতালাভের চেষ্টা করি না; আমরা সকল কাজেই পরের প্রত্যাশা করি, অথচ পরের ত্রুটি লইয়া আকাশ বিদীর্ণ করিতে থাকি; পরের অনুকরণে আমাদের গর্ব, পরের অনুগ্রহে আমাদের সম্মান, পরের চক্ষে ধূলিনিক্ষেপ করিয়া আমাদের পলিটিকস্‌, এবং নিজের বাক্‌চাতুর্যে নিজের প্রতি ভক্তিবিহ্বল হইয়া উঠাই আমাদের জীবনের প্রধান উদ্দেশ্য।”",
+
+    "creator": 5,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+
+### store data canvas
+# @prompt title enter title
+# POST {{url}}/canvas-store HTTP/1.1
+# content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "title": "{{title}}",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+### update data
+# @prompt id enter id
+POST {{url}}/update HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}",
+    "montobbo": "“সত্যকে নিজের দাস মনে না করে নিজেকে সত্যের অনুসারী হিসেবে দাঁড় করাতে হবে।”",
+
+    "creator": 12,
+    "status": 1,
+    "created_at": "{{createdAt}}"
+}
+
+### update data canvas
+# @prompt id enter id
+POST {{url}}/canvas-update HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}
+
+# {
+#     "id": "{{id}}",
+#     "title": "title canvas update",
+#     "image": "web.jpg",
+#     "short_description": "gaitgrji canvous",
+#     "description": "bangla desh is a small couctry",
+#     "published": "1",
+#     "created_at": "{{createdAt}}"
+# }
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft_delete HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+POST {{url}}/destroy HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### bulk-import
+GET {{url}}/bulk-import HTTP/1.1
+content-type: application/json
+# Authorization: {{token}}

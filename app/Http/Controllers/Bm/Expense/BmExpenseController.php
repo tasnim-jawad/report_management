@@ -63,18 +63,14 @@ class BmExpenseController extends Controller
 
         public function bm_total_expense($month){
             $org_unit_user = User::where('id', auth()->user()->id)->with('org_unit_user')->get()->first()->org_unit_user;
-            // dd($org_unit_user->unit_id);
             $date = Carbon::parse($month);
             $query = BmExpense::query();
             $filter = $query->whereYear('date',$date->clone()->year)->whereMonth('date',$date->clone()->month)->where('unit_id',$org_unit_user->unit_id);
             $total_expense = $filter->sum('amount');
             $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
-            // dd($total_expense,$category_id);
             $category_unique_id = array_values(array_unique($category_id));
-            // dd($category_unique_id);
 
             $data=[];
-            // dd($category_all_id);
             foreach($category_unique_id as $index => $item){
                 $testQuery = BmExpense::query();
                 $totalAmount = $testQuery->whereYear('date',$date->clone()->year)
@@ -86,8 +82,6 @@ class BmExpenseController extends Controller
                 $data[$index]['amount']= $totalAmount;
                 $data[$index]['category'] = $bmCategory->title;
             }
-            // dd($category_unique_id,$data,$total_expense);
-            // dd($total_income);
 
             if ($data) {
                 return response([

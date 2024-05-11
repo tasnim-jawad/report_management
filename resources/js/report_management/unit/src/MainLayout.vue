@@ -79,6 +79,11 @@
                             </router-link>
                         </li>
                         <li>
+                            <router-link :to="{name:'Montobbo'}">
+                                <span class="icon_margin"><i class="fa-solid fa-comments"></i></span>মন্তব্য
+                            </router-link>
+                        </li>
+                        <li>
                             <router-link :to="{name:'BmCategoryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>BM Category
                             </router-link>

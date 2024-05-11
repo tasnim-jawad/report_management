@@ -11,6 +11,7 @@ import Songothon from '../pages/Songothon.vue'
 import Proshikkhon from '../pages/Proshikkhon.vue'
 import Shomajsheba from '../pages/Shomajsheba.vue'
 import Rastrio from '../pages/Rastrio.vue'
+import Montobbo from '../pages/Montobbo.vue'
 import ReportInfo from '../pages/ReportInfo.vue'
 import BmUserReport from '../pages/bm_management/BmUserReport.vue'
 import BmTotalReport from '../pages/bm_management/BmTotalReport.vue'
@@ -108,6 +109,11 @@ const routes = createRouter({
                     name:'Rastrio',
                     path: 'rastrio',
                     component: Rastrio,
+                },
+                {
+                    name:'Montobbo',
+                    path: 'montobbo',
+                    component: Montobbo,
                 },
                 {
                     name:'ReportInfo',

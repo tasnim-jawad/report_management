@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('org_units', function (Blueprint $table) {
+        Schema::create('montobbos', function (Blueprint $table) {
             $table->id();
-            $table->string('title',100)->nullable();
-            $table->text('description')->nullable();
-            $table->bigInteger('org_type_id')->nullable();
-            $table->bigInteger('org_area_id')->nullable();
-            $table->enum('org_gender',['man','women'])->default('men');
+            $table->bigInteger('report_info_id')->nullable();
+            $table->longText('montobbo')->nullable();
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('org_units');
+        Schema::dropIfExists('montobbos');
     }
 };
