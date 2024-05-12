@@ -25,6 +25,10 @@ Route::group(['prefix' => 'ward' , 'namespace' =>'\App\Http\Controllers\Ward'  ]
     Route::get('report','WardController@report');
 });
 
+Route::group(['prefix' => 'thana' , 'namespace' =>'\App\Http\Controllers\thana'  ],function(){
+    Route::get('report','ThanaController@report');
+});
+
 
 // Route::get('/t', function(){
 //     $user = User::where('role',6)->first();

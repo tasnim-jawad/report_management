@@ -532,9 +532,10 @@
                         </tr>
                     </tbody>
                 </table>
+                <p>*সংগঠন অনুমোদিত</p>
             </div>
             <h1 class="font-18 fw-bold">ঘ) কর্মসূচি বাস্তবায়ন</h1>
-            <div class="job_holder mb-2">
+            <div class="job_holder mb-1">
                 <div class="d-flex align-items-start gap-2">
                     <table class="text-center mb-1">
                         <thead>
@@ -630,7 +631,7 @@
         </section>
 
 
-        <section class="mt-5">
+        <section class="">
             <div class="songothon">
                 <h1 class="font-18 fw-bold">সংগঠন :</h1>
                 <div class="jonoshokti mb-2">
@@ -712,186 +713,835 @@
                     <p class="font-14">*সদস্য (রুকন) ঘাটতির ক্ষেত্রে স্থানান্তর, ইন্তেকাল, বাতিল, ইস্তফা ও বিদেশ গমন সংখ্যার হিসাব আলাদাভাবে সংরক্ষণ করে মোট সংখ্যাটি এ ঘরে বসাতে হবে এবং এতদসংক্রান্ত তালিকা ঊর্ধ্বতন সংগঠনে জমা দিতে হবে।</p>
                     <p class="font-14">** দাওয়াত ও তাবলিগের 'ক' এর অধীনে উল্লেখিত সকল সহযোগী সদস্যের সংখ্যা সংগঠনের জনশক্তির এ ছকে সর্বমোট সহযোগী সদস্যের ঘরে বসাতে হবে।</p>
                 </div>
-                {{-- <div class="kormi_boithok d-flex flex-wrap justify-content-between mb-1">
-                    <p class="fw-bold fs-6 w-50 ">৩. মাসিক কর্মী বৈঠক সংখ্যা :  {{bangla($songothon9->unit_kormi_boithok_total?? "")}}</p>
-                    <p class="fw-bold fs-6 w-50">, উপস্থিতি:  {{bangla($songothon9->unit_kormi_boithok_uposthiti?? "")}}</p>
-                </div> --}}
-                <div class="paribaik_unit mb-2">
-                    <h4 class="fs-6">৪. পারিবারিক ইউনিট*</h4>
-                    {{-- <table class="text-center  mb-1 table_layout_fixed">
+                <div class="bivag_vittik mb-5">
+                    <h4 class="fs-6 fw-bold">৩. বিভাগভিত্তিক তথ্য:</h4>
+                    <table class="text-center mb-1">
                         <thead>
                             <tr>
-                                <th class="width-20">সংখ্যা</th>
+                                <th class="">বিভাগসমূহ</th>
+                                <th class="width-15">ধরন</th>
+                                <th class="width-15">বিগত সময়ের সংখ্যা</th>
+                                <th class="width-15">বর্তমান সংখ্যা</th>
                                 <th class="width-15">বৃদ্ধি</th>
-                                <th class="width-20">টার্গেট</th>
+                                <th class="width-15">ঘাটতি</th>
+                                <th class="width-15">টার্গেট</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td >{{bangla($songothon5->paribarik_unit_total?? "")}}</td>
-                                <td >{{bangla($songothon5->paribarik_unit_uposthiti?? "")}}</td>
-                                <td >{{bangla($songothon5->paribarik_unit_target?? "")}}</td>
+                                <td rowspan="3" class="text-center px-2">মহিলা</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">শ্রম*</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">উলামা</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">পেশাজীবী</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">যুব</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="2" class="text-center px-2">ভিন্নধর্মাবলম্বী</td>
+                                <td class="text-start">কর্মী</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
-                    </table> --}}
-                    <p>* পরিবারের জনশক্তি পুরুষ ও মহিলা উভয় হলে পারিবারিক ইউনিটের হিসাব একবারই আসবে।</p>
-                </div>
-                {{-- <div class="urdotono mb-1">
-                    <p class="fw-bold fs-6 w-50 ">৫. ঊর্ধ্বতন দায়িত্বশীলদের সফর সংখ্যা :  {{bangla($songothon7->upper_leader_sofor?? "")}}</p>
-                </div> --}}
-                <div class="ianot mb-2">
-                    <h4 class="fs-6">৬. ইয়ানত দাতা বৃদ্ধি :</h4>
-                    {{-- <table class="text-center  mb-1">
-                        <thead>
-                            <tr>
-                                <th class="w-25">নতুন ইয়ানত দাতা</th>
-                                <th class="width-20">সংখ্যা</th>
-                                <th class="width-15">টাকার পরিমাণ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-start px-2">সহযোগী সদস্য</td>
-                                <td >{{bangla($songothon8->associate_member_total?? "")}}</td>
-                                <td >{{bangla($songothon8->associate_member_total_iyanot_amounts?? "")}}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-start px-2">সুধী</td>
-                                <td >{{bangla($songothon8->sudhi_total?? "")}}</td>
-                                <td >{{bangla($songothon8->sudi_total_iyanot_amounts?? "")}}</td>
-                            </tr>
-                        </tbody>
-                    </table> --}}
+                    </table>
+                    <p class="font-12">*শ্রমিক কল্যাণের রিপোর্ট অনুযায়ী হবে।</p>
                 </div>
 
-            </div>
-            <h1 class="font-18">প্ৰশিক্ষণ :</h1>
-            <div class="proshikkhon mb-2">
-                {{-- <table class="text-center  mb-1">
-                    <thead>
-                        <tr>
-                            <th class="w-50">কর্মসূচির ধরন</th>
-                            <th class="">সংখ্যা</th>
-                            <th class="">টার্গেট</th>
-                            <th class="">উপস্থিতি</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-start px-2">তারবিয়াতী বৈঠক (সহীহ কুরআন অনুশীলন/মাসয়ালা-মাসায়েল/ দারসে কুরআন/ দারসে হাদীস / সামষ্টিক পাঠ/বিষয়ভিত্তিক আলোচনা)</td>
-                            <td >
-                                {{bangla($proshikkhon->sohi_quran_onushilon?? "")}} /
-                                {{bangla($proshikkhon->masala_masayel?? "")}} /
-                                {{bangla($proshikkhon->darsul_quran?? "")}} /
-                                {{bangla($proshikkhon->darsul_hadis?? "")}} /
-                                {{bangla($proshikkhon->samostik_path?? "")}} /
-                                {{bangla($proshikkhon->bishoy_vittik_onushilon?? "")}}
-                            </td>
-                            <td >
-                                {{bangla($proshikkhon->sohi_quran_onushilon_target?? "")}} /
-                                {{bangla($proshikkhon->masala_masayel_target?? "")}} /
-                                {{bangla($proshikkhon->darsul_quran_target?? "")}} /
-                                {{bangla($proshikkhon->darsul_hadis_target?? "")}} /
-                                {{bangla($proshikkhon->samostik_path_target?? "")}} /
-                                {{bangla($proshikkhon->bishoy_vittik_onushilon_target?? "")}}
-                            </td>
-                            <td >
-                                {{bangla($proshikkhon->sohi_quran_onushilon_uposthiti?? "")}} /
-                                {{bangla($proshikkhon->masala_masayel_uposthiti?? "")}} /
-                                {{bangla($proshikkhon->darsul_quran_uposthiti?? "")}} /
-                                {{bangla($proshikkhon->darsul_hadis_uposthiti?? "")}} /
-                                {{bangla($proshikkhon->samostik_path_uposthiti?? "")}} /
-                                {{bangla($proshikkhon->bishoy_vittik_onushilon_uposthiti?? "")}}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table> --}}
-            </div>
-            <div class="shomajsheba">
-                <h1 class="font-18">সমাজ সংস্কার ও সমাজসেবা :</h1>
-                <div class="personal_shamajik_kaj mb-2">
-                    <h4 class="fs-6">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h4>
-                    {{-- <table class="text-center  mb-1">
-                        <tr>
-                            <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
-                            <td class="width-20">{{bangla($shomajsheba1->how_many_people_did?? "")}}</td>
-                            <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
-                            <td class="width-20">{{bangla($shomajsheba1->service_received_total?? "")}}</td>
-                        </tr>
-                    </table> --}}
+
+                <div class="unit_shongothon mb-3 pt-3">
+                    <h4 class="fs-6">৪. ইউনিট সংগঠন:</h4>
+                    <table class="text-center mb-1">
+                        <thead>
+                            <tr>
+                                <th class="width-20">ইউনিটের ধরন</th>
+                                <th class="width-15">বিগত সময়ের সংখ্যা</th>
+                                <th class="width-15">বর্তমান সংখ্যা</th>
+                                <th class="width-10">বৃদ্ধি</th>
+                                <th class="width-10">ঘাটতি</th>
+                                <th class="width-15">টার্গেট</th>
+                                <th class="width-15">বাস্তবায়নের হার</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">সাধারণ ইউনিট (পুরুষ)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সাধারণ ইউনিট (মহিলা)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">উলামা ইউনিট</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">পেশাজীবী ইউনিট</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">শ্রমিক কল্যাণ ইউনিট</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">যুব ইউনিট</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">মিডিয়া ইউনিট</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-end">সর্বমোট ইউনিট সংখ্যা</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="unit_shamajik_kaj mb-2">
-                    <h4 class="fs-6">২. ইউনিটের উদ্যোগে সামাজিক কাজ :</h4>
-                    {{-- <table class="text-center  mb-1">
+                <div class="paribarik mb-2">
+                    <h4 class="fs-6">৫. দাওয়াতি ও পারিবারিক ইউনিট*:</h4>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="width">ইউনিটের ধরন</th>
+                                <th class="width">বিগত সময়ের সংখ্যা</th>
+                                <th class="width">বর্তমান সংখ্যা</th>
+                                <th class="width">বৃদ্ধি</th>
+                                <th class="width">ঘাটতি</th>
+                                <th class="width">টার্গেট</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">মোট দাওয়াতি ইউনিট</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">মোট পারিবারিক ইউনিট</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <p class="font-13">*দাওয়াতি ইউনিট ও পারিবারিক ইউনিটের সংখ্যা মোট সাংগঠনিক ইউনিটে অন্তর্ভুক্ত হবে না।</p>
+                </div>
+                <div class="bidai_chatro mb-3">
+                    <h4 class="fs-6">৬. বিদায়ী ছাত্র-ছাত্রী জনশক্তির সংগঠনে যোগদান</h4>
+                    <table class="text-center  mb-1 table_layout_fixed">
                         <thead>
                             <tr>
                                 <th class="">বিবরণ</th>
+                                <th class="">সদস্য/ সদস্যা</th>
+                                <th class="">সাথী/অগ্রসর কর্মী</th>
+                                <th class="">কর্মী</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">যোগদানকৃত ছাত্র-ছাত্রীর সংখ্যা</td>
+                                <td>/</td>
+                                <td>/</td>
+                                <td>/</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="sofor mb-2">
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="left w-50">
+                            <h4 class="fs-6 fw-bold">৭. সফর:</h4>
+                            <table class="text-center  mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="">সফরের ধরন</th>
+                                        <th class="width-40">মোট সংখ্যা</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2">ঊর্ধ্বতন দায়িত্বশীলদের সফর</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">ওয়ার্ড আমীর/সভাপতির সফর</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">ওয়ার্ড শূরা/কর্মপরিষদ/টিম সদস্যদের সফর</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="right w-50">
+                            <h4 class="fs-6 fw-bold">৮. ইয়ানত দাতা:</h4>
+                            <table class="text-center  mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="">নতুন ইয়ানত দাতা</th>
+                                        <th class="width-35">মোট সংখ্যা</th>
+                                        <th class="width-35">অর্থের পরিমাণ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2">সহযোগী সদস্য</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">সুধী</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="boithok mb-4 pb-3">
+                    <h4 class="fs-6">৯. সাংগঠনিক বৈঠকাদিঃ</h4>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="width">ক্রমিক</th>
+                                <th class="width-30">বৈঠকের ধরন</th>
                                 <th class="width-20">সংখ্যা</th>
-                                <th class="">বিবরণ</th>
+                                <th class="width-20">টার্গেট</th>
+                                <th class="w-25">গড় উপস্থিতি</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">১.</td>
+                                <td class="text-start">ওয়ার্ড শূরা/কর্মপরিষদ / টিম বৈঠক</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">২.</td>
+                                <td class="text-start">ওয়ার্ড বৈঠক</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">৩.</td>
+                                <td class="text-start">মাসিক সদস্য (রুকন) বৈঠক</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">৪.</td>
+                                <td class="text-start">ইউনিটে মোট কর্মী বৈঠক</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">৫.</td>
+                                <td class="text-start">উলামা/ যুবক/শ্রমিকদের বৈঠক/সমাবেশ</td>
+                                <td> 45 / 54 / 54 </td>
+                                <td>54 / 54 / 65</td>
+                                <td>56 / 65 / 43</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="proshikkhon mb-2">
+                <h1 class="font-18 fw-bold">প্ৰশিক্ষণ :</h1>
+                <div class="tarbiat mb-3">
+                    <h4 class="fs-6 fw-bold">ক) তারবিয়াত (নৈতিক শিক্ষা ও সাংগঠনিক প্রশিক্ষণ):</h4>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="width-5">ক্রমিক</th>
+                                <th class="width-40">প্রোগ্রামের ধরন</th>
+                                <th class="width">মোট সংখ্যা</th>
+                                <th class="width">টার্গেট</th>
+                                <th class="">গড় উপস্থিতি</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td >১.</td>
+                                <td class="text-start">ইউনিটে তারবিয়াতী বৈঠক</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td >২.</td>
+                                <td class="text-start">ওয়ার্ডভিত্তিক কর্মী শিক্ষা বৈঠক</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td >৩.</td>
+                                <td class="text-start">ঊর্ধ্বতন সংগঠনের শিক্ষাশিবির/শিক্ষা বৈঠকে অংশগ্রহণকারী</td>
+                                <td>/</td>
+                                <td>/</td>
+                                <td>/</td>
+                            </tr>
+                            <tr>
+                                <td >৪.</td>
+                                <td class="text-start">গণশিক্ষা বৈঠক/ গণ নৈশ ইবাদত</td>
+                                <td>/</td>
+                                <td>/</td>
+                                <td>/</td>
+                            </tr>
+                            <tr>
+                                <td >৫.</td>
+                                <td class="text-start">আলোচনা চক্র</td>
+                                <td class="text-start">গ্রুপ সংখ্যা:</td>
+                                <td class="text-start">অধিবেশন সংখ্যা:</td>
+                                <td>56 / 65 / 43</td>
+                            </tr>
+                            <tr>
+                                <td >৬.</td>
+                                <td class="text-start">দারস্/সহীহ কুরআন তিলাওয়াত অনুশীলন</td>
+                                <td class="text-start">প্রোগ্রাম সংখ্যা :</td>
+                                <td></td>
+                                <td>56 / 65 / 43</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="hrd">
+                    <h4 class="fs-6 fw-bold">খ) মানব সম্পদ উন্নয়ন কোর্সসমূহ :</h4>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="">কোর্সের ধরন</th>
+                                <th class="">অংশগ্রহণকারীর সংখ্যা</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">দাওয়াহ / সমাজকর্ম/ মিডিয়া</td>
+                                <td>543  / 454  / 345</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">আইসিটি/ অফিস/ফিন্যান্সিয়াল ম্যানেজমেন্ট/ইংরেজি ভাষা/আরবি ভাষা</td>
+                                <td>543  / 454  / 345  / 454  / 345</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ*</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="font-14">* ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ কোর্সের আওতায় ফার্সিং (পোল্ট্রি, ফিশারিজ, ডেইরি), সেলাই/এমব্রয়ডারী মেশিন অপারেটর, ড্রাইভিং কাম অটোমেকানিক, রন্ধন শিল্প, হর্টিকালচার/নার্সারি, তাঁত শিল্প/বুটিকস, হস্ত শিল্প, ইলেক্ট্রিক্যাল এন্ড ইলেক্ট্রনিক্স সার্ভিসিং, সিভিল কন্সট্রাকশন/প্লাম্বারিং, আমিনশীপ ইত্যাদি কোর্সসমূহের বাস্তবায়ন রিপোর্টের যোগফল এখানে বসাতে হবে।</p>
+                </div>
+            </div>
+
+            <div class="shomajsheba mt-5">
+                <h1 class="font-18 fw-bold">সমাজ সংস্কার ও সমাজসেবা :</h1>
+                <div class="personal_shamajik_kaj mb-2">
+                    <h4 class="fs-6 fw-bold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h4>
+                    <table class="text-center  mb-1">
+                        <tr>
+                            <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
+                            <td class="width-20">43</td>
+                            <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
+                            <td class="width-20">3424</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="samostik_shamajik_kaj pt-2 mb-2">
+                    <h4 class="fs-6 fw-bold">২. সামষ্টিক/সেবা টিমের মাধ্যমে সামাজিক কাজ (প্রযোজ্য ক্ষেত্রে):</h4>
+                    <table class="mb-1">
+                        <tbody>
+                            <td class="w-25 text-center">সাধারণ সেবা টিম সংখ্যা</td>
+                            <td></td>
+                            <td class="w-25 text-center">টেকনিক্যাল সেবা টিম সংখ্যা</td>
+                            <td></td>
+                            <td class="w-25 text-center">স্বেচ্ছাসেবক টিম সংখ্যা</td>
+                            <td></td>
+                        </tbody>
+                    </table>
+                    <table class="text-center  mb-1">
+                        <thead>
+                            <tr>
+                                <th class="width-35">বিবরণ</th>
+                                <th class="width-15">সংখ্যা</th>
+                                <th class="width-35">বিবরণ</th>
                                 <th class="width-15">সংখ্যা</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-start px-2">সামাজিক অনুষ্ঠানে অংশগ্রহন/সহায়তা প্রদান</td>
-                                <td >
-                                    {{bangla($shomajsheba2->shamajik_onusthane_ongshogrohon?? "")}} /
-                                    {{bangla($shomajsheba2->shamajik_onusthane_shohayota_prodan?? "")}}
-                                </td>
-                                <td class="text-start px-2">স্বেচ্ছায় রক্ত দান (কতজন/কতজনকে)</td>
-                                <td >
-                                    {{bangla($shomajsheba2->voluntarily_blood_donation_kotojon?? "")}} /
-                                    {{bangla($shomajsheba2->voluntarily_blood_donation_kotojonke?? "")}}
-                                </td>
+                                <td class="text-start px-2">ছোট-ছোট উন্নয়নমূলক কাজ</td>
+                                <td></td>
+                                <td class="text-start px-2">টেকনিক্যাল সেবা প্রদান (কতজন / কতজনকে)</td>
+                                <td>/</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2 font-13">সামাজিক অনুষ্ঠানে অশংগ্রহণ/সহায়তা প্রদান (সংখ্যা / কতজনকে)</td>
+                                <td>/</td>
+                                <td class="text-start px-2">অনলাইনের মাধ্যমে সেবা প্রদান (কতজনকে)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">সামাজিক বিরোধ মীমাংসা</td>
-                                <td >{{bangla($shomajsheba2->shamajik_birodh_mimangsha?? "")}}</td>
-                                <td class="text-start px-2">মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজন/কতজনকে)</td>
-                                <td >
-                                    {{bangla($shomajsheba2->matrikalin_sheba_prodan_kotojon?? "")}} /
-                                    {{bangla($shomajsheba2->matrikalin_sheba_prodan_kotojonke?? "")}}
-                                </td>
+                                <td></td>
+                                <td class="text-start px-2">বৃক্ষরোপন (কতটি)</td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <td class="text-start px-2">মানবিক সহায়তা/কর্জে হাসানা প্রদান (কতজনকে)</td>
-                                <td >
-                                    {{bangla($shomajsheba2->manobik_shohayota_prodan?? "")}} /
-                                    {{bangla($shomajsheba2->korje_hasana_prodan?? "")}}
-                                </td>
-                                <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে)</td>
-                                <td >{{bangla($shomajsheba2->mayeter_gosol?? "")}}</td>
+                                <td class="text-start px-2">মানবিক সহায়তা প্রদান (কতজনকে)</td>
+                                <td></td>
+                                <td class="text-start px-2">জনসচেতনতামূলক প্রোগ্রাম (কতটি)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">কর্জে হাসানা প্রদান (কতজনকে )</td>
+                                <td></td>
+                                <td class="text-start px-2">ত্রাণ বিতরণ (কতজনকে)</td>
+                                <td ></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">পরিষ্কার-পরিচ্ছন্নতা/মশক নিধন অভিযান</td>
+                                <td>/</td>
+                                <td class="text-start px-2">ভিন্নধর্মাবলম্বীদের সেবা প্রদান (কতজন/কতজনকে)</td>
+                                <td >/</td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">রোগীর পরিচর্যা/চিকিৎসা সহায়তা প্রদান (কতজনকে)</td>
-                                <td >
-                                    {{bangla($shomajsheba2->rogir_poricorja?? "")}} /
-                                    {{bangla($shomajsheba2->medical_shohayota_prodan?? "")}}
-                                </td>
-                                <td class="text-start px-2">অন্যান্য</td>
-                                <td >{{bangla($shomajsheba2->others?? "")}}</td>
+                                <td>/</td>
+                                <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে )</td>
+                                <td ></td>
                             </tr>
                             <tr>
-                                <td class="text-start px-2">নবজাতককে গিফ্ট প্রদান (কতজনকে )</td>
-                                <td >{{bangla($shomajsheba2->nobojatokke_gift_prodan?? "")}}</td>
-                                <td class="text-start px-2"></td>
+                                <td class="text-start px-2">স্বেচ্ছায় রক্ত দান (কতজন/কতজনকে)</td>
+                                <td>/</td>
+                                <td class="text-start px-2">জানাযায় অংশগ্রহণ</td>
+                                <td ></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">নবজাতককে গিফ্‌ট প্রদান (কতজনকে)</td>
+                                <td></td>
+                                <td class="text-start px-2">স্বল্প পুঁজিতে কর্মসংস্থানের সহায়তা (কতজনকে)</td>
+                                <td ></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">ভ্রাম্যমান স্কুল/মক্তব চালু</td>
+                                <td>/</td>
+                                <td class="text-start px-2">অন্যান্য......</td>
                                 <td ></td>
                             </tr>
                         </tbody>
-                    </table> --}}
+                    </table>
+                </div>
+                <div class="shastho_poribar_kollan mb-2">
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="left w-50">
+                            <h4 class="fs-6 fw-bold">৩. স্বাস্থ্য ও পরিবার কল্যাণমূলক কাজ</h4>
+                            <table class="text-center  mb-1">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2 width-70">স্বাস্থ্যকর্মী প্রশিক্ষণ প্রোগ্রামে মোট অংশগ্রহণকারীর সংখ্যা</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">কতজন স্বাস্থ্যসেবা কাজে অংশগ্রহণ করেছেন</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">সেবাপ্রাপ্ত সংখ্যা</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="right w-50">
+                            <h4 class="fs-6 fw-bold">৪. প্রাতিষ্ঠানিক উদ্যোগে সামাজিক কাজ:</h4>
+                            <table class="text-center  mb-1">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2 width-70">কতটি সামাজিক প্রতিষ্ঠান রয়েছে</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">কতটি প্রতিষ্ঠানে সামাজিক কাজ হয়েছে</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2 font-13">কতটি নতুন সামাজিক প্রতিষ্ঠান চালু করা হয়েছে (প্রযোজ্য ক্ষেত্রে)</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="rartrio">
-                <h1 class="font-18">রাষ্ট্রীয় সংস্কার ও সংশোধন :</h1>
-                <div class="bisistomb-2">
-                    <p>বিশিষ্ট ব্যক্তিবর্গের সাথে যোগাযোগ সংখ্যা :   <span>{{bangla($rastrio->bishishto_bekti_jogajog?? "")}}</span></p>
+                <h1 class="font-18 fw-bold">রাষ্ট্রীয় সংস্কার ও সংশোধন :</h1>
+                <div class="rajnoitik_jogajog">
+                    <h4 class="fs-6 fw-bold">১. রাজনৈতিক ও প্রশাসনিক যোগাযোগ</h4>
+                    <table class="text-center  mb-1">
+                        <thead>
+                            <tr>
+                                <th>যোগাযোগের ধরন</th>
+                                <th>মোট কতজন যোগাযোগ করেছেন</th>
+                                <th>মোট কতজনের সাথে যোগাযোগ হয়েছে</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">রাজনৈতিক ব্যক্তিবর্গ</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">প্রশাসনিক ব্যক্তিবর্গ</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="kormoshuchi_bastobayon">
+                    <h4 class="fs-6 fw-bold">২. কর্মসূচি বাস্তবায়ন</h4>
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="left width-55">
+                            <table class="text-center mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="width-55">কর্মসূচির বিবরণ</th>
+                                        <th>মোট সংখ্যা</th>
+                                        <th>গড় উপস্থিতি</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2 ">কেন্দ্র ঘোষিত রাজনৈতিক কর্মসূচি পালন</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2 font-13">স্থানীয়ভাবে ঘোষিত কর্মসূচি : জনসভা/সমাবেশ/মিছিল</td>
+                                        <td>43 / 45 / 76 </td>
+                                        <td>43 / 45 / 76 </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="right width-45">
+                            <table class="text-center  mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="width-60">কর্মসূচির বিবরণ</th>
+                                        <th>মোট সংখ্যা</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2 font-14">পোস্টার/লিফলেট/বুকলেট/স্মারকলিপি বিতরণ</td>
+                                        <td>54 / 43 / 43 / 43 </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">অন্যান্য</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dibosh">
+                    <h4 class="fs-6 fw-bold">৩. জাতীয় ও আন্তর্জাতিক দিবস পালন:</h4>
+                    <table class="text-center  mb-1">
+                        <thead>
+                            <tr>
+                                <th>দিবসসমূহ</th>
+                                <th>মোট প্রোগ্রাম সংখ্যা</th>
+                                <th>গড় উপস্থিতি</th>
+                                <th>দিবসসমূহ</th>
+                                <th>মোট প্রোগ্রাম সংখ্যা</th>
+                                <th>গড় উপস্থিতি</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">স্বাধীনতা ও জাতীয় দিবস</td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-start">আন্তর্জাতিক মাতৃভাষা দিবস</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">বিজয় দিবস</td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-start">অন্যান্য</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="nirbachon">
+                    <h4 class="fs-6 fw-bold">৪. জাতীয় ও স্থানীয় নির্বাচনভিত্তিক কার্যক্রম:</h4>
+                    <table class="text-center  mb-1">
+                        <thead>
+                            <tr>
+                                <th>নির্বাচনের ধরন</th>
+                                <th>মোট প্রার্থী সংখ্যা</th>
+                                <th>নির্বাচিত সংখ্যা</th>
+                                <th>দ্বিতীয় অবস্থান</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">কাউন্সিলর/মেম্বার</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex align-items-start gap-2">
+                        <table class="text-center mb-2 width-60">
+                            <thead>
+                                <tr>
+                                    <th class="width-45">প্রস্তুতিমূলক কার্যক্রমের ধরন</th>
+                                    <th>সংখ্যা</th>
+                                    <th>বৃদ্ধি</th>
+                                    <th>টার্গেট</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start">মোট ভোট কেন্দ্র (জাতীয়/স্থানীয়)</td>
+                                    <td>/</td>
+                                    <td>/</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start">ভোট কেন্দ্র কমিটি/কেন্দ্র/ বুথভিত্তিক ইউনিট</td>
+                                    <td>/</td>
+                                    <td>/</td>
+                                    <td>/</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="text-center w-25">
+                            <thead>
+                                <tr>
+                                    <th>নির্বাচন পরিচালনা কমিটির বৈঠক সংখ্যা</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>45</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
             </div>
-            {{-- <div class="baytulmal">
-                <div class="title">
+            <div class="baytulmal">
+                <div class="title negative_margine">
                     <h1>বাইতুলমাল</h1>
                 </div>
-                <p class="fs-6">মাসিক ওয়াদার পরিমাণ :</p>
+                <p class="fs-6 fw-bold">ধার্যকৃত নিছাব :</p>
                 <table class="text-center  mb-1 table_layout_fixed">
                     <thead>
                         <tr>
@@ -904,41 +1554,119 @@
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        @foreach ($income_category_wise as $income_category)
-                                            <tr>
-                                                <td class="text-start px-2 w-50 border_bottom">{{$income_category["category"]}}</td>
-                                                <td class="border_left_bottom">{{bangla($income_category["amount"])}}</td>
-                                            </tr>
-                                        @endforeach
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">প্রাপ্ত নিছাব</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">সরাসরি ইয়ানত</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">এককালীন</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">নির্বাচনী ফান্ড</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">শহীদ ফান্ড</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">কল্যাণ তহবিল</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">সমাজকল্যাণ ও সমাজসেবা</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">প্রকাশনা</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">বই বিক্রি</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </td>
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        @foreach ($expense_category_wise as $expense_category)
-                                            <tr>
-                                                <td class="text-start px-2 w-50 border_bottom">{{$expense_category["category"]}}</td>
-                                                <td class="border_left_bottom">{{bangla($expense_category["amount"])}}</td>
-                                            </tr>
-                                        @endforeach
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">নিছাব পরিশোধ</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">এককালীন</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">স্থানীয় খরচ</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">নির্বাচনী ফান্ড</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">শহীদ ফান্ড</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">কল্যাণ তহবিল</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">সমাজকল্যাণ ও সমাজসেবা</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">দাওয়াত</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-start px-2 w-50 border_bottom">অন্যান্য</td>
+                                            <td class="border_left_bottom"></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </td>
                         </tr>
                         <tr>
+                            <td class="text-end px-2">মোট</td>
+                            <td ></td>
+                            <td class="text-end px-2">মোট</td>
+                            <td ></td>
+                        </tr>
+                        <tr>
+                            <td class="text-end px-2">গত মাসের উদ্বৃত্ত</td>
+                            <td ></td>
+                            <td class="text-end px-2">এ মাসের উদ্বৃত্ত</td>
+                            <td ></td>
+                        </tr>
+                        <tr>
                             <td class="text-end px-2">সর্বমোট</td>
-                            <td >{{bangla($total_income?? "")}}</td>
+                            <td ></td>
                             <td class="text-end px-2">সর্বমোট</td>
-                            <td >{{bangla($total_expense?? "")}}</td>
+                            <td ></td>
                         </tr>
                     </tbody>
                 </table>
-            </div> --}}
-            {{-- <div class="montobbo">
-                <h1 class="fs-6 mb-1">ইউনিট সভানেত্রীর মন্তব্য :</h1>
-                <p>{{$montobbo->montobbo?? ""}}</p>
-            </div> --}}
+            </div>
+            <div class="montobbo">
+                <h1 class="fs-6 fw-bold">ওয়ার্ড আমীর/সভাপতির মন্তব্য :</h1>
+                <p>1. সব দুঃখের মূল এই দুনিয়ার প্রতি অত্যাধিক আকর্ষণ।- হযরত আলী (রাঃ)
+
+                    2. একজন আহত ব্যক্তি তার যন্ত্রনা যত সহজে ভুলে যায়, একজন অপমানিত ব্যক্তি তত সহজে অপমান ভোলে না।- জর্জ লিললো
+
+                    3. অসহায়কে অবজ্ঞা করা উচিত নয়, কারণ মানুষ মাত্রেই জীবনের কোন না কোন সময় অসহায়তার শিকার হবে।- গোল্ড স্মিথ
+
+                    4. ভবিষ্যতে যার কাছ থেকে তুমি সবচেয়ে বড় কষ্টটি পাবে, আজ সে তোমার সবচেয়ে কাছের কোন একজন। - রেদোয়ান মাসুদ</p>
+            </div>
         </section>
 
 
