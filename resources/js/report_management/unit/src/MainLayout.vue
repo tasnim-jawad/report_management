@@ -174,6 +174,7 @@ export default {
         // console.log(this.user);
     },
     methods:{
+
         auth_user: function(){
             axios.get("/user/user_info")
                 .then(responce =>{
@@ -184,11 +185,14 @@ export default {
         },
         logout: function(){
             // console.log("clicked");
-            localStorage.removeItem('token');
-            let token = localStorage.getItem('token');
-            if(!token){
-                window.location.href = '/login'
+            if(window.confirm('logout')){
+                localStorage.removeItem('token');
+                document.getElementById('logout-form').submit();
             }
+            // let token = localStorage.getItem('token');
+            // if(!token){
+            //     window.location.href = '/login'
+            // }
         }
     }
 }
