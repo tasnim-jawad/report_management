@@ -43,3 +43,5 @@ Route::get('/tt',function(){
     $hi = unit_report_header_info($rs, null, '2024-03-01');
     $cg = common_get(Dawat1RegularGroupWise::class, request()->user_id);
 });
+
+Route::any('/logout','\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
