@@ -84,6 +84,7 @@ class LoginController extends Controller
 
 
         if ($check_auth_user && Hash::check($request->password, $check_auth_user->password)) {
+            auth()->login($check_auth_user);
             DB::table('oauth_access_tokens')->where("user_id", $check_auth_user->id)->update(['revoked' => 1]);
             $data['access_token'] = $check_auth_user->createToken('accessToken')->accessToken;
             $data['user'] = $check_auth_user;
@@ -91,5 +92,16 @@ class LoginController extends Controller
         } else {
             return response()->json(['status' => 'error', 'message' => 'Sorry,user not found'], 404);
         }
+    }
+
+    public function logout()
+    {
+        if (auth()->check() && $_SERVER["REQUEST_METHOD"] == "POST") {
+            echo"<script>localStorage.removeItem('token');</script>";
+            DB::table('oauth_access_tokens')->where("user_id", auth()->user()->id)->update(['revoked' => 1]);
+            auth()->logout();
+        }
+
+        return redirect('/login');
     }
 }
