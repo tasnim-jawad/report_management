@@ -42,6 +42,15 @@ class UnitController extends Controller
     public function report(){
         $form_data = request()->query();
         // dd($form_data,$form_data['user_id']);
+        // $date = Carbon::parse($form_data['month']);
+        // $month = $date->month;
+        // $year = $date->year;
+        // dd($date,$month,$year);
+        $isPermitted =  is_unit_report_upload_permitted($form_data['month']);
+        // dd($isPermitted);
+        if(!$isPermitted){
+            return redirect()->back();
+        }
         $unit_user = User::where('id',$form_data['user_id'])->with('org_unit_user')->get()->first();
 
         $unit_id = $unit_user->org_unit_user['unit_id'];

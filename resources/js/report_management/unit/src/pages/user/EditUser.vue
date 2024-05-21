@@ -109,9 +109,9 @@ export default {
     methods:{
         show_users : function(){
             axios.get(`/user/show/${this.user_id}`)
-                .then(responce => {
-                    console.log(responce);
-                    this.user_details = responce.data
+                .then(response => {
+                    console.log(response);
+                    this.user_details = response.data
                     console.log(this.user_details);
                 })
         },
@@ -131,16 +131,16 @@ export default {
         },
         show_responsibility : function(){
             axios.get("/responsibility/all")
-                .then(responce => {
-                    this.responsibilities = responce.data
+                .then(response => {
+                    this.responsibilities = response.data
                     // console.log(this.responsibilities.data);
                 })
         },
         user_responsibility : function(){
             console.log(this.user_id);
             axios.get(`/org-unit-responsible/show_user/${this.user_id}`)
-                .then(responce => {
-                    this.user_responsibile = responce.data
+                .then(response => {
+                    this.user_responsibile = response.data
                     // console.log(this.user_responsibile);
                 })
                 .catch(function (error) {

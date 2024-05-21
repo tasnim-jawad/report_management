@@ -31,7 +31,7 @@
                         <input type="text" :name="field.name" class="form-control">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm mt-3">Create Category</button>
+                <button type="submit" class="btn btn-primary btn-sm mt-3">Create Entry</button>
             </form>
         </div>
     </div>

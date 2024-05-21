@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            Create Bm Category
+            Create Bm Expense
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_expense">

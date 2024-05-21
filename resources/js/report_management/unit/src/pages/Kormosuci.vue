@@ -10,9 +10,69 @@
             <div class="card-header">
                 <h1>কর্মসূচি বাস্তবায়ন:</h1>
             </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মাসিক সাধারণ সভা:</h1>
+            </div>
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'kormosuci-bastobayon'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ব্যক্তিগত ইফতার মাহফিল:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'kormosuci-bastobayon'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ইফতার মাহফিল:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'kormosuci-bastobayon'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>চা চক্র:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'kormosuci-bastobayon'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সামষ্টিক খাওয়া:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'kormosuci-bastobayon'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>শিক্ষা সফর:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -29,79 +89,88 @@ export default {
     month: null,
     fields1:[
         {
-            label:'মাসিক সাধারণ সভা - সংখ্যা',
+            label:'সংখ্যা',
             name:'unit_masik_sadaron_sova_total',
         },
         {
-            label:'মাসিক সাধারণ সভা - টার্গেট',
+            label:'টার্গেট',
             name:'unit_masik_sadaron_sova_target',
         },
         {
-            label:'মাসিক সাধারণ সভা - মোট উপস্থিতি',
+            label:'মোট উপস্থিতি',
             name:'unit_masik_sadaron_sova_uposthiti',
         },
+
+    ],
+    fields2:[
         {
-            label:'ব্যক্তিগত ইফতার মাহফিল - সংখ্যা',
+            label:'সংখ্যা',
             name:'iftar_mahfil_personal_total',
         },
         {
-            label:'ব্যক্তিগত ইফতার মাহফিল - টার্গেট',
+            label:'টার্গেট',
             name:'iftar_mahfil_personal_target',
         },
         {
-            label:'ব্যক্তিগত ইফতার মাহফিল - মোট উপস্থিতি',
+            label:'মোট উপস্থিতি',
             name:'iftar_mahfil_personal_uposthiti',
         },
+    ],
+    fields3:[
         {
-            label:'সাংগঠনিক ইফতার মাহফিল - সংখ্যা',
+            label:'সংখ্যা',
             name:'iftar_mahfil_samostic_total',
         },
         {
-            label:'সাংগঠনিক ইফতার মাহফিল - টার্গেট',
+            label:'টার্গেট',
             name:'iftar_mahfil_samostic_target',
         },
         {
-            label:'সাংগঠনিক ইফতার মাহফিল - মোট উপস্থিতি',
+            label:'মোট উপস্থিতি',
             name:'iftar_mahfil_samostic_uposthiti',
         },
+    ],
+    fields4:[
         {
-            label:'চা চক্র - সংখ্যা',
+            label:'সংখ্যা',
             name:'cha_chakra_total',
         },
         {
-            label:'চা চক্র - টার্গেট',
+            label:'টার্গেট',
             name:'cha_chakra_target',
         },
         {
-            label:'চা চক্র - মোট উপস্থিতি',
+            label:'মোট উপস্থিতি',
             name:'cha_chakra_uposthiti',
         },
+    ],
+    fields5:[
         {
-            label:'সামষ্টিক খাওয়া - সংখ্যা',
+            label:'সংখ্যা',
             name:'samostic_khawa_total',
         },
         {
-            label:'সামষ্টিক খাওয়া - টার্গেট',
+            label:'টার্গেট',
             name:'samostic_khawa_target',
         },
         {
-            label:'সামষ্টিক খাওয়া - মোট উপস্থিতি',
+            label:'মোট উপস্থিতি',
             name:'samostic_khawa_uposthiti',
         },
+    ],
+    fields6:[
         {
-            label:'শিক্ষা সফর - সংখ্যা',
+            label:'সংখ্যা',
             name:'sikkha_sofor_total',
         },
         {
-            label:'শিক্ষা সফর - টার্গেট',
+            label:'টার্গেট',
             name:'sikkha_sofor_target',
         },
         {
-            label:'শিক্ষা সফর - মোট উপস্থিতি',
+            label:'মোট উপস্থিতি',
             name:'sikkha_sofor_uposthiti',
         },
-
-
     ],
 }),
     methods: {

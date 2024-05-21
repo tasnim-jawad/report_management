@@ -10,9 +10,91 @@
             <div class="card-header">
                 <h1>দাওয়াহ্ ও প্রকাশনা:</h1>
             </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>বই বিলিকেন্দ্ৰ:</h1>
+            </div>
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawah-and-prokashona'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>বই:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawah-and-prokashona'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>বই বিলি/বিক্রি:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawah-and-prokashona'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>বইয়ের সফ্ট কপি বিলি (সংগঠন অনুমোদিত):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawah-and-prokashona'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>দাওয়াতি লিংক বিতরণ (সংগঠন অনুমোদিত):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawah-and-prokashona'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সোনার বাংলা:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawah-and-prokashona'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সংগ্রাম:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields7" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawah-and-prokashona'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৃথিবী:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields8" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -28,70 +110,84 @@ export default {
         month:null,
         fields1:[
             {
-                label:'বই বিলিকেন্দ্ৰ সংখ্যা',
+                label:'সংখ্যা',
                 name:'unit_book_distribution_center',
             },
             {
-                label:'বই বিলিকেন্দ্ৰ বৃদ্ধি',
+                label:'বৃদ্ধি',
                 name:'unit_book_distribution_center_increase',
             },
+
+        ],
+        fields2:[
             {
-                label:'বই সংখ্যা',
+                label:'সংখ্যা',
                 name:'books_in_pathagar',
             },
             {
-                label:'বই বৃদ্ধি',
+                label:'বৃদ্ধি',
                 name:'books_in_pathagar_increase',
             },
+        ],
+        fields3:[
             {
-                label:'বই বিলি/বিক্রি সংখ্যা',
+                label:'সংখ্যা',
                 name:'unit_book_distribution',
             },
             {
-                label:'বই বিলি/বিক্রি বৃদ্ধি',
+                label:'বৃদ্ধি',
                 name:'unit_book_distribution_increase',
             },
+        ],
+        fields4:[
             {
-                label:'বইয়ের সফ্ট কপি বিলি (সংগঠন অনুমোদিত) সংখ্যা',
+                label:'সংখ্যা',
                 name:'soft_copy_book_distribution',
             },
             {
-                label:'বইয়ের সফ্ট কপি বিলি (সংগঠন অনুমোদিত) বৃদ্ধি',
+                label:'বৃদ্ধি',
                 name:'soft_copy_book_distribution_increase',
             },
+        ],
+        fields5:[
             {
-                label:'দাওয়াতি লিংক বিতরণ (সংগঠন অনুমোদিত) সংখ্যা',
+                label:'সংখ্যা',
                 name:'dawat_link_distribution',
             },
             {
-                label:'দাওয়াতি লিংক বিতরণ (সংগঠন অনুমোদিত) বৃদ্ধি',
+                label:'বৃদ্ধি',
                 name:'dawat_link_distribution_increase',
             },
+        ],
+        fields6:[
             {
-                label:'সোনার বাংলা সংখ্যা',
+                label:'সংখ্যা',
                 name:'sonar_bangla',
             },
             {
-                label:'সোনার বাংলা বৃদ্ধি',
+                label:'বৃদ্ধি',
                 name:'sonar_bangla_increase',
             },
+        ],
+        fields7:[
             {
-                label:'সংগ্রাম সংখ্যা',
+                label:'সংখ্যা',
                 name:'songram',
             },
             {
-                label:'সংগ্রাম বৃদ্ধি',
+                label:'বৃদ্ধি',
                 name:'songram_increase',
             },
+        ],
+        fields8:[
             {
-                label:'পৃথিবী সংখ্যা',
+                label:'সংখ্যা',
                 name:'prithibi',
             },
             {
-                label:'পৃথিবী বৃদ্ধি',
+                label:'বৃদ্ধি',
                 name:'prithibi_increase',
             },
-
         ],
     }),
     methods: {

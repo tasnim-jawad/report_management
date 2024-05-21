@@ -31,7 +31,7 @@
                     <p class="w-25">উপজেলা/থানা: {{$thana_info['title']?? ""}}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between ">
-                    <p>ইউনিট সভানেত্রীর নাম: {{$precedent['full_name']?? ""}}</p>
+                    <p>ইউনিট সভাপতির নাম: {{$precedent['full_name']?? ""}}</p>
                     <p class="width-30">ইউনিটের ধরন: {{$org_type['title']?? "" }}</p>
                 </div>
             </div>
@@ -322,7 +322,7 @@
                                 <td >{{bangla($kormosuci->unit_masik_sadaron_sova_total?? "")}}</td>
                                 <td >{{bangla($kormosuci->unit_masik_sadaron_sova_target?? "")}}</td>
                                 <td >
-                                    {{number_format($kormosuci->unit_masik_sadaron_sova_uposthiti / $kormosuci->unit_masik_sadaron_sova_total?? "",1)}}
+                                    {{bangla(round($kormosuci->unit_masik_sadaron_sova_uposthiti / $kormosuci->unit_masik_sadaron_sova_total?? ""))}}
                                 </td>
                             </tr>
                             <tr>
@@ -337,8 +337,8 @@
                                     {{bangla($kormosuci->iftar_mahfil_samostic_target?? "")}}
                                 </td>
                                 <td >
-                                    {{number_format($kormosuci->iftar_mahfil_personal_uposthiti / $kormosuci->iftar_mahfil_personal_total?? "",1)}} /
-                                    {{number_format($kormosuci->iftar_mahfil_samostic_uposthiti / $kormosuci->iftar_mahfil_samostic_total?? "",1)}}
+                                    {{bangla(round($kormosuci->iftar_mahfil_personal_uposthiti / $kormosuci->iftar_mahfil_personal_total?? 0))}} /
+                                    {{bangla(round($kormosuci->iftar_mahfil_samostic_uposthiti / $kormosuci->iftar_mahfil_samostic_total?? 0))}}
                                 </td>
                             </tr>
                             <tr>
@@ -355,9 +355,9 @@
                                     {{bangla($kormosuci->sikkha_sofor_target?? "")}}
                                 </td>
                                 <td >
-                                    {{number_format($kormosuci->cha_chakra_uposthiti / $kormosuci->cha_chakra_total?? "",1)}} /
-                                    {{number_format($kormosuci->samostic_khawa_uposthiti / $kormosuci->samostic_khawa_total?? "",1)}} /
-                                    {{number_format($kormosuci->sikkha_sofor_uposthiti / $kormosuci->sikkha_sofor_total?? "",1)}}
+                                    {{bangla(round($kormosuci->cha_chakra_uposthiti / $kormosuci->cha_chakra_total?? 0))}} /
+                                    {{bangla(round($kormosuci->samostic_khawa_uposthiti / $kormosuci->samostic_khawa_total?? 0))}} /
+                                    {{bangla(round($kormosuci->sikkha_sofor_uposthiti / $kormosuci->sikkha_sofor_total?? 0))}}
                                 </td>
                             </tr>
                         </tbody>

@@ -47,9 +47,33 @@
             <div class="card-header">
                 <h1>৪. গণসংযোগ ও দাওয়াতি অভিযান পালন:</h1>
             </div>
+            <!-- <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
+                    :unique_key="4"></form-input>
+                </form>
+            </div> -->
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>গণসংযোগ দশক/পক্ষ:</h1>
+            </div>
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
+                    :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
                     :unique_key="4"></form-input>
                 </form>
@@ -121,39 +145,77 @@ export default {
         ],
         fields4: [
             {
-                label: 'গণসংযোগ দশক/পক্ষ - মোট গ্রুপ সংখ্যা ',
+                label: 'মোট গ্রুপ সংখ্যা ',
                 name: 'total_gono_songjog_group',
             },
             {
-                label: 'গণসংযোগ দশক/পক্ষ - অংশগ্রহণকারীর সংখ্যা',
+                label: 'অংশগ্রহণকারীর সংখ্যা',
                 name: 'total_attended',
             },
             {
-                label: 'গণসংযোগ দশক/পক্ষ - কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
                 name: 'how_many_have_been_invited',
             },
             {
-                label: 'গণসংযোগ দশক/পক্ষ - কতজন সহযোগী সদস্য হয়েছেন',
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
                 name: 'how_many_associate_members_created',
             },
+
+
+        ],
+        fields5:[
             {
-                label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - মোট গ্রুপ সংখ্যা ',
+                label: 'মোট গ্রুপ সংখ্যা ',
                 name: 'jela_mohanogor_declared_gonosonjog_group',
             },
             {
-                label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - অংশগ্রহণকারীর সংখ্যা',
+                label: 'অংশগ্রহণকারীর সংখ্যা',
                 name: 'jela_mohanogor_declared_gonosonjog_attended',
             },
             {
-                label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
                 name: 'jela_mohanogor_declared_gonosonjog_invited',
             },
             {
-                label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - কতজন সহযোগী সদস্য হয়েছেন',
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
                 name: 'jela_mohanogor_declared_gonosonjog_associated_created',
             },
+        ]
+        // fields4: [
+        //     {
+        //         label: 'গণসংযোগ দশক/পক্ষ - মোট গ্রুপ সংখ্যা ',
+        //         name: 'total_gono_songjog_group',
+        //     },
+        //     {
+        //         label: 'গণসংযোগ দশক/পক্ষ - অংশগ্রহণকারীর সংখ্যা',
+        //         name: 'total_attended',
+        //     },
+        //     {
+        //         label: 'গণসংযোগ দশক/পক্ষ - কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+        //         name: 'how_many_have_been_invited',
+        //     },
+        //     {
+        //         label: 'গণসংযোগ দশক/পক্ষ - কতজন সহযোগী সদস্য হয়েছেন',
+        //         name: 'how_many_associate_members_created',
+        //     },
+        //     {
+        //         label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - মোট গ্রুপ সংখ্যা ',
+        //         name: 'jela_mohanogor_declared_gonosonjog_group',
+        //     },
+        //     {
+        //         label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - অংশগ্রহণকারীর সংখ্যা',
+        //         name: 'jela_mohanogor_declared_gonosonjog_attended',
+        //     },
+        //     {
+        //         label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+        //         name: 'jela_mohanogor_declared_gonosonjog_invited',
+        //     },
+        //     {
+        //         label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - কতজন সহযোগী সদস্য হয়েছেন',
+        //         name: 'jela_mohanogor_declared_gonosonjog_associated_created',
+        //     },
 
-        ],
+        // ],
     }),
     methods: {
         dawat_upload: function (endpoint) {

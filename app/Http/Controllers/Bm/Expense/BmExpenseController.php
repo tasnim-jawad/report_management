@@ -31,13 +31,13 @@ class BmExpenseController extends Controller
                 $key = request()->search_key;
                 $query->where(function ($q) use ($key) {
                     return $q->where('id', '%' . $key . '%')
-                    ->orWhere('user_id', '%' . $key . '%')
-                    ->orWhere('unit_id', '%' . $key . '%')
-                    ->orWhere('ward_id', '%' . $key . '%')
-                    ->orWhere('thana_id', '%' . $key . '%')
-                    ->orWhere('city_id', '%' . $key . '%')
-                    ->orWhere('amount', '%' . $key . '%')
-                    ->orWhere('date', '%' . $key . '%')
+                    ->orWhere('user_id','LIKE', '%' . $key . '%')
+                    ->orWhere('unit_id','LIKE',  '%' . $key . '%')
+                    ->orWhere('ward_id','LIKE',  '%' . $key . '%')
+                    ->orWhere('thana_id','LIKE',  '%' . $key . '%')
+                    ->orWhere('city_id','LIKE',  '%' . $key . '%')
+                    ->orWhere('amount','LIKE',  '%' . $key . '%')
+                    ->orWhere('date','LIKE',  '%' . $key . '%')
                     ->orWhere('bm_expense_category_id', '%' . $key . '%');
 
                 });

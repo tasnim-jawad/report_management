@@ -10,6 +10,11 @@
             <div class="card-header">
                 <h1>১. তালিমুল কুরআনের মাধ্যমে দাওয়াত:</h1>
             </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ব্যক্তিগত উদ্যোগে:</h1>
+            </div>
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
@@ -18,12 +23,47 @@
             </div>
         </div>
         <div class="card mb-3" v-if="month">
-            <div class="card-header">
-                <h1>২. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত:</h1>
-            </div>
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'department1-talimul-quran'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>২. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ভিন্নধর্মাবলম্বী:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'department4-different-job-holders-dawat'" :unique_key="4"></form-input>
                 </form>
             </div>
@@ -34,7 +74,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'department5-paribarik-dawat'" :unique_key="5"></form-input>
                 </form>
             </div>
@@ -51,21 +91,24 @@ export default {
     month: null,
     fields1:[
         {
-            label:'ব্যক্তিগত উদ্যোগে কতজন সদস্য(রুকন) কুরআন শিক্ষা প্রদান করেছেন ',
+            label:'কতজন সদস্য(রুকন) কুরআন শিক্ষা প্রদান করেছেন ',
             name:'teacher_rokon',
         },
         {
-            label:'ব্যক্তিগত উদ্যোগে কতজন কর্মী কুরআন শিক্ষা প্রদান করেছেন',
+            label:'কতজন কর্মী কুরআন শিক্ষা প্রদান করেছেন',
             name:'teacher_worker',
         },
         {
-            label:'ব্যক্তিগত উদ্যোগে কতজন সদস্য(রুকন)-কে কুরআন শিক্ষা প্রদান করা হয়েছে ',
+            label:'কতজন সদস্য(রুকন)-কে কুরআন শিক্ষা প্রদান করা হয়েছে ',
             name:'student_rokon',
         },
         {
-            label:'ব্যক্তিগত উদ্যোগে কতজন কর্মীকে কুরআন শিক্ষা প্রদান করা হয়েছে ',
+            label:'কতজন কর্মীকে কুরআন শিক্ষা প্রদান করা হয়েছে ',
             name:'student_worker',
         },
+
+    ],
+    fields2:[
         {
             label:'কতজন সহীহ তিলাওয়াত শিখেছেন',
             name:'how_much_learned_quran',
@@ -80,45 +123,49 @@ export default {
         },
 
     ],
-    fields2:[
+    fields3:[
         {
-            label:'রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ - কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+            label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
             name:'political_and_special_invited',
         },
         {
-            label:'রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ - কতজন সহযোগী সদস্য হয়েছেন',
+            label:'কতজন সহযোগী সদস্য হয়েছেন',
             name:'political_and_special_been_associated',
         },
         {
-            label:'রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ - টার্গেট',
+            label:'টার্গেট',
             name:'political_and_special_target',
         },
+    ],
+    fields4:[
         {
-            label:'প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র) - কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+            label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
             name:'prantik_jonogosti_invited',
         },
         {
-            label:'প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র) - কতজন সহযোগী সদস্য হয়েছেন',
+            label:'কতজন সহযোগী সদস্য হয়েছেন',
             name:'prantik_jonogosti_been_associated',
         },
         {
-            label:'প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র) - টার্গেট',
+            label:'টার্গেট',
             name:'prantik_jonogosti_target',
         },
+    ],
+    fields5:[
         {
-            label:'ভিন্নধর্মাবলম্বী - কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+            label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
             name:'vinno_dormalombi_invited',
         },
         {
-            label:'ভিন্নধর্মাবলম্বী - কতজন সহযোগী সদস্য হয়েছেন',
+            label:'কতজন সহযোগী সদস্য হয়েছেন',
             name:'vinno_dormalombi_been_associated',
         },
         {
-            label:'ভিন্নধর্মাবলম্বী - টার্গেট',
+            label:'টার্গেট',
             name:'vinno_dormalombi_target',
         },
     ],
-    fields3:[
+    fields6:[
         {
             label:'দাওয়াতি কাজে অংশগ্রহণকারী পরিবার সংখ্যা',
             name:'total_attended_family',

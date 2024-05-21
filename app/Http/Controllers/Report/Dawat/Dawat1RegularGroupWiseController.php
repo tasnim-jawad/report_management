@@ -118,11 +118,11 @@ class Dawat1RegularGroupWiseController extends Controller
         if (request()->has('search_key')) {
             $key = request()->search_key;
             $query->where(function ($q) use ($key) {
-                return $q->where('id', '%' . $key . '%')
-                    ->orWhere('how_many_groups_are_out', '%' . $key . '%')
-                    ->orWhere('number_of_participants', '%' . $key . '%')
-                    ->orWhere('how_many_have_been_invited', '%' . $key . '%')
-                    ->orWhere('how_many_associate_members_created', '%' . $key . '%');
+                return $q->where('id', "LIKE", '%' . $key . '%')
+                    ->orWhere('how_many_groups_are_out', "LIKE", '%' . $key . '%')
+                    ->orWhere('number_of_participants', "LIKE", '%' . $key . '%')
+                    ->orWhere('how_many_have_been_invited', "LIKE", '%' . $key . '%')
+                    ->orWhere('how_many_associate_members_created', "LIKE", '%' . $key . '%');
             });
         }
 
