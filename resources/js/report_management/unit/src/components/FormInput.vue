@@ -4,7 +4,11 @@
             <label for="">{{label}}</label>
         </div>
         <div class="form_input">
-            <input type="number" :id="unique_key+name" @change="onchange(endpoint)" :name="name" class="form-control">
+            <input type="number"
+                :id="unique_key+name"
+                @change="onchange(endpoint)"
+                :name="name"
+                class="form-control">
         </div>
     </div>
 </template>
