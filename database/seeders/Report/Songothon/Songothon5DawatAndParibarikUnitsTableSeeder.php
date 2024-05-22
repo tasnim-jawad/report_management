@@ -16,7 +16,7 @@ class Songothon5DawatAndParibarikUnitsTableSeeder extends Seeder
         Songothon5DawatAndParibarikUnit::truncate();
         Songothon5DawatAndParibarikUnit::create([
             'paribarik_unit_total' => 32,
-            'paribarik_unit_uposthiti' => 32,
+            'paribarik_unit_increase' => 32,
             'paribarik_unit_target' => 32,
 
             // 'dawati_unit_previous' => 32,
@@ -36,7 +36,7 @@ class Songothon5DawatAndParibarikUnitsTableSeeder extends Seeder
         ]);
         Songothon5DawatAndParibarikUnit::create([
             'paribarik_unit_total' => 36,
-            'paribarik_unit_uposthiti' => 36,
+            'paribarik_unit_increase' => 36,
             'paribarik_unit_target' => 36,
 
             // 'dawati_unit_previous' => 21,
@@ -56,7 +56,7 @@ class Songothon5DawatAndParibarikUnitsTableSeeder extends Seeder
         ]);
         Songothon5DawatAndParibarikUnit::create([
             'paribarik_unit_total' => 34,
-            'paribarik_unit_uposthiti' => 34,
+            'paribarik_unit_increase' => 34,
             'paribarik_unit_target' => 34,
 
             // 'dawati_unit_previous' => 37,
@@ -76,7 +76,7 @@ class Songothon5DawatAndParibarikUnitsTableSeeder extends Seeder
         ]);
         Songothon5DawatAndParibarikUnit::create([
             'paribarik_unit_total' => 35,
-            'paribarik_unit_uposthiti' => 35,
+            'paribarik_unit_increase' => 35,
             'paribarik_unit_target' => 35,
 
             // 'dawati_unit_previous' => 543,

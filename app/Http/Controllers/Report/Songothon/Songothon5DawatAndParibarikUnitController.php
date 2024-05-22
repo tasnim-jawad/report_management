@@ -53,7 +53,7 @@ class Songothon5DawatAndParibarikUnitController extends Controller
                 $query->where(function ($q) use ($key) {
                     return $q->where('id', '%' . $key . '%')
                     ->orWhere('paribarik_unit_total', '%' . $key . '%')
-                    ->orWhere('paribarik_unit_uposthiti', '%' . $key . '%')
+                    ->orWhere('paribarik_unit_increase', '%' . $key . '%')
                     ->orWhere('paribarik_unit_target', '%' . $key . '%');
 
                     // ->orWhere('dawati_unit_previous', '%' . $key . '%')
@@ -100,7 +100,7 @@ class Songothon5DawatAndParibarikUnitController extends Controller
         {
             $validator = Validator::make(request()->all(), [
                 'paribarik_unit_total' => ['required'],
-                'paribarik_unit_uposthiti' => ['required'],
+                'paribarik_unit_increase' => ['required'],
                 'paribarik_unit_target' => ['required'],
 
                 // 'dawati_unit_previous' => ['required'],
@@ -128,7 +128,7 @@ class Songothon5DawatAndParibarikUnitController extends Controller
 
             $data = new Songothon5DawatAndParibarikUnit();
             $data->paribarik_unit_total = request()->paribarik_unit_total;
-            $data->paribarik_unit_uposthiti = request()->paribarik_unit_uposthiti;
+            $data->paribarik_unit_increase = request()->paribarik_unit_increase;
             $data->paribarik_unit_target = request()->paribarik_unit_target;
 
             // $data->dawati_unit_previous = request()->dawati_unit_previous;
@@ -162,7 +162,7 @@ class Songothon5DawatAndParibarikUnitController extends Controller
 
             $validator = Validator::make(request()->all(), [
                 'paribarik_unit_total' => ['required'],
-                'paribarik_unit_uposthiti' => ['required'],
+                'paribarik_unit_increase' => ['required'],
                 'paribarik_unit_target' => ['required'],
 
                 // 'dawati_unit_previous' => ['required'],
@@ -190,7 +190,7 @@ class Songothon5DawatAndParibarikUnitController extends Controller
 
 
             $data->paribarik_unit_total = request()->paribarik_unit_total;
-            $data->paribarik_unit_uposthiti = request()->paribarik_unit_uposthiti;
+            $data->paribarik_unit_increase = request()->paribarik_unit_increase;
             $data->paribarik_unit_target = request()->paribarik_unit_target;
 
             // $data->dawati_unit_previous = request()->dawati_unit_previous;

@@ -181,41 +181,6 @@ export default {
                 name: 'jela_mohanogor_declared_gonosonjog_associated_created',
             },
         ]
-        // fields4: [
-        //     {
-        //         label: 'গণসংযোগ দশক/পক্ষ - মোট গ্রুপ সংখ্যা ',
-        //         name: 'total_gono_songjog_group',
-        //     },
-        //     {
-        //         label: 'গণসংযোগ দশক/পক্ষ - অংশগ্রহণকারীর সংখ্যা',
-        //         name: 'total_attended',
-        //     },
-        //     {
-        //         label: 'গণসংযোগ দশক/পক্ষ - কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-        //         name: 'how_many_have_been_invited',
-        //     },
-        //     {
-        //         label: 'গণসংযোগ দশক/পক্ষ - কতজন সহযোগী সদস্য হয়েছেন',
-        //         name: 'how_many_associate_members_created',
-        //     },
-        //     {
-        //         label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - মোট গ্রুপ সংখ্যা ',
-        //         name: 'jela_mohanogor_declared_gonosonjog_group',
-        //     },
-        //     {
-        //         label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - অংশগ্রহণকারীর সংখ্যা',
-        //         name: 'jela_mohanogor_declared_gonosonjog_attended',
-        //     },
-        //     {
-        //         label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-        //         name: 'jela_mohanogor_declared_gonosonjog_invited',
-        //     },
-        //     {
-        //         label: 'জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান - কতজন সহযোগী সদস্য হয়েছেন',
-        //         name: 'jela_mohanogor_declared_gonosonjog_associated_created',
-        //     },
-
-        // ],
     }),
     methods: {
         dawat_upload: function (endpoint) {

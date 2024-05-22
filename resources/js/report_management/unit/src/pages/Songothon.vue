@@ -231,11 +231,11 @@ export default {
                 name:'paribarik_unit_total',
             },
             {
-                label:'মোট উপস্থিতি',
-                name:'paribarik_unit_uposthiti',
+                label:'বৃদ্ধি',
+                name:'paribarik_unit_increase',
             },
             {
-                label:'বৃদ্ধি',
+                label:'টার্গেট',
                 name:'paribarik_unit_target',
             },
         ],

@@ -322,23 +322,34 @@
                                 <td >{{bangla($kormosuci->unit_masik_sadaron_sova_total?? "")}}</td>
                                 <td >{{bangla($kormosuci->unit_masik_sadaron_sova_target?? "")}}</td>
                                 <td >
-                                    {{bangla(round($kormosuci->unit_masik_sadaron_sova_uposthiti / $kormosuci->unit_masik_sadaron_sova_total?? ""))}}
+                                    @if($kormosuci && isset($kormosuci->unit_masik_sadaron_sova_uposthiti) && isset($kormosuci->unit_masik_sadaron_sova_total) && $kormosuci->unit_masik_sadaron_sova_total != 0)
+                                        {{bangla(round($kormosuci->unit_masik_sadaron_sova_uposthiti / $kormosuci->unit_masik_sadaron_sova_total))}}
+                                    @endif
                                 </td>
                             </tr>
                             <tr>
                                 <td >২.</td>
                                 <td class="text-start px-2">ইফতার মাহফিল (ব্যক্তিগত/সাংগঠনিক)</td>
                                 <td >
-                                    {{bangla($kormosuci->iftar_mahfil_personal_total?? "")}} /
+                                    {{bangla($kormosuci->iftar_mahfil_personal_total?? "  ")}} /
                                     {{bangla($kormosuci->iftar_mahfil_samostic_total?? "")}}
                                 </td>
                                 <td >
-                                    {{bangla($kormosuci->iftar_mahfil_personal_target?? "")}} /
+                                    {{bangla($kormosuci->iftar_mahfil_personal_target?? "  ")}} /
                                     {{bangla($kormosuci->iftar_mahfil_samostic_target?? "")}}
                                 </td>
                                 <td >
-                                    {{bangla(round($kormosuci->iftar_mahfil_personal_uposthiti / $kormosuci->iftar_mahfil_personal_total?? 0))}} /
-                                    {{bangla(round($kormosuci->iftar_mahfil_samostic_uposthiti / $kormosuci->iftar_mahfil_samostic_total?? 0))}}
+                                    @if($kormosuci && isset($kormosuci->iftar_mahfil_personal_uposthiti) && isset($kormosuci->iftar_mahfil_personal_total) && $kormosuci->iftar_mahfil_personal_total != 0)
+                                        {{bangla(round($kormosuci->iftar_mahfil_personal_uposthiti / $kormosuci->iftar_mahfil_personal_total))}}
+                                    @else
+                                        {{"  "}}
+                                    @endif
+                                     /
+                                     @if($kormosuci && isset($kormosuci->iftar_mahfil_samostic_uposthiti) && isset($kormosuci->iftar_mahfil_samostic_total) && $kormosuci->iftar_mahfil_samostic_total != 0)
+                                        {{bangla(round($kormosuci->iftar_mahfil_samostic_uposthiti / $kormosuci->iftar_mahfil_samostic_total))}}
+                                    @else
+                                        {{"  "}}
+                                    @endif
                                 </td>
                             </tr>
                             <tr>
@@ -351,13 +362,27 @@
                                 </td>
                                 <td >
                                     {{bangla($kormosuci->cha_chakra_target?? "")}} /
-                                    {{bangla($kormosuci->samostic_khawa_target?? "")}} /
-                                    {{bangla($kormosuci->sikkha_sofor_target?? "")}}
+                                    {{bangla($kormosuci->samostic_khawa_target?? "  ")}} /
+                                    {{bangla($kormosuci->sikkha_sofor_target?? "  ")}}
                                 </td>
                                 <td >
-                                    {{bangla(round($kormosuci->cha_chakra_uposthiti / $kormosuci->cha_chakra_total?? 0))}} /
-                                    {{bangla(round($kormosuci->samostic_khawa_uposthiti / $kormosuci->samostic_khawa_total?? 0))}} /
-                                    {{bangla(round($kormosuci->sikkha_sofor_uposthiti / $kormosuci->sikkha_sofor_total?? 0))}}
+                                    @if($kormosuci && isset($kormosuci->cha_chakra_uposthiti) && isset($kormosuci->cha_chakra_total) && $kormosuci->cha_chakra_total != 0)
+                                        {{bangla(round($kormosuci->cha_chakra_uposthiti / $kormosuci->cha_chakra_total))}}
+                                    @else
+                                        {{""}}
+                                    @endif
+                                    /
+                                    @if($kormosuci && isset($kormosuci->samostic_khawa_uposthiti) && isset($kormosuci->samostic_khawa_total) && $kormosuci->samostic_khawa_total != 0)
+                                        {{bangla(round($kormosuci->samostic_khawa_uposthiti / $kormosuci->samostic_khawa_total?? 0))}}
+                                    @else
+                                        {{""}}
+                                    @endif
+                                    /
+                                    @if($kormosuci && isset($kormosuci->sikkha_sofor_uposthiti) && isset($kormosuci->sikkha_sofor_total) && $kormosuci->sikkha_sofor_total != 0)
+                                        {{bangla(round($kormosuci->sikkha_sofor_uposthiti / $kormosuci->sikkha_sofor_total?? 0))}}
+                                    @else
+                                        {{""}}
+                                    @endif
                                 </td>
                             </tr>
                         </tbody>
@@ -460,7 +485,7 @@
                         <tbody>
                             <tr>
                                 <td >{{bangla($songothon5->paribarik_unit_total?? "")}}</td>
-                                <td >{{bangla($songothon5->paribarik_unit_uposthiti?? "")}}</td>
+                                <td >{{bangla($songothon5->paribarik_unit_increase?? "")}}</td>
                                 <td >{{bangla($songothon5->paribarik_unit_target?? "")}}</td>
                             </tr>
                         </tbody>
@@ -667,7 +692,7 @@
                 </table>
             </div>
             <div class="montobbo">
-                <h1 class="fs-6 mb-1">ইউনিট সভানেত্রীর মন্তব্য :</h1>
+                <h1 class="fs-6 mb-1">ইউনিট সভাপতির মন্তব্য :</h1>
                 <p>{{$montobbo->montobbo?? ""}}</p>
             </div>
         </section>

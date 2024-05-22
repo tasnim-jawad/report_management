@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('paribarik_unit_total')->nullable();
-            $table->bigInteger('paribarik_unit_uposthiti')->nullable();
+            $table->bigInteger('paribarik_unit_increase')->nullable();
             $table->bigInteger('paribarik_unit_target')->nullable();
 
             // $table->bigInteger('dawati_unit_previous')->nullable();
