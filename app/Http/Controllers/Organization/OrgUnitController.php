@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Hash;
 
 class OrgUnitController extends Controller
 {
+    public function details(){
+        $units = OrgUnit::with(['org_city','org_thana','org_ward','org_unit_responsible','org_area'])->get();
+        // dd($units);
+        return response([
+            'status' => 'success',
+            'data' => $units
+        ]);
+    }
+
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;
@@ -65,14 +74,16 @@ class OrgUnitController extends Controller
     }
     public function store()
     {
+        // dd(auth()->user()->id);
         $validator = Validator::make(request()->all(), [
-            'title' => ['required'],
+            'title' => ['required','unique:org_units,title'],
             'description' => ['required'],
+            'org_city_id' => ['required'],
+            'org_thana_id' => ['required'],
+            'org_ward_id' => ['required'],
             'org_type_id' => ['required'],
             'org_area_id' => ['required'],
             'org_gender' => ['required'],
-            'creator' => ['required'],
-            'status' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -85,11 +96,13 @@ class OrgUnitController extends Controller
         $data = new OrgUnit();
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->org_city_id = request()->org_city_id;
+        $data->org_thana_id = request()->org_thana_id;
+        $data->org_ward_id = request()->org_ward_id;
         $data->org_type_id = request()->org_type_id;
         $data->org_area_id = request()->org_area_id;
         $data->org_gender = request()->org_gender;
-        $data->creator = request()->creator;
-        $data->status = request()->status;
+        $data->creator = auth()->user()->id;
         $data->save();
 
         return response()->json($data, 200);
@@ -108,6 +121,9 @@ class OrgUnitController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'org_city_id' => ['required'],
+            'org_thana_id' => ['required'],
+            'org_ward_id' => ['required'],
             'org_type_id' => ['required'],
             'org_area_id' => ['required'],
             'org_gender' => ['required'],
@@ -124,6 +140,9 @@ class OrgUnitController extends Controller
 
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->org_city_id = request()->org_city_id;
+        $data->org_thana_id = request()->org_thana_id;
+        $data->org_ward_id = request()->org_ward_id;
         $data->org_type_id = request()->org_type_id;
         $data->org_area_id = request()->org_area_id;
         $data->org_gender = request()->org_gender;

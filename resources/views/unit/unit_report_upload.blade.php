@@ -25,9 +25,9 @@
             <div class="report_heading position-relative mb-1">
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
                 <h1 class="text-center mb-2 fs-4">ইউনিট সংগঠনের মাসিক রিপোর্ট</h1>
-                <div class="org_gender position-absolute">
-                    <p>মহিলা</p>
-                </div>
+                {{-- <div class="org_gender position-absolute">
+                    <p>পুরুষ</p>
+                </div> --}}
             </div>
             {{-- <div class="unit_info">
                 <div class="line d-flex flex-wrap justify-content-between mb-1">

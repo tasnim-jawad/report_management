@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title',100)->nullable();
             $table->integer('no')->nullable();      //ward number
             $table->text('description')->nullable();
+            $table->bigInteger('org_city_id')->nullable();
+            $table->bigInteger('org_thana_id')->nullable();
             $table->bigInteger('org_type_id')->nullable();
             $table->bigInteger('org_area_id')->nullable();
             $table->enum('org_gender',['men','women'])->default('men');

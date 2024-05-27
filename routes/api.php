@@ -120,6 +120,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'org-thana'] , function(){
+        Route::get('/city-wise-thana/{city_id}', [App\Http\Controllers\Organization\OrgThanaController::class,'city_wise_thana']);
+
         Route::get('/all', [App\Http\Controllers\Organization\OrgThanaController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Organization\OrgThanaController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Organization\OrgThanaController::class,'store']);
@@ -131,6 +133,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'org-ward'] , function(){
+        Route::get('/thana-wise-ward/{thana_id}/{gender}', [App\Http\Controllers\Organization\OrgWardController::class,'thana_wise_ward']);
+
         Route::get('/all', [App\Http\Controllers\Organization\OrgWardController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Organization\OrgWardController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Organization\OrgWardController::class,'store']);
@@ -142,6 +146,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'org-unit'] , function(){
+        Route::get('/details', [App\Http\Controllers\Organization\OrgUnitController::class,'details']);
+
         Route::get('/all', [App\Http\Controllers\Organization\OrgUnitController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Organization\OrgUnitController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Organization\OrgUnitController::class,'store']);

@@ -88,6 +88,9 @@
                                             if(data.user.role == 6){
                                                 console.log('unit');
                                                 window.location.href = '/dashboard/unit#';
+                                            }else if(data.user.role == 2){
+                                                console.log('admin');
+                                                window.location.href = '/dashboard/admin#';
                                             }
 
                                         }

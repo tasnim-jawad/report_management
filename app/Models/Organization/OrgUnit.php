@@ -27,4 +27,17 @@ class OrgUnit extends Model
     {
         return $this->belongsTo(OrgArea::class);
     }
+
+    public function org_city()
+    {
+        return $this->belongsTo(OrgCity::class);
+    }
+    public function org_thana()
+    {
+        return $this->belongsTo(OrgThana::class);
+    }
+    public function org_ward()
+    {
+        return $this->belongsTo(OrgWard::class);
+    }
 }

@@ -15,7 +15,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix' => 'dashboard', 'namespace' => '\App\Http\Controllers\Dashboard'], function () {
     Route::get('unit', 'DashboardController@unit');
+    Route::get('admin', 'DashboardController@admin');
 });
+
 Route::group(['prefix' => 'unit', 'namespace' => '\App\Http\Controllers\Unit'], function () {
     Route::get('report', 'UnitController@report')->middleware('auth');
     Route::get('report/upload', 'UnitController@report_upload')->middleware('auth');

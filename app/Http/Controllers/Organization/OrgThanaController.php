@@ -4,12 +4,21 @@ namespace App\Http\Controllers\Organization;
 
 use App\Http\Controllers\Controller;
 use App\Models\Organization\OrgThana;
+use App\Models\Organization\OrgThanaUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
 class OrgThanaController extends Controller
 {
+    public function city_wise_thana($city_id){
+        $thanas = OrgThana::where('org_city_id',$city_id)->get();
+        return response([
+            'status' => 'success',
+            'data' => $thanas,
+        ]);
+    }
+
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;

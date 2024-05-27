@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
             'telegram_name' => "admin",
             'telegram_id' => "1212",
             'email' => "admin@gmail.com",
-            'password' => "1414",
+            'password' => "12345678",
             'blood_group' => "L+",
         ]);
         User::create([

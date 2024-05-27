@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Hash;
 
 class OrgWardController extends Controller
 {
+    public function thana_wise_ward($thana_id,$gender){
+        $wards = OrgWard::where('org_thana_id', $thana_id)->where('org_gender',$gender)->get();
+        return response([
+            'status' => 'success',
+            'data' => $wards,
+        ]);
+    }
+
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;

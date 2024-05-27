@@ -40,4 +40,9 @@ class OrgCity extends Model
         return $this->belongsTo(OrgArea::class);
     }
 
+    public function org_unit()
+    {
+        return $this->hasMany(OrgUnit::class);
+    }
+
 }

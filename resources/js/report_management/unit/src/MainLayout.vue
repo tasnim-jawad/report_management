@@ -153,49 +153,44 @@
 </template>
 
 <script>
-import axios from 'axios'
-export default {
-    data: function(){
-        return {
-            user:[],
-        }
-    },
-    created: function(){
-        let token = localStorage.getItem('token')
-
-        if(!token){
-            window.location.href = '/login'
-        }
-        // this.$router.push({name:`Dashboard`})
-        let prevUrl = window.sessionStorage.getItem('prevurl');
-        window.location.hash = prevUrl || "#/dashboard";
-
-        this.auth_user();
-        // console.log(this.user);
-    },
-    methods:{
-
-        auth_user: function(){
-            axios.get("/user/user_info")
-                .then(responce =>{
-                    // console.log(responce);
-                    this.user = responce.data
-                    // console.log(this.user);
-                })
-        },
-        logout: function(){
-            // console.log("clicked");
-            if(window.confirm('logout')){
-                localStorage.removeItem('token');
-                document.getElementById('logout-form').submit();
+    import axios from 'axios'
+    export default {
+        data: function(){
+            return {
+                user:[],
             }
-            // let token = localStorage.getItem('token');
-            // if(!token){
-            //     window.location.href = '/login'
-            // }
+        },
+        created: function(){
+            let token = localStorage.getItem('token')
+
+            if(!token){
+                window.location.href = '/login'
+            }
+            // this.$router.push({name:`Dashboard`})
+            let prevUrl = window.sessionStorage.getItem('prevurl');
+            window.location.hash = prevUrl || "#/dashboard";
+
+            this.auth_user();
+            // console.log(this.user);
+        },
+        methods:{
+
+            auth_user: function(){
+                axios.get("/user/user_info")
+                    .then(responce =>{
+                        // console.log(responce);
+                        this.user = responce.data
+                        // console.log(this.user);
+                    })
+            },
+            logout: function(){
+                if(window.confirm('logout')){
+                    localStorage.removeItem('token');
+                    document.getElementById('logout-form').submit();
+                }
+            }
         }
     }
-}
 </script>
 
 <style>

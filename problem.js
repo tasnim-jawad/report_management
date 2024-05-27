@@ -5,7 +5,8 @@
     4/ report upload -er authentication kivabe hobe?
         get method-e deway jekono id pass korei report upload kora jacche .
         obosso je authorized tar namei report upload hocche.
-    5/মাসিক ওয়াদার পরিমাণ : input neya hobe naki?
-    6/ ইউনিট সভাপতির মন্তব্য : formet ta kivabe thik rakha jay?
+    5/ মাসিক ওয়াদার পরিমাণ : input neya hobe naki?
+    7/ error handeling  kora hoy ni.
+    8/ keu login na thakleo report upload jawa jacche.
 
 */

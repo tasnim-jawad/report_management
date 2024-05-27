@@ -693,7 +693,7 @@
             </div>
             <div class="montobbo">
                 <h1 class="fs-6 mb-1">ইউনিট সভাপতির মন্তব্য :</h1>
-                <p>{{$montobbo->montobbo?? ""}}</p>
+                <pre>{{$montobbo->montobbo?? ""}}</pre>
             </div>
         </section>
 
