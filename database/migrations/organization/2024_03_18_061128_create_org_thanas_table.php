@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('org_city_id')->nullable();
             $table->bigInteger('org_type_id')->nullable();
             $table->bigInteger('org_area_id')->nullable();
+            $table->enum('org_gender',['men','women'])->default('men');
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();

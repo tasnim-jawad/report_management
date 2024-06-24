@@ -1,3 +1,118 @@
+*,
+html,
+body {
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+a,
+span,
+i {
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    transition: all linear .3s;
+}
+
+ul li {
+    list-style-type: none;
+}
+
 
 
 :root {
@@ -10,6 +125,7 @@
     --white: white;
     --color7: #394190;
 }
+
 @keyframes dropdownAnimation {
     0% {
         opacity: 0;
@@ -21,6 +137,7 @@
         transform: translate(0)
     }
 }
+
 @font-face {
     font-family: 'solaiman_lipi';
     src: url('../../fonts/SolaimanLipi.ttf');
@@ -38,19 +155,45 @@ body{
     height: 100svh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 230px 1fr;
+    grid-template-columns: 1fr;
+    position: relative;
 }
+
 .report_app_left{
+    position: absolute;
     background-color: var(--dark);
+    width: 230px;
+    left: -230px;
+    opacity: 0;
+    transition: left .3s ease-in-out, opacity .3s ease-in-out;
+}
+.report_app_left_toggle{
+    left: 0px;
+    z-index: 1;
+    opacity: 1;
+}
+.close_sidebar{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 4px 0px;
+    border-radius: 50%;
+    background-color: rgb(130, 155, 177);
+    color: red;
+    font-size: 16px;
+    line-height: 16px;
+    width: 24px;
+    text-align: center;
 }
 .side_nav{
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: column; */
     height: 100vh;
     overflow: scroll;
     padding-bottom: 30px;
+    scrollbar-width: none;
+    opacity: 1;
+    transition: opacity .2s .3s ease-in-out;
 }
+
 .side_nav .logo{
     display: flex;
     justify-content: center;
@@ -118,6 +261,7 @@ body{
     grid-template-rows: 60px 1fr;
     background-color: var(--color2);
     overflow: scroll;
+    scrollbar-width: none;
 }
 
 .side_nav .options .block_title{
@@ -229,4 +373,5 @@ body{
 .label_width{
     width: 215px;
 }
+
 

@@ -11,8 +11,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <link rel="stylesheet" href="{{ asset('css/unit/default.css') }}">
     <link rel="stylesheet" href="{{ asset('css/unit/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/unit/responsive.css') }}">
 
     <script src="/js/sweat_alert.js"></script>
 

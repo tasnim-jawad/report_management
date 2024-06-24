@@ -36,7 +36,7 @@ class ReportInfosTableSeeder extends Seeder
                 'status' => 1,
             ],
             [
-                'org_type' => 'word',
+                'org_type' => 'ward',
                 'org_type_id' => 3,
                 'responsibility_id' => 3,
                 'responsibility_name' => 'Organizing Secretary',
