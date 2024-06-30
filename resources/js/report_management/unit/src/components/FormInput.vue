@@ -8,7 +8,7 @@
                 :id="unique_key+name"
                 @change="onchange(endpoint)"
                 :name="name"
-                class="form-control">
+                class="form-control te">
         </div>
     </div>
 </template>

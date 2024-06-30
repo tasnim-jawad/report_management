@@ -87,17 +87,17 @@
                         </li>
                         <li>
                             <router-link :to="{name:'BmCategoryAll'}">
-                                <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>BM Category
+                                <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>আয়ের খাত সমুূহ
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{name:'BmCategoryUserAll'}">
-                                <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>BM User's Target
+                                <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত ধার্য
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{name:'BmEntryAll'}">
-                                <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>BM entry
+                                <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>আয় এন্ট্রি করুন
                             </router-link>
                         </li>
                         <li>

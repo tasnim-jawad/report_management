@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            Create Bm Category
+            নতুন খাত তৈরি করুন
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_category">
@@ -13,7 +13,7 @@
                         <input type="text" :name="field.name" class="form-control">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm mt-3">Create Category</button>
+                <button type="submit" class="btn btn-primary btn-sm mt-3">খাত তৈরি করুন</button>
             </form>
         </div>
     </div>

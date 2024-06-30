@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            Create Bm Category
+            ব্যক্তিগত ধার্য নির্ধারণ করুন
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_category_user">
@@ -35,7 +35,7 @@
                         <input type="text" :name="field.name" class="form-control">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm mt-3">Create Category</button>
+                <button type="submit" class="btn btn-primary btn-sm mt-3">ধার্য নিশ্চিত করুন</button>
             </form>
         </div>
     </div>

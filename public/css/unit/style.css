@@ -161,6 +161,7 @@ body{
 
 .report_app_left{
     position: absolute;
+    z-index: 1;
     background-color: var(--dark);
     width: 230px;
     left: -230px;
@@ -326,12 +327,12 @@ body{
     border-radius: 10px;
     padding: 10px;
 }
-.form_label{
+/* .form_label{
     width: 200px;
 }
 .form_input{
     flex: 1;
-}
+} */
 /* .dofa_heading{
     font-size: 18px;
     margin-bottom: 10px;
@@ -373,5 +374,29 @@ body{
 .label_width{
     width: 215px;
 }
+.card .card-header,
+.card .card-header h1{
+    font-family: 'solaiman_lipi';
+}
+
+/* FormInput component desigen */
+.form_label{
+    width: 200px;
+    flex:2;
+}
+.form_label label{
+    font-size: 16px;
+    font-family: 'solaiman_lipi';
+}
+.form_input{
+    flex: 1;
+}
+.form_input input{
+    min-width: 70px;
+    padding: 5px 5px;
+    text-align: center;
+    
+}
 
 
+/* FormInput component design */

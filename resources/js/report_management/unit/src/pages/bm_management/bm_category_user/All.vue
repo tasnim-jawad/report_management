@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Show All Bm Category User
+            সকল ব্যক্তিগত ধার্যের তালিকা
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'BmCategoryUserCreate'}" class="text-dark">Create Category User</router-link>
+                <router-link :to="{name:'BmCategoryUserCreate'}" class="text-dark">ব্যক্তিগত ধার্য নির্ধারণ করুন</router-link>
             </div>
         </div>
         <div class="card-body">

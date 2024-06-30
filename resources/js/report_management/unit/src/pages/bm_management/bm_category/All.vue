@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Show All Bm Category
+            আয়ের সকল খাত সমূহ 
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'BmCategoryCreate'}" class="text-dark">Create Category</router-link>
+                <router-link :to="{name:'BmCategoryCreate'}" class="text-dark">নতুন খাত তৈরি করুন </router-link>
             </div>
         </div>
         <div class="card-body">

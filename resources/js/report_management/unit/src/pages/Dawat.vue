@@ -7,76 +7,82 @@
                     মাস: <input type="month" @change="get_monthly_data" v-model="month" ref="month" name="month">
                 </div>
             </div>
-            <div class="card mb-3 col-md-6 mx-2 " v-if="month">
-                <div class="card-header">
-                    <h1>১. নিয়মিত গ্রুপ ভিত্তিক দাওয়াত:</h1>
-                </div>
-                <div class="card-body">
-                    <form action="">
-                        <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
-                            :onchange="dawat_upload" :endpoint="'dawat1-regular-group-wise'"
-                            :unique_key="1" ></form-input>
-                    </form>
-                </div>
-            </div>
-            <div class="card mb-3 col-md-6 mx-2 " v-if="month">
-                <div class="card-header">
-                    <h1>২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h1>
-                </div>
-                <div class="card-body">
-                    <form action="">
-                        <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name"
-                            :onchange="dawat_upload" :endpoint="'dawat2-personal-and-target'" :unique_key="2"
-                            :key="index"></form-input>
-                    </form>
+                <div class="col-md-6 px-2">
+                    <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1>১. নিয়মিত গ্রুপ ভিত্তিক দাওয়াত:</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
+                                :onchange="dawat_upload" :endpoint="'dawat1-regular-group-wise'"
+                                :unique_key="1" ></form-input>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="card mb-3 col-md-6 mx-2 " v-if="month">
-                <div class="card-header">
-                    <h1>৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত:</h1>
-                </div>
-                <div class="card-body">
-                    <form action="">
-                        <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
-                            :onchange="dawat_upload" :endpoint="'dawat3-general-program-and-others'"
-                            :unique_key="3"></form-input>
-                    </form>
-                </div>
-            </div>
-            <div class="card mb-3 col-md-6 mx-2 " v-if="month">
-                <div class="card-header">
-                    <h1>৪. গণসংযোগ ও দাওয়াতি অভিযান পালন:</h1>
-                </div>
-                <!-- <div class="card-body">
-                    <form action="">
-                        <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
-                        :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
-                        :unique_key="4"></form-input>
-                    </form>
-                </div> -->
-            </div>
-            <div class="card mb-3 col-md-6 mx-2 " v-if="month">
-                <div class="card-header">
-                    <h1>গণসংযোগ দশক/পক্ষ:</h1>
-                </div>
-                <div class="card-body">
-                    <form action="">
-                        <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
-                        :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
-                        :unique_key="4"></form-input>
-                    </form>
+            <div class="col-md-6 px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1>২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name"
+                                :onchange="dawat_upload" :endpoint="'dawat2-personal-and-target'" :unique_key="2"
+                                :key="index"></form-input>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="card mb-3 col-md-6 mx-2 " v-if="month">
-                <div class="card-header">
-                    <h1>জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান:</h1>
+            <div class="col-md-6 px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1>৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত:</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
+                                :onchange="dawat_upload" :endpoint="'dawat3-general-program-and-others'"
+                                :unique_key="3"></form-input>
+                        </form>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <form action="">
-                        <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
-                        :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
-                        :unique_key="4"></form-input>
-                    </form>
+            </div>
+            
+            <div class="col-md-12 px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1>৪. গণসংযোগ ও দাওয়াতি অভিযান পালন:</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1>গণসংযোগ দশক/পক্ষ:</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                            :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
+                            :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1>জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান:</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
+                            :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
+                            :unique_key="4"></form-input>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

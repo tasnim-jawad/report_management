@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            Create Bm Category
+            Edit Bm Category
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="edit_category">
