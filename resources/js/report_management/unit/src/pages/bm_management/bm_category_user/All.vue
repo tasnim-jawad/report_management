@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="card-body">
-            <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+            <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >
                 <table class="table table-striped table-bordered text-start">
                     <thead>
                         <tr class="table-dark">

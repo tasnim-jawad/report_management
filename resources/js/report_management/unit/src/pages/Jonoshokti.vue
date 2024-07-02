@@ -7,10 +7,10 @@
                 <router-link :to="{name:'CreateUser'}" class="text-dark">Create User</router-link>
             </div>
         </div>
-        <div class="card-body">
+        <div class="card-body table-responsive">
             <table class="table table-striped table-bordered text-center">
                 <thead>
-                    <tr>
+                    <tr class="table-dark eng">
                         <th>srl#</th>
                         <th>Name</th>
                         <th>Gender</th>

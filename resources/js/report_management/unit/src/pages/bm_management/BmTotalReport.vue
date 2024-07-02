@@ -9,7 +9,7 @@
             Bm Total
         </div>
         <div class="card-body">
-            <div class="d-flex align-items-start">
+            <div class="d-flex align-items-start table-responsive">
                 <table class="table table-bordered text-start">
                     <thead>
                         <tr class="table-info">

@@ -4,7 +4,7 @@
             BM Report
         </div>
         <div class="card-body">
-            <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+            <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >
                 <div class="d-flex">
                     <div class="d-flex align-items-center me-3">
                         <label class="label_width" for="">Select User</label>

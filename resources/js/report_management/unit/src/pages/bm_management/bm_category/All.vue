@@ -1,13 +1,13 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            আয়ের সকল খাত সমূহ 
+            আয়ের সকল খাত সমূহ
             <div class="btn btn-info btn-sm">
                 <router-link :to="{name:'BmCategoryCreate'}" class="text-dark">নতুন খাত তৈরি করুন </router-link>
             </div>
         </div>
         <div class="card-body">
-            <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+            <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >
                 <table class="table table-striped table-bordered text-start">
                     <thead>
                         <tr class="table-dark">

@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-12 px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
@@ -85,15 +85,22 @@
                     </div>
                 </div>
             </div>
+            <previous-next
+                :next-route="{ name: 'Department' }"
+                :month="month"
+            ></previous-next>
         </div>
+        <note :notes="notes"></note>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
 import FormInput from '../components/FormInput.vue'
+import PreviousNext from '../components/PreviousNext.vue';
+import Note from '../components/Note.vue';
 export default {
-    components: { FormInput },
+    components: { FormInput, PreviousNext, Note },
     data: () => ({
         month: null,
         fields1: [
@@ -186,6 +193,16 @@ export default {
             {
                 label: 'কতজন সহযোগী সদস্য হয়েছেন',
                 name: 'jela_mohanogor_declared_gonosonjog_associated_created',
+            },
+        ],
+        notes:[
+            {
+                label: 'বিঃদ্রঃ - ১',
+                name: 'এখান থেকে শুরু',
+            },
+            {
+                label: 'বিঃদ্রঃ - ২',
+                name: 'চলবে',
             },
         ]
     }),

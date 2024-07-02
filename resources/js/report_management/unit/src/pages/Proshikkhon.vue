@@ -72,13 +72,20 @@
                 </form>
             </div>
         </div>
+        <previous-next
+                :prev-route="{ name: 'Songothon' }"
+                :next-route="{ name: 'Shomajsheba' }"
+                :month="month"
+            >
+        </previous-next>
     </div>
 </template>
 
 <script>
 import FormInput from '../components/FormInput.vue'
+import PreviousNext from '../components/PreviousNext.vue';
 export default {
-  components: { FormInput },
+  components: { FormInput, PreviousNext },
     data: ()=>({
         month:null,
         fields1:[

@@ -8,7 +8,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রাষ্ট্রীয় সংস্কার ও সংশোধন:</h1>
+                <h1>মন্তব্য:</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -23,13 +23,20 @@
                 </form>
             </div>
         </div>
+        <previous-next
+                :prev-route="{ name: 'Rastrio' }"
+                :next-route="{ name: 'BmEntryAll' }"
+                :month="month"
+            >
+        </previous-next>
     </div>
 </template>
 
 <script>
 import FormInput from '../components/FormInput.vue'
+import PreviousNext from '../components/PreviousNext.vue';
 export default {
-    components: { FormInput },
+    components: { FormInput, PreviousNext },
     data: ()=>({
         month:null,
     }),
@@ -47,10 +54,13 @@ export default {
                 .then(({ data: object }) => {
                     for (const key in object) {
                         if (Object.hasOwnProperty.call(object, key)) {
-                            const value = object[key];
-                            let el = document.querySelector(`#montobboText`);
-                            if (el) {
-                                el.value = value;
+                            if(key == 'montobbo'){
+                                const value = object[key];
+                                let el = document.querySelector(`#montobboText`);
+                                if (el) {
+                                    console.log('montobbo',value);
+                                    el.value = value;
+                                }
                             }
                         }
                     }

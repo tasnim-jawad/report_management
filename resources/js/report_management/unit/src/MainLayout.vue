@@ -143,7 +143,7 @@
                     </ul>
                 </div>
             </header>
-            <main class="route_body ">
+            <main class="route_body overflow-x-scroll height-fit-content scrollbar_width_none">
                 <div class="route_content ">
                     <router-view></router-view>
                 </div>
@@ -197,7 +197,7 @@
                 if(width >= 768){
                     const report_app = document.getElementById("report_app");
                     report_app.classList.toggle("sidebar_hide");
-    
+
                     const side_nav = document.getElementById("side_nav");
                     side_nav.classList.toggle("side_nav_toggle");
                 }else if(width < 768){

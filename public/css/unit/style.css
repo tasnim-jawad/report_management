@@ -142,6 +142,10 @@ ul li {
     font-family: 'solaiman_lipi';
     src: url('../../fonts/SolaimanLipi.ttf');
 }
+
+.eng{
+    font-family: sans-serif;
+}
 body{
     font-family: 'solaiman_lipi';
 }
@@ -378,6 +382,9 @@ body{
 .card .card-header h1{
     font-family: 'solaiman_lipi';
 }
+table{
+    font-family: 'solaiman_lipi';
+}
 
 /* FormInput component desigen */
 .form_label{
@@ -395,8 +402,35 @@ body{
     min-width: 70px;
     padding: 5px 5px;
     text-align: center;
-    
+
 }
 
 
 /* FormInput component design */
+
+.height-fit-content{
+    height:fit-content;
+}
+
+.previous_next_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_width_95px{
+    width: 95px;
+}
+.scrollbar_width_none{
+    scrollbar-width: none;
+}
+
+.notes{
+    font-family: 'solaiman_lipi';
+    padding: 10px 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+
+}
