@@ -143,8 +143,8 @@
                     </ul>
                 </div>
             </header>
-            <main class="route_body overflow-x-scroll height-fit-content scrollbar_width_none">
-                <div class="route_content ">
+            <main class="route_body overflow-x-scroll scrollbar_width_none">
+                <div class="route_content scrollbar_width_none overflow-y-scroll">
                     <router-view></router-view>
                 </div>
             </main>
