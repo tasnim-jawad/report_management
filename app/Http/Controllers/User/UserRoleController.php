@@ -28,10 +28,11 @@ class UserRoleController extends Controller
 
         if (request()->has('search_key')) {
             $key = request()->search_key;
+
             $query->where(function ($q) use ($key) {
-                return $q->where('id', '%' . $key . '%')
-                    ->orWhere('serial', '%' . $key . '%')
-                    ->orWhere('title', '%' . $key . '%');
+                return $q->where('id','LIKE' , '%' . $key . '%')
+                    ->orWhere('serial','LIKE',  '%' . $key . '%')
+                    ->orWhere('title','LIKE' , '%' . $key . '%');
 
             });
         }
