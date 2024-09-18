@@ -6,10 +6,14 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.unit');
 });
 
-Auth::routes();
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

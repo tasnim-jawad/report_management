@@ -27,8 +27,8 @@
             default: null
         },
         month: {
-            type: Boolean,
-            required: true
+            type: String,
+            default: null
         }
     }
     }

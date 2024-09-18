@@ -12,16 +12,22 @@
 
 <script>
 import axios from 'axios';
+import { store as data_store} from "../../stores/ReportStore";
+import { mapState, mapWritableState } from 'pinia';
+
 export default {
     data:function(){
         return {
-            month:"",
+            // month:"",
             user_id:"",
             user: [],
         }
     },
     created:function(){
         this.user_info()
+    },
+    computed: {
+        ...mapWritableState(data_store, ['month']),
     },
     methods:{
         get_monthly_report: function(){

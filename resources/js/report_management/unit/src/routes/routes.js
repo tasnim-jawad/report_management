@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import App from '../MainLayout.vue'
+import MainLayout from '../MainLayout.vue'
 
 import Dashboard from '../pages/Dashboard.vue'
 import Dawat from '../pages/Dawat.vue'
@@ -52,12 +52,11 @@ import BmExpenseCreate from '../pages/bm_management/bm_expense/Create.vue'
 import BmExpenseDetails from '../pages/bm_management/bm_expense/Details.vue'
 import BmExpenseEdit from '../pages/bm_management/bm_expense/Edit.vue'
 
-const routes = createRouter({
-    history: createWebHashHistory(),
-    routes: [
+const routes =
         {
 
-            path: '/',
+            path: '',
+            component: MainLayout,
             children:[
                 {
                     name: "Dashboard",
@@ -302,10 +301,6 @@ const routes = createRouter({
                 },
 
             ]
-        },
-
-    ]
-});
-
+        }
 
 export default routes;

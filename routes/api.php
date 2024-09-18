@@ -8,6 +8,17 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
+Route::group(['prefix' => 'v1','namespace' => 'App\Http\Controllers\Auth', 'middleware' => 'guest:api'], function(){
+    Route::group(['prefix' => '/user'] , function(){
+        Route::post('/login', 'LoginController@login');
+    });
+});
+
+Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function(){
+    Route::get('user/check_user', [App\Http\Controllers\Auth\LoginController::class,'check_user']);
+    // Route::post('/api-logout', [App\Http\Controllers\Auth\LoginController::class,'api_logout']);
+});
+
 
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => '/user'] , function(){

@@ -22,24 +22,25 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    // use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
+
     public function login(Request $request)
     {
 
@@ -104,4 +105,32 @@ class LoginController extends Controller
 
         return redirect('/login');
     }
+
+    public function check_user()
+    {
+        // dd("checker check in login controller",auth()->check());
+        if (auth()->check()) {
+            return response()->json(
+                auth()->user()
+            , 200);
+        }
+
+        return response()->json([""],403);
+    }
+
+    // public function api_logout()
+    // {
+    //     if (auth()->check()) {
+    //         // DB::table('oauth_access_tokens')->where("user_id", auth()->user()->id)->update(['revoked' => 1]);
+    //         $token = auth()->user()->token();
+    //         $token->revoke();
+
+    //         return response()->json([
+    //             'status' => 'success',
+    //             'result' => 'logout Successful'
+    //         ], 200);
+
+    //     }
+    //     return response()->json(['status' => 'error', 'result' => 'User not authenticated'], 401);
+    // }
 }

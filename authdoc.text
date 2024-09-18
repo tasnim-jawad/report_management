@@ -21,3 +21,5 @@ composer dump-autoload
 
 php artisan migrate:rollback --path="database/migrations/*/*"
 php artisan migrate --path="database/migrations/*/*"
+
+// && php artisan passport:client --personal

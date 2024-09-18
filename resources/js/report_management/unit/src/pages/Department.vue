@@ -92,97 +92,104 @@
 import axios from 'axios';
 import FormInput from '../components/FormInput.vue'
 import PreviousNext from '../components/PreviousNext.vue';
+import { store as data_store} from "../stores/ReportStore";
+import { mapState, mapWritableState } from 'pinia';
+
 export default {
   components: { FormInput, PreviousNext },
-  data: ()=>({
-    month: null,
-    fields1:[
-        {
-            label:'কতজন সদস্য(রুকন) কুরআন শিক্ষা প্রদান করেছেন ',
-            name:'teacher_rokon',
-        },
-        {
-            label:'কতজন কর্মী কুরআন শিক্ষা প্রদান করেছেন',
-            name:'teacher_worker',
-        },
-        {
-            label:'কতজন সদস্য(রুকন)-কে কুরআন শিক্ষা প্রদান করা হয়েছে ',
-            name:'student_rokon',
-        },
-        {
-            label:'কতজন কর্মীকে কুরআন শিক্ষা প্রদান করা হয়েছে ',
-            name:'student_worker',
-        },
+    data: ()=>({
+        // month: null,
+        fields1:[
+            {
+                label:'কতজন সদস্য(রুকন) কুরআন শিক্ষা প্রদান করেছেন ',
+                name:'teacher_rokon',
+            },
+            {
+                label:'কতজন কর্মী কুরআন শিক্ষা প্রদান করেছেন',
+                name:'teacher_worker',
+            },
+            {
+                label:'কতজন সদস্য(রুকন)-কে কুরআন শিক্ষা প্রদান করা হয়েছে ',
+                name:'student_rokon',
+            },
+            {
+                label:'কতজন কর্মীকে কুরআন শিক্ষা প্রদান করা হয়েছে ',
+                name:'student_worker',
+            },
 
-    ],
-    fields2:[
-        {
-            label:'কতজন সহীহ তিলাওয়াত শিখেছেন',
-            name:'how_much_learned_quran',
-        },
-        {
-            label:'মোট কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-            name:'how_much_invited',
-        },
-        {
-            label:'কতজন সহযোগী সদস্য হয়েছেন',
-            name:'how_much_been_associated',
-        },
+        ],
+        fields2:[
+            {
+                label:'কতজন সহীহ তিলাওয়াত শিখেছেন',
+                name:'how_much_learned_quran',
+            },
+            {
+                label:'মোট কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name:'how_much_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'how_much_been_associated',
+            },
 
-    ],
-    fields3:[
-        {
-            label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
-            name:'political_and_special_invited',
-        },
-        {
-            label:'কতজন সহযোগী সদস্য হয়েছেন',
-            name:'political_and_special_been_associated',
-        },
-        {
-            label:'টার্গেট',
-            name:'political_and_special_target',
-        },
-    ],
-    fields4:[
-        {
-            label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
-            name:'prantik_jonogosti_invited',
-        },
-        {
-            label:'কতজন সহযোগী সদস্য হয়েছেন',
-            name:'prantik_jonogosti_been_associated',
-        },
-        {
-            label:'টার্গেট',
-            name:'prantik_jonogosti_target',
-        },
-    ],
-    fields5:[
-        {
-            label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
-            name:'vinno_dormalombi_invited',
-        },
-        {
-            label:'কতজন সহযোগী সদস্য হয়েছেন',
-            name:'vinno_dormalombi_been_associated',
-        },
-        {
-            label:'টার্গেট',
-            name:'vinno_dormalombi_target',
-        },
-    ],
-    fields6:[
-        {
-            label:'দাওয়াতি কাজে অংশগ্রহণকারী পরিবার সংখ্যা',
-            name:'total_attended_family',
-        },
-        {
-            label:'কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে',
-            name:'how_many_new_family_invited',
-        },
-    ]
-  }),
+        ],
+        fields3:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'political_and_special_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'political_and_special_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'political_and_special_target',
+            },
+        ],
+        fields4:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'prantik_jonogosti_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'prantik_jonogosti_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'prantik_jonogosti_target',
+            },
+        ],
+        fields5:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'vinno_dormalombi_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'vinno_dormalombi_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'vinno_dormalombi_target',
+            },
+        ],
+        fields6:[
+            {
+                label:'দাওয়াতি কাজে অংশগ্রহণকারী পরিবার সংখ্যা',
+                name:'total_attended_family',
+            },
+            {
+                label:'কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে',
+                name:'how_many_new_family_invited',
+            },
+        ]
+    }),
+
+    computed: {
+        ...mapWritableState(data_store, ['month']),
+    },
   methods: {
         dawat_upload: function (endpoint) {
             var value = event.target.value;

@@ -90,96 +90,102 @@
 import axios from 'axios';
 import FormInput from '../components/FormInput.vue'
 import PreviousNext from '../components/PreviousNext.vue';
+import { store as data_store} from "../stores/ReportStore";
+import { mapState, mapWritableState } from 'pinia';
+
 export default {
   components: { FormInput, PreviousNext },
-  data: ()=>({
-    month: null,
-    fields1:[
-        {
-            label:'সংখ্যা',
-            name:'unit_masik_sadaron_sova_total',
-        },
-        {
-            label:'টার্গেট',
-            name:'unit_masik_sadaron_sova_target',
-        },
-        {
-            label:'মোট উপস্থিতি',
-            name:'unit_masik_sadaron_sova_uposthiti',
-        },
+    data: ()=>({
+        // month: null,
+        fields1:[
+            {
+                label:'সংখ্যা',
+                name:'unit_masik_sadaron_sova_total',
+            },
+            {
+                label:'টার্গেট',
+                name:'unit_masik_sadaron_sova_target',
+            },
+            {
+                label:'মোট উপস্থিতি',
+                name:'unit_masik_sadaron_sova_uposthiti',
+            },
 
-    ],
-    fields2:[
-        {
-            label:'সংখ্যা',
-            name:'iftar_mahfil_personal_total',
-        },
-        {
-            label:'টার্গেট',
-            name:'iftar_mahfil_personal_target',
-        },
-        {
-            label:'মোট উপস্থিতি',
-            name:'iftar_mahfil_personal_uposthiti',
-        },
-    ],
-    fields3:[
-        {
-            label:'সংখ্যা',
-            name:'iftar_mahfil_samostic_total',
-        },
-        {
-            label:'টার্গেট',
-            name:'iftar_mahfil_samostic_target',
-        },
-        {
-            label:'মোট উপস্থিতি',
-            name:'iftar_mahfil_samostic_uposthiti',
-        },
-    ],
-    fields4:[
-        {
-            label:'সংখ্যা',
-            name:'cha_chakra_total',
-        },
-        {
-            label:'টার্গেট',
-            name:'cha_chakra_target',
-        },
-        {
-            label:'মোট উপস্থিতি',
-            name:'cha_chakra_uposthiti',
-        },
-    ],
-    fields5:[
-        {
-            label:'সংখ্যা',
-            name:'samostic_khawa_total',
-        },
-        {
-            label:'টার্গেট',
-            name:'samostic_khawa_target',
-        },
-        {
-            label:'মোট উপস্থিতি',
-            name:'samostic_khawa_uposthiti',
-        },
-    ],
-    fields6:[
-        {
-            label:'সংখ্যা',
-            name:'sikkha_sofor_total',
-        },
-        {
-            label:'টার্গেট',
-            name:'sikkha_sofor_target',
-        },
-        {
-            label:'মোট উপস্থিতি',
-            name:'sikkha_sofor_uposthiti',
-        },
-    ],
-}),
+        ],
+        fields2:[
+            {
+                label:'সংখ্যা',
+                name:'iftar_mahfil_personal_total',
+            },
+            {
+                label:'টার্গেট',
+                name:'iftar_mahfil_personal_target',
+            },
+            {
+                label:'মোট উপস্থিতি',
+                name:'iftar_mahfil_personal_uposthiti',
+            },
+        ],
+        fields3:[
+            {
+                label:'সংখ্যা',
+                name:'iftar_mahfil_samostic_total',
+            },
+            {
+                label:'টার্গেট',
+                name:'iftar_mahfil_samostic_target',
+            },
+            {
+                label:'মোট উপস্থিতি',
+                name:'iftar_mahfil_samostic_uposthiti',
+            },
+        ],
+        fields4:[
+            {
+                label:'সংখ্যা',
+                name:'cha_chakra_total',
+            },
+            {
+                label:'টার্গেট',
+                name:'cha_chakra_target',
+            },
+            {
+                label:'মোট উপস্থিতি',
+                name:'cha_chakra_uposthiti',
+            },
+        ],
+        fields5:[
+            {
+                label:'সংখ্যা',
+                name:'samostic_khawa_total',
+            },
+            {
+                label:'টার্গেট',
+                name:'samostic_khawa_target',
+            },
+            {
+                label:'মোট উপস্থিতি',
+                name:'samostic_khawa_uposthiti',
+            },
+        ],
+        fields6:[
+            {
+                label:'সংখ্যা',
+                name:'sikkha_sofor_total',
+            },
+            {
+                label:'টার্গেট',
+                name:'sikkha_sofor_target',
+            },
+            {
+                label:'মোট উপস্থিতি',
+                name:'sikkha_sofor_uposthiti',
+            },
+        ],
+    }),
+    computed: {
+        ...mapWritableState(data_store, ['month']),
+    },
     methods: {
         dawat_upload: function (endpoint) {
             var value = event.target.value;

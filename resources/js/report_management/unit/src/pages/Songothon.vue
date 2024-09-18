@@ -117,10 +117,13 @@
 <script>
 import FormInput from '../components/FormInput.vue'
 import PreviousNext from '../components/PreviousNext.vue';
+import { store as data_store} from "../stores/ReportStore";
+import { mapState, mapWritableState } from 'pinia';
+
 export default {
     components: { FormInput, PreviousNext },
     data: ()=>({
-        month: null,
+        // month: null,
         rokon:[
             {
                 label:'বিগত মাসের সংখ্যা',
@@ -271,6 +274,9 @@ export default {
             },
         ],
     }),
+    computed: {
+        ...mapWritableState(data_store, ['month']),
+    },
     methods: {
         dawat_upload: function (endpoint) {
             var value = event.target.value;

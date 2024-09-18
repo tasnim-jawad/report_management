@@ -99,10 +99,12 @@ import axios from 'axios';
 import FormInput from '../components/FormInput.vue'
 import PreviousNext from '../components/PreviousNext.vue';
 import Note from '../components/Note.vue';
+import { store as data_store} from "../stores/ReportStore";
+import { mapState, mapWritableState } from 'pinia';
 export default {
     components: { FormInput, PreviousNext, Note },
     data: () => ({
-        month: null,
+        // month: null,
         fields1: [
             {
                 label: 'কতটি গ্রুপ বের হয়েছে',
@@ -206,6 +208,9 @@ export default {
             },
         ]
     }),
+    computed: {
+        ...mapWritableState(data_store, ['month']),
+    },
     methods: {
         dawat_upload: function (endpoint) {
             var value = event.target.value;
