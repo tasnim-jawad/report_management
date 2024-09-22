@@ -14,34 +14,47 @@ class Songothon9SangothonikBoithoksTableSeeder extends Seeder
     public function run(): void
     {
         Songothon9SangothonikBoithok::truncate();
-        Songothon9SangothonikBoithok::create([
-            'unit_kormi_boithok_total' => 2,
-            'unit_kormi_boithok_uposthiti' => 23,
+        $report_info_id = 1;
+        for ($i = 1; $i <= 10; $i++) {
+            for ($j = 1; $j <= 12; $j++) {
+                Songothon9SangothonikBoithok::create([
+                    'report_info_id' => $report_info_id,
+                    'unit_kormi_boithok_total' => rand(1, 10),
+                    'unit_kormi_boithok_uposthiti' => rand(1, 10),
+                    'creator' => 8 + $i,
+                    'status' => 1,
+                ]);
+                $report_info_id++;
+            }
+        }
+        // Songothon9SangothonikBoithok::create([
+        //     'unit_kormi_boithok_total' => rand(1, 10),
+        //     'unit_kormi_boithok_uposthiti' => rand(1, 10),
 
-            'creator' => 3,
-            'status' => 1,
-        ]);
-        Songothon9SangothonikBoithok::create([
-            'unit_kormi_boithok_total' => 3,
-            'unit_kormi_boithok_uposthiti' => 33,
+        //     'creator' => 3,
+        //     'status' => 1,
+        // ]);
+        // Songothon9SangothonikBoithok::create([
+        //     'unit_kormi_boithok_total' => 3,
+        //     'unit_kormi_boithok_uposthiti' => 33,
 
-            'creator' => 3,
-            'status' => 1,
-        ]);
-        Songothon9SangothonikBoithok::create([
-            'unit_kormi_boithok_total' => 4,
-            'unit_kormi_boithok_uposthiti' => 43,
+        //     'creator' => 3,
+        //     'status' => 1,
+        // ]);
+        // Songothon9SangothonikBoithok::create([
+        //     'unit_kormi_boithok_total' => 4,
+        //     'unit_kormi_boithok_uposthiti' => 43,
 
-            'creator' => 3,
-            'status' => 1,
-        ]);
-        Songothon9SangothonikBoithok::create([
-            'unit_kormi_boithok_total' => 5,
-            'unit_kormi_boithok_uposthiti' => 53,
+        //     'creator' => 3,
+        //     'status' => 1,
+        // ]);
+        // Songothon9SangothonikBoithok::create([
+        //     'unit_kormi_boithok_total' => 5,
+        //     'unit_kormi_boithok_uposthiti' => 53,
 
-            'creator' => 3,
-            'status' => 1,
-        ]);
+        //     'creator' => 3,
+        //     'status' => 1,
+        // ]);
         // Songothon9SangothonikBoithok::create([
         //     'word_sura_boithok_man_total' => 23,
         //     'word_sura_boithok_man_target' => 23,

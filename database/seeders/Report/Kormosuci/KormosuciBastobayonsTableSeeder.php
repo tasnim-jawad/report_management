@@ -14,59 +14,66 @@ class KormosuciBastobayonsTableSeeder extends Seeder
     public function run(): void
     {
         KormosuciBastobayon::truncate();
-        KormosuciBastobayon::create([
-            'unit_masik_sadaron_sova_total' => 21,
-            'unit_masik_sadaron_sova_target' => 29,
-            'unit_masik_sadaron_sova_uposthiti' => 29,
-            // 'dawati_sova_total' => 22,
-            // 'dawati_sova_target' => 28,
-            // 'alochona_sova_total' => 12,
-            // 'alochona_sova_target' => 23,
-            // 'sudhi_somabesh_total' => 21,
-            // 'sudhi_somabesh_target' => 29,
-            // 'siratunnabi_mahfil_total' => 24,
-            // 'siratunnabi_mahfil_target' => 27,
-            // 'eid_reunion_total' => 20,
-            // 'eid_reunion_target' => 24,
-            // 'dars_total' => 24,
-            // 'dars_target' => 28,
-            // 'tafsir_total' => 22,
-            // 'tafsir_target' => 27,
-            // 'dawati_jonosova_total' => 28,
-            // 'dawati_jonosova_target' => 23,
-            'iftar_mahfil_personal_total' => 23,
-            'iftar_mahfil_personal_target' => 24,
-            'iftar_mahfil_personal_uposthiti' => 24,
+        $report_info_id = 1;
+        for ($i = 1; $i <= 10; $i++) {
+            for ($j = 1; $j <= 12; $j++) {
+                KormosuciBastobayon::create([
+                    'report_info_id' => $report_info_id,
+                    'unit_masik_sadaron_sova_total' => rand(1, 10),
+                    'unit_masik_sadaron_sova_target' => rand(1, 10),
+                    'unit_masik_sadaron_sova_uposthiti' => rand(1, 10),
+                    'iftar_mahfil_personal_total' => rand(1, 10),
+                    'iftar_mahfil_personal_target' => rand(1, 10),
+                    'iftar_mahfil_personal_uposthiti' => rand(1, 10),
 
-            'iftar_mahfil_samostic_total' => 28,
-            'iftar_mahfil_samostic_target' => 29,
-            'iftar_mahfil_samostic_uposthiti' => 29,
+                    'iftar_mahfil_samostic_total' => rand(1, 10),
+                    'iftar_mahfil_samostic_target' => rand(1, 10),
+                    'iftar_mahfil_samostic_uposthiti' => rand(1, 10),
 
-            'cha_chakra_total' => 24,
-            'cha_chakra_target' => 27,
-            'cha_chakra_uposthiti' => 27,
+                    'cha_chakra_total' => rand(1, 10),
+                    'cha_chakra_target' => rand(1, 10),
+                    'cha_chakra_uposthiti' => rand(1, 10),
 
-            'samostic_khawa_total' => 27,
-            'samostic_khawa_target' => 26,
-            'samostic_khawa_uposthiti' => 26,
+                    'samostic_khawa_total' => rand(1, 10),
+                    'samostic_khawa_target' => rand(1, 10),
+                    'samostic_khawa_uposthiti' => rand(1, 10),
 
-            'sikkha_sofor_total' => 23,
-            'sikkha_sofor_target' => 27,
-            'sikkha_sofor_uposthiti' => 27,
+                    'sikkha_sofor_total' => rand(1, 10),
+                    'sikkha_sofor_target' => rand(1, 10),
+                    'sikkha_sofor_uposthiti' => rand(1, 10),
+                    'creator' => 8 + $i,
+                    'status' => 1,
+                ]);
+                $report_info_id++;
+            }
+        }
+        // KormosuciBastobayon::create([
+        //     'unit_masik_sadaron_sova_total' => rand(1, 10),
+        //     'unit_masik_sadaron_sova_target' => rand(1, 10),
+        //     'unit_masik_sadaron_sova_uposthiti' => rand(1, 10),
+        //     'iftar_mahfil_personal_total' => rand(1, 10),
+        //     'iftar_mahfil_personal_target' => rand(1, 10),
+        //     'iftar_mahfil_personal_uposthiti' => rand(1, 10),
 
-            // 'kirat_protijogita_total' => 23,
-            // 'kirat_protijogita_target' => 27,
+        //     'iftar_mahfil_samostic_total' => rand(1, 10),
+        //     'iftar_mahfil_samostic_target' => rand(1, 10),
+        //     'iftar_mahfil_samostic_uposthiti' => rand(1, 10),
 
-            // 'hamd_nat_protijogita_total' => 22,
-            // 'hamd_nat_protijogita_target' => 28,
+        //     'cha_chakra_total' => rand(1, 10),
+        //     'cha_chakra_target' => rand(1, 10),
+        //     'cha_chakra_uposthiti' => rand(1, 10),
 
-            // 'others_total' => 12,
-            // 'others_target' => 24,
+        //     'samostic_khawa_total' => rand(1, 10),
+        //     'samostic_khawa_target' => rand(1, 10),
+        //     'samostic_khawa_uposthiti' => rand(1, 10),
 
+        //     'sikkha_sofor_total' => rand(1, 10),
+        //     'sikkha_sofor_target' => rand(1, 10),
+        //     'sikkha_sofor_uposthiti' => rand(1, 10),
 
-            'creator' => 3,
-            'status' => 1,
-        ]);
+        //     'creator' => 3,
+        //     'status' => 1,
+        // ]);
 
     }
 }

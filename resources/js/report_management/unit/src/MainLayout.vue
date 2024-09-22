@@ -85,44 +85,44 @@
                                 <span class="icon_margin"><i class="fa-solid fa-comments"></i></span>মন্তব্য
                             </router-link>
                         </li>
-                        <li>
+                        <!-- <li>
                             <router-link :to="{name:'BmCategoryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>আয়ের খাত সমুূহ
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{name:'BmCategoryUserAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত ধার্য
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{name:'BmEntryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>আয় এন্ট্রি করুন
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{name:'BmExpenseCategoryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-layer-group"></i></span>BM Expense Category
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{name:'BmExpenseAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>BM Expense
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{name:'BmUserReport'}">
                                 <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM User Report
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{name:'BmTotalReport'}">
                                 <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM Total Report
                             </router-link>
-                        </li>
+                        </li> -->
                         <li>
                             <router-link :to="{name:'PrintReport'}">
-                                <span class="icon_margin"><i class="fa-solid fa-print"></i></span>Report Print
+                                <span class="icon_margin"><i class="fa-solid fa-print"></i></span>রিপোর্ট প্রিন্ট
                             </router-link>
                         </li>
                     </ul>

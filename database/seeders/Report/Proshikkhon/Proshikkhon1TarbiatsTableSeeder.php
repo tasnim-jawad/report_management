@@ -14,10 +14,25 @@ class Proshikkhon1TarbiatsTableSeeder extends Seeder
     public function run(): void
     {
         Proshikkhon1Tarbiat::truncate();
+        $report_info_id = 1;
+        for ($i = 1; $i <= 10; $i++) {
+            for ($j = 1; $j <= 12; $j++) {
+                Proshikkhon1Tarbiat::create([
+                    'report_info_id' => $report_info_id,
+                    'tarbiati_boithok_total' => rand(1, 10),
+                    'tarbiati_boithok_target' => rand(1, 10),
+                    'tarbiati_boithok_uposthiti' => rand(1, 10),
+
+                    'creator' => 8 + $i,
+                    'status' => 1,
+                ]);
+                $report_info_id++;
+            }
+        }
         Proshikkhon1Tarbiat::create([
-            'tarbiati_boithok_total' => 12,
-            'tarbiati_boithok_target' => 22,
-            'tarbiati_boithok_uposthiti' => 42,
+            'tarbiati_boithok_total' => rand(1, 10),
+            'tarbiati_boithok_target' => rand(1, 10),
+            'tarbiati_boithok_uposthiti' => rand(1, 10),
 
             'creator' => 3,
             'status' => 1,

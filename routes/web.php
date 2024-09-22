@@ -11,7 +11,7 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('auth.login');
-});
+})->name('login');
 
 // Auth::routes();
 
@@ -23,8 +23,8 @@ Route::group(['prefix' => 'dashboard', 'namespace' => '\App\Http\Controllers\Das
 });
 
 Route::group(['prefix' => 'unit', 'namespace' => '\App\Http\Controllers\Unit'], function () {
-    Route::get('report', 'UnitController@report')->middleware('auth');
-    Route::get('report/upload', 'UnitController@report_upload')->middleware('auth');
+    Route::get('report', 'UnitController@report');
+    Route::get('report/upload', 'UnitController@report_upload');
 });
 
 Route::group(['prefix' => 'ward', 'namespace' => '\App\Http\Controllers\Ward'], function () {

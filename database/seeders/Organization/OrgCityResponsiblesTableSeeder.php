@@ -16,15 +16,15 @@ class OrgCityResponsiblesTableSeeder extends Seeder
         OrgCityResponsible::truncate();
         OrgCityResponsible::insert([
             [
-                'user_id' => 3,
+                'user_id' => 5,
                 'responsibility_id' => 1,
                 'org_city_id' => 1,
             ],
-            [
-                'user_id' => 4,
-                'responsibility_id' => 2,
-                'org_city_id' => 1,
-            ],
+            // [
+            //     'user_id' => 6,
+            //     'responsibility_id' => 2,
+            //     'org_city_id' => 1,
+            // ],
         ]);
     }
 }

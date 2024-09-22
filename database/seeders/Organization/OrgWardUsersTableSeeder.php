@@ -25,7 +25,7 @@ class OrgWardUsersTableSeeder extends Seeder
                 'user_id' => 8,
                 'city_id' => 1,
                 'thana_id' => 1,
-                'ward_id' => 1,
+                'ward_id' => 2,
             ],
         ]);
     }

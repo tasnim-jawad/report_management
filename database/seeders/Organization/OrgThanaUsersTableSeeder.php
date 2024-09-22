@@ -16,16 +16,10 @@ class OrgThanaUsersTableSeeder extends Seeder
         OrgThanaUser::truncate();
         OrgThanaUser::insert([
             [
-                'user_id' => 7,
+                'user_id' => 6,
                 'city_id' => 1,
                 'thana_id' => 1
             ],
-            [
-                'user_id' => 8,
-                'city_id' => 1,
-                'thana_id' => 1
-            ],
-
         ]);
     }
 }

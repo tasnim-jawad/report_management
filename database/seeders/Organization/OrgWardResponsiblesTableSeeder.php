@@ -22,8 +22,8 @@ class OrgWardResponsiblesTableSeeder extends Seeder
             ],
             [
                 'user_id' => 8,
-                'responsibility_id' => 2,
-                'org_ward_id' => 1,
+                'responsibility_id' => 1,
+                'org_ward_id' => 2,
             ],
         ]);
     }
