@@ -11,7 +11,7 @@
                 <table class="table table-striped table-bordered text-start">
                     <thead>
                         <tr class="table-dark">
-                            <th>Name</th>
+                            <!-- <th>Name</th> -->
                             <th>Category</th>
                             <th>Month</th>
                             <th>Amount</th>
@@ -20,7 +20,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(entry,index) in bm_entry" :key="index">
-                            <td>{{entry.user.full_name}}</td>
+                            <!-- <td>{{entry.user.full_name}}</td> -->
                             <td>{{entry.bm_category.title}}</td>
                             <td>{{ new Date(entry.month).toLocaleString('default', { month: 'long' }) +' ' + new Date(entry.month).getFullYear().toString().slice(-2)}}</td>
                             <td>{{entry.amount}}</td>
@@ -42,6 +42,11 @@
                                 </div>
                             </td>
                         </tr>
+                        <tr v-if="total_paid > 0">
+                            <td colspan="2" class="text-end">Total</td>
+                            <td>{{ total_paid }}</td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -55,6 +60,7 @@ export default {
     data() {
         return {
             bm_entry:[],
+            total_paid:[],
         }
     },
 
@@ -62,13 +68,14 @@ export default {
         this.show_bm_entry()
     },
     methods:{
-        show_bm_entry : function(){
-            axios.get('/bm-paid/single-unit')
-                .then(response => {
-                    this.bm_entry = response.data
-                    console.log(this.bm_entry);
+        show_bm_entry :async function(){
+            let response = await  axios.get('/bm-paid/single-unit');
 
-                })
+            if(response.data.status == "success"){
+                console.log("response",response.data);
+                this.bm_entry = response.data.data;
+                this.total_paid = response.data.total_paid;
+            }
         },
         delete_entry : function(entry_id){
             if (window.confirm("Are you sure you want to delete this Entry?")) {

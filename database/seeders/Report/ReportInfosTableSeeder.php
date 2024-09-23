@@ -18,7 +18,7 @@ class ReportInfosTableSeeder extends Seeder
             for ($j = 1; $j <= 12; $j++) {
                 ReportInfo::create([
                     'org_type' => 'unit',
-                    'org_type_id' => 1,
+                    'org_type_id' => $i,
                     'responsibility_id' => 1,
                     'responsibility_name' => 'president',
                     'month_year' => "2024-" . str_pad($j, 2, '0', STR_PAD_LEFT) . "-01", // Fixes the date format

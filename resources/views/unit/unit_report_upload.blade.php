@@ -829,7 +829,13 @@
                                     <tbody>
                                         @foreach ($expense_category_wise as $expense_category)
                                             <tr>
-                                                <td class="text-start px-2 w-50 border_bottom">{{$expense_category["category"]}}</td>
+                                                <td class="text-start px-2 w-50 border_bottom">
+                                                    <select type="text" name="" class="w-100" >
+                                                        <option value="">-- খাত সিলেক্ট --</option>
+                                                        {{-- <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option> --}}
+
+                                                    </select>
+                                                </td>
                                                 <td class="border_left_bottom">{{bangla($expense_category["amount"])}}</td>
                                             </tr>
                                         @endforeach
@@ -850,6 +856,7 @@
                 <h1 class="fs-6">ইউনিট সভাপতির মন্তব্য :</h1>
                 <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input" rows="5">{{$montobbo->montobbo?? ""}}</textarea>
             </div>
+            <my-component :month="month"></my-component>
         </section>
     </div>
 
@@ -864,7 +871,8 @@
                 console.log('connected');
             },
             data: ()=>({
-                month: `{{request()->month}}`
+                // month: `{{request()->month}}`
+                month: @json(request()->month)
             }),
             methods: {
                 data_upload: function(endpoint) {
@@ -877,6 +885,22 @@
                         month
                     })
                 },
+            },
+            components: {
+                'my-component': {
+                    template: `
+                        <tr>
+                            <td class="text-start px-2 w-50 border_bottom">
+                                <select type="text" name="" class="w-100" >
+                                    <option value="">-- খাত সিলেক্ট --</option>
+                                    {{-- <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option> --}}
+
+                                </select>
+                            </td>
+                            <td class="border_left_bottom">{{bangla($expense_category["amount"])}}</td>
+                        </tr>
+                    `,
+                }
             }
         });
     </script>

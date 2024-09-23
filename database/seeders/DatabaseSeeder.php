@@ -37,9 +37,11 @@ use Database\Seeders\Report\Department\Department6MosjidDawahInfomationCentersTa
 use Database\Seeders\Report\Department\Department7DawatInTechnologiesTableSeeder;
 use Database\Seeders\Report\Department\Department8DawatInCulturalProgramsTableSeeder;
 use Database\Seeders\Report\Kormosuci\KormosuciBastobayonsTableSeeder;
+use Database\Seeders\Report\Montobbo\MontobbosTableSeeder;
 use Database\Seeders\Report\Proshikkhon\Proshikkhon1TarbiatsTableSeeder;
 use Database\Seeders\Report\Rastrio\Rastrio1BishishtoBektisTableSeeder;
 use Database\Seeders\Report\ReportInfosTableSeeder;
+use Database\Seeders\Report\ReportManagementControlsTableSeeder;
 use Database\Seeders\Report\Shomajsheba\Shomajsheba1PersonalSocialWorksTableSeeder;
 use Database\Seeders\Report\Shomajsheba\Shomajsheba2UnitSocialWorksTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon1JonosoktisTableSeeder;
@@ -101,6 +103,7 @@ class DatabaseSeeder extends Seeder
             OrgUnitResponsiblesTableSeeder::class,
             //report table
             ReportInfosTableSeeder::class,
+            ReportManagementControlsTableSeeder::class,
             // dawat
             Dawat1RegularGroupWisesTableSeeder::class,
             Dawat2PersonalAndTargetsTableSeeder::class,
@@ -130,12 +133,14 @@ class DatabaseSeeder extends Seeder
             Songothon8IyanotDataTableSeeder::class,
             Songothon9SangothonikBoithoksTableSeeder::class,
             // proshikkhon
-            // Proshikkhon1TarbiatsTableSeeder::class,
+            Proshikkhon1TarbiatsTableSeeder::class,
             // shomajsheba
             Shomajsheba1PersonalSocialWorksTableSeeder::class,
             Shomajsheba2UnitSocialWorksTableSeeder::class,
             // rastrio
             Rastrio1BishishtoBektisTableSeeder::class,
+            // montobbo
+            MontobbosTableSeeder::class,
             // bm
             BmExpenseCategoriesTableSeeder::class,
             BmCategoriesTableSeeder::class,

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Bm\Expense;
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Expense\BmExpenseCategory;
+use App\Models\Report\ReportManagementControl;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -51,14 +52,27 @@ class BmExpenseController extends Controller
         }
 
         public function single_unit(){
+            $permission  = ReportManagementControl::where('report_type', 'unit')
+                                                ->where('is_active', 1)
+                                                ->latest()
+                                                ->first();
+            $monthYear = Carbon::parse($permission->month_year);
+            $month = $monthYear->month;
+            $year = $monthYear->year;
             $unit_id = auth()->user()->org_unit_user["unit_id"];
-            // dd($month);
-            $data = BmExpense::with('bm_expense_category')->where('unit_id',$unit_id)->get()->all();
+            $data = BmExpense::with('bm_expense_category')
+                                ->where('unit_id',$unit_id)
+                                ->whereMonth('date',$month)
+                                ->whereYear('date',$year)
+                                ->get();
             // dd($data);
-            return response([
-                'data' => $data,
-                'status' => 'success'
-            ]);
+            $total_expense =$data->sum('amount');
+
+            return response()->json([
+                'status'=>'success',
+                'data'=>$data,
+                'total_expense'=>$total_expense,
+            ],200);
         }
 
         public function bm_total_expense($month){
@@ -140,21 +154,33 @@ class BmExpenseController extends Controller
             }
 
             $unit_info = (object) auth()->user()->org_unit_user;
+            $permission  = ReportManagementControl::where('report_type', 'unit')
+                                                ->where('is_active', 1)
+                                                ->latest()
+                                                ->first();
+            if(!$permission){
+                return response()->json([
+                    'err_message' => 'Permission denied',
+                    'errors' => [['You do not have the necessary permissions']],
+                ], 403);
+            }else{
+                $data = new BmExpense();
+                $data->user_id = $unit_info->user_id;
+                $data->unit_id = $unit_info->unit_id;
+                $data->ward_id = $unit_info->ward_id;
+                $data->thana_id = $unit_info->thana_id;
+                $data->city_id = $unit_info->city_id;
+                $data->amount = request()->amount;
+                $data->date = $permission->month_year;
+                $data->bm_expense_category_id = request()->bm_expense_category_id;
 
-            $data = new BmExpense();
-            $data->user_id = $unit_info->user_id;
-            $data->unit_id = $unit_info->unit_id;
-            $data->ward_id = $unit_info->ward_id;
-            $data->thana_id = $unit_info->thana_id;
-            $data->city_id = $unit_info->city_id;
-            $data->amount = request()->amount;
-            $data->date = Carbon::now();
-            $data->bm_expense_category_id = request()->bm_expense_category_id;
+                $data->creator = auth()->id();
+                $data->save();
 
-            $data->creator = auth()->id();
-            $data->save();
+                return response()->json($data, 200);
+            }
 
-            return response()->json($data, 200);
+
         }
 
         public function update()

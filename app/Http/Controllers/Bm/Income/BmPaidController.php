@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Bm\Income\BmCategory;
 use App\Models\Bm\Income\BmCategoryUser;
 use App\Models\Bm\Income\BmPaid;
+use App\Models\Report\ReportManagementControl;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -49,10 +50,28 @@ class BmPaidController extends Controller
         }
 
         public function single_unit(){
+            $permission  = ReportManagementControl::where('report_type', 'unit')
+                                                ->where('is_active', 1)
+                                                ->latest()
+                                                ->first();
+            $monthYear = Carbon::parse($permission->month_year);
+            $month = $monthYear->month;
+            $year = $monthYear->year;
+
             $unit_id = auth()->user()->org_unit_user["unit_id"];
-            $data = BmPaid::with('bm_category')->with('user')->where('unit_id',$unit_id)->get()->all();
+            $data = BmPaid::with('bm_category')
+                            ->where('unit_id',$unit_id)
+                            ->whereMonth('month',$month)
+                            ->whereYear('month',$year)
+                            ->get();
             // dd($data);
-            return response()->json($data);
+            $total_paid =$data->sum('amount');
+
+            return response()->json([
+                'status'=>'success',
+                'data'=>$data,
+                'total_paid'=>$total_paid,
+            ],200);
         }
 
         public function bm_paid_report($user_id,$bm_category_id){
@@ -151,8 +170,6 @@ class BmPaidController extends Controller
             $validator = Validator::make(request()->all(), [
                 'amount' => ['required'],
                 'bm_category_id' => ['required'],
-                'user_id' => ['required'],
-                'month' => ['required'],
             ]);
 
             if ($validator->fails()) {
@@ -164,15 +181,25 @@ class BmPaidController extends Controller
 
             $unit_info = (object) auth()->user()->org_unit_user;
             // dd($unit_info->user_id);
+            $permission  = ReportManagementControl::where('report_type', 'unit')
+                                                ->where('is_active', 1)
+                                                ->latest()
+                                                ->first();
+            if(!$permission){
+                return response()->json([
+                    'err_message' => 'Permission denied',
+                    'errors' => [['You do not have the necessary permissions']],
+                ], 403);
+            }
 
             $data = new BmPaid();
-            $data->user_id = request()->user_id;
+            $data->user_id = $unit_info->user_id;
             $data->unit_id = $unit_info->unit_id;
             $data->ward_id = $unit_info->ward_id;
             $data->thana_id = $unit_info->thana_id;
             $data->city_id = $unit_info->city_id;
             $data->amount = request()->amount;
-            $data->month = request()->month . '-01';
+            $data->month = $permission->month_year;
             $data->bm_category_id = request()->bm_category_id;
 
             $data->creator =  $unit_info->user_id;

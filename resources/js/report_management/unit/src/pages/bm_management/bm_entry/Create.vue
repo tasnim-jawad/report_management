@@ -4,7 +4,7 @@
             Create Bm Entry
         </div>
         <div class="card-body">
-            <p class="mb-3" >Target:-  {{users_target}}</p>
+            <!-- <p class="mb-3" >Target:-  {{users_target}}</p> -->
             <form action="" @submit.prevent="create_entry">
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" v-for="(field, index) in fields1" :key="index">
                     <div class="form_label">
@@ -17,6 +17,7 @@
 
                         </select>
                     </div>
+
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'bm_category_id'">
                         <select type="text" :name="field.name" class="form-control" v-model="selected_bm_category_id">
                             <option value="">-- select Category --</option>
@@ -43,21 +44,21 @@ export default {
     data(){
         return {
             fields1:[
-                {
-                    label:"User",
-                    name:"user_id",
-                    field_type:"select",
-                },
+                // {
+                //     label:"User",
+                //     name:"user_id",
+                //     field_type:"select",
+                // },
                 {
                     label:"Title",
                     name:"bm_category_id",
                     field_type:"select",
                 },
-                {
-                    label:"Month",
-                    name:"month",
-                    field_type:"select",
-                },
+                // {
+                //     label:"Month",
+                //     name:"month",
+                //     field_type:"select",
+                // },
                 {
                     label:"Amount",
                     name:"amount",

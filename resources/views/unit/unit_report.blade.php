@@ -173,13 +173,23 @@
                                     <td class="text-start px-2">কতজন কুরআন শিক্ষা প্রদান করেছেন</td>
                                     <td >{{bangla($department1->teacher_rokon?? "")}}</td>
                                     <td >{{bangla($department1->teacher_worker?? "")}}</td>
-                                    <td >{{bangla($department1->teacher_rokon + $department1->teacher_worker ?? "")}}</td>
+                                    <td>
+                                        {{ ($department1->teacher_rokon ?? null) !== null || ($department1->teacher_worker ?? null) !== null
+                                            ? bangla(($department1->teacher_rokon ?? 0) + ($department1->teacher_worker ?? 0))
+                                            : ""
+                                        }}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে</td>
                                     <td >{{bangla($department1->student_rokon?? "")}}</td>
                                     <td >{{bangla($department1->student_worker?? "")}}</td>
-                                    <td >{{bangla($department1->student_rokon + $department1->student_worker ?? "")}}</td>
+                                    <td>
+                                        {{ ($department1->student_rokon ?? null) !== null || ($department1->student_worker ?? null) !== null
+                                            ? bangla(($department1->student_rokon ?? 0) + ($department1->student_worker ?? 0))
+                                            : ""
+                                        }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

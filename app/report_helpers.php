@@ -36,14 +36,15 @@ function auth_user_unit_responsibilities_info($user_id)
 
 function unit_report_header_info($resposibilities, $permission, $month)
 {
-    // dd($resposibilities);
+    // dd($resposibilities->org_unit_responsible->org_unit_id);
     $month = Carbon::parse($month);
+    // dd($month->clone()->year,$month->clone()->month);
     $check_info = ReportInfo::whereYear('month_year', $month->clone()->year)
         ->whereMonth('month_year', $month->clone()->month)
         // ->where('responsibility_id', $resposibilities->org_unit_responsible->responsibility_id)
         ->where('org_type_id', $resposibilities->org_unit_responsible->org_unit_id)
         // ->where('creator', auth()->user()->id)
-        ->where('report_type', 'unit')
+        ->where('report_type', 'monthly')
         ->orderBy('id', 'DESC')
         ->first();
     // dd($check_info );

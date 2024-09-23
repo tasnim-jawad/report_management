@@ -38,6 +38,11 @@
                                 </div>
                             </td>
                         </tr>
+                        <tr v-if="total_expense > 0">
+                            <td class="text-end">Total</td>
+                            <td>{{ total_expense }}</td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -51,6 +56,7 @@ export default {
     data() {
         return {
             bm_expense:[],
+            total_expense:[],
         }
     },
 
@@ -58,16 +64,22 @@ export default {
         this.show_bm_expense()
     },
     methods:{
-        show_bm_expense : function(){
-            axios.get('/bm-expense/single-unit')
-                .then(response => {
-                    console.log('bm expense', response);
-                    if(response.data.status == 'success'){
-                        this.bm_expense = response?.data?.data
-                    }
-                    // console.log('bm_expense',this.bm_expense);
+        show_bm_expense :async function(){
+            let response = await axios.get('/bm-expense/single-unit')
+                // .then(response => {
+                //     console.log('bm expense', response);
+                //     if(response.data.status == 'success'){
+                //         this.bm_expense = response?.data?.data
+                //     }
+                //     // console.log('bm_expense',this.bm_expense);
 
-                })
+                // })
+            if(response.data.status == "success"){
+                console.log("response",response.data);
+                this.bm_expense = response.data.data;
+                this.total_expense = response.data.total_expense;
+
+            }
         },
         delete_expense : function(expense_id){
             if (window.confirm("Are you sure you want to delete this Expense?")) {
