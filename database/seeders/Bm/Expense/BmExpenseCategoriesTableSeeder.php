@@ -15,29 +15,50 @@ class BmExpenseCategoriesTableSeeder extends Seeder
     {
         BmExpenseCategory::truncate();
         BmExpenseCategory::create([
-            'title' => 'urdhotono eanot porishodh',
-            'description' => "urdhotono eanot porishodh is an expense",
+            'title' => 'ইয়ানত জমা',
+            'description' => "ইয়ানত জমা একটি ব্যয়ের খাত",
 
             'creator' => 3,
             'status' => 1,
         ]);
         BmExpenseCategory::create([
-            'title' => 'Zakat',
-            'description' => "Zakat is an expense",
+            'title' => 'এককালীন',
+            'description' => "এককালীন একটি ব্যয়ের খাত",
 
             'creator' => 3,
             'status' => 1,
         ]);
         BmExpenseCategory::create([
-            'title' => 'Joruri',
-            'description' => "Joruri is an expense",
+            'title' => 'নির্বাচনী ফান্ড',
+            'description' => "নির্বাচনী ফান্ড একটি ব্যয়ের খাত",
 
             'creator' => 3,
             'status' => 1,
         ]);
         BmExpenseCategory::create([
-            'title' => 'Shomaj sheba',
-            'description' => "Shomaj sheba is an expense",
+            'title' => 'শহীদ ফান্ড',
+            'description' => "শহীদ ফান্ড একটি ব্যয়ের খাত",
+
+            'creator' => 3,
+            'status' => 1,
+        ]);
+        BmExpenseCategory::create([
+            'title' => 'কল্যাণ তহবিল',
+            'description' => "কল্যাণ তহবিল একটি ব্যয়ের খাত",
+
+            'creator' => 3,
+            'status' => 1,
+        ]);
+        BmExpenseCategory::create([
+            'title' => 'সমাজসেবা',
+            'description' => "সমাজসেবা একটি ব্যয়ের খাত",
+
+            'creator' => 3,
+            'status' => 1,
+        ]);
+        BmExpenseCategory::create([
+            'title' => 'অন্যান্য',
+            'description' => "অন্যান্য একটি ব্যয়ের খাত",
 
             'creator' => 3,
             'status' => 1,

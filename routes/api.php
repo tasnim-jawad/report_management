@@ -825,6 +825,14 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/restore', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'bulk_import']);
     });
+
+
+    Route::group(['prefix' => 'unit'] , function(){
+        Route::get('/uploaded-data', [App\Http\Controllers\Unit\UnitController::class,'report_upload_api']);
+        Route::get('/bm-category-wise', [App\Http\Controllers\Unit\UnitController::class,'bm_category_wise']);
+    });
+
+
 });
 
 

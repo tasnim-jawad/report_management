@@ -15,7 +15,8 @@ import Montobbo from '../pages/Montobbo.vue'
 import ReportInfo from '../pages/ReportInfo.vue'
 import BmUserReport from '../pages/bm_management/BmUserReport.vue'
 import BmTotalReport from '../pages/bm_management/BmTotalReport.vue'
-import PrintReport from '../pages/bm_management/PrintReport.vue'
+import PrintReport from '../pages/PrintReport.vue'
+import UploadReport from '../pages/UploadReport.vue'
 
 import Jonoshokti from '../pages/Jonoshokti.vue'
 import CreateUser from '../pages/user/CreateUser.vue'
@@ -298,6 +299,11 @@ const routes =
                     name: "PrintReport",
                     path: 'print-report',
                     component: PrintReport,
+                },
+                {
+                    name: "UploadReport",
+                    path: 'upload-report',
+                    component: UploadReport,
                 },
 
             ]

@@ -12,7 +12,7 @@
 
 <script>
 import axios from 'axios';
-import { store as data_store} from "../../stores/ReportStore";
+import { store as data_store} from "../stores/ReportStore";
 import { mapState, mapWritableState } from 'pinia';
 
 export default {

@@ -125,6 +125,11 @@
                                 <span class="icon_margin"><i class="fa-solid fa-print"></i></span>রিপোর্ট প্রিন্ট
                             </router-link>
                         </li>
+                        <li>
+                            <router-link :to="{name:'UploadReport'}">
+                                <span class="icon_margin"><i class="fa-solid fa-print"></i></span>রিপোর্ট আপলোড
+                            </router-link>
+                        </li>
                     </ul>
                 </nav>
             </aside>

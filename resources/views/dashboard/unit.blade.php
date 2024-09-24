@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="{{ asset('css/unit/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/unit/responsive.css') }}">
 
+    {{--------- report formate ---------}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/unit/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/unit/unit_report_upload.css') }}"> --}}
+    {{--------- report formate ---------}}
+
     <script src="/js/sweat_alert.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

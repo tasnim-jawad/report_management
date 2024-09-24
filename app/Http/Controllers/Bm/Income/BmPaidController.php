@@ -191,6 +191,7 @@ class BmPaidController extends Controller
                     'errors' => [['You do not have the necessary permissions']],
                 ], 403);
             }
+            
 
             $data = new BmPaid();
             $data->user_id = $unit_info->user_id;

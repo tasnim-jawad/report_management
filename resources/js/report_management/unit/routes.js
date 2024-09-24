@@ -1,11 +1,18 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import main_route from "./src/routes/routes";
+import UnitReportUpload from "./src/pages/UnitReportUpload.vue";
 
 const router = createRouter({
     history: createWebHashHistory(),
     linkActiveClass: 'active',
     linkExactActiveClass: 'active',
     routes: [
+        {
+            name: "UnitReportUpload",
+            path: '/unit-report-upload/:month/:user_id',
+            component: UnitReportUpload,
+            props: true
+        },
         main_route,
     ]
 })

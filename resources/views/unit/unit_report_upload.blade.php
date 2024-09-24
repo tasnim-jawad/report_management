@@ -14,13 +14,12 @@
     <link rel="stylesheet" href="{{ asset('css/unit/unit_report_upload.css') }}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.1/axios.min.js"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
 
 </head>
 
 <body>
-    <div id="main_app">
+    <div id="report_uplode_body">
         <section id="heading" class="mt-3">
             <div class="report_heading position-relative mb-1">
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
@@ -29,42 +28,6 @@
                     <p>পুরুষ</p>
                 </div> --}}
             </div>
-            {{-- <div class="unit_info">
-                <div class="line d-flex flex-wrap justify-content-between mb-1">
-                    <div class="d-flex">
-                        <label for="" class="me-2">মাস: </label>
-                        <input class="border_dot bg-input" type="month">
-                    </div>
-                    <div class="d-flex">
-                        <label for="" class="me-2">সন: </label>
-                        <input class="border_dot bg-input" type="text">
-                    </div>
-                </div>
-                <div class="line d-flex flex-wrap justify-content-between mb-1">
-                    <div class="d-flex width-35">
-                        <label for="" class="">ইউনিটের নাম: </label>
-                        <input class="border_dot bg-input" type="text">
-                    </div>
-                    <div class="d-flex width-33">
-                        <label for="" class="width-40">ওয়ার্ড নং ও নাম: </label>
-                        <input class="border_dot width-60 bg-input" type="text">
-                    </div>
-                    <div class="d-flex width-30">
-                        <label for="" class="width-35">উপজেলা/থানা: </label>
-                        <input class="border_dot width-65 bg-input" type="text">
-                    </div>
-                </div>
-                <div class="line d-flex flex-wrap justify-content-between mb-1">
-                    <div class="d-flex justify-content-start width-60">
-                        <label for="" class="">ইউনিট সভানেত্রীর নাম: </label>
-                        <input class="border_dot width-70 bg-input" type="text">
-                    </div>
-                    <div class="d-flex width-40">
-                        <label for="" class="width-30">ইউনিটের ধরন: </label>
-                        <input class="border_dot width-70 bg-input" type="text">
-                    </div>
-                </div>
-            </div> --}}
             <div class="unit_info">
                 <div class="line d-flex flex-wrap mb-1">
                     <p class="w-75">মাস: {{ date('F', strtotime($month)) }}</p>
@@ -85,18 +48,6 @@
         <section id="report">
             <div class="dawat mt-1">
                 <h1 class="font-18">দাওয়াত ও তাবলিগ :</h1>
-                {{-- <div class="jonoshadharon d-flex flex-wrap justify-content-between mb-2">
-                    <div class="d-flex justify-content-start width-70">
-                        <label for="" class="">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :</label>
-                        <input class="border_dot w-50 bg-input" type="text">
-                    </div>
-                    <div class="d-flex width-30">
-                        <label for="" class="ms-1">টার্গেট:</label>
-                        <input class="border_dot width-80 bg-input" type="text">
-                    </div>
-                    <p class="mt-1 ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান
-                        সংখ্যা যোগ করে এখানে বসাতে হবে ।</p>
-                </div> --}}
                 <div class="jonoshadharon d-flex flex-wrap justify-content-between mb-2">
                     <p class="fw-bold w-75">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
                         <span>
@@ -856,7 +807,6 @@
                 <h1 class="fs-6">ইউনিট সভাপতির মন্তব্য :</h1>
                 <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input" rows="5">{{$montobbo->montobbo?? ""}}</textarea>
             </div>
-            <my-component :month="month"></my-component>
         </section>
     </div>
 

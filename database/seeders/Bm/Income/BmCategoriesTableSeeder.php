@@ -15,29 +15,57 @@ class BmCategoriesTableSeeder extends Seeder
     {
         BmCategory::truncate();
         BmCategory::create([
-            'title' => 'Dharjo',
-            'description' => "Dharjo is an income",
+            'title' => 'ইয়ানত আদায়',
+            'description' => "ইয়ানত আদায় একটি আয়ের খাত",
 
             'creator' => 3,
             'status' => 1,
         ]);
         BmCategory::create([
-            'title' => 'ekkalin',
-            'description' => "ekkalin is an income",
+            'title' => 'এককালীন',
+            'description' => "এককালীন একটি আয়ের খাত",
 
             'creator' => 3,
             'status' => 1,
         ]);
         BmCategory::create([
-            'title' => 'nirbachoni',
-            'description' => "nirbachoni is an income",
+            'title' => 'নির্বাচনী ফান্ড',
+            'description' => "nirbachoni একটি আয়ের খাত",
 
             'creator' => 3,
             'status' => 1,
         ]);
         BmCategory::create([
-            'title' => 'Shomaj sheba',
-            'description' => "Shomaj sheba is an income",
+            'title' => 'শহীদ ফান্ড',
+            'description' => "শহীদ ফান্ড একটি আয়ের খাত",
+
+            'creator' => 3,
+            'status' => 1,
+        ]);
+        BmCategory::create([
+            'title' => 'কল্যাণ তহবিল',
+            'description' => "কল্যাণ তহবিল একটি আয়ের খাত",
+
+            'creator' => 3,
+            'status' => 1,
+        ]);
+        BmCategory::create([
+            'title' => 'সমাজসেবা',
+            'description' => "সমাজসেবা একটি আয়ের খাত",
+
+            'creator' => 3,
+            'status' => 1,
+        ]);
+        BmCategory::create([
+            'title' => 'বই বিক্রি',
+            'description' => "বই বিক্রি একটি আয়ের খাত",
+
+            'creator' => 3,
+            'status' => 1,
+        ]);
+        BmCategory::create([
+            'title' => 'অন্যান্য',
+            'description' => "অন্যান্য একটি আয়ের খাত",
 
             'creator' => 3,
             'status' => 1,
