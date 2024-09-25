@@ -52,24 +52,36 @@ class BmExpenseController extends Controller
         }
 
         public function single_unit(){
+            $passed_date = Carbon::parse(request()->all()['month']);
+            $passed_month = $passed_date->month;
+            $passed_year = $passed_date->year;
+
             $permission  = ReportManagementControl::where('report_type', 'unit')
                                                 ->where('is_active', 1)
                                                 ->latest()
                                                 ->first();
-            $monthYear = Carbon::parse($permission->month_year);
-            $month = $monthYear->month;
-            $year = $monthYear->year;
+            $permitted_date = Carbon::parse($permission->month_year);
+            $permitted_month = $permitted_date->month;
+            $permitted_year = $permitted_date->year;
+
+            if($passed_month == $permitted_month && $passed_year == $permitted_year){
+                $is_permitted = true;
+            }else{
+                $is_permitted = false;
+            }
+
             $unit_id = auth()->user()->org_unit_user["unit_id"];
             $data = BmExpense::with('bm_expense_category')
                                 ->where('unit_id',$unit_id)
-                                ->whereMonth('date',$month)
-                                ->whereYear('date',$year)
+                                ->whereMonth('date',$passed_month)
+                                ->whereYear('date',$passed_year)
                                 ->get();
             // dd($data);
             $total_expense =$data->sum('amount');
 
             return response()->json([
                 'status'=>'success',
+                'is_permitted' => $is_permitted,
                 'data'=>$data,
                 'total_expense'=>$total_expense,
             ],200);
@@ -139,6 +151,36 @@ class BmExpenseController extends Controller
                 ], 404);
             }
         }
+        public function existing_data(){
+            // dd(request()->all()['category_id']);
+            $permission  = ReportManagementControl::where('report_type', 'unit')
+                                                ->where('is_active', 1)
+                                                ->latest()
+                                                ->first();
+            $permitted_date = Carbon::parse($permission->month_year);
+            $permitted_month = $permitted_date->month;
+            $permitted_year = $permitted_date->year;
+            $unit_info = (object) auth()->user()->org_unit_user;
+
+            $existing_data = BmExpense::where('unit_id',$unit_info->unit_id)
+                                        ->where('bm_expense_category_id',request()->all()['category_id'])
+                                        ->whereYear('date',$permitted_year)
+                                        ->whereMonth('date',$permitted_month)
+                                        ->first();
+            // dd($existing_data->amount);
+            if($existing_data){
+                return response()->json([
+                    'status'=>'success',
+                    'amount' => $existing_data->amount,
+                ],200);
+            }else{
+                return response()->json([
+                    'status'=>'success',
+                    'amount' => '',
+                ],200);
+            }
+
+        }
         public function store()
         {
             $validator = Validator::make(request()->all(), [
@@ -153,7 +195,7 @@ class BmExpenseController extends Controller
                 ], 422);
             }
 
-            $unit_info = (object) auth()->user()->org_unit_user;
+
             $permission  = ReportManagementControl::where('report_type', 'unit')
                                                 ->where('is_active', 1)
                                                 ->latest()
@@ -163,6 +205,34 @@ class BmExpenseController extends Controller
                     'err_message' => 'Permission denied',
                     'errors' => [['You do not have the necessary permissions']],
                 ], 403);
+            }
+
+            $permitted_date = Carbon::parse($permission->month_year);
+            $permitted_month = $permitted_date->month;
+            $permitted_year = $permitted_date->year;
+            $unit_info = (object) auth()->user()->org_unit_user;
+
+            $already_have_data = BmExpense::where('unit_id',$unit_info->unit_id)
+                                        ->where('bm_expense_category_id',request()->bm_expense_category_id)
+                                        ->whereYear('date',$permitted_year)
+                                        ->whereMonth('date',$permitted_month)
+                                        ->exists();
+
+            if($already_have_data){
+                $data = BmExpense::where('unit_id',$unit_info->unit_id)
+                                ->where('user_id',$unit_info->user_id)
+                                ->where('ward_id',$unit_info->ward_id)
+                                ->where('thana_id',$unit_info->thana_id)
+                                ->where('city_id',$unit_info->city_id)
+                                ->whereYear('date',$permitted_year)
+                                ->whereMonth('date',$permitted_month)
+                                ->where('bm_expense_category_id',request()->bm_expense_category_id)
+                                ->first();
+                $data->amount = request()->amount;
+                $data->creator =  $unit_info->user_id;
+                $data->save();
+
+                return response()->json($data, 200);
             }else{
                 $data = new BmExpense();
                 $data->user_id = $unit_info->user_id;
@@ -179,6 +249,7 @@ class BmExpenseController extends Controller
 
                 return response()->json($data, 200);
             }
+
 
 
         }

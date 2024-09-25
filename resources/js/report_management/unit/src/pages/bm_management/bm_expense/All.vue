@@ -1,4 +1,9 @@
 <template>
+    <div class="card mb-3 ">
+        <div class="card-header border-bottom-0">
+            মাস: <input type="month" @change="get_monthly_data" v-model="month" ref="month" name="month">
+        </div>
+    </div>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             Show All Bm Expense
@@ -25,10 +30,10 @@
                                     <div class="btn btn-success btn-sm me-2">
                                         <router-link :to="{name:'BmExpenseDetails',params: { expense_id: expense.id }}"  class="text-dark">show</router-link>
                                     </div>
-                                    <div class="btn btn-warning btn-sm me-2">
+                                    <div class="btn btn-warning btn-sm me-2" v-if="is_permitted">
                                         <router-link :to="{name:'BmExpenseEdit',params: { expense_id: expense.id }}"  class="text-dark">Edit</router-link>
                                     </div>
-                                    <div class="btn btn-danger btn-sm">
+                                    <div class="btn btn-danger btn-sm" v-if="is_permitted">
                                         <a @click="delete_expense(expense.id)" class="text-dark">Delete</a>
 
                                         <form :id="'delete_expense_form_'+expense.id" >
@@ -52,33 +57,34 @@
 
 <script>
 import axios from 'axios'
+import { store as data_store} from "../../../stores/ReportStore";
+import { mapWritableState } from 'pinia';
 export default {
     data() {
         return {
             bm_expense:[],
             total_expense:[],
+            is_permitted: false,
         }
     },
-
-    created:function(){
-        this.show_bm_expense()
+    computed: {
+        ...mapWritableState(data_store, ['month']),
+    },
+    created: function() {
+        if (this.month) {
+            this.show_bm_expense();
+        }
     },
     methods:{
         show_bm_expense :async function(){
-            let response = await axios.get('/bm-expense/single-unit')
-                // .then(response => {
-                //     console.log('bm expense', response);
-                //     if(response.data.status == 'success'){
-                //         this.bm_expense = response?.data?.data
-                //     }
-                //     // console.log('bm_expense',this.bm_expense);
-
-                // })
+            let response = await axios.get('/bm-expense/single-unit',{
+                                params: { month: this.month  }
+                            });
             if(response.data.status == "success"){
                 console.log("response",response.data);
                 this.bm_expense = response.data.data;
                 this.total_expense = response.data.total_expense;
-
+                this.is_permitted = response.data.is_permitted;
             }
         },
         delete_expense : function(expense_id){
@@ -101,6 +107,11 @@ export default {
                     .catch(error => {
                         console.error(error);
                     });
+        }
+    },
+    watch:{
+        month:function(){
+            this.show_bm_expense()
         }
     }
 

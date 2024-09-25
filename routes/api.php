@@ -755,6 +755,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => 'bm-expense'] , function(){
         Route::get('/single-unit', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'single_unit']);
         Route::get('/bm-total-expense/{month}', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'bm_total_expense']);
+        Route::get('/existing-data', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'existing_data']);
 
         Route::get('/all', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'show']);
@@ -801,6 +802,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::get('/single-unit', [App\Http\Controllers\Bm\Income\BmPaidController::class,'single_unit']);
         Route::get('/bm-paid-report/{user_id}/{bm_category_id}', [App\Http\Controllers\Bm\Income\BmPaidController::class,'bm_paid_report']);
         Route::get('/bm-total/{month}', [App\Http\Controllers\Bm\Income\BmPaidController::class,'bm_total']);
+        Route::get('/existing-data', [App\Http\Controllers\Bm\Income\BmPaidController::class,'existing_data']);
 
         Route::get('/all', [App\Http\Controllers\Bm\Income\BmPaidController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmPaidController::class,'show']);
@@ -830,6 +832,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => 'unit'] , function(){
         Route::get('/uploaded-data', [App\Http\Controllers\Unit\UnitController::class,'report_upload_api']);
         Route::get('/bm-category-wise', [App\Http\Controllers\Unit\UnitController::class,'bm_category_wise']);
+        Route::get('/expense-category-wise', [App\Http\Controllers\Unit\UnitController::class,'expense_category_wise']);
     });
 
 

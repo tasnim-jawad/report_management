@@ -11,7 +11,7 @@
                         <label for="">Title</label>
                     </div>
                     <div class="form_input">
-                        <select type="text" name="bm_expense_category_id" class="form-control">
+                        <select type="text" name="bm_expense_category_id" class="form-control text-center">
                             <option value="">-- select responsibility group --</option>
                             <option v-for="(bm_expense_category, i) in expense_category.data" :key="i" :value="bm_expense_category['id']"
                             :selected="bm_expense_category['id'] === expense_info.bm_expense_category_id">{{bm_expense_category["title"]}}</option>

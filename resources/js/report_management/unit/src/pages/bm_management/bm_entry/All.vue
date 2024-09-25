@@ -1,4 +1,9 @@
 <template>
+    <div class="card mb-3 ">
+        <div class="card-header border-bottom-0">
+            মাস: <input type="month" @change="get_monthly_data" v-model="month" ref="month" name="month">
+        </div>
+    </div>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             Show All Bm Entry
@@ -29,10 +34,10 @@
                                     <div class="btn btn-success btn-sm me-2">
                                         <router-link :to="{name:'BmEntryDetails',params: { entry_id: entry.id }}"  class="text-dark">show</router-link>
                                     </div>
-                                    <div class="btn btn-warning btn-sm me-2">
+                                    <div class="btn btn-warning btn-sm me-2" v-if="is_permitted">
                                         <router-link :to="{name:'BmEntryEdit',params: { entry_id: entry.id }}"  class="text-dark">Edit</router-link>
                                     </div>
-                                    <div class="btn btn-danger btn-sm">
+                                    <div class="btn btn-danger btn-sm" v-if="is_permitted">
                                         <a @click="delete_entry(entry.id)" class="text-dark">Delete</a>
 
                                         <form :id="'delete_entry_form_'+entry.id" >
@@ -56,25 +61,35 @@
 
 <script>
 import axios from 'axios'
+import { store as data_store} from "../../../stores/ReportStore";
+import { mapWritableState } from 'pinia';
 export default {
     data() {
         return {
             bm_entry:[],
             total_paid:[],
+            is_permitted: false,
         }
     },
-
-    created:function(){
-        this.show_bm_entry()
+    computed: {
+        ...mapWritableState(data_store, ['month']),
+    },
+    created: function() {
+        if (this.month) {
+            this.show_bm_entry();
+        }
     },
     methods:{
         show_bm_entry :async function(){
-            let response = await  axios.get('/bm-paid/single-unit');
+            let response = await  axios.get('/bm-paid/single-unit',{
+                                params: { month: this.month  }
+                            });
 
             if(response.data.status == "success"){
                 console.log("response",response.data);
                 this.bm_entry = response.data.data;
                 this.total_paid = response.data.total_paid;
+                this.is_permitted = response.data.is_permitted;
             }
         },
         delete_entry : function(entry_id){
@@ -97,6 +112,11 @@ export default {
                     .catch(error => {
                         console.error(error);
                     });
+        }
+    },
+    watch:{
+        month:function(){
+            this.show_bm_entry()
         }
     }
 

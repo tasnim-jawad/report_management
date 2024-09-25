@@ -477,9 +477,6 @@ class UnitController extends Controller
         }
         // -------------------------- bm expense report ------------------------------------
 
-
-        // dd($report_info_id );
-        // return view('unit.unit_report_upload');
         return response()->json([
             'status' => "success",
             'month' => $month,
@@ -516,42 +513,31 @@ class UnitController extends Controller
             'expense_category_wise' => $expense_category_wise,
             'total_expense' => $total_expense,
         ], 200);
-        // return view('unit.unit_report_upload')->with([
-        //     'month' => $month,
-        //     'org_type' => $org_type,
-        //     'unit_info' => $unit_info,
-        //     'ward_info' => $ward_info,
-        //     'thana_info' => $thana_info,
-        //     'precedent' => $precedent,
+    }
 
-        //     'dawat1' => $dawat1,
-        //     'dawat2' => $dawat2,
-        //     'dawat3' => $dawat3,
-        //     'dawat4' => $dawat4,
-        //     'department1' => $department1,
-        //     'department4' => $department4,
-        //     'department5' => $department5,
-        //     'dawah_prokashona' => $dawah_prokashona,
-        //     'kormosuci' => $kormosuci,
-        //     'songothon1' => $songothon1,
-        //     'songothon2' => $songothon2,
-        //     'songothon9' => $songothon9,
-        //     'songothon5' => $songothon5,
-        //     'songothon7' => $songothon7,
-        //     'songothon8' => $songothon8,
-        //     'proshikkhon' => $proshikkhon,
-        //     'shomajsheba1' => $shomajsheba1,
-        //     'shomajsheba2' => $shomajsheba2,
-        //     'rastrio' => $rastrio,
-        //     'montobbo' => $montobbo,
+    public function expense_category_wise(){
+        $unit_info = (object) auth()->user()->org_unit_user;
+        $permission  = ReportManagementControl::where('report_type', 'unit')
+                                                ->where('is_active', 1)
+                                                ->latest()
+                                                ->first();
+        if(!$permission){
+            return response()->json([
+                'err_message' => 'Permission denied',
+                'errors' => [['You do not have the necessary permissions']],
+            ], 403);
+        }
 
-        //     'income_category_wise' => $income_category_wise,
-        //     'total_income' => $total_income,
+        $month = Carbon::parse($permission->month_year);
 
-        //     'expense_category_wise' => $expense_category_wise,
-        //     'total_expense' => $total_expense,
+        $query = BmExpense::query();
+        $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('unit_id', $unit_info->unit_id);
+        $data = $filter->with('bm_expense_category')->get();
 
-        // ]);
+        return response()->json([
+            'status' => 'success',
+            'data' => $data,
+        ], 200);
     }
 
     public function bm_category_wise(){
@@ -578,4 +564,5 @@ class UnitController extends Controller
             'data' => $data,
         ], 200);
     }
+
 }

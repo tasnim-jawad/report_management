@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'bm_category_id'">
-                        <select type="text" :name="field.name" class="form-control" v-model="selected_bm_category_id">
+                        <select type="text" :name="field.name" class="form-control text-center" v-model="selected_bm_category_id">
                             <option value="">-- select Category --</option>
                             <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option>
 
@@ -29,7 +29,7 @@
                         <input type="month" :name="field.name" class="form-control">
                     </div>
                     <div class="form_input" v-else>
-                        <input type="text" :name="field.name" class="form-control">
+                        <input type="text" :name="field.name" class="form-control" v-model="amount">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">Create Entry</button>
@@ -40,6 +40,7 @@
 
 <script>
 import axios from 'axios'
+import { watch } from 'vue';
 export default {
     data(){
         return {
@@ -69,6 +70,7 @@ export default {
             users_target:"",
             selected_user_id:"",
             selected_bm_category_id:"",
+            amount: "",
 
         }
     },
@@ -85,6 +87,9 @@ export default {
         selected_bm_category_id:function(){
             this.users_target = ""
             this.user_target();
+            this.existing_data();
+
+
         }
     },
 
@@ -106,9 +111,9 @@ export default {
                 })
         },
         user_target:function(){
-            console.log('target clicked');
-            console.log(this.selected_user_id);
-            console.log(this.selected_bm_category_id);
+            // console.log('target clicked');
+            // console.log(this.selected_user_id);
+            // console.log(this.selected_bm_category_id);
             if(this.selected_user_id != "" && this.selected_bm_category_id != ""){
                 axios.get(`/bm-category-user/show_target/${this.selected_user_id}/${this.selected_bm_category_id}`)
                     .then(response =>{
@@ -126,10 +131,22 @@ export default {
             }
 
         },
-        create_entry:function(){
-            event.preventDefault();
-            let e = event;
-            let formData = new FormData(event.target);
+        existing_data :async function(){
+            let response = await  axios.get('/bm-paid/existing-data',{
+                                params: {
+                                    category_id: this.selected_bm_category_id,
+                                }
+                            });
+
+            if(response.data.status == "success"){
+                console.log("response",response.data);
+                this.amount = response.data.amount;
+            }
+        },
+        create_entry:function($event){
+            $event.preventDefault();
+            let e = $event;
+            let formData = new FormData($event.target);
             // for (const entry of formData.entries()) {
             //     console.log(entry);
             // }

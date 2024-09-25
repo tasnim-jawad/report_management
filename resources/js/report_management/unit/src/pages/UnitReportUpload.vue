@@ -508,7 +508,7 @@
                                     <input name="unit_masik_sadaron_sova_target" :value="formatBangla(kormosuci.unit_masik_sadaron_sova_target ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input type="text" class="bg-input w-100 text-center" />
+                                    <input name="unit_masik_sadaron_sova_uposthiti" :value="formatBangla(average_kormosuci.unit_masik_sadaron_sova)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.unit_masik_sadaron_sova_total)" type="text" class="bg-input w-100 text-center" />
                                 </td>
                             </tr>
                             <tr>
@@ -528,8 +528,8 @@
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input type="text" class="bg-input w-100 text-center" /> /
-                                        <input type="text" class="bg-input w-100 text-center" />
+                                        <input name="iftar_mahfil_personal_uposthiti" :value="formatBangla(average_kormosuci.iftar_mahfil_personal)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.iftar_mahfil_personal_total)" type="text" class="bg-input w-100 text-center" />  /
+                                        <input name="iftar_mahfil_samostic_uposthiti" :value="formatBangla(average_kormosuci.iftar_mahfil_samostic)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.iftar_mahfil_samostic_total)" type="text" class="bg-input w-100 text-center" />
                                     </div>
                                 </td>
                             </tr>
@@ -552,8 +552,9 @@
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input type="text" class="bg-input w-100 text-center" /> / <input type="text" class="bg-input w-100 text-center" /> /
-                                        <input type="text" class="bg-input w-100 text-center" />
+                                        <input name="cha_chakra_uposthiti" :value="formatBangla(average_kormosuci.cha_chakra)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.cha_chakra_total)" type="text" class="bg-input w-100 text-center" />  /
+                                        <input name="samostic_khawa_uposthiti" :value="formatBangla(average_kormosuci.samostic_khawa)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.samostic_khawa_total)" type="text" class="bg-input w-100 text-center" />  /
+                                        <input name="sikkha_sofor_uposthiti" :value="formatBangla(average_kormosuci.sikkha_sofor)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.sikkha_sofor_total)" type="text" class="bg-input w-100 text-center" />
                                     </div>
                                 </td>
                             </tr>
@@ -874,7 +875,7 @@
                                         <tr v-for="(bm_cat,index) in bm_categories" :key="index">
                                             <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.title }}</td>
                                             <td class="border_left_bottom">
-                                                <input name="bm_entry" :value="bm_categoty_amount(bm_cat.id)" @change="income_store(bm_cat.id,$event.target.value)" type="text" class="bg-input w-100 text-center">
+                                                <input name="bm_entry" :value="formatBangla(bm_categoty_amount(bm_cat.id))" @change="income_store(bm_cat.id,$event.target.value)" type="text" class="bg-input w-100 text-center">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -885,7 +886,9 @@
                                     <tbody>
                                         <tr v-for="(expense_cat,index) in bm_expense_categories" :key="index">
                                             <td class="text-start px-2 w-50 border_bottom">{{ expense_cat.title }}</td>
-                                            <td class="border_left_bottom"><input name="bm_entry"  @change="income_store(expense_cat.id)" type="text" class="bg-input w-100 text-center"></td>
+                                            <td class="border_left_bottom">
+                                                <input name="bm_entry" :value="formatBangla(expense_categoty_amount(expense_cat.id))" @change="expense_store(expense_cat.id,$event.target.value)" type="text" class="bg-input w-100 text-center">
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -893,9 +896,9 @@
                         </tr>
                         <tr>
                             <td class="text-end px-2">সর্বমোট</td>
-                            <td >{{formatBangla(total_income?? "")}}</td>
+                            <td >{{formatBangla(parseInt(total_income)?? "")}}</td>
                             <td class="text-end px-2">সর্বমোট</td>
-                            <td >{{formatBangla(total_expense?? "")}}</td>
+                            <td >{{formatBangla(parseInt(total_expense)?? "")}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -943,15 +946,26 @@
                 montobbo: {},
 
                 income_category_wise: {},
-                total_income: {},
+                total_income: null,
 
                 expense_category_wise: {},
-                total_expense: {},
+                total_expense: null,
 
                 bm_expense_categories: null,
                 bm_categories: null,
 
                 bm_cat_wise: null,
+                expense_cat_wise: null,
+
+                average_kormosuci: {
+                    unit_masik_sadaron_sova: null,
+                    iftar_mahfil_personal: null,
+                    iftar_mahfil_samostic: null,
+                    cha_chakra: null,
+                    samostic_khawa: null,
+                    sikkha_sofor: null,
+                },
+
 
             };
         },
@@ -961,6 +975,18 @@
             this.income_category()
             this.expense_category()
             this.bm_category_wise()
+            this.bm_expense_category_wise()
+
+        },
+        watch:{
+            kormosuci:function(){
+                this.average_data();
+            },
+            total_income:function(){
+                console.log(typeof this.total_income);
+
+            },
+
         },
         methods: {
             uploaded_data:async function(){
@@ -1012,6 +1038,22 @@
 
                 }
             },
+            average_data:async function(){
+                this.average_kormosuci.unit_masik_sadaron_sova =
+                            (this.kormosuci.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.kormosuci.unit_masik_sadaron_sova_total ?? 1);
+                this.average_kormosuci.iftar_mahfil_personal =
+                            (this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1);
+                this.average_kormosuci.iftar_mahfil_personal =
+                            (this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1);
+                this.average_kormosuci.iftar_mahfil_samostic =
+                            (this.kormosuci.iftar_mahfil_samostic_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_samostic_total ?? 1);
+                this.average_kormosuci.cha_chakra =
+                            (this.kormosuci.cha_chakra_uposthiti ?? 0) / (this.kormosuci.cha_chakra_total ?? 1);
+                this.average_kormosuci.samostic_khawa =
+                            (this.kormosuci.samostic_khawa_uposthiti ?? 0) / (this.kormosuci.samostic_khawa_total ?? 1);
+                this.average_kormosuci.sikkha_sofor =
+                            (this.kormosuci.sikkha_sofor_uposthiti ?? 0) / (this.kormosuci.sikkha_sofor_total ?? 1);
+            },
             formatBangla(number) {
                 return number ? number.toLocaleString("bn-BD") : "";
             },
@@ -1031,6 +1073,30 @@
                         month: this.month,
                     })
                     .then((response) => {
+                        // window.toaster("Data uploaded successfully");
+                        console.log("Data uploaded successfully");
+                        if (['unit_masik_sadaron_sova_total', 'iftar_mahfil_personal_total',
+                            'iftar_mahfil_samostic_total', 'cha_chakra_total',
+                            'samostic_khawa_total', 'sikkha_sofor_total'].includes(name)) {
+                            this.uploaded_data();  // Call uploaded_data if name matches
+                        }
+
+                    })
+                    .catch((error) => {
+                        console.error("Error uploading data", error);
+                    });
+            },
+            average_data_upload($event,endpoint, multiplier) {
+                const { value, name } = $event.target;
+                const total = value * multiplier;
+                console.log('average_value',$event.target,total, value , multiplier);
+
+                axios.post(`/${endpoint}/store-single`, {
+                        value: total,
+                        name,
+                        month: this.month,
+                    })
+                    .then((response) => {
                         window.toaster("Data uploaded successfully");
                     })
                     .catch((error) => {
@@ -1041,7 +1107,6 @@
                 let res = await axios.get('/bm-expense-category/all')
                 if(res.data.status == 'success'){
                         this.bm_expense_categories = res?.data?.data?.data
-                        console.log('bm_expense_categories',this.bm_expense_categories);
                     }
 
             },
@@ -1049,7 +1114,6 @@
                 let res = await axios.get('/bm-category/all')
                 if(res){
                     this.bm_categories = res.data?.data
-                    console.log('bm_categories',this.bm_categories);
                 }
 
             },
@@ -1061,7 +1125,6 @@
                 axios.post('/bm-paid/store',formData)
                     .then(function (response) {
                         window.toaster('New BM entry Created successfuly', 'success');
-                        e.target.reset();
                     })
                     .catch(function (error) {
                         console.log(error.response);
@@ -1083,7 +1146,39 @@
                 }else{
                     return "";
                 }
-            }
+            },
+
+            bm_expense_category_wise:async function(){
+                let res = await axios.get('/unit/expense-category-wise')
+                if(res){
+                    this.expense_cat_wise = res.data?.data
+                }
+            },
+
+            expense_categoty_amount:function(expense_cat_id){
+                if(this.expense_cat_wise != null){
+                    const element = this.expense_cat_wise.find(element => element.bm_expense_category.id == expense_cat_id);
+                    if (element) {
+                        return element.amount;
+                    }
+                }else{
+                    return "";
+                }
+            },
+
+            expense_store:function(bm_expense_category_id,amount){
+                const formData = {
+                    bm_expense_category_id: bm_expense_category_id,
+                    amount: amount,
+                };
+                axios.post('/bm-expense/store',formData)
+                    .then(function (response) {
+                        window.toaster('New Expense entry Created successfuly', 'success');
+                    })
+                    .catch(function (error) {
+                        console.log(error.response);
+                    });
+            },
 
         },
         computed: {
@@ -1101,11 +1196,5 @@
 </script>
 
 <style>
-    /* @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"); */
     @import url("../../../../../../public/css/unit/unit_report_upload.css");
-    /* @import url("/css/unit/unit_report_upload.css"); */
-
-    /* Add any custom styles if needed */
-
-
 </style>
