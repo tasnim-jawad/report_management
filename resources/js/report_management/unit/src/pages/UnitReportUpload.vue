@@ -908,7 +908,7 @@
                 <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input" rows="5" v-model="montobbo.montobbo"></textarea>
             </div>
         </section>
-        <a href="" class="print_preview"><i class="fa-solid fa-print"></i></a>
+        <a href="" class="print_preview" @click.prevent="print_report()"><i class="fa-solid fa-print"></i></a>
     </div>
 </template>
 
@@ -1195,6 +1195,16 @@
                     .catch(function (error) {
                         console.log(error.response);
                     });
+            },
+            print_report:function(){
+                const month = this.$route.params.month;
+                const user_id = this.$route.params.user_id;
+                const url = `/unit/report?user_id=${user_id}&month=${month}&print=true`;
+                window.location.href = url;
+
+                setTimeout(() => {
+                    window.print(); // Trigger the print dialog
+                }, 200);
             },
 
         },
