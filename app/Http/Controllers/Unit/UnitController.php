@@ -516,19 +516,18 @@ class UnitController extends Controller
     }
 
     public function expense_category_wise(){
-        $unit_info = (object) auth()->user()->org_unit_user;
-        $permission  = ReportManagementControl::where('report_type', 'unit')
-                                                ->where('is_active', 1)
-                                                ->latest()
-                                                ->first();
-        if(!$permission){
-            return response()->json([
-                'err_message' => 'Permission denied',
-                'errors' => [['You do not have the necessary permissions']],
-            ], 403);
-        }
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
 
-        $month = Carbon::parse($permission->month_year);
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $unit_info = (object) auth()->user()->org_unit_user;
+        $month = Carbon::parse(request()->month);
 
         $query = BmExpense::query();
         $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('unit_id', $unit_info->unit_id);
@@ -541,19 +540,18 @@ class UnitController extends Controller
     }
 
     public function bm_category_wise(){
-        $unit_info = (object) auth()->user()->org_unit_user;
-        $permission  = ReportManagementControl::where('report_type', 'unit')
-                                                ->where('is_active', 1)
-                                                ->latest()
-                                                ->first();
-        if(!$permission){
-            return response()->json([
-                'err_message' => 'Permission denied',
-                'errors' => [['You do not have the necessary permissions']],
-            ], 403);
-        }
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
 
-        $month = Carbon::parse($permission->month_year);
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $unit_info = (object) auth()->user()->org_unit_user;
+        $month = Carbon::parse(request()->month);
 
         $query = BmPaid::query();
         $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_info->unit_id);

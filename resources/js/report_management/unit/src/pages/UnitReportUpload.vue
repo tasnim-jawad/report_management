@@ -563,7 +563,7 @@
                 </div>
 
         </section>
-        <section class="mt-5">
+        <section class="margine_top_page_change">
             <div class="songothon">
                 <h1 class="font-18">সংগঠন :</h1>
                 <div class="jonoshokti mb-2">
@@ -908,6 +908,7 @@
                 <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input" rows="5" v-model="montobbo.montobbo"></textarea>
             </div>
         </section>
+        <a href="" class="print_preview"><i class="fa-solid fa-print"></i></a>
     </div>
 </template>
 
@@ -1118,9 +1119,11 @@
 
             },
             income_store:function(bm_category_id,amount){
+                const month = this.$route.params.month;
                 const formData = {
                     bm_category_id: bm_category_id,
                     amount: amount,
+                    month: month,
                 };
                 axios.post('/bm-paid/store',formData)
                     .then(function (response) {
@@ -1132,7 +1135,13 @@
             },
 
             bm_category_wise:async function(){
-                let res = await axios.get('/unit/bm-category-wise')
+                const month = this.$route.params.month;
+
+                let res = await axios.get('/unit/bm-category-wise',{
+                    params: {
+                        month: month
+                    }
+                })
                 if(res){
                     this.bm_cat_wise = res.data?.data
                 }
@@ -1149,7 +1158,13 @@
             },
 
             bm_expense_category_wise:async function(){
-                let res = await axios.get('/unit/expense-category-wise')
+                const month = this.$route.params.month;
+
+                let res = await axios.get('/unit/expense-category-wise',{
+                    params: {
+                        month: month
+                    }
+                })
                 if(res){
                     this.expense_cat_wise = res.data?.data
                 }
@@ -1167,9 +1182,11 @@
             },
 
             expense_store:function(bm_expense_category_id,amount){
+                const month = this.$route.params.month;
                 const formData = {
                     bm_expense_category_id: bm_expense_category_id,
                     amount: amount,
+                    month: month,
                 };
                 axios.post('/bm-expense/store',formData)
                     .then(function (response) {

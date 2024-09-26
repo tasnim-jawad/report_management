@@ -119,21 +119,21 @@ window.axios.interceptors.response.use(
             if (error.response?.data?.status == "error") {
                 window.s_error(error.response.data.message);
             }
-            // if(Object.keys(error.response?.data?.errors).length){
-            //             var object_2 = error.response?.data?.errors;
-            //             console.log(object_2);
-            //             for (const key in error.response?.data?.errors) {
-            //                 if (Object.hasOwnProperty.call(object_2, key)) {
-            //                     const element = object_2[key];
-            //                     // console.log(element[0],element);
-            //                     window.s_error(element[0], 'error');
-            //                 }
-            //             }
-            //         }else if(error.response?.data?.message){
-            //             window.toaster(error.response.data.message, 'error');
-            //         }else{
-            //             window.toaster('Faild!! Something is wrong.', 'error');
-            //         }
+            if(Object.keys(error.response?.data?.errors).length){
+                        var object_2 = error.response?.data?.errors;
+                        console.log(object_2);
+                        for (const key in error.response?.data?.errors) {
+                            if (Object.hasOwnProperty.call(object_2, key)) {
+                                const element = object_2[key];
+                                // console.log(element[0],element);
+                                window.s_error(element[0], 'error');
+                            }
+                        }
+                    }else if(error.response?.data?.message){
+                        window.toaster(error.response.data.message, 'error');
+                    }else{
+                        window.toaster('Faild!! Something is wrong.', 'error');
+                    }
         }
 
         // if(error.response.status == 401){

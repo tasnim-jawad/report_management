@@ -210,6 +210,7 @@ class BmPaidController extends Controller
             $validator = Validator::make(request()->all(), [
                 'amount' => ['required'],
                 'bm_category_id' => ['required'],
+                'month' => ['required', 'date'],
             ]);
 
             if ($validator->fails()) {
@@ -230,9 +231,21 @@ class BmPaidController extends Controller
                 ], 403);
             }
 
+            $passed_date = Carbon::parse(request()->month);
+            $passed_month = $passed_date->clone()->month;
+            $passed_year = $passed_date->clone()->year;
+
             $permitted_date = Carbon::parse($permission->month_year);
             $permitted_month = $permitted_date->month;
             $permitted_year = $permitted_date->year;
+
+            if($passed_month != $permitted_month || $passed_year !=  $permitted_year){
+                return response()->json([
+                    'err_message' => 'Permission denied',
+                    'errors' => [['You do not have the necessary permissions']],
+                ], 403);
+            }
+
             $unit_info = (object) auth()->user()->org_unit_user;
 
             $already_have_data = BmPaid::where('unit_id',$unit_info->unit_id)

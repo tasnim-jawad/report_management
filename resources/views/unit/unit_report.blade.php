@@ -399,7 +399,7 @@
                     </table>
                 </div>
         </section>
-        <section class="mt-5">
+        <section class="margine_top_page_change">
             <div class="songothon">
                 <h1 class="font-18">সংগঠন :</h1>
                 <div class="jonoshokti mb-2">

@@ -150,3 +150,7 @@ function bangla($englishNumber) {
 
     return strtr($englishNumber, $banglaDigits);
 }
+
+function remove_all(){
+    
+}
