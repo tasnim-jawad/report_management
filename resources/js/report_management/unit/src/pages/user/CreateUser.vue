@@ -116,7 +116,6 @@ export default {
             let formData = new FormData(event.target);
             axios.post('/user/store_unit_user',formData)
                 .then(function (response) {
-                    console.log(response.statusText);
                     window.toaster('user create successfuly', 'success');
                 })
                 .catch(function (error) {
@@ -127,7 +126,6 @@ export default {
             axios.get("/responsibility/all")
                 .then(responce => {
                     this.responsibilities = responce.data
-                    console.log(this.responsibilities.data);
                 })
         },
 

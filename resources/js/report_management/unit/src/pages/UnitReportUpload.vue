@@ -1216,7 +1216,7 @@
                     (this.dawat3.how_many_were_give_dawat ?? 0) +
                     (this.dawat4.how_many_have_been_invited ?? 0) +
                     (this.dawat4.jela_mohanogor_declared_gonosonjog_invited ?? 0);
-                return this.formatBangla(total); // Assuming you have a bangla method to format the number
+                return this.formatBangla(total);
             },
         },
     };

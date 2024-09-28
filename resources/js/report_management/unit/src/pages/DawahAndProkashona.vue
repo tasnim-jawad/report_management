@@ -8,7 +8,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>দাওয়াহ্ ও প্রকাশনা:</h1>
+                <h1 class="fw-semibold">গ) দাওয়াহ্ ও প্রকাশনা:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -200,6 +200,12 @@ export default {
             },
         ],
     }),
+    created:function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },

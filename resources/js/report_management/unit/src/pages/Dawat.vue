@@ -10,7 +10,7 @@
                 <div class=" px-2">
                     <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1>১. নিয়মিত গ্রুপ ভিত্তিক দাওয়াত:</h1>
+                        <h1 class="fw-semibold">১. নিয়মিত গ্রুপ ভিত্তিক দাওয়াত:</h1>
                     </div>
                     <div class="card-body">
                         <form action="">
@@ -24,7 +24,7 @@
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1>২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h1>
+                        <h1 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h1>
                     </div>
                     <div class="card-body">
                         <form action="">
@@ -38,7 +38,7 @@
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1>৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত:</h1>
+                        <h1 class="fw-semibold">৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত:</h1>
                     </div>
                     <div class="card-body">
                         <form action="">
@@ -53,7 +53,7 @@
             <div class="col-md-12 px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1>৪. গণসংযোগ ও দাওয়াতি অভিযান পালন:</h1>
+                        <h1 class="fw-semibold">৪. গণসংযোগ ও দাওয়াতি অভিযান পালন:</h1>
                     </div>
                 </div>
             </div>
@@ -208,6 +208,12 @@ export default {
             },
         ]
     }),
+    created:function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },

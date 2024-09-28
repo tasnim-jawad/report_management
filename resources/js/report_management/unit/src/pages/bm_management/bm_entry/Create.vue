@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             Create Bm Entry
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'BmEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
+            </div>
         </div>
         <div class="card-body">
             <!-- <p class="mb-3" >Target:-  {{users_target}}</p> -->

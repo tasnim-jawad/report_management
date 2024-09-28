@@ -8,7 +8,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>কর্মসূচি বাস্তবায়ন:</h1>
+                <h1 class="fw-semibold">ঘ) কর্মসূচি বাস্তবায়ন:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -183,6 +183,12 @@ export default {
             },
         ],
     }),
+    created:function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },

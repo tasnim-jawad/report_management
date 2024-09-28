@@ -4,9 +4,14 @@
             মাস: <input type="month" @change="get_monthly_data" v-model="month" ref="month" name="month">
         </div>
     </div>
-    <div class="card">
+    <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">বায়তুলমাল</h1>
+            </div>
+        </div>
+    <div class="card" v-if="month">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Show All Bm Entry
+            আয়ের বিবরণ
             <div class="btn btn-info btn-sm">
                 <router-link :to="{name:'BmEntryCreate'}" class="text-dark">Create Entry</router-link>
             </div>
@@ -71,6 +76,12 @@ export default {
             is_permitted: false,
         }
     },
+    created:function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },
@@ -86,7 +97,6 @@ export default {
                             });
 
             if(response.data.status == "success"){
-                console.log("response",response.data);
                 this.bm_entry = response.data.data;
                 this.total_paid = response.data.total_paid;
                 this.is_permitted = response.data.is_permitted;
@@ -105,7 +115,6 @@ export default {
             const formData = new FormData(document.getElementById('delete_entry_form_'+entry_id));
             axios.post("/bm-paid/destroy",formData)
                     .then(response => {
-                        // console.log(response);
                         window.toaster('Entry delete successfuly', 'success');
                         this.show_bm_entry();
                     })

@@ -152,5 +152,5 @@ function bangla($englishNumber) {
 }
 
 function remove_all(){
-    
+
 }

@@ -8,7 +8,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রাষ্ট্রীয় সংস্কার ও সংশোধন:</h1>
+                <h1 class="fw-semibold">রাষ্ট্রীয় সংস্কার ও সংশোধন:</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -43,6 +43,12 @@ export default {
             },
         ],
     }),
+    created:function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },

@@ -8,6 +8,11 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
+                <h1 class="fw-semibold">সমাজ সংস্কার ও সমাজসেবা:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
                 <h1>১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h1>
             </div>
             <div class="card-body">
@@ -119,6 +124,12 @@ export default {
         ],
 
     }),
+    created:function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },

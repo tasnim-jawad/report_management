@@ -40,10 +40,7 @@ export default {
         show_users : function(){
             axios.get(`/user/show_unit_user`)
                 .then(responce => {
-                    console.log(responce.data);
                     this.user_details = responce.data
-                    console.log(this.user_details[0].full_name);
-
                 })
         },
 

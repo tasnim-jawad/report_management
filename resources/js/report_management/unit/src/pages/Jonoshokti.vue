@@ -64,7 +64,6 @@ export default {
         show_users : function(){
             axios.get("/user/show_unit_user")
                 .then(responce => {
-                    console.log(responce.data);
                     this.users = responce.data
                 })
         },
@@ -81,7 +80,6 @@ export default {
             const formData = new FormData(document.getElementById('delete_user_form_'+user_id));
             axios.post("/user/destroy",formData)
                     .then(responce => {
-                        console.log(responce);
                         window.toaster('user delete successfuly', 'success');
                         this.show_users();
                     })

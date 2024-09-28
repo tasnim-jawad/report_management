@@ -43,6 +43,12 @@ export default {
     data: ()=>({
         // month:null,
     }),
+    created:function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },

@@ -8,7 +8,12 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>১. তালিমুল কুরআনের মাধ্যমে দাওয়াত:</h1>
+                <h1 class="fw-bolder">খ) বিভাগ ভিত্তিক তথ্য:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-medium">১. তালিমুল কুরআনের মাধ্যমে দাওয়াত:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -32,7 +37,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>২. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত:</h1>
+                <h1 class="fw-semibold">২. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -70,7 +75,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>৩. পরিবারভিত্তিক দাওয়াত:</h1>
+                <h1 class="fw-semibold">৩. পরিবারভিত্তিক দাওয়াত:</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -186,7 +191,12 @@ export default {
             },
         ]
     }),
-
+    created:function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },

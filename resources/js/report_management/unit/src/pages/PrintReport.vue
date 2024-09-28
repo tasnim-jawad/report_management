@@ -18,7 +18,6 @@ import { mapState, mapWritableState } from 'pinia';
 export default {
     data:function(){
         return {
-            // month:"",
             user_id:"",
             user: [],
         }
@@ -33,20 +32,14 @@ export default {
         get_monthly_report: function(){
             if(this.month != null){
                 this.$refs.report_form.submit();
-                // window.location.href = `http://127.0.0.1:8000/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`;
-                console.log('month selected');
-
-                window.open(`http://127.0.0.1:8000/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`,'_blank')
-
+                window.open(`http://127.0.0.1:8000/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
 
         },
         user_info:function(){
             axios.get("/user/user_info")
                 .then(responce =>{
-                    console.log(responce);
                     this.user = responce.data
-                    console.log(this.user);
                 })
         },
     }
