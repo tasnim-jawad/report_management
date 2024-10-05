@@ -32,9 +32,13 @@ export const use_auth_store = defineStore("auth_store", {
 
             try {
                 let res = await window.axios.get("/user/check_user");
-                that.auth_info = res.data.user;
-                that.is_auth = 1;
-                
+                if (res.data && res.data.user) {
+                    that.auth_info = res.data.user;
+                    that.is_auth = 1;
+                } else {
+                    console.error('User data is missing in the response.');
+                }
+
             } catch (error) {
                 if (error.response && error.response.status === 401) {
                     location.href = "/login";

@@ -198,7 +198,6 @@
             },
             toggle_sidebar:function(){
                 const width = window.innerWidth;
-                console.log('width');
                 if(width >= 768){
                     const report_app = document.getElementById("report_app");
                     report_app.classList.toggle("sidebar_hide");

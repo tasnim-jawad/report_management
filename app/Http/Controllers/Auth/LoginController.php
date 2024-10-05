@@ -110,8 +110,9 @@ class LoginController extends Controller
     {
         // dd("checker check in login controller",auth()->check());
         if (auth()->check()) {
-            return response()->json(
-                auth()->user()
+            return response()->json([
+                'user' => auth()->user()
+            ]
             , 200);
         }
 
