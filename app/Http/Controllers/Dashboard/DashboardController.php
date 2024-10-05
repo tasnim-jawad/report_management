@@ -12,6 +12,9 @@ class DashboardController extends Controller
         return view('dashboard.unit');
     }
 
+    public function ward(){
+        return view('dashboard.ward');
+    }
     public function admin(){
         return view('dashboard.admin');
     }

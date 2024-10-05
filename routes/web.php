@@ -19,6 +19,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix' => 'dashboard', 'namespace' => '\App\Http\Controllers\Dashboard'], function () {
     Route::get('unit', 'DashboardController@unit');
+    Route::get('ward', 'DashboardController@ward');
     Route::get('admin', 'DashboardController@admin');
 });
 

@@ -58,7 +58,13 @@ php artisan make:controller Report/Ward/Department/Department8DawatInCulturalPro
 php artisan make:seeder Report/Ward/Department/Department8DawatInCulturalProgramsTableSeeder
 
 
+//--------------------------\\
+//-------- DawahAndProkashona ---------\\
+//--------------------------\\
 
+php artisan make:model Report/Ward/DawahAndProkashona/DawahAndProkashona -m
+php artisan make:controller Report/Ward/DawahAndProkashona/DawahAndProkashonaController
+php artisan make:seeder Report/Ward/DawahAndProkashona/DawahAndProkashonasTableSeeder
 
 //--------------------------\\
 //-------- Kormosuci ---------\\

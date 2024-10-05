@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/js/app.js',
 
                 'resources/js/report_management/unit/main.js',
+                'resources/js/report_management/ward/main.js',
             ],
             refresh: true,
         }),

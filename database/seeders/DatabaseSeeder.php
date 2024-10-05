@@ -53,6 +53,7 @@ use Database\Seeders\Report\Songothon\Songothon6BidayiStudentsConnectsTableSeede
 use Database\Seeders\Report\Songothon\Songothon7SoforsTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon8IyanotDataTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon9SangothonikBoithoksTableSeeder;
+use Database\Seeders\Report\Ward\Dawat\Dawat1RegularGroupWisesTableSeeder as Ward_Dawat1RegularGroupWisesTableSeeder;
 use Database\Seeders\User\ReportUploadersTableSeeder;
 use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
@@ -147,6 +148,12 @@ class DatabaseSeeder extends Seeder
             BmCategoryUsersTableSeeder::class,
             BmPaidsTableSeeder::class,
             BmExpensesTableSeeder::class,
+
+            /** ------------------------- **/
+            /** -------- Ward --------- **/
+            /** ------------------------- **/
+
+            Ward_Dawat1RegularGroupWisesTableSeeder::class,
         ]);
     }
 }

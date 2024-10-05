@@ -25,6 +25,15 @@ class ReportManagementControlsTableSeeder extends Seeder
                 'status' => 1,
             ]);
         }
+        for ($month = 1; $month <= 12; $month++) {
+            ReportManagementControl::create([
+                'month_year' => Carbon::createFromDate($year, $month, 1)->format('Y-m-d'),
+                'report_type' => 'ward',
+                'is_active' => 0,
+                'creator' => 5,
+                'status' => 1,
+            ]);
+        }
     }
 }
 //php artisan db:seed --class="Database\Seeders\Report\ReportManagementControlsTableSeeder"

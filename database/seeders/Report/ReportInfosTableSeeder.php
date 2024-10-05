@@ -28,6 +28,20 @@ class ReportInfosTableSeeder extends Seeder
                 ]);
             }
         }
+        for ($i = 1; $i <= 2; $i++) {
+            for ($j = 1; $j <= 12; $j++) {
+                ReportInfo::create([
+                    'org_type' => 'ward',
+                    'org_type_id' => $i,
+                    'responsibility_id' => 1,
+                    'responsibility_name' => 'president',
+                    'month_year' => "2024-" . str_pad($j, 2, '0', STR_PAD_LEFT) . "-01",
+                    'report_type' => 'monthly',
+                    'creator' => 6 + $i,
+                    'status' => 1,
+                ]);
+            }
+        }
 
         // ReportInfo::insert([
         //     [

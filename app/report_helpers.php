@@ -8,6 +8,18 @@ use App\Models\Report\ReportInfo;
 use App\Models\Report\ReportManagementControl;
 use Carbon\Carbon;
 
+function check_and_get_unit_info($user_id)
+{
+    $check_info = false;
+    // dd($user_id);
+    $permission = is_unit_report_upload_permitted(request()->month);
+    if ($permission) {
+        $resposibilities = auth_user_unit_responsibilities_info($user_id);
+        $check_info = unit_report_header_info($resposibilities, $permission, request()->month);
+    }
+    return $check_info;
+}
+
 function is_unit_report_upload_permitted($month)
 {
     $month = Carbon::parse($month);
@@ -41,9 +53,8 @@ function unit_report_header_info($resposibilities, $permission, $month)
     // dd($month->clone()->year,$month->clone()->month);
     $check_info = ReportInfo::whereYear('month_year', $month->clone()->year)
         ->whereMonth('month_year', $month->clone()->month)
-        // ->where('responsibility_id', $resposibilities->org_unit_responsible->responsibility_id)
+        ->where('org_type', 'unit')
         ->where('org_type_id', $resposibilities->org_unit_responsible->org_unit_id)
-        // ->where('creator', auth()->user()->id)
         ->where('report_type', 'monthly')
         ->orderBy('id', 'DESC')
         ->first();
@@ -64,17 +75,7 @@ function unit_report_header_info($resposibilities, $permission, $month)
     return $check_info;
 }
 
-function check_and_get_unit_info($user_id)
-{
-    $check_info = false;
-    // dd($user_id);
-    $permission = is_unit_report_upload_permitted(request()->month);
-    if ($permission) {
-        $resposibilities = auth_user_unit_responsibilities_info($user_id);
-        $check_info = unit_report_header_info($resposibilities, $permission, request()->month);
-    }
-    return $check_info;
-}
+
 
 function common_get($model, $user_id=null)
 {

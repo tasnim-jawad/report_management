@@ -23,6 +23,7 @@ Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function(){
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => '/user'] , function(){
         Route::get('/user_info', [App\Http\Controllers\User\UserController::class,'user_info']);
+        Route::get('/ward-user-info', [App\Http\Controllers\User\UserController::class,'ward_user_info']);
 
         Route::get('/show_unit_user', [App\Http\Controllers\User\UserController::class,'show_unit_user']);
         Route::post('/store_unit_user', [App\Http\Controllers\User\UserController::class,'store_unit_user']);
@@ -833,6 +834,23 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::get('/uploaded-data', [App\Http\Controllers\Unit\UnitController::class,'report_upload_api']);
         Route::get('/bm-category-wise', [App\Http\Controllers\Unit\UnitController::class,'bm_category_wise']);
         Route::get('/expense-category-wise', [App\Http\Controllers\Unit\UnitController::class,'expense_category_wise']);
+    });
+
+    Route::group(['prefix' => 'ward'] , function(){
+        Route::group(['prefix' => 'dawat1-regular-group-wise'] , function(){
+            Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'get_data']);
+            Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'store_single']);
+
+            Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'all']);
+            Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'show']);
+            Route::post('/store', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'store']);
+            Route::post('/update', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'update']);
+            Route::post('/soft_delete', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'soft_delete']);
+            Route::post('/destroy', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'destroy']);
+            Route::post('/restore', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'restore']);
+            Route::post('/bulk_import', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'bulk_import']);
+        });
+
     });
 
 
