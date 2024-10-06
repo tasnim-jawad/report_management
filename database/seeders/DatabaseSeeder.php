@@ -53,7 +53,12 @@ use Database\Seeders\Report\Songothon\Songothon6BidayiStudentsConnectsTableSeede
 use Database\Seeders\Report\Songothon\Songothon7SoforsTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon8IyanotDataTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon9SangothonikBoithoksTableSeeder;
-use Database\Seeders\Report\Ward\Dawat\Dawat1RegularGroupWisesTableSeeder as Ward_Dawat1RegularGroupWisesTableSeeder;
+use Database\Seeders\Report\Ward\Dawat\WardDawat1RegularGroupWisesTableSeeder;
+use Database\Seeders\Report\Ward\Dawat\WardDawat2PersonalAndTargetsTableSeeder;
+use Database\Seeders\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersTableSeeder;
+use Database\Seeders\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijansTableSeeder;
+use Database\Seeders\Report\Ward\Department\WardDepartment1TalimulQuransTableSeeder;
+use Database\Seeders\Report\Ward\Department\WardDepartment2MohollaVittikDawatsTableSeeder;
 use Database\Seeders\User\ReportUploadersTableSeeder;
 use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
@@ -153,7 +158,14 @@ class DatabaseSeeder extends Seeder
             /** -------- Ward --------- **/
             /** ------------------------- **/
 
-            Ward_Dawat1RegularGroupWisesTableSeeder::class,
+            // dawat
+            WardDawat1RegularGroupWisesTableSeeder::class,
+            WardDawat2PersonalAndTargetsTableSeeder::class,
+            WardDawat3GeneralProgramAndOthersTableSeeder::class,
+            WardDawat4GonoSongjogAndDawatOvijansTableSeeder::class,
+            // department
+            WardDepartment1TalimulQuransTableSeeder::class,
+            WardDepartment2MohollaVittikDawatsTableSeeder::class,
         ]);
     }
 }

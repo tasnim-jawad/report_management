@@ -836,22 +836,93 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::get('/expense-category-wise', [App\Http\Controllers\Unit\UnitController::class,'expense_category_wise']);
     });
 
-    Route::group(['prefix' => 'ward'] , function(){
-        Route::group(['prefix' => 'dawat1-regular-group-wise'] , function(){
-            Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'get_data']);
-            Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'store_single']);
 
-            Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'all']);
-            Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'show']);
-            Route::post('/store', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'store']);
-            Route::post('/update', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'update']);
-            Route::post('/soft_delete', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'soft_delete']);
-            Route::post('/destroy', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'destroy']);
-            Route::post('/restore', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'restore']);
-            Route::post('/bulk_import', [App\Http\Controllers\Report\Ward\Dawat\Dawat1RegularGroupWiseController::class,'bulk_import']);
-        });
+    //**-----------------------------------------------------------**/
+    //**-----------------------------------------------------------**/
+    //**--------------------------- Ward API ----------------------**/
+    //**-----------------------------------------------------------**/
+    //**-----------------------------------------------------------**/
 
+
+    Route::group(['prefix' => 'ward-dawat1-regular-group-wise'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'store_single']);
+
+        Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'bulk_import']);
     });
+
+    Route::group(['prefix' => 'ward-dawat2-personal-and-target'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'store_single']);
+
+        Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'ward-dawat3-general-program-and-others'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'store_single']);
+
+        Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'ward-dawat4-gono-songjog-and-dawat-ovijan'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'store_single']);
+
+        Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'bulk_import']);
+    });
+
+
+
+
+
+    Route::group(['prefix' => 'ward-department1-talimul-quran'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'store_single']);
+
+        Route::get('/all', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'ward-department2-moholla-vittik-dawat'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment2MohollaVittikDawatController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment2MohollaVittikDawatController::class,'store_single']);
+    });
+
 
 
 });

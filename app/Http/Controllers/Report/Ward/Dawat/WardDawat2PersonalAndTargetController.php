@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Report\Ward\Dawat;
 
 use App\Http\Controllers\Controller;
-use App\Models\Report\Ward\Dawat\Dawat1RegularGroupWise;
+use App\Models\Report\Ward\Dawat\WardDawat2PersonalAndTarget;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class Dawat1RegularGroupWiseController extends Controller
+class WardDawat2PersonalAndTargetController extends Controller
 {
+
     protected $report_info = false;
     public function __construct()
     {
@@ -25,13 +26,12 @@ class Dawat1RegularGroupWiseController extends Controller
 
     public function get_data()
     {
-        return ward_common_get(Dawat1RegularGroupWise::class);
+        return ward_common_get(WardDawat2PersonalAndTarget::class);
     }
 
     public function store_single()
     {
-
-        return ward_common_store($this, Dawat1RegularGroupWise::class, $this->report_info);
+        return ward_common_store($this, WardDawat2PersonalAndTarget::class, $this->report_info);
     }
 
     public function all()
@@ -46,17 +46,20 @@ class Dawat1RegularGroupWiseController extends Controller
         }
         // dd($status);
 
-        $query = Dawat1RegularGroupWise::where('status', $status)->orderBy($orderBy, $orderByType);
+        $query = WardDawat2PersonalAndTarget::where('status', $status)->orderBy($orderBy, $orderByType);
         // $query = User::latest()->get();
 
         if (request()->has('search_key')) {
             $key = request()->search_key;
             $query->where(function ($q) use ($key) {
-                return $q->where('id', "LIKE", '%' . $key . '%')
-                    ->orWhere('how_many_groups_are_out', "LIKE", '%' . $key . '%')
-                    ->orWhere('number_of_participants', "LIKE", '%' . $key . '%')
-                    ->orWhere('how_many_have_been_invited', "LIKE", '%' . $key . '%')
-                    ->orWhere('how_many_associate_members_created', "LIKE", '%' . $key . '%');
+                return $q->where('id', '%' . $key . '%')
+                ->orWhere('total_rokon', '%' . $key . '%')
+                ->orWhere('total_worker', '%' . $key . '%')
+                ->orWhere('how_many_were_give_dawat_rokon', '%' . $key . '%')
+                ->orWhere('how_many_were_give_dawat_worker', '%' . $key . '%')
+                ->orWhere('how_many_have_been_invited', '%' . $key . '%')
+                ->orWhere('how_many_associate_members_created', '%' . $key . '%');
+
             });
         }
 
@@ -71,7 +74,7 @@ class Dawat1RegularGroupWiseController extends Controller
         if (request()->has('select_all') && request()->select_all) {
             $select = "*";
         }
-        $data = Dawat1RegularGroupWise::where('id', $id)
+        $data = WardDawat2PersonalAndTarget::where('id', $id)
             ->select($select)
             ->first();
         if ($data) {
@@ -88,8 +91,10 @@ class Dawat1RegularGroupWiseController extends Controller
     public function store()
     {
         $validator = Validator::make(request()->all(), [
-            'how_many_groups_are_out' => ['required'],
-            'number_of_participants' => ['required'],
+            'total_rokon' => ['required'],
+            'total_worker' => ['required'],
+            'how_many_were_give_dawat_rokon' => ['required'],
+            'how_many_were_give_dawat_worker' => ['required'],
             'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
             'creator' => ['required'],
@@ -103,9 +108,11 @@ class Dawat1RegularGroupWiseController extends Controller
             ], 422);
         }
 
-        $data = new Dawat1RegularGroupWise();
-        $data->how_many_groups_are_out = request()->how_many_groups_are_out;
-        $data->number_of_participants = request()->number_of_participants;
+        $data = new WardDawat2PersonalAndTarget();
+        $data->total_rokon = request()->total_rokon;
+        $data->total_worker = request()->total_worker;
+        $data->how_many_were_give_dawat_rokon = request()->how_many_were_give_dawat_rokon;
+        $data->how_many_were_give_dawat_worker = request()->how_many_were_give_dawat_worker;
         $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
         $data->creator = request()->creator;
@@ -115,11 +122,9 @@ class Dawat1RegularGroupWiseController extends Controller
         return response()->json($data, 200);
     }
 
-
-
     public function update()
     {
-        $data = Dawat1RegularGroupWise::find(request()->id);
+        $data = WardDawat2PersonalAndTarget::find(request()->id);
         if (!$data) {
             return response()->json([
                 'err_message' => 'validation error',
@@ -128,8 +133,10 @@ class Dawat1RegularGroupWiseController extends Controller
         }
 
         $validator = Validator::make(request()->all(), [
-            'how_many_groups_are_out' => ['required'],
-            'number_of_participants' => ['required'],
+            'total_rokon' => ['required'],
+            'total_worker' => ['required'],
+            'how_many_were_give_dawat_rokon' => ['required'],
+            'how_many_were_give_dawat_worker' => ['required'],
             'how_many_have_been_invited' => ['required'],
             'how_many_associate_members_created' => ['required'],
             'creator' => ['required'],
@@ -143,8 +150,10 @@ class Dawat1RegularGroupWiseController extends Controller
             ], 422);
         }
 
-        $data->how_many_groups_are_out = request()->how_many_groups_are_out;
-        $data->number_of_participants = request()->number_of_participants;
+        $data->total_rokon = request()->total_rokon;
+        $data->total_worker = request()->total_worker;
+        $data->how_many_were_give_dawat_rokon = request()->how_many_were_give_dawat_rokon;
+        $data->how_many_were_give_dawat_worker = request()->how_many_were_give_dawat_worker;
         $data->how_many_have_been_invited = request()->how_many_have_been_invited;
         $data->how_many_associate_members_created = request()->how_many_associate_members_created;
         $data->creator = request()->creator;
@@ -160,7 +169,7 @@ class Dawat1RegularGroupWiseController extends Controller
     public function soft_delete()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:dawat1_regular_group_wises,id'],
+            'id' => ['required', 'exists:ward_dawat2_personal_and_targets,id'],
         ]);
 
         if ($validator->fails()) {
@@ -170,7 +179,7 @@ class Dawat1RegularGroupWiseController extends Controller
             ], 422);
         }
 
-        $data = Dawat1RegularGroupWise::find(request()->id);
+        $data = WardDawat2PersonalAndTarget::find(request()->id);
         $data->status = 0;
         $data->save();
 
@@ -182,7 +191,7 @@ class Dawat1RegularGroupWiseController extends Controller
     public function destroy()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:dawat1_regular_group_wises,id'],
+            'id' => ['required', 'exists:ward_dawat2_personal_and_targets,id'],
         ]);
 
         if ($validator->fails()) {
@@ -192,7 +201,7 @@ class Dawat1RegularGroupWiseController extends Controller
             ], 422);
         }
 
-        $data = Dawat1RegularGroupWise::find(request()->id);
+        $data = WardDawat2PersonalAndTarget::find(request()->id);
         $data->delete();
 
         return response()->json([
@@ -203,7 +212,7 @@ class Dawat1RegularGroupWiseController extends Controller
     public function restore()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:dawat1_regular_group_wises,id'],
+            'id' => ['required', 'exists:ward_dawat2_personal_and_targets,id'],
         ]);
 
         if ($validator->fails()) {
@@ -213,7 +222,7 @@ class Dawat1RegularGroupWiseController extends Controller
             ], 422);
         }
 
-        $data = Dawat1RegularGroupWise::find(request()->id);
+        $data = WardDawat2PersonalAndTarget::find(request()->id);
         $data->status = 1;
         $data->save();
 

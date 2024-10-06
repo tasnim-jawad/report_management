@@ -2,21 +2,21 @@
 //-------- Dawat ---------\\
 //--------------------------\\
 
-php artisan make:model Report/Ward/Dawat/Dawat1RegularGroupWise -m
-php artisan make:controller Report/Ward/Dawat/Dawat1RegularGroupWiseController
-php artisan make:seeder Report/Ward/Dawat/Dawat1RegularGroupWisesTableSeeder
+php artisan make:model Report/Ward/Dawat/WardDawat1RegularGroupWise -m
+php artisan make:controller Report/Ward/Dawat/WardDawat1RegularGroupWiseController
+php artisan make:seeder Report/Ward/Dawat/WardDawat1RegularGroupWisesTableSeeder
 
-php artisan make:model Report/Ward/Dawat/Dawat2PersonalAndTarget -m
-php artisan make:controller Report/Ward/Dawat/Dawat2PersonalAndTargetController
-php artisan make:seeder Report/Ward/Dawat/Dawat2PersonalAndTargetsTableSeeder
+php artisan make:model Report/Ward/Dawat/WardDawat2PersonalAndTarget -m
+php artisan make:controller Report/Ward/Dawat/WardDawat2PersonalAndTargetController
+php artisan make:seeder Report/Ward/Dawat/WardDawat2PersonalAndTargetsTableSeeder
 
-php artisan make:model Report/Ward/Dawat/Dawat3GeneralProgramAndOthers -m
-php artisan make:controller Report/Ward/Dawat/Dawat3GeneralProgramAndOthersController
-php artisan make:seeder Report/Ward/Dawat/Dawat3GeneralProgramAndOthersTableSeeder
+php artisan make:model Report/Ward/Dawat/WardDawat3GeneralProgramAndOthers -m
+php artisan make:controller Report/Ward/Dawat/WardDawat3GeneralProgramAndOthersController
+php artisan make:seeder Report/Ward/Dawat/WardDawat3GeneralProgramAndOthersTableSeeder
 
-php artisan make:model Report/Ward/Dawat/Dawat4GonoSongjogAndDawatOvijan -m
-php artisan make:controller Report/Ward/Dawat/Dawat4GonoSongjogAndDawatOvijanController
-php artisan make:seeder Report/Ward/Dawat/Dawat4GonoSongjogAndDawatOvijansTableSeeder
+php artisan make:model Report/Ward/Dawat/WardDawat4GonoSongjogAndDawatOvijan -m
+php artisan make:controller Report/Ward/Dawat/WardDawat4GonoSongjogAndDawatOvijanController
+php artisan make:seeder Report/Ward/Dawat/WardDawat4GonoSongjogAndDawatOvijansTableSeeder
 
 
 
@@ -25,54 +25,54 @@ php artisan make:seeder Report/Ward/Dawat/Dawat4GonoSongjogAndDawatOvijansTableS
 //-------- Department ---------\\
 //--------------------------\\
 
-php artisan make:model Report/Ward/Department/Department1TalimulQuran -m
-php artisan make:controller Report/Ward/Department/Department1TalimulQuranController
-php artisan make:seeder Report/Ward/Department/Department1TalimulQuransTableSeeder
+php artisan make:model Report/Ward/Department/WardDepartment1TalimulQuran -m
+php artisan make:controller Report/Ward/Department/WardDepartment1TalimulQuranController
+php artisan make:seeder Report/Ward/Department/WardDepartment1TalimulQuransTableSeeder
 
-php artisan make:model Report/Ward/Department/Department2MohollaVittikDawat -m
-php artisan make:controller Report/Ward/Department/Department2MohollaVittikDawatController
-php artisan make:seeder Report/Ward/Department/Department2MohollaVittikDawatsTableSeeder
+php artisan make:model Report/Ward/Department/WardDepartment2MohollaVittikDawat -m
+php artisan make:controller Report/Ward/Department/WardDepartment2MohollaVittikDawatController
+php artisan make:seeder Report/Ward/Department/WardDepartment2MohollaVittikDawatsTableSeeder
 
-php artisan make:model Report/Ward/Department/Department3JuboSomajDawat -m
-php artisan make:controller Report/Ward/Department/Department3JuboSomajDawatController
-php artisan make:seeder Report/Ward/Department/Department3JuboSomajDawatsTableSeeder
+php artisan make:model Report/Ward/Department/WardDepartment3JuboSomajDawat -m
+php artisan make:controller Report/Ward/Department/WardDepartment3JuboSomajDawatController
+php artisan make:seeder Report/Ward/Department/WardDepartment3JuboSomajDawatsTableSeeder
 
-php artisan make:model Report/Ward/Department/Department4DifferentJobHoldersDawat -m
-php artisan make:controller Report/Ward/Department/Department4DifferentJobHoldersDawatController
-php artisan make:seeder Report/Ward/Department/Department4DifferentJobHoldersDawatsTableSeeder
+php artisan make:model Report/Ward/Department/WardDepartment4DifferentJobHoldersDawat -m
+php artisan make:controller Report/Ward/Department/WardDepartment4DifferentJobHoldersDawatController
+php artisan make:seeder Report/Ward/Department/WardDepartment4DifferentJobHoldersDawatsTableSeeder
 
-php artisan make:model Report/Ward/Department/Department5ParibarikDawat -m
-php artisan make:controller Report/Ward/Department/Department5ParibarikDawatController
-php artisan make:seeder Report/Ward/Department/Department5ParibarikDawatsTableSeeder
+php artisan make:model Report/Ward/Department/WardDepartment5ParibarikDawat -m
+php artisan make:controller Report/Ward/Department/WardDepartment5ParibarikDawatController
+php artisan make:seeder Report/Ward/Department/WardDepartment5ParibarikDawatsTableSeeder
 
-php artisan make:model Report/Ward/Dawat/Department6MosjidDawahInfomationCenter -m
-php artisan make:controller Report/Ward/Dawat/Department6MosjidDawahInfomationCenterController
-php artisan make:seeder Report/Ward/Dawat/Department6MosjidDawahInfomationCentersTableSeeder
+php artisan make:model Report/Ward/Department/WardDepartment6MosjidDawahInfomationCenter -m
+php artisan make:controller Report/Ward/Department/WardDepartment6MosjidDawahInfomationCenterController
+php artisan make:seeder Report/Ward/Department/WardDepartment6MosjidDawahInfomationCentersTableSeeder
 
-php artisan make:model Report/Ward/Department/Department7DawatInTechnology -m
-php artisan make:controller Report/Ward/Department/Department7DawatInTechnologyController
-php artisan make:seeder Report/Ward/Department/Department7DawatInTechnologysTableSeeder
+php artisan make:model Report/Ward/Department/WardDepartment7DawatInTechnology -m
+php artisan make:controller Report/Ward/Department/WardDepartment7DawatInTechnologyController
+php artisan make:seeder Report/Ward/Department/WardDepartment7DawatInTechnologysTableSeeder
 
-php artisan make:model Report/Ward/Department/Department8DawatInCulturalProgram -m
-php artisan make:controller Report/Ward/Department/Department8DawatInCulturalProgramController
-php artisan make:seeder Report/Ward/Department/Department8DawatInCulturalProgramsTableSeeder
+php artisan make:model Report/Ward/Department/WardDepartment8DawatInCulturalProgram -m
+php artisan make:controller Report/Ward/Department/WardDepartment8DawatInCulturalProgramController
+php artisan make:seeder Report/Ward/Department/WardDepartment8DawatInCulturalProgramsTableSeeder
 
 
 //--------------------------\\
 //-------- DawahAndProkashona ---------\\
 //--------------------------\\
 
-php artisan make:model Report/Ward/DawahAndProkashona/DawahAndProkashona -m
-php artisan make:controller Report/Ward/DawahAndProkashona/DawahAndProkashonaController
-php artisan make:seeder Report/Ward/DawahAndProkashona/DawahAndProkashonasTableSeeder
+php artisan make:model Report/Ward/DawahAndProkashona/WardDawahAndProkashona -m
+php artisan make:controller Report/Ward/DawahAndProkashona/WardDawahAndProkashonaController
+php artisan make:seeder Report/Ward/DawahAndProkashona/WardDawahAndProkashonasTableSeeder
 
 //--------------------------\\
 //-------- Kormosuci ---------\\
 //--------------------------\\
 
-php artisan make:model Report/Ward/Kormosuci/KormosuciBastobayon -m
-php artisan make:controller Report/Ward/Kormosuci/KormosuciBastobayonController
-php artisan make:seeder Report/Ward/Kormosuci/KormosuciBastobayonsTableSeeder
+php artisan make:model Report/Ward/Kormosuci/WardKormosuciBastobayon -m
+php artisan make:controller Report/Ward/Kormosuci/WardKormosuciBastobayonController
+php artisan make:seeder Report/Ward/Kormosuci/WardKormosuciBastobayonsTableSeeder
 
 
 
@@ -81,41 +81,41 @@ php artisan make:seeder Report/Ward/Kormosuci/KormosuciBastobayonsTableSeeder
 //-------- Songothon ---------\\
 //--------------------------\\
 
-php artisan make:model Report/Ward/Songothon/Songothon1Jonosokti -m
-php artisan make:controller Report/Ward/Songothon/Songothon1JonosoktiController
-php artisan make:seeder Report/Ward/Songothon/Songothon1JonosoktisTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon1Jonosokti -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon1JonosoktiController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon1JonosoktisTableSeeder
 
-php artisan make:model Report/Ward/Songothon/Songothon2AssociateMember -m
-php artisan make:controller Report/Ward/Songothon/Songothon2AssociateMemberController
-php artisan make:seeder Report/Ward/Songothon/Songothon2AssociateMembersTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon2AssociateMember -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon2AssociateMemberController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon2AssociateMembersTableSeeder
 
-php artisan make:model Report/Ward/Songothon/Songothon3DepartmentalInformation -m
-php artisan make:controller Report/Ward/Songothon/Songothon3DepartmentalInformationController
-php artisan make:seeder Report/Ward/Songothon/Songothon3DepartmentalInformationTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon3DepartmentalInformation -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon3DepartmentalInformationController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon3DepartmentalInformationTableSeeder
 
-php artisan make:model Report/Ward/Songothon/Songothon4UnitSongothon -m
-php artisan make:controller Report/Ward/Songothon/Songothon4UnitSongothonController
-php artisan make:seeder Report/Ward/Songothon/Songothon4UnitSongothonsTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon4UnitSongothon -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon4UnitSongothonController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon4UnitSongothonsTableSeeder
 
-php artisan make:model Report/Ward/Songothon/Songothon5DawatAndParibarikUnit -m
-php artisan make:controller Report/Ward/Songothon/Songothon5DawatAndParibarikUnitController
-php artisan make:seeder Report/Ward/Songothon/Songothon5DawatAndParibarikUnitsTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon5DawatAndParibarikUnit -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon5DawatAndParibarikUnitController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon5DawatAndParibarikUnitsTableSeeder
 
-php artisan make:model Report/Ward/Songothon/Songothon6BidayiStudentsConnect -m
-php artisan make:controller Report/Ward/Songothon/Songothon6BidayiStudentsConnectController
-php artisan make:seeder Report/Ward/Songothon/Songothon6BidayiStudentsConnectsTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon6BidayiStudentsConnect -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon6BidayiStudentsConnectController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon6BidayiStudentsConnectsTableSeeder
 
-php artisan make:model Report/Ward/Songothon/Songothon7Sofor -m
-php artisan make:controller Report/Ward/Songothon/Songothon7SoforController
-php artisan make:seeder Report/Ward/Songothon/Songothon7SoforsTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon7Sofor -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon7SoforController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon7SoforsTableSeeder
 
-php artisan make:model Report/Ward/Songothon/Songothon8IyanotData -m
-php artisan make:controller Report/Ward/Songothon/Songothon8IyanotDataController
-php artisan make:seeder Report/Ward/Songothon/Songothon8IyanotDataTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon8IyanotData -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon8IyanotDataController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon8IyanotDataTableSeeder
 
-php artisan make:model Report/Ward/Songothon/Songothon9SangothonikBoithok -m
-php artisan make:controller Report/Ward/Songothon/Songothon9SangothonikBoithokController
-php artisan make:seeder Report/Ward/Songothon/Songothon9SangothonikBoithoksTableSeeder
+php artisan make:model Report/Ward/Songothon/WardSongothon9SangothonikBoithok -m
+php artisan make:controller Report/Ward/Songothon/WardSongothon9SangothonikBoithokController
+php artisan make:seeder Report/Ward/Songothon/WardSongothon9SangothonikBoithoksTableSeeder
 
 
 
@@ -124,13 +124,13 @@ php artisan make:seeder Report/Ward/Songothon/Songothon9SangothonikBoithoksTable
 //-------- Proshikkhon ---------\\
 //--------------------------\\
 
-php artisan make:model Report/Ward/Proshikkhon/Proshikkhon1Tarbiat -m
-php artisan make:controller Report/Ward/Proshikkhon/Proshikkhon1TarbiatController
-php artisan make:seeder Report/Ward/Proshikkhon/Proshikkhon1TarbiatsTableSeeder
+php artisan make:model Report/Ward/Proshikkhon/WardProshikkhon1Tarbiat -m
+php artisan make:controller Report/Ward/Proshikkhon/WardProshikkhon1TarbiatController
+php artisan make:seeder Report/Ward/Proshikkhon/WardProshikkhon1TarbiatsTableSeeder
 
-php artisan make:model Report/Ward/Proshikkhon/Proshikkhon2ManobShompodUnnoyon -m
-php artisan make:controller Report/Ward/Proshikkhon/Proshikkhon2ManobShompodUnnoyonController
-php artisan make:seeder Report/Ward/Proshikkhon/Proshikkhon2ManobShompodUnnoyonsTableSeeder
+php artisan make:model Report/Ward/Proshikkhon/WardProshikkhon2ManobShompodUnnoyon -m
+php artisan make:controller Report/Ward/Proshikkhon/WardProshikkhon2ManobShompodUnnoyonController
+php artisan make:seeder Report/Ward/Proshikkhon/WardProshikkhon2ManobShompodUnnoyonsTableSeeder
 
 
 
@@ -138,21 +138,21 @@ php artisan make:seeder Report/Ward/Proshikkhon/Proshikkhon2ManobShompodUnnoyons
 //-------- Shomajsheba ---------\\
 //--------------------------\\
 
-php artisan make:model Report/Ward/Shomajsheba/Shomajsheba1PersonalSocialWork -m
-php artisan make:controller Report/Ward/Shomajsheba/Shomajsheba1PersonalSocialWorkController
-php artisan make:seeder Report/Ward/Shomajsheba/Shomajsheba1PersonalSocialWorksTableSeeder
+php artisan make:model Report/Ward/Shomajsheba/WardShomajsheba1PersonalSocialWork -m
+php artisan make:controller Report/Ward/Shomajsheba/WardShomajsheba1PersonalSocialWorkController
+php artisan make:seeder Report/Ward/Shomajsheba/WardShomajsheba1PersonalSocialWorksTableSeeder
 
-php artisan make:model Report/Ward/Shomajsheba/Shomajsheba2GroupSocialWork -m
-php artisan make:controller Report/Ward/Shomajsheba/Shomajsheba2GroupSocialWorkController
-php artisan make:seeder Report/Ward/Shomajsheba/Shomajsheba2GroupSocialWorksTableSeeder
+php artisan make:model Report/Ward/Shomajsheba/WardShomajsheba2GroupSocialWork -m
+php artisan make:controller Report/Ward/Shomajsheba/WardShomajsheba2GroupSocialWorkController
+php artisan make:seeder Report/Ward/Shomajsheba/WardShomajsheba2GroupSocialWorksTableSeeder
 
-php artisan make:model Report/Ward/Shomajsheba/Shomajsheba3HealthAndFamilyKollan -m
-php artisan make:controller Report/Ward/Shomajsheba/Shomajsheba3HealthAndFamilyKollanController
-php artisan make:seeder Report/Ward/Shomajsheba/Shomajsheba3HealthAndFamilyKollansTableSeeder
+php artisan make:model Report/Ward/Shomajsheba/WardShomajsheba3HealthAndFamilyKollan -m
+php artisan make:controller Report/Ward/Shomajsheba/WardShomajsheba3HealthAndFamilyKollanController
+php artisan make:seeder Report/Ward/Shomajsheba/WardShomajsheba3HealthAndFamilyKollansTableSeeder
 
-php artisan make:model Report/Ward/Shomajsheba/Shomajsheba2InstitutionalSocialWork -m
-php artisan make:controller Report/Ward/Shomajsheba/Shomajsheba2UnitSocialWorkController
-php artisan make:seeder Report/Ward/Shomajsheba/Shomajsheba2UnitSocialWorksTableSeeder
+php artisan make:model Report/Ward/Shomajsheba/WardShomajsheba2InstitutionalSocialWork -m
+php artisan make:controller Report/Ward/Shomajsheba/WardShomajsheba2UnitSocialWorkController
+php artisan make:seeder Report/Ward/Shomajsheba/WardShomajsheba2UnitSocialWorksTableSeeder
 
 
 
@@ -160,21 +160,21 @@ php artisan make:seeder Report/Ward/Shomajsheba/Shomajsheba2UnitSocialWorksTable
 //-------- Rastrio ---------\\
 //--------------------------\\
 
-php artisan make:model Report/Ward/Rastrio/Rastrio1PoliticalCommunication -m
-php artisan make:controller Report/Ward/Rastrio/Rastrio1PoliticalCommunicationController
-php artisan make:seeder Report/Ward/Rastrio/Rastrio1PoliticalCommunicationsTableSeeder
+php artisan make:model Report/Ward/Rastrio/WardRastrio1PoliticalCommunication -m
+php artisan make:controller Report/Ward/Rastrio/WardRastrio1PoliticalCommunicationController
+php artisan make:seeder Report/Ward/Rastrio/WardRastrio1PoliticalCommunicationsTableSeeder
 
-php artisan make:model Report/Ward/Rastrio/Rastrio2KormoshuchiBastobayon -m
-php artisan make:controller Report/Ward/Rastrio/Rastrio2KormoshuchiBastobayonController
-php artisan make:seeder Report/Ward/Rastrio/Rastrio2KormoshuchiBastobayonsTableSeeder
+php artisan make:model Report/Ward/Rastrio/WardRastrio2KormoshuchiBastobayon -m
+php artisan make:controller Report/Ward/Rastrio/WardRastrio2KormoshuchiBastobayonController
+php artisan make:seeder Report/Ward/Rastrio/WardRastrio2KormoshuchiBastobayonsTableSeeder
 
-php artisan make:model Report/Ward/Rastrio/Rastrio3DiboshPalon -m
-php artisan make:controller Report/Ward/Rastrio/Rastrio3DiboshPalonController
-php artisan make:seeder Report/Ward/Rastrio/Rastrio3DiboshPalonsTableSeeder
+php artisan make:model Report/Ward/Rastrio/WardRastrio3DiboshPalon -m
+php artisan make:controller Report/Ward/Rastrio/WardRastrio3DiboshPalonController
+php artisan make:seeder Report/Ward/Rastrio/WardRastrio3DiboshPalonsTableSeeder
 
-php artisan make:model Report/Ward/Rastrio/Rastrio4ElectionActivity-m
-php artisan make:controller Report/Ward/Rastrio/Rastrio4ElectionActivityController
-php artisan make:seeder Report/Ward/Rastrio/Rastrio4ElectionActivitiesTableSeeder
+php artisan make:model Report/Ward/Rastrio/WardRastrio4ElectionActivity-m
+php artisan make:controller Report/Ward/Rastrio/WardRastrio4ElectionActivityController
+php artisan make:seeder Report/Ward/Rastrio/WardRastrio4ElectionActivitiesTableSeeder
 
 
 
@@ -182,25 +182,25 @@ php artisan make:seeder Report/Ward/Rastrio/Rastrio4ElectionActivitiesTableSeede
 //-------- Bm Expense ---------\\
 //--------------------------\\
 
-php artisan make:model Bm/Ward/Expense/BmExpense -m
-php artisan make:controller Bm/Ward/Expense/BmExpenseController
-php artisan make:seeder Bm/Ward/Expense/BmExpensesTableSeeder
+php artisan make:model Bm/Ward/Expense/WardBmExpense -m
+php artisan make:controller Bm/Ward/Expense/WardBmExpenseController
+php artisan make:seeder Bm/Ward/Expense/WardBmExpensesTableSeeder
 
-php artisan make:model Bm/Ward/Expense/BmExpenseCategory -m
-php artisan make:controller Bm/Ward/Expense/BmExpenseCategoryController
-php artisan make:seeder Bm/Ward/Expense/BmExpenseCategoriesTableSeeder
+php artisan make:model Bm/Ward/Expense/WardBmExpenseCategory -m
+php artisan make:controller Bm/Ward/Expense/WardBmExpenseCategoryController
+php artisan make:seeder Bm/Ward/Expense/WardBmExpenseCategoriesTableSeeder
 
 
 //--------------------------\\
 //-------- Bm Income ---------\\
 //--------------------------\\
 
-php artisan make:model Bm/Ward/Income/BmIncomeCategory -m
-php artisan make:controller Bm/Ward/Income/BmIncomeCategoryController
-php artisan make:seeder Bm/Ward/Income/BmIncomeCategoriesTableSeeder
+php artisan make:model Bm/Ward/Income/WardBmIncomeCategory -m
+php artisan make:controller Bm/Ward/Income/WardBmIncomeCategoryController
+php artisan make:seeder Bm/Ward/Income/WardBmIncomeCategoriesTableSeeder
 
-php artisan make:model Bm/Ward/Income/BmIncome -m
-php artisan make:controller Bm/Ward/Income/BmIncomeController
-php artisan make:seeder Bm/Ward/Income/BmIncomesTableSeeder
+php artisan make:model Bm/Ward/Income/WardBmIncome -m
+php artisan make:controller Bm/Ward/Income/WardBmIncomeController
+php artisan make:seeder Bm/Ward/Income/WardBmIncomesTableSeeder
 
 

@@ -15,7 +15,7 @@
                     <div class="card-body">
                         <form action="">
                             <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
-                                :onchange="dawat_upload" :endpoint="'dawat1-regular-group-wise'"
+                                :onchange="dawat_upload" :endpoint="'ward-dawat1-regular-group-wise'"
                                 :unique_key="1" ></form-input>
                         </form>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="card-body">
                         <form action="">
                             <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name"
-                                :onchange="dawat_upload" :endpoint="'dawat2-personal-and-target'" :unique_key="2"
+                                :onchange="dawat_upload" :endpoint="'ward-dawat2-personal-and-target'" :unique_key="2"
                                 :key="index"></form-input>
                         </form>
                     </div>
@@ -43,7 +43,7 @@
                     <div class="card-body">
                         <form action="">
                             <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
-                                :onchange="dawat_upload" :endpoint="'dawat3-general-program-and-others'"
+                                :onchange="dawat_upload" :endpoint="'ward-dawat3-general-program-and-others'"
                                 :unique_key="3"></form-input>
                         </form>
                     </div>
@@ -65,7 +65,7 @@
                     <div class="card-body">
                         <form action="">
                             <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
-                            :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
+                            :onchange="dawat_upload" :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'"
                             :unique_key="4"></form-input>
                         </form>
                     </div>
@@ -79,7 +79,35 @@
                     <div class="card-body">
                         <form action="">
                             <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
-                            :onchange="dawat_upload" :endpoint="'dawat4-gono-songjog-and-dawat-ovijan'"
+                            :onchange="dawat_upload" :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'"
+                            :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1>নির্বাচনী আসনে গণসংযোগ সপ্তাহ:</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
+                            :onchange="dawat_upload" :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'"
+                            :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1>অন্যান্য:</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields7" :label="field.label" :name="field.name" :key="index"
+                            :onchange="dawat_upload" :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'"
                             :unique_key="4"></form-input>
                         </form>
                     </div>
@@ -197,6 +225,42 @@ export default {
                 name: 'jela_mohanogor_declared_gonosonjog_associated_created',
             },
         ],
+        fields6:[
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'election_gono_songjog_group',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'election_attended',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'election_how_many_have_been_invited',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'election_how_many_associate_members_created',
+            },
+        ],
+        fields7:[
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'other_gono_songjog_group',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'other_attended',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'other_how_many_have_been_invited',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'other_how_many_associate_members_created',
+            },
+        ],
         notes:[
             {
                 label: 'বিঃদ্রঃ - ১',
@@ -244,10 +308,10 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('dawat1-regular-group-wise', 1);
-            this.get_data_by_api('dawat2-personal-and-target', 2);
-            this.get_data_by_api('dawat3-general-program-and-others', 3);
-            this.get_data_by_api('dawat4-gono-songjog-and-dawat-ovijan', 4);
+            this.get_data_by_api('ward-dawat1-regular-group-wise', 1);
+            this.get_data_by_api('ward-dawat2-personal-and-target', 2);
+            this.get_data_by_api('ward-dawat3-general-program-and-others', 3);
+            this.get_data_by_api('ward-dawat4-gono-songjog-and-dawat-ovijan', 4);
         }
     }
 

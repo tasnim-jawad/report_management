@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dawat1_regular_group_wises', function (Blueprint $table) {
+        Schema::create('ward_dawat3_general_program_and_others', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('report_info_id')->nullable();
-            $table->bigInteger('how_many_groups_are_out')->nullable();
-            $table->bigInteger('number_of_participants')->nullable();
-            $table->bigInteger('how_many_have_been_invited')->nullable();
-            $table->bigInteger('how_many_associate_members_created')->nullable();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
+            $table->integer('how_many_were_give_dawat')->unsigned()->nullable();
+            $table->integer('how_many_associate_members_created')->unsigned()->nullable();
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dawat1_regular_group_wises');
+        Schema::dropIfExists('ward_dawat3_general_program_and_others');
     }
 };
