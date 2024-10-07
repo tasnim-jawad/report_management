@@ -129,6 +129,10 @@ export default {
             top: 0,
             behavior: 'smooth'
         });
+
+        if(this.month != null){
+            this.get_monthly_data();
+        }
     },
     computed: {
         ...mapWritableState(data_store, ['month']),

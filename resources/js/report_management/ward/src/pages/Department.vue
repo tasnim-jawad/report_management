@@ -13,7 +13,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1 class="fw-medium">১. তালিমুল কুরআনের মাধ্যমে দাওয়াত:</h1>
+                <h1 class="fw-bold">১. তালিমুল কুরআনের মাধ্যমে দাওয়াত:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -105,6 +105,9 @@
                 </form>
             </div>
         </div>
+
+
+
         <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1 class="fw-semibold">২. গ্রাম ও মহল্লাভিত্তিক দাওয়াত:</h1>
@@ -174,50 +177,230 @@
             </div>
         </div>
 
+
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ:</h1>
+                <h1 class="fw-semibold">৩. যুব বিভাগের মাধ্যমে দাওয়াত :</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields17" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department3-jubo-somaj-dawat'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>যুব কমিটি:</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in fields18" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department3-jubo-somaj-dawat'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields19" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department3-jubo-somaj-dawat'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>প্রতিষ্ঠিত সমিতি/ক্লাবে দাওয়াত পৌঁছানো হয়েছে:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields20" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department3-jubo-somaj-dawat'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৪. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত :</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields21" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পেশাজীবী :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields22" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উলামা মাশায়েখ :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields23" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>শ্রমজীবী :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields24" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র) :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields25" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'department4-different-job-holders-dawat'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র):</h1>
+                <h1>ভিন্নধর্মাবলম্বী :</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in fields26" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৫. পরিবারভিত্তিক দাওয়াত :</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields27" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department5-paribarik-dawat'" :unique_key="5"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৬. মসজিদ/দাওয়াহ্ সেন্টার/তথ্যসেবা কেন্দ্রভিত্তিক দাওয়াত :</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মসজিদ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields28" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department6-mosjid-dawah-infomation-centers'" :unique_key="6"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>ভিন্নধর্মাবলম্বী:</h1>
+                <h1>দাওয়াতের আওতাভুক্ত মসজিদ:</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                    <form-input v-for="(field, index) in fields29" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department6-mosjid-dawah-infomation-centers'" :unique_key="6"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">৩. পরিবারভিত্তিক দাওয়াত:</h1>
+                <h1>মসজিদভিত্তিক দাওয়াহ্ সেন্টার:</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'department5-paribarik-dawat'" :unique_key="5"></form-input>
+                    <form-input v-for="(field, index) in fields30" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department6-mosjid-dawah-infomation-centers'" :unique_key="6"></form-input>
                 </form>
             </div>
         </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাধারণ দাওয়াহ্ সেন্টার :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields31" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department6-mosjid-dawah-infomation-centers'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক) :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields32" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department6-mosjid-dawah-infomation-centers'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>তথ্যসেবা কেন্দ্র (সাধারণ) :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields33" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department6-mosjid-dawah-infomation-centers'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৭. তথ্যপ্রযুক্তির মাধ্যমে দাওয়াত:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in fields34" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-department7-dawat-in-technology'" :unique_key="7"></form-input>
+                </form>
+            </div>
+        </div>
+
         <previous-next
                 :prev-route="{ name: 'Dawat' }"
                 :next-route="{ name: 'DawahAndProkashona' }"
@@ -410,64 +593,224 @@ export default {
             },
 
         ],
-        // fields4:[
-        //     {
-        //         label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
-        //         name:'political_and_special_invited',
-        //     },
-        //     {
-        //         label:'কতজন সহযোগী সদস্য হয়েছেন',
-        //         name:'political_and_special_been_associated',
-        //     },
-        //     {
-        //         label:'টার্গেট',
-        //         name:'political_and_special_target',
-        //     },
-        // ],
-        // fields5:[
-        //     {
-        //         label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
-        //         name:'prantik_jonogosti_invited',
-        //     },
-        //     {
-        //         label:'কতজন সহযোগী সদস্য হয়েছেন',
-        //         name:'prantik_jonogosti_been_associated',
-        //     },
-        //     {
-        //         label:'টার্গেট',
-        //         name:'prantik_jonogosti_target',
-        //     },
-        // ],
-        // fields6:[
-        //     {
-        //         label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
-        //         name:'vinno_dormalombi_invited',
-        //     },
-        //     {
-        //         label:'কতজন সহযোগী সদস্য হয়েছেন',
-        //         name:'vinno_dormalombi_been_associated',
-        //     },
-        //     {
-        //         label:'টার্গেট',
-        //         name:'vinno_dormalombi_target',
-        //     },
-        // ],
-        // fields7:[
-        //     {
-        //         label:'দাওয়াতি কাজে অংশগ্রহণকারী পরিবার সংখ্যা',
-        //         name:'total_attended_family',
-        //     },
-        //     {
-        //         label:'কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে',
-        //         name:'how_many_new_family_invited',
-        //     },
-        // ]
+        fields17:[
+            {
+                label:'কতজন যুবকের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'how_many_young_been_invited',
+            },
+            {
+                label:'কতজন যুবক সহযোগী সদস্য হয়েছেন',
+                name:'how_many_young_been_associated',
+            },
+
+        ],
+        fields18:[
+            {
+                label:'মোট সংখ্যা',
+                name:'total_young_committee',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'total_young_committee_increased',
+            },
+
+        ],
+        fields19:[
+            {
+                label:'মোট সংখ্যা',
+                name:'total_new_club',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'total_new_club_increased',
+            },
+
+        ],
+        fields20:[
+            {
+                label:'মোট সংখ্যা',
+                name:'stablished_club_total_invited',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'stablished_club_total_increased',
+            },
+
+        ],
+        fields21:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'political_and_special_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'political_and_special_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'political_and_special_target',
+            },
+        ],
+        fields22:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'pesha_jibi_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'pesha_jibi_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'pesha_jibi_target',
+            },
+        ],
+        fields23:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'olama_masayekh_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'olama_masayekh_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'olama_masayekh_target',
+            },
+        ],
+        fields24:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'sromo_jibi_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'sromo_jibi_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'sromo_jibi_target',
+            },
+        ],
+        fields25:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'prantik_jonogosti_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'prantik_jonogosti_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'prantik_jonogosti_target',
+            },
+        ],
+        fields26:[
+            {
+                label:'কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে',
+                name:'vinno_dormalombi_invited',
+            },
+            {
+                label:'কতজন সহযোগী সদস্য হয়েছেন',
+                name:'vinno_dormalombi_been_associated',
+            },
+            {
+                label:'টার্গেট',
+                name:'vinno_dormalombi_target',
+            },
+        ],
+        fields27:[
+            {
+                label:'দাওয়াতি কাজে অংশগ্রহণকারী পরিবার সংখ্যা',
+                name:'total_attended_family',
+            },
+            {
+                label:'কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে',
+                name:'how_many_new_family_invited',
+            },
+        ],
+        fields28:[
+            {
+                label:'মোট সংখ্যা	',
+                name:'total_mosjid',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'total_mosjid_increase',
+            },
+        ],
+        fields29:[
+            {
+                label:'মোট সংখ্যা	',
+                name:'dawat_included_mosjid',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'dawat_included_mosjid_increase',
+            },
+        ],
+        fields30:[
+            {
+                label:'মোট সংখ্যা	',
+                name:'mosjid_wise_dawah_center',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'mosjid_wise_dawah_center_increase',
+            },
+        ],
+        fields31:[
+            {
+                label:'মোট সংখ্যা	',
+                name:'general_dawah_center',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'general_dawah_center_increase',
+            },
+        ],
+        fields32:[
+            {
+                label:'মোট সংখ্যা	',
+                name:'mosjid_wise_information_center',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'mosjid_wise_information_center_increase',
+            },
+        ],
+        fields33:[
+            {
+                label:'মোট সংখ্যা',
+                name:'general_information_center',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'general_information_center_increase',
+            },
+        ],
+        fields34:[
+            {
+                label:'কাজের জন্য উপযুক্ত জনশক্তি সংখ্যা',
+                name:'total_well_known',
+            },
+            {
+                label:'অংশগ্রহণকারীর সংখ্যা',
+                name:'total_attended',
+            },
+        ],
     }),
     created:function(){
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
+
+        if(this.month != null){
+            this.get_monthly_data();
+        }
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
@@ -501,9 +844,11 @@ export default {
 
             this.get_data_by_api('ward-department1-talimul-quran', 1);
             this.get_data_by_api('ward-department2-moholla-vittik-dawat', 2);
-            this.get_data_by_api('department4-different-job-holders-dawat', 4);
-            this.get_data_by_api('department5-paribarik-dawat', 5);
-            // this.get_data_by_api('dawat4-gono-songjog-and-dawat-ovijan', 4);
+            this.get_data_by_api('ward-department3-jubo-somaj-dawat', 3);
+            this.get_data_by_api('ward-department4-different-job-holders-dawat', 4);
+            this.get_data_by_api('ward-department5-paribarik-dawat', 5);
+            this.get_data_by_api('ward-department6-mosjid-dawah-infomation-centers', 6);
+            this.get_data_by_api('ward-department7-dawat-in-technology', 7);
         }
     }
 

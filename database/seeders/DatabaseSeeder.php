@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Bm\BmExpenseCategory;
 use Database\Seeders\Bm\Income\BmCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpenseCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpensesTableSeeder;
@@ -53,12 +52,19 @@ use Database\Seeders\Report\Songothon\Songothon6BidayiStudentsConnectsTableSeede
 use Database\Seeders\Report\Songothon\Songothon7SoforsTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon8IyanotDataTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon9SangothonikBoithoksTableSeeder;
+use Database\Seeders\Report\Ward\DawahAndProkashona\WardDawahAndProkashonasTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat1RegularGroupWisesTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat2PersonalAndTargetsTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijansTableSeeder;
 use Database\Seeders\Report\Ward\Department\WardDepartment1TalimulQuransTableSeeder;
 use Database\Seeders\Report\Ward\Department\WardDepartment2MohollaVittikDawatsTableSeeder;
+use Database\Seeders\Report\Ward\Department\WardDepartment3JuboSomajDawatsTableSeeder;
+use Database\Seeders\Report\Ward\Department\WardDepartment4DifferentJobHoldersDawatsTableSeeder;
+use Database\Seeders\Report\Ward\Department\WardDepartment5ParibarikDawatsTableSeeder;
+use Database\Seeders\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCentersTableSeeder;
+use Database\Seeders\Report\Ward\Department\WardDepartment7DawatInTechnologiesTableSeeder;
+use Database\Seeders\Report\Ward\Kormosuci\WardKormosuciBastobayonsTableSeeder;
 use Database\Seeders\User\ReportUploadersTableSeeder;
 use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
@@ -166,6 +172,15 @@ class DatabaseSeeder extends Seeder
             // department
             WardDepartment1TalimulQuransTableSeeder::class,
             WardDepartment2MohollaVittikDawatsTableSeeder::class,
+            WardDepartment3JuboSomajDawatsTableSeeder::class,
+            WardDepartment4DifferentJobHoldersDawatsTableSeeder::class,
+            WardDepartment5ParibarikDawatsTableSeeder::class,
+            WardDepartment6MosjidDawahInfomationCentersTableSeeder::class,
+            WardDepartment7DawatInTechnologiesTableSeeder::class,
+            // department
+            WardDawahAndProkashonasTableSeeder::class,
+            // kormosuci
+            WardKormosuciBastobayonsTableSeeder::class,
         ]);
     }
 }

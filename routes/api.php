@@ -923,6 +923,48 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment2MohollaVittikDawatController::class,'store_single']);
     });
 
+    Route::group(['prefix' => 'ward-department3-jubo-somaj-dawat'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment3JuboSomajDawatController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment3JuboSomajDawatController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-department4-different-job-holders-dawat'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment4DifferentJobHoldersDawatController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment4DifferentJobHoldersDawatController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-department5-paribarik-dawat'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment5ParibarikDawatController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment5ParibarikDawatController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-department6-mosjid-dawah-infomation-centers'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCenterController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCenterController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-department7-dawat-in-technology'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment7DawatInTechnologyController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment7DawatInTechnologyController::class,'store_single']);
+    });
+
+
+
+
+
+    Route::group(['prefix' => 'ward-dawah-and-prokashona'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\DawahAndProkashona\WardDawahAndProkashonaController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\DawahAndProkashona\WardDawahAndProkashonaController::class,'store_single']);
+    });
+
+
+
+
+    Route::group(['prefix' => 'ward-kormosuci-bastobayon'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Kormosuci\WardKormosuciBastobayonController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Kormosuci\WardKormosuciBastobayonController::class,'store_single']);
+    });
+
 
 
 });

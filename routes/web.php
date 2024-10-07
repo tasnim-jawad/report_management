@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
 Route::get('/', function () {
-    return view('dashboard.unit');
+    return view('auth.login');
 });
 
 Route::get('/login', function () {

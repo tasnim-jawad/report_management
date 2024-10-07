@@ -51,11 +51,7 @@ php artisan make:seeder Report/Ward/Department/WardDepartment6MosjidDawahInfomat
 
 php artisan make:model Report/Ward/Department/WardDepartment7DawatInTechnology -m
 php artisan make:controller Report/Ward/Department/WardDepartment7DawatInTechnologyController
-php artisan make:seeder Report/Ward/Department/WardDepartment7DawatInTechnologysTableSeeder
-
-php artisan make:model Report/Ward/Department/WardDepartment8DawatInCulturalProgram -m
-php artisan make:controller Report/Ward/Department/WardDepartment8DawatInCulturalProgramController
-php artisan make:seeder Report/Ward/Department/WardDepartment8DawatInCulturalProgramsTableSeeder
+php artisan make:seeder Report/Ward/Department/WardDepartment7DawatInTechnologiesTableSeeder
 
 
 //--------------------------\\

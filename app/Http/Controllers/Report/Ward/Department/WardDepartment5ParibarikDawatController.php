@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Report\Ward\Department;
 
 use App\Http\Controllers\Controller;
-use App\Models\Report\Ward\Department\WardDepartment4DifferentJobHoldersDawat;
+use App\Models\Report\Ward\Department\WardDepartment5ParibarikDawat;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
-class WardDepartment4DifferentJobHoldersDawatController extends Controller
+class WardDepartment5ParibarikDawatController extends Controller
 {
     protected $report_info = false;
     public function __construct()
@@ -25,12 +24,12 @@ class WardDepartment4DifferentJobHoldersDawatController extends Controller
 
     public function get_data()
     {
-        return ward_common_get(WardDepartment4DifferentJobHoldersDawat::class);
+        return ward_common_get(WardDepartment5ParibarikDawat::class);
     }
 
     public function store_single()
     {
-        return ward_common_store($this, WardDepartment4DifferentJobHoldersDawat::class, $this->report_info);
+        return ward_common_store($this, WardDepartment5ParibarikDawat::class, $this->report_info);
     }
 
 }
