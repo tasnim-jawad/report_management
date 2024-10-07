@@ -11,26 +11,36 @@
                 <h1 class="fw-semibold">ঘ) সংগঠন:</h1>
             </div>
         </div>
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">১. জনশক্তি:</h1>
+            </div>
+        </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>১. জনশক্তি - সদস্য (রুকন)::</h1>
+                <h1>সদস্য (রুকন):</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in rokon" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'songothon1-jonosokti'" :unique_key="1"></form-input>
+                    :onchange="dawat_upload" :endpoint="'ward-songothon1-jonosokti'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>১. জনশক্তি - কর্মী:</h1>
+                <h1>কর্মী:</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in kormi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'songothon1-jonosokti'" :unique_key="1"></form-input>
+                    :onchange="dawat_upload" :endpoint="'ward-songothon1-jonosokti'" :unique_key="1"></form-input>
                 </form>
+            </div>
+        </div>
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">২. সহযোগী সদস্য:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -175,7 +185,7 @@ export default {
 
 
         ],
-        shohojogi:[
+        shohojogi_man:[
             {
                 label:'বিগত মাসের সংখ্যা',
                 name:'associate_member_previous',
@@ -284,6 +294,10 @@ export default {
             top: 0,
             behavior: 'smooth'
         });
+
+        if(this.month != null){
+            this.get_monthly_data();
+        }
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
@@ -315,7 +329,7 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('songothon1-jonosokti', 1);
+            this.get_data_by_api('ward-songothon1-jonosokti', 1);
             this.get_data_by_api('songothon2-associate-member', 2);
             this.get_data_by_api('songothon9-sangothonik-boithok', 9);
             this.get_data_by_api('songothon5-dawat-and-paribarik-unit', 5);

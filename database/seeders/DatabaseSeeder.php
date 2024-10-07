@@ -65,6 +65,7 @@ use Database\Seeders\Report\Ward\Department\WardDepartment5ParibarikDawatsTableS
 use Database\Seeders\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCentersTableSeeder;
 use Database\Seeders\Report\Ward\Department\WardDepartment7DawatInTechnologiesTableSeeder;
 use Database\Seeders\Report\Ward\Kormosuci\WardKormosuciBastobayonsTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon1JonosoktisTableSeeder;
 use Database\Seeders\User\ReportUploadersTableSeeder;
 use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
@@ -181,6 +182,8 @@ class DatabaseSeeder extends Seeder
             WardDawahAndProkashonasTableSeeder::class,
             // kormosuci
             WardKormosuciBastobayonsTableSeeder::class,
+            // songothon
+            WardSongothon1JonosoktisTableSeeder::class,
         ]);
     }
 }

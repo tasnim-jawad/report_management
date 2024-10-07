@@ -967,6 +967,13 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
 
 
+    Route::group(['prefix' => 'ward-songothon1-jonosokti'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon1JonosoktiController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon1JonosoktiController::class,'store_single']);
+    });
+
+
+
 });
 
 
