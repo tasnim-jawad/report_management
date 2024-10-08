@@ -11,25 +11,37 @@
                 <h1 class="fw-semibold">সমাজ সংস্কার ও সমাজসেবা:</h1>
             </div>
         </div>
-        <div class="card mb-3" v-if="month">
+        <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1>১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h1>
+                <h1 class="fw-semibold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h1>
             </div>
+        </div>
+        <div class="card mb-3" v-if="month">
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'shomajsheba1-personal-social-work'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in personal_shomajsheba" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba1-personal-social-work'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">২. সামষ্টিক/সেবা টিমের মাধ্যমে সামাজিক কাজ (প্রযোজ্য ক্ষেত্রে):</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in service_teams" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba2-group-social-work'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
-            <div class="card-header">
-                <h1>২. ইউনিটের উদ্যোগে সামাজিক কাজ:</h1>
-            </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'shomajsheba2-unit-social-work'" :unique_key="2"></form-input>
+                    <form-input v-for="(field, index) in group_social_works" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba2-group-social-work'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
@@ -52,7 +64,7 @@ export default {
     components: { FormInput, PreviousNext },
     data: ()=>({
         // month:null,
-        fields1:[
+        personal_shomajsheba:[
             {
                 label:'মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন',
                 name:'how_many_people_did',
@@ -64,13 +76,33 @@ export default {
 
 
         ],
-        fields2:[
+        service_teams:[
             {
-                label:'সামাজিক অনুষ্ঠানে অংশগ্রহন',
+                label:'সাধারণ সেবা টিম সংখ্যা',
+                name:'number_of_general_service_teams',
+            },
+            {
+                label:'টেকনিক্যাল সেবা টিম সংখ্যা',
+                name:'number_of_technical_service_teams',
+            },
+            {
+                label:'স্বেচ্ছাসেবক টিম সংখ্যা',
+                name:'number_of_volunteer_teams',
+            },
+
+        ],
+        group_social_works:[
+
+            {
+                label:'ছোট-ছোট উন্নয়নমূলক কাজ',
+                name:'minor_unnoyonmulok_kaj',
+            },
+            {
+                label:'সামাজিক অনুষ্ঠানে অশংগ্রহণ সংখ্যা',
                 name:'shamajik_onusthane_ongshogrohon',
             },
             {
-                label:'সামাজিক অনুষ্ঠানে সহায়তা প্রদান',
+                label:'সামাজিক অনুষ্ঠানে সহায়তা প্রদান কতজনকে',
                 name:'shamajik_onusthane_shohayota_prodan',
             },
             {
@@ -82,40 +114,88 @@ export default {
                 name:'manobik_shohayota_prodan',
             },
             {
-                label:'কর্জে হাসানা প্রদান (কতজনকে)',
+                label:'কর্জে হাসানা প্রদান (কতজনকে )',
                 name:'korje_hasana_prodan',
             },
             {
-                label:'রোগীর পরিচর্যা প্রদান (কতজনকে) ',
+                label:'পরিষ্কার-পরিচ্ছন্নতা অভিযান',
+                name:'porishkar_poricchonnota_ovijan',
+            },
+            {
+                label:'মশক নিধন অভিযান',
+                name:'moshok_nidhon_ovijan',
+            },
+            {
+                label:'রোগীর পরিচর্যা (কতজনকে)',
                 name:'rogir_poricorja',
             },
             {
-                label:'চিকিৎসা সহায়তা প্রদান (কতজনকে) ',
+                label:'চিকিৎসা সহায়তা প্রদান (কতজনকে)',
                 name:'medical_shohayota_prodan',
-            },
-            {
-                label:'নবজাতককে গিফ্ট প্রদান (কতজনকে)',
-                name:'nobojatokke_gift_prodan',
             },
             {
                 label:'স্বেচ্ছায় রক্ত দান (কতজন)',
                 name:'voluntarily_blood_donation_kotojon',
             },
             {
-                label:'স্বেচ্ছায় রক্ত দান (কতজনকে) ',
+                label:'স্বেচ্ছায় রক্ত দান (কতজনকে)',
                 name:'voluntarily_blood_donation_kotojonke',
             },
             {
-                label:'মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজন)',
-                name:'matrikalin_sheba_prodan_kotojon',
+                label:'নবজাতককে গিফ্‌ট প্রদান (কতজনকে)',
+                name:'nobojatokke_gift_prodan',
             },
             {
-                label:'মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজনকে) ',
-                name:'matrikalin_sheba_prodan_kotojonke',
+                label:'ভ্রাম্যমান স্কুল চালু',
+                name:'vrammoman_school_calu',
             },
             {
-                label:'মাইয়্যেতের গোসল (কতজনকে)',
-                name:'mayeter_gosol',
+                label:'ভ্রাম্যমান মক্তব চালু',
+                name:'vrammoman_moktob_calu',
+            },
+            {
+                label:'টেকনিক্যাল সেবা প্রদান (কতজন )',
+                name:'technical_services_kotojon',
+            },
+            {
+                label:'টেকনিক্যাল সেবা প্রদান (কতজনকে)',
+                name:'technical_services_prodan_kotojonke',
+            },
+            {
+                label:'অনলাইনের মাধ্যমে সেবা প্রদান (কতজনকে)',
+                name:'online_services_prodan_kotojonke',
+            },
+            {
+                label:'বৃক্ষরোপন (কতটি)',
+                name:'brikkho_ropon',
+            },
+            {
+                label:'জনসচেতনতামূলক প্রোগ্রাম (কতটি)',
+                name:'public_awareness_programs',
+            },
+            {
+                label:'ত্রাণ বিতরণ (কতজনকে)',
+                name:'tran_bitoron',
+            },
+            {
+                label:'ভিন্নধর্মাবলম্বীদের সেবা প্রদান (কতজন)',
+                name:'vinnodhormabolombider_service_prodan_kotojon',
+            },
+            {
+                label:'ভিন্নধর্মাবলম্বীদের সেবা প্রদান (কতজনকে)',
+                name:'vinnodhormabolombider_service_prodan_kotojonke',
+            },
+            {
+                label:'মাইয়্যেতের গোসল (কতজনকে )',
+                name:'mayeter_gosol_kotojonke',
+            },
+            {
+                label:'জানাযায় অংশগ্রহণ',
+                name:'janajay_ongshogrohon',
+            },
+            {
+                label:'স্বল্প পুঁজিতে কর্মসংস্থানের সহায়তা (কতজনকে)',
+                name:'low_capital_employment_kotojonke',
             },
             {
                 label:'অন্যান্য',
@@ -129,6 +209,10 @@ export default {
             top: 0,
             behavior: 'smooth'
         });
+
+        if(this.month != null){
+            this.get_monthly_data();
+        }
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
@@ -160,8 +244,8 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('shomajsheba1-personal-social-work', 1);
-            this.get_data_by_api('shomajsheba2-unit-social-work', 2);
+            this.get_data_by_api('ward-shomajsheba1-personal-social-work', 1);
+            this.get_data_by_api('ward-shomajsheba2-group-social-work', 2);
         }
     }
 

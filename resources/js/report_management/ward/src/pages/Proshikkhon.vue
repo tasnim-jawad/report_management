@@ -11,72 +11,128 @@
                 <h1 class="fw-semibold">প্রশিক্ষণ:</h1>
             </div>
         </div>
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">ক) তারবিয়াত (নৈতিক শিক্ষা ও সাংগঠনিক প্রশিক্ষণ):</h1>
+            </div>
+        </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>সহীহ কুরআন অনুশীলন :</h1>
+                <h1>ইউনিটে তারবিয়াতী বৈঠক :</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in unit_tarbiati_boithok" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>মাসয়ালা-মাসায়েল :</h1>
+                <h1>ওয়ার্ডভিত্তিক কর্মী শিক্ষা বৈঠক :</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in ward_kormi_sikkha_boithok" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>দারসে কুরআন :</h1>
+                <h1>ঊর্ধ্বতন সংগঠনের শিক্ষাশিবিরে অংশগ্রহণকারী :</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in urdhotono_sikkha_shibir" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>দারসে হাদীস :</h1>
+                <h1>ঊর্ধ্বতন সংগঠনের শিক্ষা বৈঠকে অংশগ্রহণকারী :</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in urdhotono_sikkha_boithok" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>সামষ্টিক পাঠ :</h1>
+                <h1>গণশিক্ষা বৈঠক :</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in gono_sikkha_boithok" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>বিষয়ভিত্তিক আলোচনা :</h1>
+                <h1>গণ নৈশ ইবাদত :</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in gono_noisho_ibadot" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>আলোচনা চক্র :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in alochona_chokro" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>দারসুল কুরআন অনুশীলন :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in darsul_quran" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সহীহ কুরআন তিলাওয়াত অনুশীলন :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in sohih_tilawat" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">খ) মানব সম্পদ উন্নয়ন কোর্সসমূহ:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in manob_shompod_unnoyon" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon2-manob-shompod-unnoyon'" :unique_key="2"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+
         <previous-next
                 :prev-route="{ name: 'Songothon' }"
                 :next-route="{ name: 'Shomajsheba' }"
@@ -96,88 +152,164 @@ export default {
   components: { FormInput, PreviousNext },
     data: ()=>({
         // month:null,
-        fields1:[
+
+        unit_tarbiati_boithok:[
             {
-                label:'সংখ্যা',
-                name:'sohi_quran_onushilon',
+                label:'মোট সংখ্যা',
+                name:'unit_tarbiati_boithok',
             },
             {
                 label:'টার্গেট',
-                name:'sohi_quran_onushilon_target',
+                name:'unit_tarbiati_boithok_target',
             },
             {
                 label:'উপস্থিতি',
-                name:'sohi_quran_onushilon_uposthiti',
+                name:'unit_tarbiati_boithok_uposthiti',
             },
         ],
-        fields2:[
+        ward_kormi_sikkha_boithok:[
             {
-                label:'সংখ্যা',
-                name:'masala_masayel',
+                label:'মোট সংখ্যা',
+                name:'ward_kormi_sikkha_boithok',
             },
             {
                 label:'টার্গেট',
-                name:'masala_masayel_target',
+                name:'ward_kormi_sikkha_boithok_target',
             },
             {
                 label:'উপস্থিতি',
-                name:'masala_masayel_uposthiti',
+                name:'ward_kormi_sikkha_boithok_uposthiti',
             },
         ],
-        fields3:[
+        urdhotono_sikkha_shibir:[
             {
-                label:'সংখ্যা',
-                name:'darsul_quran',
+                label:'মোট সংখ্যা',
+                name:'urdhotono_sikkha_shibir',
             },
             {
                 label:'টার্গেট',
-                name:'darsul_quran_target',
+                name:'urdhotono_sikkha_shibir_target',
+            },
+            {
+                label:'উপস্থিতি',
+                name:'urdhotono_sikkha_shibir_uposthiti',
+            },
+        ],
+        urdhotono_sikkha_boithok:[
+            {
+                label:'মোট সংখ্যা',
+                name:'urdhotono_sikkha_boithok',
+            },
+            {
+                label:'টার্গেট',
+                name:'urdhotono_sikkha_boithok_target',
+            },
+            {
+                label:'উপস্থিতি',
+                name:'urdhotono_sikkha_boithok_uposthiti',
+            },
+        ],
+        gono_sikkha_boithok:[
+            {
+                label:'মোট সংখ্যা',
+                name:'gono_sikkha_boithok',
+            },
+            {
+                label:'টার্গেট',
+                name:'gono_sikkha_boithok_target',
+            },
+            {
+                label:'উপস্থিতি',
+                name:'gono_sikkha_boithok_uposthiti',
+            },
+        ],
+        gono_noisho_ibadot:[
+            {
+                label:'মোট সংখ্যা',
+                name:'gono_noisho_ibadot',
+            },
+            {
+                label:'টার্গেট',
+                name:'gono_noisho_ibadot_target',
+            },
+            {
+                label:'উপস্থিতি',
+                name:'gono_noisho_ibadot_uposthiti',
+            },
+        ],
+        alochona_chokro:[
+            {
+                label:'গ্রুপ সংখ্যা',
+                name:'alochona_chokro_group',
+            },
+            {
+                label:'অধিবেশন সংখ্যা',
+                name:'alochona_chokro_program',
+            },
+            {
+                label:'উপস্থিতি',
+                name:'alochona_chokro_uposthiti',
+            },
+        ],
+        darsul_quran:[
+            {
+                label:'প্রোগ্রাম সংখ্যা',
+                name:'darsul_quran_program',
             },
             {
                 label:'উপস্থিতি',
                 name:'darsul_quran_uposthiti',
             },
         ],
-        fields4:[
+        sohih_tilawat:[
             {
-                label:'সংখ্যা',
-                name:'darsul_hadis',
-            },
-            {
-                label:'টার্গেট',
-                name:'darsul_hadis_target',
+                label:'প্রোগ্রাম সংখ্যা',
+                name:'sohih_tilawat_program',
             },
             {
                 label:'উপস্থিতি',
-                name:'darsul_hadis_uposthiti',
+                name:'sohih_tilawat_uposthiti',
             },
         ],
-        fields5:[
+
+
+
+        manob_shompod_unnoyon:[
             {
-                label:'সংখ্যা',
-                name:'samostik_path',
+                label:'দাওয়াহ - অংশগ্রহণকারীর সংখ্যা',
+                name:'dawah_uposthiti',
             },
             {
-                label:'টার্গেট',
-                name:'samostik_path_target',
+                label:'সমাজকর্ম - অংশগ্রহণকারীর সংখ্যা',
+                name:'shomajkormo_uposthiti',
             },
             {
-                label:'উপস্থিতি',
-                name:'samostik_path_uposthiti',
-            },
-        ],
-        fields6:[
-            {
-                label:'সংখ্যা',
-                name:'bishoy_vittik_onushilon',
+                label:'মিডিয়া - অংশগ্রহণকারীর সংখ্যা',
+                name:'media_uposthiti',
             },
             {
-                label:'টার্গেট',
-                name:'bishoy_vittik_onushilon_target',
+                label:'আইসিটি - অংশগ্রহণকারীর সংখ্যা',
+                name:'ict_uposthiti',
             },
             {
-                label:'উপস্থিতি',
-                name:'bishoy_vittik_onushilon_uposthiti',
+                label:'অফিস - অংশগ্রহণকারীর সংখ্যা',
+                name:'office_uposthiti',
+            },
+            {
+                label:'ফিন্যান্সিয়াল ম্যানেজমেন্ট - অংশগ্রহণকারীর সংখ্যা',
+                name:'financial_management_uposthiti',
+            },
+            {
+                label:'ইংরেজি ভাষা - অংশগ্রহণকারীর সংখ্যা',
+                name:'english_language_uposthiti',
+            },
+            {
+                label:'আরবি ভাষা - অংশগ্রহণকারীর সংখ্যা',
+                name:'arabic_language_uposthiti',
+            },
+            {
+                label:'ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ - অংশগ্রহণকারীর সংখ্যা',
+                name:'trade_oriented_technical_training_uposthiti',
             },
         ],
     }),
@@ -186,6 +318,10 @@ export default {
             top: 0,
             behavior: 'smooth'
         });
+
+        if(this.month != null){
+            this.get_monthly_data();
+        }
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
@@ -217,7 +353,8 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('proshikkhon1-tarbiat', 1);
+            this.get_data_by_api('ward-proshikkhon1-tarbiat', 1);
+            this.get_data_by_api('ward-proshikkhon2-manob-shompod-unnoyon', 2);
         }
     }
 

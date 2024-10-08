@@ -972,6 +972,74 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon1JonosoktiController::class,'store_single']);
     });
 
+    Route::group(['prefix' => 'ward-songothon2-associate-member'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon2AssociateMemberController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon2AssociateMemberController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-songothon3-departmental-information'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon3DepartmentalInformationController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon3DepartmentalInformationController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-songothon4-unit-songothon'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon4UnitSongothonController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon4UnitSongothonController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-songothon5-dawat-and-paribarik-unit'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon5DawatAndParibarikUnitController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon5DawatAndParibarikUnitController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-songothon6-bidayi-students-connect'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon6BidayiStudentsConnectController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon6BidayiStudentsConnectController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-songothon7-sofor'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon7SoforController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon7SoforController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-songothon8-iyanot-data'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon8IyanotDataController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon8IyanotDataController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-songothon9-sangothonik-boithok'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon9SangothonikBoithokController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon9SangothonikBoithokController::class,'store_single']);
+    });
+
+
+
+
+
+
+    Route::group(['prefix' => 'ward-proshikkhon1-tarbiat'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-proshikkhon2-manob-shompod-unnoyon'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonController::class,'store_single']);
+    });
+
+
+
+
+    Route::group(['prefix' => 'ward-shomajsheba1-personal-social-work'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWorkController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWorkController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-shomajsheba2-group-social-work'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorkController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorkController::class,'store_single']);
+    });
+
 
 
 });

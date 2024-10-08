@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWork;
+use App\Models\Report\Ward\Songothon\WardSongothon8IyanotData;
 use Database\Seeders\Bm\Income\BmCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpenseCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpensesTableSeeder;
@@ -65,7 +67,19 @@ use Database\Seeders\Report\Ward\Department\WardDepartment5ParibarikDawatsTableS
 use Database\Seeders\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCentersTableSeeder;
 use Database\Seeders\Report\Ward\Department\WardDepartment7DawatInTechnologiesTableSeeder;
 use Database\Seeders\Report\Ward\Kormosuci\WardKormosuciBastobayonsTableSeeder;
+use Database\Seeders\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatsTableSeeder;
+use Database\Seeders\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonsTableSeeder;
+use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWorksTableSeeder;
+use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorksTableSeeder;
 use Database\Seeders\Report\Ward\Songothon\WardSongothon1JonosoktisTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon2AssociateMembersTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon3DepartmentalInformationTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon4UnitSongothonsTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon5DawatAndParibarikUnitsTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon6BidayiStudentsConnectsTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon7SoforsTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon8IyanotDataTableSeeder;
+use Database\Seeders\Report\Ward\Songothon\WardSongothon9SangothonikBoithoksTableSeeder;
 use Database\Seeders\User\ReportUploadersTableSeeder;
 use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
@@ -184,6 +198,20 @@ class DatabaseSeeder extends Seeder
             WardKormosuciBastobayonsTableSeeder::class,
             // songothon
             WardSongothon1JonosoktisTableSeeder::class,
+            WardSongothon2AssociateMembersTableSeeder::class,
+            WardSongothon3DepartmentalInformationTableSeeder::class,
+            WardSongothon4UnitSongothonsTableSeeder::class,
+            WardSongothon5DawatAndParibarikUnitsTableSeeder::class,
+            WardSongothon6BidayiStudentsConnectsTableSeeder::class,
+            WardSongothon7SoforsTableSeeder::class,
+            WardSongothon8IyanotDataTableSeeder::class,
+            WardSongothon9SangothonikBoithoksTableSeeder::class,
+            //Proshikkhon
+            WardProshikkhon1TarbiatsTableSeeder::class,
+            WardProshikkhon2ManobShompodUnnoyonsTableSeeder::class,
+            //Shomajsheba
+            WardShomajsheba1PersonalSocialWorksTableSeeder::class,
+            WardShomajsheba2GroupSocialWorksTableSeeder::class,
         ]);
     }
 }
