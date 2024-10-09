@@ -45,6 +45,36 @@
                 </form>
             </div>
         </div>
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৩. স্বাস্থ্য ও পরিবার কল্যাণমূলক কাজ:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in health_and_family" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba3-health-and-family-kollan'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৪. প্রাতিষ্ঠানিক উদ্যোগে সামাজিক কাজ:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in shamajik_protishthan" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba4-institutional-social-work'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+
         <previous-next
                 :prev-route="{ name: 'Proshikkhon' }"
                 :next-route="{ name: 'Rastrio' }"
@@ -202,6 +232,37 @@ export default {
                 name:'others',
             },
         ],
+        health_and_family:[
+            {
+                label:'স্বাস্থ্যকর্মী প্রশিক্ষণ প্রোগ্রামে মোট অংশগ্রহণকারীর সংখ্যা',
+                name:'health_worker_training_programs_attendance',
+            },
+            {
+                label:'কতজন স্বাস্থ্যসেবা কাজে অংশগ্রহণ করেছেন',
+                name:'participated_in_health_care_work',
+            },
+            {
+                label:'সেবাপ্রাপ্ত সংখ্যা',
+                name:'served_people',
+            },
+
+        ],
+
+        shamajik_protishthan:[
+            {
+                label:'কতটি সামাজিক প্রতিষ্ঠান রয়েছে',
+                name:'shamajik_protishthan_kototi',
+            },
+            {
+                label:'কতটি প্রতিষ্ঠানে সামাজিক কাজ হয়েছে',
+                name:'shamajik_protishthan_kototite_kaj_hoyeche',
+            },
+            {
+                label:'কতটি নতুন সামাজিক প্রতিষ্ঠান চালু করা হয়েছে (প্রযোজ্য ক্ষেত্রে)',
+                name:'new_shamajik_protishthan',
+            },
+
+        ],
 
     }),
     created:function(){
@@ -246,6 +307,8 @@ export default {
 
             this.get_data_by_api('ward-shomajsheba1-personal-social-work', 1);
             this.get_data_by_api('ward-shomajsheba2-group-social-work', 2);
+            this.get_data_by_api('ward-shomajsheba3-health-and-family-kollan', 3);
+            this.get_data_by_api('ward-shomajsheba4-institutional-social-work', 4);
         }
     }
 

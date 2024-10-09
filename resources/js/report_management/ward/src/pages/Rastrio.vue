@@ -6,14 +6,30 @@
                 মাস: <input type="month" @change="get_monthly_data" v-model="month" ref="month" name="month">
             </div>
         </div>
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h1>
+            </div>
+        </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">রাষ্ট্রীয় সংস্কার ও সংশোধন:</h1>
+                <h1>রাজনৈতিক ব্যক্তিবর্গ:</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'rastrio1-bishishto-bekti'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in rajnoitik_bekti" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-rastrio1-political-communication'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>প্রশাসনিক ব্যক্তিবর্গ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in proshoshonik_bekti" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'ward-rastrio1-political-communication'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -36,10 +52,24 @@ export default {
     components: { FormInput, PreviousNext },
     data: ()=>({
         // month:null,
-        fields1:[
+        rajnoitik_bekti:[
             {
-                label:'বিশিষ্ট ব্যক্তিবর্গের সাথে যোগাযোগ সংখ্যা',
-                name:'bishishto_bekti_jogajog',
+                label:'মোট কতজন যোগাযোগ করেছেন',
+                name:'rajnoitik_bekti_jogajog_koreche_kotojon',
+            },
+            {
+                label:'মোট কতজনের সাথে যোগাযোগ হয়েছে',
+                name:'rajnoitik_bekti_jogajog_koreche_kotojonke',
+            },
+        ],
+        proshoshonik_bekti:[
+            {
+                label:'মোট কতজন যোগাযোগ করেছেন',
+                name:'proshoshonik_bekti_jogajog_koreche_kotojon',
+            },
+            {
+                label:'মোট কতজনের সাথে যোগাযোগ হয়েছে',
+                name:'proshoshonik_bekti_jogajog_koreche_kotojonke',
             },
         ],
     }),
@@ -48,6 +78,10 @@ export default {
             top: 0,
             behavior: 'smooth'
         });
+
+        if(this.month != null){
+            this.get_monthly_data();
+        }
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
@@ -79,7 +113,7 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('rastrio1-bishishto-bekti', 1);
+            this.get_data_by_api('ward-rastrio1-political-communication', 1);
         }
     }
 

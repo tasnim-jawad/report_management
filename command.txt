@@ -146,9 +146,9 @@ php artisan make:model Report/Ward/Shomajsheba/WardShomajsheba3HealthAndFamilyKo
 php artisan make:controller Report/Ward/Shomajsheba/WardShomajsheba3HealthAndFamilyKollanController
 php artisan make:seeder Report/Ward/Shomajsheba/WardShomajsheba3HealthAndFamilyKollansTableSeeder
 
-php artisan make:model Report/Ward/Shomajsheba/WardShomajsheba2InstitutionalSocialWork -m
-php artisan make:controller Report/Ward/Shomajsheba/WardShomajsheba2UnitSocialWorkController
-php artisan make:seeder Report/Ward/Shomajsheba/WardShomajsheba2UnitSocialWorksTableSeeder
+php artisan make:model Report/Ward/Shomajsheba/WardShomajsheba4InstitutionalSocialWork -m
+php artisan make:controller Report/Ward/Shomajsheba/WardShomajsheba4InstitutionalSocialWorkController
+php artisan make:seeder Report/Ward/Shomajsheba/WardShomajsheba4InstitutionalSocialWorksTableSeeder
 
 
 

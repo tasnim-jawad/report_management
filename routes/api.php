@@ -1040,6 +1040,25 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorkController::class,'store_single']);
     });
 
+    Route::group(['prefix' => 'ward-shomajsheba3-health-and-family-kollan'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba3HealthAndFamilyKollanController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba3HealthAndFamilyKollanController::class,'store_single']);
+    });
+
+    Route::group(['prefix' => 'ward-shomajsheba4-institutional-social-work'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba4InstitutionalSocialWorkController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba4InstitutionalSocialWorkController::class,'store_single']);
+    });
+
+
+
+
+
+    Route::group(['prefix' => 'ward-rastrio1-political-communication'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio1PoliticalCommunicationController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio1PoliticalCommunicationController::class,'store_single']);
+    });
+
 
 
 });

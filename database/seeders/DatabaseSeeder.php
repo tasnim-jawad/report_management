@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWork;
-use App\Models\Report\Ward\Songothon\WardSongothon8IyanotData;
+use App\Models\Report\Ward\Rastrio\WardRastrio1PoliticalCommunication;
 use Database\Seeders\Bm\Income\BmCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpenseCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpensesTableSeeder;
@@ -69,8 +68,11 @@ use Database\Seeders\Report\Ward\Department\WardDepartment7DawatInTechnologiesTa
 use Database\Seeders\Report\Ward\Kormosuci\WardKormosuciBastobayonsTableSeeder;
 use Database\Seeders\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatsTableSeeder;
 use Database\Seeders\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonsTableSeeder;
+use Database\Seeders\Report\Ward\Rastrio\WardRastrio1PoliticalCommunicationsTableSeeder;
 use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWorksTableSeeder;
 use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorksTableSeeder;
+use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba3HealthAndFamilyKollansTableSeeder;
+use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba4InstitutionalSocialWorksTableSeeder;
 use Database\Seeders\Report\Ward\Songothon\WardSongothon1JonosoktisTableSeeder;
 use Database\Seeders\Report\Ward\Songothon\WardSongothon2AssociateMembersTableSeeder;
 use Database\Seeders\Report\Ward\Songothon\WardSongothon3DepartmentalInformationTableSeeder;
@@ -212,6 +214,10 @@ class DatabaseSeeder extends Seeder
             //Shomajsheba
             WardShomajsheba1PersonalSocialWorksTableSeeder::class,
             WardShomajsheba2GroupSocialWorksTableSeeder::class,
+            WardShomajsheba3HealthAndFamilyKollansTableSeeder::class,
+            WardShomajsheba4InstitutionalSocialWorksTableSeeder::class,
+            //Rastrio
+            WardRastrio1PoliticalCommunicationsTableSeeder::class,
         ]);
     }
 }
