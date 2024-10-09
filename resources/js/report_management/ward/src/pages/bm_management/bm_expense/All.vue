@@ -23,7 +23,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(expense,index) in bm_expense" :key="index">
-                            <td>{{expense?.bm_expense_category?.title}}</td>
+                            <td>{{expense?.ward_bm_expense_category?.title}}</td>
                             <td>{{expense?.amount}}</td>
                             <td>
                                 <div class="action">
@@ -77,7 +77,7 @@ export default {
     },
     methods:{
         show_bm_expense :async function(){
-            let response = await axios.get('/bm-expense/single-unit',{
+            let response = await axios.get('/ward-bm-expense/single-ward',{
                                 params: { month: this.month  }
                             });
             if(response.data.status == "success"){
@@ -98,7 +98,7 @@ export default {
         submit_delete_form : function(expense_id){
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_expense_form_'+expense_id));
-            axios.post("/bm-expense/destroy",formData)
+            axios.post("/ward-bm-expense/destroy",formData)
                     .then(response => {
                         // console.log(response);
                         window.toaster('Exponse delete successfuly', 'success');

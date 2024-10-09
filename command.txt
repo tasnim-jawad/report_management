@@ -168,7 +168,7 @@ php artisan make:model Report/Ward/Rastrio/WardRastrio3DiboshPalon -m
 php artisan make:controller Report/Ward/Rastrio/WardRastrio3DiboshPalonController
 php artisan make:seeder Report/Ward/Rastrio/WardRastrio3DiboshPalonsTableSeeder
 
-php artisan make:model Report/Ward/Rastrio/WardRastrio4ElectionActivity-m
+php artisan make:model Report/Ward/Rastrio/WardRastrio4ElectionActivity -m
 php artisan make:controller Report/Ward/Rastrio/WardRastrio4ElectionActivityController
 php artisan make:seeder Report/Ward/Rastrio/WardRastrio4ElectionActivitiesTableSeeder
 
@@ -178,13 +178,13 @@ php artisan make:seeder Report/Ward/Rastrio/WardRastrio4ElectionActivitiesTableS
 //-------- Bm Expense ---------\\
 //--------------------------\\
 
-php artisan make:model Bm/Ward/Expense/WardBmExpense -m
-php artisan make:controller Bm/Ward/Expense/WardBmExpenseController
-php artisan make:seeder Bm/Ward/Expense/WardBmExpensesTableSeeder
-
 php artisan make:model Bm/Ward/Expense/WardBmExpenseCategory -m
 php artisan make:controller Bm/Ward/Expense/WardBmExpenseCategoryController
 php artisan make:seeder Bm/Ward/Expense/WardBmExpenseCategoriesTableSeeder
+
+php artisan make:model Bm/Ward/Expense/WardBmExpense -m
+php artisan make:controller Bm/Ward/Expense/WardBmExpenseController
+php artisan make:seeder Bm/Ward/Expense/WardBmExpensesTableSeeder
 
 
 //--------------------------\\

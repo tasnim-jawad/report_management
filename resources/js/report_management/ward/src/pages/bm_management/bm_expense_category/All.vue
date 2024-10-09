@@ -59,7 +59,7 @@ export default {
     },
     methods:{
         show_bm_expense_category : function(){
-            axios.get('/bm-expense-category/all')
+            axios.get('/ward-bm-expense-category/all')
                 .then(response => {
                     console.log(response);
                     if(response.data.status == 'success'){

@@ -42,7 +42,7 @@ export default {
     },
     methods:{
         show_category : function(){
-            axios.get(`/bm-expense-category/show/${this.expense_category_id}`)
+            axios.get(`/ward-bm-expense-category/show/${this.expense_category_id}`)
                 .then(responce => {
                     if(responce.data.status == 'success'){
                         this.category_info = responce?.data?.data

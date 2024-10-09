@@ -44,7 +44,7 @@ export default {
             // for (const entry of formData.entries()) {
             //     console.log(entry);
             // }
-            axios.post('/bm-expense-category/store',formData)
+            axios.post('/ward-bm-expense-category/store',formData)
                 .then(function (response) {
                     window.toaster('New BM Expence Category Created successfuly', 'success');
                     e.target.reset();

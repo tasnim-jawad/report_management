@@ -2,12 +2,16 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseCategoryController;
+use App\Models\Bm\Ward\Income\WardBmIncomeCategory;
 use App\Models\Report\Ward\Rastrio\WardRastrio1PoliticalCommunication;
 use Database\Seeders\Bm\Income\BmCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpenseCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpensesTableSeeder;
 use Database\Seeders\Bm\Income\BmCategoryUsersTableSeeder;
 use Database\Seeders\Bm\Income\BmPaidsTableSeeder;
+use Database\Seeders\Bm\Ward\Expense\WardBmExpenseCategoriesTableSeeder;
+use Database\Seeders\Bm\Ward\Expense\WardBmExpensesTableSeeder;
 use Database\Seeders\Organization\OrgAreasTableSeeder;
 use Database\Seeders\Organization\OrgCitiesTableSeeder;
 use Database\Seeders\Organization\OrgCityResponsiblesTableSeeder;
@@ -69,6 +73,9 @@ use Database\Seeders\Report\Ward\Kormosuci\WardKormosuciBastobayonsTableSeeder;
 use Database\Seeders\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatsTableSeeder;
 use Database\Seeders\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonsTableSeeder;
 use Database\Seeders\Report\Ward\Rastrio\WardRastrio1PoliticalCommunicationsTableSeeder;
+use Database\Seeders\Report\Ward\Rastrio\WardRastrio2KormoshuchiBastobayonsTableSeeder;
+use Database\Seeders\Report\Ward\Rastrio\WardRastrio3DiboshPalonsTableSeeder;
+use Database\Seeders\Report\Ward\Rastrio\WardRastrio4ElectionActivitiesTableSeeder;
 use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWorksTableSeeder;
 use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorksTableSeeder;
 use Database\Seeders\Report\Ward\Shomajsheba\WardShomajsheba3HealthAndFamilyKollansTableSeeder;
@@ -218,6 +225,13 @@ class DatabaseSeeder extends Seeder
             WardShomajsheba4InstitutionalSocialWorksTableSeeder::class,
             //Rastrio
             WardRastrio1PoliticalCommunicationsTableSeeder::class,
+            WardRastrio2KormoshuchiBastobayonsTableSeeder::class,
+            WardRastrio3DiboshPalonsTableSeeder::class,
+            WardRastrio4ElectionActivitiesTableSeeder::class,
+            //WardBmExpense
+            WardBmExpenseCategoriesTableSeeder::class,
+            WardBmExpensesTableSeeder::class,
+            WardBmIncomeCategory::class,
         ]);
     }
 }

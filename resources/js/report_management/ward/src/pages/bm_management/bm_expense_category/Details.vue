@@ -47,7 +47,7 @@ export default {
     methods:{
         show_category : function(){
             // console.log(this.expense_category_id);
-            axios.get(`/bm-expense-category/show/${this.expense_category_id}`)
+            axios.get(`/ward-bm-expense-category/show/${this.expense_category_id}`)
                 .then(response => {
                     // console.log(response);
                     if(response.data.status == 'success'){
