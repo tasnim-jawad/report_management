@@ -12,7 +12,7 @@ class WardBmIncome extends Model
 
     public function ward_bm_income_category()
     {
-        return $this->belongsTo(WardBmIncome::class);
+        return $this->belongsTo(WardBmIncomeCategory::class);
     }
 
     public function user()

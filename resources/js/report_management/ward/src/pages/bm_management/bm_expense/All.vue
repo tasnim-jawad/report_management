@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             Show All Bm Expense
-            <div class="btn btn-info btn-sm">
+            <div class="btn btn-info btn-sm" v-if="is_permitted">
                 <router-link :to="{name:'BmExpenseCreate'}" class="text-dark">Create Expense</router-link>
             </div>
         </div>

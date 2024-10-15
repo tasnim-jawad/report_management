@@ -32,7 +32,7 @@ export default {
         get_monthly_report: function(){
             if(this.month != null){
                 this.$refs.report_form.submit();
-                window.open(`http://127.0.0.1:8000/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`)
+                window.open(`/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
 
         },

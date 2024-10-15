@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             Edit Bm Expense
+            <div class="btn btn-info btn-sm">
+                    <router-link :to="{name:'BmExpenseAll'}" class="text-dark">ব্যয়ের বিবরণ</router-link>
+                </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="edit_expense">
@@ -11,10 +14,10 @@
                         <label for="">Title</label>
                     </div>
                     <div class="form_input">
-                        <select type="text" name="bm_expense_category_id" class="form-control text-center">
-                            <option value="">-- select responsibility group --</option>
+                        <select type="text" name="ward_bm_expense_category_id" class="form-control text-center">
+                            <option value="">-- select category --</option>
                             <option v-for="(bm_expense_category, i) in expense_category.data" :key="i" :value="bm_expense_category['id']"
-                            :selected="bm_expense_category['id'] === expense_info.bm_expense_category_id">{{bm_expense_category["title"]}}</option>
+                            :selected="bm_expense_category['id'] === expense_info.ward_bm_expense_category_id">{{bm_expense_category["title"]}}</option>
 
                         </select>
                     </div>
@@ -49,14 +52,14 @@ export default {
     },
     methods:{
         bm_category_list:function(){
-            axios.get('/bm-expense-category/all')
+            axios.get('/ward-bm-expense-category/all')
                 .then(responce => {
                     this.expense_category = responce?.data?.data
                     console.log('expense_category',this.expense_category);
                 })
         },
         show_expense: function(){
-            axios.get(`/bm-expense/show/${this.expense_id}`)
+            axios.get(`/ward-bm-expense/show/${this.expense_id}`)
                 .then(responce => {
                     if(responce.data.status == "success"){
                         this.expense_info = responce?.data?.data
@@ -69,7 +72,7 @@ export default {
             for (const entry of formData.entries()) {
                 console.log(entry);
             }
-            axios.post(`/bm-expense/update`,formData)
+            axios.post(`/ward-bm-expense/update`,formData)
                 .then(function (response) {
                     window.toaster('BM Expense Updated successfuly', 'success');
                 })

@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('ward_bm_incomes', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->nullable();
+            $table->bigInteger('ward_id')->nullable();
+            $table->bigInteger('thana_id')->nullable();
+            $table->bigInteger('city_id')->nullable();
+            $table->integer('amount')->nullable();
+            $table->date('month')->nullable();
+            $table->bigInteger('ward_bm_income_category_id')->nullable();
+
+            $table->bigInteger('creator')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

@@ -67,19 +67,19 @@ class WardBmIncomeController extends Controller
             }
 
             $ward_id = auth()->user()->org_ward_user["ward_id"];
-            $data = WardBmIncome::with('bm_category')
+            $data = WardBmIncome::with('ward_bm_income_category')
                             ->where('ward_id',$ward_id)
                             ->whereMonth('month',$passed_month)
                             ->whereYear('month',$passed_year)
                             ->get();
             // dd($data);
-            $total_paid =$data->sum('amount');
+            $total_income =$data->sum('amount');
 
             return response()->json([
                 'status'=>'success',
                 'is_permitted' => $is_permitted,
                 'data'=>$data,
-                'total_paid'=>$total_paid,
+                'total_income'=>$total_income,
             ],200);
         }
 
@@ -126,11 +126,11 @@ class WardBmIncomeController extends Controller
                 $totalAmount = $testQuery->whereYear('month',$date->clone()->year)
                                         ->whereMonth('month',$date->clone()->month)
                                         ->where('bm_category_id',$item)
-                                        ->where('unit_id',$org_unit_user->unit_id)
+                                        ->where('unit_id',$org_ward_user->ward_id)
                                         ->sum('amount');
-                $bmCategory= WardBmIncomeCategory::find($item);
+                $WardBmIncomeCategory= WardBmIncomeCategory::find($item);
                 $data[$index]['amount']= $totalAmount;
-                $data[$index]['category'] = $bmCategory->title;
+                $data[$index]['category'] = $WardBmIncomeCategory->title;
             }
             // dd($total_income);
 
@@ -157,7 +157,7 @@ class WardBmIncomeController extends Controller
             if (request()->has('select_all') && request()->select_all) {
                 $select = "*";
             }
-            $data = WardBmIncome::with('bm_category')->where('id', $id)
+            $data = WardBmIncome::with('ward_bm_income_category')->where('id', $id)
                 ->select($select)
                 ->first();
             if ($data) {
@@ -175,17 +175,22 @@ class WardBmIncomeController extends Controller
             }
         }
         public function existing_data(){
-            $permission  = ReportManagementControl::where('report_type', 'unit')
+            $permission  = ReportManagementControl::where('report_type', 'ward')
                                                 ->where('is_active', 1)
                                                 ->latest()
                                                 ->first();
-            $permitted_date = Carbon::parse($permission->month_year);
-            $permitted_month = $permitted_date->month;
-            $permitted_year = $permitted_date->year;
-            $unit_info = (object) auth()->user()->org_unit_user;
 
-            $existing_data = WardBmIncome::where('unit_id',$unit_info->unit_id)
-                                        ->where('bm_category_id',request()->all()['category_id'])
+            $permitted_date = $permission && $permission->month_year ? Carbon::parse($permission->month_year) : null;
+            $permitted_month = $permitted_date ? $permitted_date->month : null;
+            $permitted_year = $permitted_date ? $permitted_date->year : null;
+
+            // $permitted_date = Carbon::parse($permission->month_year);
+            // $permitted_month = $permitted_date->month;
+            // $permitted_year = $permitted_date->year;
+            $ward_info = (object) auth()->user()->org_ward_user;
+
+            $existing_data = WardBmIncome::where('ward_id',$ward_info->ward_id)
+                                        ->where('ward_bm_income_category_id',request()->all()['ward_bm_income_category_id'])
                                         ->whereYear('month',$permitted_year)
                                         ->whereMonth('month',$permitted_month)
                                         ->first();
@@ -207,7 +212,7 @@ class WardBmIncomeController extends Controller
         {
             $validator = Validator::make(request()->all(), [
                 'amount' => ['required'],
-                'bm_category_id' => ['required'],
+                'ward_bm_income_category_id' => ['required'],
                 'month' => ['required', 'date'],
             ]);
 
@@ -218,7 +223,7 @@ class WardBmIncomeController extends Controller
                 ], 422);
             }
 
-            $permission  = ReportManagementControl::where('report_type', 'unit')
+            $permission  = ReportManagementControl::where('report_type', 'ward')
                                                 ->where('is_active', 1)
                                                 ->latest()
                                                 ->first();
@@ -244,42 +249,40 @@ class WardBmIncomeController extends Controller
                 ], 403);
             }
 
-            $unit_info = (object) auth()->user()->org_unit_user;
+            $ward_info = (object) auth()->user()->org_ward_user;
 
-            $already_have_data = WardBmIncome::where('unit_id',$unit_info->unit_id)
-                                        ->where('bm_category_id',request()->bm_category_id)
+            $already_have_data = WardBmIncome::where('ward_id',$ward_info->ward_id)
+                                        ->where('ward_bm_income_category_id',request()->ward_bm_income_category_id)
                                         ->whereYear('month',$permitted_year)
                                         ->whereMonth('month',$permitted_month)
                                         ->exists();
             if($already_have_data){
-                $data = WardBmIncome::where('unit_id',$unit_info->unit_id)
-                                ->where('user_id',$unit_info->user_id)
-                                ->where('ward_id',$unit_info->ward_id)
-                                ->where('thana_id',$unit_info->thana_id)
-                                ->where('city_id',$unit_info->city_id)
+                $data = WardBmIncome::where('user_id',$ward_info->user_id)
+                                ->where('ward_id',$ward_info->ward_id)
+                                ->where('thana_id',$ward_info->thana_id)
+                                ->where('city_id',$ward_info->city_id)
                                 ->whereYear('month',$permitted_year)
                                 ->whereMonth('month',$permitted_month)
-                                ->where('bm_category_id',request()->bm_category_id)
+                                ->where('ward_bm_income_category_id',request()->ward_bm_income_category_id)
                                 ->first();
 
                 $data->amount = request()->amount;
-                $data->creator =  $unit_info->user_id;
+                $data->creator =  $ward_info->user_id;
                 $data->save();
                 return response()->json($data, 200);
 
             }else{
 
                 $data = new WardBmIncome();
-                $data->user_id = $unit_info->user_id;
-                $data->unit_id = $unit_info->unit_id;
-                $data->ward_id = $unit_info->ward_id;
-                $data->thana_id = $unit_info->thana_id;
-                $data->city_id = $unit_info->city_id;
+                $data->user_id = $ward_info->user_id;
+                $data->ward_id = $ward_info->ward_id;
+                $data->thana_id = $ward_info->thana_id;
+                $data->city_id = $ward_info->city_id;
                 $data->amount = request()->amount;
                 $data->month = $permission->month_year;
-                $data->bm_category_id = request()->bm_category_id;
+                $data->ward_bm_income_category_id = request()->ward_bm_income_category_id;
 
-                $data->creator =  $unit_info->user_id;
+                $data->creator =  $ward_info->user_id;
                 $data->save();
 
                 return response()->json($data, 200);
@@ -298,7 +301,7 @@ class WardBmIncomeController extends Controller
 
             $validator = Validator::make(request()->all(), [
                 'amount' => ['required'],
-                'bm_category_id' => ['required'],
+                'ward_bm_income_category_id' => ['required'],
             ]);
 
             if ($validator->fails()) {
@@ -308,23 +311,39 @@ class WardBmIncomeController extends Controller
                 ], 422);
             }
 
-            $unit_info = (object) auth()->user()->org_unit_user;
+            $passed_date = Carbon::parse($data->month);
+            $passed_month = $passed_date->month;
+            $passed_year = $passed_date->year;
+            $permission = ReportManagementControl::where('report_type', 'ward')
+                                                ->where('is_active', 1)
+                                                ->latest()
+                                                ->first();
+            $permitted_date = $permission && $permission->month_year ? Carbon::parse($permission->month_year) : null;
+            $permitted_month = $permitted_date ? $permitted_date->month : null;
+            $permitted_year = $permitted_date ? $permitted_date->year : null;
 
-            $data->user_id = $unit_info->user_id;
-            $data->unit_id = $unit_info->unit_id;
-            $data->ward_id = $unit_info->ward_id;
-            $data->thana_id = $unit_info->thana_id;
-            $data->city_id = $unit_info->city_id;
-            $data->amount = request()->amount;
-            $data->bm_category_id = request()->bm_category_id;
+            if($passed_month == $permitted_month && $passed_year == $permitted_year){
+                $ward_info = (object) auth()->user()->org_ward_user;
 
-            $data->creator = auth()->id();
-            $data->save();
+                $data->user_id = $ward_info->user_id;
+                $data->ward_id = $ward_info->ward_id;
+                $data->thana_id = $ward_info->thana_id;
+                $data->city_id = $ward_info->city_id;
+                $data->amount = request()->amount;
+                $data->ward_bm_income_category_id = request()->ward_bm_income_category_id;
 
-            if (request()->hasFile('image')) {
-                //
+                $data->creator = auth()->id();
+                $data->save();
+
+                return response()->json($data, 200);
+
+            }else{
+                return response()->json([
+                    'err_message' => 'Permission denied',
+                    'errors' => [['You do not have the necessary permissions']],
+                ], 403);
             }
-            return response()->json($data, 200);
+
         }
 
         public function soft_delete()

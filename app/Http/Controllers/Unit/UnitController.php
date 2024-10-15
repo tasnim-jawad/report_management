@@ -84,6 +84,7 @@ class UnitController extends Controller
         }
 
         $report_info = ReportInfo::where('org_type_id', $unit_id)
+            ->where('org_type', 'unit')
             ->whereYear('month_year', $month->clone()->year)
             ->whereMonth('month_year', $month->clone()->month)
             ->get()

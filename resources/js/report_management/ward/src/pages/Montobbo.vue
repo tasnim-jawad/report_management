@@ -14,10 +14,10 @@
                 <form action="">
                     <div class="d-flex flex-wrap gap-2 mb-2 align-items-center">
                         <div class="form_label">
-                            <label for="">ইউনিট সভাপতির মন্তব্য :</label>
+                            <label for="">ওয়ার্ড সভাপতির মন্তব্য :</label>
                         </div>
                         <div class="form_input">
-                            <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`montobbo`)" id="montobboText" rows="10"></textarea>
+                            <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`ward-montobbo`)" id="montobboText" rows="10"></textarea>
                         </div>
                     </div>
                 </form>
@@ -82,7 +82,7 @@ export default {
             let els = document.querySelectorAll('textarea');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('montobbo');
+            this.get_data_by_api('ward-montobbo');
         }
     }
 

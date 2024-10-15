@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             Create Bm Expense
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'BmExpenseAll'}" class="text-dark">ব্যয়ের বিবরণ</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_expense">
@@ -20,7 +23,7 @@
                         <input type="text" :name="field.name" v-model="amount" class="form-control">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm mt-3">Create Category</button>
+                <button type="submit" class="btn btn-primary btn-sm mt-3">Create Expense</button>
             </form>
         </div>
     </div>
@@ -28,13 +31,15 @@
 
 <script>
 import axios from 'axios'
+import { store as data_store} from "../../../stores/ReportStore";
+import { mapWritableState } from 'pinia';
 export default {
     data(){
         return {
             fields1:[
                 {
                     label:"Title",
-                    name:"bm_expense_category_id",
+                    name:"ward_bm_expense_category_id",
                     field_type:"select",
                 },
                 {
@@ -50,11 +55,17 @@ export default {
     },
     created:function(){
         this.expense_category_list();
+        if (!this.month) {
+            this.$router.push({ name: "BmEntryAll" });
+        }
     },
     watch:{
         selected_ward_bm_expense_category_id:function(){
             this.existing_data();
         }
+    },
+    computed: {
+        ...mapWritableState(data_store, ['month']),
     },
     methods:{
         expense_category_list:function(){
@@ -62,7 +73,6 @@ export default {
                 .then(responce => {
                     if(responce.data.status == 'success'){
                         this.bm_expense_category = responce?.data?.data
-                        console.log('bm_expense_category',this.bm_expense_category);
                     }
 
                 })
@@ -83,6 +93,7 @@ export default {
             event.preventDefault();
             let e = event;
             let formData = new FormData(event.target);
+            formData.append('month', this.month);
             for (const entry of formData.entries()) {
                 console.log(entry);
             }

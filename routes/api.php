@@ -1074,6 +1074,11 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio4ElectionActivityController::class,'store_single']);
     });
 
+    Route::group(['prefix' => 'ward-montobbo'] , function(){
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Montobbo\WardMontobboController::class,'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Montobbo\WardMontobboController::class,'store_single']);
+    });
+
 
     Route::group(['prefix' => 'ward-bm-expense-category'] , function(){
         Route::get('/all', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseCategoryController::class,'all']);
@@ -1112,20 +1117,20 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeCategoryController::class,'bulk_import']);
     });
 
-    Route::group(['prefix' => 'bm-income'] , function(){
-        Route::get('/single-unit', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'single_unit']);
-        Route::get('/bm-paid-report/{user_id}/{ward_bm_income_category_id}', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'bm_income_report']);
-        Route::get('/bm-total/{month}', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'bm_income_total']);
-        Route::get('/existing-data', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'existing_data']);
+    Route::group(['prefix' => 'ward-bm-income'] , function(){
+        Route::get('/single-ward', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'single_ward']);
+        Route::get('/bm-income-report/{user_id}/{ward_bm_income_category_id}', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'bm_income_report']);
+        Route::get('/bm-total/{month}', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'bm_income_total']);
+        Route::get('/existing-data', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'existing_data']);
 
-        Route::get('/all', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'all']);
-        Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'store']);
-        Route::post('/update', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'destroy']);
-        Route::post('/restore', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Income\BmPaidController::class,'bulk_import']);
+        Route::get('/all', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'bulk_import']);
     });
 });
 

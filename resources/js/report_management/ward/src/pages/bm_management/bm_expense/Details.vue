@@ -2,9 +2,15 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             Bm Entry Info
-            <!-- <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'CreateUser'}" class="text-dark">Edit</router-link>
-            </div> -->
+            <div class="d-flex gap-2">
+                <div class="btn btn-warning btn-sm">
+                    <!-- <router-link :to="{name:'CreateUser'}" class="text-dark">Edit</router-link> -->
+                    <router-link :to="{name:'BmExpenseEdit',params: { expense_id: expense_info.id }}"  class="text-dark">Edit</router-link>
+                </div>
+                <div class="btn btn-info btn-sm">
+                    <router-link :to="{name:'BmExpenseAll'}" class="text-dark">ব্যয়ের বিবরণ</router-link>
+                </div>
+            </div>
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >
@@ -18,7 +24,7 @@
                     <tbody>
                         <tr>
                             <td>Title</td>
-                            <td>{{expense_info?.bm_expense_category?.title}}</td>
+                            <td>{{expense_info?.ward_bm_expense_category?.title}}</td>
                         </tr>
                         <tr>
                             <td>Amount</td>
@@ -46,11 +52,12 @@ export default {
     },
     methods:{
         show_expense : function(){
-            axios.get(`/bm-expense/show/${this.expense_id}`)
+            axios.get(`/ward-bm-expense/show/${this.expense_id}`)
                 .then(responce => {
                     if(responce.data.status == "success"){
                         this.expense_info = responce?.data?.data
                         console.log('expense---',this.expense_info );
+                        console.log('expense---',this.expense_info.id );
                     }
 
                 })

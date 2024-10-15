@@ -21,10 +21,10 @@
                         </select>
                     </div>
 
-                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'bm_category_id'">
+                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'ward_bm_income_category_id'">
                         <select type="text" :name="field.name" class="form-control text-center" v-model="selected_bm_category_id">
                             <option value="">-- select Category --</option>
-                            <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option>
+                            <option v-for="(ward_bm_category, i) in ward_bm_category.data" :key="i" :value="ward_bm_category['id']" >{{ward_bm_category["title"]}}</option>
 
                         </select>
                     </div>
@@ -44,6 +44,8 @@
 <script>
 import axios from 'axios'
 import { watch } from 'vue';
+import { store as data_store} from "../../../stores/ReportStore";
+import { mapWritableState } from 'pinia';
 export default {
     data(){
         return {
@@ -55,7 +57,7 @@ export default {
                 // },
                 {
                     label:"Title",
-                    name:"bm_category_id",
+                    name:"ward_bm_income_category_id",
                     field_type:"select",
                 },
                 // {
@@ -68,7 +70,7 @@ export default {
                     name:"amount",
                 },
             ],
-            bm_category:[],
+            ward_bm_category:[],
             unit_user_all:[],
             users_target:"",
             selected_user_id:"",
@@ -79,65 +81,72 @@ export default {
     },
     created:function(){
         this.bm_category_list();
-        this.unit_users_list();
+        // this.unit_users_list();
+        if (!this.month) {
+            this.$router.push({ name: "BmEntryAll" });
+        }
+
     },
 
     watch:{
-        selected_user_id:function(){
-            this.users_target = ""
-            this.user_target();
-        },
+        // selected_user_id:function(){
+        //     this.users_target = ""
+        //     this.user_target();
+        // },
         selected_bm_category_id:function(){
-            this.users_target = ""
-            this.user_target();
+            // this.users_target = ""
+            // this.user_target();
             this.existing_data();
 
 
         }
     },
+    computed: {
+        ...mapWritableState(data_store, ['month']),
+    },
 
     methods:{
         bm_category_list:function(){
-            axios.get('/bm-category/all')
+            axios.get('/ward-bm-category/all')
                 .then(responce => {
-                    this.bm_category = responce.data
+                    this.ward_bm_category = responce.data
                     // console.log(this.bm_category);
 
                 })
         },
-        unit_users_list:function(){
-            axios.get('/user/show_unit_user')
-                .then(responce =>{
-                    // console.log(responce);
-                    this.unit_user_all = responce.data
-                    // console.log('users' ,this.unit_user_all);
-                })
-        },
-        user_target:function(){
-            // console.log('target clicked');
-            // console.log(this.selected_user_id);
-            // console.log(this.selected_bm_category_id);
-            if(this.selected_user_id != "" && this.selected_bm_category_id != ""){
-                axios.get(`/bm-category-user/show_target/${this.selected_user_id}/${this.selected_bm_category_id}`)
-                    .then(response =>{
-                        if(response.data.status == 'success'){
-                            if (response?.data?.data?.amount) {
-                                this.users_target = response.data?.data?.amount + " Taka";
-                            }
+        // unit_users_list:function(){
+        //     axios.get('/user/show_unit_user')
+        //         .then(responce =>{
+        //             // console.log(responce);
+        //             this.unit_user_all = responce.data
+        //             // console.log('users' ,this.unit_user_all);
+        //         })
+        // },
+        // user_target:function(){
+        //     // console.log('target clicked');
+        //     // console.log(this.selected_user_id);
+        //     // console.log(this.selected_bm_category_id);
+        //     if(this.selected_user_id != "" && this.selected_bm_category_id != ""){
+        //         axios.get(`/bm-category-user/show_target/${this.selected_user_id}/${this.selected_bm_category_id}`)
+        //             .then(response =>{
+        //                 if(response.data.status == 'success'){
+        //                     if (response?.data?.data?.amount) {
+        //                         this.users_target = response.data?.data?.amount + " Taka";
+        //                     }
 
-                        }
-                        else if(response?.data?.err_message){
-                            // console.log(response.data.err_message);
-                            this.users_target = "Not set yet";
-                        }
-                    })
-            }
+        //                 }
+        //                 else if(response?.data?.err_message){
+        //                     // console.log(response.data.err_message);
+        //                     this.users_target = "Not set yet";
+        //                 }
+        //             })
+        //     }
 
-        },
+        // },
         existing_data :async function(){
-            let response = await  axios.get('/bm-paid/existing-data',{
+            let response = await  axios.get('/ward-bm-income/existing-data',{
                                 params: {
-                                    category_id: this.selected_bm_category_id,
+                                    ward_bm_income_category_id: this.selected_bm_category_id,
                                 }
                             });
 
@@ -150,13 +159,14 @@ export default {
             $event.preventDefault();
             let e = $event;
             let formData = new FormData($event.target);
+            formData.append('month', this.month);
             // for (const entry of formData.entries()) {
             //     console.log(entry);
             // }
-            axios.post('/bm-paid/store',formData)
+            axios.post('/ward-bm-income/store',formData)
                 .then(function (response) {
                     console.log(response.statusText);
-                    window.toaster('New BM entry Created successfuly', 'success');
+                    window.toaster('BM entry successfull', 'success');
                     e.target.reset();
 
                 })

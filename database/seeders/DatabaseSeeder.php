@@ -12,6 +12,8 @@ use Database\Seeders\Bm\Income\BmCategoryUsersTableSeeder;
 use Database\Seeders\Bm\Income\BmPaidsTableSeeder;
 use Database\Seeders\Bm\Ward\Expense\WardBmExpenseCategoriesTableSeeder;
 use Database\Seeders\Bm\Ward\Expense\WardBmExpensesTableSeeder;
+use Database\Seeders\Bm\Ward\Income\WardBmIncomeCategoriesTableSeeder;
+use Database\Seeders\Bm\Ward\Income\WardBmIncomesTableSeeder;
 use Database\Seeders\Organization\OrgAreasTableSeeder;
 use Database\Seeders\Organization\OrgCitiesTableSeeder;
 use Database\Seeders\Organization\OrgCityResponsiblesTableSeeder;
@@ -70,6 +72,7 @@ use Database\Seeders\Report\Ward\Department\WardDepartment5ParibarikDawatsTableS
 use Database\Seeders\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCentersTableSeeder;
 use Database\Seeders\Report\Ward\Department\WardDepartment7DawatInTechnologiesTableSeeder;
 use Database\Seeders\Report\Ward\Kormosuci\WardKormosuciBastobayonsTableSeeder;
+use Database\Seeders\Report\Ward\Montobbo\WardMontobbosTableSeeder;
 use Database\Seeders\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatsTableSeeder;
 use Database\Seeders\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonsTableSeeder;
 use Database\Seeders\Report\Ward\Rastrio\WardRastrio1PoliticalCommunicationsTableSeeder;
@@ -231,7 +234,10 @@ class DatabaseSeeder extends Seeder
             //WardBmExpense
             WardBmExpenseCategoriesTableSeeder::class,
             WardBmExpensesTableSeeder::class,
-            WardBmIncomeCategory::class,
+            WardBmIncomeCategoriesTableSeeder::class,
+            WardBmIncomesTableSeeder::class,
+            //WardMontobbo
+            WardMontobbosTableSeeder::class,
         ]);
     }
 }

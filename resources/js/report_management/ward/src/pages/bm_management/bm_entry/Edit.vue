@@ -14,10 +14,10 @@
                         <label for="">Title</label>
                     </div>
                     <div class="form_input">
-                        <select type="text" name="bm_category_id" class="form-control">
+                        <select type="text" name="ward_bm_income_category_id" class="form-control text-center" >
                             <option value="">-- select responsibility group --</option>
                             <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']"
-                            :selected="bm_category['id'] === entry_info.bm_category_id">{{bm_category["title"]}}</option>
+                            :selected="bm_category['id'] === entry_info.ward_bm_income_category_id">{{bm_category["title"]}}</option>
 
                         </select>
                     </div>
@@ -52,17 +52,19 @@ export default {
     },
     methods:{
         bm_category_list:function(){
-            axios.get('/bm-category/all')
+            axios.get('/ward-bm-category/all')
                 .then(responce => {
                     this.bm_category = responce.data
                     console.log(this.bm_category);
                 })
         },
         show_entry : function(){
-            axios.get(`/bm-paid/show/${this.entry_id}`)
+            axios.get(`/ward-bm-income/show/${this.entry_id}`)
                 .then(responce => {
                     if(responce.data.status == "success"){
                         this.entry_info = responce.data.data
+                        console.log("entry_info",this.entry_info);
+
                     }
                 })
         },
@@ -72,7 +74,7 @@ export default {
             for (const entry of formData.entries()) {
                 console.log(entry);
             }
-            axios.post(`/bm-paid/update`,formData)
+            axios.post(`/ward-bm-income/update`,formData)
                 .then(function (response) {
                     window.toaster('BM Entry Updated successfuly', 'success');
                 })

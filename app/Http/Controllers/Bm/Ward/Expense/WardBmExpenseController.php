@@ -133,7 +133,7 @@ class WardBmExpenseController extends Controller
             if (request()->has('select_all') && request()->select_all) {
                 $select = "*";
             }
-            $data = WardBmExpense::with('bm_expense_category')->where('id', $id)
+            $data = WardBmExpense::with('ward_bm_expense_category')->where('id', $id)
                 ->select($select)
                 ->first();
             if ($data) {
@@ -231,7 +231,7 @@ class WardBmExpenseController extends Controller
                     'errors' => [['You do not have the necessary permissions']],
                 ], 403);
             }
-
+            dd(auth()->user());
             $ward_info = (object) auth()->user()->org_ward_user;
 
             $already_have_data = WardBmExpense::where('ward_id',$ward_info->ward_id)
@@ -286,7 +286,7 @@ class WardBmExpenseController extends Controller
 
             $validator = Validator::make(request()->all(), [
                 'amount' => ['required'],
-                'bm_expense_category_id' => ['required'],
+                'ward_bm_expense_category_id' => ['required'],
             ]);
 
             if ($validator->fails()) {
@@ -296,17 +296,34 @@ class WardBmExpenseController extends Controller
                 ], 422);
             }
 
+            $passed_date = Carbon::parse($data->month);
+            $passed_month = $passed_date->month;
+            $passed_year = $passed_date->year;
+            $permission = ReportManagementControl::where('report_type', 'ward')
+                                                ->where('is_active', 1)
+                                                ->latest()
+                                                ->first();
+            $permitted_date = $permission && $permission->month_year ? Carbon::parse($permission->month_year) : null;
+            $permitted_month = $permitted_date ? $permitted_date->month : null;
+            $permitted_year = $permitted_date ? $permitted_date->year : null;
 
-            $data->amount = request()->amount;
-            $data->ward_bm_expense_category_id = request()->ward_bm_expense_category_id;
 
-            $data->creator = auth()->id();
-            $data->save();
+            if($passed_month == $permitted_month && $passed_year == $permitted_year){
+                $data->amount = request()->amount;
+                $data->ward_bm_expense_category_id = request()->ward_bm_expense_category_id;
 
-            if (request()->hasFile('image')) {
-                //
+                $data->creator = auth()->id();
+                $data->save();
+
+                return response()->json($data, 200);
+
+            }else{
+                return response()->json([
+                    'err_message' => 'Permission denied',
+                    'errors' => [['You do not have the necessary permissions']],
+                ], 403);
             }
-            return response()->json($data, 200);
+
         }
 
         public function soft_delete()

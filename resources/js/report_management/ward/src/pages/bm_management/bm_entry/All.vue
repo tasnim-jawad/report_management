@@ -12,7 +12,7 @@
     <div class="card" v-if="month">
         <div class="card-header d-flex justify-content-between align-items-center">
             আয়ের বিবরণ
-            <div class="btn btn-info btn-sm">
+            <div class="btn btn-info btn-sm" v-if="is_permitted">
                 <router-link :to="{name:'BmEntryCreate'}" class="text-dark">Create Entry</router-link>
             </div>
         </div>
@@ -31,7 +31,7 @@
                     <tbody>
                         <tr v-for="(entry,index) in bm_entry" :key="index">
                             <!-- <td>{{entry.user.full_name}}</td> -->
-                            <td>{{entry.bm_category.title}}</td>
+                            <td>{{entry.ward_bm_income_category.title}}</td>
                             <td>{{ new Date(entry.month).toLocaleString('default', { month: 'long' }) +' ' + new Date(entry.month).getFullYear().toString().slice(-2)}}</td>
                             <td>{{entry.amount}}</td>
                             <td>
@@ -52,9 +52,9 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr v-if="total_paid > 0">
+                        <tr v-if="total_income > 0">
                             <td colspan="2" class="text-end">Total</td>
-                            <td>{{ total_paid }}</td>
+                            <td>{{ total_income }}</td>
                             <td></td>
                         </tr>
                     </tbody>
@@ -72,7 +72,7 @@ export default {
     data() {
         return {
             bm_entry:[],
-            total_paid:[],
+            total_income:[],
             is_permitted: false,
         }
     },
@@ -92,13 +92,13 @@ export default {
     },
     methods:{
         show_bm_entry :async function(){
-            let response = await  axios.get('/bm-paid/single-unit',{
+            let response = await  axios.get('/ward-bm-income/single-ward',{
                                 params: { month: this.month  }
                             });
 
             if(response.data.status == "success"){
                 this.bm_entry = response.data.data;
-                this.total_paid = response.data.total_paid;
+                this.total_income = response.data.total_income;
                 this.is_permitted = response.data.is_permitted;
             }
         },
@@ -113,7 +113,7 @@ export default {
         submit_delete_form : function(entry_id){
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_entry_form_'+entry_id));
-            axios.post("/bm-paid/destroy",formData)
+            axios.post("/ward-bm-income/destroy",formData)
                     .then(response => {
                         window.toaster('Entry delete successfuly', 'success');
                         this.show_bm_entry();

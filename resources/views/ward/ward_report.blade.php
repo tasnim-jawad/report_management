@@ -23,16 +23,16 @@
             </div>
             <div class="unit_info">
                 <div class="line d-flex flex-wrap ">
-                    <p class="w-75">মাস:</p>
-                    <p class="w-25">সন:</p>
+                    <p class="w-75">মাস: {{ date('F', strtotime($month)) }}</p>
+                    <p class="w-25">সন: {{ date('Y', strtotime($month)) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between ">
-                    <p>ওয়ার্ড নং ও নাম : </p>
+                    <p>ওয়ার্ড নং ও নাম : {{$ward_info['no']?? ""}} ও {{$ward_info['title']?? ""}}</p>
                     <p>পৌরসভা/ইউনিয়ন: </p>
-                    <p class="w-25">উপজেলা/থানা:</p>
+                    <p class="w-25">উপজেলা/থানা: {{$thana_info['title']?? ""}}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between ">
-                    <p>আমীর/সভাপতির নাম :</p>
+                    <p>আমীর/সভাপতির নাম : {{$precedent['full_name']?? ""}}</p>
                 </div>
             </div>
         </section>
@@ -1669,7 +1669,37 @@
             </div>
         </section>
 
+        <script>
+            function print_upload_page(event) {
+                event.preventDefault();
 
+                // Get the current URL query parameters
+                const queryParams = new URLSearchParams(window.location.search);
+
+                // Extract the user_id and month from the URL
+                const user_id = queryParams.get('user_id');
+                const month = queryParams.get('month');
+
+                if (user_id && month) {
+                    // Construct the new URL
+                    const redirectUrl = `/#/unit-report-upload/${month}/${user_id}`;
+
+                    // Redirect to the new URL
+                    window.location.href = redirectUrl;
+                } else {
+                    console.error("Required query parameters are missing in the current URL.");
+                }
+            }
+            // for  print report autometicly
+            window.addEventListener('load', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('print') === 'true') {
+                    setTimeout(() => {
+                        window.print();
+                    }, 200);
+                }
+            });
+        </script>
         {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </body>

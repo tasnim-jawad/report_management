@@ -186,6 +186,13 @@ php artisan make:model Bm/Ward/Expense/WardBmExpense -m
 php artisan make:controller Bm/Ward/Expense/WardBmExpenseController
 php artisan make:seeder Bm/Ward/Expense/WardBmExpensesTableSeeder
 
+//--------------------------\\
+//-------- Montobbo ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Ward/Montobbo/WardMontobbo -m
+php artisan make:controller Report/Ward/Montobbo/WardMontobboController
+php artisan make:seeder Report/Ward/Montobbo/WardMontobbosTableSeeder
 
 //--------------------------\\
 //-------- Bm Income ---------\\

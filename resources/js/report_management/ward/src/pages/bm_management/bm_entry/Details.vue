@@ -18,7 +18,7 @@
                     <tbody>
                         <tr>
                             <td>Title</td>
-                            <td>{{entry_info?.bm_category?.title}}</td>
+                            <td>{{entry_info?.ward_bm_income_category?.title}}</td>
                         </tr>
                         <tr>
                             <td>Amount</td>
@@ -46,7 +46,7 @@ export default {
     },
     methods:{
         show_entry : function(){
-            axios.get(`/bm-paid/show/${this.entry_id}`)
+            axios.get(`/ward-bm-income/show/${this.entry_id}`)
                 .then(responce => {
                     if(responce.data.status == "success"){
                         this.entry_info = responce.data?.data

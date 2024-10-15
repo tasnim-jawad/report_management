@@ -22,7 +22,7 @@ class WardBmExpensesTableSeeder extends Seeder
                         'ward_id' => $i,
                         'thana_id' => 1,
                         'city_id' => 1,
-                        'amount' => 10 * rand(1, 5),
+                        'amount' => 100 * rand(1, 5),
                         'date' => "2024-" . str_pad($j, 2, '0', STR_PAD_LEFT) . "-01",
                         'ward_bm_expense_category_id' => $k,
 
