@@ -28,7 +28,8 @@ import BmEntryRoutes from './BmEntryRoutes';
 import BmCategoryUserRoutes from './BmCategoryUserRoutes';
 import BmExpenseCategoryRoutes from './BmExpenseCategoryRoutes';
 import BmExpenseRoutes from './BmExpenseRoutes';
-// import BmCategory from '../pages/bm_management/bm_category/Layout.vue'
+import unit_routes from './unit_routes';
+import unit_jonoshokti_routes from './unit_jonoshokti_routes';
 // import BmCategoryAll from '../pages/bm_management/bm_category/All.vue'
 // import BmCategoryCreate from '../pages/bm_management/bm_category/Create.vue'
 // import BmCategoryDetails from '../pages/bm_management/bm_category/Details.vue'
@@ -166,6 +167,8 @@ const routes =
                 BmCategoryUserRoutes,
                 BmExpenseCategoryRoutes,
                 BmExpenseRoutes,
+                unit_routes,
+                unit_jonoshokti_routes,
             ]
         }
 

@@ -4,6 +4,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
+        "serve": "php artisan serve --host 0.0.0.0 --port 8002",
         "dbrefresh": "php artisan migrate:fresh && php artisan migrate --path=\"database/migrations/*\" && php artisan migrate --path=\"database/migrations/*/*\" && php artisan migrate --path=\"database/migrations/*/*/*\" --seed && php artisan passport:client --personal"
     },
     "devDependencies": {
@@ -15,6 +16,7 @@
         "sass": "^1.56.1",
         "vite": "^5.0",
         "vue": "^3.2.37"
+
     },
     "dependencies": {
         "moment": "^2.30.1",

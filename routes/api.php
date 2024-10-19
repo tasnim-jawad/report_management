@@ -25,10 +25,6 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::get('/user_info', [App\Http\Controllers\User\UserController::class,'user_info']);
         Route::get('/ward-user-info', [App\Http\Controllers\User\UserController::class,'ward_user_info']);
 
-        Route::get('/show_unit_user', [App\Http\Controllers\User\UserController::class,'show_unit_user']);
-        Route::post('/store_unit_user', [App\Http\Controllers\User\UserController::class,'store_unit_user']);
-        Route::post('/update_unit_user', [App\Http\Controllers\User\UserController::class,'update_unit_user']);
-
         Route::get('/all', [App\Http\Controllers\User\UserController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\User\UserController::class,'show']);
         Route::post('/store', [App\Http\Controllers\User\UserController::class,'store']);
@@ -38,6 +34,13 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/restore', [App\Http\Controllers\User\UserController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\User\UserController::class,'bulk_import']);
     });
+
+    Route::group(['prefix' => '/user'] , function(){
+        Route::get('/show_unit_user', [App\Http\Controllers\Unit\UnitUserController::class,'show_unit_user']);
+        Route::post('/store_unit_user', [App\Http\Controllers\Unit\UnitUserController::class,'store_unit_user']);
+        Route::post('/update_unit_user', [App\Http\Controllers\Unit\UnitUserController::class,'update_unit_user']);
+    });
+
 
     Route::group(['prefix' => 'user-role'] , function(){
         Route::get('/all', [App\Http\Controllers\User\UserRoleController::class,'all']);
@@ -843,6 +846,25 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     //**-----------------------------------------------------------**/
     //**-----------------------------------------------------------**/
 
+    Route::group(['prefix' => 'ward/unit'] , function(){
+        Route::get('/all', [App\Http\Controllers\Ward\WardUnitController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Ward\WardUnitController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Ward\WardUnitController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Ward\WardUnitController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Ward\WardUnitController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Ward\WardUnitController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Ward\WardUnitController::class,'restore']);
+    });
+
+    Route::group(['prefix' => 'ward/unit-jonoshokti'] , function(){
+        Route::get('/all', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'restore']);
+    });
 
     Route::group(['prefix' => 'ward-dawat1-regular-group-wise'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'get_data']);

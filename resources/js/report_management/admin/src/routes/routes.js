@@ -1,22 +1,20 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+// import { createRouter, createWebHashHistory } from 'vue-router'
 
-import App from '../MainLayout.vue'
+import MainLayout from '../MainLayout.vue'
 import Dashboard from '../components/Dashboard.vue'
 import Home from '../components/Home.vue'
 import Task from '../components/Task.vue'
 import UnitUserManagement from '../pages/UnitUserManagement.vue'
 import UnitList from '../pages/UnitList.vue'
 
+import unit_responsibility from './unit_responsibility'
 
 
-
-const routes = createRouter({
-    history: createWebHashHistory(),
-    routes: [
+const routes =
         {
 
-            path: '/',
-            // component: App,
+            path: '',
+            component: MainLayout,
             children:[
                 {
                     name: "Dashboard",
@@ -43,13 +41,11 @@ const routes = createRouter({
                     path: 'task',
                     component: Task,
                 },
+                unit_responsibility,
 
 
             ]
-        },
-
-    ]
-});
+        }
 
 
 export default routes;

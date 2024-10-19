@@ -725,7 +725,7 @@
 
                 if (user_id && month) {
                     // Construct the new URL
-                    const redirectUrl = `/#/unit-report-upload/${month}/${user_id}`;
+                    const redirectUrl = `/dashboard/unit#/unit-report-upload/${month}/${user_id}`;
 
                     // Redirect to the new URL
                     window.location.href = redirectUrl;

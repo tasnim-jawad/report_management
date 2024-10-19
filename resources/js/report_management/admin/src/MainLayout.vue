@@ -1,8 +1,9 @@
 <template>
-    <div class="report_app ">
-        <div class="report_app_left ">
+    <div id="report_app" class="report_app">
+        <div id="report_app_left" class="report_app_left">
+            <a href="" class="close_sidebar" @click.prevent="toggle_sidebar" ><i class="fa-solid fa-xmark"></i></a>
             <aside>
-                <nav class="side_nav">
+                <nav id="side_nav" class="side_nav">
                     <div class="logo">
                         <img src="https://cdn.freebiesupply.com/logos/large/2x/mi-1-logo-black-and-white.png" alt="">
                     </div>
@@ -19,7 +20,7 @@
                             <p class="m-0">Admin</p>
                         </div>
                     </div>
-                    <ul class="options">
+                    <ul class="options p-0">
                         <div class="block_title">Pages</div>
                         <li>
                             <router-link :to="{name:'Dashboard'}">
@@ -41,6 +42,11 @@
                                 <span class="icon_margin"><i class="fa-solid fa-list-check"></i></span>Unit List
                             </router-link>
                         </li>
+                        <li>
+                            <router-link :to="{name:'UnitResponsibilityAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-list-check"></i></span>Unit Responsibility
+                            </router-link>
+                        </li>
                         <!-- <li>
                             <router-link :to="{name:'Task'}">
                                 <span class="icon_margin"><i class="fa-solid fa-list-check"></i></span>tasks
@@ -53,7 +59,7 @@
         <div class="report_app_right ">
             <header class="report_app_right_top ">
                 <div class="left ">
-                    <a href=""><i class="fa-solid fa-bars"></i></a>
+                    <a href="#" @click.prevent="toggle_sidebar"><i class="fa-solid fa-bars"></i></a>
                 </div>
                 <div class="right ">
                     <a class="btn " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>
@@ -111,7 +117,21 @@
                     localStorage.removeItem('token');
                     document.getElementById('logout-form').submit();
                 }
+            },
+            toggle_sidebar:function(){
+                const width = window.innerWidth;
+                if(width >= 768){
+                    const report_app = document.getElementById("report_app");
+                    report_app.classList.toggle("sidebar_hide");
+
+                    const side_nav = document.getElementById("side_nav");
+                    side_nav.classList.toggle("side_nav_toggle");
+                }else if(width < 768){
+                    const report_app_left = document.getElementById("report_app_left");
+                    report_app_left.classList.toggle("report_app_left_toggle");
+                }
             }
+
         }
     }
 </script>

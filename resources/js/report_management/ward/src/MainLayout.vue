@@ -35,6 +35,16 @@
                                 <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>জনশক্তি
                             </router-link>
                         </li>
+                        <li>
+                            <router-link :to="{name:'UnitAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ইউনিট
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'UnitJonoshoktiAll'}">
+                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ইউনিট জনশক্তি
+                            </router-link>
+                        </li>
                         <!-- <li>
                             <router-link :to="{name:'ReportInfo'}">
                                 <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Monthly Report Info

@@ -33,6 +33,7 @@
 body{
     font-family: 'solaiman_lipi';
 }
+
 .icon_margin{
     margin-right: 12px;
 }
@@ -152,7 +153,6 @@ body{
     overflow: scroll;
     scrollbar-width: none;
 }
-
 .side_nav .options .block_title{
     color: var(--color4);
     font-size: 12px;

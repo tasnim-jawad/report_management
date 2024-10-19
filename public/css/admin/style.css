@@ -1,5 +1,4 @@
 
-
 :root {
     --dark: #222E3C;
     --color2: #F5F7FB;
@@ -10,6 +9,7 @@
     --white: white;
     --color7: #394190;
 }
+
 @keyframes dropdownAnimation {
     0% {
         opacity: 0;
@@ -21,9 +21,14 @@
         transform: translate(0)
     }
 }
+
 @font-face {
     font-family: 'solaiman_lipi';
     src: url('../../fonts/SolaimanLipi.ttf');
+}
+
+.eng{
+    font-family: sans-serif;
 }
 body{
     font-family: 'solaiman_lipi';
@@ -38,19 +43,46 @@ body{
     height: 100svh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 230px 1fr;
+    grid-template-columns: 1fr;
+    position: relative;
 }
+
 .report_app_left{
+    position: absolute;
+    z-index: 1;
     background-color: var(--dark);
+    width: 230px;
+    left: -230px;
+    opacity: 0;
+    transition: left .3s ease-in-out, opacity .3s ease-in-out;
+}
+.report_app_left_toggle{
+    left: 0px;
+    z-index: 1;
+    opacity: 1;
+}
+.close_sidebar{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 4px 0px;
+    border-radius: 50%;
+    background-color: rgb(130, 155, 177);
+    color: red;
+    font-size: 16px;
+    line-height: 16px;
+    width: 24px;
+    text-align: center;
 }
 .side_nav{
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: column; */
     height: 100vh;
     overflow: scroll;
     padding-bottom: 30px;
+    scrollbar-width: none;
+    opacity: 1;
+    transition: opacity .2s .3s ease-in-out;
 }
+
 .side_nav .logo{
     display: flex;
     justify-content: center;
@@ -118,6 +150,7 @@ body{
     grid-template-rows: 60px 1fr;
     background-color: var(--color2);
     overflow: scroll;
+    scrollbar-width: none;
 }
 
 .side_nav .options .block_title{
@@ -182,12 +215,12 @@ body{
     border-radius: 10px;
     padding: 10px;
 }
-.form_label{
+/* .form_label{
     width: 200px;
 }
 .form_input{
     flex: 1;
-}
+} */
 /* .dofa_heading{
     font-size: 18px;
     margin-bottom: 10px;
@@ -229,4 +262,59 @@ body{
 .label_width{
     width: 215px;
 }
+.card .card-header,
+.card .card-header h1{
+    font-family: 'solaiman_lipi';
+}
+table{
+    font-family: 'solaiman_lipi';
+}
 
+/* FormInput component desigen */
+.form_label{
+    width: 200px;
+    flex:2;
+}
+.form_label label{
+    font-size: 16px;
+    font-family: 'solaiman_lipi';
+}
+.form_input{
+    flex: 1;
+}
+.form_input input{
+    min-width: 70px;
+    padding: 5px 5px;
+    text-align: center;
+
+}
+
+
+/* FormInput component design */
+
+.height-fit-content{
+    height:fit-content;
+}
+
+.previous_next_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_width_95px{
+    width: 95px;
+}
+.scrollbar_width_none{
+    scrollbar-width: none;
+}
+
+.notes{
+    font-family: 'solaiman_lipi';
+    padding: 10px 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+
+}

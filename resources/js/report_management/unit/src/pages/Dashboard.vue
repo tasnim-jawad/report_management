@@ -15,7 +15,7 @@
                     <tbody>
                         <tr v-for="(unit_user,index) in user_details" :key="index">
                             <td>{{unit_user.full_name}}</td>
-                            <td>{{unit_user.org_unit_responsible[0].responsibility.title}}</td>
+                            <td>{{unit_user.org_unit_responsible[0].responsibility?.title}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -41,6 +41,8 @@ export default {
             axios.get(`/user/show_unit_user`)
                 .then(responce => {
                     this.user_details = responce.data
+                    console.log(responce.data);
+
                 })
         },
 

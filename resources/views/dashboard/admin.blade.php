@@ -11,8 +11,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <link rel="stylesheet" href="{{ asset('css/admin/default.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/responsive.css') }}">
 
     <script src="/js/sweat_alert.js"></script>
 
@@ -23,6 +23,7 @@
         rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
     @vite('resources/js/report_management/admin/main.js')
     <script>
         const Toast = Swal.mixin({
