@@ -22,13 +22,13 @@ const router = {
         },
         {
             name: "UnitJonoshoktiDetails",
-            path: 'details/:unit_user_id',
+            path: 'details/:user_id',
             component: UnitJonoshoktiDetails,
             props: true,
         },
         {
             name: "UnitJonoshoktiEdit",
-            path: 'edit/:unit_user_id',
+            path: 'edit/:user_id',
             component: UnitJonoshoktiEdit,
             props: true,
         },
