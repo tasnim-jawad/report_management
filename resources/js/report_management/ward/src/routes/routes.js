@@ -18,10 +18,10 @@ import BmTotalReport from '../pages/bm_management/BmTotalReport.vue'
 import PrintReport from '../pages/PrintReport.vue'
 import UploadReport from '../pages/UploadReport.vue'
 
-import Jonoshokti from '../pages/Jonoshokti.vue'
-import CreateUser from '../pages/user/CreateUser.vue'
-import ShowUser from '../pages/user/ShowUser.vue'
-import EditUser from '../pages/user/EditUser.vue'
+import Jonoshokti from '../pages/user/All.vue'
+import CreateUser from '../pages/user/Create.vue'
+import ShowUser from '../pages/user/Details.vue'
+import EditUser from '../pages/user/Edit.vue'
 
 import bmCategoryRoutes from './bmCategoryRoutes';
 import BmEntryRoutes from './BmEntryRoutes';
@@ -30,6 +30,7 @@ import BmExpenseCategoryRoutes from './BmExpenseCategoryRoutes';
 import BmExpenseRoutes from './BmExpenseRoutes';
 import unit_routes from './unit_routes';
 import unit_jonoshokti_routes from './unit_jonoshokti_routes';
+import ward_user_routes from './ward_user_routes';
 // import BmCategoryAll from '../pages/bm_management/bm_category/All.vue'
 // import BmCategoryCreate from '../pages/bm_management/bm_category/Create.vue'
 // import BmCategoryDetails from '../pages/bm_management/bm_category/Details.vue'
@@ -69,11 +70,6 @@ const routes =
                     path: 'dashboard',
                     component: Dashboard,
 
-                },
-                {
-                    name: "Jonoshokti",
-                    path: 'jonoshokti',
-                    component: Jonoshokti,
                 },
                 {
                     name:'Dawat',
@@ -125,23 +121,7 @@ const routes =
                     path: 'report-info',
                     component: ReportInfo,
                 },
-                {
-                    name: "CreateUser",
-                    path: 'create-user',
-                    component: CreateUser,
-                },
-                {
-                    name: "ShowUser",
-                    path: 'show-user/:user_id',
-                    component: ShowUser,
-                    props: true,
-                },
-                {
-                    name: "EditUser",
-                    path: 'edit-user/:user_id',
-                    component: EditUser,
-                    props: true,
-                },
+
                 {
                     name: "BmUserReport",
                     path: 'bm-user-report',
@@ -169,6 +149,7 @@ const routes =
                 BmExpenseRoutes,
                 unit_routes,
                 unit_jonoshokti_routes,
+                ward_user_routes,
             ]
         }
 

@@ -4,7 +4,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             জনশক্তি
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'CreateUser'}" class="text-dark">Create User</router-link>
+                <router-link :to="{name:'UserCreate'}" class="text-dark">Create User</router-link>
             </div>
         </div>
         <div class="card-body table-responsive">
@@ -13,32 +13,32 @@
                     <tr class="table-dark eng">
                         <th>srl#</th>
                         <th>Name</th>
-                        <th>Gender</th>
+                        <th>Responsibility</th>
                         <th>Telegram Name</th>
                         <th>Blood Group</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(user,index) in users" :key="index">
+                    <tr v-for="(user,index) in sortedUsers" :key="index">
                         <td>{{index + 1}}</td>
                         <td>{{user.full_name}}</td>
-                        <td>{{user.gender}}</td>
+                        <td>{{user.responsibility}}</td>
                         <td>{{user.telegram_name}}</td>
                         <td>{{user.blood_group}}</td>
                         <td>
                             <div class="action">
                                 <div class="btn btn-success btn-sm me-2">
-                                    <router-link :to="{name:'ShowUser',params: { user_id: user.id }}"  class="text-dark">show</router-link>
+                                    <router-link :to="{name:'UserDetails',params: { user_id: user.user_id }}"  class="text-dark">show</router-link>
                                 </div>
                                 <div class="btn btn-warning btn-sm me-2">
-                                    <router-link :to="{name:'EditUser',params: { user_id: user.id }}"  class="text-dark">Edit</router-link>
+                                    <router-link :to="{name:'UserEdit',params: { user_id: user.user_id }}"  class="text-dark">Edit</router-link>
                                 </div>
                                 <div class="btn btn-danger btn-sm">
-                                    <a @click="delete_user(user.id)" class="text-dark">Delete</a>
+                                    <a @click="delete_user(user.user_id)" class="text-dark">Delete</a>
 
-                                    <form :id="'delete_user_form_'+user.id" >
-                                        <input type="text" name="id" :value="user.id" class="d-none">
+                                    <form :id="'delete_user_form_'+user.user_id" >
+                                        <input type="text" name="id" :value="user.user_id" class="d-none">
                                     </form>
                                 </div>
                             </div>
@@ -55,16 +55,20 @@
 import axios from 'axios'
 export default {
     data:()=>({
-        users:{},
+        users:[],
     }),
     created:function(){
         this.show_users();
     },
     methods:{
         show_users : function(){
-            axios.get("/user/show_unit_user")
+            axios.get("ward/user/show")
                 .then(responce => {
+                    console.log(responce);
+
                     this.users = responce.data
+                    console.log("responce",this.users);
+
                 })
         },
         delete_user : function(user_id){
@@ -88,7 +92,22 @@ export default {
                     });
         }
 
-    }
+    },
+    computed: {
+        sortedUsers:function() {
+            if (this.users.length < 2) {
+                return this.users;
+            }
+            return this.users.slice().sort((a, b) => {
+                // Sort users by responsibility_id, with null/undefined at the end
+                return (a.responsibility_id === null || a.responsibility_id === undefined)
+                ? 1
+                : (b.responsibility_id === null || b.responsibility_id === undefined)
+                ? -1
+                : a.responsibility_id - b.responsibility_id;
+            });
+        }
+    },
 }
 </script>
 

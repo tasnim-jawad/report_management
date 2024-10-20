@@ -845,6 +845,11 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     //**--------------------------- Ward API ----------------------**/
     //**-----------------------------------------------------------**/
     //**-----------------------------------------------------------**/
+    Route::group(['prefix' => 'ward/user'] , function(){
+        Route::get('/show', [App\Http\Controllers\Ward\WardUserController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Ward\WardUserController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Ward\WardUserController::class,'update']);
+    });
 
     Route::group(['prefix' => 'ward/unit'] , function(){
         Route::get('/all', [App\Http\Controllers\Ward\WardUnitController::class,'all']);
@@ -857,6 +862,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'ward/unit-jonoshokti'] , function(){
+        Route::post('/set-responsibility', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'set_responsibility']);
+
         Route::get('/all', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'store']);

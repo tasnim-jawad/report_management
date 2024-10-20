@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Unit;
 use App\Http\Controllers\Controller;
 use App\Models\Organization\OrgUnitResponsible;
 use App\Models\Organization\OrgUnitUser;
+use App\Models\Organization\OrgWardUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;

@@ -31,7 +31,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{name:'Jonoshokti'}">
+                            <router-link :to="{name:'UserAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>জনশক্তি
                             </router-link>
                         </li>

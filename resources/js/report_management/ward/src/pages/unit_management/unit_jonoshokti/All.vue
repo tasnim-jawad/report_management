@@ -3,8 +3,9 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             জনশক্তি
+            <input v-model="searchQuery" type="text" placeholder="Search by user name" />
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'CreateUser'}" class="text-dark">Create User</router-link>
+                <router-link :to="{name:'UnitJonoshoktiCreate'}" class="text-dark">Create User</router-link>
             </div>
         </div>
         <div class="card-body table-responsive">
@@ -19,7 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(user,index) in users" :key="index">
+                    <tr v-for="(user,index) in filtered_users" :key="index">
                         <td>{{index + 1}}</td>
                         <td>{{user['user_name']}}</td>
                         <td>{{user['unit']}}</td>
@@ -32,6 +33,17 @@
                                 <!-- <div class="btn btn-warning btn-sm me-2">
                                     <router-link :to="{name:'EditUser',params: { user_id: user.id }}"  class="text-dark">Edit</router-link>
                                 </div> -->
+                                <div class="btn btn-info btn-sm me-2">
+                                    <router-link :to="{
+                                                    name:'UnitJonoshoktiResponsibility',
+                                                    params: {
+                                                            user_id: user.user_id ,
+                                                            unit_id: user.unit_id ,
+                                                            responsibility_id: user.responsibility_id || '',
+                                                        }
+                                                    }"
+                                                    class="text-dark">Responsibility</router-link>
+                                </div>
                                 <!-- <div class="btn btn-danger btn-sm">
                                     <a @click="delete_user(user.id)" class="text-dark">Delete</a>
 
@@ -54,6 +66,7 @@ import axios from 'axios'
 export default {
     data:()=>({
         users:{},
+        searchQuery: "",
     }),
     created:function(){
         this.show_users();
@@ -86,6 +99,16 @@ export default {
                     .catch(error => {
                         console.error(error);
                     });
+        }
+
+    },
+    computed: {
+        filtered_users() {
+            // Convert the object to an array if needed and filter by the search query
+            const users_array = Array.isArray(this.users) ? this.users : Object.values(this.users);
+            return users_array.filter(user =>
+                user.user_name.toLowerCase().includes(this.searchQuery.toLowerCase())
+            );
         }
 
     }
