@@ -28,7 +28,7 @@
                         <td>
                             <div class="action">
                                 <div class="btn btn-success btn-sm me-2">
-                                    <router-link :to="{name:'ShowUser',params: { user_id: user.user_id }}"  class="text-dark">show</router-link>
+                                    <router-link :to="{name:'UnitJonoshoktiDetails',params: { user_id: user.user_id }}"  class="text-dark">show</router-link>
                                 </div>
                                 <!-- <div class="btn btn-warning btn-sm me-2">
                                     <router-link :to="{name:'EditUser',params: { user_id: user.id }}"  class="text-dark">Edit</router-link>

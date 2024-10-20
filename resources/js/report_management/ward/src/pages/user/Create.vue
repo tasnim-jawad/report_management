@@ -9,14 +9,7 @@
                     <div class="form_label">
                         <label for="">{{field.label}}</label>
                     </div>
-                    <div class="form_input" v-if="field.field_type == 'select' && field.name == 'gender'">
-                        <select type="text" :name="field.name" class="form-control">
-                            <option value="">-- select gender --</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'blood_group'">
+                    <div class="form_input" v-if="field.field_type == 'select' && field.name == 'blood_group'">
                         <select type="text" :name="field.name" class="form-control">
                             <option value="">-- select blood group --</option>
                             <option value="O+">O+</option>
@@ -33,7 +26,6 @@
                         <select type="text" :name="field.name" class="form-control">
                             <option value="">-- select responsibility group --</option>
                             <option v-for="(responsibility, i) in responsibilities.data" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
-
                         </select>
                     </div>
                     <div class="form_input" v-else>
@@ -64,11 +56,6 @@ export default {
                 {
                     label:"Name",
                     name:"full_name",
-                },
-                {
-                    label:"Gender",
-                    field_type:"select",
-                    name:"gender",
                 },
                 {
                     label:"Telegram Name",
@@ -128,7 +115,6 @@ export default {
                     this.responsibilities = responce.data
                 })
         },
-
     }
 }
 </script>
