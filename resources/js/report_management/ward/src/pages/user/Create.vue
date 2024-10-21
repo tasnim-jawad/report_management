@@ -25,7 +25,7 @@
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'responsibility_id'">
                         <select type="text" :name="field.name" class="form-control">
                             <option value="">-- select responsibility group --</option>
-                            <option v-for="(responsibility, i) in responsibilities.data" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
+                            <option v-for="(responsibility, i) in responsibilities" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
                         </select>
                     </div>
                     <div class="form_input" v-else>
@@ -111,9 +111,14 @@ export default {
         },
         show_responsibility : function(){
             axios.get("/responsibility/all")
-                .then(responce => {
-                    this.responsibilities = responce.data
-                })
+                .then(response => {
+                    if (Array.isArray(response.data.data)) {
+                        this.responsibilities = response.data.data.slice(2);
+                    } else {
+                        console.error("Expected an array but got:", typeof response.data);
+                    }
+                }
+            )
         },
     }
 }

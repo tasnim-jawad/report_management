@@ -254,6 +254,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/bulk_import', [App\Http\Controllers\Organization\OrgThanaResponsibleController::class,'bulk_import']);
     });
     Route::group(['prefix' => 'org-ward-responsible'] , function(){
+        Route::get('/show-user/{id}', [App\Http\Controllers\Organization\OrgWardResponsibleController::class,'show_user']);
+
         Route::get('/all', [App\Http\Controllers\Organization\OrgWardResponsibleController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Organization\OrgWardResponsibleController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Organization\OrgWardResponsibleController::class,'store']);
