@@ -9,7 +9,7 @@
                 <h1 class="fw-semibold">বায়তুলমাল</h1>
             </div>
         </div>
-    <div class="card" v-if="month">
+    <div class="card mb-2" v-if="month">
         <div class="card-header d-flex justify-content-between align-items-center">
             আয়ের বিবরণ
             <div class="btn btn-info btn-sm">
@@ -62,13 +62,22 @@
             </div>
         </div>
     </div>
+    <previous-next
+            :prev-route="{ name: 'Rastrio' }"
+            :next-route="{ name: 'BmExpenseAll' }"
+            :month="month"
+        >
+    </previous-next>
 </template>
 
 <script>
 import axios from 'axios'
 import { store as data_store} from "../../../stores/ReportStore";
 import { mapWritableState } from 'pinia';
+import PreviousNext from '../../../components/PreviousNext.vue';
+
 export default {
+    components:{ PreviousNext },
     data() {
         return {
             bm_entry:[],

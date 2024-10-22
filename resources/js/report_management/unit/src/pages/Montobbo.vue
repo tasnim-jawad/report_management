@@ -12,20 +12,22 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <div class="d-flex flex-wrap gap-2 mb-2 align-items-center">
-                        <div class="form_label">
+                    <div class="d-flex flex-wrap flex-column gap-2 mb-2 align-items-center">
+                        <div class="form_label w-100">
                             <label for="">ইউনিট সভাপতির মন্তব্য :</label>
                         </div>
-                        <div class="form_input">
-                            <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`montobbo`)" id="montobboText" rows="10"></textarea>
+                        <div class="form_input w-100">
+                            <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`montobbo`)" id="montobboText" rows="5"></textarea>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+        <div class="joma_din">
+            
+        </div>
         <previous-next
-                :prev-route="{ name: 'Rastrio' }"
-                :next-route="{ name: 'BmEntryAll' }"
+                :prev-route="{ name: 'BmExpenseAll' }"
                 :month="month"
             >
         </previous-next>
@@ -48,7 +50,7 @@ export default {
             top: 0,
             behavior: 'smooth'
         });
-        
+
         if(this.month != null){
             this.get_monthly_data();
         }

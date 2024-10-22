@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import { store as data_store} from "../stores/ReportStore";
+import { mapActions, mapWritableState } from 'pinia';
 
 export default {
     props: ['user_id'],
@@ -36,7 +38,9 @@ export default {
     created:function(){
         this.show_users();
     },
+
     methods:{
+        ...mapActions( data_store,['set_month']),
         show_users : function(){
             axios.get(`/user/show_unit_user`)
                 .then(responce => {
@@ -46,7 +50,7 @@ export default {
                 })
         },
 
-    }
+    },
 }
 </script>
 

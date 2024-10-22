@@ -17,18 +17,6 @@
                 </div>
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
                     <div class="form_label">
-                        <label for="">Gender</label>
-                    </div>
-                    <div class="form_input" >
-                        <select type="text" name="gender" class="form-control">
-                            <option value="">-- select gender --</option>
-                            <option value="male" :selected="user_details.gender === 'male'">Male</option>
-                            <option value="female" :selected="user_details.gender === 'female'">Female</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
-                    <div class="form_label">
                         <label for="">Telegram Name</label>
                     </div>
                     <div class="form_input" >
@@ -71,12 +59,12 @@
                         </select>
                     </div>
                 </div>
-                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" v-if="user_responsibile.responsibility_id != 1 && user_responsibile.responsibility_id != 2">
                     <div class="form_label">
                         <label for="">Responsibility</label>
                     </div>
                     <div class="form_input">
-                        <select type="text" name="responsibility_id" class="form-control">
+                        <select type="text" name="responsibility_id" class="form-control" >
                             <option value="">-- select responsibility group --</option>
                             <option v-for="(responsibility, i) in responsibilities" :key="i"
                                     :value="responsibility['id']"
@@ -119,7 +107,7 @@ export default {
             console.log(event.target);
             let formData = new FormData(event.target);
             console.log(formData);
-            axios.post('/user/update_unit_user',formData)
+            axios.post('/ward/user/update',formData)
                 .then(function (response) {
                     console.log(response.statusText);
                     window.toaster('user updated successfuly', 'success');

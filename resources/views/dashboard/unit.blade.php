@@ -8,7 +8,7 @@
     <title>Unit Dashboard</title>
 
     @vite('resources/sass/app.scss')
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <link rel="stylesheet" href="{{ asset('css/unit/style.css') }}">
@@ -18,6 +18,10 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/unit/default.css') }}">
     <link rel="stylesheet" href="{{ asset('css/unit/unit_report_upload.css') }}"> --}}
     {{--------- report formate ---------}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" ></script>
+    <script>
+        window.modal = bootstrap.Modal;
+    </script>
 
     <script src="/js/sweat_alert.js"></script>
 
@@ -29,6 +33,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+
     @vite('resources/js/report_management/unit/main.js')
     <script>
         const Toast = Swal.mixin({

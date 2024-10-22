@@ -8,6 +8,9 @@ use App\Models\User;
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/modal', function () {
+    return view('modal');
+});
 
 Route::get('/login', function () {
     return view('auth.login');

@@ -19,7 +19,7 @@
         </div>
         <previous-next
                 :prev-route="{ name: 'Shomajsheba' }"
-                :next-route="{ name: 'Montobbo' }"
+                :next-route="{ name: 'BmEntryAll' }"
                 :month="month"
             >
         </previous-next>

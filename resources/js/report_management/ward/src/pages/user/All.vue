@@ -23,22 +23,22 @@
                     <tr v-for="(user,index) in sortedUsers" :key="index">
                         <td>{{index + 1}}</td>
                         <td>{{user.full_name}}</td>
-                        <td>{{user.responsibility}}</td>
+                        <td>{{user.org_ward_responsible?.responsibility?.title}}</td>
                         <td>{{user.telegram_name}}</td>
                         <td>{{user.blood_group}}</td>
                         <td>
                             <div class="action">
                                 <div class="btn btn-success btn-sm me-2">
-                                    <router-link :to="{name:'UserDetails',params: { user_id: user.user_id }}"  class="text-dark">show</router-link>
+                                    <router-link :to="{name:'UserDetails',params: { user_id: user.id }}"  class="text-dark">show</router-link>
                                 </div>
                                 <div class="btn btn-warning btn-sm me-2">
-                                    <router-link :to="{name:'UserEdit',params: { user_id: user.user_id }}"  class="text-dark">Edit</router-link>
+                                    <router-link :to="{name:'UserEdit',params: { user_id: user.id }}"  class="text-dark">Edit</router-link>
                                 </div>
                                 <div class="btn btn-danger btn-sm">
-                                    <a @click="delete_user(user.user_id)" class="text-dark">Delete</a>
+                                    <a @click="delete_user(user.id)" class="text-dark">Delete</a>
 
-                                    <form :id="'delete_user_form_'+user.user_id" >
-                                        <input type="text" name="id" :value="user.user_id" class="d-none">
+                                    <form :id="'delete_user_form_'+user.id" >
+                                        <input type="text" name="id" :value="user.id" class="d-none">
                                     </form>
                                 </div>
                             </div>
@@ -94,19 +94,32 @@ export default {
 
     },
     computed: {
-        sortedUsers:function() {
+        // sortedUsers:function() {
+        //     if (this.users.length < 2) {
+        //         return this.users;
+        //     }
+        //     return this.users.slice().sort((a, b) => {
+        //         // Sort users by responsibility_id, with null/undefined at the end
+        //         return (a.responsibility_id === null || a.responsibility_id === undefined)
+        //         ? 1
+        //         : (b.responsibility_id === null || b.responsibility_id === undefined)
+        //         ? -1
+        //         : a.responsibility_id - b.responsibility_id;
+        //     });
+        // }
+
+
+        sortedUsers:function(){
             if (this.users.length < 2) {
                 return this.users;
             }
-            return this.users.slice().sort((a, b) => {
-                // Sort users by responsibility_id, with null/undefined at the end
-                return (a.responsibility_id === null || a.responsibility_id === undefined)
-                ? 1
-                : (b.responsibility_id === null || b.responsibility_id === undefined)
-                ? -1
-                : a.responsibility_id - b.responsibility_id;
+            return this.users.sort((a, b) => {
+                const responsibilityA = a.org_ward_responsible?.responsibility_id ?? Infinity;
+                const responsibilityB = b.org_ward_responsible?.responsibility_id ?? Infinity;
+                return responsibilityA - responsibilityB;
             });
         }
+
     },
 }
 </script>

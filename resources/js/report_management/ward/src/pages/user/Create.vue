@@ -101,7 +101,7 @@ export default {
         create_user : function(event){
             event.preventDefault();
             let formData = new FormData(event.target);
-            axios.post('/user/store_unit_user',formData)
+            axios.post('/ward/user/store',formData)
                 .then(function (response) {
                     window.toaster('user create successfuly', 'success');
                 })
