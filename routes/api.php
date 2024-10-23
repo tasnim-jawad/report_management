@@ -865,6 +865,9 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/destroy', [App\Http\Controllers\Ward\WardUnitController::class,'destroy']);
         Route::post('/restore', [App\Http\Controllers\Ward\WardUnitController::class,'restore']);
     });
+    Route::group(['prefix' => 'ward/unit'] , function(){
+        Route::get('/report-status', [App\Http\Controllers\Ward\WardReportStatusController::class,'report_status']);
+    });
 
     Route::group(['prefix' => 'ward/unit-jonoshokti'] , function(){
         Route::post('/set-responsibility', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class,'set_responsibility']);
