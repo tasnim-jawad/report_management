@@ -5,9 +5,19 @@ export const store = defineStore(`custom_store`, {
         month: null,
         loading: true,
     }),
+    getters: {
+        $init: () => {
+            this.set_month(); // Call set_month when the store is initialized
+        }
+    },
     actions: {
-        async set_month(payload) {
+        set_month() {
+            const currentDate = new Date();
+            const currentMonth = currentDate.getMonth() + 1;
+            const currentYear = currentDate.getFullYear();
 
+            this.month = `${currentYear}-${currentMonth}`;
+            console.log(this.month); // Example: "2024-10"
         }
     }
 

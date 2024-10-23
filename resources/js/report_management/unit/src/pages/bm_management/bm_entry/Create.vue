@@ -44,6 +44,9 @@
 <script>
 import axios from 'axios'
 import { watch } from 'vue';
+import { store as data_store} from "../../../stores/ReportStore";
+import { mapWritableState } from 'pinia';
+
 export default {
     data(){
         return {
@@ -80,6 +83,10 @@ export default {
     created:function(){
         this.bm_category_list();
         this.unit_users_list();
+        
+        if (!this.month) {
+            this.$router.push({ name: "BmEntryAll" });
+        }
     },
 
     watch:{
@@ -94,6 +101,10 @@ export default {
 
 
         }
+    },
+
+    computed: {
+        ...mapWritableState(data_store, ['month']),
     },
 
     methods:{
@@ -150,6 +161,7 @@ export default {
             $event.preventDefault();
             let e = $event;
             let formData = new FormData($event.target);
+            formData.append('month', this.month);
             // for (const entry of formData.entries()) {
             //     console.log(entry);
             // }

@@ -23,8 +23,9 @@
                 </form>
             </div>
         </div>
-        <div class="joma_din">
-            
+        <div class="joma_din text-center mb-3">
+            <a href="" class="btn btn-success" v-if="joma_status == 'unsubmitted'" @click.prevent="report_joma">রিপোর্ট জমা দিন</a>
+            <a href="" class="btn btn-success" v-else-if="joma_status == 'rejected'" @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a>
         </div>
         <previous-next
                 :prev-route="{ name: 'BmExpenseAll' }"
@@ -35,6 +36,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import FormInput from '../components/FormInput.vue'
 import PreviousNext from '../components/PreviousNext.vue';
 import { store as data_store} from "../stores/ReportStore";
@@ -43,7 +45,7 @@ import { mapState, mapWritableState } from 'pinia';
 export default {
     components: { FormInput, PreviousNext },
     data: ()=>({
-        // month:null,
+        joma_status: null,
     }),
     created:function(){
         window.scrollTo({
@@ -54,6 +56,8 @@ export default {
         if(this.month != null){
             this.get_monthly_data();
         }
+
+        this.report_status();
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
@@ -89,8 +93,43 @@ export default {
             els = [...els].forEach(e => e.value = '');
 
             this.get_data_by_api('montobbo');
+        },
+
+        report_status:async function(){
+            let response = await axios.get('/unit/report-status', {
+                            params: {
+                                month: this.month
+                            }
+                        })
+            if(response.data.status == 'success'){
+                this.joma_status = response.data.report_status
+                console.log("report_status",response)
+
+            }
+        },
+        report_joma:async function(){
+            let response = await axios.get('/unit/report-joma', {
+                            params: {
+                                month: this.month
+                            }
+                        })
+            if(response.data.status == 'success'){
+                // this.$router.push({ name: "Montobbo" });
+                this.report_status()
+                window.toaster(response.data.message, 'success');
+                console.log();
+
+                this.joma_status = response.data.report_status
+                console.log("report_status",response)
+            }
+        }
+    },
+    watch:{
+        month:function(){
+            this.report_status();
         }
     }
+
 
 }
 </script>

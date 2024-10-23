@@ -119,6 +119,13 @@ ul li {
     font-family: 'solaiman_lipi';
     src: url('../../fonts/SolaimanLipi.ttf');
 }
+
+@media print {
+    .print_preview {
+        display: none;
+    }
+}
+
 body{
     font-family: 'solaiman_lipi';
     font-size: 15px;

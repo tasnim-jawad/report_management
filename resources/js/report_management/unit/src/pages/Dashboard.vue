@@ -1,4 +1,12 @@
 <template>
+    <div class="card mb-3">
+        <div class="card-header">
+            Report Status
+        </div>
+        <div class="card-body">
+            <h3 >{{ report_status_message }}</h3>
+        </div>
+    </div>
     <div class="card">
         <div class="card-header">
             All Unit User
@@ -33,10 +41,16 @@ export default {
     data() {
         return {
             user_details:[],
+            joma_status:null,
+            report_status_message:'',
         }
     },
     created:function(){
         this.show_users();
+        this.report_status();
+    },
+    computed: {
+        ...mapWritableState(data_store, ['month']),
     },
 
     methods:{
@@ -48,6 +62,19 @@ export default {
                     console.log(responce.data);
 
                 })
+        },
+        report_status:async function(){
+            let response = await axios.get('/unit/report-status', {
+                            params: {
+                                month: this.month
+                            }
+                        })
+            if(response.data.status == 'success'){
+                this.joma_status = response.data.report_status;
+                this.report_status_message = response.data.message;
+                console.log("report_status",response)
+
+            }
         },
 
     },

@@ -5,10 +5,10 @@
         </div>
     </div>
     <div class="card mb-3" v-if="month">
-            <div class="card-header">
-                <h1 class="fw-semibold">বায়তুলমাল</h1>
-            </div>
+        <div class="card-header">
+            <h1 class="fw-semibold">বায়তুলমাল</h1>
         </div>
+    </div>
     <div class="card" v-if="month">
         <div class="card-header d-flex justify-content-between align-items-center">
             আয়ের বিবরণ

@@ -28,6 +28,9 @@
 
 <script>
 import axios from 'axios'
+import { store as data_store} from "../../../stores/ReportStore";
+import { mapWritableState } from 'pinia';
+
 export default {
     data(){
         return {
@@ -50,11 +53,17 @@ export default {
     },
     created:function(){
         this.expense_category_list();
+        if (!this.month) {
+            this.$router.push({ name: "BmExpenseAll" });
+        }
     },
     watch:{
         selected_bm_expense_category_id:function(){
             this.existing_data();
         }
+    },
+    computed: {
+        ...mapWritableState(data_store, ['month']),
     },
     methods:{
         expense_category_list:function(){
@@ -83,6 +92,7 @@ export default {
             event.preventDefault();
             let e = event;
             let formData = new FormData(event.target);
+            formData.append('month', this.month);
             for (const entry of formData.entries()) {
                 console.log(entry);
             }

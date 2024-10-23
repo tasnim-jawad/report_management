@@ -18,6 +18,8 @@ return new class extends Migration
             $table->bigInteger('responsibility_id')->nullable();
             $table->string('responsibility_name',50)->nullable();
             $table->date('month_year')->nullable();
+            $table->enum('report_submit_status', ['unsubmitted','submitted'])->default('unsubmitted');
+            $table->enum('report_approved_status', ['pending','approved','rejected'])->default('pending');
             $table->string('report_type',50)->nullable();
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

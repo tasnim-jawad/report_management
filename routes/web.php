@@ -9,6 +9,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 Route::get('/modal', function () {
+    dd("ok");
     return view('modal');
 });
 

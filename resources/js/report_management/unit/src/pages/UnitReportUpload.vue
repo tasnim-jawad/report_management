@@ -908,6 +908,11 @@
                 <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input" rows="5" v-model="montobbo.montobbo"></textarea>
             </div>
         </section>
+        <div class="joma_din text-center mt-3 pb-5">
+            <!-- <a href="" class="btn btn-success" @click.prevent="report_joma">রিপোর্ট জমা দিন</a> -->
+            <a href="" class="btn btn-success" v-if="joma_status == 'unsubmitted'" @click.prevent="report_joma">রিপোর্ট জমা দিন</a>
+            <a href="" class="btn btn-success" v-else-if="joma_status == 'rejected'" @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a>
+        </div>
         <a href="" class="print_preview" @click.prevent="print_report()"><i class="fa-solid fa-print"></i></a>
     </div>
 </template>
@@ -919,6 +924,7 @@
         data() {
             return {
                 month: '',
+                joma_status: null,
                 org_type: {},
                 unit_info: {},
                 ward_info: {},
@@ -977,6 +983,7 @@
             this.expense_category()
             this.bm_category_wise()
             this.bm_expense_category_wise()
+            this.report_status()
 
         },
         watch:{
@@ -1206,6 +1213,36 @@
                     window.print(); // Trigger the print dialog
                 }, 200);
             },
+
+            report_status:async function(){
+                const month = this.$route.params.month;
+                let response = await axios.get('/unit/report-status', {
+                                params: {
+                                    month: month
+                                }
+                            })
+                if(response.data.status == 'success'){
+                    this.joma_status = response.data.report_status
+                    console.log("report_status",response)
+
+                }
+            },
+            report_joma:async function(){
+                const month = this.$route.params.month;
+                let response = await axios.get('/unit/report-joma', {
+                                params: {
+                                    month: month
+                                }
+                            })
+                if(response.data.status == 'success'){
+                    // this.$router.push({ name: "Montobbo" });
+                    this.report_status()
+                    window.toaster(response.data.message, 'success');
+
+                    this.joma_status = response.data.report_status
+                    console.log("report_status",response)
+                }
+            }
 
         },
         computed: {

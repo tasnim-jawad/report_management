@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Unit;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgUnit;
 use App\Models\Organization\OrgUnitResponsible;
 use App\Models\Organization\OrgUnitUser;
 use App\Models\Organization\OrgWardUser;
@@ -41,7 +42,7 @@ class UnitUserController extends Controller
         // dd(request()->all(),auth()->user(),auth()->user()->role);
         $validator = Validator::make(request()->all(), [
             'full_name' => ['required'],
-            'gender' => ['required','in:male,female'],
+            'gender' => ['sometimes','in:male,female'],
             'email' => ['required','unique:users'],
             // 'telegram_id' => ['numeric'],
             'password' => ['required'],
@@ -56,6 +57,8 @@ class UnitUserController extends Controller
 
         $auth_unit_all = OrgUnitUser::where('user_id', auth()->id())->first();
         $auth_user_unit = $auth_unit_all->unit_id;
+        $auth_unit = OrgUnit::where('id',$auth_user_unit)->first();
+        $gender = $auth_unit->org_gender;
         $auth_user_ward = $auth_unit_all->ward_id;
         $auth_user_thana = $auth_unit_all->thana_id;
         $auth_user_city = $auth_unit_all->city_id;
@@ -63,7 +66,7 @@ class UnitUserController extends Controller
         $user = new User();
         $user->role = auth()->user()->role;
         $user->full_name = request()->full_name;
-        $user->gender = request()->gender;
+        $user->gender = $gender;
         $user->telegram_name = request()->telegram_name;
         $user->telegram_id = request()->telegram_id;
         $user->email = request()->email;

@@ -10,6 +10,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
         {{-- <link rel="stylesheet" href="{{ asset('css/unit/default.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('css/unit/unit_report.css') }}">
+        <style>
+            @media print {
+                .print_preview {
+                    display: none;
+                }
+            }
+        </style>
 
     </head>
     <body>
@@ -709,7 +716,7 @@
         </section>
 
         <a href="javascript:void(0)" class="print_preview" onclick="print_upload_page(event)">
-            <i class="fa-solid fa-print"></i>
+            <i class="fa-solid fa-pen-to-square"></i>
         </a>
 
         <script>

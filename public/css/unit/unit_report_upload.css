@@ -118,6 +118,11 @@ ul li {
     font-family: 'solaiman_lipi';
     src: url('../../fonts/SolaimanLipi.ttf');
 }
+@media print {
+    .joma_din,.print_preview {
+        display: none; /* Hides the entire div during printing */
+    }
+}
 
 #report_uplode_body {
     font-family: 'solaiman_lipi';
