@@ -40,7 +40,6 @@ class Dawat1RegularGroupWiseController extends Controller
 
     public function store_single()
     {
-
         return common_store($this, Dawat1RegularGroupWise::class, $this->report_info);
     }
 

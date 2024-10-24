@@ -5,7 +5,7 @@
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >
-                <table class="table table-striped table-bordered text-start mb-3">
+                <table class="table table-striped table-bordered text-start mb-3" v-if="approved_unit.length">
                     <thead>
                         <tr class="table-dark">
                             <th class="w-50">Approved unit name </th>
@@ -19,7 +19,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-striped table-bordered text-start mb-3">
+                <table class="table table-striped table-bordered text-start mb-3" v-if="rejected_unit.length">
                     <thead>
                         <tr class="table-dark">
                             <th class="w-50">Rejected unit name </th>
@@ -33,7 +33,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-striped table-bordered text-start mb-3">
+                <table class="table table-striped table-bordered text-start mb-3" v-if="pending_unit.length">
                     <thead>
                         <tr class="table-dark">
                             <th class="w-50">Pending unit name </th>
@@ -43,11 +43,17 @@
                     <tbody>
                         <tr v-for="(unit,index) in pending_unit" :key="index">
                             <td>{{unit.unit_title}}</td>
-                            <td></td>
+                            <td>
+                                <div class="d-flex gap-2 justify-content-start align-items-center">
+                                    <a href="" class="btn btn-sm btn-info " @click.prevent="unit_report_view(unit.unit_id , report_month )">View</a>
+                                    <a href="" class="btn btn-sm btn-success " @click.prevent="set_unit_report_status(unit.unit_id , report_month ,'approved')">Approved</a>
+                                    <a href="" class="btn btn-sm btn-danger " @click.prevent="set_unit_report_status(unit.unit_id , report_month ,'rejected')">Reject</a>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-striped table-bordered text-start mb-3">
+                <table class="table table-striped table-bordered text-start mb-3" v-if="unsubmitted_unit.length">
                     <thead>
                         <tr class="table-dark">
                             <th class="w-50">Unsubmitted unit name </th>
@@ -67,6 +73,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import { store as data_store} from "../stores/ReportStore";
 import { mapActions, mapWritableState } from 'pinia';
 export default {
@@ -77,6 +84,7 @@ export default {
             pending_unit:[],
             rejected_unit:[],
             approved_unit:[],
+            report_month:[],
         }
     },
     created:function(){
@@ -100,6 +108,7 @@ export default {
                 this.pending_unit = response.data.pending_unit
                 this.rejected_unit = response.data.rejected_unit
                 this.approved_unit = response.data.approved_unit
+                this.report_month = response.data.report_month
                 console.log("report_status",response)
                 console.log({
                     '1': this.unsubmitted_unit,
@@ -111,6 +120,21 @@ export default {
 
             }
         },
+        unit_report_view:function(unit_id , report_month){
+            window.open(`/ward/unit/report-check?unit_id=${unit_id}&month=${report_month}`)
+        },
+        set_unit_report_status:function(unit_id , report_month, new_status){
+            // window.open(`/ward/unit/report-check?unit_id=${unit_id}&month=${report_month}`)
+            let response = axios.post('/ward/unit/change-status',{
+                        unit_id: unit_id,
+                        month: report_month,
+                        new_status: new_status
+                    }
+                );
+                console.log(response);
+
+
+        }
 
     }
 }

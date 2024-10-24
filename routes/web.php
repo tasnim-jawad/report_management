@@ -36,6 +36,8 @@ Route::group(['prefix' => 'ward', 'namespace' => '\App\Http\Controllers\Ward'], 
     Route::get('report', 'WardController@report');
     Route::get('report-upload', 'WardController@report_upload');
     Route::get('submitted-units-data-add', 'WardController@submitted_units_data_add');
+    //WardReportStatusController
+    Route::get('unit/report-check', 'WardReportStatusController@report_check');
 });
 
 Route::group(['prefix' => 'thana', 'namespace' => '\App\Http\Controllers\thana'], function () {

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\StatusChack;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -867,6 +868,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
     Route::group(['prefix' => 'ward/unit'] , function(){
         Route::get('/report-status', [App\Http\Controllers\Ward\WardReportStatusController::class,'report_status']);
+        Route::post('/change-status', [App\Http\Controllers\Ward\WardReportStatusController::class,'change_status']);
     });
 
     Route::group(['prefix' => 'ward/unit-jonoshokti'] , function(){
