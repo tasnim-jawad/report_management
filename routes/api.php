@@ -325,7 +325,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'dawat1-regular-group-wise'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class,'show']);

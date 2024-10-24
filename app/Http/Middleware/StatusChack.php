@@ -18,7 +18,6 @@ class StatusChack
      */
     public function handle(Request $request, Closure $next): Response
     {
-        dd($request->toArray());
         $unit_id = OrgUnitUser::where('user_id',auth()->id())->first()->unit_id;
         $carbon_month = Carbon::parse($request->month);
 
@@ -34,33 +33,25 @@ class StatusChack
 
         if($report_submit_status == 'unsubmitted'){
 
-            $unsubmitted_unit[] = [
-                'unit_id' => $unit->id,
-                'unit_title' => $unit->title,
-                'report_status' => "unsubmitted",
-            ];
+            return $next($request);
 
         }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'pending'){
-            $pending_unit[] = [
-                'unit_id' => $unit->id,
-                'unit_title' => $unit->title,
-                'report_status' => "pending",
-            ];
+
+            return response()->json([
+                'err_message' => 'Permission denied',
+                'errors' => [['You do not have the necessary permissions']],
+            ], 403);
 
         }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'rejected'){
-            $rejected_unit[] = [
-                'unit_id' => $unit->id,
-                'unit_title' => $unit->title,
-                'report_status' => "rejected",
-            ];
+
+            return $next($request);
 
         }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'approved'){
-            $approved_unit[] = [
-                'unit_id' => $unit->id,
-                'unit_title' => $unit->title,
-                'report_status' => "approved",
-            ];
+
+            return response()->json([
+                'err_message' => 'Permission denied',
+                'errors' => [['You do not have the necessary permissions']],
+            ], 403);
         }
-        return $next($request);
     }
 }
