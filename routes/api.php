@@ -339,7 +339,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'dawat2-personal-and-target'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat2PersonalAndTargetController::class,'show']);
@@ -353,7 +353,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'dawat3-general-program-and-others'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat3GeneralProgramAndOthersController::class,'show']);
@@ -367,7 +367,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'dawat4-gono-songjog-and-dawat-ovijan'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat4GonoSongjogAndDawatOvijanController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat4GonoSongjogAndDawatOvijanController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat4GonoSongjogAndDawatOvijanController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat4GonoSongjogAndDawatOvijanController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat4GonoSongjogAndDawatOvijanController::class,'show']);
@@ -389,7 +389,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'department1-talimul-quran'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Department\Department1TalimulQuranController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Department\Department1TalimulQuranController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Department\Department1TalimulQuranController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Department\Department1TalimulQuranController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Department\Department1TalimulQuranController::class,'show']);
@@ -425,7 +425,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'department4-different-job-holders-dawat'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Department\Department4DifferentJobHoldersDawatController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Department\Department4DifferentJobHoldersDawatController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Department\Department4DifferentJobHoldersDawatController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Department\Department4DifferentJobHoldersDawatController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Department\Department4DifferentJobHoldersDawatController::class,'show']);
@@ -439,7 +439,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'department5-paribarik-dawat'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Department\Department5ParibarikDawatController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Department\Department5ParibarikDawatController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Department\Department5ParibarikDawatController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Department\Department5ParibarikDawatController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Department\Department5ParibarikDawatController::class,'show']);
@@ -496,7 +496,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'dawah-and-prokashona'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\DawahAndProkashona\DawahAndProkashonaController::class,'show']);
@@ -512,7 +512,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'kormosuci-bastobayon'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Kormosuci\KormosuciBastobayonController::class,'show']);
@@ -539,7 +539,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'songothon1-jonosokti'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon1JonosoktiController::class,'show']);
@@ -553,7 +553,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'songothon2-associate-member'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon2AssociateMemberController::class,'show']);
@@ -589,7 +589,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'songothon5-dawat-and-paribarik-unit'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon5DawatAndParibarikUnitController::class,'show']);
@@ -614,7 +614,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'songothon7-sofor'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon7SoforController::class,'show']);
@@ -628,7 +628,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'songothon8-iyanot-data'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon8IyanotDataController::class,'show']);
@@ -642,7 +642,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'songothon9-sangothonik-boithok'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Songothon\Songothon9SangothonikBoithokController::class,'show']);
@@ -668,7 +668,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'proshikkhon1-tarbiat'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Proshikkhon\Proshikkhon1TarbiatController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Proshikkhon\Proshikkhon1TarbiatController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Proshikkhon\Proshikkhon1TarbiatController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Proshikkhon\Proshikkhon1TarbiatController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Proshikkhon\Proshikkhon1TarbiatController::class,'show']);
@@ -694,7 +694,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'shomajsheba1-personal-social-work'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba1PersonalSocialWorkController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba1PersonalSocialWorkController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba1PersonalSocialWorkController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba1PersonalSocialWorkController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba1PersonalSocialWorkController::class,'show']);
@@ -708,7 +708,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'shomajsheba2-unit-social-work'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba2UnitSocialWorkController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba2UnitSocialWorkController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba2UnitSocialWorkController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba2UnitSocialWorkController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Shomajsheba\Shomajsheba2UnitSocialWorkController::class,'show']);
@@ -730,7 +730,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'rastrio1-bishishto-bekti'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Rastrio\Rastrio1BishishtoBektiController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Rastrio\Rastrio1BishishtoBektiController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Rastrio\Rastrio1BishishtoBektiController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Rastrio\Rastrio1BishishtoBektiController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Rastrio\Rastrio1BishishtoBektiController::class,'show']);
@@ -813,17 +813,17 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
         Route::get('/all', [App\Http\Controllers\Bm\Income\BmPaidController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmPaidController::class,'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Income\BmPaidController::class,'store']);
-        Route::post('/update', [App\Http\Controllers\Bm\Income\BmPaidController::class,'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Income\BmPaidController::class,'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Income\BmPaidController::class,'destroy']);
+        Route::post('/store', [App\Http\Controllers\Bm\Income\BmPaidController::class,'store'])->middleware(StatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Income\BmPaidController::class,'update'])->middleware(StatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Income\BmPaidController::class,'soft_delete'])->middleware(StatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Income\BmPaidController::class,'destroy'])->middleware(StatusChack::class);
         Route::post('/restore', [App\Http\Controllers\Bm\Income\BmPaidController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\BmPaidController::class,'bulk_import']);
     });
 
     Route::group(['prefix' => 'montobbo'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'store_single'])->middleware(StatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Montobbo\MontobboController::class,'show']);
@@ -1137,10 +1137,10 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
         Route::get('/all', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'store']);
-        Route::post('/update', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'destroy']);
+        Route::post('/store', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'store'])->middleware(StatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'update'])->middleware(StatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'soft_delete'])->middleware(StatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'destroy'])->middleware(StatusChack::class);
         Route::post('/restore', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'bulk_import']);
     });
@@ -1170,6 +1170,16 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'destroy']);
         Route::post('/restore', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'bulk_import']);
+    });
+
+
+    Route::group(['prefix' => 'ward'] , function(){
+        Route::get('/uploaded-data', [App\Http\Controllers\Ward\WardController::class,'report_upload_api']);
+        Route::get('/bm-category-wise', [App\Http\Controllers\Ward\WardController::class,'bm_category_wise']);
+        Route::get('/expense-category-wise', [App\Http\Controllers\Ward\WardController::class,'expense_category_wise']);
+
+        Route::get('/report-status', [App\Http\Controllers\Ward\WardController::class,'report_status']);
+        Route::get('/report-joma', [App\Http\Controllers\Ward\WardController::class,'report_joma']);
     });
 });
 

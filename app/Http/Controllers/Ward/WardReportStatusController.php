@@ -88,6 +88,7 @@ class WardReportStatusController extends Controller
                     ];
 
                 }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'approved'){
+                    // dd($report_info);
                     $approved_unit[] = [
                         'unit_id' => $unit->id,
                         'unit_title' => $unit->title,
@@ -95,7 +96,7 @@ class WardReportStatusController extends Controller
                     ];
                 }
             }
-
+            // dd($approved_unit);
             return response()->json([
                 'status' => 'success',
                 "unsubmitted_unit" => $unsubmitted_unit,

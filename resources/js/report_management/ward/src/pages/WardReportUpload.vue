@@ -1,6 +1,6 @@
 <template>
     <div id="report_uplode_body">
-        <section id="heading" class="mt-3">
+        <!-- <section id="heading" class="mt-3">
             <div class="report_heading position-relative mb-1">
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
                 <h1 class="text-center mb-2 fs-4">ইউনিট সংগঠনের মাসিক রিপোর্ট</h1>
@@ -18,6 +18,30 @@
                 <div class="line d-flex flex-wrap justify-content-between">
                     <p>ইউনিট সভাপতির নাম: {{ precedent.full_name || '' }}</p>
                     <p class="width-30">ইউনিটের ধরন: {{ org_type.title || '' }}</p>
+                </div>
+            </div>
+        </section> -->
+        <section id="heading" class="mt-3">
+            <div class="report_heading position-relative mb-1">
+                <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
+                <h1 class="text-center fs-4">ওয়ার্ড সংগঠনের</h1>
+                <h1 class="text-center mb-2 fs-4">মাসিক/ত্রৈমাসিক/ষান্মাসিক/নয় মাসিক/বার্ষিক রিপোর্ট</h1>
+                <div class="org_gender position-absolute">
+                    <p>পুরুষ</p>
+                </div>
+            </div>
+            <div class="unit_info">
+                <div class="line d-flex flex-wrap ">
+                    <p class="w-75">মাস: {{ formatMonth(month) }}</p>
+                    <p class="w-25">সন: {{ formatYear(month) }}</p>
+                </div>
+                <div class="line d-flex flex-wrap justify-content-between ">
+                    <p>ওয়ার্ড নং ও নাম : {{ ward_info.no ?? "" }} ও {{ward_info.title ?? "" }}</p>
+                    <p>পৌরসভা/ইউনিয়ন: </p>
+                    <p class="w-25">উপজেলা/থানা: {{ thana_info.title ?? ""}}</p>
+                </div>
+                <div class="line d-flex flex-wrap justify-content-between ">
+                    <p>আমীর/সভাপতির নাম : {{ precedent.full_name ?? ""}}</p>
                 </div>
             </div>
         </section>
@@ -908,11 +932,6 @@
                 <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input" rows="5" v-model="montobbo.montobbo"></textarea>
             </div>
         </section>
-        <div class="joma_din text-center mt-3 pb-5">
-            <!-- <a href="" class="btn btn-success" @click.prevent="report_joma">রিপোর্ট জমা দিন</a> -->
-            <a href="" class="btn btn-success" v-if="joma_status == 'unsubmitted'" @click.prevent="report_joma">রিপোর্ট জমা দিন</a>
-            <a href="" class="btn btn-success" v-else-if="joma_status == 'rejected'" @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a>
-        </div>
         <a href="" class="print_preview" @click.prevent="print_report()"><i class="fa-solid fa-print"></i></a>
     </div>
 </template>
@@ -924,9 +943,7 @@
         data() {
             return {
                 month: '',
-                joma_status: null,
                 org_type: {},
-                unit_info: {},
                 ward_info: {},
                 thana_info: {},
                 precedent: {},
@@ -983,7 +1000,6 @@
             this.expense_category()
             this.bm_category_wise()
             this.bm_expense_category_wise()
-            this.report_status()
 
         },
         watch:{
@@ -1001,18 +1017,18 @@
                 const month = this.$route.params.month;
                 const user_id = this.$route.params.user_id;
 
-                let res = await axios.get('/unit/uploaded-data',{
+                let res = await axios.get('/ward/uploaded-data',{
                     params: {
                         month: month,
                         user_id: user_id
                     }
                 })
+                console.log(res.data);
 
                 if(res.data.status == 'success'){
 
                     this.month = res.data.month,
                     this.org_type = res.data.org_type,
-                    this.unit_info = res.data.unit_info,
                     this.ward_info = res.data.ward_info,
                     this.thana_info = res.data.thana_info,
                     this.precedent = res.data.precedent,
@@ -1022,20 +1038,33 @@
                     this.dawat3 = res.data.dawat3,
                     this.dawat4 = res.data.dawat4,
                     this.department1 = res.data.department1,
+                    this.department2 = res.data.department2,
+                    this.department3 = res.data.department3,
                     this.department4 = res.data.department4,
                     this.department5 = res.data.department5,
+                    this.department6 = res.data.department6,
+                    this.department7 = res.data.department7,
                     this.dawah_prokashona = res.data.dawah_prokashona,
                     this.kormosuci = res.data.kormosuci,
                     this.songothon1 = res.data.songothon1,
                     this.songothon2 = res.data.songothon2,
-                    this.songothon9 = res.data.songothon9,
+                    this.songothon3 = res.data.songothon3,
+                    this.songothon4 = res.data.songothon4,
                     this.songothon5 = res.data.songothon5,
+                    this.songothon6 = res.data.songothon6,
                     this.songothon7 = res.data.songothon7,
                     this.songothon8 = res.data.songothon8,
-                    this.proshikkhon = res.data.proshikkhon,
+                    this.songothon9 = res.data.songothon9,
+                    this.proshikkhon1 = res.data.proshikkhon1,
+                    this.proshikkhon2 = res.data.proshikkhon2,
                     this.shomajsheba1 = res.data.shomajsheba1,
                     this.shomajsheba2 = res.data.shomajsheba2,
-                    this.rastrio = res.data.rastrio,
+                    this.shomajsheba3 = res.data.shomajsheba3,
+                    this.shomajsheba4 = res.data.shomajsheba4,
+                    this.rastrio1 = res.data.rastrio1,
+                    this.rastrio2 = res.data.rastrio2,
+                    this.rastrio3 = res.data.rastrio3,
+                    this.rastrio4 = res.data.rastrio4,
                     this.montobbo = res.data.montobbo,
 
                     this.income_category_wise = res.data.income_category_wise,
@@ -1112,14 +1141,14 @@
                     });
             },
             expense_category:async function(){
-                let res = await axios.get('/bm-expense-category/all')
+                let res = await axios.get('/ward-bm-expense-category/all')
                 if(res.data.status == 'success'){
                         this.bm_expense_categories = res?.data?.data?.data
                     }
 
             },
             income_category:async function(){
-                let res = await axios.get('/bm-category/all')
+                let res = await axios.get('/ward-bm-category/all')
                 if(res){
                     this.bm_categories = res.data?.data
                 }
@@ -1157,8 +1186,6 @@
                 if(this.bm_cat_wise != null){
                     const element = this.bm_cat_wise.find(element => element.bm_category.id == bm_cat_id);
                     if (element) {
-                        console.log("amount",element.amount);
-
                         return element.amount;
                     }
                 }else{
@@ -1215,36 +1242,6 @@
                     window.print(); // Trigger the print dialog
                 }, 200);
             },
-
-            report_status:async function(){
-                const month = this.$route.params.month;
-                let response = await axios.get('/unit/report-status', {
-                                params: {
-                                    month: month
-                                }
-                            })
-                if(response.data.status == 'success'){
-                    this.joma_status = response.data.report_status
-                    console.log("report_status",response)
-
-                }
-            },
-            report_joma:async function(){
-                const month = this.$route.params.month;
-                let response = await axios.get('/unit/report-joma', {
-                                params: {
-                                    month: month
-                                }
-                            })
-                if(response.data.status == 'success'){
-                    // this.$router.push({ name: "Montobbo" });
-                    this.report_status()
-                    window.toaster(response.data.message, 'success');
-
-                    this.joma_status = response.data.report_status
-                    console.log("report_status",response)
-                }
-            }
 
         },
         computed: {

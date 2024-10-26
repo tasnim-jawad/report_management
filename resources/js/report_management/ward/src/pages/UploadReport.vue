@@ -31,10 +31,11 @@ export default {
     },
     methods:{
         upload_report: function(){
+            console.log(this.month, this.user_id);
 
             if (this.month && this.user_id) {
                 this.$router.push({
-                    name: 'UnitReportUpload',
+                    name: 'WardReportUpload',
                     params: {
                         month: this.month,
                         user_id: this.user_id
@@ -46,7 +47,7 @@ export default {
 
         },
         user_info:function(){
-            axios.get("/user/user_info")
+            axios.get("/user/ward-user-info")
                 .then(responce =>{
                     this.user_id = responce?.data?.user?.id;
                 })

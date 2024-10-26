@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('amount')->nullable();
             $table->date('date')->nullable();
             $table->bigInteger('bm_expense_category_id')->nullable();
+            $table->enum('report_submit_status', ['unsubmitted','submitted'])->default('unsubmitted');
+            $table->enum('report_approved_status', ['pending','approved','rejected'])->default('pending');
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

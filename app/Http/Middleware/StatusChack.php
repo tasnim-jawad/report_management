@@ -39,7 +39,8 @@ class StatusChack
 
             return response()->json([
                 'err_message' => 'Permission denied',
-                'errors' => [['You do not have the necessary permissions']],
+                // 'errors' => [['You do not have the necessary permissions']],
+                'errors' => [['মুরব্বী মুরব্বী উমহু হু হু হু']],
             ], 403);
 
         }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'rejected'){
@@ -50,7 +51,8 @@ class StatusChack
 
             return response()->json([
                 'err_message' => 'Permission denied',
-                'errors' => [['You do not have the necessary permissions']],
+                // 'errors' => [['You do not have the necessary permissions']],
+                'errors' => [['মুরব্বী মুরব্বী উমহু হু হু হু']],
             ], 403);
         }
     }

@@ -132,6 +132,8 @@ export default {
                     }
                 );
                 console.log(response);
+                this.report_status()
+
 
 
         }

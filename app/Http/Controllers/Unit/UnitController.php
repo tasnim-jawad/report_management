@@ -560,7 +560,7 @@ class UnitController extends Controller
         $query = BmPaid::query();
         $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_info->unit_id);
         $data = $filter->with('bm_category')->get();
-
+        
         return response()->json([
             'status' => 'success',
             'data' => $data,

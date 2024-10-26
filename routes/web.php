@@ -34,10 +34,10 @@ Route::group(['prefix' => 'unit', 'namespace' => '\App\Http\Controllers\Unit'], 
 
 Route::group(['prefix' => 'ward', 'namespace' => '\App\Http\Controllers\Ward'], function () {
     Route::get('report', 'WardController@report');
-    Route::get('report-upload', 'WardController@report_upload');
+    // Route::get('report-upload', 'WardController@report_upload');
     Route::get('submitted-units-data-add', 'WardController@submitted_units_data_add');
     //WardReportStatusController
-    Route::get('unit/report-check', 'WardReportStatusController@report_check');
+    Route::get('unit/report-check', 'WardReportStatusController@report_check');  //for see unit report from ward dashboard
 });
 
 Route::group(['prefix' => 'thana', 'namespace' => '\App\Http\Controllers\thana'], function () {
