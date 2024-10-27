@@ -363,7 +363,7 @@
                                         {{"  "}}
                                     @endif
                                      /
-                                     @if($kormosuci && isset($kormosuci->iftar_mahfil_samostic_uposthiti) && isset($kormosuci->iftar_mahfil_samostic_total) && $kormosuci->iftar_mahfil_samostic_total != 0)
+                                    @if($kormosuci && isset($kormosuci->iftar_mahfil_samostic_uposthiti) && isset($kormosuci->iftar_mahfil_samostic_total) && $kormosuci->iftar_mahfil_samostic_total != 0)
                                         {{bangla(round($kormosuci->iftar_mahfil_samostic_uposthiti / $kormosuci->iftar_mahfil_samostic_total))}}
                                     @else
                                         {{"  "}}

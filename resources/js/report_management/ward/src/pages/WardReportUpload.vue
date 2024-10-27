@@ -896,7 +896,7 @@
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        <tr v-for="(bm_cat,index) in bm_categories" :key="index">
+                                        <tr v-for="(bm_cat,index) in bm_income_categories" :key="index">
                                             <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.title }}</td>
                                             <td class="border_left_bottom">
                                                 <input name="bm_entry" :value="formatBangla(bm_categoty_amount(bm_cat.id))" @change="income_store(bm_cat.id,$event.target.value)" type="text" class="bg-input w-100 text-center">
@@ -976,7 +976,7 @@
                 total_expense: null,
 
                 bm_expense_categories: null,
-                bm_categories: null,
+                bm_income_categories: null,
 
                 bm_cat_wise: null,
                 expense_cat_wise: null,
@@ -1148,9 +1148,9 @@
 
             },
             income_category:async function(){
-                let res = await axios.get('/ward-bm-category/all')
+                let res = await axios.get('/ward-bm-income-category/all')
                 if(res){
-                    this.bm_categories = res.data?.data
+                    this.bm_income_categories = res.data?.data
                 }
 
             },
@@ -1173,7 +1173,7 @@
             bm_category_wise:async function(){
                 const month = this.$route.params.month;
 
-                let res = await axios.get('/unit/bm-category-wise',{
+                let res = await axios.get('/ward/income-category-wise',{
                     params: {
                         month: month
                     }
@@ -1196,7 +1196,7 @@
             bm_expense_category_wise:async function(){
                 const month = this.$route.params.month;
 
-                let res = await axios.get('/unit/expense-category-wise',{
+                let res = await axios.get('/ward/expense-category-wise',{
                     params: {
                         month: month
                     }

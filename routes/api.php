@@ -766,10 +766,10 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
         Route::get('/all', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'store']);
-        Route::post('/update', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'destroy']);
+        Route::post('/store', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'store'])->middleware(StatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'update'])->middleware(StatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'soft_delete'])->middleware(StatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'destroy'])->middleware(StatusChack::class);
         Route::post('/restore', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Expense\BmExpenseController::class,'bulk_import']);
     });
@@ -1137,15 +1137,15 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
         Route::get('/all', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'store'])->middleware(StatusChack::class);
-        Route::post('/update', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'update'])->middleware(StatusChack::class);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'soft_delete'])->middleware(StatusChack::class);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'destroy'])->middleware(StatusChack::class);
+        Route::post('/store', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'destroy']);
         Route::post('/restore', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'bulk_import']);
     });
 
-    Route::group(['prefix' => 'ward-bm-category'] , function(){
+    Route::group(['prefix' => 'ward-bm-income-category'] , function(){
         Route::get('/all', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeCategoryController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeCategoryController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeCategoryController::class,'store']);
@@ -1175,7 +1175,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward'] , function(){
         Route::get('/uploaded-data', [App\Http\Controllers\Ward\WardController::class,'report_upload_api']);
-        Route::get('/bm-category-wise', [App\Http\Controllers\Ward\WardController::class,'bm_category_wise']);
+        Route::get('/income-category-wise', [App\Http\Controllers\Ward\WardController::class,'income_category_wise']);
         Route::get('/expense-category-wise', [App\Http\Controllers\Ward\WardController::class,'expense_category_wise']);
 
         Route::get('/report-status', [App\Http\Controllers\Ward\WardController::class,'report_status']);

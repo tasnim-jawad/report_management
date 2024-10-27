@@ -131,5 +131,14 @@ function ward_common_store($bind, $class, $report_info)
     ], 403);
 }
 
+function calculate_average($total , $uposthiti)
+{
+    dd($total, $uposthiti);
+    if ($total != 0) {
+        return round($uposthiti / $total);
+    }
+    return " "; // Or any default value you'd like to return
+}
+
 
 

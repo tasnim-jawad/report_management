@@ -114,7 +114,7 @@ class WardController extends Controller
             ->where('org_type','ward')
             ->whereYear('month_year', $month->clone()->year)
             ->whereMonth('month_year', $month->clone()->month)
-            ->get()
+            ->where('status' , 1)
             ->first();
 
         if ($report_info) {
@@ -124,6 +124,147 @@ class WardController extends Controller
         }
 
         // ---------------------  reports all data to show  ---------------------------
+        $dawat1 = WardDawat1RegularGroupWise::where('report_info_id', $report_info_id)->first();
+        $dawat2 = WardDawat2PersonalAndTarget::where('report_info_id', $report_info_id)->first();
+        $dawat3 = WardDawat3GeneralProgramAndOthers::where('report_info_id', $report_info_id)->first();
+        $dawat4 = WardDawat4GonoSongjogAndDawatOvijan::where('report_info_id', $report_info_id)->first();
+        $department1 = WardDepartment1TalimulQuran::where('report_info_id', $report_info_id)->first();
+        $department2 = WardDepartment2MohollaVittikDawat::where('report_info_id', $report_info_id)->first();
+        $department3 = WardDepartment3JuboSomajDawat::where('report_info_id', $report_info_id)->first();
+        $department4 = WardDepartment4DifferentJobHoldersDawat::where('report_info_id', $report_info_id)->first();
+        $department5 = WardDepartment5ParibarikDawat::where('report_info_id', $report_info_id)->first();
+        $department6 = WardDepartment6MosjidDawahInfomationCenter::where('report_info_id', $report_info_id)->first();
+        $department7 = WardDepartment7DawatInTechnology::where('report_info_id', $report_info_id)->first();
+        $dawah_prokashona = WardDawahAndProkashona::where('report_info_id', $report_info_id)->first();
+        $kormosuci = WardKormosuciBastobayon::where('report_info_id', $report_info_id)->first();
+        $songothon1 = WardSongothon1Jonosokti::where('report_info_id', $report_info_id)->first();
+        $songothon2 = WardSongothon2AssociateMember::where('report_info_id', $report_info_id)->first();
+        $songothon3 = WardSongothon3DepartmentalInformation::where('report_info_id', $report_info_id)->first();
+        $songothon4 = WardSongothon4UnitSongothon::where('report_info_id', $report_info_id)->first();
+        $songothon5 = WardSongothon5DawatAndParibarikUnit::where('report_info_id', $report_info_id)->first();
+        $songothon6 = WardSongothon6BidayiStudentsConnect::where('report_info_id', $report_info_id)->first();
+        $songothon7 = WardSongothon7Sofor::where('report_info_id', $report_info_id)->first();
+        $songothon8 = WardSongothon8IyanotData::where('report_info_id', $report_info_id)->first();
+        $songothon9 = WardSongothon9SangothonikBoithok::where('report_info_id', $report_info_id)->first();
+        $proshikkhon1 = WardProshikkhon1Tarbiat::where('report_info_id', $report_info_id)->first();
+        $proshikkhon2 = WardProshikkhon2ManobShompodUnnoyon::where('report_info_id', $report_info_id)->first();
+        $shomajsheba1 = WardShomajsheba1PersonalSocialWork::where('report_info_id', $report_info_id)->first();
+        $shomajsheba2 = WardShomajsheba2GroupSocialWork::where('report_info_id', $report_info_id)->first();
+        $shomajsheba3 = WardShomajsheba3HealthAndFamilyKollan::where('report_info_id', $report_info_id)->first();
+        $shomajsheba4= WardShomajsheba4InstitutionalSocialWork::where('report_info_id', $report_info_id)->first();
+        $rastrio1 = WardRastrio1PoliticalCommunication::where('report_info_id', $report_info_id)->first();
+        $rastrio2 = WardRastrio2KormoshuchiBastobayon::where('report_info_id', $report_info_id)->first();
+        $rastrio3 = WardRastrio3DiboshPalon::where('report_info_id', $report_info_id)->first();
+        $rastrio4 = WardRastrio4ElectionActivity::where('report_info_id', $report_info_id)->first();
+        $montobbo = WardMontobbo::where('report_info_id', $report_info_id)->first();
+        // ---------------------  reports all data to show  ---------------------------
+
+        // -------------------------- bm income report ------------------------------------
+        $query = WardBmIncome::query();
+        $filter = $query->whereYear('month', $month->clone()->year)
+                        ->whereMonth('month', $month->clone()->month)
+                        ->where('ward_id', $ward_id);
+        $total_income = $filter->sum('amount');
+
+        $category_all_id = WardBmIncomeCategory::pluck('id');
+        $income_category_wise = [];
+
+        foreach ($category_all_id as $index => $item) {
+            $testQuery = WardBmIncome::query();
+            $totalAmount = $testQuery->whereYear('month', $month->clone()->year)
+                ->whereMonth('month', $month->clone()->month)
+                ->where('ward_bm_income_category_id', $item)
+                ->where('ward_id', $ward_id)
+                ->sum('amount');
+            $WardBmIncomeCategory = WardBmIncomeCategory::find($item);
+            $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+            $income_category_wise[$index]['category'] = $WardBmIncomeCategory->title;
+        }
+
+        // -------------------------- bm income report ------------------------------------
+
+        // -------------------------- bm expense report ------------------------------------
+        $query = WardBmExpense::query();
+        $filter = $query->whereYear('date', $month->clone()->year)
+                        ->whereMonth('date', $month->clone()->month)
+                        ->where('ward_id', $ward_id);
+        $total_expense = $filter->sum('amount');
+
+        $category_ids = WardBmExpenseCategory::pluck('id');
+        $expense_category_wise = [];
+
+        foreach ($category_ids as $index => $item) {
+            $testQuery = WardBmExpense::query();
+            $totalAmount = $testQuery->whereYear('date', $month->clone()->year)
+                ->whereMonth('date', $month->clone()->month)
+                ->where('ward_bm_expense_category_id', $item)
+                ->where('ward_id', $ward_id)
+                ->sum('amount');
+            $WardBmExpenseCategory = WardBmExpenseCategory::find($item);
+            $expense_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+            $expense_category_wise[$index]['category'] = $WardBmExpenseCategory->title;
+        }
+        // -------------------------- bm expense report ------------------------------------
+        // -------------------------- bm previous report ------------------------------------
+        $query = WardBmIncome::query();
+        $filter = $query->whereDate('month','<=',$month->clone()->subMonth())
+                        ->where('ward_id', $ward_id);
+        $total_previous_income = $filter->sum('amount');
+        // dd($total_previous_income);
+
+        $query = WardBmExpense::query();
+        $filter = $query->whereDate('date','<=',$month->clone()->subMonth())
+                        ->where('ward_id', $ward_id);
+        $total_previous_expense = $filter->sum('amount');
+        $total_previous =  $total_previous_income - $total_previous_expense;
+        $total_current_income =  $total_previous + $total_income;
+        $in_total =  $total_current_income - $total_expense;
+        // dd($total_previous_income,$total_previous_expense,$total_previous);
+        // -------------------------- bm previous report ------------------------------------
+
+
+        // dd(
+        //     'dawat1',$dawat1,
+        //     'dawat2',$dawat2,
+        //     'dawat3',$dawat3,
+        //     'dawat4',$dawat4,
+        //     'department1',$department1,
+        //     'department2',$department2,
+        //     'department3',$department3,
+        //     'department4',$department4,
+        //     'department5',$department5,
+        //     'department6',$department6,
+        //     'department7',$department7,
+        //     'dawah_prokashona',$dawah_prokashona,
+        //     'kormosuci',$kormosuci,
+        //     'songothon1',$songothon1,
+        //     'songothon2',$songothon2,
+        //     'songothon3',$songothon3,
+        //     'songothon4',$songothon4,
+        //     'songothon5',$songothon5,
+        //     'songothon6',$songothon6,
+        //     'songothon7',$songothon7,
+        //     'songothon8',$songothon8,
+        //     'songothon9',$songothon9,
+        //     'proshikkhon1',$proshikkhon1,
+        //     'proshikkhon2',$proshikkhon2,
+        //     'shomajsheba1',$shomajsheba1,
+        //     'shomajsheba2',$shomajsheba2,
+        //     'shomajsheba3',$shomajsheba3,
+        //     'shomajsheba4',$shomajsheba4,
+        //     'rastrio1',$rastrio1,
+        //     'rastrio2',$rastrio2,
+        //     'rastrio3',$rastrio3,
+        //     'rastrio4',$rastrio4,
+        //     'montobbo',$montobbo,
+
+        //     'income_category_wise',$income_category_wise,
+        //     'total_income',$total_income,
+
+        //     'expense_category_wise',$expense_category_wise,
+        //     'total_expense',$total_expense,
+        // );
+
         return view('ward.ward_report')->with([
             'month' => $month,
             'org_type' => $org_type,
@@ -131,32 +272,49 @@ class WardController extends Controller
             'thana_info' => $thana_info,
             'precedent' => $precedent,
 
-            // 'dawat1' => $dawat1,
-            // 'dawat2' => $dawat2,
-            // 'dawat3' => $dawat3,
-            // 'dawat4' => $dawat4,
-            // 'department1' => $department1,
-            // 'department4' => $department4,
-            // 'department5' => $department5,
-            // 'dawah_prokashona' => $dawah_prokashona,
-            // 'kormosuci' => $kormosuci,
-            // 'songothon1' => $songothon1,
-            // 'songothon2' => $songothon2,
-            // 'songothon9' => $songothon9,
-            // 'songothon5' => $songothon5,
-            // 'songothon7' => $songothon7,
-            // 'songothon8' => $songothon8,
-            // 'proshikkhon' => $proshikkhon,
-            // 'shomajsheba1' => $shomajsheba1,
-            // 'shomajsheba2' => $shomajsheba2,
-            // 'rastrio' => $rastrio,
-            // 'montobbo' => $montobbo,
+            'dawat1' => $dawat1,
+            'dawat2' => $dawat2,
+            'dawat3' => $dawat3,
+            'dawat4' => $dawat4,
+            'department1' => $department1,
+            'department2' => $department2,
+            'department3' => $department3,
+            'department4' => $department4,
+            'department5' => $department5,
+            'department6' => $department6,
+            'department7' => $department7,
+            'dawah_prokashona' => $dawah_prokashona,
+            'kormosuci' => $kormosuci,
+            'songothon1' => $songothon1,
+            'songothon2' => $songothon2,
+            'songothon3' => $songothon3,
+            'songothon4' => $songothon4,
+            'songothon5' => $songothon5,
+            'songothon6' => $songothon6,
+            'songothon7' => $songothon7,
+            'songothon8' => $songothon8,
+            'songothon9' => $songothon9,
+            'proshikkhon1' => $proshikkhon1,
+            'proshikkhon2' => $proshikkhon2,
+            'shomajsheba1' => $shomajsheba1,
+            'shomajsheba2' => $shomajsheba2,
+            'shomajsheba3' => $shomajsheba3,
+            'shomajsheba4' => $shomajsheba4,
+            'rastrio1' => $rastrio1,
+            'rastrio2' => $rastrio2,
+            'rastrio3' => $rastrio3,
+            'rastrio4' => $rastrio4,
+            'montobbo' => $montobbo,
 
-            // 'income_category_wise' => $income_category_wise,
-            // 'total_income' => $total_income,
+            'income_category_wise' => $income_category_wise,
+            'total_income' => $total_income,
 
-            // 'expense_category_wise' => $expense_category_wise,
-            // 'total_expense' => $total_expense,
+            'expense_category_wise' => $expense_category_wise,
+            'total_expense' => $total_expense,
+
+            'total_previous' => $total_previous,
+            'total_current_income' => $total_current_income,
+            'in_total' => $in_total,
 
         ]);
     }
@@ -198,7 +356,6 @@ class WardController extends Controller
 
         if ($report_info) {
             $report_info_id = $report_info->id;
-            // dd($report_info_id );
         }else{
             return redirect()->back();
         }
@@ -959,7 +1116,53 @@ class WardController extends Controller
         ]);
     }
 
+    public function expense_category_wise(){
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
 
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $ward_info = (object) auth()->user()->org_ward_user;
+        $month = Carbon::parse(request()->month);
+
+        $query = WardBmExpense::query();
+        $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('ward_id', $ward_info->ward_id);
+        $data = $filter->with('ward_bm_expense_category')->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $data,
+        ], 200);
+    }
+
+    public function income_category_wise(){
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $ward_info = (object) auth()->user()->org_ward_user;
+        $month = Carbon::parse(request()->month);
+
+        $query = WardBmIncome::query();
+        $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('ward_id', $ward_info->ward_id);
+        $data = $filter->with('ward_bm_income_category')->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $data,
+        ], 200);
+    }
 
     // public function report_upload()
     // {

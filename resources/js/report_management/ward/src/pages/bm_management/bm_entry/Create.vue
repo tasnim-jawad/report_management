@@ -108,7 +108,7 @@ export default {
 
     methods:{
         bm_category_list:function(){
-            axios.get('/ward-bm-category/all')
+            axios.get('/ward-bm-income-category/all')
                 .then(responce => {
                     this.ward_bm_category = responce.data
                     // console.log(this.bm_category);
