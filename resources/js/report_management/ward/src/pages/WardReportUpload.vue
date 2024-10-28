@@ -49,59 +49,52 @@
         <section id="report">
             <div class="dawat mt-1">
                 <h1 class="font-18">দাওয়াত ও তাবলিগ :</h1>
-                <div class="jonoshadharon d-flex flex-wrap justify-content-between mb-2">
-                    <p class="fw-bold w-75">
-                        ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
+                <div class="jonoshadharon d-flex flex-wrap justify-content-between ">
+                    <p class="fw-bold w-75">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
                         <span>{{ total_dawat }}</span>
                     </p>
-                    <p class="fw-bold w-25">টার্গেট:</p>
+                    <p class="fw-bold w-25">মোট জনসংখ্যা:</p>
+                    <p class="fw-bold ps-3 w-100">টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক) :</p>
+                    <p class="ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান সংখ্যা যোগ করে এখানে বসাতে হবে ।</p>
                 </div>
-
-                <div class="group_dawat mb-2">
-                    <h4 class="fs-6">১. নিয়মিত গ্রুপভিত্তিক দাওয়াত :</h4>
-                    <table class="text-center">
+                <div class="group_dawat mb-1">
+                    <h4 class="fs-6 fw-bold">১. নিয়মিত গ্রুপভিত্তিক দাওয়াত :</h4>
+                    <table class="text-center  ">
                         <thead>
                             <tr>
-                                <th class="width-20">কতটি গ্রুপ বের হয়েছে</th>
-                                <th class="width-20">অংশগ্রহণকারীর সংখ্যা</th>
-                                <th>কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</th>
-                                <th>কতজন সহযোগী সদস্য হয়েছেন</th>
+                                <th >কতটি গ্রুপ বের হয়েছে</th>
+                                <th >অংশগ্রহণকারীর সংখ্যা </th>
+                                <th >কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</th>
+                                <th >কতজন সহযোগী সদস্য হয়েছেন</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>
-                                    <input name="how_many_groups_are_out" :value="formatBangla(dawat1.how_many_groups_are_out)" @change="data_upload('dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="how_many_groups_are_out" :value="formatBangla(dawat1.how_many_groups_are_out)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="number_of_participants" :value="formatBangla(dawat1.number_of_participants)" @change="data_upload('dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="number_of_participants" :value="formatBangla(dawat1.number_of_participants)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat1.how_many_have_been_invited)" @change="data_upload('dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat1.how_many_have_been_invited)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input
-                                        name="how_many_associate_members_created"
-                                        :value="formatBangla(dawat1.how_many_associate_members_created)"
-                                        @change="data_upload('dawat1-regular-group-wise')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <input name="how_many_associate_members_created" :value="formatBangla(dawat1.how_many_associate_members_created)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
-                <div class="personal_dawat mb-2">
-                    <h4 class="fs-6">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h4>
-                    <table class="text-center">
+                <div class="personal_dawat mb-1">
+                    <h4 class="fs-6 fw-bold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h4>
+                    <table class="text-center  ">
                         <thead>
                             <tr>
-                                <th>বিবরণ</th>
+                                <th >বিবরণ</th>
                                 <th class="width-15">সদস্য (রুকন)</th>
                                 <th class="width-15">কর্মী</th>
-                                <th>বিবরণ</th>
+                                <th >বিবরণ</th>
                                 <th class="width-15">সংখ্যা</th>
                             </tr>
                         </thead>
@@ -109,151 +102,133 @@
                             <tr>
                                 <td class="text-start px-2">মোট জনশক্তি সংখ্যা</td>
                                 <td>
-                                    <input name="total_rokon" :value="formatBangla(dawat2.total_rokon)" @change="data_upload('dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="total_rokon" :value="formatBangla(dawat2.total_rokon)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="total_worker" :value="formatBangla(dawat2.total_worker)" @change="data_upload('dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="total_worker" :value="formatBangla(dawat2.total_worker)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td class="text-start px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
                                 <td>
-                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat2.how_many_have_been_invited)" @change="data_upload('dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat2.how_many_have_been_invited)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন</td>
                                 <td>
-                                    <input name="how_many_were_give_dawat_rokon" :value="formatBangla(dawat2.how_many_were_give_dawat_rokon)" @change="data_upload('dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="how_many_were_give_dawat_rokon" :value="formatBangla(dawat2.how_many_were_give_dawat_rokon)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="how_many_were_give_dawat_worker" :value="formatBangla(dawat2.how_many_were_give_dawat_worker)" @change="data_upload('dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="how_many_were_give_dawat_worker" :value="formatBangla(dawat2.how_many_were_give_dawat_worker)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td class="text-start px-2">কতজন সহযোগী সদস্য হয়েছেন</td>
                                 <td>
-                                    <input
-                                        name="how_many_associate_members_created"
-                                        :value="formatBangla(dawat2.how_many_associate_members_created)"
-                                        @change="data_upload('dawat2-personal-and-target')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <input name="how_many_associate_members_created" :value="formatBangla(dawat2.how_many_associate_members_created)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
                 <div class="shadharon_shova mb-2">
-                    <h4 class="fs-6">৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত :</h4>
-                    <table class="text-center table_layout_fixed">
-                        <thead>
-                            <tr>
-                                <th>মোট কতজনকে দাওয়াত প্রদান করা হয়েছে</th>
-                                <th>মোট কতজন সহযোগী সদস্য হয়েছেন</th>
-                            </tr>
-                        </thead>
+                    <h4 class="fs-6 fw-bold">৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত :</h4>
+                    <table class="text-center  table_layout_fixed">
                         <tbody>
                             <tr>
+                                <td class="width-35">মোট কতজনকে দাওয়াত প্রদান করা হয়েছে</td>
                                 <td>
-                                    <input name="how_many_were_give_dawat" :value="formatBangla(dawat3.how_many_were_give_dawat)" @change="data_upload('dawat3-general-program-and-others')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="how_many_were_give_dawat" :value="formatBangla(dawat3.how_many_were_give_dawat)" @change="data_upload('ward-dawat3-general-program-and-others')" type="text" class="bg-input w-100 text-center" />
                                 </td>
+                                <td class="width-35">মোট কতজন সহযোগী সদস্য হয়েছেন</td>
                                 <td>
-                                    <input
-                                        name="how_many_associate_members_created"
-                                        :value="formatBangla(dawat3.how_many_associate_members_created)"
-                                        @change="data_upload('dawat3-general-program-and-others')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <input name="how_many_associate_members_created" :value="formatBangla(dawat3.how_many_associate_members_created)" @change="data_upload('ward-dawat3-general-program-and-others')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
                 <div class="gonoshongjog mb-2">
-                    <h4 class="fs-6">৪. গণসংযোগ ও দাওয়াতি অভিযান পালন*:</h4>
-                    <table class="text-center">
+                    <h4 class="fs-6 fw-bold">৪. গণসংযোগ ও দাওয়াতি অভিযান পালন*:</h4>
+                    <table class="text-center  ">
                         <thead>
                             <tr>
-                                <th class="width">বিবরণ</th>
-                                <th class="width-15">মোট গ্রুপ সংখ্যা</th>
+                                <th class="">বিবরণ</th>
+                                <th class="width-10 px-0">মোট গ্রুপ সংখ্যা</th>
                                 <th class="width-15">অংশগ্রহণকারীর সংখ্যা</th>
-                                <th class="width-20">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</th>
-                                <th class="width-15">কতজন সহযোগী সদস্য হয়েছেন</th>
+                                <th class="w-25 px-0">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</th>
+                                <th class="width-19 px-0">কতজন সহযোগী সদস্য হয়েছেন</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">গণসংযোগ দশক / পক্ষ</td>
+
                                 <td>
-                                    <input name="total_gono_songjog_group" :value="formatBangla(dawat4.total_gono_songjog_group ?? '')" @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="total_gono_songjog_group" :value="formatBangla(dawat4.total_gono_songjog_group)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="total_attended" :value="formatBangla(dawat4.total_attended ?? '')" @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="total_attended" :value="formatBangla(dawat4.total_attended)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat4.how_many_have_been_invited ?? '')" @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat4.how_many_have_been_invited)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input
-                                        name="how_many_associate_members_created"
-                                        :value="formatBangla(dawat4.how_many_associate_members_created ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <input name="how_many_associate_members_created" :value="formatBangla(dawat4.how_many_associate_members_created)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান</td>
                                 <td>
-                                    <input
-                                        name="jela_mohanogor_declared_gonosonjog_group"
-                                        :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_group ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <input name="jela_mohanogor_declared_gonosonjog_group" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_group)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input
-                                        name="jela_mohanogor_declared_gonosonjog_attended"
-                                        :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_attended ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <input name="jela_mohanogor_declared_gonosonjog_attended" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_attended)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input
-                                        name="jela_mohanogor_declared_gonosonjog_invited"
-                                        :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_invited ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <input name="jela_mohanogor_declared_gonosonjog_invited" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_invited)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input
-                                        name="jela_mohanogor_declared_gonosonjog_associated_created"
-                                        :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_associated_created ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <input name="jela_mohanogor_declared_gonosonjog_associated_created" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_associated_created)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">নির্বাচনী আসনে গণসংযোগ সপ্তাহ</td>
+                                <td>
+                                    <input name="election_gono_songjog_group" :value="formatBangla(dawat4.election_gono_songjog_group)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="election_attended" :value="formatBangla(dawat4.election_attended)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="election_how_many_have_been_invited" :value="formatBangla(dawat4.election_how_many_have_been_invited)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="election_how_many_associate_members_created" :value="formatBangla(dawat4.election_how_many_associate_members_created)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">অন্যান্য</td>
+                                <td>
+                                    <input name="other_gono_songjog_group" :value="formatBangla(dawat4.other_gono_songjog_group)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="other_attended" :value="formatBangla(dawat4.other_attended)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="other_how_many_have_been_invited" :value="formatBangla(dawat4.other_how_many_have_been_invited)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="other_how_many_associate_members_created" :value="formatBangla(dawat4.other_how_many_associate_members_created)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <p>* গণসংযোগ অভিযান পালনের সময় গ্রুপ সংখ্যা, ব্যক্তিগত ও গ্রুপভিত্তিক সহযোগী সদস্য বৃদ্ধি সংখ্যা শুধুমাত্র এই ছকেই বসাতে হবে।</p>
                 </div>
-
             </div>
-            <h1 class="font-18">খ) বিভাগ ভিত্তিক তথ্য :</h1>
+            <h1 class="font-18 fw-bold">খ) বিভাগ ভিত্তিক তথ্য :</h1>
             <div class="bivag">
                 <div class="talimul_quran mb-2">
-                    <h4 class="fs-6">১. তালিমুল কুরআনের মাধ্যমে দাওয়াত</h4>
-                    <table class="text-center mb-1">
+                    <h4 class="fs-6 fw-bold">১. তালিমুল কুরআনের মাধ্যমে দাওয়াত</h4>
+                    <table class="text-center  mb-2">
                         <thead>
                             <tr>
                                 <th class="width-40">ব্যক্তিগত উদ্যোগ</th>
@@ -265,620 +240,762 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">কতজন কুরআন শিক্ষা প্রদান করেছেন</td>
+                                <!-- <td >{{bangla($department1->teacher_rokon?? "")}}</td>
+                                <td >{{bangla($department1->teacher_worker?? "")}}</td> -->
                                 <td>
-                                    <input name="teacher_rokon" :value="formatBangla(department1.teacher_rokon ?? '')" @change="data_upload('department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="teacher_rokon" :value="formatBangla(department1.teacher_rokon)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="teacher_worker" :value="formatBangla(department1.teacher_worker ?? '')" @change="data_upload('department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="teacher_worker" :value="formatBangla(department1.teacher_worker)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
                                 </td>
-                                <td>{{ formatBangla((department1.teacher_rokon ?? 0) + (department1.teacher_worker ?? 0)) }}</td>
+
+                                <td>
+                                    {{ (department1.teacher_rokon ?? null) !== null || (department1.teacher_worker ?? null) !== null
+                                        ? formatBangla((department1.teacher_rokon ?? 0) + (department1.teacher_worker ?? 0))
+                                        : ""
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে</td>
                                 <td>
-                                    <input name="student_rokon" :value="formatBangla(department1.student_rokon ?? '')" @change="data_upload('department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="student_rokon" :value="formatBangla(department1.student_rokon)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="student_worker" :value="formatBangla(department1.student_worker ?? '')" @change="data_upload('department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    <input name="student_worker" :value="formatBangla(department1.student_worker)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
                                 </td>
-                                <td>{{ formatBangla((department1.student_rokon ?? 0) + (department1.student_worker ?? 0)) }}</td>
+                                <td>
+                                    {{ (department1.student_rokon ?? null) !== null || (department1.student_worker ?? null) !== null
+                                        ? formatBangla((department1.student_rokon ?? 0) + (department1.student_worker ?? 0))
+                                        : ""
+                                    }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="d-flex align-items-start gap-2">
+                        <table class="text-center  mb-1">
+                            <thead>
+                                <tr>
+                                    <th class="width-40">সামষ্টিক উদ্যোগ</th>
+                                    <th class="width-30">মোট সংখ্যা</th>
+                                    <th class="width-30 px-0">মোট শিক্ষার্থী সংখ্যা</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start px-2">কুরআন শিক্ষার গ্রুপ</td>
+                                    <td>
+                                        <input name="quran_learning_total_group" :value="formatBangla(department1.quran_learning_total_group)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td>
+                                        <input name="quran_learning_total_students" :value="formatBangla(department1.quran_learning_total_students)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">মক্তব/ফোরকানিয়া মাদ্রাসা</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <input name="total_moktob" :value="formatBangla(department1.total_moktob)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="total_forkania_madrasah" :value="formatBangla(department1.total_forkania_madrasah)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <input name="total_moktob_students" :value="formatBangla(department1.total_moktob_students)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="total_forkania_madrasah_students" :value="formatBangla(department1.total_forkania_madrasah_students)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="text-center  mb-1">
+                            <tbody>
+                                <tr>
+                                    <td class="text-start width-70 px-2">মোট কতজন সহীহ তিলাওয়াত শিখেছেন</td>
+                                    <td class="width-30">
+                                        <input name="how_much_learned_sohih_tilawat" :value="formatBangla(department1.how_much_learned_sohih_tilawat)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">মোট কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে (পু/ম)</td>
+                                    <td >
+                                        <div class="d-flex">
+                                            <input name="how_much_invited_man" :value="formatBangla(department1.how_much_invited_man)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="how_much_invited_woman" :value="formatBangla(department1.how_much_invited_woman)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">মোট কতজন সহযোগী সদস্য হয়েছেন (পু/ম)</td>
+                                    <td >
+                                        <div class="d-flex">
+                                            <input name="how_much_been_associated_man" :value="formatBangla(department1.how_much_been_associated_man)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="how_much_been_associated_woman" :value="formatBangla(department1.how_much_been_associated_woman)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <table class="text-center table_layout_fixed">
-                        <thead>
-                            <tr>
-                                <th class="">কতজন সহীহ তিলাওয়াত শিখেছেন</th>
-                                <th class="">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</th>
-                                <th class="">কতজন সহযোগী সদস্য হয়েছেন</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    <input name="how_much_learned_quran" :value="formatBangla(department1.how_much_learned_quran ?? '')" @change="data_upload('department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                <td class="width-35 text-start">তা'লিমুল কুরআন : মুয়াল্লিম সংখ্যা (পু./ম.)</td>
+                                <td >
+                                    <div class="d-flex">
+                                        <input name="total_muallim_man" :value="formatBangla(department1.total_muallim_man)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="total_muallim_woman" :value="formatBangla(department1.total_muallim_woman)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
-                                <td>
-                                    <input name="how_much_invited" :value="formatBangla(department1.how_much_invited ?? '')" @change="data_upload('department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
-                                </td>
-                                <td>
-                                    <input name="how_much_been_associated" :value="formatBangla(department1.how_much_been_associated ?? '')" @change="data_upload('department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                <td class="width-35 text-start">বৃদ্ধি সংখ্যা (পু./ম.) :</td>
+                                <td >
+                                    <div class="d-flex">
+                                        <input name="total_muallim_increased_man" :value="formatBangla(department1.total_muallim_increased_man)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="total_muallim_increased_woman" :value="formatBangla(department1.total_muallim_increased_woman)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <div class="moholla">
+                    <h4 class="fs-6 fw-bold">২. গ্রাম ও মহল্লাভিত্তিক দাওয়াত</h4>
+                    <div class="d-flex align-items-start gap-2">
+                        <table class="text-center  mb-1">
+                            <thead>
+                                <tr>
+                                    <th class="width-60 text-start">সরকারি হিসাবে গ্রাম/মহল্লা সংখ্যা</th>
+                                    <th class="width-20">
+                                        <div class="d-flex">
+                                            <input name="govment_calculated_village_amount" :value="formatBangla(department2.govment_calculated_village_amount)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="govment_calculated_moholla_amount" :value="formatBangla(department2.govment_calculated_moholla_amount)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </th>
+                                    <th class="width-20 ">বৃদ্ধি</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start px-2">গ্রাম/মহল্লা কমিটি সংখ্যা</td>
+                                    <td >
+                                        <div class="d-flex">
+                                            <input name="total_village_committee" :value="formatBangla(department2.total_village_committee)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="total_moholla_committee" :value="formatBangla(department2.total_moholla_committee)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </td>
+                                    <td >
+                                        <div class="d-flex">
+                                            <input name="total_village_committee_increased" :value="formatBangla(department2.total_village_committee_increased)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="total_moholla_committee_increased" :value="formatBangla(department2.total_moholla_committee_increased)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">বিশেষ দাওয়াতের অন্তর্ভুক্ত গ্রাম/মহল্লা* সংখ্যা</td>
+                                    <td >
+                                        <div class="d-flex">
+                                            <input name="special_dawat_included_village" :value="formatBangla(department2.special_dawat_included_village)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="special_dawat_included_moholla" :value="formatBangla(department2.special_dawat_included_moholla)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </td>
+                                    <td >
+                                        <div class="d-flex">
+                                            <input name="special_dawat_included_village_increased" :value="formatBangla(department2.special_dawat_included_village_increased)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />/
+                                            <input name="special_dawat_included_moholla_increased" :value="formatBangla(department2.special_dawat_included_moholla_increased)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="text-center  mb-1">
+                            <tbody>
+                                <tr>
+                                    <td class="text-start width-70 px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
+                                    <td class="width-30">
+                                        <input name="how_many_been_invited" :value="formatBangla(department2.how_many_been_invited)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">কতজন সহযোগী সদস্য হয়েছেন</td>
+                                    <td class="width-30">
+                                        <input name="how_many_associated_created" :value="formatBangla(department2.how_many_associated_created)" @change="data_upload('ward-department2-moholla-vittik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="font-12">* সেসব গ্রাম/মহল্লা বুঝাবে যেখানে ইউনিট/দাওয়াতি ইউনিট নেই।</p>
+                </div>
+                <div class="jubo mb-2">
+                    <h4 class="fs-6 fw-bold">৩. যুব বিভাগের মাধ্যমে দাওয়াত*:</h4>
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="left w-100">
+                            <table class="text-center mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="width-60">বিবরণ</th>
+                                        <th class="width-20">মোট সংখ্যা</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2">কতজন যুবকের মাঝে দাওয়াত পৌঁছানো হয়েছে</td>
+                                        <td >
+                                            <input name="how_many_young_been_invited" :value="formatBangla(department3.how_many_young_been_invited)" @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">কতজন যুবক সহযোগী সদস্য হয়েছেন</td>
+                                        <td >
+                                            <input name="how_many_young_been_associated" :value="formatBangla(department3.how_many_young_been_associated)" @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="font-11">* যুব বিভাগের কাজের ক্ষেত্রে ছাত্র সংগঠনের সাবেক জনশক্তি ব্যতিত সাধারণ যুবকগণই যুবক হিসাবে গণ্য হবে।</p>
+                        </div>
+                        <table class="text-center mb-1">
+                            <thead>
+                                <tr>
+                                    <th class="width-60 ">বিবরণ</th>
+                                    <th class="width-20">মোট সংখ্যা</th>
+                                    <th class="width-20 ">বৃদ্ধি</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start px-2">যুব কমিটি</td>
+                                    <td >
+                                        <input name="total_young_committee" :value="formatBangla(department3.total_young_committee)" @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="total_young_committee_increased" :value="formatBangla(department3.total_young_committee_increased)" @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে</td>
+                                    <td >
+                                        <input name="total_new_club" :value="formatBangla(department3.total_new_club)" @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="total_new_club_increased" :value="formatBangla(department3.total_new_club_increased)" @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">প্রতিষ্ঠিত সমিতি/ক্লাবে দাওয়াত পৌঁছানো হয়েছে</td>
+                                    <td >
+                                        <input name="stablished_club_total_invited" :value="formatBangla(department3.stablished_club_total_invited)" @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="stablished_club_total_increased" :value="formatBangla(department3.stablished_club_total_increased)" @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="job_holder mb-2">
+                    <h4 class="fs-6 fw-bold">৪. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত</h4>
+                    <div class="d-flex align-items-start gap-2">
+                        <table class="text-center mb-1">
+                            <thead>
+                                <tr>
+                                    <th class="width-30 letter_spacing">শ্রেণি-পেশার বিবরণ</th>
+                                    <th class="w-25 px-0 font-13">কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে</th>
+                                    <th class="width-20 px-0 font-13">কতজন সহযোগী সদস্য হয়েছেন</th>
+                                    <th class="width-10">টার্গেট</th>
+                                    <th class="font-13 width-15">বাস্তবায়নের হার</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start letter_spacing ">রাজ: ও বিশিষ্ট ব্যক্তিবর্গ</td>
+                                    <td >
+                                        <input name="political_and_special_invited" :value="formatBangla(department4.political_and_special_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="political_and_special_been_associated" :value="formatBangla(department4.political_and_special_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="political_and_special_target" :value="formatBangla(department4.political_and_special_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >{{formatBangla(implementation_rate(department4.political_and_special_target,department4.political_and_special_been_associated))}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">পেশাজীবী</td>
+                                    <td >
+                                        <input name="pesha_jibi_invited" :value="formatBangla(department4.pesha_jibi_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="pesha_jibi_been_associated" :value="formatBangla(department4.pesha_jibi_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="pesha_jibi_target" :value="formatBangla(department4.pesha_jibi_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >{{formatBangla(implementation_rate(department4.pesha_jibi_target,department4.pesha_jibi_been_associated))}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">উলামা মাশায়েখ</td>
+                                    <td >
+                                        <input name="olama_masayekh_invited" :value="formatBangla(department4.olama_masayekh_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="olama_masayekh_been_associated" :value="formatBangla(department4.olama_masayekh_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="olama_masayekh_target" :value="formatBangla(department4.olama_masayekh_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >{{formatBangla(implementation_rate(department4.olama_masayekh_target, department4.olama_masayekh_been_associated))}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="text-center mb-1">
+                            <thead>
+                                <tr>
+                                    <th class="width-30 letter_spacing">শ্রেণি-পেশার বিবরণ</th>
+                                    <th class="w-25 px-0 font-13">কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে</th>
+                                    <th class="width-20 px-0 font-13">কতজন সহযোগী সদস্য হয়েছেন</th>
+                                    <th class="width-10">টার্গেট</th>
+                                    <th class="font-13 width-15">বাস্তবায়নের হার</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start px-1">শ্রমজীবী</td>
+                                    <td >
+                                        <input name="sromo_jibi_invited" :value="formatBangla(department4.sromo_jibi_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="sromo_jibi_been_associated" :value="formatBangla(department4.sromo_jibi_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="sromo_jibi_target" :value="formatBangla(department4.sromo_jibi_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >{{formatBangla(implementation_rate(department4.sromo_jibi_target, department4.sromo_jibi_been_associated))}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-1 letter_spacing font-13">প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)</td>
+                                    <td >
+                                        <input name="prantik_jonogosti_invited" :value="formatBangla(department4.prantik_jonogosti_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="prantik_jonogosti_been_associated" :value="formatBangla(department4.prantik_jonogosti_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="prantik_jonogosti_target" :value="formatBangla(department4.prantik_jonogosti_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >{{formatBangla(implementation_rate(department4.prantik_jonogosti_target, department4.prantik_jonogosti_been_associated))}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-1">ভিন্নধর্মাবলম্বী</td>
+                                    <td >
+                                        <input name="vinno_dormalombi_invited" :value="formatBangla(department4.vinno_dormalombi_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="vinno_dormalombi_been_associated" :value="formatBangla(department4.vinno_dormalombi_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >
+                                        <input name="vinno_dormalombi_target" :value="formatBangla(department4.vinno_dormalombi_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    </td>
+                                    <td >{{formatBangla(implementation_rate(department4.vinno_dormalombi_target, department4.vinno_dormalombi_been_associated))}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="paribarik mb-2">
+                    <h4 class="fs-6 fw-bold">৫. পরিবারভিত্তিক দাওয়াত</h4>
+                    <table class="text-center  table_layout_fixed">
+                        <tbody>
+                            <tr>
+                                <td class="width-35">দাওয়াতি কাজে অংশগ্রহণকারী মোট পরিবার সংখ্যা</td>
+                                <td >
+                                    <input name="total_attended_family" :value="formatBangla(department5.total_attended_family)" @change="data_upload('ward-department5-paribarik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td class="width-35">মোট কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে</td>
+                                <td >
+                                    <input name="how_many_new_family_invited" :value="formatBangla(department5.how_many_new_family_invited)" @change="data_upload('ward-department5-paribarik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mosjid_dawah_center mb-1">
+                    <h4 class="fs-6 fw-bold">৬. মসজিদ/দাওয়াহ্ সেন্টার/তথ্যসেবা কেন্দ্রভিত্তিক দাওয়াত</h4>
+                    <table class="text-center  ">
+                        <thead>
+                            <tr>
+                                <th class="width-30">বিবরণ</th>
+                                <th class="width-10">মোট সংখ্যা</th>
+                                <th class="width-10">বৃদ্ধি</th>
+                                <th class="width-30">বিবরণ</th>
+                                <th class="width-10">মোট সংখ্যা</th>
+                                <th class="width-10">বৃদ্ধি</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">মসজিদ</td>
+                                <td >
+                                    <input name="total_mosjid" :value="formatBangla(department6.total_mosjid)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td >
+                                    <input name="total_mosjid_increase" :value="formatBangla(department6.total_mosjid_increase)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td class="text-start px-2">সাধারণ দাওয়াহ্ সেন্টার</td>
+                                <td >
+                                    <input name="general_dawah_center" :value="formatBangla(department6.general_dawah_center)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td >
+                                    <input name="general_dawah_center_increase" :value="formatBangla(department6.general_dawah_center_increase)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">দাওয়াতের আওতাভুক্ত মসজিদ</td>
+                                <td >
+                                    <input name="dawat_included_mosjid" :value="formatBangla(department6.dawat_included_mosjid)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td >
+                                    <input name="dawat_included_mosjid_increase" :value="formatBangla(department6.dawat_included_mosjid_increase)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td class="text-start px-2">তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক /সাধারণ)</td>
+                                <td >
+                                    <div class="d-flex">
+                                        <input name="mosjid_wise_information_center" :value="formatBangla(department6.mosjid_wise_information_center)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="general_information_center" :value="formatBangla(department6.general_information_center)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
+                                </td>
+                                <td >
+                                    <div class="d-flex">
+                                        <input name="mosjid_wise_information_center_increase" :value="formatBangla(department6.mosjid_wise_information_center_increase)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="general_information_center_increase" :value="formatBangla(department6.general_information_center_increase)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">মসজিদভিত্তিক দাওয়াহ্ সেন্টার</td>
+                                <td >
+                                    <input name="mosjid_wise_dawah_center" :value="formatBangla(department6.mosjid_wise_dawah_center)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td >
+                                    <input name="mosjid_wise_dawah_center_increase" :value="formatBangla(department6.mosjid_wise_dawah_center_increase)" @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td class="text-start px-2"></td>
+                                <td ></td>
+                                <td ></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tottho_projukti d-flex flex-wrap justify-content-between mb-1">
+                    <p class="fw-bold fs-6 width-60 ">৭. তথ্যপ্রযুক্তির মাধ্যমে দাওয়াতি কাজের জন্য উপযুক্ত জনশক্তি সংখ্যা:
+                        <span>
+                            <input name="total_well_known" :value="formatBangla(department7.total_well_known)" @change="data_upload('ward-department7-dawat-in-technology')" type="text" class="bg-input w-100 text-center" />
+                        </span>
+                    </p>
+                    <p class="fw-bold fs-6 width-40">,অংশগ্রহণকারীর সংখ্যা:
+                        <span>
+                            <input name="total_attended" :value="formatBangla(department7.total_attended)" @change="data_upload('ward-department7-dawat-in-technology')" type="text" class="bg-input w-100 text-center" />
+                        </span>
+                    </p>
+                </div>
             </div>
-            <div class="job_holder">
-                <h4 class="fs-6">২. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত</h4>
+
+        </section>
+
+        <section>
+            <h1 class="font-18 fw-bold">গ) দাওয়াহ্ ও প্রকাশনা:</h1>
+            <div class="dawah_prokashona">
                 <table class="text-center mb-1">
                     <thead>
                         <tr>
-                            <th class="">শ্রেণি-পেশার বিবরণ</th>
-                            <th class="">কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে</th>
-                            <th class="">কতজন সহযোগী সদস্য হয়েছেন</th>
-                            <th class="width-20">টার্গেট</th>
+                            <th class="width-20">বিবরণ</th>
+                            <th class="width-10">মোট সংখ্যা</th>
+                            <th class="width-10">বৃদ্ধি</th>
+                            <th class="width-30">বিবরণ</th>
+                            <th class="width-15">মোট সংখ্যা</th>
+                            <th class="width-15">বৃদ্ধি</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-start px-2">রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ</td>
-                            <td>
-                                <input
-                                    name="political_and_special_invited"
-                                    :value="formatBangla(department4.political_and_special_invited ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')"
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                            <td class="text-start px-2">পাঠাগার</td>
+                            <td >
+                                <input name="total_pathagar" :value="formatBangla(dawah_prokashona.total_pathagar)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
-                            <td>
-                                <input
-                                    name="political_and_special_been_associated"
-                                    :value="formatBangla(department4.political_and_special_been_associated ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')"
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                            <td >
+                                <input name="total_pathagar_increase" :value="formatBangla(dawah_prokashona.total_pathagar_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
-                            <td>
-                                <input
-                                    name="political_and_special_target"
-                                    :value="formatBangla(department4.political_and_special_target ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')"
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+
+                            <td class="text-start px-2">ওয়ার্ডে বই বিক্রয় কেন্দ্র</td>
+                            <!-- <td >{{bangla($dawah_prokashona->ward_book_sales_center?? "")}}</td>
+                            <td >{{bangla($dawah_prokashona->ward_book_sales_center_increase?? "")}}</td> -->
+                            <td >
+                                <input name="ward_book_sales_center" :value="formatBangla(dawah_prokashona.ward_book_sales_center)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+                            <td >
+                                <input name="ward_book_sales_center_increase" :value="formatBangla(dawah_prokashona.ward_book_sales_center_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-start px-2">প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)</td>
-                            <td>
-                                <input
-                                    name="prantik_jonogosti_invited"
-                                    :value="formatBangla(department4.prantik_jonogosti_invited ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')"
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                            <td class="text-start px-2">বই</td>
+                            <!-- <td >{{bangla($dawah_prokashona->books_in_pathagar?? "")}}</td>
+                            <td >{{bangla($dawah_prokashona->books_in_pathagar_increase?? "")}}</td> -->
+                            <td >
+                                <input name="books_in_pathagar" :value="formatBangla(dawah_prokashona.books_in_pathagar)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
-                            <td>
-                                <input
-                                    name="prantik_jonogosti_been_associated"
-                                    :value="formatBangla(department4.prantik_jonogosti_been_associated ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')"
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                            <td >
+                                <input name="books_in_pathagar_increase" :value="formatBangla(dawah_prokashona.books_in_pathagar_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
-                            <td>
-                                <input name="prantik_jonogosti_target" :value="formatBangla(department4.prantik_jonogosti_target ?? '')" @change="data_upload('department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+
+                            <td class="text-start px-2">ওয়ার্ডে বই বিক্রয়</td>
+                            <!-- <td >{{bangla($dawah_prokashona->ward_book_sales?? "")}}</td>
+                            <td >{{bangla($dawah_prokashona->ward_book_sales_increase?? "")}}</td> -->
+                            <td >
+                                <input name="ward_book_sales" :value="formatBangla(dawah_prokashona.ward_book_sales)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+                            <td >
+                                <input name="ward_book_sales_increase" :value="formatBangla(dawah_prokashona.ward_book_sales_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-start px-2">ভিন্নধর্মাবলম্বী</td>
-                            <td>
-                                <input name="vinno_dormalombi_invited" :value="formatBangla(department4.vinno_dormalombi_invited ?? '')" @change="data_upload('department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                            <td class="text-start px-2">বই বিলি</td>
+                            <!-- <td >{{bangla($dawah_prokashona->book_distribution?? "")}}</td>
+                            <td >{{bangla($dawah_prokashona->book_distribution_increase?? "")}}</td> -->
+                            <td >
+                                <input name="book_distribution" :value="formatBangla(dawah_prokashona.book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
-                            <td>
-                                <input
-                                    name="vinno_dormalombi_been_associated"
-                                    :value="formatBangla(department4.vinno_dormalombi_been_associated ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')"
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                            <td >
+                                <input name="book_distribution_increase" :value="formatBangla(dawah_prokashona.book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
-                            <td>
-                                <input name="vinno_dormalombi_target" :value="formatBangla(department4.vinno_dormalombi_target ?? '')" @change="data_upload('department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+
+                            <td class="text-start px-2">বইয়ের সফট কপি বিলি*</td>
+                            <!-- <td >{{bangla($dawah_prokashona->soft_copy_book_distribution?? "")}}</td>
+                            <td >{{bangla($dawah_prokashona->soft_copy_book_distribution_increase?? "")}}</td> -->
+                            <td >
+                                <input name="soft_copy_book_distribution" :value="formatBangla(dawah_prokashona.soft_copy_book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+                            <td >
+                                <input name="soft_copy_book_distribution_increase" :value="formatBangla(dawah_prokashona.soft_copy_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-start px-2">ইউনিটে বই বিলিকেন্দ্র</td>
+                            <!-- <td >{{bangla($dawah_prokashona->unit_book_distribution_center?? "")}}</td>
+                            <td >{{bangla($dawah_prokashona->unit_book_distribution_center_increase?? "")}}</td> -->
+                            <td >
+                                <input name="unit_book_distribution_center" :value="formatBangla(dawah_prokashona.unit_book_distribution_center)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+                            <td >
+                                <input name="unit_book_distribution_center_increase" :value="formatBangla(dawah_prokashona.unit_book_distribution_center_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+
+                            <td class="text-start px-2">দাওয়াতি লিংক বিতরণ*</td>
+                            <!-- <td >{{bangla($dawah_prokashona->dawat_link_distribution?? "")}}</td>
+                            <td >{{bangla($dawah_prokashona->dawat_link_distribution_increase?? "")}}</td> -->
+                            <td >
+                                <input name="dawat_link_distribution" :value="formatBangla(dawah_prokashona.dawat_link_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+                            <td >
+                                <input name="dawat_link_distribution_increase" :value="formatBangla(dawah_prokashona.dawat_link_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-start px-2">ইউনিটে বই বিলি</td>
+                            <!-- <td >{{bangla($dawah_prokashona->unit_book_distribution?? "")}}</td>
+                            <td >{{bangla($dawah_prokashona->unit_book_distribution_increase?? "")}}</td> -->
+                            <td >
+                                <input name="unit_book_distribution" :value="formatBangla(dawah_prokashona.unit_book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+                            <td >
+                                <input name="unit_book_distribution_increase" :value="formatBangla(dawah_prokashona.unit_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                            </td>
+
+                            <td class="text-start px-2">সোনার বাংলা/সংগ্রাম/পৃথিবী কত কপি চলে</td>
+                            <td >
+
+
+                                <!-- {{bangla($dawah_prokashona->sonar_bangla?? "")}} /
+                                {{bangla($dawah_prokashona->songram?? "")}} /
+                                {{bangla($dawah_prokashona->prithibi?? "")}} -->
+                                <div class="d-flex">
+                                    <input name="sonar_bangla" :value="formatBangla(dawah_prokashona.sonar_bangla)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />/
+                                    <input name="songram" :value="formatBangla(dawah_prokashona.songram)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />/
+                                    <input name="prithibi" :value="formatBangla(dawah_prokashona.prithibi)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                </div>
+                            </td>
+                            <td >
+                                <!-- {{bangla($dawah_prokashona->sonar_bangla_increase?? "")}} /
+                                {{bangla($dawah_prokashona->songram_increase?? "")}} /
+                                {{bangla($dawah_prokashona->prithibi_increase?? "")}} -->
+                                <div class="d-flex">
+                                    <input name="sonar_bangla_increase" :value="formatBangla(dawah_prokashona.sonar_bangla_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />/
+                                    <input name="songram_increase" :value="formatBangla(dawah_prokashona.songram_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />/
+                                    <input name="prithibi_increase" :value="formatBangla(dawah_prokashona.prithibi_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <p>*সংগঠন অনুমোদিত</p>
             </div>
-            <div class="poribar mb-2">
-                <h4 class="fs-6">৩. পরিবারভিত্তিক দাওয়াত:</h4>
-                <table class="text-center mb-1 table_layout_fixed">
-                    <thead>
-                        <tr>
-                            <th class="">দাওয়াতি কাজে অংশগ্রহণকারী পরিবার সংখ্যা</th>
-                            <th class="">কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input name="total_attended_family" :value="formatBangla(department5.total_attended_family ?? '')" @change="data_upload('department5-paribarik-dawat')" type="text" class="bg-input w-100 text-center" />
-                            </td>
-                            <td>
-                                <input name="how_many_new_family_invited" :value="formatBangla(department5.how_many_new_family_invited ?? '')" @change="data_upload('department5-paribarik-dawat')" type="text" class="bg-input w-100 text-center" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h1 class="font-18">গ) দাওয়াহ্ ও প্রকাশনা:</h1>
-                <div class="dawah_prokashona">
-                    <table class="text-center mb-1">
-                        <thead>
-                            <tr>
-                                <th class="width-20">বিবরণ</th>
-                                <th class="width-10">সংখ্যা</th>
-                                <th class="width-10">বৃদ্ধি</th>
-                                <th class="width-30">বিবরণ</th>
-                                <th class="">সংখ্যা</th>
-                                <th class="">বৃদ্ধি</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-start px-2">বই বিলিকেন্দ্ৰ</td>
-                                <td>
-                                    <input name="unit_book_distribution_center" :value="formatBangla(dawah_prokashona.unit_book_distribution_center ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                </td>
-                                <td>
-                                    <input
-                                        name="unit_book_distribution_center_increase"
-                                        :value="formatBangla(dawah_prokashona.unit_book_distribution_center_increase ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
-                                <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
-                                <td>
-                                    <input name="soft_copy_book_distribution" :value="formatBangla(dawah_prokashona.soft_copy_book_distribution ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                </td>
-                                <td>
-                                    <input
-                                        name="soft_copy_book_distribution_increase"
-                                        :value="formatBangla(dawah_prokashona.soft_copy_book_distribution_increase ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-start px-2">বই</td>
-                                <td>
-                                    <input name="books_in_pathagar" :value="formatBangla(dawah_prokashona.books_in_pathagar ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                </td>
-                                <td>
-                                    <input name="books_in_pathagar_increase" :value="formatBangla(dawah_prokashona.books_in_pathagar_increase ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                </td>
-                                <td class="text-start px-2">দাওয়াতি লিংক বিতরণ<span>(সংগঠন অনুমোদিত)</span></td>
-                                <td>
-                                    <input name="dawat_link_distribution" :value="formatBangla(dawah_prokashona.dawat_link_distribution ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                </td>
-                                <td>
-                                    <input
-                                        name="dawat_link_distribution_increase"
-                                        :value="formatBangla(dawah_prokashona.dawat_link_distribution_increase ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')"
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-start px-2">বই বিলি/বিক্রি</td>
-                                <td>
-                                    <input name="unit_book_distribution" :value="formatBangla(dawah_prokashona.unit_book_distribution ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                </td>
-                                <td>
-                                    <input name="unit_book_distribution_increase" :value="formatBangla(dawah_prokashona.unit_book_distribution_increase ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                </td>
-                                <td class="text-start px-2">সোনার বাংলা/সংগ্রাম/ পৃথিবী কত কপি চলে</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="sonar_bangla" :value="formatBangla(dawah_prokashona.sonar_bangla ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="songram" :value="formatBangla(dawah_prokashona.songram ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="prithibi" :value="formatBangla(dawah_prokashona.prithibi ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="sonar_bangla_increase" :value="formatBangla(dawah_prokashona.sonar_bangla_increase ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="songram_increase" :value="formatBangla(dawah_prokashona.songram_increase ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="prithibi_increase" :value="formatBangla(dawah_prokashona.prithibi_increase ?? '')" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="dawah_prokashona">
+            <h1 class="font-18 fw-bold">ঘ) কর্মসূচি বাস্তবায়ন</h1>
+            <!-- <div class="job_holder mb-1">
+                <div class="d-flex align-items-start gap-2">
                     <table class="text-center mb-1">
                         <thead>
                             <tr>
                                 <th class="width-10px">ক্র</th>
-                                <th class="width-30">কর্মসূচির বিবরণ</th>
-                                <th class="">সংখ্যা</th>
+                                <th class="width-50">কর্মসূচির বিবরণ</th>
+                                <th class="">মোট সংখ্যা</th>
                                 <th class="">টার্গেট</th>
                                 <th class="">গড় উপস্থিতি</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>১.</td>
-                                <td class="text-start px-2">মাসিক সাধারণ সভা</td>
-                                <td>
-                                    <input name="unit_masik_sadaron_sova_total" :value="formatBangla(kormosuci.unit_masik_sadaron_sova_total ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                <td >১.</td>
+                                <td class="text-start px-2">ইউনিটে মাসিক সাধারণ সভা</td>
+                                <td >{{bangla($kormosuci->unit_masik_sadaron_sova_total?? "")}}</td>
+                                <td >{{bangla($kormosuci->unit_masik_sadaron_sova_target?? "")}}</td>
+                                <td>{{bangla(calculate_average($kormosuci->unit_masik_sadaron_sova_total,$kormosuci->unit_masik_sadaron_sova_uposthiti))}}</td>
+                            </tr>
+                            <tr>
+                                <td >২.</td>
+                                <td class="text-start font-13 px-2">দাওয়াতি সভা/আলোচনা সভা/সুধী সমাবেশ</td>
+                                <td class="font-13">
+                                    {{bangla($kormosuci->dawati_sova_total?? "")}}/
+                                    {{bangla($kormosuci->alochona_sova_total?? "")}}/
+                                    {{bangla($kormosuci->sudhi_somabesh_total?? "")}}
                                 </td>
-                                <td>
-                                    <input name="unit_masik_sadaron_sova_target" :value="formatBangla(kormosuci.unit_masik_sadaron_sova_target ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                <td class="font-13">
+                                    {{bangla($kormosuci->dawati_sova_target?? "")}}/
+                                    {{bangla($kormosuci->alochona_sova_target?? "")}}/
+                                    {{bangla($kormosuci->sudhi_somabesh_target?? "")}}
                                 </td>
-                                <td>
-                                    <input name="unit_masik_sadaron_sova_uposthiti" :value="formatBangla(average_kormosuci.unit_masik_sadaron_sova)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.unit_masik_sadaron_sova_total)" type="text" class="bg-input w-100 text-center" />
+                                <td class="font-13">
+                                    {{bangla(calculate_average($kormosuci->dawati_sova_total,$kormosuci->dawati_sova_uposthiti))}}/
+                                    {{bangla(calculate_average($kormosuci->alochona_sova_total,$kormosuci->alochona_sova_uposthiti))}}/
+                                    {{bangla(calculate_average($kormosuci->sudhi_somabesh_total,$kormosuci->sudhi_somabesh_uposthiti))}}
                                 </td>
                             </tr>
                             <tr>
-                                <td>২.</td>
-                                <td class="text-start px-2">ইফতার মাহফিল (ব্যক্তিগত/সাংগঠনিক)</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="iftar_mahfil_personal_total" :value="formatBangla(kormosuci.iftar_mahfil_personal_total ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="iftar_mahfil_samostic_total" :value="formatBangla(kormosuci.iftar_mahfil_samostic_total ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="iftar_mahfil_personal_target" :value="formatBangla(kormosuci.iftar_mahfil_personal_target ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="iftar_mahfil_samostic_target" :value="formatBangla(kormosuci.iftar_mahfil_samostic_target ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="iftar_mahfil_personal_uposthiti" :value="formatBangla(average_kormosuci.iftar_mahfil_personal)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.iftar_mahfil_personal_total)" type="text" class="bg-input w-100 text-center" />  /
-                                        <input name="iftar_mahfil_samostic_uposthiti" :value="formatBangla(average_kormosuci.iftar_mahfil_samostic)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.iftar_mahfil_samostic_total)" type="text" class="bg-input w-100 text-center" />
-                                    </div>
-                                </td>
+                                <td >৩.</td>
+                                <td class="text-start px-2">সীরাতুন্নবী (সাঃ) মাহফিল</td>
+                                <td>{{bangla($kormosuci->siratunnabi_mahfil_total?? "")}}</td>
+                                <td>{{bangla($kormosuci->siratunnabi_mahfil_target?? "")}}</td>
+                                <td>{{bangla(calculate_average($kormosuci->siratunnabi_mahfil_total,$kormosuci->siratunnabi_mahfil_uposthiti))}}</td>
                             </tr>
                             <tr>
-                                <td>৩.</td>
-                                <td class="text-start px-2">চা চক্র/সামষ্টিক খাওয়া/শিক্ষা সফর</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="cha_chakra_total" :value="formatBangla(kormosuci.cha_chakra_total ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="samostic_khawa_total" :value="formatBangla(kormosuci.samostic_khawa_total ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="sikkha_sofor_total" :value="formatBangla(kormosuci.sikkha_sofor_total ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
-                                    </div>
+                                <td >৪.</td>
+                                <td class="text-start px-2">ঈদ পুনর্মিলনী</td>
+                                <td >{{bangla($kormosuci->eid_reunion_total?? "")}}</td>
+                                <td >{{bangla($kormosuci->eid_reunion_target?? "")}}</td>
+                                <td>{{bangla(calculate_average($kormosuci->eid_reunion_total,$kormosuci->eid_reunion_uposthiti))}}</td>
+                            </tr>
+                            <tr>
+                                <td >৫.</td>
+                                <td class="text-start font-13 letter_spacing px-1">দারস/তাফসীর/দাওয়াতি জনসভা ও ইসলামী মাহফিল</td>
+                                <td class="font-13">
+                                    {{bangla($kormosuci->dars_total?? "")}}/
+                                    {{bangla($kormosuci->tafsir_total?? "")}}/
+                                    {{bangla($kormosuci->dawati_jonosova_total?? "")}}
                                 </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="cha_chakra_target" :value="formatBangla(kormosuci.cha_chakra_target ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="samostic_khawa_target" :value="formatBangla(kormosuci.samostic_khawa_target ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" /> /
-                                        <input name="sikkha_sofor_target" :value="formatBangla(kormosuci.sikkha_sofor_target ?? '')" @change="data_upload('kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
-                                    </div>
+                                <td class="font-13">
+                                    {{bangla($kormosuci->dars_target?? "")}}/
+                                    {{bangla($kormosuci->tafsir_target?? "")}}/
+                                    {{bangla($kormosuci->dawati_jonosova_target?? "")}}
                                 </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="cha_chakra_uposthiti" :value="formatBangla(average_kormosuci.cha_chakra)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.cha_chakra_total)" type="text" class="bg-input w-100 text-center" />  /
-                                        <input name="samostic_khawa_uposthiti" :value="formatBangla(average_kormosuci.samostic_khawa)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.samostic_khawa_total)" type="text" class="bg-input w-100 text-center" />  /
-                                        <input name="sikkha_sofor_uposthiti" :value="formatBangla(average_kormosuci.sikkha_sofor)" @change="average_data_upload($event,'kormosuci-bastobayon',kormosuci.sikkha_sofor_total)" type="text" class="bg-input w-100 text-center" />
-                                    </div>
+                                <td class="font-13">
+                                    {{bangla(calculate_average($kormosuci->dars_total,$kormosuci->dars_uposthiti))}}/
+                                    {{bangla(calculate_average($kormosuci->tafsir_total,$kormosuci->tafsir_uposthiti))}}/
+                                    {{bangla(calculate_average($kormosuci->dawati_jonosova_total,$kormosuci->dawati_jonosova_uposthiti))}}
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-
-        </section>
-        <section class="margine_top_page_change">
-            <div class="songothon">
-                <h1 class="font-18">সংগঠন :</h1>
-                <div class="jonoshokti mb-2">
-                    <h4 class="fs-6">১. জনশক্তি</h4>
-                    <table class="text-center  mb-1 table_layout_fixed">
+                    <table class="text-center mb-1">
                         <thead>
                             <tr>
-                                <th class="">জনশক্তি ধরন</th>
-                                <th class="">বিগত মাসের সংখ্যা</th>
-                                <th class="">বর্তমান সংখ্যা</th>
-                                <th class="">বৃদ্ধি</th>
-                                <th class="">ঘাটতি</th>
+                                <th class="width-10px">ক্র</th>
+                                <th class="w-50">কর্মসূচির বিবরণ</th>
+                                <th class="">মোট সংখ্যা</th>
                                 <th class="">টার্গেট</th>
+                                <th class="">গড় উপস্থিতি</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-start px-2">সদস্য (রুকন)</td>
-                                <td><input name="rokon_previous" :value="formatBangla(songothon1.rokon_previous?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_present" :value="formatBangla(songothon1.rokon_present?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_briddhi" :value="formatBangla(songothon1.rokon_briddhi?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_gatti" :value="formatBangla(songothon1.rokon_gatti?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_target" :value="formatBangla(songothon1.rokon_target?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                            </tr>
-                            <tr>
-                                <td class="text-start px-2">কর্মী</td>
-                                <td><input name="worker_previous" :value="formatBangla(songothon1.worker_previous?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_present" :value="formatBangla(songothon1.worker_present?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_briddhi" :value="formatBangla(songothon1.worker_briddhi?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_gatti" :value="formatBangla(songothon1.worker_gatti?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_target" :value="formatBangla(songothon1.worker_target?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="shohojogi mb-2">
-                    <h4 class="fs-6">২. সহযোগী সদস্য ও ভিন্নধর্মাবলম্বী :</h4>
-                    <table class="text-center  mb-1">
-                        <thead>
-                            <tr>
-                                <th class="w-25">সহযোগী</th>
-                                <th class="width-20">বিগত মাসের সংখ্যা</th>
-                                <th class="width-20">বর্তমান সংখ্যা</th>
-                                <th class="width-15">বৃদ্ধি</th>
-                                <th class="width-20">টার্গেট</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-start px-2">সহযোগী সদস্য*</td>
-                                <td><input name="associate_member_previous" :value="formatBangla(songothon2.associate_member_previous?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="associate_member_present" :value="formatBangla(songothon2.associate_member_present?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="associate_member_briddhi" :value="formatBangla(songothon2.associate_member_briddhi?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="associate_member_target" :value="formatBangla(songothon2.associate_member_target?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"></td>
-                            </tr>
-                            <tr>
-                                <td class="text-start px-2">ভিন্নধর্মাবলম্বী কর্মী/সহযোগী সদস্য</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="vinno_dormalombi_worker_previous" :value="formatBangla(songothon2.vinno_dormalombi_worker_previous?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(songothon2.vinno_dormalombi_associate_member_previous?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center">
-                                    </div>
+                                <td >৬.</td>
+                                <td class="text-start px-2">ইফতার মাহফিল (ব্যক্তিগত/সাংগঠনিক)</td>
+                                <td >
+                                    {{bangla($kormosuci->iftar_mahfil_personal_total?? "")}}/
+                                    {{bangla($kormosuci->iftar_mahfil_samostic_total?? "")}}
+                                </td>
+                                <td >
+                                    {{bangla($kormosuci->iftar_mahfil_personal_target?? "")}}/
+                                    {{bangla($kormosuci->iftar_mahfil_samostic_target?? "")}}
                                 </td>
                                 <td>
-                                    <div class="d-flex">
-                                        <input name="vinno_dormalombi_worker_present" :value="formatBangla(songothon2.vinno_dormalombi_worker_present?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(songothon2.vinno_dormalombi_associate_member_present?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="vinno_dormalombi_worker_briddhi" :value="formatBangla(songothon2.vinno_dormalombi_worker_briddhi?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="vinno_dormalombi_associate_member_briddhi" :value="formatBangla(songothon2.vinno_dormalombi_associate_member_briddhi?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="vinno_dormalombi_worker_target" :value="formatBangla(songothon2.vinno_dormalombi_worker_target?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="vinno_dormalombi_associate_member_target" :value="formatBangla(songothon2.vinno_dormalombi_associate_member_target?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center">
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>*দাওয়াত ও তাবলিগের 'ক' এর অধীনে উল্লেখিত সকল সহযোগী সদস্যের সংখ্যা এ ছকে সহযোগী সদস্যের ঘরে
-                        বসাতে হবে।</p>
-                </div>
-                <div class="kormi_boithok d-flex flex-wrap justify-content-between mb-1">
-                    <div class="d-flex justify-content-start w-50">
-                        <label for="" class="fw-bold fs-6">৩. মাসিক কর্মী বৈঠক সংখ্যা :</label>
-                        <input class="border_dot width-60 bg-input ps-2" name="unit_kormi_boithok_total" :value="formatBangla(songothon9.unit_kormi_boithok_total?? '')" @change="data_upload('songothon9-sangothonik-boithok')" type="text">
-                    </div>
-                    <div class="d-flex justify-content-start w-50">
-                        <label for="" class="fw-bold fs-6">, উপস্থিতি:</label>
-                        <input class="border_dot width-80 bg-input ps-2" name="unit_kormi_boithok_uposthiti" :value="formatBangla(songothon9.unit_kormi_boithok_uposthiti?? '')" @change="data_upload('songothon9-sangothonik-boithok')" type="text">
-                    </div>
-                </div>
-                <div class="paribaik_unit mb-2">
-                    <h4 class="fs-6">৪. পারিবারিক ইউনিট*</h4>
-                    <table class="text-center  mb-1 table_layout_fixed">
-                        <thead>
-                            <tr>
-                                <th class="width-20">সংখ্যা</th>
-                                <th class="width-15">বৃদ্ধি</th>
-                                <th class="width-20">টার্গেট</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input name="paribarik_unit_total" :value="formatBangla(songothon5.paribarik_unit_total?? '')" @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="paribarik_unit_increase" :value="formatBangla(songothon5.paribarik_unit_increase?? '')" @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="paribarik_unit_target" :value="formatBangla(songothon5.paribarik_unit_target?? '')" @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>* পরিবারের জনশক্তি পুরুষ ও মহিলা উভয় হলে পারিবারিক ইউনিটের হিসাব একবারই আসবে।</p>
-                </div>
-                <div class="urdotono mb-1">
-                    <div class="d-flex justify-content-start ">
-                        <label for="" class="fw-bold fs-6">৫. ঊর্ধ্বতন দায়িত্বশীলদের সফর সংখ্যা :</label>
-                        <input class="border_dot bg-input w-75" name="upper_leader_sofor" :value="formatBangla(songothon7.upper_leader_sofor?? '')" @change="data_upload('songothon7-sofor')" type="text">
-                    </div>
-                </div>
-                <div class="ianot mb-2">
-                    <h4 class="fs-6">৬. ইয়ানত দাতা বৃদ্ধি :</h4>
-                    <table class="text-center  mb-1">
-                        <thead>
-                            <tr>
-                                <th class="w-25">নতুন ইয়ানত দাতা</th>
-                                <th class="width-20">সংখ্যা</th>
-                                <th class="width-15">টাকার পরিমাণ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-start px-2">সহযোগী সদস্য</td>
-                                <td><input name="associate_member_total" :value="formatBangla(songothon8.associate_member_total?? '')" @change="data_upload('songothon8-iyanot-data')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="associate_member_total_iyanot_amounts" :value="formatBangla(songothon8.associate_member_total_iyanot_amounts?? '')" @change="data_upload('songothon8-iyanot-data')" type="text" class="bg-input w-100 text-center"></td>
-                            </tr>
-                            <tr>
-                                <td class="text-start px-2">সুধী</td>
-                                <td><input name="sudhi_total" :value="formatBangla(songothon8.sudhi_total?? '')" @change="data_upload('songothon8-iyanot-data')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="sudi_total_iyanot_amounts" :value="formatBangla(songothon8.sudi_total_iyanot_amounts?? '')" @change="data_upload('songothon8-iyanot-data')" type="text" class="bg-input w-100 text-center"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-            <h1 class="font-18">প্ৰশিক্ষণ :</h1>
-            <div class="proshikkhon mb-2">
-                <table class="text-center  mb-1">
-                    <thead>
-                        <tr>
-                            <th class="w-50">কর্মসূচির ধরন</th>
-                            <th class="">সংখ্যা</th>
-                            <th class="">টার্গেট</th>
-                            <th class="">উপস্থিতি</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-start px-2">তারবিয়াতী বৈঠক (সহীহ কুরআন অনুশীলন/মাসয়ালা-মাসায়েল/ দারসে
-                                কুরআন/ দারসে হাদীস / সামষ্টিক পাঠ/বিষয়ভিত্তিক আলোচনা)</td>
-                            <td>
-                                <div class="d-flex">
-                                    <input name="sohi_quran_onushilon" :value="formatBangla(proshikkhon.sohi_quran_onushilon?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="masala_masayel" :value="formatBangla(proshikkhon.masala_masayel?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="darsul_quran" :value="formatBangla(proshikkhon.darsul_quran?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="darsul_hadis" :value="formatBangla(proshikkhon.darsul_hadis?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="samostik_path" :value="formatBangla(proshikkhon.samostik_path?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="bishoy_vittik_onushilon" :value="formatBangla(proshikkhon.bishoy_vittik_onushilon?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center">
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex">
-                                    <input name="sohi_quran_onushilon_target" :value="formatBangla(proshikkhon.sohi_quran_onushilon_target?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="masala_masayel_target" :value="formatBangla(proshikkhon.masala_masayel_target?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="darsul_quran_target" :value="formatBangla(proshikkhon.darsul_quran_target?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="darsul_hadis_target" :value="formatBangla(proshikkhon.darsul_hadis_target?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="samostik_path_target" :value="formatBangla(proshikkhon.samostik_path_target?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="bishoy_vittik_onushilon_target" :value="formatBangla(proshikkhon.bishoy_vittik_onushilon_target?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center">
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex">
-                                    <input name="sohi_quran_onushilon_uposthiti" :value="formatBangla(proshikkhon.sohi_quran_onushilon_uposthiti?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="masala_masayel_uposthiti" :value="formatBangla(proshikkhon.masala_masayel_uposthiti?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="darsul_quran_uposthiti" :value="formatBangla(proshikkhon.darsul_quran_uposthiti?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="darsul_hadis_uposthiti" :value="formatBangla(proshikkhon.darsul_hadis_uposthiti?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="samostik_path_uposthiti" :value="formatBangla(proshikkhon.samostik_path_uposthiti?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center"> /
-                                    <input name="bishoy_vittik_onushilon_uposthiti" :value="formatBangla(proshikkhon.bishoy_vittik_onushilon_uposthiti?? '')" @change="data_upload('proshikkhon1-tarbiat')" type="text" class="bg-input w-100 text-center">
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="shomajsheba">
-                <h1 class="font-18">সমাজ সংস্কার ও সমাজসেবা :</h1>
-                <div class="personal_shamajik_kaj mb-2">
-                    <h4 class="fs-6">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h4>
-                    <table class="text-center  mb-1">
-                        <tr>
-                            <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
-                            <td class="width-20"><input name="how_many_people_did" :value="formatBangla(shomajsheba1.how_many_people_did?? '')" @change="data_upload('shomajsheba1-personal-social-work')" type="text" class="bg-input w-100 text-center"></td>
-                            <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
-                            <td class="width-20"><input name="service_received_total" :value="formatBangla(shomajsheba1.service_received_total?? '')" @change="data_upload('shomajsheba1-personal-social-work')" type="text" class="bg-input w-100 text-center"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="unit_shamajik_kaj mb-2">
-                    <h4 class="fs-6">২. ইউনিটের উদ্যোগে সামাজিক কাজ :</h4>
-                    <table class="text-center  mb-1">
-                        <thead>
-                            <tr>
-                                <th class="">বিবরণ</th>
-                                <th class="width-20">সংখ্যা</th>
-                                <th class="">বিবরণ</th>
-                                <th class="width-15">সংখ্যা</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-start px-2">সামাজিক অনুষ্ঠানে অংশগ্রহন/সহায়তা প্রদান</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="shamajik_onusthane_ongshogrohon" :value="formatBangla(shomajsheba2.shamajik_onusthane_ongshogrohon?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="shamajik_onusthane_shohayota_prodan" :value="formatBangla(shomajsheba2.shamajik_onusthane_shohayota_prodan?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center">
-                                    </div>
-                                </td>
-                                <td class="text-start px-2">স্বেচ্ছায় রক্ত দান (কতজন/কতজনকে)</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="voluntarily_blood_donation_kotojon" :value="formatBangla(shomajsheba2.voluntarily_blood_donation_kotojon?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="voluntarily_blood_donation_kotojonke" :value="formatBangla(shomajsheba2.voluntarily_blood_donation_kotojonke?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center">
-                                    </div>
+                                    {{bangla(calculate_average($kormosuci->iftar_mahfil_personal_total,$kormosuci->iftar_mahfil_personal_uposthiti))}}/
+                                    {{bangla(calculate_average($kormosuci->iftar_mahfil_samostic_total,$kormosuci->iftar_mahfil_samostic_uposthiti))}}
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-start px-2">সামাজিক বিরোধ মীমাংসা</td>
-                                <td><input name="shamajik_birodh_mimangsha" :value="formatBangla(shomajsheba2.shamajik_birodh_mimangsha?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"></td>
-                                <td class="text-start px-2">মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজন/কতজনকে)</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="matrikalin_sheba_prodan_kotojon" :value="formatBangla(shomajsheba2.matrikalin_sheba_prodan_kotojon?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="matrikalin_sheba_prodan_kotojonke" :value="formatBangla(shomajsheba2.matrikalin_sheba_prodan_kotojonke?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center">
-                                    </div>
+                                <td >৭.</td>
+                                <td class="text-start px-2">চা চক্র/সামষ্টিক খাওয়া/শিক্ষা সফর</td>
+                                <td class="font-13">
+                                    {{bangla($kormosuci->cha_chakra_total?? "")}}/
+                                    {{bangla($kormosuci->samostic_khawa_total?? "")}}/
+                                    {{bangla($kormosuci->sikkha_sofor_total?? "")}}
+                                </td>
+                                <td class="font-13">
+                                    {{bangla($kormosuci->cha_chakra_target?? "")}}/
+                                    {{bangla($kormosuci->samostic_khawa_target?? "")}}/
+                                    {{bangla($kormosuci->sikkha_sofor_target?? "")}}
+                                </td>
+                                <td class="font-13">
+                                    {{bangla(calculate_average($kormosuci->cha_chakra_total,$kormosuci->cha_chakra_uposthiti))}}/
+                                    {{bangla(calculate_average($kormosuci->samostic_khawa_total,$kormosuci->samostic_khawa_uposthiti))}}/
+                                    {{bangla(calculate_average($kormosuci->sikkha_sofor_total,$kormosuci->sikkha_sofor_uposthiti))}}
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-start px-2">মানবিক সহায়তা/কর্জে হাসানা প্রদান (কতজনকে)</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="manobik_shohayota_prodan" :value="formatBangla(shomajsheba2.manobik_shohayota_prodan?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="korje_hasana_prodan" :value="formatBangla(shomajsheba2.korje_hasana_prodan?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center">
-                                    </div>
+                                <td >৮.</td>
+                                <td class="text-start px-2">কিরাত/হামদ না'ত প্ৰতিযোগিতা</td>
+                                <td class="font-13">
+                                    {{bangla($kormosuci->kirat_protijogita_total?? "")}}/
+                                    {{bangla($kormosuci->hamd_nat_protijogita_total?? "")}}
                                 </td>
-                                <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে)</td>
-                                <td><input name="mayeter_gosol" :value="formatBangla(shomajsheba2.mayeter_gosol?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"></td>
+                                <td class="font-13">
+                                    {{bangla($kormosuci->kirat_protijogita_target?? "")}}/
+                                    {{bangla($kormosuci->hamd_nat_protijogita_target?? "")}}
+                                </td>
+                                <td class="font-13">
+                                    {{bangla(calculate_average($kormosuci->kirat_protijogita_total,$kormosuci->kirat_protijogita_uposthiti))}}/
+                                    {{bangla(calculate_average($kormosuci->hamd_nat_protijogita_total,$kormosuci->hamd_nat_protijogita_uposthiti))}}
+                                </td>
                             </tr>
                             <tr>
-                                <td class="text-start px-2">রোগীর পরিচর্যা/চিকিৎসা সহায়তা প্রদান (কতজনকে)</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input name="rogir_poricorja" :value="formatBangla(shomajsheba2.rogir_poricorja?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="medical_shohayota_prodan" :value="formatBangla(shomajsheba2.medical_shohayota_prodan?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center">
-                                    </div>
-                                </td>
+                                <td >৯.</td>
                                 <td class="text-start px-2">অন্যান্য</td>
-                                <td><input name="others" :value="formatBangla(shomajsheba2.others?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"></td>
-                            </tr>
-                            <tr>
-                                <td class="text-start px-2">নবজাতককে গিফ্ট প্রদান (কতজনকে )</td>
-                                <td><input name="nobojatokke_gift_prodan" :value="formatBangla(shomajsheba2.nobojatokke_gift_prodan?? '')" @change="data_upload('shomajsheba2-unit-social-work')" type="text" class="bg-input w-100 text-center"></td>
-                                <td class="text-start px-2"></td>
-                                <td></td>
+                                <td >{{bangla($kormosuci->others_total?? "")}}</td>
+                                <td >{{bangla($kormosuci->others_target?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($kormosuci->others_total,$kormosuci->others_uposthiti))}}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="rartrio">
-                <h1 class="font-18">রাষ্ট্রীয় সংস্কার ও সংশোধন :</h1>
-                <div class="bisisto mb-2">
-                    <div class="d-flex justify-content-start">
-                        <label for="" class="">বিশিষ্ট ব্যক্তিবর্গের সাথে যোগাযোগ সংখ্যা :</label>
-                        <input class="border_dot  bg-input" name="bishishto_bekti_jogajog" :value="formatBangla(rastrio.bishishto_bekti_jogajog?? '')" @change="data_upload('rastrio1-bishishto-bekti')" type="text">
-                    </div>
-                </div>
-            </div>
+            </div> -->
+        </section>
+
+
+        <section class="margine_top_page_change">
+
             <div class="baytulmal">
                 <div class="title">
                     <h1>বাইতুলমাল</h1>
@@ -1073,6 +1190,9 @@
                     this.expense_category_wise = res.data.expense_category_wise,
                     this.total_expense = res.data.total_expense
 
+                    console.log("this.department2",this.department2);
+
+
                 }
             },
             average_data:async function(){
@@ -1243,6 +1363,14 @@
                 }, 200);
             },
 
+            implementation_rate:function(target, achieved){
+                if (target && achieved && target !== 0) {
+                    return this.formatBangla(Math.round((achieved / target) * 100)) + '%';
+                }
+                return ' ';
+            }
+
+
         },
         computed: {
             total_dawat:function() {
@@ -1259,5 +1387,6 @@
 </script>
 
 <style>
-    @import url("../../../../../../public/css/unit/unit_report_upload.css");
+    /* @import url("../../../../../../public/css/unit/unit_report_upload.css"); */
+    @import url("../../../../../../public/css/ward/ward_report_upload.css");
 </style>

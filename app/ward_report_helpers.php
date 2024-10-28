@@ -133,10 +133,20 @@ function ward_common_store($bind, $class, $report_info)
 
 function calculate_average($total , $uposthiti)
 {
-    dd($total, $uposthiti);
-    if ($total != 0) {
+    // dd($total, $uposthiti);
+    if($total && $uposthiti && $total != 0){
+
         return round($uposthiti / $total);
     }
+
+    return " "; // Or any default value you'd like to return
+}
+function implementation_rate($target, $achieved)
+{
+    if($target && $achieved && $target != 0){
+        return round(($achieved / $target) * 100) . '%';
+    }
+
     return " "; // Or any default value you'd like to return
 }
 
