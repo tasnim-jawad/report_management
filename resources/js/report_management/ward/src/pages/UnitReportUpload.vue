@@ -1076,9 +1076,15 @@
                     .then((response) => {
                         // window.toaster("Data uploaded successfully");
                         console.log("Data uploaded successfully");
-                        if (['unit_masik_sadaron_sova_total', 'iftar_mahfil_personal_total',
-                            'iftar_mahfil_samostic_total', 'cha_chakra_total',
-                            'samostic_khawa_total', 'sikkha_sofor_total'].includes(name)) {
+                        if (
+                            [
+                                'unit_masik_sadaron_sova_total',
+                                'iftar_mahfil_personal_total',
+                                'iftar_mahfil_samostic_total',
+                                'cha_chakra_total',
+                                'samostic_khawa_total',
+                                'sikkha_sofor_total'
+                            ].includes(name)) {
                             this.uploaded_data();  // Call uploaded_data if name matches
                         }
 

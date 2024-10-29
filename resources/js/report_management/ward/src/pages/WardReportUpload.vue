@@ -783,8 +783,6 @@
                         </tr>
                         <tr>
                             <td class="text-start px-2">ইউনিটে বই বিলিকেন্দ্র</td>
-                            <!-- <td >{{bangla($dawah_prokashona->unit_book_distribution_center?? "")}}</td>
-                            <td >{{bangla($dawah_prokashona->unit_book_distribution_center_increase?? "")}}</td> -->
                             <td >
                                 <input name="unit_book_distribution_center" :value="formatBangla(dawah_prokashona.unit_book_distribution_center)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
@@ -793,8 +791,6 @@
                             </td>
 
                             <td class="text-start px-2">দাওয়াতি লিংক বিতরণ*</td>
-                            <!-- <td >{{bangla($dawah_prokashona->dawat_link_distribution?? "")}}</td>
-                            <td >{{bangla($dawah_prokashona->dawat_link_distribution_increase?? "")}}</td> -->
                             <td >
                                 <input name="dawat_link_distribution" :value="formatBangla(dawah_prokashona.dawat_link_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
@@ -804,8 +800,6 @@
                         </tr>
                         <tr>
                             <td class="text-start px-2">ইউনিটে বই বিলি</td>
-                            <!-- <td >{{bangla($dawah_prokashona->unit_book_distribution?? "")}}</td>
-                            <td >{{bangla($dawah_prokashona->unit_book_distribution_increase?? "")}}</td> -->
                             <td >
                                 <input name="unit_book_distribution" :value="formatBangla(dawah_prokashona.unit_book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
@@ -815,11 +809,6 @@
 
                             <td class="text-start px-2">সোনার বাংলা/সংগ্রাম/পৃথিবী কত কপি চলে</td>
                             <td >
-
-
-                                <!-- {{bangla($dawah_prokashona->sonar_bangla?? "")}} /
-                                {{bangla($dawah_prokashona->songram?? "")}} /
-                                {{bangla($dawah_prokashona->prithibi?? "")}} -->
                                 <div class="d-flex">
                                     <input name="sonar_bangla" :value="formatBangla(dawah_prokashona.sonar_bangla)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />/
                                     <input name="songram" :value="formatBangla(dawah_prokashona.songram)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />/
@@ -827,9 +816,6 @@
                                 </div>
                             </td>
                             <td >
-                                <!-- {{bangla($dawah_prokashona->sonar_bangla_increase?? "")}} /
-                                {{bangla($dawah_prokashona->songram_increase?? "")}} /
-                                {{bangla($dawah_prokashona->prithibi_increase?? "")}} -->
                                 <div class="d-flex">
                                     <input name="sonar_bangla_increase" :value="formatBangla(dawah_prokashona.sonar_bangla_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />/
                                     <input name="songram_increase" :value="formatBangla(dawah_prokashona.songram_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />/
@@ -842,13 +828,13 @@
                 <p>*সংগঠন অনুমোদিত</p>
             </div>
             <h1 class="font-18 fw-bold">ঘ) কর্মসূচি বাস্তবায়ন</h1>
-            <!-- <div class="job_holder mb-1">
+            <div class="job_holder mb-1">
                 <div class="d-flex align-items-start gap-2">
                     <table class="text-center mb-1">
                         <thead>
                             <tr>
                                 <th class="width-10px">ক্র</th>
-                                <th class="width-50">কর্মসূচির বিবরণ</th>
+                                <th class="w-50">কর্মসূচির বিবরণ</th>
                                 <th class="">মোট সংখ্যা</th>
                                 <th class="">টার্গেট</th>
                                 <th class="">গড় উপস্থিতি</th>
@@ -858,60 +844,91 @@
                             <tr>
                                 <td >১.</td>
                                 <td class="text-start px-2">ইউনিটে মাসিক সাধারণ সভা</td>
-                                <td >{{bangla($kormosuci->unit_masik_sadaron_sova_total?? "")}}</td>
-                                <td >{{bangla($kormosuci->unit_masik_sadaron_sova_target?? "")}}</td>
-                                <td>{{bangla(calculate_average($kormosuci->unit_masik_sadaron_sova_total,$kormosuci->unit_masik_sadaron_sova_uposthiti))}}</td>
+                                <td >
+                                    <input name="unit_masik_sadaron_sova_total" :value="formatBangla(kormosuci.unit_masik_sadaron_sova_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td >
+                                    <input name="unit_masik_sadaron_sova_target" :value="formatBangla(kormosuci.unit_masik_sadaron_sova_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="unit_masik_sadaron_sova_uposthiti" :value="formatBangla(average_kormosuci.unit_masik_sadaron_sova)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.unit_masik_sadaron_sova_total)" type="text" class="bg-input w-100 text-center" />
+                                </td>
                             </tr>
                             <tr>
                                 <td >২.</td>
                                 <td class="text-start font-13 px-2">দাওয়াতি সভা/আলোচনা সভা/সুধী সমাবেশ</td>
                                 <td class="font-13">
-                                    {{bangla($kormosuci->dawati_sova_total?? "")}}/
-                                    {{bangla($kormosuci->alochona_sova_total?? "")}}/
-                                    {{bangla($kormosuci->sudhi_somabesh_total?? "")}}
+                                    <div class="d-flex">
+                                        <input name="dawati_sova_total" :value="formatBangla(kormosuci.dawati_sova_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="alochona_sova_total" :value="formatBangla(kormosuci.alochona_sova_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="sudhi_somabesh_total" :value="formatBangla(kormosuci.sudhi_somabesh_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                                 <td class="font-13">
-                                    {{bangla($kormosuci->dawati_sova_target?? "")}}/
-                                    {{bangla($kormosuci->alochona_sova_target?? "")}}/
-                                    {{bangla($kormosuci->sudhi_somabesh_target?? "")}}
+                                    <div class="d-flex">
+                                        <input name="dawati_sova_target" :value="formatBangla(kormosuci.dawati_sova_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="alochona_sova_target" :value="formatBangla(kormosuci.alochona_sova_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="sudhi_somabesh_target" :value="formatBangla(kormosuci.sudhi_somabesh_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                                 <td class="font-13">
-                                    {{bangla(calculate_average($kormosuci->dawati_sova_total,$kormosuci->dawati_sova_uposthiti))}}/
-                                    {{bangla(calculate_average($kormosuci->alochona_sova_total,$kormosuci->alochona_sova_uposthiti))}}/
-                                    {{bangla(calculate_average($kormosuci->sudhi_somabesh_total,$kormosuci->sudhi_somabesh_uposthiti))}}
+                                    <div class="d-flex">
+                                        <input name="dawati_sova_uposthiti" :value="formatBangla(average_kormosuci.dawati_sova)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.dawati_sova_total)" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="alochona_sova_uposthiti" :value="formatBangla(average_kormosuci.alochona_sova)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.alochona_sova_total)" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="sudhi_somabesh_uposthiti" :value="formatBangla(average_kormosuci.sudhi_somabesh)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.sudhi_somabesh_total)" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td >৩.</td>
                                 <td class="text-start px-2">সীরাতুন্নবী (সাঃ) মাহফিল</td>
-                                <td>{{bangla($kormosuci->siratunnabi_mahfil_total?? "")}}</td>
-                                <td>{{bangla($kormosuci->siratunnabi_mahfil_target?? "")}}</td>
-                                <td>{{bangla(calculate_average($kormosuci->siratunnabi_mahfil_total,$kormosuci->siratunnabi_mahfil_uposthiti))}}</td>
+                                <td >
+                                    <input name="siratunnabi_mahfil_total" :value="formatBangla(kormosuci.siratunnabi_mahfil_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td >
+                                    <input name="siratunnabi_mahfil_target" :value="formatBangla(kormosuci.siratunnabi_mahfil_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="siratunnabi_mahfil_uposthiti" :value="formatBangla(average_kormosuci.siratunnabi_mahfil)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.siratunnabi_mahfil_total)" type="text" class="bg-input w-100 text-center" />
+                                </td>
                             </tr>
                             <tr>
                                 <td >৪.</td>
                                 <td class="text-start px-2">ঈদ পুনর্মিলনী</td>
-                                <td >{{bangla($kormosuci->eid_reunion_total?? "")}}</td>
-                                <td >{{bangla($kormosuci->eid_reunion_target?? "")}}</td>
-                                <td>{{bangla(calculate_average($kormosuci->eid_reunion_total,$kormosuci->eid_reunion_uposthiti))}}</td>
+                                <td >
+                                    <input name="eid_reunion_total" :value="formatBangla(kormosuci.eid_reunion_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td >
+                                    <input name="eid_reunion_target" :value="formatBangla(kormosuci.eid_reunion_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td>
+                                    <input name="eid_reunion_uposthiti" :value="formatBangla(average_kormosuci.eid_reunion)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.eid_reunion_total)" type="text" class="bg-input w-100 text-center" />
+                                </td>
                             </tr>
                             <tr>
                                 <td >৫.</td>
                                 <td class="text-start font-13 letter_spacing px-1">দারস/তাফসীর/দাওয়াতি জনসভা ও ইসলামী মাহফিল</td>
+
                                 <td class="font-13">
-                                    {{bangla($kormosuci->dars_total?? "")}}/
-                                    {{bangla($kormosuci->tafsir_total?? "")}}/
-                                    {{bangla($kormosuci->dawati_jonosova_total?? "")}}
+                                    <div class="d-flex">
+                                        <input name="dars_total" :value="formatBangla(kormosuci.dars_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="tafsir_total" :value="formatBangla(kormosuci.tafsir_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="dawati_jonosova_total" :value="formatBangla(kormosuci.dawati_jonosova_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                                 <td class="font-13">
-                                    {{bangla($kormosuci->dars_target?? "")}}/
-                                    {{bangla($kormosuci->tafsir_target?? "")}}/
-                                    {{bangla($kormosuci->dawati_jonosova_target?? "")}}
+                                    <div class="d-flex">
+                                        <input name="dars_target" :value="formatBangla(kormosuci.dars_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="tafsir_target" :value="formatBangla(kormosuci.tafsir_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="dawati_jonosova_target" :value="formatBangla(kormosuci.dawati_jonosova_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                                 <td class="font-13">
-                                    {{bangla(calculate_average($kormosuci->dars_total,$kormosuci->dars_uposthiti))}}/
-                                    {{bangla(calculate_average($kormosuci->tafsir_total,$kormosuci->tafsir_uposthiti))}}/
-                                    {{bangla(calculate_average($kormosuci->dawati_jonosova_total,$kormosuci->dawati_jonosova_uposthiti))}}
+                                    <div class="d-flex">
+                                        <input name="dars_uposthiti" :value="formatBangla(average_kormosuci.dars)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.dars_total)" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="tafsir_uposthiti" :value="formatBangla(average_kormosuci.tafsir)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.tafsir_total)" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="dawati_jonosova_uposthiti" :value="formatBangla(average_kormosuci.dawati_jonosova)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.dawati_jonosova_total)" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -930,66 +947,1349 @@
                             <tr>
                                 <td >৬.</td>
                                 <td class="text-start px-2">ইফতার মাহফিল (ব্যক্তিগত/সাংগঠনিক)</td>
-                                <td >
-                                    {{bangla($kormosuci->iftar_mahfil_personal_total?? "")}}/
-                                    {{bangla($kormosuci->iftar_mahfil_samostic_total?? "")}}
-                                </td>
-                                <td >
-                                    {{bangla($kormosuci->iftar_mahfil_personal_target?? "")}}/
-                                    {{bangla($kormosuci->iftar_mahfil_samostic_target?? "")}}
+                                <td>
+                                    <div class="d-flex">
+                                        <input name="iftar_mahfil_personal_total" :value="formatBangla(kormosuci.iftar_mahfil_personal_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="iftar_mahfil_samostic_total" :value="formatBangla(kormosuci.iftar_mahfil_samostic_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                                 <td>
-                                    {{bangla(calculate_average($kormosuci->iftar_mahfil_personal_total,$kormosuci->iftar_mahfil_personal_uposthiti))}}/
-                                    {{bangla(calculate_average($kormosuci->iftar_mahfil_samostic_total,$kormosuci->iftar_mahfil_samostic_uposthiti))}}
+                                    <div class="d-flex">
+                                        <input name="iftar_mahfil_personal_target" :value="formatBangla(kormosuci.iftar_mahfil_personal_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="iftar_mahfil_samostic_target" :value="formatBangla(kormosuci.iftar_mahfil_samostic_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <input name="iftar_mahfil_personal_uposthiti" :value="formatBangla(average_kormosuci.iftar_mahfil_personal)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.iftar_mahfil_personal_total)" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="iftar_mahfil_samostic_uposthiti" :value="formatBangla(average_kormosuci.iftar_mahfil_samostic)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.iftar_mahfil_samostic_total)" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td >৭.</td>
                                 <td class="text-start px-2">চা চক্র/সামষ্টিক খাওয়া/শিক্ষা সফর</td>
                                 <td class="font-13">
-                                    {{bangla($kormosuci->cha_chakra_total?? "")}}/
-                                    {{bangla($kormosuci->samostic_khawa_total?? "")}}/
-                                    {{bangla($kormosuci->sikkha_sofor_total?? "")}}
+                                    <div class="d-flex">
+                                        <input name="cha_chakra_total" :value="formatBangla(kormosuci.cha_chakra_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="samostic_khawa_total" :value="formatBangla(kormosuci.samostic_khawa_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="sikkha_sofor_total" :value="formatBangla(kormosuci.sikkha_sofor_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                                 <td class="font-13">
-                                    {{bangla($kormosuci->cha_chakra_target?? "")}}/
-                                    {{bangla($kormosuci->samostic_khawa_target?? "")}}/
-                                    {{bangla($kormosuci->sikkha_sofor_target?? "")}}
+                                    <div class="d-flex">
+                                        <input name="cha_chakra_target" :value="formatBangla(kormosuci.cha_chakra_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="samostic_khawa_target" :value="formatBangla(kormosuci.samostic_khawa_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="sikkha_sofor_target" :value="formatBangla(kormosuci.sikkha_sofor_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                                 <td class="font-13">
-                                    {{bangla(calculate_average($kormosuci->cha_chakra_total,$kormosuci->cha_chakra_uposthiti))}}/
-                                    {{bangla(calculate_average($kormosuci->samostic_khawa_total,$kormosuci->samostic_khawa_uposthiti))}}/
-                                    {{bangla(calculate_average($kormosuci->sikkha_sofor_total,$kormosuci->sikkha_sofor_uposthiti))}}
+                                    <div class="d-flex">
+                                        <input name="cha_chakra_uposthiti" :value="formatBangla(average_kormosuci.cha_chakra)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.cha_chakra_total)" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="samostic_khawa_uposthiti" :value="formatBangla(average_kormosuci.samostic_khawa)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.samostic_khawa_total)" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="sikkha_sofor_uposthiti" :value="formatBangla(average_kormosuci.sikkha_sofor)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.sikkha_sofor_total)" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td >৮.</td>
                                 <td class="text-start px-2">কিরাত/হামদ না'ত প্ৰতিযোগিতা</td>
-                                <td class="font-13">
-                                    {{bangla($kormosuci->kirat_protijogita_total?? "")}}/
-                                    {{bangla($kormosuci->hamd_nat_protijogita_total?? "")}}
+                                <td>
+                                    <div class="d-flex">
+                                        <input name="kirat_protijogita_total" :value="formatBangla(kormosuci.kirat_protijogita_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="hamd_nat_protijogita_total" :value="formatBangla(kormosuci.hamd_nat_protijogita_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
-                                <td class="font-13">
-                                    {{bangla($kormosuci->kirat_protijogita_target?? "")}}/
-                                    {{bangla($kormosuci->hamd_nat_protijogita_target?? "")}}
+                                <td>
+                                    <div class="d-flex">
+                                        <input name="kirat_protijogita_target" :value="formatBangla(kormosuci.kirat_protijogita_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="hamd_nat_protijogita_target" :value="formatBangla(kormosuci.hamd_nat_protijogita_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
-                                <td class="font-13">
-                                    {{bangla(calculate_average($kormosuci->kirat_protijogita_total,$kormosuci->kirat_protijogita_uposthiti))}}/
-                                    {{bangla(calculate_average($kormosuci->hamd_nat_protijogita_total,$kormosuci->hamd_nat_protijogita_uposthiti))}}
+                                <td>
+                                    <div class="d-flex">
+                                        <input name="kirat_protijogita_uposthiti" :value="formatBangla(average_kormosuci.kirat_protijogita)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.kirat_protijogita_total)" type="text" class="bg-input w-100 text-center" />/
+                                        <input name="hamd_nat_protijogita_uposthiti" :value="formatBangla(average_kormosuci.hamd_nat_protijogita)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.hamd_nat_protijogita_total)" type="text" class="bg-input w-100 text-center" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td >৯.</td>
                                 <td class="text-start px-2">অন্যান্য</td>
-                                <td >{{bangla($kormosuci->others_total?? "")}}</td>
-                                <td >{{bangla($kormosuci->others_target?? "")}}</td>
+                                <td >
+                                    <input name="others_total" :value="formatBangla(kormosuci.others_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                </td>
+                                <td >
+                                    <input name="others_target" :value="formatBangla(kormosuci.others_target)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />
+                                </td>
                                 <td>
-                                    {{bangla(calculate_average($kormosuci->others_total,$kormosuci->others_uposthiti))}}
+                                    <input name="others_uposthiti" :value="formatBangla(average_kormosuci.others)" @change="average_data_upload($event,'ward-kormosuci-bastobayon',kormosuci.others_total)" type="text" class="bg-input w-100 text-center" />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </section>
+
+        <section class="">
+            <div class="songothon">
+                <h1 class="font-18 fw-bold">সংগঠন :</h1>
+                <div class="jonoshokti mb-2">
+                    <h4 class="fs-6 fw-bold">১. জনশক্তি</h4>
+                    <!-- <table class="text-center  mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="width-20">জনশক্তি ধরন</th>
+                                <th class="">বিগত মাসের সংখ্যা</th>
+                                <th class="">বর্তমান সংখ্যা</th>
+                                <th class="">বৃদ্ধি</th>
+                                <th class="">ঘাটতি*</th>
+                                <th class="">টার্গেট</th>
+                                <th class="">বাস্তবায়নের হার</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">সর্বমোট সদস্য (রুকন)</td>
+                                <td>{{bangla($songothon1->rokon_previous?? "")}}</td>
+                                <td>{{bangla($songothon1->rokon_present?? "")}}</td>
+                                <td>{{bangla($songothon1->rokon_briddhi?? "")}}</td>
+                                <td>{{bangla($songothon1->rokon_gatti?? "")}}</td>
+                                <td>{{bangla($songothon1->rokon_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon1->rokon_target, $songothon1->rokon_briddhi))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">সর্বমোট কর্মী</td>
+                                <td>{{bangla($songothon1->worker_previous?? "")}}</td>
+                                <td>{{bangla($songothon1->worker_present?? "")}}</td>
+                                <td>{{bangla($songothon1->worker_briddhi?? "")}}</td>
+                                <td>{{bangla($songothon1->worker_gatti?? "")}}</td>
+                                <td>{{bangla($songothon1->worker_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon1->worker_target, $songothon1->worker_briddhi))}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
+
+                <!-- <div class="shohojogi mb-2">
+                    <h4 class="fs-6 fw-bold">২. সহযোগী সদস্য :</h4>
+                    <table class="text-center mb-1">
+                        <thead>
+                            <tr>
+                                <th class="w-25">সহযোগী</th>
+                                <th class="width-15">বিগত মাসের সংখ্যা</th>
+                                <th class="width-15">বর্তমান সংখ্যা</th>
+                                <th class="width-15">বৃদ্ধি</th>
+                                <th class="width-15">টার্গেট</th>
+                                <th class="width-15">বাস্তবায়নের হার</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">মোট সহযোগী সদস্য (পুরুষ)</td>
+                                <td>{{bangla($songothon2->associate_member_man_previous?? "")}}</td>
+                                <td>{{bangla($songothon2->associate_member_man_present?? "")}}</td>
+                                <td>{{bangla($songothon2->associate_member_man_briddhi?? "")}}</td>
+                                <td>{{bangla($songothon2->associate_member_man_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon2->associate_member_man_target, $songothon2->associate_member_man_briddhi))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">মোট সহযোগী সদস্য (মহিলা)</td>
+                                <td>{{bangla($songothon2->associate_member_woman_previous?? "")}}</td>
+                                <td>{{bangla($songothon2->associate_member_woman_present?? "")}}</td>
+                                <td>{{bangla($songothon2->associate_member_woman_briddhi?? "")}}</td>
+                                <td>{{bangla($songothon2->associate_member_woman_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon2->associate_member_woman_target, $songothon2->associate_member_woman_briddhi))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">সর্বমোট সহযোগী সদস্য সংখ্যা**</td>
+                                <td>
+                                    {{ bangla(($songothon2->associate_member_man_previous ?? 0) + ($songothon2->associate_member_woman_previous ?? 0) ?: '') }}
+                                </td>
+                                <td>
+                                    {{ bangla(($songothon2->associate_member_man_present ?? 0) + ($songothon2->associate_member_woman_present ?? 0) ?: '') }}
+                                </td>
+                                <td>
+                                    {{ bangla(($songothon2->associate_member_man_briddhi ?? 0) + ($songothon2->associate_member_woman_briddhi ?? 0) ?: '') }}
+                                </td>
+                                <td>
+                                    {{ bangla(($songothon2->associate_member_man_target ?? 0) + ($songothon2->associate_member_woman_target ?? 0) ?: '') }}
+                                </td>
+                                <td>
+                                    {{-- {{ bangla(($songothon2->associate_member_man_previous ?? 0) + ($songothon2->associate_member_woman_previous ?? 0) ?: '') }} --}}
+                                    {{
+                                        bangla(
+                                            implementation_rate(
+                                                (($songothon2->associate_member_man_briddhi ?? 0) + ($songothon2->associate_member_woman_briddhi ?? 0) ?: ''),
+                                                (($songothon2->associate_member_man_briddhi ?? 0) + ($songothon2->associate_member_woman_briddhi ?? 0) ?: '')
+                                            )
+                                        )
+                                    }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="font-14">*সদস্য (রুকন) ঘাটতির ক্ষেত্রে স্থানান্তর, ইন্তেকাল, বাতিল, ইস্তফা ও বিদেশ গমন সংখ্যার হিসাব আলাদাভাবে সংরক্ষণ করে মোট সংখ্যাটি এ ঘরে বসাতে হবে এবং এতদসংক্রান্ত তালিকা ঊর্ধ্বতন সংগঠনে জমা দিতে হবে।</p>
+                    <p class="font-14">** দাওয়াত ও তাবলিগের 'ক' এর অধীনে উল্লেখিত সকল সহযোগী সদস্যের সংখ্যা সংগঠনের জনশক্তির এ ছকে সর্বমোট সহযোগী সদস্যের ঘরে বসাতে হবে।</p>
+                </div> -->
+                <!-- <div class="bivag_vittik mb-5">
+                    <h4 class="fs-6 fw-bold">৩. বিভাগভিত্তিক তথ্য:</h4>
+                    <table class="text-center mb-1">
+                        <thead>
+                            <tr>
+                                <th class="">বিভাগসমূহ</th>
+                                <th class="width-15">ধরন</th>
+                                <th class="width-15">বিগত সময়ের সংখ্যা</th>
+                                <th class="width-15">বর্তমান সংখ্যা</th>
+                                <th class="width-15">বৃদ্ধি</th>
+                                <th class="width-15">ঘাটতি</th>
+                                <th class="width-15">টার্গেট</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">মহিলা</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td>{{bangla($songothon3->women_rokon_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->women_rokon_present?? "")}}</td>
+                                <td>{{bangla($songothon3->women_rokon_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->women_rokon_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->women_rokon_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td>{{bangla($songothon3->women_kormi_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->women_kormi_present?? "")}}</td>
+                                <td>{{bangla($songothon3->women_kormi_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->women_kormi_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->women_kormi_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td>{{bangla($songothon3->women_associate_member_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->women_associate_member_present?? "")}}</td>
+                                <td>{{bangla($songothon3->women_associate_member_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->women_associate_member_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->women_associate_member_target?? "")}}</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">শ্রম*</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td>{{bangla($songothon3->sromojibi_rokon_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_rokon_present?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_rokon_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_rokon_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_rokon_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td>{{bangla($songothon3->sromojibi_kormi_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_kormi_present?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_kormi_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_kormi_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_kormi_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td>{{bangla($songothon3->sromojibi_associate_member_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_associate_member_present?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_associate_member_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_associate_member_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->sromojibi_associate_member_target?? "")}}</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">উলামা</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td>{{bangla($songothon3->ulama_rokon_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_rokon_present?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_rokon_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_rokon_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_rokon_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td>{{bangla($songothon3->ulama_kormi_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_kormi_present?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_kormi_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_kormi_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_kormi_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td>{{bangla($songothon3->ulama_associate_member_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_associate_member_present?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_associate_member_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_associate_member_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->ulama_associate_member_target?? "")}}</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">পেশাজীবী</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td>{{bangla($songothon3->pesha_jibi_rokon_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_rokon_present?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_rokon_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_rokon_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_rokon_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td>{{bangla($songothon3->pesha_jibi_kormi_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_kormi_present?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_kormi_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_kormi_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_kormi_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td>{{bangla($songothon3->pesha_jibi_associate_member_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_associate_member_present?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_associate_member_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_associate_member_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->pesha_jibi_associate_member_target?? "")}}</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3" class="text-center px-2">যুব</td>
+                                <td class="text-start">সদস্য (রুকন)</td>
+                                <td>{{bangla($songothon3->jubo_rokon_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_rokon_present?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_rokon_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_rokon_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_rokon_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">কর্মী</td>
+                                <td>{{bangla($songothon3->jubo_kormi_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_kormi_present?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_kormi_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_kormi_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_kormi_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td>{{bangla($songothon3->jubo_associate_member_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_associate_member_present?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_associate_member_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_associate_member_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->jubo_associate_member_target?? "")}}</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="2" class="text-center px-2">ভিন্নধর্মাবলম্বী</td>
+                                <td class="text-start">কর্মী</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_kormi_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_kormi_present?? "")}}</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_kormi_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_kormi_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_kormi_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সহযোগী সদস্য</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_associate_member_previous?? "")}}</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_associate_member_present?? "")}}</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_associate_member_increase?? "")}}</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_associate_member_gatti?? "")}}</td>
+                                <td>{{bangla($songothon3->vinno_dormalombi_associate_member_target?? "")}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="font-12">*শ্রমিক কল্যাণের রিপোর্ট অনুযায়ী হবে।</p>
+                </div> -->
+
+
+                <!-- <div class="unit_shongothon mb-3 pt-3">
+                    <h4 class="fs-6">৪. ইউনিট সংগঠন:</h4>
+                    <table class="text-center mb-1">
+                        <thead>
+                            <tr>
+                                <th class="width-20">ইউনিটের ধরন</th>
+                                <th class="width-15">বিগত সময়ের সংখ্যা</th>
+                                <th class="width-15">বর্তমান সংখ্যা</th>
+                                <th class="width-10">বৃদ্ধি</th>
+                                <th class="width-10">ঘাটতি</th>
+                                <th class="width-15">টার্গেট</th>
+                                <th class="width-15">বাস্তবায়নের হার</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">সাধারণ ইউনিট (পুরুষ)</td>
+                                <td>{{bangla($songothon4->general_unit_men_previous?? "")}}</td>
+                                <td>{{bangla($songothon4->general_unit_men_present?? "")}}</td>
+                                <td>{{bangla($songothon4->general_unit_men_increase?? "")}}</td>
+                                <td>{{bangla($songothon4->general_unit_men_gatti?? "")}}</td>
+                                <td>{{bangla($songothon4->general_unit_men_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon4->general_unit_men_target, $songothon4->general_unit_men_increase))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সাধারণ ইউনিট (মহিলা)</td>
+                                <td>{{bangla($songothon4->general_unit_women_previous?? "")}}</td>
+                                <td>{{bangla($songothon4->general_unit_women_present?? "")}}</td>
+                                <td>{{bangla($songothon4->general_unit_women_increase?? "")}}</td>
+                                <td>{{bangla($songothon4->general_unit_women_gatti?? "")}}</td>
+                                <td>{{bangla($songothon4->general_unit_women_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon4->general_unit_women_target, $songothon4->general_unit_women_increase))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">উলামা ইউনিট</td>
+                                <td>{{bangla($songothon4->ulama_unit_previous?? "")}}</td>
+                                <td>{{bangla($songothon4->ulama_unit_present?? "")}}</td>
+                                <td>{{bangla($songothon4->ulama_unit_increase?? "")}}</td>
+                                <td>{{bangla($songothon4->ulama_unit_gatti?? "")}}</td>
+                                <td>{{bangla($songothon4->ulama_unit_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon4->ulama_unit_target, $songothon4->ulama_unit_increase))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">পেশাজীবী ইউনিট</td>
+                                <td>{{bangla($songothon4->peshajibi_unit_previous?? "")}}</td>
+                                <td>{{bangla($songothon4->peshajibi_unit_present?? "")}}</td>
+                                <td>{{bangla($songothon4->peshajibi_unit_increase?? "")}}</td>
+                                <td>{{bangla($songothon4->peshajibi_unit_gatti?? "")}}</td>
+                                <td>{{bangla($songothon4->peshajibi_unit_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon4->peshajibi_unit_target, $songothon4->peshajibi_unit_increase))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">শ্রমিক কল্যাণ ইউনিট</td>
+                                <td>{{bangla($songothon4->sromik_kollyan_unit_previous?? "")}}</td>
+                                <td>{{bangla($songothon4->sromik_kollyan_unit_present?? "")}}</td>
+                                <td>{{bangla($songothon4->sromik_kollyan_unit_increase?? "")}}</td>
+                                <td>{{bangla($songothon4->sromik_kollyan_unit_gatti?? "")}}</td>
+                                <td>{{bangla($songothon4->sromik_kollyan_unit_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon4->sromik_kollyan_unit_target, $songothon4->sromik_kollyan_unit_increase))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">যুব ইউনিট</td>
+                                <td>{{bangla($songothon4->jubo_unit_previous?? "")}}</td>
+                                <td>{{bangla($songothon4->jubo_unit_present?? "")}}</td>
+                                <td>{{bangla($songothon4->jubo_unit_increase?? "")}}</td>
+                                <td>{{bangla($songothon4->jubo_unit_gatti?? "")}}</td>
+                                <td>{{bangla($songothon4->jubo_unit_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon4->jubo_unit_target, $songothon4->jubo_unit_increase))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">মিডিয়া ইউনিট</td>
+                                <td>{{bangla($songothon4->media_unit_previous?? "")}}</td>
+                                <td>{{bangla($songothon4->media_unit_present?? "")}}</td>
+                                <td>{{bangla($songothon4->media_unit_increase?? "")}}</td>
+                                <td>{{bangla($songothon4->media_unit_gatti?? "")}}</td>
+                                <td>{{bangla($songothon4->media_unit_target?? "")}}</td>
+                                <td>
+                                    {{bangla(implementation_rate($songothon4->media_unit_target, $songothon4->media_unit_increase))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-end">সর্বমোট ইউনিট সংখ্যা</td>
+                                <td>
+                                    {{
+                                        bangla(
+                                            ($songothon4->general_unit_men_previous ?? 0) +
+                                            ($songothon4->general_unit_women_previous ?? 0) +
+                                            ($songothon4->ulama_unit_previous ?? 0) +
+                                            ($songothon4->peshajibi_unit_previous ?? 0) +
+                                            ($songothon4->sromik_kollyan_unit_previous ?? 0) +
+                                            ($songothon4->jubo_unit_previous ?? 0) +
+                                            ($songothon4->media_unit_previous ?? 0)
+                                            ?: ''
+                                        )
+                                    }}
+                                </td>
+                                <td>
+                                    {{
+                                        bangla(
+                                            ($songothon4->general_unit_men_present ?? 0) +
+                                            ($songothon4->general_unit_women_present ?? 0) +
+                                            ($songothon4->ulama_unit_present ?? 0) +
+                                            ($songothon4->peshajibi_unit_present ?? 0) +
+                                            ($songothon4->sromik_kollyan_unit_present ?? 0) +
+                                            ($songothon4->jubo_unit_present ?? 0) +
+                                            ($songothon4->media_unit_present ?? 0)
+                                            ?: ''
+                                        )
+                                    }}
+                                </td>
+                                <td>
+                                    {{
+                                        bangla(
+                                            ($songothon4->general_unit_men_increase ?? 0) +
+                                            ($songothon4->general_unit_women_increase ?? 0) +
+                                            ($songothon4->ulama_unit_increase ?? 0) +
+                                            ($songothon4->peshajibi_unit_increase ?? 0) +
+                                            ($songothon4->sromik_kollyan_unit_increase ?? 0) +
+                                            ($songothon4->jubo_unit_increase ?? 0) +
+                                            ($songothon4->media_unit_increase ?? 0)
+                                            ?: ''
+                                        )
+                                    }}
+                                </td>
+                                <td>
+                                    {{
+                                        bangla(
+                                            ($songothon4->general_unit_men_gatti ?? 0) +
+                                            ($songothon4->general_unit_women_gatti ?? 0) +
+                                            ($songothon4->ulama_unit_gatti ?? 0) +
+                                            ($songothon4->peshajibi_unit_gatti ?? 0) +
+                                            ($songothon4->sromik_kollyan_unit_gatti ?? 0) +
+                                            ($songothon4->jubo_unit_gatti ?? 0) +
+                                            ($songothon4->media_unit_gatti ?? 0)
+                                            ?: ''
+                                        )
+                                    }}
+                                </td>
+                                <td>
+                                    {{
+                                        bangla(
+                                            ($songothon4->general_unit_men_target ?? 0) +
+                                            ($songothon4->general_unit_women_target ?? 0) +
+                                            ($songothon4->ulama_unit_target ?? 0) +
+                                            ($songothon4->peshajibi_unit_target ?? 0) +
+                                            ($songothon4->sromik_kollyan_unit_target ?? 0) +
+                                            ($songothon4->jubo_unit_target ?? 0) +
+                                            ($songothon4->media_unit_target ?? 0)
+                                            ?: ''
+                                        )
+                                    }}
+                                </td>
+                                <td>
+                                    {{
+                                        bangla(
+                                            implementation_rate(
+                                                (
+                                                    ($songothon4->general_unit_men_target ?? 0) +
+                                                    ($songothon4->general_unit_women_target ?? 0) +
+                                                    ($songothon4->ulama_unit_target ?? 0) +
+                                                    ($songothon4->peshajibi_unit_target ?? 0) +
+                                                    ($songothon4->sromik_kollyan_unit_target ?? 0) +
+                                                    ($songothon4->jubo_unit_target ?? 0) +
+                                                    ($songothon4->media_unit_target ?? 0)
+                                                    ?: ''
+                                                ),
+                                                (
+                                                    ($songothon4->general_unit_men_increase ?? 0) +
+                                                    ($songothon4->general_unit_women_increase ?? 0) +
+                                                    ($songothon4->ulama_unit_increase ?? 0) +
+                                                    ($songothon4->peshajibi_unit_increase ?? 0) +
+                                                    ($songothon4->sromik_kollyan_unit_increase ?? 0) +
+                                                    ($songothon4->jubo_unit_increase ?? 0) +
+                                                    ($songothon4->media_unit_increase ?? 0)
+                                                    ?: ''
+                                                )
+
+                                            )
+                                        )
+                                    }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+                <!-- <div class="paribarik mb-2">
+                    <h4 class="fs-6">৫. দাওয়াতি ও পারিবারিক ইউনিট*:</h4>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="width">ইউনিটের ধরন</th>
+                                <th class="width">বিগত সময়ের সংখ্যা</th>
+                                <th class="width">বর্তমান সংখ্যা</th>
+                                <th class="width">বৃদ্ধি</th>
+                                <th class="width">ঘাটতি</th>
+                                <th class="width">টার্গেট</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">মোট দাওয়াতি ইউনিট</td>
+                                <td>{{bangla($songothon5->dawati_unit_previous?? "")}}</td>
+                                <td>{{bangla($songothon5->dawati_unit_present?? "")}}</td>
+                                <td>{{bangla($songothon5->dawati_unit_increase?? "")}}</td>
+                                <td>{{bangla($songothon5->dawati_unit_gatti?? "")}}</td>
+                                <td>{{bangla($songothon5->dawati_unit_target?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">মোট পারিবারিক ইউনিট</td>
+                                <td>{{bangla($songothon5->paribarik_unit_previous?? "")}}</td>
+                                <td>{{bangla($songothon5->paribarik_unit_present?? "")}}</td>
+                                <td>{{bangla($songothon5->paribarik_unit_increase?? "")}}</td>
+                                <td>{{bangla($songothon5->paribarik_unit_gatti?? "")}}</td>
+                                <td>{{bangla($songothon5->paribarik_unit_target?? "")}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="font-13">*দাওয়াতি ইউনিট ও পারিবারিক ইউনিটের সংখ্যা মোট সাংগঠনিক ইউনিটে অন্তর্ভুক্ত হবে না।</p>
+                </div> -->
+                <!-- <div class="bidai_chatro mb-3">
+                    <h4 class="fs-6">৬. বিদায়ী ছাত্র-ছাত্রী জনশক্তির সংগঠনে যোগদান</h4>
+                    <table class="text-center  mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="">বিবরণ</th>
+                                <th class="">সদস্য/ সদস্যা</th>
+                                <th class="">সাথী/অগ্রসর কর্মী</th>
+                                <th class="">কর্মী</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">যোগদানকৃত ছাত্র-ছাত্রীর সংখ্যা</td>
+                                <td>
+                                    {{bangla($songothon6->Joined_student_man_member?? "")}} /
+                                    {{bangla($songothon6->Joined_student_women_member?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla($songothon6->Joined_student_man_associate?? "")}} /
+                                    {{bangla($songothon6->Joined_student_women_associate?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla($songothon6->Joined_student_man_worker?? "")}} /
+                                    {{bangla($songothon6->Joined_student_women_worker?? "")}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+                <!-- <div class="sofor mb-2">
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="left w-50">
+                            <h4 class="fs-6 fw-bold">৭. সফর:</h4>
+                            <table class="text-center  mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="">সফরের ধরন</th>
+                                        <th class="width-40">মোট সংখ্যা</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2">ঊর্ধ্বতন দায়িত্বশীলদের সফর</td>
+                                        <td>{{bangla($songothon7->upper_leader_sofor?? "")}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">ওয়ার্ড আমীর/সভাপতির সফর</td>
+                                        <td>{{bangla($songothon7->ward_sovapotir_sofor?? "")}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">ওয়ার্ড শূরা/কর্মপরিষদ/টিম সদস্যদের সফর</td>
+                                        <td>{{bangla($songothon7->word_sura_sodosso_sofor?? "")}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="right w-50">
+                            <h4 class="fs-6 fw-bold">৮. ইয়ানত দাতা:</h4>
+                            <table class="text-center  mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="">নতুন ইয়ানত দাতা</th>
+                                        <th class="width-35">মোট সংখ্যা</th>
+                                        <th class="width-35">অর্থের পরিমাণ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2">সহযোগী সদস্য</td>
+                                        <td>{{bangla($songothon8->associate_member_total?? "")}}</td>
+                                        <td>{{bangla($songothon8->associate_member_total_iyanot_amounts?? "")}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">সুধী</td>
+                                        <td>{{bangla($songothon8->sudhi_total?? "")}}</td>
+                                        <td>{{bangla($songothon8->sudi_total_iyanot_amounts?? "")}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="boithok mb-4 pb-3">
+                    <h4 class="fs-6">৯. সাংগঠনিক বৈঠকাদিঃ</h4>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="width">ক্রমিক</th>
+                                <th class="width-30">বৈঠকের ধরন</th>
+                                <th class="width-20">সংখ্যা</th>
+                                <th class="width-20">টার্গেট</th>
+                                <th class="w-25">গড় উপস্থিতি</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">১.</td>
+                                <td class="text-start">ওয়ার্ড শূরা/কর্মপরিষদ / টিম বৈঠক</td>
+                                <td>
+                                    {{bangla($songothon9->word_sura_boithok_total?? "")}} /
+                                    {{bangla($songothon9->kormoporishod_boithok_total?? "")}} /
+                                    {{bangla($songothon9->team_boithok_total?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla($songothon9->word_sura_boithok_target?? "")}} /
+                                    {{bangla($songothon9->kormoporishod_boithok_target?? "")}} /
+                                    {{bangla($songothon9->team_boithok_target?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla(calculate_average($songothon9->word_sura_boithok_total, $songothon9->word_sura_boithok_uposthiti))}}/
+                                    {{bangla(calculate_average($songothon9->kormoporishod_boithok_total, $songothon9->kormoporishod_boithok_uposthiti))}}/
+                                    {{bangla(calculate_average($songothon9->team_boithok_total, $songothon9->team_boithok_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">২.</td>
+                                <td class="text-start">ওয়ার্ড বৈঠক</td>
+                                <td>{{bangla($songothon9->word_boithok_total?? "")}}</td>
+                                <td>{{bangla($songothon9->word_boithok_target?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($songothon9->word_boithok_total, $songothon9->word_boithok_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">৩.</td>
+                                <td class="text-start">মাসিক সদস্য (রুকন) বৈঠক</td>
+                                <td>{{bangla($songothon9->masik_sodosso_boithok_total?? "")}}</td>
+                                <td>{{bangla($songothon9->masik_sodosso_boithok_target?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($songothon9->masik_sodosso_boithok_total, $songothon9->masik_sodosso_boithok_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">৪.</td>
+                                <td class="text-start">ইউনিটে মোট কর্মী বৈঠক</td>
+                                <td>{{bangla($songothon9->unit_kormi_boithok_total?? "")}}</td>
+                                <td>{{bangla($songothon9->unit_kormi_boithok_target?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($songothon9->unit_kormi_boithok_total, $songothon9->unit_kormi_boithok_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">৫.</td>
+                                <td class="text-start">উলামা/ যুবক/শ্রমিকদের বৈঠক/সমাবেশ</td>
+                                <td>
+                                    {{bangla($songothon9->ulama_somabesh_total?? "")}} /
+                                    {{bangla($songothon9->jubok_somabesh_total?? "")}} /
+                                    {{bangla($songothon9->sromik_somabesh_total?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla($songothon9->ulama_somabesh_target?? "")}} /
+                                    {{bangla($songothon9->jubok_somabesh_target?? "")}} /
+                                    {{bangla($songothon9->sromik_somabesh_target?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla(calculate_average($songothon9->ulama_somabesh_total, $songothon9->ulama_somabesh_uposthiti))}}/
+                                    {{bangla(calculate_average($songothon9->jubok_somabesh_total, $songothon9->jubok_somabesh_uposthiti))}}/
+                                    {{bangla(calculate_average($songothon9->sromik_somabesh_total, $songothon9->sromik_somabesh_uposthiti))}}
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div> -->
+            </div>
+
+
+            <!-- <div class="proshikkhon mb-2">
+                <h1 class="font-18 fw-bold">প্ৰশিক্ষণ :</h1>
+                <div class="tarbiat mb-3">
+                    <h4 class="fs-6 fw-bold">ক) তারবিয়াত (নৈতিক শিক্ষা ও সাংগঠনিক প্রশিক্ষণ):</h4>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="width-5">ক্রমিক</th>
+                                <th class="width-40">প্রোগ্রামের ধরন</th>
+                                <th class="width">মোট সংখ্যা</th>
+                                <th class="width">টার্গেট</th>
+                                <th class="">গড় উপস্থিতি</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td >১.</td>
+                                <td class="text-start">ইউনিটে তারবিয়াতী বৈঠক</td>
+                                <td>{{bangla($proshikkhon1->unit_tarbiati_boithok?? "")}}</td>
+                                <td>{{bangla($proshikkhon1->unit_tarbiati_boithok_target?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($proshikkhon1->unit_tarbiati_boithok, $proshikkhon1->unit_tarbiati_boithok_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >২.</td>
+                                <td class="text-start">ওয়ার্ডভিত্তিক কর্মী শিক্ষা বৈঠক</td>
+                                <td>{{bangla($proshikkhon1->ward_kormi_sikkha_boithok?? "")}}</td>
+                                <td>{{bangla($proshikkhon1->ward_kormi_sikkha_boithok_target?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($proshikkhon1->ward_kormi_sikkha_boithok, $proshikkhon1->ward_kormi_sikkha_boithok_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >৩.</td>
+                                <td class="text-start">ঊর্ধ্বতন সংগঠনের শিক্ষাশিবির/শিক্ষা বৈঠকে অংশগ্রহণকারী</td>
+                                <td>
+                                    {{bangla($proshikkhon1->urdhotono_sikkha_shibir?? "")}} /
+                                    {{bangla($proshikkhon1->urdhotono_sikkha_boithok?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla($proshikkhon1->urdhotono_sikkha_shibir_target?? "")}} /
+                                    {{bangla($proshikkhon1->urdhotono_sikkha_boithok_target?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla(calculate_average($proshikkhon1->urdhotono_sikkha_shibir, $proshikkhon1->urdhotono_sikkha_shibir_uposthiti))}}/
+                                    {{bangla(calculate_average($proshikkhon1->urdhotono_sikkha_boithok, $proshikkhon1->urdhotono_sikkha_boithok_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >৪.</td>
+                                <td class="text-start">গণশিক্ষা বৈঠক/ গণ নৈশ ইবাদত</td>
+                                <td>
+                                    {{bangla($proshikkhon1->gono_sikkha_boithok?? "")}} /
+                                    {{bangla($proshikkhon1->gono_noisho_ibadot?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla($proshikkhon1->gono_sikkha_boithok_target?? "")}} /
+                                    {{bangla($proshikkhon1->gono_noisho_ibadot_target?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla(calculate_average($proshikkhon1->gono_sikkha_boithok, $proshikkhon1->gono_sikkha_boithok_uposthiti))}}/
+                                    {{bangla(calculate_average($proshikkhon1->gono_noisho_ibadot, $proshikkhon1->gono_noisho_ibadot_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >৫.</td>
+                                <td class="text-start">আলোচনা চক্র</td>
+                                <td class="text-start">
+                                    গ্রুপ সংখ্যা: <span>{{bangla($proshikkhon1->alochona_chokro_group?? "")}}</span>
+                                </td>
+                                <td class="text-start">
+                                    অধিবেশন সংখ্যা: <span>{{bangla($proshikkhon1->alochona_chokro_program?? "")}}</span>
+                                </td>
+                                <td>
+                                    {{bangla(calculate_average($proshikkhon1->alochona_chokro_program, $proshikkhon1->alochona_chokro_uposthiti))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >৬.</td>
+                                <td class="text-start">দারস্/সহীহ কুরআন তিলাওয়াত অনুশীলন</td>
+                                <td class="text-start">
+                                    প্রোগ্রাম সংখ্যা :
+                                    <span>
+                                        {{bangla($proshikkhon1->darsul_quran_program?? "")}} /
+                                        {{bangla($proshikkhon1->sohih_tilawat_program?? "")}}
+                                    </span>
+                                </td>
+                                <td></td>
+                                <td>
+                                    {{bangla(calculate_average($proshikkhon1->darsul_quran_program, $proshikkhon1->darsul_quran_uposthiti))}}/
+                                    {{bangla(calculate_average($proshikkhon1->sohih_tilawat_program, $proshikkhon1->sohih_tilawat_uposthiti))}}
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="hrd">
+                    <h4 class="fs-6 fw-bold">খ) মানব সম্পদ উন্নয়ন কোর্সসমূহ :</h4>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="">কোর্সের ধরন</th>
+                                <th class="">অংশগ্রহণকারীর সংখ্যা</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">দাওয়াহ / সমাজকর্ম/ মিডিয়া</td>
+                                <td>
+                                    {{bangla($proshikkhon2->dawah_uposthiti?? "")}} /
+                                    {{bangla($proshikkhon2->shomajkormo_uposthiti?? "")}} /
+                                    {{bangla($proshikkhon2->media_uposthiti?? "")}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">আইসিটি/ অফিস/ ফিন্যান্সিয়াল ম্যানেজমেন্ট/ ইংরেজি ভাষা/ আরবি ভাষা</td>
+                                <td>
+                                    {{bangla($proshikkhon2->ict_uposthiti?? "")}} /
+                                    {{bangla($proshikkhon2->office_uposthiti?? "")}} /
+                                    {{bangla($proshikkhon2->financial_management_uposthiti?? "")}} /
+                                    {{bangla($proshikkhon2->english_language_uposthiti?? "")}} /
+                                    {{bangla($proshikkhon2->arabic_language_uposthiti?? "")}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ*</td>
+                                <td>{{bangla($proshikkhon2->trade_oriented_technical_training_uposthiti?? "")}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="font-14">* ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ কোর্সের আওতায় ফার্সিং (পোল্ট্রি, ফিশারিজ, ডেইরি), সেলাই/এমব্রয়ডারী মেশিন অপারেটর, ড্রাইভিং কাম অটোমেকানিক, রন্ধন শিল্প, হর্টিকালচার/নার্সারি, তাঁত শিল্প/বুটিকস, হস্ত শিল্প, ইলেক্ট্রিক্যাল এন্ড ইলেক্ট্রনিক্স সার্ভিসিং, সিভিল কন্সট্রাকশন/প্লাম্বারিং, আমিনশীপ ইত্যাদি কোর্সসমূহের বাস্তবায়ন রিপোর্টের যোগফল এখানে বসাতে হবে।</p>
+                </div>
+            </div> -->
+
+            <!-- <div class="shomajsheba mt-5">
+                <h1 class="font-18 fw-bold">সমাজ সংস্কার ও সমাজসেবা :</h1>
+                <div class="personal_shamajik_kaj mb-2">
+                    <h4 class="fs-6 fw-bold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h4>
+                    <table class="text-center  mb-1">
+                        <tr>
+                            <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
+                            <td class="width-20">{{bangla($shomajsheba1->how_many_people_did?? "")}}</td>
+                            <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
+                            <td class="width-20">{{bangla($shomajsheba1->service_received_total?? "")}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="samostik_shamajik_kaj pt-3 mb-2">
+                    <h4 class="fs-6 fw-bold">২. সামষ্টিক/সেবা টিমের মাধ্যমে সামাজিক কাজ (প্রযোজ্য ক্ষেত্রে):</h4>
+                    <table class="mb-1">
+                        <tbody>
+                            <td class="w-25 text-center">সাধারণ সেবা টিম সংখ্যা</td>
+                            <td class="text-center">{{bangla($shomajsheba2->number_of_general_service_teams?? "")}}</td>
+                            <td class="w-25 text-center">টেকনিক্যাল সেবা টিম সংখ্যা</td>
+                            <td class="text-center">{{bangla($shomajsheba2->number_of_technical_service_teams?? "")}}</td>
+                            <td class="w-25 text-center">স্বেচ্ছাসেবক টিম সংখ্যা</td>
+                            <td class="text-center">{{bangla($shomajsheba2->number_of_volunteer_teams?? "")}}</td>
+                        </tbody>
+                    </table>
+                    <table class="text-center  mb-1">
+                        <thead>
+                            <tr>
+                                <th class="width-35">বিবরণ</th>
+                                <th class="width-15">সংখ্যা</th>
+                                <th class="width-35">বিবরণ</th>
+                                <th class="width-15">সংখ্যা</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">ছোট-ছোট উন্নয়নমূলক কাজ</td>
+                                <td>{{bangla($shomajsheba2->minor_unnoyonmulok_kaj?? "")}}</td>
+                                <td class="text-start px-2">টেকনিক্যাল সেবা প্রদান (কতজন / কতজনকে)</td>
+                                <td>
+                                    {{bangla($shomajsheba2->technical_services_prodan_kotojonke?? "")}} /
+                                    {{bangla($shomajsheba2->online_services_prodan_kotojonke?? "")}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2 font-13">সামাজিক অনুষ্ঠানে অশংগ্রহণ/সহায়তা প্রদান (সংখ্যা / কতজনকে)</td>
+                                <td>
+                                    {{bangla($shomajsheba2->shamajik_onusthane_ongshogrohon?? "")}} /
+                                    {{bangla($shomajsheba2->shamajik_onusthane_shohayota_prodan?? "")}}
+                                </td>
+                                <td class="text-start px-2">অনলাইনের মাধ্যমে সেবা প্রদান (কতজনকে)</td>
+                                <td>{{bangla($shomajsheba2->online_services_prodan_kotojonke?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">সামাজিক বিরোধ মীমাংসা</td>
+                                <td>{{bangla($shomajsheba2->shamajik_birodh_mimangsha?? "")}}</td>
+                                <td class="text-start px-2">বৃক্ষরোপন (কতটি)</td>
+                                <td>{{bangla($shomajsheba2->brikkho_ropon?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">মানবিক সহায়তা প্রদান (কতজনকে)</td>
+                                <td>{{bangla($shomajsheba2->manobik_shohayota_prodan?? "")}}</td>
+                                <td class="text-start px-2">জনসচেতনতামূলক প্রোগ্রাম (কতটি)</td>
+                                <td>{{bangla($shomajsheba2->public_awareness_programs?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">কর্জে হাসানা প্রদান (কতজনকে )</td>
+                                <td>{{bangla($shomajsheba2->korje_hasana_prodan?? "")}}</td>
+                                <td class="text-start px-2">ত্রাণ বিতরণ (কতজনকে)</td>
+                                <td >{{bangla($shomajsheba2->tran_bitoron?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">পরিষ্কার-পরিচ্ছন্নতা/মশক নিধন অভিযান</td>
+                                <td>
+                                    {{bangla($shomajsheba2->porishkar_poricchonnota_ovijan?? "")}} /
+                                    {{bangla($shomajsheba2->moshok_nidhon_ovijan?? "")}}
+                                </td>
+                                <td class="text-start px-2">ভিন্নধর্মাবলম্বীদের সেবা প্রদান (কতজন/কতজনকে)</td>
+                                <td>
+                                    {{bangla($shomajsheba2->vinnodhormabolombider_service_prodan_kotojon?? "")}} /
+                                    {{bangla($shomajsheba2->vinnodhormabolombider_service_prodan_kotojonke?? "")}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">রোগীর পরিচর্যা/চিকিৎসা সহায়তা প্রদান (কতজনকে)</td>
+                                <td>
+                                    {{bangla($shomajsheba2->rogir_poricorja?? "")}} /
+                                    {{bangla($shomajsheba2->medical_shohayota_prodan?? "")}}
+                                </td>
+                                <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে )</td>
+                                <td>{{bangla($shomajsheba2->mayeter_gosol_kotojonke?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">স্বেচ্ছায় রক্ত দান (কতজন/কতজনকে)</td>
+                                <td>
+                                    {{bangla($shomajsheba2->voluntarily_blood_donation_kotojon?? "")}} /
+                                    {{bangla($shomajsheba2->voluntarily_blood_donation_kotojonke?? "")}}
+                                </td>
+                                <td class="text-start px-2">জানাযায় অংশগ্রহণ</td>
+                                <td >{{bangla($shomajsheba2->janajay_ongshogrohon?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">নবজাতককে গিফ্‌ট প্রদান (কতজনকে)</td>
+                                <td>{{bangla($shomajsheba2->nobojatokke_gift_prodan?? "")}}</td>
+                                <td class="text-start px-2">স্বল্প পুঁজিতে কর্মসংস্থানের সহায়তা (কতজনকে)</td>
+                                <td >{{bangla($shomajsheba2->low_capital_employment_kotojonke?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">ভ্রাম্যমান স্কুল/মক্তব চালু</td>
+                                <td>
+                                    {{bangla($shomajsheba2->vrammoman_school_calu?? "")}} /
+                                    {{bangla($shomajsheba2->vrammoman_moktob_calu?? "")}}
+                                </td>
+                                <td class="text-start px-2">অন্যান্য......</td>
+                                <td >{{bangla($shomajsheba2->others?? "")}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="shastho_poribar_kollan mb-2">
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="left w-50">
+                            <h4 class="fs-6 fw-bold">৩. স্বাস্থ্য ও পরিবার কল্যাণমূলক কাজ</h4>
+                            <table class="text-center  mb-1">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2 width-70">স্বাস্থ্যকর্মী প্রশিক্ষণ প্রোগ্রামে মোট অংশগ্রহণকারীর সংখ্যা</td>
+                                        <td>{{bangla($shomajsheba3->health_worker_training_programs_attendance?? "")}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">কতজন স্বাস্থ্যসেবা কাজে অংশগ্রহণ করেছেন</td>
+                                        <td>{{bangla($shomajsheba3->participated_in_health_care_work?? "")}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">সেবাপ্রাপ্ত সংখ্যা</td>
+                                        <td>{{bangla($shomajsheba3->served_people?? "")}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="right w-50">
+                            <h4 class="fs-6 fw-bold">৪. প্রাতিষ্ঠানিক উদ্যোগে সামাজিক কাজ:</h4>
+                            <table class="text-center  mb-1">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2 width-70">কতটি সামাজিক প্রতিষ্ঠান রয়েছে</td>
+                                        <td>{{bangla($shomajsheba4->shamajik_protishthan_kototi?? "")}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">কতটি প্রতিষ্ঠানে সামাজিক কাজ হয়েছে</td>
+                                        <td>{{bangla($shomajsheba4->shamajik_protishthan_kototite_kaj_hoyeche?? "")}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2 font-13">কতটি নতুন সামাজিক প্রতিষ্ঠান চালু করা হয়েছে (প্রযোজ্য ক্ষেত্রে)</td>
+                                        <td>{{bangla($shomajsheba4->new_shamajik_protishthan?? "")}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="rartrio">
+                <h1 class="font-18 fw-bold">রাষ্ট্রীয় সংস্কার ও সংশোধন :</h1>
+                <div class="rajnoitik_jogajog">
+                    <h4 class="fs-6 fw-bold">১. রাজনৈতিক ও প্রশাসনিক যোগাযোগ</h4>
+                    <table class="text-center  mb-1">
+                        <thead>
+                            <tr>
+                                <th>যোগাযোগের ধরন</th>
+                                <th>মোট কতজন যোগাযোগ করেছেন</th>
+                                <th>মোট কতজনের সাথে যোগাযোগ হয়েছে</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">রাজনৈতিক ব্যক্তিবর্গ</td>
+                                <td>{{bangla($rastrio1->rajnoitik_bekti_jogajog_koreche_kotojon?? "")}}</td>
+                                <td>{{bangla($rastrio1->rajnoitik_bekti_jogajog_koreche_kotojonke?? "")}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">প্রশাসনিক ব্যক্তিবর্গ</td>
+                                <td>{{bangla($rastrio1->proshoshonik_bekti_jogajog_koreche_kotojon?? "")}}</td>
+                                <td>{{bangla($rastrio1->proshoshonik_bekti_jogajog_koreche_kotojonke?? "")}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="kormoshuchi_bastobayon">
+                    <h4 class="fs-6 fw-bold">২. কর্মসূচি বাস্তবায়ন</h4>
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="left width-55">
+                            <table class="text-center mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="width-55">কর্মসূচির বিবরণ</th>
+                                        <th>মোট সংখ্যা</th>
+                                        <th>গড় উপস্থিতি</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2 ">কেন্দ্র ঘোষিত রাজনৈতিক কর্মসূচি পালন</td>
+                                        <td>{{bangla($rastrio2->centrally_announced_political_program?? "")}}</td>
+                                        <td>
+                                            {{bangla(calculate_average($rastrio2->centrally_announced_political_program, $rastrio2->centrally_announced_political_program_attend))}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2 font-13">স্থানীয়ভাবে ঘোষিত কর্মসূচি : জনসভা/সমাবেশ/মিছিল</td>
+                                        <td class="font-13">
+                                            {{bangla($rastrio2->locally_announced_jonoshova?? "")}}/
+                                            {{bangla($rastrio2->locally_announced_shomabesh?? "")}}/
+                                            {{bangla($rastrio2->locally_announced_michil?? "")}}
+                                        </td>
+                                        <td class="font-13">
+                                            {{bangla(calculate_average($rastrio2->locally_announced_jonoshova, $rastrio2->locally_announced_jonoshova_attend))}}/
+                                            {{bangla(calculate_average($rastrio2->locally_announced_shomabesh, $rastrio2->locally_announced_shomabesh_attend))}}/
+                                            {{bangla(calculate_average($rastrio2->locally_announced_michil, $rastrio2->locally_announced_michil_attend))}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="right width-45">
+                            <table class="text-center  mb-1">
+                                <thead>
+                                    <tr>
+                                        <th class="width-60">কর্মসূচির বিবরণ</th>
+                                        <th>মোট সংখ্যা</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start px-2 font-14">পোস্টার/লিফলেট/বুকলেট/স্মারকলিপি বিতরণ</td>
+                                        <td class="font-13">
+                                            {{bangla($rastrio2->poster_bitoron?? "")}}/
+                                            {{bangla($rastrio2->leaflet_bitoron?? "")}}/
+                                            {{bangla($rastrio2->booklet_bitoron?? "")}}/
+                                            {{bangla($rastrio2->sharoklipi_bitoron?? "")}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start px-2">অন্যান্য</td>
+                                        <td>{{bangla($rastrio2->others?? "")}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dibosh">
+                    <h4 class="fs-6 fw-bold">৩. জাতীয় ও আন্তর্জাতিক দিবস পালন:</h4>
+                    <table class="text-center  mb-1">
+                        <thead>
+                            <tr>
+                                <th>দিবসসমূহ</th>
+                                <th>মোট প্রোগ্রাম সংখ্যা</th>
+                                <th>গড় উপস্থিতি</th>
+                                <th>দিবসসমূহ</th>
+                                <th>মোট প্রোগ্রাম সংখ্যা</th>
+                                <th>গড় উপস্থিতি</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">স্বাধীনতা ও জাতীয় দিবস</td>
+                                <td>{{bangla($rastrio3->shadhinota_o_jatio_dibosh_total_programs?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($rastrio3->shadhinota_o_jatio_dibosh_total_programs, $rastrio3->shadhinota_o_jatio_dibosh_attend))}}
+                                </td>
+                                <td class="text-start">আন্তর্জাতিক মাতৃভাষা দিবস</td>
+                                <td>{{bangla($rastrio3->mattrivasha_dibosh_total_programs?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($rastrio3->mattrivasha_dibosh_total_programs, $rastrio3->mattrivasha_dibosh_attend))}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">বিজয় দিবস</td>
+                                <td>{{bangla($rastrio3->bijoy_dibosh_total_programs?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($rastrio3->bijoy_dibosh_total_programs, $rastrio3->bijoy_dibosh_attend))}}
+                                </td>
+                                <td class="text-start">অন্যান্য</td>
+                                <td>{{bangla($rastrio3->others_total_programs?? "")}}</td>
+                                <td>
+                                    {{bangla(calculate_average($rastrio3->others_total_programs, $rastrio3->others_attend))}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="nirbachon">
+                    <h4 class="fs-6 fw-bold">৪. জাতীয় ও স্থানীয় নির্বাচনভিত্তিক কার্যক্রম:</h4>
+                    <table class="text-center  mb-1">
+                        <thead>
+                            <tr>
+                                <th>নির্বাচনের ধরন</th>
+                                <th>মোট প্রার্থী সংখ্যা</th>
+                                <th>নির্বাচিত সংখ্যা</th>
+                                <th>দ্বিতীয় অবস্থান</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">কাউন্সিলর/মেম্বার</td>
+                                <td>
+                                    {{bangla($rastrio4->councilor_candidate?? "")}} /
+                                    {{bangla($rastrio4->member_candidate?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla($rastrio4->councilor_candidate_elected?? "")}} /
+                                    {{bangla($rastrio4->member_candidate_elected?? "")}}
+                                </td>
+                                <td>
+                                    {{bangla($rastrio4->councilor_candidate_second_position?? "")}} /
+                                    {{bangla($rastrio4->member_candidate_second_position?? "")}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex align-items-start gap-2">
+                        <table class="text-center mb-2 width-60">
+                            <thead>
+                                <tr>
+                                    <th class="width-45">প্রস্তুতিমূলক কার্যক্রমের ধরন</th>
+                                    <th>সংখ্যা</th>
+                                    <th>বৃদ্ধি</th>
+                                    <th>টার্গেট</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start">মোট ভোট কেন্দ্র (জাতীয়/স্থানীয়)</td>
+                                    <td>
+                                        {{bangla($rastrio4->national_vote_kendro?? "")}} /
+                                        {{bangla($rastrio4->local_vote_kendro?? "")}}
+                                    </td>
+                                    <td>
+                                        {{bangla($rastrio4->national_vote_kendro_increase?? "")}} /
+                                        {{bangla($rastrio4->local_vote_kendro_increase?? "")}}
+                                    </td>
+                                    <td>
+                                        {{bangla($rastrio4->national_vote_kendro_target?? "")}} /
+                                        {{bangla($rastrio4->local_vote_kendro_target?? "")}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start">ভোট কেন্দ্র কমিটি/কেন্দ্র/ বুথভিত্তিক ইউনিট</td>
+                                    <td>
+                                        {{bangla($rastrio4->vote_kendro_committee?? "")}} /
+                                        {{bangla($rastrio4->vote_kendro_vittik_unit?? "")}}
+                                    </td>
+                                    <td>
+                                        {{bangla($rastrio4->vote_kendro_committee_increase?? "")}} /
+                                        {{bangla($rastrio4->vote_kendro_vittik_unit_increase?? "")}}
+                                    </td>
+                                    <td>
+                                        {{bangla($rastrio4->vote_kendro_committee_target?? "")}} /
+                                        {{bangla($rastrio4->vote_kendro_vittik_unit_target?? "")}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="text-center w-25">
+                            <thead>
+                                <tr>
+                                    <th>নির্বাচন পরিচালনা কমিটির বৈঠক সংখ্যা</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{bangla($rastrio4->election_management_committee_meeting?? "")}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="baytulmal">
+                <div class="title negative_margine">
+                    <h1>বাইতুলমাল</h1>
+                </div>
+                <p class="fs-6 fw-bold">ধার্যকৃত নিছাব :</p>
+                <table class="text-center  mb-1 table_layout_fixed">
+                    <thead>
+                        <tr>
+                            <th class="text-center" colspan="2">আয়ের বিবরণ</th>
+                            <th class="text-center" colspan="2">জমার পরিমাণ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-0 vertical_align_baseline" colspan="2">
+                                <table class="border_none">
+                                    <tbody>
+                                        @foreach ($income_category_wise as $income_category)
+                                            <tr>
+                                                <td class="text-start px-2 w-50 border_bottom">{{$income_category["category"]}}</td>
+                                                <td class="border_left_bottom">{{bangla($income_category["amount"])}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td class="p-0 vertical_align_baseline" colspan="2">
+                                <table class="border_none">
+                                    <tbody>
+                                        @foreach ($expense_category_wise as $expense_category)
+                                            <tr>
+                                                <td class="text-start px-2 w-50 border_bottom">{{$expense_category["category"]}}</td>
+                                                <td class="border_left_bottom">{{bangla($expense_category["amount"])}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-end px-2">মোট</td>
+                            <td >{{bangla($total_income)}}</td>
+                            <td class="text-end px-2">মোট</td>
+                            <td >{{bangla($total_expense)}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end px-2">গত মাসের উদ্বৃত্ত</td>
+                            <td >{{bangla($total_previous)}}</td>
+                            <td class="text-end px-2">এ মাসের উদ্বৃত্ত</td>
+                            <td >{{bangla($total_current_income)}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end px-2">সর্বমোট</td>
+                            <td >{{bangla($total_current_income)}}</td>
+                            <td class="text-end px-2">সর্বমোট</td>
+                            <td >{{bangla($in_total)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+            <!-- <div class="montobbo">
+                <h1 class="fs-6 fw-bold">ওয়ার্ড আমীর/সভাপতির মন্তব্য :</h1>
+                <p>{{$montobbo->montobbo}}</p>
             </div> -->
         </section>
 
@@ -1100,11 +2400,22 @@
 
                 average_kormosuci: {
                     unit_masik_sadaron_sova: null,
+                    dawati_sova: null,
+                    alochona_sova: null,
+                    sudhi_somabesh: null,
+                    siratunnabi_mahfil: null,
+                    eid_reunion: null,
+                    dars: null,
+                    tafsir: null,
+                    dawati_jonosova: null,
                     iftar_mahfil_personal: null,
                     iftar_mahfil_samostic: null,
                     cha_chakra: null,
                     samostic_khawa: null,
                     sikkha_sofor: null,
+                    kirat_protijogita: null,
+                    hamd_nat_protijogita: null,
+                    others: null,
                 },
 
 
@@ -1196,21 +2507,46 @@
                 }
             },
             average_data:async function(){
+                // -------------- kormosuci --------------
                 this.average_kormosuci.unit_masik_sadaron_sova =
-                            (this.kormosuci.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.kormosuci.unit_masik_sadaron_sova_total ?? 1);
+                    Math.round((this.kormosuci.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.kormosuci.unit_masik_sadaron_sova_total ?? 1));
+                this.average_kormosuci.dawati_sova =
+                    Math.round((this.kormosuci.dawati_sova_uposthiti ?? 0) / (this.kormosuci.dawati_sova_total ?? 1));
+                this.average_kormosuci.alochona_sova =
+                    Math.round((this.kormosuci.alochona_sova_uposthiti ?? 0) / (this.kormosuci.alochona_sova_total ?? 1));
+                this.average_kormosuci.sudhi_somabesh =
+                    Math.round((this.kormosuci.sudhi_somabesh_uposthiti ?? 0) / (this.kormosuci.sudhi_somabesh_total ?? 1));
+                this.average_kormosuci.siratunnabi_mahfil =
+                    Math.round((this.kormosuci.siratunnabi_mahfil_uposthiti ?? 0) / (this.kormosuci.siratunnabi_mahfil_total ?? 1));
+                this.average_kormosuci.eid_reunion =
+                    Math.round((this.kormosuci.eid_reunion_uposthiti ?? 0) / (this.kormosuci.eid_reunion_total ?? 1));
+                this.average_kormosuci.dars =
+                    Math.round((this.kormosuci.dars_uposthiti ?? 0) / (this.kormosuci.dars_total ?? 1));
+                this.average_kormosuci.tafsir =
+                    Math.round((this.kormosuci.tafsir_uposthiti ?? 0) / (this.kormosuci.tafsir_total ?? 1));
+                this.average_kormosuci.dawati_jonosova =
+                    Math.round((this.kormosuci.dawati_jonosova_uposthiti ?? 0) / (this.kormosuci.dawati_jonosova_total ?? 1));
                 this.average_kormosuci.iftar_mahfil_personal =
-                            (this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1);
-                this.average_kormosuci.iftar_mahfil_personal =
-                            (this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1);
+                    Math.round((this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1));
                 this.average_kormosuci.iftar_mahfil_samostic =
-                            (this.kormosuci.iftar_mahfil_samostic_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_samostic_total ?? 1);
+                    Math.round((this.kormosuci.iftar_mahfil_samostic_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_samostic_total ?? 1));
                 this.average_kormosuci.cha_chakra =
-                            (this.kormosuci.cha_chakra_uposthiti ?? 0) / (this.kormosuci.cha_chakra_total ?? 1);
+                    Math.round((this.kormosuci.cha_chakra_uposthiti ?? 0) / (this.kormosuci.cha_chakra_total ?? 1));
                 this.average_kormosuci.samostic_khawa =
-                            (this.kormosuci.samostic_khawa_uposthiti ?? 0) / (this.kormosuci.samostic_khawa_total ?? 1);
+                    Math.round((this.kormosuci.samostic_khawa_uposthiti ?? 0) / (this.kormosuci.samostic_khawa_total ?? 1));
                 this.average_kormosuci.sikkha_sofor =
-                            (this.kormosuci.sikkha_sofor_uposthiti ?? 0) / (this.kormosuci.sikkha_sofor_total ?? 1);
+                    Math.round((this.kormosuci.sikkha_sofor_uposthiti ?? 0) / (this.kormosuci.sikkha_sofor_total ?? 1));
+                this.average_kormosuci.kirat_protijogita =
+                    Math.round((this.kormosuci.kirat_protijogita_uposthiti ?? 0) / (this.kormosuci.kirat_protijogita_total ?? 1));
+                this.average_kormosuci.hamd_nat_protijogita =
+                    Math.round((this.kormosuci.hamd_nat_protijogita_uposthiti ?? 0) / (this.kormosuci.hamd_nat_protijogita_total ?? 1));
+                this.average_kormosuci.others =
+                    Math.round((this.kormosuci.others_uposthiti ?? 0) / (this.kormosuci.others_total ?? 1));
+                // -------------- kormosuci --------------
+
+
             },
+
             formatBangla(number) {
                 return number ? number.toLocaleString("bn-BD") : "";
             },
@@ -1232,11 +2568,30 @@
                     .then((response) => {
                         // window.toaster("Data uploaded successfully");
                         console.log("Data uploaded successfully");
-                        if (['unit_masik_sadaron_sova_total', 'iftar_mahfil_personal_total',
-                            'iftar_mahfil_samostic_total', 'cha_chakra_total',
-                            'samostic_khawa_total', 'sikkha_sofor_total'].includes(name)) {
-                            this.uploaded_data();  // Call uploaded_data if name matches
-                        }
+                        if (
+                            [
+                                'unit_masik_sadaron_sova',
+                                'dawati_sova',
+                                'alochona_sova',
+                                'sudhi_somabesh',
+                                'siratunnabi_mahfil',
+                                'eid_reunion',
+                                'dars',
+                                'tafsir',
+                                'dawati_jonosova',
+                                'iftar_mahfil_personal',
+                                'iftar_mahfil_samostic',
+                                'cha_chakra',
+                                'samostic_khawa',
+                                'sikkha_sofor',
+                                'kirat_protijogita',
+                                'hamd_nat_protijogita',
+                                'others',
+
+
+                            ].includes(name)) {
+                                this.uploaded_data();  // Call uploaded_data if name matches
+                            }
 
                     })
                     .catch((error) => {
