@@ -146,6 +146,9 @@ ul li {
 .font-13 {
     font-size: 13px;
 }
+.width-5 {
+    width: 5%;
+}
 
 /* width by % */
 .width-10 {

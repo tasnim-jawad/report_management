@@ -1157,7 +1157,7 @@ class WardController extends Controller
         $query = WardBmIncome::query();
         $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('ward_id', $ward_info->ward_id);
         $data = $filter->with('ward_bm_income_category')->get();
-
+        // dd("income_category_wise", $data->toArray());
         return response()->json([
             'status' => 'success',
             'data' => $data,

@@ -845,7 +845,7 @@
                                     {{
                                         bangla(
                                             implementation_rate(
-                                                (($songothon2->associate_member_man_briddhi ?? 0) + ($songothon2->associate_member_woman_briddhi ?? 0) ?: ''),
+                                                (($songothon2->associate_member_man_target ?? 0) + ($songothon2->associate_member_woman_target ?? 0) ?: ''),
                                                 (($songothon2->associate_member_man_briddhi ?? 0) + ($songothon2->associate_member_woman_briddhi ?? 0) ?: '')
                                             )
                                         )
