@@ -2826,7 +2826,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="baytulmal">
+            <div class="baytulmal">
                 <div class="title negative_margine">
                     <h1>বাইতুলমাল</h1>
                 </div>
@@ -2843,77 +2843,8 @@
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        @foreach ($income_category_wise as $income_category)
-                                            <tr>
-                                                <td class="text-start px-2 w-50 border_bottom">{{$income_category["category"]}}</td>
-                                                <td class="border_left_bottom">{{bangla($income_category["amount"])}}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td class="p-0 vertical_align_baseline" colspan="2">
-                                <table class="border_none">
-                                    <tbody>
-                                        @foreach ($expense_category_wise as $expense_category)
-                                            <tr>
-                                                <td class="text-start px-2 w-50 border_bottom">{{$expense_category["category"]}}</td>
-                                                <td class="border_left_bottom">{{bangla($expense_category["amount"])}}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-end px-2">মোট</td>
-                            <td >{{bangla($total_income)}}</td>
-                            <td class="text-end px-2">মোট</td>
-                            <td >{{bangla($total_expense)}}</td>
-                        </tr>
-                        <tr>
-                            <td class="text-end px-2">গত মাসের উদ্বৃত্ত</td>
-                            <td >{{bangla($total_previous)}}</td>
-                            <td class="text-end px-2">এ মাসের উদ্বৃত্ত</td>
-                            <td >{{bangla($total_current_income)}}</td>
-                        </tr>
-                        <tr>
-                            <td class="text-end px-2">সর্বমোট</td>
-                            <td >{{bangla($total_current_income)}}</td>
-                            <td class="text-end px-2">সর্বমোট</td>
-                            <td >{{bangla($in_total)}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> -->
-            <!-- <div class="montobbo">
-                <h1 class="fs-6 fw-bold">ওয়ার্ড আমীর/সভাপতির মন্তব্য :</h1>
-                <p>{{$montobbo->montobbo}}</p>
-            </div> -->
-        </section>
-
-
-        <section class="margine_top_page_change">
-
-            <div class="baytulmal">
-                <div class="title">
-                    <h1>বাইতুলমাল</h1>
-                </div>
-                <p class="fs-6">মাসিক ওয়াদার পরিমাণ :</p>
-                <table class="text-center  mb-1 table_layout_fixed">
-                    <thead>
-                        <tr>
-                            <th class="text-center" colspan="2">আয়ের বিবরণ</th>
-                            <th class="text-center" colspan="2">জমার পরিমাণ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="p-0 vertical_align_baseline" colspan="2">
-                                <table class="border_none">
-                                    <tbody>
                                         <tr v-for="(bm_cat,index) in bm_income_categories" :key="index">
-                                            <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.title + ' ' + bm_cat.id }}</td>
+                                            <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.title }}</td>
                                             <td class="border_left_bottom">
                                                 <input name="bm_entry" :value="formatBangla(bm_categoty_amount(bm_cat.id))" @change="income_store(bm_cat.id,$event.target.value)" type="text" class="bg-input w-100 text-center">
                                             </td>
@@ -2935,19 +2866,37 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-end px-2">সর্বমোট</td>
+                            <td class="text-end px-2">মোট</td>
                             <td >{{formatBangla(parseInt(total_income)?? "")}}</td>
-                            <td class="text-end px-2">সর্বমোট</td>
+                            <td class="text-end px-2">মোট</td>
                             <td >{{formatBangla(parseInt(total_expense)?? "")}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end px-2">গত মাসের উদ্বৃত্ত</td>
+                            <td >{{formatBangla(parseInt(total_previous)?? "")}}</td>
+                            <td class="text-end px-2">এ মাসের উদ্বৃত্ত</td>
+                            <td >{{formatBangla(parseInt(total_current_income)?? "")}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end px-2">সর্বমোট</td>
+                            <td >{{formatBangla(parseInt(total_current_income)?? "")}}</td>
+                            <td class="text-end px-2">সর্বমোট</td>
+                            <td >{{formatBangla(parseInt(in_total)?? "")}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="montobbo">
-                <h1 class="fs-6">ইউনিট সভাপতির মন্তব্য :</h1>
-                <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input" rows="5" v-model="montobbo.montobbo"></textarea>
+                <h1 class="fs-6 fw-bold">ওয়ার্ড আমীর/সভাপতির মন্তব্য :</h1>
+                <textarea name="montobbo" @change="data_upload('ward-montobbo')" id="" cols="30" class="w-100 bg-input" rows="5" v-model="montobbo.montobbo"></textarea>
             </div>
         </section>
+
+        <div class="joma_din text-center mt-3 pb-5">
+            <!-- <a href="" class="btn btn-success" @click.prevent="report_joma">রিপোর্ট জমা দিন</a> -->
+            <a href="" class="btn btn-success" v-if="joma_status == 'unsubmitted'" @click.prevent="report_joma">রিপোর্ট জমা দিন</a>
+            <a href="" class="btn btn-success" v-else-if="joma_status == 'rejected'" @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a>
+        </div>
         <a href="" class="print_preview" @click.prevent="print_report()"><i class="fa-solid fa-print"></i></a>
     </div>
 </template>
@@ -3010,6 +2959,10 @@
                 bm_cat_wise: null,
                 expense_cat_wise: null,
 
+                total_previous: null,
+                total_current_income: null,
+                in_total: null,
+
                 average_kormosuci: {
                     unit_masik_sadaron_sova: null,
                     dawati_sova: null,
@@ -3052,7 +3005,7 @@
                     darsul_quran: null,
                     sohih_tilawat: null,
                 },
-                
+
                 average_rastrio2: {
                     centrally_announced_political_program: null,
                     locally_announced_jonoshova: null,
@@ -3076,7 +3029,7 @@
             this.expense_category()
             this.bm_category_wise()
             this.bm_expense_category_wise()
-        
+
         },
         watch:{
             kormosuci:function(){
@@ -3157,6 +3110,10 @@
 
                     this.expense_category_wise = res.data.expense_category_wise,
                     this.total_expense = res.data.total_expense
+
+                    this.total_previous = res.data.total_previous,
+                    this.total_current_income = res.data.total_current_income,
+                    this.in_total = res.data.in_total,
 
                     console.log("this.department2",this.department2);
 
@@ -3376,7 +3333,7 @@
                 if(res.data.status == 'success'){
                         this.bm_expense_categories = res?.data?.data?.data
                         console.log('this.bm_expense_categories',this.bm_expense_categories);
-                        
+
                     }
 
             },
@@ -3387,14 +3344,14 @@
                 }
 
             },
-            income_store:function(bm_category_id,amount){
+            income_store:function(ward_bm_income_category_id,amount){
                 const month = this.$route.params.month;
                 const formData = {
-                    bm_category_id: bm_category_id,
+                    ward_bm_income_category_id: ward_bm_income_category_id,
                     amount: amount,
                     month: month,
                 };
-                axios.post('/bm-paid/store',formData)
+                axios.post('/ward-bm-income/store',formData)
                     .then(function (response) {
                         window.toaster('New BM entry Created successfuly', 'success');
                     })
@@ -3423,7 +3380,7 @@
                     // console.log("inside element",element)
                     if (element) {
                         // console.log('return',element.amount);
-                        
+
                         return element.amount;
                     }
                 }else{
@@ -3447,10 +3404,10 @@
             expense_categoty_amount:function(expense_cat_id){
                 console.log("expense_categoty_amount",expense_cat_id);
                 console.log("this.expense_cat_wise",this.expense_cat_wise);
-                
+
                 if(this.expense_cat_wise != null){
                     console.log("expanxe inside",this.expense_cat_wise);
-                    
+
                     const element = this.expense_cat_wise.find(element => element.ward_bm_expense_category.id == expense_cat_id);
                     if (element) {
                         return element.amount;
@@ -3460,14 +3417,14 @@
                 }
             },
 
-            expense_store:function(bm_expense_category_id,amount){
+            expense_store:function(ward_bm_expense_category_id,amount){
                 const month = this.$route.params.month;
                 const formData = {
-                    bm_expense_category_id: bm_expense_category_id,
+                    ward_bm_expense_category_id: ward_bm_expense_category_id,
                     amount: amount,
                     month: month,
                 };
-                axios.post('/bm-expense/store',formData)
+                axios.post('/ward-bm-expense/store',formData)
                     .then(function (response) {
                         window.toaster('New Expense entry Created successfuly', 'success');
                     })
@@ -3478,7 +3435,7 @@
             print_report:function(){
                 const month = this.$route.params.month;
                 const user_id = this.$route.params.user_id;
-                const url = `/unit/report?user_id=${user_id}&month=${month}&print=true`;
+                const url = `/ward/report?user_id=${user_id}&month=${month}&print=true`;
                 window.location.href = url;
 
                 setTimeout(() => {
@@ -3491,6 +3448,36 @@
                     return this.formatBangla(Math.round((achieved / target) * 100)) + '%';
                 }
                 return ' ';
+            },
+
+            report_status:async function(){
+                const month = this.$route.params.month;
+                let response = await axios.get('/ward/report-status', {
+                                params: {
+                                    month: month
+                                }
+                            })
+                if(response.data.status == 'success'){
+                    this.joma_status = response.data.report_status
+                    console.log("report_status",response)
+
+                }
+            },
+            report_joma:async function(){
+                const month = this.$route.params.month;
+                let response = await axios.get('/ward/report-joma', {
+                                params: {
+                                    month: month
+                                }
+                            })
+                if(response.data.status == 'success'){
+                    // this.$router.push({ name: "Montobbo" });
+                    this.report_status()
+                    window.toaster(response.data.message, 'success');
+
+                    this.joma_status = response.data.report_status
+                    console.log("report_status",response)
+                }
             }
 
 

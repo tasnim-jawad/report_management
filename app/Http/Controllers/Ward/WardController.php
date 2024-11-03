@@ -445,6 +445,22 @@ class WardController extends Controller
             $expense_category_wise[$index]['category'] = $WardBmExpenseCategory->title;
         }
         // -------------------------- bm expense report ------------------------------------
+        // -------------------------- bm previous report ------------------------------------
+        $query = WardBmIncome::query();
+        $filter = $query->whereDate('month','<=',$month->clone()->subMonth())
+                        ->where('ward_id', $ward_id);
+        $total_previous_income = $filter->sum('amount');
+        // dd($total_previous_income);
+
+        $query = WardBmExpense::query();
+        $filter = $query->whereDate('date','<=',$month->clone()->subMonth())
+                        ->where('ward_id', $ward_id);
+        $total_previous_expense = $filter->sum('amount');
+        $total_previous =  $total_previous_income - $total_previous_expense;
+        $total_current_income =  $total_previous + $total_income;
+        $in_total =  $total_current_income - $total_expense;
+        // dd($total_previous_income,$total_previous_expense,$total_previous);
+        // -------------------------- bm previous report ------------------------------------
         // dd(
             // 'status',"success",
             // 'month',$month->toArray(),
@@ -542,6 +558,10 @@ class WardController extends Controller
 
             'expense_category_wise' => $expense_category_wise,
             'total_expense' => $total_expense,
+
+            'total_previous' => $total_previous,
+            'total_current_income' => $total_current_income,
+            'in_total' => $in_total,
         ], 200);
     }
 

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('month_year')->nullable();
             $table->enum('report_type',['unit', 'ward', 'thana','city'])->nullable();
+            $table->bigInteger('upper_organization_id')->nullable();
             $table->tinyInteger('is_active')->default(0);
 
             $table->bigInteger('creator')->nullable();

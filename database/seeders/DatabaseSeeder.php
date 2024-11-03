@@ -97,6 +97,7 @@ use Database\Seeders\User\UserClassesTableSeeder;
 use Database\Seeders\User\UserContactsTableSeeder;
 use Database\Seeders\User\UserRolesTableSeeder;
 use Database\Seeders\User\UsersTableSeeder;
+use Database\Seeders\Ward\WardTotalUnitSubmittedDataTableSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -238,6 +239,8 @@ class DatabaseSeeder extends Seeder
             WardBmIncomesTableSeeder::class,
             //WardMontobbo
             WardMontobbosTableSeeder::class,
+            // ward
+            WardTotalUnitSubmittedDataTableSeeder::class,
         ]);
     }
 }

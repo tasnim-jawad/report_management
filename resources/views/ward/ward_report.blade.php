@@ -6,7 +6,8 @@
         <title>Report || ward</title>
 
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
         <link rel="stylesheet" href="{{ asset('css/ward/default.css') }}">
         <link rel="stylesheet" href="{{ asset('css/ward/ward_report.css') }}">
 
@@ -2009,6 +2010,10 @@
             </div>
         </section>
 
+        <a href="javascript:void(0)" class="print_preview" onclick="print_upload_page(event)">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </a>
+
         <script>
             function print_upload_page(event) {
                 event.preventDefault();
@@ -2022,7 +2027,7 @@
 
                 if (user_id && month) {
                     // Construct the new URL
-                    const redirectUrl = `/#/unit-report-upload/${month}/${user_id}`;
+                    const redirectUrl = `/#/ward-report-upload/${month}/${user_id}`;
 
                     // Redirect to the new URL
                     window.location.href = redirectUrl;

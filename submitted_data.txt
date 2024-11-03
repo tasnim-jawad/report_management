@@ -1,19 +1,10 @@
-// php artisan make:seeder Report/Dawat/Dawat4GonoSongjogAndDawatOvijansTableSeeder
-// php artisan make:controller Report/Dawat/Dawat4GonoSongjogAndDawatOvijanController
-// php artisan make:model Report/Dawat/Dawat4GonoSongjogAndDawatOvijan -m
-
-// php artisan make:seeder Report/Dawat/Dawat4GonoSongjogAndDawatOvijansTableSeeder
-// php artisan make:controller Report/Dawat/Dawat4GonoSongjogAndDawatOvijanController
-// php artisan make:model Report/Dawat/Dawat4GonoSongjogAndDawatOvijan -m
-
-
-// all_dawat1
+all_dawat1
 dawat1_how_many_groups_are_out
 dawat1_number_of_participants
 dawat1_how_many_have_been_invited
-dawat1_prophow_many_associate_members_createderty3
+dawat1_how_many_associate_members_created
 
-// all_dawat2
+all_dawat2
 dawat2_total_rokon
 dawat2_total_worker
 dawat2_how_many_were_give_dawat_rokon
@@ -21,11 +12,11 @@ dawat2_how_many_were_give_dawat_worker
 dawat2_how_many_have_been_invited
 dawat2_how_many_associate_members_created
 
-// all_dawat3
+all_dawat3
 dawat3_how_many_were_give_dawat
 dawat3_how_many_associate_members_created
 
-// all_dawat4
+all_dawat4
 dawat4_total_gono_songjog_group
 dawat4_total_attended
 dawat4_how_many_have_been_invited
@@ -36,7 +27,7 @@ dawat4_jela_mohanogor_declared_gonosonjog_attended
 dawat4_jela_mohanogor_declared_gonosonjog_invited
 dawat4_jela_mohanogor_declared_gonosonjog_associated_created
 
-// all_department1
+all_department1
 department1_teacher_rokon
 department1_teacher_worker
 department1_student_rokon
@@ -46,7 +37,7 @@ department1_how_much_learned_quran
 department1_how_much_invited
 department1_how_much_been_associated
 
-// all_department4
+all_department4
 department4_political_and_special_invited
 department4_political_and_special_been_associated
 department4_political_and_special_target
@@ -59,11 +50,11 @@ department4_vinno_dormalombi_invited
 department4_vinno_dormalombi_been_associated
 department4_vinno_dormalombi_target
 
-// all_department5
+all_department5
 department5_total_attended_family
 department5_how_many_new_family_invited
 
-// all_dawah_prokashona
+all_dawah_prokashona
 prokashona_books_in_pathagar
 prokashona_books_in_pathagar_increase
 
@@ -88,7 +79,7 @@ prokashona_songram_increase
 prokashona_prithibi
 prokashona_prithibi_increase
 
-// all_kormosuci
+all_kormosuci
 kormosuci_unit_masik_sadaron_sova_total
 kormosuci_unit_masik_sadaron_sova_target
 kormosuci_unit_masik_sadaron_sova_uposthiti
@@ -114,7 +105,7 @@ kormosuci_sikkha_sofor_target
 kormosuci_sikkha_sofor_uposthiti
 
 
-// all_songothon1
+all_songothon1
 songothon1_rokon_previous
 songothon1_rokon_present
 songothon1_rokon_briddhi
@@ -126,7 +117,7 @@ songothon1_worker_briddhi
 songothon1_worker_gatti
 songothon1_worker_target
 
-// all_songothon2
+all_songothon2
 songothon2_associate_member_previous
 songothon2_associate_member_present
 songothon2_associate_member_briddhi
@@ -140,25 +131,25 @@ songothon2_vinno_dormalombi_associate_member_present
 songothon2_vinno_dormalombi_associate_member_briddhi
 songothon2_vinno_dormalombi_associate_member_target
 
-// all_songothon9
+all_songothon9
 songothon9_unit_kormi_boithok_total
 songothon9_unit_kormi_boithok_uposthiti
 
-// all_songothon5
+all_songothon5
 songothon5_paribarik_unit_total
 songothon5_paribarik_unit_increase
 songothon5_paribarik_unit_target
 
-// all_songothon7
+all_songothon7
 songothon7_upper_leader_sofor
 
-// all_songothon8
+all_songothon8
 songothon8_associate_member_total
 songothon8_associate_member_total_iyanot_amounts
 songothon8_sudhi_total
 songothon8_sudi_total_iyanot_amounts
 
-// all_proshikkhon
+all_proshikkhon
 proshikkhon_sohi_quran_onushilon
 proshikkhon_sohi_quran_onushilon_target
 proshikkhon_sohi_quran_onushilon_uposthiti
@@ -183,11 +174,11 @@ proshikkhon_bishoy_vittik_onushilon
 proshikkhon_bishoy_vittik_onushilon_target
 proshikkhon_bishoy_vittik_onushilon_uposthiti
 
-// all_shomajsheba1
+all_shomajsheba1
 shomajsheba1_how_many_people_did
 shomajsheba1_service_received_total
 
-// all_shomajsheba2
+all_shomajsheba2
 shomajsheba2_shamajik_onusthane_ongshogrohon
 shomajsheba2_shamajik_onusthane_shohayota_prodan
 shomajsheba2_shamajik_birodh_mimangsha
@@ -204,9 +195,9 @@ shomajsheba2_mayeter_gosol
 shomajsheba2_others
 
 
-// all_rastrio
+all_rastrio
 rastrio_bishishto_bekti_jogajog
 
-// all_montobbo
+all_montobbo
 montobbo_montobbo
 

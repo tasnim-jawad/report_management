@@ -231,7 +231,7 @@ class WardBmExpenseController extends Controller
                     'errors' => [['You do not have the necessary permissions']],
                 ], 403);
             }
-            dd(auth()->user());
+            // dd(auth()->user());
             $ward_info = (object) auth()->user()->org_ward_user;
 
             $already_have_data = WardBmExpense::where('ward_id',$ward_info->ward_id)
