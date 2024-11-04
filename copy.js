@@ -11,7 +11,7 @@
 dawat1_how_many_groups_are_out
 dawat1_number_of_participants
 dawat1_how_many_have_been_invited
-dawat1_prophow_many_associate_members_createderty3
+dawat1_how_many_associate_members_created
 
 // all_dawat2
 dawat2_total_rokon

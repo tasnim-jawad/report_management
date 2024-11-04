@@ -2,14 +2,14 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Organization\OrgUnitUser;
+use App\Models\Organization\OrgWardUser;
 use App\Models\Report\ReportInfo;
 use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class StatusChack
+class WardStatusChack
 {
     /**
      * Handle an incoming request.
@@ -18,11 +18,11 @@ class StatusChack
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $unit_id = OrgUnitUser::where('user_id',auth()->id())->first()->unit_id;
+        $ward_id = OrgWardUser::where('user_id',auth()->id())->first()->ward_id;
         $carbon_month = Carbon::parse($request->month);
 
-        $report_info = ReportInfo::where('org_type_id', $unit_id)
-                            ->where('org_type','unit')
+        $report_info = ReportInfo::where('org_type_id', $ward_id)
+                            ->where('org_type','ward')
                             ->whereYear('month_year', $carbon_month->clone()->year)
                             ->whereMonth('month_year', $carbon_month->clone()->month)
                             ->where('report_type', 'monthly')

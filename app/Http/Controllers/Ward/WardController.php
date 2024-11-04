@@ -614,7 +614,7 @@ class WardController extends Controller
             'how_many_groups_are_out' => 0,
             'number_of_participants' => 0,
             'how_many_have_been_invited' => 0,
-            'prophow_many_associate_members_createderty3' => 0,
+            'how_many_associate_members_created' => 0,
         ];
         $all_dawat2 = [
             'total_rokon' => 0,
@@ -848,7 +848,7 @@ class WardController extends Controller
             $all_dawat1['how_many_groups_are_out'] += $dawat1->how_many_groups_are_out;
             $all_dawat1['number_of_participants'] += $dawat1->number_of_participants;
             $all_dawat1['how_many_have_been_invited'] += $dawat1->how_many_have_been_invited;
-            $all_dawat1['prophow_many_associate_members_createderty3'] += $dawat1->prophow_many_associate_members_createderty3;
+            $all_dawat1['how_many_associate_members_created'] += $dawat1->how_many_associate_members_created;
 
             $all_dawat2['total_rokon'] += $dawat2->total_rokon;
             $all_dawat2['total_worker'] += $dawat2->total_worker;
@@ -1254,7 +1254,7 @@ class WardController extends Controller
     //         'how_many_groups_are_out' => 0,
     //         'number_of_participants' => 0,
     //         'how_many_have_been_invited' => 0,
-    //         'prophow_many_associate_members_createderty3' => 0,
+    //         'how_many_associate_members_created' => 0,
     //     ];
     //     $all_dawat2 = [
     //         'total_rokon' => 0,
@@ -1530,7 +1530,7 @@ class WardController extends Controller
     //         $all_dawat1['how_many_groups_are_out'] += $dawat1->how_many_groups_are_out;
     //         $all_dawat1['number_of_participants'] += $dawat1->number_of_participants;
     //         $all_dawat1['how_many_have_been_invited'] += $dawat1->how_many_have_been_invited;
-    //         $all_dawat1['prophow_many_associate_members_createderty3'] += $dawat1->prophow_many_associate_members_createderty3;
+    //         $all_dawat1['how_many_associate_members_created'] += $dawat1->how_many_associate_members_created;
 
     //         $all_dawat2['total_rokon'] += $dawat2->total_rokon;
     //         $all_dawat2['total_worker'] += $dawat2->total_worker;

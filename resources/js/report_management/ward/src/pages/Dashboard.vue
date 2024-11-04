@@ -17,6 +17,11 @@
                             <td>{{unit.unit_title}}</td>
                             <td></td>
                         </tr>
+                        <tr>
+                            <td colspan="2" class="text-start">
+                                <a href="" class="btn btn-success btn-sm" @click.prevent="submit_total_approved_unit_data">Submit Total Approved Unit Data</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 <table class="table table-striped table-bordered text-start mb-3" v-if="rejected_unit.length">
@@ -133,9 +138,13 @@ export default {
                 );
                 console.log(response);
                 this.report_status()
-
-
-
+        },
+        submit_total_approved_unit_data:function(){
+            console.log("clicked");
+            let response = axios.post('/ward/submitted-units-data-add',{
+                        month: this.month
+                    }
+                );
         }
 
     }

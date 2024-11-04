@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\StatusChack;
+use App\Http\Middleware\WardStatusChack;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -1180,6 +1181,10 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
         Route::get('/report-status', [App\Http\Controllers\Ward\WardController::class,'report_status']);
         Route::get('/report-joma', [App\Http\Controllers\Ward\WardController::class,'report_joma']);
+    });
+
+    Route::group(['prefix' => 'ward'] , function(){
+        Route::post('/submitted-units-data-add', [App\Http\Controllers\Ward\WardTotalUnitSubmittedDataController::class,'submitted_units_data_add'])->middleware(WardStatusChack::class);
     });
 });
 

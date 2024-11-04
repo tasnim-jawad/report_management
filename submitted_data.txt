@@ -201,3 +201,12 @@ rastrio_bishishto_bekti_jogajog
 all_montobbo
 montobbo_montobbo
 
+ $data->dawat1_how_many_groups_are_out = $all_dawat1['how_many_groups_are_out'];
+ $data->dawat2_how_many_were_give_dawat_rokon = $all_dawat2['how_many_were_give_dawat_rokon'];
+ $data->proshikkhon_masala_masayel = $all_proshikkhon['masala_masayel'];
+ $data->songothon5_paribarik_unit_total = $all_songothon5['paribarik_unit_total'];
+
+$data->dawat1_how_many_groups_are_out = $all_dawat1['how_many_groups_are_out];
+$data->dawat1_number_of_participants = $all_dawat1['number_of_participants];
+$data->dawat1_how_many_have_been_invited = $all_dawat1['how_many_have_been_invited];
+$data->dawat1_how_many_associate_members_created = $all_dawat1['how_many_associate_members_created];

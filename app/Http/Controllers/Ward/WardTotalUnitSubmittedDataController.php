@@ -30,6 +30,7 @@ use App\Models\Report\Songothon\Songothon7Sofor;
 use App\Models\Report\Songothon\Songothon8IyanotData;
 use App\Models\Report\Songothon\Songothon9SangothonikBoithok;
 use App\Models\User;
+use App\Models\Ward\WardTotalUnitSubmittedData;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -38,9 +39,9 @@ class WardTotalUnitSubmittedDataController extends Controller
 {
     public function submitted_units_data_add()
     {
+        // dd(request()->all());
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
-            'user_id' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -50,10 +51,16 @@ class WardTotalUnitSubmittedDataController extends Controller
             ], 422);
         }
 
-        // dd(request()->all());
-        $ward_user = User::where('id', request()->user_id)->with('org_ward_user')->get()->first();
+        $permission = is_ward_report_upload_permitted(request()->month,auth()->user()->id);
+        if(!$permission){
+            return response()->json([
+                'err_message' => 'Permission denied',
+                'errors' => [['মুরব্বী মুরব্বী উমহু হু হু হু']],
+            ], 403);
+        }
 
-        $ward_id = $ward_user->org_ward_user['ward_id'];
+        $ward_user = User::where('id', auth()->user()->id)->with('org_ward_user')->get()->first();
+        $ward_id = $ward_user->org_ward_user->ward_id;
         $month = Carbon::parse(request()->month);
         $units = OrgUnit::where('org_ward_id',$ward_id)->get();
 
@@ -84,7 +91,7 @@ class WardTotalUnitSubmittedDataController extends Controller
             'how_many_groups_are_out' => 0,
             'number_of_participants' => 0,
             'how_many_have_been_invited' => 0,
-            'prophow_many_associate_members_createderty3' => 0,
+            'how_many_associate_members_created' => 0,
         ];
         $all_dawat2 = [
             'total_rokon' => 0,
@@ -281,7 +288,7 @@ class WardTotalUnitSubmittedDataController extends Controller
             'bishishto_bekti_jogajog' => 0,
         ];
         $all_montobbo = [
-            'montobbo' => [],
+            'montobbo' => null,
         ];
 
         $all_income_category_wise = [];
@@ -318,7 +325,7 @@ class WardTotalUnitSubmittedDataController extends Controller
             $all_dawat1['how_many_groups_are_out'] += $dawat1->how_many_groups_are_out;
             $all_dawat1['number_of_participants'] += $dawat1->number_of_participants;
             $all_dawat1['how_many_have_been_invited'] += $dawat1->how_many_have_been_invited;
-            $all_dawat1['prophow_many_associate_members_createderty3'] += $dawat1->prophow_many_associate_members_createderty3;
+            $all_dawat1['how_many_associate_members_created'] += $dawat1->how_many_associate_members_created;
 
             $all_dawat2['total_rokon'] += $dawat2->total_rokon;
             $all_dawat2['total_worker'] += $dawat2->total_worker;
@@ -482,8 +489,9 @@ class WardTotalUnitSubmittedDataController extends Controller
             $all_shomajsheba2['others'] += $shomajsheba2->others;
 
             $all_rastrio['bishishto_bekti_jogajog'] += $rastrio->bishishto_bekti_jogajog;
-
-            $all_montobbo['montobbo'][] = $montobbo->montobbo;
+            // dd(isset($all_montobbo['montobbo']));
+            $all_montobbo['montobbo'] = isset($all_montobbo['montobbo'])? $all_montobbo['montobbo'] . PHP_EOL . $montobbo->montobbo : $montobbo->montobbo;
+            // dd($all_montobbo['montobbo']);
 
         }
 
@@ -541,68 +549,309 @@ class WardTotalUnitSubmittedDataController extends Controller
         }
         // -------------------------- bm expense report ------------------------------------
 
-        dd(
-            $report_info_ids,
-            $all_dawat1,
-            $all_dawat2,
-            $all_dawat3,
-            $all_dawat4,
-            $all_department1,
-            $all_department4,
-            $all_department5,
-            $all_dawah_prokashona,
-            $all_kormosuci,
-            $all_songothon1,
-            $all_songothon2,
-            $all_songothon9,
-            $all_songothon5,
-            $all_songothon7,
-            $all_songothon8,
-            $all_proshikkhon,
-            $all_shomajsheba1,
-            $all_shomajsheba2,
-            $all_rastrio,
-            $all_montobbo,
-            $all_income_category_wise,
-            $total_income,
-            $all_expense_category_wise,
-            $total_expense,
-        );
-        return view('ward.ward_report_upload')->with([
-            'month' => $month,
-            'org_type' => $org_type,
-            'unit_info' => $unit_info,
-            'ward_info' => $ward_info,
-            'thana_info' => $thana_info,
-            'precedent' => $precedent,
+        $ward_report_info = ReportInfo::whereYear('month_year', $month->clone()->year)
+            ->whereMonth('month_year', $month->clone()->month)
+            ->where('org_type', 'ward')
+            ->where('org_type_id', $ward_id)
+            ->where('report_type', 'monthly')
+            ->orderBy('id', 'DESC')
+            ->first();
+        // dd($ward_report_info->toArray(),$permission->toArray(),$permission->month_year,$permission->report_type);
+        if (!$ward_report_info && $permission) {
+            $ward_report_info = ReportInfo::create([
+                'org_type' => 'ward',
+                'org_type_id' => $ward_id,
+                'responsibility_id' => 1,
+                'responsibility_name' => 'president',
+                'month_year' => $permission->month_year,
+                'report_type' =>  'monthly',
+                'creator' => auth()->user()->id,
+                'status' => 1,
+            ]);
+        }
 
-            'dawat1' => $dawat1,
-            'dawat2' => $dawat2,
-            'dawat3' => $dawat3,
-            'dawat4' => $dawat4,
-            'department1' => $department1,
-            'department4' => $department4,
-            'department5' => $department5,
-            'dawah_prokashona' => $dawah_prokashona,
-            'kormosuci' => $kormosuci,
-            'songothon1' => $songothon1,
-            'songothon2' => $songothon2,
-            'songothon9' => $songothon9,
-            'songothon5' => $songothon5,
-            'songothon7' => $songothon7,
-            'songothon8' => $songothon8,
-            'proshikkhon' => $proshikkhon,
-            'shomajsheba1' => $shomajsheba1,
-            'shomajsheba2' => $shomajsheba2,
-            'rastrio' => $rastrio,
-            'montobbo' => $montobbo,
+        $data = WardTotalUnitSubmittedData::where('report_info_id', $ward_report_info->id)->first();
+        // dd($data->toArray(),$all_dawat1['how_many_groups_are_out']);
+        // dd($all_montobbo['montobbo']);
+        if(!$data){
+            $data =new WardTotalUnitSubmittedData();
+        }
 
-            'all_income_category_wise' => $all_income_category_wise,
-            'total_income' => $total_income,
+        // Dawat1
+        $data->dawat1_how_many_groups_are_out = $all_dawat1['how_many_groups_are_out'];
+        $data->dawat1_number_of_participants = $all_dawat1['number_of_participants'];
+        $data->dawat1_how_many_have_been_invited = $all_dawat1['how_many_have_been_invited'];
+        $data->dawat1_how_many_associate_members_created = $all_dawat1['how_many_associate_members_created'];
 
-            'all_expense_category_wise' => $all_expense_category_wise,
-            'total_expense' => $total_expense,
+        // Dawat2
+        $data->dawat2_total_rokon = $all_dawat2['total_rokon'];
+        $data->dawat2_total_worker = $all_dawat2['total_worker'];
+        $data->dawat2_how_many_were_give_dawat_rokon = $all_dawat2['how_many_were_give_dawat_rokon'];
+        $data->dawat2_how_many_were_give_dawat_worker = $all_dawat2['how_many_were_give_dawat_worker'];
+        $data->dawat2_how_many_have_been_invited = $all_dawat2['how_many_have_been_invited'];
+        $data->dawat2_how_many_associate_members_created = $all_dawat2['how_many_associate_members_created'];
 
-        ]);
+        // Dawat3
+        $data->dawat3_how_many_were_give_dawat = $all_dawat3['how_many_were_give_dawat'];
+        $data->dawat3_how_many_associate_members_created = $all_dawat3['how_many_associate_members_created'];
+
+        // Dawat4
+        $data->dawat4_total_gono_songjog_group = $all_dawat4['total_gono_songjog_group'];
+        $data->dawat4_total_attended = $all_dawat4['total_attended'];
+        $data->dawat4_how_many_have_been_invited = $all_dawat4['how_many_have_been_invited'];
+        $data->dawat4_how_many_associate_members_created = $all_dawat4['how_many_associate_members_created'];
+
+        $data->dawat4_jela_mohanogor_declared_gonosonjog_group = $all_dawat4['jela_mohanogor_declared_gonosonjog_group'];
+        $data->dawat4_jela_mohanogor_declared_gonosonjog_attended = $all_dawat4['jela_mohanogor_declared_gonosonjog_attended'];
+        $data->dawat4_jela_mohanogor_declared_gonosonjog_invited = $all_dawat4['jela_mohanogor_declared_gonosonjog_invited'];
+        $data->dawat4_jela_mohanogor_declared_gonosonjog_associated_created = $all_dawat4['jela_mohanogor_declared_gonosonjog_associated_created'];
+
+        // Department1
+        $data->department1_teacher_rokon = $all_department1['teacher_rokon'];
+        $data->department1_teacher_worker = $all_department1['teacher_worker'];
+        $data->department1_student_rokon = $all_department1['student_rokon'];
+        $data->department1_student_worker = $all_department1['student_worker'];
+
+        $data->department1_how_much_learned_quran = $all_department1['how_much_learned_quran'];
+        $data->department1_how_much_invited = $all_department1['how_much_invited'];
+        $data->department1_how_much_been_associated = $all_department1['how_much_been_associated'];
+
+        // Department4
+        $data->department4_political_and_special_invited = $all_department4['political_and_special_invited'];
+        $data->department4_political_and_special_been_associated = $all_department4['political_and_special_been_associated'];
+        $data->department4_political_and_special_target = $all_department4['political_and_special_target'];
+
+        $data->department4_prantik_jonogosti_invited = $all_department4['prantik_jonogosti_invited'];
+        $data->department4_prantik_jonogosti_been_associated = $all_department4['prantik_jonogosti_been_associated'];
+        $data->department4_prantik_jonogosti_target = $all_department4['prantik_jonogosti_target'];
+
+        $data->department4_vinno_dormalombi_invited = $all_department4['vinno_dormalombi_invited'];
+        $data->department4_vinno_dormalombi_been_associated = $all_department4['vinno_dormalombi_been_associated'];
+        $data->department4_vinno_dormalombi_target = $all_department4['vinno_dormalombi_target'];
+
+        // Department5
+        $data->department5_total_attended_family = $all_department5['total_attended_family'];
+        $data->department5_how_many_new_family_invited = $all_department5['how_many_new_family_invited'];
+
+
+        // Dawah Prokashona
+        $data->prokashona_books_in_pathagar = $all_dawah_prokashona['books_in_pathagar'];
+        $data->prokashona_books_in_pathagar_increase = $all_dawah_prokashona['books_in_pathagar_increase'];
+
+        $data->prokashona_unit_book_distribution_center = $all_dawah_prokashona['unit_book_distribution_center'];
+        $data->prokashona_unit_book_distribution_center_increase = $all_dawah_prokashona['unit_book_distribution_center_increase'];
+
+        $data->prokashona_unit_book_distribution = $all_dawah_prokashona['unit_book_distribution'];
+        $data->prokashona_unit_book_distribution_increase = $all_dawah_prokashona['unit_book_distribution_increase'];
+
+        $data->prokashona_soft_copy_book_distribution = $all_dawah_prokashona['soft_copy_book_distribution'];
+        $data->prokashona_soft_copy_book_distribution_increase = $all_dawah_prokashona['soft_copy_book_distribution_increase'];
+
+        $data->prokashona_dawat_link_distribution = $all_dawah_prokashona['dawat_link_distribution'];
+        $data->prokashona_dawat_link_distribution_increase = $all_dawah_prokashona['dawat_link_distribution_increase'];
+
+        $data->prokashona_sonar_bangla = $all_dawah_prokashona['sonar_bangla'];
+        $data->prokashona_sonar_bangla_increase = $all_dawah_prokashona['sonar_bangla_increase'];
+
+        $data->prokashona_songram = $all_dawah_prokashona['songram'];
+        $data->prokashona_songram_increase = $all_dawah_prokashona['songram_increase'];
+
+        $data->prokashona_prithibi = $all_dawah_prokashona['prithibi'];
+        $data->prokashona_prithibi_increase = $all_dawah_prokashona['prithibi_increase'];
+
+        // Kormosuci
+        $data->kormosuci_unit_masik_sadaron_sova_total = $all_kormosuci['unit_masik_sadaron_sova_total'];
+        $data->kormosuci_unit_masik_sadaron_sova_target = $all_kormosuci['unit_masik_sadaron_sova_target'];
+        $data->kormosuci_unit_masik_sadaron_sova_uposthiti = $all_kormosuci['unit_masik_sadaron_sova_uposthiti'];
+
+        $data->kormosuci_iftar_mahfil_personal_total = $all_kormosuci['iftar_mahfil_personal_total'];
+        $data->kormosuci_iftar_mahfil_personal_target = $all_kormosuci['iftar_mahfil_personal_target'];
+        $data->kormosuci_iftar_mahfil_personal_uposthiti = $all_kormosuci['iftar_mahfil_personal_uposthiti'];
+
+        $data->kormosuci_iftar_mahfil_samostic_total = $all_kormosuci['iftar_mahfil_samostic_total'];
+        $data->kormosuci_iftar_mahfil_samostic_target = $all_kormosuci['iftar_mahfil_samostic_target'];
+        $data->kormosuci_iftar_mahfil_samostic_uposthiti = $all_kormosuci['iftar_mahfil_samostic_uposthiti'];
+
+        $data->kormosuci_cha_chakra_total = $all_kormosuci['cha_chakra_total'];
+        $data->kormosuci_cha_chakra_target = $all_kormosuci['cha_chakra_target'];
+        $data->kormosuci_cha_chakra_uposthiti = $all_kormosuci['cha_chakra_uposthiti'];
+
+        $data->kormosuci_samostic_khawa_total = $all_kormosuci['samostic_khawa_total'];
+        $data->kormosuci_samostic_khawa_target = $all_kormosuci['samostic_khawa_target'];
+        $data->kormosuci_samostic_khawa_uposthiti = $all_kormosuci['samostic_khawa_uposthiti'];
+
+        $data->kormosuci_sikkha_sofor_total = $all_kormosuci['sikkha_sofor_total'];
+        $data->kormosuci_sikkha_sofor_target = $all_kormosuci['sikkha_sofor_target'];
+        $data->kormosuci_sikkha_sofor_uposthiti = $all_kormosuci['sikkha_sofor_uposthiti'];
+
+        // Songothon1
+        $data->songothon1_rokon_previous = $all_songothon1['rokon_previous'];
+        $data->songothon1_rokon_present = $all_songothon1['rokon_present'];
+        $data->songothon1_rokon_briddhi = $all_songothon1['rokon_briddhi'];
+        $data->songothon1_rokon_gatti = $all_songothon1['rokon_gatti'];
+        $data->songothon1_rokon_target = $all_songothon1['rokon_target'];
+        $data->songothon1_worker_previous = $all_songothon1['worker_previous'];
+        $data->songothon1_worker_present = $all_songothon1['worker_present'];
+        $data->songothon1_worker_briddhi = $all_songothon1['worker_briddhi'];
+        $data->songothon1_worker_gatti = $all_songothon1['worker_gatti'];
+        $data->songothon1_worker_target = $all_songothon1['worker_target'];
+
+        // Songothon2
+        $data->songothon2_associate_member_previous = $all_songothon2['associate_member_previous'];
+        $data->songothon2_associate_member_present = $all_songothon2['associate_member_present'];
+        $data->songothon2_associate_member_briddhi = $all_songothon2['associate_member_briddhi'];
+        $data->songothon2_associate_member_target = $all_songothon2['associate_member_target'];
+        $data->songothon2_vinno_dormalombi_worker_previous = $all_songothon2['vinno_dormalombi_worker_previous'];
+        $data->songothon2_vinno_dormalombi_worker_present = $all_songothon2['vinno_dormalombi_worker_present'];
+        $data->songothon2_vinno_dormalombi_worker_briddhi = $all_songothon2['vinno_dormalombi_worker_briddhi'];
+        $data->songothon2_vinno_dormalombi_worker_target = $all_songothon2['vinno_dormalombi_worker_target'];
+        $data->songothon2_vinno_dormalombi_associate_member_previous = $all_songothon2['vinno_dormalombi_associate_member_previous'];
+        $data->songothon2_vinno_dormalombi_associate_member_present = $all_songothon2['vinno_dormalombi_associate_member_present'];
+        $data->songothon2_vinno_dormalombi_associate_member_briddhi = $all_songothon2['vinno_dormalombi_associate_member_briddhi'];
+        $data->songothon2_vinno_dormalombi_associate_member_target = $all_songothon2['vinno_dormalombi_associate_member_target'];
+
+        // Songothon9
+        $data->songothon9_unit_kormi_boithok_total = $all_songothon9['unit_kormi_boithok_total'];
+        $data->songothon9_unit_kormi_boithok_uposthiti = $all_songothon9['unit_kormi_boithok_uposthiti'];
+
+        // Songothon5
+        $data->songothon5_paribarik_unit_total = $all_songothon5['paribarik_unit_total'];
+        $data->songothon5_paribarik_unit_increase = $all_songothon5['paribarik_unit_increase'];
+        $data->songothon5_paribarik_unit_target = $all_songothon5['paribarik_unit_target'];
+
+        // Songothon7
+        $data->songothon7_upper_leader_sofor = $all_songothon7['upper_leader_sofor'];
+
+        // Songothon8
+        $data->songothon8_associate_member_total = $all_songothon8['associate_member_total'];
+        $data->songothon8_associate_member_total_iyanot_amounts = $all_songothon8['associate_member_total_iyanot_amounts'];
+        $data->songothon8_sudhi_total = $all_songothon8['sudhi_total'];
+        $data->songothon8_sudi_total_iyanot_amounts = $all_songothon8['sudi_total_iyanot_amounts'];
+
+        // Proshikkhon
+        $data->proshikkhon_sohi_quran_onushilon = $all_proshikkhon['sohi_quran_onushilon'];
+        $data->proshikkhon_sohi_quran_onushilon_target = $all_proshikkhon['sohi_quran_onushilon_target'];
+        $data->proshikkhon_sohi_quran_onushilon_uposthiti = $all_proshikkhon['sohi_quran_onushilon_uposthiti'];
+
+        $data->proshikkhon_masala_masayel = $all_proshikkhon['masala_masayel'];
+        $data->proshikkhon_masala_masayel_target = $all_proshikkhon['masala_masayel_target'];
+        $data->proshikkhon_masala_masayel_uposthiti = $all_proshikkhon['masala_masayel_uposthiti'];
+
+        $data->proshikkhon_darsul_quran = $all_proshikkhon['darsul_quran'];
+        $data->proshikkhon_darsul_quran_target = $all_proshikkhon['darsul_quran_target'];
+        $data->proshikkhon_darsul_quran_uposthiti = $all_proshikkhon['darsul_quran_uposthiti'];
+
+        $data->proshikkhon_darsul_hadis = $all_proshikkhon['darsul_hadis'];
+        $data->proshikkhon_darsul_hadis_target = $all_proshikkhon['darsul_hadis_target'];
+        $data->proshikkhon_darsul_hadis_uposthiti = $all_proshikkhon['darsul_hadis_uposthiti'];
+
+        $data->proshikkhon_samostik_path = $all_proshikkhon['samostik_path'];
+        $data->proshikkhon_samostik_path_target = $all_proshikkhon['samostik_path_target'];
+        $data->proshikkhon_samostik_path_uposthiti = $all_proshikkhon['samostik_path_uposthiti'];
+
+        $data->proshikkhon_bishoy_vittik_onushilon = $all_proshikkhon['bishoy_vittik_onushilon'];
+        $data->proshikkhon_bishoy_vittik_onushilon_target = $all_proshikkhon['bishoy_vittik_onushilon_target'];
+        $data->proshikkhon_bishoy_vittik_onushilon_uposthiti = $all_proshikkhon['bishoy_vittik_onushilon_uposthiti'];
+
+        // Shomajsheba1
+        $data->shomajsheba1_how_many_people_did = $all_shomajsheba1['how_many_people_did'];
+        $data->shomajsheba1_service_received_total = $all_shomajsheba1['service_received_total'];
+
+        // Shomajsheba2
+        $data->shomajsheba2_shamajik_onusthane_ongshogrohon = $all_shomajsheba2['shamajik_onusthane_ongshogrohon'];
+        $data->shomajsheba2_shamajik_onusthane_shohayota_prodan = $all_shomajsheba2['shamajik_onusthane_shohayota_prodan'];
+        $data->shomajsheba2_shamajik_birodh_mimangsha = $all_shomajsheba2['shamajik_birodh_mimangsha'];
+        $data->shomajsheba2_manobik_shohayota_prodan = $all_shomajsheba2['manobik_shohayota_prodan'];
+        $data->shomajsheba2_korje_hasana_prodan = $all_shomajsheba2['korje_hasana_prodan'];
+        $data->shomajsheba2_rogir_poricorja = $all_shomajsheba2['rogir_poricorja'];
+        $data->shomajsheba2_medical_shohayota_prodan = $all_shomajsheba2['medical_shohayota_prodan'];
+        $data->shomajsheba2_nobojatokke_gift_prodan = $all_shomajsheba2['nobojatokke_gift_prodan'];
+        $data->shomajsheba2_voluntarily_blood_donation_kotojon = $all_shomajsheba2['voluntarily_blood_donation_kotojon'];
+        $data->shomajsheba2_voluntarily_blood_donation_kotojonke = $all_shomajsheba2['voluntarily_blood_donation_kotojonke'];
+        $data->shomajsheba2_matrikalin_sheba_prodan_kotojon = $all_shomajsheba2['matrikalin_sheba_prodan_kotojon'];
+        $data->shomajsheba2_matrikalin_sheba_prodan_kotojonke = $all_shomajsheba2['matrikalin_sheba_prodan_kotojonke'];
+        $data->shomajsheba2_mayeter_gosol = $all_shomajsheba2['mayeter_gosol'];
+        $data->shomajsheba2_others = $all_shomajsheba2['others'];
+
+        // Rastrio
+        $data->rastrio_bishishto_bekti_jogajog = $all_rastrio['bishishto_bekti_jogajog'];
+
+        // montobbo
+        $data->all_montobbo = $all_montobbo['montobbo'];
+        $data->save();
+        if($data->save()){
+            // dd($data->toArray());
+            return response()->json([
+                'status' => 'success',
+                'data' => $data,
+            ], 200);
+        }
+
+
+
+
+        // dd(
+        //     $report_info_ids,
+        //     $all_dawat1,
+        //     $all_dawat2,
+        //     $all_dawat3,
+        //     $all_dawat4,
+        //     $all_department1,
+        //     $all_department4,
+        //     $all_department5,
+        //     $all_dawah_prokashona,
+        //     $all_kormosuci,
+        //     $all_songothon1,
+        //     $all_songothon2,
+        //     $all_songothon9,
+        //     $all_songothon5,
+        //     $all_songothon7,
+        //     $all_songothon8,
+        //     $all_proshikkhon,
+        //     $all_shomajsheba1,
+        //     $all_shomajsheba2,
+        //     $all_rastrio,
+        //     $all_montobbo,
+        //     $all_income_category_wise,
+        //     $total_income,
+        //     $all_expense_category_wise,
+        //     $total_expense,
+        // );
+        // return view('ward.ward_report_upload')->with([
+        //     'month' => $month,
+        //     'org_type' => $org_type,
+        //     'unit_info' => $unit_info,
+        //     'ward_info' => $ward_info,
+        //     'thana_info' => $thana_info,
+        //     'precedent' => $precedent,
+
+        //     'dawat1' => $dawat1,
+        //     'dawat2' => $dawat2,
+        //     'dawat3' => $dawat3,
+        //     'dawat4' => $dawat4,
+        //     'department1' => $department1,
+        //     'department4' => $department4,
+        //     'department5' => $department5,
+        //     'dawah_prokashona' => $dawah_prokashona,
+        //     'kormosuci' => $kormosuci,
+        //     'songothon1' => $songothon1,
+        //     'songothon2' => $songothon2,
+        //     'songothon9' => $songothon9,
+        //     'songothon5' => $songothon5,
+        //     'songothon7' => $songothon7,
+        //     'songothon8' => $songothon8,
+        //     'proshikkhon' => $proshikkhon,
+        //     'shomajsheba1' => $shomajsheba1,
+        //     'shomajsheba2' => $shomajsheba2,
+        //     'rastrio' => $rastrio,
+        //     'montobbo' => $montobbo,
+
+        //     'all_income_category_wise' => $all_income_category_wise,
+        //     'total_income' => $total_income,
+
+        //     'all_expense_category_wise' => $all_expense_category_wise,
+        //     'total_expense' => $total_expense,
+
+        // ]);
     }
 }

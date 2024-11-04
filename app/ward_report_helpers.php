@@ -8,13 +8,14 @@ use App\Models\Organization\OrgWardResponsible;
 use App\Models\Organization\Responsibility;
 use App\Models\Report\ReportInfo;
 use App\Models\Report\ReportManagementControl;
+use App\Models\User;
 use Carbon\Carbon;
 
 function check_and_get_ward_info($user_id)
 {
     $check_info = false;
     // dd($user_id);
-    $permission = is_ward_report_upload_permitted(request()->month);
+    $permission = is_ward_report_upload_permitted(request()->month,$user_id);
     if ($permission) {
         $resposibilities = auth_user_ward_responsibilities_info($user_id);
         $check_info = ward_report_header_info($resposibilities, $permission, request()->month);
@@ -22,13 +23,18 @@ function check_and_get_ward_info($user_id)
     return $check_info;
 }
 
-function is_ward_report_upload_permitted($month)
+function is_ward_report_upload_permitted($month,$user_id)
 {
     $month = Carbon::parse($month);
+    $ward_user = User::where('id', $user_id)->with('org_ward_user')->get()->first();
+    // dd($ward_user->toArray(),$ward_user->org_ward_user->thana_id);
+    $upper_organization_id = $ward_user->org_ward_user->thana_id;
+
     $permission = ReportManagementControl::whereYear('month_year', $month->clone()->year)
         ->whereMonth('month_year', $month->clone()->month)
         ->where('is_active', 1)
         ->where('report_type', 'ward')
+        ->where('upper_organization_id', $upper_organization_id)
         ->first();
     return $permission;
 }
@@ -65,7 +71,7 @@ function ward_report_header_info($resposibilities, $permission, $month)
             'responsibility_id' => $resposibilities->org_unit_responsible->responsibility_id,
             'responsibility_name' => $resposibilities->resposibilities->title,
             'month_year' => $permission->month_year,
-            'report_type' =>  $permission->report_type,
+            'report_type' => 'monthly',
             'creator' => auth()->user()->id,
             'status' => 1,
         ]);
