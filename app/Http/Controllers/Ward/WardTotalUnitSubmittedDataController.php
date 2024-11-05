@@ -39,7 +39,7 @@ class WardTotalUnitSubmittedDataController extends Controller
 {
     public function submitted_units_data_add()
     {
-        // dd(request()->all());
+        dd(auth()->user()->toArray());
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
         ]);
@@ -853,5 +853,14 @@ class WardTotalUnitSubmittedDataController extends Controller
         //     'total_expense' => $total_expense,
 
         // ]);
+    }
+    public function total_unit_report(){
+        $token = session()->all();
+
+        dd($token);
+        $month = request()->month;
+        // request()->merge(['month' => $month]);
+        $responce = $this->submitted_units_data_add();
+        dd($responce );
     }
 }

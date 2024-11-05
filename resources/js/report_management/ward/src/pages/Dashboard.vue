@@ -139,12 +139,25 @@ export default {
                 console.log(response);
                 this.report_status()
         },
-        submit_total_approved_unit_data:function(){
+        submit_total_approved_unit_data:async function(){
             console.log("clicked");
-            let response = axios.post('/ward/submitted-units-data-add',{
-                        month: this.month
+            const is_confirmed = confirm(`Are you sure you want to submit the approved unit data for the month of ${this.month}?`);
+            if(is_confirmed){
+                try {
+                    let response =await axios.post('/ward/submitted-units-data-add',{
+                            month: this.month
+                        });
+                        
+                    if(response.data.data.status == "success"){
+                        window.toaster("data is set successfully", 'success');
+                        // window.s_alert('data is set successfully', 'success');
                     }
-                );
+                } catch (error) {
+                    console.error("Error submitting data:", error);
+                    window.toaster("Failed to submit data", 'error');
+                }
+
+            }
         }
 
     }

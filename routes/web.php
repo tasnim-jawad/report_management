@@ -38,6 +38,7 @@ Route::group(['prefix' => 'ward', 'namespace' => '\App\Http\Controllers\Ward'], 
     Route::get('submitted-units-data-add', 'WardController@submitted_units_data_add');
     //WardReportStatusController
     Route::get('unit/report-check', 'WardReportStatusController@report_check');  //for see unit report from ward dashboard
+    Route::get('unit/total-unit-report', 'WardTotalUnitSubmittedDataController@total_unit_report');  //for see unit report from ward dashboard
 });
 
 Route::group(['prefix' => 'thana', 'namespace' => '\App\Http\Controllers\thana'], function () {
