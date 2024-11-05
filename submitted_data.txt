@@ -210,3 +210,6 @@ $data->dawat1_how_many_groups_are_out = $all_dawat1['how_many_groups_are_out];
 $data->dawat1_number_of_participants = $all_dawat1['number_of_participants];
 $data->dawat1_how_many_have_been_invited = $all_dawat1['how_many_have_been_invited];
 $data->dawat1_how_many_associate_members_created = $all_dawat1['how_many_associate_members_created];
+
+change
+jamil 
