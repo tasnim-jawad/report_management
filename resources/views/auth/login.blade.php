@@ -53,7 +53,7 @@
                                 loadHandler(spiner, response = false)
 
                                 //  spiner.classList.remove('d-none')
-                                fetch('api/v1/user/login', {
+                                fetch('/user/login', {
                                         method: "POST",
                                         body: new FormData(event.target),
                                         headers: {

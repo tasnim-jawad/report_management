@@ -70,17 +70,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
+                                <td class="parent_popup">
                                     <input name="how_many_groups_are_out" :value="formatBangla(dawat1.how_many_groups_are_out)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="unit_info_icon" @click="toggle_popup">
+                                        <span class="i_icon">
+                                            <i class="fa fa-list"></i>
+                                        </span>
+                                        <div class="unit_data_popup">
+                                            <span>৩৪৩৪</span>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>
+                                <td class="parent_popup">
                                     <input name="number_of_participants" :value="formatBangla(dawat1.number_of_participants)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="unit_info_icon" @click="toggle_popup">
+                                        <span class="i_icon">
+                                            <i class="fa fa-list"></i>
+                                        </span>
+                                        <div class="unit_data_popup">
+                                            <span>৩৪৩৪</span>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>
+                                <td class="parent_popup">
                                     <input name="how_many_have_been_invited" :value="formatBangla(dawat1.how_many_have_been_invited)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                    <popup :popup_data="424234"></popup>
                                 </td>
-                                <td>
+                                <td class="parent_popup">
                                     <input name="how_many_associate_members_created" :value="formatBangla(dawat1.how_many_associate_members_created)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                    <popup :popup_data="'435345345345345345 345345345345 34534534534534'"></popup>
                                 </td>
                             </tr>
                         </tbody>
@@ -2903,8 +2921,10 @@
 
 <script>
     import axios from "axios";
+    import Popup from "../components/Popup.vue"
 
     export default {
+        components:{ Popup },
         data() {
             return {
                 month: '',
@@ -3477,6 +3497,13 @@
 
                     this.joma_status = response.data.report_status
                     console.log("report_status",response)
+                }
+            },
+            toggle_popup(event) {
+                const parent = event.currentTarget.closest('.unit_info_icon');
+                const popup = parent.querySelector('.unit_data_popup');
+                if (popup) {
+                    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
                 }
             }
 

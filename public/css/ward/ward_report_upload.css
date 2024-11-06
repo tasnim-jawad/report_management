@@ -332,3 +332,49 @@ th {
     box-shadow: 0px 0px 4px 3px rgb(4 43 14 / 30%);
 }
 
+.parent_popup {
+    position: relative; /* Set this on the immediate parent */
+}
+.unit_info_icon{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    .i_icon{
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px;
+        background-color: #87cefaa6;
+        border-radius: 50%;
+    }
+}
+.unit_data_popup {
+    position: absolute;
+    max-width: 300px;
+    min-width: 150px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    opacity: 0;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    transition-duration: .3s;
+    transform: translateY(0);
+}
+.unit_data_popup.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    top: calc(100% + 3px);
+    right: 0px;
+}
+.unit_data_popup table tr td{
+    font-size: 12px;
+    padding: 5px;
+}
+/* .parent_popup:hover .unit_data_popup {
+    display: block;
+} */
+

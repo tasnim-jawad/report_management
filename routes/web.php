@@ -45,6 +45,12 @@ Route::group(['prefix' => 'thana', 'namespace' => '\App\Http\Controllers\thana']
     Route::get('report', 'ThanaController@report');
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Auth', 'middleware' => 'guest'], function(){
+    Route::group(['prefix' => '/user'] , function(){
+        Route::post('/login', 'LoginController@login');
+    });
+});
+Route::any('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 // Route::get('/t', function(){
 //     $user = User::where('role',6)->first();
@@ -60,4 +66,4 @@ Route::get('/tt', function () {
     $cg = common_get(Dawat1RegularGroupWise::class, request()->user_id);
 });
 
-Route::any('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+

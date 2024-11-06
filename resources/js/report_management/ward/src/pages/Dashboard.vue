@@ -90,11 +90,13 @@ export default {
             rejected_unit:[],
             approved_unit:[],
             report_month:[],
+            user: [],
         }
     },
     created:function(){
         this.set_month()
         this.report_status()
+        this.user_info()
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
@@ -145,9 +147,10 @@ export default {
             if(is_confirmed){
                 try {
                     let response =await axios.post('/ward/submitted-units-data-add',{
-                            month: this.month
+                            month: this.month,
+                            user_id: this.user?.user?.id,
                         });
-                        
+
                     if(response.data.data.status == "success"){
                         window.toaster("data is set successfully", 'success');
                         // window.s_alert('data is set successfully', 'success');
@@ -156,9 +159,15 @@ export default {
                     console.error("Error submitting data:", error);
                     window.toaster("Failed to submit data", 'error');
                 }
-
             }
-        }
+        },
+        user_info:function(){
+            axios.get("/user/ward-user-info")
+                .then(responce =>{
+                    this.user = responce.data
+                })
+        },
+
 
     }
 }

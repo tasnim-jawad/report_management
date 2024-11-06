@@ -37,21 +37,10 @@ use Illuminate\Support\Facades\Validator;
 
 class WardTotalUnitSubmittedDataController extends Controller
 {
-    public function submitted_units_data_add()
-    {
-        dd(auth()->user()->toArray());
-        $validator = Validator::make(request()->all(), [
-            'month' => ['required', 'date'],
-        ]);
+    public function data_generate(){
+        $user_id = request()->user_id;
 
-        if ($validator->fails()) {
-            return response()->json([
-                'err_message' => 'validation error',
-                'errors' => $validator->errors(),
-            ], 422);
-        }
-
-        $permission = is_ward_report_upload_permitted(request()->month,auth()->user()->id);
+        $permission = is_ward_report_upload_permitted(request()->month,$user_id);
         if(!$permission){
             return response()->json([
                 'err_message' => 'Permission denied',
@@ -59,7 +48,7 @@ class WardTotalUnitSubmittedDataController extends Controller
             ], 403);
         }
 
-        $ward_user = User::where('id', auth()->user()->id)->with('org_ward_user')->get()->first();
+        $ward_user = User::where('id', $user_id)->with('org_ward_user')->get()->first();
         $ward_id = $ward_user->org_ward_user->ward_id;
         $month = Carbon::parse(request()->month);
         $units = OrgUnit::where('org_ward_id',$ward_id)->get();
@@ -565,7 +554,7 @@ class WardTotalUnitSubmittedDataController extends Controller
                 'responsibility_name' => 'president',
                 'month_year' => $permission->month_year,
                 'report_type' =>  'monthly',
-                'creator' => auth()->user()->id,
+                'creator' => $user_id,
                 'status' => 1,
             ]);
         }
@@ -779,13 +768,47 @@ class WardTotalUnitSubmittedDataController extends Controller
         // montobbo
         $data->all_montobbo = $all_montobbo['montobbo'];
         $data->save();
+
+
         if($data->save()){
-            // dd($data->toArray());
+            return [
+                'data' => $data,
+                'total_income' => $total_income,
+                'all_income_category_wise' => $all_income_category_wise,
+                'total_expense' => $total_expense,
+                'all_expense_category_wise' => $all_expense_category_wise,
+                'approved_unit_ids' => $approved_unit_ids,
+            ];
+        }
+
+    }
+
+    public function submitted_units_data_add()
+    {
+        // dd(request()->all());
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'user_id' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $data =$this->data_generate();
+        // dd("submitted_units_data_add",$data['data']->toArray());
+        // dd($data->toArray());
+
+        if($data){
             return response()->json([
                 'status' => 'success',
-                'data' => $data,
+                'data' => $data['data'],
             ], 200);
         }
+
 
 
 
@@ -854,13 +877,55 @@ class WardTotalUnitSubmittedDataController extends Controller
 
         // ]);
     }
-    public function total_unit_report(){
-        $token = session()->all();
 
-        dd($token);
-        $month = request()->month;
-        // request()->merge(['month' => $month]);
-        $responce = $this->submitted_units_data_add();
-        dd($responce );
+    public function total_unit_report(){
+        // dd(request()->all());
+        // dd(auth()->user());
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'user_id' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $month = Carbon::parse(request()->month);
+
+        // $month = request()->month;
+        // $user_id = request()->user_id;
+        // request()->merge(
+        //     [
+        //         'month' => $month,
+        //         'user_id' => $user_id,
+        //     ]
+        // );
+        $data = $this->data_generate();
+        // dd(
+        //     "response",
+        //     $data['data'],
+        //     $data['total_income'],
+        //     $data['all_income_category_wise'],
+        //     $data['total_expense'],
+        //     $data['all_expense_category_wise'],
+        // );
+        // dd("approved_unit_ids",$data['approved_unit_ids']);
+
+        $unit_names = OrgUnit::wherein('id',$data['approved_unit_ids'])->pluck('title');
+        // dd($unit_names ,count($unit_names));
+
+        return view('ward.total_unit_report')
+                    ->with([
+                        'month' => $month,
+                        'data' => $data['data'],
+                        'total_income' => $data['total_income'],
+                        'all_income_category_wise' => $data['all_income_category_wise'],
+                        'total_expense' => $data['total_expense'],
+                        'all_expense_category_wise' => $data['all_expense_category_wise'],
+                        'unit_names' => $unit_names,
+                        'number_of_unit' => count($unit_names),
+                    ]);
     }
 }

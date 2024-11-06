@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-3">
         <div class="card-header">
-            মাসিক রিপোর্ট
+           ওয়ার্ডের মাসিক রিপোর্ট
         </div>
         <div class="card-body border-bottom-0">
             <form ref="report_form" action="" method="GET">
@@ -13,7 +13,7 @@
     </div>
     <div class="card mb-3">
         <div class="card-header">
-            মাসিক ইউনিট রিপোর্ট (টোটাল )
+            মাসিক ইউনিট রিপোর্ট (জমা দেওয়া ইউনিটের টোটাল )
         </div>
         <div class="card-body border-bottom-0">
             <form ref="report_form" action="" method="GET">
@@ -55,7 +55,7 @@ export default {
                 console.log("total-unit-report",this.month);
 
                 // this.$refs.report_form.submit();
-                window.open(`/ward/unit/total-unit-report?month=${this.month}`)
+                window.open(`/ward/unit/total-unit-report?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
         },
         user_info:function(){

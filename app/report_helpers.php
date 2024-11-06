@@ -152,6 +152,24 @@ function bangla($englishNumber) {
     return strtr($englishNumber, $banglaDigits);
 }
 
+function bangla_month($english_month) {
+    $bangla_month = [
+        'January' => 'জানুয়ারি',
+        'February' => 'ফেব্রুয়ারি',
+        'March' => 'মার্চ',
+        'April' => 'এপ্রিল',
+        'May' => 'মে',
+        'June' => 'জুন',
+        'July' => 'জুলাই',
+        'August' => 'আগস্ট',
+        'September' => 'সেপ্টেম্বর',
+        'October' => 'অক্টোবর',
+        'November' => 'নভেম্বর',
+        'December' => 'ডিসেম্বর'
+    ];
+
+    return $bangla_month[$english_month] ?? $english_month;
+}
 function remove_all(){
 
 }

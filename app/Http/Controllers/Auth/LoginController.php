@@ -98,7 +98,6 @@ class LoginController extends Controller
     public function logout()
     {
         if (auth()->check() && $_SERVER["REQUEST_METHOD"] == "POST") {
-            echo"<script>localStorage.removeItem('token');</script>";
             DB::table('oauth_access_tokens')->where("user_id", auth()->user()->id)->update(['revoked' => 1]);
             auth()->logout();
         }
