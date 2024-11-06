@@ -348,6 +348,8 @@ th {
         padding: 4px;
         background-color: #87cefaa6;
         border-radius: 50%;
+        position: relative;
+        z-index: 999;
     }
 }
 .unit_data_popup {

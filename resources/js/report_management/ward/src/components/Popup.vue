@@ -1,7 +1,7 @@
 <template>
-    <div class="unit_info_icon" @click="toggle_popup">
-        <span class="i_icon">
-            <i class="fa fa-list"></i>
+    <div class="unit_info_icon" >
+        <span class="i_icon" @click="toggle_popup">
+            <i class="fa fa-list" ></i>
         </span>
         <div class="unit_data_popup" :class="{active:is_popup_visible}">
             <!-- <span>{{popup_data }}</span> -->
