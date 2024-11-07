@@ -18,7 +18,14 @@ export const store = defineStore(`custom_store`, {
 
             this.month = `${currentYear}-${currentMonth}`;
             console.log(this.month); // Example: "2024-10"
-        }
+        },
+        user_info:function(){
+            axios.get("/user/ward-user-info")
+                .then(responce =>{
+                    this.user_info = responce.data
+                })
+        },
+
     }
 
 

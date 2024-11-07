@@ -334,6 +334,7 @@ th {
 
 .parent_popup {
     position: relative; /* Set this on the immediate parent */
+    z-index: -1;
 }
 .unit_info_icon{
     position: absolute;
@@ -360,6 +361,7 @@ th {
     border-radius: 3px;
     opacity: 0;
     overflow: hidden;
+    visibility: hidden;
     top: 0;
     right: 0;
     transition-duration: .3s;
@@ -376,7 +378,4 @@ th {
     font-size: 12px;
     padding: 5px;
 }
-/* .parent_popup:hover .unit_data_popup {
-    display: block;
-} */
 

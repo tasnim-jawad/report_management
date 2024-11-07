@@ -156,5 +156,41 @@ function implementation_rate($target, $achieved)
     return " "; // Or any default value you'd like to return
 }
 
+function approved_unit_ids($ward_id, $month)
+{
+    $month = Carbon::parse($month);
+    $units = OrgUnit::where('org_ward_id',$ward_id)->get();
+
+    $unit_ids = [];
+    $approved_report_info_ids = [];
+    $approved_unit_ids = [];
+    foreach ($units as $index => $unit) {
+        $unit_id = $unit->id;
+        $unit_ids[] = $unit_id;
+        $report_info = ReportInfo::where('org_type_id', $unit_id)
+                ->where('org_type', 'unit')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->where('report_approved_status','approved')
+                ->where('status', 1)
+                ->get()
+                ->first();
+
+        if($report_info){
+            $approved_report_info_ids[] = $report_info->id;
+            $approved_unit_ids[] = $report_info->org_type_id;
+            $approved_units[] = [
+                'unit_id' =>$unit->id,
+                'unit_title' =>$unit->title,
+                'report_info_id' =>$report_info->id,
+            ];
+        }
+    }
+    return [
+        'approved_report_info_ids' => $approved_report_info_ids,
+        'approved_units' => $approved_units,
+    ];
+}
+
 
 

@@ -70,35 +70,53 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="parent_popup">
-                                    <input name="how_many_groups_are_out" :value="formatBangla(dawat1.how_many_groups_are_out)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
-                                    <div class="unit_info_icon" @click="toggle_popup">
-                                        <span class="i_icon">
-                                            <i class="fa fa-list"></i>
-                                        </span>
-                                        <div class="unit_data_popup">
-                                            <span>৩৪৩৪</span>
-                                        </div>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="how_many_groups_are_out" :value="formatBangla(dawat1.how_many_groups_are_out)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                            >
+                                        </popup>
                                     </div>
                                 </td>
-                                <td class="parent_popup">
-                                    <input name="number_of_participants" :value="formatBangla(dawat1.number_of_participants)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
-                                    <div class="unit_info_icon" @click="toggle_popup">
-                                        <span class="i_icon">
-                                            <i class="fa fa-list"></i>
-                                        </span>
-                                        <div class="unit_data_popup">
-                                            <span>৩৪৩৪</span>
-                                        </div>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="number_of_participants" :value="formatBangla(dawat1.number_of_participants)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat1_regular_group_wises'"
+                                            :field_title="'number_of_participants'"
+                                            :month="month"
+                                            >
+                                        </popup>
                                     </div>
                                 </td>
-                                <td class="parent_popup">
-                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat1.how_many_have_been_invited)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
-                                    <popup :popup_data="424234"></popup>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="how_many_have_been_invited" :value="formatBangla(dawat1.how_many_have_been_invited)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat1_regular_group_wises'"
+                                            :field_title="'how_many_have_been_invited'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
-                                <td class="parent_popup">
-                                    <input name="how_many_associate_members_created" :value="formatBangla(dawat1.how_many_associate_members_created)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
-                                    <popup :popup_data="'435345345345345345 345345345345 34534534534534'"></popup>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="how_many_associate_members_created" :value="formatBangla(dawat1.how_many_associate_members_created)" @change="data_upload('ward-dawat1-regular-group-wise')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat1_regular_group_wises'"
+                                            :field_title="'how_many_associate_members_created'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -120,27 +138,81 @@
                             <tr>
                                 <td class="text-start px-2">মোট জনশক্তি সংখ্যা</td>
                                 <td>
-                                    <input name="total_rokon" :value="formatBangla(dawat2.total_rokon)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_rokon" :value="formatBangla(dawat2.total_rokon)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat2_personal_and_targets'"
+                                            :field_title="'total_rokon'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="total_worker" :value="formatBangla(dawat2.total_worker)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_worker" :value="formatBangla(dawat2.total_worker)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat2_personal_and_targets'"
+                                            :field_title="'total_worker'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
                                 <td>
-                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat2.how_many_have_been_invited)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_have_been_invited" :value="formatBangla(dawat2.how_many_have_been_invited)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat2_personal_and_targets'"
+                                            :field_title="'how_many_have_been_invited'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন</td>
                                 <td>
-                                    <input name="how_many_were_give_dawat_rokon" :value="formatBangla(dawat2.how_many_were_give_dawat_rokon)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_were_give_dawat_rokon" :value="formatBangla(dawat2.how_many_were_give_dawat_rokon)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat2_personal_and_targets'"
+                                            :field_title="'how_many_were_give_dawat_rokon'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_were_give_dawat_worker" :value="formatBangla(dawat2.how_many_were_give_dawat_worker)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_were_give_dawat_worker" :value="formatBangla(dawat2.how_many_were_give_dawat_worker)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat2_personal_and_targets'"
+                                            :field_title="'how_many_were_give_dawat_worker'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">কতজন সহযোগী সদস্য হয়েছেন</td>
                                 <td>
-                                    <input name="how_many_associate_members_created" :value="formatBangla(dawat2.how_many_associate_members_created)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_associate_members_created" :value="formatBangla(dawat2.how_many_associate_members_created)" @change="data_upload('ward-dawat2-personal-and-target')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat2_personal_and_targets'"
+                                            :field_title="'how_many_associate_members_created'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -153,11 +225,29 @@
                             <tr>
                                 <td class="width-35">মোট কতজনকে দাওয়াত প্রদান করা হয়েছে</td>
                                 <td>
-                                    <input name="how_many_were_give_dawat" :value="formatBangla(dawat3.how_many_were_give_dawat)" @change="data_upload('ward-dawat3-general-program-and-others')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_were_give_dawat" :value="formatBangla(dawat3.how_many_were_give_dawat)" @change="data_upload('ward-dawat3-general-program-and-others')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat3_general_program_and_others'"
+                                            :field_title="'how_many_were_give_dawat'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td class="width-35">মোট কতজন সহযোগী সদস্য হয়েছেন</td>
                                 <td>
-                                    <input name="how_many_associate_members_created" :value="formatBangla(dawat3.how_many_associate_members_created)" @change="data_upload('ward-dawat3-general-program-and-others')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_associate_members_created" :value="formatBangla(dawat3.how_many_associate_members_created)" @change="data_upload('ward-dawat3-general-program-and-others')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat3_general_program_and_others'"
+                                            :field_title="'how_many_associate_members_created'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -180,31 +270,103 @@
                                 <td class="text-start px-2">গণসংযোগ দশক / পক্ষ</td>
 
                                 <td>
-                                    <input name="total_gono_songjog_group" :value="formatBangla(dawat4.total_gono_songjog_group)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_gono_songjog_group" :value="formatBangla(dawat4.total_gono_songjog_group)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :field_title="'total_gono_songjog_group'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="total_attended" :value="formatBangla(dawat4.total_attended)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_attended" :value="formatBangla(dawat4.total_attended)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :field_title="'total_attended'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_have_been_invited" :value="formatBangla(dawat4.how_many_have_been_invited)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_have_been_invited" :value="formatBangla(dawat4.how_many_have_been_invited)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :field_title="'how_many_have_been_invited'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_associate_members_created" :value="formatBangla(dawat4.how_many_associate_members_created)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_associate_members_created" :value="formatBangla(dawat4.how_many_associate_members_created)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :field_title="'how_many_associate_members_created'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান</td>
                                 <td>
-                                    <input name="jela_mohanogor_declared_gonosonjog_group" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_group)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="jela_mohanogor_declared_gonosonjog_group" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_group)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :field_title="'jela_mohanogor_declared_gonosonjog_group'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="jela_mohanogor_declared_gonosonjog_attended" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_attended)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="jela_mohanogor_declared_gonosonjog_attended" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_attended)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :field_title="'jela_mohanogor_declared_gonosonjog_attended'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="jela_mohanogor_declared_gonosonjog_invited" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_invited)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="jela_mohanogor_declared_gonosonjog_invited" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_invited)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :field_title="'jela_mohanogor_declared_gonosonjog_invited'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="jela_mohanogor_declared_gonosonjog_associated_created" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_associated_created)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="jela_mohanogor_declared_gonosonjog_associated_created" :value="formatBangla(dawat4.jela_mohanogor_declared_gonosonjog_associated_created)" @change="data_upload('ward-dawat4-gono-songjog-and-dawat-ovijan')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :field_title="'jela_mohanogor_declared_gonosonjog_associated_created'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -3133,9 +3295,7 @@
 
                     this.total_previous = res.data.total_previous,
                     this.total_current_income = res.data.total_current_income,
-                    this.in_total = res.data.in_total,
-
-                    console.log("this.department2",this.department2);
+                    this.in_total = res.data.in_total
 
 
                 }
@@ -3422,11 +3582,11 @@
             },
 
             expense_categoty_amount:function(expense_cat_id){
-                console.log("expense_categoty_amount",expense_cat_id);
-                console.log("this.expense_cat_wise",this.expense_cat_wise);
+                // console.log("expense_categoty_amount",expense_cat_id);
+                // console.log("this.expense_cat_wise",this.expense_cat_wise);
 
                 if(this.expense_cat_wise != null){
-                    console.log("expanxe inside",this.expense_cat_wise);
+                    // console.log("expanxe inside",this.expense_cat_wise);
 
                     const element = this.expense_cat_wise.find(element => element.ward_bm_expense_category.id == expense_cat_id);
                     if (element) {

@@ -34,6 +34,7 @@ use App\Models\Ward\WardTotalUnitSubmittedData;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class WardTotalUnitSubmittedDataController extends Controller
 {
@@ -893,28 +894,8 @@ class WardTotalUnitSubmittedDataController extends Controller
             ], 422);
         }
         $month = Carbon::parse(request()->month);
-
-        // $month = request()->month;
-        // $user_id = request()->user_id;
-        // request()->merge(
-        //     [
-        //         'month' => $month,
-        //         'user_id' => $user_id,
-        //     ]
-        // );
         $data = $this->data_generate();
-        // dd(
-        //     "response",
-        //     $data['data'],
-        //     $data['total_income'],
-        //     $data['all_income_category_wise'],
-        //     $data['total_expense'],
-        //     $data['all_expense_category_wise'],
-        // );
-        // dd("approved_unit_ids",$data['approved_unit_ids']);
-
         $unit_names = OrgUnit::wherein('id',$data['approved_unit_ids'])->pluck('title');
-        // dd($unit_names ,count($unit_names));
 
         return view('ward.total_unit_report')
                     ->with([
@@ -927,5 +908,46 @@ class WardTotalUnitSubmittedDataController extends Controller
                         'unit_names' => $unit_names,
                         'number_of_unit' => count($unit_names),
                     ]);
+    }
+
+    public function get_all_unit_data(){
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'ward_id' => ['required'],
+            'table_name' => ['required'],
+            'field_title' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $data = approved_unit_ids(request()->ward_id, request()->month);
+
+        $unit_wise_data  = [];
+        $total = 0;
+        foreach($data['approved_units'] as $approved_unit){
+            // dd($approved_unit['report_info_id']);
+
+            $data = DB::table(request()->table_name)
+                    ->where('report_info_id', $approved_unit['report_info_id'])
+                    ->value(request()->field_title);
+            // dd("value",$data);
+            $unit_wise_data[] = [
+                'unit_title' => $approved_unit['unit_title'],
+                'value' => $data,
+            ];
+
+            $total += $data;
+        }
+        // dd($unit_wise_data,$total);
+
+        return response()->json([
+            'status' => 'success',
+            'unit_wise_data' => $unit_wise_data,
+            'total' => $total,
+        ], 200);
     }
 }

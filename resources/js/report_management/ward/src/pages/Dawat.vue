@@ -14,9 +14,25 @@
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
-                                :onchange="dawat_upload" :endpoint="'ward-dawat1-regular-group-wise'"
-                                :unique_key="1" ></form-input>
+                            <div v-for="(field, index) in fields1" :key="index">
+                                <form-input  :label="field.label" :name="field.name"
+                                    :onchange="dawat_upload" :endpoint="'ward-dawat1-regular-group-wise'"
+                                    :unique_key="1" ></form-input>
+
+                                <!-- for next version -->
+
+                                <!-- <div class="position-relative">
+                                    <popup
+                                        :ward_id="1"
+                                        :table_name="'dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div> -->
+
+                                <!-- for next version -->
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -127,10 +143,11 @@ import axios from 'axios';
 import FormInput from '../components/FormInput.vue'
 import PreviousNext from '../components/PreviousNext.vue';
 import Note from '../components/Note.vue';
+import Popup from '../components/Popup.vue';
 import { store as data_store} from "../stores/ReportStore";
 import { mapState, mapWritableState } from 'pinia';
 export default {
-    components: { FormInput, PreviousNext, Note },
+    components: { FormInput, PreviousNext, Note ,Popup},
     data: () => ({
         // month: null,
         fields1: [
