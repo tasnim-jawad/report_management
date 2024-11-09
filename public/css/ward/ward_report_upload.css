@@ -119,8 +119,13 @@ ul li {
     src: url('../../fonts/SolaimanLipi.ttf');
 }
 @media print {
-    .joma_din,.print_preview {
+    .joma_din,
+    .print_preview {
         display: none; /* Hides the entire div during printing */
+    }
+    .do_not_print,
+    .parent_popup .unit_info_icon{
+        display: none;
     }
 }
 
@@ -334,19 +339,23 @@ th {
 
 .parent_popup {
     position: relative; /* Set this on the immediate parent */
-    z-index: -1;
+    /* z-index: -1; */
+}
+.parent_popup:has(.unit_data_popup.active) {
+    z-index: 9999;
 }
 .unit_info_icon{
     position: absolute;
     right: 0px;
     top: 50%;
     transform: translateY(-50%);
+    margin-right: -2px;
     .i_icon{
-        font-size: 10px;
+        font-size: 7px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 4px;
+        padding: 3px;
         background-color: #87cefaa6;
         border-radius: 50%;
         position: relative;
@@ -378,4 +387,17 @@ th {
     font-size: 12px;
     padding: 5px;
 }
+.parent_popup_note{
+    width: 30%;
+    position: relative;
+    display: flex;
+    justify-content: start;
 
+}
+.parent_popup_note:has(.unit_data_popup.active) {
+    z-index: 9999;
+}
+.parent_popup_note .line{
+    border-bottom: 2px dashed black;
+    flex: 1;
+}

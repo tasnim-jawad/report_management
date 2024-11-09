@@ -423,10 +423,28 @@
                                 <!-- <td >{{bangla($department1->teacher_rokon?? "")}}</td>
                                 <td >{{bangla($department1->teacher_worker?? "")}}</td> -->
                                 <td>
-                                    <input name="teacher_rokon" :value="formatBangla(department1.teacher_rokon)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="teacher_rokon" :value="formatBangla(department1.teacher_rokon)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'department1_talimul_qurans'"
+                                            :field_title="'teacher_rokon'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="teacher_worker" :value="formatBangla(department1.teacher_worker)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="teacher_worker" :value="formatBangla(department1.teacher_worker)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'department1_talimul_qurans'"
+                                            :field_title="'teacher_worker'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
 
                                 <td>
@@ -439,10 +457,28 @@
                             <tr>
                                 <td class="text-start px-2">কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে</td>
                                 <td>
-                                    <input name="student_rokon" :value="formatBangla(department1.student_rokon)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="student_rokon" :value="formatBangla(department1.student_rokon)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'department1_talimul_qurans'"
+                                            :field_title="'student_rokon'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="student_worker" :value="formatBangla(department1.student_worker)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="student_worker" :value="formatBangla(department1.student_worker)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'department1_talimul_qurans'"
+                                            :field_title="'student_worker'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     {{ (department1.student_rokon ?? null) !== null || (department1.student_worker ?? null) !== null
@@ -495,24 +531,51 @@
                                 <tr>
                                     <td class="text-start width-70 px-2">মোট কতজন সহীহ তিলাওয়াত শিখেছেন</td>
                                     <td class="width-30">
-                                        <input name="how_much_learned_sohih_tilawat" :value="formatBangla(department1.how_much_learned_sohih_tilawat)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="how_much_learned_sohih_tilawat" :value="formatBangla(department1.how_much_learned_sohih_tilawat)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department1_talimul_qurans'"
+                                                :field_title="'how_much_learned_sohih_tilawat'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">মোট কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে (পু/ম)</td>
                                     <td >
-                                        <div class="d-flex">
-                                            <input name="how_much_invited_man" :value="formatBangla(department1.how_much_invited_man)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
-                                            <input name="how_much_invited_woman" :value="formatBangla(department1.how_much_invited_woman)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <div class="d-flex">
+                                                <input name="how_much_invited_man" :value="formatBangla(department1.how_much_invited_man)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
+                                                <input name="how_much_invited_woman" :value="formatBangla(department1.how_much_invited_woman)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                            </div>
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department1_talimul_qurans'"
+                                                :field_title="'how_much_invited'"
+                                                :month="month"
+                                                >
+                                            </popup>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">মোট কতজন সহযোগী সদস্য হয়েছেন (পু/ম)</td>
                                     <td >
-                                        <div class="d-flex">
-                                            <input name="how_much_been_associated_man" :value="formatBangla(department1.how_much_been_associated_man)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
-                                            <input name="how_much_been_associated_woman" :value="formatBangla(department1.how_much_been_associated_woman)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <div class="d-flex">
+                                                <input name="how_much_been_associated_man" :value="formatBangla(department1.how_much_been_associated_man)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />/
+                                                <input name="how_much_been_associated_woman" :value="formatBangla(department1.how_much_been_associated_woman)" @change="data_upload('ward-department1-talimul-quran')" type="text" class="bg-input w-100 text-center" />
+                                            </div>
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department1_talimul_qurans'"
+                                                :field_title="'how_much_been_associated'"
+                                                :month="month"
+                                                >
+                                            </popup>
                                         </div>
                                     </td>
                                 </tr>
@@ -693,13 +756,40 @@
                                 <tr>
                                     <td class="text-start letter_spacing ">রাজ: ও বিশিষ্ট ব্যক্তিবর্গ</td>
                                     <td >
-                                        <input name="political_and_special_invited" :value="formatBangla(department4.political_and_special_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="political_and_special_invited" :value="formatBangla(department4.political_and_special_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'political_and_special_invited'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >
-                                        <input name="political_and_special_been_associated" :value="formatBangla(department4.political_and_special_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="political_and_special_been_associated" :value="formatBangla(department4.political_and_special_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'political_and_special_been_associated'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >
-                                        <input name="political_and_special_target" :value="formatBangla(department4.political_and_special_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="political_and_special_target" :value="formatBangla(department4.political_and_special_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'political_and_special_target'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >{{formatBangla(implementation_rate(department4.political_and_special_target,department4.political_and_special_been_associated))}}</td>
                                 </tr>
@@ -758,26 +848,80 @@
                                 <tr>
                                     <td class="text-start px-1 letter_spacing font-13">প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)</td>
                                     <td >
-                                        <input name="prantik_jonogosti_invited" :value="formatBangla(department4.prantik_jonogosti_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="prantik_jonogosti_invited" :value="formatBangla(department4.prantik_jonogosti_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'prantik_jonogosti_invited'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >
-                                        <input name="prantik_jonogosti_been_associated" :value="formatBangla(department4.prantik_jonogosti_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="prantik_jonogosti_been_associated" :value="formatBangla(department4.prantik_jonogosti_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'prantik_jonogosti_been_associated'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >
-                                        <input name="prantik_jonogosti_target" :value="formatBangla(department4.prantik_jonogosti_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="prantik_jonogosti_target" :value="formatBangla(department4.prantik_jonogosti_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'prantik_jonogosti_target'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >{{formatBangla(implementation_rate(department4.prantik_jonogosti_target, department4.prantik_jonogosti_been_associated))}}</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-1">ভিন্নধর্মাবলম্বী</td>
                                     <td >
-                                        <input name="vinno_dormalombi_invited" :value="formatBangla(department4.vinno_dormalombi_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="vinno_dormalombi_invited" :value="formatBangla(department4.vinno_dormalombi_invited)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'vinno_dormalombi_invited'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >
-                                        <input name="vinno_dormalombi_been_associated" :value="formatBangla(department4.vinno_dormalombi_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="vinno_dormalombi_been_associated" :value="formatBangla(department4.vinno_dormalombi_been_associated)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'vinno_dormalombi_been_associated'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >
-                                        <input name="vinno_dormalombi_target" :value="formatBangla(department4.vinno_dormalombi_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <div class="parent_popup">
+                                            <input name="vinno_dormalombi_target" :value="formatBangla(department4.vinno_dormalombi_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
+                                            <popup
+                                                :ward_id="ward_info.id"
+                                                :table_name="'department4_different_job_holders_dawats'"
+                                                :field_title="'vinno_dormalombi_target'"
+                                                :month="month"
+                                                >
+                                            </popup>
+                                        </div>
                                     </td>
                                     <td >{{formatBangla(implementation_rate(department4.vinno_dormalombi_target, department4.vinno_dormalombi_been_associated))}}</td>
                                 </tr>
@@ -792,11 +936,29 @@
                             <tr>
                                 <td class="width-35">দাওয়াতি কাজে অংশগ্রহণকারী মোট পরিবার সংখ্যা</td>
                                 <td >
-                                    <input name="total_attended_family" :value="formatBangla(department5.total_attended_family)" @change="data_upload('ward-department5-paribarik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_attended_family" :value="formatBangla(department5.total_attended_family)" @change="data_upload('ward-department5-paribarik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'department5_paribarik_dawats'"
+                                            :field_title="'total_attended_family'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td class="width-35">মোট কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে</td>
                                 <td >
-                                    <input name="how_many_new_family_invited" :value="formatBangla(department5.how_many_new_family_invited)" @change="data_upload('ward-department5-paribarik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_new_family_invited" :value="formatBangla(department5.how_many_new_family_invited)" @change="data_upload('ward-department5-paribarik-dawat')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'department5_paribarik_dawats'"
+                                            :field_title="'how_many_new_family_invited'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -955,36 +1117,108 @@
                             <!-- <td >{{bangla($dawah_prokashona->soft_copy_book_distribution?? "")}}</td>
                             <td >{{bangla($dawah_prokashona->soft_copy_book_distribution_increase?? "")}}</td> -->
                             <td >
-                                <input name="soft_copy_book_distribution" :value="formatBangla(dawah_prokashona.soft_copy_book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="soft_copy_book_distribution" :value="formatBangla(dawah_prokashona.soft_copy_book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <popup
+                                        :ward_id="ward_info.id"
+                                        :table_name="'dawah_and_prokashonas'"
+                                        :field_title="'soft_copy_book_distribution'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div>
                             </td>
                             <td >
-                                <input name="soft_copy_book_distribution_increase" :value="formatBangla(dawah_prokashona.soft_copy_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="soft_copy_book_distribution_increase" :value="formatBangla(dawah_prokashona.soft_copy_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <popup
+                                        :ward_id="ward_info.id"
+                                        :table_name="'dawah_and_prokashonas'"
+                                        :field_title="'soft_copy_book_distribution_increase'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">ইউনিটে বই বিলিকেন্দ্র</td>
                             <td >
-                                <input name="unit_book_distribution_center" :value="formatBangla(dawah_prokashona.unit_book_distribution_center)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_book_distribution_center" :value="formatBangla(dawah_prokashona.unit_book_distribution_center)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <popup
+                                        :ward_id="ward_info.id"
+                                        :table_name="'dawah_and_prokashonas'"
+                                        :field_title="'unit_book_distribution_center'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div>
                             </td>
                             <td >
-                                <input name="unit_book_distribution_center_increase" :value="formatBangla(dawah_prokashona.unit_book_distribution_center_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_book_distribution_center_increase" :value="formatBangla(dawah_prokashona.unit_book_distribution_center_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <popup
+                                        :ward_id="ward_info.id"
+                                        :table_name="'dawah_and_prokashonas'"
+                                        :field_title="'unit_book_distribution_center_increase'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div>
                             </td>
 
                             <td class="text-start px-2">দাওয়াতি লিংক বিতরণ*</td>
                             <td >
-                                <input name="dawat_link_distribution" :value="formatBangla(dawah_prokashona.dawat_link_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="dawat_link_distribution" :value="formatBangla(dawah_prokashona.dawat_link_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <popup
+                                        :ward_id="ward_info.id"
+                                        :table_name="'dawah_and_prokashonas'"
+                                        :field_title="'dawat_link_distribution'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div>
                             </td>
                             <td >
-                                <input name="dawat_link_distribution_increase" :value="formatBangla(dawah_prokashona.dawat_link_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="dawat_link_distribution_increase" :value="formatBangla(dawah_prokashona.dawat_link_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <popup
+                                        :ward_id="ward_info.id"
+                                        :table_name="'dawah_and_prokashonas'"
+                                        :field_title="'dawat_link_distribution_increase'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">ইউনিটে বই বিলি</td>
                             <td >
-                                <input name="unit_book_distribution" :value="formatBangla(dawah_prokashona.unit_book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_book_distribution" :value="formatBangla(dawah_prokashona.unit_book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <popup
+                                        :ward_id="ward_info.id"
+                                        :table_name="'dawah_and_prokashonas'"
+                                        :field_title="'unit_book_distribution'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div>
                             </td>
                             <td >
-                                <input name="unit_book_distribution_increase" :value="formatBangla(dawah_prokashona.unit_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_book_distribution_increase" :value="formatBangla(dawah_prokashona.unit_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <popup
+                                        :ward_id="ward_info.id"
+                                        :table_name="'dawah_and_prokashonas'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                        >
+                                    </popup>
+                                </div>
                             </td>
 
                             <td class="text-start px-2">সোনার বাংলা/সংগ্রাম/পৃথিবী কত কপি চলে</td>
@@ -1006,6 +1240,50 @@
                     </tbody>
                 </table>
                 <p>*সংগঠন অনুমোদিত</p>
+                <div class="do_not_print">
+                    <popup-note
+                        :label="'সোনার বাংলা মোট সংখ্যা'"
+                        :ward_id="ward_info.id"
+                        :table_name="'dawah_and_prokashonas'"
+                        :field_title="'sonar_bangla'"
+                        :month="month"
+                    />
+                    <popup-note
+                        :label="'সোনার বাংলা বৃদ্ধি'"
+                        :ward_id="ward_info.id"
+                        :table_name="'dawah_and_prokashonas'"
+                        :field_title="'sonar_bangla_increase'"
+                        :month="month"
+                    />
+                    <popup-note
+                        :label="'সংগ্রাম মোট সংখ্যা'"
+                        :ward_id="ward_info.id"
+                        :table_name="'dawah_and_prokashonas'"
+                        :field_title="'songram'"
+                        :month="month"
+                    />
+                    <popup-note
+                        :label="'সংগ্রাম বৃদ্ধি'"
+                        :ward_id="ward_info.id"
+                        :table_name="'dawah_and_prokashonas'"
+                        :field_title="'songram_increase'"
+                        :month="month"
+                    />
+                    <popup-note
+                        :label="'পৃথিবী মোট সংখ্যা'"
+                        :ward_id="ward_info.id"
+                        :table_name="'dawah_and_prokashonas'"
+                        :field_title="'prithibi'"
+                        :month="month"
+                    />
+                    <popup-note
+                        :label="'পৃথিবী বৃদ্ধি'"
+                        :ward_id="ward_info.id"
+                        :table_name="'dawah_and_prokashonas'"
+                        :field_title="'prithibi_increase'"
+                        :month="month"
+                    />
+                </div>
             </div>
             <h1 class="font-18 fw-bold">ঘ) কর্মসূচি বাস্তবায়ন</h1>
             <div class="job_holder mb-1">
@@ -1126,7 +1404,7 @@
                         <tbody>
                             <tr>
                                 <td >৬.</td>
-                                <td class="text-start px-2">ইফতার মাহফিল (ব্যক্তিগত/সাংগঠনিক)</td>
+                                <td class="text-start">ইফতার মাহফিল (ব্যক্তিগত/সাংগঠনিক)</td>
                                 <td>
                                     <div class="d-flex">
                                         <input name="iftar_mahfil_personal_total" :value="formatBangla(kormosuci.iftar_mahfil_personal_total)" @change="data_upload('ward-kormosuci-bastobayon')" type="text" class="bg-input w-100 text-center" />/
@@ -1210,6 +1488,134 @@
                     </table>
                 </div>
             </div>
+            <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
+                <popup-note
+                    :label="'ইউনিটে মাসিক সাধারণ সভা মোট সংখ্যা'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'unit_masik_sadaron_sova_total'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'ইউনিটে মাসিক সাধারণ সভা বৃদ্ধি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'unit_masik_sadaron_sova_target'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'ইউনিটে মাসিক সাধারণ সভা মোট উপস্থিতি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'unit_masik_sadaron_sova_uposthiti'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'ইফতার মাহফিল (ব্যক্তিগত) মোট সংখ্যা'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'iftar_mahfil_personal_total'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'ইফতার মাহফিল (ব্যক্তিগত) বৃদ্ধি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'iftar_mahfil_personal_target'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'ইফতার মাহফিল (ব্যক্তিগত) মোট উপস্থিতি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'iftar_mahfil_personal_uposthiti'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'ইফতার মাহফিল (সাংগঠনিক) মোট সংখ্যা'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'iftar_mahfil_samostic_total'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'ইফতার মাহফিল (সাংগঠনিক) বৃদ্ধি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'iftar_mahfil_samostic_target'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'ইফতার মাহফিল (সাংগঠনিক) মোট উপস্থিতি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'iftar_mahfil_samostic_uposthiti'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'চা চক্র মোট সংখ্যা'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'cha_chakra_total'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'চা চক্র বৃদ্ধি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'cha_chakra_target'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'চা চক্র মোট উপস্থিতি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'cha_chakra_uposthiti'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'সামষ্টিক খাওয়া মোট সংখ্যা'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'samostic_khawa_total'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'সামষ্টিক খাওয়া বৃদ্ধি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'samostic_khawa_target'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'সামষ্টিক খাওয়া মোট উপস্থিতি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'samostic_khawa_uposthiti'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'শিক্ষা সফর মোট সংখ্যা'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'sikkha_sofor_total'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'শিক্ষা সফর বৃদ্ধি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'sikkha_sofor_target'"
+                    :month="month"
+                />
+                <popup-note
+                    :label="'শিক্ষা সফর মোট উপস্থিতি'"
+                    :ward_id="ward_info.id"
+                    :table_name="'kormosuci_bastobayons'"
+                    :field_title="'sikkha_sofor_uposthiti'"
+                    :month="month"
+                />
+            </div>
         </section>
 
         <section class="">
@@ -1233,19 +1639,64 @@
                             <tr>
                                 <td class="text-start px-2">সর্বমোট সদস্য (রুকন)</td>
                                 <td >
-                                    <input name="rokon_previous" :value="formatBangla(songothon1.rokon_previous)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="rokon_previous" :value="formatBangla(songothon1.rokon_previous)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'songothon1_jonosoktis'"
+                                            :field_title="'rokon_previous'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td >
-                                    <input name="rokon_present" :value="formatBangla(songothon1.rokon_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="rokon_present" :value="formatBangla(songothon1.rokon_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'songothon1_jonosoktis'"
+                                            :field_title="'rokon_present'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td >
-                                    <input name="rokon_briddhi" :value="formatBangla(songothon1.rokon_briddhi)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="rokon_briddhi" :value="formatBangla(songothon1.rokon_briddhi)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'songothon1_jonosoktis'"
+                                            :field_title="'rokon_briddhi'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td >
-                                    <input name="rokon_gatti" :value="formatBangla(songothon1.rokon_gatti)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="rokon_gatti" :value="formatBangla(songothon1.rokon_gatti)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'songothon1_jonosoktis'"
+                                            :field_title="'rokon_gatti'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td >
-                                    <input name="rokon_target" :value="formatBangla(songothon1.rokon_target)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="rokon_target" :value="formatBangla(songothon1.rokon_target)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'songothon1_jonosoktis'"
+                                            :field_title="'rokon_target'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td >
                                     {{ formatBangla(implementation_rate(songothon1.rokon_target, songothon1.rokon_briddhi))}}
@@ -3084,9 +3535,10 @@
 <script>
     import axios from "axios";
     import Popup from "../components/Popup.vue"
+    import PopupNote from "../components/PopupNote.vue"
 
     export default {
-        components:{ Popup },
+        components:{ Popup , PopupNote },
         data() {
             return {
                 month: '',

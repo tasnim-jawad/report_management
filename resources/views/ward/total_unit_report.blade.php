@@ -290,37 +290,37 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">বই বিলিকেন্দ্ৰ</td>
-                                <td >{{bangla($data->dawah_prokashona_unit_book_distribution_center?? "")}}</td>
-                                <td >{{bangla($data->dawah_prokashona_unit_book_distribution_center_increase?? "")}}</td>
+                                <td >{{bangla($data->prokashona_unit_book_distribution_center?? "")}}</td>
+                                <td >{{bangla($data->prokashona_unit_book_distribution_center_increase?? "")}}</td>
 
                                 <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
-                                <td >{{bangla($data->dawah_prokashona_soft_copy_book_distribution?? "")}}</td>
-                                <td >{{bangla($data->dawah_prokashona_soft_copy_book_distribution_increase?? "")}}</td>
+                                <td >{{bangla($data->prokashona_soft_copy_book_distribution?? "")}}</td>
+                                <td >{{bangla($data->prokashona_soft_copy_book_distribution_increase?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">বই</td>
-                                <td >{{bangla($data->dawah_prokashona_books_in_pathagar?? "")}}</td>
-                                <td >{{bangla($data->dawah_prokashona_books_in_pathagar_increase?? "")}}</td>
+                                <td >{{bangla($data->prokashona_books_in_pathagar?? "")}}</td>
+                                <td >{{bangla($data->prokashona_books_in_pathagar_increase?? "")}}</td>
 
                                 <td class="text-start px-2">দাওয়াতি লিংক বিতরণ<span>(সংগঠন অনুমোদিত)</span></td>
-                                <td >{{bangla($data->dawah_prokashona_dawat_link_distribution?? "")}}</td>
-                                <td >{{bangla($data->dawah_prokashona_dawat_link_distribution_increase?? "")}}</td>
+                                <td >{{bangla($data->prokashona_dawat_link_distribution?? "")}}</td>
+                                <td >{{bangla($data->prokashona_dawat_link_distribution_increase?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">বই বিলি/বিক্রি</td>
-                                <td >{{bangla($data->dawah_prokashona_unit_book_distribution?? "")}}</td>
-                                <td >{{bangla($data->dawah_prokashona_unit_book_distribution_increase?? "")}}</td>
+                                <td >{{bangla($data->prokashona_unit_book_distribution?? "")}}</td>
+                                <td >{{bangla($data->prokashona_unit_book_distribution_increase?? "")}}</td>
 
                                 <td class="text-start px-2">সোনার বাংলা/সংগ্রাম/ পৃথিবী কত কপি চলে</td>
                                 <td >
-                                    {{bangla($data->dawah_prokashona_sonar_bangla?? "")}} /
-                                    {{bangla($data->dawah_prokashona_songram?? "")}} /
-                                    {{bangla($data->dawah_prokashona_prithibi?? "")}}
+                                    {{bangla($data->prokashona_sonar_bangla?? "")}} /
+                                    {{bangla($data->prokashona_songram?? "")}} /
+                                    {{bangla($data->prokashona_prithibi?? "")}}
                                 </td>
                                 <td >
-                                    {{bangla($data->dawah_prokashona_sonar_bangla_increase?? "")}} /
-                                    {{bangla($data->dawah_prokashona_songram_increase?? "")}} /
-                                    {{bangla($data->dawah_prokashona_prithibi_increase?? "")}}
+                                    {{bangla($data->prokashona_sonar_bangla_increase?? "")}} /
+                                    {{bangla($data->prokashona_songram_increase?? "")}} /
+                                    {{bangla($data->prokashona_prithibi_increase?? "")}}
                                 </td>
                             </tr>
                         </tbody>
