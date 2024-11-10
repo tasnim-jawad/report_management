@@ -33,7 +33,7 @@ export default {
             required: true,
         },
         month: {
-            type: Date,
+            type: String,
             required: true,
         },
         label: {

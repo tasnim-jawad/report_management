@@ -1,53 +1,53 @@
 <template>
     <div>
-    <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            জনশক্তি
-            <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'CreateUser'}" class="text-dark">Create User</router-link>
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                জনশক্তি
+                <div class="btn btn-info btn-sm">
+                    <router-link :to="{name:'CreateUser'}" class="text-dark">Create User</router-link>
+                </div>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-striped table-bordered text-center">
+                    <thead>
+                        <tr class="table-dark eng">
+                            <th>srl#</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Telegram Name</th>
+                            <th>Blood Group</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(user,index) in users" :key="index">
+                            <td>{{index + 1}}</td>
+                            <td>{{user.full_name}}</td>
+                            <td>{{user.gender}}</td>
+                            <td>{{user.telegram_name}}</td>
+                            <td>{{user.blood_group}}</td>
+                            <td>
+                                <div class="action">
+                                    <div class="btn btn-success btn-sm me-2">
+                                        <router-link :to="{name:'ShowUser',params: { user_id: user.id }}"  class="text-dark">show</router-link>
+                                    </div>
+                                    <div class="btn btn-warning btn-sm me-2">
+                                        <router-link :to="{name:'EditUser',params: { user_id: user.id }}"  class="text-dark">Edit</router-link>
+                                    </div>
+                                    <div class="btn btn-danger btn-sm">
+                                        <a @click="delete_user(user.id)" class="text-dark">Delete</a>
+
+                                        <form :id="'delete_user_form_'+user.id" >
+                                            <input type="text" name="id" :value="user.id" class="d-none">
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="card-body table-responsive">
-            <table class="table table-striped table-bordered text-center">
-                <thead>
-                    <tr class="table-dark eng">
-                        <th>srl#</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Telegram Name</th>
-                        <th>Blood Group</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(user,index) in users" :key="index">
-                        <td>{{index + 1}}</td>
-                        <td>{{user.full_name}}</td>
-                        <td>{{user.gender}}</td>
-                        <td>{{user.telegram_name}}</td>
-                        <td>{{user.blood_group}}</td>
-                        <td>
-                            <div class="action">
-                                <div class="btn btn-success btn-sm me-2">
-                                    <router-link :to="{name:'ShowUser',params: { user_id: user.id }}"  class="text-dark">show</router-link>
-                                </div>
-                                <div class="btn btn-warning btn-sm me-2">
-                                    <router-link :to="{name:'EditUser',params: { user_id: user.id }}"  class="text-dark">Edit</router-link>
-                                </div>
-                                <div class="btn btn-danger btn-sm">
-                                    <a @click="delete_user(user.id)" class="text-dark">Delete</a>
-
-                                    <form :id="'delete_user_form_'+user.id" >
-                                        <input type="text" name="id" :value="user.id" class="d-none">
-                                    </form>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
     </div>
 </template>
 

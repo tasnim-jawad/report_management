@@ -81,7 +81,6 @@ export default {
                                 params: { month: this.month  }
                             });
             if(response.data.status == "success"){
-                console.log("response",response.data);
                 this.bm_expense = response.data.data;
                 this.total_expense = response.data.total_expense;
                 this.is_permitted = response.data.is_permitted;

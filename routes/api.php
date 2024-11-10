@@ -886,7 +886,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-dawat1-regular-group-wise'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'store_single'])->middleware(WardStatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class,'show']);
@@ -900,7 +900,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-dawat2-personal-and-target'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'store_single'])->middleware(WardStatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat2PersonalAndTargetController::class,'show']);
@@ -914,7 +914,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-dawat3-general-program-and-others'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'store_single'])->middleware(WardStatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersController::class,'show']);
@@ -928,7 +928,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-dawat4-gono-songjog-and-dawat-ovijan'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'store_single'])->middleware(WardStatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijanController::class,'show']);
@@ -946,7 +946,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-department1-talimul-quran'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'store_single'])->middleware(WardStatusChack::class);
 
         Route::get('/all', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Department\WardDepartment1TalimulQuranController::class,'show']);
@@ -960,32 +960,32 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-department2-moholla-vittik-dawat'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment2MohollaVittikDawatController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment2MohollaVittikDawatController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment2MohollaVittikDawatController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-department3-jubo-somaj-dawat'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment3JuboSomajDawatController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment3JuboSomajDawatController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment3JuboSomajDawatController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-department4-different-job-holders-dawat'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment4DifferentJobHoldersDawatController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment4DifferentJobHoldersDawatController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment4DifferentJobHoldersDawatController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-department5-paribarik-dawat'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment5ParibarikDawatController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment5ParibarikDawatController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment5ParibarikDawatController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-department6-mosjid-dawah-infomation-centers'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCenterController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCenterController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment6MosjidDawahInfomationCenterController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-department7-dawat-in-technology'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Department\WardDepartment7DawatInTechnologyController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment7DawatInTechnologyController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Department\WardDepartment7DawatInTechnologyController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
 
@@ -994,7 +994,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-dawah-and-prokashona'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\DawahAndProkashona\WardDawahAndProkashonaController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\DawahAndProkashona\WardDawahAndProkashonaController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\DawahAndProkashona\WardDawahAndProkashonaController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
 
@@ -1002,54 +1002,54 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-kormosuci-bastobayon'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Kormosuci\WardKormosuciBastobayonController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Kormosuci\WardKormosuciBastobayonController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Kormosuci\WardKormosuciBastobayonController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
 
 
     Route::group(['prefix' => 'ward-songothon1-jonosokti'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon1JonosoktiController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon1JonosoktiController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon1JonosoktiController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-songothon2-associate-member'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon2AssociateMemberController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon2AssociateMemberController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon2AssociateMemberController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-songothon3-departmental-information'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon3DepartmentalInformationController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon3DepartmentalInformationController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon3DepartmentalInformationController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-songothon4-unit-songothon'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon4UnitSongothonController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon4UnitSongothonController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon4UnitSongothonController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-songothon5-dawat-and-paribarik-unit'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon5DawatAndParibarikUnitController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon5DawatAndParibarikUnitController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon5DawatAndParibarikUnitController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-songothon6-bidayi-students-connect'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon6BidayiStudentsConnectController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon6BidayiStudentsConnectController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon6BidayiStudentsConnectController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-songothon7-sofor'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon7SoforController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon7SoforController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon7SoforController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-songothon8-iyanot-data'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon8IyanotDataController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon8IyanotDataController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon8IyanotDataController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-songothon9-sangothonik-boithok'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon9SangothonikBoithokController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon9SangothonikBoithokController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Songothon\WardSongothon9SangothonikBoithokController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
 
@@ -1059,12 +1059,12 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-proshikkhon1-tarbiat'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon1TarbiatController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-proshikkhon2-manob-shompod-unnoyon'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Proshikkhon\WardProshikkhon2ManobShompodUnnoyonController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
 
@@ -1072,22 +1072,22 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-shomajsheba1-personal-social-work'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWorkController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWorkController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba1PersonalSocialWorkController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-shomajsheba2-group-social-work'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorkController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorkController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba2GroupSocialWorkController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-shomajsheba3-health-and-family-kollan'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba3HealthAndFamilyKollanController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba3HealthAndFamilyKollanController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba3HealthAndFamilyKollanController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-shomajsheba4-institutional-social-work'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba4InstitutionalSocialWorkController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba4InstitutionalSocialWorkController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Shomajsheba\WardShomajsheba4InstitutionalSocialWorkController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
 
@@ -1096,27 +1096,27 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'ward-rastrio1-political-communication'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio1PoliticalCommunicationController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio1PoliticalCommunicationController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio1PoliticalCommunicationController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-rastrio2-kormoshuchi-bastobayon'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio2KormoshuchiBastobayonController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio2KormoshuchiBastobayonController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio2KormoshuchiBastobayonController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-rastrio3-dibosh-palon'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio3DiboshPalonController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio3DiboshPalonController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio3DiboshPalonController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-rastrio4-election-activitie'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio4ElectionActivityController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio4ElectionActivityController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Rastrio\WardRastrio4ElectionActivityController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-montobbo'] , function(){
         Route::get('/data', [App\Http\Controllers\Report\Ward\Montobbo\WardMontobboController::class,'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Montobbo\WardMontobboController::class,'store_single']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Montobbo\WardMontobboController::class,'store_single'])->middleware(WardStatusChack::class);
     });
 
 
@@ -1138,12 +1138,12 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
         Route::get('/all', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'store']);
-        Route::post('/update', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'destroy']);
-        Route::post('/restore', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'bulk_import']);
+        Route::post('/store', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'store'])->middleware(WardStatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'update'])->middleware(WardStatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'soft_delete'])->middleware(WardStatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'destroy'])->middleware(WardStatusChack::class);
+        Route::post('/restore', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'restore'])->middleware(WardStatusChack::class);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseController::class,'bulk_import'])->middleware(WardStatusChack::class);
     });
 
     Route::group(['prefix' => 'ward-bm-income-category'] , function(){
@@ -1165,14 +1165,13 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
         Route::get('/all', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'store']);
-        Route::post('/update', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'destroy']);
-        Route::post('/restore', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'bulk_import']);
+        Route::post('/store', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'store'])->middleware(WardStatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'update'])->middleware(WardStatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'soft_delete'])->middleware(WardStatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'destroy'])->middleware(WardStatusChack::class);
+        Route::post('/restore', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'restore'])->middleware(WardStatusChack::class);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeController::class,'bulk_import'])->middleware(WardStatusChack::class);
     });
-
 
     Route::group(['prefix' => 'ward'] , function(){
         Route::get('/uploaded-data', [App\Http\Controllers\Ward\WardController::class,'report_upload_api']);

@@ -322,3 +322,8 @@ table{
     margin-top: 10px;
 
 }
+.max_with_550_auto{
+    max-width: 550px;
+    margin: auto;
+}
+

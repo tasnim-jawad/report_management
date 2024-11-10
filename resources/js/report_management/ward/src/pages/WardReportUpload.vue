@@ -3896,6 +3896,7 @@
                 ward_info: {},
                 thana_info: {},
                 precedent: {},
+                joma_status: null,
 
                 dawat1:{},
                 dawat2:{},
@@ -4013,6 +4014,7 @@
             this.expense_category()
             this.bm_category_wise()
             this.bm_expense_category_wise()
+            this.report_status()
 
         },
         watch:{

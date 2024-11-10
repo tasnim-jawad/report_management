@@ -7,7 +7,7 @@
             <form ref="report_form" action="" method="GET">
                 <input type="text" class="d-none" name="user_id" :value = "this.user?.user?.id" >
                 মাস: <input type="month" v-model="month" name="month">
-                <button class="btn btn-success ms-5" type="button" @click="get_monthly_report">Submit</button>
+                <button class="btn btn-success ms-5" type="button" @click="get_monthly_report">দেখুন</button>
             </form>
         </div>
     </div>
@@ -19,7 +19,7 @@
             <form ref="report_form" action="" method="GET">
                 <input type="text" class="d-none" name="user_id" :value = "this.user?.user?.id" >
                 মাস: <input type="month" v-model="month" name="month">
-                <button class="btn btn-success ms-5" type="button" @click.prevent="total_unit_report">Submit</button>
+                <button class="btn btn-success ms-5" type="button" @click.prevent="total_unit_report">দেখুন</button>
             </form>
         </div>
     </div>
@@ -46,15 +46,11 @@ export default {
     methods:{
         get_monthly_report: function(){
             if(this.month != null){
-                // this.$refs.report_form.submit();
                 window.open(`/ward/report?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
         },
         total_unit_report: function(){
             if(this.month != null){
-                console.log("total-unit-report",this.month);
-
-                // this.$refs.report_form.submit();
                 window.open(`/ward/unit/total-unit-report?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
         },

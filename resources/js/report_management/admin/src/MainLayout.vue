@@ -6,6 +6,7 @@
                 <nav id="side_nav" class="side_nav">
                     <div class="logo">
                         <img src="https://cdn.freebiesupply.com/logos/large/2x/mi-1-logo-black-and-white.png" alt="">
+                        <!-- <img src="https://cdn.freebiesupply.com/logos/large/2x/mi-1-logo-black-and-white.png" alt=""> -->
                     </div>
                     <div class="profile_view">
                         <div class="profile_pic">
@@ -116,6 +117,8 @@
                 if(window.confirm('logout')){
                     localStorage.removeItem('token');
                     document.getElementById('logout-form').submit();
+                } else {
+                    event.preventDefault();
                 }
             },
             toggle_sidebar:function(){

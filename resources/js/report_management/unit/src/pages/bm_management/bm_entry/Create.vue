@@ -83,7 +83,7 @@ export default {
     created:function(){
         this.bm_category_list();
         this.unit_users_list();
-        
+
         if (!this.month) {
             this.$router.push({ name: "BmEntryAll" });
         }
@@ -153,7 +153,6 @@ export default {
                             });
 
             if(response.data.status == "success"){
-                console.log("response",response.data);
                 this.amount = response.data.amount;
             }
         },

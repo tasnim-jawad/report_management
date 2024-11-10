@@ -152,7 +152,6 @@ export default {
                             });
 
             if(response.data.status == "success"){
-                console.log("response",response.data);
                 this.amount = response.data.amount;
             }
         },

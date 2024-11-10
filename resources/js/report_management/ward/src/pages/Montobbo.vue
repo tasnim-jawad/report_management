@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="max_with_550_auto">
         <!-- <h1 class="dofa_heading">দাওয়াত ও তাবলিগ</h1> -->
         <div class="card mb-3">
             <div class="card-header border-bottom-0">
@@ -12,11 +12,12 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <div class="d-flex flex-wrap gap-2 mb-2 align-items-center">
-                        <div class="form_label">
+                    <!-- <div class="d-flex flex-wrap gap-2 mb-2 align-items-center"> -->
+                        <div class="d-flex flex-wrap flex-column gap-2 mb-2 align-items-center">
+                        <div class="form_label w-100">
                             <label for="">ওয়ার্ড সভাপতির মন্তব্য :</label>
                         </div>
-                        <div class="form_input">
+                        <div class="form_input w-100">
                             <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`ward-montobbo`)" id="montobboText" rows="10"></textarea>
                         </div>
                     </div>

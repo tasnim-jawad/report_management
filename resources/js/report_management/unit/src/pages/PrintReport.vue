@@ -1,5 +1,5 @@
 <template>
-    <div class="card mb-3">
+    <div class="card mb-3 ">
         <div class="card-body border-bottom-0">
             <form ref="report_form" action="/unit/report" method="GET">
                 <input type="text" class="d-none" name="user_id" :value = "this.user?.user?.id" >

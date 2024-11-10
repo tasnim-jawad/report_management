@@ -30,6 +30,7 @@ use App\Models\Report\Montobbo\Montobbo;
 use App\Models\Report\Proshikkhon\Proshikkhon1Tarbiat;
 use App\Models\Report\Rastrio\Rastrio1BishishtoBekti;
 use App\Models\Report\ReportInfo;
+use App\Models\Report\ReportManagementControl;
 use App\Models\Report\Shomajsheba\Shomajsheba1PersonalSocialWork;
 use App\Models\Report\Shomajsheba\Shomajsheba2UnitSocialWork;
 use App\Models\Report\Songothon\Songothon1Jonosokti;
@@ -1184,6 +1185,110 @@ class WardController extends Controller
         ], 200);
     }
 
+    public function report_status(){
+        $month = request()->month;
+        if($month){
+            $org_ward_user = OrgWardUser::where('user_id',auth()->id())->first();
+            $ward_id = $org_ward_user->ward_id;
+            $month = Carbon::parse(request()->month);
+
+            $report_info = ReportInfo::where('org_type_id', $ward_id)
+                        ->where('org_type','ward')
+                        ->whereYear('month_year', $month->clone()->year)
+                        ->whereMonth('month_year', $month->clone()->month)
+                        ->get()
+                        ->first();
+
+            $report_submit_status = $report_info->report_submit_status??'unsubmitted';
+            $report_approved_status = $report_info->report_approved_status??'pending';
+
+            if($report_submit_status == 'unsubmitted'){
+                return response()->json([
+                    'status' => 'success',
+                    'report_status' => "unsubmitted",
+                    "message" => "রিপোর্ট জমা দেওয়া হয়নি এখনো ।"
+                ], 200);
+
+            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'pending'){
+                return response()->json([
+                    'status' => 'success',
+                    'report_status' => "pending",
+                    "message" => "রিপোর্ট জমা হয়েছে । থানার আপ্রুভের জন্য অপেক্ষমাণ।"
+                ], 200);
+
+            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'rejected'){
+                return response()->json([
+                    'status' => 'success',
+                    'report_status' => "rejected",
+                    "message" => "রিপোর্ট রিজেক্ট করা হয়েছে । ভুলগুলি ঠিক করে আবার জমা দিন ।"
+                ], 200);
+
+            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'approved'){
+                return response()->json([
+                    'status' => 'success',
+                    'report_status' => "approved",
+                    "message" => "এ মাসের রিপোর্ট থানা গ্রহন করেছে।"
+                ], 200);
+            }
+
+        }
+
+    }
+
+    public function report_joma(){
+
+        $month = Carbon::parse(request()->month);
+        $org_ward_user = OrgWardUser::where('user_id',auth()->id())->first();
+        $ward_id = $org_ward_user->ward_id;
+
+        $permission  = ReportManagementControl::where('report_type', 'ward')
+                                            ->whereYear('month_year', $month->clone()->year)
+                                            ->whereMonth('month_year', $month->clone()->month)
+                                            ->where('is_active', 1)
+                                            ->latest()
+                                            ->first();
+        // dd($permission);
+        if( $permission ){
+            $report_info = ReportInfo::where('org_type_id', $ward_id)
+                        ->where('org_type','ward')
+                        ->whereYear('month_year', $month->clone()->year)
+                        ->whereMonth('month_year', $month->clone()->month)
+                        ->get()
+                        ->first();
+
+
+            if($report_info->report_submit_status == 'unsubmitted' && $report_info->report_approved_status == 'pending'){
+                $report_info->report_submit_status = 'submitted';
+                $report_info->save();
+
+                return response()->json([
+                    'status' => 'success',
+                    'report_status' => "rejected",
+                    "message" => "রিপোর্ট জমা করা হয়েছে ।"
+                ], 200);
+
+            }else if($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'rejected'){
+                $report_info->report_approved_status = 'pending';
+                $report_info->save();
+
+                return response()->json([
+                    'status' => 'success',
+                    'report_status' => "rejected",
+                    "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
+                ], 200);
+            }else{
+                return response()->json([
+                    'err_message' => 'No Content',
+                    'errors' => ['name' => ['Report has no data']],
+                ], 204);
+            }
+        }else{
+            return response()->json([
+                'err_message' => 'Permission denied',
+                'errors' => [['You do not have the necessary permissions']],
+            ], 403);
+        }
+    }
     // public function report_upload()
     // {
     //     $validator = Validator::make(request()->all(), [

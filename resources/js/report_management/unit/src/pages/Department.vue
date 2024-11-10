@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="max_with_550_auto">
         <!-- <h1 class="dofa_heading">দাওয়াত ও তাবলিগ</h1> -->
         <div class="card mb-3">
             <div class="card-header border-bottom-0">
@@ -196,7 +196,7 @@ export default {
             top: 0,
             behavior: 'smooth'
         });
-        
+
         if(this.month != null){
             this.get_monthly_data();
         }

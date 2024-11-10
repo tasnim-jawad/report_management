@@ -164,6 +164,7 @@ function approved_unit_ids($ward_id, $month)
     $unit_ids = [];
     $approved_report_info_ids = [];
     $approved_unit_ids = [];
+    $approved_units = [];
     foreach ($units as $index => $unit) {
         $unit_id = $unit->id;
         $unit_ids[] = $unit_id;

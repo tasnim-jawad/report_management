@@ -7,6 +7,7 @@
                 <nav id="side_nav" class="side_nav">
                     <div class="logo">
                         <img src="https://cdn.freebiesupply.com/logos/large/2x/mi-1-logo-black-and-white.png" alt="">
+                        <!-- <img src="/images/Jamaat-e-islami-removebg-preview.png" alt=""> -->
                     </div>
                     <div class="profile_view">
                         <div class="profile_pic">
@@ -152,7 +153,7 @@
                 <div class="right">
                     <a class="btn " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     <ul class="dropdown-menu ">
-                        <li><a class="dropdown-item" href="#" @click="logout">Logout</a></li>
+                        <li><a class="dropdown-item" href="#" @click.prevent="logout">Logout</a></li>
                         <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                     </ul>
@@ -204,6 +205,9 @@
                 if(window.confirm('logout')){
                     localStorage.removeItem('token');
                     document.getElementById('logout-form').submit();
+                }else{
+                    let prevUrl = window.sessionStorage.getItem('prevurl');
+                    window.location.href = prevUrl || "#/dashboard";
                 }
             },
             toggle_sidebar:function(){

@@ -69,7 +69,7 @@ export default {
             let formData = new FormData(event.target);
             axios.post(`/ward/unit/update`,formData)
                 .then(function (response) {
-                    window.toaster('BM unit Updated successfuly', 'success');
+                    window.toaster('unit Updated successfuly', 'success');
                 })
                 .catch(function (error) {
                     console.log(error.response);

@@ -95,21 +95,19 @@ export default {
             let formData = new FormData(event.target);
             try {
                 let response = await axios.post('/ward/unit-jonoshokti/set-responsibility', formData);
-                console.log('response', response);
-                console.log('response.data', response.data);
-                console.log('response.data.status', response.data.status);
+                // console.log('response', response);
+                // console.log('response.data', response.data);
+                // console.log('response.data.status', response.data.status);
 
                 if (response.data.status === 'success') {
                     window.toaster('User created successfully', 'success');
                 }
             } catch (error) {
-                // Handling error response
-                if (error.response && error.response.status === 409) {
+                if (error.response && error.response.status === 422) {
                     let errMessage = error.response.data.err_message || 'An error occurred';
                     window.toaster(errMessage, 'error');
                     window.s_alert(errMessage, 'error');
                 } else {
-                    // For other errors (e.g. 500, 422, etc.)
                     window.toaster('An unexpected error occurred', 'error');
                     console.log('Error', error);
                 }

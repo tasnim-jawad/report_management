@@ -319,5 +319,8 @@ table{
     color: red;
     font-size: 14px;
     margin-top: 10px;
-
+}
+.max_with_550_auto{
+    max-width: 550px;
+    margin: auto;
 }

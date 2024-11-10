@@ -62,11 +62,11 @@ class WardReportStatusController extends Controller
                             ->get()
                             ->first();
 
-                $report_submit_status = $report_info->report_submit_status;
-                $report_approved_status = $report_info->report_approved_status;
+                $report_submit_status = $report_info->report_submit_status ?? 'unsubmitted';
+                $report_approved_status = $report_info->report_approved_status ?? 'pending' ;
+
 
                 if($report_submit_status == 'unsubmitted'){
-
                     $unsubmitted_unit[] = [
                         'unit_id' => $unit->id,
                         'unit_title' => $unit->title,
