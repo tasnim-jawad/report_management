@@ -174,11 +174,11 @@ class WardReportStatusController extends Controller
         $thana_info = OrgThana::where('id', $thana_id)->first();
         $org_type = OrgType::where('id', $unit_info->org_type_id)->first();
 
-        $unit_precedent = OrgUnitResponsible::where('org_unit_id', $unit_id)->where('responsibility_id',1)->first();
-        $precedent = null;
-        if($unit_precedent){
-            $precedent_id = $unit_precedent->user_id;
-            $precedent = User::find($precedent_id);
+        $unit_president = OrgUnitResponsible::where('org_unit_id', $unit_id)->where('responsibility_id',1)->first();
+        $president = null;
+        if($unit_president){
+            $president_id = $unit_president->user_id;
+            $president = User::find($president_id);
         }
 
         $report_info = ReportInfo::where('org_type_id', $unit_id)
@@ -270,7 +270,7 @@ class WardReportStatusController extends Controller
             'unit_info' => $unit_info,
             'ward_info' => $ward_info,
             'thana_info' => $thana_info,
-            'precedent' => $precedent,
+            'president' => $president,
 
             'dawat1' => $dawat1,
             'dawat2' => $dawat2,

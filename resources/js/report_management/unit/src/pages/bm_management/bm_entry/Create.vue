@@ -119,15 +119,10 @@ export default {
         unit_users_list:function(){
             axios.get('/user/show_unit_user')
                 .then(responce =>{
-                    // console.log(responce);
                     this.unit_user_all = responce.data
-                    // console.log('users' ,this.unit_user_all);
                 })
         },
         user_target:function(){
-            // console.log('target clicked');
-            // console.log(this.selected_user_id);
-            // console.log(this.selected_bm_category_id);
             if(this.selected_user_id != "" && this.selected_bm_category_id != ""){
                 axios.get(`/bm-category-user/show_target/${this.selected_user_id}/${this.selected_bm_category_id}`)
                     .then(response =>{
@@ -138,7 +133,6 @@ export default {
 
                         }
                         else if(response?.data?.err_message){
-                            // console.log(response.data.err_message);
                             this.users_target = "Not set yet";
                         }
                     })

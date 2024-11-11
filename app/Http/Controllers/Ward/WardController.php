@@ -103,13 +103,13 @@ class WardController extends Controller
         $thana_info = OrgThana::where('id', $thana_id)->first();
         $org_type = OrgType::where('id', $ward_info['org_type_id'])->first();
 
-        $precedent = null;
+        $president = null;
         $org_ward_responsible = OrgWardResponsible::where('org_ward_id',$ward_id)->where('responsibility_id', 1)->first();
         if($org_ward_responsible){
-            $precedent = User::where('id',$org_ward_responsible->user_id)->first();
+            $president = User::where('id',$org_ward_responsible->user_id)->first();
         }
 
-        // dd($precedent);
+        // dd($president);
 
         $report_info = ReportInfo::where('org_type_id', $ward_id)
             ->where('org_type','ward')
@@ -271,7 +271,7 @@ class WardController extends Controller
             'org_type' => $org_type,
             'ward_info' => $ward_info,
             'thana_info' => $thana_info,
-            'precedent' => $precedent,
+            'president' => $president,
 
             'dawat1' => $dawat1,
             'dawat2' => $dawat2,
@@ -340,13 +340,13 @@ class WardController extends Controller
         $thana_info = OrgThana::where('id', $thana_id)->first();
         $org_type = OrgType::where('id', $ward_info['org_type_id'])->first();
 
-        $precedent = null;
+        $president = null;
         $org_ward_responsible = OrgWardResponsible::where('org_ward_id',$ward_id)->where('responsibility_id', 1)->first();
         if($org_ward_responsible){
-            $precedent = User::where('id',$org_ward_responsible->user_id)->first();
+            $president = User::where('id',$org_ward_responsible->user_id)->first();
         }
 
-        // dd($precedent);
+        // dd($president);
 
         $report_info = ReportInfo::where('org_type_id', $ward_id)
             ->where('org_type','ward')
@@ -469,7 +469,7 @@ class WardController extends Controller
             // 'ward_info',$ward_info->toArray(),
             // 'ward_info',$ward_info->toArray(),
             // 'thana_info',$thana_info->toArray(),
-            // 'precedent',$precedent->toArray(),
+            // 'president',$president->toArray(),
 
             // 'dawat1',$dawat1,
             // 'dawat2',$dawat2,
@@ -518,7 +518,7 @@ class WardController extends Controller
             'org_type' => $org_type,
             'ward_info' => $ward_info,
             'thana_info' => $thana_info,
-            'precedent' => $precedent,
+            'president' => $president,
 
             'dawat1' => $dawat1,
             'dawat2' => $dawat2,
@@ -1105,7 +1105,7 @@ class WardController extends Controller
             'unit_info' => $unit_info,
             'ward_info' => $ward_info,
             'thana_info' => $thana_info,
-            'precedent' => $precedent,
+            'president' => $president,
 
             'dawat1' => $dawat1,
             'dawat2' => $dawat2,
@@ -1323,11 +1323,11 @@ class WardController extends Controller
     //     //         ->whereRaw('org_unit_users.user_id = users.id')
     //     //         ->where('org_unit_users.unit_id', $unit_id);
     //     // })->get();
-    //     // $precedent = null;
+    //     // $president = null;
     //     // foreach ($unit_user_list as $unit_user_single) {
     //     //     foreach ($unit_user_single['org_unit_responsible'] as $responcibility) {
     //     //         if ($responcibility['responsibility_id'] === 1) {
-    //     //             $precedent = $unit_user_single;
+    //     //             $president = $unit_user_single;
     //     //         }
     //     //     }
     //     // }
@@ -1850,7 +1850,7 @@ class WardController extends Controller
     //         'unit_info' => $unit_info,
     //         'ward_info' => $ward_info,
     //         'thana_info' => $thana_info,
-    //         'precedent' => $precedent,
+    //         'president' => $president,
 
     //         'dawat1' => $dawat1,
     //         'dawat2' => $dawat2,

@@ -76,8 +76,6 @@ export default {
             axios.get("/ward/unit-jonoshokti/all")
                 .then(responce => {
                     this.users = responce.data
-                    console.log(this.users);
-
                 })
         },
         delete_user : function(user_id){

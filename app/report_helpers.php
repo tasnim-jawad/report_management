@@ -170,8 +170,23 @@ function bangla_month($english_month) {
 
     return $bangla_month[$english_month] ?? $english_month;
 }
-function remove_all(){
 
+function report_info_create($org_type,$org_type_id,$responsibility_id,$responsibility_name,$month_year,$report_type){
+    // dd($month_year);
+    $data = new ReportInfo();
+    $data->org_type = $org_type;
+    $data->org_type_id = $org_type_id;
+    $data->responsibility_id = $responsibility_id ?? 1;
+    $data->responsibility_name = $responsibility_name ?? 'president';
+    $data->month_year = $month_year;
+    $data->report_type = $report_type ?? 'monthly';
+    $data->creator = auth()->user()->id;
+    $data->save();
+
+    return $data;
 }
+
+// function remove_all(){}
+
 
 

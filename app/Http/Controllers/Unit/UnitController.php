@@ -58,8 +58,8 @@ class UnitController extends Controller
         $form_data = request()->query();
 
         $unit_user = User::where('id', $form_data['user_id'])->with('org_unit_user')->get()->first();
-
         $unit_id = $unit_user->org_unit_user['unit_id'];
+        // dd($unit_user);
         $month = Carbon::parse($form_data['month']);
         $unit_info = OrgUnit::where('id', $unit_id)->get()->first();
         $ward_id = $unit_user->org_unit_user['ward_id'];
@@ -75,11 +75,11 @@ class UnitController extends Controller
                 ->where('org_unit_users.unit_id', $unit_id);
         })->get();
         // dd($result);
-        $precedent = null;
+        $president = null;
         foreach ($unit_user_list as $unit_user_single) {
             foreach ($unit_user_single['org_unit_responsible'] as $responcibility) {
                 if ($responcibility['responsibility_id'] === 1) {
-                    $precedent = $unit_user_single;
+                    $president = $unit_user_single;
                 }
             }
         }
@@ -124,9 +124,10 @@ class UnitController extends Controller
         // -------------------------- bm income report ------------------------------------
         $query = BmPaid::query();
         $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_id);
-        $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
-        $category_all_id = array_values(array_unique($category));
+        // $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
+        // $category_all_id = array_values(array_unique($category));
         $total_income = $filter->sum('amount');
+        $category_all_id = BmCategory::pluck('id');
 
         $income_category_wise = [];
         foreach ($category_all_id as $index => $item) {
@@ -137,7 +138,7 @@ class UnitController extends Controller
                 ->where('unit_id', $unit_id)
                 ->sum('amount');
             $bmCategory = BmCategory::find($item);
-            $income_category_wise[$index]['amount'] = $totalAmount;
+            $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
             $income_category_wise[$index]['category'] = $bmCategory->title;
         }
         // -------------------------- bm income report ------------------------------------
@@ -146,8 +147,9 @@ class UnitController extends Controller
         $query = BmExpense::query();
         $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('unit_id', $unit_id);
         $total_expense = $filter->sum('amount');
-        $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
-        $category_unique_id = array_values(array_unique($category_id));
+        // $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
+        // $category_unique_id = array_values(array_unique($category_id));
+        $category_unique_id = BmExpenseCategory::pluck('id');
 
         $expense_category_wise = [];
         foreach ($category_unique_id as $index => $item) {
@@ -158,7 +160,7 @@ class UnitController extends Controller
                 ->where('unit_id', $unit_id)
                 ->sum('amount');
             $bmCategory = BmExpenseCategory::find($item);
-            $expense_category_wise[$index]['amount'] = $totalAmount;
+            $expense_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
             $expense_category_wise[$index]['category'] = $bmCategory->title;
         }
         // -------------------------- bm expense report ------------------------------------
@@ -173,7 +175,7 @@ class UnitController extends Controller
             'unit_info' => $unit_info,
             'ward_info' => $ward_info,
             'thana_info' => $thana_info,
-            'precedent' => $precedent,
+            'president' => $president,
 
             'dawat1' => $dawat1,
             'dawat2' => $dawat2,
@@ -236,11 +238,11 @@ class UnitController extends Controller
                 ->whereRaw('org_unit_users.user_id = users.id')
                 ->where('org_unit_users.unit_id', $unit_id);
         })->get();
-        $precedent = null;
+        $president = null;
         foreach ($unit_user_list as $unit_user_single) {
             foreach ($unit_user_single['org_unit_responsible'] as $responcibility) {
                 if ($responcibility['responsibility_id'] === 1) {
-                    $precedent = $unit_user_single;
+                    $president = $unit_user_single;
                 }
             }
         }
@@ -332,7 +334,7 @@ class UnitController extends Controller
             'unit_info' => $unit_info,
             'ward_info' => $ward_info,
             'thana_info' => $thana_info,
-            'precedent' => $precedent,
+            'president' => $president,
 
             'dawat1' => $dawat1,
             'dawat2' => $dawat2,
@@ -394,11 +396,11 @@ class UnitController extends Controller
                 ->whereRaw('org_unit_users.user_id = users.id')
                 ->where('org_unit_users.unit_id', $unit_id);
         })->get();
-        $precedent = null;
+        $president = null;
         foreach ($unit_user_list as $unit_user_single) {
             foreach ($unit_user_single['org_unit_responsible'] as $responcibility) {
                 if ($responcibility['responsibility_id'] === 1) {
-                    $precedent = $unit_user_single;
+                    $president = $unit_user_single;
                 }
             }
         }
@@ -413,30 +415,31 @@ class UnitController extends Controller
         if ($report_info) {
             $report_info_id = $report_info->id;
         }else{
-            return redirect()->back();
+            $report_info = report_info_create('unit', $unit_id, 1, 'president', $month, 'monthly');
+            $report_info_id = $report_info->id;
         }
 
         // ---------------------  reports all data to show  ---------------------------
-        $dawat1 = Dawat1RegularGroupWise::where('report_info_id', $report_info_id)->get()->first();
-        $dawat2 = Dawat2PersonalAndTarget::where('report_info_id', $report_info_id)->get()->first();
-        $dawat3 = Dawat3GeneralProgramAndOthers::where('report_info_id', $report_info_id)->get()->first();
-        $dawat4 = Dawat4GonoSongjogAndDawatOvijan::where('report_info_id', $report_info_id)->get()->first();
-        $department1 = Department1TalimulQuran::where('report_info_id', $report_info_id)->get()->first();
-        $department4 = Department4DifferentJobHoldersDawat::where('report_info_id', $report_info_id)->get()->first();
-        $department5 = Department5ParibarikDawat::where('report_info_id', $report_info_id)->get()->first();
-        $dawah_prokashona = DawahAndProkashona::where('report_info_id', $report_info_id)->get()->first();
-        $kormosuci = KormosuciBastobayon::where('report_info_id', $report_info_id)->get()->first();
-        $songothon1 = Songothon1Jonosokti::where('report_info_id', $report_info_id)->get()->first();
-        $songothon2 = Songothon2AssociateMember::where('report_info_id', $report_info_id)->get()->first();
-        $songothon9 = Songothon9SangothonikBoithok::where('report_info_id', $report_info_id)->get()->first();
-        $songothon5 = Songothon5DawatAndParibarikUnit::where('report_info_id', $report_info_id)->get()->first();
-        $songothon7 = Songothon7Sofor::where('report_info_id', $report_info_id)->get()->first();
-        $songothon8 = Songothon8IyanotData::where('report_info_id', $report_info_id)->get()->first();
-        $proshikkhon = Proshikkhon1Tarbiat::where('report_info_id', $report_info_id)->get()->first();
-        $shomajsheba1 = Shomajsheba1PersonalSocialWork::where('report_info_id', $report_info_id)->get()->first();
-        $shomajsheba2 = Shomajsheba2UnitSocialWork::where('report_info_id', $report_info_id)->get()->first();
-        $rastrio = Rastrio1BishishtoBekti::where('report_info_id', $report_info_id)->get()->first();
-        $montobbo = Montobbo::where('report_info_id', $report_info_id)->get()->first();
+        $dawat1 = Dawat1RegularGroupWise::where('report_info_id', $report_info_id)->latest()->first();
+        $dawat2 = Dawat2PersonalAndTarget::where('report_info_id', $report_info_id)->latest()->first();
+        $dawat3 = Dawat3GeneralProgramAndOthers::where('report_info_id', $report_info_id)->latest()->first();
+        $dawat4 = Dawat4GonoSongjogAndDawatOvijan::where('report_info_id', $report_info_id)->latest()->first();
+        $department1 = Department1TalimulQuran::where('report_info_id', $report_info_id)->latest()->first();
+        $department4 = Department4DifferentJobHoldersDawat::where('report_info_id', $report_info_id)->latest()->first();
+        $department5 = Department5ParibarikDawat::where('report_info_id', $report_info_id)->latest()->first();
+        $dawah_prokashona = DawahAndProkashona::where('report_info_id', $report_info_id)->latest()->first();
+        $kormosuci = KormosuciBastobayon::where('report_info_id', $report_info_id)->latest()->first();
+        $songothon1 = Songothon1Jonosokti::where('report_info_id', $report_info_id)->latest()->first();
+        $songothon2 = Songothon2AssociateMember::where('report_info_id', $report_info_id)->latest()->first();
+        $songothon9 = Songothon9SangothonikBoithok::where('report_info_id', $report_info_id)->latest()->first();
+        $songothon5 = Songothon5DawatAndParibarikUnit::where('report_info_id', $report_info_id)->latest()->first();
+        $songothon7 = Songothon7Sofor::where('report_info_id', $report_info_id)->latest()->first();
+        $songothon8 = Songothon8IyanotData::where('report_info_id', $report_info_id)->latest()->first();
+        $proshikkhon = Proshikkhon1Tarbiat::where('report_info_id', $report_info_id)->latest()->first();
+        $shomajsheba1 = Shomajsheba1PersonalSocialWork::where('report_info_id', $report_info_id)->latest()->first();
+        $shomajsheba2 = Shomajsheba2UnitSocialWork::where('report_info_id', $report_info_id)->latest()->first();
+        $rastrio = Rastrio1BishishtoBekti::where('report_info_id', $report_info_id)->latest()->first();
+        $montobbo = Montobbo::where('report_info_id', $report_info_id)->latest()->first();
         // ---------------------  reports all data to show  ---------------------------
 
         // -------------------------- bm income report ------------------------------------
@@ -488,7 +491,7 @@ class UnitController extends Controller
             'unit_info' => $unit_info,
             'ward_info' => $ward_info,
             'thana_info' => $thana_info,
-            'precedent' => $precedent,
+            'president' => $president,
 
             'dawat1' => $dawat1,
             'dawat2' => $dawat2,
@@ -560,7 +563,7 @@ class UnitController extends Controller
         $query = BmPaid::query();
         $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_info->unit_id);
         $data = $filter->with('bm_category')->get();
-        
+
         return response()->json([
             'status' => 'success',
             'data' => $data,
@@ -580,8 +583,8 @@ class UnitController extends Controller
                         ->get()
                         ->first();
 
-            $report_submit_status = $report_info->report_submit_status;
-            $report_approved_status = $report_info->report_approved_status;
+            $report_submit_status = $report_info->report_submit_status??'unsubmitted';
+            $report_approved_status = $report_info->report_approved_status??'pending';
 
             if($report_submit_status == 'unsubmitted'){
                 return response()->json([

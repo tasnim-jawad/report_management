@@ -312,173 +312,173 @@ class WardTotalUnitSubmittedDataController extends Controller
             $montobbo = Montobbo::where('report_info_id', $report_info_id)->get()->first();
             // ---------------------  reports all data to show  ---------------------------
 
-            $all_dawat1['how_many_groups_are_out'] += $dawat1->how_many_groups_are_out;
-            $all_dawat1['number_of_participants'] += $dawat1->number_of_participants;
-            $all_dawat1['how_many_have_been_invited'] += $dawat1->how_many_have_been_invited;
-            $all_dawat1['how_many_associate_members_created'] += $dawat1->how_many_associate_members_created;
+            $all_dawat1['how_many_groups_are_out'] += $dawat1->how_many_groups_are_out ?? 0 ;
+            $all_dawat1['number_of_participants'] += $dawat1->number_of_participants ?? 0 ;
+            $all_dawat1['how_many_have_been_invited'] += $dawat1->how_many_have_been_invited ?? 0 ;
+            $all_dawat1['how_many_associate_members_created'] += $dawat1->how_many_associate_members_created ?? 0 ;
 
-            $all_dawat2['total_rokon'] += $dawat2->total_rokon;
-            $all_dawat2['total_worker'] += $dawat2->total_worker;
-            $all_dawat2['how_many_were_give_dawat_rokon'] += $dawat2->how_many_were_give_dawat_rokon;
-            $all_dawat2['how_many_were_give_dawat_worker'] += $dawat2->how_many_were_give_dawat_worker;
-            $all_dawat2['how_many_have_been_invited'] += $dawat2->how_many_have_been_invited;
-            $all_dawat2['how_many_associate_members_created'] += $dawat2->how_many_associate_members_created;
+            $all_dawat2['total_rokon'] += $dawat2->total_rokon ?? 0 ;
+            $all_dawat2['total_worker'] += $dawat2->total_worker ?? 0 ;
+            $all_dawat2['how_many_were_give_dawat_rokon'] += $dawat2->how_many_were_give_dawat_rokon ?? 0 ;
+            $all_dawat2['how_many_were_give_dawat_worker'] += $dawat2->how_many_were_give_dawat_worker ?? 0 ;
+            $all_dawat2['how_many_have_been_invited'] += $dawat2->how_many_have_been_invited ?? 0 ;
+            $all_dawat2['how_many_associate_members_created'] += $dawat2->how_many_associate_members_created ?? 0 ;
 
-            $all_dawat3['how_many_were_give_dawat'] += $dawat3->how_many_were_give_dawat;
-            $all_dawat3['how_many_associate_members_created'] += $dawat3->how_many_associate_members_created;
+            $all_dawat3['how_many_were_give_dawat'] += $dawat3->how_many_were_give_dawat ?? 0 ;
+            $all_dawat3['how_many_associate_members_created'] += $dawat3->how_many_associate_members_created ?? 0 ;
 
-            $all_dawat4['total_gono_songjog_group'] += $dawat4->total_gono_songjog_group;
-            $all_dawat4['total_attended'] += $dawat4->total_attended;
-            $all_dawat4['how_many_have_been_invited'] += $dawat4->how_many_have_been_invited;
-            $all_dawat4['how_many_associate_members_created'] += $dawat4->how_many_associate_members_created;
-            $all_dawat4['jela_mohanogor_declared_gonosonjog_group'] += $dawat4->jela_mohanogor_declared_gonosonjog_group;
-            $all_dawat4['jela_mohanogor_declared_gonosonjog_attended'] += $dawat4->jela_mohanogor_declared_gonosonjog_attended;
-            $all_dawat4['jela_mohanogor_declared_gonosonjog_invited'] += $dawat4->jela_mohanogor_declared_gonosonjog_invited;
-            $all_dawat4['jela_mohanogor_declared_gonosonjog_associated_created'] += $dawat4->jela_mohanogor_declared_gonosonjog_associated_created;
+            $all_dawat4['total_gono_songjog_group'] += $dawat4->total_gono_songjog_group ?? 0 ;
+            $all_dawat4['total_attended'] += $dawat4->total_attended ?? 0 ;
+            $all_dawat4['how_many_have_been_invited'] += $dawat4->how_many_have_been_invited ?? 0 ;
+            $all_dawat4['how_many_associate_members_created'] += $dawat4->how_many_associate_members_created ?? 0 ;
+            $all_dawat4['jela_mohanogor_declared_gonosonjog_group'] += $dawat4->jela_mohanogor_declared_gonosonjog_group ?? 0 ;
+            $all_dawat4['jela_mohanogor_declared_gonosonjog_attended'] += $dawat4->jela_mohanogor_declared_gonosonjog_attended ?? 0 ;
+            $all_dawat4['jela_mohanogor_declared_gonosonjog_invited'] += $dawat4->jela_mohanogor_declared_gonosonjog_invited ?? 0 ;
+            $all_dawat4['jela_mohanogor_declared_gonosonjog_associated_created'] += $dawat4->jela_mohanogor_declared_gonosonjog_associated_created ?? 0 ;
 
-            $all_department1['teacher_rokon'] += $department1->teacher_rokon;
-            $all_department1['teacher_worker'] += $department1->teacher_worker;
-            $all_department1['student_rokon'] += $department1->student_rokon;
-            $all_department1['student_worker'] += $department1->student_worker;
-            $all_department1['how_much_learned_quran'] += $department1->how_much_learned_quran;
-            $all_department1['how_much_invited'] += $department1->how_much_invited;
-            $all_department1['how_much_been_associated'] += $department1->how_much_been_associated;
+            $all_department1['teacher_rokon'] += $department1->teacher_rokon ?? 0 ;
+            $all_department1['teacher_worker'] += $department1->teacher_worker ?? 0 ;
+            $all_department1['student_rokon'] += $department1->student_rokon ?? 0 ;
+            $all_department1['student_worker'] += $department1->student_worker ?? 0 ;
+            $all_department1['how_much_learned_quran'] += $department1->how_much_learned_quran ?? 0 ;
+            $all_department1['how_much_invited'] += $department1->how_much_invited ?? 0 ;
+            $all_department1['how_much_been_associated'] += $department1->how_much_been_associated ?? 0 ;
 
-            $all_department4['political_and_special_invited'] += $department4->political_and_special_invited;
-            $all_department4['political_and_special_been_associated'] += $department4->political_and_special_been_associated;
-            $all_department4['political_and_special_target'] += $department4->political_and_special_target;
-            $all_department4['prantik_jonogosti_invited'] += $department4->prantik_jonogosti_invited;
-            $all_department4['prantik_jonogosti_been_associated'] += $department4->prantik_jonogosti_been_associated;
-            $all_department4['prantik_jonogosti_target'] += $department4->prantik_jonogosti_target;
-            $all_department4['vinno_dormalombi_invited'] += $department4->vinno_dormalombi_invited;
-            $all_department4['vinno_dormalombi_been_associated'] += $department4->vinno_dormalombi_been_associated;
-            $all_department4['vinno_dormalombi_target'] += $department4->vinno_dormalombi_target;
+            $all_department4['political_and_special_invited'] += $department4->political_and_special_invited ?? 0 ;
+            $all_department4['political_and_special_been_associated'] += $department4->political_and_special_been_associated ?? 0 ;
+            $all_department4['political_and_special_target'] += $department4->political_and_special_target ?? 0 ;
+            $all_department4['prantik_jonogosti_invited'] += $department4->prantik_jonogosti_invited ?? 0 ;
+            $all_department4['prantik_jonogosti_been_associated'] += $department4->prantik_jonogosti_been_associated ?? 0 ;
+            $all_department4['prantik_jonogosti_target'] += $department4->prantik_jonogosti_target ?? 0 ;
+            $all_department4['vinno_dormalombi_invited'] += $department4->vinno_dormalombi_invited ?? 0 ;
+            $all_department4['vinno_dormalombi_been_associated'] += $department4->vinno_dormalombi_been_associated ?? 0 ;
+            $all_department4['vinno_dormalombi_target'] += $department4->vinno_dormalombi_target ?? 0 ;
 
-            $all_department5['total_attended_family'] += $department5->total_attended_family;
-            $all_department5['how_many_new_family_invited'] += $department5->how_many_new_family_invited;
+            $all_department5['total_attended_family'] += $department5->total_attended_family ?? 0 ;
+            $all_department5['how_many_new_family_invited'] += $department5->how_many_new_family_invited ?? 0 ;
 
-            $all_dawah_prokashona['books_in_pathagar'] += $dawah_prokashona->books_in_pathagar;
-            $all_dawah_prokashona['books_in_pathagar_increase'] += $dawah_prokashona->books_in_pathagar_increase;
-            $all_dawah_prokashona['unit_book_distribution_center'] += $dawah_prokashona->unit_book_distribution_center;
-            $all_dawah_prokashona['unit_book_distribution_center_increase'] += $dawah_prokashona->unit_book_distribution_center_increase;
-            $all_dawah_prokashona['unit_book_distribution'] += $dawah_prokashona->unit_book_distribution;
-            $all_dawah_prokashona['unit_book_distribution_increase'] += $dawah_prokashona->unit_book_distribution_increase;
-            $all_dawah_prokashona['soft_copy_book_distribution'] += $dawah_prokashona->soft_copy_book_distribution;
-            $all_dawah_prokashona['soft_copy_book_distribution_increase'] += $dawah_prokashona->soft_copy_book_distribution_increase;
-            $all_dawah_prokashona['dawat_link_distribution'] += $dawah_prokashona->dawat_link_distribution;
-            $all_dawah_prokashona['dawat_link_distribution_increase'] += $dawah_prokashona->dawat_link_distribution_increase;
-            $all_dawah_prokashona['sonar_bangla'] += $dawah_prokashona->sonar_bangla;
-            $all_dawah_prokashona['sonar_bangla_increase'] += $dawah_prokashona->sonar_bangla_increase;
-            $all_dawah_prokashona['songram'] += $dawah_prokashona->songram;
-            $all_dawah_prokashona['songram_increase'] += $dawah_prokashona->songram_increase;
-            $all_dawah_prokashona['prithibi'] += $dawah_prokashona->prithibi;
-            $all_dawah_prokashona['prithibi_increase'] += $dawah_prokashona->prithibi_increase;
+            $all_dawah_prokashona['books_in_pathagar'] += $dawah_prokashona->books_in_pathagar ?? 0 ;
+            $all_dawah_prokashona['books_in_pathagar_increase'] += $dawah_prokashona->books_in_pathagar_increase ?? 0 ;
+            $all_dawah_prokashona['unit_book_distribution_center'] += $dawah_prokashona->unit_book_distribution_center ?? 0 ;
+            $all_dawah_prokashona['unit_book_distribution_center_increase'] += $dawah_prokashona->unit_book_distribution_center_increase ?? 0 ;
+            $all_dawah_prokashona['unit_book_distribution'] += $dawah_prokashona->unit_book_distribution ?? 0 ;
+            $all_dawah_prokashona['unit_book_distribution_increase'] += $dawah_prokashona->unit_book_distribution_increase ?? 0 ;
+            $all_dawah_prokashona['soft_copy_book_distribution'] += $dawah_prokashona->soft_copy_book_distribution ?? 0 ;
+            $all_dawah_prokashona['soft_copy_book_distribution_increase'] += $dawah_prokashona->soft_copy_book_distribution_increase ?? 0 ;
+            $all_dawah_prokashona['dawat_link_distribution'] += $dawah_prokashona->dawat_link_distribution ?? 0 ;
+            $all_dawah_prokashona['dawat_link_distribution_increase'] += $dawah_prokashona->dawat_link_distribution_increase ?? 0 ;
+            $all_dawah_prokashona['sonar_bangla'] += $dawah_prokashona->sonar_bangla ?? 0 ;
+            $all_dawah_prokashona['sonar_bangla_increase'] += $dawah_prokashona->sonar_bangla_increase ?? 0 ;
+            $all_dawah_prokashona['songram'] += $dawah_prokashona->songram ?? 0 ;
+            $all_dawah_prokashona['songram_increase'] += $dawah_prokashona->songram_increase ?? 0 ;
+            $all_dawah_prokashona['prithibi'] += $dawah_prokashona->prithibi ?? 0 ;
+            $all_dawah_prokashona['prithibi_increase'] += $dawah_prokashona->prithibi_increase ?? 0 ;
 
-            $all_kormosuci['unit_masik_sadaron_sova_total'] += $kormosuci->unit_masik_sadaron_sova_total;
-            $all_kormosuci['unit_masik_sadaron_sova_target'] += $kormosuci->unit_masik_sadaron_sova_target;
-            $all_kormosuci['unit_masik_sadaron_sova_uposthiti'] += $kormosuci->unit_masik_sadaron_sova_uposthiti;
+            $all_kormosuci['unit_masik_sadaron_sova_total'] += $kormosuci->unit_masik_sadaron_sova_total ?? 0 ;
+            $all_kormosuci['unit_masik_sadaron_sova_target'] += $kormosuci->unit_masik_sadaron_sova_target ?? 0 ;
+            $all_kormosuci['unit_masik_sadaron_sova_uposthiti'] += $kormosuci->unit_masik_sadaron_sova_uposthiti ?? 0 ;
 
-            $all_kormosuci['iftar_mahfil_personal_total'] += $kormosuci->iftar_mahfil_personal_total;
-            $all_kormosuci['iftar_mahfil_personal_target'] += $kormosuci->iftar_mahfil_personal_target;
-            $all_kormosuci['iftar_mahfil_personal_uposthiti'] += $kormosuci->iftar_mahfil_personal_uposthiti;
+            $all_kormosuci['iftar_mahfil_personal_total'] += $kormosuci->iftar_mahfil_personal_total ?? 0 ;
+            $all_kormosuci['iftar_mahfil_personal_target'] += $kormosuci->iftar_mahfil_personal_target ?? 0 ;
+            $all_kormosuci['iftar_mahfil_personal_uposthiti'] += $kormosuci->iftar_mahfil_personal_uposthiti ?? 0 ;
 
-            $all_kormosuci['iftar_mahfil_samostic_total'] += $kormosuci->iftar_mahfil_samostic_total;
-            $all_kormosuci['iftar_mahfil_samostic_target'] += $kormosuci->iftar_mahfil_samostic_target;
-            $all_kormosuci['iftar_mahfil_samostic_uposthiti'] += $kormosuci->iftar_mahfil_samostic_uposthiti;
+            $all_kormosuci['iftar_mahfil_samostic_total'] += $kormosuci->iftar_mahfil_samostic_total ?? 0 ;
+            $all_kormosuci['iftar_mahfil_samostic_target'] += $kormosuci->iftar_mahfil_samostic_target ?? 0 ;
+            $all_kormosuci['iftar_mahfil_samostic_uposthiti'] += $kormosuci->iftar_mahfil_samostic_uposthiti ?? 0 ;
 
-            $all_kormosuci['cha_chakra_total'] += $kormosuci->cha_chakra_total;
-            $all_kormosuci['cha_chakra_target'] += $kormosuci->cha_chakra_target;
-            $all_kormosuci['cha_chakra_uposthiti'] += $kormosuci->cha_chakra_uposthiti;
+            $all_kormosuci['cha_chakra_total'] += $kormosuci->cha_chakra_total ?? 0 ;
+            $all_kormosuci['cha_chakra_target'] += $kormosuci->cha_chakra_target ?? 0 ;
+            $all_kormosuci['cha_chakra_uposthiti'] += $kormosuci->cha_chakra_uposthiti ?? 0 ;
 
-            $all_kormosuci['samostic_khawa_total'] += $kormosuci->samostic_khawa_total;
-            $all_kormosuci['samostic_khawa_target'] += $kormosuci->samostic_khawa_target;
-            $all_kormosuci['samostic_khawa_uposthiti'] += $kormosuci->samostic_khawa_uposthiti;
+            $all_kormosuci['samostic_khawa_total'] += $kormosuci->samostic_khawa_total ?? 0 ;
+            $all_kormosuci['samostic_khawa_target'] += $kormosuci->samostic_khawa_target ?? 0 ;
+            $all_kormosuci['samostic_khawa_uposthiti'] += $kormosuci->samostic_khawa_uposthiti ?? 0 ;
 
-            $all_kormosuci['sikkha_sofor_total'] += $kormosuci->sikkha_sofor_total;
-            $all_kormosuci['sikkha_sofor_target'] += $kormosuci->sikkha_sofor_target;
-            $all_kormosuci['sikkha_sofor_uposthiti'] += $kormosuci->sikkha_sofor_uposthiti;
+            $all_kormosuci['sikkha_sofor_total'] += $kormosuci->sikkha_sofor_total ?? 0 ;
+            $all_kormosuci['sikkha_sofor_target'] += $kormosuci->sikkha_sofor_target ?? 0 ;
+            $all_kormosuci['sikkha_sofor_uposthiti'] += $kormosuci->sikkha_sofor_uposthiti ?? 0 ;
 
-            $all_songothon1['rokon_previous'] += $songothon1->rokon_previous;
-            $all_songothon1['rokon_present'] += $songothon1->rokon_present;
-            $all_songothon1['rokon_briddhi'] += $songothon1->rokon_briddhi;
-            $all_songothon1['rokon_gatti'] += $songothon1->rokon_gatti;
-            $all_songothon1['rokon_target'] += $songothon1->rokon_target;
-            $all_songothon1['worker_previous'] += $songothon1->worker_previous;
-            $all_songothon1['worker_present'] += $songothon1->worker_present;
-            $all_songothon1['worker_briddhi'] += $songothon1->worker_briddhi;
-            $all_songothon1['worker_gatti'] += $songothon1->worker_gatti;
-            $all_songothon1['worker_target'] += $songothon1->worker_target;
+            $all_songothon1['rokon_previous'] += $songothon1->rokon_previous ?? 0 ;
+            $all_songothon1['rokon_present'] += $songothon1->rokon_present ?? 0 ;
+            $all_songothon1['rokon_briddhi'] += $songothon1->rokon_briddhi ?? 0 ;
+            $all_songothon1['rokon_gatti'] += $songothon1->rokon_gatti ?? 0 ;
+            $all_songothon1['rokon_target'] += $songothon1->rokon_target ?? 0 ;
+            $all_songothon1['worker_previous'] += $songothon1->worker_previous ?? 0 ;
+            $all_songothon1['worker_present'] += $songothon1->worker_present ?? 0 ;
+            $all_songothon1['worker_briddhi'] += $songothon1->worker_briddhi ?? 0 ;
+            $all_songothon1['worker_gatti'] += $songothon1->worker_gatti ?? 0 ;
+            $all_songothon1['worker_target'] += $songothon1->worker_target ?? 0 ;
 
-            $all_songothon2['associate_member_previous'] += $songothon2->associate_member_previous;
-            $all_songothon2['associate_member_present'] += $songothon2->associate_member_present;
-            $all_songothon2['associate_member_briddhi'] += $songothon2->associate_member_briddhi;
-            $all_songothon2['associate_member_target'] += $songothon2->associate_member_target;
-            $all_songothon2['vinno_dormalombi_worker_previous'] += $songothon2->vinno_dormalombi_worker_previous;
-            $all_songothon2['vinno_dormalombi_worker_present'] += $songothon2->vinno_dormalombi_worker_present;
-            $all_songothon2['vinno_dormalombi_worker_briddhi'] += $songothon2->vinno_dormalombi_worker_briddhi;
-            $all_songothon2['vinno_dormalombi_worker_target'] += $songothon2->vinno_dormalombi_worker_target;
-            $all_songothon2['vinno_dormalombi_associate_member_previous'] += $songothon2->vinno_dormalombi_associate_member_previous;
-            $all_songothon2['vinno_dormalombi_associate_member_present'] += $songothon2->vinno_dormalombi_associate_member_present;
-            $all_songothon2['vinno_dormalombi_associate_member_briddhi'] += $songothon2->vinno_dormalombi_associate_member_briddhi;
-            $all_songothon2['vinno_dormalombi_associate_member_target'] += $songothon2->vinno_dormalombi_associate_member_target;
+            $all_songothon2['associate_member_previous'] += $songothon2->associate_member_previous ?? 0 ;
+            $all_songothon2['associate_member_present'] += $songothon2->associate_member_present ?? 0 ;
+            $all_songothon2['associate_member_briddhi'] += $songothon2->associate_member_briddhi ?? 0 ;
+            $all_songothon2['associate_member_target'] += $songothon2->associate_member_target ?? 0 ;
+            $all_songothon2['vinno_dormalombi_worker_previous'] += $songothon2->vinno_dormalombi_worker_previous ?? 0 ;
+            $all_songothon2['vinno_dormalombi_worker_present'] += $songothon2->vinno_dormalombi_worker_present ?? 0 ;
+            $all_songothon2['vinno_dormalombi_worker_briddhi'] += $songothon2->vinno_dormalombi_worker_briddhi ?? 0 ;
+            $all_songothon2['vinno_dormalombi_worker_target'] += $songothon2->vinno_dormalombi_worker_target ?? 0 ;
+            $all_songothon2['vinno_dormalombi_associate_member_previous'] += $songothon2->vinno_dormalombi_associate_member_previous ?? 0 ;
+            $all_songothon2['vinno_dormalombi_associate_member_present'] += $songothon2->vinno_dormalombi_associate_member_present ?? 0 ;
+            $all_songothon2['vinno_dormalombi_associate_member_briddhi'] += $songothon2->vinno_dormalombi_associate_member_briddhi ?? 0 ;
+            $all_songothon2['vinno_dormalombi_associate_member_target'] += $songothon2->vinno_dormalombi_associate_member_target ?? 0 ;
 
-            $all_songothon9['unit_kormi_boithok_total'] += $songothon9->unit_kormi_boithok_total;
-            $all_songothon9['unit_kormi_boithok_uposthiti'] += $songothon9->unit_kormi_boithok_uposthiti;
+            $all_songothon9['unit_kormi_boithok_total'] += $songothon9->unit_kormi_boithok_total ?? 0 ;
+            $all_songothon9['unit_kormi_boithok_uposthiti'] += $songothon9->unit_kormi_boithok_uposthiti ?? 0 ;
 
-            $all_songothon5['paribarik_unit_total'] += $songothon5->paribarik_unit_total;
-            $all_songothon5['paribarik_unit_increase'] += $songothon5->paribarik_unit_increase;
-            $all_songothon5['paribarik_unit_target'] += $songothon5->paribarik_unit_target;
+            $all_songothon5['paribarik_unit_total'] += $songothon5->paribarik_unit_total ?? 0 ;
+            $all_songothon5['paribarik_unit_increase'] += $songothon5->paribarik_unit_increase ?? 0 ;
+            $all_songothon5['paribarik_unit_target'] += $songothon5->paribarik_unit_target ?? 0 ;
 
-            $all_songothon7['upper_leader_sofor'] += $songothon7->upper_leader_sofor;
+            $all_songothon7['upper_leader_sofor'] += $songothon7->upper_leader_sofor ?? 0 ;
 
-            $all_songothon8['associate_member_total'] += $songothon8->associate_member_total;
-            $all_songothon8['associate_member_total_iyanot_amounts'] += $songothon8->associate_member_total_iyanot_amounts;
-            $all_songothon8['sudhi_total'] += $songothon8->sudhi_total;
-            $all_songothon8['sudi_total_iyanot_amounts'] += $songothon8->sudi_total_iyanot_amounts;
+            $all_songothon8['associate_member_total'] += $songothon8->associate_member_total ?? 0 ;
+            $all_songothon8['associate_member_total_iyanot_amounts'] += $songothon8->associate_member_total_iyanot_amounts ?? 0 ;
+            $all_songothon8['sudhi_total'] += $songothon8->sudhi_total ?? 0 ;
+            $all_songothon8['sudi_total_iyanot_amounts'] += $songothon8->sudi_total_iyanot_amounts ?? 0 ;
 
-            $all_proshikkhon['sohi_quran_onushilon'] += $proshikkhon->sohi_quran_onushilon;
-            $all_proshikkhon['sohi_quran_onushilon_target'] += $proshikkhon->sohi_quran_onushilon_target;
-            $all_proshikkhon['sohi_quran_onushilon_uposthiti'] += $proshikkhon->sohi_quran_onushilon_uposthiti;
+            $all_proshikkhon['sohi_quran_onushilon'] += $proshikkhon->sohi_quran_onushilon ?? 0 ;
+            $all_proshikkhon['sohi_quran_onushilon_target'] += $proshikkhon->sohi_quran_onushilon_target ?? 0 ;
+            $all_proshikkhon['sohi_quran_onushilon_uposthiti'] += $proshikkhon->sohi_quran_onushilon_uposthiti ?? 0 ;
 
-            $all_proshikkhon['masala_masayel'] += $proshikkhon->masala_masayel;
-            $all_proshikkhon['masala_masayel_target'] += $proshikkhon->masala_masayel_target;
-            $all_proshikkhon['masala_masayel_uposthiti'] += $proshikkhon->masala_masayel_uposthiti;
+            $all_proshikkhon['masala_masayel'] += $proshikkhon->masala_masayel ?? 0 ;
+            $all_proshikkhon['masala_masayel_target'] += $proshikkhon->masala_masayel_target ?? 0 ;
+            $all_proshikkhon['masala_masayel_uposthiti'] += $proshikkhon->masala_masayel_uposthiti ?? 0 ;
 
-            $all_proshikkhon['darsul_quran'] += $proshikkhon->darsul_quran;
-            $all_proshikkhon['darsul_quran_target'] += $proshikkhon->darsul_quran_target;
-            $all_proshikkhon['darsul_quran_uposthiti'] += $proshikkhon->darsul_quran_uposthiti;
+            $all_proshikkhon['darsul_quran'] += $proshikkhon->darsul_quran ?? 0 ;
+            $all_proshikkhon['darsul_quran_target'] += $proshikkhon->darsul_quran_target ?? 0 ;
+            $all_proshikkhon['darsul_quran_uposthiti'] += $proshikkhon->darsul_quran_uposthiti ?? 0 ;
 
-            $all_proshikkhon['darsul_hadis'] += $proshikkhon->darsul_hadis;
-            $all_proshikkhon['darsul_hadis_target'] += $proshikkhon->darsul_hadis_target;
-            $all_proshikkhon['darsul_hadis_uposthiti'] += $proshikkhon->darsul_hadis_uposthiti;
+            $all_proshikkhon['darsul_hadis'] += $proshikkhon->darsul_hadis ?? 0 ;
+            $all_proshikkhon['darsul_hadis_target'] += $proshikkhon->darsul_hadis_target ?? 0 ;
+            $all_proshikkhon['darsul_hadis_uposthiti'] += $proshikkhon->darsul_hadis_uposthiti ?? 0 ;
 
-            $all_proshikkhon['samostik_path'] += $proshikkhon->samostik_path;
-            $all_proshikkhon['samostik_path_target'] += $proshikkhon->samostik_path_target;
-            $all_proshikkhon['samostik_path_uposthiti'] += $proshikkhon->samostik_path_uposthiti;
+            $all_proshikkhon['samostik_path'] += $proshikkhon->samostik_path ?? 0 ;
+            $all_proshikkhon['samostik_path_target'] += $proshikkhon->samostik_path_target ?? 0 ;
+            $all_proshikkhon['samostik_path_uposthiti'] += $proshikkhon->samostik_path_uposthiti ?? 0 ;
 
-            $all_proshikkhon['bishoy_vittik_onushilon'] += $proshikkhon->bishoy_vittik_onushilon;
-            $all_proshikkhon['bishoy_vittik_onushilon_target'] += $proshikkhon->bishoy_vittik_onushilon_target;
-            $all_proshikkhon['bishoy_vittik_onushilon_uposthiti'] += $proshikkhon->bishoy_vittik_onushilon_uposthiti;
+            $all_proshikkhon['bishoy_vittik_onushilon'] += $proshikkhon->bishoy_vittik_onushilon ?? 0 ;
+            $all_proshikkhon['bishoy_vittik_onushilon_target'] += $proshikkhon->bishoy_vittik_onushilon_target ?? 0 ;
+            $all_proshikkhon['bishoy_vittik_onushilon_uposthiti'] += $proshikkhon->bishoy_vittik_onushilon_uposthiti ?? 0 ;
 
-            $all_shomajsheba1['how_many_people_did'] += $shomajsheba1->how_many_people_did;
-            $all_shomajsheba1['service_received_total'] += $shomajsheba1->service_received_total;
+            $all_shomajsheba1['how_many_people_did'] += $shomajsheba1->how_many_people_did ?? 0 ;
+            $all_shomajsheba1['service_received_total'] += $shomajsheba1->service_received_total ?? 0 ;
 
-            $all_shomajsheba2['shamajik_onusthane_ongshogrohon'] += $shomajsheba2->shamajik_onusthane_ongshogrohon;
-            $all_shomajsheba2['shamajik_onusthane_shohayota_prodan'] += $shomajsheba2->shamajik_onusthane_shohayota_prodan;
-            $all_shomajsheba2['shamajik_birodh_mimangsha'] += $shomajsheba2->shamajik_birodh_mimangsha;
-            $all_shomajsheba2['manobik_shohayota_prodan'] += $shomajsheba2->manobik_shohayota_prodan;
-            $all_shomajsheba2['korje_hasana_prodan'] += $shomajsheba2->korje_hasana_prodan;
-            $all_shomajsheba2['rogir_poricorja'] += $shomajsheba2->rogir_poricorja;
-            $all_shomajsheba2['medical_shohayota_prodan'] += $shomajsheba2->medical_shohayota_prodan;
-            $all_shomajsheba2['nobojatokke_gift_prodan'] += $shomajsheba2->nobojatokke_gift_prodan;
-            $all_shomajsheba2['voluntarily_blood_donation_kotojon'] += $shomajsheba2->voluntarily_blood_donation_kotojon;
-            $all_shomajsheba2['voluntarily_blood_donation_kotojonke'] += $shomajsheba2->voluntarily_blood_donation_kotojonke;
-            $all_shomajsheba2['matrikalin_sheba_prodan_kotojon'] += $shomajsheba2->matrikalin_sheba_prodan_kotojon;
-            $all_shomajsheba2['matrikalin_sheba_prodan_kotojonke'] += $shomajsheba2->matrikalin_sheba_prodan_kotojonke;
-            $all_shomajsheba2['mayeter_gosol'] += $shomajsheba2->mayeter_gosol;
-            $all_shomajsheba2['others'] += $shomajsheba2->others;
+            $all_shomajsheba2['shamajik_onusthane_ongshogrohon'] += $shomajsheba2->shamajik_onusthane_ongshogrohon ?? 0 ;
+            $all_shomajsheba2['shamajik_onusthane_shohayota_prodan'] += $shomajsheba2->shamajik_onusthane_shohayota_prodan ?? 0 ;
+            $all_shomajsheba2['shamajik_birodh_mimangsha'] += $shomajsheba2->shamajik_birodh_mimangsha ?? 0 ;
+            $all_shomajsheba2['manobik_shohayota_prodan'] += $shomajsheba2->manobik_shohayota_prodan ?? 0 ;
+            $all_shomajsheba2['korje_hasana_prodan'] += $shomajsheba2->korje_hasana_prodan ?? 0 ;
+            $all_shomajsheba2['rogir_poricorja'] += $shomajsheba2->rogir_poricorja ?? 0 ;
+            $all_shomajsheba2['medical_shohayota_prodan'] += $shomajsheba2->medical_shohayota_prodan ?? 0 ;
+            $all_shomajsheba2['nobojatokke_gift_prodan'] += $shomajsheba2->nobojatokke_gift_prodan ?? 0 ;
+            $all_shomajsheba2['voluntarily_blood_donation_kotojon'] += $shomajsheba2->voluntarily_blood_donation_kotojon ?? 0 ;
+            $all_shomajsheba2['voluntarily_blood_donation_kotojonke'] += $shomajsheba2->voluntarily_blood_donation_kotojonke ?? 0 ;
+            $all_shomajsheba2['matrikalin_sheba_prodan_kotojon'] += $shomajsheba2->matrikalin_sheba_prodan_kotojon ?? 0 ;
+            $all_shomajsheba2['matrikalin_sheba_prodan_kotojonke'] += $shomajsheba2->matrikalin_sheba_prodan_kotojonke ?? 0 ;
+            $all_shomajsheba2['mayeter_gosol'] += $shomajsheba2->mayeter_gosol ?? 0 ;
+            $all_shomajsheba2['others'] += $shomajsheba2->others ?? 0 ;
 
-            $all_rastrio['bishishto_bekti_jogajog'] += $rastrio->bishishto_bekti_jogajog;
+            $all_rastrio['bishishto_bekti_jogajog'] += $rastrio->bishishto_bekti_jogajog ?? 0 ;
             // dd(isset($all_montobbo['montobbo']));
             $all_montobbo['montobbo'] = isset($all_montobbo['montobbo'])? $all_montobbo['montobbo'] . PHP_EOL . $montobbo->montobbo : $montobbo->montobbo;
             // dd($all_montobbo['montobbo']);
@@ -847,7 +847,7 @@ class WardTotalUnitSubmittedDataController extends Controller
         //     'unit_info' => $unit_info,
         //     'ward_info' => $ward_info,
         //     'thana_info' => $thana_info,
-        //     'precedent' => $precedent,
+        //     'president' => $president,
 
         //     'dawat1' => $dawat1,
         //     'dawat2' => $dawat2,

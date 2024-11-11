@@ -59,9 +59,9 @@ axios.interceptors.request.use(
 
 window.remove_form_action_classes = function () {
     $(".loader_body").removeClass("active");
-    $("input,select,textarea").removeClass("border-warning");
+    $("input,select,textarea").removeClass("border-danger");
     $("form button").prop("disabled", false);
-    $(`.error.text-warning`).remove();
+    $(`.error.text-danger`).remove();
 };
 
 
@@ -88,9 +88,9 @@ window.render_form_errors = function (object, selector = "name") {
              */
             if (el) {
                 $(
-                    `<div class="error text-warning">${element[0]}</div>`
+                    `<div class="error text-danger">${element[0]}</div>`
                 ).insertAfter(el);
-                el.classList.add("border-warning");
+                el.classList.add("border-danger");
             }
         }
     }

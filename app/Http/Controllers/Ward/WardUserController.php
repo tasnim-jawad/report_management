@@ -42,7 +42,7 @@ class WardUserController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-
+        // dd(request()->all());
         $auth_ward_info = OrgWardUser::where('user_id', auth()->id())->first();
         $auth_ward = $auth_ward_info->ward_id;
         $auth_thana = $auth_ward_info->thana_id;
@@ -125,7 +125,7 @@ class WardUserController extends Controller
             }else{
                 $org_ward_responsibles->responsibility_id = request()->responsibility_id ?? null;
                 $org_ward_responsibles->save();
-                
+
                 return response()->json([$user], 200);
             }
 
@@ -144,5 +144,34 @@ class WardUserController extends Controller
                 return response()->json([$user,$org_ward_responsibles], 200);
             }
         }
+    }
+
+    public function destroy()
+    {
+        // dd(request()->all());
+        $validator = Validator::make(request()->all(), [
+            'id' => ['required', 'exists:users,id'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $data = User::find(request()->id);
+        $deleted = $data->delete();
+
+        if($deleted){
+            $org_ward_user = OrgWardUser::where('user_id',request()->id)->get()->first();
+            $org_ward_user->delete();
+            $org_ward_responsible = OrgWardResponsible::where('user_id',request()->id)->get()->first();
+            $org_ward_responsible->delete();
+        }
+
+        return response()->json([
+            'result' => 'deleted',
+        ], 200);
     }
 }

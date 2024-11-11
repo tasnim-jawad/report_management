@@ -73,10 +73,18 @@ class WardUnitJonoshoktiController extends Controller
                 return response()->json(['err_message' => 'Unit not found'], 404);
             }
 
-            $gender = $unit_info->org_gender;
-            $ward_id = $unit_info->ward_id;
-            $thana_id = $unit_info->thana_id;
-            $city_id = $unit_info->city_id;
+            $exist_responsible_user = OrgUnitResponsible::where('responsibility_id', request()->responsibility_id)
+                                                    ->where('org_unit_id', request()->unit_id)
+                                                    ->first();
+            if ($exist_responsible_user) {
+                $exist_responsible_user->responsibility_id = null;
+                $exist_responsible_user->save();
+            }
+
+            $gender = $unit_info->org_gender == 'men'? 'male':'female';
+            $ward_id = $unit_info->org_ward_id;
+            $thana_id = $unit_info->org_thana_id;
+            $city_id = $unit_info->org_city_id;
             $role_serial = UserRole::where('title', 'unit')->first()->serial;
 
             $if_exist_org_unit_responsibles = OrgUnitResponsible::where('responsibility_id', $responsibility_id)

@@ -61,9 +61,7 @@ export default {
             console.log(this.unit_id);
             axios.get(`/ward/unit/show/${this.unit_id}`)
                 .then(responce => {
-                    console.log(responce);
                     this.unit_info = responce.data
-                    console.log(this.unit_info);
                 })
         }
     }

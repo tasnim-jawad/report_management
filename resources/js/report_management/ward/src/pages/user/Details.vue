@@ -65,9 +65,7 @@ export default {
         show_users : function(){
             axios.get(`/user/show/${this.user_id}`)
                 .then(responce => {
-                    console.log(responce);
                     this.user_details = responce.data
-                    console.log(this.user_details);
                 })
         },
 

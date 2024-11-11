@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('role')->nullable();
             $table->string('full_name', 50)->nullable();
-            $table->string('gender', 10)->nullable();
+            $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('telegram_name',50)->nullable();
             $table->string('telegram_id')->nullable();
             $table->string('email')->unique()->nullable();

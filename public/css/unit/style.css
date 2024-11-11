@@ -257,7 +257,7 @@ body{
     transition: background .1s ease-in-out, color .1s ease-in-out;
 }
 .action{
-    min-width: 160px;
+    min-width: 170px;
 }
 .label_width{
     width: 215px;

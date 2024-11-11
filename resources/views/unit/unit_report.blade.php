@@ -28,6 +28,7 @@
                     <p>{{$unit_info['org_gender']?? ""}}</p>
                 </div>
             </div>
+            {{-- {{dd($ward_info)}} --}}
             <div class="unit_info">
                 <div class="line d-flex flex-wrap mb-1">
                     <p class="w-75">মাস: {{ date('F', strtotime($month)) }}</p>
@@ -39,7 +40,7 @@
                     <p class="w-25">উপজেলা/থানা: {{$thana_info['title']?? ""}}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between ">
-                    <p>ইউনিট সভাপতির নাম: {{$precedent['full_name']?? ""}}</p>
+                    <p>ইউনিট সভাপতির নাম: {{$president['full_name']?? ""}}</p>
                     <p class="width-30">ইউনিটের ধরন: {{$org_type['title']?? "" }}</p>
                 </div>
             </div>

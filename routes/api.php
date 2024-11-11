@@ -856,6 +856,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::get('/show', [App\Http\Controllers\Ward\WardUserController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Ward\WardUserController::class,'store']);
         Route::post('/update', [App\Http\Controllers\Ward\WardUserController::class,'update']);
+        Route::post('/destroy', [App\Http\Controllers\Ward\WardUserController::class,'destroy']);
     });
 
     Route::group(['prefix' => 'ward/unit'] , function(){

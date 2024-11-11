@@ -133,9 +133,7 @@ export default {
         unit_users_list:function(){
             axios.get('/user/show_unit_user')
                 .then(responce =>{
-                    // console.log(responce);
                     this.unit_user_all = responce.data
-                    // console.log('users' ,this.unit_user_all);
                 })
         },
         users_bm_paid_report:function(){

@@ -196,9 +196,7 @@
             auth_user: function(){
                 axios.get("/user/ward-user-info")
                     .then(responce =>{
-                        // console.log(responce);
                         this.user = responce.data
-                        // console.log(this.user);
                     })
             },
             logout: function(){

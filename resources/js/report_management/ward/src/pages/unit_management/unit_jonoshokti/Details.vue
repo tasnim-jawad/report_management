@@ -63,18 +63,9 @@ export default {
     },
     methods:{
         show_users : function(){
-            // Accessing user_id prop
-            // console.log(this.user_id);
-            // console.log(this.$props.user_id);
-            // Accessing user_id route parameter
-            // const userId = this.$route.params.user_id;
-            // console.log(userId);
-
             axios.get(`/user/show/${this.user_id}`)
                 .then(responce => {
-                    console.log(responce);
                     this.user_details = responce.data
-                    console.log(this.user_details);
                 })
         },
 

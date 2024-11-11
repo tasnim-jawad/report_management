@@ -85,6 +85,7 @@
                                             target.classList.remove('d-none');
                                         } else {
                                             localStorage.setItem('token', data.access_token);
+                                            sessionStorage.removeItem('prevurl');
                                             if(data.user.role == 6){
                                                 console.log('unit');
                                                 window.location.href = '/dashboard/unit#';

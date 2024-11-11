@@ -50,9 +50,7 @@ export default {
             console.log(this.category_id);
             axios.get(`/bm-category/show/${this.category_id}`)
                 .then(responce => {
-                    console.log(responce);
                     this.category_info = responce.data
-                    console.log(this.category_info);
                 })
         }
     }

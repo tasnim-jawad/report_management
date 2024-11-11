@@ -68,7 +68,7 @@ function ward_report_header_info($resposibilities, $permission, $month)
         $check_info = ReportInfo::create([
             'org_type' => 'ward',
             'org_type_id' => $resposibilities->org_ward_responsible->org_ward_id,
-            'responsibility_id' => $resposibilities->org_unit_responsible->responsibility_id,
+            'responsibility_id' => $resposibilities->org_ward_responsible->responsibility_id,
             'responsibility_name' => $resposibilities->resposibilities->title,
             'month_year' => $permission->month_year,
             'report_type' => 'monthly',

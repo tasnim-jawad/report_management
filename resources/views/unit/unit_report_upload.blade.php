@@ -39,7 +39,7 @@
                     <p class="w-25">উপজেলা/থানা: {{$thana_info['title']?? ""}}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between ">
-                    <p>ইউনিট সভাপতির নাম: {{$precedent['full_name']?? ""}}</p>
+                    <p>ইউনিট সভাপতির নাম: {{$president['full_name']?? ""}}</p>
                     <p class="width-30">ইউনিটের ধরন: {{$org_type['title']?? "" }}</p>
                 </div>
             </div>

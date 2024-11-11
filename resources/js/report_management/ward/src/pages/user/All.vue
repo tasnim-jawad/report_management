@@ -64,11 +64,7 @@ export default {
         show_users : function(){
             axios.get("ward/user/show")
                 .then(responce => {
-                    console.log(responce);
-
                     this.users = responce.data
-                    console.log("responce",this.users);
-
                 })
         },
         delete_user : function(user_id){
@@ -82,7 +78,7 @@ export default {
         submit_delete_form : function(user_id){
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_user_form_'+user_id));
-            axios.post("/user/destroy",formData)
+            axios.post("ward/user/destroy",formData)
                     .then(responce => {
                         window.toaster('user delete successfuly', 'success');
                         this.show_users();
@@ -113,9 +109,15 @@ export default {
             if (this.users.length < 2) {
                 return this.users;
             }
+            console.log('sort',this.users);
+
             return this.users.sort((a, b) => {
+                console.log('a',a);
+                console.log('b',b);
                 const responsibilityA = a.org_ward_responsible?.responsibility_id ?? Infinity;
                 const responsibilityB = b.org_ward_responsible?.responsibility_id ?? Infinity;
+                console.log("ss",responsibilityA ,responsibilityB,responsibilityA - responsibilityB);
+
                 return responsibilityA - responsibilityB;
             });
         }

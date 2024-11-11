@@ -63,8 +63,6 @@ export default {
             axios.get('/ward/unit/all')
                 .then(response => {
                     this.units = response.data.data
-                    console.log("unitsssss",this.units);
-
                 })
         },
         delete_unit : function(unit_id){
@@ -80,7 +78,6 @@ export default {
             const formData = new FormData(document.getElementById('delete_unit_form_'+unit_id));
             axios.post("ward/unit/destroy",formData)
                     .then(response => {
-                        console.log(response);
                         window.toaster('Unit delete successfuly', 'success');
                         this.all_unit();
                     })

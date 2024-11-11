@@ -111,6 +111,9 @@ export default {
             let formData = new FormData(event.target);
             axios.post('/user/store_unit_user',formData)
                 .then(function (response) {
+                    console.log("redirect");
+
+                    // this.$router.push({ name:'Jonoshokti' });
                     window.toaster('user create successfuly', 'success');
                 })
                 .catch(function (error) {

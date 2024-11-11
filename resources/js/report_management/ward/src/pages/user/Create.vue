@@ -28,6 +28,9 @@
                             <option v-for="(responsibility, i) in responsibilities" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
                         </select>
                     </div>
+                    <!-- <div class="form_input" v-else-if="field.field_type == 'password' && field.name == 'password'">
+                        <input type="password" :name="field.name" class="form-control">
+                    </div> -->
                     <div class="form_input" v-else>
                         <input type="text" :name="field.name" class="form-control">
                     </div>
@@ -71,6 +74,7 @@ export default {
                 },
                 {
                     label:"Password",
+                    field_type:"password",
                     name:"password",
                 },
                 {
@@ -104,6 +108,7 @@ export default {
             axios.post('/ward/user/store',formData)
                 .then(function (response) {
                     window.toaster('user create successfuly', 'success');
+                    this.$router.push({ name:'UserAll' });
                 })
                 .catch(function (error) {
                     console.log(error.response);

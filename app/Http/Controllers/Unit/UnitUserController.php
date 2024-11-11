@@ -58,7 +58,7 @@ class UnitUserController extends Controller
         $auth_unit_all = OrgUnitUser::where('user_id', auth()->id())->first();
         $auth_user_unit = $auth_unit_all->unit_id;
         $auth_unit = OrgUnit::where('id',$auth_user_unit)->first();
-        $gender = $auth_unit->org_gender;
+        $gender = $auth_unit->org_gender == 'men'? 'male':'female';
         $auth_user_ward = $auth_unit_all->ward_id;
         $auth_user_thana = $auth_unit_all->thana_id;
         $auth_user_city = $auth_unit_all->city_id;
@@ -113,7 +113,7 @@ class UnitUserController extends Controller
 
         $validator = Validator::make(request()->all(), [
             'full_name' => ['required'],
-            'gender' => ['required','in:male,female'],
+            'gender' => ['sometimes','in:male,female'],
             'email' => ['required',Rule::unique('users')->ignore($user->id)],
         ]);
 
@@ -126,7 +126,7 @@ class UnitUserController extends Controller
 
 
         $user->full_name = request()->full_name;
-        $user->gender = request()->gender;
+        $user->gender = request()->gender ?? 'male';
         $user->telegram_name = request()->telegram_name;
         $user->telegram_id = request()->telegram_id;
         $user->email = request()->email;
