@@ -117,6 +117,7 @@
                 if(window.confirm('logout')){
                     localStorage.removeItem('token');
                     document.getElementById('logout-form').submit();
+                    sessionStorage.removeItem('prevurl');
                 } else {
                     event.preventDefault();
                 }

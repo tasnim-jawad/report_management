@@ -791,7 +791,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td >{{formatBangla(implementation_rate(department4?.political_and_special_target,department4.political_and_special_been_associated))}}</td>
+                                    <td >{{formatBangla(implementation_rate(department4?.political_and_special_target,department4?.political_and_special_been_associated))}}</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">পেশাজীবী</td>
@@ -804,7 +804,7 @@
                                     <td >
                                         <input name="pesha_jibi_target" :value="formatBangla(department4?.pesha_jibi_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
                                     </td>
-                                    <td >{{formatBangla(implementation_rate(department4?.pesha_jibi_target,department4.pesha_jibi_been_associated))}}</td>
+                                    <td >{{formatBangla(implementation_rate(department4?.pesha_jibi_target,department4?.pesha_jibi_been_associated))}}</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">উলামা মাশায়েখ</td>
@@ -817,7 +817,7 @@
                                     <td >
                                         <input name="olama_masayekh_target" :value="formatBangla(department4?.olama_masayekh_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
                                     </td>
-                                    <td >{{formatBangla(implementation_rate(department4?.olama_masayekh_target, department4.olama_masayekh_been_associated))}}</td>
+                                    <td >{{formatBangla(implementation_rate(department4?.olama_masayekh_target, department4?.olama_masayekh_been_associated))}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -843,7 +843,7 @@
                                     <td >
                                         <input name="sromo_jibi_target" :value="formatBangla(department4?.sromo_jibi_target)" @change="data_upload('ward-department4-different-job-holders-dawat')" type="text" class="bg-input w-100 text-center" />
                                     </td>
-                                    <td >{{formatBangla(implementation_rate(department4?.sromo_jibi_target, department4.sromo_jibi_been_associated))}}</td>
+                                    <td >{{formatBangla(implementation_rate(department4?.sromo_jibi_target, department4?.sromo_jibi_been_associated))}}</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-1 letter_spacing font-13">প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)</td>
@@ -883,7 +883,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td >{{formatBangla(implementation_rate(department4?.prantik_jonogosti_target, department4.prantik_jonogosti_been_associated))}}</td>
+                                    <td >{{formatBangla(implementation_rate(department4?.prantik_jonogosti_target, department4?.prantik_jonogosti_been_associated))}}</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-1">ভিন্নধর্মাবলম্বী</td>
@@ -923,7 +923,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td >{{formatBangla(implementation_rate(department4?.vinno_dormalombi_target, department4.vinno_dormalombi_been_associated))}}</td>
+                                    <td >{{formatBangla(implementation_rate(department4?.vinno_dormalombi_target, department4?.vinno_dormalombi_been_associated))}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1699,7 +1699,7 @@
                                     </div>
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon1?.rokon_target, songothon1.rokon_briddhi))}}
+                                    {{ formatBangla(implementation_rate(songothon1?.rokon_target, songothon1?.rokon_briddhi))}}
                                 </td>
                             </tr>
                             <tr>
@@ -1766,7 +1766,7 @@
                                     </div>
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon1?.worker_target, songothon1.worker_briddhi))}}
+                                    {{ formatBangla(implementation_rate(songothon1?.worker_target, songothon1?.worker_briddhi))}}
                                 </td>
                             </tr>
                         </tbody>
@@ -1802,7 +1802,7 @@
                                     <input name="associate_member_man_target" :value="formatBangla(songothon2?.associate_member_man_target)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon2?.associate_member_man_target, songothon2.associate_member_man_briddhi))}}
+                                    {{ formatBangla(implementation_rate(songothon2?.associate_member_man_target, songothon2?.associate_member_man_briddhi))}}
                                 </td>
                             </tr>
                             <tr>
@@ -1820,7 +1820,7 @@
                                     <input name="associate_member_woman_target" :value="formatBangla(songothon2?.associate_member_woman_target)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon2?.associate_member_woman_target, songothon2.associate_member_woman_briddhi))}}
+                                    {{ formatBangla(implementation_rate(songothon2?.associate_member_woman_target, songothon2?.associate_member_woman_briddhi))}}
                                 </td>
                             </tr>
                             <tr>
@@ -2342,7 +2342,7 @@
                                     <input name="general_unit_men_target" :value="formatBangla(songothon4?.general_unit_men_target)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon4?.general_unit_men_target, songothon4.general_unit_men_increase))}}
+                                    {{ formatBangla(implementation_rate(songothon4?.general_unit_men_target, songothon4?.general_unit_men_increase))}}
                                 </td>
                             </tr>
                             <tr>
@@ -2371,7 +2371,7 @@
                                     <input name="general_unit_women_target" :value="formatBangla(songothon4?.general_unit_women_target)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon4?.general_unit_women_target, songothon4.general_unit_women_increase))}}
+                                    {{ formatBangla(implementation_rate(songothon4?.general_unit_women_target, songothon4?.general_unit_women_increase))}}
                                 </td>
                             </tr>
                             <tr>
@@ -2400,7 +2400,7 @@
                                     <input name="ulama_unit_target" :value="formatBangla(songothon4?.ulama_unit_target)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon4?.ulama_unit_target, songothon4.ulama_unit_increase))}}
+                                    {{ formatBangla(implementation_rate(songothon4?.ulama_unit_target, songothon4?.ulama_unit_increase))}}
                                 </td>
                             </tr>
                             <tr>
@@ -2429,7 +2429,7 @@
                                     <input name="peshajibi_unit_target" :value="formatBangla(songothon4?.peshajibi_unit_target)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon4?.peshajibi_unit_target, songothon4.peshajibi_unit_increase))}}
+                                    {{ formatBangla(implementation_rate(songothon4?.peshajibi_unit_target, songothon4?.peshajibi_unit_increase))}}
                                 </td>
                             </tr>
                             <tr>
@@ -2458,7 +2458,7 @@
                                     <input name="sromik_kollyan_unit_target" :value="formatBangla(songothon4?.sromik_kollyan_unit_target)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon4?.sromik_kollyan_unit_target, songothon4.sromik_kollyan_unit_increase))}}
+                                    {{ formatBangla(implementation_rate(songothon4?.sromik_kollyan_unit_target, songothon4?.sromik_kollyan_unit_increase))}}
                                 </td>
                             </tr>
                             <tr>
@@ -2487,7 +2487,7 @@
                                     <input name="jubo_unit_target" :value="formatBangla(songothon4?.jubo_unit_target)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon4?.jubo_unit_target, songothon4.jubo_unit_increase))}}
+                                    {{ formatBangla(implementation_rate(songothon4?.jubo_unit_target, songothon4?.jubo_unit_increase))}}
                                 </td>
                             </tr>
                             <tr>
@@ -2516,7 +2516,7 @@
                                     <input name="media_unit_target" :value="formatBangla(songothon4?.media_unit_target)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
                                 </td>
                                 <td >
-                                    {{ formatBangla(implementation_rate(songothon4?.media_unit_target, songothon4.media_unit_increase))}}
+                                    {{ formatBangla(implementation_rate(songothon4?.media_unit_target, songothon4?.media_unit_increase))}}
                                 </td>
                             </tr>
                             <tr>
@@ -4448,19 +4448,23 @@
                 }
             },
             report_joma:async function(){
-                const month = this.$route.params.month;
-                let response = await axios.get('/ward/report-joma', {
-                                params: {
-                                    month: month
-                                }
-                            })
-                if(response.data.status == 'success'){
-                    // this.$router.push({ name: "Montobbo" });
-                    this.report_status()
-                    window.toaster(response.data.message, 'success');
+                if(window.confirm("আপনি কি জমা দানের বিষয়ে নিশ্চিত?")){
+                    const month = this.$route.params.month;
+                    let response = await axios.get('/ward/report-joma', {
+                                    params: {
+                                        month: month
+                                    }
+                                })
+                    if(response.data.status == 'success'){
+                        // this.$router.push({ name: "Montobbo" });
+                        this.report_status()
+                        window.toaster(response.data.message, 'success');
 
-                    this.joma_status = response.data.report_status
-                    console.log("report_status",response)
+                        this.joma_status = response.data.report_status
+                        console.log("report_status",response)
+                    }
+                }else{
+                    window.toaster("রিপোর্ট জমা বন্ধ করা হয়েছে । অনুগ্রহ করে সমস্ত প্রয়োজনীয় তথ্য পূরণ করুন ", 'info');
                 }
             },
             toggle_popup(event) {

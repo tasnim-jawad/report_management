@@ -41,6 +41,7 @@ export default {
         ward_id: {
             type: Number,
             required: true,
+            default: 0,
         },
         month: {
             type: String,
@@ -72,6 +73,8 @@ export default {
         },
 
         get_all_unit_data:async function() {
+            console.log("this.ward_id",this.ward_id);
+
             let response = await axios.get('/ward/get-all-unit-data',{
                 params: {
                     ward_id: this.ward_id,

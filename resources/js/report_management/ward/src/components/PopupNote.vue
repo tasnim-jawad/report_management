@@ -31,6 +31,7 @@ export default {
         ward_id: {
             type: Number,
             required: true,
+            default: 0,
         },
         month: {
             type: String,

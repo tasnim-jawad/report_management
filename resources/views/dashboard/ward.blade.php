@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="{{ asset('css/unit/unit_report_upload.css') }}"> --}}
     {{--------- report formate ---------}}
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" ></script>
+    <script>
+        window.modal = bootstrap.Modal;
+    </script>
+    
     <script src="/js/sweat_alert.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

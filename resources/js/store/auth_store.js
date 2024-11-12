@@ -35,6 +35,39 @@ export const use_auth_store = defineStore("auth_store", {
                 if (res.data && res.data.user) {
                     that.auth_info = res.data.user;
                     that.is_auth = 1;
+
+                    let prevurl = sessionStorage.getItem('prevurl') || '#/dashboard';
+
+                    // if(that.auth_info.role == 6){
+                    //     console.log('unit');
+                    //     window.location.href ='/dashboard/unit' + prevurl;
+                    // }else if(that.auth_info.role == 5){
+                    //     console.log('ward');
+                    //     window.location.href ='/dashboard/ward' + prevurl;
+                    // }else if(that.auth_info.role == 2){
+                    //     console.log('admin');
+                    //     window.location.href ='/dashboard/admin' + prevurl;
+                    // }
+
+                    switch (that.auth_info.role) {
+                        case 6:
+                            console.log('unit');
+                            window.location.href = '/dashboard/unit' + prevurl;
+                            break;
+                        case 5:
+                            console.log('ward');
+                            window.location.href = '/dashboard/ward' + prevurl;
+                            break;
+                        case 2:
+                            console.log('admin');
+                            window.location.href = '/dashboard/admin' + prevurl;
+                            break;
+                        default:
+                            console.log('default');
+                            window.location.href = prevurl;
+                            break;
+                    }
+
                 } else {
                     console.error('User data is missing in the response.');
                 }

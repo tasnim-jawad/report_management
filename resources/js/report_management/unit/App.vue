@@ -20,9 +20,7 @@ export default {
         }),
     },
     created:async function(){
-        let user = await this.check_is_auth();
-        // console.log("is_auth",user);
-        // console.log("user",user);
+        await this.check_is_auth();
     },
 }
 </script>

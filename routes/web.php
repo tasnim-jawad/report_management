@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Middleware\IsAuth;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
 Route::get('/', function () {
-    return view('auth.login');
+    return redirect()->to('/login');
 });
 Route::get('/modal', function () {
     dd("ok");
@@ -15,11 +16,11 @@ Route::get('/modal', function () {
 
 Route::get('/login', function () {
     return view('auth.login');
-})->name('login')->middleware('guest');
+})->middleware(IsAuth::class);
 
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'dashboard', 'namespace' => '\App\Http\Controllers\Dashboard'], function () {
     Route::get('unit', 'DashboardController@unit');

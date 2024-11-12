@@ -166,16 +166,55 @@
             </main>
 
         </div>
+        <!-------------------------------------->
+        <!-------------Modal start-------------->
+        <!-------------------------------------->
 
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Launch static backdrop modal
+        </button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">সরাসরি রিপোর্ট ফরমে যেতে চান ?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex">
+                        <button class="btn btn-success m-auto"
+                                type="button"
+                                @click="upload_report"
+                                :disabled="!month || !user_id"
+                                data-bs-toggle="modal"
+                        >রিপোর্ট ফরম</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">না</button>
+                        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!------------------------------------>
+        <!-------------Modal end-------------->
+        <!------------------------------------>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
+    import { store as data_store} from "./stores/ReportStore";
+    import { mapActions, mapWritableState } from 'pinia';
     export default {
         data: function(){
             return {
                 user:[],
+                user_id:"",
+                isUnitReportPage: false,
             }
         },
         created: function(){
@@ -191,18 +230,33 @@
             this.auth_user();
             // console.log(this.user);
         },
-        methods:{
+        mounted: function () {
 
+            this.isUnitReportPage = window.location.href.includes("unit-report-upload");
+
+            // Show the modal if not on 'unit-report-upload' page
+            if (!this.isUnitReportPage) {
+                let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
+                    keyboard: false,
+                });
+                modalElement.show();
+            }
+
+        },
+        methods:{
+            ...mapActions( data_store,['set_month']),
             auth_user: function(){
                 axios.get("/user/ward-user-info")
                     .then(responce =>{
                         this.user = responce.data
+                        this.user_id = this.user?.user?.id;
                     })
             },
             logout: function(){
                 if(window.confirm('logout')){
                     localStorage.removeItem('token');
                     document.getElementById('logout-form').submit();
+                    sessionStorage.removeItem('prevurl');
                 }else{
                     let prevUrl = window.sessionStorage.getItem('prevurl');
                     window.location.href = prevUrl || "#/dashboard";
@@ -220,8 +274,27 @@
                     const report_app_left = document.getElementById("report_app_left");
                     report_app_left.classList.toggle("report_app_left_toggle");
                 }
+            },
+            upload_report: function(){
+                console.log("upload data",this.month,this.user_id);
+                let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
+                    keyboard: false,
+                });
+                modalElement.hide();
+
+                this.$router.push({
+                    name: 'WardReportUpload',
+                    params: {
+                        month: this.month,
+                        user_id: this.user_id
+                    }
+                });
             }
-        }
+        },
+        computed: {
+            ...mapWritableState(data_store, ['month']),
+
+        },
     }
 </script>
 

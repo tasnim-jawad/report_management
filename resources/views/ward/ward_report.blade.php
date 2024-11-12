@@ -10,7 +10,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
         <link rel="stylesheet" href="{{ asset('css/ward/default.css') }}">
         <link rel="stylesheet" href="{{ asset('css/ward/ward_report.css') }}">
-
+        <style>
+            @media print {
+                .print_preview {
+                    display: none;
+                }
+            }
+        </style>
     </head>
     <body>
         <section id="heading" class="mt-3">
@@ -2027,7 +2033,7 @@
 
                 if (user_id && month) {
                     // Construct the new URL
-                    const redirectUrl = `/#/ward-report-upload/${month}/${user_id}`;
+                    const redirectUrl = `/dashboard/ward#/ward-report-upload/${month}/${user_id}`;
 
                     // Redirect to the new URL
                     window.location.href = redirectUrl;

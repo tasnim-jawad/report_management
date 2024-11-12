@@ -12,6 +12,7 @@ export default {
     computed:{
         ...mapState(use_auth_store,{
             is_auth: 'is_auth',
+            auth_info: 'auth_info',
         })
     },
     methods:{
@@ -20,9 +21,7 @@ export default {
         }),
     },
     created:async function(){
-        let user = await this.check_is_auth();
-        // console.log("is_auth",user);
-        // console.log("user",user);
+        await this.check_is_auth();
     },
 }
 </script>
