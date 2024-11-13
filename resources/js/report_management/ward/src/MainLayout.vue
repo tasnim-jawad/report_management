@@ -228,6 +228,7 @@
             window.location.hash = prevUrl || "#/dashboard";
 
             this.auth_user();
+            this.set_month();
             // console.log(this.user);
         },
         mounted: function () {

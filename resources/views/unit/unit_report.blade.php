@@ -25,14 +25,14 @@
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
                 <h1 class="text-center mb-2 fs-4">ইউনিট সংগঠনের মাসিক রিপোর্ট</h1>
                 <div class="org_gender position-absolute">
-                    <p>{{$unit_info['org_gender']?? ""}}</p>
+                    <p>{{$unit_info['org_gender'] == 'men' ? "পুরুষ" : "মহিলা"}}</p>
                 </div>
             </div>
             {{-- {{dd($ward_info)}} --}}
             <div class="unit_info">
                 <div class="line d-flex flex-wrap mb-1">
-                    <p class="w-75">মাস: {{ date('F', strtotime($month)) }}</p>
-                    <p class="w-25">সন: {{ date('Y', strtotime($month)) }}</p>
+                    <p class="w-75">মাস: {{bangla_month( date('F', strtotime($month) ))}}</p>
+                    <p class="w-25">সন: {{bangla( date('Y', strtotime($month) )) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between mb-1">
                     <p>ইউনিটের নাম: {{$unit_info['title']?? ""}}</p>

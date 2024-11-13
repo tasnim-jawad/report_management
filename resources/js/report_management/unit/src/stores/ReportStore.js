@@ -17,7 +17,7 @@ export const store = defineStore(`custom_store`, {
             const currentYear = currentDate.getFullYear();
 
             this.month = `${currentYear}-${currentMonth}`;
-            console.log(this.month); // Example: "10-2024"
+            // console.log(this.month); // Example: "10-2024"
         }
     }
 

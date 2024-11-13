@@ -30,8 +30,8 @@
             </div>
             <div class="unit_info">
                 <div class="line d-flex flex-wrap ">
-                    <p class="w-75">মাস: {{ date('F', strtotime($month)) }}</p>
-                    <p class="w-25">সন: {{ date('Y', strtotime($month)) }}</p>
+                    <p class="w-75">মাস: {{bangla_month( date('F', strtotime($month) ))}}</p>
+                    <p class="w-25">সন: {{bangla( date('Y', strtotime($month) )) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between ">
                     <p>ওয়ার্ড নং ও নাম : {{$ward_info['no']?? ""}} ও {{$ward_info['title']?? ""}}</p>
