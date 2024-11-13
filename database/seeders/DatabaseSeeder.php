@@ -8,6 +8,8 @@ use App\Models\Report\Ward\Rastrio\WardRastrio1PoliticalCommunication;
 use Database\Seeders\Bm\Income\BmCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpenseCategoriesTableSeeder;
 use Database\Seeders\Bm\Expense\BmExpensesTableSeeder;
+use Database\Seeders\Bm\Expense\UnitExpenseTargetLogsTableSeeder;
+use Database\Seeders\Bm\Expense\UnitExpenseTargetsTableSeeder;
 use Database\Seeders\Bm\Income\BmCategoryUsersTableSeeder;
 use Database\Seeders\Bm\Income\BmPaidsTableSeeder;
 use Database\Seeders\Bm\Ward\Expense\WardBmExpenseCategoriesTableSeeder;
@@ -186,6 +188,8 @@ class DatabaseSeeder extends Seeder
             BmCategoriesTableSeeder::class,
             BmCategoryUsersTableSeeder::class,
             BmPaidsTableSeeder::class,
+            UnitExpenseTargetsTableSeeder::class,
+            UnitExpenseTargetLogsTableSeeder::class,
             BmExpensesTableSeeder::class,
 
             /** ------------------------- **/

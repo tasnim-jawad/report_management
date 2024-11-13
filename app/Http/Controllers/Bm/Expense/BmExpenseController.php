@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Bm\Expense;
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Expense\BmExpenseCategory;
+use App\Models\Bm\Expense\UnitExpenseTarget;
 use App\Models\Report\ReportManagementControl;
 use App\Models\User;
 use Carbon\Carbon;
@@ -60,9 +61,10 @@ class BmExpenseController extends Controller
                                                 ->where('is_active', 1)
                                                 ->latest()
                                                 ->first();
-            $permitted_date = Carbon::parse($permission->month_year);
-            $permitted_month = $permitted_date->month;
-            $permitted_year = $permitted_date->year;
+
+            $permitted_date = $permission && $permission->month_year ? Carbon::parse($permission->month_year) : null;
+            $permitted_month = $permitted_date ? $permitted_date->month : null;
+            $permitted_year = $permitted_date ? $permitted_date->year : null;
 
             if($passed_month == $permitted_month && $passed_year == $permitted_year){
                 $is_permitted = true;
@@ -230,7 +232,14 @@ class BmExpenseController extends Controller
                                         ->whereYear('date',$permitted_year)
                                         ->whereMonth('date',$permitted_month)
                                         ->exists();
-
+            $target = UnitExpenseTarget::where('bm_expense_category_id',request()->bm_expense_category_id)
+                                        ->where('unit_id',$unit_info->unit_id)
+                                        ->where('ward_id',$unit_info->ward_id)
+                                        ->where('thana_id',$unit_info->thana_id)
+                                        ->where('city_id',$unit_info->city_id)
+                                        ->latest()
+                                        ->first();
+            // dd($target);
             if($already_have_data){
                 $data = BmExpense::where('unit_id',$unit_info->unit_id)
                                 ->where('user_id',$unit_info->user_id)
@@ -256,6 +265,9 @@ class BmExpenseController extends Controller
                 $data->amount = request()->amount;
                 $data->date = $permission->month_year;
                 $data->bm_expense_category_id = request()->bm_expense_category_id;
+
+                $data->unit_expense_targets_id = $target->id;
+                $data->unit_expense_targets_amount = $target->amount;
 
                 $data->creator = auth()->id();
                 $data->save();

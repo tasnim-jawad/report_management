@@ -58,9 +58,10 @@ class BmPaidController extends Controller
                                                 ->where('is_active', 1)
                                                 ->latest()
                                                 ->first();
-            $permitted_date = Carbon::parse($permission->month_year);
-            $permitted_month = $permitted_date->month;
-            $permitted_year = $permitted_date->year;
+
+            $permitted_date = $permission && $permission->month_year ? Carbon::parse($permission->month_year) : null;
+            $permitted_month = $permitted_date ? $permitted_date->month : null;
+            $permitted_year = $permitted_date ? $permitted_date->year : null;
 
             if($passed_month == $permitted_month && $passed_year == $permitted_year){
                 $is_permitted = true;

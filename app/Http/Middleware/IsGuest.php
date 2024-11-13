@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class IsAuth
+class IsGuest
 {
     /**
      * Handle an incoming request.
@@ -36,7 +36,5 @@ class IsAuth
         if (!Auth::check()) {
             return $next($request);
         }
-
-
     }
 }

@@ -27,6 +27,8 @@ class BmExpensesTableSeeder extends Seeder
                         'amount' => 10 * rand(1, 5),
                         'date' => "2024-" . str_pad($j, 2, '0', STR_PAD_LEFT) . "-01",
                         'bm_expense_category_id' => $k,
+                        'unit_expense_targets_id' => null,
+                        'unit_expense_targets_amount' => null,
 
                         'creator' => 8 + $i,
                         'status' => 1,
@@ -46,6 +48,8 @@ class BmExpensesTableSeeder extends Seeder
                         'amount' => 10 * rand(1, 5),
                         'date' => "2024-" . str_pad($j, 2, '0', STR_PAD_LEFT) . "-01",
                         'bm_expense_category_id' => $k,
+                        'unit_expense_targets_id' => null,
+                        'unit_expense_targets_amount' => null,
 
                         'creator' => 8 + $i,
                         'status' => 1,

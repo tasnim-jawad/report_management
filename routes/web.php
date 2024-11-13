@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Middleware\IsAuth;
+use App\Http\Middleware\IsGuest;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +16,7 @@ Route::get('/modal', function () {
 
 Route::get('/login', function () {
     return view('auth.login');
-})->middleware(IsAuth::class);
+})->middleware(IsGuest::class);
 
 // Auth::routes();
 
