@@ -21,35 +21,57 @@ class UnitExpenseTargetController extends Controller
         }
         // dd($status);
 
-        $query = UnitExpenseTarget::where('status', $status)->orderBy($orderBy, $orderByType);
+        $query = UnitExpenseTarget::where('status', $status)->orderBy($orderBy, $orderByType)->with('bm_expense_category');
         // $query = User::latest()->get();
 
         if (request()->has('search_key')) {
             $key = request()->search_key;
             $query->where(function ($q) use ($key) {
                 return $q->where('id', '%' . $key . '%')
-                    ->orWhere('title', '%' . $key . '%')
-                    ->orWhere('description', '%' . $key . '%');
-
+                    ->orWhere('unit_id', '%' . $key . '%')
+                    ->orWhere('ward_id', '%' . $key . '%')
+                    ->orWhere('thana_id', '%' . $key . '%')
+                    ->orWhere('city_id', '%' . $key . '%')
+                    ->orWhere('bm_expense_category_id', '%' . $key . '%')
+                    ->orWhere('amount', '%' . $key . '%')
+                    ->orWhere('start_from', '%' . $key . '%');
             });
         }
-
+        // dd($query->paginate($paginate)->toArray());
         $datas = $query->paginate($paginate);
         return response([
             'data' => $datas,
             'status' => 'success'
         ]);
     }
+    public function ward_wise(){
+        $ward_info = (object) auth()->user()->org_ward_user;
+        // dd($ward_info);
+        $targets = UnitExpenseTarget::where('ward_id',$ward_info->ward_id)
+                                    ->where('thana_id',$ward_info->thana_id)
+                                    ->where('city_id',$ward_info->city_id)
+                                    ->where('status', 1 )
+                                    ->with('bm_expense_category')
+                                    ->with('org_unit')
+                                    ->orderBy('bm_expense_category_id', 'ASC')
+                                    ->get();
+        // dd($targets->toArray());
+        return response([
+            'data' => $targets,
+            'status' => 'success'
+        ]);
+    }
 
     public function show($id)
     {
-
         $select = ["*"];
         if (request()->has('select_all') && request()->select_all) {
             $select = "*";
         }
         $data = UnitExpenseTarget::where('id', $id)
             ->select($select)
+            ->with('bm_expense_category')
+            ->with('org_unit')
             ->first();
         if ($data) {
             return response([
@@ -68,8 +90,10 @@ class UnitExpenseTargetController extends Controller
     public function store()
     {
         $validator = Validator::make(request()->all(), [
-            'title' => ['required'],
-            'description' => ['required'],
+            'unit_id' => ['required'],
+            'bm_expense_category_id' => ['required'],
+            'amount' => ['required'],
+            'start_from' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -78,10 +102,17 @@ class UnitExpenseTargetController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
+        $ward_info = (object) auth()->user()->org_ward_user;
 
         $data = new UnitExpenseTarget();
-        $data->title = request()->title;
-        $data->description = request()->description;
+        $data->unit_id = request()->unit_id;
+        $data->ward_id = $ward_info->ward_id;
+        $data->thana_id = $ward_info->thana_id;
+        $data->city_id = $ward_info->city_id;
+        $data->amount = request()->amount;
+        $data->bm_expense_category_id = request()->bm_expense_category_id;
+        $data->start_from = request()->start_from;
+
         $data->creator = auth()->id();
         $data->save();
 
@@ -99,8 +130,13 @@ class UnitExpenseTargetController extends Controller
         }
 
         $validator = Validator::make(request()->all(), [
-            'title' => ['required'],
-            'description' => ['required'],
+            'unit_id' => ['required'],
+            'ward_id' => ['required'],
+            'thana_id' => ['required'],
+            'city_id' => ['required'],
+            'bm_expense_category_id' => ['required'],
+            'amount' => ['required'],
+            'start_from' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -110,21 +146,24 @@ class UnitExpenseTargetController extends Controller
             ], 422);
         }
 
-        $data->title = request()->title;
-        $data->description = request()->description;
+        $data->unit_id = request()->unit_id;
+        $data->ward_id = request()->ward_id;
+        $data->thana_id = request()->thana_id;
+        $data->city_id = request()->city_id;
+        $data->amount = request()->amount;
+        $data->bm_expense_category_id = request()->bm_expense_category_id;
+        $data->start_from = request()->start_from;
+
         $data->creator = auth()->id();
         $data->save();
 
-        if (request()->hasFile('image')) {
-            //
-        }
         return response()->json($data, 200);
     }
 
     public function soft_delete()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_Expense_categories,id'],
+            'id' => ['required', 'exists:unit_expense_targets,id'],
         ]);
 
         if ($validator->fails()) {
@@ -146,7 +185,7 @@ class UnitExpenseTargetController extends Controller
     public function destroy()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_Expense_categories,id'],
+            'id' => ['required', 'exists:unit_expense_targets,id'],
         ]);
 
         if ($validator->fails()) {
@@ -167,7 +206,7 @@ class UnitExpenseTargetController extends Controller
     public function restore()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_Expense_categories,id'],
+            'id' => ['required', 'exists:unit_expense_targets,id'],
         ]);
 
         if ($validator->fails()) {

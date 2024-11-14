@@ -23,6 +23,7 @@ import CreateUser from '../pages/user/Create.vue'
 import ShowUser from '../pages/user/Details.vue'
 import EditUser from '../pages/user/Edit.vue'
 
+import UnitExpenseTargetRoutes from './UnitExpenseTargetRoutes';
 import bmCategoryRoutes from './bmCategoryRoutes';
 import BmEntryRoutes from './BmEntryRoutes';
 import BmCategoryUserRoutes from './BmCategoryUserRoutes';
@@ -142,6 +143,7 @@ const routes =
                     path: 'upload-report',
                     component: UploadReport,
                 },
+                UnitExpenseTargetRoutes,
                 bmCategoryRoutes,
                 BmEntryRoutes,
                 BmCategoryUserRoutes,

@@ -18,6 +18,19 @@ class OrgUnitController extends Controller
             'data' => $units
         ]);
     }
+    public function ward_wise_unit(){
+        $ward_info = (object) auth()->user()->org_ward_user;
+        $units = OrgUnit::where('org_ward_id',$ward_info->ward_id)
+                ->where('org_thana_id',$ward_info->thana_id)
+                ->where('org_city_id',$ward_info->city_id)
+                ->with(['org_city','org_thana','org_ward','org_unit_responsible','org_area'])
+                ->get();
+        // dd($units);
+        return response([
+            'status' => 'success',
+            'data' => $units
+        ]);
+    }
 
     public function all()
     {

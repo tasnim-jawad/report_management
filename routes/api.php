@@ -164,6 +164,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'org-unit'] , function(){
         Route::get('/details', [App\Http\Controllers\Organization\OrgUnitController::class,'details']);
+        Route::get('/ward-wise-unit', [App\Http\Controllers\Organization\OrgUnitController::class,'ward_wise_unit']);
 
         Route::get('/all', [App\Http\Controllers\Organization\OrgUnitController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Organization\OrgUnitController::class,'show']);
@@ -750,6 +751,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
 
     Route::group(['prefix' => 'bm-expense-category'] , function(){
+        Route::get('', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'index']);
+
         Route::get('/all', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'store']);
@@ -780,6 +783,20 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
 
 
+
+    Route::group(['prefix' => 'unit-expense-target'] , function(){
+        Route::get('/ward-wise', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'ward_wise']);
+
+
+        Route::get('/all', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'bulk_import']);
+    });
 
     Route::group(['prefix' => 'bm-category'] , function(){
         Route::get('/all', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'all']);
