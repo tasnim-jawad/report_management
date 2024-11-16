@@ -15,13 +15,10 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('unit_expense_targets_id')->nullable();
             $table->date('created_date')->nullable();
-            $table->bigInteger('unit_id')->nullable();
-            $table->bigInteger('ward_id')->nullable();
-            $table->bigInteger('thana_id')->nullable();
-            $table->bigInteger('city_id')->nullable();
-            $table->bigInteger('bm_expense_category_id')->nullable();
-            $table->integer('amount')->nullable();
-            $table->date('start_from')->nullable();
+            $table->string('action'); // Action type: create, update, delete
+            $table->string('model'); // Name of the model
+            $table->unsignedBigInteger('model_id'); // ID of the affected model
+            $table->json('payload')->nullable(); // Data changes or details
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

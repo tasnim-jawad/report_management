@@ -189,7 +189,7 @@ class DatabaseSeeder extends Seeder
             BmCategoryUsersTableSeeder::class,
             BmPaidsTableSeeder::class,
             UnitExpenseTargetsTableSeeder::class,
-            UnitExpenseTargetLogsTableSeeder::class,
+            // UnitExpenseTargetLogsTableSeeder::class,
             BmExpensesTableSeeder::class,
 
             /** ------------------------- **/

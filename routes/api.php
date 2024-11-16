@@ -787,7 +787,6 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => 'unit-expense-target'] , function(){
         Route::get('/ward-wise', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'ward_wise']);
 
-
         Route::get('/all', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class,'store']);

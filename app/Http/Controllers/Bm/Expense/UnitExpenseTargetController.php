@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Bm\Expense;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Expense\UnitExpenseTarget;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class UnitExpenseTargetController extends Controller
 {
@@ -47,17 +49,66 @@ class UnitExpenseTargetController extends Controller
     public function ward_wise(){
         $ward_info = (object) auth()->user()->org_ward_user;
         // dd($ward_info);
-        $targets = UnitExpenseTarget::where('ward_id',$ward_info->ward_id)
-                                    ->where('thana_id',$ward_info->thana_id)
-                                    ->where('city_id',$ward_info->city_id)
-                                    ->where('status', 1 )
-                                    ->with('bm_expense_category')
-                                    ->with('org_unit')
-                                    ->orderBy('bm_expense_category_id', 'ASC')
-                                    ->get();
+        // $targets = UnitExpenseTarget::where('ward_id',$ward_info->ward_id)
+        //                             ->where('thana_id',$ward_info->thana_id)
+        //                             ->where('city_id',$ward_info->city_id)
+        //                             ->where('status', 1 )
+        //                             ->with('bm_expense_category')
+        //                             ->with('org_unit')
+        //                             ->orderBy('id', 'desc')
+        //                             ->select('unit_id','ward_id', 'thana_id','city_id','bm_expense_category_id','start_from')
+        //                             ->groupBy('unit_id','ward_id', 'thana_id','city_id','bm_expense_category_id')
+        //                             ->get()
+        //                             ->map(function($item){
+        //                                 $item_details = UnitExpenseTarget::where('unit_id', $item->unit_id)
+        //                                         ->where('start_from',$item->start_from)
+        //                                         ->orderBy('id', 'desc')
+        //                                         ->first();
+
+        //                                 $item->id = $item_details->id;
+        //                                 $item->amount = $item_details->amount;
+        //                                 $item->start_from = $item_details->start_from;
+        //                                 return $item;
+        //                             });
+        $latestUnitTargets = UnitExpenseTarget::select(
+                            'unit_expense_targets.id',
+                            'unit_expense_targets.unit_id',
+                            'unit_expense_targets.ward_id',
+                            'unit_expense_targets.thana_id',
+                            'unit_expense_targets.city_id',
+                            'unit_expense_targets.bm_expense_category_id',
+                            'unit_expense_targets.start_from',
+                            'unit_expense_targets.amount'
+                        )
+                        ->joinSub(
+                            DB::table('unit_expense_targets')
+                                ->select(
+                                    'unit_id',
+                                    'ward_id',
+                                    'thana_id',
+                                    'city_id',
+                                    'bm_expense_category_id',
+                                    DB::raw('MAX(start_from) as latest_start_from')
+                                )
+                                ->groupBy('unit_id', 'ward_id', 'thana_id', 'city_id', 'bm_expense_category_id'),
+                            'latest',
+                            function ($join) {
+                                $join->on('unit_expense_targets.unit_id', '=', 'latest.unit_id')
+                                    ->on('unit_expense_targets.ward_id', '=', 'latest.ward_id')
+                                    ->on('unit_expense_targets.thana_id', '=', 'latest.thana_id')
+                                    ->on('unit_expense_targets.city_id', '=', 'latest.city_id')
+                                    ->on('unit_expense_targets.bm_expense_category_id', '=', 'latest.bm_expense_category_id')
+                                    ->on('unit_expense_targets.start_from', '=', 'latest.latest_start_from');
+                            }
+                        )
+                        ->with(['bm_expense_category', 'org_unit'])
+                        ->orderBy('bm_expense_category_id', 'asc')
+                        ->get();
+
+        // dd($latestUnitTargets->toArray());
         // dd($targets->toArray());
         return response([
-            'data' => $targets,
+            'data' => $latestUnitTargets,
             'status' => 'success'
         ]);
     }
@@ -131,9 +182,6 @@ class UnitExpenseTargetController extends Controller
 
         $validator = Validator::make(request()->all(), [
             'unit_id' => ['required'],
-            'ward_id' => ['required'],
-            'thana_id' => ['required'],
-            'city_id' => ['required'],
             'bm_expense_category_id' => ['required'],
             'amount' => ['required'],
             'start_from' => ['required'],
@@ -145,17 +193,18 @@ class UnitExpenseTargetController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
+        $ward_info = (object) auth()->user()->org_ward_user;
 
         $data->unit_id = request()->unit_id;
-        $data->ward_id = request()->ward_id;
-        $data->thana_id = request()->thana_id;
-        $data->city_id = request()->city_id;
+        $data->ward_id = $ward_info->ward_id;
+        $data->thana_id = $ward_info->thana_id;
+        $data->city_id = $ward_info->city_id;
         $data->amount = request()->amount;
         $data->bm_expense_category_id = request()->bm_expense_category_id;
         $data->start_from = request()->start_from;
 
         $data->creator = auth()->id();
-        $data->save();
+        $data->update();
 
         return response()->json($data, 200);
     }
@@ -225,3 +274,23 @@ class UnitExpenseTargetController extends Controller
         ], 200);
     }
 }
+
+
+/*
+sql table name is unit_targets find the latest based on start_form date
+id,unit_id,start_from
+1,1,2024-05-01
+2,1,2024-06-01
+3,1,2024-07-01
+4,2,2024-05-01
+5,2,2024-06-01
+6,2,2024-07-01
+
+result
+3,1,2024-07-01
+6,4,2024-07-01
+
+
+*/
+
+

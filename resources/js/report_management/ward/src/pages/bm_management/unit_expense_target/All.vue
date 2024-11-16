@@ -26,11 +26,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(unit_expense_target,index) in unit_expense_targets" :key="index">
-                            <td>{{unit_expense_target.org_unit.title}}</td>
-                            <td>{{unit_expense_target.bm_expense_category.title}}</td>
-                            <td>{{unit_expense_target.amount}}</td>
-                            <td>{{unit_expense_target.start_from}}</td>
+                        <tr v-for="(unit_expense_target,index) in filtered_expense_targets" :key="index">
+                            <td>{{unit_expense_target?.org_unit?.title}}</td>
+                            <td>{{unit_expense_target?.bm_expense_category?.title}}</td>
+                            <td>{{unit_expense_target?.amount}}</td>
+                            <td>{{unit_expense_target?.start_from}}</td>
                             <td>
                                 <div class="action">
                                     <div class="btn btn-success btn-sm me-2">
@@ -62,31 +62,34 @@ export default {
     data() {
         return {
             unit_expense_targets:[],
+            filtered_expense_targets: [],
             units: [],
             searched_unit_id: "",
         }
     },
 
     created:function(){
-        this.show_bm_category();
+        this.show_unit_expense_target();
         this.all_units();
     },
     watch:{
         searched_unit_id:function(){
             console.log("searched_unit_id",this.searched_unit_id);
+            this.expense_targets(this.searched_unit_id)
         }
     },
     methods:{
-        show_bm_category : function(){
-            axios.get('/unit-expense-target/ward-wise')
+        show_unit_expense_target :async function(){
+            await axios.get('/unit-expense-target/ward-wise')
                 .then(response => {
-                    this.unit_expense_targets = response.data.data
-                    // console.log(this.unit_expense_targets);
+                    this.unit_expense_targets = response.data.data;
+                    this.filtered_expense_targets = this.unit_expense_targets;
+                    console.log("this.filtered_expense_targets",this.filtered_expense_targets);
 
                 })
         },
         delete_category : function(category_id){
-            if (window.confirm("Are you sure you want to delete this category?")) {
+            if (window.confirm("Are you sure you want to delete this Target?")) {
                 this.submit_delete_form(category_id);
             } else {
                 window.toaster('user info is safe', 'info');
@@ -110,14 +113,21 @@ export default {
             let response =await axios.get('/org-unit/ward-wise-unit')
             this.units = response.data.data;
         },
-        expense_targets:async function(){
-            // let targets = unit_expense_targets.for
-            const unit_expense_targets = Array.isArray(this.unit_expense_targets) ? this.unit_expense_targets : Object.values(this.unit_expense_targets);
-            unit_expense_targets.forEach(expense_target =>{
-                console.log(expense_target);
+        expense_targets:async function(unit_id){
+            console.log("unit_id",unit_id);
+            if (!unit_id) {
+                this.filtered_expense_targets = this.unit_expense_targets;
+                return;
             }
-                // user.user_name.toLowerCase().includes(this.searchQuery.toLowerCase())
-            );
+            // let targets = unit_expense_targets.for
+            const expense_targets = Array.isArray(this.unit_expense_targets) ? this.unit_expense_targets : Object.values(this.unit_expense_targets);
+            let filtered_target_unit_wise = expense_targets.filter(expense_target =>{
+                return expense_target.org_unit.id === unit_id
+            });
+
+            this.filtered_expense_targets = filtered_target_unit_wise;
+
+            console.log("filtered ",this.filtered_expense_targets);
 
         },
     }
