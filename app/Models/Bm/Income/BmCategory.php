@@ -18,4 +18,9 @@ class BmCategory extends Model
     {
         return $this->hasMany(BmCategoryUser::class);
     }
+
+    public function parent_category()
+    {
+        return $this->belongsTo(BmCategory::class,'parent_id','id');
+    }
 }

@@ -232,14 +232,22 @@ class BmExpenseController extends Controller
                                         ->whereYear('date',$permitted_year)
                                         ->whereMonth('date',$permitted_month)
                                         ->exists();
+
             $target = UnitExpenseTarget::where('bm_expense_category_id',request()->bm_expense_category_id)
+                                        ->where(function ($query) use ($permitted_year, $permitted_month) {
+                                            $query->whereYear('start_from', '<', $permitted_year)
+                                                ->orWhere(function ($subQuery) use ($permitted_year, $permitted_month) {
+                                                    $subQuery->whereYear('start_from', $permitted_year)
+                                                            ->whereMonth('start_from', '<=', $permitted_month);
+                                                });
+                                        })
                                         ->where('unit_id',$unit_info->unit_id)
                                         ->where('ward_id',$unit_info->ward_id)
                                         ->where('thana_id',$unit_info->thana_id)
                                         ->where('city_id',$unit_info->city_id)
                                         ->latest()
                                         ->first();
-            // dd($target);
+            // dd($target->id,$target->amount);
             if($already_have_data){
                 $data = BmExpense::where('unit_id',$unit_info->unit_id)
                                 ->where('user_id',$unit_info->user_id)
@@ -249,6 +257,7 @@ class BmExpenseController extends Controller
                                 ->whereYear('date',$permitted_year)
                                 ->whereMonth('date',$permitted_month)
                                 ->where('bm_expense_category_id',request()->bm_expense_category_id)
+                                ->latest()
                                 ->first();
                 $data->amount = request()->amount;
                 $data->creator =  $unit_info->user_id;
@@ -308,9 +317,6 @@ class BmExpenseController extends Controller
             $data->creator = auth()->id();
             $data->save();
 
-            if (request()->hasFile('image')) {
-                //
-            }
             return response()->json($data, 200);
         }
 

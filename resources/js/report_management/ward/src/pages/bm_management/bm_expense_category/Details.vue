@@ -24,6 +24,10 @@
                             <td>Description</td>
                             <td>{{category_info?.description}}</td>
                         </tr>
+                        <tr>
+                            <td>Parent category</td>
+                            <td>{{category_info?.parent_expanse_category?.title ?? '----'}}</td>
+                        </tr>
 
                     </tbody>
                 </table>

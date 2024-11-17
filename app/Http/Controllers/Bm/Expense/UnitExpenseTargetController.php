@@ -276,21 +276,3 @@ class UnitExpenseTargetController extends Controller
 }
 
 
-/*
-sql table name is unit_targets find the latest based on start_form date
-id,unit_id,start_from
-1,1,2024-05-01
-2,1,2024-06-01
-3,1,2024-07-01
-4,2,2024-05-01
-5,2,2024-06-01
-6,2,2024-07-01
-
-result
-3,1,2024-07-01
-6,4,2024-07-01
-
-
-*/
-
-

@@ -17,6 +17,12 @@ class IsGuest
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
+            $token = session('token') ?? request()->bearerToken();
+            if(!$token ){
+                auth()->logout();
+                return $next($request);
+            }
+            
             $user = Auth::user();
             $prevurl = session('prevurl', '#/dashboard'); // Default to '#/dashboard' if prevurl is not set
 

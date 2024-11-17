@@ -62,8 +62,6 @@ export default {
             axios.get('/bm-category/all')
                 .then(response => {
                     this.categories = response.data.data
-                    console.log(this.categories);
-
                 })
         },
         delete_category : function(category_id){
@@ -79,7 +77,6 @@ export default {
             const formData = new FormData(document.getElementById('delete_category_form_'+category_id));
             axios.post("/bm-category/destroy",formData)
                     .then(response => {
-                        console.log(response);
                         window.toaster('category delete successfuly', 'success');
                         this.show_bm_category();
                     })

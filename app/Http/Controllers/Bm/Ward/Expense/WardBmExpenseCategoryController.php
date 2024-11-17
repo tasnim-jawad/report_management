@@ -40,7 +40,16 @@ class WardBmExpenseCategoryController extends Controller
             'status' => 'success'
         ]);
     }
+    public function parent_category()
+    {
+        $datas = WardBmExpenseCategory::where('parent_id', null)
+                                    ->orderBy('id', 'asc')
+                                    ->where('status', 1)
+                                    ->get();
+                                    // dd("parent_category ward income",$datas);
 
+        return response()->json($datas);
+    }
     public function show($id)
     {
 
@@ -50,6 +59,7 @@ class WardBmExpenseCategoryController extends Controller
         }
         $data = WardBmExpenseCategory::where('id', $id)
             ->select($select)
+            ->with('parent_expanse_category')
             ->first();
         if ($data) {
             return response([
@@ -70,6 +80,7 @@ class WardBmExpenseCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'parent_id' => ['nullable', 'integer', 'exists:ward_bm_Expense_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -82,6 +93,7 @@ class WardBmExpenseCategoryController extends Controller
         $data = new WardBmExpenseCategory();
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->parent_id = request()->parent_id;
         $data->creator = auth()->id();
         $data->save();
 
@@ -101,6 +113,7 @@ class WardBmExpenseCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'parent_id' => ['nullable', 'integer', 'exists:ward_bm_Expense_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -112,12 +125,10 @@ class WardBmExpenseCategoryController extends Controller
 
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->parent_id = request()->parent_id;
         $data->creator = auth()->id();
         $data->save();
 
-        if (request()->hasFile('image')) {
-            //
-        }
         return response()->json($data, 200);
     }
 

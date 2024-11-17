@@ -22,6 +22,17 @@
                         <input type="text" name="description" :value="category_info.description" class="form-control">
                     </div>
                 </div>
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+                    <div class="form_label">
+                        <label for="parent_id">Parent Category</label>
+                    </div>
+                    <div class="form_input">
+                        <select id="parent_id" class="form-select text-center" name="parent_id" aria-label="Default select example" v-model="category_info.parent_id">
+                            <option value=""> -- (optional) -- </option>
+                            <option v-for="(category, index) in categories" :key="index" :value="category.id" >{{category.title}}</option>
+                        </select>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">Edit Category</button>
             </form>
         </div>
@@ -35,10 +46,12 @@ export default {
     data:function(){
         return{
             category_info:[],
+            categories:[],
         }
     },
     created:function(){
         this.show_category();
+        this.all_categories();
     },
     methods:{
         show_category : function(){
@@ -64,8 +77,16 @@ export default {
             } else {
                 window.toaster('expense category info is safe', 'info');
             }
+        },
+        all_categories:async function() {
+            console.log("created");
 
+            let response = await axios.get('/ward-bm-expense-category/parent-category')
+            if (response) {
+                this.categories = response.data
+                console.log('this.categories',this.categories);
 
+            }
         }
     }
 }

@@ -31,9 +31,9 @@
                     <tbody>
                         <tr v-for="(entry,index) in bm_entry" :key="index">
                             <!-- <td>{{entry.user.full_name}}</td> -->
-                            <td>{{entry.ward_bm_income_category.title}}</td>
+                            <td>{{entry?.ward_bm_income_category?.title}}</td>
                             <td>{{ new Date(entry.month).toLocaleString('default', { month: 'long' }) +' ' + new Date(entry.month).getFullYear().toString().slice(-2)}}</td>
-                            <td>{{entry.amount}}</td>
+                            <td>{{entry?.amount}}</td>
                             <td>
                                 <div class="action">
                                     <div class="btn btn-success btn-sm me-2">

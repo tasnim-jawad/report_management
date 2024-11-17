@@ -752,6 +752,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'bm-expense-category'] , function(){
         Route::get('', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'index']);
+        Route::get('/parent-category', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'parent_category']);
 
         Route::get('/all', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\BmExpenseCategoryController::class,'show']);
@@ -798,6 +799,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'bm-category'] , function(){
+        Route::get('/parent-category', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'parent_category']);
+
         Route::get('/all', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Bm\Income\BmCategoryController::class,'store']);
@@ -1138,6 +1141,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
 
     Route::group(['prefix' => 'ward-bm-expense-category'] , function(){
+        Route::get('/parent-category', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseCategoryController::class,'parent_category']);
+
         Route::get('/all', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseCategoryController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseCategoryController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Bm\Ward\Expense\WardBmExpenseCategoryController::class,'store']);
@@ -1164,6 +1169,9 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     });
 
     Route::group(['prefix' => 'ward-bm-income-category'] , function(){
+        Route::get('/parent-category', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeCategoryController::class,'parent_category']);
+
+
         Route::get('/all', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeCategoryController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeCategoryController::class,'show']);
         Route::post('/store', [App\Http\Controllers\Bm\Ward\Income\WardBmIncomeCategoryController::class,'store']);

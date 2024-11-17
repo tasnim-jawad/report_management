@@ -13,6 +13,17 @@
                         <input type="text" :name="field.name" class="form-control">
                     </div>
                 </div>
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center">
+                    <div class="form_label">
+                        <label for="parent_id">প্রধান খাত</label>
+                    </div>
+                    <div class="form_input">
+                        <select id="parent_id" class="form-select" name="parent_id" aria-label="Default select example">
+                            <option value=""> -- (optional) -- </option>
+                            <option v-for="(category, index) in categories" :key="index" :value="category.id" >{{category.title}}</option>
+                        </select>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">খাত তৈরি করুন</button>
             </form>
         </div>
@@ -34,7 +45,11 @@ export default {
                     name:"description",
                 },
             ],
+            categories:[],
         }
+    },
+    created:function(){
+        this.all_categories()
     },
     methods:{
         create_category:function(){
@@ -43,7 +58,7 @@ export default {
             // for (const entry of formData.entries()) {
             //     console.log(entry);
             // }
-            axios.post('/bm-category/store',formData)
+            axios.post('/ward-bm-income-category/store',formData)
                 .then(function (response) {
                     console.log(response.statusText);
                     window.toaster('New BM Category Created successfuly', 'success');
@@ -52,6 +67,16 @@ export default {
                     console.log(error.response);
                 });
         },
+        all_categories:async function() {
+            console.log("created");
+
+            let response = await axios.get('/ward-bm-income-category/parent-category')
+            if (response) {
+                this.categories = response.data
+                console.log("this.categories",this.categories);
+
+            }
+        }
 
     }
 }

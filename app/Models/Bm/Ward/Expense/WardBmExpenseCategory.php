@@ -13,4 +13,9 @@ class WardBmExpenseCategory extends Model
     {
         return $this->hasMany(WardBmExpense::class);
     }
+
+    public function parent_expanse_category()
+    {
+        return $this->belongsTo(WardBmExpenseCategory::class,'parent_id','id');
+    }
 }

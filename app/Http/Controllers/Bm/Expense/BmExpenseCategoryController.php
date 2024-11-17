@@ -50,6 +50,17 @@ class BmExpenseCategoryController extends Controller
         ]);
     }
 
+    public function parent_category()
+    {
+        $datas = BmExpenseCategory::where('parent_id', null)
+                                    ->orderBy('id', 'asc')
+                                    ->where('status', 1)
+                                    ->get();
+                                    // dd("parent_category ward income",$datas);
+
+        return response()->json($datas);
+    }
+
     public function show($id)
     {
 
@@ -59,6 +70,7 @@ class BmExpenseCategoryController extends Controller
         }
         $data = BmExpenseCategory::where('id', $id)
             ->select($select)
+            ->with('parent_expense_category')
             ->first();
         if ($data) {
             return response([
@@ -79,6 +91,7 @@ class BmExpenseCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'parent_id' => ['nullable', 'integer', 'exists:bm_Expense_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -91,6 +104,7 @@ class BmExpenseCategoryController extends Controller
         $data = new BmExpenseCategory();
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->parent_id = request()->parent_id;
         $data->creator = auth()->id();
         $data->save();
 
@@ -110,6 +124,7 @@ class BmExpenseCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'parent_id' => ['nullable', 'integer', 'exists:bm_Expense_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -121,6 +136,7 @@ class BmExpenseCategoryController extends Controller
 
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->parent_id = request()->parent_id;
         $data->creator = auth()->id();
         $data->save();
 

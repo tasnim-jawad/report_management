@@ -37,6 +37,16 @@ class WardBmIncomeCategoryController extends Controller
         $datas = $query->paginate($paginate);
         return response()->json($datas);
     }
+    public function parent_category()
+    {
+        $datas = WardBmIncomeCategory::where('parent_id', null)
+                                    ->orderBy('id', 'asc')
+                                    ->where('status', 1)
+                                    ->get();
+                                    // dd("parent_category ward income",$datas);
+
+        return response()->json($datas);
+    }
 
     public function show($id)
     {
@@ -47,6 +57,7 @@ class WardBmIncomeCategoryController extends Controller
         }
         $data = WardBmIncomeCategory::where('id', $id)
             ->select($select)
+            ->with('parent_income_category')
             ->first();
         if ($data) {
             return response()->json($data, 200);
@@ -64,6 +75,7 @@ class WardBmIncomeCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'parent_id' => ['nullable', 'integer', 'exists:ward_bm_income_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -76,6 +88,7 @@ class WardBmIncomeCategoryController extends Controller
         $data = new WardBmIncomeCategory();
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->parent_id = request()->parent_id;
         $data->creator = auth()->id();
         $data->save();
 
@@ -95,6 +108,7 @@ class WardBmIncomeCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'parent_id' => ['nullable', 'integer', 'exists:ward_bm_income_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -106,19 +120,17 @@ class WardBmIncomeCategoryController extends Controller
 
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->parent_id = request()->parent_id;
         $data->creator = auth()->id();
         $data->save();
 
-        if (request()->hasFile('image')) {
-            //
-        }
         return response()->json($data, 200);
     }
 
     public function soft_delete()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_categories,id'],
+            'id' => ['required', 'exists:ward_bm_income_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -140,7 +152,7 @@ class WardBmIncomeCategoryController extends Controller
     public function destroy()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_categories,id'],
+            'id' => ['required', 'exists:ward_bm_income_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -161,7 +173,7 @@ class WardBmIncomeCategoryController extends Controller
     public function restore()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_categories,id'],
+            'id' => ['required', 'exists:ward_bm_income_categories,id'],
         ]);
 
         if ($validator->fails()) {

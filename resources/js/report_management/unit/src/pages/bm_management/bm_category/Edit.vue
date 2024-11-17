@@ -22,6 +22,17 @@
                         <input type="text" name="description" :value="category_info.description" class="form-control">
                     </div>
                 </div>
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center">
+                    <div class="form_label">
+                        <label for="parent_id">প্রধান খাত</label>
+                    </div>
+                    <div class="form_input">
+                        <select id="parent_id" class="form-select" name="parent_id" aria-label="Default select example" v-model="category_info.parent_id">
+                            <option value=""> -- (optional) -- </option>
+                            <option v-for="(category, index) in categories" :key="index" :value="category.id" >{{category.title}}</option>
+                        </select>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">Edit Category</button>
             </form>
         </div>
@@ -35,10 +46,13 @@ export default {
     data:function(){
         return{
             category_info:[],
+            categories:[]
+            // parent_id: category_info?.parent_id ?? '',
         }
     },
     created:function(){
         this.show_category();
+        this.all_categories();
     },
     methods:{
         show_category : function(){
@@ -58,6 +72,14 @@ export default {
                     console.log(error.response);
                 });
 
+        },
+        all_categories:async function() {
+            console.log("created");
+
+            let response = await axios.get('/bm-category/parent-category')
+            if (response) {
+                this.categories = response.data
+            }
         }
     }
 }

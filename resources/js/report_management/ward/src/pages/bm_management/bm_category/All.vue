@@ -59,7 +59,7 @@ export default {
     },
     methods:{
         show_bm_category : function(){
-            axios.get('/bm-category/all')
+            axios.get('/ward-bm-income-category/all')
                 .then(response => {
                     this.categories = response.data.data
                     console.log(this.categories);
@@ -77,7 +77,7 @@ export default {
         submit_delete_form : function(category_id){
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_category_form_'+category_id));
-            axios.post("/bm-category/destroy",formData)
+            axios.post("/ward-bm-income-category/destroy",formData)
                     .then(response => {
                         console.log(response);
                         window.toaster('category delete successfuly', 'success');

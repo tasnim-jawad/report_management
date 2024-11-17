@@ -12,4 +12,9 @@ class WardBmIncomeCategory extends Model
     {
         return $this->hasMany(WardBmIncome::class);
     }
+
+    public function parent_income_category()
+    {
+        return $this->belongsTo(WardBmIncomeCategory::class,'parent_id','id');
+    }
 }

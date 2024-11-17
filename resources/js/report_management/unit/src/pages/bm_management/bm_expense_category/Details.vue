@@ -24,7 +24,10 @@
                             <td>Description</td>
                             <td>{{category_info?.description}}</td>
                         </tr>
-
+                        <tr>
+                            <td>Parent category</td>
+                            <td>{{category_info?.parent_expense_category?.title ?? '----'}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -46,13 +49,10 @@ export default {
     },
     methods:{
         show_category : function(){
-            // console.log(this.expense_category_id);
             axios.get(`/bm-expense-category/show/${this.expense_category_id}`)
                 .then(response => {
-                    // console.log(response);
                     if(response.data.status == 'success'){
                         this.category_info = response?.data?.data
-                        // console.log(this.category_info);
                     }
                 })
         }

@@ -13,4 +13,9 @@ class BmExpenseCategory extends Model
     {
         return $this->hasMany(BmExpense::class);
     }
+
+    public function parent_expense_category()
+    {
+        return $this->belongsTo(BmExpenseCategory::class,'parent_id','id');
+    }
 }

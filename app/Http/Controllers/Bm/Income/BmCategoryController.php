@@ -37,6 +37,16 @@ class BmCategoryController extends Controller
         $datas = $query->paginate($paginate);
         return response()->json($datas);
     }
+    public function parent_category()
+    {
+        $datas = BmCategory::where('parent_id', null)
+                                    ->orderBy('id', 'asc')
+                                    ->where('status', 1)
+                                    ->get();
+                                    // dd("parent_category ward income",$datas);
+
+        return response()->json($datas);
+    }
 
     public function show($id)
     {
@@ -47,6 +57,7 @@ class BmCategoryController extends Controller
         }
         $data = BmCategory::where('id', $id)
             ->select($select)
+            ->with('parent_category')
             ->first();
         if ($data) {
             return response()->json($data, 200);
@@ -64,6 +75,7 @@ class BmCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'parent_id' => ['nullable', 'integer', 'exists:bm_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -76,6 +88,7 @@ class BmCategoryController extends Controller
         $data = new BmCategory();
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->parent_id = request()->parent_id;
         $data->creator = auth()->id();
         $data->save();
 
@@ -95,6 +108,7 @@ class BmCategoryController extends Controller
         $validator = Validator::make(request()->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'parent_id' => ['nullable', 'integer', 'exists:bm_categories,id'],
         ]);
 
         if ($validator->fails()) {
@@ -106,12 +120,10 @@ class BmCategoryController extends Controller
 
         $data->title = request()->title;
         $data->description = request()->description;
+        $data->parent_id = request()->parent_id;
         $data->creator = auth()->id();
         $data->save();
 
-        if (request()->hasFile('image')) {
-            //
-        }
         return response()->json($data, 200);
     }
 

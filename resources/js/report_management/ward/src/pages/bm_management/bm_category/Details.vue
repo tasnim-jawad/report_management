@@ -24,6 +24,10 @@
                             <td>Description</td>
                             <td>{{category_info.description}}</td>
                         </tr>
+                        <tr>
+                            <td>Parent category</td>
+                            <td>{{category_info?.parent_income_category?.title ?? '----'}}</td>
+                        </tr>
 
                     </tbody>
                 </table>
@@ -48,7 +52,7 @@ export default {
         show_category : function(){
             console.log();
             console.log(this.category_id);
-            axios.get(`/bm-category/show/${this.category_id}`)
+            axios.get(`/ward-bm-income-category/show/${this.category_id}`)
                 .then(responce => {
                     this.category_info = responce.data
                 })
