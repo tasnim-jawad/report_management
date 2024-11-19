@@ -159,6 +159,290 @@ class WardController extends Controller
         $rastrio4 = WardRastrio4ElectionActivity::where('report_info_id', $report_info_id)->first();
         $montobbo = WardMontobbo::where('report_info_id', $report_info_id)->first();
         // ---------------------  reports all data to show  ---------------------------
+        // ---------------------  previous and present calculation  ---------------------------
+        $previous_month = $month->clone()->subMonth()->endOfMonth();
+        $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $ward_id)
+            ->where('org_type','ward')
+            ->where('report_approved_status','approved')
+            ->whereDate('month_year', '<=' ,$previous_month)
+            ->pluck('id');
+
+        $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $ward_id)
+        ->where('org_type','ward')
+        ->where('report_approved_status','approved')
+        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
+        ->pluck('id');
+        /** ------------songothon1---------- */
+        /** rokon */
+        $songothon1_rokon_previous = calculate_previous_present(
+            WardSongothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        $songothon1_rokon_present = calculate_previous_present(
+            WardSongothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        /** worker */
+        $songothon1_worker_previous = calculate_previous_present(
+            WardSongothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+
+        $songothon1_worker_present = calculate_previous_present(
+            WardSongothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+        /** ------------songothon1---------- */
+
+        /** ------------songothon2---------- */
+        /** associate_member_man */
+        $songothon2_associate_member_man_previous = calculate_increase(
+            WardSongothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'associate_member_man_briddhi',
+        );
+
+        $songothon2_associate_member_man_present = calculate_increase(
+            WardSongothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'associate_member_man_briddhi',
+        );
+
+        /** associate_member_woman */
+        $songothon2_associate_member_woman_previous = calculate_increase(
+            WardSongothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'associate_member_woman_briddhi',
+        );
+
+        $songothon2_associate_member_woman_present = calculate_increase(
+            WardSongothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'associate_member_woman_briddhi',
+        );
+        /** ------------songothon1---------- */
+
+        /** ------------songothon3---------- */
+        /** women */
+        $songothon3_women_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'women'
+        );
+        $songothon3_women_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'women'
+        );
+
+        /** sromojibi */
+        $songothon3_sromojibi_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'sromojibi'
+        );
+        $songothon3_sromojibi_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'sromojibi'
+        );
+
+        /** ulama */
+        $songothon3_ulama_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'ulama'
+        );
+        $songothon3_ulama_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'ulama'
+        );
+        /** pesha_jibi */
+        $songothon3_pesha_jibi_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'pesha_jibi'
+        );
+        $songothon3_pesha_jibi_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'pesha_jibi'
+        );
+        /** jubo */
+        $songothon3_jubo_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'jubo'
+        );
+        $songothon3_jubo_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'jubo'
+        );
+        /** vinno_dormalombi */
+        $songothon3_vinno_dormalombi_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'vinno_dormalombi'
+        );
+        $songothon3_vinno_dormalombi_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'vinno_dormalombi'
+        );
+
+        /** ------------songothon3---------- */
+
+        /** ------------songothon4---------- */
+        /** general_unit_men */
+        $songothon4_general_unit_men_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'general_unit_men_increase',
+            'general_unit_men_gatti'
+        );
+
+        $songothon4_general_unit_men_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'general_unit_men_increase',
+            'general_unit_men_gatti'
+        );
+        /** general_unit_women */
+        $songothon4_general_unit_women_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'general_unit_women_increase',
+            'general_unit_women_gatti'
+        );
+
+        $songothon4_general_unit_women_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'general_unit_women_increase',
+            'general_unit_women_gatti'
+        );
+        /** ulama_unit */
+        $songothon4_ulama_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'ulama_unit_increase',
+            'ulama_unit_gatti'
+        );
+
+        $songothon4_ulama_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'ulama_unit_increase',
+            'ulama_unit_gatti'
+        );
+        /** peshajibi_unit */
+        $songothon4_peshajibi_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'peshajibi_unit_increase',
+            'peshajibi_unit_gatti'
+        );
+
+        $songothon4_peshajibi_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'peshajibi_unit_increase',
+            'peshajibi_unit_gatti'
+        );
+        /** sromik_kollyan_unit */
+        $songothon4_sromik_kollyan_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'sromik_kollyan_unit_increase',
+            'sromik_kollyan_unit_gatti'
+        );
+
+        $songothon4_sromik_kollyan_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'sromik_kollyan_unit_increase',
+            'sromik_kollyan_unit_gatti'
+        );
+        /** jubo_unit */
+        $songothon4_jubo_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'jubo_unit_increase',
+            'jubo_unit_gatti'
+        );
+
+        $songothon4_jubo_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'jubo_unit_increase',
+            'jubo_unit_gatti'
+        );
+        /** media_unit */
+        $songothon4_media_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'media_unit_increase',
+            'media_unit_gatti'
+        );
+
+        $songothon4_media_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'media_unit_increase',
+            'media_unit_gatti'
+        );
+        /** ------------songothon4---------- */
+
+        /** ------------songothon5---------- */
+        /** dawati_unit */
+        $songothon5_dawati_unit_previous = calculate_previous_present(
+            WardSongothon5DawatAndParibarikUnit::class,
+            $total_approved_report_info_ids_previous,
+            'dawati_unit_increase',
+            'dawati_unit_gatti'
+        );
+
+        $songothon5_dawati_unit_present = calculate_previous_present(
+            WardSongothon5DawatAndParibarikUnit::class,
+            $total_approved_report_info_ids_present,
+            'dawati_unit_increase',
+            'dawati_unit_gatti'
+        );
+        /** paribarik_unit */
+        $songothon5_paribarik_unit_previous = calculate_previous_present(
+            WardSongothon5DawatAndParibarikUnit::class,
+            $total_approved_report_info_ids_previous,
+            'paribarik_unit_increase',
+            'paribarik_unit_gatti'
+        );
+
+        $songothon5_paribarik_unit_present = calculate_previous_present(
+            WardSongothon5DawatAndParibarikUnit::class,
+            $total_approved_report_info_ids_present,
+            'paribarik_unit_increase',
+            'paribarik_unit_gatti'
+        );
+
+        // dd($songothon5_paribarik_unit_previous,$songothon5_paribarik_unit_present);
+        /** ------------songothon5---------- */
+
+
+
+        // dd( $songothon3_vinno_dormalombi_previous,$songothon3_vinno_dormalombi_present);
+
+        // ---------------------  previous and present calculation  ---------------------------
 
         // -------------------------- bm income report ------------------------------------
         $query = WardBmIncome::query();
@@ -307,6 +591,73 @@ class WardController extends Controller
             'rastrio4' => $rastrio4,
             'montobbo' => $montobbo,
 
+            'previous_present'=>(object)[
+                //songothon1_rokon
+                'songothon1_rokon_previous' => $songothon1_rokon_previous,
+                'songothon1_rokon_present' => $songothon1_rokon_present,
+                //songothon1_worker
+                'songothon1_worker_previous' => $songothon1_worker_previous,
+                'songothon1_worker_present' => $songothon1_worker_present,
+                //songothon2_associate_member_man
+                'songothon2_associate_member_man_previous' => $songothon2_associate_member_man_previous,
+                'songothon2_associate_member_man_present' => $songothon2_associate_member_man_present,
+                //songothon2_associate_member_woman
+                'songothon2_associate_member_woman_previous' => $songothon2_associate_member_woman_previous,
+                'songothon2_associate_member_woman_present' => $songothon2_associate_member_woman_present,
+
+
+                //songothon3_women
+                'songothon3_women_previous' => $songothon3_women_previous,
+                'songothon3_women_present' => $songothon3_women_present,
+                //songothon3_sromojibi
+                'songothon3_sromojibi_previous' => $songothon3_sromojibi_previous,
+                'songothon3_sromojibi_present' => $songothon3_sromojibi_present,
+                //songothon3_ulama
+                'songothon3_ulama_previous' => $songothon3_ulama_previous,
+                'songothon3_ulama_present' => $songothon3_ulama_present,
+                //songothon3_pesha_jibi
+                'songothon3_pesha_jibi_previous' => $songothon3_pesha_jibi_previous,
+                'songothon3_pesha_jibi_present' => $songothon3_pesha_jibi_present,
+                //songothon3_jubo
+                'songothon3_jubo_previous' => $songothon3_jubo_previous,
+                'songothon3_jubo_present' => $songothon3_jubo_present,
+                //songothon3_vinno_dormalombi
+                'songothon3_vinno_dormalombi_previous' => $songothon3_vinno_dormalombi_previous,
+                'songothon3_vinno_dormalombi_present' => $songothon3_vinno_dormalombi_present,
+
+
+
+                //songothon4_general_unit_men
+                'songothon4_general_unit_men_previous' => $songothon4_general_unit_men_previous,
+                'songothon4_general_unit_men_present' => $songothon4_general_unit_men_present,
+                //songothon4_general_unit_women
+                'songothon4_general_unit_women_previous' => $songothon4_general_unit_women_previous,
+                'songothon4_general_unit_women_present' => $songothon4_general_unit_women_present,
+                //songothon4_ulama_unit
+                'songothon4_ulama_unit_previous' => $songothon4_ulama_unit_previous,
+                'songothon4_ulama_unit_present' => $songothon4_ulama_unit_present,
+                //songothon4_peshajibi_unit
+                'songothon4_peshajibi_unit_previous' => $songothon4_peshajibi_unit_previous,
+                'songothon4_peshajibi_unit_present' => $songothon4_peshajibi_unit_present,
+                //songothon4_sromik_kollyan_unit
+                'songothon4_sromik_kollyan_unit_previous' => $songothon4_sromik_kollyan_unit_previous,
+                'songothon4_sromik_kollyan_unit_present' => $songothon4_sromik_kollyan_unit_present,
+                //songothon4_jubo_unit
+                'songothon4_jubo_unit_previous' => $songothon4_jubo_unit_previous,
+                'songothon4_jubo_unit_present' => $songothon4_jubo_unit_present,
+                //songothon4_media_unit
+                'songothon4_media_unit_previous' => $songothon4_media_unit_previous,
+                'songothon4_media_unit_present' => $songothon4_media_unit_present,
+
+
+                //songothon5_dawati_unit
+                'songothon5_dawati_unit_previous' => $songothon5_dawati_unit_previous,
+                'songothon5_dawati_unit_present' => $songothon5_dawati_unit_present,
+                //songothon5_paribarik_unit
+                'songothon5_paribarik_unit_previous' => $songothon5_paribarik_unit_previous,
+                'songothon5_paribarik_unit_present' => $songothon5_paribarik_unit_present,
+            ],
+
             'income_category_wise' => $income_category_wise,
             'total_income' => $total_income,
 
@@ -397,6 +748,291 @@ class WardController extends Controller
         $montobbo = WardMontobbo::where('report_info_id', $report_info_id)->first();
         // ---------------------  reports all data to show  ---------------------------
 
+        // ---------------------  previous and present calculation  ---------------------------
+        $previous_month = $month->clone()->subMonth()->endOfMonth();
+        $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $ward_id)
+            ->where('org_type','ward')
+            ->where('report_approved_status','approved')
+            ->whereDate('month_year', '<=' ,$previous_month)
+            ->pluck('id');
+
+        $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $ward_id)
+        ->where('org_type','ward')
+        ->where('report_approved_status','approved')
+        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
+        ->pluck('id');
+        /** ------------songothon1---------- */
+        /** rokon */
+        $songothon1_rokon_previous = calculate_previous_present(
+            WardSongothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        $songothon1_rokon_present = calculate_previous_present(
+            WardSongothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        /** worker */
+        $songothon1_worker_previous = calculate_previous_present(
+            WardSongothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+
+        $songothon1_worker_present = calculate_previous_present(
+            WardSongothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+        /** ------------songothon1---------- */
+
+        /** ------------songothon2---------- */
+        /** associate_member_man */
+        $songothon2_associate_member_man_previous = calculate_increase(
+            WardSongothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'associate_member_man_briddhi',
+        );
+
+        $songothon2_associate_member_man_present = calculate_increase(
+            WardSongothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'associate_member_man_briddhi',
+        );
+
+        /** associate_member_woman */
+        $songothon2_associate_member_woman_previous = calculate_increase(
+            WardSongothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'associate_member_woman_briddhi',
+        );
+
+        $songothon2_associate_member_woman_present = calculate_increase(
+            WardSongothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'associate_member_woman_briddhi',
+        );
+        /** ------------songothon1---------- */
+
+        /** ------------songothon3---------- */
+        /** women */
+        $songothon3_women_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'women'
+        );
+        $songothon3_women_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'women'
+        );
+
+        /** sromojibi */
+        $songothon3_sromojibi_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'sromojibi'
+        );
+        $songothon3_sromojibi_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'sromojibi'
+        );
+
+        /** ulama */
+        $songothon3_ulama_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'ulama'
+        );
+        $songothon3_ulama_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'ulama'
+        );
+        /** pesha_jibi */
+        $songothon3_pesha_jibi_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'pesha_jibi'
+        );
+        $songothon3_pesha_jibi_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'pesha_jibi'
+        );
+        /** jubo */
+        $songothon3_jubo_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'jubo'
+        );
+        $songothon3_jubo_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'jubo'
+        );
+        /** vinno_dormalombi */
+        $songothon3_vinno_dormalombi_previous = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_previous,
+            'vinno_dormalombi'
+        );
+        $songothon3_vinno_dormalombi_present = calculate_songothon3_previous_present(
+            WardSongothon3DepartmentalInformation::class,
+            $total_approved_report_info_ids_present,
+            'vinno_dormalombi'
+        );
+
+        /** ------------songothon3---------- */
+
+        /** ------------songothon4---------- */
+        /** general_unit_men */
+        $songothon4_general_unit_men_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'general_unit_men_increase',
+            'general_unit_men_gatti'
+        );
+
+        $songothon4_general_unit_men_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'general_unit_men_increase',
+            'general_unit_men_gatti'
+        );
+        /** general_unit_women */
+        $songothon4_general_unit_women_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'general_unit_women_increase',
+            'general_unit_women_gatti'
+        );
+
+        $songothon4_general_unit_women_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'general_unit_women_increase',
+            'general_unit_women_gatti'
+        );
+        /** ulama_unit */
+        $songothon4_ulama_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'ulama_unit_increase',
+            'ulama_unit_gatti'
+        );
+
+        $songothon4_ulama_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'ulama_unit_increase',
+            'ulama_unit_gatti'
+        );
+        /** peshajibi_unit */
+        $songothon4_peshajibi_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'peshajibi_unit_increase',
+            'peshajibi_unit_gatti'
+        );
+
+        $songothon4_peshajibi_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'peshajibi_unit_increase',
+            'peshajibi_unit_gatti'
+        );
+        /** sromik_kollyan_unit */
+        $songothon4_sromik_kollyan_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'sromik_kollyan_unit_increase',
+            'sromik_kollyan_unit_gatti'
+        );
+
+        $songothon4_sromik_kollyan_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'sromik_kollyan_unit_increase',
+            'sromik_kollyan_unit_gatti'
+        );
+        /** jubo_unit */
+        $songothon4_jubo_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'jubo_unit_increase',
+            'jubo_unit_gatti'
+        );
+
+        $songothon4_jubo_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'jubo_unit_increase',
+            'jubo_unit_gatti'
+        );
+        /** media_unit */
+        $songothon4_media_unit_previous = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_previous,
+            'media_unit_increase',
+            'media_unit_gatti'
+        );
+
+        $songothon4_media_unit_present = calculate_previous_present(
+            WardSongothon4UnitSongothon::class,
+            $total_approved_report_info_ids_present,
+            'media_unit_increase',
+            'media_unit_gatti'
+        );
+        /** ------------songothon4---------- */
+
+        /** ------------songothon5---------- */
+        /** dawati_unit */
+        $songothon5_dawati_unit_previous = calculate_previous_present(
+            WardSongothon5DawatAndParibarikUnit::class,
+            $total_approved_report_info_ids_previous,
+            'dawati_unit_increase',
+            'dawati_unit_gatti'
+        );
+
+        $songothon5_dawati_unit_present = calculate_previous_present(
+            WardSongothon5DawatAndParibarikUnit::class,
+            $total_approved_report_info_ids_present,
+            'dawati_unit_increase',
+            'dawati_unit_gatti'
+        );
+        /** paribarik_unit */
+        $songothon5_paribarik_unit_previous = calculate_previous_present(
+            WardSongothon5DawatAndParibarikUnit::class,
+            $total_approved_report_info_ids_previous,
+            'paribarik_unit_increase',
+            'paribarik_unit_gatti'
+        );
+
+        $songothon5_paribarik_unit_present = calculate_previous_present(
+            WardSongothon5DawatAndParibarikUnit::class,
+            $total_approved_report_info_ids_present,
+            'paribarik_unit_increase',
+            'paribarik_unit_gatti'
+        );
+
+        // dd($songothon5_paribarik_unit_previous,$songothon5_paribarik_unit_present);
+        /** ------------songothon5---------- */
+
+
+
+        // dd( $songothon3_vinno_dormalombi_previous,$songothon3_vinno_dormalombi_present);
+
+        // ---------------------  previous and present calculation  ---------------------------
+
         // -------------------------- bm income report ------------------------------------
         $query = WardBmIncome::query();
         $filter = $query->whereYear('month', $month->clone()->year)
@@ -416,8 +1052,12 @@ class WardController extends Controller
                 ->where('ward_id', $ward_id)
                 ->sum('amount');
             $WardBmIncomeCategory = WardBmIncomeCategory::find($item);
-            $income_category_wise[$index]['amount'] = $totalAmount;
-            $income_category_wise[$index]['category'] = $WardBmIncomeCategory->title;
+            if(!$WardBmIncomeCategory){
+                dd($WardBmIncomeCategory ,$item);
+
+            }
+            $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+            $income_category_wise[$index]['category'] = $WardBmIncomeCategory->title ?? "";
         }
         // -------------------------- bm income report ------------------------------------
 
@@ -553,6 +1193,73 @@ class WardController extends Controller
             'rastrio3' => $rastrio3,
             'rastrio4' => $rastrio4,
             'montobbo' => $montobbo,
+
+            'previous_present'=>(object)[
+                //songothon1_rokon
+                'songothon1_rokon_previous' => $songothon1_rokon_previous,
+                'songothon1_rokon_present' => $songothon1_rokon_present,
+                //songothon1_worker
+                'songothon1_worker_previous' => $songothon1_worker_previous,
+                'songothon1_worker_present' => $songothon1_worker_present,
+                //songothon2_associate_member_man
+                'songothon2_associate_member_man_previous' => $songothon2_associate_member_man_previous,
+                'songothon2_associate_member_man_present' => $songothon2_associate_member_man_present,
+                //songothon2_associate_member_woman
+                'songothon2_associate_member_woman_previous' => $songothon2_associate_member_woman_previous,
+                'songothon2_associate_member_woman_present' => $songothon2_associate_member_woman_present,
+
+
+                //songothon3_women
+                'songothon3_women_previous' => $songothon3_women_previous,
+                'songothon3_women_present' => $songothon3_women_present,
+                //songothon3_sromojibi
+                'songothon3_sromojibi_previous' => $songothon3_sromojibi_previous,
+                'songothon3_sromojibi_present' => $songothon3_sromojibi_present,
+                //songothon3_ulama
+                'songothon3_ulama_previous' => $songothon3_ulama_previous,
+                'songothon3_ulama_present' => $songothon3_ulama_present,
+                //songothon3_pesha_jibi
+                'songothon3_pesha_jibi_previous' => $songothon3_pesha_jibi_previous,
+                'songothon3_pesha_jibi_present' => $songothon3_pesha_jibi_present,
+                //songothon3_jubo
+                'songothon3_jubo_previous' => $songothon3_jubo_previous,
+                'songothon3_jubo_present' => $songothon3_jubo_present,
+                //songothon3_vinno_dormalombi
+                'songothon3_vinno_dormalombi_previous' => $songothon3_vinno_dormalombi_previous,
+                'songothon3_vinno_dormalombi_present' => $songothon3_vinno_dormalombi_present,
+
+
+
+                //songothon4_general_unit_men
+                'songothon4_general_unit_men_previous' => $songothon4_general_unit_men_previous,
+                'songothon4_general_unit_men_present' => $songothon4_general_unit_men_present,
+                //songothon4_general_unit_women
+                'songothon4_general_unit_women_previous' => $songothon4_general_unit_women_previous,
+                'songothon4_general_unit_women_present' => $songothon4_general_unit_women_present,
+                //songothon4_ulama_unit
+                'songothon4_ulama_unit_previous' => $songothon4_ulama_unit_previous,
+                'songothon4_ulama_unit_present' => $songothon4_ulama_unit_present,
+                //songothon4_peshajibi_unit
+                'songothon4_peshajibi_unit_previous' => $songothon4_peshajibi_unit_previous,
+                'songothon4_peshajibi_unit_present' => $songothon4_peshajibi_unit_present,
+                //songothon4_sromik_kollyan_unit
+                'songothon4_sromik_kollyan_unit_previous' => $songothon4_sromik_kollyan_unit_previous,
+                'songothon4_sromik_kollyan_unit_present' => $songothon4_sromik_kollyan_unit_present,
+                //songothon4_jubo_unit
+                'songothon4_jubo_unit_previous' => $songothon4_jubo_unit_previous,
+                'songothon4_jubo_unit_present' => $songothon4_jubo_unit_present,
+                //songothon4_media_unit
+                'songothon4_media_unit_previous' => $songothon4_media_unit_previous,
+                'songothon4_media_unit_present' => $songothon4_media_unit_present,
+
+
+                //songothon5_dawati_unit
+                'songothon5_dawati_unit_previous' => $songothon5_dawati_unit_previous,
+                'songothon5_dawati_unit_present' => $songothon5_dawati_unit_present,
+                //songothon5_paribarik_unit
+                'songothon5_paribarik_unit_previous' => $songothon5_paribarik_unit_previous,
+                'songothon5_paribarik_unit_present' => $songothon5_paribarik_unit_present,
+            ],
 
             'income_category_wise' => $income_category_wise,
             'total_income' => $total_income,

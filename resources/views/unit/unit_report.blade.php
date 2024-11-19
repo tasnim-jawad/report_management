@@ -427,16 +427,16 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সদস্য (রুকন)</td>
-                                <td >{{bangla($songothon1->rokon_previous?? "")}} </td>
-                                <td >{{bangla($songothon1->rokon_present?? "")}} </td>
+                                <td >{{bangla($previous_present->rokon_previous?? "")}} </td>
+                                <td >{{bangla($previous_present->rokon_present?? "")}} </td>
                                 <td >{{bangla($songothon1->rokon_briddhi?? "")}} </td>
                                 <td >{{bangla($songothon1->rokon_gatti?? "")}} </td>
                                 <td >{{bangla($songothon1->rokon_target?? "")}} </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কর্মী</td>
-                                <td >{{bangla($songothon1->worker_previous?? "")}} </td>
-                                <td >{{bangla($songothon1->worker_present?? "")}} </td>
+                                <td >{{bangla($previous_present->worker_previous?? "")}} </td>
+                                <td >{{bangla($previous_present->worker_present?? "")}} </td>
                                 <td >{{bangla($songothon1->worker_briddhi?? "")}} </td>
                                 <td >{{bangla($songothon1->worker_gatti?? "")}} </td>
                                 <td >{{bangla($songothon1->worker_target?? "")}} </td>
@@ -459,20 +459,20 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সহযোগী সদস্য*</td>
-                                <td >{{bangla($songothon2->associate_member_previous?? "")}}</td>
-                                <td >{{bangla($songothon2->associate_member_present?? "")}}</td>
+                                <td >{{bangla($previous_present->associate_member_previous?? "")}}</td>
+                                <td >{{bangla($previous_present->associate_member_present?? "")}}</td>
                                 <td >{{bangla($songothon2->associate_member_briddhi?? "")}}</td>
                                 <td >{{bangla($songothon2->associate_member_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">ভিন্নধর্মাবলম্বী কর্মী/সহযোগী সদস্য</td>
                                 <td >
-                                    {{bangla($songothon2->vinno_dormalombi_worker_previous?? "")}} /
-                                    {{bangla($songothon2->vinno_dormalombi_associate_member_previous?? "")}}
+                                    {{bangla($previous_present->vinno_dormalombi_worker_previous?? "")}} /
+                                    {{bangla($previous_present->vinno_dormalombi_associate_member_previous?? "")}}
                                 </td>
                                 <td >
-                                    {{bangla($songothon2->vinno_dormalombi_worker_present?? "")}} /
-                                    {{bangla($songothon2->vinno_dormalombi_associate_member_present?? "")}}
+                                    {{bangla($previous_present->vinno_dormalombi_worker_present?? "")}} /
+                                    {{bangla($previous_present->vinno_dormalombi_associate_member_present?? "")}}
                                 </td>
                                 <td >
                                     {{bangla($songothon2->vinno_dormalombi_worker_briddhi?? "")}} /

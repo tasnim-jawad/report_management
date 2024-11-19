@@ -186,7 +186,32 @@ function report_info_create($org_type,$org_type_id,$responsibility_id,$responsib
     return $data;
 }
 
-// function remove_all(){}
+function calculate_previous_present($model, $total_approved_report_info_ids, $column_name_increase, $column_name_decrease)
+{
+    // Fetch data based on the provided model and report_info_ids
+    $data = $model::whereIn('report_info_id', $total_approved_report_info_ids)->get();
+
+    // Sum the specified increase and decrease columns
+    $total_increase = $data->sum($column_name_increase);
+    $total_decrease = $data->sum($column_name_decrease);
+
+    // Calculate the total
+    $total = $total_increase - $total_decrease;
+
+    return $total;
+}
+
+function calculate_increase($model, $total_approved_report_info_ids,$column_name_increase)
+{
+    // Fetch data based on the provided model and report_info_ids
+    $data = $model::whereIn('report_info_id', $total_approved_report_info_ids)->get();
+    
+    // Sum the specified increase columns
+    $total_increase = $data->sum($column_name_increase);
+
+    return $total_increase;
+}
+
 
 
 

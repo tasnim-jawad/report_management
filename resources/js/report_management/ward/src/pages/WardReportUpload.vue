@@ -1640,7 +1640,8 @@
                                 <td class="text-start px-2">সর্বমোট সদস্য (রুকন)</td>
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="rokon_previous" :value="formatBangla(songothon1?.rokon_previous)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="rokon_previous" :value="formatBangla(songothon1?.rokon_previous)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
+                                        {{formatBangla(previous_present?.songothon1_rokon_previous?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon1_jonosoktis'"
@@ -1652,7 +1653,8 @@
                                 </td>
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="rokon_present" :value="formatBangla(songothon1?.rokon_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="rokon_present" :value="formatBangla(songothon1?.rokon_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
+                                        <td>{{formatBangla(previous_present?.songothon1_rokon_present?? '')}}</td>
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon1_jonosoktis'"
@@ -3932,6 +3934,8 @@
                 rastrio4:{},
                 montobbo:{},
 
+                previous_present: {},
+
                 income_category_wise: {},
                 total_income: null,
 
@@ -4090,6 +4094,8 @@
                     this.rastrio3 = res.data.rastrio3,
                     this.rastrio4 = res.data.rastrio4,
                     this.montobbo = res.data.montobbo,
+
+                    this.previous_present = res.data.previous_present,
 
                     this.income_category_wise = res.data.income_category_wise,
                     this.total_income = res.data.total_income,

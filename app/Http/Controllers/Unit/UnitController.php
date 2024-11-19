@@ -120,6 +120,91 @@ class UnitController extends Controller
         $montobbo = Montobbo::where('report_info_id', $report_info_id)->get()->first();
         // ---------------------  reports all data to show  ---------------------------
 
+        // ---------------------  previous and present calculation  ---------------------------
+        $previous_month = $month->clone()->subMonth()->endOfMonth();
+        $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $unit_id)
+            ->where('org_type','unit')
+            ->where('report_approved_status','approved')
+            ->whereDate('month_year', '<=' ,$previous_month)
+            ->pluck('id');
+
+        $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $unit_id)
+        ->where('org_type','unit')
+        ->where('report_approved_status','approved')
+        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
+        ->pluck('id');
+
+        /** rokon */
+        $rokon_previous = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        $rokon_present = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        /** worker */
+        $worker_previous = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+
+        $worker_present = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+
+        /** associate_member */
+        $associate_member_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'associate_member_briddhi',
+        );
+
+        $associate_member_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'associate_member_briddhi',
+        );
+
+        /** vinno_dormalombi_worker */
+        $vinno_dormalombi_worker_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'vinno_dormalombi_worker_briddhi',
+        );
+
+        $vinno_dormalombi_worker_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'vinno_dormalombi_worker_briddhi',
+        );
+
+        /** vinno_dormalombi_associate_member */
+        $vinno_dormalombi_associate_member_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'vinno_dormalombi_associate_member_briddhi',
+        );
+
+        $vinno_dormalombi_associate_member_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'vinno_dormalombi_associate_member_briddhi',
+        );
+
+        // ---------------------  previous and present calculation  ---------------------------
+
 
         // -------------------------- bm income report ------------------------------------
         $query = BmPaid::query();
@@ -197,6 +282,24 @@ class UnitController extends Controller
             'shomajsheba2' => $shomajsheba2,
             'rastrio' => $rastrio,
             'montobbo' => $montobbo,
+
+            'previous_present'=>(object)[
+                //rokon
+                'rokon_previous' => $rokon_previous,
+                'rokon_present' => $rokon_present,
+                //worker
+                'worker_previous' => $worker_previous,
+                'worker_present' => $worker_present,
+                //associate_member
+                'associate_member_previous' => $associate_member_previous,
+                'associate_member_present' => $associate_member_present,
+                //vinno_dormalombi_worker
+                'vinno_dormalombi_worker_previous' => $vinno_dormalombi_worker_previous,
+                'vinno_dormalombi_worker_present' => $vinno_dormalombi_worker_present,
+                //vinno_dormalombi_associate_member
+                'vinno_dormalombi_associate_member_previous' => $vinno_dormalombi_associate_member_previous,
+                'vinno_dormalombi_associate_member_present' => $vinno_dormalombi_associate_member_present,
+            ],
 
             'income_category_wise' => $income_category_wise,
             'total_income' => $total_income,
@@ -283,6 +386,91 @@ class UnitController extends Controller
         $montobbo = Montobbo::where('report_info_id', $report_info_id)->get()->first();
         // ---------------------  reports all data to show  ---------------------------
 
+        // ---------------------  previous and present calculation  ---------------------------
+        $previous_month = $month->clone()->subMonth()->endOfMonth();
+        $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $unit_id)
+            ->where('org_type','unit')
+            ->where('report_approved_status','approved')
+            ->whereDate('month_year', '<=' ,$previous_month)
+            ->pluck('id');
+
+        $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $unit_id)
+        ->where('org_type','unit')
+        ->where('report_approved_status','approved')
+        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
+        ->pluck('id');
+
+        /** rokon */
+        $rokon_previous = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        $rokon_present = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        /** worker */
+        $worker_previous = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+
+        $worker_present = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+
+        /** associate_member */
+        $associate_member_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'associate_member_briddhi',
+        );
+
+        $associate_member_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'associate_member_briddhi',
+        );
+
+        /** vinno_dormalombi_worker */
+        $vinno_dormalombi_worker_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'vinno_dormalombi_worker_briddhi',
+        );
+
+        $vinno_dormalombi_worker_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'vinno_dormalombi_worker_briddhi',
+        );
+
+        /** vinno_dormalombi_associate_member */
+        $vinno_dormalombi_associate_member_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'vinno_dormalombi_associate_member_briddhi',
+        );
+
+        $vinno_dormalombi_associate_member_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'vinno_dormalombi_associate_member_briddhi',
+        );
+
+        // ---------------------  previous and present calculation  ---------------------------
+
         // -------------------------- bm income report ------------------------------------
         $query = BmPaid::query();
         $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_id);
@@ -299,7 +487,7 @@ class UnitController extends Controller
                 ->where('unit_id', $unit_id)
                 ->sum('amount');
             $bmCategory = BmCategory::find($item);
-            $income_category_wise[$index]['amount'] = $totalAmount;
+            $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
             $income_category_wise[$index]['category'] = $bmCategory->title;
         }
         // -------------------------- bm income report ------------------------------------
@@ -356,6 +544,24 @@ class UnitController extends Controller
             'shomajsheba2' => $shomajsheba2,
             'rastrio' => $rastrio,
             'montobbo' => $montobbo,
+
+            'previous_present'=>(object)[
+                //rokon
+                'rokon_previous' => $rokon_previous,
+                'rokon_present' => $rokon_present,
+                //worker
+                'worker_previous' => $worker_previous,
+                'worker_present' => $worker_present,
+                //associate_member
+                'associate_member_previous' => $associate_member_previous,
+                'associate_member_present' => $associate_member_present,
+                //vinno_dormalombi_worker
+                'vinno_dormalombi_worker_previous' => $vinno_dormalombi_worker_previous,
+                'vinno_dormalombi_worker_present' => $vinno_dormalombi_worker_present,
+                //vinno_dormalombi_associate_member
+                'vinno_dormalombi_associate_member_previous' => $vinno_dormalombi_associate_member_previous,
+                'vinno_dormalombi_associate_member_present' => $vinno_dormalombi_associate_member_present,
+            ],
 
             'income_category_wise' => $income_category_wise,
             'total_income' => $total_income,
@@ -442,6 +648,91 @@ class UnitController extends Controller
         $montobbo = Montobbo::where('report_info_id', $report_info_id)->latest()->first();
         // ---------------------  reports all data to show  ---------------------------
 
+        // ---------------------  previous and present calculation  ---------------------------
+        $previous_month = $month->clone()->subMonth()->endOfMonth();
+        $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $unit_id)
+            ->where('org_type','unit')
+            ->where('report_approved_status','approved')
+            ->whereDate('month_year', '<=' ,$previous_month)
+            ->pluck('id');
+
+        $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $unit_id)
+        ->where('org_type','unit')
+        ->where('report_approved_status','approved')
+        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
+        ->pluck('id');
+
+        /** rokon */
+        $rokon_previous = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        $rokon_present = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'rokon_briddhi',
+            'rokon_gatti'
+        );
+
+        /** worker */
+        $worker_previous = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_previous,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+
+        $worker_present = calculate_previous_present(
+            Songothon1Jonosokti::class,
+            $total_approved_report_info_ids_present,
+            'worker_briddhi',
+            'worker_gatti'
+        );
+
+        /** associate_member */
+        $associate_member_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'associate_member_briddhi',
+        );
+
+        $associate_member_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'associate_member_briddhi',
+        );
+
+        /** vinno_dormalombi_worker */
+        $vinno_dormalombi_worker_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'vinno_dormalombi_worker_briddhi',
+        );
+
+        $vinno_dormalombi_worker_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'vinno_dormalombi_worker_briddhi',
+        );
+
+        /** vinno_dormalombi_associate_member */
+        $vinno_dormalombi_associate_member_previous = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_previous,
+            'vinno_dormalombi_associate_member_briddhi',
+        );
+
+        $vinno_dormalombi_associate_member_present = calculate_increase(
+            Songothon2AssociateMember::class,
+            $total_approved_report_info_ids_present,
+            'vinno_dormalombi_associate_member_briddhi',
+        );
+
+        // ---------------------  previous and present calculation  ---------------------------
+
         // -------------------------- bm income report ------------------------------------
         $query = BmPaid::query();
         $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_id);
@@ -458,7 +749,7 @@ class UnitController extends Controller
                 ->where('unit_id', $unit_id)
                 ->sum('amount');
             $bmCategory = BmCategory::find($item);
-            $income_category_wise[$index]['amount'] = $totalAmount;
+            $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
             $income_category_wise[$index]['category'] = $bmCategory->title;
         }
         // -------------------------- bm income report ------------------------------------
@@ -513,6 +804,24 @@ class UnitController extends Controller
             'shomajsheba2' => $shomajsheba2,
             'rastrio' => $rastrio,
             'montobbo' => $montobbo,
+
+            'previous_present'=>(object)[
+                //rokon
+                'rokon_previous' => $rokon_previous,
+                'rokon_present' => $rokon_present,
+                //worker
+                'worker_previous' => $worker_previous,
+                'worker_present' => $worker_present,
+                //associate_member
+                'associate_member_previous' => $associate_member_previous,
+                'associate_member_present' => $associate_member_present,
+                //vinno_dormalombi_worker
+                'vinno_dormalombi_worker_previous' => $vinno_dormalombi_worker_previous,
+                'vinno_dormalombi_worker_present' => $vinno_dormalombi_worker_present,
+                //vinno_dormalombi_associate_member
+                'vinno_dormalombi_associate_member_previous' => $vinno_dormalombi_associate_member_previous,
+                'vinno_dormalombi_associate_member_present' => $vinno_dormalombi_associate_member_present,
+            ],
 
             'income_category_wise' => $income_category_wise,
             'total_income' => $total_income,

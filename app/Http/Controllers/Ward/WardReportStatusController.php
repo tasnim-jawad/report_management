@@ -234,7 +234,7 @@ class WardReportStatusController extends Controller
                 ->where('unit_id', $unit_id)
                 ->sum('amount');
             $bmCategory = BmCategory::find($item);
-            $income_category_wise[$index]['amount'] = $totalAmount;
+            $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
             $income_category_wise[$index]['category'] = $bmCategory->title;
         }
         // -------------------------- bm income report ------------------------------------

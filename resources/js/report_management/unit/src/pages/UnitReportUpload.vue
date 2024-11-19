@@ -582,16 +582,16 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সদস্য (রুকন)</td>
-                                <td><input name="rokon_previous" :value="formatBangla(songothon1?.rokon_previous?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_present" :value="formatBangla(songothon1?.rokon_present?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
+                                <td>{{formatBangla(previous_present?.rokon_previous?? '')}}</td>
+                                <td>{{formatBangla(previous_present?.rokon_present?? '')}}</td>
                                 <td><input name="rokon_briddhi" :value="formatBangla(songothon1?.rokon_briddhi?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
                                 <td><input name="rokon_gatti" :value="formatBangla(songothon1?.rokon_gatti?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
                                 <td><input name="rokon_target" :value="formatBangla(songothon1?.rokon_target?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কর্মী</td>
-                                <td><input name="worker_previous" :value="formatBangla(songothon1?.worker_previous?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_present" :value="formatBangla(songothon1?.worker_present?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
+                                <td>{{formatBangla(previous_present?.worker_previous?? '')}}</td>
+                                <td>{{formatBangla(previous_present?.worker_present?? '')}}</td>
                                 <td><input name="worker_briddhi" :value="formatBangla(songothon1?.worker_briddhi?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
                                 <td><input name="worker_gatti" :value="formatBangla(songothon1?.worker_gatti?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
                                 <td><input name="worker_target" :value="formatBangla(songothon1?.worker_target?? '')" @change="data_upload('songothon1-jonosokti')" type="text" class="bg-input w-100 text-center"></td>
@@ -614,23 +614,23 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সহযোগী সদস্য*</td>
-                                <td><input name="associate_member_previous" :value="formatBangla(songothon2?.associate_member_previous?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"></td>
-                                <td><input name="associate_member_present" :value="formatBangla(songothon2?.associate_member_present?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"></td>
+                                <td>{{formatBangla(previous_present?.associate_member_previous?? '')}}</td>
+                                <td>{{formatBangla(previous_present?.associate_member_present?? '')}}</td>
                                 <td><input name="associate_member_briddhi" :value="formatBangla(songothon2?.associate_member_briddhi?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"></td>
                                 <td><input name="associate_member_target" :value="formatBangla(songothon2?.associate_member_target?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">ভিন্নধর্মাবলম্বী কর্মী/সহযোগী সদস্য</td>
                                 <td>
-                                    <div class="d-flex">
-                                        <input name="vinno_dormalombi_worker_previous" :value="formatBangla(songothon2?.vinno_dormalombi_worker_previous?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(songothon2?.vinno_dormalombi_associate_member_previous?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center">
+                                    <div class="d-flex justify-content-center">
+                                        {{formatBangla(previous_present?.vinno_dormalombi_worker_previous?? '')}}/
+                                        {{formatBangla(previous_present?.vinno_dormalombi_associate_member_previous?? '')}}
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="d-flex">
-                                        <input name="vinno_dormalombi_worker_present" :value="formatBangla(songothon2?.vinno_dormalombi_worker_present?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center"> /
-                                        <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(songothon2?.vinno_dormalombi_associate_member_present?? '')" @change="data_upload('songothon2-associate-member')" type="text" class="bg-input w-100 text-center">
+                                    <div class="d-flex justify-content-center">
+                                        {{formatBangla(previous_present?.vinno_dormalombi_worker_present?? '')}}/
+                                        {{formatBangla(previous_present?.vinno_dormalombi_associate_member_present?? '')}}
                                     </div>
                                 </td>
                                 <td>
@@ -952,6 +952,8 @@
                 rastrio: {},
                 montobbo: {},
 
+                previous_present: {},
+
                 income_category_wise: {},
                 total_income: null,
 
@@ -1037,6 +1039,8 @@
                     this.shomajsheba2 = res.data.shomajsheba2,
                     this.rastrio = res.data.rastrio,
                     this.montobbo = res.data.montobbo,
+
+                    this.previous_present = res.data.previous_present,
 
                     this.income_category_wise = res.data.income_category_wise,
                     this.total_income = res.data.total_income,

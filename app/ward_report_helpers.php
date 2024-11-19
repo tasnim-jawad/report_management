@@ -194,4 +194,31 @@ function approved_unit_ids($ward_id, $month)
 }
 
 
+function calculate_songothon3_previous_present($model, $total_approved_report_info_ids, $department_name,)
+{
+    // Fetch data based on the provided model and report_info_ids
+    $data = $model::whereIn('report_info_id', $total_approved_report_info_ids)->get();
+
+    // rokon
+    $rokon_increase = $data->sum($department_name.'_rokon_increase');
+    $rokon_gatti = $data->sum($department_name.'_rokon_gatti');
+    // kormi
+    $kormi_increase = $data->sum($department_name.'_kormi_increase');
+    $kormi_gatti = $data->sum($department_name.'_kormi_gatti');
+    // associate_member
+    $associate_member_increase = $data->sum($department_name.'_associate_member_increase');
+    $associate_member_gatti = $data->sum($department_name.'_associate_member_gatti');
+
+    // Calculate the total
+    $total_rokon = $rokon_increase - $rokon_gatti;
+    $total_kormi = $kormi_increase - $kormi_gatti;
+    $total_associate_member = $associate_member_increase - $associate_member_gatti;
+
+    return (object)[
+        'total_rokon'=> $total_rokon,
+        'total_kormi'=> $total_kormi,
+        'total_associate_member'=> $total_associate_member,
+    ];
+}
+
 

@@ -130,14 +130,14 @@ export default {
     data: ()=>({
         // month: null,
         rokon:[
-            {
-                label:'বিগত মাসের সংখ্যা',
-                name:'rokon_previous',
-            },
-            {
-                label:'বর্তমান সংখ্যা',
-                name:'rokon_present',
-            },
+            // {
+            //     label:'বিগত মাসের সংখ্যা',
+            //     name:'rokon_previous',
+            // },
+            // {
+            //     label:'বর্তমান সংখ্যা',
+            //     name:'rokon_present',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'rokon_briddhi',
@@ -152,14 +152,14 @@ export default {
             },
         ],
         kormi:[
-            {
-                label:'বিগত মাসের সংখ্যা',
-                name:'worker_previous',
-            },
-            {
-                label:'বর্তমান সংখ্যা',
-                name:'worker_present',
-            },
+            // {
+            //     label:'বিগত মাসের সংখ্যা',
+            //     name:'worker_previous',
+            // },
+            // {
+            //     label:'বর্তমান সংখ্যা',
+            //     name:'worker_present',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'worker_briddhi',
@@ -176,14 +176,14 @@ export default {
 
         ],
         shohojogi:[
-            {
-                label:'বিগত মাসের সংখ্যা',
-                name:'associate_member_previous',
-            },
-            {
-                label:'বর্তমান সংখ্যা',
-                name:'associate_member_present',
-            },
+            // {
+            //     label:'বিগত মাসের সংখ্যা',
+            //     name:'associate_member_previous',
+            // },
+            // {
+            //     label:'বর্তমান সংখ্যা',
+            //     name:'associate_member_present',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'associate_member_briddhi',
@@ -194,14 +194,14 @@ export default {
             },
         ],
         vinno_dormalombi_kormi:[
-            {
-                label:'বিগত মাসের সংখ্যা',
-                name:'vinno_dormalombi_worker_previous',
-            },
-            {
-                label:'বর্তমান সংখ্যা',
-                name:'vinno_dormalombi_worker_present',
-            },
+            // {
+            //     label:'বিগত মাসের সংখ্যা',
+            //     name:'vinno_dormalombi_worker_previous',
+            // },
+            // {
+            //     label:'বর্তমান সংখ্যা',
+            //     name:'vinno_dormalombi_worker_present',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'vinno_dormalombi_worker_briddhi',
@@ -212,14 +212,14 @@ export default {
             },
         ],
         vinno_dormalombi_shohojogi:[
-            {
-                label:'বিগত মাসের সংখ্যা',
-                name:'vinno_dormalombi_associate_member_previous',
-            },
-            {
-                label:'বর্তমান সংখ্যা',
-                name:'vinno_dormalombi_associate_member_present',
-            },
+            // {
+            //     label:'বিগত মাসের সংখ্যা',
+            //     name:'vinno_dormalombi_associate_member_previous',
+            // },
+            // {
+            //     label:'বর্তমান সংখ্যা',
+            //     name:'vinno_dormalombi_associate_member_present',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'vinno_dormalombi_associate_member_briddhi',

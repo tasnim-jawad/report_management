@@ -776,8 +776,8 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সর্বমোট সদস্য (রুকন)</td>
-                                <td>{{bangla($songothon1->rokon_previous?? "")}}</td>
-                                <td>{{bangla($songothon1->rokon_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon1_rokon_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon1_rokon_present?? "")}}</td>
                                 <td>{{bangla($songothon1->rokon_briddhi?? "")}}</td>
                                 <td>{{bangla($songothon1->rokon_gatti?? "")}}</td>
                                 <td>{{bangla($songothon1->rokon_target?? "")}}</td>
@@ -787,8 +787,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start px-2">সর্বমোট কর্মী</td>
-                                <td>{{bangla($songothon1->worker_previous?? "")}}</td>
-                                <td>{{bangla($songothon1->worker_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon1_worker_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon1_worker_present?? "")}}</td>
                                 <td>{{bangla($songothon1->worker_briddhi?? "")}}</td>
                                 <td>{{bangla($songothon1->worker_gatti?? "")}}</td>
                                 <td>{{bangla($songothon1->worker_target?? "")}}</td>
@@ -815,8 +815,8 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">মোট সহযোগী সদস্য (পুরুষ)</td>
-                                <td>{{bangla($songothon2->associate_member_man_previous?? "")}}</td>
-                                <td>{{bangla($songothon2->associate_member_man_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon2_associate_member_man_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon2_associate_member_man_present?? "")}}</td>
                                 <td>{{bangla($songothon2->associate_member_man_briddhi?? "")}}</td>
                                 <td>{{bangla($songothon2->associate_member_man_target?? "")}}</td>
                                 <td>
@@ -825,8 +825,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start px-2">মোট সহযোগী সদস্য (মহিলা)</td>
-                                <td>{{bangla($songothon2->associate_member_woman_previous?? "")}}</td>
-                                <td>{{bangla($songothon2->associate_member_woman_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon2_associate_member_woman_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon2_associate_member_woman_present?? "")}}</td>
                                 <td>{{bangla($songothon2->associate_member_woman_briddhi?? "")}}</td>
                                 <td>{{bangla($songothon2->associate_member_woman_target?? "")}}</td>
                                 <td>
@@ -836,10 +836,10 @@
                             <tr>
                                 <td class="text-start px-2">সর্বমোট সহযোগী সদস্য সংখ্যা**</td>
                                 <td>
-                                    {{ bangla(($songothon2->associate_member_man_previous ?? 0) + ($songothon2->associate_member_woman_previous ?? 0) ?: '') }}
+                                    {{ bangla(($previous_present->songothon2_associate_member_man_previous ?? 0) + ($previous_present->songothon2_associate_member_woman_previous ?? 0) ?: '') }}
                                 </td>
                                 <td>
-                                    {{ bangla(($songothon2->associate_member_man_present ?? 0) + ($songothon2->associate_member_woman_present ?? 0) ?: '') }}
+                                    {{ bangla(($previous_present->songothon2_associate_member_man_present ?? 0) + ($previous_present->songothon2_associate_member_woman_present ?? 0) ?: '') }}
                                 </td>
                                 <td>
                                     {{ bangla(($songothon2->associate_member_man_briddhi ?? 0) + ($songothon2->associate_member_woman_briddhi ?? 0) ?: '') }}
@@ -879,27 +879,30 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{-- @php
+                                dd($previous_present->songothon3_women_previous);
+                            @endphp --}}
                             <tr>
                                 <td rowspan="3" class="text-center px-2">মহিলা</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>{{bangla($songothon3->women_rokon_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->women_rokon_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_women_previous->total_rokon?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_women_present->total_rokon?? "")}}</td>
                                 <td>{{bangla($songothon3->women_rokon_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->women_rokon_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->women_rokon_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>{{bangla($songothon3->women_kormi_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->women_kormi_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_women_previous->total_kormi?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_women_present->total_kormi?? "")}}</td>
                                 <td>{{bangla($songothon3->women_kormi_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->women_kormi_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->women_kormi_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>{{bangla($songothon3->women_associate_member_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->women_associate_member_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_women_previous->total_associate_member?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_women_present->total_associate_member?? "")}}</td>
                                 <td>{{bangla($songothon3->women_associate_member_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->women_associate_member_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->women_associate_member_target?? "")}}</td>
@@ -908,24 +911,24 @@
                             <tr>
                                 <td rowspan="3" class="text-center px-2">শ্রম*</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>{{bangla($songothon3->sromojibi_rokon_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->sromojibi_rokon_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_sromojibi_previous->total_rokon?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_sromojibi_present->total_rokon?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_rokon_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_rokon_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_rokon_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>{{bangla($songothon3->sromojibi_kormi_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->sromojibi_kormi_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_sromojibi_previous->total_kormi?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_sromojibi_present->total_kormi?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_kormi_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_kormi_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_kormi_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>{{bangla($songothon3->sromojibi_associate_member_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->sromojibi_associate_member_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_sromojibi_previous->total_associate_member?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_sromojibi_present->total_associate_member?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_associate_member_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_associate_member_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->sromojibi_associate_member_target?? "")}}</td>
@@ -934,24 +937,24 @@
                             <tr>
                                 <td rowspan="3" class="text-center px-2">উলামা</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>{{bangla($songothon3->ulama_rokon_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->ulama_rokon_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_ulama_previous->total_rokon?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_ulama_present->total_rokon?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_rokon_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_rokon_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_rokon_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>{{bangla($songothon3->ulama_kormi_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->ulama_kormi_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_ulama_previous->total_kormi?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_ulama_present->total_kormi?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_kormi_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_kormi_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_kormi_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>{{bangla($songothon3->ulama_associate_member_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->ulama_associate_member_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_ulama_previous->total_associate_member?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_ulama_present->total_associate_member?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_associate_member_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_associate_member_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->ulama_associate_member_target?? "")}}</td>
@@ -960,24 +963,24 @@
                             <tr>
                                 <td rowspan="3" class="text-center px-2">পেশাজীবী</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>{{bangla($songothon3->pesha_jibi_rokon_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->pesha_jibi_rokon_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_pesha_jibi_previous->total_rokon?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_pesha_jibi_present->total_rokon?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_rokon_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_rokon_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_rokon_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>{{bangla($songothon3->pesha_jibi_kormi_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->pesha_jibi_kormi_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_pesha_jibi_previous->total_kormi?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_pesha_jibi_present->total_kormi?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_kormi_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_kormi_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_kormi_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>{{bangla($songothon3->pesha_jibi_associate_member_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->pesha_jibi_associate_member_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_pesha_jibi_previous->total_associate_member?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_pesha_jibi_present->total_associate_member?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_associate_member_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_associate_member_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->pesha_jibi_associate_member_target?? "")}}</td>
@@ -986,24 +989,24 @@
                             <tr>
                                 <td rowspan="3" class="text-center px-2">যুব</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>{{bangla($songothon3->jubo_rokon_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->jubo_rokon_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_jubo_previous->total_rokon?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_jubo_present->total_rokon?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_rokon_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_rokon_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_rokon_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>{{bangla($songothon3->jubo_kormi_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->jubo_kormi_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_jubo_previous->total_kormi?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_jubo_present->total_kormi?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_kormi_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_kormi_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_kormi_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>{{bangla($songothon3->jubo_associate_member_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->jubo_associate_member_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_jubo_previous->total_associate_member?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_jubo_present->total_associate_member?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_associate_member_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_associate_member_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->jubo_associate_member_target?? "")}}</td>
@@ -1012,16 +1015,16 @@
                             <tr>
                                 <td rowspan="2" class="text-center px-2">ভিন্নধর্মাবলম্বী</td>
                                 <td class="text-start">কর্মী</td>
-                                <td>{{bangla($songothon3->vinno_dormalombi_kormi_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->vinno_dormalombi_kormi_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_vinno_dormalombi_previous->total_kormi?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_vinno_dormalombi_present->total_kormi?? "")}}</td>
                                 <td>{{bangla($songothon3->vinno_dormalombi_kormi_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->vinno_dormalombi_kormi_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->vinno_dormalombi_kormi_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>{{bangla($songothon3->vinno_dormalombi_associate_member_previous?? "")}}</td>
-                                <td>{{bangla($songothon3->vinno_dormalombi_associate_member_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_vinno_dormalombi_previous->total_associate_member?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon3_vinno_dormalombi_present->total_associate_member?? "")}}</td>
                                 <td>{{bangla($songothon3->vinno_dormalombi_associate_member_increase?? "")}}</td>
                                 <td>{{bangla($songothon3->vinno_dormalombi_associate_member_gatti?? "")}}</td>
                                 <td>{{bangla($songothon3->vinno_dormalombi_associate_member_target?? "")}}</td>
@@ -1049,8 +1052,8 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (পুরুষ)</td>
-                                <td>{{bangla($songothon4->general_unit_men_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_general_unit_men_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_general_unit_men_present?? "")}}</td>
                                 <td>{{bangla($songothon4->general_unit_men_increase?? "")}}</td>
                                 <td>{{bangla($songothon4->general_unit_men_gatti?? "")}}</td>
                                 <td>{{bangla($songothon4->general_unit_men_target?? "")}}</td>
@@ -1060,8 +1063,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (মহিলা)</td>
-                                <td>{{bangla($songothon4->general_unit_women_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_general_unit_women_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_general_unit_women_present?? "")}}</td>
                                 <td>{{bangla($songothon4->general_unit_women_increase?? "")}}</td>
                                 <td>{{bangla($songothon4->general_unit_women_gatti?? "")}}</td>
                                 <td>{{bangla($songothon4->general_unit_women_target?? "")}}</td>
@@ -1071,8 +1074,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start">উলামা ইউনিট</td>
-                                <td>{{bangla($songothon4->ulama_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->ulama_unit_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_ulama_unit_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_ulama_unit_present?? "")}}</td>
                                 <td>{{bangla($songothon4->ulama_unit_increase?? "")}}</td>
                                 <td>{{bangla($songothon4->ulama_unit_gatti?? "")}}</td>
                                 <td>{{bangla($songothon4->ulama_unit_target?? "")}}</td>
@@ -1082,8 +1085,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start">পেশাজীবী ইউনিট</td>
-                                <td>{{bangla($songothon4->peshajibi_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->peshajibi_unit_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_peshajibi_unit_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_peshajibi_unit_present?? "")}}</td>
                                 <td>{{bangla($songothon4->peshajibi_unit_increase?? "")}}</td>
                                 <td>{{bangla($songothon4->peshajibi_unit_gatti?? "")}}</td>
                                 <td>{{bangla($songothon4->peshajibi_unit_target?? "")}}</td>
@@ -1093,8 +1096,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start">শ্রমিক কল্যাণ ইউনিট</td>
-                                <td>{{bangla($songothon4->sromik_kollyan_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->sromik_kollyan_unit_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_sromik_kollyan_unit_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_sromik_kollyan_unit_present?? "")}}</td>
                                 <td>{{bangla($songothon4->sromik_kollyan_unit_increase?? "")}}</td>
                                 <td>{{bangla($songothon4->sromik_kollyan_unit_gatti?? "")}}</td>
                                 <td>{{bangla($songothon4->sromik_kollyan_unit_target?? "")}}</td>
@@ -1104,8 +1107,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start">যুব ইউনিট</td>
-                                <td>{{bangla($songothon4->jubo_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->jubo_unit_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_jubo_unit_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_jubo_unit_present?? "")}}</td>
                                 <td>{{bangla($songothon4->jubo_unit_increase?? "")}}</td>
                                 <td>{{bangla($songothon4->jubo_unit_gatti?? "")}}</td>
                                 <td>{{bangla($songothon4->jubo_unit_target?? "")}}</td>
@@ -1115,8 +1118,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start">মিডিয়া ইউনিট</td>
-                                <td>{{bangla($songothon4->media_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->media_unit_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_media_unit_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon4_media_unit_present?? "")}}</td>
                                 <td>{{bangla($songothon4->media_unit_increase?? "")}}</td>
                                 <td>{{bangla($songothon4->media_unit_gatti?? "")}}</td>
                                 <td>{{bangla($songothon4->media_unit_target?? "")}}</td>
@@ -1129,13 +1132,13 @@
                                 <td>
                                     {{
                                         bangla(
-                                            ($songothon4->general_unit_men_previous ?? 0) +
-                                            ($songothon4->general_unit_women_previous ?? 0) +
-                                            ($songothon4->ulama_unit_previous ?? 0) +
-                                            ($songothon4->peshajibi_unit_previous ?? 0) +
-                                            ($songothon4->sromik_kollyan_unit_previous ?? 0) +
-                                            ($songothon4->jubo_unit_previous ?? 0) +
-                                            ($songothon4->media_unit_previous ?? 0)
+                                            ($previous_present->songothon4_general_unit_men_previous ?? 0) +
+                                            ($previous_present->songothon4_general_unit_women_previous ?? 0) +
+                                            ($previous_present->songothon4_ulama_unit_previous ?? 0) +
+                                            ($previous_present->songothon4_peshajibi_unit_previous ?? 0) +
+                                            ($previous_present->songothon4_sromik_kollyan_unit_previous ?? 0) +
+                                            ($previous_present->songothon4_jubo_unit_previous ?? 0) +
+                                            ($previous_present->songothon4_media_unit_previous ?? 0)
                                             ?: ''
                                         )
                                     }}
@@ -1143,13 +1146,13 @@
                                 <td>
                                     {{
                                         bangla(
-                                            ($songothon4->general_unit_men_present ?? 0) +
-                                            ($songothon4->general_unit_women_present ?? 0) +
-                                            ($songothon4->ulama_unit_present ?? 0) +
-                                            ($songothon4->peshajibi_unit_present ?? 0) +
-                                            ($songothon4->sromik_kollyan_unit_present ?? 0) +
-                                            ($songothon4->jubo_unit_present ?? 0) +
-                                            ($songothon4->media_unit_present ?? 0)
+                                            ($previous_present->songothon4_general_unit_men_present ?? 0) +
+                                            ($previous_present->songothon4_general_unit_women_present ?? 0) +
+                                            ($previous_present->songothon4_ulama_unit_present ?? 0) +
+                                            ($previous_present->songothon4_peshajibi_unit_present ?? 0) +
+                                            ($previous_present->songothon4_sromik_kollyan_unit_present ?? 0) +
+                                            ($previous_present->songothon4_jubo_unit_present ?? 0) +
+                                            ($previous_present->songothon4_media_unit_present ?? 0)
                                             ?: ''
                                         )
                                     }}
@@ -1245,16 +1248,16 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">মোট দাওয়াতি ইউনিট</td>
-                                <td>{{bangla($songothon5->dawati_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon5->dawati_unit_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon5_dawati_unit_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon5_dawati_unit_present?? "")}}</td>
                                 <td>{{bangla($songothon5->dawati_unit_increase?? "")}}</td>
                                 <td>{{bangla($songothon5->dawati_unit_gatti?? "")}}</td>
                                 <td>{{bangla($songothon5->dawati_unit_target?? "")}}</td>
                             </tr>
                             <tr>
                                 <td class="text-start">মোট পারিবারিক ইউনিট</td>
-                                <td>{{bangla($songothon5->paribarik_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon5->paribarik_unit_present?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon5_paribarik_unit_previous?? "")}}</td>
+                                <td>{{bangla($previous_present->songothon5_paribarik_unit_present?? "")}}</td>
                                 <td>{{bangla($songothon5->paribarik_unit_increase?? "")}}</td>
                                 <td>{{bangla($songothon5->paribarik_unit_gatti?? "")}}</td>
                                 <td>{{bangla($songothon5->paribarik_unit_target?? "")}}</td>
