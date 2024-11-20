@@ -212,20 +212,50 @@ class UnitController extends Controller
         // $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
         // $category_all_id = array_values(array_unique($category));
         $total_income = $filter->sum('amount');
-        $category_all_id = BmCategory::pluck('id');
-
+        $category_all_id = BmCategory::select(['id', 'parent_id'])->get();
+        // dd($category_all_id);
         $income_category_wise = [];
         foreach ($category_all_id as $index => $item) {
+            $category_exist = false;
+            $already_created_category_ids = [];
+
             $testQuery = BmPaid::query();
             $totalAmount = $testQuery->whereYear('month', $month->clone()->year)
                 ->whereMonth('month', $month->clone()->month)
-                ->where('bm_category_id', $item)
+                ->where('bm_category_id', $item->id)
                 ->where('unit_id', $unit_id)
                 ->sum('amount');
-            $bmCategory = BmCategory::find($item);
-            $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
-            $income_category_wise[$index]['category'] = $bmCategory->title;
+            if($item->parent_id != 0){
+                foreach($income_category_wise as $key=>$income_category){
+                    if($income_category['category_id'] == $item->parent_id){
+                        if($income_category_wise[$key]['amount'] == ''){
+                            $sum_sub_cat = $totalAmount == 0 ? "" : $totalAmount;
+                        }else{
+                            $sum_sub_cat = $income_category_wise[$key]['amount'] + $totalAmount;
+                        }
+                        $income_category_wise[$key]['amount'] = $sum_sub_cat;
+                        $category_exist = true;
+                    }
+                }
+                if(!$category_exist){
+                    $bmCategory = BmCategory::find($item->parent_id);
+                    $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+                    $income_category_wise[$index]['category'] = $bmCategory->title;
+                    $income_category_wise[$index]['category_id'] = $bmCategory->id;
+
+                    $already_created_category_ids[] = $item->parent_id;
+                }
+            }
+            if (!in_array($item->id, $already_created_category_ids) && $item->parent_id == 0) {
+                $bmCategory = BmCategory::find($item->id);
+                // dd($bmCategory,$item->id,$item );
+                $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+                $income_category_wise[$index]['category'] = $bmCategory->title;
+                $income_category_wise[$index]['category_id'] = $bmCategory->id;
+            }
+
         }
+        // dd($income_category_wise);
         // -------------------------- bm income report ------------------------------------
 
         // -------------------------- bm expense report ------------------------------------
@@ -248,11 +278,8 @@ class UnitController extends Controller
             $expense_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
             $expense_category_wise[$index]['category'] = $bmCategory->title;
         }
+        // dd($expense_category_wise);
         // -------------------------- bm expense report ------------------------------------
-
-
-
-
 
         return view('unit.unit_report')->with([
             'month' => $month,

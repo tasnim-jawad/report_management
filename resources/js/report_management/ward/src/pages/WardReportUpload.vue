@@ -1654,7 +1654,7 @@
                                 <td >
                                     <div class="parent_popup">
                                         <!-- <input name="rokon_present" :value="formatBangla(songothon1?.rokon_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
-                                        <td>{{formatBangla(previous_present?.songothon1_rokon_present?? '')}}</td>
+                                        {{formatBangla(previous_present?.songothon1_rokon_present?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon1_jonosoktis'"
@@ -1709,7 +1709,8 @@
 
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="worker_previous" :value="formatBangla(songothon1?.worker_previous)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="worker_previous" :value="formatBangla(songothon1?.worker_previous)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
+                                        {{formatBangla(previous_present?.songothon1_worker_previous?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon1_jonosoktis'"
@@ -1721,7 +1722,8 @@
                                 </td>
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="worker_present" :value="formatBangla(songothon1?.worker_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="worker_present" :value="formatBangla(songothon1?.worker_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
+                                        {{formatBangla(previous_present?.songothon1_worker_present?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon1_jonosoktis'"
@@ -1792,10 +1794,12 @@
                             <tr>
                                 <td class="text-start px-2">মোট সহযোগী সদস্য (পুরুষ)</td>
                                 <td >
-                                    <input name="associate_member_man_previous" :value="formatBangla(songothon2?.associate_member_man_previous)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="associate_member_man_previous" :value="formatBangla(songothon2?.associate_member_man_previous)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon2_associate_member_man_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="associate_member_man_present" :value="formatBangla(songothon2?.associate_member_man_present)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="associate_member_man_present" :value="formatBangla(songothon2?.associate_member_man_present)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon2_associate_member_man_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="associate_member_man_briddhi" :value="formatBangla(songothon2?.associate_member_man_briddhi)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" />
@@ -1810,10 +1814,12 @@
                             <tr>
                                 <td class="text-start px-2">মোট সহযোগী সদস্য (মহিলা)</td>
                                 <td >
-                                    <input name="associate_member_woman_previous" :value="formatBangla(songothon2?.associate_member_woman_previous)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="associate_member_woman_previous" :value="formatBangla(songothon2?.associate_member_woman_previous)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon2_associate_member_woman_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="associate_member_woman_present" :value="formatBangla(songothon2?.associate_member_woman_present)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="associate_member_woman_present" :value="formatBangla(songothon2?.associate_member_woman_present)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon2_associate_member_woman_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="associate_member_woman_briddhi" :value="formatBangla(songothon2?.associate_member_woman_briddhi)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" />
@@ -1829,7 +1835,7 @@
                                 <td class="text-start px-2">সর্বমোট সহযোগী সদস্য সংখ্যা**</td>
                                 <td>
                                     <div class="parent_popup">
-                                        {{ formatBangla((songothon2?.associate_member_man_previous ?? 0) + (songothon2?.associate_member_woman_previous ?? 0) || '') }}
+                                        {{ formatBangla((previous_present?.songothon2_associate_member_man_previous ?? 0) + (previous_present?.songothon2_associate_member_woman_previous ?? 0) || '') }}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon2_associate_members'"
@@ -1841,7 +1847,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        {{ formatBangla((songothon2?.associate_member_man_present ?? 0) + (songothon2?.associate_member_woman_present ?? 0) || '') }}
+                                        {{ formatBangla((previous_present?.songothon2_associate_member_man_present ?? 0) + (previous_present?.songothon2_associate_member_woman_present ?? 0) || '') }}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon2_associate_members'"
@@ -1911,10 +1917,12 @@
                                 <td class="text-start">সদস্য (রুকন)</td>
 
                                 <td >
-                                    <input name="women_rokon_previous" :value="formatBangla(songothon3?.women_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="women_rokon_previous" :value="formatBangla(songothon3?.women_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_women_previous?.total_rokon?? '')}}
                                 </td>
                                 <td >
-                                    <input name="women_rokon_present" :value="formatBangla(songothon3?.women_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="women_rokon_present" :value="formatBangla(songothon3?.women_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_women_present?.total_rokon?? '')}}
                                 </td>
                                 <td >
                                     <input name="women_rokon_increase" :value="formatBangla(songothon3?.women_rokon_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -1929,10 +1937,12 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td >
-                                    <input name="women_kormi_previous" :value="formatBangla(songothon3?.women_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="women_kormi_previous" :value="formatBangla(songothon3?.women_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_women_previous?.total_kormi?? '')}}
                                 </td>
                                 <td >
-                                    <input name="women_kormi_present" :value="formatBangla(songothon3?.women_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="women_kormi_present" :value="formatBangla(songothon3?.women_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_women_present?.total_kormi?? '')}}
                                 </td>
                                 <td >
                                     <input name="women_kormi_increase" :value="formatBangla(songothon3?.women_kormi_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -1947,10 +1957,12 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td >
-                                    <input name="women_associate_member_previous" :value="formatBangla(songothon3?.women_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="women_associate_member_previous" :value="formatBangla(songothon3?.women_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_women_previous?.total_associate_member?? '')}}
                                 </td>
                                 <td >
-                                    <input name="women_associate_member_present" :value="formatBangla(songothon3?.women_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="women_associate_member_present" :value="formatBangla(songothon3?.women_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_women_present?.total_associate_member?? '')}}
                                 </td>
                                 <td >
                                     <input name="women_associate_member_increase" :value="formatBangla(songothon3?.women_associate_member_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -1967,13 +1979,16 @@
                                 <td rowspan="3" class="text-center px-2">শ্রম*</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td >
-                                    <input name="sromojibi_rokon_previous" :value="formatBangla(songothon3?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="sromojibi_rokon_previous" :value="formatBangla(songothon3?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_sromojibi_previous?.total_rokon?? '')}}
                                 </td>
                                 <td >
-                                    <input name="sromojibi_rokon_present" :value="formatBangla(songothon3?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="sromojibi_rokon_present" :value="formatBangla(songothon3?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_sromojibi_present?.total_rokon?? '')}}
                                 </td>
                                 <td >
                                     <input name="sromojibi_rokon_increase" :value="formatBangla(songothon3?.sromojibi_rokon_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+
                                 </td>
                                 <td >
                                     <input name="sromojibi_rokon_gatti" :value="formatBangla(songothon3?.sromojibi_rokon_gatti)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -1985,10 +2000,12 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td >
-                                    <input name="sromojibi_kormi_previous" :value="formatBangla(songothon3?.sromojibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="sromojibi_kormi_previous" :value="formatBangla(songothon3?.sromojibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_sromojibi_previous?.total_kormi?? '')}}
                                 </td>
                                 <td >
-                                    <input name="sromojibi_kormi_present" :value="formatBangla(songothon3?.sromojibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="sromojibi_kormi_present" :value="formatBangla(songothon3?.sromojibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_sromojibi_present?.total_kormi?? '')}}
                                 </td>
                                 <td >
                                     <input name="sromojibi_kormi_increase" :value="formatBangla(songothon3?.sromojibi_kormi_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2003,10 +2020,12 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td >
-                                    <input name="sromojibi_associate_member_previous" :value="formatBangla(songothon3?.sromojibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="sromojibi_associate_member_previous" :value="formatBangla(songothon3?.sromojibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_sromojibi_previous?.total_associate_member?? '')}}
                                 </td>
                                 <td >
-                                    <input name="sromojibi_associate_member_present" :value="formatBangla(songothon3?.sromojibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="sromojibi_associate_member_present" :value="formatBangla(songothon3?.sromojibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_sromojibi_present?.total_associate_member?? '')}}
                                 </td>
                                 <td >
                                     <input name="sromojibi_associate_member_increase" :value="formatBangla(songothon3?.sromojibi_associate_member_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2023,10 +2042,12 @@
                                 <td rowspan="3" class="text-center px-2">উলামা</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td >
-                                    <input name="ulama_rokon_previous" :value="formatBangla(songothon3?.ulama_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="ulama_rokon_previous" :value="formatBangla(songothon3?.ulama_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_ulama_previous?.total_rokon?? '')}}
                                 </td>
                                 <td >
-                                    <input name="ulama_rokon_present" :value="formatBangla(songothon3?.ulama_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="ulama_rokon_present" :value="formatBangla(songothon3?.ulama_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_ulama_present?.total_rokon?? '')}}
                                 </td>
                                 <td >
                                     <input name="ulama_rokon_increase" :value="formatBangla(songothon3?.ulama_rokon_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2041,10 +2062,12 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td >
-                                    <input name="ulama_kormi_previous" :value="formatBangla(songothon3?.ulama_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="ulama_kormi_previous" :value="formatBangla(songothon3?.ulama_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_ulama_previous?.total_kormi?? '')}}
                                 </td>
                                 <td >
-                                    <input name="ulama_kormi_present" :value="formatBangla(songothon3?.ulama_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="ulama_kormi_present" :value="formatBangla(songothon3?.ulama_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_ulama_present?.total_kormi?? '')}}
                                 </td>
                                 <td >
                                     <input name="ulama_kormi_increase" :value="formatBangla(songothon3?.ulama_kormi_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2059,10 +2082,12 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td >
-                                    <input name="ulama_associate_member_previous" :value="formatBangla(songothon3?.ulama_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="ulama_associate_member_previous" :value="formatBangla(songothon3?.ulama_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_ulama_previous?.total_associate_member?? '')}}
                                 </td>
                                 <td >
-                                    <input name="ulama_associate_member_present" :value="formatBangla(songothon3?.ulama_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="ulama_associate_member_present" :value="formatBangla(songothon3?.ulama_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_ulama_present?.total_associate_member?? '')}}
                                 </td>
                                 <td >
                                     <input name="ulama_associate_member_increase" :value="formatBangla(songothon3?.ulama_associate_member_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2079,10 +2104,12 @@
                                 <td rowspan="3" class="text-center px-2">পেশাজীবী</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td >
-                                    <input name="pesha_jibi_rokon_previous" :value="formatBangla(songothon3?.pesha_jibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="pesha_jibi_rokon_previous" :value="formatBangla(songothon3?.pesha_jibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_pesha_jibi_previous?.total_rokon?? '')}}
                                 </td>
                                 <td >
-                                    <input name="pesha_jibi_rokon_present" :value="formatBangla(songothon3?.pesha_jibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="pesha_jibi_rokon_present" :value="formatBangla(songothon3?.pesha_jibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_pesha_jibi_present?.total_rokon?? '')}}
                                 </td>
                                 <td >
                                     <input name="pesha_jibi_rokon_increase" :value="formatBangla(songothon3?.pesha_jibi_rokon_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2097,10 +2124,12 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td >
-                                    <input name="pesha_jibi_kormi_previous" :value="formatBangla(songothon3?.pesha_jibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="pesha_jibi_kormi_previous" :value="formatBangla(songothon3?.pesha_jibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_pesha_jibi_previous?.total_kormi?? '')}}
                                 </td>
                                 <td >
-                                    <input name="pesha_jibi_kormi_present" :value="formatBangla(songothon3?.pesha_jibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="pesha_jibi_kormi_present" :value="formatBangla(songothon3?.pesha_jibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_pesha_jibi_present?.total_kormi?? '')}}
                                 </td>
                                 <td >
                                     <input name="pesha_jibi_kormi_increase" :value="formatBangla(songothon3?.pesha_jibi_kormi_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2115,10 +2144,12 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td >
-                                    <input name="pesha_jibi_associate_member_previous" :value="formatBangla(songothon3?.pesha_jibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="pesha_jibi_associate_member_previous" :value="formatBangla(songothon3?.pesha_jibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_pesha_jibi_previous?.total_associate_member?? '')}}
                                 </td>
                                 <td >
-                                    <input name="pesha_jibi_associate_member_present" :value="formatBangla(songothon3?.pesha_jibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="pesha_jibi_associate_member_present" :value="formatBangla(songothon3?.pesha_jibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_pesha_jibi_present?.total_associate_member?? '')}}
                                 </td>
                                 <td >
                                     <input name="pesha_jibi_associate_member_increase" :value="formatBangla(songothon3?.pesha_jibi_associate_member_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2135,10 +2166,12 @@
                                 <td rowspan="3" class="text-center px-2">যুব</td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td >
-                                    <input name="jubo_rokon_previous" :value="formatBangla(songothon3?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="jubo_rokon_previous" :value="formatBangla(songothon3?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_jubo_previous?.total_rokon?? '')}}
                                 </td>
                                 <td >
-                                    <input name="jubo_rokon_present" :value="formatBangla(songothon3?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="jubo_rokon_present" :value="formatBangla(songothon3?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_jubo_present?.total_rokon?? '')}}
                                 </td>
                                 <td >
                                     <input name="jubo_rokon_increase" :value="formatBangla(songothon3?.jubo_rokon_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2153,10 +2186,12 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td >
-                                    <input name="jubo_kormi_previous" :value="formatBangla(songothon3?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="jubo_kormi_previous" :value="formatBangla(songothon3?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_jubo_previous?.total_kormi?? '')}}
                                 </td>
                                 <td >
-                                    <input name="jubo_kormi_present" :value="formatBangla(songothon3?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="jubo_kormi_present" :value="formatBangla(songothon3?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_jubo_present?.total_kormi?? '')}}
                                 </td>
                                 <td >
                                     <input name="jubo_kormi_increase" :value="formatBangla(songothon3?.jubo_kormi_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2171,10 +2206,12 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td >
-                                    <input name="jubo_associate_member_previous" :value="formatBangla(songothon3?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="jubo_associate_member_previous" :value="formatBangla(songothon3?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_jubo_previous?.total_associate_member?? '')}}
                                 </td>
                                 <td >
-                                    <input name="jubo_associate_member_present" :value="formatBangla(songothon3?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="jubo_associate_member_present" :value="formatBangla(songothon3?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon3_jubo_present?.total_associate_member?? '')}}
                                 </td>
                                 <td >
                                     <input name="jubo_associate_member_increase" :value="formatBangla(songothon3?.jubo_associate_member_increase)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
@@ -2192,7 +2229,8 @@
                                 <td class="text-start">কর্মী</td>
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="vinno_dormalombi_kormi_previous" :value="formatBangla(songothon3?.vinno_dormalombi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="vinno_dormalombi_kormi_previous" :value="formatBangla(songothon3?.vinno_dormalombi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                        {{formatBangla(previous_present?.songothon3_vinno_dormalombi_previous?.total_kormi?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon2_associate_members'"
@@ -2204,7 +2242,8 @@
                                 </td>
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="vinno_dormalombi_kormi_present" :value="formatBangla(songothon3?.vinno_dormalombi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="vinno_dormalombi_kormi_present" :value="formatBangla(songothon3?.vinno_dormalombi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                        {{formatBangla(previous_present?.songothon3_vinno_dormalombi_present?.total_kormi?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon2_associate_members'"
@@ -2246,7 +2285,8 @@
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(songothon3?.vinno_dormalombi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(songothon3?.vinno_dormalombi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                        {{formatBangla(previous_present?.songothon3_vinno_dormalombi_previous?.total_associate_member?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon2_associate_members'"
@@ -2258,7 +2298,8 @@
                                 </td>
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(songothon3?.vinno_dormalombi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(songothon3?.vinno_dormalombi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                        {{formatBangla(previous_present?.songothon3_vinno_dormalombi_present?.total_associate_member?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon2_associate_members'"
@@ -2329,10 +2370,12 @@
                                 </td> -->
 
                                 <td >
-                                    <input name="general_unit_men_previous" :value="formatBangla(songothon4?.general_unit_men_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="general_unit_men_previous" :value="formatBangla(songothon4?.general_unit_men_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_general_unit_men_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="general_unit_men_present" :value="formatBangla(songothon4?.general_unit_men_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="general_unit_men_present" :value="formatBangla(songothon4?.general_unit_men_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_general_unit_men_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="general_unit_men_increase" :value="formatBangla(songothon4?.general_unit_men_increase)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
@@ -2358,10 +2401,12 @@
                                     {{bangla(implementation_rate($songothon4->general_unit_women_target, $songothon4->general_unit_women_increase))}}
                                 </td> -->
                                 <td >
-                                    <input name="general_unit_women_previous" :value="formatBangla(songothon4?.general_unit_women_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="general_unit_women_previous" :value="formatBangla(songothon4?.general_unit_women_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_general_unit_women_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="general_unit_women_present" :value="formatBangla(songothon4?.general_unit_women_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="general_unit_women_present" :value="formatBangla(songothon4?.general_unit_women_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_general_unit_women_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="general_unit_women_increase" :value="formatBangla(songothon4?.general_unit_women_increase)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
@@ -2387,10 +2432,12 @@
                                     {{bangla(implementation_rate($songothon4->ulama_unit_target, $songothon4->ulama_unit_increase))}}
                                 </td> -->
                                 <td >
-                                    <input name="ulama_unit_previous" :value="formatBangla(songothon4?.ulama_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="ulama_unit_previous" :value="formatBangla(songothon4?.ulama_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_ulama_unit_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="ulama_unit_present" :value="formatBangla(songothon4?.ulama_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="ulama_unit_present" :value="formatBangla(songothon4?.ulama_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_ulama_unit_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="ulama_unit_increase" :value="formatBangla(songothon4?.ulama_unit_increase)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
@@ -2416,10 +2463,12 @@
                                     {{bangla(implementation_rate($songothon4->peshajibi_unit_target, $songothon4->peshajibi_unit_increase))}}
                                 </td> -->
                                 <td >
-                                    <input name="peshajibi_unit_previous" :value="formatBangla(songothon4?.peshajibi_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="peshajibi_unit_previous" :value="formatBangla(songothon4?.peshajibi_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_peshajibi_unit_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="peshajibi_unit_present" :value="formatBangla(songothon4?.peshajibi_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="peshajibi_unit_present" :value="formatBangla(songothon4?.peshajibi_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_peshajibi_unit_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="peshajibi_unit_increase" :value="formatBangla(songothon4?.peshajibi_unit_increase)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
@@ -2445,10 +2494,12 @@
                                     {{bangla(implementation_rate($songothon4->sromik_kollyan_unit_target, $songothon4->sromik_kollyan_unit_increase))}}
                                 </td> -->
                                 <td >
-                                    <input name="sromik_kollyan_unit_previous" :value="formatBangla(songothon4?.sromik_kollyan_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="sromik_kollyan_unit_previous" :value="formatBangla(songothon4?.sromik_kollyan_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_sromik_kollyan_unit_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="sromik_kollyan_unit_present" :value="formatBangla(songothon4?.sromik_kollyan_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="sromik_kollyan_unit_present" :value="formatBangla(songothon4?.sromik_kollyan_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_sromik_kollyan_unit_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="sromik_kollyan_unit_increase" :value="formatBangla(songothon4?.sromik_kollyan_unit_increase)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
@@ -2474,10 +2525,12 @@
                                     {{bangla(implementation_rate($songothon4->jubo_unit_target, $songothon4->jubo_unit_increase))}}
                                 </td> -->
                                 <td >
-                                    <input name="jubo_unit_previous" :value="formatBangla(songothon4?.jubo_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="jubo_unit_previous" :value="formatBangla(songothon4?.jubo_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_jubo_unit_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="jubo_unit_present" :value="formatBangla(songothon4?.jubo_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="jubo_unit_present" :value="formatBangla(songothon4?.jubo_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_jubo_unit_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="jubo_unit_increase" :value="formatBangla(songothon4?.jubo_unit_increase)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
@@ -2503,10 +2556,12 @@
                                     {{bangla(implementation_rate($songothon4->media_unit_target, $songothon4->media_unit_increase))}}
                                 </td> -->
                                 <td >
-                                    <input name="media_unit_previous" :value="formatBangla(songothon4?.media_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="media_unit_previous" :value="formatBangla(songothon4?.media_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_media_unit_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="media_unit_present" :value="formatBangla(songothon4?.media_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="media_unit_present" :value="formatBangla(songothon4?.media_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon4_media_unit_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="media_unit_increase" :value="formatBangla(songothon4?.media_unit_increase)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" />
@@ -2526,13 +2581,13 @@
                                 <td>
                                     {{
                                         formatBangla(
-                                            (songothon4?.general_unit_men_previous ?? 0) +
-                                            (songothon4?.general_unit_women_previous ?? 0) +
-                                            (songothon4?.ulama_unit_previous ?? 0) +
-                                            (songothon4?.peshajibi_unit_previous ?? 0) +
-                                            (songothon4?.sromik_kollyan_unit_previous ?? 0) +
-                                            (songothon4?.jubo_unit_previous ?? 0) +
-                                            (songothon4?.media_unit_previous ?? 0)
+                                            (previous_present?.songothon4_general_unit_men_previous ?? 0) +
+                                            (previous_present?.songothon4_general_unit_women_previous ?? 0) +
+                                            (previous_present?.songothon4_ulama_unit_previous ?? 0) +
+                                            (previous_present?.songothon4_peshajibi_unit_previous ?? 0) +
+                                            (previous_present?.songothon4_sromik_kollyan_unit_previous ?? 0) +
+                                            (previous_present?.songothon4_jubo_unit_previous ?? 0) +
+                                            (previous_present?.songothon4_media_unit_previous ?? 0)
                                             || ''
                                         )
                                     }}
@@ -2540,13 +2595,13 @@
                                 <td>
                                     {{
                                         formatBangla(
-                                            (songothon4?.general_unit_men_present ?? 0) +
-                                            (songothon4?.general_unit_women_present ?? 0) +
-                                            (songothon4?.ulama_unit_present ?? 0) +
-                                            (songothon4?.peshajibi_unit_present ?? 0) +
-                                            (songothon4?.sromik_kollyan_unit_present ?? 0) +
-                                            (songothon4?.jubo_unit_present ?? 0) +
-                                            (songothon4?.media_unit_present ?? 0)
+                                            (previous_present?.songothon4_general_unit_men_present ?? 0) +
+                                            (previous_present?.songothon4_general_unit_women_present ?? 0) +
+                                            (previous_present?.songothon4_ulama_unit_present ?? 0) +
+                                            (previous_present?.songothon4_peshajibi_unit_present ?? 0) +
+                                            (previous_present?.songothon4_sromik_kollyan_unit_present ?? 0) +
+                                            (previous_present?.songothon4_jubo_unit_present ?? 0) +
+                                            (previous_present?.songothon4_media_unit_present ?? 0)
                                             || ''
                                         )
                                     }}
@@ -2643,10 +2698,12 @@
                             <tr>
                                 <td class="text-start">মোট দাওয়াতি ইউনিট</td>
                                 <td >
-                                    <input name="dawati_unit_previous" :value="formatBangla(songothon5?.dawati_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="dawati_unit_previous" :value="formatBangla(songothon5?.dawati_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon5_dawati_unit_previous?? '')}}
                                 </td>
                                 <td >
-                                    <input name="dawati_unit_present" :value="formatBangla(songothon5?.dawati_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="dawati_unit_present" :value="formatBangla(songothon5?.dawati_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon5_dawati_unit_present?? '')}}
                                 </td>
                                 <td >
                                     <input name="dawati_unit_increase" :value="formatBangla(songothon5?.dawati_unit_increase)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" />
@@ -2661,11 +2718,13 @@
                             <tr>
                                 <td class="text-start">মোট পারিবারিক ইউনিট</td>
                                 <td >
-                                    <input name="paribarik_unit_previous" :value="formatBangla(songothon5?.paribarik_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="paribarik_unit_previous" :value="formatBangla(songothon5?.paribarik_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
+                                    {{formatBangla(previous_present?.songothon5_paribarik_unit_previous?? '')}}
                                 </td>
                                 <td >
                                     <div class="parent_popup">
-                                        <input name="paribarik_unit_present" :value="formatBangla(songothon5?.paribarik_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" />
+                                        <!-- <input name="paribarik_unit_present" :value="formatBangla(songothon5?.paribarik_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
+                                        {{formatBangla(previous_present?.songothon5_paribarik_unit_present?? '')}}
                                         <popup
                                             :ward_id="ward_info.id"
                                             :table_name="'songothon5_dawat_and_paribarik_units'"
@@ -4051,7 +4110,6 @@
                         user_id: user_id
                     }
                 })
-                console.log(res.data);
 
                 if(res.data.status == 'success'){
 
@@ -4106,7 +4164,6 @@
                     this.total_previous = res.data.total_previous,
                     this.total_current_income = res.data.total_current_income,
                     this.in_total = res.data.in_total
-
 
                 }
             },
@@ -4322,8 +4379,6 @@
                 let res = await axios.get('/ward-bm-expense-category/all')
                 if(res.data.status == 'success'){
                         this.bm_expense_categories = res?.data?.data?.data
-                        console.log('this.bm_expense_categories',this.bm_expense_categories);
-
                     }
 
             },
@@ -4365,13 +4420,17 @@
             bm_categoty_amount:function(bm_cat_id){
                 // console.log(bm_cat_id,this.bm_cat_wise);
                 if(this.bm_cat_wise != null){
-                    // console.log("inside",bm_cat_id,this.bm_cat_wise)
-                    const element = this.bm_cat_wise.find(element => element.ward_bm_income_category.id == bm_cat_id);
+                    // console.log("inside",bm_cat_id,this.bm_cat_wise )
+                    const element = this.bm_cat_wise.find(el => {
+                        if(el.ward_bm_income_category && el.ward_bm_income_category.id == bm_cat_id){
+                            return el
+                        }
+                    });
                     // console.log("inside element",element)
                     if (element) {
-                        // console.log('return',element.amount);
-
                         return element.amount;
+                    }else{
+                        // console.log("element not found")
                     }
                 }else{
                     return "";
@@ -4397,10 +4456,15 @@
 
                 if(this.expense_cat_wise != null){
                     // console.log("expanxe inside",this.expense_cat_wise);
-
-                    const element = this.expense_cat_wise.find(element => element.ward_bm_expense_category.id == expense_cat_id);
+                    const element = this.expense_cat_wise.find(element =>{
+                        if(element.ward_bm_expense_category && element.ward_bm_expense_category.id == expense_cat_id){
+                            return element
+                        }
+                    });
                     if (element) {
                         return element.amount;
+                    }else{
+                        // console.log("element not found")
                     }
                 }else{
                     return "";

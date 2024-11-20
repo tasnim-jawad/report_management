@@ -52,7 +52,7 @@ class BmExpenseCategoryController extends Controller
 
     public function parent_category()
     {
-        $datas = BmExpenseCategory::where('parent_id', null)
+        $datas = BmExpenseCategory::where('parent_id', 0)
                                     ->orderBy('id', 'asc')
                                     ->where('status', 1)
                                     ->get();

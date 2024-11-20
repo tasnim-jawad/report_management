@@ -39,7 +39,7 @@ class WardBmIncomeCategoryController extends Controller
     }
     public function parent_category()
     {
-        $datas = WardBmIncomeCategory::where('parent_id', null)
+        $datas = WardBmIncomeCategory::where('parent_id', 0)
                                     ->orderBy('id', 'asc')
                                     ->where('status', 1)
                                     ->get();

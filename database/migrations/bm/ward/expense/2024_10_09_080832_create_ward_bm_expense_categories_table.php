@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('description')->nullable();
-            $table->bigInteger('parent_id')->nullable();
+            $table->bigInteger('parent_id')->default(0);
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

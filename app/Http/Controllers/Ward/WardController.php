@@ -1053,8 +1053,7 @@ class WardController extends Controller
                 ->sum('amount');
             $WardBmIncomeCategory = WardBmIncomeCategory::find($item);
             if(!$WardBmIncomeCategory){
-                dd($WardBmIncomeCategory ,$item);
-
+                // dd($WardBmIncomeCategory ,$item);
             }
             $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
             $income_category_wise[$index]['category'] = $WardBmIncomeCategory->title ?? "";

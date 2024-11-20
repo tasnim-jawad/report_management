@@ -39,7 +39,7 @@ class BmCategoryController extends Controller
     }
     public function parent_category()
     {
-        $datas = BmCategory::where('parent_id', null)
+        $datas = BmCategory::where('parent_id', 0)
                                     ->orderBy('id', 'asc')
                                     ->where('status', 1)
                                     ->get();
