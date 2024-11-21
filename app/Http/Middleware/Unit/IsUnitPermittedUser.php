@@ -17,7 +17,7 @@ class IsUnitPermittedUser
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check() && auth()->user()->roll == 6 ) {
-            // dd(auth()->user()->roll == 6);
+            
             if(auth()->user()->org_unit_responsible[0]->responsibility_id == 1 ){
                 // dd(auth()->user());
                 return $next($request);
