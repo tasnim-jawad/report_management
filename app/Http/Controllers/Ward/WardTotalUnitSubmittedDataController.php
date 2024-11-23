@@ -950,4 +950,25 @@ class WardTotalUnitSubmittedDataController extends Controller
             'total' => $total,
         ], 200);
     }
+    public function count_approved_unit(){
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $ward_id = auth()->user()->org_ward_user->ward_id;
+        $data =  approved_unit_ids($ward_id, request()->month);
+        $total_units = OrgUnit::where('org_ward_id', $ward_id)->count();
+        $approved_units = count($data['approved_units']);
+        return response()->json([
+            'status' => 'success',
+            'total_units' => $total_units,
+            'approved_units' => $approved_units,
+        ], 200);
+    }
 }

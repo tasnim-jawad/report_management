@@ -234,7 +234,8 @@
 
             this.auth_user();
             this.set_month();
-            // console.log(this.user);
+            // console.dir(window);
+            // console.log(window.yamin);
         },
         mounted: function () {
 

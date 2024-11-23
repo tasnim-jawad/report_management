@@ -205,7 +205,7 @@ function calculate_increase($model, $total_approved_report_info_ids,$column_name
 {
     // Fetch data based on the provided model and report_info_ids
     $data = $model::whereIn('report_info_id', $total_approved_report_info_ids)->get();
-    
+
     // Sum the specified increase columns
     $total_increase = $data->sum($column_name_increase);
 

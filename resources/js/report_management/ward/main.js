@@ -1,6 +1,7 @@
 import '../../bootstrap.js';
 import '../../plugins/axios_setup.js';
 import '../../plugins/sweet_alert.js';
+import '../../plugins/moment_setup.js';
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia'

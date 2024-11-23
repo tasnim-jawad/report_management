@@ -7,6 +7,22 @@
             <h3 > {{ report_status_message }} </h3>
         </div>
     </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            রিপোর্ট জমা দেওয়ার জন্য ইউনিটের জন্য অনুমোদিত মাস
+        </div>
+        <div class="card-body">
+            <div class="d-flex flex-wrap justify-content-start align-items-center gap-2">
+                <p v-if="permitted_month_text != ''" >পারমিটেড মাসঃ {{ permitted_month_text }}</p>
+                <p v-else  class="text-danger">কোনো মাসেই রিপোর্ট জমা দেয়ার কোনো অনুমতি নেই</p>
+                <a href="" @click.prevent="remove_permission" class="btn btn-sm btn-danger " v-if="permitted_month_text != ''" >remove permission</a>
+            </div>
+            <div class="d-flex flex-wrap justify-content-start align-items-center mt-3 gap-2">
+                <input type="month" v-model="permission_month" ref="month" name="month">
+                <a href="" @click.prevent="set_permission" class="btn btn-sm btn-success ">Set New permission</a>
+            </div>
+        </div>
+    </div>
     <!-- <div class="card mb-3">
         <div class="card-header">Permission to submit Unit report</div>
         <div class="card-body">
@@ -19,8 +35,8 @@
         </div>
     </div> -->
     <div class="card">
-        <div class="card-header">
-            All Units Status
+        <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+            All Units Status <input type="month" v-model="month" ref="month" name="month">
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >
@@ -114,6 +130,7 @@ export default {
     props: ['user_id'],
     data() {
         return {
+            permission_month:null,
             unsubmitted_unit:[],
             pending_unit:[],
             rejected_unit:[],
@@ -121,6 +138,7 @@ export default {
             report_month:[],
             user: [],
             report_status_message:'',
+            permitted_month_text:'',
         }
     },
     created:function(){
@@ -128,9 +146,15 @@ export default {
         this.report_status()
         this.user_info()
         this.ward_report_status()
+        this.unit_report_joma_permitted_month()
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
+    },
+    watch:{
+        month:function(){
+            this.report_status()
+        }
     },
     methods:{
         ...mapActions( data_store,['set_month']),
@@ -174,7 +198,6 @@ export default {
                 this.report_status()
         },
         submit_total_approved_unit_data:async function(){
-            console.log("clicked");
             const is_confirmed = confirm(`Are you sure you want to submit the approved unit data for the month of ${this.month}?`);
             if(is_confirmed){
                 try {
@@ -208,6 +231,37 @@ export default {
                     this.user = responce.data
                 })
         },
+        unit_report_joma_permitted_month:async function() {
+            let response =await axios.post('/ward/unit-report-joma-permitted-month',);
+            if(response.data.status == 'success'){
+                const month_year = response.data.data.month_year
+                let formatted_month_year = window.formatDate(month_year, 'long_month_year');
+                this.permitted_month_text = formatted_month_year
+            }else{
+                this.permitted_month_text = ''
+            }
+        },
+        set_permission:async function(){
+            let formatted_month_year = window.formatDate(this.permission_month, 'long_month_year');
+            const is_confirmed = confirm(`Are you sure you want to Give Permission for month ${formatted_month_year}? `);
+            if(is_confirmed){}
+            let response =await axios.post('/ward/set-unit-report-joma-permission',{
+                        month: this.permission_month,
+                    }
+                );
+                // console.log(response.data.status);
+            if(response.data.status == 'success'){
+                this.unit_report_joma_permitted_month()
+            }
+        },
+        remove_permission:async function(){
+            const is_confirmed = confirm(`Are you sure you want to remove Permission? `);
+            if(is_confirmed){}
+            let response =await axios.post('/ward/remove-unit-report-joma-permission');
+            if(response.data.status == 'success'){
+                this.unit_report_joma_permitted_month()
+            }
+        }
 
 
     }

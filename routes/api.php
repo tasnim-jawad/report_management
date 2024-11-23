@@ -1210,6 +1210,13 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => 'ward'] , function(){
         Route::post('/submitted-units-data-add', [App\Http\Controllers\Ward\WardTotalUnitSubmittedDataController::class,'submitted_units_data_add'])->middleware(WardStatusChack::class);
         Route::get('/get-all-unit-data', [App\Http\Controllers\Ward\WardTotalUnitSubmittedDataController::class,'get_all_unit_data']);
+        Route::get('/count-approved-unit', [App\Http\Controllers\Ward\WardTotalUnitSubmittedDataController::class,'count_approved_unit']);
+    });
+
+    Route::group(['prefix' => 'ward'] , function(){
+        Route::post('/unit-report-joma-permitted-month', [App\Http\Controllers\Ward\PermissionController::class,'unit_report_joma_permitted_month']);
+        Route::post('/set-unit-report-joma-permission', [App\Http\Controllers\Ward\PermissionController::class,'set_unit_report_joma_permission']);
+        Route::post('/remove-unit-report-joma-permission', [App\Http\Controllers\Ward\PermissionController::class,'remove_unit_report_joma_permission']);
     });
 });
 

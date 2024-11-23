@@ -23,7 +23,7 @@
     <script>
         window.modal = bootstrap.Modal;
     </script>
-    
+
     <script src="/js/sweat_alert.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

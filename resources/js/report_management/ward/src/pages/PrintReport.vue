@@ -13,7 +13,7 @@
     </div>
     <div class="card mb-3">
         <div class="card-header">
-            মাসিক ইউনিট রিপোর্ট (জমা দেওয়া ইউনিটের টোটাল )
+            মাসিক ইউনিট রিপোর্ট (এপ্রুভড ইউনিটের টোটাল ) - টোটাল ইউনিট - {{ total_units_counts }} টি এবং এপ্রুভড হয়েছে - {{ approved_units_count }}  টি।
         </div>
         <div class="card-body border-bottom-0">
             <form ref="report_form" action="" method="GET" >
@@ -37,16 +37,29 @@ export default {
             user_id:"",
             user: [],
             approved_unit:[],
+            approved_units_count:'',
+            total_units_counts:'',
         }
     },
     created:function(){
         this.user_info()
         this.report_status()
+        this.count_units()
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },
+    watch:{
+        month:function(){
+            this.count_units()
+        }
+    },
     methods:{
+        formatBangla(number) {
+            return number !== null && number !== undefined
+                        ? number.toLocaleString("bn-BD")
+                        : "";
+        },
         get_monthly_report: function(){
             if(this.month != null){
                 window.open(`/ward/report?user_id=${this.user?.user?.id}&month=${this.month}`)
@@ -85,6 +98,22 @@ export default {
                 // });
 
 
+            }
+        },
+        count_units:async function(){
+            if(this.month){
+                let response = await axios.get('/ward/count-approved-unit', {
+                                params: {
+                                    month: this.month
+                                }
+                            })
+                if(response.data.status == 'success'){
+                    let approved = response.data.approved_units;
+                    let total = response.data.total_units;
+
+                    this.approved_units_count = this.formatBangla(approved)
+                    this.total_units_counts = this.formatBangla(total)
+                }
             }
         }
     }

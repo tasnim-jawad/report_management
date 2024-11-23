@@ -9,6 +9,8 @@ window.formatDate = (date, format_type="date") => {
         return moment(date).format('DD-MMMM-YYYY hh:mm:ss A')
     }else if(format_type == 'time'){
         return moment(date).format('hh:mm:ss A')
+    }else if(format_type == 'long_month_year'){
+        return moment(date).format('MMMM YYYY');
     }else{
         return moment(date).format(format_type)
     }
