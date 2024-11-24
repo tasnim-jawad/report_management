@@ -81,8 +81,6 @@ use Illuminate\Support\Facades\Validator;
 class WardController extends Controller
 {
     public function report(){
-        // dd(request()->all());
-        // dd(request()->user_id,request()->month);
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
             'user_id' => ['required'],

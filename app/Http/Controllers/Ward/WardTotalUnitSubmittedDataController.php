@@ -53,7 +53,7 @@ class WardTotalUnitSubmittedDataController extends Controller
         $ward_id = $ward_user->org_ward_user->ward_id;
         $month = Carbon::parse(request()->month);
         $units = OrgUnit::where('org_ward_id',$ward_id)->get();
-
+        
         $report_info_ids = [];
         $unit_ids = [];
         $approved_unit_ids = [];

@@ -8,6 +8,18 @@
             </form>
         </div>
     </div>
+    <div class="card mb-3 ">
+        <div class="card-header">
+            print month to month
+        </div>
+        <div class="card-body border-bottom-0">
+            <form ref="report_form_sum" >
+                শুরুর মাস: <input type="month" v-model="start_month" name="start_month">
+                শেষের মাস: <input type="month" v-model="end_month" name="end_month">
+                <button class="btn btn-success ms-5" type="button" @click.prevent="report_sum">Submit</button>
+            </form>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -18,6 +30,9 @@ import { mapState, mapWritableState } from 'pinia';
 export default {
     data:function(){
         return {
+            user_id:"",
+            start_month:null,
+            end_month:null,
             user_id:"",
             user: [],
         }
@@ -31,10 +46,15 @@ export default {
     methods:{
         get_monthly_report: function(){
             if(this.month != null){
-                this.$refs.report_form.submit();
+                this.$refs.report_form_sum.submit();
                 window.open(`/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
+        },
 
+        report_sum:function(){
+            if(this.start_month != null && this.end_month != null){
+                window.open(`/unit/report/unit-report-sum?user_id=${this.user?.user?.id}&start_month=${this.start_month}&end_month=${this.end_month}`)
+            }
         },
         user_info:function(){
             axios.get("/user/user_info")

@@ -15,6 +15,9 @@ class DashboardController extends Controller
     public function ward(){
         return view('dashboard.ward');
     }
+    public function thana(){
+        return view('dashboard.thana');
+    }
     public function admin(){
         return view('dashboard.admin');
     }

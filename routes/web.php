@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Actions\DateWiseReportSum;
 use App\Http\Middleware\IsGuest;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use Illuminate\Support\Facades\Auth;
@@ -25,12 +26,14 @@ Route::get('/login', function () {
 Route::group(['prefix' => 'dashboard', 'namespace' => '\App\Http\Controllers\Dashboard'], function () {
     Route::get('unit', 'DashboardController@unit');
     Route::get('ward', 'DashboardController@ward');
+    Route::get('thana', 'DashboardController@thana');
     Route::get('admin', 'DashboardController@admin');
 });
 
 Route::group(['prefix' => 'unit', 'namespace' => '\App\Http\Controllers\Unit'], function () {
     Route::get('report', 'UnitController@report');
     Route::get('report/upload', 'UnitController@report_upload');
+    Route::get('report/unit-report-sum', 'UnitController@unit_report_sum');
 });
 
 Route::group(['prefix' => 'ward', 'namespace' => '\App\Http\Controllers\Ward'], function () {
@@ -65,6 +68,21 @@ Route::get('/tt', function () {
     $rs = auth_user_unit_responsibilities_info(request()->user_id);
     $hi = unit_report_header_info($rs, null, '2024-03-01');
     $cg = common_get(Dawat1RegularGroupWise::class, request()->user_id);
+});
+Route::get('/date-wise', function () {
+     // Define the parameters needed for the execute method
+     $start_month = '2024-01'; // Example start month
+     $end_month = '2024-06'; // Example end month
+     $org_type = 'unit'; // Example organization type
+     $org_type_id = 1; // Example organization ID
+     $table_name ='dawat1_regular_group_wises';
+
+     // Instantiate the class and call the execute method
+     $dateWiseReportSum = new DateWiseReportSum();
+     $report_info_ids = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id);
+
+     // Return the result (you can return as JSON or however you'd like)
+     return response()->json($report_info_ids);
 });
 
 

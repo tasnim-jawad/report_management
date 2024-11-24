@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Unit;
 
+use App\Http\Controllers\Actions\DateWiseReportSum;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Unit\Actions\CalculatePreviousPresent;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Expense\BmExpenseCategory;
 use App\Models\Bm\Income\BmCategory;
@@ -10,6 +12,7 @@ use App\Models\Bm\Income\BmPaid;
 use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgType;
 use App\Models\Organization\OrgUnit;
+use App\Models\Organization\OrgUnitResponsible;
 use App\Models\Organization\OrgUnitUser;
 use App\Models\Organization\OrgWard;
 use App\Models\Report\DawahAndProkashona\DawahAndProkashona;
@@ -1007,6 +1010,181 @@ class UnitController extends Controller
                 'errors' => [['You do not have the necessary permissions']],
             ], 403);
         }
+    }
+
+    public function unit_report_sum()
+    {
+        $validator = Validator::make(request()->all(), [
+            'start_month' => ['required', 'date'],
+            'end_month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $unit_id = auth()->user()->org_unit_user->unit_id;
+
+        $start_month = request()->start_month;
+        $end_month = request()->end_month;
+        $org_type = 'unit';
+        $org_type_id = $unit_id;
+
+
+        $dateWiseReportSum = new DateWiseReportSum();
+        $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id);
+
+        $president = null;
+        $president_id = optional(OrgUnitResponsible::where('org_unit_id', $unit_id)
+                                ->where('responsibility_id', 1)
+                                ->first())->user_id;
+        if($president_id){
+            $president = User::where('id',$president_id)->first()->full_name;
+        }
+
+        // ---------------------  reports all data to show  ---------------------------
+        // $montobbo = Montobbo::whereIn('report_info_id', $report_info_id)->get()->first();
+        // ---------------------  reports all data to show  ---------------------------
+
+        
+        // ---------------------  previous and present calculation  ---------------------------
+        $calculatePreviousPresent = new CalculatePreviousPresent();
+        $previous_present = $calculatePreviousPresent->execute($start_month, $end_month, $org_type, $org_type_id);
+        // dd($previous_present);
+        // ---------------------  previous and present calculation  ---------------------------
+
+
+        // -------------------------- bm income report ------------------------------------
+        $query = BmPaid::query();
+        $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_id);
+        // $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
+        // $category_all_id = array_values(array_unique($category));
+        $total_income = $filter->sum('amount');
+        $category_all_id = BmCategory::select(['id', 'parent_id'])->get();
+        // dd($category_all_id);
+        $income_category_wise = [];
+        foreach ($category_all_id as $index => $item) {
+            $category_exist = false;
+            $already_created_category_ids = [];
+
+            $testQuery = BmPaid::query();
+            $totalAmount = $testQuery->whereYear('month', $month->clone()->year)
+                ->whereMonth('month', $month->clone()->month)
+                ->where('bm_category_id', $item->id)
+                ->where('unit_id', $unit_id)
+                ->sum('amount');
+            if($item->parent_id != 0){
+                foreach($income_category_wise as $key=>$income_category){
+                    if($income_category['category_id'] == $item->parent_id){
+                        if($income_category_wise[$key]['amount'] == ''){
+                            $sum_sub_cat = $totalAmount == 0 ? "" : $totalAmount;
+                        }else{
+                            $sum_sub_cat = $income_category_wise[$key]['amount'] + $totalAmount;
+                        }
+                        $income_category_wise[$key]['amount'] = $sum_sub_cat;
+                        $category_exist = true;
+                    }
+                }
+                if(!$category_exist){
+                    $bmCategory = BmCategory::find($item->parent_id);
+                    $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+                    $income_category_wise[$index]['category'] = $bmCategory->title;
+                    $income_category_wise[$index]['category_id'] = $bmCategory->id;
+
+                    $already_created_category_ids[] = $item->parent_id;
+                }
+            }
+            if (!in_array($item->id, $already_created_category_ids) && $item->parent_id == 0) {
+                $bmCategory = BmCategory::find($item->id);
+                // dd($bmCategory,$item->id,$item );
+                $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+                $income_category_wise[$index]['category'] = $bmCategory->title;
+                $income_category_wise[$index]['category_id'] = $bmCategory->id;
+            }
+
+        }
+        // dd($income_category_wise);
+        // -------------------------- bm income report ------------------------------------
+
+        // -------------------------- bm expense report ------------------------------------
+        $query = BmExpense::query();
+        $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('unit_id', $unit_id);
+        $total_expense = $filter->sum('amount');
+        // $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
+        // $category_unique_id = array_values(array_unique($category_id));
+        $category_unique_id = BmExpenseCategory::pluck('id');
+
+        $expense_category_wise = [];
+        foreach ($category_unique_id as $index => $item) {
+            $testQuery = BmExpense::query();
+            $totalAmount = $testQuery->whereYear('date', $month->clone()->year)
+                ->whereMonth('date', $month->clone()->month)
+                ->where('bm_expense_category_id', $item)
+                ->where('unit_id', $unit_id)
+                ->sum('amount');
+            $bmCategory = BmExpenseCategory::find($item);
+            $expense_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+            $expense_category_wise[$index]['category'] = $bmCategory->title;
+        }
+        // dd($expense_category_wise);
+        // -------------------------- bm expense report ------------------------------------
+
+        return view('unit.unit_report')->with([
+            'month' => $month,
+            'org_type' => $org_type,
+            'unit_info' => $unit_info,
+            'ward_info' => $ward_info,
+            'thana_info' => $thana_info,
+            'president' => $president,
+
+            'dawat1' => $dawat1,
+            'dawat2' => $dawat2,
+            'dawat3' => $dawat3,
+            'dawat4' => $dawat4,
+            'department1' => $department1,
+            'department4' => $department4,
+            'department5' => $department5,
+            'dawah_prokashona' => $dawah_prokashona,
+            'kormosuci' => $kormosuci,
+            'songothon1' => $songothon1,
+            'songothon2' => $songothon2,
+            'songothon9' => $songothon9,
+            'songothon5' => $songothon5,
+            'songothon7' => $songothon7,
+            'songothon8' => $songothon8,
+            'proshikkhon' => $proshikkhon,
+            'shomajsheba1' => $shomajsheba1,
+            'shomajsheba2' => $shomajsheba2,
+            'rastrio' => $rastrio,
+            'montobbo' => $montobbo,
+
+            'previous_present'=>(object)[
+                //rokon
+                'rokon_previous' => $rokon_previous,
+                'rokon_present' => $rokon_present,
+                //worker
+                'worker_previous' => $worker_previous,
+                'worker_present' => $worker_present,
+                //associate_member
+                'associate_member_previous' => $associate_member_previous,
+                'associate_member_present' => $associate_member_present,
+                //vinno_dormalombi_worker
+                'vinno_dormalombi_worker_previous' => $vinno_dormalombi_worker_previous,
+                'vinno_dormalombi_worker_present' => $vinno_dormalombi_worker_present,
+                //vinno_dormalombi_associate_member
+                'vinno_dormalombi_associate_member_previous' => $vinno_dormalombi_associate_member_previous,
+                'vinno_dormalombi_associate_member_present' => $vinno_dormalombi_associate_member_present,
+            ],
+
+            'income_category_wise' => $income_category_wise,
+            'total_income' => $total_income,
+
+            'expense_category_wise' => $expense_category_wise,
+            'total_expense' => $total_expense,
+
+        ]);
     }
 
 }
