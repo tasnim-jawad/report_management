@@ -132,6 +132,12 @@ class WardReportStatusController extends Controller
                     ->whereMonth('month_year', $carbon_month->clone()->month)
                     ->first();
 
+        $income = BmPaid::where('unit_id', $unit_id)
+                    ->whereYear('month', $carbon_month->clone()->year)
+                    ->whereMonth('month', $carbon_month->clone()->month)
+                    ->get();
+        // dd($income);
+
         if($new_status == 'approved'){
             $report_info->report_approved_status = 'approved';
             $report_info->save();

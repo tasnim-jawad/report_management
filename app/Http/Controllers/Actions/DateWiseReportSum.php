@@ -29,12 +29,29 @@ class DateWiseReportSum
             $selected_columns = array_slice($all_columns, 2, -4);
 
             foreach ($selected_columns as $selected_column){
-                $sum = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)->sum($selected_column);
-                $result[$table_name][$selected_column] = $sum ;
-            }
-        }
+                if($table_name == 'montobbos'){
+                    $text = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)
+                                                ->selectRaw("GROUP_CONCAT(montobbo SEPARATOR '\n') as montobbo")
+                                                ->first();
 
-        return $result;
+                    $result[$table_name][$selected_column] = $text->montobbo;
+                }else{
+                    $sum = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)->sum($selected_column);
+                    $result[$table_name][$selected_column] = $sum ;
+                }
+            }
+
+        }
+        // dd($result);
+        return $this->array_to_object($result);
+    }
+
+    private function array_to_object($array)
+    {
+        if (is_array($array)) {
+            return (object) array_map([$this, 'array_to_object'], $array);
+        }
+        return $array;
     }
 
     public function get_unit_table(){
@@ -50,13 +67,9 @@ class DateWiseReportSum
             "dawat3_general_program_and_others",
             "dawat4_gono_songjog_and_dawat_ovijans",
             "department1_talimul_qurans",
-            "department2_moholla_vittik_dawats",
-            "department3_jubo_somaj_dawats",
             "department4_different_job_holders_dawats",
             "department5_paribarik_dawats",
-            "department6_mosjid_dawah_infomation_centers",
             "department7_dawat_in_technologies",
-            "department8_dawat_in_cultural_programs",
             "kormosuci_bastobayons",
             "proshikkhon1_tarbiats",
             "rastrio1_bishishto_bektis",
@@ -70,6 +83,7 @@ class DateWiseReportSum
             "songothon7_sofors",
             "songothon8_iyanot_data",
             "songothon9_sangothonik_boithoks",
+            "montobbos",
         ];
 
         return $table_names;

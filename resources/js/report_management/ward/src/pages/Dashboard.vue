@@ -187,7 +187,7 @@ export default {
         set_unit_report_status:function(unit_id , report_month, new_status){
             // window.open(`/ward/unit/report-check?unit_id=${unit_id}&month=${report_month}`)
             const is_confirmed = confirm(`Are you sure you want to Change Submission Status to ${new_status}?`);
-            if(is_confirmed){}
+            if(is_confirmed){
             let response = axios.post('/ward/unit/change-status',{
                         unit_id: unit_id,
                         month: report_month,
@@ -196,6 +196,7 @@ export default {
                 );
                 console.log(response);
                 this.report_status()
+            }
         },
         submit_total_approved_unit_data:async function(){
             const is_confirmed = confirm(`Are you sure you want to submit the approved unit data for the month of ${this.month}?`);

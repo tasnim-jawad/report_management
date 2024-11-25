@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Unit\Actions;
+namespace App\Http\Controllers\Actions;
 
+use App\Http\Controllers\Controller;
 use App\Models\Report\ReportInfo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -9,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class CalculatePreviousPresent
 {
-
     public function execute($start_month, $end_month, $org_type, $org_type_id)
     {
         $s_month = Carbon::parse($start_month);
@@ -55,8 +55,8 @@ class CalculatePreviousPresent
             }
         }
 
-        dd($results);
-        return $results;
+        // dd($results);
+        return (object) $results;
     }
 
     private function get_approved_report_ids($month, $org_type, $org_type_id)

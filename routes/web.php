@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Actions\BmReport;
 use App\Http\Controllers\Actions\DateWiseReportSum;
+use App\Http\Controllers\Actions\ReportHeader;
 use App\Http\Middleware\IsGuest;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use Illuminate\Support\Facades\Auth;
@@ -71,15 +73,21 @@ Route::get('/tt', function () {
 });
 Route::get('/date-wise', function () {
      // Define the parameters needed for the execute method
-     $start_month = '2024-01'; // Example start month
-     $end_month = '2024-06'; // Example end month
-     $org_type = 'unit'; // Example organization type
-     $org_type_id = 1; // Example organization ID
-     $table_name ='dawat1_regular_group_wises';
-
+    $start_month = '2024-01'; // Example start month
+    $end_month = '2024-06'; // Example end month
+    $org_type = 'unit'; // Example organization type
+    $org_type_id = 1; // Example organization ID
+    $transaction_type = 'expense';
      // Instantiate the class and call the execute method
-     $dateWiseReportSum = new DateWiseReportSum();
-     $report_info_ids = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id);
+    //  $dateWiseReportSum = new DateWiseReportSum();
+    //  $report_info_ids = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id);
+    // $bm_report = new BmReport();
+    // $income_report = $bm_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type);
+
+    // $bm_report = new BmReport();
+    // $income_report = $bm_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type);
+    $report_header = new ReportHeader();
+    $data = $report_header->execute(auth()->user());
 
      // Return the result (you can return as JSON or however you'd like)
      return response()->json($report_info_ids);
