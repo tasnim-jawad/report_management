@@ -3,6 +3,7 @@
 use App\Http\Controllers\Actions\BmReport;
 use App\Http\Controllers\Actions\DateWiseReportSum;
 use App\Http\Controllers\Actions\ReportHeader;
+use App\Http\Controllers\Actions\ReportJoma;
 use App\Http\Middleware\IsGuest;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use Illuminate\Support\Facades\Auth;
@@ -86,11 +87,14 @@ Route::get('/date-wise', function () {
 
     // $bm_report = new BmReport();
     // $income_report = $bm_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type);
-    $report_header = new ReportHeader();
-    $data = $report_header->execute(auth()->user());
+    // $report_header = new ReportHeader();
+    // $data = $report_header->execute(auth()->user());
+    $month = '2024-11';
+    $report = new ReportJoma();
+    $data = $report->execute($month,'unit',1);
 
      // Return the result (you can return as JSON or however you'd like)
-     return response()->json($report_info_ids);
+     return response()->json($data);
 });
 
 

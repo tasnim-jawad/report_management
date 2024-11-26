@@ -32,6 +32,7 @@ class BmReport
         $transactions = DB::table($transaction_table_name)
             ->whereBetween($month_column, [$start_month_date->startOfMonth(), $end_month_date->endOfMonth()])
             ->where($org_type_column_name, $org_type_id)
+            ->where('report_approved_status','approved')
             ->get();
 
         // Step 3: Calculate total transaction amount

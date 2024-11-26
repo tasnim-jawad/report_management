@@ -76,6 +76,7 @@ class ReportHeader
             'thana_info' => $thana_info,
             'thana_info' => $thana_info,
             'org_type' => $org_type_title,
+            'president' => $president,
         ];
     }
 

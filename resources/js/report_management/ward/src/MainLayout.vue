@@ -6,8 +6,8 @@
             <aside>
                 <nav id="side_nav" class="side_nav">
                     <div class="logo">
-                        <img src="https://cdn.freebiesupply.com/logos/large/2x/mi-1-logo-black-and-white.png" alt="">
-                        <!-- <img src="/images/Jamaat-e-islami-removebg-preview.png" alt=""> -->
+                        <!-- <img src="https://cdn.freebiesupply.com/logos/large/2x/mi-1-logo-black-and-white.png" alt=""> -->
+                        <img src="/images/bji_logo2.png" alt="">
                     </div>
                     <div class="profile_view">
                         <div class="profile_pic">

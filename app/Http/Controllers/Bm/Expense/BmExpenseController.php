@@ -275,8 +275,8 @@ class BmExpenseController extends Controller
                 $data->date = $permission->month_year;
                 $data->bm_expense_category_id = request()->bm_expense_category_id;
 
-                $data->unit_expense_targets_id = $target->id;
-                $data->unit_expense_targets_amount = $target->amount;
+                $data->unit_expense_targets_id = $target->id ?? null;
+                $data->unit_expense_targets_amount = $target->amount ?? null;
 
                 $data->creator = auth()->id();
                 $data->save();

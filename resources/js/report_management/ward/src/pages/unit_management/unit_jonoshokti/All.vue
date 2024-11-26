@@ -15,7 +15,7 @@
                         <th>srl#</th>
                         <th>Name</th>
                         <th>Unit Name</th>
-                        <th>Telegram Name</th>
+                        <th>Responsibility</th>
                         <th>Action</th>
                     </tr>
                 </thead>

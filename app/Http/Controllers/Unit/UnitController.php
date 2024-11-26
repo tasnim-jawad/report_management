@@ -910,6 +910,8 @@ class UnitController extends Controller
             'data' => $data,
         ], 200);
     }
+
+
     public function report_status(){
         $month = request()->month;
         if($month){
@@ -963,6 +965,13 @@ class UnitController extends Controller
 
         $month = Carbon::parse(request()->month);
         $org_unit_user = OrgUnitUser::where('user_id',auth()->id())->first();
+
+        if (!$org_unit_user) {
+            return response()->json([
+                'err_message' => 'Unit information not found for this user.',
+            ], 404);
+        }
+
         $unit_id = $org_unit_user->unit_id;
 
         $permission  = ReportManagementControl::where('report_type', 'unit')
@@ -971,46 +980,85 @@ class UnitController extends Controller
                                             ->where('is_active', 1)
                                             ->latest()
                                             ->first();
-        // dd($permission);
-        if( $permission ){
-            $report_info = ReportInfo::where('org_type_id', $unit_id)
-                        ->where('org_type','unit')
-                        ->whereYear('month_year', $month->clone()->year)
-                        ->whereMonth('month_year', $month->clone()->month)
-                        ->get()
-                        ->first();
 
-
-            if($report_info->report_submit_status == 'unsubmitted' && $report_info->report_approved_status == 'pending'){
-                $report_info->report_submit_status = 'submitted';
-                $report_info->save();
-
-                return response()->json([
-                    'status' => 'success',
-                    'report_status' => "rejected",
-                    "message" => "রিপোর্ট জমা করা হয়েছে ।"
-                ], 200);
-
-            }else if($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'rejected'){
-                $report_info->report_approved_status = 'pending';
-                $report_info->save();
-
-                return response()->json([
-                    'status' => 'success',
-                    'report_status' => "rejected",
-                    "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
-                ], 200);
-            }else{
-                return response()->json([
-                    'err_message' => 'validation error',
-                    'errors' => ['name' => ['Report has no data']],
-                ], 422);
-            }
-        }else{
+        if (!$permission) {
             return response()->json([
                 'err_message' => 'Permission denied',
                 'errors' => [['You do not have the necessary permissions']],
             ], 403);
+        }
+
+        $report_info = ReportInfo::where('org_type_id', $unit_id)
+                    ->where('org_type', 'unit')
+                    ->whereYear('month_year', $month->year)
+                    ->whereMonth('month_year', $month->month)
+                    ->first();
+
+        if (!$report_info) {
+            return response()->json([
+                'err_message' => 'Report information not found.',
+                'errors' => [['You do not have any data']],
+            ], 404);
+        }
+
+        switch (true) {
+            case $report_info->report_submit_status === 'unsubmitted' &&
+                $report_info->report_approved_status === 'pending':
+                $report_info->report_submit_status = 'submitted';
+                $report_info->save();
+                // Update related BmPaid records
+                BmPaid::where('unit_id', $unit_id)
+                    ->whereYear('month', $month->year)
+                    ->whereMonth('month', $month->month)
+                    ->update(['report_submit_status' => 'submitted']);
+
+                // Update related BmExpense records
+                BmExpense::where('unit_id', $unit_id)
+                    ->whereYear('date', $month->year)
+                    ->whereMonth('date', $month->month)
+                    ->update(['report_submit_status' => 'submitted']);
+
+                return response()->json([
+                    'status' => 'success',
+                    'report_status' => 'submitted',
+                    'message' => 'রিপোর্ট জমা করা হয়েছে ।',
+                ], 200);
+
+            case $report_info->report_submit_status === 'submitted' &&
+                $report_info->report_approved_status === 'rejected':
+                $report_info->report_approved_status = 'pending';
+                $report_info->save();
+
+                // Update related BmPaid records
+                BmPaid::where('unit_id', $unit_id)
+                    ->whereYear('month', $month->year)
+                    ->whereMonth('month', $month->month)
+                    ->update(['report_approved_status' => 'pending']);
+
+                // Update related BmPaid records
+                BmExpense::where('unit_id', $unit_id)
+                    ->whereYear('date', $month->year)
+                    ->whereMonth('date', $month->month)
+                    ->update(['report_approved_status' => 'pending']);
+
+                return response()->json([
+                    'status' => 'success',
+                    'report_status' => 'resubmitted',
+                    'message' => 'রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।',
+                ], 200);
+
+            case $report_info->report_submit_status === 'submitted' &&
+                $report_info->report_approved_status === 'approved':
+                return response()->json([
+                    'err_message' => 'Report is already approved and cannot be resubmitted.',
+                    'errors' => [['already approved and cannot be resubmitted.']],
+                ], 400);
+
+            default:
+                return response()->json([
+                    'err_message' => 'No valid action for the current report status.',
+                    'errors' => [['No valid action ']],
+                ], 422);
         }
     }
 

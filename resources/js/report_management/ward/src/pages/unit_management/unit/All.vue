@@ -51,7 +51,7 @@ export default {
     data() {
         return {
             units:[],
-            delete_permission:false,
+            delete_permission:true,
         }
     },
 
@@ -69,7 +69,7 @@ export default {
             if (window.confirm("Are you sure you want to delete this unit?")) {
                 this.submit_delete_form(unit_id);
             } else {
-                window.toaster('user info is safe', 'info');
+                window.toaster('unit is safe', 'info');
             }
 
         },

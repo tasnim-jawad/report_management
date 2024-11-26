@@ -212,7 +212,11 @@ export default {
                     }
                 } catch (error) {
                     console.error("Error submitting data:", error);
-                    window.toaster("Failed to submit data", 'error');
+                    if(error.response.status == 403){
+                        window.toaster(error.response.data.message, 'error');
+                    }else{
+                        window.toaster("Failed to submit data", 'error');
+                    }
                 }
             }
         },
@@ -245,22 +249,24 @@ export default {
         set_permission:async function(){
             let formatted_month_year = window.formatDate(this.permission_month, 'long_month_year');
             const is_confirmed = confirm(`Are you sure you want to Give Permission for month ${formatted_month_year}? `);
-            if(is_confirmed){}
-            let response =await axios.post('/ward/set-unit-report-joma-permission',{
-                        month: this.permission_month,
-                    }
-                );
-                // console.log(response.data.status);
-            if(response.data.status == 'success'){
-                this.unit_report_joma_permitted_month()
+            if(is_confirmed){
+                let response =await axios.post('/ward/set-unit-report-joma-permission',{
+                            month: this.permission_month,
+                        }
+                    );
+                    // console.log(response.data.status);
+                if(response.data.status == 'success'){
+                    this.unit_report_joma_permitted_month()
+                }
             }
         },
         remove_permission:async function(){
             const is_confirmed = confirm(`Are you sure you want to remove Permission? `);
-            if(is_confirmed){}
-            let response =await axios.post('/ward/remove-unit-report-joma-permission');
-            if(response.data.status == 'success'){
-                this.unit_report_joma_permitted_month()
+            if(is_confirmed){
+                let response =await axios.post('/ward/remove-unit-report-joma-permission');
+                if(response.data.status == 'success'){
+                    this.unit_report_joma_permitted_month()
+                }
             }
         }
 

@@ -285,7 +285,7 @@ table{
 .form_input input{
     min-width: 70px;
     padding: 5px 5px;
-    text-align: center;
+    /* text-align: start; */
 
 }
 

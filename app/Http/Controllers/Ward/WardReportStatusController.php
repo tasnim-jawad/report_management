@@ -113,7 +113,7 @@ class WardReportStatusController extends Controller
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
             'unit_id' => ['required'],
-            'new_status' => ['required'],
+            'new_status' => ['required', 'in:approved,rejected'],
         ]);
 
         if ($validator->fails()) {
@@ -126,25 +126,29 @@ class WardReportStatusController extends Controller
         $unit_id = request()->unit_id;
         $new_status = request()->new_status;
         $carbon_month = Carbon::parse(request()->month);
+
         $report_info = ReportInfo::where('org_type_id', $unit_id)
                     ->where('org_type','unit')
                     ->whereYear('month_year', $carbon_month->clone()->year)
                     ->whereMonth('month_year', $carbon_month->clone()->month)
                     ->first();
 
-        $income = BmPaid::where('unit_id', $unit_id)
-                    ->whereYear('month', $carbon_month->clone()->year)
-                    ->whereMonth('month', $carbon_month->clone()->month)
-                    ->get();
-        // dd($income);
-
-        if($new_status == 'approved'){
-            $report_info->report_approved_status = 'approved';
-            $report_info->save();
-        }else if($new_status == 'rejected'){
-            $report_info->report_approved_status = 'rejected';
+        if ($report_info) {
+            $report_info->report_approved_status = $new_status;
             $report_info->save();
         }
+
+        // Bulk update for BmPaid
+        BmPaid::where('unit_id', $unit_id)
+                ->whereYear('month', $carbon_month->year)
+                ->whereMonth('month', $carbon_month->month)
+                ->update(['report_approved_status' => $new_status]);
+
+        // Bulk update for BmExpense
+        BmExpense::where('unit_id', $unit_id)
+                ->whereYear('date', $carbon_month->year)
+                ->whereMonth('date', $carbon_month->month)
+                ->update(['report_approved_status' => $new_status]);
 
         return response()->json([
             'status' => 'success',

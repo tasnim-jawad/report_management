@@ -84,11 +84,11 @@
                                 <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও সংশোধন
                             </router-link>
                         </li>
-                        <li>
+                        <!-- <li>
                             <router-link :to="{name:'BmCategoryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>আয়ের খাত সমুূহ
                             </router-link>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <router-link :to="{name:'BmCategoryUserAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত ধার্য
@@ -99,11 +99,11 @@
                                 <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>আয় এন্ট্রি করুন
                             </router-link>
                         </li>
-                        <li>
+                        <!-- <li>
                             <router-link :to="{name:'BmExpenseCategoryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-layer-group"></i></span>ব্যয়ের খাত সমুূহ
                             </router-link>
-                        </li>
+                        </li> -->
                         <li>
                             <router-link :to="{ name: 'BmExpenseAll' }">
                                 <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>ব্যয় এন্ট্রি করুন

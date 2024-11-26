@@ -10,6 +10,8 @@ class BmPaid extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function bm_category()
     {
         return $this->belongsTo(BmCategory::class);

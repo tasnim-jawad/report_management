@@ -113,7 +113,8 @@ window.axios.interceptors.response.use(
             );
         } else {
             console.log(error.response || error);
-            if (error.response?.data?.status == "server_error") {
+            if (error.response?.data?.status == "server_error" || error.response?.status === 500 || error.response?.status === 403) {
+                console.log(error.response.data.message);
                 window.s_warning(error.response.data.message);
             }
             if (error.response?.data?.status == "error") {

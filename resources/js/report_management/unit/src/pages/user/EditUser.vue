@@ -78,7 +78,7 @@
                     <div class="form_input">
                         <select type="text" name="responsibility_id" class="form-control">
                             <option value="">-- select responsibility group --</option>
-                            <option v-for="(responsibility, i) in responsibilities.data" :key="i"
+                            <option v-for="(responsibility, i) in responsibilities" :key="i"
                                     :value="responsibility['id']"
                                     :selected="user_responsibile.responsibility_id == responsibility['id']" >{{responsibility["title"]}}</option>
 
@@ -132,7 +132,15 @@ export default {
         show_responsibility : function(){
             axios.get("/responsibility/all")
                 .then(response => {
-                    this.responsibilities = response.data
+                    if (Array.isArray(response.data.data)) {
+                        this.responsibilities = response.data.data.slice(2)
+                        console.log(this.responsibilities );
+
+                    } else {
+                        console.error("Expected an array but got:", typeof response.data);
+                    }
+
+                    // this.responsibilities = response.data
                     // console.log(this.responsibilities.data);
                 })
         },
