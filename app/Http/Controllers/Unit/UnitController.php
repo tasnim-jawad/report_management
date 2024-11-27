@@ -873,6 +873,7 @@ class UnitController extends Controller
         ], 200);
     }
 
+
     public function expense_category_wise(){
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
@@ -1141,6 +1142,45 @@ class UnitController extends Controller
         ]);
     }
 
+    public function report_upload_monthly()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $unit_id = auth()->user()->org_unit_user->unit_id;
+
+        $start_month = request()->month;
+        $end_month = request()->month;
+        $org_type = 'unit';
+        $org_type_id = $unit_id;
+
+        $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id);
+        // dd($datas->report_sum_data );
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $datas,
+        ], 200);
+        // return view('unit.unit_report_monthly')->with([
+        //     'start_month' => $datas->start_month,
+        //     'end_month' => $datas->end_month,
+        //     'report_header' => $datas->report_header,
+
+        //     'report_sum_data' => $datas->report_sum_data,
+        //     'previous_present' => $datas->previous_present,
+        //     'income_report' => $datas->income_report,
+        //     'expense_report' => $datas->expense_report,
+        // ]);
+    }
+
     public function report_summation($start_month, $end_month, $org_type, $org_type_id)
     {
         $report_header_instance = new ReportHeader();
@@ -1181,5 +1221,6 @@ class UnitController extends Controller
             'expense_report' => $expense_report,
         ];
     }
+
 
 }

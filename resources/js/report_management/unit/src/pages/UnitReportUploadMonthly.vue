@@ -11,13 +11,14 @@
                     <p class="w-25">সন: {{ formatYear(month) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between mb-1">
-                    <p>ইউনিটের নাম: {{ unit_info.title || '' }}</p>
-                    <p>ওয়ার্ড নং ও নাম: {{ ward_info.no || '' }} ও {{ ward_info.title || '' }}</p>
-                    <p class="w-25">উপজেলা/থানা: {{ thana_info.title || '' }}</p>
+                    <p>ইউনিটের নাম: {{ report_header.unit_info.title || '' }}</p>
+                    <p>ওয়ার্ড নং ও নাম: {{ report_header.ward_info.no || '' }} ও {{ report_header.ward_info.title || ''
+                        }}</p>
+                    <p class="w-25">উপজেলা/থানা: {{ report_header.thana_info.title || '' }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between">
-                    <p>ইউনিট সভাপতির নাম: {{ president.full_name || '' }}</p>
-                    <p class="width-30">ইউনিটের ধরন: {{ org_type.title || '' }}</p>
+                    <p>ইউনিট সভাপতির নাম: {{ report_header.president.full_name || '' }}</p>
+                    <p class="width-30">ইউনিটের ধরন: {{ report_header.org_type || '' }}</p>
                 </div>
             </div>
         </section>
@@ -48,25 +49,25 @@
                             <tr>
                                 <td>
                                     <input name="how_many_groups_are_out"
-                                        :value="formatBangla(dawat1?.how_many_groups_are_out)"
+                                        :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_groups_are_out)"
                                         @change="data_upload('dawat1-regular-group-wise')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="number_of_participants"
-                                        :value="formatBangla(dawat1?.number_of_participants)"
+                                        :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.number_of_participants)"
                                         @change="data_upload('dawat1-regular-group-wise')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="how_many_have_been_invited"
-                                        :value="formatBangla(dawat1?.how_many_have_been_invited)"
+                                        :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_have_been_invited)"
                                         @change="data_upload('dawat1-regular-group-wise')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="how_many_associate_members_created"
-                                        :value="formatBangla(dawat1?.how_many_associate_members_created)"
+                                        :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_associate_members_created)"
                                         @change="data_upload('dawat1-regular-group-wise')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
@@ -91,19 +92,21 @@
                             <tr>
                                 <td class="text-start px-2">মোট জনশক্তি সংখ্যা</td>
                                 <td>
-                                    <input name="total_rokon" :value="formatBangla(dawat2?.total_rokon)"
+                                    <input name="total_rokon"
+                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.total_rokon)"
                                         @change="data_upload('dawat2-personal-and-target')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="total_worker" :value="formatBangla(dawat2?.total_worker)"
+                                    <input name="total_worker"
+                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.total_worker)"
                                         @change="data_upload('dawat2-personal-and-target')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td class="text-start px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
                                 <td>
                                     <input name="how_many_have_been_invited"
-                                        :value="formatBangla(dawat2?.how_many_have_been_invited)"
+                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_have_been_invited)"
                                         @change="data_upload('dawat2-personal-and-target')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
@@ -112,20 +115,20 @@
                                 <td class="text-start px-2">কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন</td>
                                 <td>
                                     <input name="how_many_were_give_dawat_rokon"
-                                        :value="formatBangla(dawat2?.how_many_were_give_dawat_rokon)"
+                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_were_give_dawat_rokon)"
                                         @change="data_upload('dawat2-personal-and-target')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="how_many_were_give_dawat_worker"
-                                        :value="formatBangla(dawat2?.how_many_were_give_dawat_worker)"
+                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_were_give_dawat_worker)"
                                         @change="data_upload('dawat2-personal-and-target')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td class="text-start px-2">কতজন সহযোগী সদস্য হয়েছেন</td>
                                 <td>
                                     <input name="how_many_associate_members_created"
-                                        :value="formatBangla(dawat2?.how_many_associate_members_created)"
+                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_associate_members_created)"
                                         @change="data_upload('dawat2-personal-and-target')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
@@ -147,13 +150,13 @@
                             <tr>
                                 <td>
                                     <input name="how_many_were_give_dawat"
-                                        :value="formatBangla(dawat3?.how_many_were_give_dawat)"
+                                        :value="formatBangla(report_sum_data?.dawat3_general_program_and_others?.how_many_were_give_dawat)"
                                         @change="data_upload('dawat3-general-program-and-others')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="how_many_associate_members_created"
-                                        :value="formatBangla(dawat3?.how_many_associate_members_created)"
+                                        :value="formatBangla(report_sum_data?.dawat3_general_program_and_others?.how_many_associate_members_created)"
                                         @change="data_upload('dawat3-general-program-and-others')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
@@ -179,24 +182,25 @@
                                 <td class="text-start px-2">গণসংযোগ দশক / পক্ষ</td>
                                 <td>
                                     <input name="total_gono_songjog_group"
-                                        :value="formatBangla(dawat4?.total_gono_songjog_group ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.total_gono_songjog_group ?? '')"
                                         @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="total_attended" :value="formatBangla(dawat4?.total_attended ?? '')"
+                                    <input name="total_attended"
+                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.total_attended ?? '')"
                                         @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="how_many_have_been_invited"
-                                        :value="formatBangla(dawat4?.how_many_have_been_invited ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_have_been_invited ?? '')"
                                         @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="how_many_associate_members_created"
-                                        :value="formatBangla(dawat4?.how_many_associate_members_created ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_associate_members_created ?? '')"
                                         @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
@@ -205,25 +209,25 @@
                                 <td class="text-start px-2">জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান</td>
                                 <td>
                                     <input name="jela_mohanogor_declared_gonosonjog_group"
-                                        :value="formatBangla(dawat4?.jela_mohanogor_declared_gonosonjog_group ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_group ?? '')"
                                         @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="jela_mohanogor_declared_gonosonjog_attended"
-                                        :value="formatBangla(dawat4?.jela_mohanogor_declared_gonosonjog_attended ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_attended ?? '')"
                                         @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="jela_mohanogor_declared_gonosonjog_invited"
-                                        :value="formatBangla(dawat4?.jela_mohanogor_declared_gonosonjog_invited ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_invited ?? '')"
                                         @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="jela_mohanogor_declared_gonosonjog_associated_created"
-                                        :value="formatBangla(dawat4?.jela_mohanogor_declared_gonosonjog_associated_created ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_associated_created ?? '')"
                                         @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
@@ -1204,34 +1208,12 @@ export default {
         return {
             month: '',
             joma_status: null,
-            org_type: {},
-            unit_info: {},
-            ward_info: {},
-            thana_info: {},
-            president: {},
 
-            dawat1: {},
-            dawat2: {},
-            dawat3: {},
-            dawat4: {},
-            department1: {},
-            department4: {},
-            department5: {},
-            dawah_prokashona: {},
-            kormosuci: {},
-            songothon1: {},
-            songothon2: {},
-            songothon9: {},
-            songothon5: {},
-            songothon7: {},
-            songothon8: {},
-            proshikkhon: {},
-            shomajsheba1: {},
-            shomajsheba2: {},
-            rastrio: {},
-            montobbo: {},
-
+            report_header: {},
+            report_sum_data: {},
             previous_present: {},
+            income_report: {},
+            expense_report: {},
 
             income_category_wise: {},
             total_income: null,
@@ -1282,54 +1264,66 @@ export default {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;
 
-            let res = await axios.get('/unit/uploaded-data', {
+            let res = await axios.get('/unit/uploaded-data-monthly', {
                 params: {
                     month: month,
                     user_id: user_id
                 }
             })
+            console.log("rererere", res.data.data);
 
             if (res.data.status == 'success') {
+                console.log("res", res.data.data.end_month);
+                this.month = res.data.data.end_month,
+                    this.report_header = res.data.data.report_header,
+                    this.report_sum_data = res.data.data.report_sum_data,
+                    this.previous_present = res.data.data.previous_present,
+                    this.income_report = res.data.data.income_report,
+                    this.expense_report = res.data.data.expense_report
+                // this.month = res.data.month,
+                //     this.org_type = res.data.org_type,
+                //     this.unit_info = res.data.unit_info,
+                //     this.ward_info = res.data.ward_info,
+                //     this.thana_info = res.data.thana_info,
+                //     this.president = res.data.president,
 
-                this.month = res.data.month,
-                    this.org_type = res.data.org_type,
-                    this.unit_info = res.data.unit_info,
-                    this.ward_info = res.data.ward_info,
-                    this.thana_info = res.data.thana_info,
-                    this.president = res.data.president,
+                //     this.dawat1 = res.data.dawat1,
+                //     this.dawat2 = res.data.dawat2,
+                //     this.dawat3 = res.data.dawat3,
+                //     this.dawat4 = res.data.dawat4,
+                //     this.department1 = res.data.department1,
+                //     this.department4 = res.data.department4,
+                //     this.department5 = res.data.department5,
+                //     this.dawah_prokashona = res.data.dawah_prokashona,
+                //     this.kormosuci = res.data.kormosuci,
+                //     this.songothon1 = res.data.songothon1,
+                //     this.songothon2 = res.data.songothon2,
+                //     this.songothon9 = res.data.songothon9,
+                //     this.songothon5 = res.data.songothon5,
+                //     this.songothon7 = res.data.songothon7,
+                //     this.songothon8 = res.data.songothon8,
+                //     this.proshikkhon = res.data.proshikkhon,
+                //     this.shomajsheba1 = res.data.shomajsheba1,
+                //     this.shomajsheba2 = res.data.shomajsheba2,
+                //     this.rastrio = res.data.rastrio,
+                //     this.montobbo = res.data.montobbo,
 
-                    this.dawat1 = res.data.dawat1,
-                    this.dawat2 = res.data.dawat2,
-                    this.dawat3 = res.data.dawat3,
-                    this.dawat4 = res.data.dawat4,
-                    this.department1 = res.data.department1,
-                    this.department4 = res.data.department4,
-                    this.department5 = res.data.department5,
-                    this.dawah_prokashona = res.data.dawah_prokashona,
-                    this.kormosuci = res.data.kormosuci,
-                    this.songothon1 = res.data.songothon1,
-                    this.songothon2 = res.data.songothon2,
-                    this.songothon9 = res.data.songothon9,
-                    this.songothon5 = res.data.songothon5,
-                    this.songothon7 = res.data.songothon7,
-                    this.songothon8 = res.data.songothon8,
-                    this.proshikkhon = res.data.proshikkhon,
-                    this.shomajsheba1 = res.data.shomajsheba1,
-                    this.shomajsheba2 = res.data.shomajsheba2,
-                    this.rastrio = res.data.rastrio,
-                    this.montobbo = res.data.montobbo,
+                //     this.previous_present = res.data.previous_present,
 
-                    this.previous_present = res.data.previous_present,
+                //     this.income_category_wise = res.data.income_category_wise,
+                //     this.total_income = res.data.total_income,
 
-                    this.income_category_wise = res.data.income_category_wise,
-                    this.total_income = res.data.total_income,
+                //     this.expense_category_wise = res.data.expense_category_wise,
+                //     this.total_expense = res.data.total_expense
 
-                    this.expense_category_wise = res.data.expense_category_wise,
-                    this.total_expense = res.data.total_expense
 
             }
-            console.log("unit_info", this.unit_info);
-            console.log("this.montobbo", this.montobbo);
+            console.log("this.month", this.month);
+            console.log("report_header", this.report_header);
+            console.log("report_sum_data", this.report_sum_data);
+            console.log("previous_present", this.previous_present);
+            console.log("income_report", this.income_report);
+            console.log("expense_report", this.expense_report);
         },
         average_data: async function () {
             this.average_kormosuci.unit_masik_sadaron_sova =
@@ -1544,16 +1538,18 @@ export default {
 
     },
     computed: {
-        total_dawat: function () {
+        total_dawat() {
             const total =
-                (this.dawat1?.how_many_have_been_invited ?? 0) +
-                (this.dawat2?.how_many_have_been_invited ?? 0) +
-                (this.dawat3?.how_many_were_give_dawat ?? 0) +
-                (this.dawat4?.how_many_have_been_invited ?? 0) +
-                (this.dawat4?.jela_mohanogor_declared_gonosonjog_invited ?? 0);
-            return this.formatBangla(total);
+                (Number(this.report_sum_data?.dawat1_regular_group_wises?.how_many_have_been_invited) || 0) +
+                (Number(this.report_sum_data?.dawat2_personal_and_targets?.how_many_have_been_invited) || 0) +
+                (Number(this.report_sum_data?.dawat3_general_program_and_others?.how_many_were_give_dawat) || 0) +
+                (Number(this.report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_have_been_invited) || 0) +
+                (Number(this.report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_invited) || 0);
+
+            return this.formatBangla ? this.formatBangla(total) : total;
         },
     },
+
 };
 </script>
 

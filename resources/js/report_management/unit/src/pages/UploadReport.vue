@@ -33,8 +33,15 @@ export default {
         upload_report: function(){
 
             if (this.month && this.user_id) {
+                // this.$router.push({
+                //     name: 'UnitReportUpload',
+                //     params: {
+                //         month: this.month,
+                //         user_id: this.user_id
+                //     }
+                // });
                 this.$router.push({
-                    name: 'UnitReportUpload',
+                    name: 'UnitReportUploadMonthly',
                     params: {
                         month: this.month,
                         user_id: this.user_id
