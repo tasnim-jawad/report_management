@@ -90,6 +90,7 @@ body{
     align-items: center;
     padding: 10px;
     flex-wrap: wrap;
+    border-bottom: 2px solid var(--color4);
 }
 
 .side_nav .logo img{
@@ -190,6 +191,22 @@ body{
 }
 .report_app_right .report_app_right_top .left a{
     color: var(--dark);
+}
+.report_app_right .report_app_right_top .middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+}
+.report_app_right .report_app_right_top .middle p{
+    color: var(--dark);
+    border: 1px solid var(--color3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'solaiman_lipi';
+
 }
 .report_app_right .report_app_right_top .right a{
     color: var(--dark);

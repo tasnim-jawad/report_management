@@ -16,12 +16,15 @@ return new class extends Migration
             $table->bigInteger('role')->nullable();
             $table->string('full_name', 50)->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
+            $table->string('image',100)->default('default.jpg');
             $table->string('telegram_name',50)->nullable();
             $table->string('telegram_id')->nullable();
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->string('blood_group', 10)->nullable();
+            $table->tinyInteger('is_permitted')->default(0);
+
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->rememberToken();

@@ -48,10 +48,16 @@ class BmReport
         foreach ($categories as $id => $category) {
             $category_total_amount = $category_wise_amount->get($id, 0);
 
+            if ($category_total_amount == 0) {
+                $category_total_amount = '';
+            }
+
             if ($category->parent_id != 0) {
                 // Handle subcategories
                 if (isset($category_wise_data[$category->parent_id])) {
-                    $category_wise_data[$category->parent_id]['amount'] += $category_total_amount;
+                    if ($category_total_amount !== '') {
+                        $category_wise_data[$category->parent_id]['amount'] += $category_total_amount;
+                    }
                 } else {
                     $category_wise_data[$category->parent_id] = [
                         'amount' => $category_total_amount,

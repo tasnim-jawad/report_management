@@ -47,300 +47,310 @@ use Illuminate\Support\Facades\Validator;
 
 class UnitController extends Controller
 {
-    public function report()
-    {
-        $validator = Validator::make(request()->all(), [
-            'month' => ['required', 'date'],
-            'user_id' => ['required'],
-        ]);
+    // public function report()
+    // {
+    //     $validator = Validator::make(request()->all(), [
+    //         'month' => ['required', 'date'],
+    //         'user_id' => ['required'],
+    //     ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'err_message' => 'validation error',
-                'errors' => $validator->errors(),
-            ], 422);
-        }
-        $form_data = request()->query();
+    //     if ($validator->fails()) {
+    //         return response()->json([
+    //             'err_message' => 'validation error',
+    //             'errors' => $validator->errors(),
+    //         ], 422);
+    //     }
 
-        $unit_user = User::where('id', $form_data['user_id'])->with('org_unit_user')->get()->first();
-        $unit_id = $unit_user->org_unit_user['unit_id'];
-        // dd($unit_user);
-        $month = Carbon::parse($form_data['month']);
-        $unit_info = OrgUnit::where('id', $unit_id)->get()->first();
-        $ward_id = $unit_user->org_unit_user['ward_id'];
-        $ward_info = OrgWard::where('id', $ward_id)->get()->first();
-        $thana_id = $unit_user->org_unit_user['thana_id'];
-        $thana_info = OrgThana::where('id', $thana_id)->get()->first();
-        $org_type = OrgType::where('id', $unit_info['org_type_id'])->get()->first();
+    //     // $unit_id = auth()->user()->org_unit_user->unit_id;
+    //     // // dd($unit_id);
+    //     // $start_month = request()->month;
+    //     // $end_month = request()->month;
+    //     // $org_type = 'unit';
+    //     // $org_type_id = $unit_id;
 
-        $unit_user_list = User::with('org_unit_responsible.responsibility')->whereExists(function ($query) use ($unit_id) {
-            $query->select("*")
-                ->from('org_unit_users')
-                ->whereRaw('org_unit_users.user_id = users.id')
-                ->where('org_unit_users.unit_id', $unit_id);
-        })->get();
-        // dd($result);
-        $president = null;
-        foreach ($unit_user_list as $unit_user_single) {
-            foreach ($unit_user_single['org_unit_responsible'] as $responcibility) {
-                if ($responcibility['responsibility_id'] === 1) {
-                    $president = $unit_user_single;
-                }
-            }
-        }
+    //     // $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id);
+    //     // dd($datas);
+    //     $form_data = request()->query();
 
-        $report_info = ReportInfo::where('org_type_id', $unit_id)
-            ->where('org_type','unit')
-            ->whereYear('month_year', $month->clone()->year)
-            ->whereMonth('month_year', $month->clone()->month)
-            ->get()
-            ->first();
+    //     $unit_user = User::where('id', $form_data['user_id'])->with('org_unit_user')->get()->first();
+    //     $unit_id = $unit_user->org_unit_user['unit_id'];
+    //     // dd($unit_user);
+    //     $month = Carbon::parse($form_data['month']);
+    //     $unit_info = OrgUnit::where('id', $unit_id)->get()->first();
+    //     $ward_id = $unit_user->org_unit_user['ward_id'];
+    //     $ward_info = OrgWard::where('id', $ward_id)->get()->first();
+    //     $thana_id = $unit_user->org_unit_user['thana_id'];
+    //     $thana_info = OrgThana::where('id', $thana_id)->get()->first();
+    //     $org_type = OrgType::where('id', $unit_info['org_type_id'])->get()->first();
 
-        if ($report_info) {
-            $report_info_id = $report_info->id;
-        }else{
-            return redirect()->back();
-        }
+    //     $unit_user_list = User::with('org_unit_responsible.responsibility')->whereExists(function ($query) use ($unit_id) {
+    //         $query->select("*")
+    //             ->from('org_unit_users')
+    //             ->whereRaw('org_unit_users.user_id = users.id')
+    //             ->where('org_unit_users.unit_id', $unit_id);
+    //     })->get();
+    //     // dd($result);
+    //     $president = null;
+    //     foreach ($unit_user_list as $unit_user_single) {
+    //         foreach ($unit_user_single['org_unit_responsible'] as $responcibility) {
+    //             if ($responcibility['responsibility_id'] === 1) {
+    //                 $president = $unit_user_single;
+    //             }
+    //         }
+    //     }
 
-        // ---------------------  reports all data to show  ---------------------------
-        $dawat1 = Dawat1RegularGroupWise::where('report_info_id', $report_info_id)->get()->first();
-        $dawat2 = Dawat2PersonalAndTarget::where('report_info_id', $report_info_id)->get()->first();
-        $dawat3 = Dawat3GeneralProgramAndOthers::where('report_info_id', $report_info_id)->get()->first();
-        $dawat4 = Dawat4GonoSongjogAndDawatOvijan::where('report_info_id', $report_info_id)->get()->first();
-        $department1 = Department1TalimulQuran::where('report_info_id', $report_info_id)->get()->first();
-        $department4 = Department4DifferentJobHoldersDawat::where('report_info_id', $report_info_id)->get()->first();
-        $department5 = Department5ParibarikDawat::where('report_info_id', $report_info_id)->get()->first();
-        $dawah_prokashona = DawahAndProkashona::where('report_info_id', $report_info_id)->get()->first();
-        $kormosuci = KormosuciBastobayon::where('report_info_id', $report_info_id)->get()->first();
-        $songothon1 = Songothon1Jonosokti::where('report_info_id', $report_info_id)->get()->first();
-        $songothon2 = Songothon2AssociateMember::where('report_info_id', $report_info_id)->get()->first();
-        $songothon9 = Songothon9SangothonikBoithok::where('report_info_id', $report_info_id)->get()->first();
-        $songothon5 = Songothon5DawatAndParibarikUnit::where('report_info_id', $report_info_id)->get()->first();
-        $songothon7 = Songothon7Sofor::where('report_info_id', $report_info_id)->get()->first();
-        $songothon8 = Songothon8IyanotData::where('report_info_id', $report_info_id)->get()->first();
-        $proshikkhon = Proshikkhon1Tarbiat::where('report_info_id', $report_info_id)->get()->first();
-        $shomajsheba1 = Shomajsheba1PersonalSocialWork::where('report_info_id', $report_info_id)->get()->first();
-        $shomajsheba2 = Shomajsheba2UnitSocialWork::where('report_info_id', $report_info_id)->get()->first();
-        $rastrio = Rastrio1BishishtoBekti::where('report_info_id', $report_info_id)->get()->first();
-        $montobbo = Montobbo::where('report_info_id', $report_info_id)->get()->first();
-        // ---------------------  reports all data to show  ---------------------------
+    //     $report_info = ReportInfo::where('org_type_id', $unit_id)
+    //         ->where('org_type','unit')
+    //         ->whereYear('month_year', $month->clone()->year)
+    //         ->whereMonth('month_year', $month->clone()->month)
+    //         ->get()
+    //         ->first();
 
-        // ---------------------  previous and present calculation  ---------------------------
-        $previous_month = $month->clone()->subMonth()->endOfMonth();
-        $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $unit_id)
-            ->where('org_type','unit')
-            ->where('report_approved_status','approved')
-            ->whereDate('month_year', '<=' ,$previous_month)
-            ->pluck('id');
+    //     if ($report_info) {
+    //         $report_info_id = $report_info->id;
+    //     }else{
+    //         return redirect()->back();
+    //     }
 
-        $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $unit_id)
-        ->where('org_type','unit')
-        ->where('report_approved_status','approved')
-        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
-        ->pluck('id');
+    //     // ---------------------  reports all data to show  ---------------------------
+    //     $dawat1 = Dawat1RegularGroupWise::where('report_info_id', $report_info_id)->get()->first();
+    //     $dawat2 = Dawat2PersonalAndTarget::where('report_info_id', $report_info_id)->get()->first();
+    //     $dawat3 = Dawat3GeneralProgramAndOthers::where('report_info_id', $report_info_id)->get()->first();
+    //     $dawat4 = Dawat4GonoSongjogAndDawatOvijan::where('report_info_id', $report_info_id)->get()->first();
+    //     $department1 = Department1TalimulQuran::where('report_info_id', $report_info_id)->get()->first();
+    //     $department4 = Department4DifferentJobHoldersDawat::where('report_info_id', $report_info_id)->get()->first();
+    //     $department5 = Department5ParibarikDawat::where('report_info_id', $report_info_id)->get()->first();
+    //     $dawah_prokashona = DawahAndProkashona::where('report_info_id', $report_info_id)->get()->first();
+    //     $kormosuci = KormosuciBastobayon::where('report_info_id', $report_info_id)->get()->first();
+    //     $songothon1 = Songothon1Jonosokti::where('report_info_id', $report_info_id)->get()->first();
+    //     $songothon2 = Songothon2AssociateMember::where('report_info_id', $report_info_id)->get()->first();
+    //     $songothon9 = Songothon9SangothonikBoithok::where('report_info_id', $report_info_id)->get()->first();
+    //     $songothon5 = Songothon5DawatAndParibarikUnit::where('report_info_id', $report_info_id)->get()->first();
+    //     $songothon7 = Songothon7Sofor::where('report_info_id', $report_info_id)->get()->first();
+    //     $songothon8 = Songothon8IyanotData::where('report_info_id', $report_info_id)->get()->first();
+    //     $proshikkhon = Proshikkhon1Tarbiat::where('report_info_id', $report_info_id)->get()->first();
+    //     $shomajsheba1 = Shomajsheba1PersonalSocialWork::where('report_info_id', $report_info_id)->get()->first();
+    //     $shomajsheba2 = Shomajsheba2UnitSocialWork::where('report_info_id', $report_info_id)->get()->first();
+    //     $rastrio = Rastrio1BishishtoBekti::where('report_info_id', $report_info_id)->get()->first();
+    //     $montobbo = Montobbo::where('report_info_id', $report_info_id)->get()->first();
+    //     // ---------------------  reports all data to show  ---------------------------
 
-        /** rokon */
-        $rokon_previous = calculate_previous_present(
-            Songothon1Jonosokti::class,
-            $total_approved_report_info_ids_previous,
-            'rokon_briddhi',
-            'rokon_gatti'
-        );
+    //     // ---------------------  previous and present calculation  ---------------------------
+    //     $previous_month = $month->clone()->subMonth()->endOfMonth();
+    //     $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $unit_id)
+    //         ->where('org_type','unit')
+    //         ->where('report_approved_status','approved')
+    //         ->whereDate('month_year', '<=' ,$previous_month)
+    //         ->pluck('id');
 
-        $rokon_present = calculate_previous_present(
-            Songothon1Jonosokti::class,
-            $total_approved_report_info_ids_present,
-            'rokon_briddhi',
-            'rokon_gatti'
-        );
+    //     $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $unit_id)
+    //     ->where('org_type','unit')
+    //     ->where('report_approved_status','approved')
+    //     ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
+    //     ->pluck('id');
 
-        /** worker */
-        $worker_previous = calculate_previous_present(
-            Songothon1Jonosokti::class,
-            $total_approved_report_info_ids_previous,
-            'worker_briddhi',
-            'worker_gatti'
-        );
+    //     /** rokon */
+    //     $rokon_previous = calculate_previous_present(
+    //         Songothon1Jonosokti::class,
+    //         $total_approved_report_info_ids_previous,
+    //         'rokon_briddhi',
+    //         'rokon_gatti'
+    //     );
 
-        $worker_present = calculate_previous_present(
-            Songothon1Jonosokti::class,
-            $total_approved_report_info_ids_present,
-            'worker_briddhi',
-            'worker_gatti'
-        );
+    //     $rokon_present = calculate_previous_present(
+    //         Songothon1Jonosokti::class,
+    //         $total_approved_report_info_ids_present,
+    //         'rokon_briddhi',
+    //         'rokon_gatti'
+    //     );
 
-        /** associate_member */
-        $associate_member_previous = calculate_increase(
-            Songothon2AssociateMember::class,
-            $total_approved_report_info_ids_previous,
-            'associate_member_briddhi',
-        );
+    //     /** worker */
+    //     $worker_previous = calculate_previous_present(
+    //         Songothon1Jonosokti::class,
+    //         $total_approved_report_info_ids_previous,
+    //         'worker_briddhi',
+    //         'worker_gatti'
+    //     );
 
-        $associate_member_present = calculate_increase(
-            Songothon2AssociateMember::class,
-            $total_approved_report_info_ids_present,
-            'associate_member_briddhi',
-        );
+    //     $worker_present = calculate_previous_present(
+    //         Songothon1Jonosokti::class,
+    //         $total_approved_report_info_ids_present,
+    //         'worker_briddhi',
+    //         'worker_gatti'
+    //     );
 
-        /** vinno_dormalombi_worker */
-        $vinno_dormalombi_worker_previous = calculate_increase(
-            Songothon2AssociateMember::class,
-            $total_approved_report_info_ids_previous,
-            'vinno_dormalombi_worker_briddhi',
-        );
+    //     /** associate_member */
+    //     $associate_member_previous = calculate_increase(
+    //         Songothon2AssociateMember::class,
+    //         $total_approved_report_info_ids_previous,
+    //         'associate_member_briddhi',
+    //     );
 
-        $vinno_dormalombi_worker_present = calculate_increase(
-            Songothon2AssociateMember::class,
-            $total_approved_report_info_ids_present,
-            'vinno_dormalombi_worker_briddhi',
-        );
+    //     $associate_member_present = calculate_increase(
+    //         Songothon2AssociateMember::class,
+    //         $total_approved_report_info_ids_present,
+    //         'associate_member_briddhi',
+    //     );
 
-        /** vinno_dormalombi_associate_member */
-        $vinno_dormalombi_associate_member_previous = calculate_increase(
-            Songothon2AssociateMember::class,
-            $total_approved_report_info_ids_previous,
-            'vinno_dormalombi_associate_member_briddhi',
-        );
+    //     /** vinno_dormalombi_worker */
+    //     $vinno_dormalombi_worker_previous = calculate_increase(
+    //         Songothon2AssociateMember::class,
+    //         $total_approved_report_info_ids_previous,
+    //         'vinno_dormalombi_worker_briddhi',
+    //     );
 
-        $vinno_dormalombi_associate_member_present = calculate_increase(
-            Songothon2AssociateMember::class,
-            $total_approved_report_info_ids_present,
-            'vinno_dormalombi_associate_member_briddhi',
-        );
+    //     $vinno_dormalombi_worker_present = calculate_increase(
+    //         Songothon2AssociateMember::class,
+    //         $total_approved_report_info_ids_present,
+    //         'vinno_dormalombi_worker_briddhi',
+    //     );
 
-        // ---------------------  previous and present calculation  ---------------------------
+    //     /** vinno_dormalombi_associate_member */
+    //     $vinno_dormalombi_associate_member_previous = calculate_increase(
+    //         Songothon2AssociateMember::class,
+    //         $total_approved_report_info_ids_previous,
+    //         'vinno_dormalombi_associate_member_briddhi',
+    //     );
+
+    //     $vinno_dormalombi_associate_member_present = calculate_increase(
+    //         Songothon2AssociateMember::class,
+    //         $total_approved_report_info_ids_present,
+    //         'vinno_dormalombi_associate_member_briddhi',
+    //     );
+
+    //     // ---------------------  previous and present calculation  ---------------------------
 
 
-        // -------------------------- bm income report ------------------------------------
-        $query = BmPaid::query();
-        $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_id);
-        // $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
-        // $category_all_id = array_values(array_unique($category));
-        $total_income = $filter->sum('amount');
-        $category_all_id = BmCategory::select(['id', 'parent_id'])->get();
-        // dd($category_all_id);
-        $income_category_wise = [];
-        foreach ($category_all_id as $index => $item) {
-            $category_exist = false;
-            $already_created_category_ids = [];
+    //     // -------------------------- bm income report ------------------------------------
+    //     $query = BmPaid::query();
+    //     $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('unit_id', $unit_id);
+    //     // $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
+    //     // $category_all_id = array_values(array_unique($category));
+    //     $total_income = $filter->sum('amount');
+    //     $category_all_id = BmCategory::select(['id', 'parent_id'])->get();
+    //     // dd($category_all_id);
+    //     $income_category_wise = [];
+    //     foreach ($category_all_id as $index => $item) {
+    //         $category_exist = false;
+    //         $already_created_category_ids = [];
 
-            $testQuery = BmPaid::query();
-            $totalAmount = $testQuery->whereYear('month', $month->clone()->year)
-                ->whereMonth('month', $month->clone()->month)
-                ->where('bm_category_id', $item->id)
-                ->where('unit_id', $unit_id)
-                ->sum('amount');
-            if($item->parent_id != 0){
-                foreach($income_category_wise as $key=>$income_category){
-                    if($income_category['category_id'] == $item->parent_id){
-                        if($income_category_wise[$key]['amount'] == ''){
-                            $sum_sub_cat = $totalAmount == 0 ? "" : $totalAmount;
-                        }else{
-                            $sum_sub_cat = $income_category_wise[$key]['amount'] + $totalAmount;
-                        }
-                        $income_category_wise[$key]['amount'] = $sum_sub_cat;
-                        $category_exist = true;
-                    }
-                }
-                if(!$category_exist){
-                    $bmCategory = BmCategory::find($item->parent_id);
-                    $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
-                    $income_category_wise[$index]['category'] = $bmCategory->title;
-                    $income_category_wise[$index]['category_id'] = $bmCategory->id;
+    //         $testQuery = BmPaid::query();
+    //         $totalAmount = $testQuery->whereYear('month', $month->clone()->year)
+    //             ->whereMonth('month', $month->clone()->month)
+    //             ->where('bm_category_id', $item->id)
+    //             ->where('unit_id', $unit_id)
+    //             ->sum('amount');
+    //         if($item->parent_id != 0){
+    //             foreach($income_category_wise as $key=>$income_category){
+    //                 if($income_category['category_id'] == $item->parent_id){
+    //                     if($income_category_wise[$key]['amount'] == ''){
+    //                         $sum_sub_cat = $totalAmount == 0 ? "" : $totalAmount;
+    //                     }else{
+    //                         $sum_sub_cat = $income_category_wise[$key]['amount'] + $totalAmount;
+    //                     }
+    //                     $income_category_wise[$key]['amount'] = $sum_sub_cat;
+    //                     $category_exist = true;
+    //                 }
+    //             }
+    //             if(!$category_exist){
+    //                 $bmCategory = BmCategory::find($item->parent_id);
+    //                 $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+    //                 $income_category_wise[$index]['category'] = $bmCategory->title;
+    //                 $income_category_wise[$index]['category_id'] = $bmCategory->id;
 
-                    $already_created_category_ids[] = $item->parent_id;
-                }
-            }
-            if (!in_array($item->id, $already_created_category_ids) && $item->parent_id == 0) {
-                $bmCategory = BmCategory::find($item->id);
-                // dd($bmCategory,$item->id,$item );
-                $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
-                $income_category_wise[$index]['category'] = $bmCategory->title;
-                $income_category_wise[$index]['category_id'] = $bmCategory->id;
-            }
+    //                 $already_created_category_ids[] = $item->parent_id;
+    //             }
+    //         }
+    //         if (!in_array($item->id, $already_created_category_ids) && $item->parent_id == 0) {
+    //             $bmCategory = BmCategory::find($item->id);
+    //             // dd($bmCategory,$item->id,$item );
+    //             $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+    //             $income_category_wise[$index]['category'] = $bmCategory->title;
+    //             $income_category_wise[$index]['category_id'] = $bmCategory->id;
+    //         }
 
-        }
-        // dd($income_category_wise);
-        // -------------------------- bm income report ------------------------------------
+    //     }
+    //     // dd($income_category_wise);
+    //     // -------------------------- bm income report ------------------------------------
 
-        // -------------------------- bm expense report ------------------------------------
-        $query = BmExpense::query();
-        $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('unit_id', $unit_id);
-        $total_expense = $filter->sum('amount');
-        // $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
-        // $category_unique_id = array_values(array_unique($category_id));
-        $category_unique_id = BmExpenseCategory::pluck('id');
+    //     // -------------------------- bm expense report ------------------------------------
+    //     $query = BmExpense::query();
+    //     $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('unit_id', $unit_id);
+    //     $total_expense = $filter->sum('amount');
+    //     // $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
+    //     // $category_unique_id = array_values(array_unique($category_id));
+    //     $category_unique_id = BmExpenseCategory::pluck('id');
 
-        $expense_category_wise = [];
-        foreach ($category_unique_id as $index => $item) {
-            $testQuery = BmExpense::query();
-            $totalAmount = $testQuery->whereYear('date', $month->clone()->year)
-                ->whereMonth('date', $month->clone()->month)
-                ->where('bm_expense_category_id', $item)
-                ->where('unit_id', $unit_id)
-                ->sum('amount');
-            $bmCategory = BmExpenseCategory::find($item);
-            $expense_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
-            $expense_category_wise[$index]['category'] = $bmCategory->title;
-        }
-        // dd($expense_category_wise);
-        // -------------------------- bm expense report ------------------------------------
+    //     $expense_category_wise = [];
+    //     foreach ($category_unique_id as $index => $item) {
+    //         $testQuery = BmExpense::query();
+    //         $totalAmount = $testQuery->whereYear('date', $month->clone()->year)
+    //             ->whereMonth('date', $month->clone()->month)
+    //             ->where('bm_expense_category_id', $item)
+    //             ->where('unit_id', $unit_id)
+    //             ->sum('amount');
+    //         $bmCategory = BmExpenseCategory::find($item);
+    //         $expense_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
+    //         $expense_category_wise[$index]['category'] = $bmCategory->title;
+    //     }
+    //     // dd($expense_category_wise);
+    //     // -------------------------- bm expense report ------------------------------------
 
-        return view('unit.unit_report')->with([
-            'month' => $month,
-            'org_type' => $org_type,
-            'unit_info' => $unit_info,
-            'ward_info' => $ward_info,
-            'thana_info' => $thana_info,
-            'president' => $president,
+    //     return view('unit.unit_report')->with([
+    //         'month' => $month,
+    //         'org_type' => $org_type,
+    //         'unit_info' => $unit_info,
+    //         'ward_info' => $ward_info,
+    //         'thana_info' => $thana_info,
+    //         'president' => $president,
 
-            'dawat1' => $dawat1,
-            'dawat2' => $dawat2,
-            'dawat3' => $dawat3,
-            'dawat4' => $dawat4,
-            'department1' => $department1,
-            'department4' => $department4,
-            'department5' => $department5,
-            'dawah_prokashona' => $dawah_prokashona,
-            'kormosuci' => $kormosuci,
-            'songothon1' => $songothon1,
-            'songothon2' => $songothon2,
-            'songothon9' => $songothon9,
-            'songothon5' => $songothon5,
-            'songothon7' => $songothon7,
-            'songothon8' => $songothon8,
-            'proshikkhon' => $proshikkhon,
-            'shomajsheba1' => $shomajsheba1,
-            'shomajsheba2' => $shomajsheba2,
-            'rastrio' => $rastrio,
-            'montobbo' => $montobbo,
+    //         'dawat1' => $dawat1,
+    //         'dawat2' => $dawat2,
+    //         'dawat3' => $dawat3,
+    //         'dawat4' => $dawat4,
+    //         'department1' => $department1,
+    //         'department4' => $department4,
+    //         'department5' => $department5,
+    //         'dawah_prokashona' => $dawah_prokashona,
+    //         'kormosuci' => $kormosuci,
+    //         'songothon1' => $songothon1,
+    //         'songothon2' => $songothon2,
+    //         'songothon9' => $songothon9,
+    //         'songothon5' => $songothon5,
+    //         'songothon7' => $songothon7,
+    //         'songothon8' => $songothon8,
+    //         'proshikkhon' => $proshikkhon,
+    //         'shomajsheba1' => $shomajsheba1,
+    //         'shomajsheba2' => $shomajsheba2,
+    //         'rastrio' => $rastrio,
+    //         'montobbo' => $montobbo,
 
-            'previous_present'=>(object)[
-                //rokon
-                'rokon_previous' => $rokon_previous,
-                'rokon_present' => $rokon_present,
-                //worker
-                'worker_previous' => $worker_previous,
-                'worker_present' => $worker_present,
-                //associate_member
-                'associate_member_previous' => $associate_member_previous,
-                'associate_member_present' => $associate_member_present,
-                //vinno_dormalombi_worker
-                'vinno_dormalombi_worker_previous' => $vinno_dormalombi_worker_previous,
-                'vinno_dormalombi_worker_present' => $vinno_dormalombi_worker_present,
-                //vinno_dormalombi_associate_member
-                'vinno_dormalombi_associate_member_previous' => $vinno_dormalombi_associate_member_previous,
-                'vinno_dormalombi_associate_member_present' => $vinno_dormalombi_associate_member_present,
-            ],
+    //         'previous_present'=>(object)[
+    //             //rokon
+    //             'rokon_previous' => $rokon_previous,
+    //             'rokon_present' => $rokon_present,
+    //             //worker
+    //             'worker_previous' => $worker_previous,
+    //             'worker_present' => $worker_present,
+    //             //associate_member
+    //             'associate_member_previous' => $associate_member_previous,
+    //             'associate_member_present' => $associate_member_present,
+    //             //vinno_dormalombi_worker
+    //             'vinno_dormalombi_worker_previous' => $vinno_dormalombi_worker_previous,
+    //             'vinno_dormalombi_worker_present' => $vinno_dormalombi_worker_present,
+    //             //vinno_dormalombi_associate_member
+    //             'vinno_dormalombi_associate_member_previous' => $vinno_dormalombi_associate_member_previous,
+    //             'vinno_dormalombi_associate_member_present' => $vinno_dormalombi_associate_member_present,
+    //         ],
 
-            'income_category_wise' => $income_category_wise,
-            'total_income' => $total_income,
+    //         'income_category_wise' => $income_category_wise,
+    //         'total_income' => $total_income,
 
-            'expense_category_wise' => $expense_category_wise,
-            'total_expense' => $total_expense,
+    //         'expense_category_wise' => $expense_category_wise,
+    //         'total_expense' => $total_expense,
 
-        ]);
-    }
+    //     ]);
+    // }
 
     public function report_upload()
     {
@@ -1082,6 +1092,57 @@ class UnitController extends Controller
         $org_type = 'unit';
         $org_type_id = $unit_id;
 
+        $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id);
+        // dd($datas->report_sum_data );
+
+        return view('unit.unit_report_sum')->with([
+            'start_month' => $datas->start_month,
+            'end_month' => $datas->end_month,
+            'report_header' => $datas->report_header,
+
+            'report_sum_data' => $datas->report_sum_data,
+            'previous_present' => $datas->previous_present,
+            'income_report' => $datas->income_report,
+            'expense_report' => $datas->expense_report,
+        ]);
+    }
+    public function unit_report_monthly()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $unit_id = auth()->user()->org_unit_user->unit_id;
+
+        $start_month = request()->month;
+        $end_month = request()->month;
+        $org_type = 'unit';
+        $org_type_id = $unit_id;
+
+        $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id);
+        // dd($datas->report_sum_data );
+
+        return view('unit.unit_report_monthly')->with([
+            'start_month' => $datas->start_month,
+            'end_month' => $datas->end_month,
+            'report_header' => $datas->report_header,
+
+            'report_sum_data' => $datas->report_sum_data,
+            'previous_present' => $datas->previous_present,
+            'income_report' => $datas->income_report,
+            'expense_report' => $datas->expense_report,
+        ]);
+    }
+
+    public function report_summation($start_month, $end_month, $org_type, $org_type_id)
+    {
         $report_header_instance = new ReportHeader();
         $report_header = $report_header_instance->execute( $org_type, $org_type_id);
 
@@ -1109,7 +1170,7 @@ class UnitController extends Controller
         $expense_report = $bm_expense_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type);
         // -------------------------- bm expense report ------------------------------------
 
-        return view('unit.unit_report_sum')->with([
+        return (object) [
             'start_month' => $start_month,
             'end_month' => $end_month,
             'report_header' => $report_header,
@@ -1118,7 +1179,7 @@ class UnitController extends Controller
             'previous_present' => $previous_present,
             'income_report' => $income_report,
             'expense_report' => $expense_report,
-        ]);
+        ];
     }
 
 }

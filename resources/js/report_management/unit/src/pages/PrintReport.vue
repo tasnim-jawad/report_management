@@ -47,7 +47,8 @@ export default {
         get_monthly_report: function(){
             if(this.month != null){
                 this.$refs.report_form_sum.submit();
-                window.open(`/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`)
+                // window.open(`/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`)
+                window.open(`/unit/unit-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
         },
 

@@ -13,6 +13,12 @@ const router = createRouter({
             component: UnitReportUpload,
             props: true
         },
+        {
+            name: "UnitReportUploadMonthly",
+            path: '/unit-report-upload-monthly/:month/:user_id',
+            component: UnitReportUpload,
+            props: true
+        },
         main_route,
     ]
 })

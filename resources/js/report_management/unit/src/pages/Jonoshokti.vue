@@ -14,7 +14,7 @@
                             <th>srl#</th>
                             <th>Name</th>
                             <th>Gender</th>
-                            <th>Telegram Name</th>
+                            <th>responsibility</th>
                             <th>Blood Group</th>
                             <th>Action</th>
                         </tr>
@@ -24,7 +24,7 @@
                             <td>{{index + 1}}</td>
                             <td>{{user.full_name}}</td>
                             <td>{{user.gender}}</td>
-                            <td>{{user.telegram_name}}</td>
+                            <td>{{user.org_unit_responsible[0]?.responsibility?.title}}</td>
                             <td>{{user.blood_group}}</td>
                             <td>
                                 <div class="action">

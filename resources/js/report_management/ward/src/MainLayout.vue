@@ -20,8 +20,8 @@
                         <div class="profile_info">
                             <h5 class="m-0">{{this.user?.user?.full_name}}</h5>
                             <p class="m-0">{{this.user?.responsibility?.resposibilities?.title}}</p>
-                            <p class="m-0">ward: {{this.user?.responsibility?.org_ward?.title}}</p>
-                            <p class="m-0">thana: {{this.user?.thana?.title}}</p>
+                            <!-- <p class="m-0">ward: {{this.user?.responsibility?.org_ward?.title}}</p>
+                            <p class="m-0">thana: {{this.user?.thana?.title}}</p> -->
                         </div>
                     </div>
                     <ul class="options">
@@ -155,8 +155,12 @@
                 <div class="left ">
                     <a href="#" @click.prevent="toggle_sidebar"><i class="fa-solid fa-bars"></i></a>
                 </div>
+                <div class="middle">
+                    <p >ওয়ার্ডঃ {{this.user?.responsibility?.org_ward?.title}}</p>
+                    <p >থানাঃ {{this.user?.thana?.title}}</p>
+                </div>
                 <div class="right">
-                    <a class="btn " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     <ul class="dropdown-menu ">
                         <li><a class="dropdown-item" href="#" @click.prevent="logout">Logout</a></li>
                         <!-- <li><a class="dropdown-item" href="#">Another action</a></li>

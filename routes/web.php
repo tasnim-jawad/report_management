@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Actions\BmReport;
 use App\Http\Controllers\Actions\DateWiseReportSum;
+use App\Http\Controllers\Actions\Monthly\MonthlyReport;
 use App\Http\Controllers\Actions\ReportHeader;
 use App\Http\Controllers\Actions\ReportJoma;
 use App\Http\Middleware\IsGuest;
@@ -37,6 +38,7 @@ Route::group(['prefix' => 'unit', 'namespace' => '\App\Http\Controllers\Unit'], 
     Route::get('report', 'UnitController@report');
     Route::get('report/upload', 'UnitController@report_upload');
     Route::get('report/unit-report-sum', 'UnitController@unit_report_sum');
+    Route::get('unit-report-monthly', 'UnitController@unit_report_monthly');
 });
 
 Route::group(['prefix' => 'ward', 'namespace' => '\App\Http\Controllers\Ward'], function () {
@@ -90,9 +92,9 @@ Route::get('/date-wise', function () {
     // $report_header = new ReportHeader();
     // $data = $report_header->execute(auth()->user());
     $month = '2024-11';
-    $report = new ReportJoma();
+    $report = new MonthlyReport();
     $data = $report->execute($month,'unit',1);
-
+    dd($data );
      // Return the result (you can return as JSON or however you'd like)
      return response()->json($data);
 });

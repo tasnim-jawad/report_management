@@ -6,13 +6,16 @@
             <aside>
                 <nav id="side_nav" class="side_nav">
                     <div class="logo">
-                        <img src="https://cdn.freebiesupply.com/logos/large/2x/mi-1-logo-black-and-white.png" alt="" />
+                        <!-- <img src="https://cdn.freebiesupply.com/logos/large/2x/mi-1-logo-black-and-white.png" alt="" /> -->
+                        <img src="/images/bji_logo2.png" alt="">
                     </div>
                     <div class="profile_view">
                         <div class="profile_pic">
                             <div class="circle">
                                 <div class="image_body">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrumPKQMsrYtosDWTVcOvkXleWBlJhdshg2k3qyomSQ&s" alt="" />
+                                    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrumPKQMsrYtosDWTVcOvkXleWBlJhdshg2k3qyomSQ&s" alt="" /> -->
+                                    <!-- <img :src="`/images/${user?.user?.image}`" alt=""> -->
+                                    <img src="/images/default.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -21,10 +24,10 @@
                             <p class="m-0">
                                 {{ this.user?.responsibility?.resposibilities?.title }}
                             </p>
-                            <p class="m-0">
+                            <!-- <p class="m-0">
                                 unit: {{ this.user?.responsibility?.org_unit?.title }}
                             </p>
-                            <p class="m-0">ward: {{ this.user?.ward?.title }}</p>
+                            <p class="m-0">ward: {{ this.user?.ward?.title }}</p> -->
                         </div>
                     </div>
                     <ul class="options">
@@ -142,6 +145,10 @@
             <header class="report_app_right_top">
                 <div class="left">
                     <a href="#" @click.prevent="toggle_sidebar"><i class="fa-solid fa-bars"></i></a>
+                </div>
+                <div class="middle">
+                    <p >ইউনিট: {{ this.user?.responsibility?.org_unit?.title }}</p>
+                    <p >ওয়ার্ড: {{ this.user?.ward?.title }}</p>
                 </div>
                 <div class="right">
                     <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>

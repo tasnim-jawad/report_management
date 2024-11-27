@@ -120,6 +120,7 @@ ul li {
 }
 @media print {
     .joma_din,
+    .go_back_to_dashboard,
     .print_preview {
         display: none; /* Hides the entire div during printing */
     }
@@ -306,7 +307,7 @@ th {
 .margine_top_page_change{
     margin-top: 130px;
 }
-
+.go_back_to_dashboard,
 .print_preview {
     position: fixed;
     display: flex;
@@ -325,6 +326,7 @@ th {
 }
 
 /* Hover effect */
+.go_back_to_dashboard:hover,
 .print_preview:hover {
     background-color: rgb(37, 159, 37);
     transform: scale(1.1);
@@ -332,6 +334,7 @@ th {
 }
 
 /* Active state for click effect */
+.go_back_to_dashboard:active,
 .print_preview:active {
     transform: scale(1.05);
     box-shadow: 0px 0px 4px 3px rgb(4 43 14 / 30%);
