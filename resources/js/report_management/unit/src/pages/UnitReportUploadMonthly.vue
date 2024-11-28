@@ -256,34 +256,48 @@
                             <tr>
                                 <td class="text-start px-2">কতজন কুরআন শিক্ষা প্রদান করেছেন</td>
                                 <td>
-                                    <input name="teacher_rokon" :value="formatBangla(department1?.teacher_rokon ?? '')"
+                                    <input name="teacher_rokon"
+                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.teacher_rokon ?? '')"
                                         @change="data_upload('department1-talimul-quran')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="teacher_worker"
-                                        :value="formatBangla(department1?.teacher_worker ?? '')"
+                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.teacher_worker ?? '')"
                                         @change="data_upload('department1-talimul-quran')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
-                                <td>{{ formatBangla((department1?.teacher_rokon ?? 0) + (department1?.teacher_worker ??
-                                    0)) }}</td>
+                                <td>
+                                    {{
+                                        formatBangla(
+                                            (Number(report_sum_data?.department1_talimul_qurans?.teacher_rokon) ?? 0) +
+                                            (Number(report_sum_data?.department1_talimul_qurans?.teacher_worker) ?? 0)
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে</td>
                                 <td>
-                                    <input name="student_rokon" :value="formatBangla(department1?.student_rokon ?? '')"
+                                    <input name="student_rokon"
+                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.student_rokon ?? '')"
                                         @change="data_upload('department1-talimul-quran')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="student_worker"
-                                        :value="formatBangla(department1?.student_worker ?? '')"
+                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.student_worker ?? '')"
                                         @change="data_upload('department1-talimul-quran')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
-                                <td>{{ formatBangla((department1?.student_rokon ?? 0) + (department1?.student_worker ??
-                                    0)) }}</td>
+                                <td>
+                                    {{
+                                        formatBangla(
+                                            (Number(report_sum_data?.department1_talimul_qurans?.student_rokon) ?? 0) +
+                                            (Number(report_sum_data?.department1_talimul_qurans?.student_worker) ?? 0)
+                                        )
+                                    }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -299,19 +313,19 @@
                             <tr>
                                 <td>
                                     <input name="how_much_learned_quran"
-                                        :value="formatBangla(department1?.how_much_learned_quran ?? '')"
+                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_learned_quran ?? '')"
                                         @change="data_upload('department1-talimul-quran')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="how_much_invited"
-                                        :value="formatBangla(department1?.how_much_invited ?? '')"
+                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_invited ?? '')"
                                         @change="data_upload('department1-talimul-quran')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
                                     <input name="how_much_been_associated"
-                                        :value="formatBangla(department1?.how_much_been_associated ?? '')"
+                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_been_associated ?? '')"
                                         @change="data_upload('department1-talimul-quran')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
@@ -336,19 +350,19 @@
                             <td class="text-start px-2">রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ</td>
                             <td>
                                 <input name="political_and_special_invited"
-                                    :value="formatBangla(department4?.political_and_special_invited ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_invited ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="political_and_special_been_associated"
-                                    :value="formatBangla(department4?.political_and_special_been_associated ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_been_associated ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="political_and_special_target"
-                                    :value="formatBangla(department4?.political_and_special_target ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_target ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
@@ -357,19 +371,19 @@
                             <td class="text-start px-2">প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)</td>
                             <td>
                                 <input name="prantik_jonogosti_invited"
-                                    :value="formatBangla(department4?.prantik_jonogosti_invited ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_invited ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="prantik_jonogosti_been_associated"
-                                    :value="formatBangla(department4?.prantik_jonogosti_been_associated ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_been_associated ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="prantik_jonogosti_target"
-                                    :value="formatBangla(department4?.prantik_jonogosti_target ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_target ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
@@ -378,19 +392,19 @@
                             <td class="text-start px-2">ভিন্নধর্মাবলম্বী</td>
                             <td>
                                 <input name="vinno_dormalombi_invited"
-                                    :value="formatBangla(department4?.vinno_dormalombi_invited ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_invited ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="vinno_dormalombi_been_associated"
-                                    :value="formatBangla(department4?.vinno_dormalombi_been_associated ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_been_associated ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="vinno_dormalombi_target"
-                                    :value="formatBangla(department4?.vinno_dormalombi_target ?? '')"
+                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_target ?? '')"
                                     @change="data_upload('department4-different-job-holders-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
@@ -411,13 +425,13 @@
                         <tr>
                             <td>
                                 <input name="total_attended_family"
-                                    :value="formatBangla(department5?.total_attended_family ?? '')"
+                                    :value="formatBangla(report_sum_data?.department5_paribarik_dawats?.total_attended_family ?? '')"
                                     @change="data_upload('department5-paribarik-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="how_many_new_family_invited"
-                                    :value="formatBangla(department5?.how_many_new_family_invited ?? '')"
+                                    :value="formatBangla(report_sum_data?.department5_paribarik_dawats?.how_many_new_family_invited ?? '')"
                                     @change="data_upload('department5-paribarik-dawat')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
@@ -443,100 +457,91 @@
                         <tr>
                             <td class="text-start px-2">বই বিলিকেন্দ্ৰ</td>
                             <td>
-                                <input name="unit_book_distribution_center"
-                                    :value="formatBangla(dawah_prokashona?.unit_book_distribution_center ?? '')"
-                                    @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                {{ formatBangla(previous_present?.unit_book_distribution_center_present ?? '') }}
                             </td>
                             <td>
                                 <input name="unit_book_distribution_center_increase"
-                                    :value="formatBangla(dawah_prokashona?.unit_book_distribution_center_increase ?? '')"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution_center_increase ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
                             <td>
                                 <input name="soft_copy_book_distribution"
-                                    :value="formatBangla(dawah_prokashona?.soft_copy_book_distribution ?? '')"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.soft_copy_book_distribution ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
-                                <input name="soft_copy_book_distribution_increase"
-                                    :value="formatBangla(dawah_prokashona?.soft_copy_book_distribution_increase ?? '')"
+                                <!-- <input name="soft_copy_book_distribution_increase"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.soft_copy_book_distribution_increase ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                    class="bg-input w-100 text-center" /> -->
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">বই</td>
-                            <td>
+                            <!-- <td>
                                 <input name="books_in_pathagar"
-                                    :value="formatBangla(dawah_prokashona?.books_in_pathagar ?? '')"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.books_in_pathagar ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" />
+                            </td> -->
+                            <td>
+                                {{ formatBangla(previous_present?.books_in_pathagar_present ?? '') }}
                             </td>
                             <td>
                                 <input name="books_in_pathagar_increase"
-                                    :value="formatBangla(dawah_prokashona?.books_in_pathagar_increase ?? '')"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.books_in_pathagar_increase ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td class="text-start px-2">দাওয়াতি লিংক বিতরণ<span>(সংগঠন অনুমোদিত)</span></td>
                             <td>
                                 <input name="dawat_link_distribution"
-                                    :value="formatBangla(dawah_prokashona?.dawat_link_distribution ?? '')"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.dawat_link_distribution ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
-                                <input name="dawat_link_distribution_increase"
-                                    :value="formatBangla(dawah_prokashona?.dawat_link_distribution_increase ?? '')"
+                                <!-- <input name="dawat_link_distribution_increase"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.dawat_link_distribution_increase ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                    class="bg-input w-100 text-center" /> -->
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">বই বিলি/বিক্রি</td>
                             <td>
                                 <input name="unit_book_distribution"
-                                    :value="formatBangla(dawah_prokashona?.unit_book_distribution ?? '')"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
-                                <input name="unit_book_distribution_increase"
-                                    :value="formatBangla(dawah_prokashona?.unit_book_distribution_increase ?? '')"
+                                <!-- <input name="unit_book_distribution_increase"
+                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution_increase ?? '')"
                                     @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                    class="bg-input w-100 text-center" /> -->
                             </td>
                             <td class="text-start px-2">সোনার বাংলা/সংগ্রাম/ পৃথিবী কত কপি চলে</td>
                             <td>
-                                <div class="d-flex">
-                                    <input name="sonar_bangla"
-                                        :value="formatBangla(dawah_prokashona?.sonar_bangla ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="songram" :value="formatBangla(dawah_prokashona?.songram ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="prithibi" :value="formatBangla(dawah_prokashona?.prithibi ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')" type="text"
-                                        class="bg-input w-100 text-center" />
-                                </div>
+                                {{ formatBangla(previous_present?.sonar_bangla_present ?? '') }} /
+                                {{ formatBangla(previous_present?.songram_present ?? '') }} /
+                                {{ formatBangla(previous_present?.prithibi_present ?? '') }}
                             </td>
                             <td>
                                 <div class="d-flex">
                                     <input name="sonar_bangla_increase"
-                                        :value="formatBangla(dawah_prokashona?.sonar_bangla_increase ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.sonar_bangla_increase ?? '')"
                                         @change="data_upload('dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> /
                                     <input name="songram_increase"
-                                        :value="formatBangla(dawah_prokashona?.songram_increase ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.songram_increase ?? '')"
                                         @change="data_upload('dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> /
                                     <input name="prithibi_increase"
-                                        :value="formatBangla(dawah_prokashona?.prithibi_increase ?? '')"
+                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.prithibi_increase ?? '')"
                                         @change="data_upload('dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </div>
@@ -563,20 +568,20 @@
                             <td class="text-start px-2">মাসিক সাধারণ সভা</td>
                             <td>
                                 <input name="unit_masik_sadaron_sova_total"
-                                    :value="formatBangla(kormosuci?.unit_masik_sadaron_sova_total ?? '')"
+                                    :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_total ?? '')"
                                     @change="data_upload('kormosuci-bastobayon')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="unit_masik_sadaron_sova_target"
-                                    :value="formatBangla(kormosuci?.unit_masik_sadaron_sova_target ?? '')"
+                                    :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_target ?? '')"
                                     @change="data_upload('kormosuci-bastobayon')" type="text"
                                     class="bg-input w-100 text-center" />
                             </td>
                             <td>
                                 <input name="unit_masik_sadaron_sova_uposthiti"
                                     :value="formatBangla(average_kormosuci.unit_masik_sadaron_sova)"
-                                    @change="average_data_upload($event, 'kormosuci-bastobayon', kormosuci.unit_masik_sadaron_sova_total)"
+                                    @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_total)"
                                     type="text" class="bg-input w-100 text-center" />
                             </td>
                         </tr>
@@ -586,11 +591,11 @@
                             <td>
                                 <div class="d-flex">
                                     <input name="iftar_mahfil_personal_total"
-                                        :value="formatBangla(kormosuci?.iftar_mahfil_personal_total ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_total ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" /> /
                                     <input name="iftar_mahfil_samostic_total"
-                                        :value="formatBangla(kormosuci?.iftar_mahfil_samostic_total ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_total ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </div>
@@ -598,11 +603,11 @@
                             <td>
                                 <div class="d-flex">
                                     <input name="iftar_mahfil_personal_target"
-                                        :value="formatBangla(kormosuci?.iftar_mahfil_personal_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_target ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" /> /
                                     <input name="iftar_mahfil_samostic_target"
-                                        :value="formatBangla(kormosuci?.iftar_mahfil_samostic_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_target ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </div>
@@ -611,11 +616,11 @@
                                 <div class="d-flex">
                                     <input name="iftar_mahfil_personal_uposthiti"
                                         :value="formatBangla(average_kormosuci.iftar_mahfil_personal)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', kormosuci.iftar_mahfil_personal_total)"
+                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_total)"
                                         type="text" class="bg-input w-100 text-center" /> /
                                     <input name="iftar_mahfil_samostic_uposthiti"
                                         :value="formatBangla(average_kormosuci.iftar_mahfil_samostic)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', kormosuci.iftar_mahfil_samostic_total)"
+                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_total)"
                                         type="text" class="bg-input w-100 text-center" />
                                 </div>
                             </td>
@@ -626,15 +631,15 @@
                             <td>
                                 <div class="d-flex">
                                     <input name="cha_chakra_total"
-                                        :value="formatBangla(kormosuci?.cha_chakra_total ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_total ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" /> /
                                     <input name="samostic_khawa_total"
-                                        :value="formatBangla(kormosuci?.samostic_khawa_total ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_total ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" /> /
                                     <input name="sikkha_sofor_total"
-                                        :value="formatBangla(kormosuci?.sikkha_sofor_total ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_total ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </div>
@@ -642,15 +647,15 @@
                             <td>
                                 <div class="d-flex">
                                     <input name="cha_chakra_target"
-                                        :value="formatBangla(kormosuci?.cha_chakra_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_target ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" /> /
                                     <input name="samostic_khawa_target"
-                                        :value="formatBangla(kormosuci?.samostic_khawa_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_target ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" /> /
                                     <input name="sikkha_sofor_target"
-                                        :value="formatBangla(kormosuci?.sikkha_sofor_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_target ?? '')"
                                         @change="data_upload('kormosuci-bastobayon')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </div>
@@ -659,15 +664,15 @@
                                 <div class="d-flex">
                                     <input name="cha_chakra_uposthiti"
                                         :value="formatBangla(average_kormosuci.cha_chakra)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', kormosuci.cha_chakra_total)"
+                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.cha_chakra_total)"
                                         type="text" class="bg-input w-100 text-center" /> /
                                     <input name="samostic_khawa_uposthiti"
                                         :value="formatBangla(average_kormosuci.samostic_khawa)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', kormosuci.samostic_khawa_total)"
+                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.samostic_khawa_total)"
                                         type="text" class="bg-input w-100 text-center" /> /
                                     <input name="sikkha_sofor_uposthiti"
                                         :value="formatBangla(average_kormosuci.sikkha_sofor)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', kormosuci.sikkha_sofor_total)"
+                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_total)"
                                         type="text" class="bg-input w-100 text-center" />
                                 </div>
                             </td>
@@ -698,13 +703,13 @@
                                 <td class="text-start px-2">সদস্য (রুকন)</td>
                                 <td>{{ formatBangla(previous_present?.rokon_previous ?? '') }}</td>
                                 <td>{{ formatBangla(previous_present?.rokon_present ?? '') }}</td>
-                                <td><input name="rokon_briddhi" :value="formatBangla(songothon1?.rokon_briddhi ?? '')"
+                                <td><input name="rokon_briddhi" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_briddhi ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_gatti" :value="formatBangla(songothon1?.rokon_gatti ?? '')"
+                                <td><input name="rokon_gatti" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_gatti ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_target" :value="formatBangla(songothon1?.rokon_target ?? '')"
+                                <td><input name="rokon_target" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_target ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -712,13 +717,13 @@
                                 <td class="text-start px-2">কর্মী</td>
                                 <td>{{ formatBangla(previous_present?.worker_previous ?? '') }}</td>
                                 <td>{{ formatBangla(previous_present?.worker_present ?? '') }}</td>
-                                <td><input name="worker_briddhi" :value="formatBangla(songothon1?.worker_briddhi ?? '')"
+                                <td><input name="worker_briddhi" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_briddhi ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_gatti" :value="formatBangla(songothon1?.worker_gatti ?? '')"
+                                <td><input name="worker_gatti" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_gatti ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_target" :value="formatBangla(songothon1?.worker_target ?? '')"
+                                <td><input name="worker_target" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_target ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -743,11 +748,11 @@
                                 <td>{{ formatBangla(previous_present?.associate_member_previous ?? '') }}</td>
                                 <td>{{ formatBangla(previous_present?.associate_member_present ?? '') }}</td>
                                 <td><input name="associate_member_briddhi"
-                                        :value="formatBangla(songothon2?.associate_member_briddhi ?? '')"
+                                        :value="formatBangla(report_sum_data?.songothon2_associate_members?.associate_member_briddhi ?? '')"
                                         @change="data_upload('songothon2-associate-member')" type="text"
                                         class="bg-input w-100 text-center"></td>
                                 <td><input name="associate_member_target"
-                                        :value="formatBangla(songothon2?.associate_member_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.songothon2_associate_members?.associate_member_target ?? '')"
                                         @change="data_upload('songothon2-associate-member')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -770,11 +775,11 @@
                                 <td>
                                     <div class="d-flex">
                                         <input name="vinno_dormalombi_worker_briddhi"
-                                            :value="formatBangla(songothon2?.vinno_dormalombi_worker_briddhi ?? '')"
+                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_worker_briddhi ?? '')"
                                             @change="data_upload('songothon2-associate-member')" type="text"
                                             class="bg-input w-100 text-center"> /
                                         <input name="vinno_dormalombi_associate_member_briddhi"
-                                            :value="formatBangla(songothon2?.vinno_dormalombi_associate_member_briddhi ?? '')"
+                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_associate_member_briddhi ?? '')"
                                             @change="data_upload('songothon2-associate-member')" type="text"
                                             class="bg-input w-100 text-center">
                                     </div>
@@ -782,11 +787,11 @@
                                 <td>
                                     <div class="d-flex">
                                         <input name="vinno_dormalombi_worker_target"
-                                            :value="formatBangla(songothon2?.vinno_dormalombi_worker_target ?? '')"
+                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_worker_target ?? '')"
                                             @change="data_upload('songothon2-associate-member')" type="text"
                                             class="bg-input w-100 text-center"> /
                                         <input name="vinno_dormalombi_associate_member_target"
-                                            :value="formatBangla(songothon2?.vinno_dormalombi_associate_member_target ?? '')"
+                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_associate_member_target ?? '')"
                                             @change="data_upload('songothon2-associate-member')" type="text"
                                             class="bg-input w-100 text-center">
                                     </div>
@@ -801,13 +806,13 @@
                     <div class="d-flex justify-content-start w-50">
                         <label for="" class="fw-bold fs-6">৩. মাসিক কর্মী বৈঠক সংখ্যা :</label>
                         <input class="border_dot width-60 bg-input ps-2" name="unit_kormi_boithok_total"
-                            :value="formatBangla(songothon9?.unit_kormi_boithok_total ?? '')"
+                            :value="formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_total ?? '')"
                             @change="data_upload('songothon9-sangothonik-boithok')" type="text">
                     </div>
                     <div class="d-flex justify-content-start w-50">
                         <label for="" class="fw-bold fs-6">, উপস্থিতি:</label>
                         <input class="border_dot width-80 bg-input ps-2" name="unit_kormi_boithok_uposthiti"
-                            :value="formatBangla(songothon9?.unit_kormi_boithok_uposthiti ?? '')"
+                            :value="formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_uposthiti ?? '')"
                             @change="data_upload('songothon9-sangothonik-boithok')" type="text">
                     </div>
                 </div>
@@ -824,15 +829,15 @@
                         <tbody>
                             <tr>
                                 <td><input name="paribarik_unit_total"
-                                        :value="formatBangla(songothon5?.paribarik_unit_total ?? '')"
+                                        :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_total ?? '')"
                                         @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
                                         class="bg-input w-100 text-center"></td>
                                 <td><input name="paribarik_unit_increase"
-                                        :value="formatBangla(songothon5?.paribarik_unit_increase ?? '')"
+                                        :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_increase ?? '')"
                                         @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
                                         class="bg-input w-100 text-center"></td>
                                 <td><input name="paribarik_unit_target"
-                                        :value="formatBangla(songothon5?.paribarik_unit_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_target ?? '')"
                                         @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -844,7 +849,7 @@
                     <div class="d-flex justify-content-start ">
                         <label for="" class="fw-bold fs-6">৫. ঊর্ধ্বতন দায়িত্বশীলদের সফর সংখ্যা :</label>
                         <input class="border_dot bg-input w-75" name="upper_leader_sofor"
-                            :value="formatBangla(songothon7?.upper_leader_sofor ?? '')"
+                            :value="formatBangla(report_sum_data?.songothon7_sofors?.upper_leader_sofor ?? '')"
                             @change="data_upload('songothon7-sofor')" type="text">
                     </div>
                 </div>
@@ -862,21 +867,21 @@
                             <tr>
                                 <td class="text-start px-2">সহযোগী সদস্য</td>
                                 <td><input name="associate_member_total"
-                                        :value="formatBangla(songothon8?.associate_member_total ?? '')"
+                                        :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total ?? '')"
                                         @change="data_upload('songothon8-iyanot-data')" type="text"
                                         class="bg-input w-100 text-center"></td>
                                 <td><input name="associate_member_total_iyanot_amounts"
-                                        :value="formatBangla(songothon8?.associate_member_total_iyanot_amounts ?? '')"
+                                        :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total_iyanot_amounts ?? '')"
                                         @change="data_upload('songothon8-iyanot-data')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">সুধী</td>
-                                <td><input name="sudhi_total" :value="formatBangla(songothon8?.sudhi_total ?? '')"
+                                <td><input name="sudhi_total" :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.sudhi_total ?? '')"
                                         @change="data_upload('songothon8-iyanot-data')" type="text"
                                         class="bg-input w-100 text-center"></td>
                                 <td><input name="sudi_total_iyanot_amounts"
-                                        :value="formatBangla(songothon8?.sudi_total_iyanot_amounts ?? '')"
+                                        :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.sudi_total_iyanot_amounts ?? '')"
                                         @change="data_upload('songothon8-iyanot-data')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -903,24 +908,24 @@
                             <td>
                                 <div class="d-flex">
                                     <input name="sohi_quran_onushilon"
-                                        :value="formatBangla(proshikkhon?.sohi_quran_onushilon ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.sohi_quran_onushilon ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="masala_masayel"
-                                        :value="formatBangla(proshikkhon?.masala_masayel ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.masala_masayel ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
-                                    <input name="darsul_quran" :value="formatBangla(proshikkhon?.darsul_quran ?? '')"
+                                    <input name="darsul_quran" :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_quran ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
-                                    <input name="darsul_hadis" :value="formatBangla(proshikkhon?.darsul_hadis ?? '')"
+                                    <input name="darsul_hadis" :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_hadis ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
-                                    <input name="samostik_path" :value="formatBangla(proshikkhon?.samostik_path ?? '')"
+                                    <input name="samostik_path" :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.samostik_path ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="bishoy_vittik_onushilon"
-                                        :value="formatBangla(proshikkhon?.bishoy_vittik_onushilon ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.bishoy_vittik_onushilon ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center">
                                 </div>
@@ -928,27 +933,27 @@
                             <td>
                                 <div class="d-flex">
                                     <input name="sohi_quran_onushilon_target"
-                                        :value="formatBangla(proshikkhon?.sohi_quran_onushilon_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.sohi_quran_onushilon_target ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="masala_masayel_target"
-                                        :value="formatBangla(proshikkhon?.masala_masayel_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.masala_masayel_target ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="darsul_quran_target"
-                                        :value="formatBangla(proshikkhon?.darsul_quran_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_quran_target ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="darsul_hadis_target"
-                                        :value="formatBangla(proshikkhon?.darsul_hadis_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_hadis_target ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="samostik_path_target"
-                                        :value="formatBangla(proshikkhon?.samostik_path_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.samostik_path_target ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="bishoy_vittik_onushilon_target"
-                                        :value="formatBangla(proshikkhon?.bishoy_vittik_onushilon_target ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.bishoy_vittik_onushilon_target ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center">
                                 </div>
@@ -956,27 +961,27 @@
                             <td>
                                 <div class="d-flex">
                                     <input name="sohi_quran_onushilon_uposthiti"
-                                        :value="formatBangla(proshikkhon?.sohi_quran_onushilon_uposthiti ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.sohi_quran_onushilon_uposthiti ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="masala_masayel_uposthiti"
-                                        :value="formatBangla(proshikkhon?.masala_masayel_uposthiti ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.masala_masayel_uposthiti ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="darsul_quran_uposthiti"
-                                        :value="formatBangla(proshikkhon?.darsul_quran_uposthiti ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_quran_uposthiti ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="darsul_hadis_uposthiti"
-                                        :value="formatBangla(proshikkhon?.darsul_hadis_uposthiti ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_hadis_uposthiti ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="samostik_path_uposthiti"
-                                        :value="formatBangla(proshikkhon?.samostik_path_uposthiti ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.samostik_path_uposthiti ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="bishoy_vittik_onushilon_uposthiti"
-                                        :value="formatBangla(proshikkhon?.bishoy_vittik_onushilon_uposthiti ?? '')"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.bishoy_vittik_onushilon_uposthiti ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center">
                                 </div>
@@ -993,12 +998,12 @@
                         <tr>
                             <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
                             <td class="width-20"><input name="how_many_people_did"
-                                    :value="formatBangla(shomajsheba1?.how_many_people_did ?? '')"
+                                    :value="formatBangla(report_sum_data?.shomajsheba1_personal_social_works?.how_many_people_did ?? '')"
                                     @change="data_upload('shomajsheba1-personal-social-work')" type="text"
                                     class="bg-input w-100 text-center"></td>
                             <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
                             <td class="width-20"><input name="service_received_total"
-                                    :value="formatBangla(shomajsheba1?.service_received_total ?? '')"
+                                    :value="formatBangla(report_sum_data?.shomajsheba1_personal_social_works?.service_received_total ?? '')"
                                     @change="data_upload('shomajsheba1-personal-social-work')" type="text"
                                     class="bg-input w-100 text-center"></td>
                         </tr>
@@ -1021,11 +1026,11 @@
                                 <td>
                                     <div class="d-flex">
                                         <input name="shamajik_onusthane_ongshogrohon"
-                                            :value="formatBangla(shomajsheba2?.shamajik_onusthane_ongshogrohon ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_onusthane_ongshogrohon ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center"> /
                                         <input name="shamajik_onusthane_shohayota_prodan"
-                                            :value="formatBangla(shomajsheba2?.shamajik_onusthane_shohayota_prodan ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_onusthane_shohayota_prodan ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center">
                                     </div>
@@ -1034,11 +1039,11 @@
                                 <td>
                                     <div class="d-flex">
                                         <input name="voluntarily_blood_donation_kotojon"
-                                            :value="formatBangla(shomajsheba2?.voluntarily_blood_donation_kotojon ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.voluntarily_blood_donation_kotojon ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center"> /
                                         <input name="voluntarily_blood_donation_kotojonke"
-                                            :value="formatBangla(shomajsheba2?.voluntarily_blood_donation_kotojonke ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.voluntarily_blood_donation_kotojonke ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center">
                                     </div>
@@ -1047,18 +1052,18 @@
                             <tr>
                                 <td class="text-start px-2">সামাজিক বিরোধ মীমাংসা</td>
                                 <td><input name="shamajik_birodh_mimangsha"
-                                        :value="formatBangla(shomajsheba2?.shamajik_birodh_mimangsha ?? '')"
+                                        :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_birodh_mimangsha ?? '')"
                                         @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                         class="bg-input w-100 text-center"></td>
                                 <td class="text-start px-2">মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজন/কতজনকে)</td>
                                 <td>
                                     <div class="d-flex">
                                         <input name="matrikalin_sheba_prodan_kotojon"
-                                            :value="formatBangla(shomajsheba2?.matrikalin_sheba_prodan_kotojon ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.matrikalin_sheba_prodan_kotojon ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center"> /
                                         <input name="matrikalin_sheba_prodan_kotojonke"
-                                            :value="formatBangla(shomajsheba2?.matrikalin_sheba_prodan_kotojonke ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.matrikalin_sheba_prodan_kotojonke ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center">
                                     </div>
@@ -1069,17 +1074,17 @@
                                 <td>
                                     <div class="d-flex">
                                         <input name="manobik_shohayota_prodan"
-                                            :value="formatBangla(shomajsheba2?.manobik_shohayota_prodan ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.manobik_shohayota_prodan ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center"> /
                                         <input name="korje_hasana_prodan"
-                                            :value="formatBangla(shomajsheba2?.korje_hasana_prodan ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.korje_hasana_prodan ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center">
                                     </div>
                                 </td>
                                 <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে)</td>
-                                <td><input name="mayeter_gosol" :value="formatBangla(shomajsheba2?.mayeter_gosol ?? '')"
+                                <td><input name="mayeter_gosol" :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.mayeter_gosol ?? '')"
                                         @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -1088,24 +1093,24 @@
                                 <td>
                                     <div class="d-flex">
                                         <input name="rogir_poricorja"
-                                            :value="formatBangla(shomajsheba2?.rogir_poricorja ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.rogir_poricorja ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center"> /
                                         <input name="medical_shohayota_prodan"
-                                            :value="formatBangla(shomajsheba2?.medical_shohayota_prodan ?? '')"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.medical_shohayota_prodan ?? '')"
                                             @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                             class="bg-input w-100 text-center">
                                     </div>
                                 </td>
                                 <td class="text-start px-2">অন্যান্য</td>
-                                <td><input name="others" :value="formatBangla(shomajsheba2?.others ?? '')"
+                                <td><input name="others" :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.others ?? '')"
                                         @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">নবজাতককে গিফ্ট প্রদান (কতজনকে )</td>
                                 <td><input name="nobojatokke_gift_prodan"
-                                        :value="formatBangla(shomajsheba2?.nobojatokke_gift_prodan ?? '')"
+                                        :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.nobojatokke_gift_prodan ?? '')"
                                         @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                         class="bg-input w-100 text-center"></td>
                                 <td class="text-start px-2"></td>
@@ -1121,7 +1126,7 @@
                     <div class="d-flex justify-content-start">
                         <label for="" class="">বিশিষ্ট ব্যক্তিবর্গের সাথে যোগাযোগ সংখ্যা :</label>
                         <input class="border_dot  bg-input" name="bishishto_bekti_jogajog"
-                            :value="formatBangla(rastrio?.bishishto_bekti_jogajog ?? '')"
+                            :value="formatBangla(report_sum_data?.rastrio1_bishishto_bektis?.bishishto_bekti_jogajog ?? '')"
                             @change="data_upload('rastrio1-bishishto-bekti')" type="text">
                     </div>
                 </div>
@@ -1143,12 +1148,12 @@
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        <tr v-for="(bm_cat, index) in bm_categories" :key="index">
-                                            <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.title }}</td>
+                                        <tr v-for="(bm_cat, index) in income_report?.category_wise_data" :key="index">
+                                            <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.category_name }}</td>
                                             <td class="border_left_bottom">
                                                 <input name="bm_entry"
-                                                    :value="formatBangla(bm_categoty_amount(bm_cat.id))"
-                                                    @change="income_store(bm_cat.id, $event.target.value)" type="text"
+                                                    :value="formatBangla(bm_cat.amount)"
+                                                    @change="income_store(bm_cat.category_id, $event.target.value)" type="text"
                                                     class="bg-input w-100 text-center">
                                             </td>
                                         </tr>
@@ -1158,12 +1163,12 @@
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        <tr v-for="(expense_cat, index) in bm_expense_categories" :key="index">
-                                            <td class="text-start px-2 w-50 border_bottom">{{ expense_cat.title }}</td>
+                                        <tr v-for="(expense_cat, index) in expense_report?.category_wise_data" :key="index">
+                                            <td class="text-start px-2 w-50 border_bottom">{{ expense_cat.category_name }}</td>
                                             <td class="border_left_bottom">
                                                 <input name="bm_entry"
-                                                    :value="formatBangla(expense_categoty_amount(expense_cat.id))"
-                                                    @change="expense_store(expense_cat.id, $event.target.value)"
+                                                    :value="formatBangla(expense_cat.amount)"
+                                                    @change="expense_store(expense_cat.category_id, $event.target.value)"
                                                     type="text" class="bg-input w-100 text-center">
                                             </td>
                                         </tr>
@@ -1173,9 +1178,9 @@
                         </tr>
                         <tr>
                             <td class="text-end px-2">সর্বমোট</td>
-                            <td>{{ formatBangla(parseInt(total_income) ?? "") }}</td>
+                            <td>{{ formatBangla(Number(income_report?.total_amount)) }}</td>
                             <td class="text-end px-2">সর্বমোট</td>
-                            <td>{{ formatBangla(parseInt(total_expense) ?? "") }}</td>
+                            <td>{{ formatBangla(Number(expense_report?.total_amount)) }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1183,7 +1188,7 @@
             <div class="montobbo">
                 <h1 class="fs-6">ইউনিট সভাপতির মন্তব্য :</h1>
                 <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input"
-                    rows="5">{{ montobbo?.montobbo }}</textarea>
+                    rows="5">{{ report_sum_data?.montobbos?.montobbo }}</textarea>
             </div>
         </section>
         <div class="joma_din text-center mt-3 pb-5">
@@ -1242,22 +1247,16 @@ export default {
 
     created() {
         this.uploaded_data()
-        this.income_category()
-        this.expense_category()
-        this.bm_category_wise()
-        this.bm_expense_category_wise()
+        // this.income_category()
+        // this.expense_category()
+        // this.bm_category_wise()
+        // this.bm_expense_category_wise()
         this.report_status()
-
     },
     watch: {
-        kormosuci: function () {
+        'report_sum_data.kormosuci_bastobayons': function () {
             this.average_data();
         },
-        total_income: function () {
-            console.log(typeof this.total_income);
-
-        },
-
     },
     methods: {
         uploaded_data: async function () {
@@ -1280,42 +1279,6 @@ export default {
                     this.previous_present = res.data.data.previous_present,
                     this.income_report = res.data.data.income_report,
                     this.expense_report = res.data.data.expense_report
-                // this.month = res.data.month,
-                //     this.org_type = res.data.org_type,
-                //     this.unit_info = res.data.unit_info,
-                //     this.ward_info = res.data.ward_info,
-                //     this.thana_info = res.data.thana_info,
-                //     this.president = res.data.president,
-
-                //     this.dawat1 = res.data.dawat1,
-                //     this.dawat2 = res.data.dawat2,
-                //     this.dawat3 = res.data.dawat3,
-                //     this.dawat4 = res.data.dawat4,
-                //     this.department1 = res.data.department1,
-                //     this.department4 = res.data.department4,
-                //     this.department5 = res.data.department5,
-                //     this.dawah_prokashona = res.data.dawah_prokashona,
-                //     this.kormosuci = res.data.kormosuci,
-                //     this.songothon1 = res.data.songothon1,
-                //     this.songothon2 = res.data.songothon2,
-                //     this.songothon9 = res.data.songothon9,
-                //     this.songothon5 = res.data.songothon5,
-                //     this.songothon7 = res.data.songothon7,
-                //     this.songothon8 = res.data.songothon8,
-                //     this.proshikkhon = res.data.proshikkhon,
-                //     this.shomajsheba1 = res.data.shomajsheba1,
-                //     this.shomajsheba2 = res.data.shomajsheba2,
-                //     this.rastrio = res.data.rastrio,
-                //     this.montobbo = res.data.montobbo,
-
-                //     this.previous_present = res.data.previous_present,
-
-                //     this.income_category_wise = res.data.income_category_wise,
-                //     this.total_income = res.data.total_income,
-
-                //     this.expense_category_wise = res.data.expense_category_wise,
-                //     this.total_expense = res.data.total_expense
-
 
             }
             console.log("this.month", this.month);
@@ -1326,23 +1289,37 @@ export default {
             console.log("expense_report", this.expense_report);
         },
         average_data: async function () {
-            this.average_kormosuci.unit_masik_sadaron_sova =
-                this.kormosuci ? (this.kormosuci.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.kormosuci.unit_masik_sadaron_sova_total ?? 1) : 0;
-            this.average_kormosuci.iftar_mahfil_personal =
-                this.kormosuci ? (this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1) : 0;
-            this.average_kormosuci.iftar_mahfil_personal =
-                this.kormosuci ? (this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1) : 0;
-            this.average_kormosuci.iftar_mahfil_samostic =
-                this.kormosuci ? (this.kormosuci.iftar_mahfil_samostic_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_samostic_total ?? 1) : 0;
-            this.average_kormosuci.cha_chakra =
-                this.kormosuci ? (this.kormosuci.cha_chakra_uposthiti ?? 0) / (this.kormosuci.cha_chakra_total ?? 1) : 0;
-            this.average_kormosuci.samostic_khawa =
-                this.kormosuci ? (this.kormosuci.samostic_khawa_uposthiti ?? 0) / (this.kormosuci.samostic_khawa_total ?? 1) : 0;
-            this.average_kormosuci.sikkha_sofor =
-                this.kormosuci ? (this.kormosuci.sikkha_sofor_uposthiti ?? 0) / (this.kormosuci.sikkha_sofor_total ?? 1) : 0;
+            if (this.report_sum_data.kormosuci_bastobayons) {
+                const fields = [
+                    "unit_masik_sadaron_sova",
+                    "iftar_mahfil_personal",
+                    "iftar_mahfil_samostic",
+                    "cha_chakra",
+                    "samostic_khawa",
+                    "sikkha_sofor"
+                ];
+                fields.forEach(field => {
+                    const uposthitiKey = `${field}_uposthiti`;
+                    const totalKey = `${field}_total`;
+                    this.average_kormosuci[field] =
+                        Math.round(
+                            (this.report_sum_data.kormosuci_bastobayons[uposthitiKey] ?? 0) /
+                            (this.report_sum_data.kormosuci_bastobayons[totalKey] ?? 1)
+                        )
+                });
+                // this.average_kormosuci.unit_masik_sadaron_sova = (this.report_sum_data.kormosuci_bastobayons.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.unit_masik_sadaron_sova_total ?? 1) : 0;
+                // this.average_kormosuci.iftar_mahfil_personal = (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_personal_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_personal_total ?? 1) : 0;
+                // this.average_kormosuci.iftar_mahfil_personal = (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_personal_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_personal_total ?? 1) : 0;
+                // this.average_kormosuci.iftar_mahfil_samostic = (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_samostic_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_samostic_total ?? 1) : 0;
+                // this.average_kormosuci.cha_chakra = (this.report_sum_data.kormosuci_bastobayons.cha_chakra_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.cha_chakra_total ?? 1) : 0;
+                // this.average_kormosuci.samostic_khawa = (this.report_sum_data.kormosuci_bastobayons.samostic_khawa_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.samostic_khawa_total ?? 1) : 0;
+                // this.average_kormosuci.sikkha_sofor = (this.report_sum_data.kormosuci_bastobayons.sikkha_sofor_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.sikkha_sofor_total ?? 1) : 0;
+                console.log("average_kormosuci", this.average_kormosuci);
+
+            }
         },
         formatBangla(number) {
-            return number ? number.toLocaleString("bn-BD") : "";
+            return number !== null && number !== undefined ? number.toLocaleString("bn-BD") : "";
         },
         formatMonth(date) {
             return new Date(date).toLocaleString("bn-BD", { month: "long" });
@@ -1400,20 +1377,20 @@ export default {
                     console.error("Error uploading data", error);
                 });
         },
-        expense_category: async function () {
-            let res = await axios.get('/bm-expense-category/all')
-            if (res.data.status == 'success') {
-                this.bm_expense_categories = res?.data?.data?.data
-            }
+        // expense_category: async function () {
+        //     let res = await axios.get('/bm-expense-category/all')
+        //     if (res.data.status == 'success') {
+        //         this.bm_expense_categories = res?.data?.data?.data
+        //     }
 
-        },
-        income_category: async function () {
-            let res = await axios.get('/bm-category/all')
-            if (res) {
-                this.bm_categories = res.data?.data
-            }
+        // },
+        // income_category: async function () {
+        //     let res = await axios.get('/bm-category/all')
+        //     if (res) {
+        //         this.bm_categories = res.data?.data
+        //     }
 
-        },
+        // },
         income_store: function (bm_category_id, amount) {
             const month = this.$route.params.month;
             const formData = {
@@ -1430,54 +1407,54 @@ export default {
                 });
         },
 
-        bm_category_wise: async function () {
-            const month = this.$route.params.month;
+        // bm_category_wise: async function () {
+        //     const month = this.$route.params.month;
 
-            let res = await axios.get('/unit/bm-category-wise', {
-                params: {
-                    month: month
-                }
-            })
-            if (res) {
-                this.bm_cat_wise = res.data?.data
-            }
-        },
-        bm_categoty_amount: function (bm_cat_id) {
-            if (this.bm_cat_wise != null) {
-                const element = this.bm_cat_wise.find(element => element.bm_category.id == bm_cat_id);
-                if (element) {
-                    console.log("amount", element.amount);
+        //     let res = await axios.get('/unit/bm-category-wise', {
+        //         params: {
+        //             month: month
+        //         }
+        //     })
+        //     if (res) {
+        //         this.bm_cat_wise = res.data?.data
+        //     }
+        // },
+        // bm_categoty_amount: function (bm_cat_id) {
+        //     if (this.bm_cat_wise != null) {
+        //         const element = this.bm_cat_wise.find(element => element.bm_category.id == bm_cat_id);
+        //         if (element) {
+        //             console.log("amount", element.amount);
 
-                    return element.amount;
-                }
-            } else {
-                return "";
-            }
-        },
+        //             return element.amount;
+        //         }
+        //     } else {
+        //         return "";
+        //     }
+        // },
 
-        bm_expense_category_wise: async function () {
-            const month = this.$route.params.month;
+        // bm_expense_category_wise: async function () {
+        //     const month = this.$route.params.month;
 
-            let res = await axios.get('/unit/expense-category-wise', {
-                params: {
-                    month: month
-                }
-            })
-            if (res) {
-                this.expense_cat_wise = res.data?.data
-            }
-        },
+        //     let res = await axios.get('/unit/expense-category-wise', {
+        //         params: {
+        //             month: month
+        //         }
+        //     })
+        //     if (res) {
+        //         this.expense_cat_wise = res.data?.data
+        //     }
+        // },
 
-        expense_categoty_amount: function (expense_cat_id) {
-            if (this.expense_cat_wise != null) {
-                const element = this.expense_cat_wise.find(element => element.bm_expense_category.id == expense_cat_id);
-                if (element) {
-                    return element.amount;
-                }
-            } else {
-                return "";
-            }
-        },
+        // expense_categoty_amount: function (expense_cat_id) {
+        //     if (this.expense_cat_wise != null) {
+        //         const element = this.expense_cat_wise.find(element => element.bm_expense_category.id == expense_cat_id);
+        //         if (element) {
+        //             return element.amount;
+        //         }
+        //     } else {
+        //         return "";
+        //     }
+        // },
 
         expense_store: function (bm_expense_category_id, amount) {
             const month = this.$route.params.month;

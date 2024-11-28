@@ -1161,34 +1161,25 @@ class UnitController extends Controller
         $end_month = request()->month;
         $org_type = 'unit';
         $org_type_id = $unit_id;
-
-        $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id);
+        $report_approved_status = ['pending','approved','rejected'];   //enum('pending','approved','rejected')
+        $is_need_sum = false;
+        $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id ,$report_approved_status ,$is_need_sum);
         // dd($datas->report_sum_data );
 
         return response()->json([
             'status' => 'success',
             'data' => $datas,
         ], 200);
-        // return view('unit.unit_report_monthly')->with([
-        //     'start_month' => $datas->start_month,
-        //     'end_month' => $datas->end_month,
-        //     'report_header' => $datas->report_header,
-
-        //     'report_sum_data' => $datas->report_sum_data,
-        //     'previous_present' => $datas->previous_present,
-        //     'income_report' => $datas->income_report,
-        //     'expense_report' => $datas->expense_report,
-        // ]);
     }
 
-    public function report_summation($start_month, $end_month, $org_type, $org_type_id)
+    public function report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'], $is_need_sum = true )
     {
         $report_header_instance = new ReportHeader();
         $report_header = $report_header_instance->execute( $org_type, $org_type_id);
 
         // ---------------------  reports all data to show  ---------------------------
         $dateWiseReportSum = new DateWiseReportSum();
-        $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id);
+        $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status);
         // ---------------------  reports all data to show  ---------------------------
 
         // ---------------------  previous and present calculation  ---------------------------
@@ -1201,13 +1192,13 @@ class UnitController extends Controller
         // -------------------------- bm income report ------------------------------------
         $bm_income_report = new BmReport();
         $transaction_type = 'income';
-        $income_report = $bm_income_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type);
+        $income_report = $bm_income_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type, $report_approved_status, $is_need_sum);
         // -------------------------- bm income report ------------------------------------
 
         // -------------------------- bm expense report ------------------------------------
         $bm_expense_report = new BmReport();
         $transaction_type = 'expense';
-        $expense_report = $bm_expense_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type);
+        $expense_report = $bm_expense_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type, $report_approved_status, $is_need_sum);
         // -------------------------- bm expense report ------------------------------------
 
         return (object) [

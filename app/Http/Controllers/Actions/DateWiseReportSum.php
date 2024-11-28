@@ -10,37 +10,41 @@ use Illuminate\Support\Facades\DB;
 
 class DateWiseReportSum
 {
-    public function execute($start_month , $end_month ,$org_type , $org_type_id){
+    public function execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'])
+    {
         $s_month = Carbon::parse($start_month);
         $e_month = Carbon::parse($end_month);
+
+        // Ensure $report_approved_status is always an array
+        $approved_status_array = is_array($report_approved_status) ? $report_approved_status : [$report_approved_status];
+
         $report_info_ids = ReportInfo::whereBetween('month_year', [$s_month->startOfMonth(), $e_month->endOfMonth()])
-                                        ->where('org_type',$org_type)
-                                        ->where('org_type_id',$org_type_id)
-                                        ->where('report_approved_status','approved')
-                                        ->pluck('id');
+            ->where('org_type', $org_type)
+            ->where('org_type_id', $org_type_id)
+            ->whereIn('report_approved_status', $approved_status_array)
+            ->pluck('id');
 
 
         $table_function_name = "get_" . $org_type . "_table";
         $table_names = $this->$table_function_name();
 
         $result = [];
-        foreach ($table_names as $table_name){
+        foreach ($table_names as $table_name) {
             $all_columns = DB::getSchemaBuilder()->getColumnListing($table_name);
             $selected_columns = array_slice($all_columns, 2, -4);
 
-            foreach ($selected_columns as $selected_column){
-                if($table_name == 'montobbos'){
+            foreach ($selected_columns as $selected_column) {
+                if ($table_name == 'montobbos') {
                     $text = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)
-                                                ->selectRaw("GROUP_CONCAT(montobbo SEPARATOR '\n') as montobbo")
-                                                ->first();
+                        ->selectRaw("GROUP_CONCAT(montobbo SEPARATOR '\n') as montobbo")
+                        ->first();
 
                     $result[$table_name][$selected_column] = $text->montobbo;
-                }else{
+                } else {
                     $sum = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)->sum($selected_column);
                     $result[$table_name][$selected_column] = $sum == 0 ? "" : $sum;
                 }
             }
-
         }
         // dd($result);
         return $this->array_to_object($result);
@@ -54,7 +58,8 @@ class DateWiseReportSum
         return $array;
     }
 
-    public function get_unit_table(){
+    public function get_unit_table()
+    {
         // $tables = DB::select('SHOW TABLES');
         // // Format the result into an array of table names
         // $table_names = array_map(function($table) {

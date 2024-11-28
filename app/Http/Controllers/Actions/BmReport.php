@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class BmReport
 {
-    public function execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type)
+    public function execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type, $report_approved_status = ['approved'], $is_need_sum = true)
     {
         $start_month_date = Carbon::parse($start_month);
         $end_month_date = Carbon::parse($end_month);
+
+        // Ensure $report_approved_status is always an array
+        $approved_status_array = is_array($report_approved_status) ? $report_approved_status : [$report_approved_status];
 
         $info_function_name = "get_" . $org_type . "_" . $transaction_type . "_info";
         $transaction_info = $this->$info_function_name();
@@ -32,7 +35,7 @@ class BmReport
         $transactions = DB::table($transaction_table_name)
             ->whereBetween($month_column, [$start_month_date->startOfMonth(), $end_month_date->endOfMonth()])
             ->where($org_type_column_name, $org_type_id)
-            ->where('report_approved_status','approved')
+            ->whereIn('report_approved_status', $approved_status_array)
             ->get();
 
         // Step 3: Calculate total transaction amount
@@ -52,7 +55,7 @@ class BmReport
                 $category_total_amount = '';
             }
 
-            if ($category->parent_id != 0) {
+            if ($category->parent_id != 0 && $is_need_sum) {
                 // Handle subcategories
                 if (isset($category_wise_data[$category->parent_id])) {
                     if ($category_total_amount !== '') {
