@@ -11,14 +11,14 @@
                     <p class="w-25">সন: {{ formatYear(month) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between mb-1">
-                    <p>ইউনিটের নাম: {{ report_header.unit_info.title || '' }}</p>
-                    <p>ওয়ার্ড নং ও নাম: {{ report_header.ward_info.no || '' }} ও {{ report_header.ward_info.title || ''
+                    <p>ইউনিটের নাম: {{ report_header?.unit_info.title || '' }}</p>
+                    <p>ওয়ার্ড নং ও নাম: {{ report_header?.ward_info.no || '' }} ও {{ report_header?.ward_info.title || ''
                         }}</p>
                     <p class="w-25">উপজেলা/থানা: {{ report_header.thana_info.title || '' }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between">
-                    <p>ইউনিট সভাপতির নাম: {{ report_header.president.full_name || '' }}</p>
-                    <p class="width-30">ইউনিটের ধরন: {{ report_header.org_type || '' }}</p>
+                    <p>ইউনিট সভাপতির নাম: {{ report_header?.president || '' }}</p>
+                    <p class="width-30">ইউনিটের ধরন: {{ report_header?.org_type || '' }}</p>
                 </div>
             </div>
         </section>
@@ -1269,7 +1269,6 @@ export default {
                     user_id: user_id
                 }
             })
-            console.log("rererere", res.data.data);
 
             if (res.data.status == 'success') {
                 console.log("res", res.data.data.end_month);
@@ -1281,12 +1280,6 @@ export default {
                     this.expense_report = res.data.data.expense_report
 
             }
-            console.log("this.month", this.month);
-            console.log("report_header", this.report_header);
-            console.log("report_sum_data", this.report_sum_data);
-            console.log("previous_present", this.previous_present);
-            console.log("income_report", this.income_report);
-            console.log("expense_report", this.expense_report);
         },
         average_data: async function () {
             if (this.report_sum_data.kormosuci_bastobayons) {
@@ -1307,14 +1300,6 @@ export default {
                             (this.report_sum_data.kormosuci_bastobayons[totalKey] ?? 1)
                         )
                 });
-                // this.average_kormosuci.unit_masik_sadaron_sova = (this.report_sum_data.kormosuci_bastobayons.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.unit_masik_sadaron_sova_total ?? 1) : 0;
-                // this.average_kormosuci.iftar_mahfil_personal = (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_personal_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_personal_total ?? 1) : 0;
-                // this.average_kormosuci.iftar_mahfil_personal = (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_personal_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_personal_total ?? 1) : 0;
-                // this.average_kormosuci.iftar_mahfil_samostic = (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_samostic_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.iftar_mahfil_samostic_total ?? 1) : 0;
-                // this.average_kormosuci.cha_chakra = (this.report_sum_data.kormosuci_bastobayons.cha_chakra_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.cha_chakra_total ?? 1) : 0;
-                // this.average_kormosuci.samostic_khawa = (this.report_sum_data.kormosuci_bastobayons.samostic_khawa_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.samostic_khawa_total ?? 1) : 0;
-                // this.average_kormosuci.sikkha_sofor = (this.report_sum_data.kormosuci_bastobayons.sikkha_sofor_uposthiti ?? 0) / (this.report_sum_data.kormosuci_bastobayons.sikkha_sofor_total ?? 1) : 0;
-                console.log("average_kormosuci", this.average_kormosuci);
 
             }
         },
@@ -1377,20 +1362,7 @@ export default {
                     console.error("Error uploading data", error);
                 });
         },
-        // expense_category: async function () {
-        //     let res = await axios.get('/bm-expense-category/all')
-        //     if (res.data.status == 'success') {
-        //         this.bm_expense_categories = res?.data?.data?.data
-        //     }
 
-        // },
-        // income_category: async function () {
-        //     let res = await axios.get('/bm-category/all')
-        //     if (res) {
-        //         this.bm_categories = res.data?.data
-        //     }
-
-        // },
         income_store: function (bm_category_id, amount) {
             const month = this.$route.params.month;
             const formData = {
@@ -1406,55 +1378,6 @@ export default {
                     console.log(error.response);
                 });
         },
-
-        // bm_category_wise: async function () {
-        //     const month = this.$route.params.month;
-
-        //     let res = await axios.get('/unit/bm-category-wise', {
-        //         params: {
-        //             month: month
-        //         }
-        //     })
-        //     if (res) {
-        //         this.bm_cat_wise = res.data?.data
-        //     }
-        // },
-        // bm_categoty_amount: function (bm_cat_id) {
-        //     if (this.bm_cat_wise != null) {
-        //         const element = this.bm_cat_wise.find(element => element.bm_category.id == bm_cat_id);
-        //         if (element) {
-        //             console.log("amount", element.amount);
-
-        //             return element.amount;
-        //         }
-        //     } else {
-        //         return "";
-        //     }
-        // },
-
-        // bm_expense_category_wise: async function () {
-        //     const month = this.$route.params.month;
-
-        //     let res = await axios.get('/unit/expense-category-wise', {
-        //         params: {
-        //             month: month
-        //         }
-        //     })
-        //     if (res) {
-        //         this.expense_cat_wise = res.data?.data
-        //     }
-        // },
-
-        // expense_categoty_amount: function (expense_cat_id) {
-        //     if (this.expense_cat_wise != null) {
-        //         const element = this.expense_cat_wise.find(element => element.bm_expense_category.id == expense_cat_id);
-        //         if (element) {
-        //             return element.amount;
-        //         }
-        //     } else {
-        //         return "";
-        //     }
-        // },
 
         expense_store: function (bm_expense_category_id, amount) {
             const month = this.$route.params.month;

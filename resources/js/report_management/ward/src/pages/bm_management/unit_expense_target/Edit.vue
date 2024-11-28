@@ -97,7 +97,7 @@ export default {
         },
         all_bm_expense_categorys:async function(){
             let response =await axios.get('/bm-expense-category')
-            this.bm_expense_categorys = response.data.data;
+            this.bm_expense_categorys = response.data.data.length ? [response.data.data[0]] : []; 
             console.log("bm_expense_categorys" , this.bm_expense_categorys);
 
         },
