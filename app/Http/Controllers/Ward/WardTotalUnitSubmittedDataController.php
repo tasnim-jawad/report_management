@@ -833,74 +833,6 @@ class WardTotalUnitSubmittedDataController extends Controller
         } catch (\Throwable $th) {
             throw $th;
         }
-
-
-
-
-
-        // dd(
-        //     $report_info_ids,
-        //     $all_dawat1,
-        //     $all_dawat2,
-        //     $all_dawat3,
-        //     $all_dawat4,
-        //     $all_department1,
-        //     $all_department4,
-        //     $all_department5,
-        //     $all_dawah_prokashona,
-        //     $all_kormosuci,
-        //     $all_songothon1,
-        //     $all_songothon2,
-        //     $all_songothon9,
-        //     $all_songothon5,
-        //     $all_songothon7,
-        //     $all_songothon8,
-        //     $all_proshikkhon,
-        //     $all_shomajsheba1,
-        //     $all_shomajsheba2,
-        //     $all_rastrio,
-        //     $all_montobbo,
-        //     $all_income_category_wise,
-        //     $total_income,
-        //     $all_expense_category_wise,
-        //     $total_expense,
-        // );
-        // return view('ward.ward_report_upload')->with([
-        //     'month' => $month,
-        //     'org_type' => $org_type,
-        //     'unit_info' => $unit_info,
-        //     'ward_info' => $ward_info,
-        //     'thana_info' => $thana_info,
-        //     'president' => $president,
-
-        //     'dawat1' => $dawat1,
-        //     'dawat2' => $dawat2,
-        //     'dawat3' => $dawat3,
-        //     'dawat4' => $dawat4,
-        //     'department1' => $department1,
-        //     'department4' => $department4,
-        //     'department5' => $department5,
-        //     'dawah_prokashona' => $dawah_prokashona,
-        //     'kormosuci' => $kormosuci,
-        //     'songothon1' => $songothon1,
-        //     'songothon2' => $songothon2,
-        //     'songothon9' => $songothon9,
-        //     'songothon5' => $songothon5,
-        //     'songothon7' => $songothon7,
-        //     'songothon8' => $songothon8,
-        //     'proshikkhon' => $proshikkhon,
-        //     'shomajsheba1' => $shomajsheba1,
-        //     'shomajsheba2' => $shomajsheba2,
-        //     'rastrio' => $rastrio,
-        //     'montobbo' => $montobbo,
-
-        //     'all_income_category_wise' => $all_income_category_wise,
-        //     'total_income' => $total_income,
-
-        //     'all_expense_category_wise' => $all_expense_category_wise,
-        //     'total_expense' => $total_expense,
-
-        // ]);
     }
 
     public function total_unit_report()
@@ -918,6 +850,7 @@ class WardTotalUnitSubmittedDataController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
+
         $month = Carbon::parse(request()->month);
         $data = $this->data_generate();
         $unit_names = OrgUnit::wherein('id', $data['approved_unit_ids'])->pluck('title');

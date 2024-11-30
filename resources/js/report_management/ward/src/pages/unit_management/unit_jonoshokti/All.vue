@@ -46,8 +46,10 @@
                                         }" class="text-dark">Responsibility</router-link>
                                     </div>
 
-                                    <a class="btn btn-info btn-sm me-2" @click="togglePermission(user.id)">
-                                        {{ user.is_permitted ? 'Revoke Permission' : 'Grant Permission' }}
+                                    <a :class="['btn btn-sm me-2', user.is_permitted == 1 ? 'btn-danger' : 'btn-success']"
+                                        @click="toggle_permission(user.user_id)">
+
+                                        {{ user.is_permitted == 1 ? 'Revoke Permission' : 'Grant Permission' }}
                                     </a>
                                     <!-- <div class="btn btn-danger btn-sm">
                                     <a @click="delete_user(user.id)" class="text-dark">Delete</a>
@@ -102,6 +104,30 @@ export default {
                 .catch(error => {
                     console.error(error);
                 });
+        },
+        toggle_permission: function (user_id) {
+            // Find the user for better confirmation and update
+            const user = this.users.find(u => u.user_id === user_id);
+
+            if (!user) {
+                console.error(`User with ID ${user_id} not found.`);
+                return;
+            }
+
+            // Show a confirmation dialog
+            if (confirm(`Are you sure you want to ${user.is_permitted == 1 ? 'revoke' : 'grant'} permission for ${user.user_name}?`)) {
+                axios.post('/user/toggle-dashboard-permission', { user_id })
+                    .then(response => {
+                        // Update the user state to reflect the toggle
+                        user.is_permitted = !user.is_permitted;
+                        // Display success message using the toaster
+                        window.toaster(response.data.message, 'success');
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        window.toaster('Something went wrong. Please try again.', 'error'); // Optional error message
+                    });
+            }
         }
 
     },

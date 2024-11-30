@@ -8,8 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class BmReport
 {
-    public function execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type, $report_approved_status = ['approved'], $is_need_sum = true)
-    {
+    public function execute(
+        $start_month,
+        $end_month,
+        $org_type,
+        $org_type_id,
+        $transaction_type,
+        $report_approved_status = ['approved'],
+        $is_need_sum = true,
+
+    ) {
         $start_month_date = Carbon::parse($start_month);
         $end_month_date = Carbon::parse($end_month);
 
@@ -32,9 +40,11 @@ class BmReport
 
         // Step 2: Fetch all relevant transactions in the given date range
         $org_type_column_name = $org_type . '_id';
+        $org_type_condition = is_array($org_type_id) ? 'whereIn' : 'where';
+        
         $transactions = DB::table($transaction_table_name)
             ->whereBetween($month_column, [$start_month_date->startOfMonth(), $end_month_date->endOfMonth()])
-            ->where($org_type_column_name, $org_type_id)
+            ->$org_type_condition($org_type_column_name, $org_type_id)
             ->whereIn('report_approved_status', $approved_status_array)
             ->get();
 

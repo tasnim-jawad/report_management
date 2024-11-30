@@ -99,7 +99,7 @@ class PermissionController extends Controller
     {
         try {
             $validator = Validator::make(request()->all(), [
-                'user_id' => ['required'],
+                'user_id' => ['required', 'exists:users,id'],
             ]);
 
             if ($validator->fails()) {
@@ -116,7 +116,13 @@ class PermissionController extends Controller
             return response()->json(['message' => 'Permission toggled successfully']);
 
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            // return messageResponse($e->getMessage(),[], 500, 'server_error');
+
+            return response()->json([
+                'err_message' => 'An error occurred while toggling permission.',
+            ], 500);
+
         }
     }
 }

@@ -17,6 +17,7 @@ use App\Models\Organization\OrgUnit;
 use App\Models\Organization\OrgUnitResponsible;
 use App\Models\Organization\OrgUnitUser;
 use App\Models\Organization\OrgWard;
+use App\Models\Organization\OrgWardUser;
 use App\Models\Report\DawahAndProkashona\DawahAndProkashona;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use App\Models\Report\Dawat\Dawat2PersonalAndTarget;
@@ -393,7 +394,7 @@ class UnitController extends Controller
         }
 
         $report_info = ReportInfo::where('org_type_id', $unit_id)
-            ->where('org_type','unit')
+            ->where('org_type', 'unit')
             ->whereYear('month_year', $month->clone()->year)
             ->whereMonth('month_year', $month->clone()->month)
             ->get()
@@ -401,7 +402,7 @@ class UnitController extends Controller
 
         if ($report_info) {
             $report_info_id = $report_info->id;
-        }else{
+        } else {
             return redirect()->back();
         }
 
@@ -431,16 +432,16 @@ class UnitController extends Controller
         // ---------------------  previous and present calculation  ---------------------------
         $previous_month = $month->clone()->subMonth()->endOfMonth();
         $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $unit_id)
-            ->where('org_type','unit')
-            ->where('report_approved_status','approved')
-            ->whereDate('month_year', '<=' ,$previous_month)
+            ->where('org_type', 'unit')
+            ->where('report_approved_status', 'approved')
+            ->whereDate('month_year', '<=', $previous_month)
             ->pluck('id');
 
         $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $unit_id)
-        ->where('org_type','unit')
-        ->where('report_approved_status','approved')
-        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
-        ->pluck('id');
+            ->where('org_type', 'unit')
+            ->where('report_approved_status', 'approved')
+            ->whereDate('month_year', '<=', $month->clone()->endOfMonth())
+            ->pluck('id');
 
         /** rokon */
         $rokon_previous = calculate_previous_present(
@@ -587,7 +588,7 @@ class UnitController extends Controller
             'rastrio' => $rastrio,
             'montobbo' => $montobbo,
 
-            'previous_present'=>(object)[
+            'previous_present' => (object)[
                 //rokon
                 'rokon_previous' => $rokon_previous,
                 'rokon_present' => $rokon_present,
@@ -654,7 +655,7 @@ class UnitController extends Controller
         }
 
         $report_info = ReportInfo::where('org_type_id', $unit_id)
-            ->where('org_type','unit')
+            ->where('org_type', 'unit')
             ->whereYear('month_year', $month->clone()->year)
             ->whereMonth('month_year', $month->clone()->month)
             ->get()
@@ -662,7 +663,7 @@ class UnitController extends Controller
 
         if ($report_info) {
             $report_info_id = $report_info->id;
-        }else{
+        } else {
             $report_info = report_info_create('unit', $unit_id, 1, 'president', $month, 'monthly');
             $report_info_id = $report_info->id;
         }
@@ -693,16 +694,16 @@ class UnitController extends Controller
         // ---------------------  previous and present calculation  ---------------------------
         $previous_month = $month->clone()->subMonth()->endOfMonth();
         $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $unit_id)
-            ->where('org_type','unit')
-            ->where('report_approved_status','approved')
-            ->whereDate('month_year', '<=' ,$previous_month)
+            ->where('org_type', 'unit')
+            ->where('report_approved_status', 'approved')
+            ->whereDate('month_year', '<=', $previous_month)
             ->pluck('id');
 
         $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $unit_id)
-        ->where('org_type','unit')
-        ->where('report_approved_status','approved')
-        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
-        ->pluck('id');
+            ->where('org_type', 'unit')
+            ->where('report_approved_status', 'approved')
+            ->whereDate('month_year', '<=', $month->clone()->endOfMonth())
+            ->pluck('id');
 
         /** rokon */
         $rokon_previous = calculate_previous_present(
@@ -847,7 +848,7 @@ class UnitController extends Controller
             'rastrio' => $rastrio,
             'montobbo' => $montobbo,
 
-            'previous_present'=>(object)[
+            'previous_present' => (object)[
                 //rokon
                 'rokon_previous' => $rokon_previous,
                 'rokon_present' => $rokon_present,
@@ -874,7 +875,8 @@ class UnitController extends Controller
     }
 
 
-    public function expense_category_wise(){
+    public function expense_category_wise()
+    {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
         ]);
@@ -898,7 +900,8 @@ class UnitController extends Controller
         ], 200);
     }
 
-    public function bm_category_wise(){
+    public function bm_category_wise()
+    {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
         ]);
@@ -923,59 +926,56 @@ class UnitController extends Controller
     }
 
 
-    public function report_status(){
+    public function report_status()
+    {
         $month = request()->month;
-        if($month){
-            $org_unit_user = OrgUnitUser::where('user_id',auth()->id())->first();
+        if ($month) {
+            $org_unit_user = OrgUnitUser::where('user_id', auth()->id())->first();
             $unit_id = $org_unit_user->unit_id;
             $month = Carbon::parse(request()->month);
 
             $report_info = ReportInfo::where('org_type_id', $unit_id)
-                        ->where('org_type','unit')
-                        ->whereYear('month_year', $month->clone()->year)
-                        ->whereMonth('month_year', $month->clone()->month)
-                        ->get()
-                        ->first();
+                ->where('org_type', 'unit')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->get()
+                ->first();
 
-            $report_submit_status = $report_info->report_submit_status??'unsubmitted';
-            $report_approved_status = $report_info->report_approved_status??'pending';
+            $report_submit_status = $report_info->report_submit_status ?? 'unsubmitted';
+            $report_approved_status = $report_info->report_approved_status ?? 'pending';
 
-            if($report_submit_status == 'unsubmitted'){
+            if ($report_submit_status == 'unsubmitted') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "unsubmitted",
                     "message" => "রিপোর্ট জমা দেওয়া হয়নি এখনো ।"
                 ], 200);
-
-            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'pending'){
+            } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'pending') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "pending",
                     "message" => "রিপোর্ট জমা হয়েছে । ওয়ার্ডের আপ্রুভের জন্য অপেক্ষমাণ।"
                 ], 200);
-
-            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'rejected'){
+            } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'rejected') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "rejected",
                     "message" => "রিপোর্ট রিজেক্ট করা হয়েছে । ভুলগুলি ঠিক করে আবার জমা দিন ।"
                 ], 200);
-
-            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'approved'){
+            } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'approved') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "approved",
                     "message" => "এ মাসের রিপোর্ট ওয়ার্ড গ্রহন করেছে।"
                 ], 200);
             }
-
         }
-
     }
-    public function report_joma(){
+    public function report_joma()
+    {
 
         $month = Carbon::parse(request()->month);
-        $org_unit_user = OrgUnitUser::where('user_id',auth()->id())->first();
+        $org_unit_user = OrgUnitUser::where('user_id', auth()->id())->first();
 
         if (!$org_unit_user) {
             return response()->json([
@@ -986,11 +986,11 @@ class UnitController extends Controller
         $unit_id = $org_unit_user->unit_id;
 
         $permission  = ReportManagementControl::where('report_type', 'unit')
-                                            ->whereYear('month_year', $month->clone()->year)
-                                            ->whereMonth('month_year', $month->clone()->month)
-                                            ->where('is_active', 1)
-                                            ->latest()
-                                            ->first();
+            ->whereYear('month_year', $month->clone()->year)
+            ->whereMonth('month_year', $month->clone()->month)
+            ->where('is_active', 1)
+            ->latest()
+            ->first();
 
         if (!$permission) {
             return response()->json([
@@ -1000,10 +1000,10 @@ class UnitController extends Controller
         }
 
         $report_info = ReportInfo::where('org_type_id', $unit_id)
-                    ->where('org_type', 'unit')
-                    ->whereYear('month_year', $month->year)
-                    ->whereMonth('month_year', $month->month)
-                    ->first();
+            ->where('org_type', 'unit')
+            ->whereYear('month_year', $month->year)
+            ->whereMonth('month_year', $month->month)
+            ->first();
 
         if (!$report_info) {
             return response()->json([
@@ -1093,7 +1093,7 @@ class UnitController extends Controller
         $org_type = 'unit';
         $org_type_id = $unit_id;
 
-        $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id);
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id);
         // dd($datas->report_sum_data );
 
         return view('unit.unit_report_sum')->with([
@@ -1127,7 +1127,7 @@ class UnitController extends Controller
         $org_type = 'unit';
         $org_type_id = $unit_id;
 
-        $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id);
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id);
         // dd($datas->report_sum_data );
 
         return view('unit.unit_report_monthly')->with([
@@ -1161,9 +1161,9 @@ class UnitController extends Controller
         $end_month = request()->month;
         $org_type = 'unit';
         $org_type_id = $unit_id;
-        $report_approved_status = ['pending','approved','rejected'];   //enum('pending','approved','rejected')
+        $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
         $is_need_sum = false;
-        $datas = $this->report_summation($start_month,$end_month,$org_type,$org_type_id ,$report_approved_status ,$is_need_sum);
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
         // dd($datas->report_sum_data );
 
         return response()->json([
@@ -1172,14 +1172,133 @@ class UnitController extends Controller
         ], 200);
     }
 
-    public function report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'], $is_need_sum = true )
+    public function report_check()
     {
-        $report_header_instance = new ReportHeader();
-        $report_header = $report_header_instance->execute( $org_type, $org_type_id);
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'unit_id' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $unit_id = request()->unit_id;
+
+        $start_month = request()->month;
+        $end_month = request()->month;
+        $org_type = 'unit';
+        $org_type_id = $unit_id;
+        $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
+        $is_need_sum = false;
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
+        // dd($datas->report_sum_data );
+
+        return view('unit.unit_report_check')->with([
+            'start_month' => $datas->start_month,
+            'end_month' => $datas->end_month,
+            'report_header' => $datas->report_header,
+
+            'report_sum_data' => $datas->report_sum_data,
+            'previous_present' => $datas->previous_present,
+            'income_report' => $datas->income_report,
+            'expense_report' => $datas->expense_report,
+        ]);
+    }
+
+    public function total_approved_unit_report()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'user_id' => ['required', 'exists:org_ward_users,user_id'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $month = Carbon::parse(request()->month);
+        $ward_id = OrgWardUser::where('user_id', request()->user_id)->value('ward_id');
+        $ward_info = OrgWard::find($ward_id);
+        $thana_info = $ward_info ? OrgThana::find($ward_info->org_thana_id) : null;
+        $units = OrgUnit::where('org_ward_id', $ward_id)->get();
+
+        $report_info_ids = [];
+        $unit_ids = [];
+        $approved_unit_ids = [];
+        foreach ($units as $unit) {
+            $unit_id = $unit->id;
+            $unit_ids[] = $unit_id;
+            $report_info = ReportInfo::where('org_type_id', $unit_id)
+                ->where('org_type', 'unit')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->where('report_approved_status', 'approved')
+                ->where('status', 1)
+                ->get()
+                ->first();
+
+            if ($report_info) {
+                $report_info_id = $report_info->id;
+                $report_info_ids[] = $report_info_id;
+                $approved_unit_ids[] = $report_info->org_type_id;
+            }
+        }
+        $unit_count = count($approved_unit_ids);
+        $unit_titles = [];
+        foreach($approved_unit_ids as $unit_id){
+            $unit_info = OrgUnit::find($unit_id);
+            if ($unit_info) {
+                $unit_titles[] = $unit_info->title;
+            }
+        }
+
+        $start_month = request()->month;
+        $end_month = request()->month;
+        $org_type = 'unit';
+        $org_type_id = $approved_unit_ids;
+        $report_approved_status = ['approved'];   //enum('pending','approved','rejected')
+        $is_need_sum = false;
+        $reportInfoIds = $report_info_ids;
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum, $reportInfoIds);
+
+        $report_header = (object) [
+            'unit_count' => $unit_count,
+            'unit_titles' => $unit_titles,
+            'ward_info' => $ward_info,
+            'thana_info' => $thana_info,
+        ];
+
+        return view('unit.total_approved_unit_report')->with([
+            'start_month' => $datas->start_month,
+            'end_month' => $datas->end_month,
+            'report_header' => $report_header,
+
+            'report_sum_data' => $datas->report_sum_data,
+            'previous_present' => $datas->previous_present,
+            'income_report' => $datas->income_report,
+            'expense_report' => $datas->expense_report,
+        ]);
+    }
+
+    public function report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'], $is_need_sum = true, $report_info_ids = null)
+    {
+        if (!is_array($org_type_id)) {
+            $report_header_instance = new ReportHeader();
+            $report_header = $report_header_instance->execute($org_type, $org_type_id);
+        } else {
+            $report_header = null;
+        }
 
         // ---------------------  reports all data to show  ---------------------------
         $dateWiseReportSum = new DateWiseReportSum();
-        $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status);
+        $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $report_info_ids);
         // ---------------------  reports all data to show  ---------------------------
 
         // ---------------------  previous and present calculation  ---------------------------
@@ -1192,13 +1311,13 @@ class UnitController extends Controller
         // -------------------------- bm income report ------------------------------------
         $bm_income_report = new BmReport();
         $transaction_type = 'income';
-        $income_report = $bm_income_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type, $report_approved_status, $is_need_sum);
+        $income_report = $bm_income_report->execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type, $report_approved_status, $is_need_sum);
         // -------------------------- bm income report ------------------------------------
 
         // -------------------------- bm expense report ------------------------------------
         $bm_expense_report = new BmReport();
         $transaction_type = 'expense';
-        $expense_report = $bm_expense_report->execute($start_month, $end_month, $org_type, $org_type_id , $transaction_type, $report_approved_status, $is_need_sum);
+        $expense_report = $bm_expense_report->execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type, $report_approved_status, $is_need_sum);
         // -------------------------- bm expense report ------------------------------------
 
         return (object) [
@@ -1212,6 +1331,4 @@ class UnitController extends Controller
             'expense_report' => $expense_report,
         ];
     }
-
-
 }

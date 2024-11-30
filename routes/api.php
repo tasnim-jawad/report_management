@@ -26,6 +26,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::group(['prefix' => '/user'] , function(){
         Route::get('/user_info', [App\Http\Controllers\User\UserController::class,'user_info']);
         Route::get('/ward-user-info', [App\Http\Controllers\User\UserController::class,'ward_user_info']);
+        Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Ward\PermissionController::class,'toggle_dashboard_permission']);
 
         Route::get('/all', [App\Http\Controllers\User\UserController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\User\UserController::class,'show']);
@@ -1218,6 +1219,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/unit-report-joma-permitted-month', [App\Http\Controllers\Ward\PermissionController::class,'unit_report_joma_permitted_month']);
         Route::post('/set-unit-report-joma-permission', [App\Http\Controllers\Ward\PermissionController::class,'set_unit_report_joma_permission']);
         Route::post('/remove-unit-report-joma-permission', [App\Http\Controllers\Ward\PermissionController::class,'remove_unit_report_joma_permission']);
+        // Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Ward\PermissionController::class,'toggle_dashboard_permission']);
     });
 });
 

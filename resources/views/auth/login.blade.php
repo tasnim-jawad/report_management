@@ -12,6 +12,11 @@
                     <div class="card-body">
                         <div id="errorMsgShow"></div>
                         <form onsubmit="submitHandler()">
+                            @if(session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
                             <div class="row mb-3">
                                 <label for="email"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>

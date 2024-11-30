@@ -10,19 +10,33 @@ use Illuminate\Support\Facades\DB;
 
 class DateWiseReportSum
 {
-    public function execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'])
-    {
-        $s_month = Carbon::parse($start_month);
-        $e_month = Carbon::parse($end_month);
+    public function execute(
+        $start_month = null,
+        $end_month = null,
+        $org_type,
+        $org_type_id,
+        $report_approved_status = ['approved'],
+        $report_info_ids = null // Allow passing report_info_ids directly
+    ) {
+        if (is_null($report_info_ids)) {
+            $s_month = Carbon::parse($start_month);
+            $e_month = Carbon::parse($end_month);
 
-        // Ensure $report_approved_status is always an array
-        $approved_status_array = is_array($report_approved_status) ? $report_approved_status : [$report_approved_status];
+            // Ensure $report_approved_status is always an array
+            $approved_status_array = is_array($report_approved_status) ? $report_approved_status : [$report_approved_status];
 
-        $report_info_ids = ReportInfo::whereBetween('month_year', [$s_month->startOfMonth(), $e_month->endOfMonth()])
-            ->where('org_type', $org_type)
-            ->where('org_type_id', $org_type_id)
-            ->whereIn('report_approved_status', $approved_status_array)
-            ->pluck('id');
+            $report_info_ids = ReportInfo::whereBetween('month_year', [$s_month->startOfMonth(), $e_month->endOfMonth()])
+                ->where('org_type', $org_type)
+                ->where('org_type_id', $org_type_id)
+                ->whereIn('report_approved_status', $approved_status_array)
+                ->pluck('id')
+                ->toArray();
+        }
+
+        // Validate $report_info_ids to ensure it's an array
+        if (!is_array($report_info_ids) || empty($report_info_ids)) {
+            throw new \InvalidArgumentException('Invalid report_info_ids provided.');
+        }
 
 
         $table_function_name = "get_" . $org_type . "_table";

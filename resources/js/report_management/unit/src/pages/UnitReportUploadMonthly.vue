@@ -11,10 +11,10 @@
                     <p class="w-25">সন: {{ formatYear(month) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between mb-1">
-                    <p>ইউনিটের নাম: {{ report_header?.unit_info.title || '' }}</p>
-                    <p>ওয়ার্ড নং ও নাম: {{ report_header?.ward_info.no || '' }} ও {{ report_header?.ward_info.title || ''
+                    <p>ইউনিটের নাম: {{ report_header?.unit_info?.title || '' }}</p>
+                    <p>ওয়ার্ড নং ও নাম: {{ report_header?.ward_info?.no || '' }} ও {{ report_header?.ward_info?.title || ''
                         }}</p>
-                    <p class="w-25">উপজেলা/থানা: {{ report_header.thana_info.title || '' }}</p>
+                    <p class="w-25">উপজেলা/থানা: {{ report_header?.thana_info?.title || '' }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between">
                     <p>ইউনিট সভাপতির নাম: {{ report_header?.president || '' }}</p>

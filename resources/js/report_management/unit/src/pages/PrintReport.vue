@@ -3,8 +3,9 @@
         <div class="card-body border-bottom-0">
             <form ref="report_form" action="/unit/report" method="GET">
                 <input type="text" class="d-none" name="user_id" :value = "this.user?.user?.id" >
-                মাস: <input type="month" v-model="month" name="month">
-                <button class="btn btn-success ms-5" type="button" @click="get_monthly_report">Submit</button>
+                <label for="" class="form-label">মাস:</label>
+                <input type="month" v-model="month" name="month" class="form-control">
+                <button class="btn btn-success mt-2" type="button" @click="get_monthly_report">Print preview</button>
             </form>
         </div>
     </div>
@@ -14,9 +15,14 @@
         </div>
         <div class="card-body border-bottom-0">
             <form ref="report_form_sum" >
-                শুরুর মাস: <input type="month" v-model="start_month" name="start_month">
-                শেষের মাস: <input type="month" v-model="end_month" name="end_month">
-                <button class="btn btn-success ms-5" type="button" @click.prevent="report_sum">Submit</button>
+                <label for="" class="form-label">শুরুর মাস:</label>
+                <input type="month" v-model="start_month" name="start_month" class="form-control">
+                <label for="" class="form-label">শেষের মাস:</label>
+                <input type="month" v-model="end_month" name="end_month" class="form-control">
+
+                <button class="btn btn-success mt-2 me-2" type="button" @click.prevent="report_sum('any')">Month to Month</button>
+                <button class="btn btn-warning mt-2 me-2" type="button" @click.prevent="report_sum('half_yearly')">Half Yearly</button>
+                <button class="btn btn-info mt-2 me-2" type="button" @click.prevent="report_sum('annual')">Annual</button>
             </form>
         </div>
     </div>
@@ -47,14 +53,23 @@ export default {
         get_monthly_report: function(){
             if(this.month != null){
                 this.$refs.report_form_sum.submit();
-                // window.open(`/unit/report?user_id=${this.user?.user?.id}&month=${this.month}`)
-                window.open(`/unit/unit-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}`)
+                // window.open(`/unit/report?user_id=${this.user?.user?.id}&month=${this.month}&print=true`)
+                window.open(`/unit/unit-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}&print=true`)
             }
         },
 
-        report_sum:function(){
+        report_sum:function(sum_type){
+            const current_year = new Date().getFullYear();
+            if(sum_type == 'half_yearly'){
+                this.start_month = `${current_year}-01`; // January of the current year
+                this.end_month = `${current_year}-06`;
+            }else if(sum_type == 'annual'){
+                this.start_month = `${current_year}-01`; // January of the current year
+                this.end_month = `${current_year}-12`;
+            }
+
             if(this.start_month != null && this.end_month != null){
-                window.open(`/unit/report/unit-report-sum?user_id=${this.user?.user?.id}&start_month=${this.start_month}&end_month=${this.end_month}`)
+                window.open(`/unit/report/unit-report-sum?user_id=${this.user?.user?.id}&start_month=${this.start_month}&end_month=${this.end_month}&print=true`)
             }
         },
         user_info:function(){

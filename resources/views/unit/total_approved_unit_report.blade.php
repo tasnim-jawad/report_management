@@ -22,29 +22,34 @@
 </head>
 
 <body>
+    {{-- {{dd($report_header)}} --}}
     <section id="heading" class="mt-3">
         <div class="report_heading position-relative mb-1">
             <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
             <h1 class="text-center mb-2 fs-4">ইউনিট সংগঠনের মাসিক রিপোর্ট</h1>
-            <div class="org_gender position-absolute">
-                <p>{{ $report_header->unit_info->org_gender == 'men' ? 'পুরুষ' : 'মহিলা' }}</p>
-            </div>
+            {{-- <div class="org_gender position-absolute">
+                <p>{{ $report_header?->unit_info?->org_gender == 'men' ? 'পুরুষ' : 'মহিলা' }}</p>
+            </div> --}}
         </div>
-        {{-- {{dd($ward_info)}} --}}
+        {{-- {{dd($report_header)}} --}}
         <div class="unit_info">
             <div class="line d-flex flex-wrap mb-1">
                 <p class="w-75">মাস: {{ bangla_month(date('F', strtotime($start_month))) }}</p>
                 <p class="w-25">সন: {{ bangla(date('Y', strtotime($end_month))) }}</p>
             </div>
             <div class="line d-flex flex-wrap justify-content-between mb-1">
-                <p>ইউনিটের নাম: {{ $report_header->unit_info->title ?? '' }}</p>
-                <p>ওয়ার্ড নং ও নাম: {{ $report_header->ward_info->no ?? '' }} ও
-                    {{ $report_header->ward_info->title ?? '' }}</p>
-                <p class="w-25">উপজেলা/থানা: {{ $report_header->thana_info->title ?? '' }}</p>
+                <p>ইউনিটের সংখ্যা: {{ bangla($report_header?->unit_count) ?? '' }}</p>
+                <p>ওয়ার্ড নং ও নাম: {{ $report_header?->ward_info?->no ?? '' }} ও
+                    {{ $report_header?->ward_info?->title ?? '' }}</p>
+                <p class="w-25">উপজেলা/থানা: {{ $report_header?->thana_info?->title ?? '' }}</p>
             </div>
             <div class="line d-flex flex-wrap justify-content-between ">
-                <p>ইউনিট সভাপতির নাম: {{ $report_header->president ?? '' }}</p>
-                <p class="width-30">ইউনিটের ধরন: {{ $report_header->org_type ?? '' }}</p>
+                <p>ইউনিট সমুহের নাম :
+                    @foreach ($report_header?->unit_titles as $unit_name)
+                        <span class="">{{$unit_name}},</span>
+                    @endforeach
+                </p>
+                {{-- <p class="width-30">ইউনিটের ধরন: {{ $report_header?->org_type ?? '' }}</p> --}}
             </div>
         </div>
     </section>
@@ -844,12 +849,12 @@
         </div>
     </section>
 
-    <a href="javascript:void(0)" class="print_preview" onclick="print_upload_page(event)">
-        <i class="fa-solid fa-pen-to-square"></i>
+    <a href="javascript:void(0)" class="print_preview" onclick="window.print()">
+        <i class="fa-solid fa-print"></i>
     </a>
-    <a href="javascript:void(0)" class="go_back_to_dashboard" onclick="go_back_to_dashboard(event)">
+    {{-- <a href="javascript:void(0)" class="go_back_to_dashboard" onclick="go_back_to_dashboard(event)">
         <i class="fa-solid fa-door-open"></i>
-    </a>
+    </a> --}}
 
     <script>
         function print_upload_page(event) {
@@ -880,12 +885,12 @@
             const queryParams = new URLSearchParams(window.location.search);
 
             // Extract the user_id and month from the URL
-            const user_id = queryParams.get('user_id');
+            const unit_id = queryParams.get('unit_id');
             const month = queryParams.get('month');
 
-            if (user_id && month) {
+            if (unit_id && month) {
                 // Construct the new URL
-                const redirectUrl = `/dashboard/unit#/dashboard`;
+                const redirectUrl = `/dashboard/ward#/dashboard`;
 
                 // Redirect to the new URL
                 window.location.href = redirectUrl;

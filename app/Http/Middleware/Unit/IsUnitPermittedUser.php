@@ -16,17 +16,14 @@ class IsUnitPermittedUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && auth()->user()->roll == 6 ) {
-            
-            if(auth()->user()->org_unit_responsible[0]->responsibility_id == 1 ){
-                // dd(auth()->user());
-                return $next($request);
-            }else{
-                return redirect()->back();
-            }
-        }else{
-            auth()->logout();
-            return redirect('/logout');
+        // Check if the user is authenticated and has the required permission
+        // dd(Auth::user()->is_permitted);
+        if (Auth::check() && Auth::user()->is_permitted === 1) {
+            return $next($request);
         }
+
+        // Log out the user and redirect to the login page
+        Auth::logout();
+        return redirect('/login')->with('error', 'You are not permitted to access dashboard.');
     }
 }

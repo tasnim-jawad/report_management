@@ -234,7 +234,8 @@
         },
         mounted: function () {
 
-            this.isUnitReportPage = window.location.href.includes("unit-report-upload");
+            // this.isUnitReportPage = window.location.href.includes("unit-report-upload");
+            this.isUnitReportPage = window.location.href.includes("unit-report-upload-monthly");
 
             // Show the modal if not on 'unit-report-upload' page
             if (!this.isUnitReportPage) {
@@ -281,7 +282,7 @@
                 modalElement.hide();
 
                 this.$router.push({
-                    name: 'UnitReportUpload',
+                    name: 'UnitReportUploadMonthly',
                     params: {
                         month: this.month,
                         user_id: this.user_id

@@ -67,7 +67,8 @@ export default {
         },
         total_unit_report: function(){
             if(this.month != null){
-                window.open(`/ward/unit/total-unit-report?user_id=${this.user?.user?.id}&month=${this.month}`)
+                // window.open(`/ward/unit/total-unit-report?user_id=${this.user?.user?.id}&month=${this.month}`)
+                window.open(`/unit/total-approved-unit-report?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
         },
         user_info:function(){

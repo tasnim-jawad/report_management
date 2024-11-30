@@ -6,6 +6,7 @@ use App\Http\Controllers\Actions\Monthly\MonthlyReport;
 use App\Http\Controllers\Actions\ReportHeader;
 use App\Http\Controllers\Actions\ReportJoma;
 use App\Http\Middleware\IsGuest;
+use App\Http\Middleware\Unit\IsUnitPermittedUser;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Route::get('/login', function () {
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'dashboard', 'namespace' => '\App\Http\Controllers\Dashboard'], function () {
-    Route::get('unit', 'DashboardController@unit');
+    Route::get('unit', 'DashboardController@unit')->middleware(IsUnitPermittedUser::class);
     Route::get('ward', 'DashboardController@ward');
     Route::get('thana', 'DashboardController@thana');
     Route::get('admin', 'DashboardController@admin');
@@ -39,6 +40,8 @@ Route::group(['prefix' => 'unit', 'namespace' => '\App\Http\Controllers\Unit'], 
     Route::get('report/upload', 'UnitController@report_upload');
     Route::get('report/unit-report-sum', 'UnitController@unit_report_sum');
     Route::get('unit-report-monthly', 'UnitController@unit_report_monthly');
+    Route::get('report-check', 'UnitController@report_check');
+    Route::get('total-approved-unit-report', 'UnitController@total_approved_unit_report');
 });
 
 Route::group(['prefix' => 'ward', 'namespace' => '\App\Http\Controllers\Ward'], function () {

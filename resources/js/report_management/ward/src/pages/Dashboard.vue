@@ -182,7 +182,8 @@ export default {
             }
         },
         unit_report_view:function(unit_id , report_month){
-            window.open(`/ward/unit/report-check?unit_id=${unit_id}&month=${report_month}`)
+            // window.open(`/ward/unit/report-check?unit_id=${unit_id}&month=${report_month}`)
+            window.open(`/unit/report-check?unit_id=${unit_id}&month=${report_month}`)
         },
         set_unit_report_status:function(unit_id , report_month, new_status){
             // window.open(`/ward/unit/report-check?unit_id=${unit_id}&month=${report_month}`)
