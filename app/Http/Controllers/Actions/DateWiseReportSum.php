@@ -35,7 +35,8 @@ class DateWiseReportSum
 
         // Validate $report_info_ids to ensure it's an array
         if (!is_array($report_info_ids) || empty($report_info_ids)) {
-            throw new \InvalidArgumentException('Invalid report_info_ids provided.');
+            return [];
+            // throw new \InvalidArgumentException('Invalid report_info_ids provided.');
         }
 
 

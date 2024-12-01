@@ -6,6 +6,7 @@ use App\Http\Controllers\Actions\BmReport;
 use App\Http\Controllers\Actions\DateWiseReportSum;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Actions\CalculatePreviousPresent;
+use App\Http\Controllers\Actions\CheckInfo;
 use App\Http\Controllers\Actions\ReportHeader;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Expense\BmExpenseCategory;
@@ -1107,6 +1108,64 @@ class UnitController extends Controller
             'expense_report' => $datas->expense_report,
         ]);
     }
+    public function check_report_info()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $month = request()->month;
+        $org_type = 'unit';
+        $org_type_id = auth()->user()->org_unit_user->unit_id;
+
+        $check_info = new CheckInfo();
+        $check_info_status = $check_info->execute($month, $org_type, $org_type_id);
+        // dd($check_info_status);
+        return response()->json([
+            'status' => 'success',
+            'data' => $check_info_status,
+        ], 200);
+    }
+    public function check_report_info_in_range()
+    {
+        $validator = Validator::make(request()->all(), [
+            'start_month' => ['required', 'date'],
+            'end_month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $start_month = Carbon::parse(request()->start_month);
+        $end_month = Carbon::parse(request()->end_month);
+
+        $org_type = 'unit';
+        $org_type_id = auth()->user()->org_unit_user->unit_id;
+        $report_approved_status = ['approved'];
+
+        $report_info_ids = ReportInfo::whereBetween('month_year', [$start_month->startOfMonth(), $end_month->endOfMonth()])
+                ->where('org_type', $org_type)
+                ->where('org_type_id', $org_type_id)
+                ->whereIn('report_approved_status', $report_approved_status)
+                ->pluck('id');
+        // dd($report_info_ids->isNotEmpty() ? $report_info_ids : null);
+        return response()->json([
+            'status' => 'success',
+            'data' => $report_info_ids->isNotEmpty() ? $report_info_ids : null,
+        ], 200);
+    }
+
     public function unit_report_monthly()
     {
         $validator = Validator::make(request()->all(), [
@@ -1196,7 +1255,9 @@ class UnitController extends Controller
         $is_need_sum = false;
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
         // dd($datas->report_sum_data );
-
+        // if(empty($datas){
+        //     return
+        // }
         return view('unit.unit_report_check')->with([
             'start_month' => $datas->start_month,
             'end_month' => $datas->end_month,
@@ -1252,7 +1313,7 @@ class UnitController extends Controller
         }
         $unit_count = count($approved_unit_ids);
         $unit_titles = [];
-        foreach($approved_unit_ids as $unit_id){
+        foreach ($approved_unit_ids as $unit_id) {
             $unit_info = OrgUnit::find($unit_id);
             if ($unit_info) {
                 $unit_titles[] = $unit_info->title;
@@ -1320,15 +1381,19 @@ class UnitController extends Controller
         $expense_report = $bm_expense_report->execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type, $report_approved_status, $is_need_sum);
         // -------------------------- bm expense report ------------------------------------
 
-        return (object) [
-            'start_month' => $start_month,
-            'end_month' => $end_month,
-            'report_header' => $report_header,
+        if(empty($report_sum_data)){
+            return [];
+        }else{
+            return (object) [
+                'start_month' => $start_month,
+                'end_month' => $end_month,
+                'report_header' => $report_header,
 
-            'report_sum_data' => $report_sum_data,
-            'previous_present' => $previous_present,
-            'income_report' => $income_report,
-            'expense_report' => $expense_report,
-        ];
+                'report_sum_data' => $report_sum_data,
+                'previous_present' => $previous_present,
+                'income_report' => $income_report,
+                'expense_report' => $expense_report,
+            ];
+        }
     }
 }

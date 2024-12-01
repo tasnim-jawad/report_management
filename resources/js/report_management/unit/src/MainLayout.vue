@@ -54,7 +54,8 @@
                         </li>
                         <li>
                             <router-link :to="{ name: 'Department' }">
-                                <span class="icon_margin"><i class="fa-solid fa-puzzle-piece"></i></span>বিভাগ ভিত্তিক তথ্য
+                                <span class="icon_margin"><i class="fa-solid fa-puzzle-piece"></i></span>বিভাগ ভিত্তিক
+                                তথ্য
                             </router-link>
                         </li>
                         <li>
@@ -64,7 +65,8 @@
                         </li>
                         <li>
                             <router-link :to="{ name: 'Kormosuci' }">
-                                <span class="icon_margin"><i class="fa-solid fa-handshake"></i></span>কর্মসূচি বাস্তবায়ন
+                                <span class="icon_margin"><i class="fa-solid fa-handshake"></i></span>কর্মসূচি
+                                বাস্তবায়ন
                             </router-link>
                         </li>
                         <li>
@@ -79,12 +81,14 @@
                         </li>
                         <li>
                             <router-link :to="{ name: 'Shomajsheba' }">
-                                <span class="icon_margin"><i class="fa-solid fa-share-from-square"></i></span>সমাজ সংস্কার ও সমাজসেবা
+                                <span class="icon_margin"><i class="fa-solid fa-share-from-square"></i></span>সমাজ
+                                সংস্কার ও সমাজসেবা
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{ name: 'Rastrio' }">
-                                <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও সংশোধন
+                                <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও
+                                সংশোধন
                             </router-link>
                         </li>
                         <!-- <li>
@@ -109,7 +113,8 @@
                         </li> -->
                         <li>
                             <router-link :to="{ name: 'BmExpenseAll' }">
-                                <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>ব্যয় এন্ট্রি করুন
+                                <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>ব্যয়
+                                এন্ট্রি করুন
                             </router-link>
                         </li>
                         <!-- <li>
@@ -147,11 +152,12 @@
                     <a href="#" @click.prevent="toggle_sidebar"><i class="fa-solid fa-bars"></i></a>
                 </div>
                 <div class="middle">
-                    <p >ইউনিট: {{ this.user?.responsibility?.org_unit?.title }}</p>
-                    <p >ওয়ার্ড: {{ this.user?.ward?.title }}</p>
+                    <p>ইউনিট: {{ this.user?.responsibility?.org_unit?.title }}</p>
+                    <p>ওয়ার্ড: {{ this.user?.ward?.title }}</p>
                 </div>
                 <div class="right">
-                    <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                            class="fa-solid fa-ellipsis-vertical"></i></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" href="#" @click="logout">Logout</a>
@@ -178,7 +184,8 @@
         </button> -->
 
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -186,12 +193,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body d-flex">
-                        <button class="btn btn-success m-auto"
-                                type="button"
-                                @click="upload_report"
-                                :disabled="!month || !user_id"
-                                data-bs-toggle="modal"
-                        >রিপোর্ট ফরম</button>
+                        <button class="btn btn-success m-auto" type="button" @click="upload_report"
+                            :disabled="!month || !user_id" data-bs-toggle="modal">রিপোর্ট ফরম</button>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">না</button>
@@ -208,94 +211,119 @@
 </template>
 
 <script>
-    import axios from "axios";
-    import { store as data_store} from "./stores/ReportStore";
-    import { mapActions, mapWritableState } from 'pinia';
-    export default {
-        data: function () {
-            return {
-                user_id:"",
-                user: {},
-                isUnitReportPage: false,
-            };
-        },
-        created: function () {
-            let token = localStorage.getItem("token");
+import axios from "axios";
+import { store as data_store } from "./stores/ReportStore";
+import { mapActions, mapWritableState } from 'pinia';
+export default {
+    data: function () {
+        return {
+            user_id: "",
+            user: {},
+            isUnitReportPage: false,
+        };
+    },
+    created: function () {
+        let token = localStorage.getItem("token");
 
-            if (!token) {
-                window.location.href = "/login";
+        if (!token) {
+            window.location.href = "/login";
+        }
+        // this.$router.push({name:`Dashboard`})
+        let prevUrl = window.sessionStorage.getItem("prevurl");
+        window.location.hash = prevUrl || "#/dashboard";
+
+        this.auth_user();
+        this.set_month();
+    },
+    mounted: function () {
+
+        // this.isUnitReportPage = window.location.href.includes("unit-report-upload");
+        this.isUnitReportPage = window.location.href.includes("unit-report-upload-monthly");
+
+        // Show the modal if not on 'unit-report-upload' page
+        if (!this.isUnitReportPage) {
+            let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
+                keyboard: false,
+            });
+            modalElement.show();
+        }
+
+    },
+    methods: {
+        ...mapActions(data_store, ['set_month']),
+        auth_user: function () {
+            axios.get("/user/user_info").then((responce) => {
+                this.user = responce.data;
+                this.user_id = this.user?.user?.id;
+            });
+        },
+        logout: function () {
+            if (window.confirm("logout")) {
+                localStorage.removeItem("token");
+                document.getElementById("logout-form").submit();
+                sessionStorage.removeItem('prevurl');
             }
-            // this.$router.push({name:`Dashboard`})
-            let prevUrl = window.sessionStorage.getItem("prevurl");
-            window.location.hash = prevUrl || "#/dashboard";
-
-            this.auth_user();
-            this.set_month();
         },
-        mounted: function () {
+        toggle_sidebar: function () {
+            const width = window.innerWidth;
+            if (width >= 768) {
+                const report_app = document.getElementById("report_app");
+                report_app.classList.toggle("sidebar_hide");
 
-            // this.isUnitReportPage = window.location.href.includes("unit-report-upload");
-            this.isUnitReportPage = window.location.href.includes("unit-report-upload-monthly");
+                const side_nav = document.getElementById("side_nav");
+                side_nav.classList.toggle("side_nav_toggle");
+            } else if (width < 768) {
+                const report_app_left = document.getElementById("report_app_left");
+                report_app_left.classList.toggle("report_app_left_toggle");
+            }
+        },
+        upload_report: async function () {
+            console.log("Upload data:", this.month, this.user_id);
 
-            // Show the modal if not on 'unit-report-upload' page
-            if (!this.isUnitReportPage) {
-                let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
-                    keyboard: false,
-                });
-                modalElement.show();
+            // Hide the modal
+            const modalElement = window.bootstrap.Modal.getInstance(document.getElementById("staticBackdrop"));
+            modalElement?.hide();
+
+            // Validate month selection
+            if (!this.month) {
+                return window.s_warning("Please select a month.", 'error');
             }
 
-        },
-        methods: {
-            ...mapActions( data_store,['set_month']),
-            auth_user: function () {
-                axios.get("/user/user_info").then((responce) => {
-                    this.user = responce.data;
-                    this.user_id = this.user?.user?.id;
-                });
-            },
-            logout: function () {
-                if (window.confirm("logout")) {
-                    localStorage.removeItem("token");
-                    document.getElementById("logout-form").submit();
-                    sessionStorage.removeItem('prevurl');
-                }
-            },
-            toggle_sidebar: function () {
-                const width = window.innerWidth;
-                if (width >= 768) {
-                    const report_app = document.getElementById("report_app");
-                    report_app.classList.toggle("sidebar_hide");
+            try {
+                // Check report info
+                const { data } = await axios.get('/unit/check-report-info', { params: { month: this.month } });
 
-                    const side_nav = document.getElementById("side_nav");
-                    side_nav.classList.toggle("side_nav_toggle");
-                } else if (width < 768) {
-                    const report_app_left = document.getElementById("report_app_left");
-                    report_app_left.classList.toggle("report_app_left_toggle");
-                }
-            },
-            upload_report: function(){
-                console.log("upload data",this.month,this.user_id);
-                let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
-                    keyboard: false,
-                });
-                modalElement.hide();
-
-                this.$router.push({
-                    name: 'UnitReportUploadMonthly',
-                    params: {
-                        month: this.month,
-                        user_id: this.user_id
+                if (data.data) {
+                    if (this.user_id) {
+                        // Navigate to report upload route
+                        return this.$router.push({
+                            name: 'UnitReportUploadMonthly',
+                            params: {
+                                month: this.month,
+                                user_id: this.user_id
+                            }
+                        });
+                    } else {
+                        return window.s_warning("User ID is missing. Please ensure it is provided.", 'error');
                     }
-                });
+                }
+
+                // Show error for insufficient permissions
+                const errMessage = 'আপনার রিপোর্ট পূরণ করার অনুমতি নেই। রিপোর্ট পূরণ করার অনুমতির জন্য আপনার ঊর্ধ্বতন দায়িত্বশীলের সাথে যোগাযোগ করুন।';
+                window.s_warning(errMessage, 'error');
+            } catch (error) {
+                // Handle unexpected errors
+                console.error("An error occurred while fetching report information:", error);
+                window.s_warning("An unexpected error occurred. Please try again.", 'error');
             }
+        }
 
-        },
-        computed: {
-            ...mapWritableState(data_store, ['month']),
 
-        },
-    };
+    },
+    computed: {
+        ...mapWritableState(data_store, ['month']),
+    },
+};
 </script>
 
 <style></style>

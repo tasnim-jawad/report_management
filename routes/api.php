@@ -859,10 +859,12 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
     Route::group(['prefix' => 'unit'] , function(){
         Route::get('/uploaded-data', [App\Http\Controllers\Unit\UnitController::class,'report_upload_api']);
-        Route::get('/uploaded-data-monthly', [App\Http\Controllers\Unit\UnitController::class,'report_upload_monthly']);
         Route::get('/bm-category-wise', [App\Http\Controllers\Unit\UnitController::class,'bm_category_wise']);
         Route::get('/expense-category-wise', [App\Http\Controllers\Unit\UnitController::class,'expense_category_wise']);
 
+        Route::get('/check-report-info', [App\Http\Controllers\Unit\UnitController::class,'check_report_info']);
+        Route::get('/check-report-info-in-range', [App\Http\Controllers\Unit\UnitController::class,'check_report_info_in_range']);
+        Route::get('/uploaded-data-monthly', [App\Http\Controllers\Unit\UnitController::class,'report_upload_monthly']);
         Route::get('/report-status', [App\Http\Controllers\Unit\UnitController::class,'report_status']);
         Route::get('/report-joma', [App\Http\Controllers\Unit\UnitController::class,'report_joma']);
     });

@@ -707,9 +707,17 @@ class WardController extends Controller
         if ($report_info) {
             $report_info_id = $report_info->id;
         }else{
-            return redirect()->back();
-        }
+            $org_type = 'ward';
+            $org_type_id = $ward_id;
+            $responsibility_id = null;
+            $responsibility_name = null;
+            $month_year = $month;
+            $report_type = null;
 
+            $report_info = report_info_create($org_type,$org_type_id,$responsibility_id,$responsibility_name,$month_year,$report_type);
+            $report_info_id = $report_info->id;
+        }
+        // dd($report_info_id );
         // ---------------------  reports all data to show  ---------------------------
         $dawat1 = WardDawat1RegularGroupWise::where('report_info_id', $report_info_id)->first();
         $dawat2 = WardDawat2PersonalAndTarget::where('report_info_id', $report_info_id)->first();
@@ -1100,53 +1108,53 @@ class WardController extends Controller
         // dd($total_previous_income,$total_previous_expense,$total_previous);
         // -------------------------- bm previous report ------------------------------------
         // dd(
-            // 'status',"success",
-            // 'month',$month->toArray(),
-            // 'org_type',$org_type->toArray(),
-            // 'ward_info',$ward_info->toArray(),
-            // 'ward_info',$ward_info->toArray(),
-            // 'thana_info',$thana_info->toArray(),
-            // 'president',$president->toArray(),
+        //     'status',"success",
+        //     'month',$month->toArray(),
+        //     'org_type',$org_type->toArray(),
+        //     'ward_info',$ward_info->toArray(),
+        //     'ward_info',$ward_info->toArray(),
+        //     'thana_info',$thana_info->toArray(),
+        //     'president',$president->toArray(),
 
-            // 'dawat1',$dawat1,
-            // 'dawat2',$dawat2,
-            // 'dawat3',$dawat3,
-            // 'dawat4',$dawat4,
-            // 'department1',$department1,
-            // 'department2',$department2,
-            // 'department3',$department3,
-            // 'department4',$department4,
-            // 'department5',$department5,
-            // 'department6',$department6,
-            // 'department7',$department7,
-            // 'dawah_prokashona',$dawah_prokashona,
-            // 'kormosuci',$kormosuci,
-            // 'songothon1',$songothon1,
-            // 'songothon2',$songothon2,
-            // 'songothon3',$songothon3,
-            // 'songothon4',$songothon4,
-            // 'songothon5',$songothon5,
-            // 'songothon6',$songothon6,
-            // 'songothon7',$songothon7,
-            // 'songothon8',$songothon8,
-            // 'songothon9',$songothon9,
-            // 'proshikkhon1',$proshikkhon1,
-            // 'proshikkhon2',$proshikkhon2,
-            // 'shomajsheba1',$shomajsheba1,
-            // 'shomajsheba2',$shomajsheba2,
-            // 'shomajsheba3',$shomajsheba3,
-            // 'shomajsheba4',$shomajsheba4,
-            // 'rastrio1',$rastrio1,
-            // 'rastrio2',$rastrio2,
-            // 'rastrio3',$rastrio3,
-            // 'rastrio4',$rastrio4,
-            // 'montobbo',$montobbo,
+        //     'dawat1',$dawat1,
+        //     'dawat2',$dawat2,
+        //     'dawat3',$dawat3,
+        //     'dawat4',$dawat4,
+        //     'department1',$department1,
+        //     'department2',$department2,
+        //     'department3',$department3,
+        //     'department4',$department4,
+        //     'department5',$department5,
+        //     'department6',$department6,
+        //     'department7',$department7,
+        //     'dawah_prokashona',$dawah_prokashona,
+        //     'kormosuci',$kormosuci,
+        //     'songothon1',$songothon1,
+        //     'songothon2',$songothon2,
+        //     'songothon3',$songothon3,
+        //     'songothon4',$songothon4,
+        //     'songothon5',$songothon5,
+        //     'songothon6',$songothon6,
+        //     'songothon7',$songothon7,
+        //     'songothon8',$songothon8,
+        //     'songothon9',$songothon9,
+        //     'proshikkhon1',$proshikkhon1,
+        //     'proshikkhon2',$proshikkhon2,
+        //     'shomajsheba1',$shomajsheba1,
+        //     'shomajsheba2',$shomajsheba2,
+        //     'shomajsheba3',$shomajsheba3,
+        //     'shomajsheba4',$shomajsheba4,
+        //     'rastrio1',$rastrio1,
+        //     'rastrio2',$rastrio2,
+        //     'rastrio3',$rastrio3,
+        //     'rastrio4',$rastrio4,
+        //     'montobbo',$montobbo,
 
-            // 'income_category_wise',$income_category_wise,
-            // 'total_income',$total_income,
+        //     'income_category_wise',$income_category_wise,
+        //     'total_income',$total_income,
 
-            // 'expense_category_wise',$expense_category_wise,
-            // 'total_expense',$total_expense,
+        //     'expense_category_wise',$expense_category_wise,
+        //     'total_expense',$total_expense,
         // );
 
         return response()->json([

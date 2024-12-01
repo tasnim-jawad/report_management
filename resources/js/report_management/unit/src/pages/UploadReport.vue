@@ -1,60 +1,70 @@
 <template>
     <div class="card mb-3">
         <div class="card-body border-bottom-0">
-            মাস: <input type="month" v-model="month" name="month">
-            <button class="btn btn-success ms-5"
-                    type="button"
-                    @click="upload_report"
-                    :disabled="!month || !user_id"
-            >Submit</button>
+            <label for="" class="form-label">মাস:</label>
+            <input class="form-control" type="month" v-model="month" name="month">
+            <a href="#" class="btn btn-success mt-2" type="button" @click="upload_report"
+                :disabled="!month || !user_id">রিপোর্ট ফরম</a>
         </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import { store as data_store} from "../stores/ReportStore";
+import { store as data_store } from "../stores/ReportStore";
 import { mapState, mapWritableState } from 'pinia';
 
 export default {
-    data:function(){
+    data: function () {
         return {
             // month:"",
-            user_id:"",
+            user_id: "",
         }
     },
-    created:function(){
+    created: function () {
         this.user_info()
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },
-    methods:{
-        upload_report: function(){
+    methods: {
+        upload_report: async function (event) {
+            event?.preventDefault();
 
-            if (this.month && this.user_id) {
-                // this.$router.push({
-                //     name: 'UnitReportUpload',
-                //     params: {
-                //         month: this.month,
-                //         user_id: this.user_id
-                //     }
-                // });
-                this.$router.push({
-                    name: 'UnitReportUploadMonthly',
-                    params: {
-                        month: this.month,
-                        user_id: this.user_id
-                    }
-                });
-            } else {
-                alert("Please select a month and ensure user ID is available");
+            if (!this.month) {
+                return window.s_warning("Please select a month.", 'error');
             }
 
+            try {
+                const { data } = await axios.get('/unit/check-report-info', {
+                    params: { month: this.month }
+                });
+
+                if (data.data) {
+                    if (this.user_id) {
+                        return this.$router.push({
+                            name: 'UnitReportUploadMonthly',
+                            params: {
+                                month: this.month,
+                                user_id: this.user_id
+                            }
+                        });
+                    } else {
+                        return window.s_warning("User ID is missing. Please ensure it is provided.", 'error');
+                    }
+                }
+
+                const errMessage = 'আপনার রিপোর্ট পূরণ করার অনুমতি নেই। রিপোর্ট পূরণ করার অনুমতির জন্য আপনার ঊর্ধ্বতন দায়িত্বশীলের সাথে যোগাযোগ করুন।';
+                window.s_warning(errMessage, 'error');
+            } catch (error) {
+                console.error("An error occurred while fetching report information:", error);
+                window.s_warning("An unexpected error occurred. Please try again.", 'error');
+            }
         },
-        user_info:function(){
-            axios.get("/user/user_info")
-                .then(responce =>{
+
+        user_info:async function () {
+            await axios.get("/user/user_info")
+                .then(responce => {
                     this.user_id = responce?.data?.user?.id;
                 })
                 .catch(error => {
@@ -65,6 +75,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

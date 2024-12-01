@@ -4078,7 +4078,6 @@
             this.bm_category_wise()
             this.bm_expense_category_wise()
             this.report_status()
-
         },
         watch:{
             kormosuci:function(){
@@ -4101,6 +4100,7 @@
         },
         methods: {
             uploaded_data:async function(){
+
                 const month = this.$route.params.month;
                 const user_id = this.$route.params.user_id;
 

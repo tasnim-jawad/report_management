@@ -58,15 +58,16 @@ function unit_report_header_info($resposibilities, $permission, $month)
         ->where('report_type', 'monthly')
         ->orderBy('id', 'DESC')
         ->first();
-    // dd($check_info );
+    // dd('check_info',$check_info,$permission,$permission->report_type );
     if (!$check_info && $permission) {
+        // dd('inside');
         $check_info = ReportInfo::create([
-            'org_type' => 'unit',
+            'org_type' => $permission->report_type,
             'org_type_id' => $resposibilities->org_unit_responsible->org_unit_id,
             'responsibility_id' => $resposibilities->org_unit_responsible->responsibility_id,
             'responsibility_name' => $resposibilities->resposibilities->title,
             'month_year' => $permission->month_year,
-            'report_type' =>  $permission->report_type,
+            'report_type' =>  'monthly',
             'creator' => auth()->user()->id,
             'status' => 1,
         ]);
