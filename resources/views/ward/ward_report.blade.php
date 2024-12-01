@@ -2015,7 +2015,7 @@
             </div>
             <div class="montobbo">
                 <h1 class="fs-6 fw-bold">ওয়ার্ড আমীর/সভাপতির মন্তব্য :</h1>
-                <p>{{$montobbo->montobbo}}</p>
+                <p>{{$montobbo?->montobbo}}</p>
             </div>
         </section>
 

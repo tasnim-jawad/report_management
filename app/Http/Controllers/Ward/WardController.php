@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Ward;
 
+use App\Http\Controllers\Actions\CheckInfo;
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Expense\BmExpenseCategory;
@@ -2011,6 +2012,64 @@ class WardController extends Controller
                 'errors' => ['name' => ['Report has no data']],
             ], 204);
         }
+    }
+
+    public function check_report_info()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $month = request()->month;
+        $org_type = 'ward';
+        $org_type_id = auth()->user()->org_unit_user->unit_id;
+
+        $check_info = new CheckInfo();
+        $check_info_status = $check_info->execute($month, $org_type, $org_type_id);
+        // dd($check_info_status);
+        return response()->json([
+            'status' => 'success',
+            'data' => $check_info_status,
+        ], 200);
+    }
+    public function check_report_info_in_range()
+    {
+        $validator = Validator::make(request()->all(), [
+            'start_month' => ['required', 'date'],
+            'end_month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $start_month = Carbon::parse(request()->start_month);
+        $end_month = Carbon::parse(request()->end_month);
+
+        $org_type = 'ward';
+        $org_type_id = auth()->user()->org_unit_user->unit_id;
+        $report_approved_status = ['approved'];
+
+        $report_info_ids = ReportInfo::whereBetween('month_year', [$start_month->startOfMonth(), $end_month->endOfMonth()])
+                ->where('org_type', $org_type)
+                ->where('org_type_id', $org_type_id)
+                ->whereIn('report_approved_status', $report_approved_status)
+                ->pluck('id');
+        // dd($report_info_ids->isNotEmpty() ? $report_info_ids : null);
+        return response()->json([
+            'status' => 'success',
+            'data' => $report_info_ids->isNotEmpty() ? $report_info_ids : null,
+        ], 200);
     }
 
 }

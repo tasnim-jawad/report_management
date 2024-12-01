@@ -1207,6 +1207,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::get('/income-category-wise', [App\Http\Controllers\Ward\WardController::class,'income_category_wise']);
         Route::get('/expense-category-wise', [App\Http\Controllers\Ward\WardController::class,'expense_category_wise']);
 
+        Route::get('/check-report-info', [App\Http\Controllers\Ward\WardController::class,'check_report_info']);
+        Route::get('/check-report-info-in-range', [App\Http\Controllers\Ward\WardController::class,'check_report_info_in_range']);
         Route::get('/report-status', [App\Http\Controllers\Ward\WardController::class,'report_status']);
         Route::get('/report-joma', [App\Http\Controllers\Ward\WardController::class,'report_joma']);
     });
