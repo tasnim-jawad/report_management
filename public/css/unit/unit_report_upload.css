@@ -227,7 +227,9 @@ th {
     padding: 1px 5px;
     /* min-width: 60px; */
 }
-
+td{
+    min-height: 20px;
+}
 .table_layout_fixed {
     table-layout: fixed;
 }

@@ -1258,7 +1258,18 @@ class UnitController extends Controller
         // if(empty($datas){
         //     return
         // }
-        return view('unit.unit_report_check')->with([
+        // return view('unit.unit_report_check')->with([
+        //     'start_month' => $datas->start_month,
+        //     'end_month' => $datas->end_month,
+        //     'report_header' => $datas->report_header,
+
+        //     'report_sum_data' => $datas->report_sum_data,
+        //     'previous_present' => $datas->previous_present,
+        //     'income_report' => $datas->income_report,
+        //     'expense_report' => $datas->expense_report,
+        // ]);.
+
+        $data = (object) [
             'start_month' => $datas->start_month,
             'end_month' => $datas->end_month,
             'report_header' => $datas->report_header,
@@ -1267,7 +1278,12 @@ class UnitController extends Controller
             'previous_present' => $datas->previous_present,
             'income_report' => $datas->income_report,
             'expense_report' => $datas->expense_report,
-        ]);
+        ];
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $data,
+        ], 200);
     }
 
     public function total_approved_unit_report()

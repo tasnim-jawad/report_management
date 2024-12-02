@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Models\Bm\Income\BmCategoryUser;
 use App\Models\Bm\Income\BmPaid;
+use App\Models\Comment\Comment;
 use App\Models\Organization\OrgCityResponsible;
 use App\Models\Organization\OrgCityUser;
 use App\Models\Organization\OrgThanaResponsible;
@@ -125,5 +126,11 @@ class User extends Authenticatable
     public function bm_category_user()
     {
         return $this->hasMany(BmCategoryUser::class);
+    }
+
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class,'commenter_id', 'id');
     }
 }

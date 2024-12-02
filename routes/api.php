@@ -862,6 +862,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::get('/bm-category-wise', [App\Http\Controllers\Unit\UnitController::class,'bm_category_wise']);
         Route::get('/expense-category-wise', [App\Http\Controllers\Unit\UnitController::class,'expense_category_wise']);
 
+        Route::get('/report-check', [App\Http\Controllers\Unit\UnitController::class,'report_check']);
         Route::get('/check-report-info', [App\Http\Controllers\Unit\UnitController::class,'check_report_info']);
         Route::get('/check-report-info-in-range', [App\Http\Controllers\Unit\UnitController::class,'check_report_info_in_range']);
         Route::get('/uploaded-data-monthly', [App\Http\Controllers\Unit\UnitController::class,'report_upload_monthly']);
@@ -1225,6 +1226,23 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::post('/remove-unit-report-joma-permission', [App\Http\Controllers\Ward\PermissionController::class,'remove_unit_report_joma_permission']);
         // Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Ward\PermissionController::class,'toggle_dashboard_permission']);
     });
+
+
+    Route::group(['prefix' => 'comment'] , function(){
+        Route::get('/parent-category', [App\Http\Controllers\Comment\CommentController::class,'parent_category']);
+        Route::get('/index', [App\Http\Controllers\Comment\CommentController::class,'index']);
+
+        Route::get('/all', [App\Http\Controllers\Comment\CommentController::class,'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Comment\CommentController::class,'show']);
+        Route::post('/store', [App\Http\Controllers\Comment\CommentController::class,'store']);
+        Route::post('/update', [App\Http\Controllers\Comment\CommentController::class,'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Comment\CommentController::class,'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Comment\CommentController::class,'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Comment\CommentController::class,'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Comment\CommentController::class,'bulk_import']);
+    });
+
+
 });
 
 

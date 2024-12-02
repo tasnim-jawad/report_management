@@ -343,10 +343,12 @@ th {
 .parent_popup {
     position: relative; /* Set this on the immediate parent */
     /* z-index: -1; */
+    min-height: 17px;
 }
 .parent_popup:has(.unit_data_popup.active) {
     z-index: 9999;
 }
+.comment_icon,
 .unit_info_icon{
     position: absolute;
     right: 0px;
@@ -365,6 +367,8 @@ th {
         z-index: 999;
     }
 }
+
+.comment_data_popup,
 .unit_data_popup {
     position: absolute;
     max-width: 300px;
@@ -379,6 +383,7 @@ th {
     transition-duration: .3s;
     transform: translateY(0);
 }
+.comment_data_popup.active,
 .unit_data_popup.active{
     opacity: 1;
     visibility: visible;
@@ -386,10 +391,12 @@ th {
     top: calc(100% + 3px);
     right: 0px;
 }
+.comment_data_popup table tr td,
 .unit_data_popup table tr td{
     font-size: 12px;
     padding: 5px;
 }
+
 .parent_popup_note{
     width: 30%;
     position: relative;
