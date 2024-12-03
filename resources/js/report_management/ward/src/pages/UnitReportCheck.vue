@@ -48,18 +48,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
+                                <td style="background-color: gray;">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_groups_are_out)
                                         }}
-                                        <comment
-                                            :org_type="'unit'"
-                                            :org_type_id="report_header?.unit_info?.id"
-                                            :month_year="month"
-                                            :table_name="'dawat1_regular_group_wises'"
-                                            :column_name="'how_many_groups_are_out'"
-                                        />
+                                        <comment :table_name="'dawat1_regular_group_wises'"
+                                            :column_name="'how_many_groups_are_out'" :org_type="'unit'"
+                                            :org_type_id="report_header?.unit_info?.id" :month_year="month" />
                                     </div>
                                 </td>
                                 <td>
@@ -963,11 +959,11 @@
                 <div class="urdotono mb-1">
                     <div class="d-flex justify-content-start ">
                         <label for="" class="fw-bold fs-6">৫. ঊর্ধ্বতন দায়িত্বশীলদের সফর সংখ্যা :</label>
-                            <div class="parent_popup w-75 border_dot">
-                                        {{
-                                            formatBangla(report_sum_data?.songothon7_sofors?.upper_leader_sofor
-                                                ?? '') }}
-                                    </div>
+                        <div class="parent_popup w-75 border_dot">
+                            {{
+                                formatBangla(report_sum_data?.songothon7_sofors?.upper_leader_sofor
+                                    ?? '') }}
+                        </div>
                     </div>
                 </div>
                 <div class="ianot mb-2">
@@ -1359,7 +1355,7 @@
             <div class="montobbo">
                 <h1 class="fs-6">ইউনিট সভাপতির মন্তব্য :</h1>
                 <p>
-                    {{ report_sum_data?.montobbos?.montobbo ?? 'মন্তব্য নাই'}}
+                    {{ report_sum_data?.montobbos?.montobbo ?? 'মন্তব্য নাই' }}
                 </p>
                 <!-- <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input"
                     rows="5">{{ report_sum_data?.montobbos?.montobbo }}</textarea> -->
@@ -1375,19 +1371,74 @@
         <router-link :to="{ name: 'Dashboard' }">
             <a href="" class="go_back_to_dashboard"><i class="fa-solid fa-door-open"></i></a>
         </router-link>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="comment_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="comment_form_container">
+                            <form>
+                                <div class="mb-2">
+                                    <label for="comment" class="form-label">Add Comment</label>
+                                    <textarea name="comment" id="comment" class="form-control"
+                                        v-model="comment_text"></textarea>
+                                </div>
+                                <a href="#" class="btn btn-success" @click.prevent="comment_set(comment_text)">Add comment</a>
+                            </form>
+                        </div>
+                        <div class="all_comment" v-for="(comment , index) in all_comment_store" :key="index">
+                            <p>{{ comment?.user?.full_name }} - {{ comment?.comment }}</p>
+                        </div>
+                        ...
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                        <p>sdfasdfdsaf</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from "axios";
 import Comment from "../components/Comment.vue";
+import { store as comment_store } from "../stores/CommentStore";
+import { mapActions, mapWritableState } from "pinia";
 
 export default {
-    components:{ Comment },
+    components: { Comment },
     data() {
         return {
             month: '',
+            comment_text: '',
             joma_status: null,
+            comments:[];
 
             report_header: {},
             report_sum_data: {},
@@ -1417,17 +1468,66 @@ export default {
             },
         };
     },
+    computed: {
+        ...mapWritableState(comment_store, {
+            org_type_store: 'org_type',
+            org_type_id_store: 'org_type_id',
+            month_year_store: 'month_year',
+            comment_text_store: 'comment_text',
+            all_comment_store: 'all_comment',
+        }),
+    },
+    created: async function () {
+        try {
+            await this.uploaded_data();  // Wait for uploaded_data() to finish
 
-    created() {
-        this.uploaded_data()
-        // this.report_status()
+            // Set the values after uploaded_data() is done
+            this.org_type_store = 'unit';
+            this.org_type_id_store = this.report_header?.unit_info?.id || null;
+            this.month_year_store = this.month || '';
+            this.comment_text_store = this.comment_text;
+
+            console.log([
+                "from unitCheck",
+                this.org_type_store,
+                this.org_type_id_store,
+                this.month_year_store,
+                this.comment_text_store,
+            ]);
+        } catch (error) {
+            console.error('Error during uploaded_data:', error);
+        }
+
     },
     watch: {
         'report_sum_data.kormosuci_bastobayons': function () {
             this.average_data();
         },
+        report_header: {
+            handler() {
+                this.update_store();
+            },
+            deep: true,
+        },
+        month(newMonth) {
+            this.update_store();
+        },
+        comment_text(v) {
+            this.comment_text_store = v;
+        },
+        column_name_store:function (new_value) {
+            console.log(new_value)
+        }
     },
     methods: {
+        ...mapActions(comment_store, {
+            comment_set: 'comment_set'
+        }),
+        update_store() {
+            this.org_type_store = 'unit';
+            this.org_type_id_store = this.report_header?.unit_info?.id || null;
+            this.month_year_store = this.month || '';
+        },
         uploaded_data: async function () {
             const month = this.$route.params.month;
             const unit_id = this.$route.params.unit_id;
@@ -1442,11 +1542,11 @@ export default {
             if (res.data.status == 'success') {
                 console.log("res", res.data.data.end_month);
                 this.month = res.data.data.end_month,
-                this.report_header = res.data.data.report_header,
-                this.report_sum_data = res.data.data.report_sum_data,
-                this.previous_present = res.data.data.previous_present,
-                this.income_report = res.data.data.income_report,
-                this.expense_report = res.data.data.expense_report
+                    this.report_header = res.data.data.report_header,
+                    this.report_sum_data = res.data.data.report_sum_data,
+                    this.previous_present = res.data.data.previous_present,
+                    this.income_report = res.data.data.income_report,
+                    this.expense_report = res.data.data.expense_report
 
             }
         },

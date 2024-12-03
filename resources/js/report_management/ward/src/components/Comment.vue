@@ -1,13 +1,19 @@
 <template>
-    <div class="comment_icon">       <!-- unit_info_icon  -->
-        <span class="i_icon" @click="toggle_popup">
+    <div class="comment_icon">
+        <span class="i_icon" @click="modal_show(
+            table_name,
+            column_name,
+            org_type,
+            org_type_id,
+            month_year,
+        )">
             <i class="fa fa-list"></i>
         </span>
-        <div class="comment_data_popup" :class="{ active: is_popup_visible }"> <!-- unit_data_popup  -->
-            <!-- <span>{{popup_data }}</span> -->
+        <!-- <div class="comment_data_popup" :class="{ active: is_popup_visible }">
+
             <form action="" @click.prevent="comment_set">
-                <label for="comment">Comment</label>
-                <textarea name="comment" id="comment" class="bg-gray" v-model="comment_text"></textarea>
+                <label for="comment" class="form-label fs-6">Add Comment</label>
+                <textarea name="comment" id="comment" class="form-control" v-model="comment_text"></textarea>
                 <button type="button" class="btn btn-sm btn-success m-2">comment</button>
             </form>
             <table class="table table-striped mb-0">
@@ -18,12 +24,14 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import { store as comment_store } from "../stores/CommentStore";
+import { mapActions, mapWritableState } from "pinia";
 
 export default {
     props: {
@@ -44,9 +52,8 @@ export default {
             required: true,
         },
         column_name: {
-            type: Number,
+            type: String,
             required: true,
-            default: 0,
         },
     },
 
@@ -58,64 +65,28 @@ export default {
         };
     },
     created: function () {
+        this.table_name_store = this.table_name;
+        this.column_name_store = this.column_name;
+    },
+    computed: {
+        ...mapWritableState(comment_store, {
+            table_name_store: 'table_name',
+            column_name_store: 'column_name',
+        }),
+    },
+    watch: {
+        table_name: function (new_value) {
+            this.table_name_store = new_value
 
+        },
+        column_name: function (new_value) {
+            this.column_name_store = new_value
+        }
     },
     methods: {
-        toggle_popup() {
-
-            [...document.querySelectorAll('.comment_data_popup')].forEach(i => i.classList.remove('active'))
-
-            this.is_popup_visible = !this.is_popup_visible;
-
-            if (this.is_popup_visible) {
-                this.get_all_comment()
-            }
-        },
-
-        get_all_comment: async function () {
-
-            let response = await axios.get('/comment/index', {
-                params: {
-                    month: this.month,
-                    org_type: this.org_type,
-                    org_type_id: this.org_type_id,
-                    table_name: this.table_name,
-                    column_name: this.column_name,
-                    comment: this.comment,
-                }
-            })
-            console.log(response);
-
-            if (response.data.status == 'success') {
-                this.all_comment = response?.data?.data;
-                console.log('all_comment'.all_comment);
-
-            }
-
-        },
-        comment_set() {
-            if (this.comment_text.trim() === '') {
-                console.log('Comment cannot be empty.');
-                return;
-            }
-
-            // Simulate storing the data or sending it to an API
-            console.log('Comment:', this.comment_text);
-
-            let response = axios.get('/comment/store', {
-                params: {
-                    month: this.month,
-                    org_type: this.org_type,
-                    org_type_id: this.org_type_id,
-                    table_name: this.table_name,
-                    column_name: this.column_name,
-                    comment: this.comment_text,
-                }
-            })
-
-            // Reset the textarea after submitting
-            this.comment_text = '';
-        }
+        ...mapActions(comment_store, {
+            modal_show: 'modal_show'
+        }),
     }
 };
 </script>

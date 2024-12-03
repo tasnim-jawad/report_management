@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('table_row_id')->nullable();
             $table->string('column_name')->nullable();
             $table->enum('org_type', ['unit', 'ward', 'thana', 'city'])->nullable();
+            $table->bigInteger('org_type_id')->nullable();
             $table->date('month_year')->nullable();
             $table->bigInteger('commenter_id')->nullable();
             $table->string('commenter_responsibility_name')->nullable();

@@ -40,7 +40,12 @@ class CommentController extends Controller
         $table_name = request()->table_name;
         $column_name = request()->column_name;
 
-
+        $report_info_id = ReportInfo::where('org_type_id', $org_type_id)
+            ->where('org_type', $org_type)
+            ->whereYear('month_year', $carbon_month->clone()->year)
+            ->whereMonth('month_year', $carbon_month->clone()->month)
+            ->pluck('id');
+        dd($report_info_id);
         $query = Comment::where('status', $status)
             ->whereYear('month_year', $carbon_month->clone()->year)
             ->whereMonth('month_year', $carbon_month->clone()->month)
@@ -48,6 +53,81 @@ class CommentController extends Controller
             ->where('org_type_id', $org_type_id)
             ->where('table_name', $table_name)
             ->where('org_type', $org_type)
+            ->orderBy($orderBy, $orderByType)
+            ->with('user');
+        $datas = $query->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $datas,
+        ], 200);
+    }
+    public function column_comment_all()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'org_type' => ['required'],
+            'org_type_id' => ['required'],
+            'table_name' => ['required'],
+            'column_name' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $carbon_month = Carbon::parse(request()->month);
+        $org_type = request()->org_type;
+        $org_type_id = request()->org_type_id;
+        $table_name = request()->table_name;
+        $column_name = request()->column_name;
+
+        $report_info = ReportInfo::where('org_type_id', $org_type_id)
+            ->where('org_type', $org_type)
+            ->whereYear('month_year', $carbon_month->clone()->year)
+            ->whereMonth('month_year', $carbon_month->clone()->month)
+            ->first();
+        // dd($report_info);
+        if (!$report_info) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => ['name' => ['report not found ']],
+            ], 422);
+        }
+
+        $table_row = DB::table($table_name)
+            ->where('report_info_id', $report_info->id)
+            ->first();
+
+        if (!$table_row) {
+            $table_row_id = DB::table($table_name)->insertGetId([
+                'report_info_id' => $report_info->id,
+                'creator' => auth()->user()->id,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        } else {
+            $table_row_id = $table_row->id;
+        }
+
+
+        $orderBy = request()->orderBy ?? 'id';
+        $orderByType = request()->orderByType ?? 'DESC';
+        $status = 1;
+        $report_info_id = $report_info->id;
+
+        $query = Comment::where('status', $status)
+            ->where('report_info_id', $report_info_id)
+            ->where('table_name', $table_name)
+            ->where('table_row_id', $table_row_id)
+            ->where('column_name', $column_name)
+            ->where('org_type', $org_type)
+            ->where('org_type_id', $org_type_id)
+            ->whereYear('month_year', $carbon_month->clone()->year)
+            ->whereMonth('month_year', $carbon_month->clone()->month)
             ->orderBy($orderBy, $orderByType)
             ->with('user');
         $datas = $query->get();
@@ -82,8 +162,9 @@ class CommentController extends Controller
 
     public function store()
     {
+        // dd(request()->all());
         $validator = Validator::make(request()->all(), [
-            'month' => ['required'],
+            'month' => ['required', 'date'],
             'org_type' => ['required'],
             'org_type_id' => ['required'],
             'table_name' => ['required'],
@@ -102,13 +183,15 @@ class CommentController extends Controller
         $org_type = request()->org_type;
         $org_type_id = request()->org_type_id;
         $table_name = request()->table_name;
+        $column_name = request()->column_name;
+        $comment = request()->comment;
 
         $report_info = ReportInfo::where('org_type_id', $org_type_id)
             ->where('org_type', $org_type)
             ->whereYear('month_year', $carbon_month->clone()->year)
             ->whereMonth('month_year', $carbon_month->clone()->month)
             ->first();
-
+        // dd($report_info);
         if (!$report_info) {
             return response()->json([
                 'err_message' => 'validation error',
@@ -131,16 +214,18 @@ class CommentController extends Controller
             $table_row_id = $table_row->id;
         }
 
+        // dd($table_row_id);
 
         $data = new Comment();
         $data->report_info_id = $report_info->id;
         $data->table_name = $table_name;
         $data->table_row_id = $table_row_id;
-        $data->column_name = request()->column_name;
+        $data->column_name = $column_name;
         $data->org_type = $org_type;
-        $data->month_year = $org_type_id;
+        $data->org_type_id = $org_type_id;
+        $data->month_year = $carbon_month;
         $data->commenter_id = auth()->user()->id;
-        $data->comment = request()->comment;
+        $data->comment = $comment;
 
         $data->creator = auth()->id();
         $data->save();
