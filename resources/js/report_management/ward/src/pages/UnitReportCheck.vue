@@ -48,14 +48,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="background-color: gray;">
+                                <td>
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_groups_are_out)
                                         }}
                                         <comment :table_name="'dawat1_regular_group_wises'"
-                                            :column_name="'how_many_groups_are_out'" :org_type="'unit'"
-                                            :org_type_id="report_header?.unit_info?.id" :month_year="month" />
+                                            :column_name="'how_many_groups_are_out'" />
                                     </div>
                                 </td>
                                 <td>
@@ -63,6 +62,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat1_regular_group_wises?.number_of_participants)
                                         }}
+                                        <comment :table_name="'dawat1_regular_group_wises'"
+                                            :column_name="'number_of_participants'" />
                                     </div>
                                 </td>
                                 <td>
@@ -70,6 +71,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_have_been_invited)
                                         }}
+                                        <comment :table_name="'dawat1_regular_group_wises'"
+                                            :column_name="'how_many_have_been_invited'" />
                                     </div>
                                 </td>
                                 <td>
@@ -77,6 +80,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_associate_members_created)
                                         }}
+                                        <comment :table_name="'dawat1_regular_group_wises'"
+                                            :column_name="'how_many_associate_members_created'" />
                                     </div>
                                 </td>
                             </tr>
@@ -104,6 +109,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat2_personal_and_targets?.total_rokon)
                                         }}
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'total_rokon'" />
                                     </div>
                                 </td>
                                 <td>
@@ -111,6 +118,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat2_personal_and_targets?.total_worker)
                                         }}
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'total_worker'" />
                                     </div>
                                 </td>
                                 <td class="text-start px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
@@ -119,6 +128,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_have_been_invited)
                                         }}
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'how_many_have_been_invited'" />
                                     </div>
                                 </td>
                             </tr>
@@ -129,6 +140,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_were_give_dawat_rokon)
                                         }}
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'how_many_were_give_dawat_rokon'" />
                                     </div>
                                 </td>
                                 <td>
@@ -136,6 +149,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_were_give_dawat_worker)
                                         }}
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'how_many_were_give_dawat_worker'" />
                                     </div>
                                 </td>
                                 <td class="text-start px-2">কতজন সহযোগী সদস্য হয়েছেন</td>
@@ -144,6 +159,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_associate_members_created)
                                         }}
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'how_many_associate_members_created'" />
                                     </div>
                                 </td>
                             </tr>
@@ -168,6 +185,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat3_general_program_and_others?.how_many_were_give_dawat)
                                         }}
+                                        <comment :table_name="'dawat3_general_program_and_others'"
+                                            :column_name="'how_many_were_give_dawat'" />
                                     </div>
                                 </td>
                                 <td>
@@ -175,6 +194,8 @@
                                         {{
                                             formatBangla(report_sum_data?.dawat3_general_program_and_others?.how_many_associate_members_created)
                                         }}
+                                        <comment :table_name="'dawat3_general_program_and_others'"
+                                            :column_name="'how_many_associate_members_created'" />
                                     </div>
                                 </td>
                             </tr>
@@ -205,6 +226,8 @@
                                             formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.total_gono_songjog_group
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'total_gono_songjog_group'" />
                                     </div>
                                 </td>
                                 <td>
@@ -213,6 +236,8 @@
                                             formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.total_attended
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'total_attended'" />
                                     </div>
                                 </td>
                                 <td>
@@ -221,6 +246,8 @@
                                             formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_have_been_invited
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'how_many_have_been_invited'" />
                                     </div>
                                 </td>
                                 <td>
@@ -229,6 +256,8 @@
                                             formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_associate_members_created
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'how_many_associate_members_created'" />
                                     </div>
                                 </td>
                             </tr>
@@ -240,6 +269,8 @@
                                             formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_group
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'jela_mohanogor_declared_gonosonjog_group'" />
                                     </div>
                                 </td>
                                 <td>
@@ -248,6 +279,8 @@
                                             formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_attended
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'jela_mohanogor_declared_gonosonjog_attended'" />
                                     </div>
                                 </td>
                                 <td>
@@ -256,6 +289,8 @@
                                             formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_invited
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'jela_mohanogor_declared_gonosonjog_invited'" />
                                     </div>
                                 </td>
                                 <td>
@@ -264,6 +299,8 @@
                                             formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_associated_created
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'jela_mohanogor_declared_gonosonjog_associated_created'" />
                                     </div>
                                 </td>
                             </tr>
@@ -296,6 +333,8 @@
                                         {{
                                             formatBangla(report_sum_data?.department1_talimul_qurans?.teacher_rokon ?? '')
                                         }}
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'teacher_rokon'" />
                                     </div>
                                 </td>
                                 <td>
@@ -303,6 +342,8 @@
                                         {{
                                             formatBangla(report_sum_data?.department1_talimul_qurans?.teacher_worker ?? '')
                                         }}
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'teacher_worker'" />
                                     </div>
                                 </td>
                                 <td>
@@ -321,6 +362,8 @@
                                         {{
                                             formatBangla(report_sum_data?.department1_talimul_qurans?.student_rokon ?? '')
                                         }}
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'student_rokon'" />
                                     </div>
                                 </td>
                                 <td>
@@ -328,6 +371,8 @@
                                         {{
                                             formatBangla(report_sum_data?.department1_talimul_qurans?.student_worker ?? '')
                                         }}
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'student_worker'" />
                                     </div>
                                 </td>
                                 <td>
@@ -357,6 +402,8 @@
                                             formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_learned_quran
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'how_much_learned_quran'" />
                                     </div>
                                 </td>
                                 <td>
@@ -365,6 +412,8 @@
                                             formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_invited ??
                                                 '')
                                         }}
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'how_much_invited'" />
                                     </div>
                                 </td>
                                 <td>
@@ -373,6 +422,8 @@
                                             formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_been_associated
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'how_much_been_associated'" />
                                     </div>
                                 </td>
                             </tr>
@@ -400,6 +451,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_invited
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'political_and_special_invited'" />
                                 </div>
                             </td>
                             <td>
@@ -408,6 +461,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_been_associated
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'political_and_special_been_associated'" />
                                 </div>
                             </td>
                             <td>
@@ -416,6 +471,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_target
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'political_and_special_target'" />
                                 </div>
                             </td>
                         </tr>
@@ -427,6 +484,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_invited
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'prantik_jonogosti_invited'" />
                                 </div>
                             </td>
                             <td>
@@ -435,6 +494,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_been_associated
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'prantik_jonogosti_been_associated'" />
                                 </div>
                             </td>
                             <td>
@@ -443,6 +504,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_target
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'prantik_jonogosti_target'" />
                                 </div>
                             </td>
                         </tr>
@@ -454,6 +517,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_invited
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'vinno_dormalombi_invited'" />
                                 </div>
                             </td>
                             <td>
@@ -462,6 +527,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_been_associated
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'vinno_dormalombi_been_associated'" />
                                 </div>
                             </td>
                             <td>
@@ -470,6 +537,8 @@
                                         formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_target
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'vinno_dormalombi_target'" />
                                 </div>
                             </td>
                         </tr>
@@ -494,6 +563,8 @@
                                         formatBangla(report_sum_data?.department5_paribarik_dawats?.total_attended_family ??
                                             '')
                                     }}
+                                    <comment :table_name="'department5_paribarik_dawats'"
+                                        :column_name="'total_attended_family'" />
                                 </div>
                             </td>
                             <td>
@@ -502,6 +573,8 @@
                                         formatBangla(report_sum_data?.department5_paribarik_dawats?.how_many_new_family_invited
                                             ?? '')
                                     }}
+                                    <comment :table_name="'department5_paribarik_dawats'"
+                                        :column_name="'how_many_new_family_invited'" />
                                 </div>
                             </td>
                         </tr>
@@ -538,6 +611,8 @@
                                         formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution_center_increase
                                             ?? '')
                                     }}
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'unit_book_distribution_center_increase'" />
                                 </div>
                             </td>
                             <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
@@ -547,6 +622,8 @@
                                         formatBangla(report_sum_data?.dawah_and_prokashonas?.soft_copy_book_distribution ??
                                             '')
                                     }}
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'soft_copy_book_distribution'" />
                                 </div>
                             </td>
                             <td>
@@ -567,6 +644,8 @@
                                         formatBangla(report_sum_data?.dawah_and_prokashonas?.books_in_pathagar_increase ??
                                             '')
                                     }}
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'books_in_pathagar_increase'" />
                                 </div>
                             </td>
                             <td class="text-start px-2">দাওয়াতি লিংক বিতরণ<span>(সংগঠন অনুমোদিত)</span></td>
@@ -575,6 +654,8 @@
                                     {{
                                         formatBangla(report_sum_data?.dawah_and_prokashonas?.dawat_link_distribution ?? '')
                                     }}
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'dawat_link_distribution'" />
                                 </div>
                             </td>
                             <td>
@@ -587,6 +668,8 @@
                                     {{
                                         formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution ?? '')
                                     }}
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'unit_book_distribution'" />
                                 </div>
                             </td>
                             <td>
@@ -606,16 +689,22 @@
                                             formatBangla(report_sum_data?.dawah_and_prokashonas?.sonar_bangla_increase ??
                                                 '')
                                         }}
+                                        <comment :table_name="'dawah_and_prokashonas'"
+                                            :column_name="'sonar_bangla_increase'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.dawah_and_prokashonas?.songram_increase ?? '')
                                         }}
+                                        <comment :table_name="'dawah_and_prokashonas'"
+                                            :column_name="'songram_increase'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.dawah_and_prokashonas?.prithibi_increase ?? '')
                                         }}
+                                        <comment :table_name="'dawah_and_prokashonas'"
+                                            :column_name="'prithibi_increase'" />
                                     </div>
                                 </div>
                             </td>
@@ -643,19 +732,27 @@
                                 <div class="parent_popup">
                                     {{
                                         formatBangla(report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_total
-                                            ?? '') }}
+                                            ?? '')
+                                    }}
+                                    <comment :table_name="'kormosuci_bastobayons'"
+                                        :column_name="'unit_masik_sadaron_sova_total'" />
                                 </div>
                             </td>
                             <td>
                                 <div class="parent_popup">
                                     {{
                                         formatBangla(report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_target
-                                            ?? '') }}
+                                            ?? '')
+                                    }}
+                                    <comment :table_name="'kormosuci_bastobayons'"
+                                        :column_name="'unit_masik_sadaron_sova_target'" />
                                 </div>
                             </td>
                             <td>
                                 <div class="parent_popup">
                                     {{ formatBangla(average_kormosuci.unit_masik_sadaron_sova) }}
+                                    <comment :table_name="'kormosuci_bastobayons'"
+                                        :column_name="'unit_masik_sadaron_sova_uposthiti'" />
                                 </div>
                             </td>
                         </tr>
@@ -667,12 +764,18 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_total
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_personal_total'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_total
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_samostic_total'" />
                                     </div>
                                 </div>
                             </td>
@@ -681,12 +784,18 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_target
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_personal_target'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_target
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_samostic_target'" />
                                     </div>
                                 </div>
                             </td>
@@ -694,9 +803,13 @@
                                 <div class="d-flex justify-content-evenly">
                                     <div class="parent_popup">
                                         {{ formatBangla(average_kormosuci.iftar_mahfil_personal) }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_personal_uposthiti'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(average_kormosuci.iftar_mahfil_samostic) }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_samostic_uposthiti'" />
                                     </div>
                                 </div>
                             </td>
@@ -707,32 +820,54 @@
                             <td>
                                 <div class="d-flex justify-content-evenly">
                                     <div class="parent_popup">
-                                        {{ formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_total ?? '')
+                                        {{
+                                            formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_total ?? '')
                                         }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'cha_chakra_total'" />
                                     </div> /
                                     <div class="parent_popup">
-                                        {{ formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_total ??
-                                            '') }}
+                                        {{
+                                            formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_total ??
+                                                '')
+                                        }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'samostic_khawa_total'" />
                                     </div> /
                                     <div class="parent_popup">
-                                        {{ formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_total ??
-                                            '') }}
+                                        {{
+                                            formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_total ??
+                                                '')
+                                        }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'sikkha_sofor_total'" />
                                     </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex justify-content-evenly">
                                     <div class="parent_popup">
-                                        {{ formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_target ?? '')
+                                        {{
+                                            formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_target ?? '')
                                         }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'cha_chakra_target'" />
                                     </div> /
                                     <div class="parent_popup">
-                                        {{ formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_target ??
-                                            '') }}
+                                        {{
+                                            formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_target ??
+                                                '')
+                                        }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'samostic_khawa_target'" />
                                     </div> /
                                     <div class="parent_popup">
-                                        {{ formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_target ??
-                                            '') }}
+                                        {{
+                                            formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_target ??
+                                                '')
+                                        }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'sikkha_sofor_target'" />
                                     </div>
                                 </div>
                             </td>
@@ -740,12 +875,18 @@
                                 <div class="d-flex justify-content-evenly">
                                     <div class="parent_popup">
                                         {{ formatBangla(average_kormosuci.cha_chakra) }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'cha_chakra_uposthiti'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(average_kormosuci.samostic_khawa) }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'samostic_khawa_uposthiti'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(average_kormosuci.sikkha_sofor) }}
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'sikkha_sofor_uposthiti'" />
                                     </div>
                                 </div>
                             </td>
@@ -780,16 +921,19 @@
                                 <td>
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_briddhi ?? '') }}
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'rokon_briddhi'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_gatti ?? '') }}
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'rokon_gatti'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_target ?? '') }}
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'rokon_target'" />
                                     </div>
                                 </td>
                             </tr>
@@ -800,16 +944,20 @@
                                 <td>
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_briddhi ?? '') }}
+                                        <comment :table_name="'songothon1_jonosoktis'"
+                                            :column_name="'worker_briddhi'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_gatti ?? '') }}
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'worker_gatti'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_target ?? '') }}
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'worker_target'" />
                                     </div>
                                 </td>
                             </tr>
@@ -838,14 +986,20 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.songothon2_associate_members?.associate_member_briddhi
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'songothon2_associate_members'"
+                                            :column_name="'associate_member_briddhi'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.songothon2_associate_members?.associate_member_target
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'songothon2_associate_members'"
+                                            :column_name="'associate_member_target'" />
                                     </div>
                                 </td>
                             </tr>
@@ -870,12 +1024,18 @@
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_worker_briddhi
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'songothon2_associate_members'"
+                                                :column_name="'vinno_dormalombi_worker_briddhi'" />
                                         </div> /
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_associate_member_briddhi
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'songothon2_associate_members'"
+                                                :column_name="'vinno_dormalombi_associate_member_briddhi'" />
                                         </div>
                                     </div>
                                 </td>
@@ -884,12 +1044,18 @@
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_worker_target
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'songothon2_associate_members'"
+                                                :column_name="'vinno_dormalombi_worker_target'" />
                                         </div> /
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_associate_member_target
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'songothon2_associate_members'"
+                                                :column_name="'vinno_dormalombi_associate_member_target'" />
                                         </div>
                                     </div>
                                 </td>
@@ -905,7 +1071,10 @@
                         <label for="" class="fw-bold fs-6">৩. মাসিক কর্মী বৈঠক সংখ্যা :</label>
                         <div class="parent_popup ms-2 border_dot width-60">
                             {{ formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_total
-                                ?? '') }}
+                                ?? '')
+                            }}
+                            <comment :table_name="'songothon9_sangothonik_boithoks'"
+                                :column_name="'unit_kormi_boithok_total'" />
                         </div>
                     </div>
                     <div class="d-flex justify-content-start w-50">
@@ -913,7 +1082,10 @@
                         <div class="parent_popup ms-2 border_dot width-80">
                             {{
                                 formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_uposthiti
-                                    ?? '') }}
+                                    ?? '')
+                            }}
+                            <comment :table_name="'songothon9_sangothonik_boithoks'"
+                                :column_name="'unit_kormi_boithok_uposthiti'" />
                         </div>
                     </div>
                 </div>
@@ -933,21 +1105,30 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_total
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'paribarik_unit_total'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_increase
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'paribarik_unit_increase'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_target
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'paribarik_unit_target'" />
                                     </div>
                                 </td>
                             </tr>
@@ -963,6 +1144,7 @@
                             {{
                                 formatBangla(report_sum_data?.songothon7_sofors?.upper_leader_sofor
                                     ?? '') }}
+                            <comment :table_name="'songothon7_sofors'" :column_name="'upper_leader_sofor'" />
                         </div>
                     </div>
                 </div>
@@ -981,15 +1163,22 @@
                                 <td class="text-start px-2">সহযোগী সদস্য</td>
                                 <td>
                                     <div class="parent_popup">
-                                        {{ formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total
-                                            ?? '') }}
+                                        {{
+                                            formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'songothon8_iyanot_data'"
+                                            :column_name="'associate_member_total'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total_iyanot_amounts
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'songothon8_iyanot_data'"
+                                            :column_name="'associate_member_total_iyanot_amounts'" />
                                     </div>
                                 </td>
                             </tr>
@@ -998,13 +1187,17 @@
                                 <td>
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.songothon8_iyanot_data?.sudhi_total ?? '') }}
+                                        <comment :table_name="'songothon8_iyanot_data'" :column_name="'sudhi_total'" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.songothon8_iyanot_data?.sudi_total_iyanot_amounts
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'songothon8_iyanot_data'"
+                                            :column_name="'sudi_total_iyanot_amounts'" />
                                     </div>
                                 </td>
                             </tr>
@@ -1032,22 +1225,31 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.sohi_quran_onushilon ??
                                             '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'sohi_quran_onushilon'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.masala_masayel ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'masala_masayel'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_quran ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'" :column_name="'darsul_quran'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_hadis ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'" :column_name="'darsul_hadis'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.samostik_path ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'" :column_name="'samostik_path'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.bishoy_vittik_onushilon
                                             ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'bishoy_vittik_onushilon'" />
                                     </div>
                                 </div>
                             </td>
@@ -1057,27 +1259,39 @@
                                         {{
                                             formatBangla(report_sum_data?.proshikkhon1_tarbiats?.sohi_quran_onushilon_target
                                                 ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'sohi_quran_onushilon_target'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.masala_masayel_target ??
                                             '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'masala_masayel_target'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_quran_target ??
                                             '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'darsul_quran_target'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_hadis_target ??
                                             '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'darsul_hadis_target'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.samostik_path_target ??
                                             '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'samostik_path_target'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.proshikkhon1_tarbiats?.bishoy_vittik_onushilon_target
                                                 ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'bishoy_vittik_onushilon_target'" />
                                     </div>
                                 </div>
                             </td>
@@ -1087,27 +1301,40 @@
                                         {{
                                             formatBangla(report_sum_data?.proshikkhon1_tarbiats?.sohi_quran_onushilon_uposthiti
                                                 ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'sohi_quran_onushilon_uposthiti'" />
                                     </div> /
                                     <div class="parent_popup">
-                                        {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.masala_masayel_uposthiti
-                                            ?? '') }}
+                                        {{
+                                            formatBangla(report_sum_data?.proshikkhon1_tarbiats?.masala_masayel_uposthiti
+                                                ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'masala_masayel_uposthiti'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_quran_uposthiti
                                             ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'darsul_quran_uposthiti'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_hadis_uposthiti
                                             ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'darsul_hadis_uposthiti'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.proshikkhon1_tarbiats?.samostik_path_uposthiti
                                             ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'samostik_path_uposthiti'" />
                                     </div> /
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.proshikkhon1_tarbiats?.bishoy_vittik_onushilon_uposthiti
                                                 ?? '') }}
+                                        <comment :table_name="'proshikkhon1_tarbiats'"
+                                            :column_name="'bishoy_vittik_onushilon_uposthiti'" />
                                     </div>
                                 </div>
                             </td>
@@ -1127,7 +1354,10 @@
                                 <div class="parent_popup">
                                     {{
                                         formatBangla(report_sum_data?.shomajsheba1_personal_social_works?.how_many_people_did
-                                            ?? '') }}
+                                            ?? '')
+                                    }}
+                                    <comment :table_name="'shomajsheba1_personal_social_works'"
+                                        :column_name="'how_many_people_did'" />
                                 </div>
                             </td>
                             <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
@@ -1135,7 +1365,10 @@
                                 <div class="parent_popup">
                                     {{
                                         formatBangla(report_sum_data?.shomajsheba1_personal_social_works?.service_received_total
-                                            ?? '') }}
+                                            ?? '')
+                                    }}
+                                    <comment :table_name="'shomajsheba1_personal_social_works'"
+                                        :column_name="'service_received_total'" />
                                 </div>
                             </td>
                         </tr>
@@ -1160,12 +1393,18 @@
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_onusthane_ongshogrohon
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'shamajik_onusthane_ongshogrohon'" />
                                         </div> /
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_onusthane_shohayota_prodan
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'shamajik_onusthane_shohayota_prodan'" />
                                         </div>
                                     </div>
                                 </td>
@@ -1175,12 +1414,18 @@
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.voluntarily_blood_donation_kotojon
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'voluntarily_blood_donation_kotojon'" />
                                         </div> /
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.voluntarily_blood_donation_kotojonke
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'voluntarily_blood_donation_kotojonke'" />
                                         </div>
                                     </div>
                                 </td>
@@ -1191,7 +1436,10 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_birodh_mimangsha
-                                                ?? '') }}
+                                                ?? '')
+                                        }}
+                                        <comment :table_name="'shomajsheba2_unit_social_works'"
+                                            :column_name="'shamajik_birodh_mimangsha'" />
                                     </div>
                                 </td>
                                 <td class="text-start px-2">মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজন/কতজনকে)</td>
@@ -1200,12 +1448,18 @@
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.matrikalin_sheba_prodan_kotojon
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'matrikalin_sheba_prodan_kotojon'" />
                                         </div> /
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.matrikalin_sheba_prodan_kotojonke
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'matrikalin_sheba_prodan_kotojonke'" />
                                         </div>
                                     </div>
                                 </td>
@@ -1217,13 +1471,18 @@
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.manobik_shohayota_prodan
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'manobik_shohayota_prodan'" />
                                         </div> /
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.korje_hasana_prodan
                                                     ?? '')
                                             }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'korje_hasana_prodan'" />
                                         </div>
                                     </div>
                                 </td>
@@ -1234,6 +1493,8 @@
                                             formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.mayeter_gosol ??
                                                 '')
                                         }}
+                                        <comment :table_name="'shomajsheba2_unit_social_works'"
+                                            :column_name="'mayeter_gosol'" />
                                     </div>
                                 </td>
                             </tr>
@@ -1244,12 +1505,18 @@
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.rogir_poricorja
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'rogir_poricorja'" />
                                         </div> /
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.medical_shohayota_prodan
-                                                    ?? '') }}
+                                                    ?? '')
+                                            }}
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'medical_shohayota_prodan'" />
                                         </div>
                                     </div>
                                 </td>
@@ -1259,6 +1526,8 @@
                                         {{
                                             formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.others ?? '')
                                         }}
+                                        <comment :table_name="'shomajsheba2_unit_social_works'"
+                                            :column_name="'others'" />
                                     </div>
                                 </td>
                             </tr>
@@ -1270,6 +1539,8 @@
                                             formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.nobojatokke_gift_prodan
                                                 ?? '')
                                         }}
+                                        <comment :table_name="'shomajsheba2_unit_social_works'"
+                                            :column_name="'nobojatokke_gift_prodan'" />
                                     </div>
                                 </td>
                                 <td class="text-start px-2"></td>
@@ -1290,6 +1561,8 @@
                                 formatBangla(report_sum_data?.rastrio1_bishishto_bektis?.bishishto_bekti_jogajog
                                     ?? '')
                             }}
+                            <comment :table_name="'rastrio1_bishishto_bektis'"
+                                :column_name="'bishishto_bekti_jogajog'" />
                         </div>
                     </div>
                 </div>
@@ -1383,36 +1656,21 @@
                     </div>
                     <div class="modal-body">
                         <div class="comment_form_container">
-                            <form>
+                            <form class="mb-2">
                                 <div class="mb-2">
                                     <label for="comment" class="form-label">Add Comment</label>
                                     <textarea name="comment" id="comment" class="form-control"
-                                        v-model="comment_text"></textarea>
+                                        v-model="comment_text_store"></textarea>
                                 </div>
-                                <a href="#" class="btn btn-success" @click.prevent="comment_set(comment_text)">Add comment</a>
+                                <a href="#" class="btn btn-success" @click.prevent="comment_set">Add
+                                    comment</a>
                             </form>
                         </div>
-                        <div class="all_comment" v-for="(comment , index) in all_comment_store" :key="index">
-                            <p>{{ comment?.user?.full_name }} - {{ comment?.comment }}</p>
+                        <pre>{{ all_comment_store ? "" : 'No data available' }}</pre> <!-- Debug output -->
+                        <div class="all_comment" v-for="(comment, index) in all_comment_store" :key="index">
+                            <p> <strong>{{ comment?.user?.full_name }} :- </strong> {{ comment?.comment }}</p>
                         </div>
-                        ...
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
-                        <p>sdfasdfdsaf</p>
+
                     </div>
 
                     <div class="modal-footer">
@@ -1436,9 +1694,8 @@ export default {
     data() {
         return {
             month: '',
-            comment_text: '',
             joma_status: null,
-            comments:[];
+            comments: [],
 
             report_header: {},
             report_sum_data: {},
@@ -1468,15 +1725,6 @@ export default {
             },
         };
     },
-    computed: {
-        ...mapWritableState(comment_store, {
-            org_type_store: 'org_type',
-            org_type_id_store: 'org_type_id',
-            month_year_store: 'month_year',
-            comment_text_store: 'comment_text',
-            all_comment_store: 'all_comment',
-        }),
-    },
     created: async function () {
         try {
             await this.uploaded_data();  // Wait for uploaded_data() to finish
@@ -1485,7 +1733,6 @@ export default {
             this.org_type_store = 'unit';
             this.org_type_id_store = this.report_header?.unit_info?.id || null;
             this.month_year_store = this.month || '';
-            this.comment_text_store = this.comment_text;
 
             console.log([
                 "from unitCheck",
@@ -1493,6 +1740,7 @@ export default {
                 this.org_type_id_store,
                 this.month_year_store,
                 this.comment_text_store,
+                this.all_comment_store,
             ]);
         } catch (error) {
             console.error('Error during uploaded_data:', error);
@@ -1512,12 +1760,10 @@ export default {
         month(newMonth) {
             this.update_store();
         },
-        comment_text(v) {
-            this.comment_text_store = v;
-        },
-        column_name_store:function (new_value) {
+        column_name_store: function (new_value) {
             console.log(new_value)
-        }
+        },
+
     },
     methods: {
         ...mapActions(comment_store, {
@@ -1711,6 +1957,13 @@ export default {
 
     },
     computed: {
+        ...mapWritableState(comment_store, {
+            org_type_store: 'org_type',
+            org_type_id_store: 'org_type_id',
+            month_year_store: 'month_year',
+            comment_text_store: 'comment_text',
+            all_comment_store: 'all_comment',
+        }),
         total_dawat() {
             const total =
                 (Number(this.report_sum_data?.dawat1_regular_group_wises?.how_many_have_been_invited) || 0) +

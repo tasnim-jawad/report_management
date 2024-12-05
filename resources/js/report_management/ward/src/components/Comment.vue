@@ -1,12 +1,6 @@
 <template>
     <div class="comment_icon">
-        <span class="i_icon" @click="modal_show(
-            table_name,
-            column_name,
-            org_type,
-            org_type_id,
-            month_year,
-        )">
+        <span class="i_icon" @click="modal_show(table_name , column_name)">
             <i class="fa fa-list"></i>
         </span>
         <!-- <div class="comment_data_popup" :class="{ active: is_popup_visible }">
@@ -35,18 +29,6 @@ import { mapActions, mapWritableState } from "pinia";
 
 export default {
     props: {
-        org_type: {
-            type: String,
-            required: true,
-        },
-        org_type_id: {
-            type: [String, Number],
-            required: true,
-        },
-        month_year: {
-            type: String,
-            required: true,
-        },
         table_name: {
             type: String,
             required: true,
@@ -67,6 +49,9 @@ export default {
     created: function () {
         this.table_name_store = this.table_name;
         this.column_name_store = this.column_name;
+
+        console.log(this.table_name_store, this.column_name_store);
+
     },
     computed: {
         ...mapWritableState(comment_store, {
@@ -75,13 +60,18 @@ export default {
         }),
     },
     watch: {
-        table_name: function (new_value) {
-            this.table_name_store = new_value
-
+        table_name: {
+            immediate: true,
+            handler(new_value) {
+                this.table_name_store = new_value;
+            },
         },
-        column_name: function (new_value) {
-            this.column_name_store = new_value
-        }
+        column_name: {
+            immediate: true,
+            handler(new_value) {
+                this.column_name_store = new_value;
+            },
+        },
     },
     methods: {
         ...mapActions(comment_store, {

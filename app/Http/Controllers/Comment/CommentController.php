@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Comment;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment\Comment;
+use App\Models\Organization\Responsibility;
 use App\Models\Report\ReportInfo;
+use App\Models\User\UserRole;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -214,7 +216,16 @@ class CommentController extends Controller
             $table_row_id = $table_row->id;
         }
 
-        // dd($table_row_id);
+        // Retrieve responsibility name 
+        $org_type_serial = auth()->user()->role;
+        $org_type = UserRole::where('serial', $org_type_serial)->first()->title;
+        $org_responsible = 'org_' . $org_type . '_responsible';
+
+        $commenter_responsibility_id = auth()->user()->$org_responsible?->responsibility_id;
+        $commenter_responsibility_name = $commenter_responsibility_id
+            ? Responsibility::find($commenter_responsibility_id)?->title
+            : null;
+
 
         $data = new Comment();
         $data->report_info_id = $report_info->id;
@@ -225,6 +236,7 @@ class CommentController extends Controller
         $data->org_type_id = $org_type_id;
         $data->month_year = $carbon_month;
         $data->commenter_id = auth()->user()->id;
+        $data->commenter_responsibility_name = $commenter_responsibility_name;
         $data->comment = $comment;
 
         $data->creator = auth()->id();

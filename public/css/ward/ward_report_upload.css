@@ -197,7 +197,7 @@ ul li {
 }
 
 .width-60 {
-    width: 60%;
+    width: 60% !important;
 }
 
 .width-65 {
@@ -209,7 +209,7 @@ ul li {
 }
 
 .width-80 {
-    width: 80%;
+    width: 80% !important;
 }
 
 .bg-input {
@@ -344,6 +344,7 @@ th {
     position: relative; /* Set this on the immediate parent */
     /* z-index: -1; */
     min-height: 17px;
+    width: 100%;
 }
 .parent_popup:has(.unit_data_popup.active) {
     z-index: 9999;
