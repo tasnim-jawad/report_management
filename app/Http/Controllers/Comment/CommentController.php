@@ -216,10 +216,10 @@ class CommentController extends Controller
             $table_row_id = $table_row->id;
         }
 
-        // Retrieve responsibility name 
+        // Retrieve responsibility name
         $org_type_serial = auth()->user()->role;
-        $org_type = UserRole::where('serial', $org_type_serial)->first()->title;
-        $org_responsible = 'org_' . $org_type . '_responsible';
+        $org_type_title = UserRole::where('serial', $org_type_serial)->first()->title;
+        $org_responsible = 'org_' . $org_type_title . '_responsible';
 
         $commenter_responsibility_id = auth()->user()->$org_responsible?->responsibility_id;
         $commenter_responsibility_name = $commenter_responsibility_id

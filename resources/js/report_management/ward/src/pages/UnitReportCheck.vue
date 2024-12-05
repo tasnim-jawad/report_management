@@ -1627,9 +1627,13 @@
             </div>
             <div class="montobbo">
                 <h1 class="fs-6">ইউনিট সভাপতির মন্তব্য :</h1>
-                <p>
-                    {{ report_sum_data?.montobbos?.montobbo ?? 'মন্তব্য নাই' }}
-                </p>
+                <div class="parent_popup">
+                    <p>
+                        {{ report_sum_data?.montobbos?.montobbo ?? 'মন্তব্য নাই' }}
+                    </p>
+                    <comment :table_name="'montobbos'" :column_name="'montobbo'" />
+                </div>
+
                 <!-- <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input"
                     rows="5">{{ report_sum_data?.montobbos?.montobbo }}</textarea> -->
             </div>
