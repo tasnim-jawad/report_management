@@ -12,7 +12,8 @@
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between mb-1">
                     <p>ইউনিটের নাম: {{ report_header?.unit_info?.title || '' }}</p>
-                    <p>ওয়ার্ড নং ও নাম: {{ report_header?.ward_info?.no || '' }} ও {{ report_header?.ward_info?.title || ''
+                    <p>ওয়ার্ড নং ও নাম: {{ report_header?.ward_info?.no || '' }} ও {{ report_header?.ward_info?.title
+                        || ''
                         }}</p>
                     <p class="w-25">উপজেলা/থানা: {{ report_header?.thana_info?.title || '' }}</p>
                 </div>
@@ -48,16 +49,25 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input name="how_many_groups_are_out"
-                                        :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_groups_are_out)"
-                                        @change="data_upload('dawat1-regular-group-wise')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_groups_are_out"
+                                            :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_groups_are_out)"
+                                            @change="data_upload('dawat1-regular-group-wise')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat1_regular_group_wises'"
+                                            :column_name="'how_many_groups_are_out'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="number_of_participants"
-                                        :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.number_of_participants)"
-                                        @change="data_upload('dawat1-regular-group-wise')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="number_of_participants"
+                                            :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.number_of_participants)"
+                                            @change="data_upload('dawat1-regular-group-wise')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat1_regular_group_wises'"
+                                            :column_name="'number_of_participants'" />
+
+                                    </div>
                                 </td>
                                 <td>
                                     <input name="how_many_have_been_invited"
@@ -703,13 +713,16 @@
                                 <td class="text-start px-2">সদস্য (রুকন)</td>
                                 <td>{{ formatBangla(previous_present?.rokon_previous ?? '') }}</td>
                                 <td>{{ formatBangla(previous_present?.rokon_present ?? '') }}</td>
-                                <td><input name="rokon_briddhi" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_briddhi ?? '')"
+                                <td><input name="rokon_briddhi"
+                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_briddhi ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_gatti" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_gatti ?? '')"
+                                <td><input name="rokon_gatti"
+                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_gatti ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_target" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_target ?? '')"
+                                <td><input name="rokon_target"
+                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_target ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -717,13 +730,16 @@
                                 <td class="text-start px-2">কর্মী</td>
                                 <td>{{ formatBangla(previous_present?.worker_previous ?? '') }}</td>
                                 <td>{{ formatBangla(previous_present?.worker_present ?? '') }}</td>
-                                <td><input name="worker_briddhi" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_briddhi ?? '')"
+                                <td><input name="worker_briddhi"
+                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_briddhi ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_gatti" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_gatti ?? '')"
+                                <td><input name="worker_gatti"
+                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_gatti ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_target" :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_target ?? '')"
+                                <td><input name="worker_target"
+                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_target ?? '')"
                                         @change="data_upload('songothon1-jonosokti')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -877,7 +893,8 @@
                             </tr>
                             <tr>
                                 <td class="text-start px-2">সুধী</td>
-                                <td><input name="sudhi_total" :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.sudhi_total ?? '')"
+                                <td><input name="sudhi_total"
+                                        :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.sudhi_total ?? '')"
                                         @change="data_upload('songothon8-iyanot-data')" type="text"
                                         class="bg-input w-100 text-center"></td>
                                 <td><input name="sudi_total_iyanot_amounts"
@@ -915,13 +932,16 @@
                                         :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.masala_masayel ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
-                                    <input name="darsul_quran" :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_quran ?? '')"
+                                    <input name="darsul_quran"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_quran ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
-                                    <input name="darsul_hadis" :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_hadis ?? '')"
+                                    <input name="darsul_hadis"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.darsul_hadis ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
-                                    <input name="samostik_path" :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.samostik_path ?? '')"
+                                    <input name="samostik_path"
+                                        :value="formatBangla(report_sum_data?.proshikkhon1_tarbiats?.samostik_path ?? '')"
                                         @change="data_upload('proshikkhon1-tarbiat')" type="text"
                                         class="bg-input w-100 text-center"> /
                                     <input name="bishoy_vittik_onushilon"
@@ -1084,7 +1104,8 @@
                                     </div>
                                 </td>
                                 <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে)</td>
-                                <td><input name="mayeter_gosol" :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.mayeter_gosol ?? '')"
+                                <td><input name="mayeter_gosol"
+                                        :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.mayeter_gosol ?? '')"
                                         @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -1103,7 +1124,8 @@
                                     </div>
                                 </td>
                                 <td class="text-start px-2">অন্যান্য</td>
-                                <td><input name="others" :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.others ?? '')"
+                                <td><input name="others"
+                                        :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.others ?? '')"
                                         @change="data_upload('shomajsheba2-unit-social-work')" type="text"
                                         class="bg-input w-100 text-center"></td>
                             </tr>
@@ -1149,12 +1171,12 @@
                                 <table class="border_none">
                                     <tbody>
                                         <tr v-for="(bm_cat, index) in income_report?.category_wise_data" :key="index">
-                                            <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.category_name }}</td>
+                                            <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.category_name }}
+                                            </td>
                                             <td class="border_left_bottom">
-                                                <input name="bm_entry"
-                                                    :value="formatBangla(bm_cat.amount)"
-                                                    @change="income_store(bm_cat.category_id, $event.target.value)" type="text"
-                                                    class="bg-input w-100 text-center">
+                                                <input name="bm_entry" :value="formatBangla(bm_cat.amount)"
+                                                    @change="income_store(bm_cat.category_id, $event.target.value)"
+                                                    type="text" class="bg-input w-100 text-center">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1163,11 +1185,12 @@
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        <tr v-for="(expense_cat, index) in expense_report?.category_wise_data" :key="index">
-                                            <td class="text-start px-2 w-50 border_bottom">{{ expense_cat.category_name }}</td>
+                                        <tr v-for="(expense_cat, index) in expense_report?.category_wise_data"
+                                            :key="index">
+                                            <td class="text-start px-2 w-50 border_bottom">{{ expense_cat.category_name
+                                                }}</td>
                                             <td class="border_left_bottom">
-                                                <input name="bm_entry"
-                                                    :value="formatBangla(expense_cat.amount)"
+                                                <input name="bm_entry" :value="formatBangla(expense_cat.amount)"
                                                     @change="expense_store(expense_cat.category_id, $event.target.value)"
                                                     type="text" class="bg-input w-100 text-center">
                                             </td>
@@ -1202,13 +1225,51 @@
         <router-link :to="{ name: 'Dashboard' }">
             <a href="" class="go_back_to_dashboard"><i class="fa-solid fa-door-open"></i></a>
         </router-link>
+
+        <!-- Modal -->
+        <div class="modal fade" id="comment_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="comment_form_container">
+                            <form class="mb-2">
+                                <div class="mb-2">
+                                    <label for="comment" class="form-label">Add Comment</label>
+                                    <textarea name="comment" id="comment" class="form-control"
+                                        v-model="comment_text_store"></textarea>
+                                </div>
+                                <a href="#" class="btn btn-success" @click.prevent="comment_set">Add
+                                    comment</a>
+                            </form>
+                        </div>
+                        <pre>{{ all_comment_store ? "" : 'No data available' }}</pre> <!-- Debug output -->
+                        <div class="all_comment" v-for="(comment, index) in all_comment_store" :key="index">
+                            <p> <strong>{{ comment?.user?.full_name }} :- </strong> {{ comment?.comment }}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from "axios";
-
+import Comment from "../components/Comment.vue";
+import { store as comment_store } from "../stores/CommentStore";
+import { mapActions, mapWritableState } from "pinia";
 export default {
+    components: { Comment },
     data() {
         return {
             month: '',
@@ -1245,13 +1306,28 @@ export default {
         };
     },
 
-    created() {
-        this.uploaded_data()
-        // this.income_category()
-        // this.expense_category()
-        // this.bm_category_wise()
-        // this.bm_expense_category_wise()
-        this.report_status()
+    created: async function () {
+        try {
+            await this.uploaded_data()
+            await this.report_status()
+
+            // Set the values after uploaded_data() is done
+            this.org_type_store = 'unit';
+            this.org_type_id_store = this.report_header?.unit_info?.id || null;
+            this.month_year_store = this.month || '';
+            this.is_data_are_set = true
+            console.log([
+                "from UnitReportUploadMonthly",
+                this.org_type_store,
+                this.org_type_id_store,
+                this.month_year_store,
+                this.comment_text_store,
+                this.all_comment_store,
+            ]);
+        } catch (error) {
+            console.error('Error during uploaded_data:', error);
+        }
+
     },
     watch: {
         'report_sum_data.kormosuci_bastobayons': function () {
@@ -1438,6 +1514,14 @@ export default {
 
     },
     computed: {
+        ...mapWritableState(comment_store, {
+            org_type_store: 'org_type',
+            org_type_id_store: 'org_type_id',
+            month_year_store: 'month_year',
+            comment_text_store: 'comment_text',
+            all_comment_store: 'all_comment',
+            is_data_are_set: 'is_data_are_set',
+        }),
         total_dawat() {
             const total =
                 (Number(this.report_sum_data?.dawat1_regular_group_wises?.how_many_have_been_invited) || 0) +

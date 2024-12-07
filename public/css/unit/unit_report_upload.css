@@ -118,11 +118,19 @@ ul li {
     font-family: 'solaiman_lipi';
     src: url('../../fonts/SolaimanLipi.ttf');
 }
+
 @media print {
+
     .joma_din,
     .go_back_to_dashboard,
     .print_preview {
-        display: none; /* Hides the entire div during printing */
+        display: none;
+        /* Hides the entire div during printing */
+    }
+
+    .do_not_print,
+    .parent_popup .unit_info_icon {
+        display: none;
     }
 }
 
@@ -227,9 +235,11 @@ th {
     padding: 1px 5px;
     /* min-width: 60px; */
 }
-td{
+
+td {
     min-height: 20px;
 }
+
 .table_layout_fixed {
     table-layout: fixed;
 }
@@ -289,7 +299,7 @@ td{
     vertical-align: baseline;
 }
 
-.margine_top_page_change{
+.margine_top_page_change {
     margin-top: 130px;
 }
 
@@ -311,7 +321,7 @@ td{
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.go_back_to_dashboard{
+.go_back_to_dashboard {
     bottom: 60px;
     right: 15px;
 }
@@ -331,3 +341,97 @@ td{
     box-shadow: 0px 0px 4px 3px rgb(4 43 14 / 30%);
 }
 
+
+.parent_popup {
+    position: relative;
+    /* Set this on the immediate parent */
+    /* z-index: -1; */
+    min-height: 17px;
+    width: 100%;
+}
+
+.parent_popup:has(.unit_data_popup.active) {
+    z-index: 9999;
+}
+
+.comment_icon,
+.unit_info_icon {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: -2px;
+
+    .i_icon {
+        font-size: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        background-color: #87cefaa6;
+        border-radius: 50%;
+        position: relative;
+        z-index: 999;
+    }
+}
+
+.comment_data_popup,
+.unit_data_popup {
+    position: absolute;
+    max-width: 300px;
+    min-width: 150px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    transition-duration: .3s;
+    transform: translateY(0);
+}
+
+.comment_data_popup.active,
+.unit_data_popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    top: calc(100% + 3px);
+    right: 0px;
+}
+
+.comment_data_popup table tr td,
+.unit_data_popup table tr td {
+    font-size: 12px;
+    padding: 5px;
+}
+
+.parent_popup_note {
+    width: 30%;
+    position: relative;
+    display: flex;
+    justify-content: start;
+
+}
+
+.parent_popup_note:has(.unit_data_popup.active) {
+    z-index: 9999;
+}
+
+.parent_popup_note .line {
+    border-bottom: 2px dashed black;
+    flex: 1;
+}
+
+.number_of_comments {
+    position: absolute;
+    line-height: 11px;
+    width: 11px;
+    font-size: 9px;
+    background-color: #ff0c0c;
+    border-radius: 50%;
+    color: white;
+    top: -8px;
+    right: -7px;
+    z-index: 999;
+}
