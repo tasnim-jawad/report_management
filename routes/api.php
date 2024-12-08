@@ -1232,6 +1232,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
         Route::get('/parent-category', [App\Http\Controllers\Comment\CommentController::class,'parent_category']);
         Route::get('/index', [App\Http\Controllers\Comment\CommentController::class,'index']);
         Route::get('/column-comment-all', [App\Http\Controllers\Comment\CommentController::class,'column_comment_all']);
+        Route::get('/count-comment', [App\Http\Controllers\Comment\CommentController::class,'count_comment']);
 
         Route::get('/all', [App\Http\Controllers\Comment\CommentController::class,'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Comment\CommentController::class,'show']);

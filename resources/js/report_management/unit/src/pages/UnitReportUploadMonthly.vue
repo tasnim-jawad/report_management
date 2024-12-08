@@ -70,16 +70,24 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_have_been_invited"
-                                        :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_have_been_invited)"
-                                        @change="data_upload('dawat1-regular-group-wise')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_have_been_invited"
+                                            :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_have_been_invited)"
+                                            @change="data_upload('dawat1-regular-group-wise')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat1_regular_group_wises'"
+                                            :column_name="'how_many_have_been_invited'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_associate_members_created"
-                                        :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_associate_members_created)"
-                                        @change="data_upload('dawat1-regular-group-wise')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_associate_members_created"
+                                            :value="formatBangla(report_sum_data?.dawat1_regular_group_wises?.how_many_associate_members_created)"
+                                            @change="data_upload('dawat1-regular-group-wise')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat1_regular_group_wises'"
+                                            :column_name="'how_many_associate_members_created'" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -102,45 +110,71 @@
                             <tr>
                                 <td class="text-start px-2">মোট জনশক্তি সংখ্যা</td>
                                 <td>
-                                    <input name="total_rokon"
-                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.total_rokon)"
-                                        @change="data_upload('dawat2-personal-and-target')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_rokon"
+                                            :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.total_rokon)"
+                                            @change="data_upload('dawat2-personal-and-target')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'total_rokon'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="total_worker"
-                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.total_worker)"
-                                        @change="data_upload('dawat2-personal-and-target')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_worker"
+                                            :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.total_worker)"
+                                            @change="data_upload('dawat2-personal-and-target')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'total_worker'" />
+
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
                                 <td>
-                                    <input name="how_many_have_been_invited"
-                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_have_been_invited)"
-                                        @change="data_upload('dawat2-personal-and-target')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_have_been_invited"
+                                            :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_have_been_invited)"
+                                            @change="data_upload('dawat2-personal-and-target')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'how_many_have_been_invited'" />
+
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন</td>
                                 <td>
-                                    <input name="how_many_were_give_dawat_rokon"
-                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_were_give_dawat_rokon)"
-                                        @change="data_upload('dawat2-personal-and-target')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_were_give_dawat_rokon"
+                                            :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_were_give_dawat_rokon)"
+                                            @change="data_upload('dawat2-personal-and-target')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'how_many_were_give_dawat_rokon'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_were_give_dawat_worker"
-                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_were_give_dawat_worker)"
-                                        @change="data_upload('dawat2-personal-and-target')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_were_give_dawat_worker"
+                                            :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_were_give_dawat_worker)"
+                                            @change="data_upload('dawat2-personal-and-target')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'how_many_were_give_dawat_worker'" />
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">কতজন সহযোগী সদস্য হয়েছেন</td>
                                 <td>
-                                    <input name="how_many_associate_members_created"
-                                        :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_associate_members_created)"
-                                        @change="data_upload('dawat2-personal-and-target')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_associate_members_created"
+                                            :value="formatBangla(report_sum_data?.dawat2_personal_and_targets?.how_many_associate_members_created)"
+                                            @change="data_upload('dawat2-personal-and-target')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat2_personal_and_targets'"
+                                            :column_name="'how_many_associate_members_created'" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -159,16 +193,24 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input name="how_many_were_give_dawat"
-                                        :value="formatBangla(report_sum_data?.dawat3_general_program_and_others?.how_many_were_give_dawat)"
-                                        @change="data_upload('dawat3-general-program-and-others')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_were_give_dawat"
+                                            :value="formatBangla(report_sum_data?.dawat3_general_program_and_others?.how_many_were_give_dawat)"
+                                            @change="data_upload('dawat3-general-program-and-others')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat3_general_program_and_others'"
+                                            :column_name="'how_many_were_give_dawat'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_associate_members_created"
-                                        :value="formatBangla(report_sum_data?.dawat3_general_program_and_others?.how_many_associate_members_created)"
-                                        @change="data_upload('dawat3-general-program-and-others')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_associate_members_created"
+                                            :value="formatBangla(report_sum_data?.dawat3_general_program_and_others?.how_many_associate_members_created)"
+                                            @change="data_upload('dawat3-general-program-and-others')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat3_general_program_and_others'"
+                                            :column_name="'how_many_associate_members_created'" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -191,55 +233,87 @@
                             <tr>
                                 <td class="text-start px-2">গণসংযোগ দশক / পক্ষ</td>
                                 <td>
-                                    <input name="total_gono_songjog_group"
-                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.total_gono_songjog_group ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_gono_songjog_group"
+                                            :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.total_gono_songjog_group ?? '')"
+                                            @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'total_gono_songjog_group'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="total_attended"
-                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.total_attended ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="total_attended"
+                                            :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.total_attended ?? '')"
+                                            @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'total_attended'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_have_been_invited"
-                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_have_been_invited ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_have_been_invited"
+                                            :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_have_been_invited ?? '')"
+                                            @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'how_many_have_been_invited'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_many_associate_members_created"
-                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_associate_members_created ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_many_associate_members_created"
+                                            :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.how_many_associate_members_created ?? '')"
+                                            @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'how_many_associate_members_created'" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান</td>
                                 <td>
-                                    <input name="jela_mohanogor_declared_gonosonjog_group"
-                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_group ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="jela_mohanogor_declared_gonosonjog_group"
+                                            :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_group ?? '')"
+                                            @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'jela_mohanogor_declared_gonosonjog_group'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="jela_mohanogor_declared_gonosonjog_attended"
-                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_attended ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="jela_mohanogor_declared_gonosonjog_attended"
+                                            :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_attended ?? '')"
+                                            @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'jela_mohanogor_declared_gonosonjog_attended'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="jela_mohanogor_declared_gonosonjog_invited"
-                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_invited ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="jela_mohanogor_declared_gonosonjog_invited"
+                                            :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_invited ?? '')"
+                                            @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'jela_mohanogor_declared_gonosonjog_invited'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="jela_mohanogor_declared_gonosonjog_associated_created"
-                                        :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_associated_created ?? '')"
-                                        @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="jela_mohanogor_declared_gonosonjog_associated_created"
+                                            :value="formatBangla(report_sum_data?.dawat4_gono_songjog_and_dawat_ovijans?.jela_mohanogor_declared_gonosonjog_associated_created ?? '')"
+                                            @change="data_upload('dawat4-gono-songjog-and-dawat-ovijan')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'jela_mohanogor_declared_gonosonjog_associated_created'" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -266,16 +340,24 @@
                             <tr>
                                 <td class="text-start px-2">কতজন কুরআন শিক্ষা প্রদান করেছেন</td>
                                 <td>
-                                    <input name="teacher_rokon"
-                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.teacher_rokon ?? '')"
-                                        @change="data_upload('department1-talimul-quran')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="teacher_rokon"
+                                            :value="formatBangla(report_sum_data?.department1_talimul_qurans?.teacher_rokon ?? '')"
+                                            @change="data_upload('department1-talimul-quran')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'teacher_rokon'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="teacher_worker"
-                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.teacher_worker ?? '')"
-                                        @change="data_upload('department1-talimul-quran')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="teacher_worker"
+                                            :value="formatBangla(report_sum_data?.department1_talimul_qurans?.teacher_worker ?? '')"
+                                            @change="data_upload('department1-talimul-quran')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'teacher_worker'" />
+                                    </div>
                                 </td>
                                 <td>
                                     {{
@@ -289,16 +371,24 @@
                             <tr>
                                 <td class="text-start px-2">কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে</td>
                                 <td>
-                                    <input name="student_rokon"
-                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.student_rokon ?? '')"
-                                        @change="data_upload('department1-talimul-quran')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="student_rokon"
+                                            :value="formatBangla(report_sum_data?.department1_talimul_qurans?.student_rokon ?? '')"
+                                            @change="data_upload('department1-talimul-quran')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'student_rokon'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="student_worker"
-                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.student_worker ?? '')"
-                                        @change="data_upload('department1-talimul-quran')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="student_worker"
+                                            :value="formatBangla(report_sum_data?.department1_talimul_qurans?.student_worker ?? '')"
+                                            @change="data_upload('department1-talimul-quran')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'student_worker'" />
+                                    </div>
                                 </td>
                                 <td>
                                     {{
@@ -322,22 +412,34 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input name="how_much_learned_quran"
-                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_learned_quran ?? '')"
-                                        @change="data_upload('department1-talimul-quran')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_much_learned_quran"
+                                            :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_learned_quran ?? '')"
+                                            @change="data_upload('department1-talimul-quran')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'how_much_learned_quran'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_much_invited"
-                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_invited ?? '')"
-                                        @change="data_upload('department1-talimul-quran')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_much_invited"
+                                            :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_invited ?? '')"
+                                            @change="data_upload('department1-talimul-quran')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'how_much_invited'" />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input name="how_much_been_associated"
-                                        :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_been_associated ?? '')"
-                                        @change="data_upload('department1-talimul-quran')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="how_much_been_associated"
+                                            :value="formatBangla(report_sum_data?.department1_talimul_qurans?.how_much_been_associated ?? '')"
+                                            @change="data_upload('department1-talimul-quran')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'department1_talimul_qurans'"
+                                            :column_name="'how_much_been_associated'" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -359,64 +461,100 @@
                         <tr>
                             <td class="text-start px-2">রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ</td>
                             <td>
-                                <input name="political_and_special_invited"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_invited ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="political_and_special_invited"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_invited ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'political_and_special_invited'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="political_and_special_been_associated"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_been_associated ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="political_and_special_been_associated"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_been_associated ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'political_and_special_been_associated'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="political_and_special_target"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_target ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="political_and_special_target"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.political_and_special_target ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'political_and_special_target'" />
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)</td>
                             <td>
-                                <input name="prantik_jonogosti_invited"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_invited ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="prantik_jonogosti_invited"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_invited ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'prantik_jonogosti_invited'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="prantik_jonogosti_been_associated"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_been_associated ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="prantik_jonogosti_been_associated"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_been_associated ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'prantik_jonogosti_been_associated'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="prantik_jonogosti_target"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_target ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="prantik_jonogosti_target"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.prantik_jonogosti_target ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'prantik_jonogosti_target'" />
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">ভিন্নধর্মাবলম্বী</td>
                             <td>
-                                <input name="vinno_dormalombi_invited"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_invited ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="vinno_dormalombi_invited"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_invited ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'vinno_dormalombi_invited'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="vinno_dormalombi_been_associated"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_been_associated ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="vinno_dormalombi_been_associated"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_been_associated ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'vinno_dormalombi_been_associated'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="vinno_dormalombi_target"
-                                    :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_target ?? '')"
-                                    @change="data_upload('department4-different-job-holders-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="vinno_dormalombi_target"
+                                        :value="formatBangla(report_sum_data?.department4_different_job_holders_dawats?.vinno_dormalombi_target ?? '')"
+                                        @change="data_upload('department4-different-job-holders-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department4_different_job_holders_dawats'"
+                                        :column_name="'vinno_dormalombi_target'" />
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -434,16 +572,24 @@
                     <tbody>
                         <tr>
                             <td>
-                                <input name="total_attended_family"
-                                    :value="formatBangla(report_sum_data?.department5_paribarik_dawats?.total_attended_family ?? '')"
-                                    @change="data_upload('department5-paribarik-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="total_attended_family"
+                                        :value="formatBangla(report_sum_data?.department5_paribarik_dawats?.total_attended_family ?? '')"
+                                        @change="data_upload('department5-paribarik-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department5_paribarik_dawats'"
+                                        :column_name="'total_attended_family'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="how_many_new_family_invited"
-                                    :value="formatBangla(report_sum_data?.department5_paribarik_dawats?.how_many_new_family_invited ?? '')"
-                                    @change="data_upload('department5-paribarik-dawat')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="how_many_new_family_invited"
+                                        :value="formatBangla(report_sum_data?.department5_paribarik_dawats?.how_many_new_family_invited ?? '')"
+                                        @change="data_upload('department5-paribarik-dawat')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'department5_paribarik_dawats'"
+                                        :column_name="'how_many_new_family_invited'" />
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -470,17 +616,25 @@
                                 {{ formatBangla(previous_present?.unit_book_distribution_center_present ?? '') }}
                             </td>
                             <td>
-                                <input name="unit_book_distribution_center_increase"
-                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution_center_increase ?? '')"
-                                    @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_book_distribution_center_increase"
+                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution_center_increase ?? '')"
+                                        @change="data_upload('dawah-and-prokashona')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'unit_book_distribution_center_increase'" />
+                                </div>
                             </td>
                             <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
                             <td>
-                                <input name="soft_copy_book_distribution"
-                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.soft_copy_book_distribution ?? '')"
-                                    @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="soft_copy_book_distribution"
+                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.soft_copy_book_distribution ?? '')"
+                                        @change="data_upload('dawah-and-prokashona')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'soft_copy_book_distribution'" />
+                                </div>
                             </td>
                             <td>
                                 <!-- <input name="soft_copy_book_distribution_increase"
@@ -501,17 +655,25 @@
                                 {{ formatBangla(previous_present?.books_in_pathagar_present ?? '') }}
                             </td>
                             <td>
-                                <input name="books_in_pathagar_increase"
-                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.books_in_pathagar_increase ?? '')"
-                                    @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="books_in_pathagar_increase"
+                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.books_in_pathagar_increase ?? '')"
+                                        @change="data_upload('dawah-and-prokashona')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'books_in_pathagar_increase'" />
+                                </div>
                             </td>
                             <td class="text-start px-2">দাওয়াতি লিংক বিতরণ<span>(সংগঠন অনুমোদিত)</span></td>
                             <td>
-                                <input name="dawat_link_distribution"
-                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.dawat_link_distribution ?? '')"
-                                    @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="dawat_link_distribution"
+                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.dawat_link_distribution ?? '')"
+                                        @change="data_upload('dawah-and-prokashona')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'dawat_link_distribution'" />
+                                </div>
                             </td>
                             <td>
                                 <!-- <input name="dawat_link_distribution_increase"
@@ -523,10 +685,14 @@
                         <tr>
                             <td class="text-start px-2">বই বিলি/বিক্রি</td>
                             <td>
-                                <input name="unit_book_distribution"
-                                    :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution ?? '')"
-                                    @change="data_upload('dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_book_distribution"
+                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.unit_book_distribution ?? '')"
+                                        @change="data_upload('dawah-and-prokashona')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'dawah_and_prokashonas'"
+                                        :column_name="'unit_book_distribution'" />
+                                </div>
                             </td>
                             <td>
                                 <!-- <input name="unit_book_distribution_increase"
@@ -536,24 +702,36 @@
                             </td>
                             <td class="text-start px-2">সোনার বাংলা/সংগ্রাম/ পৃথিবী কত কপি চলে</td>
                             <td>
-                                {{ formatBangla(previous_present?.sonar_bangla_present ?? '') }} /
-                                {{ formatBangla(previous_present?.songram_present ?? '') }} /
+                                {{ formatBangla(previous_present?.sonar_bangla_present ?? '') }}/
+                                {{ formatBangla(previous_present?.songram_present ?? '') }}/
                                 {{ formatBangla(previous_present?.prithibi_present ?? '') }}
                             </td>
                             <td>
                                 <div class="d-flex">
-                                    <input name="sonar_bangla_increase"
-                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.sonar_bangla_increase ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="songram_increase"
-                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.songram_increase ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="prithibi_increase"
-                                        :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.prithibi_increase ?? '')"
-                                        @change="data_upload('dawah-and-prokashona')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="sonar_bangla_increase"
+                                            :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.sonar_bangla_increase ?? '')"
+                                            @change="data_upload('dawah-and-prokashona')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawah_and_prokashonas'"
+                                            :column_name="'sonar_bangla_increase'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="songram_increase"
+                                            :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.songram_increase ?? '')"
+                                            @change="data_upload('dawah-and-prokashona')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawah_and_prokashonas'"
+                                            :column_name="'songram_increase'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="prithibi_increase"
+                                            :value="formatBangla(report_sum_data?.dawah_and_prokashonas?.prithibi_increase ?? '')"
+                                            @change="data_upload('dawah-and-prokashona')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'dawah_and_prokashonas'"
+                                            :column_name="'prithibi_increase'" />
+                                    </div>
                                 </div>
                             </td>
                         </tr>
@@ -577,22 +755,34 @@
                             <td>১.</td>
                             <td class="text-start px-2">মাসিক সাধারণ সভা</td>
                             <td>
-                                <input name="unit_masik_sadaron_sova_total"
-                                    :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_total ?? '')"
-                                    @change="data_upload('kormosuci-bastobayon')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_masik_sadaron_sova_total"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_total ?? '')"
+                                        @change="data_upload('kormosuci-bastobayon')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'kormosuci_bastobayons'"
+                                        :column_name="'unit_masik_sadaron_sova_total'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="unit_masik_sadaron_sova_target"
-                                    :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_target ?? '')"
-                                    @change="data_upload('kormosuci-bastobayon')" type="text"
-                                    class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_masik_sadaron_sova_target"
+                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_target ?? '')"
+                                        @change="data_upload('kormosuci-bastobayon')" type="text"
+                                        class="bg-input w-100 text-center" />
+                                    <comment :table_name="'kormosuci_bastobayons'"
+                                        :column_name="'unit_masik_sadaron_sova_target'" />
+                                </div>
                             </td>
                             <td>
-                                <input name="unit_masik_sadaron_sova_uposthiti"
-                                    :value="formatBangla(average_kormosuci.unit_masik_sadaron_sova)"
-                                    @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_total)"
-                                    type="text" class="bg-input w-100 text-center" />
+                                <div class="parent_popup">
+                                    <input name="unit_masik_sadaron_sova_uposthiti"
+                                        :value="formatBangla(average_kormosuci.unit_masik_sadaron_sova)"
+                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.unit_masik_sadaron_sova_total)"
+                                        type="text" class="bg-input w-100 text-center" />
+                                    <comment :table_name="'kormosuci_bastobayons'"
+                                        :column_name="'unit_masik_sadaron_sova_uposthiti'" />
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -600,38 +790,62 @@
                             <td class="text-start px-2">ইফতার মাহফিল (ব্যক্তিগত/সাংগঠনিক)</td>
                             <td>
                                 <div class="d-flex">
-                                    <input name="iftar_mahfil_personal_total"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_total ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="iftar_mahfil_samostic_total"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_total ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="iftar_mahfil_personal_total"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_total ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_personal_total'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="iftar_mahfil_samostic_total"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_total ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_samostic_total'" />
+                                    </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex">
-                                    <input name="iftar_mahfil_personal_target"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_target ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="iftar_mahfil_samostic_target"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_target ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="iftar_mahfil_personal_target"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_target ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_personal_target'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="iftar_mahfil_samostic_target"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_target ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_samostic_target'" />
+                                    </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex">
-                                    <input name="iftar_mahfil_personal_uposthiti"
-                                        :value="formatBangla(average_kormosuci.iftar_mahfil_personal)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_total)"
-                                        type="text" class="bg-input w-100 text-center" /> /
-                                    <input name="iftar_mahfil_samostic_uposthiti"
-                                        :value="formatBangla(average_kormosuci.iftar_mahfil_samostic)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_total)"
-                                        type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="iftar_mahfil_personal_uposthiti"
+                                            :value="formatBangla(average_kormosuci.iftar_mahfil_personal)"
+                                            @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_personal_total)"
+                                            type="text" class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_personal_uposthiti'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="iftar_mahfil_samostic_uposthiti"
+                                            :value="formatBangla(average_kormosuci.iftar_mahfil_samostic)"
+                                            @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.iftar_mahfil_samostic_total)"
+                                            type="text" class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'iftar_mahfil_samostic_uposthiti'" />
+                                    </div>
                                 </div>
                             </td>
                         </tr>
@@ -640,50 +854,86 @@
                             <td class="text-start px-2">চা চক্র/সামষ্টিক খাওয়া/শিক্ষা সফর</td>
                             <td>
                                 <div class="d-flex">
-                                    <input name="cha_chakra_total"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_total ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="samostic_khawa_total"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_total ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="sikkha_sofor_total"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_total ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="cha_chakra_total"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_total ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'cha_chakra_total'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="samostic_khawa_total"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_total ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'samostic_khawa_total'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="sikkha_sofor_total"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_total ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'sikkha_sofor_total'" />
+                                    </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex">
-                                    <input name="cha_chakra_target"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_target ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="samostic_khawa_target"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_target ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" /> /
-                                    <input name="sikkha_sofor_target"
-                                        :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_target ?? '')"
-                                        @change="data_upload('kormosuci-bastobayon')" type="text"
-                                        class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="cha_chakra_target"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.cha_chakra_target ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'cha_chakra_target'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="samostic_khawa_target"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.samostic_khawa_target ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'samostic_khawa_target'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="sikkha_sofor_target"
+                                            :value="formatBangla(report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_target ?? '')"
+                                            @change="data_upload('kormosuci-bastobayon')" type="text"
+                                            class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'sikkha_sofor_target'" />
+                                    </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex">
-                                    <input name="cha_chakra_uposthiti"
-                                        :value="formatBangla(average_kormosuci.cha_chakra)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.cha_chakra_total)"
-                                        type="text" class="bg-input w-100 text-center" /> /
-                                    <input name="samostic_khawa_uposthiti"
-                                        :value="formatBangla(average_kormosuci.samostic_khawa)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.samostic_khawa_total)"
-                                        type="text" class="bg-input w-100 text-center" /> /
-                                    <input name="sikkha_sofor_uposthiti"
-                                        :value="formatBangla(average_kormosuci.sikkha_sofor)"
-                                        @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_total)"
-                                        type="text" class="bg-input w-100 text-center" />
+                                    <div class="parent_popup">
+                                        <input name="cha_chakra_uposthiti"
+                                            :value="formatBangla(average_kormosuci.cha_chakra)"
+                                            @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.cha_chakra_total)"
+                                            type="text" class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'cha_chakra_uposthiti'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="samostic_khawa_uposthiti"
+                                            :value="formatBangla(average_kormosuci.samostic_khawa)"
+                                            @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.samostic_khawa_total)"
+                                            type="text" class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'samostic_khawa_uposthiti'" />
+                                    </div>/
+                                    <div class="parent_popup">
+                                        <input name="sikkha_sofor_uposthiti"
+                                            :value="formatBangla(average_kormosuci.sikkha_sofor)"
+                                            @change="average_data_upload($event, 'kormosuci-bastobayon', report_sum_data?.kormosuci_bastobayons?.sikkha_sofor_total)"
+                                            type="text" class="bg-input w-100 text-center" />
+                                        <comment :table_name="'kormosuci_bastobayons'"
+                                            :column_name="'sikkha_sofor_uposthiti'" />
+                                    </div>
                                 </div>
                             </td>
                         </tr>
@@ -713,35 +963,66 @@
                                 <td class="text-start px-2">সদস্য (রুকন)</td>
                                 <td>{{ formatBangla(previous_present?.rokon_previous ?? '') }}</td>
                                 <td>{{ formatBangla(previous_present?.rokon_present ?? '') }}</td>
-                                <td><input name="rokon_briddhi"
-                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_briddhi ?? '')"
-                                        @change="data_upload('songothon1-jonosokti')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_gatti"
-                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_gatti ?? '')"
-                                        @change="data_upload('songothon1-jonosokti')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="rokon_target"
-                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_target ?? '')"
-                                        @change="data_upload('songothon1-jonosokti')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="rokon_briddhi"
+                                            :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_briddhi ?? '')"
+                                            @change="data_upload('songothon1-jonosokti')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'rokon_briddhi'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="rokon_gatti"
+                                            :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_gatti ?? '')"
+                                            @change="data_upload('songothon1-jonosokti')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'rokon_gatti'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="rokon_target"
+                                            :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.rokon_target ?? '')"
+                                            @change="data_upload('songothon1-jonosokti')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'rokon_target'" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কর্মী</td>
                                 <td>{{ formatBangla(previous_present?.worker_previous ?? '') }}</td>
                                 <td>{{ formatBangla(previous_present?.worker_present ?? '') }}</td>
-                                <td><input name="worker_briddhi"
-                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_briddhi ?? '')"
-                                        @change="data_upload('songothon1-jonosokti')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_gatti"
-                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_gatti ?? '')"
-                                        @change="data_upload('songothon1-jonosokti')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="worker_target"
-                                        :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_target ?? '')"
-                                        @change="data_upload('songothon1-jonosokti')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="worker_briddhi"
+                                            :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_briddhi ?? '')"
+                                            @change="data_upload('songothon1-jonosokti')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon1_jonosoktis'"
+                                            :column_name="'worker_briddhi'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="worker_gatti"
+                                            :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_gatti ?? '')"
+                                            @change="data_upload('songothon1-jonosokti')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'worker_gatti'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="worker_target"
+                                            :value="formatBangla(report_sum_data?.songothon1_jonosoktis?.worker_target ?? '')"
+                                            @change="data_upload('songothon1-jonosokti')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon1_jonosoktis'" :column_name="'worker_target'" />
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -763,14 +1044,26 @@
                                 <td class="text-start px-2">সহযোগী সদস্য*</td>
                                 <td>{{ formatBangla(previous_present?.associate_member_previous ?? '') }}</td>
                                 <td>{{ formatBangla(previous_present?.associate_member_present ?? '') }}</td>
-                                <td><input name="associate_member_briddhi"
-                                        :value="formatBangla(report_sum_data?.songothon2_associate_members?.associate_member_briddhi ?? '')"
-                                        @change="data_upload('songothon2-associate-member')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="associate_member_target"
-                                        :value="formatBangla(report_sum_data?.songothon2_associate_members?.associate_member_target ?? '')"
-                                        @change="data_upload('songothon2-associate-member')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="associate_member_briddhi"
+                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.associate_member_briddhi ?? '')"
+                                            @change="data_upload('songothon2-associate-member')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon2_associate_members'"
+                                            :column_name="'associate_member_briddhi'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="associate_member_target"
+                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.associate_member_target ?? '')"
+                                            @change="data_upload('songothon2-associate-member')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon2_associate_members'"
+                                            :column_name="'associate_member_target'" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">ভিন্নধর্মাবলম্বী কর্মী/সহযোগী সদস্য</td>
@@ -790,26 +1083,42 @@
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input name="vinno_dormalombi_worker_briddhi"
-                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_worker_briddhi ?? '')"
-                                            @change="data_upload('songothon2-associate-member')" type="text"
-                                            class="bg-input w-100 text-center"> /
-                                        <input name="vinno_dormalombi_associate_member_briddhi"
-                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_associate_member_briddhi ?? '')"
-                                            @change="data_upload('songothon2-associate-member')" type="text"
-                                            class="bg-input w-100 text-center">
+                                        <div class="parent_popup">
+                                            <input name="vinno_dormalombi_worker_briddhi"
+                                                :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_worker_briddhi ?? '')"
+                                                @change="data_upload('songothon2-associate-member')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'songothon2_associate_members'"
+                                                :column_name="'vinno_dormalombi_worker_briddhi'" />
+                                        </div>/
+                                        <div class="parent_popup">
+                                            <input name="vinno_dormalombi_associate_member_briddhi"
+                                                :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_associate_member_briddhi ?? '')"
+                                                @change="data_upload('songothon2-associate-member')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'songothon2_associate_members'"
+                                                :column_name="'vinno_dormalombi_associate_member_briddhi'" />
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input name="vinno_dormalombi_worker_target"
-                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_worker_target ?? '')"
-                                            @change="data_upload('songothon2-associate-member')" type="text"
-                                            class="bg-input w-100 text-center"> /
-                                        <input name="vinno_dormalombi_associate_member_target"
-                                            :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_associate_member_target ?? '')"
-                                            @change="data_upload('songothon2-associate-member')" type="text"
-                                            class="bg-input w-100 text-center">
+                                        <div class="parent_popup">
+                                            <input name="vinno_dormalombi_worker_target"
+                                                :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_worker_target ?? '')"
+                                                @change="data_upload('songothon2-associate-member')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'songothon2_associate_members'"
+                                                :column_name="'vinno_dormalombi_worker_target'" />
+                                        </div>/
+                                        <div class="parent_popup">
+                                            <input name="vinno_dormalombi_associate_member_target"
+                                                :value="formatBangla(report_sum_data?.songothon2_associate_members?.vinno_dormalombi_associate_member_target ?? '')"
+                                                @change="data_upload('songothon2-associate-member')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'songothon2_associate_members'"
+                                                :column_name="'vinno_dormalombi_associate_member_target'" />
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
@@ -821,15 +1130,23 @@
                 <div class="kormi_boithok d-flex flex-wrap justify-content-between mb-1">
                     <div class="d-flex justify-content-start w-50">
                         <label for="" class="fw-bold fs-6">৩. মাসিক কর্মী বৈঠক সংখ্যা :</label>
-                        <input class="border_dot width-60 bg-input ps-2" name="unit_kormi_boithok_total"
-                            :value="formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_total ?? '')"
-                            @change="data_upload('songothon9-sangothonik-boithok')" type="text">
+                        <div class="parent_popup width-60">
+                            <input class="border_dot bg-input ps-2 w-100" name="unit_kormi_boithok_total"
+                                :value="formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_total ?? '')"
+                                @change="data_upload('songothon9-sangothonik-boithok')" type="text">
+                            <comment :table_name="'songothon9_sangothonik_boithoks'"
+                                :column_name="'unit_kormi_boithok_total'" />
+                        </div>
                     </div>
                     <div class="d-flex justify-content-start w-50">
                         <label for="" class="fw-bold fs-6">, উপস্থিতি:</label>
-                        <input class="border_dot width-80 bg-input ps-2" name="unit_kormi_boithok_uposthiti"
-                            :value="formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_uposthiti ?? '')"
-                            @change="data_upload('songothon9-sangothonik-boithok')" type="text">
+                        <div class="parent_popup width-80">
+                            <input class="border_dot bg-input ps-2 w-100" name="unit_kormi_boithok_uposthiti"
+                                :value="formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_uposthiti ?? '')"
+                                @change="data_upload('songothon9-sangothonik-boithok')" type="text">
+                            <comment :table_name="'songothon9_sangothonik_boithoks'"
+                                :column_name="'unit_kormi_boithok_uposthiti'" />
+                        </div>
                     </div>
                 </div>
                 <div class="paribaik_unit mb-2">
@@ -844,18 +1161,36 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input name="paribarik_unit_total"
-                                        :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_total ?? '')"
-                                        @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="paribarik_unit_increase"
-                                        :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_increase ?? '')"
-                                        @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="paribarik_unit_target"
-                                        :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_target ?? '')"
-                                        @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="paribarik_unit_total"
+                                            :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_total ?? '')"
+                                            @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'paribarik_unit_total'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="paribarik_unit_increase"
+                                            :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_increase ?? '')"
+                                            @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'paribarik_unit_increase'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="paribarik_unit_target"
+                                            :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_target ?? '')"
+                                            @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'paribarik_unit_target'" />
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -864,9 +1199,12 @@
                 <div class="urdotono mb-1">
                     <div class="d-flex justify-content-start ">
                         <label for="" class="fw-bold fs-6">৫. ঊর্ধ্বতন দায়িত্বশীলদের সফর সংখ্যা :</label>
-                        <input class="border_dot bg-input w-75" name="upper_leader_sofor"
-                            :value="formatBangla(report_sum_data?.songothon7_sofors?.upper_leader_sofor ?? '')"
-                            @change="data_upload('songothon7-sofor')" type="text">
+                        <div class="parent_popup w-75">
+                            <input class="border_dot bg-input w-100" name="upper_leader_sofor"
+                                :value="formatBangla(report_sum_data?.songothon7_sofors?.upper_leader_sofor ?? '')"
+                                @change="data_upload('songothon7-sofor')" type="text">
+                            <comment :table_name="'songothon7_sofors'" :column_name="'upper_leader_sofor'" />
+                        </div>
                     </div>
                 </div>
                 <div class="ianot mb-2">
@@ -882,25 +1220,48 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">সহযোগী সদস্য</td>
-                                <td><input name="associate_member_total"
-                                        :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total ?? '')"
-                                        @change="data_upload('songothon8-iyanot-data')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="associate_member_total_iyanot_amounts"
-                                        :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total_iyanot_amounts ?? '')"
-                                        @change="data_upload('songothon8-iyanot-data')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="associate_member_total"
+                                            :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total ?? '')"
+                                            @change="data_upload('songothon8-iyanot-data')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon8_iyanot_data'"
+                                            :column_name="'associate_member_total'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="associate_member_total_iyanot_amounts"
+                                            :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.associate_member_total_iyanot_amounts ?? '')"
+                                            @change="data_upload('songothon8-iyanot-data')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon8_iyanot_data'"
+                                            :column_name="'associate_member_total_iyanot_amounts'" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">সুধী</td>
-                                <td><input name="sudhi_total"
-                                        :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.sudhi_total ?? '')"
-                                        @change="data_upload('songothon8-iyanot-data')" type="text"
-                                        class="bg-input w-100 text-center"></td>
-                                <td><input name="sudi_total_iyanot_amounts"
-                                        :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.sudi_total_iyanot_amounts ?? '')"
-                                        @change="data_upload('songothon8-iyanot-data')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="sudhi_total"
+                                            :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.sudhi_total ?? '')"
+                                            @change="data_upload('songothon8-iyanot-data')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon8_iyanot_data'" :column_name="'sudhi_total'" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="sudi_total_iyanot_amounts"
+                                            :value="formatBangla(report_sum_data?.songothon8_iyanot_data?.sudi_total_iyanot_amounts ?? '')"
+                                            @change="data_upload('songothon8-iyanot-data')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'songothon8_iyanot_data'"
+                                            :column_name="'sudi_total_iyanot_amounts'" />
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -1017,15 +1378,27 @@
                     <table class="text-center  mb-1">
                         <tr>
                             <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
-                            <td class="width-20"><input name="how_many_people_did"
-                                    :value="formatBangla(report_sum_data?.shomajsheba1_personal_social_works?.how_many_people_did ?? '')"
-                                    @change="data_upload('shomajsheba1-personal-social-work')" type="text"
-                                    class="bg-input w-100 text-center"></td>
+                            <td class="width-20">
+                                <div class="parent_popup">
+                                    <input name="how_many_people_did"
+                                        :value="formatBangla(report_sum_data?.shomajsheba1_personal_social_works?.how_many_people_did ?? '')"
+                                        @change="data_upload('shomajsheba1-personal-social-work')" type="text"
+                                        class="bg-input w-100 text-center">
+                                    <comment :table_name="'shomajsheba1_personal_social_works'"
+                                        :column_name="'how_many_people_did'" />
+                                </div>
+                            </td>
                             <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
-                            <td class="width-20"><input name="service_received_total"
-                                    :value="formatBangla(report_sum_data?.shomajsheba1_personal_social_works?.service_received_total ?? '')"
-                                    @change="data_upload('shomajsheba1-personal-social-work')" type="text"
-                                    class="bg-input w-100 text-center"></td>
+                            <td class="width-20">
+                                <div class="parent_popup">
+                                    <input name="service_received_total"
+                                        :value="formatBangla(report_sum_data?.shomajsheba1_personal_social_works?.service_received_total ?? '')"
+                                        @change="data_upload('shomajsheba1-personal-social-work')" type="text"
+                                        class="bg-input w-100 text-center">
+                                    <comment :table_name="'shomajsheba1_personal_social_works'"
+                                        :column_name="'service_received_total'" />
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -1045,47 +1418,77 @@
                                 <td class="text-start px-2">সামাজিক অনুষ্ঠানে অংশগ্রহন/সহায়তা প্রদান</td>
                                 <td>
                                     <div class="d-flex">
-                                        <input name="shamajik_onusthane_ongshogrohon"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_onusthane_ongshogrohon ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center"> /
-                                        <input name="shamajik_onusthane_shohayota_prodan"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_onusthane_shohayota_prodan ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center">
+                                        <div class="parent_popup">
+                                            <input name="shamajik_onusthane_ongshogrohon"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_onusthane_ongshogrohon ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'shamajik_onusthane_ongshogrohon'" />
+                                        </div>/
+                                        <div class="parent_popup">
+                                            <input name="shamajik_onusthane_shohayota_prodan"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_onusthane_shohayota_prodan ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'shamajik_onusthane_shohayota_prodan'" />
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="text-start px-2">স্বেচ্ছায় রক্ত দান (কতজন/কতজনকে)</td>
                                 <td>
                                     <div class="d-flex">
-                                        <input name="voluntarily_blood_donation_kotojon"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.voluntarily_blood_donation_kotojon ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center"> /
-                                        <input name="voluntarily_blood_donation_kotojonke"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.voluntarily_blood_donation_kotojonke ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center">
+                                        <div class="parent_popup">
+                                            <input name="voluntarily_blood_donation_kotojon"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.voluntarily_blood_donation_kotojon ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'voluntarily_blood_donation_kotojon'" />
+                                        </div>/
+                                        <div class="parent_popup">
+                                            <input name="voluntarily_blood_donation_kotojonke"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.voluntarily_blood_donation_kotojonke ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'voluntarily_blood_donation_kotojonke'" />
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">সামাজিক বিরোধ মীমাংসা</td>
-                                <td><input name="shamajik_birodh_mimangsha"
-                                        :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_birodh_mimangsha ?? '')"
-                                        @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="shamajik_birodh_mimangsha"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.shamajik_birodh_mimangsha ?? '')"
+                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'shomajsheba2_unit_social_works'"
+                                            :column_name="'shamajik_birodh_mimangsha'" />
+                                    </div>
+                                </td>
                                 <td class="text-start px-2">মাতৃত্বকালীন সময়ে সেবা প্রদান (কতজন/কতজনকে)</td>
                                 <td>
                                     <div class="d-flex">
-                                        <input name="matrikalin_sheba_prodan_kotojon"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.matrikalin_sheba_prodan_kotojon ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center"> /
-                                        <input name="matrikalin_sheba_prodan_kotojonke"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.matrikalin_sheba_prodan_kotojonke ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center">
+                                        <div class="parent_popup">
+                                            <input name="matrikalin_sheba_prodan_kotojon"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.matrikalin_sheba_prodan_kotojon ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'matrikalin_sheba_prodan_kotojon'" />
+                                        </div>/
+                                        <div class="parent_popup">
+                                            <input name="matrikalin_sheba_prodan_kotojonke"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.matrikalin_sheba_prodan_kotojonke ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'matrikalin_sheba_prodan_kotojonke'" />
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
@@ -1093,48 +1496,82 @@
                                 <td class="text-start px-2">মানবিক সহায়তা/কর্জে হাসানা প্রদান (কতজনকে)</td>
                                 <td>
                                     <div class="d-flex">
-                                        <input name="manobik_shohayota_prodan"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.manobik_shohayota_prodan ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center"> /
-                                        <input name="korje_hasana_prodan"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.korje_hasana_prodan ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center">
+                                        <div class="parent_popup">
+                                            <input name="manobik_shohayota_prodan"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.manobik_shohayota_prodan ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'manobik_shohayota_prodan'" />
+                                        </div>/
+                                        <div class="parent_popup">
+                                            <input name="korje_hasana_prodan"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.korje_hasana_prodan ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'korje_hasana_prodan'" />
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে)</td>
-                                <td><input name="mayeter_gosol"
-                                        :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.mayeter_gosol ?? '')"
-                                        @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="mayeter_gosol"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.mayeter_gosol ?? '')"
+                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'shomajsheba2_unit_social_works'"
+                                            :column_name="'mayeter_gosol'" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">রোগীর পরিচর্যা/চিকিৎসা সহায়তা প্রদান (কতজনকে)</td>
                                 <td>
                                     <div class="d-flex">
-                                        <input name="rogir_poricorja"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.rogir_poricorja ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center"> /
-                                        <input name="medical_shohayota_prodan"
-                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.medical_shohayota_prodan ?? '')"
-                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                            class="bg-input w-100 text-center">
+                                        <div class="parent_popup">
+                                            <input name="rogir_poricorja"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.rogir_poricorja ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'rogir_poricorja'" />
+                                        </div>/
+                                        <div class="parent_popup">
+                                            <input name="medical_shohayota_prodan"
+                                                :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.medical_shohayota_prodan ?? '')"
+                                                @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                                class="bg-input w-100 text-center">
+                                            <comment :table_name="'shomajsheba2_unit_social_works'"
+                                                :column_name="'medical_shohayota_prodan'" />
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="text-start px-2">অন্যান্য</td>
-                                <td><input name="others"
-                                        :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.others ?? '')"
-                                        @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="others"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.others ?? '')"
+                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'shomajsheba2_unit_social_works'"
+                                            :column_name="'others'" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">নবজাতককে গিফ্ট প্রদান (কতজনকে )</td>
-                                <td><input name="nobojatokke_gift_prodan"
-                                        :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.nobojatokke_gift_prodan ?? '')"
-                                        @change="data_upload('shomajsheba2-unit-social-work')" type="text"
-                                        class="bg-input w-100 text-center"></td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input name="nobojatokke_gift_prodan"
+                                            :value="formatBangla(report_sum_data?.shomajsheba2_unit_social_works?.nobojatokke_gift_prodan ?? '')"
+                                            @change="data_upload('shomajsheba2-unit-social-work')" type="text"
+                                            class="bg-input w-100 text-center">
+                                        <comment :table_name="'shomajsheba2_unit_social_works'"
+                                            :column_name="'nobojatokke_gift_prodan'" />
+                                    </div>
+                                </td>
                                 <td class="text-start px-2"></td>
                                 <td></td>
                             </tr>
@@ -1147,9 +1584,13 @@
                 <div class="bisisto mb-2">
                     <div class="d-flex justify-content-start">
                         <label for="" class="">বিশিষ্ট ব্যক্তিবর্গের সাথে যোগাযোগ সংখ্যা :</label>
-                        <input class="border_dot  bg-input" name="bishishto_bekti_jogajog"
-                            :value="formatBangla(report_sum_data?.rastrio1_bishishto_bektis?.bishishto_bekti_jogajog ?? '')"
-                            @change="data_upload('rastrio1-bishishto-bekti')" type="text">
+                        <div class="parent_popup w-auto">
+                            <input class="border_dot  bg-input" name="bishishto_bekti_jogajog"
+                                :value="formatBangla(report_sum_data?.rastrio1_bishishto_bektis?.bishishto_bekti_jogajog ?? '')"
+                                @change="data_upload('rastrio1-bishishto-bekti')" type="text">
+                            <comment :table_name="'rastrio1_bishishto_bektis'"
+                                :column_name="'bishishto_bekti_jogajog'" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1161,8 +1602,20 @@
                 <table class="text-center  mb-1 table_layout_fixed">
                     <thead>
                         <tr>
-                            <th class="text-center" colspan="2">আয়ের বিবরণ</th>
-                            <th class="text-center" colspan="2">জমার পরিমাণ</th>
+                            <th class="text-center" colspan="2">
+                                <div class="parent_popup">
+                                    আয়ের বিবরণ
+                                    <comment :table_name="'income_table'"
+                                        :column_name="'income'" />
+                                </div>
+                            </th>
+                            <th class="text-center" colspan="2">
+                                <div class="parent_popup">
+                                    জমার পরিমাণ
+                                    <comment :table_name="'expense_table'"
+                                    :column_name="'expense'" />
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1210,8 +1663,13 @@
             </div>
             <div class="montobbo">
                 <h1 class="fs-6">ইউনিট সভাপতির মন্তব্য :</h1>
-                <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input"
-                    rows="5">{{ report_sum_data?.montobbos?.montobbo }}</textarea>
+                <div class="parent_popup">
+                    <textarea name="montobbo" @change="data_upload('montobbo')" id="" cols="30" class="w-100 bg-input"
+                        rows="5">{{ report_sum_data?.montobbos?.montobbo }}</textarea>
+                    <!-- <comment :table_name="'montobbos'"
+                        :column_name="'montobbo'" /> -->
+                    <comment :table_name="'dawat1_regular_group_wises'" :column_name="'number_of_participants'" />
+                </div>
             </div>
         </section>
         <div class="joma_din text-center mt-3 pb-5">
@@ -1235,7 +1693,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="comment_form_container">
+                        <!-- <div class="comment_form_container">
                             <form class="mb-2">
                                 <div class="mb-2">
                                     <label for="comment" class="form-label">Add Comment</label>
@@ -1245,10 +1703,16 @@
                                 <a href="#" class="btn btn-success" @click.prevent="comment_set">Add
                                     comment</a>
                             </form>
-                        </div>
-                        <pre>{{ all_comment_store ? "" : 'No data available' }}</pre> <!-- Debug output -->
+                        </div> -->
+                        <!-- <pre>{{ all_comment_store ? "" : 'No data available' }}</pre> Debug output -->
                         <div class="all_comment" v-for="(comment, index) in all_comment_store" :key="index">
-                            <p> <strong>{{ comment?.user?.full_name }} :- </strong> {{ comment?.comment }}</p>
+                            <div class="comment-card">
+                                <div class="comment-header">
+                                    <strong class="comment-author">{{ comment?.user?.full_name }}</strong>
+                                    <span class="comment-index">#{{ index + 1 }}</span>
+                                </div>
+                                <p class="comment-text">{{ comment?.comment }}</p>
+                            </div>
                         </div>
 
                     </div>
@@ -1316,14 +1780,9 @@ export default {
             this.org_type_id_store = this.report_header?.unit_info?.id || null;
             this.month_year_store = this.month || '';
             this.is_data_are_set = true
-            console.log([
-                "from UnitReportUploadMonthly",
-                this.org_type_store,
-                this.org_type_id_store,
-                this.month_year_store,
-                this.comment_text_store,
-                this.all_comment_store,
-            ]);
+            if (this.is_data_are_set) {
+                this.comment_count();
+            }
         } catch (error) {
             console.error('Error during uploaded_data:', error);
         }
@@ -1335,6 +1794,9 @@ export default {
         },
     },
     methods: {
+        ...mapActions(comment_store, {
+            comment_count: 'comment_count'
+        }),
         uploaded_data: async function () {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;

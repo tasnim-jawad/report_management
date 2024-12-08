@@ -1575,8 +1575,20 @@
                 <table class="text-center  mb-1 table_layout_fixed">
                     <thead>
                         <tr>
-                            <th class="text-center" colspan="2">আয়ের বিবরণ</th>
-                            <th class="text-center" colspan="2">জমার পরিমাণ</th>
+                            <th class="text-center" colspan="2">
+                                <div class="parent_popup">
+                                    আয়ের বিবরণ
+                                    <comment :table_name="'income_table'"
+                                        :column_name="'income'" />
+                                </div>
+                            </th>
+                            <th class="text-center" colspan="2">
+                                <div class="parent_popup">
+                                    জমার পরিমাণ
+                                    <comment :table_name="'expense_table'"
+                                    :column_name="'expense'" />
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>

@@ -10,12 +10,8 @@ export const store = defineStore(`comment_store`, {
         is_data_are_set: false,
         comment_text: '',
         all_comment: [],
+        all_comment_count: [],
     }),
-    // getters: {
-    //     $init: () => {
-    //         this.set_month(); // Call set_month when the store is initialized
-    //     }
-    // },
     actions: {
         modal_show: function (table_name, column_name) {
 
@@ -31,18 +27,6 @@ export const store = defineStore(`comment_store`, {
         },
 
         get_column_comment_all: async function (table_name, column_name) {
-
-            let params = {
-                month: this.month_year,
-                org_type: this.org_type,
-                org_type_id: this.org_type_id,
-                table_name: table_name,
-                column_name: column_name,
-                comment_text: this.comment_text,
-            }
-
-            console.log("comment store -----", params);
-
             let response = await axios.get('/comment/column-comment-all', {
                 params: {
                     month: this.month_year,
@@ -70,16 +54,6 @@ export const store = defineStore(`comment_store`, {
             }
 
             // Simulate storing the data or sending it to an API
-            let params = {
-                month: this.month_year,
-                org_type: this.org_type,
-                org_type_id: this.org_type_id,
-                table_name: this.table_name,
-                column_name: this.column_name,
-                comment_text: this.comment_text,
-            }
-            console.log("comment store", params);
-
             let response = await axios.post('/comment/store', {
                 month: `${this.month_year}-01`,
                 org_type: this.org_type,
@@ -104,6 +78,28 @@ export const store = defineStore(`comment_store`, {
 
             // Reset the textarea after submitting
             this.comment_text = '';
+        },
+        comment_count: async function () {
+            let params = {
+                month: `${this.month_year}-01`,
+                org_type: this.org_type,
+                org_type_id: this.org_type_id,
+            }
+            console.log("comment_count", params);
+
+
+            let response = await axios.get('/comment/count-comment', {
+                params: {
+                    month: `${this.month_year}-01`,
+                    org_type: this.org_type,
+                    org_type_id: this.org_type_id,
+                }
+            })
+            console.log(response);
+
+            if (response.data.status == 'success') {
+                this.all_comment_count = response.data.data;
+            }
         }
     }
 

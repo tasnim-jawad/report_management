@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Comment;
 
+use App\Http\Controllers\Actions\CommentCount;
 use App\Http\Controllers\Controller;
 use App\Models\Comment\Comment;
 use App\Models\Organization\Responsibility;
@@ -47,7 +48,7 @@ class CommentController extends Controller
             ->whereYear('month_year', $carbon_month->clone()->year)
             ->whereMonth('month_year', $carbon_month->clone()->month)
             ->pluck('id');
-        dd($report_info_id);
+        // dd($report_info_id);
         $query = Comment::where('status', $status)
             ->whereYear('month_year', $carbon_month->clone()->year)
             ->whereMonth('month_year', $carbon_month->clone()->month)
@@ -70,9 +71,7 @@ class CommentController extends Controller
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
             'org_type' => ['required'],
-            'org_type_id' => ['required'],
-            'table_name' => ['required'],
-            'column_name' => ['required'],
+            'org_type_id' => ['required']
         ]);
 
         if ($validator->fails()) {
@@ -81,63 +80,17 @@ class CommentController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-
-        $carbon_month = Carbon::parse(request()->month);
+        $month = request()->month;
         $org_type = request()->org_type;
         $org_type_id = request()->org_type_id;
-        $table_name = request()->table_name;
-        $column_name = request()->column_name;
 
-        $report_info = ReportInfo::where('org_type_id', $org_type_id)
-            ->where('org_type', $org_type)
-            ->whereYear('month_year', $carbon_month->clone()->year)
-            ->whereMonth('month_year', $carbon_month->clone()->month)
-            ->first();
-        // dd($report_info);
-        if (!$report_info) {
-            return response()->json([
-                'err_message' => 'validation error',
-                'errors' => ['name' => ['report not found ']],
-            ], 422);
-        }
+        $comment_count = new CommentCount();
+        $comment_count_result = $comment_count->execute($month, $org_type, $org_type_id);
+        // dd($comment_count_result );
 
-        $table_row = DB::table($table_name)
-            ->where('report_info_id', $report_info->id)
-            ->first();
-
-        if (!$table_row) {
-            $table_row_id = DB::table($table_name)->insertGetId([
-                'report_info_id' => $report_info->id,
-                'creator' => auth()->user()->id,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        } else {
-            $table_row_id = $table_row->id;
-        }
-
-
-        $orderBy = request()->orderBy ?? 'id';
-        $orderByType = request()->orderByType ?? 'DESC';
-        $status = 1;
-        $report_info_id = $report_info->id;
-
-        $query = Comment::where('status', $status)
-            ->where('report_info_id', $report_info_id)
-            ->where('table_name', $table_name)
-            ->where('table_row_id', $table_row_id)
-            ->where('column_name', $column_name)
-            ->where('org_type', $org_type)
-            ->where('org_type_id', $org_type_id)
-            ->whereYear('month_year', $carbon_month->clone()->year)
-            ->whereMonth('month_year', $carbon_month->clone()->month)
-            ->orderBy($orderBy, $orderByType)
-            ->with('user');
-        $datas = $query->count();
-        dd($datas );
         return response()->json([
             'status' => 'success',
-            'data' => $datas,
+            'data' => $comment_count_result,
         ], 200);
     }
     public function column_comment_all()
@@ -176,20 +129,24 @@ class CommentController extends Controller
             ], 422);
         }
 
-        $table_row = DB::table($table_name)
-            ->where('report_info_id', $report_info->id)
-            ->first();
-
-        if (!$table_row) {
-            $table_row_id = DB::table($table_name)->insertGetId([
-                'report_info_id' => $report_info->id,
-                'creator' => auth()->user()->id,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+        if ($table_name == 'income_table' || $table_name == 'expense_table') {
+            $table_row_id = null;
         } else {
-            $table_row_id = $table_row->id;
+            $table_row = DB::table($table_name)
+                ->where('report_info_id', $report_info->id)
+                ->first();
+            if (!$table_row) {
+                $table_row_id = DB::table($table_name)->insertGetId([
+                    'report_info_id' => $report_info->id,
+                    'creator' => auth()->user()->id,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            } else {
+                $table_row_id = $table_row->id;
+            }
         }
+
 
 
         $orderBy = request()->orderBy ?? 'id';
@@ -277,19 +234,22 @@ class CommentController extends Controller
             ], 422);
         }
 
-        $table_row = DB::table($table_name)
-            ->where('report_info_id', $report_info->id)
-            ->first();
-
-        if (!$table_row) {
-            $table_row_id = DB::table($table_name)->insertGetId([
-                'report_info_id' => $report_info->id,
-                'creator' => auth()->user()->id,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+        if ($table_name == 'income_table' || $table_name == 'expense_table') {
+            $table_row_id = null;
         } else {
-            $table_row_id = $table_row->id;
+            $table_row = DB::table($table_name)
+                ->where('report_info_id', $report_info->id)
+                ->first();
+            if (!$table_row) {
+                $table_row_id = DB::table($table_name)->insertGetId([
+                    'report_info_id' => $report_info->id,
+                    'creator' => auth()->user()->id,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            } else {
+                $table_row_id = $table_row->id;
+            }
         }
 
         // Retrieve responsibility name
