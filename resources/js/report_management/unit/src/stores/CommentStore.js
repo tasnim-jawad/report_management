@@ -80,12 +80,12 @@ export const store = defineStore(`comment_store`, {
             this.comment_text = '';
         },
         comment_count: async function () {
-            let params = {
-                month: `${this.month_year}-01`,
-                org_type: this.org_type,
-                org_type_id: this.org_type_id,
-            }
-            console.log("comment_count", params);
+            // let params = {
+            //     month: `${this.month_year}-01`,
+            //     org_type: this.org_type,
+            //     org_type_id: this.org_type_id,
+            // }
+            // console.log("comment_count", params);
 
 
             let response = await axios.get('/comment/count-comment', {

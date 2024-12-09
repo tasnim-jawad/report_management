@@ -24,7 +24,7 @@ class DateWiseReportSum
 
             // Ensure $report_approved_status is always an array
             $approved_status_array = is_array($report_approved_status) ? $report_approved_status : [$report_approved_status];
-
+            // dd($approved_status_array);
             $report_info_ids = ReportInfo::whereBetween('month_year', [$s_month->startOfMonth(), $e_month->endOfMonth()])
                 ->where('org_type', $org_type)
                 ->where('org_type_id', $org_type_id)
@@ -49,7 +49,7 @@ class DateWiseReportSum
             $selected_columns = array_slice($all_columns, 2, -4);
 
             foreach ($selected_columns as $selected_column) {
-                if ($table_name == 'montobbos') {
+                if ($table_name == 'montobbos' || $table_name == 'ward_montobbos') {
                     $text = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)
                         ->selectRaw("GROUP_CONCAT(montobbo SEPARATOR '\n') as montobbo")
                         ->first();
@@ -104,6 +104,46 @@ class DateWiseReportSum
             "songothon8_iyanot_data",
             "songothon9_sangothonik_boithoks",
             "montobbos",
+        ];
+
+        return $table_names;
+    }
+    public function get_ward_table()
+    {
+        $table_names = [
+            "ward_dawah_and_prokashonas",
+            "ward_dawat1_regular_group_wises",
+            "ward_dawat2_personal_and_targets",
+            "ward_dawat3_general_program_and_others",
+            "ward_dawat4_gono_songjog_and_dawat_ovijans",
+            "ward_department1_talimul_qurans",
+            "ward_department2_moholla_vittik_dawats",
+            "ward_department3_jubo_somaj_dawats",
+            "ward_department4_different_job_holders_dawats",
+            "ward_department5_paribarik_dawats",
+            "ward_department6_mosjid_dawah_infomation_centers",
+            "ward_department7_dawat_in_technologies",
+            "ward_kormosuci_bastobayons",
+            "ward_montobbos",
+            "ward_proshikkhon1_tarbiats",
+            "ward_proshikkhon2_manob_shompod_unnoyons",
+            "ward_rastrio1_political_communications",
+            "ward_rastrio2_kormoshuchi_bastobayons",
+            "ward_rastrio3_dibosh_palons",
+            "ward_rastrio4_election_activities",
+            "ward_shomajsheba1_personal_social_works",
+            "ward_shomajsheba2_group_social_works",
+            "ward_shomajsheba3_health_and_family_kollans",
+            "ward_shomajsheba4_institutional_social_works",
+            "ward_songothon1_jonosoktis",
+            "ward_songothon2_associate_members",
+            "ward_songothon3_departmental_information",
+            "ward_songothon4_unit_songothons",
+            "ward_songothon5_dawat_and_paribarik_units",
+            "ward_songothon6_bidayi_students_connects",
+            "ward_songothon7_sofors",
+            "ward_songothon8_iyanot_data",
+            "ward_songothon9_sangothonik_boithoks"
         ];
 
         return $table_names;

@@ -1781,6 +1781,8 @@ export default {
             this.month_year_store = this.month || '';
             this.is_data_are_set = true
             if (this.is_data_are_set) {
+                console.log("this.is_data_are_set" ,this.is_data_are_set);
+
                 this.comment_count();
             }
         } catch (error) {

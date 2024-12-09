@@ -25,7 +25,7 @@ class CommentCount
 
         $table_function_name = "get_" . $org_type . "_table";
         $table_names = $this->$table_function_name();
-
+        dd($table_names);
         $result = [];
         foreach ($table_names as $table_name) {
             if ($table_name != 'income_table' && $table_name != 'expense_table') {
@@ -139,6 +139,47 @@ class CommentCount
             "montobbos",
             "income_table",
             "expense_table",
+        ];
+
+        return $table_names;
+    }
+
+    public function get_ward_table()
+    {
+        $table_names = [
+            "ward_dawah_and_prokashonas",
+            "ward_dawat1_regular_group_wises",
+            "ward_dawat2_personal_and_targets",
+            "ward_dawat3_general_program_and_others",
+            "ward_dawat4_gono_songjog_and_dawat_ovijans",
+            "ward_department1_talimul_qurans",
+            "ward_department2_moholla_vittik_dawats",
+            "ward_department3_jubo_somaj_dawats",
+            "ward_department4_different_job_holders_dawats",
+            "ward_department5_paribarik_dawats",
+            "ward_department6_mosjid_dawah_infomation_centers",
+            "ward_department7_dawat_in_technologies",
+            "ward_kormosuci_bastobayons",
+            "ward_montobbos",
+            "ward_proshikkhon1_tarbiats",
+            "ward_proshikkhon2_manob_shompod_unnoyons",
+            "ward_rastrio1_political_communications",
+            "ward_rastrio2_kormoshuchi_bastobayons",
+            "ward_rastrio3_dibosh_palons",
+            "ward_rastrio4_election_activities",
+            "ward_shomajsheba1_personal_social_works",
+            "ward_shomajsheba2_group_social_works",
+            "ward_shomajsheba3_health_and_family_kollans",
+            "ward_shomajsheba4_institutional_social_works",
+            "ward_songothon1_jonosoktis",
+            "ward_songothon2_associate_members",
+            "ward_songothon3_departmental_information",
+            "ward_songothon4_unit_songothons",
+            "ward_songothon5_dawat_and_paribarik_units",
+            "ward_songothon6_bidayi_students_connects",
+            "ward_songothon7_sofors",
+            "ward_songothon8_iyanot_data",
+            "ward_songothon9_sangothonik_boithoks"
         ];
 
         return $table_names;

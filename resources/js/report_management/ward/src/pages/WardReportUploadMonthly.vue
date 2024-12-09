@@ -1,26 +1,5 @@
 <template>
     <div id="report_uplode_body">
-        <!-- <section id="heading" class="mt-3">
-            <div class="report_heading position-relative mb-1">
-                <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
-                <h1 class="text-center mb-2 fs-4">ইউনিট সংগঠনের মাসিক রিপোর্ট</h1>
-            </div>
-            <div class="unit_info">
-                <div class="line d-flex flex-wrap mb-1">
-                    <p class="w-75">মাস: {{ formatMonth(month) }}</p>
-                    <p class="w-25">সন: {{ formatYear(month) }}</p>
-                </div>
-                <div class="line d-flex flex-wrap justify-content-between mb-1">
-                    <p>ইউনিটের নাম: {{ unit_info.title || '' }}</p>
-                    <p>ওয়ার্ড নং ও নাম: {{ ward_info.no || '' }} ও {{ ward_info.title || '' }}</p>
-                    <p class="w-25">উপজেলা/থানা: {{ thana_info.title || '' }}</p>
-                </div>
-                <div class="line d-flex flex-wrap justify-content-between">
-                    <p>ইউনিট সভাপতির নাম: {{ president.full_name || '' }}</p>
-                    <p class="width-30">ইউনিটের ধরন: {{ org_type.title || '' }}</p>
-                </div>
-            </div>
-        </section> -->
         <section id="heading" class="mt-3">
             <div class="report_heading position-relative mb-1">
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>

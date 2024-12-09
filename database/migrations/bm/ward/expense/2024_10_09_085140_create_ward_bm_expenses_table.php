@@ -21,6 +21,13 @@ return new class extends Migration
             $table->date('date')->nullable();
             $table->bigInteger('ward_bm_expense_category_id')->nullable();
 
+            //for report submission status
+            $table->enum('report_submit_status', ['unsubmitted', 'submitted'])->default('unsubmitted');
+            $table->enum('report_approved_status', ['pending', 'approved', 'rejected'])->default('pending');
+            //for track about target
+            $table->bigInteger('ward_expense_targets_id')->nullable();
+            $table->bigInteger('ward_expense_targets_amount')->nullable();
+
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();

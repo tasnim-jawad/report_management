@@ -149,4 +149,68 @@ class CalculatePreviousPresent
             ],
         ];
     }
+    private function get_ward_calculations()
+    {
+        return [
+            'unit_book_distribution_center' => [
+                'table' => 'dawah_and_prokashonas',
+                'columns' => ['increase' => 'unit_book_distribution_center_increase'],
+                'type' => 'increase',
+            ],
+            'books_in_pathagar' => [
+                'table' => 'dawah_and_prokashonas',
+                'columns' => ['increase' => 'books_in_pathagar_increase'],
+                'type' => 'increase',
+            ],
+            'sonar_bangla' => [
+                'table' => 'dawah_and_prokashonas',
+                'columns' => ['increase' => 'sonar_bangla_increase'],
+                'type' => 'increase',
+            ],
+            'songram' => [
+                'table' => 'dawah_and_prokashonas',
+                'columns' => ['increase' => 'songram_increase'],
+                'type' => 'increase',
+            ],
+            'prithibi' => [
+                'table' => 'dawah_and_prokashonas',
+                'columns' => ['increase' => 'prithibi_increase'],
+                'type' => 'increase',
+            ],
+
+
+            'paribarik_unit_total' => [
+                'table' => 'songothon5_dawat_and_paribarik_units',
+                'columns' => ['increase' => 'paribarik_unit_increase'],
+                'type' => 'increase',
+            ],
+
+
+            'rokon' => [
+                'table' => 'songothon1_jonosoktis',
+                'columns' => ['increase' => 'rokon_briddhi', 'decrease' => 'rokon_gatti'],
+                'type' => 'previous_present',
+            ],
+            'worker' => [
+                'table' => 'songothon1_jonosoktis',
+                'columns' => ['increase' => 'worker_briddhi', 'decrease' => 'worker_gatti'],
+                'type' => 'previous_present',
+            ],
+            'associate_member' => [
+                'table' => 'songothon2_associate_members',
+                'columns' => ['increase' => 'associate_member_briddhi'],
+                'type' => 'increase',
+            ],
+            'vinno_dormalombi_worker' => [
+                'table' => 'songothon2_associate_members',
+                'columns' => ['increase' => 'vinno_dormalombi_worker_briddhi'],
+                'type' => 'increase',
+            ],
+            'vinno_dormalombi_associate_member' => [
+                'table' => 'songothon2_associate_members',
+                'columns' => ['increase' => 'vinno_dormalombi_associate_member_briddhi'],
+                'type' => 'increase',
+            ],
+        ];
+    }
 }

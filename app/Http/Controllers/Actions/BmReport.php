@@ -41,7 +41,7 @@ class BmReport
         // Step 2: Fetch all relevant transactions in the given date range
         $org_type_column_name = $org_type . '_id';
         $org_type_condition = is_array($org_type_id) ? 'whereIn' : 'where';
-        
+
         $transactions = DB::table($transaction_table_name)
             ->whereBetween($month_column, [$start_month_date->startOfMonth(), $end_month_date->endOfMonth()])
             ->$org_type_condition($org_type_column_name, $org_type_id)
@@ -113,7 +113,6 @@ class BmReport
             'category_table_name' => "bm_categories",
             'transaction_table_name' => "bm_paids",
             'category_id_column_name_in_transaction_table' => "bm_category_id",
-            'category_id_column_name_in_transaction_table' => "bm_category_id",
             'month_column' => "month",
         ];
 
@@ -125,7 +124,32 @@ class BmReport
         $data = [
             'category_table_name' => "bm_expense_categories",
             'transaction_table_name' => "bm_expenses",
-            'category_id_column_name_in_transaction_table' => "bm_expense_category_id",
+            'category_id_column_name_in_transaction_table' => "ward_bm_income_category_id",
+            'month_column' => "date",
+        ];
+
+        return $data;
+    }
+
+    //--------------------------- ward --------------------
+    public function get_ward_income_info()
+    {
+        $data = [
+            'category_table_name' => "ward_bm_income_categories",
+            'transaction_table_name' => "ward_bm_incomes",
+            'category_id_column_name_in_transaction_table' => "bm_category_id",
+            'month_column' => "month",
+        ];
+
+        return $data;
+    }
+
+    public function get_ward_expense_info()
+    {
+        $data = [
+            'category_table_name' => "ward_bm_expense_categories",
+            'transaction_table_name' => "ward_bm_expenses",
+            'category_id_column_name_in_transaction_table' => "ward_bm_expense_category_id",
             'month_column' => "date",
         ];
 

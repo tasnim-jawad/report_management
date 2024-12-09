@@ -62,7 +62,7 @@ export default {
         },
         get_monthly_report: function(){
             if(this.month != null){
-                window.open(`/ward/report?user_id=${this.user?.user?.id}&month=${this.month}`)
+                window.open(`/ward/ward-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
         },
         total_unit_report: function(){

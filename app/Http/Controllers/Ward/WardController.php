@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers\Ward;
 
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Actions\BmReport;
+use App\Http\Controllers\Actions\CalculatePreviousPresent;
 use App\Http\Controllers\Actions\CheckInfo;
+use App\Http\Controllers\Actions\DateWiseReportSum;
+use App\Http\Controllers\Actions\ReportHeader;
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Expense\BmExpenseCategory;
@@ -494,7 +499,6 @@ class WardController extends Controller
         $filter = $query->whereDate('month','<=',$month->clone()->subMonth())
                         ->where('ward_id', $ward_id);
         $total_previous_income = $filter->sum('amount');
-        // dd($total_previous_income);
 
         $query = WardBmExpense::query();
         $filter = $query->whereDate('date','<=',$month->clone()->subMonth())
@@ -503,51 +507,7 @@ class WardController extends Controller
         $total_previous =  $total_previous_income - $total_previous_expense;
         $total_current_income =  $total_previous + $total_income;
         $in_total =  $total_current_income - $total_expense;
-        // dd($total_previous_income,$total_previous_expense,$total_previous);
         // -------------------------- bm previous report ------------------------------------
-
-
-        // dd(
-        //     'dawat1',$dawat1,
-        //     'dawat2',$dawat2,
-        //     'dawat3',$dawat3,
-        //     'dawat4',$dawat4,
-        //     'department1',$department1,
-        //     'department2',$department2,
-        //     'department3',$department3,
-        //     'department4',$department4,
-        //     'department5',$department5,
-        //     'department6',$department6,
-        //     'department7',$department7,
-        //     'dawah_prokashona',$dawah_prokashona,
-        //     'kormosuci',$kormosuci,
-        //     'songothon1',$songothon1,
-        //     'songothon2',$songothon2,
-        //     'songothon3',$songothon3,
-        //     'songothon4',$songothon4,
-        //     'songothon5',$songothon5,
-        //     'songothon6',$songothon6,
-        //     'songothon7',$songothon7,
-        //     'songothon8',$songothon8,
-        //     'songothon9',$songothon9,
-        //     'proshikkhon1',$proshikkhon1,
-        //     'proshikkhon2',$proshikkhon2,
-        //     'shomajsheba1',$shomajsheba1,
-        //     'shomajsheba2',$shomajsheba2,
-        //     'shomajsheba3',$shomajsheba3,
-        //     'shomajsheba4',$shomajsheba4,
-        //     'rastrio1',$rastrio1,
-        //     'rastrio2',$rastrio2,
-        //     'rastrio3',$rastrio3,
-        //     'rastrio4',$rastrio4,
-        //     'montobbo',$montobbo,
-
-        //     'income_category_wise',$income_category_wise,
-        //     'total_income',$total_income,
-
-        //     'expense_category_wise',$expense_category_wise,
-        //     'total_expense',$total_expense,
-        // );
 
         return view('ward.ward_report')->with([
             'month' => $month,
@@ -2029,7 +1989,7 @@ class WardController extends Controller
 
         $month = request()->month;
         $org_type = 'ward';
-        $org_type_id = auth()->user()->org_unit_user->unit_id;
+        $org_type_id = auth()->user()->org_ward_user->ward_id;
 
         $check_info = new CheckInfo();
         $check_info_status = $check_info->execute($month, $org_type, $org_type_id);
@@ -2070,6 +2030,96 @@ class WardController extends Controller
             'status' => 'success',
             'data' => $report_info_ids->isNotEmpty() ? $report_info_ids : null,
         ], 200);
+    }
+
+
+
+
+    public function ward_report_monthly()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $ward_id = auth()->user()->org_ward_user->ward_id;
+
+        $start_month = request()->month;
+        $end_month = request()->month;
+        $org_type = 'ward';
+        $org_type_id = $ward_id;
+        $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
+
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status);
+        dd($datas);
+        dd($datas->report_sum_data );
+
+        return view('unit.ward_report_monthly')->with([
+            'start_month' => $datas->start_month,
+            'end_month' => $datas->end_month,
+            'report_header' => $datas->report_header,
+
+            'report_sum_data' => $datas->report_sum_data,
+            'previous_present' => $datas->previous_present,
+            'income_report' => $datas->income_report,
+            'expense_report' => $datas->expense_report,
+        ]);
+    }
+
+    public function report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'], $is_need_sum = true, $report_info_ids = null)
+    {
+        if (!is_array($org_type_id)) {
+            $report_header_instance = new ReportHeader();
+            $report_header = $report_header_instance->execute($org_type, $org_type_id);
+        } else {
+            $report_header = null;
+        }
+
+        // ---------------------  reports all data to show  ---------------------------
+        $dateWiseReportSum = new DateWiseReportSum();
+        $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $report_info_ids);
+        // dd($report_sum_data );
+        // ---------------------  reports all data to show  ---------------------------
+
+        // ---------------------  previous and present calculation  ---------------------------
+        $calculatePreviousPresent = new CalculatePreviousPresent();
+        $previous_present = $calculatePreviousPresent->execute($start_month, $end_month, $org_type, $org_type_id);
+        // dd($previous_present);
+        // ---------------------  previous and present calculation  ---------------------------
+
+
+        // -------------------------- bm income report ------------------------------------
+        $bm_income_report = new BmReport();
+        $transaction_type = 'income';
+        $income_report = $bm_income_report->execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type, $report_approved_status, $is_need_sum);
+        // -------------------------- bm income report ------------------------------------
+
+        // -------------------------- bm expense report ------------------------------------
+        $bm_expense_report = new BmReport();
+        $transaction_type = 'expense';
+        $expense_report = $bm_expense_report->execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type, $report_approved_status, $is_need_sum);
+        // -------------------------- bm expense report ------------------------------------
+
+        if(empty($report_sum_data)){
+            return [];
+        }else{
+            return (object) [
+                'start_month' => $start_month,
+                'end_month' => $end_month,
+                'report_header' => $report_header,
+
+                'report_sum_data' => $report_sum_data,
+                'previous_present' => $previous_present,
+                'income_report' => $income_report,
+                'expense_report' => $expense_report,
+            ];
+        }
     }
 
 }
