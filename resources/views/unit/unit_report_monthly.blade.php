@@ -27,7 +27,7 @@
             <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
             <h1 class="text-center mb-2 fs-4">ইউনিট সংগঠনের মাসিক রিপোর্ট</h1>
             <div class="org_gender position-absolute">
-                <p>{{ $report_header->unit_info->org_gender == 'men' ? 'পুরুষ' : 'মহিলা' }}</p>
+                <p>{{ $report_header?->unit_info?->org_gender == 'men' ? 'পুরুষ' : 'মহিলা' }}</p>
             </div>
         </div>
         {{-- {{dd($ward_info)}} --}}
@@ -37,9 +37,9 @@
                 <p class="w-25">সন: {{ bangla(date('Y', strtotime($end_month))) }}</p>
             </div>
             <div class="line d-flex flex-wrap justify-content-between mb-1">
-                <p>ইউনিটের নাম: {{ $report_header->unit_info->title ?? '' }}</p>
-                <p>ওয়ার্ড নং ও নাম: {{ $report_header->ward_info->no ?? '' }} ও
-                    {{ $report_header->ward_info->title ?? '' }}</p>
+                <p>ইউনিটের নাম: {{ $report_header?->unit_info?->title ?? '' }}</p>
+                <p>ওয়ার্ড নং ও নাম: {{ $report_header?->ward_info?->no ?? '' }} ও
+                    {{ $report_header?->ward_info?->title ?? '' }}</p>
                 <p class="w-25">উপজেলা/থানা: {{ $report_header->thana_info->title ?? '' }}</p>
             </div>
             <div class="line d-flex flex-wrap justify-content-between ">

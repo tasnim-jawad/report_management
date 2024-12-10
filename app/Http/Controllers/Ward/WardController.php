@@ -86,7 +86,8 @@ use Illuminate\Support\Facades\Validator;
 
 class WardController extends Controller
 {
-    public function report(){
+    public function report()
+    {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
             'user_id' => ['required'],
@@ -108,23 +109,23 @@ class WardController extends Controller
         $org_type = OrgType::where('id', $ward_info['org_type_id'])->first();
 
         $president = null;
-        $org_ward_responsible = OrgWardResponsible::where('org_ward_id',$ward_id)->where('responsibility_id', 1)->first();
-        if($org_ward_responsible){
-            $president = User::where('id',$org_ward_responsible->user_id)->first();
+        $org_ward_responsible = OrgWardResponsible::where('org_ward_id', $ward_id)->where('responsibility_id', 1)->first();
+        if ($org_ward_responsible) {
+            $president = User::where('id', $org_ward_responsible->user_id)->first();
         }
 
         // dd($president);
 
         $report_info = ReportInfo::where('org_type_id', $ward_id)
-            ->where('org_type','ward')
+            ->where('org_type', 'ward')
             ->whereYear('month_year', $month->clone()->year)
             ->whereMonth('month_year', $month->clone()->month)
-            ->where('status' , 1)
+            ->where('status', 1)
             ->first();
 
         if ($report_info) {
             $report_info_id = $report_info->id;
-        }else{
+        } else {
             return redirect()->back();
         }
 
@@ -156,7 +157,7 @@ class WardController extends Controller
         $shomajsheba1 = WardShomajsheba1PersonalSocialWork::where('report_info_id', $report_info_id)->first();
         $shomajsheba2 = WardShomajsheba2GroupSocialWork::where('report_info_id', $report_info_id)->first();
         $shomajsheba3 = WardShomajsheba3HealthAndFamilyKollan::where('report_info_id', $report_info_id)->first();
-        $shomajsheba4= WardShomajsheba4InstitutionalSocialWork::where('report_info_id', $report_info_id)->first();
+        $shomajsheba4 = WardShomajsheba4InstitutionalSocialWork::where('report_info_id', $report_info_id)->first();
         $rastrio1 = WardRastrio1PoliticalCommunication::where('report_info_id', $report_info_id)->first();
         $rastrio2 = WardRastrio2KormoshuchiBastobayon::where('report_info_id', $report_info_id)->first();
         $rastrio3 = WardRastrio3DiboshPalon::where('report_info_id', $report_info_id)->first();
@@ -166,16 +167,16 @@ class WardController extends Controller
         // ---------------------  previous and present calculation  ---------------------------
         $previous_month = $month->clone()->subMonth()->endOfMonth();
         $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $ward_id)
-            ->where('org_type','ward')
-            ->where('report_approved_status','approved')
-            ->whereDate('month_year', '<=' ,$previous_month)
+            ->where('org_type', 'ward')
+            ->where('report_approved_status', 'approved')
+            ->whereDate('month_year', '<=', $previous_month)
             ->pluck('id');
 
         $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $ward_id)
-        ->where('org_type','ward')
-        ->where('report_approved_status','approved')
-        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
-        ->pluck('id');
+            ->where('org_type', 'ward')
+            ->where('report_approved_status', 'approved')
+            ->whereDate('month_year', '<=', $month->clone()->endOfMonth())
+            ->pluck('id');
         /** ------------songothon1---------- */
         /** rokon */
         $songothon1_rokon_previous = calculate_previous_present(
@@ -451,8 +452,8 @@ class WardController extends Controller
         // -------------------------- bm income report ------------------------------------
         $query = WardBmIncome::query();
         $filter = $query->whereYear('month', $month->clone()->year)
-                        ->whereMonth('month', $month->clone()->month)
-                        ->where('ward_id', $ward_id);
+            ->whereMonth('month', $month->clone()->month)
+            ->where('ward_id', $ward_id);
         $total_income = $filter->sum('amount');
 
         $category_all_id = WardBmIncomeCategory::pluck('id');
@@ -475,8 +476,8 @@ class WardController extends Controller
         // -------------------------- bm expense report ------------------------------------
         $query = WardBmExpense::query();
         $filter = $query->whereYear('date', $month->clone()->year)
-                        ->whereMonth('date', $month->clone()->month)
-                        ->where('ward_id', $ward_id);
+            ->whereMonth('date', $month->clone()->month)
+            ->where('ward_id', $ward_id);
         $total_expense = $filter->sum('amount');
 
         $category_ids = WardBmExpenseCategory::pluck('id');
@@ -496,13 +497,13 @@ class WardController extends Controller
         // -------------------------- bm expense report ------------------------------------
         // -------------------------- bm previous report ------------------------------------
         $query = WardBmIncome::query();
-        $filter = $query->whereDate('month','<=',$month->clone()->subMonth())
-                        ->where('ward_id', $ward_id);
+        $filter = $query->whereDate('month', '<=', $month->clone()->subMonth())
+            ->where('ward_id', $ward_id);
         $total_previous_income = $filter->sum('amount');
 
         $query = WardBmExpense::query();
-        $filter = $query->whereDate('date','<=',$month->clone()->subMonth())
-                        ->where('ward_id', $ward_id);
+        $filter = $query->whereDate('date', '<=', $month->clone()->subMonth())
+            ->where('ward_id', $ward_id);
         $total_previous_expense = $filter->sum('amount');
         $total_previous =  $total_previous_income - $total_previous_expense;
         $total_current_income =  $total_previous + $total_income;
@@ -550,7 +551,7 @@ class WardController extends Controller
             'rastrio4' => $rastrio4,
             'montobbo' => $montobbo,
 
-            'previous_present'=>(object)[
+            'previous_present' => (object)[
                 //songothon1_rokon
                 'songothon1_rokon_previous' => $songothon1_rokon_previous,
                 'songothon1_rokon_present' => $songothon1_rokon_present,
@@ -629,7 +630,8 @@ class WardController extends Controller
 
         ]);
     }
-    public function report_upload_api(){
+    public function report_upload_api()
+    {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
             'user_id' => ['required'],
@@ -651,23 +653,23 @@ class WardController extends Controller
         $org_type = OrgType::where('id', $ward_info['org_type_id'])->first();
 
         $president = null;
-        $org_ward_responsible = OrgWardResponsible::where('org_ward_id',$ward_id)->where('responsibility_id', 1)->first();
-        if($org_ward_responsible){
-            $president = User::where('id',$org_ward_responsible->user_id)->first();
+        $org_ward_responsible = OrgWardResponsible::where('org_ward_id', $ward_id)->where('responsibility_id', 1)->first();
+        if ($org_ward_responsible) {
+            $president = User::where('id', $org_ward_responsible->user_id)->first();
         }
 
         // dd($president);
 
         $report_info = ReportInfo::where('org_type_id', $ward_id)
-            ->where('org_type','ward')
+            ->where('org_type', 'ward')
             ->whereYear('month_year', $month->clone()->year)
             ->whereMonth('month_year', $month->clone()->month)
-            ->where('status' , 1)
+            ->where('status', 1)
             ->first();
 
         if ($report_info) {
             $report_info_id = $report_info->id;
-        }else{
+        } else {
             $org_type = 'ward';
             $org_type_id = $ward_id;
             $responsibility_id = null;
@@ -675,7 +677,7 @@ class WardController extends Controller
             $month_year = $month;
             $report_type = null;
 
-            $report_info = report_info_create($org_type,$org_type_id,$responsibility_id,$responsibility_name,$month_year,$report_type);
+            $report_info = report_info_create($org_type, $org_type_id, $responsibility_id, $responsibility_name, $month_year, $report_type);
             $report_info_id = $report_info->id;
         }
         // dd($report_info_id );
@@ -707,7 +709,7 @@ class WardController extends Controller
         $shomajsheba1 = WardShomajsheba1PersonalSocialWork::where('report_info_id', $report_info_id)->first();
         $shomajsheba2 = WardShomajsheba2GroupSocialWork::where('report_info_id', $report_info_id)->first();
         $shomajsheba3 = WardShomajsheba3HealthAndFamilyKollan::where('report_info_id', $report_info_id)->first();
-        $shomajsheba4= WardShomajsheba4InstitutionalSocialWork::where('report_info_id', $report_info_id)->first();
+        $shomajsheba4 = WardShomajsheba4InstitutionalSocialWork::where('report_info_id', $report_info_id)->first();
         $rastrio1 = WardRastrio1PoliticalCommunication::where('report_info_id', $report_info_id)->first();
         $rastrio2 = WardRastrio2KormoshuchiBastobayon::where('report_info_id', $report_info_id)->first();
         $rastrio3 = WardRastrio3DiboshPalon::where('report_info_id', $report_info_id)->first();
@@ -718,16 +720,16 @@ class WardController extends Controller
         // ---------------------  previous and present calculation  ---------------------------
         $previous_month = $month->clone()->subMonth()->endOfMonth();
         $total_approved_report_info_ids_previous = ReportInfo::where('org_type_id', $ward_id)
-            ->where('org_type','ward')
-            ->where('report_approved_status','approved')
-            ->whereDate('month_year', '<=' ,$previous_month)
+            ->where('org_type', 'ward')
+            ->where('report_approved_status', 'approved')
+            ->whereDate('month_year', '<=', $previous_month)
             ->pluck('id');
 
         $total_approved_report_info_ids_present = ReportInfo::where('org_type_id', $ward_id)
-        ->where('org_type','ward')
-        ->where('report_approved_status','approved')
-        ->whereDate('month_year', '<=' ,$month->clone()->endOfMonth())
-        ->pluck('id');
+            ->where('org_type', 'ward')
+            ->where('report_approved_status', 'approved')
+            ->whereDate('month_year', '<=', $month->clone()->endOfMonth())
+            ->pluck('id');
         /** ------------songothon1---------- */
         /** rokon */
         $songothon1_rokon_previous = calculate_previous_present(
@@ -1003,8 +1005,8 @@ class WardController extends Controller
         // -------------------------- bm income report ------------------------------------
         $query = WardBmIncome::query();
         $filter = $query->whereYear('month', $month->clone()->year)
-                        ->whereMonth('month', $month->clone()->month)
-                        ->where('ward_id', $ward_id);
+            ->whereMonth('month', $month->clone()->month)
+            ->where('ward_id', $ward_id);
         $total_income = $filter->sum('amount');
 
         $category = $filter->with('ward_bm_income_category')->pluck('ward_bm_income_category_id')->all();
@@ -1019,7 +1021,7 @@ class WardController extends Controller
                 ->where('ward_id', $ward_id)
                 ->sum('amount');
             $WardBmIncomeCategory = WardBmIncomeCategory::find($item);
-            if(!$WardBmIncomeCategory){
+            if (!$WardBmIncomeCategory) {
                 // dd($WardBmIncomeCategory ,$item);
             }
             $income_category_wise[$index]['amount'] = $totalAmount == 0 ? "" : $totalAmount;
@@ -1030,8 +1032,8 @@ class WardController extends Controller
         // -------------------------- bm expense report ------------------------------------
         $query = WardBmExpense::query();
         $filter = $query->whereYear('date', $month->clone()->year)
-                        ->whereMonth('date', $month->clone()->month)
-                        ->where('ward_id', $ward_id);
+            ->whereMonth('date', $month->clone()->month)
+            ->where('ward_id', $ward_id);
         $total_expense = $filter->sum('amount');
 
         $category_id = $filter->with('ward_bm_expense_category')->pluck('ward_bm_expense_category_id')->all();
@@ -1046,7 +1048,7 @@ class WardController extends Controller
                 ->where('ward_bm_expense_category_id', $item)
                 ->where('ward_id', $ward_id)
                 ->sum('amount');
-                // dd($item);
+            // dd($item);
             $WardBmExpenseCategory = WardBmExpenseCategory::find($item);
             $expense_category_wise[$index]['amount'] = $totalAmount;
             $expense_category_wise[$index]['category'] = $WardBmExpenseCategory->title;
@@ -1054,14 +1056,14 @@ class WardController extends Controller
         // -------------------------- bm expense report ------------------------------------
         // -------------------------- bm previous report ------------------------------------
         $query = WardBmIncome::query();
-        $filter = $query->whereDate('month','<=',$month->clone()->subMonth())
-                        ->where('ward_id', $ward_id);
+        $filter = $query->whereDate('month', '<=', $month->clone()->subMonth())
+            ->where('ward_id', $ward_id);
         $total_previous_income = $filter->sum('amount');
         // dd($total_previous_income);
 
         $query = WardBmExpense::query();
-        $filter = $query->whereDate('date','<=',$month->clone()->subMonth())
-                        ->where('ward_id', $ward_id);
+        $filter = $query->whereDate('date', '<=', $month->clone()->subMonth())
+            ->where('ward_id', $ward_id);
         $total_previous_expense = $filter->sum('amount');
         $total_previous =  $total_previous_income - $total_previous_expense;
         $total_current_income =  $total_previous + $total_income;
@@ -1160,7 +1162,7 @@ class WardController extends Controller
             'rastrio4' => $rastrio4,
             'montobbo' => $montobbo,
 
-            'previous_present'=>(object)[
+            'previous_present' => (object)[
                 //songothon1_rokon
                 'songothon1_rokon_previous' => $songothon1_rokon_previous,
                 'songothon1_rokon_present' => $songothon1_rokon_present,
@@ -1259,7 +1261,7 @@ class WardController extends Controller
 
         $ward_id = $ward_user->org_ward_user['ward_id'];
         $month = Carbon::parse(request()->month);
-        $units = OrgUnit::where('org_ward_id',$ward_id)->get();
+        $units = OrgUnit::where('org_ward_id', $ward_id)->get();
 
         $report_info_ids = [];
         $unit_ids = [];
@@ -1268,15 +1270,15 @@ class WardController extends Controller
             $unit_id = $unit->id;
             $unit_ids[] = $unit_id;
             $report_info = ReportInfo::where('org_type_id', $unit_id)
-                    ->where('org_type', 'unit')
-                    ->whereYear('month_year', $month->clone()->year)
-                    ->whereMonth('month_year', $month->clone()->month)
-                    ->where('report_approved_status','approved')
-                    ->where('status', 1)
-                    ->get()
-                    ->first();
+                ->where('org_type', 'unit')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->where('report_approved_status', 'approved')
+                ->where('status', 1)
+                ->get()
+                ->first();
 
-            if($report_info){
+            if ($report_info) {
                 $report_info_id = $report_info->id;
                 $report_info_ids[] = $report_info_id;
                 $approved_unit_ids[] = $report_info->org_type_id;
@@ -1688,16 +1690,15 @@ class WardController extends Controller
             $all_rastrio['bishishto_bekti_jogajog'] += $rastrio->bishishto_bekti_jogajog;
 
             $all_montobbo['montobbo'][] = $montobbo->montobbo;
-
         }
 
         // -------------------------- bm income report ------------------------------------
         $query = BmPaid::query();
         $filter = $query->whereYear('month', $month->clone()->year)
-                        ->whereMonth('month', $month->clone()->month)
-                        ->where('ward_id', $ward_id)
-                        ->whereIn('unit_id', $approved_unit_ids)
-                        ->where('status', 1);
+            ->whereMonth('month', $month->clone()->month)
+            ->where('ward_id', $ward_id)
+            ->whereIn('unit_id', $approved_unit_ids)
+            ->where('status', 1);
         // dd($approved_unit_ids,$filter->get()->all(),$filter->sum('amount'));
 
         $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
@@ -1722,10 +1723,10 @@ class WardController extends Controller
         // -------------------------- bm expense report ------------------------------------
         $query = BmExpense::query();
         $filter = $query->whereYear('date', $month->clone()->year)
-                        ->whereMonth('date', $month->clone()->month)
-                        ->where('ward_id', $ward_id)
-                        ->whereIn('unit_id', $approved_unit_ids)
-                        ->where('status', 1);
+            ->whereMonth('date', $month->clone()->month)
+            ->where('ward_id', $ward_id)
+            ->whereIn('unit_id', $approved_unit_ids)
+            ->where('status', 1);
         $total_expense = $filter->sum('amount');
         $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
         $category_unique_id = array_values(array_unique($category_id));
@@ -1810,7 +1811,8 @@ class WardController extends Controller
         ]);
     }
 
-    public function expense_category_wise(){
+    public function expense_category_wise()
+    {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
         ]);
@@ -1834,7 +1836,8 @@ class WardController extends Controller
         ], 200);
     }
 
-    public function income_category_wise(){
+    public function income_category_wise()
+    {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
         ]);
@@ -1858,60 +1861,57 @@ class WardController extends Controller
         ], 200);
     }
 
-    public function report_status(){
+    public function report_status()
+    {
         $month = request()->month;
-        if($month){
-            $org_ward_user = OrgWardUser::where('user_id',auth()->id())->first();
+        if ($month) {
+            $org_ward_user = OrgWardUser::where('user_id', auth()->id())->first();
             $ward_id = $org_ward_user->ward_id;
             $month = Carbon::parse(request()->month);
 
             $report_info = ReportInfo::where('org_type_id', $ward_id)
-                        ->where('org_type','ward')
-                        ->whereYear('month_year', $month->clone()->year)
-                        ->whereMonth('month_year', $month->clone()->month)
-                        ->get()
-                        ->first();
+                ->where('org_type', 'ward')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->get()
+                ->first();
 
-            $report_submit_status = $report_info->report_submit_status??'unsubmitted';
-            $report_approved_status = $report_info->report_approved_status??'pending';
+            $report_submit_status = $report_info->report_submit_status ?? 'unsubmitted';
+            $report_approved_status = $report_info->report_approved_status ?? 'pending';
 
-            if($report_submit_status == 'unsubmitted'){
+            if ($report_submit_status == 'unsubmitted') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "unsubmitted",
                     "message" => "রিপোর্ট জমা দেওয়া হয়নি এখনো ।"
                 ], 200);
-
-            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'pending'){
+            } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'pending') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "pending",
                     "message" => "রিপোর্ট জমা হয়েছে । থানার আপ্রুভের জন্য অপেক্ষমাণ।"
                 ], 200);
-
-            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'rejected'){
+            } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'rejected') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "rejected",
                     "message" => "রিপোর্ট রিজেক্ট করা হয়েছে । ভুলগুলি ঠিক করে আবার জমা দিন ।"
                 ], 200);
-
-            }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'approved'){
+            } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'approved') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "approved",
                     "message" => "এ মাসের রিপোর্ট থানা গ্রহন করেছে।"
                 ], 200);
             }
-
         }
-
     }
 
-    public function report_joma(){
+    public function report_joma()
+    {
 
         $month = Carbon::parse(request()->month);
-        $org_ward_user = OrgWardUser::where('user_id',auth()->id())->first();
+        $org_ward_user = OrgWardUser::where('user_id', auth()->id())->first();
 
         if (!$org_ward_user) {
             return response()->json([
@@ -1922,11 +1922,11 @@ class WardController extends Controller
         $ward_id = $org_ward_user->ward_id;
 
         $permission  = ReportManagementControl::where('report_type', 'ward')
-                                            ->whereYear('month_year', $month->clone()->year)
-                                            ->whereMonth('month_year', $month->clone()->month)
-                                            ->where('is_active', 1)
-                                            ->latest()
-                                            ->first();
+            ->whereYear('month_year', $month->clone()->year)
+            ->whereMonth('month_year', $month->clone()->month)
+            ->where('is_active', 1)
+            ->latest()
+            ->first();
         if (!$permission) {
             return response()->json([
                 'err_message' => 'Permission denied',
@@ -1936,10 +1936,10 @@ class WardController extends Controller
 
         // Fetch ReportInfo
         $report_info = ReportInfo::where('org_type_id', $ward_id)
-                                ->where('org_type', 'ward')
-                                ->whereYear('month_year', $month->year)
-                                ->whereMonth('month_year', $month->month)
-                                ->first();
+            ->where('org_type', 'ward')
+            ->whereYear('month_year', $month->year)
+            ->whereMonth('month_year', $month->month)
+            ->first();
 
         if (!$report_info) {
             return response()->json([
@@ -1947,7 +1947,7 @@ class WardController extends Controller
             ], 404);
         }
 
-        if($report_info->report_submit_status == 'unsubmitted' && $report_info->report_approved_status == 'pending'){
+        if ($report_info->report_submit_status == 'unsubmitted' && $report_info->report_approved_status == 'pending') {
             $report_info->report_submit_status = 'submitted';
             $report_info->save();
 
@@ -1956,8 +1956,7 @@ class WardController extends Controller
                 'report_status' => "rejected",
                 "message" => "রিপোর্ট জমা করা হয়েছে ।"
             ], 200);
-
-        }else if($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'rejected'){
+        } else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'rejected') {
             $report_info->report_approved_status = 'pending';
             $report_info->save();
 
@@ -1966,7 +1965,7 @@ class WardController extends Controller
                 'report_status' => "rejected",
                 "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
             ], 200);
-        }else{
+        } else {
             return response()->json([
                 'err_message' => 'No Content',
                 'errors' => ['name' => ['Report has no data']],
@@ -2021,10 +2020,10 @@ class WardController extends Controller
         $report_approved_status = ['approved'];
 
         $report_info_ids = ReportInfo::whereBetween('month_year', [$start_month->startOfMonth(), $end_month->endOfMonth()])
-                ->where('org_type', $org_type)
-                ->where('org_type_id', $org_type_id)
-                ->whereIn('report_approved_status', $report_approved_status)
-                ->pluck('id');
+            ->where('org_type', $org_type)
+            ->where('org_type_id', $org_type_id)
+            ->whereIn('report_approved_status', $report_approved_status)
+            ->pluck('id');
         // dd($report_info_ids->isNotEmpty() ? $report_info_ids : null);
         return response()->json([
             'status' => 'success',
@@ -2057,10 +2056,26 @@ class WardController extends Controller
         $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
 
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status);
-        dd($datas);
-        dd($datas->report_sum_data );
+        // dd($datas);
 
-        return view('unit.ward_report_monthly')->with([
+        
+        // -------------------------- bm previous report ------------------------------------
+        $carbon_start_month = Carbon::parse($start_month);
+        $query = WardBmIncome::query();
+        $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
+            ->where('ward_id', $ward_id);
+        $total_previous_income = $filter->sum('amount');
+
+        $query = WardBmExpense::query();
+        $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
+            ->where('ward_id', $ward_id);
+        $total_previous_expense = $filter->sum('amount');
+        $total_previous =  $total_previous_income - $total_previous_expense;
+        $total_current_income =  $total_previous + $datas->income_report->total_amount;
+        $in_total =  $total_current_income - $datas->expense_report->total_amount;
+        // -------------------------- bm previous report ------------------------------------
+
+        return view('ward.ward_report_monthly')->with([
             'start_month' => $datas->start_month,
             'end_month' => $datas->end_month,
             'report_header' => $datas->report_header,
@@ -2069,6 +2084,10 @@ class WardController extends Controller
             'previous_present' => $datas->previous_present,
             'income_report' => $datas->income_report,
             'expense_report' => $datas->expense_report,
+
+            'total_previous' => $total_previous,
+            'total_current_income' => $total_current_income,
+            'in_total' => $in_total,
         ]);
     }
 
@@ -2106,9 +2125,9 @@ class WardController extends Controller
         $expense_report = $bm_expense_report->execute($start_month, $end_month, $org_type, $org_type_id, $transaction_type, $report_approved_status, $is_need_sum);
         // -------------------------- bm expense report ------------------------------------
 
-        if(empty($report_sum_data)){
+        if (empty($report_sum_data)) {
             return [];
-        }else{
+        } else {
             return (object) [
                 'start_month' => $start_month,
                 'end_month' => $end_month,
@@ -2121,5 +2140,4 @@ class WardController extends Controller
             ];
         }
     }
-
 }

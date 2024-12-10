@@ -1089,7 +1089,7 @@
                                 <input name="book_distribution" :value="formatBangla(dawah_prokashona?.book_distribution)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
                             </td>
                             <td >
-                                <input name="book_distribution_increase" :value="formatBangla(dawah_prokashona?.book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                <!-- <input name="book_distribution_increase" :value="formatBangla(dawah_prokashona?.book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> -->
                             </td>
 
                             <td class="text-start px-2">বইয়ের সফট কপি বিলি*</td>
@@ -1109,7 +1109,7 @@
                             </td>
                             <td >
                                 <div class="parent_popup">
-                                    <input name="soft_copy_book_distribution_increase" :value="formatBangla(dawah_prokashona?.soft_copy_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" />
+                                    <!-- <input name="soft_copy_book_distribution_increase" :value="formatBangla(dawah_prokashona?.soft_copy_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> -->
                                     <popup
                                         :ward_id="ward_info.id"
                                         :table_name="'dawah_and_prokashonas'"
