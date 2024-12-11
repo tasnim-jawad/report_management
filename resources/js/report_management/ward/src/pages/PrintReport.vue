@@ -60,9 +60,28 @@ export default {
                         ? number.toLocaleString("bn-BD")
                         : "";
         },
-        get_monthly_report: function(){
-            if(this.month != null){
-                window.open(`/ward/ward-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}`)
+        get_monthly_report: async function (event) {
+            event?.preventDefault();
+
+            if (!this.month) {
+                return window.s_warning("Please select a month.", 'error');
+            }
+
+            try {
+                const { data } = await axios.get('/ward/check-report-info', {
+                    params: { month: this.month }
+                });
+
+                if (data.data) {
+                    const url = `/ward/ward-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}&print=true`;
+                    window.open(url);
+                } else {
+                    const errMessage = 'আপনার রিপোর্ট দেখার অনুমতি নেই। রিপোর্ট দেখার অনুমতির জন্য আপনার ঊর্ধ্বতন দায়িত্বশীলের সাথে যোগাযোগ করুন।';
+                    window.s_warning(errMessage, 'error');
+                }
+            } catch (error) {
+                console.error("An error occurred while fetching report information:", error);
+                window.s_warning("An unexpected error occurred. Please try again.", 'error');
             }
         },
         total_unit_report: function(){

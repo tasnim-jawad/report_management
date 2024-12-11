@@ -1,12 +1,13 @@
 <template>
     <div class="card mb-3">
         <div class="card-body border-bottom-0">
-            মাস: <input type="month" v-model="month" name="month">
-            <button class="btn btn-success ms-5"
+            <label for="" class="form-label">মাস:</label>
+            <input class="form-control" type="month" v-model="month" name="month">
+            <a href="#" class="btn btn-success mt-2"
                     type="button"
                     @click="upload_report"
                     :disabled="!month || !user_id"
-            >Submit</button>
+            >রিপোর্ট ফরম</a>
         </div>
     </div>
 </template>
@@ -30,19 +31,39 @@ export default {
         ...mapWritableState(data_store, ['month']),
     },
     methods:{
-        upload_report: function(){
-            console.log(this.month, this.user_id);
+        upload_report:async function(event){
+            event?.preventDefault();
 
-            if (this.month && this.user_id) {
-                this.$router.push({
-                    name: 'WardReportUpload',
-                    params: {
-                        month: this.month,
-                        user_id: this.user_id
+            if (!this.month) {
+                return window.s_warning("Please select a month.", 'error');
+            }
+            try {
+                // Check report info
+                const { data } = await axios.get('/ward/check-report-info', { params: { month: this.month } });
+                console.log("from ward mainlayout",data);
+
+                if (data.data) {
+                    if (this.user_id) {
+                        // Navigate to report upload route
+                        return this.$router.push({
+                            name: 'WardReportUploadMonthly',
+                            params: {
+                                month: this.month,
+                                user_id: this.user_id
+                            }
+                        });
+                    } else {
+                        return window.s_warning("User ID is missing. Please ensure it is provided.", 'error');
                     }
-                });
-            } else {
-                alert("Please select a month and ensure user ID is available");
+                }
+
+                // Show error for insufficient permissions
+                const errMessage = 'আপনার রিপোর্ট পূরণ করার অনুমতি নেই। রিপোর্ট পূরণ করার অনুমতির জন্য আপনার ঊর্ধ্বতন দায়িত্বশীলের সাথে যোগাযোগ করুন।';
+                window.s_warning(errMessage, 'error');
+            } catch (error) {
+                // Handle unexpected errors
+                console.error("An error occurred while fetching report information:", error);
+                window.s_warning("An unexpected error occurred. Please try again.", 'error');
             }
 
         },

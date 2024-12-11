@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import main_route from "./src/routes/routes";
 import WardReportUpload from "./src/pages/WardReportUpload.vue";
+import WardReportUploadMonthly from "./src/pages/WardReportUploadMonthly.vue";
 import UnitReportCheck from "./src/pages/UnitReportCheck.vue";
 
 const router = createRouter({
@@ -12,6 +13,12 @@ const router = createRouter({
             name: "WardReportUpload",
             path: '/ward-report-upload/:month/:user_id',
             component: WardReportUpload,
+            props: true
+        },
+        {
+            name: "WardReportUploadMonthly",
+            path: '/ward-report-upload-monthly/:month/:user_id',
+            component: WardReportUploadMonthly,
             props: true
         },
         {

@@ -111,7 +111,8 @@
                     <tbody>
                         <tr>
                             <td class="text-start px-2">মোট জনশক্তি সংখ্যা</td>
-                            <td>{{ bangla($report_sum_data->ward_dawat2_personal_and_targets->total_rokon ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_dawat2_personal_and_targets->total_rokon ?? '') }}
+                            </td>
                             <td>{{ bangla($report_sum_data->ward_dawat2_personal_and_targets->total_worker ?? '') }}
                             </td>
                             <td class="text-start px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
@@ -231,7 +232,7 @@
                             </td>
                             <td>{{ bangla($report_sum_data->ward_department1_talimul_qurans->teacher_worker ?? '') }}
                             </td>
-                            <td>
+                            {{-- <td>
                                 {{ ($report_sum_data->ward_department1_talimul_qurans->teacher_rokon ?? null) !== null ||
                                 ($report_sum_data->ward_department1_talimul_qurans->teacher_worker ?? null) !== null
                                     ? bangla(
@@ -239,6 +240,18 @@
                                             ($report_sum_data->ward_department1_talimul_qurans->teacher_worker ?? 0),
                                     )
                                     : '' }}
+                            </td> --}}
+                            <td>
+                                @php
+                                    $sum = collect([
+                                        $report_sum_data->ward_department1_talimul_qurans->teacher_rokon ?? 0,
+                                        $report_sum_data->ward_department1_talimul_qurans->teacher_worker ?? 0,
+                                    ])
+                                        ->map(fn($value) => is_numeric($value) ? $value : 0)
+                                        ->sum();
+                                @endphp
+
+                                {{ bangla($sum == 0 ? '' : $sum) }}
                             </td>
                         </tr>
                         <tr>
@@ -360,7 +373,8 @@
                             <tr>
                                 <th class="width-60 text-start">সরকারি হিসাবে গ্রাম/মহল্লা সংখ্যা</th>
                                 <th class="width-20">
-                                    {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->govment_calculated_village_amount ?? '') }} /
+                                    {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->govment_calculated_village_amount ?? '') }}
+                                    /
                                     {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->govment_calculated_moholla_amount ?? '') }}
                                 </th>
                                 <th class="width-20 ">বৃদ্ধি</th>
@@ -374,7 +388,8 @@
                                     {{ bangla($previous_present->total_moholla_committee_present ?? '') }}
                                 </td>
                                 <td>
-                                    {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->total_village_committee_increased ?? '') }} /
+                                    {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->total_village_committee_increased ?? '') }}
+                                    /
                                     {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->total_moholla_committee_increased ?? '') }}
                                 </td>
                             </tr>
@@ -385,7 +400,8 @@
                                     {{ bangla($previous_present->special_dawat_included_moholla_present ?? '') }}
                                 </td>
                                 <td>
-                                    {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->special_dawat_included_village_increased ?? '') }} /
+                                    {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->special_dawat_included_village_increased ?? '') }}
+                                    /
                                     {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->special_dawat_included_moholla_increased ?? '') }}
                                 </td>
                             </tr>
@@ -396,11 +412,14 @@
                         <tbody>
                             <tr>
                                 <td class="text-start width-70 px-2">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</td>
-                                <td class="width-30">{{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->how_many_been_invited ?? '') }}</td>
+                                <td class="width-30">
+                                    {{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->how_many_been_invited ?? '') }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">কতজন সহযোগী সদস্য হয়েছেন</td>
-                                <td>{{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->how_many_associated_created ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department2_moholla_vittik_dawats->how_many_associated_created ?? '') }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -422,11 +441,13 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">কতজন যুবকের মাঝে দাওয়াত পৌঁছানো হয়েছে</td>
-                                    <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->how_many_young_been_invited ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->how_many_young_been_invited ?? '') }}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">কতজন যুবক সহযোগী সদস্য হয়েছেন</td>
-                                    <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->how_many_young_been_associated ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->how_many_young_been_associated ?? '') }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -445,17 +466,20 @@
                             <tr>
                                 <td class="text-start px-2">যুব কমিটি</td>
                                 <td>{{ bangla($previous_present->total_young_committee_present ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->total_young_committee_increased ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->total_young_committee_increased ?? '') }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে</td>
                                 <td>{{ bangla($previous_present->total_new_club_present ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->total_new_club_increased ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->total_new_club_increased ?? '') }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">প্রতিষ্ঠিত সমিতি/ক্লাবে দাওয়াত পৌঁছানো হয়েছে</td>
                                 <td>{{ bangla($previous_present->stablished_club_total_invited_present ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->stablished_club_total_increased ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department3_jubo_somaj_dawats->stablished_club_total_increased ?? '') }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -478,25 +502,34 @@
                         <tbody>
                             <tr>
                                 <td class="text-start letter_spacing ">রাজ: ও বিশিষ্ট ব্যক্তিবর্গ</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->political_and_special_invited ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->political_and_special_been_associated ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->political_and_special_target ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->political_and_special_invited ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->political_and_special_been_associated ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->political_and_special_target ?? '') }}
+                                </td>
                                 <td>{{ bangla(implementation_rate($report_sum_data->ward_department4_different_job_holders_dawats->political_and_special_target ?? '', $report_sum_data->ward_department4_different_job_holders_dawats->political_and_special_been_associated ?? '')) }}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">পেশাজীবী</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->pesha_jibi_invited ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->pesha_jibi_been_associated ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->pesha_jibi_target ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->pesha_jibi_invited ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->pesha_jibi_been_associated ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->pesha_jibi_target ?? '') }}
+                                </td>
                                 <td>{{ bangla(implementation_rate($report_sum_data->ward_department4_different_job_holders_dawats->pesha_jibi_target ?? '', $report_sum_data->ward_department4_different_job_holders_dawats->pesha_jibi_been_associated ?? '')) }}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">উলামা মাশায়েখ</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->olama_masayekh_invited ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->olama_masayekh_been_associated ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->olama_masayekh_target ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->olama_masayekh_invited ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->olama_masayekh_been_associated ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->olama_masayekh_target ?? '') }}
+                                </td>
                                 <td>{{ bangla(implementation_rate($report_sum_data->ward_department4_different_job_holders_dawats->olama_masayekh_target ?? '', $report_sum_data->ward_department4_different_job_holders_dawats->olama_masayekh_been_associated ?? '')) }}
                                 </td>
                             </tr>
@@ -515,25 +548,34 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-1">শ্রমজীবী</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->sromo_jibi_invited ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->sromo_jibi_been_associated ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->sromo_jibi_target ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->sromo_jibi_invited ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->sromo_jibi_been_associated ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->sromo_jibi_target ?? '') }}
+                                </td>
                                 <td>{{ bangla(implementation_rate($report_sum_data->ward_department4_different_job_holders_dawats->sromo_jibi_target ?? '', $report_sum_data->ward_department4_different_job_holders_dawats->sromo_jibi_been_associated ?? '')) }}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-1 letter_spacing font-13">প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->prantik_jonogosti_invited ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->prantik_jonogosti_been_associated ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->prantik_jonogosti_target ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->prantik_jonogosti_invited ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->prantik_jonogosti_been_associated ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->prantik_jonogosti_target ?? '') }}
+                                </td>
                                 <td>{{ bangla(implementation_rate($report_sum_data->ward_department4_different_job_holders_dawats->prantik_jonogosti_target ?? '', $report_sum_data->ward_department4_different_job_holders_dawats->prantik_jonogosti_been_associated ?? '')) }}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-1">ভিন্নধর্মাবলম্বী</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->vinno_dormalombi_invited ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->vinno_dormalombi_been_associated ?? '') }}</td>
-                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->vinno_dormalombi_target ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->vinno_dormalombi_invited ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->vinno_dormalombi_been_associated ?? '') }}
+                                </td>
+                                <td>{{ bangla($report_sum_data->ward_department4_different_job_holders_dawats->vinno_dormalombi_target ?? '') }}
+                                </td>
                                 <td>{{ bangla(implementation_rate($report_sum_data->ward_department4_different_job_holders_dawats->vinno_dormalombi_target ?? '', $report_sum_data->ward_department4_different_job_holders_dawats->vinno_dormalombi_been_associated ?? '')) }}
                                 </td>
                             </tr>
@@ -548,9 +590,11 @@
                     <tbody>
                         <tr>
                             <td class="width-35">দাওয়াতি কাজে অংশগ্রহণকারী মোট পরিবার সংখ্যা</td>
-                            <td>{{ bangla($report_sum_data->ward_department5_paribarik_dawats->total_attended_family ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_department5_paribarik_dawats->total_attended_family ?? '') }}
+                            </td>
                             <td class="width-35">মোট কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে</td>
-                            <td>{{ bangla($report_sum_data->ward_department5_paribarik_dawats->how_many_new_family_invited ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_department5_paribarik_dawats->how_many_new_family_invited ?? '') }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -572,29 +616,34 @@
                         <tr>
                             <td class="text-start px-2">মসজিদ</td>
                             <td>{{ bangla($previous_present->total_mosjid_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->total_mosjid_increase ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->total_mosjid_increase ?? '') }}
+                            </td>
                             <td class="text-start px-2">সাধারণ দাওয়াহ্ সেন্টার</td>
                             <td>{{ bangla($previous_present->general_dawah_center_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->general_dawah_center_increase ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->general_dawah_center_increase ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">দাওয়াতের আওতাভুক্ত মসজিদ</td>
                             <td>{{ bangla($previous_present->dawat_included_mosjid_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->dawat_included_mosjid_increase ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->dawat_included_mosjid_increase ?? '') }}
+                            </td>
                             <td class="text-start px-2">তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক /সাধারণ)</td>
                             <td>
                                 {{ bangla($previous_present->mosjid_wise_information_center_present ?? '') }} /
                                 {{ bangla($previous_present->general_information_center_present ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->mosjid_wise_information_center_increase ?? '') }} /
+                                {{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->mosjid_wise_information_center_increase ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->general_information_center_increase ?? '') }}
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">মসজিদভিত্তিক দাওয়াহ্ সেন্টার</td>
                             <td>{{ bangla($previous_present->mosjid_wise_dawah_center_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->mosjid_wise_dawah_center_increase ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_department6_mosjid_dawah_infomation_centers->mosjid_wise_dawah_center_increase ?? '') }}
+                            </td>
                             <td class="text-start px-2"></td>
                             <td></td>
                             <td></td>
@@ -632,20 +681,24 @@
                     <tr>
                         <td class="text-start px-2">পাঠাগার</td>
                         <td>{{ bangla($previous_present->total_pathagar_present ?? '') }}</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->total_pathagar_increase ?? '') }}</td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->total_pathagar_increase ?? '') }}
+                        </td>
 
                         <td class="text-start px-2">ওয়ার্ডে বই বিক্রয় কেন্দ্র</td>
                         <td>{{ bangla($previous_present->ward_book_sales_center_present ?? '') }}</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->ward_book_sales_center_increase ?? '') }}</td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->ward_book_sales_center_increase ?? '') }}
+                        </td>
                     </tr>
                     <tr>
                         <td class="text-start px-2">বই</td>
                         <td>{{ bangla($previous_present->books_in_pathagar_present ?? '') }}</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->books_in_pathagar_increase ?? '') }}</td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->books_in_pathagar_increase ?? '') }}
+                        </td>
 
                         <td class="text-start px-2">ওয়ার্ডে বই বিক্রয়</td>
                         <td>{{ bangla($previous_present->ward_book_sales_present ?? '') }}</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->ward_book_sales_increase ?? '') }}</td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->ward_book_sales_increase ?? '') }}
+                        </td>
                     </tr>
                     <tr>
                         <td class="text-start px-2">বই বিলি</td>
@@ -655,25 +708,30 @@
                         </td>
 
                         <td class="text-start px-2">বইয়ের সফট কপি বিলি*</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->soft_copy_book_distribution ?? '') }}</td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->soft_copy_book_distribution ?? '') }}
+                        </td>
                         <td>
                             {{-- {{ bangla($report_sum_data->ward_dawah_and_prokashonas->soft_copy_book_distribution_increase ?? '') }} --}}
                         </td>
                     </tr>
                     <tr>
                         <td class="text-start px-2">ইউনিটে বই বিলিকেন্দ্র</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->unit_book_distribution_center ?? '') }}</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->unit_book_distribution_center_increase ?? '') }}</td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->unit_book_distribution_center ?? '') }}
+                        </td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->unit_book_distribution_center_increase ?? '') }}
+                        </td>
 
                         <td class="text-start px-2">দাওয়াতি লিংক বিতরণ*</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->dawat_link_distribution ?? '') }}</td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->dawat_link_distribution ?? '') }}
+                        </td>
                         <td>
                             {{-- {{ bangla($report_sum_data->ward_dawah_and_prokashonas->dawat_link_distribution_increase ?? '') }} --}}
                         </td>
                     </tr>
                     <tr>
                         <td class="text-start px-2">ইউনিটে বই বিলি</td>
-                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->unit_book_distribution ?? '') }}</td>
+                        <td>{{ bangla($report_sum_data->ward_dawah_and_prokashonas->unit_book_distribution ?? '') }}
+                        </td>
                         <td>
                             {{-- {{ bangla($report_sum_data->ward_dawah_and_prokashonas->unit_book_distribution_increase ?? '') }} --}}
                         </td>
@@ -712,8 +770,10 @@
                         <tr>
                             <td>১.</td>
                             <td class="text-start px-2">ইউনিটে মাসিক সাধারণ সভা</td>
-                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->unit_masik_sadaron_sova_total ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->unit_masik_sadaron_sova_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->unit_masik_sadaron_sova_total ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->unit_masik_sadaron_sova_target ?? '') }}
+                            </td>
                             <td>{{ bangla(calculate_average($report_sum_data->ward_kormosuci_bastobayons->unit_masik_sadaron_sova_total ?? '', $report_sum_data->ward_kormosuci_bastobayons->unit_masik_sadaron_sova_uposthiti ?? '')) }}
                             </td>
                         </tr>
@@ -739,16 +799,20 @@
                         <tr>
                             <td>৩.</td>
                             <td class="text-start px-2">সীরাতুন্নবী (সাঃ) মাহফিল</td>
-                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->siratunnabi_mahfil_total ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->siratunnabi_mahfil_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->siratunnabi_mahfil_total ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->siratunnabi_mahfil_target ?? '') }}
+                            </td>
                             <td>{{ bangla(calculate_average($report_sum_data->ward_kormosuci_bastobayons->siratunnabi_mahfil_total ?? '', $report_sum_data->ward_kormosuci_bastobayons->siratunnabi_mahfil_uposthiti ?? '')) }}
                             </td>
                         </tr>
                         <tr>
                             <td>৪.</td>
                             <td class="text-start px-2">ঈদ পুনর্মিলনী</td>
-                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->eid_reunion_total ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->eid_reunion_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->eid_reunion_total ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_kormosuci_bastobayons->eid_reunion_target ?? '') }}
+                            </td>
                             <td>{{ bangla(calculate_average($report_sum_data->ward_kormosuci_bastobayons->eid_reunion_total ?? '', $report_sum_data->ward_kormosuci_bastobayons->eid_reunion_uposthiti ?? '')) }}
                             </td>
                         </tr>
@@ -913,18 +977,26 @@
                             <td class="text-start px-2">মোট সহযোগী সদস্য (পুরুষ)</td>
                             <td>{{ bangla($previous_present->associate_member_man_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->associate_member_man_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon2_associate_members->associate_member_man_briddhi ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon2_associate_members->associate_member_man_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon2_associate_members->associate_member_man_briddhi ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon2_associate_members->associate_member_man_target ?? '') }}
+                            </td>
                             <td>
-                                {{ bangla(implementation_rate($report_sum_data->ward_songothon2_associate_members->associate_member_man_target ?? '', $report_sum_data->ward_songothon2_associate_members->associate_member_man_briddhi ?? '')) }}
+                                {{ bangla(
+                                    ((int) ($report_sum_data->ward_songothon2_associate_members->associate_member_man_briddhi ?? 0)) +
+                                    ((int) ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_briddhi ?? 0)) ?:
+                                    '',
+                                ) }}
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">মোট সহযোগী সদস্য (মহিলা)</td>
                             <td>{{ bangla($previous_present->associate_member_woman_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->associate_member_woman_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon2_associate_members->associate_member_woman_briddhi ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon2_associate_members->associate_member_woman_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon2_associate_members->associate_member_woman_briddhi ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon2_associate_members->associate_member_woman_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(implementation_rate($report_sum_data->ward_songothon2_associate_members->associate_member_woman_target ?? '', $report_sum_data->ward_songothon2_associate_members->associate_member_woman_briddhi ?? '')) }}
                             </td>
@@ -938,17 +1010,28 @@
                                 {{ bangla(($previous_present->associate_member_man_present ?? 0) + ($previous_present->associate_member_woman_present ?? 0) ?: '') }}
                             </td>
                             <td>
-                                {{ bangla(($report_sum_data->ward_songothon2_associate_members->associate_member_man_briddhi ?? 0) + ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_briddhi ?? 0) ?: '') }}
+                                {{ bangla(
+                                    ((int) ($report_sum_data->ward_songothon2_associate_members->associate_member_man_briddhi ?? 0)) +
+                                    ((int) ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_briddhi ?? 0)) ?:
+                                    '',
+                                ) }}
                             </td>
                             <td>
-                                {{ bangla(($report_sum_data->ward_songothon2_associate_members->associate_member_man_target ?? 0) + ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_target ?? 0) ?: '') }}
+                                {{ bangla(
+                                    (int) ($report_sum_data->ward_songothon2_associate_members->associate_member_man_target ?? 0) +
+                                    (int) ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_target ?? 0) ?:
+                                    '',
+                                ) }}
                             </td>
                             <td>
                                 {{-- {{ bangla(($report_sum_data->ward_songothon2_associate_members->associate_member_man_previous ?? 0) + ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_previous ?? 0) ?: '') }} --}}
                                 {{ bangla(
                                     implementation_rate(
-                                        ($report_sum_data->ward_songothon2_associate_members->associate_member_man_target ?? 0) + ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_target ?? 0) ?: '',
-                                        ($report_sum_data->ward_songothon2_associate_members->associate_member_man_briddhi ?? 0) + ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_briddhi ?? 0) ?: '',
+                                        (int) ($report_sum_data->ward_songothon2_associate_members->associate_member_man_target ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_target ?? 0),
+
+                                        (int) ($report_sum_data->ward_songothon2_associate_members->associate_member_man_briddhi ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon2_associate_members->associate_member_woman_briddhi ?? 0),
                                     ),
                                 ) }}
                             </td>
@@ -982,19 +1065,25 @@
                         <tr>
                             <td rowspan="3" class="text-center px-2">মহিলা</td>
                             <td class="text-start">সদস্য (রুকন)</td>
-                            <td>{{ bangla($previous_present->women_rokon_previous?? '') }}</td>
-                            <td>{{ bangla($previous_present->women_rokon_present?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_rokon_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_rokon_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_rokon_target ?? '') }}</td>
+                            <td>{{ bangla($previous_present->women_rokon_previous ?? '') }}</td>
+                            <td>{{ bangla($previous_present->women_rokon_present ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_rokon_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_rokon_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_rokon_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">কর্মী</td>
                             <td>{{ bangla($previous_present->women_kormi_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->women_kormi_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_kormi_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_kormi_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_kormi_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_kormi_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_kormi_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_kormi_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">সহযোগী সদস্য</td>
@@ -1002,9 +1091,12 @@
                             </td>
                             <td>{{ bangla($previous_present->women_associate_member_present ?? '') }}
                             </td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_associate_member_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_associate_member_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_associate_member_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_associate_member_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_associate_member_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->women_associate_member_target ?? '') }}
+                            </td>
                         </tr>
 
                         <tr>
@@ -1012,17 +1104,23 @@
                             <td class="text-start">সদস্য (রুকন)</td>
                             <td>{{ bangla($previous_present->sromojibi_rokon_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->sromojibi_rokon_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_rokon_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_rokon_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_rokon_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_rokon_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_rokon_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_rokon_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">কর্মী</td>
                             <td>{{ bangla($previous_present->sromojibi_kormi_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->sromojibi_kormi_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_kormi_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_kormi_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_kormi_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_kormi_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_kormi_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_kormi_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">সহযোগী সদস্য</td>
@@ -1030,9 +1128,12 @@
                             </td>
                             <td>{{ bangla($previous_present->sromojibi_associate_member_present ?? '') }}
                             </td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_associate_member_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_associate_member_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_associate_member_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_associate_member_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_associate_member_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->sromojibi_associate_member_target ?? '') }}
+                            </td>
                         </tr>
 
                         <tr>
@@ -1040,17 +1141,23 @@
                             <td class="text-start">সদস্য (রুকন)</td>
                             <td>{{ bangla($previous_present->ulama_rokon_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->ulama_rokon_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_rokon_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_rokon_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_rokon_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_rokon_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_rokon_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_rokon_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">কর্মী</td>
                             <td>{{ bangla($previous_present->ulama_kormi_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->ulama_kormi_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_kormi_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_kormi_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_kormi_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_kormi_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_kormi_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_kormi_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">সহযোগী সদস্য</td>
@@ -1058,9 +1165,12 @@
                             </td>
                             <td>{{ bangla($previous_present->ulama_associate_member_present ?? '') }}
                             </td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_associate_member_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_associate_member_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_associate_member_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_associate_member_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_associate_member_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->ulama_associate_member_target ?? '') }}
+                            </td>
                         </tr>
 
                         <tr>
@@ -1068,17 +1178,23 @@
                             <td class="text-start">সদস্য (রুকন)</td>
                             <td>{{ bangla($previous_present->pesha_jibi_rokon_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->pesha_jibi_rokon_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_rokon_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_rokon_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_rokon_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_rokon_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_rokon_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_rokon_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">কর্মী</td>
                             <td>{{ bangla($previous_present->pesha_jibi_kormi_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->pesha_jibi_kormi_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_kormi_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_kormi_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_kormi_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_kormi_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_kormi_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_kormi_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">সহযোগী সদস্য</td>
@@ -1086,9 +1202,12 @@
                             </td>
                             <td>{{ bangla($previous_present->pesha_jibi_associate_member_present ?? '') }}
                             </td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_associate_member_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_associate_member_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_associate_member_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_associate_member_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_associate_member_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->pesha_jibi_associate_member_target ?? '') }}
+                            </td>
                         </tr>
 
                         <tr>
@@ -1096,17 +1215,23 @@
                             <td class="text-start">সদস্য (রুকন)</td>
                             <td>{{ bangla($previous_present->jubo_rokon_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->jubo_rokon_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_rokon_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_rokon_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_rokon_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_rokon_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_rokon_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_rokon_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">কর্মী</td>
                             <td>{{ bangla($previous_present->jubo_kormi_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->jubo_kormi_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_kormi_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_kormi_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_kormi_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_kormi_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_kormi_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_kormi_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">সহযোগী সদস্য</td>
@@ -1114,9 +1239,12 @@
                             </td>
                             <td>{{ bangla($previous_present->jubo_associate_member_present ?? '') }}
                             </td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_associate_member_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_associate_member_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_associate_member_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_associate_member_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_associate_member_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->jubo_associate_member_target ?? '') }}
+                            </td>
                         </tr>
 
                         <tr>
@@ -1126,9 +1254,12 @@
                             </td>
                             <td>{{ bangla($previous_present->vinno_dormalombi_kormi_present ?? '') }}
                             </td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_kormi_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_kormi_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_kormi_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_kormi_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_kormi_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_kormi_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">সহযোগী সদস্য</td>
@@ -1136,9 +1267,12 @@
                             </td>
                             <td>{{ bangla($previous_present->vinno_dormalombi_associate_member_present ?? '') }}
                             </td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_associate_member_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_associate_member_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_associate_member_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_associate_member_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_associate_member_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon3_departmental_information->vinno_dormalombi_associate_member_target ?? '') }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1164,9 +1298,12 @@
                             <td class="text-start">সাধারণ ইউনিট (পুরুষ)</td>
                             <td>{{ bangla($previous_present->general_unit_men_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->general_unit_men_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(implementation_rate($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_target ?? '', $report_sum_data->ward_songothon4_unit_songothons->general_unit_men_increase ?? '')) }}
                             </td>
@@ -1175,9 +1312,12 @@
                             <td class="text-start">সাধারণ ইউনিট (মহিলা)</td>
                             <td>{{ bangla($previous_present->general_unit_women_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->general_unit_women_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(implementation_rate($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_target ?? '', $report_sum_data->ward_songothon4_unit_songothons->general_unit_women_increase ?? '')) }}
                             </td>
@@ -1186,9 +1326,12 @@
                             <td class="text-start">উলামা ইউনিট</td>
                             <td>{{ bangla($previous_present->ulama_unit_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->ulama_unit_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(implementation_rate($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_target ?? '', $report_sum_data->ward_songothon4_unit_songothons->ulama_unit_increase ?? '')) }}
                             </td>
@@ -1197,9 +1340,12 @@
                             <td class="text-start">পেশাজীবী ইউনিট</td>
                             <td>{{ bangla($previous_present->peshajibi_unit_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->peshajibi_unit_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(implementation_rate($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_target ?? '', $report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_increase ?? '')) }}
                             </td>
@@ -1208,9 +1354,12 @@
                             <td class="text-start">শ্রমিক কল্যাণ ইউনিট</td>
                             <td>{{ bangla($previous_present->sromik_kollyan_unit_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->sromik_kollyan_unit_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(implementation_rate($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_target ?? '', $report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_increase ?? '')) }}
                             </td>
@@ -1219,9 +1368,12 @@
                             <td class="text-start">যুব ইউনিট</td>
                             <td>{{ bangla($previous_present->jubo_unit_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->jubo_unit_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(implementation_rate($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_target ?? '', $report_sum_data->ward_songothon4_unit_songothons->jubo_unit_increase ?? '')) }}
                             </td>
@@ -1230,9 +1382,12 @@
                             <td class="text-start">মিডিয়া ইউনিট</td>
                             <td>{{ bangla($previous_present->media_unit_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->media_unit_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->media_unit_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->media_unit_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->media_unit_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->media_unit_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->media_unit_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon4_unit_songothons->media_unit_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(implementation_rate($report_sum_data->ward_songothon4_unit_songothons->media_unit_target ?? '', $report_sum_data->ward_songothon4_unit_songothons->media_unit_increase ?? '')) }}
                             </td>
@@ -1265,59 +1420,54 @@
                             </td>
                             <td>
                                 {{ bangla(
-                                    ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_increase ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_increase ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_increase ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_increase ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_increase ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_increase ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->media_unit_increase ?? 0) ?:
-                                    '',
+                                    (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_increase ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_increase ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_increase ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_increase ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_increase ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_increase ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->media_unit_increase ?? 0),
                                 ) }}
                             </td>
                             <td>
                                 {{ bangla(
-                                    ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_gatti ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_gatti ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_gatti ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_gatti ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_gatti ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_gatti ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->media_unit_gatti ?? 0) ?:
-                                    '',
+                                    (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_gatti ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_gatti ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_gatti ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_gatti ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_gatti ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_gatti ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->media_unit_gatti ?? 0),
                                 ) }}
                             </td>
                             <td>
                                 {{ bangla(
-                                    ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_target ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_target ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_target ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_target ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_target ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_target ?? 0) +
-                                    ($report_sum_data->ward_songothon4_unit_songothons->media_unit_target ?? 0) ?:
-                                    '',
+                                    (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_target ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_target ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_target ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_target ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_target ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_target ?? 0) +
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->media_unit_target ?? 0),
                                 ) }}
                             </td>
                             <td>
                                 {{ bangla(
                                     implementation_rate(
-                                        ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_target ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_target ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_target ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_target ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_target ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_target ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->media_unit_target ?? 0) ?:
-                                        '',
-                                        ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_increase ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_increase ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_increase ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_increase ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_increase ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_increase ?? 0) +
-                                        ($report_sum_data->ward_songothon4_unit_songothons->media_unit_increase ?? 0) ?:
-                                        '',
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_target ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_target ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_target ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_target ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_target ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_target ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->media_unit_target ?? 0),
+                                        (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_men_increase ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->general_unit_women_increase ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->ulama_unit_increase ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->peshajibi_unit_increase ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->sromik_kollyan_unit_increase ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->jubo_unit_increase ?? 0) +
+                                            (int) ($report_sum_data->ward_songothon4_unit_songothons->media_unit_increase ?? 0),
                                     ),
                                 ) }}
                             </td>
@@ -1344,17 +1494,23 @@
                             <td class="text-start">মোট দাওয়াতি ইউনিট</td>
                             <td>{{ bangla($previous_present->dawati_unit_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->dawati_unit_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->dawati_unit_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->dawati_unit_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->dawati_unit_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->dawati_unit_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->dawati_unit_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->dawati_unit_target ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">মোট পারিবারিক ইউনিট</td>
                             <td>{{ bangla($previous_present->paribarik_unit_previous ?? '') }}</td>
                             <td>{{ bangla($previous_present->paribarik_unit_present ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->paribarik_unit_increase ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->paribarik_unit_gatti ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->paribarik_unit_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->paribarik_unit_increase ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->paribarik_unit_gatti ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon5_dawat_and_paribarik_units->paribarik_unit_target ?? '') }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1377,15 +1533,18 @@
                         <tr>
                             <td class="text-start px-2">যোগদানকৃত ছাত্র-ছাত্রীর সংখ্যা</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_man_member ?? '') }} /
+                                {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_man_member ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_women_member ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_man_associate ?? '') }} /
+                                {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_man_associate ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_women_associate ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_man_worker ?? '') }} /
+                                {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_man_worker ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_songothon6_bidayi_students_connects->Joined_student_women_worker ?? '') }}
                             </td>
                         </tr>
@@ -1406,15 +1565,18 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">ঊর্ধ্বতন দায়িত্বশীলদের সফর</td>
-                                    <td>{{ bangla($report_sum_data->ward_songothon7_sofors->upper_leader_sofor ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_songothon7_sofors->upper_leader_sofor ?? '') }}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">ওয়ার্ড আমীর/সভাপতির সফর</td>
-                                    <td>{{ bangla($report_sum_data->ward_songothon7_sofors->ward_sovapotir_sofor ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_songothon7_sofors->ward_sovapotir_sofor ?? '') }}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">ওয়ার্ড শূরা/কর্মপরিষদ/টিম সদস্যদের সফর</td>
-                                    <td>{{ bangla($report_sum_data->ward_songothon7_sofors->word_sura_sodosso_sofor ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_songothon7_sofors->word_sura_sodosso_sofor ?? '') }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1433,13 +1595,17 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">সহযোগী সদস্য</td>
-                                    <td>{{ bangla($report_sum_data->ward_songothon8_iyanot_data->associate_member_total ?? '') }}</td>
-                                    <td>{{ bangla($report_sum_data->ward_songothon8_iyanot_data->associate_member_total_iyanot_amounts ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_songothon8_iyanot_data->associate_member_total ?? '') }}
+                                    </td>
+                                    <td>{{ bangla($report_sum_data->ward_songothon8_iyanot_data->associate_member_total_iyanot_amounts ?? '') }}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">সুধী</td>
-                                    <td>{{ bangla($report_sum_data->ward_songothon8_iyanot_data->sudhi_total ?? '') }}</td>
-                                    <td>{{ bangla($report_sum_data->ward_songothon8_iyanot_data->sudi_total_iyanot_amounts ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_songothon8_iyanot_data->sudhi_total ?? '') }}
+                                    </td>
+                                    <td>{{ bangla($report_sum_data->ward_songothon8_iyanot_data->sudi_total_iyanot_amounts ?? '') }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1463,13 +1629,17 @@
                             <td class="text-start">১.</td>
                             <td class="text-start">ওয়ার্ড শূরা/কর্মপরিষদ / টিম বৈঠক</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->word_sura_boithok_total ?? '') }} /
-                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->kormoporishod_boithok_total ?? '') }} /
+                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->word_sura_boithok_total ?? '') }}
+                                /
+                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->kormoporishod_boithok_total ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->team_boithok_total ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->word_sura_boithok_target ?? '') }} /
-                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->kormoporishod_boithok_target ?? '') }} /
+                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->word_sura_boithok_target ?? '') }}
+                                /
+                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->kormoporishod_boithok_target ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->team_boithok_target ?? '') }}
                             </td>
                             <td>
@@ -1481,8 +1651,10 @@
                         <tr>
                             <td class="text-start">২.</td>
                             <td class="text-start">ওয়ার্ড বৈঠক</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->word_boithok_total ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->word_boithok_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->word_boithok_total ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->word_boithok_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_songothon9_sangothonik_boithoks->word_boithok_total ?? '', $report_sum_data->ward_songothon9_sangothonik_boithoks->word_boithok_uposthiti ?? '')) }}
                             </td>
@@ -1490,8 +1662,10 @@
                         <tr>
                             <td class="text-start">৩.</td>
                             <td class="text-start">মাসিক সদস্য (রুকন) বৈঠক</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->masik_sodosso_boithok_total ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->masik_sodosso_boithok_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->masik_sodosso_boithok_total ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->masik_sodosso_boithok_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_songothon9_sangothonik_boithoks->masik_sodosso_boithok_total ?? '', $report_sum_data->ward_songothon9_sangothonik_boithoks->masik_sodosso_boithok_uposthiti ?? '')) }}
                             </td>
@@ -1499,8 +1673,10 @@
                         <tr>
                             <td class="text-start">৪.</td>
                             <td class="text-start">ইউনিটে মোট কর্মী বৈঠক</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->unit_kormi_boithok_total ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->unit_kormi_boithok_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->unit_kormi_boithok_total ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->unit_kormi_boithok_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_songothon9_sangothonik_boithoks->unit_kormi_boithok_total ?? '', $report_sum_data->ward_songothon9_sangothonik_boithoks->unit_kormi_boithok_uposthiti ?? '')) }}
                             </td>
@@ -1509,13 +1685,17 @@
                             <td class="text-start">৫.</td>
                             <td class="text-start">উলামা/ যুবক/শ্রমিকদের বৈঠক/সমাবেশ</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->ulama_somabesh_total ?? '') }} /
-                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->jubok_somabesh_total ?? '') }} /
+                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->ulama_somabesh_total ?? '') }}
+                                /
+                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->jubok_somabesh_total ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->sromik_somabesh_total ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->ulama_somabesh_target ?? '') }} /
-                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->jubok_somabesh_target ?? '') }} /
+                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->ulama_somabesh_target ?? '') }}
+                                /
+                                {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->jubok_somabesh_target ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_songothon9_sangothonik_boithoks->sromik_somabesh_target ?? '') }}
                             </td>
                             <td>
@@ -1548,8 +1728,10 @@
                         <tr>
                             <td>১.</td>
                             <td class="text-start">ইউনিটে তারবিয়াতী বৈঠক</td>
-                            <td>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->unit_tarbiati_boithok ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->unit_tarbiati_boithok_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->unit_tarbiati_boithok ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->unit_tarbiati_boithok_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_proshikkhon1_tarbiats->unit_tarbiati_boithok ?? '', $report_sum_data->ward_proshikkhon1_tarbiats->unit_tarbiati_boithok_uposthiti ?? '')) }}
                             </td>
@@ -1557,8 +1739,10 @@
                         <tr>
                             <td>২.</td>
                             <td class="text-start">ওয়ার্ডভিত্তিক কর্মী শিক্ষা বৈঠক</td>
-                            <td>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->ward_kormi_sikkha_boithok ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->ward_kormi_sikkha_boithok_target ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->ward_kormi_sikkha_boithok ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->ward_kormi_sikkha_boithok_target ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_proshikkhon1_tarbiats->ward_kormi_sikkha_boithok ?? '', $report_sum_data->ward_proshikkhon1_tarbiats->ward_kormi_sikkha_boithok_uposthiti ?? '')) }}
                             </td>
@@ -1567,11 +1751,13 @@
                             <td>৩.</td>
                             <td class="text-start">ঊর্ধ্বতন সংগঠনের শিক্ষাশিবির/শিক্ষা বৈঠকে অংশগ্রহণকারী</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->urdhotono_sikkha_shibir ?? '') }} /
+                                {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->urdhotono_sikkha_shibir ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->urdhotono_sikkha_boithok ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->urdhotono_sikkha_shibir_target ?? '') }} /
+                                {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->urdhotono_sikkha_shibir_target ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->urdhotono_sikkha_boithok_target ?? '') }}
                             </td>
                             <td>
@@ -1583,11 +1769,13 @@
                             <td>৪.</td>
                             <td class="text-start">গণশিক্ষা বৈঠক/ গণ নৈশ ইবাদত</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->gono_sikkha_boithok ?? '') }} /
+                                {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->gono_sikkha_boithok ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->gono_noisho_ibadot ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->gono_sikkha_boithok_target ?? '') }} /
+                                {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->gono_sikkha_boithok_target ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->gono_noisho_ibadot_target ?? '') }}
                             </td>
                             <td>
@@ -1599,10 +1787,12 @@
                             <td>৫.</td>
                             <td class="text-start">আলোচনা চক্র</td>
                             <td class="text-start">
-                                গ্রুপ সংখ্যা: <span>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->alochona_chokro_group ?? '') }}</span>
+                                গ্রুপ সংখ্যা:
+                                <span>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->alochona_chokro_group ?? '') }}</span>
                             </td>
                             <td class="text-start">
-                                অধিবেশন সংখ্যা: <span>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->alochona_chokro_program ?? '') }}</span>
+                                অধিবেশন সংখ্যা:
+                                <span>{{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->alochona_chokro_program ?? '') }}</span>
                             </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_proshikkhon1_tarbiats->alochona_chokro_program ?? '', $report_sum_data->ward_proshikkhon1_tarbiats->alochona_chokro_uposthiti ?? '')) }}
@@ -1614,7 +1804,8 @@
                             <td class="text-start">
                                 প্রোগ্রাম সংখ্যা :
                                 <span>
-                                    {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->darsul_quran_program ?? '') }} /
+                                    {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->darsul_quran_program ?? '') }}
+                                    /
                                     {{ bangla($report_sum_data->ward_proshikkhon1_tarbiats->sohih_tilawat_program ?? '') }}
                                 </span>
                             </td>
@@ -1642,8 +1833,10 @@
                         <tr>
                             <td class="text-start px-2">দাওয়াহ / সমাজকর্ম/ মিডিয়া</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->dawah_uposthiti ?? '') }} /
-                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->shomajkormo_uposthiti ?? '') }} /
+                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->dawah_uposthiti ?? '') }}
+                                /
+                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->shomajkormo_uposthiti ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->media_uposthiti ?? '') }}
                             </td>
                         </tr>
@@ -1651,16 +1844,21 @@
                             <td class="text-start px-2">আইসিটি/ অফিস/ ফিন্যান্সিয়াল ম্যানেজমেন্ট/ ইংরেজি ভাষা/ আরবি
                                 ভাষা</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->ict_uposthiti ?? '') }} /
-                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->office_uposthiti ?? '') }} /
-                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->financial_management_uposthiti ?? '') }} /
-                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->english_language_uposthiti ?? '') }} /
+                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->ict_uposthiti ?? '') }}
+                                /
+                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->office_uposthiti ?? '') }}
+                                /
+                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->financial_management_uposthiti ?? '') }}
+                                /
+                                {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->english_language_uposthiti ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->arabic_language_uposthiti ?? '') }}
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ*</td>
-                            <td>{{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->trade_oriented_technical_training_uposthiti ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_proshikkhon2_manob_shompod_unnoyons->trade_oriented_technical_training_uposthiti ?? '') }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1678,9 +1876,13 @@
                 <table class="text-center  mb-1">
                     <tr>
                         <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
-                        <td class="width-20">{{ bangla($report_sum_data->ward_shomajsheba1_personal_social_works->how_many_people_did ?? '') }}</td>
+                        <td class="width-20">
+                            {{ bangla($report_sum_data->ward_shomajsheba1_personal_social_works->how_many_people_did ?? '') }}
+                        </td>
                         <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
-                        <td class="width-20">{{ bangla($report_sum_data->ward_shomajsheba1_personal_social_works->service_received_total ?? '') }}</td>
+                        <td class="width-20">
+                            {{ bangla($report_sum_data->ward_shomajsheba1_personal_social_works->service_received_total ?? '') }}
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -1689,13 +1891,17 @@
                 <table class="mb-1">
                     <tbody>
                         <td class="w-25 text-center">সাধারণ সেবা টিম সংখ্যা</td>
-                        <td class="text-center">{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->number_of_general_service_teams ?? '') }}
+                        <td class="text-center">
+                            {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->number_of_general_service_teams ?? '') }}
                         </td>
                         <td class="w-25 text-center">টেকনিক্যাল সেবা টিম সংখ্যা</td>
-                        <td class="text-center">{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->number_of_technical_service_teams ?? '') }}
+                        <td class="text-center">
+                            {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->number_of_technical_service_teams ?? '') }}
                         </td>
                         <td class="w-25 text-center">স্বেচ্ছাসেবক টিম সংখ্যা</td>
-                        <td class="text-center">{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->number_of_volunteer_teams ?? '') }}</td>
+                        <td class="text-center">
+                            {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->number_of_volunteer_teams ?? '') }}
+                        </td>
                     </tbody>
                 </table>
                 <table class="text-center  mb-1">
@@ -1710,10 +1916,12 @@
                     <tbody>
                         <tr>
                             <td class="text-start px-2">ছোট-ছোট উন্নয়নমূলক কাজ</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->minor_unnoyonmulok_kaj ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->minor_unnoyonmulok_kaj ?? '') }}
+                            </td>
                             <td class="text-start px-2">টেকনিক্যাল সেবা প্রদান (কতজন / কতজনকে)</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->technical_services_prodan_kotojonke ?? '') }} /
+                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->technical_services_prodan_kotojonke ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->online_services_prodan_kotojonke ?? '') }}
                             </td>
                         </tr>
@@ -1721,74 +1929,92 @@
                             <td class="text-start px-2 font-13">সামাজিক অনুষ্ঠানে অশংগ্রহণ/সহায়তা প্রদান (সংখ্যা /
                                 কতজনকে)</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->shamajik_onusthane_ongshogrohon ?? '') }} /
+                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->shamajik_onusthane_ongshogrohon ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->shamajik_onusthane_shohayota_prodan ?? '') }}
                             </td>
                             <td class="text-start px-2">অনলাইনের মাধ্যমে সেবা প্রদান (কতজনকে)</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->online_services_prodan_kotojonke ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->online_services_prodan_kotojonke ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">সামাজিক বিরোধ মীমাংসা</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->shamajik_birodh_mimangsha ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->shamajik_birodh_mimangsha ?? '') }}
+                            </td>
                             <td class="text-start px-2">বৃক্ষরোপন (কতটি)</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->brikkho_ropon ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->brikkho_ropon ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">মানবিক সহায়তা প্রদান (কতজনকে)</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->manobik_shohayota_prodan ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->manobik_shohayota_prodan ?? '') }}
+                            </td>
                             <td class="text-start px-2">জনসচেতনতামূলক প্রোগ্রাম (কতটি)</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->public_awareness_programs ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->public_awareness_programs ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">কর্জে হাসানা প্রদান (কতজনকে )</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->korje_hasana_prodan ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->korje_hasana_prodan ?? '') }}
+                            </td>
                             <td class="text-start px-2">ত্রাণ বিতরণ (কতজনকে)</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->tran_bitoron ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->tran_bitoron ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">পরিষ্কার-পরিচ্ছন্নতা/মশক নিধন অভিযান</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->porishkar_poricchonnota_ovijan ?? '') }} /
+                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->porishkar_poricchonnota_ovijan ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->moshok_nidhon_ovijan ?? '') }}
                             </td>
                             <td class="text-start px-2">ভিন্নধর্মাবলম্বীদের সেবা প্রদান (কতজন/কতজনকে)</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->vinnodhormabolombider_service_prodan_kotojon ?? '') }} /
+                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->vinnodhormabolombider_service_prodan_kotojon ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->vinnodhormabolombider_service_prodan_kotojonke ?? '') }}
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">রোগীর পরিচর্যা/চিকিৎসা সহায়তা প্রদান (কতজনকে)</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->rogir_poricorja ?? '') }} /
+                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->rogir_poricorja ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->medical_shohayota_prodan ?? '') }}
                             </td>
                             <td class="text-start px-2">মাইয়্যেতের গোসল (কতজনকে )</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->mayeter_gosol_kotojonke ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->mayeter_gosol_kotojonke ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">স্বেচ্ছায় রক্ত দান (কতজন/কতজনকে)</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->voluntarily_blood_donation_kotojon ?? '') }} /
+                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->voluntarily_blood_donation_kotojon ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->voluntarily_blood_donation_kotojonke ?? '') }}
                             </td>
                             <td class="text-start px-2">জানাযায় অংশগ্রহণ</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->janajay_ongshogrohon ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->janajay_ongshogrohon ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">নবজাতককে গিফ্‌ট প্রদান (কতজনকে)</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->nobojatokke_gift_prodan ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->nobojatokke_gift_prodan ?? '') }}
+                            </td>
                             <td class="text-start px-2">স্বল্প পুঁজিতে কর্মসংস্থানের সহায়তা (কতজনকে)</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->low_capital_employment_kotojonke ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->low_capital_employment_kotojonke ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">ভ্রাম্যমান স্কুল/মক্তব চালু</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->vrammoman_school_calu ?? '') }} /
+                                {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->vrammoman_school_calu ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->vrammoman_moktob_calu ?? '') }}
                             </td>
                             <td class="text-start px-2">অন্যান্য......</td>
-                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->others ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_shomajsheba2_group_social_works->others ?? '') }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1807,11 +2033,13 @@
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">কতজন স্বাস্থ্যসেবা কাজে অংশগ্রহণ করেছেন</td>
-                                    <td>{{ bangla($report_sum_data->ward_shomajsheba3_health_and_family_kollans->participated_in_health_care_work ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_shomajsheba3_health_and_family_kollans->participated_in_health_care_work ?? '') }}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">সেবাপ্রাপ্ত সংখ্যা</td>
-                                    <td>{{ bangla($report_sum_data->ward_shomajsheba3_health_and_family_kollans->served_people ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_shomajsheba3_health_and_family_kollans->served_people ?? '') }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1823,7 +2051,8 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2 width-70">কতটি সামাজিক প্রতিষ্ঠান রয়েছে</td>
-                                    <td>{{ bangla($report_sum_data->ward_shomajsheba4_institutional_social_works->shamajik_protishthan_kototi ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_shomajsheba4_institutional_social_works->shamajik_protishthan_kototi ?? '') }}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">কতটি প্রতিষ্ঠানে সামাজিক কাজ হয়েছে</td>
@@ -1833,7 +2062,8 @@
                                 <tr>
                                     <td class="text-start px-2 font-13">কতটি নতুন সামাজিক প্রতিষ্ঠান চালু করা হয়েছে
                                         (প্রযোজ্য ক্ষেত্রে)</td>
-                                    <td>{{ bangla($report_sum_data->ward_shomajsheba4_institutional_social_works->new_shamajik_protishthan ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_shomajsheba4_institutional_social_works->new_shamajik_protishthan ?? '') }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1857,13 +2087,17 @@
                     <tbody>
                         <tr>
                             <td class="text-start">রাজনৈতিক ব্যক্তিবর্গ</td>
-                            <td>{{ bangla($report_sum_data->ward_rastrio1_political_communications->rajnoitik_bekti_jogajog_koreche_kotojon ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_rastrio1_political_communications->rajnoitik_bekti_jogajog_koreche_kotojonke ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_rastrio1_political_communications->rajnoitik_bekti_jogajog_koreche_kotojon ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_rastrio1_political_communications->rajnoitik_bekti_jogajog_koreche_kotojonke ?? '') }}
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start">প্রশাসনিক ব্যক্তিবর্গ</td>
-                            <td>{{ bangla($report_sum_data->ward_rastrio1_political_communications->proshoshonik_bekti_jogajog_koreche_kotojon ?? '') }}</td>
-                            <td>{{ bangla($report_sum_data->ward_rastrio1_political_communications->proshoshonik_bekti_jogajog_koreche_kotojonke ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_rastrio1_political_communications->proshoshonik_bekti_jogajog_koreche_kotojon ?? '') }}
+                            </td>
+                            <td>{{ bangla($report_sum_data->ward_rastrio1_political_communications->proshoshonik_bekti_jogajog_koreche_kotojonke ?? '') }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1883,7 +2117,8 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2 ">কেন্দ্র ঘোষিত রাজনৈতিক কর্মসূচি পালন</td>
-                                    <td>{{ bangla($report_sum_data->ward_rastrio2_kormoshuchi_bastobayons->centrally_announced_political_program ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_rastrio2_kormoshuchi_bastobayons->centrally_announced_political_program ?? '') }}
+                                    </td>
                                     <td>
                                         {{ bangla(calculate_average($report_sum_data->ward_rastrio2_kormoshuchi_bastobayons->centrally_announced_political_program ?? '', $report_sum_data->ward_rastrio2_kormoshuchi_bastobayons->centrally_announced_political_program_attend ?? '')) }}
                                     </td>
@@ -1926,7 +2161,8 @@
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">অন্যান্য</td>
-                                    <td>{{ bangla($report_sum_data->ward_rastrio2_kormoshuchi_bastobayons->others ?? '') }}</td>
+                                    <td>{{ bangla($report_sum_data->ward_rastrio2_kormoshuchi_bastobayons->others ?? '') }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1950,24 +2186,28 @@
                     <tbody>
                         <tr>
                             <td class="text-start">স্বাধীনতা ও জাতীয় দিবস</td>
-                            <td>{{ bangla($report_sum_data->ward_rastrio3_dibosh_palons->shadhinota_o_jatio_dibosh_total_programs ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_rastrio3_dibosh_palons->shadhinota_o_jatio_dibosh_total_programs ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_rastrio3_dibosh_palons->shadhinota_o_jatio_dibosh_total_programs ?? '', $report_sum_data->ward_rastrio3_dibosh_palons->shadhinota_o_jatio_dibosh_attend ?? '')) }}
                             </td>
                             <td class="text-start">আন্তর্জাতিক মাতৃভাষা দিবস</td>
-                            <td>{{ bangla($report_sum_data->ward_rastrio3_dibosh_palons->mattrivasha_dibosh_total_programs ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_rastrio3_dibosh_palons->mattrivasha_dibosh_total_programs ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_rastrio3_dibosh_palons->mattrivasha_dibosh_total_programs ?? '', $report_sum_data->ward_rastrio3_dibosh_palons->mattrivasha_dibosh_attend ?? '')) }}
                             </td>
                         </tr>
                         <tr>
                             <td class="text-start">বিজয় দিবস</td>
-                            <td>{{ bangla($report_sum_data->ward_rastrio3_dibosh_palons->bijoy_dibosh_total_programs ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_rastrio3_dibosh_palons->bijoy_dibosh_total_programs ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_rastrio3_dibosh_palons->bijoy_dibosh_total_programs ?? '', $report_sum_data->ward_rastrio3_dibosh_palons->bijoy_dibosh_attend ?? '')) }}
                             </td>
                             <td class="text-start">অন্যান্য</td>
-                            <td>{{ bangla($report_sum_data->ward_rastrio3_dibosh_palons->others_total_programs ?? '') }}</td>
+                            <td>{{ bangla($report_sum_data->ward_rastrio3_dibosh_palons->others_total_programs ?? '') }}
+                            </td>
                             <td>
                                 {{ bangla(calculate_average($report_sum_data->ward_rastrio3_dibosh_palons->others_total_programs ?? '', $report_sum_data->ward_rastrio3_dibosh_palons->others_attend ?? '')) }}
                             </td>
@@ -1990,15 +2230,18 @@
                         <tr>
                             <td class="text-start px-2">কাউন্সিলর/মেম্বার</td>
                             <td>
-                                {{ bangla($report_sum_data->ward_rastrio4_election_activities->councilor_candidate ?? '') }} /
+                                {{ bangla($report_sum_data->ward_rastrio4_election_activities->councilor_candidate ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_rastrio4_election_activities->member_candidate ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_rastrio4_election_activities->councilor_candidate_elected ?? '') }} /
+                                {{ bangla($report_sum_data->ward_rastrio4_election_activities->councilor_candidate_elected ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_rastrio4_election_activities->member_candidate_elected ?? '') }}
                             </td>
                             <td>
-                                {{ bangla($report_sum_data->ward_rastrio4_election_activities->councilor_candidate_second_position ?? '') }} /
+                                {{ bangla($report_sum_data->ward_rastrio4_election_activities->councilor_candidate_second_position ?? '') }}
+                                /
                                 {{ bangla($report_sum_data->ward_rastrio4_election_activities->member_candidate_second_position ?? '') }}
                             </td>
                         </tr>
@@ -2022,11 +2265,13 @@
                                     {{ bangla($previous_present->local_vote_kendro_present ?? '') }}
                                 </td>
                                 <td>
-                                    {{ bangla($report_sum_data->ward_rastrio4_election_activities->national_vote_kendro_increase ?? '') }} /
+                                    {{ bangla($report_sum_data->ward_rastrio4_election_activities->national_vote_kendro_increase ?? '') }}
+                                    /
                                     {{ bangla($report_sum_data->ward_rastrio4_election_activities->local_vote_kendro_increase ?? '') }}
                                 </td>
                                 <td>
-                                    {{ bangla($report_sum_data->ward_rastrio4_election_activities->national_vote_kendro_target ?? '') }} /
+                                    {{ bangla($report_sum_data->ward_rastrio4_election_activities->national_vote_kendro_target ?? '') }}
+                                    /
                                     {{ bangla($report_sum_data->ward_rastrio4_election_activities->local_vote_kendro_target ?? '') }}
                                 </td>
                             </tr>
@@ -2037,11 +2282,13 @@
                                     {{ bangla($previous_present->vote_kendro_vittik_unit_present ?? '') }}
                                 </td>
                                 <td>
-                                    {{ bangla($report_sum_data->ward_rastrio4_election_activities->vote_kendro_committee_increase ?? '') }} /
+                                    {{ bangla($report_sum_data->ward_rastrio4_election_activities->vote_kendro_committee_increase ?? '') }}
+                                    /
                                     {{ bangla($report_sum_data->ward_rastrio4_election_activities->vote_kendro_vittik_unit_increase ?? '') }}
                                 </td>
                                 <td>
-                                    {{ bangla($report_sum_data->ward_rastrio4_election_activities->vote_kendro_committee_target ?? '') }} /
+                                    {{ bangla($report_sum_data->ward_rastrio4_election_activities->vote_kendro_committee_target ?? '') }}
+                                    /
                                     {{ bangla($report_sum_data->ward_rastrio4_election_activities->vote_kendro_vittik_unit_target ?? '') }}
                                 </td>
                             </tr>
@@ -2056,7 +2303,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ bangla($report_sum_data->ward_rastrio4_election_activities->election_management_committee_meeting ?? '') }}</td>
+                                <td>{{ bangla($report_sum_data->ward_rastrio4_election_activities->election_management_committee_meeting ?? '') }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>

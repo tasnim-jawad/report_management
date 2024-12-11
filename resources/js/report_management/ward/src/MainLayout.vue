@@ -309,8 +309,7 @@ export default {
                     if (this.user_id) {
                         // Navigate to report upload route
                         return this.$router.push({
-                            // name: 'UnitReportUploadMonthly',
-                            name: 'WardReportUpload',
+                            name: 'WardReportUploadMonthly',
                             params: {
                                 month: this.month,
                                 user_id: this.user_id
@@ -329,13 +328,6 @@ export default {
                 console.error("An error occurred while fetching report information:", error);
                 window.s_warning("An unexpected error occurred. Please try again.", 'error');
             }
-            // this.$router.push({
-            //     name: 'WardReportUpload',
-            //     params: {
-            //         month: this.month,
-            //         user_id: this.user_id
-            //     }
-            // });
         }
     },
     computed: {
