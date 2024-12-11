@@ -2058,17 +2058,19 @@ class WardController extends Controller
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status);
         // dd($datas);
 
-        
+
         // -------------------------- bm previous report ------------------------------------
         $carbon_start_month = Carbon::parse($start_month);
         $query = WardBmIncome::query();
         $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
-            ->where('ward_id', $ward_id);
+            ->where('ward_id', $ward_id)
+            ->where('report_approved_status', 'approved');
         $total_previous_income = $filter->sum('amount');
 
         $query = WardBmExpense::query();
         $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
-            ->where('ward_id', $ward_id);
+            ->where('ward_id', $ward_id)
+            ->where('report_approved_status', 'approved');
         $total_previous_expense = $filter->sum('amount');
         $total_previous =  $total_previous_income - $total_previous_expense;
         $total_current_income =  $total_previous + $datas->income_report->total_amount;

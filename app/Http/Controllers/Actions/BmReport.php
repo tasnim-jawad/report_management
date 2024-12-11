@@ -124,7 +124,7 @@ class BmReport
         $data = [
             'category_table_name' => "bm_expense_categories",
             'transaction_table_name' => "bm_expenses",
-            'category_id_column_name_in_transaction_table' => "ward_bm_income_category_id",
+            'category_id_column_name_in_transaction_table' => "bm_expense_category_id",
             'month_column' => "date",
         ];
 
@@ -137,7 +137,7 @@ class BmReport
         $data = [
             'category_table_name' => "ward_bm_income_categories",
             'transaction_table_name' => "ward_bm_incomes",
-            'category_id_column_name_in_transaction_table' => "bm_category_id",
+            'category_id_column_name_in_transaction_table' => "ward_bm_income_category_id",
             'month_column' => "month",
         ];
 
