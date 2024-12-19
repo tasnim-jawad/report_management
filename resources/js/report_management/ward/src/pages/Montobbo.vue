@@ -49,6 +49,10 @@ export default {
             top: 0,
             behavior: 'smooth'
         });
+
+        if(this.month != null){
+            this.get_monthly_data();
+        }
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
@@ -63,6 +67,7 @@ export default {
             })
         },
         get_data_by_api: function (endpoint) {
+            console.log(endpoint,"montobbo");
             axios.get(`${endpoint}/data?month=${this.month}-01`)
                 .then(({ data: object }) => {
                     for (const key in object) {
@@ -80,6 +85,8 @@ export default {
                 });
         },
         get_monthly_data: function () {
+            console.log("get_monthly_data");
+
             let els = document.querySelectorAll('textarea');
             els = [...els].forEach(e => e.value = '');
 

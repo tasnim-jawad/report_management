@@ -539,10 +539,10 @@ export default {
 
         ],
         fields12:[
-            {
-                label:'সংখ্যা',
-                name:'total_village_committee',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'total_village_committee',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'total_village_committee_increased',
@@ -550,10 +550,10 @@ export default {
 
         ],
         fields13:[
-            {
-                label:'সংখ্যা',
-                name:'total_moholla_committee',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'total_moholla_committee',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'total_moholla_committee_increased',
@@ -561,10 +561,10 @@ export default {
 
         ],
         fields14:[
-            {
-                label:'সংখ্যা',
-                name:'special_dawat_included_village',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'special_dawat_included_village',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'special_dawat_included_village_increased',
@@ -572,10 +572,10 @@ export default {
 
         ],
         fields15:[
-            {
-                label:'সংখ্যা',
-                name:'special_dawat_included_moholla',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'special_dawat_included_moholla',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'special_dawat_included_moholla_increased',
@@ -605,10 +605,10 @@ export default {
 
         ],
         fields18:[
-            {
-                label:'মোট সংখ্যা',
-                name:'total_young_committee',
-            },
+            // {
+            //     label:'মোট সংখ্যা',
+            //     name:'total_young_committee',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'total_young_committee_increased',
@@ -616,10 +616,10 @@ export default {
 
         ],
         fields19:[
-            {
-                label:'মোট সংখ্যা',
-                name:'total_new_club',
-            },
+            // {
+            //     label:'মোট সংখ্যা',
+            //     name:'total_new_club',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'total_new_club_increased',
@@ -627,10 +627,10 @@ export default {
 
         ],
         fields20:[
-            {
-                label:'মোট সংখ্যা',
-                name:'stablished_club_total_invited',
-            },
+            // {
+            //     label:'মোট সংখ্যা',
+            //     name:'stablished_club_total_invited',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'stablished_club_total_increased',
@@ -732,60 +732,60 @@ export default {
             },
         ],
         fields28:[
-            {
-                label:'মোট সংখ্যা	',
-                name:'total_mosjid',
-            },
+            // {
+            //     label:'মোট সংখ্যা	',
+            //     name:'total_mosjid',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'total_mosjid_increase',
             },
         ],
         fields29:[
-            {
-                label:'মোট সংখ্যা	',
-                name:'dawat_included_mosjid',
-            },
+            // {
+            //     label:'মোট সংখ্যা	',
+            //     name:'dawat_included_mosjid',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'dawat_included_mosjid_increase',
             },
         ],
         fields30:[
-            {
-                label:'মোট সংখ্যা	',
-                name:'mosjid_wise_dawah_center',
-            },
+            // {
+            //     label:'মোট সংখ্যা	',
+            //     name:'mosjid_wise_dawah_center',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'mosjid_wise_dawah_center_increase',
             },
         ],
         fields31:[
-            {
-                label:'মোট সংখ্যা	',
-                name:'general_dawah_center',
-            },
+            // {
+            //     label:'মোট সংখ্যা	',
+            //     name:'general_dawah_center',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'general_dawah_center_increase',
             },
         ],
         fields32:[
-            {
-                label:'মোট সংখ্যা	',
-                name:'mosjid_wise_information_center',
-            },
+            // {
+            //     label:'মোট সংখ্যা	',
+            //     name:'mosjid_wise_information_center',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'mosjid_wise_information_center_increase',
             },
         ],
         fields33:[
-            {
-                label:'মোট সংখ্যা',
-                name:'general_information_center',
-            },
+            // {
+            //     label:'মোট সংখ্যা',
+            //     name:'general_information_center',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'general_information_center_increase',

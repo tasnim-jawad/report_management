@@ -697,7 +697,7 @@
                                                 }}</span>/
                                             <span>{{
                                                 formatBangla(previous_present?.total_moholla_committee_present)
-                                            }}</span>
+                                                }}</span>
                                             <!-- <input name="total_village_committee"
                                                 :value="formatBangla(report_sum_data?.ward_department2_moholla_vittik_dawats?.total_village_committee)"
                                                 @change="data_upload('ward-department2-moholla-vittik-dawat')"
@@ -727,10 +727,10 @@
                                         <div>
                                             <span>{{
                                                 formatBangla(previous_present?.special_dawat_included_village_present)
-                                            }}</span>/
+                                                }}</span>/
                                             <span>{{
                                                 formatBangla(previous_present?.special_dawat_included_moholla_present)
-                                            }}</span>
+                                                }}</span>
 
                                             <!-- <input name="special_dawat_included_village"
                                                 :value="formatBangla(report_sum_data?.ward_department2_moholla_vittik_dawats?.special_dawat_included_village)"
@@ -1715,10 +1715,12 @@
                                 </td>
                                 <td class="font-13">
                                     <div class="d-flex">
-                                        <input name="dars_uposthiti" :value="formatBangla(average_uposthiti?.ward_kormosuci_bastobayons?.dars)"
+                                        <input name="dars_uposthiti"
+                                            :value="formatBangla(average_uposthiti?.ward_kormosuci_bastobayons?.dars)"
                                             @change="average_data_upload($event, 'ward-kormosuci-bastobayon', kormosuci.dars_total)"
                                             type="text" class="bg-input w-100 text-center" />/
-                                        <input name="tafsir_uposthiti" :value="formatBangla(average_uposthiti?.ward_kormosuci_bastobayons?.tafsir)"
+                                        <input name="tafsir_uposthiti"
+                                            :value="formatBangla(average_uposthiti?.ward_kormosuci_bastobayons?.tafsir)"
                                             @change="average_data_upload($event, 'ward-kormosuci-bastobayon', kormosuci.tafsir_total)"
                                             type="text" class="bg-input w-100 text-center" />/
                                         <input name="dawati_jonosova_uposthiti"
@@ -1889,7 +1891,8 @@
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="others_uposthiti" :value="formatBangla(average_uposthiti?.ward_kormosuci_bastobayons?.others)"
+                                    <input name="others_uposthiti"
+                                        :value="formatBangla(average_uposthiti?.ward_kormosuci_bastobayons?.others)"
                                         @change="average_data_upload($event, 'ward-kormosuci-bastobayon', kormosuci.others_total)"
                                         type="text" class="bg-input w-100 text-center" />
                                 </td>
@@ -2276,11 +2279,11 @@
 
                                 <td>
                                     <!-- <input name="women_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_women_previous?.total_rokon ?? '') }}
+                                    {{ formatBangla(previous_present?.women_rokon_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="women_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_women_present?.total_rokon ?? '') }}
+                                    {{ formatBangla(previous_present?.women_rokon_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="women_rokon_increase"
@@ -2305,11 +2308,11 @@
                                 <td class="text-start">কর্মী</td>
                                 <td>
                                     <!-- <input name="women_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_women_previous?.total_kormi ?? '') }}
+                                    {{ formatBangla(previous_present?.women_kormi_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="women_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_women_present?.total_kormi ?? '') }}
+                                    {{ formatBangla(previous_present?.women_kormi_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="women_kormi_increase"
@@ -2334,15 +2337,11 @@
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
                                     <!-- <input name="women_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_women_previous?.total_associate_member
-                                        ??
-                                        '') }}
+                                    {{ formatBangla(previous_present?.women_associate_member_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="women_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_women_present?.total_associate_member
-                                        ??
-                                        '') }}
+                                    {{ formatBangla(previous_present?.women_associate_member_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="women_associate_member_increase"
@@ -2369,12 +2368,12 @@
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
                                     <!-- <input name="sromojibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_sromojibi_previous?.total_rokon ?? '')
+                                    {{ formatBangla(previous_present?.sromojibi_rokon_previous ?? '')
                                     }}
                                 </td>
                                 <td>
                                     <!-- <input name="sromojibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_sromojibi_present?.total_rokon ?? '')
+                                    {{ formatBangla(previous_present?.sromojibi_rokon_present ?? '')
                                     }}
                                 </td>
                                 <td>
@@ -2401,12 +2400,12 @@
                                 <td class="text-start">কর্মী</td>
                                 <td>
                                     <!-- <input name="sromojibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_sromojibi_previous?.total_kormi ?? '')
+                                    {{ formatBangla(previous_present?.sromojibi_kormi_previous ?? '')
                                     }}
                                 </td>
                                 <td>
                                     <!-- <input name="sromojibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_sromojibi_present?.total_kormi ?? '')
+                                    {{ formatBangla(previous_present?.sromojibi_kormi_present ?? '')
                                     }}
                                 </td>
                                 <td>
@@ -2433,14 +2432,14 @@
                                 <td>
                                     <!-- <input name="sromojibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
-                                        formatBangla(previous_present?.songothon3_sromojibi_previous?.total_associate_member
+                                        formatBangla(previous_present?.sromojibi_associate_member_previous
                                             ??
                                             '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="sromojibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
-                                        formatBangla(previous_present?.songothon3_sromojibi_present?.total_associate_member
+                                        formatBangla(previous_present?.sromojibi_associate_member_present
                                             ??
                                             '') }}
                                 </td>
@@ -2469,11 +2468,11 @@
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
                                     <!-- <input name="ulama_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_ulama_previous?.total_rokon ?? '') }}
+                                    {{ formatBangla(previous_present?.ulama_rokon_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="ulama_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_ulama_present?.total_rokon ?? '') }}
+                                    {{ formatBangla(previous_present?.ulama_rokon_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="ulama_rokon_increase"
@@ -2498,11 +2497,11 @@
                                 <td class="text-start">কর্মী</td>
                                 <td>
                                     <!-- <input name="ulama_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_ulama_previous?.total_kormi ?? '') }}
+                                    {{ formatBangla(previous_present?.ulama_kormi_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="ulama_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_ulama_present?.total_kormi ?? '') }}
+                                    {{ formatBangla(previous_present?.ulama_kormi_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="ulama_kormi_increase"
@@ -2527,13 +2526,13 @@
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
                                     <!-- <input name="ulama_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_ulama_previous?.total_associate_member
+                                    {{ formatBangla(previous_present?.ulama_associate_member_previous
                                         ??
                                         '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="ulama_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_ulama_present?.total_associate_member
+                                    {{ formatBangla(previous_present?.ulama_associate_member_present
                                         ??
                                         '') }}
                                 </td>
@@ -2562,12 +2561,12 @@
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
                                     <!-- <input name="pesha_jibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_pesha_jibi_previous?.total_rokon ?? '')
+                                    {{ formatBangla(previous_present?.pesha_jibi_rokon_previous ?? '')
                                     }}
                                 </td>
                                 <td>
                                     <!-- <input name="pesha_jibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_pesha_jibi_present?.total_rokon ?? '')
+                                    {{ formatBangla(previous_present?.pesha_jibi_rokon_present ?? '')
                                     }}
                                 </td>
                                 <td>
@@ -2593,12 +2592,12 @@
                                 <td class="text-start">কর্মী</td>
                                 <td>
                                     <!-- <input name="pesha_jibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_pesha_jibi_previous?.total_kormi ?? '')
+                                    {{ formatBangla(previous_present?.pesha_jibi_kormi_previous ?? '')
                                     }}
                                 </td>
                                 <td>
                                     <!-- <input name="pesha_jibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_pesha_jibi_present?.total_kormi ?? '')
+                                    {{ formatBangla(previous_present?.pesha_jibi_kormi_present ?? '')
                                     }}
                                 </td>
                                 <td>
@@ -2625,14 +2624,14 @@
                                 <td>
                                     <!-- <input name="pesha_jibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
-                                        formatBangla(previous_present?.songothon3_pesha_jibi_previous?.total_associate_member
+                                        formatBangla(previous_present?.pesha_jibi_associate_member_previous
                                             ??
                                             '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="pesha_jibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
-                                        formatBangla(previous_present?.songothon3_pesha_jibi_present?.total_associate_member
+                                        formatBangla(previous_present?.pesha_jibi_associate_member_present
                                             ??
                                             '') }}
                                 </td>
@@ -2661,11 +2660,11 @@
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
                                     <!-- <input name="jubo_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_jubo_previous?.total_rokon ?? '') }}
+                                    {{ formatBangla(previous_present?.jubo_rokon_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="jubo_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_jubo_present?.total_rokon ?? '') }}
+                                    {{ formatBangla(previous_present?.jubo_rokon_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="jubo_rokon_increase"
@@ -2690,11 +2689,11 @@
                                 <td class="text-start">কর্মী</td>
                                 <td>
                                     <!-- <input name="jubo_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_jubo_previous?.total_kormi ?? '') }}
+                                    {{ formatBangla(previous_present?.jubo_kormi_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="jubo_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_jubo_present?.total_kormi ?? '') }}
+                                    {{ formatBangla(previous_present?.jubo_kormi_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="jubo_kormi_increase"
@@ -2719,13 +2718,13 @@
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
                                     <!-- <input name="jubo_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_jubo_previous?.total_associate_member
+                                    {{ formatBangla(previous_present?.jubo_associate_member_previous
                                         ??
                                         '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="jubo_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon3_jubo_present?.total_associate_member ??
+                                    {{ formatBangla(previous_present?.jubo_associate_member_present ??
                                         '') }}
                                 </td>
                                 <td>
@@ -2755,7 +2754,7 @@
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
-                                            formatBangla(previous_present?.songothon3_vinno_dormalombi_previous?.total_kormi
+                                            formatBangla(previous_present?.vinno_dormalombi_kormi_previous
                                                 ??
                                                 '') }}
                                         <popup :ward_id="report_header?.ward_info?.id"
@@ -2768,7 +2767,7 @@
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
-                                            formatBangla(previous_present?.songothon3_vinno_dormalombi_present?.total_kormi
+                                            formatBangla(previous_present?.vinno_dormalombi_kormi_present
                                                 ??
                                                 '') }}
                                         <popup :ward_id="report_header?.ward_info?.id"
@@ -2814,7 +2813,7 @@
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
-                                            formatBangla(previous_present?.songothon3_vinno_dormalombi_previous?.total_associate_member
+                                            formatBangla(previous_present?.vinno_dormalombi_associate_member_previous
                                                 ??
                                                 '') }}
                                         <popup :ward_id="report_header?.ward_info?.id"
@@ -2827,7 +2826,7 @@
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
-                                            formatBangla(previous_present?.songothon3_vinno_dormalombi_present?.total_associate_member
+                                            formatBangla(previous_present?.vinno_dormalombi_associate_member_present
                                                 ??
                                                 '') }}
                                         <popup :ward_id="report_header?.ward_info?.id"
@@ -2901,11 +2900,11 @@
 
                                 <td>
                                     <!-- <input name="general_unit_men_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_general_unit_men_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.general_unit_men_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="general_unit_men_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_general_unit_men_present ?? '') }}
+                                    {{ formatBangla(previous_present?.general_unit_men_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="general_unit_men_increase"
@@ -2943,11 +2942,11 @@
                                 </td> -->
                                 <td>
                                     <!-- <input name="general_unit_women_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_general_unit_women_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.general_unit_women_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="general_unit_women_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_general_unit_women_present ?? '') }}
+                                    {{ formatBangla(previous_present?.general_unit_women_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="general_unit_women_increase"
@@ -2985,11 +2984,11 @@
                                 </td> -->
                                 <td>
                                     <!-- <input name="ulama_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_ulama_unit_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.ulama_unit_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="ulama_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_ulama_unit_present ?? '') }}
+                                    {{ formatBangla(previous_present?.ulama_unit_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="ulama_unit_increase"
@@ -3027,11 +3026,11 @@
                                 </td> -->
                                 <td>
                                     <!-- <input name="peshajibi_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_peshajibi_unit_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.peshajibi_unit_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="peshajibi_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_peshajibi_unit_present ?? '') }}
+                                    {{ formatBangla(previous_present?.peshajibi_unit_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="peshajibi_unit_increase"
@@ -3069,11 +3068,11 @@
                                 </td> -->
                                 <td>
                                     <!-- <input name="sromik_kollyan_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_sromik_kollyan_unit_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.sromik_kollyan_unit_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="sromik_kollyan_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_sromik_kollyan_unit_present ?? '') }}
+                                    {{ formatBangla(previous_present?.sromik_kollyan_unit_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="sromik_kollyan_unit_increase"
@@ -3111,11 +3110,11 @@
                                 </td> -->
                                 <td>
                                     <!-- <input name="jubo_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_jubo_unit_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.jubo_unit_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="jubo_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_jubo_unit_present ?? '') }}
+                                    {{ formatBangla(previous_present?.jubo_unit_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="jubo_unit_increase"
@@ -3153,11 +3152,11 @@
                                 </td> -->
                                 <td>
                                     <!-- <input name="media_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_media_unit_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.media_unit_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="media_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon4_media_unit_present ?? '') }}
+                                    {{ formatBangla(previous_present?.media_unit_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="media_unit_increase"
@@ -3188,108 +3187,120 @@
                                 <td>
                                     {{
                                         formatBangla(
-                                            (previous_present?.songothon4_general_unit_men_previous ?? 0) +
-                                            (previous_present?.songothon4_general_unit_women_previous ?? 0) +
-                                            (previous_present?.songothon4_ulama_unit_previous ?? 0) +
-                                            (previous_present?.songothon4_peshajibi_unit_previous ?? 0) +
-                                            (previous_present?.songothon4_sromik_kollyan_unit_previous ?? 0) +
-                                            (previous_present?.songothon4_jubo_unit_previous ?? 0) +
-                                            (previous_present?.songothon4_media_unit_previous ?? 0)
-                                            || ''
+                                            (
+                                                Number(previous_present?.general_unit_men_previous ?? 0) +
+                                                Number(previous_present?.general_unit_women_previous ?? 0) +
+                                                Number(previous_present?.ulama_unit_previous ?? 0) +
+                                                Number(previous_present?.peshajibi_unit_previous ?? 0) +
+                                                Number(previous_present?.sromik_kollyan_unit_previous ?? 0) +
+                                                Number(previous_present?.jubo_unit_previous ?? 0) +
+                                                Number(previous_present?.media_unit_previous ?? 0)
+                                            ) || ''
                                         )
                                     }}
                                 </td>
                                 <td>
                                     {{
                                         formatBangla(
-                                            (previous_present?.songothon4_general_unit_men_present ?? 0) +
-                                            (previous_present?.songothon4_general_unit_women_present ?? 0) +
-                                            (previous_present?.songothon4_ulama_unit_present ?? 0) +
-                                            (previous_present?.songothon4_peshajibi_unit_present ?? 0) +
-                                            (previous_present?.songothon4_sromik_kollyan_unit_present ?? 0) +
-                                            (previous_present?.songothon4_jubo_unit_present ?? 0) +
-                                            (previous_present?.songothon4_media_unit_present ?? 0)
-                                            || ''
+                                            (
+                                                Number(previous_present?.general_unit_men_present ?? 0) +
+                                                Number(previous_present?.general_unit_women_present ?? 0) +
+                                                Number(previous_present?.ulama_unit_present ?? 0) +
+                                                Number(previous_present?.peshajibi_unit_present ?? 0) +
+                                                Number(previous_present?.sromik_kollyan_unit_present ?? 0) +
+                                                Number(previous_present?.jubo_unit_present ?? 0) +
+                                                Number(previous_present?.media_unit_present ?? 0)
+
+                                            ) || ''
                                         )
                                     }}
                                 </td>
                                 <td>
                                     {{
                                         formatBangla(
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_increase ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_increase ?? 0)
-                                            +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_increase ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_increase ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_increase ??
-                                                0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_increase ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.media_unit_increase ?? 0)
-                                            || ''
+                                            (
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_increase
+                                                    ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_increase
+                                                    ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_increase ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_increase ??
+                                                    0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_increase
+                                                    ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_increase ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_increase ?? 0)
+                                            ) || ''
                                         )
                                     }}
                                 </td>
+
+
                                 <td>
                                     {{
                                         formatBangla(
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_gatti ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_gatti ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_gatti ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_gatti ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_gatti ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_gatti ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.media_unit_gatti ?? 0)
-                                            || ''
+                                            (
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_gatti ??
+                                                    0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_gatti ??
+                                                    0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_gatti ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_gatti ?? 0)
+                                                +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_gatti
+                                                    ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_gatti ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_gatti ?? 0)
+                                            ) || ''
                                         )
                                     }}
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_target ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_target ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_target ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_target ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_target ?? 0)
-                                            +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_target ?? 0) +
-                                            (report_sum_data?.ward_songothon4_unit_songothons?.media_unit_target ?? 0)
-                                            || ''
+                                            (
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_target ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_target ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_target ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_target ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_target ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_target ?? 0) +
+                                                Number(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_target ?? 0)
+                                            ) || ''
                                         )
                                     }}
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
                                             implementation_rate(
+                                                // First argument: Target values summed
                                                 (
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_target ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_target ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_target ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_target ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_target ?? 0)
-                                                    +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_target ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.media_unit_target ?? 0)
-                                                    || ''
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_target ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_target ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_target ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_target ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_target?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_target ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_target ?? 0)
                                                 ),
+                                                // Second argument: Increase values summed
                                                 (
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_increase ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_increase ?? 0)
-                                                    +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_increase ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_increase ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_increase ??
-                                                        0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_increase ?? 0) +
-                                                    (report_sum_data?.ward_songothon4_unit_songothons?.media_unit_increase ?? 0)
-                                                    || ''
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_increase ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_increase ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_increase ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_increase ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_increase ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_increase ?? 0) +
+                                                    Number(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_increase ?? 0)
                                                 )
-
                                             )
                                         )
                                     }}
                                 </td>
+
                             </tr>
                         </tbody>
                     </table>
@@ -3312,11 +3323,11 @@
                                 <td class="text-start">মোট দাওয়াতি ইউনিট</td>
                                 <td>
                                     <!-- <input name="dawati_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.dawati_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon5_dawati_unit_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.dawati_unit_previous ?? '') }}
                                 </td>
                                 <td>
                                     <!-- <input name="dawati_unit_present" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.dawati_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon5_dawati_unit_present ?? '') }}
+                                    {{ formatBangla(previous_present?.dawati_unit_present ?? '') }}
                                 </td>
                                 <td>
                                     <input name="dawati_unit_increase"
@@ -3341,12 +3352,12 @@
                                 <td class="text-start">মোট পারিবারিক ইউনিট</td>
                                 <td>
                                     <!-- <input name="paribarik_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.paribarik_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{ formatBangla(previous_present?.songothon5_paribarik_unit_previous ?? '') }}
+                                    {{ formatBangla(previous_present?.paribarik_unit_previous ?? '') }}
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         <!-- <input name="paribarik_unit_present" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.paribarik_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
-                                        {{ formatBangla(previous_present?.songothon5_paribarik_unit_present ?? '') }}
+                                        {{ formatBangla(previous_present?.paribarik_unit_present ?? '') }}
                                         <popup :ward_id="report_header?.ward_info?.id"
                                             :table_name="'songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_total'" :month="month">
@@ -3974,15 +3985,15 @@
                                 <td>
                                     <div class="d-flex">
                                         <input name="dawah_uposthiti"
-                                            :value="formatBangla(report_sum_data?.dawah_uposthiti)"
+                                            :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.dawah_uposthiti)"
                                             @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                             class="bg-input w-100 text-center" />/
                                         <input name="shomajkormo_uposthiti"
-                                            :value="formatBangla(report_sum_data?.shomajkormo_uposthiti)"
+                                            :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.shomajkormo_uposthiti)"
                                             @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                             class="bg-input w-100 text-center" />/
                                         <input name="media_uposthiti"
-                                            :value="formatBangla(report_sum_data?.media_uposthiti)"
+                                            :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.media_uposthiti)"
                                             @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                             class="bg-input w-100 text-center" />
                                     </div>
@@ -3994,23 +4005,23 @@
                                 <td>
                                     <div class="d-flex">
                                         <input name="ict_uposthiti"
-                                            :value="formatBangla(report_sum_data?.ict_uposthiti)"
+                                            :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.ict_uposthiti)"
                                             @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                             class="bg-input w-100 text-center" />/
                                         <input name="office_uposthiti"
-                                            :value="formatBangla(report_sum_data?.office_uposthiti)"
+                                            :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.office_uposthiti)"
                                             @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                             class="bg-input w-100 text-center" />/
                                         <input name="financial_management_uposthiti"
-                                            :value="formatBangla(report_sum_data?.financial_management_uposthiti)"
+                                            :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.financial_management_uposthiti)"
                                             @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                             class="bg-input w-100 text-center" />/
                                         <input name="english_language_uposthiti"
-                                            :value="formatBangla(report_sum_data?.english_language_uposthiti)"
+                                            :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.english_language_uposthiti)"
                                             @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                             class="bg-input w-100 text-center" />/
                                         <input name="arabic_language_uposthiti"
-                                            :value="formatBangla(report_sum_data?.arabic_language_uposthiti)"
+                                            :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.arabic_language_uposthiti)"
                                             @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                             class="bg-input w-100 text-center" />
                                     </div>
@@ -4020,7 +4031,7 @@
                                 <td class="text-start px-2">ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ*</td>
                                 <td>
                                     <input name="trade_oriented_technical_training_uposthiti"
-                                        :value="formatBangla(report_sum_data?.trade_oriented_technical_training_uposthiti)"
+                                        :value="formatBangla(report_sum_data?.ward_proshikkhon2_manob_shompod_unnoyons?.trade_oriented_technical_training_uposthiti)"
                                         @change="data_upload('ward-proshikkhon2-manob-shompod-unnoyon')" type="text"
                                         class="bg-input w-100 text-center" />
                                 </td>
@@ -4717,7 +4728,8 @@
                                         class="bg-input w-100 text-center" />
                                 </td>
                                 <td>
-                                    <input name="others_attend" :value="formatBangla(average_uposthiti?.ward_rastrio3_dibosh_palons?.others)"
+                                    <input name="others_attend"
+                                        :value="formatBangla(average_uposthiti?.ward_rastrio3_dibosh_palons?.others)"
                                         @change="average_data_upload($event, 'ward-rastrio3-dibosh-palon', rastrio3.others_total_programs)"
                                         type="text" class="bg-input w-100 text-center" />
                                 </td>
@@ -4925,13 +4937,14 @@
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        <tr v-for="(bm_cat, index) in bm_income_categories" :key="index">
-                                            <td class="text-start px-2 w-50 border_bottom">{{ bm_cat.title }}</td>
+                                        <tr v-for="(income_category, index) in income_report?.category_wise_data"
+                                            :key="index">
+                                            <td class="text-start px-2 w-50 border_bottom">{{
+                                                income_category.category_name }}</td>
                                             <td class="border_left_bottom">
-                                                <input name="bm_entry"
-                                                    :value="formatBangla(bm_categoty_amount(bm_cat.id))"
-                                                    @change="income_store(bm_cat.id, $event.target.value)" type="text"
-                                                    class="bg-input w-100 text-center">
+                                                <input name="bm_entry" :value="formatBangla(income_category.amount)"
+                                                    @change="income_store(income_category.category_id, $event.target.value)"
+                                                    type="text" class="bg-input w-100 text-center">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -4940,12 +4953,13 @@
                             <td class="p-0 vertical_align_baseline" colspan="2">
                                 <table class="border_none">
                                     <tbody>
-                                        <tr v-for="(expense_cat, index) in bm_expense_categories" :key="index">
-                                            <td class="text-start px-2 w-50 border_bottom">{{ expense_cat.title }}</td>
+                                        <tr v-for="(expense_category, index) in expense_report?.category_wise_data"
+                                            :key="index">
+                                            <td class="text-start px-2 w-50 border_bottom">{{ expense_category.category_name }}
+                                            </td>
                                             <td class="border_left_bottom">
-                                                <input name="bm_entry"
-                                                    :value="formatBangla(expense_categoty_amount(expense_cat.id))"
-                                                    @change="expense_store(expense_cat.id, $event.target.value)"
+                                                <input name="bm_entry" :value="formatBangla(expense_category.amount)"
+                                                    @change="expense_store(expense_category.category_id, $event.target.value)"
                                                     type="text" class="bg-input w-100 text-center">
                                             </td>
                                         </tr>
@@ -4955,9 +4969,9 @@
                         </tr>
                         <tr>
                             <td class="text-end px-2">মোট</td>
-                            <td>{{ formatBangla(parseInt(total_income) ?? "") }}</td>
+                            <td>{{ formatBangla(parseInt(income_report?.total_amount) ?? "") }}</td>
                             <td class="text-end px-2">মোট</td>
-                            <td>{{ formatBangla(parseInt(total_expense) ?? "") }}</td>
+                            <td>{{ formatBangla(parseInt(expense_report?.total_amount) ?? "") }}</td>
                         </tr>
                         <tr>
                             <td class="text-end px-2">গত মাসের উদ্বৃত্ত</td>
@@ -4977,7 +4991,7 @@
             <div class="montobbo">
                 <h1 class="fs-6 fw-bold">ওয়ার্ড আমীর/সভাপতির মন্তব্য :</h1>
                 <textarea name="montobbo" @change="data_upload('ward-montobbo')" id="" cols="30" class="w-100 bg-input"
-                    rows="5">{{ montobbo?.montobbo }}</textarea>
+                    rows="5">{{ report_sum_data?.ward_montobbos?.montobbo }}</textarea>
             </div>
         </section>
 
@@ -5090,10 +5104,10 @@ export default {
 
     created() {
         this.uploaded_data()
-        this.income_category()
-        this.expense_category()
-        this.bm_category_wise()
-        this.bm_expense_category_wise()
+        // this.income_category()
+        // this.expense_category()
+        // this.bm_category_wise()/
+        // this.bm_expense_category_wise()
         this.report_status()
     },
     watch: {
@@ -5460,20 +5474,20 @@ export default {
 
             return " ";
         },
-        expense_category: async function () {
-            let res = await axios.get('/ward-bm-expense-category/all')
-            if (res.data.status == 'success') {
-                this.bm_expense_categories = res?.data?.data?.data
-            }
+        // expense_category: async function () {
+        //     let res = await axios.get('/ward-bm-expense-category/all')
+        //     if (res.data.status == 'success') {
+        //         this.bm_expense_categories = res?.data?.data?.data
+        //     }
 
-        },
-        income_category: async function () {
-            let res = await axios.get('/ward-bm-income-category/all')
-            if (res) {
-                this.bm_income_categories = res.data?.data
-            }
+        // },
+        // income_category: async function () {
+        //     let res = await axios.get('/ward-bm-income-category/all')
+        //     if (res) {
+        //         this.bm_income_categories = res.data?.data
+        //     }
 
-        },
+        // },
         income_store: function (ward_bm_income_category_id, amount) {
             const month = this.$route.params.month;
             const formData = {
@@ -5490,71 +5504,71 @@ export default {
                 });
         },
 
-        bm_category_wise: async function () {
-            const month = this.$route.params.month;
+        // bm_category_wise: async function () {
+        //     const month = this.$route.params.month;
 
-            let res = await axios.get('/ward/income-category-wise', {
-                params: {
-                    month: month
-                }
-            })
-            if (res) {
-                this.bm_cat_wise = res.data?.data
-            }
-        },
-        bm_categoty_amount: function (bm_cat_id) {
-            // console.log(bm_cat_id,this.bm_cat_wise);
-            if (this.bm_cat_wise != null) {
-                // console.log("inside",bm_cat_id,this.bm_cat_wise )
-                const element = this.bm_cat_wise.find(el => {
-                    if (el.ward_bm_income_category && el.ward_bm_income_category.id == bm_cat_id) {
-                        return el
-                    }
-                });
-                // console.log("inside element",element)
-                if (element) {
-                    return element.amount;
-                } else {
-                    // console.log("element not found")
-                }
-            } else {
-                return "";
-            }
-        },
+        //     let res = await axios.get('/ward/income-category-wise', {
+        //         params: {
+        //             month: month
+        //         }
+        //     })
+        //     if (res) {
+        //         this.bm_cat_wise = res.data?.data
+        //     }
+        // },
+        // bm_categoty_amount: function (bm_cat_id) {
+        //     // console.log(bm_cat_id,this.bm_cat_wise);
+        //     if (this.bm_cat_wise != null) {
+        //         // console.log("inside",bm_cat_id,this.bm_cat_wise )
+        //         const element = this.bm_cat_wise.find(el => {
+        //             if (el.ward_bm_income_category && el.ward_bm_income_category.id == bm_cat_id) {
+        //                 return el
+        //             }
+        //         });
+        //         // console.log("inside element",element)
+        //         if (element) {
+        //             return element.amount;
+        //         } else {
+        //             // console.log("element not found")
+        //         }
+        //     } else {
+        //         return "";
+        //     }
+        // },
 
-        bm_expense_category_wise: async function () {
-            const month = this.$route.params.month;
+        // bm_expense_category_wise: async function () {
+        //     const month = this.$route.params.month;
 
-            let res = await axios.get('/ward/expense-category-wise', {
-                params: {
-                    month: month
-                }
-            })
-            if (res) {
-                this.expense_cat_wise = res.data?.data
-            }
-        },
+        //     let res = await axios.get('/ward/expense-category-wise', {
+        //         params: {
+        //             month: month
+        //         }
+        //     })
+        //     if (res) {
+        //         this.expense_cat_wise = res.data?.data
+        //     }
+        // },
 
-        expense_categoty_amount: function (expense_cat_id) {
-            // console.log("expense_categoty_amount",expense_cat_id);
-            // console.log("this.expense_cat_wise",this.expense_cat_wise);
+        // expense_categoty_amount: function (expense_cat_id) {
+        //     // console.log("expense_categoty_amount",expense_cat_id);
+        //     // console.log("this.expense_cat_wise",this.expense_cat_wise);
 
-            if (this.expense_cat_wise != null) {
-                // console.log("expanxe inside",this.expense_cat_wise);
-                const element = this.expense_cat_wise.find(element => {
-                    if (element.ward_bm_expense_category && element.ward_bm_expense_category.id == expense_cat_id) {
-                        return element
-                    }
-                });
-                if (element) {
-                    return element.amount;
-                } else {
-                    // console.log("element not found")
-                }
-            } else {
-                return "";
-            }
-        },
+        //     if (this.expense_cat_wise != null) {
+        //         // console.log("expanxe inside",this.expense_cat_wise);
+        //         const element = this.expense_cat_wise.find(element => {
+        //             if (element.ward_bm_expense_category && element.ward_bm_expense_category.id == expense_cat_id) {
+        //                 return element
+        //             }
+        //         });
+        //         if (element) {
+        //             return element.amount;
+        //         } else {
+        //             // console.log("element not found")
+        //         }
+        //     } else {
+        //         return "";
+        //     }
+        // },
 
         expense_store: function (ward_bm_expense_category_id, amount) {
             const month = this.$route.params.month;

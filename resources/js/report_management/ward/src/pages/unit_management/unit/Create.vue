@@ -101,6 +101,8 @@ export default {
             axios.post("ward/unit/store",formData)
                     .then(responce => {
                         window.toaster('unit create successfuly', 'success');
+                        console.log(cevent.target);
+
                         cevent.target.reset();
                     })
                     .catch(error => {

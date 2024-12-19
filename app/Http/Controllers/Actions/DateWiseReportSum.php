@@ -53,7 +53,7 @@ class DateWiseReportSum
                     $text = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)
                         ->selectRaw("GROUP_CONCAT(montobbo SEPARATOR '\n') as montobbo")
                         ->first();
-
+                    // dd($report_info_ids, $table_name, $text->montobbo);
                     $result[$table_name][$selected_column] = $text->montobbo;
                 } else {
                     $sum = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)->sum($selected_column);

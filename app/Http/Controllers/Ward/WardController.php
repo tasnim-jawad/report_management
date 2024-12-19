@@ -1949,7 +1949,19 @@ class WardController extends Controller
 
         if ($report_info->report_submit_status == 'unsubmitted' && $report_info->report_approved_status == 'pending') {
             $report_info->report_submit_status = 'submitted';
+            $report_info->report_approved_status = 'approved';
             $report_info->save();
+            // Update related BmPaid records
+            WardBmIncome::where('ward_id', $ward_id)
+                    ->whereYear('month', $month->year)
+                    ->whereMonth('month', $month->month)
+                    ->update(['report_submit_status' => 'submitted','report_approved_status' => 'approved']);
+
+            // Update related BmExpense records
+            WardBmExpense::where('ward_id', $ward_id)
+                ->whereYear('date', $month->year)
+                ->whereMonth('date', $month->month)
+                ->update(['report_submit_status' => 'submitted','report_approved_status' => 'approved']);
 
             return response()->json([
                 'status' => 'success',
@@ -1959,6 +1971,18 @@ class WardController extends Controller
         } else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'rejected') {
             $report_info->report_approved_status = 'pending';
             $report_info->save();
+
+            // Update related BmPaid records
+            WardBmIncome::where('ward_id', $ward_id)
+                    ->whereYear('month', $month->year)
+                    ->whereMonth('month', $month->month)
+                    ->update(['report_submit_status' => 'pending']);
+
+            // Update related BmExpense records
+            WardBmExpense::where('ward_id', $ward_id)
+                ->whereYear('date', $month->year)
+                ->whereMonth('date', $month->month)
+                ->update(['report_submit_status' => 'pending']);
 
             return response()->json([
                 'status' => 'success',
@@ -1971,6 +1995,66 @@ class WardController extends Controller
                 'errors' => ['name' => ['Report has no data']],
             ], 204);
         }
+    }
+
+    public function ward_report_sum()
+    {
+        $validator = Validator::make(request()->all(), [
+            'start_month' => ['required', 'date'],
+            'end_month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $ward_id = auth()->user()->org_ward_user->ward_id;
+
+        $start_month = request()->start_month;
+        $end_month = request()->end_month;
+        $org_type = 'ward';
+        $org_type_id = $ward_id;
+        // $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
+
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id);
+        // dd($datas);
+
+
+        // -------------------------- bm previous report ------------------------------------
+        $carbon_start_month = Carbon::parse($start_month);
+        $query = WardBmIncome::query();
+        $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
+            ->where('ward_id', $ward_id)
+            ->where('report_approved_status', 'approved');
+        $total_previous_income = $filter->sum('amount');
+
+        $query = WardBmExpense::query();
+        $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
+            ->where('ward_id', $ward_id)
+            ->where('report_approved_status', 'approved');
+        $total_previous_expense = $filter->sum('amount');
+        $total_previous =  $total_previous_income - $total_previous_expense;
+        $total_current_income =  $total_previous + $datas->income_report->total_amount;
+        $in_total =  $total_current_income - $datas->expense_report->total_amount;
+        // -------------------------- bm previous report ------------------------------------
+        // dd($datas->start_month,$datas->end_month,);
+        return view('ward.ward_report_sum')->with([
+            'start_month' => $datas->start_month,
+            'end_month' => $datas->end_month,
+            'report_header' => $datas->report_header,
+
+            'report_sum_data' => $datas->report_sum_data,
+            'previous_present' => $datas->previous_present,
+            'income_report' => $datas->income_report,
+            'expense_report' => $datas->expense_report,
+
+            'total_previous' => $total_previous,
+            'total_current_income' => $total_current_income,
+            'in_total' => $in_total,
+        ]);
     }
 
     public function check_report_info()
@@ -2016,7 +2100,7 @@ class WardController extends Controller
         $end_month = Carbon::parse(request()->end_month);
 
         $org_type = 'ward';
-        $org_type_id = auth()->user()->org_unit_user->unit_id;
+        $org_type_id = auth()->user()->org_ward_user->ward_id;
         $report_approved_status = ['approved'];
 
         $report_info_ids = ReportInfo::whereBetween('month_year', [$start_month->startOfMonth(), $end_month->endOfMonth()])
@@ -2030,9 +2114,6 @@ class WardController extends Controller
             'data' => $report_info_ids->isNotEmpty() ? $report_info_ids : null,
         ], 200);
     }
-
-
-
 
     public function ward_report_monthly()
     {
@@ -2115,7 +2196,7 @@ class WardController extends Controller
         $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
         $is_need_sum = false;
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
-        // dd($datas->report_sum_data );
+        // dd($datas);
 
                // -------------------------- bm previous report ------------------------------------
                $carbon_start_month = Carbon::parse($start_month);
