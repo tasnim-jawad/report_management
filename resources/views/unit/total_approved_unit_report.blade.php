@@ -70,7 +70,7 @@
                         ) }}
                     </span>
                 </p>
-                <p class="fw-bold w-25">টার্গেট:</p>
+                <p class="fw-bold w-25">টার্গেট:  <span>{{ bangla($report_sum_data->dawat5_jonoshadharons->jonoshadharon_dawat_target ?? '') }}</span></p>
                 <p class="mt-1 ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান
                     সংখ্যা যোগ করে এখানে বসাতে হবে ।</p>
             </div>

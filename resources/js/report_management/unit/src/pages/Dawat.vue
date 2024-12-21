@@ -14,6 +14,15 @@
                     </div>
                 </div>
                 <div class="card mb-3" v-if="month">
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload" :endpoint="'dawat5-jonoshadharon'"
+                                :unique_key="5"></form-input>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mb-3" v-if="month">
                     <div class="card-header">
                         <h1 class="fw-semold">১. নিয়মিত গ্রুপ ভিত্তিক দাওয়াত:</h1>
                     </div>
@@ -199,6 +208,12 @@ export default {
                 name: 'jela_mohanogor_declared_gonosonjog_associated_created',
             },
         ],
+        fields6: [
+            {
+                label: 'টার্গেট:',
+                name: 'jonoshadharon_dawat_target',
+            },
+        ],
         notes: [
             {
                 label: 'বিঃদ্রঃ - ১',
@@ -254,6 +269,7 @@ export default {
             this.get_data_by_api('dawat2-personal-and-target', 2);
             this.get_data_by_api('dawat3-general-program-and-others', 3);
             this.get_data_by_api('dawat4-gono-songjog-and-dawat-ovijan', 4);
+            this.get_data_by_api('dawat5-jonoshadharon', 5);
         }
     }
 

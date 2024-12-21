@@ -34,7 +34,7 @@ class ReportManagementControlsTableSeeder extends Seeder
                     'month_year' => Carbon::createFromDate($year, $month, 1)->format('Y-m-d'),
                     'report_type' => 'ward',
                     'upper_organization_id' => $i,
-                    'is_active' => 1,
+                    'is_active' => 0,
                     'creator' => 5,
                     'status' => 1,
                 ]);

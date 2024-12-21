@@ -92,6 +92,8 @@ export default {
     },
     methods:{
         show_bm_entry :async function(){
+            console.log("show_bm_entry ------");
+
             let response = await  axios.get('/ward-bm-income/single-ward',{
                                 params: { month: this.month  }
                             });
@@ -100,6 +102,8 @@ export default {
                 this.bm_entry = response.data.data;
                 this.total_income = response.data.total_income;
                 this.is_permitted = response.data.is_permitted;
+                console.log("this.is_permitted ----",this.is_permitted);
+
             }
         },
         delete_entry : function(entry_id){

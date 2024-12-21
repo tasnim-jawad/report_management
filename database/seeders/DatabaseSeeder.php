@@ -32,10 +32,12 @@ use Database\Seeders\Organization\OrgWardsTableSeeder;
 use Database\Seeders\Organization\OrgWardUsersTableSeeder;
 use Database\Seeders\Organization\ResponsibilitiesTableSeeder;
 use Database\Seeders\Report\DawahAndProkashona\DawahAndProkashonasTableSeeder;
+use Database\Seeders\Report\Dawat\Dawat1JonoshadharonsTableSeeder;
 use Database\Seeders\Report\Dawat\Dawat1RegularGroupWisesTableSeeder;
 use Database\Seeders\Report\Dawat\Dawat2PersonalAndTargetsTableSeeder;
 use Database\Seeders\Report\Dawat\Dawat3GeneralProgramAndOthersTableSeeder;
 use Database\Seeders\Report\Dawat\Dawat4GonoSongjogAndDawatOvijansTableSeeder;
+use Database\Seeders\Report\Dawat\Dawat5JonoshadharonsTableSeeder;
 use Database\Seeders\Report\Department\Department1TalimulQuransTableSeeder;
 use Database\Seeders\Report\Department\Department2MohollaVittikDawatsTableSeeder;
 use Database\Seeders\Report\Department\Department3JuboSomajDawatsTableSeeder;
@@ -62,10 +64,12 @@ use Database\Seeders\Report\Songothon\Songothon7SoforsTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon8IyanotDataTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon9SangothonikBoithoksTableSeeder;
 use Database\Seeders\Report\Ward\DawahAndProkashona\WardDawahAndProkashonasTableSeeder;
+use Database\Seeders\Report\Ward\Dawat\WardDawat1JonoshadharonsTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat1RegularGroupWisesTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat2PersonalAndTargetsTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat3GeneralProgramAndOthersTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat4GonoSongjogAndDawatOvijansTableSeeder;
+use Database\Seeders\Report\Ward\Dawat\WardDawat5JonoshadharonsTableSeeder;
 use Database\Seeders\Report\Ward\Department\WardDepartment1TalimulQuransTableSeeder;
 use Database\Seeders\Report\Ward\Department\WardDepartment2MohollaVittikDawatsTableSeeder;
 use Database\Seeders\Report\Ward\Department\WardDepartment3JuboSomajDawatsTableSeeder;
@@ -131,66 +135,67 @@ class DatabaseSeeder extends Seeder
             OrgCitiesTableSeeder::class,
             OrgThanasTableSeeder::class,
             OrgWardsTableSeeder::class,
-            // OrgUnitsTableSeeder::class,
+            OrgUnitsTableSeeder::class,
 
             OrgCityUsersTableSeeder::class,
             OrgThanaUsersTableSeeder::class,
             OrgWardUsersTableSeeder::class,
-            // OrgUnitUsersTableSeeder::class,
+            OrgUnitUsersTableSeeder::class,
 
             ResponsibilitiesTableSeeder::class,
             OrgCityResponsiblesTableSeeder::class,
             OrgThanaResponsiblesTableSeeder::class,
             OrgWardResponsiblesTableSeeder::class,
-            // OrgUnitResponsiblesTableSeeder::class,
+            OrgUnitResponsiblesTableSeeder::class,
             //report table
-            // ReportInfosTableSeeder::class,
-            // ReportManagementControlsTableSeeder::class,
+            ReportInfosTableSeeder::class,
+            ReportManagementControlsTableSeeder::class,
             // dawat
-            // Dawat1RegularGroupWisesTableSeeder::class,
-            // Dawat2PersonalAndTargetsTableSeeder::class,
-            // Dawat3GeneralProgramAndOthersTableSeeder::class,
-            // Dawat4GonoSongjogAndDawatOvijansTableSeeder::class,
+            Dawat1RegularGroupWisesTableSeeder::class,
+            Dawat2PersonalAndTargetsTableSeeder::class,
+            Dawat3GeneralProgramAndOthersTableSeeder::class,
+            Dawat4GonoSongjogAndDawatOvijansTableSeeder::class,
+            Dawat5JonoshadharonsTableSeeder::class,
             // department
-            // Department1TalimulQuransTableSeeder::class,
-            // Department2MohollaVittikDawatsTableSeeder::class,
-            // Department3JuboSomajDawatsTableSeeder::class,
-            // Department4DifferentJobHoldersDawatsTableSeeder::class,
-            // Department5ParibarikDawatsTableSeeder::class,
-            // Department6MosjidDawahInfomationCentersTableSeeder::class,
-            // Department7DawatInTechnologiesTableSeeder::class,
-            // Department8DawatInCulturalProgramsTableSeeder::class,
+            Department1TalimulQuransTableSeeder::class,
+            Department2MohollaVittikDawatsTableSeeder::class,
+            Department3JuboSomajDawatsTableSeeder::class,
+            Department4DifferentJobHoldersDawatsTableSeeder::class,
+            Department5ParibarikDawatsTableSeeder::class,
+            Department6MosjidDawahInfomationCentersTableSeeder::class,
+            Department7DawatInTechnologiesTableSeeder::class,
+            Department8DawatInCulturalProgramsTableSeeder::class,
             // DawahAndProkashona
-            // DawahAndProkashonasTableSeeder::class,
+            DawahAndProkashonasTableSeeder::class,
             // kormosuci
-            // KormosuciBastobayonsTableSeeder::class,
-            //songothon
-            // Songothon1JonosoktisTableSeeder::class,
-            // Songothon2AssociateMembersTableSeeder::class,
-            // Songothon3DepartmentalInformationTableSeeder::class,
-            // Songothon4UnitSongothonsTableSeeder::class,
-            // Songothon5DawatAndParibarikUnitsTableSeeder::class,
-            // Songothon6BidayiStudentsConnectsTableSeeder::class,
-            // Songothon7SoforsTableSeeder::class,
-            // Songothon8IyanotDataTableSeeder::class,
-            // Songothon9SangothonikBoithoksTableSeeder::class,
+            KormosuciBastobayonsTableSeeder::class,
+            // songothon
+            Songothon1JonosoktisTableSeeder::class,
+            Songothon2AssociateMembersTableSeeder::class,
+            Songothon3DepartmentalInformationTableSeeder::class,
+            Songothon4UnitSongothonsTableSeeder::class,
+            Songothon5DawatAndParibarikUnitsTableSeeder::class,
+            Songothon6BidayiStudentsConnectsTableSeeder::class,
+            Songothon7SoforsTableSeeder::class,
+            Songothon8IyanotDataTableSeeder::class,
+            Songothon9SangothonikBoithoksTableSeeder::class,
             // proshikkhon
-            // Proshikkhon1TarbiatsTableSeeder::class,
+            Proshikkhon1TarbiatsTableSeeder::class,
             // shomajsheba
-            // Shomajsheba1PersonalSocialWorksTableSeeder::class,
-            // Shomajsheba2UnitSocialWorksTableSeeder::class,
+            Shomajsheba1PersonalSocialWorksTableSeeder::class,
+            Shomajsheba2UnitSocialWorksTableSeeder::class,
             // rastrio
-            // Rastrio1BishishtoBektisTableSeeder::class,
+            Rastrio1BishishtoBektisTableSeeder::class,
             // montobbo
-            // MontobbosTableSeeder::class,
+            MontobbosTableSeeder::class,
             // bm
             BmExpenseCategoriesTableSeeder::class,
             BmCategoriesTableSeeder::class,
             // BmCategoryUsersTableSeeder::class,
-            // BmPaidsTableSeeder::class,
-            // UnitExpenseTargetsTableSeeder::class,
+            BmPaidsTableSeeder::class,
+            UnitExpenseTargetsTableSeeder::class,
             // UnitExpenseTargetLogsTableSeeder::class,
-            // BmExpensesTableSeeder::class,
+            BmExpensesTableSeeder::class,
 
             /** ------------------------- **/
             /** -------- Ward --------- **/
@@ -201,6 +206,7 @@ class DatabaseSeeder extends Seeder
             WardDawat2PersonalAndTargetsTableSeeder::class,
             WardDawat3GeneralProgramAndOthersTableSeeder::class,
             WardDawat4GonoSongjogAndDawatOvijansTableSeeder::class,
+            WardDawat5JonoshadharonsTableSeeder::class,
             // department
             WardDepartment1TalimulQuransTableSeeder::class,
             WardDepartment2MohollaVittikDawatsTableSeeder::class,

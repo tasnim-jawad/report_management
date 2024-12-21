@@ -60,12 +60,12 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td colspan="2" class="text-start">
                                 <a href="" class="btn btn-success btn-sm"
                                     @click.prevent="submit_total_approved_unit_data">Submit Total Approved Unit Data</a>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
                 <table class="table table-striped table-bordered text-start mb-3" v-if="rejected_unit.length">

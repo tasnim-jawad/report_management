@@ -7,17 +7,30 @@
                     মাস: <input type="month" @change="get_monthly_data" v-model="month" ref="month" name="month">
                 </div>
             </div>
-                <div class=" px-2">
-                    <div class="card mb-3" v-if="month">
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1 class="fw-bolder">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদানের তথ্য:</h1>
+                    </div>
+                </div>
+                <div class="card mb-3" v-if="month">
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in fields8" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload" :endpoint="'ward-dawat5-jonoshadharon'"
+                                :unique_key="5"></form-input>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mb-3" v-if="month">
                     <div class="card-header">
                         <h1 class="fw-semibold">১. নিয়মিত গ্রুপ ভিত্তিক দাওয়াত:</h1>
                     </div>
                     <div class="card-body">
                         <form action="">
                             <div v-for="(field, index) in fields1" :key="index">
-                                <form-input  :label="field.label" :name="field.name"
-                                    :onchange="dawat_upload" :endpoint="'ward-dawat1-regular-group-wise'"
-                                    :unique_key="1" ></form-input>
+                                <form-input :label="field.label" :name="field.name" :onchange="dawat_upload"
+                                    :endpoint="'ward-dawat1-regular-group-wise'" :unique_key="1"></form-input>
 
                                 <!-- for next version -->
 
@@ -58,9 +71,9 @@
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
-                                :onchange="dawat_upload" :endpoint="'ward-dawat3-general-program-and-others'"
-                                :unique_key="3"></form-input>
+                            <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'ward-dawat3-general-program-and-others'" :unique_key="3"></form-input>
                         </form>
                     </div>
                 </div>
@@ -80,9 +93,9 @@
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
-                            :onchange="dawat_upload" :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'"
-                            :unique_key="4"></form-input>
+                            <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
                     </div>
                 </div>
@@ -94,9 +107,9 @@
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
-                            :onchange="dawat_upload" :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'"
-                            :unique_key="4"></form-input>
+                            <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
                     </div>
                 </div>
@@ -108,9 +121,9 @@
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
-                            :onchange="dawat_upload" :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'"
-                            :unique_key="4"></form-input>
+                            <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
                     </div>
                 </div>
@@ -122,17 +135,14 @@
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields7" :label="field.label" :name="field.name" :key="index"
-                            :onchange="dawat_upload" :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'"
-                            :unique_key="4"></form-input>
+                            <form-input v-for="(field, index) in fields7" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
                     </div>
                 </div>
             </div>
-            <previous-next
-                :next-route="{ name: 'Department' }"
-                :month="month"
-            ></previous-next>
+            <previous-next :next-route="{ name: 'Department' }" :month="month"></previous-next>
         </div>
         <note :notes="notes"></note>
     </div>
@@ -144,10 +154,10 @@ import FormInput from '../components/FormInput.vue'
 import PreviousNext from '../components/PreviousNext.vue';
 import Note from '../components/Note.vue';
 import Popup from '../components/Popup.vue';
-import { store as data_store} from "../stores/ReportStore";
+import { store as data_store } from "../stores/ReportStore";
 import { mapState, mapWritableState } from 'pinia';
 export default {
-    components: { FormInput, PreviousNext, Note ,Popup},
+    components: { FormInput, PreviousNext, Note, Popup },
     data: () => ({
         // month: null,
         fields1: [
@@ -224,7 +234,7 @@ export default {
 
 
         ],
-        fields5:[
+        fields5: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
                 name: 'jela_mohanogor_declared_gonosonjog_group',
@@ -242,7 +252,7 @@ export default {
                 name: 'jela_mohanogor_declared_gonosonjog_associated_created',
             },
         ],
-        fields6:[
+        fields6: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
                 name: 'election_gono_songjog_group',
@@ -260,7 +270,7 @@ export default {
                 name: 'election_how_many_associate_members_created',
             },
         ],
-        fields7:[
+        fields7: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
                 name: 'other_gono_songjog_group',
@@ -278,7 +288,13 @@ export default {
                 name: 'other_how_many_associate_members_created',
             },
         ],
-        notes:[
+        fields8: [
+            {
+                label: 'মোট জনসংখ্যা:',
+                name: 'total_population',
+            },
+        ],
+        notes: [
             {
                 label: 'বিঃদ্রঃ - ১',
                 name: 'এখান থেকে শুরু',
@@ -289,13 +305,13 @@ export default {
             },
         ]
     }),
-    created:function(){
+    created: function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
 
-        if(this.month != null){
+        if (this.month != null) {
             this.get_monthly_data();
         }
     },
@@ -333,6 +349,7 @@ export default {
             this.get_data_by_api('ward-dawat2-personal-and-target', 2);
             this.get_data_by_api('ward-dawat3-general-program-and-others', 3);
             this.get_data_by_api('ward-dawat4-gono-songjog-and-dawat-ovijan', 4);
+            this.get_data_by_api('ward-dawat5-jonoshadharon', 5);
         }
     }
 

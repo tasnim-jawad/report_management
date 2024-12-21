@@ -42,7 +42,7 @@
                         </select>
                     </div>
                     <div class="form_input" v-else>
-                        <input type="text" :name="field.name" class="form-control">
+                        <input :type="field?.field_type || 'text'" :name="field.name" class="form-control">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">Create User</button>
@@ -70,6 +70,7 @@ export default {
                 {
                     label:"Name",
                     name:"full_name",
+                    field_type:"text",
                 },
                 // {
                 //     label:"Gender",
@@ -79,14 +80,17 @@ export default {
                 {
                     label:"Telegram Name",
                     name:"telegram_name",
+                    field_type:"text",
                 },
                 {
                     label:"Telegram id",
                     name:"telegram_id",
+                    field_type:"text",
                 },
                 {
                     label:"Email",
                     name:"email",
+                    field_type:"email",
                 },
                 {
                     label:"Password",

@@ -62,7 +62,7 @@ class WardBmExpenseController extends Controller
             $permitted_date = $permission && $permission->month_year ? Carbon::parse($permission->month_year) : null;
             $permitted_month = $permitted_date ? $permitted_date->month : null;
             $permitted_year = $permitted_date ? $permitted_date->year : null;
-
+            // dd($passed_month,$permitted_month);
             if($passed_month == $permitted_month && $passed_year == $permitted_year){
                 $is_permitted = true;
             }else{

@@ -32,7 +32,19 @@
                         ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
                         <span>{{ total_dawat }}</span>
                     </p>
-                    <p class="fw-bold w-25">টার্গেট:</p>
+                    <div class="d-flex justify-content-start w-25">
+                        <label for="" class="fw-bold fs-6">টার্গেট :</label>
+                        <div class="parent_popup width-60">
+                            <input class="border_dot bg-input ps-2 w-100" name="jonoshadharon_dawat_target"
+                                :value="formatBangla(report_sum_data?.dawat5_jonoshadharons?.jonoshadharon_dawat_target ?? '')"
+                                @change="data_upload('dawat5-jonoshadharon')" type="text">
+                            <comment :table_name="'dawat5_jonoshadharons'"
+                                :column_name="'jonoshadharon_dawat_target'" />
+                        </div>
+                    </div>
+                    <!-- <p class="fw-bold w-25">টার্গেট:</p> -->
+                    <p class="mt-1 ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান
+                        সংখ্যা যোগ করে এখানে বসাতে হবে ।</p>
                 </div>
 
                 <div class="group_dawat mb-2">
@@ -1598,7 +1610,7 @@
                 <div class="title">
                     <h1>বাইতুলমাল</h1>
                 </div>
-                <p class="fs-6">মাসিক ওয়াদার পরিমাণ :</p>
+                <p class="fs-6">মাসিক ওয়াদার পরিমাণ : <span>{{ formatBangla(nisab_dharjo?.amount ?? '') }}</span> /=</p>
                 <table class="text-center  mb-1 table_layout_fixed">
                     <thead>
                         <tr>
@@ -1742,6 +1754,8 @@ export default {
             report_header: {},
             report_sum_data: {},
             previous_present: {},
+
+            nisab_dharjo: {},
             income_report: {},
             expense_report: {},
 
@@ -1816,6 +1830,8 @@ export default {
                     this.report_header = res.data.data.report_header,
                     this.report_sum_data = res.data.data.report_sum_data,
                     this.previous_present = res.data.data.previous_present,
+
+                    this.nisab_dharjo = res.data.nisab_dharjo,
                     this.income_report = res.data.data.income_report,
                     this.expense_report = res.data.data.expense_report
 

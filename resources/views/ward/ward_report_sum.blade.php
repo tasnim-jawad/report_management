@@ -67,7 +67,7 @@
                         ) }}
                     </span>
                 </p>
-                <p class="fw-bold w-25">মোট জনসংখ্যা:</p>
+                <p class="fw-bold w-25">মোট জনসংখ্যা:   <span>{{ bangla($report_sum_data?->ward_dawat5_jonoshadharons?->total_population ?? '') }}</span></p>
                 <p class="fw-bold ps-3 w-100">টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক) :</p>
                 <p class="ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান সংখ্যা
                     যোগ করে এখানে বসাতে হবে ।</p>

@@ -326,6 +326,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
 
 
 
+
+
     Route::group(['prefix' => 'dawat1-regular-group-wise'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'store_single'])->middleware(StatusChack::class);
@@ -380,6 +382,20 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::post('/destroy', [App\Http\Controllers\Report\Dawat\Dawat4GonoSongjogAndDawatOvijanController::class, 'destroy']);
         Route::post('/restore', [App\Http\Controllers\Report\Dawat\Dawat4GonoSongjogAndDawatOvijanController::class, 'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Report\Dawat\Dawat4GonoSongjogAndDawatOvijanController::class, 'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'dawat5-jonoshadharon'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Dawat\Dawat5JonoshadharonController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Dawat\Dawat5JonoshadharonController::class, 'store_single'])->middleware(StatusChack::class);
+
+        // Route::get('/all', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'all']);
+        // Route::get('/show/{id}', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'show']);
+        // Route::post('/store', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'store']);
+        // Route::post('/update', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'update']);
+        // Route::post('/soft_delete', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'soft_delete']);
+        // Route::post('/destroy', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'destroy']);
+        // Route::post('/restore', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'restore']);
+        // Route::post('/bulk_import', [App\Http\Controllers\Report\Dawat\Dawat1RegularGroupWiseController::class, 'bulk_import']);
     });
 
 
@@ -907,6 +923,20 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::post('/soft_delete', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class, 'soft_delete']);
         Route::post('/destroy', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class, 'destroy']);
         Route::post('/restore', [App\Http\Controllers\Ward\WardUnitJonoshoktiController::class, 'restore']);
+    });
+
+    Route::group(['prefix' => 'ward-dawat5-jonoshadharon'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Ward\Dawat\WardDawat5JonoshadharonController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Ward\Dawat\WardDawat5JonoshadharonController::class, 'store_single'])->middleware(WardStatusChack::class);
+
+        // Route::get('/all', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class, 'all']);
+        // Route::get('/show/{id}', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class, 'show']);
+        // Route::post('/store', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class, 'store']);
+        // Route::post('/update', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class, 'update']);
+        // Route::post('/soft_delete', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class, 'soft_delete']);
+        // Route::post('/destroy', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class, 'destroy']);
+        // Route::post('/restore', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class, 'restore']);
+        // Route::post('/bulk_import', [App\Http\Controllers\Report\Ward\Dawat\WardDawat1RegularGroupWiseController::class, 'bulk_import']);
     });
 
     Route::group(['prefix' => 'ward-dawat1-regular-group-wise'], function () {

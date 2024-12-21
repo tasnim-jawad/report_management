@@ -2,6 +2,10 @@
 //-------- Dawat ---------\\
 //--------------------------\\
 
+php artisan make:model Report/Ward/Dawat/WardDawat5Jonoshadharon -m
+php artisan make:controller Report/Ward/Dawat/WardDawat5JonoshadharonController
+php artisan make:seeder Report/Ward/Dawat/WardDawat5JonoshadharonsTableSeeder
+
 php artisan make:model Report/Ward/Dawat/WardDawat1RegularGroupWise -m
 php artisan make:controller Report/Ward/Dawat/WardDawat1RegularGroupWiseController
 php artisan make:seeder Report/Ward/Dawat/WardDawat1RegularGroupWisesTableSeeder
@@ -207,3 +211,13 @@ php artisan make:controller Bm/Ward/Income/WardBmIncomeController
 php artisan make:seeder Bm/Ward/Income/WardBmIncomesTableSeeder
 
 
+
+
+
+php artisan make:model Report/Dawat/Dawat5Jonoshadharon -m
+php artisan make:controller Report/Dawat/Dawat5JonoshadharonController
+php artisan make:seeder Report/Dawat/Dawat5JonoshadharonsTableSeeder
+
+php artisan make:model Report/Ward/Dawat/WardDawat5Jonoshadharon -m
+php artisan make:controller Report/Ward/Dawat/WardDawat5JonoshadharonController
+php artisan make:seeder Report/Ward/Dawat/WardDawat5JonoshadharonsTableSeeder

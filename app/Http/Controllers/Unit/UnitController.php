@@ -10,6 +10,7 @@ use App\Http\Controllers\Actions\CheckInfo;
 use App\Http\Controllers\Actions\ReportHeader;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Expense\BmExpenseCategory;
+use App\Models\Bm\Expense\UnitExpenseTarget;
 use App\Models\Bm\Income\BmCategory;
 use App\Models\Bm\Income\BmPaid;
 use App\Models\Organization\OrgThana;
@@ -791,6 +792,8 @@ class UnitController extends Controller
 
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id);
         // dd($datas->report_sum_data );
+        $nisab_dharjo = UnitExpenseTarget::where('unit_id',$unit_id)->select('amount')->latest()->first();
+        // dd($nisab_dharjo->amount);
 
         return view('unit.unit_report_sum')->with([
             'start_month' => $datas->start_month,
@@ -799,6 +802,8 @@ class UnitController extends Controller
 
             'report_sum_data' => $datas->report_sum_data,
             'previous_present' => $datas->previous_present,
+
+            'nisab_dharjo' => $nisab_dharjo,
             'income_report' => $datas->income_report,
             'expense_report' => $datas->expense_report,
         ]);
@@ -883,6 +888,8 @@ class UnitController extends Controller
         $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
 
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status);
+        $nisab_dharjo = UnitExpenseTarget::where('unit_id',$unit_id)->select('amount')->latest()->first();
+        // dd($nisab_dharjo->amount);
         // dd($datas->report_sum_data );
 
         return view('unit.unit_report_monthly')->with([
@@ -892,6 +899,8 @@ class UnitController extends Controller
 
             'report_sum_data' => $datas->report_sum_data,
             'previous_present' => $datas->previous_present,
+
+            'nisab_dharjo' => $nisab_dharjo,
             'income_report' => $datas->income_report,
             'expense_report' => $datas->expense_report,
         ]);
@@ -920,10 +929,14 @@ class UnitController extends Controller
         $is_need_sum = false;
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
         // dd($datas->report_sum_data );
+        $nisab_dharjo = UnitExpenseTarget::where('unit_id',$unit_id)->select('amount')->latest()->first();
+        // dd($nisab_dharjo->amount);
+
 
         return response()->json([
             'status' => 'success',
             'data' => $datas,
+            'nisab_dharjo' => $nisab_dharjo,
         ], 200);
     }
 
@@ -950,6 +963,8 @@ class UnitController extends Controller
         $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
         $is_need_sum = false;
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
+        $nisab_dharjo = UnitExpenseTarget::where('unit_id',$unit_id)->select('amount')->latest()->first();
+        // dd($nisab_dharjo->amount);
         // dd($datas->report_sum_data );
         // if(empty($datas){
         //     return
@@ -972,6 +987,8 @@ class UnitController extends Controller
 
             'report_sum_data' => $datas->report_sum_data,
             'previous_present' => $datas->previous_present,
+
+            'nisab_dharjo' => $nisab_dharjo,
             'income_report' => $datas->income_report,
             'expense_report' => $datas->expense_report,
         ];

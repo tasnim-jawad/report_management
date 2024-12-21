@@ -66,7 +66,7 @@
                         ) }}
                     </span>
                 </p>
-                <p class="fw-bold w-25">টার্গেট:</p>
+                <p class="fw-bold w-25">টার্গেট:  <span>{{ bangla($report_sum_data->dawat5_jonoshadharons->jonoshadharon_dawat_target ?? '') }}</span></p>
                 <p class="mt-1 ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান
                     সংখ্যা যোগ করে এখানে বসাতে হবে ।</p>
             </div>
@@ -791,7 +791,7 @@
             <div class="title">
                 <h1>বাইতুলমাল</h1>
             </div>
-            <p class="fs-6">মাসিক ওয়াদার পরিমাণ :</p>
+            <p class="fs-6">মাসিক ওয়াদার পরিমাণ :  <span>{{ bangla($nisab_dharjo->amount ?? '') }}</span> /=</p>
             <table class="text-center  mb-1 table_layout_fixed">
                 <thead>
                     <tr>

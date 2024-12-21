@@ -25,7 +25,7 @@ class CommentCount
 
         $table_function_name = "get_" . $org_type . "_table";
         $table_names = $this->$table_function_name();
-        dd($table_names);
+        // dd($table_names);
         $result = [];
         foreach ($table_names as $table_name) {
             if ($table_name != 'income_table' && $table_name != 'expense_table') {
@@ -119,6 +119,7 @@ class CommentCount
             "dawat2_personal_and_targets",
             "dawat3_general_program_and_others",
             "dawat4_gono_songjog_and_dawat_ovijans",
+            "dawat5_jonoshadharons",
             "department1_talimul_qurans",
             "department4_different_job_holders_dawats",
             "department5_paribarik_dawats",
@@ -152,6 +153,7 @@ class CommentCount
             "ward_dawat2_personal_and_targets",
             "ward_dawat3_general_program_and_others",
             "ward_dawat4_gono_songjog_and_dawat_ovijans",
+            "ward_dawat5_jonoshadharons",
             "ward_department1_talimul_qurans",
             "ward_department2_moholla_vittik_dawats",
             "ward_department3_jubo_somaj_dawats",

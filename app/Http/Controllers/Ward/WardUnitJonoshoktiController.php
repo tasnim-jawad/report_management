@@ -53,7 +53,7 @@ class WardUnitJonoshoktiController extends Controller
                 'unit_id' => ['required'],
                 'responsibility_id' => ['required'],
                 'full_name' => ['required'],
-                'email' => ['required', 'unique:users'],
+                'email' => ['required', 'unique:users', 'email'],
                 'password' => ['required'],
             ]);
 

@@ -32,7 +32,7 @@
                         ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
                         <span>{{ total_dawat }}</span>
                     </p>
-                    <p class="fw-bold w-25">টার্গেট:</p>
+                    <p class="fw-bold w-25">টার্গেট:  <span>{{formatBangla(report_sum_data?.dawat5_jonoshadharons?.jonoshadharon_dawat_target) }}</span></p>
                 </div>
 
                 <div class="group_dawat mb-2">
@@ -1571,7 +1571,7 @@
                 <div class="title">
                     <h1>বাইতুলমাল</h1>
                 </div>
-                <p class="fs-6">মাসিক ওয়াদার পরিমাণ :</p>
+                <p class="fs-6">মাসিক ওয়াদার পরিমাণ : <span>{{ formatBangla(nisab_dharjo?.amount ?? '') }}</span> /=</p>
                 <table class="text-center  mb-1 table_layout_fixed">
                     <thead>
                         <tr>
@@ -1716,6 +1716,8 @@ export default {
             report_header: {},
             report_sum_data: {},
             previous_present: {},
+
+            nisab_dharjo: {},
             income_report: {},
             expense_report: {},
 
@@ -1807,6 +1809,8 @@ export default {
                     this.report_header = res.data.data.report_header,
                     this.report_sum_data = res.data.data.report_sum_data,
                     this.previous_present = res.data.data.previous_present,
+
+                    this.nisab_dharjo = res.data.data.nisab_dharjo,
                     this.income_report = res.data.data.income_report,
                     this.expense_report = res.data.data.expense_report
 
