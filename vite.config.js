@@ -11,6 +11,7 @@ export default defineConfig({
 
                 'resources/js/report_management/unit/main.js',
                 'resources/js/report_management/ward/main.js',
+                'resources/js/report_management/thana/main.js',
             ],
             refresh: true,
         }),

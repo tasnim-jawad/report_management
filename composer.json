@@ -30,7 +30,8 @@
         },
         "files": [
             "app/report_helpers.php",
-            "app/ward_report_helpers.php"
+            "app/ward_report_helpers.php",
+            "app/thana_report_helpers.php"
         ]
     },
     "autoload-dev": {

@@ -17,8 +17,8 @@ class IsUnitPermittedUser
     public function handle(Request $request, Closure $next): Response
     {
         // Check if the user is authenticated and has the required permission
-        // dd(Auth::user()->is_permitted);
-        if (Auth::check() && Auth::user()->is_permitted === 1) {
+        // dd(isset(Auth::user()->org_unit_user));
+        if (Auth::check() && isset(Auth::user()->org_unit_user) && Auth::user()->is_permitted === 1) {
             return $next($request);
         }
 

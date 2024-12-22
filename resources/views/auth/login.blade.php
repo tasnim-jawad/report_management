@@ -97,6 +97,9 @@
                                             }else if(data.user.role == 5){
                                                 console.log('ward');
                                                 window.location.href = '/dashboard/ward#';
+                                            }else if(data.user.role == 4){
+                                                console.log('thana');
+                                                window.location.href = '/dashboard/thana#';
                                             }else if(data.user.role == 2){
                                                 console.log('admin');
                                                 window.location.href = '/dashboard/admin#';

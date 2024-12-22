@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgCity;
 use App\Models\Organization\OrgThana;
+use App\Models\Organization\OrgThanaUser;
 use App\Models\Organization\OrgUnitResponsible;
 use App\Models\Organization\OrgUnitUser;
 use App\Models\Organization\OrgWard;
@@ -46,6 +48,21 @@ class UserController extends Controller
             'responsibility' => $user_responsibility,
             'thana_id' => $thana_id,
             'thana' => $thana,
+        ]);
+    }
+    public function thana_user_info(){
+        // dd(auth()->user());
+        $user = auth()->user();
+        $user_responsibility = auth_user_thana_responsibilities_info(auth()->id());
+        $org_thana_user = OrgThanaUser::where('user_id', auth()->id())->get()->first();
+        $city_id = $org_thana_user->city_id;
+        $city = OrgCity::find($city_id);
+        // return [$user,$user_responsibility];
+        return response()->json([
+            'user' => $user,
+            'responsibility' => $user_responsibility,
+            'city_id' => $city_id,
+            'city' => $city,
         ]);
     }
     public function all()
