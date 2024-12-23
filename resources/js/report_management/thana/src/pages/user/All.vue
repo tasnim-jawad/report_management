@@ -23,7 +23,8 @@
                     <tr v-for="(user,index) in sortedUsers" :key="index">
                         <td>{{index + 1}}</td>
                         <td>{{user.full_name}}</td>
-                        <td>{{user.org_ward_responsible?.responsibility?.title}}</td>
+                        <!-- <td>{{user.org_thana_responsible[0]?.responsibility?.title}}</td> -->
+                        <td>{{user.org_thana_responsible[0]?.responsibility?.title}}</td>
                         <td>{{user.telegram_name}}</td>
                         <td>{{user.blood_group}}</td>
                         <td>
@@ -62,9 +63,10 @@ export default {
     },
     methods:{
         show_users : function(){
-            axios.get("ward/user/show")
+            axios.get("thana/user/show")
                 .then(responce => {
                     this.users = responce.data
+
                 })
         },
         delete_user : function(user_id){
@@ -78,7 +80,7 @@ export default {
         submit_delete_form : function(user_id){
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_user_form_'+user_id));
-            axios.post("ward/user/destroy",formData)
+            axios.post("thana/user/destroy",formData)
                     .then(responce => {
                         window.toaster('user delete successfuly', 'success');
                         this.show_users();
@@ -90,21 +92,6 @@ export default {
 
     },
     computed: {
-        // sortedUsers:function() {
-        //     if (this.users.length < 2) {
-        //         return this.users;
-        //     }
-        //     return this.users.slice().sort((a, b) => {
-        //         // Sort users by responsibility_id, with null/undefined at the end
-        //         return (a.responsibility_id === null || a.responsibility_id === undefined)
-        //         ? 1
-        //         : (b.responsibility_id === null || b.responsibility_id === undefined)
-        //         ? -1
-        //         : a.responsibility_id - b.responsibility_id;
-        //     });
-        // }
-
-
         sortedUsers:function(){
             if (this.users.length < 2) {
                 return this.users;

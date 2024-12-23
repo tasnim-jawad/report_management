@@ -9,6 +9,13 @@
                     <div class="form_label">
                         <label for="">{{field.label}}</label>
                     </div>
+                    <!-- <div class="form_input" v-if="field.field_type == 'select' && field.name == 'gender'">
+                        <select type="text" :name="field.name" class="form-control">
+                            <option value="">-- select gender --</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div> -->
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'blood_group'">
                         <select type="text" :name="field.name" class="form-control">
                             <option value="">-- select blood group --</option>
@@ -28,11 +35,14 @@
                             <option v-for="(responsibility, i) in responsibilities" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
                         </select>
                     </div>
-                    <!-- <div class="form_input" v-else-if="field.field_type == 'password' && field.name == 'password'">
-                        <input type="password" :name="field.name" class="form-control">
-                    </div> -->
+                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'ward_id'">
+                        <select type="text" :name="field.name" class="form-control">
+                            <option value="">-- select responsibility group --</option>
+                            <option v-for="(ward, i) in wards" :key="i" :value="ward['id']" >{{ward["title"]}}</option>
+                        </select>
+                    </div>
                     <div class="form_input" v-else>
-                        <input type="text" :name="field.name" class="form-control">
+                        <input :type="field?.field_type || 'text'" :name="field.name" class="form-control">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">Create User</button>
@@ -42,7 +52,7 @@
 </template>
 
 <script>
-import FormInput from '../../components/FormInput.vue'
+import FormInput from '../../../components/FormInput.vue'
 
 export default {
     components:{
@@ -51,6 +61,7 @@ export default {
     data() {
         return {
             responsibilities:[],
+            wards:[],
             fields1:[
                 // {
                 //     label:"Role",
@@ -59,22 +70,30 @@ export default {
                 {
                     label:"Name",
                     name:"full_name",
+                    field_type:"text",
                 },
+                // {
+                //     label:"Gender",
+                //     field_type:"select",
+                //     name:"gender",
+                // },
                 {
                     label:"Telegram Name",
                     name:"telegram_name",
+                    field_type:"text",
                 },
                 {
                     label:"Telegram id",
                     name:"telegram_id",
+                    field_type:"text",
                 },
                 {
                     label:"Email",
                     name:"email",
+                    field_type:"email",
                 },
                 {
                     label:"Password",
-                    field_type:"password",
                     name:"password",
                 },
                 {
@@ -87,6 +106,11 @@ export default {
                     field_type:"select",
                     name:"responsibility_id",
                 },
+                {
+                    label:"Ward",
+                    field_type:"select",
+                    name:"ward_id",
+                },
             ],
 
 
@@ -94,37 +118,53 @@ export default {
     },
     created(){
         this.show_responsibility();
+        this.all_wards();
     },
     methods:{
-        // show_users : function(){
-        //     axios.get("/user/all")
-        //         .then(responce => {
-        //             this.users = responce.data
-        //         })
-        // },
-        create_user : function(event){
+        all_wards :async function(){
+            let response =await axios.get('/thana/ward/all')
+            console.log("Response:",response);
+            if(response && response.data && response.data.data){
+                this.wards = response.data.data
+                console.log("Wards",this.wards);
+            }
+        },
+        create_user :async function(event){
             event.preventDefault();
             let formData = new FormData(event.target);
-            axios.post('/thana/user/store',formData)
-                .then(function (response) {
-                    window.toaster('user create successfuly', 'success');
-                    this.$router.push({ name:'UserAll' });
-                })
-                .catch(function (error) {
-                    console.log(error.response);
-                });
+            try {
+                let response = await axios.post('/thana/ward-jonoshokti/store', formData);
+                if (response.data.status === 'success') {
+                    window.toaster('User created successfully', 'success');
+                }
+            } catch (error) {
+                // Handling error response
+                if (error.response && error.response.status === 409) {
+                    let errMessage = error.response.data.err_message || 'An error occurred';
+                    window.toaster(errMessage, 'error');
+                    window.s_alert(errMessage, 'error');
+                } else {
+                    // For other errors (e.g. 500, 422, etc.)
+                    window.toaster('An unexpected error occurred', 'error');
+                    console.log('Error', error);
+                }
+            }
+
         },
         show_responsibility : function(){
             axios.get("/responsibility/all")
-                .then(response => {
-                    if (Array.isArray(response.data.data)) {
-                        this.responsibilities = response.data.data.slice(2);
-                    } else {
-                        console.error("Expected an array but got:", typeof response.data);
-                    }
-                }
-            )
+                    .then(response => {
+                        if (Array.isArray(response.data.data)) {
+                            this.responsibilities = response.data.data.slice(0, 2);
+                        } else {
+                            console.error("Expected an array but got:", typeof response.data);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching responsibilities:", error);
+                    });
         },
+
     }
 }
 </script>

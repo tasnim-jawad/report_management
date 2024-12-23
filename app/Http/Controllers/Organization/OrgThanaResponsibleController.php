@@ -40,6 +40,27 @@ class OrgThanaResponsibleController extends Controller
         return response()->json($datas);
     }
 
+    public function show_user($id)
+    {
+        $select = ["*"];
+        if (request()->has('select_all') && request()->select_all) {
+            $select = "*";
+        }
+        $data = OrgThanaResponsible::where('user_id', $id)
+            ->select($select)
+            ->first();
+        if ($data) {
+            return response()->json($data, 200);
+        } else {
+            return response()->json([
+                'err_message' => 'data not found',
+                'errors' => [
+                    'user' => [],
+                ],
+            ], 404);
+        }
+    }
+
     public function show($id)
     {
 

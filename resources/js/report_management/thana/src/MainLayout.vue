@@ -38,17 +38,17 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'UnitAll' }">
-                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ইউনিট
+                            <router-link :to="{ name: 'WardAll' }">
+                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ওয়ার্ড
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'UnitJonoshoktiAll' }">
-                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ইউনিট জনশক্তি
+                            <router-link :to="{ name: 'WardJonoshoktiAll' }">
+                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ওয়ার্ড জনশক্তি
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'UnitExpenseTargetAll' }">
+                            <router-link :to="{ name: 'WardExpenseTargetAll' }">
                                 <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ইউনিটের ধার্য
                             </router-link>
                         </li>
@@ -163,8 +163,8 @@
                     <a href="#" @click.prevent="toggle_sidebar"><i class="fa-solid fa-bars"></i></a>
                 </div>
                 <div class="middle">
-                    <p>ওয়ার্ডঃ {{ this.user?.responsibility?.org_ward?.title }}</p>
-                    <p>থানাঃ {{ this.user?.thana?.title }}</p>
+                    <p>থানাঃ {{ this.user?.responsibility?.org_thana?.title }}</p>
+                    <p>মহানগরীঃ {{ this.user?.city?.title }}</p>
                 </div>
                 <div class="right">
                     <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i

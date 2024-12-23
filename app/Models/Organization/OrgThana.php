@@ -2,6 +2,7 @@
 
 namespace App\Models\Organization;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -39,5 +40,15 @@ class OrgThana extends Model
     public function org_unit()
     {
         return $this->hasMany(OrgUnit::class);
+    }
+
+
+    public function thana_to_user()
+    {
+        return $this->hasManyThrough(User::class ,OrgThanaUser::class,  'thana_id','id','id','user_id');
+    }
+    public function thana_to_responsibility()
+    {
+        return $this->hasManyThrough(Responsibility::class ,OrgThanaResponsible::class,  'org_thana_id','id','id','responsibility_id');
     }
 }

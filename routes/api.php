@@ -239,6 +239,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
 
 
     Route::group(['prefix' => 'org-city-responsible'], function () {
+        Route::get('/show-user/{id}', [App\Http\Controllers\Organization\OrgCityResponsibleController::class, 'show_user']);
+
         Route::get('/all', [App\Http\Controllers\Organization\OrgCityResponsibleController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Organization\OrgCityResponsibleController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Organization\OrgCityResponsibleController::class, 'store']);
@@ -249,6 +251,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::post('/bulk_import', [App\Http\Controllers\Organization\OrgCityResponsibleController::class, 'bulk_import']);
     });
     Route::group(['prefix' => 'org-thana-responsible'], function () {
+        Route::get('/show-user/{id}', [App\Http\Controllers\Organization\OrgThanaResponsibleController::class, 'show_user']);
+
         Route::get('/all', [App\Http\Controllers\Organization\OrgThanaResponsibleController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Organization\OrgThanaResponsibleController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Organization\OrgThanaResponsibleController::class, 'store']);
@@ -1305,5 +1309,47 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::post('/ward-report-joma-permitted-month', [App\Http\Controllers\Thana\PermissionController::class, 'ward_report_joma_permitted_month']);
         Route::post('/set-ward-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'set_ward_report_joma_permission']);
         Route::post('/remove-ward-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'remove_ward_report_joma_permission']);
+    });
+
+    Route::group(['prefix' => 'thana/user'], function () {
+        Route::get('/show', [App\Http\Controllers\Thana\ThanaUserController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Thana\ThanaUserController::class, 'store']);
+        Route::post('/update', [App\Http\Controllers\Thana\ThanaUserController::class, 'update']);
+        Route::post('/destroy', [App\Http\Controllers\Thana\ThanaUserController::class, 'destroy']);
+    });
+
+    Route::group(['prefix' => 'thana/ward'], function () {
+        Route::get('/all', [App\Http\Controllers\Thana\ThanaWardController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Thana\ThanaWardController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Thana\ThanaWardController::class, 'store']);
+        Route::post('/update', [App\Http\Controllers\Thana\ThanaWardController::class, 'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Thana\ThanaWardController::class, 'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Thana\ThanaWardController::class, 'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Thana\ThanaWardController::class, 'restore']);
+    });
+
+    Route::group(['prefix' => 'thana/ward-jonoshokti'], function () {
+        Route::post('/set-responsibility', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'set_responsibility']);
+
+        Route::get('/all', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'store']);
+        Route::post('/update', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'restore']);
+    });
+
+    Route::group(['prefix' => 'ward-expense-target'], function () {
+        Route::get('/thana-wise', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'ward_wise']);
+
+        Route::get('/all', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'store']);
+        Route::post('/update', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'update']);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'soft_delete']);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'destroy']);
+        Route::post('/restore', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Expense\UnitExpenseTargetController::class, 'bulk_import']);
     });
 });

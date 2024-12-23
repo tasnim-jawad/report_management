@@ -23,14 +23,14 @@ import CreateUser from '../pages/user/Create.vue'
 import ShowUser from '../pages/user/Details.vue'
 import EditUser from '../pages/user/Edit.vue'
 
-import UnitExpenseTargetRoutes from './UnitExpenseTargetRoutes';
+import ward_expense_target_routes from './ward_expense_target_routes';
 import bmCategoryRoutes from './bmCategoryRoutes';
 import BmEntryRoutes from './BmEntryRoutes';
 import BmCategoryUserRoutes from './BmCategoryUserRoutes';
 import BmExpenseCategoryRoutes from './BmExpenseCategoryRoutes';
 import BmExpenseRoutes from './BmExpenseRoutes';
-import unit_routes from './unit_routes';
-import unit_jonoshokti_routes from './unit_jonoshokti_routes';
+import ward_routes from './ward_routes';
+import ward_jonoshokti_routes from './ward_jonoshokti_routes';
 import ward_user_routes from './ward_user_routes';
 // import BmCategoryAll from '../pages/bm_management/bm_category/All.vue'
 // import BmCategoryCreate from '../pages/bm_management/bm_category/Create.vue'
@@ -143,14 +143,14 @@ const routes =
                     path: 'upload-report',
                     component: UploadReport,
                 },
-                UnitExpenseTargetRoutes,
+                ward_expense_target_routes,
                 bmCategoryRoutes,
                 BmEntryRoutes,
                 BmCategoryUserRoutes,
                 BmExpenseCategoryRoutes,
                 BmExpenseRoutes,
-                unit_routes,
-                unit_jonoshokti_routes,
+                ward_routes,
+                ward_jonoshokti_routes,
                 ward_user_routes,
             ]
         }

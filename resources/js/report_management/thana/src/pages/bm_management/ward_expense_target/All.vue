@@ -2,11 +2,11 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             আয়ের সকল খাত সমূহ
-            <div class="unit_select">
-                <label for="unit_id">Unit:</label>
-                <select name="unit_id" id="unit_id" class="text-center" v-model="searched_unit_id">
-                    <option value="" > -- select unit --</option>
-                    <option v-for="(unit,index) in units" :key="index" :value="unit.id">{{ unit.title }}</option>
+            <div class="ward_select">
+                <label for="ward_id">Unit:</label>
+                <select name="ward_id" id="ward_id" class="text-center" v-model="searched_ward_id">
+                    <option value="" > -- select ward --</option>
+                    <option v-for="(ward,index) in wards" :key="index" :value="ward.id">{{ ward.title }}</option>
                 </select>
             </div>
             <div class="btn btn-info btn-sm">
@@ -26,24 +26,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(unit_expense_target,index) in filtered_expense_targets" :key="index">
-                            <td>{{unit_expense_target?.org_unit?.title}}</td>
-                            <td>{{unit_expense_target?.bm_expense_category?.title}}</td>
-                            <td>{{unit_expense_target?.amount}}</td>
-                            <td>{{unit_expense_target?.start_from}}</td>
+                        <tr v-for="(ward_expense_target,index) in filtered_expense_targets" :key="index">
+                            <td>{{ward_expense_target?.org_ward?.title}}</td>
+                            <td>{{ward_expense_target?.bm_expense_category?.title}}</td>
+                            <td>{{ward_expense_target?.amount}}</td>
+                            <td>{{ward_expense_target?.start_from}}</td>
                             <td>
                                 <div class="action">
                                     <div class="btn btn-success btn-sm me-2">
-                                        <router-link :to="{name:'UnitExpenseTargetDetails',params: { unit_expense_target_id: unit_expense_target.id }}"  class="text-dark">show</router-link>
+                                        <router-link :to="{name:'UnitExpenseTargetDetails',params: { ward_expense_target_id: ward_expense_target.id }}"  class="text-dark">show</router-link>
                                     </div>
                                     <div class="btn btn-warning btn-sm me-2">
-                                        <router-link :to="{name:'UnitExpenseTargetEdit',params: { unit_expense_target_id: unit_expense_target.id }}"  class="text-dark">Edit</router-link>
+                                        <router-link :to="{name:'UnitExpenseTargetEdit',params: { ward_expense_target_id: ward_expense_target.id }}"  class="text-dark">Edit</router-link>
                                     </div>
                                     <div class="btn btn-danger btn-sm">
-                                        <a @click="delete_category(unit_expense_target.id)" class="text-dark">Delete</a>
+                                        <a @click="delete_category(ward_expense_target.id)" class="text-dark">Delete</a>
 
-                                        <form :id="'delete_unit_expense_target_form_'+unit_expense_target.id" >
-                                            <input type="text" name="id" :value="unit_expense_target.id" class="d-none">
+                                        <form :id="'delete_ward_expense_target_form_'+ward_expense_target.id" >
+                                            <input type="text" name="id" :value="ward_expense_target.id" class="d-none">
                                         </form>
                                     </div>
                                 </div>
@@ -61,29 +61,29 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            unit_expense_targets:[],
+            ward_expense_targets:[],
             filtered_expense_targets: [],
-            units: [],
-            searched_unit_id: "",
+            wards: [],
+            searched_ward_id: "",
         }
     },
 
     created:function(){
-        this.show_unit_expense_target();
-        this.all_units();
+        this.show_ward_expense_target();
+        this.all_wards();
     },
     watch:{
-        searched_unit_id:function(){
-            console.log("searched_unit_id",this.searched_unit_id);
-            this.expense_targets(this.searched_unit_id)
+        searched_ward_id:function(){
+            console.log("searched_ward_id",this.searched_ward_id);
+            this.expense_targets(this.searched_ward_id)
         }
     },
     methods:{
-        show_unit_expense_target :async function(){
-            await axios.get('/unit-expense-target/ward-wise')
+        show_ward_expense_target :async function(){
+            await axios.get('/ward-expense-target/ward-wise')
                 .then(response => {
-                    this.unit_expense_targets = response.data.data;
-                    this.filtered_expense_targets = this.unit_expense_targets;
+                    this.ward_expense_targets = response.data.data;
+                    this.filtered_expense_targets = this.ward_expense_targets;
                     console.log("this.filtered_expense_targets",this.filtered_expense_targets);
 
                 })
@@ -109,23 +109,23 @@ export default {
                         console.error(error);
                     });
         },
-        all_units:async function(){
-            let response =await axios.get('/org-unit/ward-wise-unit')
-            this.units = response.data.data;
+        all_wards:async function(){
+            let response =await axios.get('/org-ward/ward-wise-ward')
+            this.wards = response.data.data;
         },
-        expense_targets:async function(unit_id){
-            console.log("unit_id",unit_id);
-            if (!unit_id) {
-                this.filtered_expense_targets = this.unit_expense_targets;
+        expense_targets:async function(ward_id){
+            console.log("ward_id",ward_id);
+            if (!ward_id) {
+                this.filtered_expense_targets = this.ward_expense_targets;
                 return;
             }
-            // let targets = unit_expense_targets.for
-            const expense_targets = Array.isArray(this.unit_expense_targets) ? this.unit_expense_targets : Object.values(this.unit_expense_targets);
-            let filtered_target_unit_wise = expense_targets.filter(expense_target =>{
-                return expense_target.org_unit.id === unit_id
+            // let targets = ward_expense_targets.for
+            const expense_targets = Array.isArray(this.ward_expense_targets) ? this.ward_expense_targets : Object.values(this.ward_expense_targets);
+            let filtered_target_ward_wise = expense_targets.filter(expense_target =>{
+                return expense_target.org_ward.id === ward_id
             });
 
-            this.filtered_expense_targets = filtered_target_unit_wise;
+            this.filtered_expense_targets = filtered_target_ward_wise;
 
             console.log("filtered ",this.filtered_expense_targets);
 

@@ -17,6 +17,18 @@
                 </div>
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
                     <div class="form_label">
+                        <label for="">Gender</label>
+                    </div>
+                    <div class="form_input" >
+                        <select type="text" name="gender" class="form-control">
+                            <option value="">-- select gender --</option>
+                            <option value="male" :selected="user_details.gender === 'male'">Male</option>
+                            <option value="female" :selected="user_details.gender === 'female'">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+                    <div class="form_label">
                         <label for="">Telegram Name</label>
                     </div>
                     <div class="form_input" >
@@ -59,16 +71,17 @@
                         </select>
                     </div>
                 </div>
-                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" v-if="user_responsibile.responsibility_id != 1 && user_responsibile.responsibility_id != 2">
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
                     <div class="form_label">
                         <label for="">Responsibility</label>
                     </div>
                     <div class="form_input">
-                        <select type="text" name="responsibility_id" class="form-control" >
+                        <select type="text" name="responsibility_id" class="form-control">
                             <option value="">-- select responsibility group --</option>
-                            <option v-for="(responsibility, i) in responsibilities" :key="i"
+                            <option v-for="(responsibility, i) in responsibilities.data" :key="i"
                                     :value="responsibility['id']"
                                     :selected="user_responsibile.responsibility_id == responsibility['id']" >{{responsibility["title"]}}</option>
+
                         </select>
                     </div>
                 </div>
@@ -107,7 +120,7 @@ export default {
             console.log(event.target);
             let formData = new FormData(event.target);
             console.log(formData);
-            axios.post('/thana/user/update',formData)
+            axios.post('/user/update_unit_user',formData)
                 .then(function (response) {
                     console.log(response.statusText);
                     window.toaster('user updated successfuly', 'success');
@@ -119,16 +132,13 @@ export default {
         show_responsibility : function(){
             axios.get("/responsibility/all")
                 .then(response => {
-                    if (Array.isArray(response.data.data)) {
-                        this.responsibilities = response.data.data.slice(2);
-                    } else {
-                        console.error("Expected an array but got:", typeof response.data);
-                    }
+                    this.responsibilities = response.data
+                    // console.log(this.responsibilities.data);
                 })
         },
         user_responsibility : function(){
             console.log(this.user_id);
-            axios.get(`/org-thana-responsible/show-user/${this.user_id}`)
+            axios.get(`/org-unit-responsible/show_user/${this.user_id}`)
                 .then(response => {
                     this.user_responsibile = response.data
                     // console.log(this.user_responsibile);
