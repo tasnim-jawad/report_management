@@ -3,7 +3,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             ধার্য বিস্তারিত
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UnitExpenseTargetAll'}" class="text-dark">সকল ধার্য দেখুন</router-link>
+                <router-link :to="{name:'WardExpenseTargetAll'}" class="text-dark">সকল ধার্য দেখুন</router-link>
             </div>
         </div>
         <div class="card-body">
@@ -18,19 +18,19 @@
                     <tbody>
                         <tr>
                             <td>Unit Name</td>
-                            <td>{{unit_expense_target_info?.org_unit?.title}}</td>
+                            <td>{{ward_expense_target_info?.org_ward?.title}}</td>
                         </tr>
                         <tr>
                             <td>Categpry</td>
-                            <td>{{unit_expense_target_info?.bm_expense_category?.title}}</td>
+                            <td>{{ward_expense_target_info?.ward_bm_expense_category?.title}}</td>
                         </tr>
                         <tr>
                             <td>Amount</td>
-                            <td>{{unit_expense_target_info?.amount}}</td>
+                            <td>{{ward_expense_target_info?.amount}}</td>
                         </tr>
                         <tr>
                             <td>Start From</td>
-                            <td>{{unit_expense_target_info?.start_from}}</td>
+                            <td>{{ward_expense_target_info?.start_from}}</td>
                         </tr>
 
                     </tbody>
@@ -39,7 +39,7 @@
         </div>
         <div class="card-footer">
             <div class="btn btn-warning btn-sm me-2">
-                <router-link :to="{name:'UnitExpenseTargetEdit',params: { unit_expense_target_id: unit_expense_target_info.id }}"  class="text-dark">Edit</router-link>
+                <router-link :to="{name:'WardExpenseTargetEdit',params: { ward_expense_target_id: ward_expense_target_info.id }}"  class="text-dark">Edit</router-link>
             </div>
         </div>
     </div>
@@ -48,10 +48,10 @@
 <script>
 import axios from 'axios';
 export default {
-    props:['unit_expense_target_id'],
+    props:['ward_expense_target_id'],
     data:function(){
         return {
-            unit_expense_target_info:[],
+            ward_expense_target_info:[],
         }
     },
     created:function(){
@@ -59,9 +59,10 @@ export default {
     },
     methods:{
         show_category : function(){
-            axios.get(`/unit-expense-target/show/${this.unit_expense_target_id}`)
+            axios.get(`/ward-expense-target/show/${this.ward_expense_target_id}`)
                 .then(responce => {
-                    this.unit_expense_target_info = responce.data.data
+
+                    this.ward_expense_target_info = responce?.data?.data
 
                 })
         }

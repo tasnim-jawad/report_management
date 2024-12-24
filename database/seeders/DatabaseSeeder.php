@@ -14,6 +14,7 @@ use Database\Seeders\Bm\Income\BmCategoryUsersTableSeeder;
 use Database\Seeders\Bm\Income\BmPaidsTableSeeder;
 use Database\Seeders\Bm\Ward\Expense\WardBmExpenseCategoriesTableSeeder;
 use Database\Seeders\Bm\Ward\Expense\WardBmExpensesTableSeeder;
+use Database\Seeders\Bm\Ward\Expense\WardExpenseTargetsTableSeeder;
 use Database\Seeders\Bm\Ward\Income\WardBmIncomeCategoriesTableSeeder;
 use Database\Seeders\Bm\Ward\Income\WardBmIncomesTableSeeder;
 use Database\Seeders\Organization\OrgAreasTableSeeder;
@@ -245,6 +246,7 @@ class DatabaseSeeder extends Seeder
             //WardBmExpense
             WardBmExpenseCategoriesTableSeeder::class,
             WardBmExpensesTableSeeder::class,
+            WardExpenseTargetsTableSeeder::class,
             WardBmIncomeCategoriesTableSeeder::class,
             WardBmIncomesTableSeeder::class,
             //WardMontobbo

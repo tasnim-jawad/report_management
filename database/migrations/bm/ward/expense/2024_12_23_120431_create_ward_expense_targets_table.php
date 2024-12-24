@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('ward_expense_targets', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('ward_id')->nullable();
+            $table->bigInteger('thana_id')->nullable();
+            $table->bigInteger('city_id')->nullable();
+            $table->bigInteger('ward_bm_expense_category_id')->nullable();
+            $table->integer('amount')->nullable();
+            $table->date('start_from')->nullable();
+
+            $table->bigInteger('creator')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

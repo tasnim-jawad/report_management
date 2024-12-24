@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Validator;
 
 class WardBmExpenseCategoryController extends Controller
 {
+    public function index(){
+        $datas = WardBmExpenseCategory::where('status', 1)
+                                ->orderBy('id','ASC')
+                                ->get();
+        return response([
+            'data' => $datas,
+            'status' => 'success'
+        ]);
+    }
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;

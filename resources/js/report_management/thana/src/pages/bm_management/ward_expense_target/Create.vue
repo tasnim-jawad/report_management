@@ -3,7 +3,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             নতুন ধার্য নির্ধারণ করুন
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UnitExpenseTargetAll'}" class="text-dark">সকল ধার্য দেখুন</router-link>
+                <router-link :to="{name:'WardExpenseTargetAll'}" class="text-dark">সকল ধার্য দেখুন</router-link>
             </div>
         </div>
         <div class="card-body">
@@ -11,23 +11,23 @@
 
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center">
                     <div class="form_label">
-                        <label for="unit_id">Unit Name</label>
+                        <label for="ward_id">Ward Name</label>
                     </div>
                     <div class="form_input">
-                        <select name="unit_id" id="unit_id" class="form-control text-center">
-                            <option value="" > -- select unit --</option>
-                            <option v-for="(unit,index) in units" :key="index" :value="unit.id">{{ unit.title }}</option>
+                        <select name="ward_id" id="ward_id" class="form-control text-center">
+                            <option value="" > -- select ward --</option>
+                            <option v-for="(ward,index) in wards" :key="index" :value="ward.id">{{ ward.title }}</option>
                         </select>
                     </div>
                 </div>
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center">
                     <div class="form_label">
-                        <label for="bm_expense_category_id">Category</label>
+                        <label for="ward_bm_expense_category_id">Category</label>
                     </div>
                     <div class="form_input">
-                        <select name="bm_expense_category_id" id="bm_expense_category_id" class="form-control text-center">
+                        <select name="ward_bm_expense_category_id" id="ward_bm_expense_category_id" class="form-control text-center">
                             <option value="" > -- select category--</option>
-                            <option v-for="(category,index) in bm_expense_categorys" :key="index" :value="category.id">{{ category.title }}</option>
+                            <option v-for="(category,index) in ward_bm_expense_categorys" :key="index" :value="category.id">{{ category.title }}</option>
                         </select>
                     </div>
                 </div>
@@ -68,13 +68,13 @@ export default {
                     name:"description",
                 },
             ],
-            units: [],
-            bm_expense_categorys: [],
+            wards: [],
+            ward_bm_expense_categorys: [],
         }
     },
     created:function () {
-        this.all_units()
-        this.all_bm_expense_categorys()
+        this.all_wards()
+        this.all_ward_bm_expense_categorys()
     },
     methods:{
         create_category:function(){
@@ -84,24 +84,24 @@ export default {
             //     console.log(entry);
             // }
             let self = this;
-            axios.post('/unit-expense-target/store',formData)
+            axios.post('/ward-expense-target/store',formData)
                 .then(function (response) {
                     console.log(response.statusText);
                     window.toaster('New BM expense target Created successfuly', 'success');
-                    self.$router.push({ name: 'UnitExpenseTargetAll' });
+                    self.$router.push({ name: 'WardExpenseTargetAll' });
                 })
                 .catch(function (error) {
                     console.log(error.response);
                 });
         },
-        all_units:async function(){
-            let response =await axios.get('/org-unit/ward-wise-unit')
-            this.units = response.data.data;
+        all_wards:async function(){
+            let response =await axios.get('/org-ward/thana-wise-ward')
+            this.wards = response.data.data;
         },
-        all_bm_expense_categorys:async function(){
-            let response =await axios.get('/bm-expense-category')
-            this.bm_expense_categorys = response.data.data.length ? [response.data.data[0]] : []; 
-            console.log("bm_expense_categorys" , this.bm_expense_categorys);
+        all_ward_bm_expense_categorys:async function(){
+            let response =await axios.get('/ward-bm-expense-category')
+            this.ward_bm_expense_categorys = response.data.data.length ? [response.data.data[0]] : [];
+            console.log("ward_bm_expense_categorys" , this.ward_bm_expense_categorys);
         }
 
     }

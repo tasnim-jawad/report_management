@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('ward_expense_target_logs', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('ward_expense_targets_id')->nullable();
+            $table->date('created_date')->nullable();
+            $table->string('action'); // Action type: create, update, delete
+            $table->string('model'); // Name of the model
+            $table->unsignedBigInteger('model_id'); // ID of the affected model
+            $table->json('payload')->nullable(); // Data changes or details
+
+            $table->bigInteger('creator')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

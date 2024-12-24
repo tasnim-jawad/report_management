@@ -1,16 +1,16 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            আয়ের সকল খাত সমূহ
+            আয়ের সকল খাত সমূহের ধার্য
             <div class="ward_select">
-                <label for="ward_id">Unit:</label>
+                <label for="ward_id">Ward:</label>
                 <select name="ward_id" id="ward_id" class="text-center" v-model="searched_ward_id">
                     <option value="" > -- select ward --</option>
                     <option v-for="(ward,index) in wards" :key="index" :value="ward.id">{{ ward.title }}</option>
                 </select>
             </div>
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UnitExpenseTargetCreate'}" class="text-dark">নতুন ধার্য নির্ধারণ করুন </router-link>
+                <router-link :to="{name:'WardExpenseTargetCreate'}" class="text-dark">নতুন ধার্য নির্ধারণ করুন </router-link>
             </div>
         </div>
         <div class="card-body">
@@ -18,7 +18,7 @@
                 <table class="table table-striped table-bordered text-start">
                     <thead>
                         <tr class="table-dark">
-                            <th >Unit Name</th>
+                            <th >Ward Name</th>
                             <th>Category</th>
                             <th>Amount</th>
                             <th>Start From</th>
@@ -28,16 +28,16 @@
                     <tbody>
                         <tr v-for="(ward_expense_target,index) in filtered_expense_targets" :key="index">
                             <td>{{ward_expense_target?.org_ward?.title}}</td>
-                            <td>{{ward_expense_target?.bm_expense_category?.title}}</td>
+                            <td>{{ward_expense_target?.ward_bm_expense_category?.title}}</td>
                             <td>{{ward_expense_target?.amount}}</td>
                             <td>{{ward_expense_target?.start_from}}</td>
                             <td>
                                 <div class="action">
                                     <div class="btn btn-success btn-sm me-2">
-                                        <router-link :to="{name:'UnitExpenseTargetDetails',params: { ward_expense_target_id: ward_expense_target.id }}"  class="text-dark">show</router-link>
+                                        <router-link :to="{name:'WardExpenseTargetDetails',params: { ward_expense_target_id: ward_expense_target.id }}"  class="text-dark">show</router-link>
                                     </div>
                                     <div class="btn btn-warning btn-sm me-2">
-                                        <router-link :to="{name:'UnitExpenseTargetEdit',params: { ward_expense_target_id: ward_expense_target.id }}"  class="text-dark">Edit</router-link>
+                                        <router-link :to="{name:'WardExpenseTargetEdit',params: { ward_expense_target_id: ward_expense_target.id }}"  class="text-dark">Edit</router-link>
                                     </div>
                                     <div class="btn btn-danger btn-sm">
                                         <a @click="delete_category(ward_expense_target.id)" class="text-dark">Delete</a>
@@ -80,7 +80,7 @@ export default {
     },
     methods:{
         show_ward_expense_target :async function(){
-            await axios.get('/ward-expense-target/ward-wise')
+            await axios.get('/ward-expense-target/thana-wise')
                 .then(response => {
                     this.ward_expense_targets = response.data.data;
                     this.filtered_expense_targets = this.ward_expense_targets;
@@ -110,7 +110,7 @@ export default {
                     });
         },
         all_wards:async function(){
-            let response =await axios.get('/org-ward/ward-wise-ward')
+            let response =await axios.get('/org-ward/thana-wise-ward')
             this.wards = response.data.data;
         },
         expense_targets:async function(ward_id){

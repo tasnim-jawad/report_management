@@ -38,6 +38,15 @@ class OrgWard extends Model
         return $this->hasMany(OrgUnit::class);
     }
 
+    public function org_city()
+    {
+        return $this->belongsTo(OrgCity::class);
+    }
+    public function org_thana()
+    {
+        return $this->belongsTo(OrgThana::class);
+    }
+
 
     public function ward_to_user()
     {
