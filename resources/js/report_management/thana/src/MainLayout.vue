@@ -49,7 +49,7 @@
                         </li>
                         <li>
                             <router-link :to="{ name: 'WardExpenseTargetAll' }">
-                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ইউনিটের ধার্য
+                                <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>ওয়ার্ডের ধার্য
                             </router-link>
                         </li>
                         <!-- <li>
@@ -57,66 +57,66 @@
                                 <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Monthly Report Info
                             </router-link>
                         </li> -->
-                        <li>
+                        <!-- <li>
                             <router-link :to="{ name: 'Dawat' }">
                                 <span class="icon_margin"><i class="fa-regular fa-comment"></i></span>দাওয়াত ও তাবলিগ
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'Department' }">
                                 <span class="icon_margin"><i class="fa-solid fa-puzzle-piece"></i></span>বিভাগ ভিত্তিক
                                 তথ্য
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'DawahAndProkashona' }">
                                 <span class="icon_margin"><i class="fa-solid fa-book"></i></span>দাওয়াহ্ ও প্রকাশনা
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'Kormosuci' }">
                                 <span class="icon_margin"><i class="fa-solid fa-handshake"></i></span>কর্মসূচি
                                 বাস্তবায়ন
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'Songothon' }">
                                 <span class="icon_margin"><i class="fa-solid fa-sitemap"></i></span>সংগঠন
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'Proshikkhon' }">
                                 <span class="icon_margin"><i class="fa-solid fa-chalkboard-user"></i></span>প্ৰশিক্ষণ
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'Shomajsheba' }">
                                 <span class="icon_margin"><i class="fa-solid fa-share-from-square"></i></span>সমাজ
                                 সংস্কার ও সমাজসেবা
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'Rastrio' }">
                                 <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও
                                 সংশোধন
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'Montobbo' }">
                                 <span class="icon_margin"><i class="fa-solid fa-comments"></i></span>মন্তব্য
                             </router-link>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <router-link :to="{ name: 'BmCategoryAll' }">
                                 <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>আয়ের
                                 খাত সমুূহ
                             </router-link>
                         </li> -->
-                        <li>
+                        <!-- <li>
                             <router-link :to="{ name: 'BmEntryAll' }">
                                 <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>আয় এন্ট্রি করুন
                             </router-link>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <router-link :to="{name:'BmCategoryUserAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত ধার্য
@@ -127,12 +127,12 @@
                                 <span class="icon_margin"><i class="fa-solid fa-layer-group"></i></span>ব্যয়ের খাত সমুূহ
                             </router-link>
                         </li> -->
-                        <li>
+                        <!-- <li>
                             <router-link :to="{ name: 'BmExpenseAll' }">
                                 <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>ব্যয়
                                 এন্ট্রি করুন
                             </router-link>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <router-link :to="{name:'BmUserReport'}">
                                 <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM User Report
@@ -143,16 +143,16 @@
                                 <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM Total Report
                             </router-link>
                         </li> -->
-                        <li>
+                        <!-- <li>
                             <router-link :to="{ name: 'PrintReport' }">
                                 <span class="icon_margin"><i class="fa-solid fa-print"></i></span>রিপোর্ট প্রিন্ট
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link :to="{ name: 'UploadReport' }">
                                 <span class="icon_margin"><i class="fa-solid fa-print"></i></span>রিপোর্ট আপলোড
                             </router-link>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </aside>

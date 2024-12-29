@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Thana;
 
 use App\Http\Controllers\Controller;
 use App\Models\Report\ReportManagementControl;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PermissionController extends Controller
 {
@@ -33,7 +35,7 @@ class PermissionController extends Controller
         // dd($data->month_year);
 
     }
-    public function set_unit_report_joma_permission()
+    public function set_ward_report_joma_permission()
     {
         // dd(request()->all());
         $validator = Validator::make(request()->all(), [
@@ -48,14 +50,14 @@ class PermissionController extends Controller
         }
 
         $month_year = Carbon::parse(request()->month);
-        $ward_id = auth()->user()->org_ward_user->ward_id;
+        $thana_id = auth()->user()->org_thana_user->thana_id;
 
-        ReportManagementControl::where('upper_organization_id', $ward_id)
-            ->where('report_type', 'unit')
+        ReportManagementControl::where('upper_organization_id', $thana_id)
+            ->where('report_type', 'ward')
             ->update(['is_active' => 0]);
 
-        $data = ReportManagementControl::where('upper_organization_id', $ward_id)
-            ->where('report_type', 'unit')
+        $data = ReportManagementControl::where('upper_organization_id', $thana_id)
+            ->where('report_type', 'ward')
             ->whereYear('month_year', $month_year->clone()->year)
             ->whereMonth('month_year', $month_year->clone()->month)
             ->latest()
@@ -66,8 +68,8 @@ class PermissionController extends Controller
 
             $data = new ReportManagementControl();
             $data->month_year = $month_year->clone()->toDateString();
-            $data->report_type = 'unit';
-            $data->upper_organization_id = $ward_id;
+            $data->report_type = 'ward';
+            $data->upper_organization_id = $thana_id;
             $data->is_active = 1;
 
             $data->creator = auth()->id();
@@ -80,11 +82,11 @@ class PermissionController extends Controller
         ], 200);
     }
 
-    public function remove_unit_report_joma_permission()
+    public function remove_ward_report_joma_permission()
     {
-        $ward_id = auth()->user()->org_ward_user->ward_id;
-        ReportManagementControl::where('upper_organization_id', $ward_id)
-            ->where('report_type', 'unit')
+        $thana_id = auth()->user()->org_thana_user->thana_id;
+        ReportManagementControl::where('upper_organization_id', $thana_id)
+            ->where('report_type', 'ward')
             ->update(['is_active' => 0]);
 
         return response()->json([
