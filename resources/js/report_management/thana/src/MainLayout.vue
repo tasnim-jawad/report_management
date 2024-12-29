@@ -29,7 +29,7 @@
                         <div class="block_title">Pages</div>
                         <li>
                             <router-link :to="{ name: 'Dashboard' }">
-                                <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>ড্যাশবোর্ড
+                                <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>ড্যাশবোর্ড থানা 
                             </router-link>
                         </li>
                         <li>
