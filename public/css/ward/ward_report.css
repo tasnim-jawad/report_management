@@ -188,6 +188,10 @@ td,th{
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.go_back_to_dashboard{
+    bottom: 60px;
+    right: 15px;
+}
 /* Hover effect */
 .go_back_to_dashboard:hover,
 .print_preview:hover {

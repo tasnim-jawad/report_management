@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{{ asset('css/ward/ward_report.css') }}">
     <style>
         @media print {
-            .print_preview {
+            .print_preview,
+            .go_back_to_dashboard {
                 display: none;
             }
         }
@@ -2384,6 +2385,9 @@
     <a href="javascript:void(0)" class="print_preview" onclick="print_upload_page(event)">
         <i class="fa-solid fa-pen-to-square"></i>
     </a>
+    <a href="javascript:void(0)" class="go_back_to_dashboard" onclick="go_back_to_dashboard(event)">
+        <i class="fa-solid fa-door-open"></i>
+    </a>
 
     <script>
         function print_upload_page(event) {
@@ -2399,6 +2403,27 @@
             if (user_id && month) {
                 // Construct the new URL
                 const redirectUrl = `/dashboard/ward#/ward-report-upload/${month}/${user_id}`;
+
+                // Redirect to the new URL
+                window.location.href = redirectUrl;
+            } else {
+                console.error("Required query parameters are missing in the current URL.");
+            }
+        }
+
+        function go_back_to_dashboard(event) {
+            event.preventDefault();
+
+            // Get the current URL query parameters
+            const queryParams = new URLSearchParams(window.location.search);
+
+            // Extract the user_id and month from the URL
+            const user_id = queryParams.get('user_id');
+            const month = queryParams.get('month');
+
+            if (user_id && month) {
+                // Construct the new URL
+                const redirectUrl = `/dashboard/ward#/dashboard`;
 
                 // Redirect to the new URL
                 window.location.href = redirectUrl;

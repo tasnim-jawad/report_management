@@ -5013,6 +5013,9 @@
                 @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a>
         </div>
         <a href="" class="print_preview" @click.prevent="print_report()"><i class="fa-solid fa-print"></i></a>
+        <router-link :to="{ name: 'Dashboard' }">
+            <a href="" class="go_back_to_dashboard"><i class="fa-solid fa-door-open"></i></a>
+        </router-link>
     </div>
 </template>
 
@@ -5598,7 +5601,7 @@ export default {
         print_report: function () {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;
-            const url = `/ward/report?user_id=${user_id}&month=${month}&print=true`;
+            const url = `/ward/ward-report-monthly?user_id=${user_id}&month=${month}&print=true`;
             window.location.href = url;
 
             setTimeout(() => {

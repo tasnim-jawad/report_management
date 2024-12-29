@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{{ asset('css/unit/unit_report.css') }}">
     <style>
         @media print {
-            .print_preview {
+            .print_preview,
+            .go_back_to_dashboard {
                 display: none;
             }
         }
