@@ -5,7 +5,7 @@
         "dev": "vite",
         "build": "vite build",
         "serve": "php artisan serve --host 0.0.0.0 --port 8002",
-        "dbrefresh": "php artisan migrate:fresh && php artisan migrate --path=\"database/migrations/*\" && php artisan migrate --path=\"database/migrations/*/*\" && php artisan migrate --path=\"database/migrations/*/*/*\" --seed && php artisan passport:client --personal"
+        "dbrefresh": "php artisan migrate:fresh && php artisan migrate --path=\"database/migrations/*\" && php artisan migrate --path=\"database/migrations/*/*\" && php artisan migrate --path=\"database/migrations/*/*/*\" --seed && php artisan passport:install && php artisan passport:client --personal"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",

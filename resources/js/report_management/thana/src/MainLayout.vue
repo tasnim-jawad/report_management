@@ -233,7 +233,8 @@ export default {
     },
     created: function () {
         let token = localStorage.getItem('token')
-
+        console.log("somthing");
+        
         if (!token) {
             window.location.href = '/login'
         }
@@ -252,7 +253,7 @@ export default {
             let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
                 keyboard: false,
             });
-            modalElement.show();
+            // modalElement.show();  // যেহেতু এখন রিপোর্ট আপলোডের পেইজ নাই তাই এটা কমেন্ট করা হয়েছে
         }
 
     },
