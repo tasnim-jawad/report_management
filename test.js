@@ -1,5 +1,5 @@
 // git hub test
-
+// git connect with remote 
 average_data: async function ($table_name) {
     const field_mappings = {
         ward_kormosuci_bastobayons: [
