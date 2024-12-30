@@ -16,8 +16,8 @@ class OrgCitiesTableSeeder extends Seeder
         OrgCity::truncate();
         OrgCity::insert([
             [
-                'title' =>"dhaka mohanogori uttor",
-                'description' => "dhaka mohanogori uttor is a city",
+                'title' =>"Dhaka mohanogori Uttor",
+                'description' => "Dhaka mohanogori uttor is a city",
                 'org_type_id' => 1,
                 'org_area_id' => 1,
                 'org_gender' => 'men',

@@ -1175,10 +1175,11 @@
                             <tr>
                                 <td>
                                     <div class="parent_popup">
-                                        <input name="paribarik_unit_total"
+                                        <!-- <input name="paribarik_unit_total"
                                             :value="formatBangla(report_sum_data?.songothon5_dawat_and_paribarik_units?.paribarik_unit_total ?? '')"
                                             @change="data_upload('songothon5-dawat-and-paribarik-unit')" type="text"
-                                            class="bg-input w-100 text-center">
+                                            class="bg-input w-100 text-center"> -->
+                                        {{ formatBangla(previous_present?.paribarik_unit_total_present ?? '') }}
                                         <comment :table_name="'songothon5_dawat_and_paribarik_units'"
                                             :column_name="'paribarik_unit_total'" />
                                     </div>

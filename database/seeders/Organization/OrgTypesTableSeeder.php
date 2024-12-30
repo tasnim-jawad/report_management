@@ -20,7 +20,7 @@ class OrgTypesTableSeeder extends Seeder
                 'description' => "sromik kollan is an organization"
             ],
             [
-                'title' => "engineers forum",
+                'title' => "Engineers forum",
                 'description' => "engineers forum is an organization"
             ],
             [

@@ -18,23 +18,23 @@ class OrgAreasTableSeeder extends Seeder
         OrgArea::insert([
             [
                 'ward' => "mirpur 6",
-                'pourosova' => "moddho badda pourosova",
-                'thana' => "moddho badda thana"
+                'pourosova' => "mirpur pourosova",
+                'thana' => "mirpur thana"
             ],
             [
                 'ward' => "mirpur 10",
-                'pourosova' => "badda pourosova",
-                'thana' => "badda thana"
+                'pourosova' => "mirpur pourosova",
+                'thana' => "mirpur thana"
             ],
             [
                 'ward' => "pollobi",
-                'pourosova' => "haji para pourosova",
-                'thana' => "haji para thana"
+                'pourosova' => "mirpur pourosova",
+                'thana' => "mirpur thana"
             ],
             [
                 'ward' => "kalshi",
-                'pourosova' => "chiriakhana pourosova",
-                'thana' => "chiriakhana thana"
+                'pourosova' => "mirpur pourosova",
+                'thana' => "mirpur thana"
             ],
 
         ]);

@@ -41,7 +41,7 @@
                 <p>ইউনিটের সংখ্যা: {{ bangla($report_header?->unit_count) ?? '' }}</p>
                 <p>ওয়ার্ড নং ও নাম: {{ $report_header?->ward_info?->no ?? '' }} ও
                     {{ $report_header?->ward_info?->title ?? '' }}</p>
-                <p class="w-25">উপজেলা/থানা: {{ $report_header?->thana_info?->title ?? '' }}</p>
+                <p class="width-30">উপজেলা/থানা: {{ $report_header?->thana_info?->title ?? '' }}</p>
             </div>
             <div class="line d-flex flex-wrap justify-content-between ">
                 <p>ইউনিট সমুহের নাম :
@@ -348,7 +348,8 @@
                         <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
                         <td>{{ bangla($report_sum_data->dawah_and_prokashonas->soft_copy_book_distribution ?? '') }}
                         </td>
-                        <td>{{ bangla($report_sum_data->dawah_and_prokashonas->soft_copy_book_distribution_increase ?? '') }}
+                        <td>
+                            {{-- {{ bangla($report_sum_data->dawah_and_prokashonas->soft_copy_book_distribution_increase ?? '') }} --}}
                         </td>
                     </tr>
                     <tr>
@@ -359,7 +360,8 @@
 
                         <td class="text-start px-2">দাওয়াতি লিংক বিতরণ<span>(সংগঠন অনুমোদিত)</span></td>
                         <td>{{ bangla($report_sum_data->dawah_and_prokashonas->dawat_link_distribution ?? '') }}</td>
-                        <td>{{ bangla($report_sum_data->dawah_and_prokashonas->dawat_link_distribution_increase ?? '') }}
+                        <td>
+                            {{-- {{ bangla($report_sum_data->dawah_and_prokashonas->dawat_link_distribution_increase ?? '') }} --}}
                         </td>
                     </tr>
                     <tr>

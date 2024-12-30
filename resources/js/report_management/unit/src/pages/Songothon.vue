@@ -241,10 +241,10 @@ export default {
             },
         ],
         fields4:[
-            {
-                label:'সংখ্যা',
-                name:'paribarik_unit_total',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'paribarik_unit_total',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'paribarik_unit_increase',

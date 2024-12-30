@@ -4822,15 +4822,18 @@
                                     <td>
                                         <!-- {{bangla($rastrio4->national_vote_kendro?? "")}} /
                                         {{bangla($rastrio4->local_vote_kendro?? "")}} -->
-                                        <div class="d-flex">
-                                            <input name="national_vote_kendro"
+                                        <div>
+                                            <!-- <input name="national_vote_kendro"
                                                 :value="formatBangla(report_sum_data?.ward_rastrio4_election_activities?.national_vote_kendro)"
                                                 @change="data_upload('ward-rastrio4-election-activitie')" type="text"
                                                 class="bg-input w-100 text-center" />/
                                             <input name="local_vote_kendro"
                                                 :value="formatBangla(report_sum_data?.ward_rastrio4_election_activities?.local_vote_kendro)"
                                                 @change="data_upload('ward-rastrio4-election-activitie')" type="text"
-                                                class="bg-input w-100 text-center" />
+                                                class="bg-input w-100 text-center" /> -->
+                                            <span>{{ formatBangla(previous_present.national_vote_kendro_present) }}</span>/
+                                            <span>{{ formatBangla(previous_present.local_vote_kendro_present) }}</span>
+                                            
                                         </div>
                                     </td>
                                     <td>
@@ -4867,15 +4870,17 @@
                                     <td>
                                         <!-- {{bangla($rastrio4->vote_kendro_committee?? "")}} /
                                         {{bangla($rastrio4->vote_kendro_vittik_unit?? "")}} -->
-                                        <div class="d-flex">
-                                            <input name="vote_kendro_committee"
+                                        <div>
+                                            <!-- <input name="vote_kendro_committee"
                                                 :value="formatBangla(report_sum_data?.ward_rastrio4_election_activities?.vote_kendro_committee)"
                                                 @change="data_upload('ward-rastrio4-election-activitie')" type="text"
                                                 class="bg-input w-100 text-center" />/
                                             <input name="vote_kendro_vittik_unit"
                                                 :value="formatBangla(report_sum_data?.ward_rastrio4_election_activities?.vote_kendro_vittik_unit)"
                                                 @change="data_upload('ward-rastrio4-election-activitie')" type="text"
-                                                class="bg-input w-100 text-center" />
+                                                class="bg-input w-100 text-center" /> -->
+                                            <span>{{ formatBangla(previous_present.vote_kendro_committee_present) }}</span>/
+                                            <span>{{ formatBangla(previous_present.vote_kendro_vittik_unit_present) }}</span>
                                         </div>
                                     </td>
                                     <td>

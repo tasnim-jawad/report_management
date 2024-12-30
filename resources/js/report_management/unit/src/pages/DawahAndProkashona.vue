@@ -119,10 +119,10 @@ export default {
     data: ()=>({
         // month:null,
         fields1:[
-            {
-                label:'সংখ্যা',
-                name:'unit_book_distribution_center',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'unit_book_distribution_center',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'unit_book_distribution_center_increase',
@@ -130,10 +130,10 @@ export default {
 
         ],
         fields2:[
-            {
-                label:'সংখ্যা',
-                name:'books_in_pathagar',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'books_in_pathagar',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'books_in_pathagar_increase',
@@ -144,56 +144,56 @@ export default {
                 label:'সংখ্যা',
                 name:'unit_book_distribution',
             },
-            {
-                label:'বৃদ্ধি',
-                name:'unit_book_distribution_increase',
-            },
+            // {
+            //     label:'বৃদ্ধি',
+            //     name:'unit_book_distribution_increase',
+            // },
         ],
         fields4:[
             {
                 label:'সংখ্যা',
                 name:'soft_copy_book_distribution',
             },
-            {
-                label:'বৃদ্ধি',
-                name:'soft_copy_book_distribution_increase',
-            },
+            // {
+            //     label:'বৃদ্ধি',
+            //     name:'soft_copy_book_distribution_increase',
+            // },
         ],
         fields5:[
             {
                 label:'সংখ্যা',
                 name:'dawat_link_distribution',
             },
-            {
-                label:'বৃদ্ধি',
-                name:'dawat_link_distribution_increase',
-            },
+            // {
+            //     label:'বৃদ্ধি',
+            //     name:'dawat_link_distribution_increase',
+            // },
         ],
         fields6:[
-            {
-                label:'সংখ্যা',
-                name:'sonar_bangla',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'sonar_bangla',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'sonar_bangla_increase',
             },
         ],
         fields7:[
-            {
-                label:'সংখ্যা',
-                name:'songram',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'songram',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'songram_increase',
             },
         ],
         fields8:[
-            {
-                label:'সংখ্যা',
-                name:'prithibi',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'prithibi',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'prithibi_increase',

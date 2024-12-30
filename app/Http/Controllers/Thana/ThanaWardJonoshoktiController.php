@@ -38,6 +38,7 @@ class ThanaWardJonoshoktiController extends Controller
                 'ward_id' =>$user->org_ward->id,
                 'responsibility' => $user->responsibility->title ?? "",
                 'responsibility_id' => $user->responsibility->id ?? "",
+                'is_permitted' => $user->user->is_permitted,
             ];
 
         }

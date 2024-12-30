@@ -20,7 +20,7 @@
                         <input type="text" :name="field.name" v-model="amount" class="form-control">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm mt-3">Create Category</button>
+                <button type="submit" class="btn btn-primary btn-sm mt-3">Expense Entry</button>
             </form>
         </div>
     </div>

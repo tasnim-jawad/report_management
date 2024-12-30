@@ -282,7 +282,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in fields25" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'ward-department4-different-job-holders-dawat'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -293,7 +293,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in fields26" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'department4-different-job-holders-dawat'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'ward-department4-different-job-holders-dawat'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>

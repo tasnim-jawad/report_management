@@ -233,7 +233,6 @@ export default {
     },
     created: function () {
         let token = localStorage.getItem('token')
-        console.log("somthing");
         
         if (!token) {
             window.location.href = '/login'

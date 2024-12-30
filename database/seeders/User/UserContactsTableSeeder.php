@@ -45,26 +45,26 @@ class UserContactsTableSeeder extends Seeder
                 'value' => '+8801879789879',
                 'user_id' => 6,
             ],
-            [
-                'type' => 'personal',
-                'value' => '+8801657556',
-                'user_id' => 7,
-            ],
-            [
-                'type' => 'signal',
-                'value' => '+880156898967',
-                'user_id' => 8,
-            ],
-            [
-                'type' => 'whatsapp',
-                'value' => '+88017985643',
-                'user_id' => 9,
-            ],
-            [
-                'type' => 'telegram',
-                'value' => '+880178543876345',
-                'user_id' => 10,
-            ],
+            // [
+            //     'type' => 'personal',
+            //     'value' => '+8801657556',
+            //     'user_id' => 7,
+            // ],
+            // [
+            //     'type' => 'signal',
+            //     'value' => '+880156898967',
+            //     'user_id' => 8,
+            // ],
+            // [
+            //     'type' => 'whatsapp',
+            //     'value' => '+88017985643',
+            //     'user_id' => 9,
+            // ],
+            // [
+            //     'type' => 'telegram',
+            //     'value' => '+880178543876345',
+            //     'user_id' => 10,
+            // ],
         ]);
     }
 }

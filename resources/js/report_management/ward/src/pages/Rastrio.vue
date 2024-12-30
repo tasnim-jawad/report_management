@@ -229,7 +229,7 @@
 
         <previous-next
                 :prev-route="{ name: 'Shomajsheba' }"
-                :next-route="{ name: 'Montobbo' }"
+                :next-route="{ name: 'BmEntryAll' }"
                 :month="month"
             >
         </previous-next>
@@ -405,10 +405,10 @@ export default {
         ],
 
         national_vote_kendro:[
-            {
-                label:'সংখ্যা',
-                name:'national_vote_kendro',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'national_vote_kendro',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'national_vote_kendro_increase',
@@ -419,10 +419,10 @@ export default {
             },
         ],
         local_vote_kendro:[
-            {
-                label:'সংখ্যা',
-                name:'local_vote_kendro',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'local_vote_kendro',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'local_vote_kendro_increase',
@@ -433,10 +433,10 @@ export default {
             },
         ],
         vote_kendro_committee:[
-            {
-                label:'সংখ্যা',
-                name:'vote_kendro_committee',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'vote_kendro_committee',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'vote_kendro_committee_increase',
@@ -447,10 +447,10 @@ export default {
             },
         ],
         vote_kendro_vittik_unit:[
-            {
-                label:'সংখ্যা',
-                name:'vote_kendro_vittik_unit',
-            },
+            // {
+            //     label:'সংখ্যা',
+            //     name:'vote_kendro_vittik_unit',
+            // },
             {
                 label:'বৃদ্ধি',
                 name:'vote_kendro_vittik_unit_increase',

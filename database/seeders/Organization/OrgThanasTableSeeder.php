@@ -16,8 +16,8 @@ class OrgThanasTableSeeder extends Seeder
         OrgThana::truncate();
         OrgThana::insert([
             [
-                'title' =>"mirpur 1",
-                'description' => "mirpur 1 is a thana",
+                'title' =>"Engineers Forum",
+                'description' => "Engineers Forum is a thana of Dhaka Mohanogor North",
                 'org_city_id' => 1,
                 'org_type_id' => 1,
                 'org_area_id' => 1,

@@ -38,6 +38,7 @@ class WardUnitJonoshoktiController extends Controller
                 'unit_id' =>$user->org_unit->id,
                 'responsibility' => $user->responsibility->title ?? "",
                 'responsibility_id' => $user->responsibility->id ?? "",
+                'is_permitted' => $user->user->is_permitted,
             ];
 
         }

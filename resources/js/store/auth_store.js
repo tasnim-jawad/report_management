@@ -58,6 +58,10 @@ export const use_auth_store = defineStore("auth_store", {
                             console.log('ward');
                             window.location.href = '/dashboard/ward' + prevurl;
                             break;
+                        case 4:
+                            console.log('thana');
+                            window.location.href = '/dashboard/thana' + prevurl;
+                            break;
                         case 2:
                             console.log('admin');
                             window.location.href = '/dashboard/admin' + prevurl;
@@ -74,7 +78,8 @@ export const use_auth_store = defineStore("auth_store", {
 
             } catch (error) {
                 if (error.response && error.response.status === 401) {
-                    location.href = "/login";
+                    location.href = "/logout";
+                    // location.href = "/login";
                 } else {
                     console.error('An error occurred:', error);
                 }

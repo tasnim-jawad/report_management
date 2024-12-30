@@ -16,21 +16,25 @@ class IsGuest
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // dd(Auth::check());
         if (Auth::check()) {
-            $token = session('token') ?? request()->bearerToken();
-            if(!$token ){
-                auth()->logout();
-                return $next($request);
-            }
-            
+            // dd($request->headers->all());
+            // $token = session('token') ?? request()->bearerToken();
+            // if(!$token){
+            //     auth()->logout();
+            //     return $next($request);
+            // }
+            // auth()->logout();
             $user = Auth::user();
             $prevurl = session('prevurl', '#/dashboard'); // Default to '#/dashboard' if prevurl is not set
-
+            // dd($user);
             switch ($user->role) {
                 case 6:
                     return redirect('/dashboard/unit' . $prevurl);
                 case 5:
                     return redirect('/dashboard/ward' . $prevurl);
+                case 4:
+                    return redirect('/dashboard/thana' . $prevurl);
                 case 2:
                     return redirect('/dashboard/admin' . $prevurl);
                 default:

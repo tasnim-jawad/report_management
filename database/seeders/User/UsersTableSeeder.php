@@ -78,40 +78,46 @@ class UsersTableSeeder extends Seeder
             'blood_group' => "B+",
         ]);
 
-        User::create([
-            'role' => 5,
-            'full_name' =>"ward_1_amir",
-            'gender' => "male",
-            'telegram_name' => "ward_1_amir",
-            'telegram_id' => "ward_1_amir",
-            'email' => "ward_1_amir@gmail.com",
-            'password' => bcrypt('12345678'),
-            'blood_group' => "B+",
-        ]);
-        User::create([
-            'role' => 5,
-            'full_name' =>"ward_2_amir",
-            'gender' => "male",
-            'telegram_name' => "ward_2_amir",
-            'telegram_id' => "ward_2_amir",
-            'email' => "ward_2_amir@gmail.com",
-            'password' => bcrypt('12345678'),
-            'blood_group' => "B+",
-        ]);
+        // User::create([
+        //     'role' => 5,
+        //     'full_name' =>"ward_1_amir",
+        //     'gender' => "male",
+        //     'telegram_name' => "ward_1_amir",
+        //     'telegram_id' => "ward_1_amir",
+        //     'email' => "ward_1_amir@gmail.com",
+        //     'password' => bcrypt('12345678'),
+        //     'blood_group' => "B+",
+        // ]);
+        // User::create([
+        //     'role' => 5,
+        //     'full_name' =>"ward_2_amir",
+        //     'gender' => "male",
+        //     'telegram_name' => "ward_2_amir",
+        //     'telegram_id' => "ward_2_amir",
+        //     'email' => "ward_2_amir@gmail.com",
+        //     'password' => bcrypt('12345678'),
+        //     'blood_group' => "B+",
+        // ]);
 
-        for ($i = 1; $i <= 10; $i++) {
-            User::create([
-                'role' => 6,
-                'full_name' => "Unit $i",
-                'gender' => 'male', // Alternates between male and female
-                'telegram_name' => "Unit_$i",
-                'telegram_id' => "1000$i", // Slightly different Telegram ID for each user
-                'email' => "unit_$i@gmail.com", // Different email for each user
-                'password' => bcrypt('12345678'), // Ensure password is hashed
-                'blood_group' => ($i % 2 == 0) ? 'O+' : 'A-', // Alternates blood group
-            ]);
-        }
+        // for ($i = 1; $i <= 10; $i++) {
+        //     User::create([
+        //         'role' => 6,
+        //         'full_name' => "Unit $i",
+        //         'gender' => 'male', // Alternates between male and female
+        //         'telegram_name' => "Unit_$i",
+        //         'telegram_id' => "1000$i", // Slightly different Telegram ID for each user
+        //         'email' => "unit_$i@gmail.com", // Different email for each user
+        //         'password' => bcrypt('12345678'), // Ensure password is hashed
+        //         'blood_group' => ($i % 2 == 0) ? 'O+' : 'A-', // Alternates blood group
+        //     ]);
+        // }
 
+
+
+
+
+
+        
         // User::create([
         //     'role' => 4,
         //     'full_name' =>"sirajul islam",
