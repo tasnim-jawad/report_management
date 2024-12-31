@@ -40,7 +40,7 @@
                 <p>ওয়ার্ড নং ও নাম : {{ $report_header?->ward_info?->no ?? '' }} ও
                     {{ $report_header?->ward_info?->title ?? '' }}</p>
                 <p>পৌরসভা/ইউনিয়ন: </p>
-                <p class="w-25">উপজেলা/থানা: {{ $report_header?->thana_info?->title ?? '' }}</p>
+                <p class="width-30">উপজেলা/থানা: {{ $report_header?->thana_info?->title ?? '' }}</p>
             </div>
             <div class="line d-flex flex-wrap justify-content-between ">
                 <p>আমীর/সভাপতির নাম : {{ $report_header->president ?? '' }}</p>
@@ -585,7 +585,7 @@
                 </div>
             </div>
 
-            <div class="paribarik mb-2">
+            <div class="paribarik mb-5 pb-5">
                 <h4 class="fs-6 fw-bold">৫. পরিবারভিত্তিক দাওয়াত</h4>
                 <table class="text-center  table_layout_fixed">
                     <tbody>
@@ -600,7 +600,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="mosjid_dawah_center mb-1">
+            <div class="mosjid_dawah_center mb-2">
                 <h4 class="fs-6 fw-bold">৬. মসজিদ/দাওয়াহ্ সেন্টার/তথ্যসেবা কেন্দ্রভিত্তিক দাওয়াত</h4>
                 <table class="text-center  ">
                     <thead>
@@ -653,7 +653,7 @@
                 </table>
             </div>
 
-            <div class="tottho_projukti d-flex flex-wrap justify-content-between mb-1">
+            <div class="tottho_projukti d-flex flex-wrap justify-content-between mb-2">
                 <p class="fw-bold fs-6 width-60 ">৭. তথ্যপ্রযুক্তির মাধ্যমে দাওয়াতি কাজের জন্য উপযুক্ত জনশক্তি সংখ্যা:
                     <span>{{ bangla($report_sum_data->ward_department7_dawat_in_technologies->total_well_known ?? '') }}</span>
                 </p>
@@ -1046,7 +1046,7 @@
                     জনশক্তির এ ছকে সর্বমোট সহযোগী সদস্যের ঘরে বসাতে হবে।</p>
             </div>
 
-            <div class="bivag_vittik mb-5">
+            <div class="bivag_vittik mb-5 pb-3">
                 <h4 class="fs-6 fw-bold">৩. বিভাগভিত্তিক তথ্য:</h4>
                 <table class="text-center mb-1">
                     <thead>
@@ -1870,9 +1870,9 @@
             </div>
         </div>
 
-        <div class="shomajsheba mt-5">
+        <div class="shomajsheba mt-5 pt-3">
             <h1 class="font-18 fw-bold">সমাজ সংস্কার ও সমাজসেবা :</h1>
-            <div class="personal_shamajik_kaj mb-2">
+            <div class="personal_shamajik_kaj mb-5">
                 <h4 class="fs-6 fw-bold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h4>
                 <table class="text-center  mb-1">
                     <tr>
@@ -1887,7 +1887,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="samostik_shamajik_kaj pt-3 mb-2">
+            <div class="samostik_shamajik_kaj pt-5 mb-2">
                 <h4 class="fs-6 fw-bold">২. সামষ্টিক/সেবা টিমের মাধ্যমে সামাজিক কাজ (প্রযোজ্য ক্ষেত্রে):</h4>
                 <table class="mb-1">
                     <tbody>

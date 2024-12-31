@@ -4,9 +4,9 @@
             মাস: <input type="month" @change="get_monthly_data" v-model="month" ref="month" name="month">
         </div>
     </div>
-    <div class="card">
+    <div class="card mb-2">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Show All Bm Expense
+            ব্যয়ের বিবরণ
             <div class="btn btn-info btn-sm" v-if="is_permitted">
                 <router-link :to="{name:'BmExpenseCreate'}" class="text-dark">Create Expense</router-link>
             </div>
@@ -53,13 +53,21 @@
             </div>
         </div>
     </div>
+    <previous-next
+            :prev-route="{ name: 'BmEntryAll' }"
+            :next-route="{ name: 'Montobbo' }"
+            :month="month"
+        >
+    </previous-next>
 </template>
 
 <script>
 import axios from 'axios'
 import { store as data_store} from "../../../stores/ReportStore";
 import { mapWritableState } from 'pinia';
+import PreviousNext from '../../../components/PreviousNext.vue';
 export default {
+    components: { PreviousNext },
     data() {
         return {
             bm_expense:[],

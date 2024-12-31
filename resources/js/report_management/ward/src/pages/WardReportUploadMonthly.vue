@@ -40,8 +40,8 @@
                             <input class="border_dot bg-input ps-2 w-100" name="total_population"
                                 :value="formatBangla(report_sum_data?.ward_dawat5_jonoshadharons?.total_population ?? '')"
                                 @change="data_upload('ward-dawat5-jonoshadharon')" type="text">
-                            <comment :table_name="'ward_dawat5_jonoshadharons'"
-                                :column_name="'total_population'" />
+                            <!-- <comment :table_name="'ward_dawat5_jonoshadharons'"
+                                :column_name="'total_population'" /> -->
                         </div>
                     </div>
                     <p class="fw-bold ps-3 w-100">টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক) :</p>

@@ -29,8 +29,7 @@
             <a href="" class="btn btn-success" v-else-if="joma_status == 'rejected'" @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a>
         </div>
         <previous-next
-                :prev-route="{ name: 'Rastrio' }"
-                :next-route="{ name: 'BmEntryAll' }"
+                :prev-route="{ name: 'BmExpenseAll' }"
                 :month="month"
             >
         </previous-next>

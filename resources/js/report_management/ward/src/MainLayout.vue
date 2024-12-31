@@ -101,11 +101,6 @@
                                 সংশোধন
                             </router-link>
                         </li>
-                        <li>
-                            <router-link :to="{ name: 'Montobbo' }">
-                                <span class="icon_margin"><i class="fa-solid fa-comments"></i></span>মন্তব্য
-                            </router-link>
-                        </li>
                         <!-- <li>
                             <router-link :to="{ name: 'BmCategoryAll' }">
                                 <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>আয়ের
@@ -131,6 +126,11 @@
                             <router-link :to="{ name: 'BmExpenseAll' }">
                                 <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>ব্যয়
                                 এন্ট্রি করুন
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'Montobbo' }">
+                                <span class="icon_margin"><i class="fa-solid fa-comments"></i></span>মন্তব্য
                             </router-link>
                         </li>
                         <!-- <li>
