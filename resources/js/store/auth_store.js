@@ -6,7 +6,9 @@ export const use_auth_store = defineStore("auth_store", {
         is_auth: 0,
         auth_info: {},
         role: {},
-        user_unseen_notification: {}
+        user_unseen_notification: {},
+        unit_active_report_month_info: null,
+
     }),
     getters: {},
     actions: {

@@ -1,10 +1,16 @@
 <template>
-    <div class="card mb-3">
+    <div class="card mb-3" v-if="unit_active_report_month_info">
         <div class="card-body border-bottom-0">
             <label for="" class="form-label">মাস:</label>
             <input class="form-control" type="month" v-model="month" name="month">
             <a href="#" class="btn btn-success mt-2" type="button" @click="upload_report"
                 :disabled="!month || !user_id">রিপোর্ট ফরম</a>
+        </div>
+    </div>
+    <div class="card" v-else>
+        <div class="card-body">
+            <!-- <p>আপনার রিপোর্ট পূরণ করার অনুমতি নেই। রিপোর্ট পূরণ করার অনুমতির জন্য আপনার ঊর্ধ্বতন দায়িত্বশীলের সাথে যোগাযোগ করুন।</p> -->
+            <p>রিপোর্ট পুরন করার অনুমতি বন্ধ আছে । আপডেট টেলিগ্রাম / হোয়াটসঅ্যাপ -এ জানিয়ে দেয়া হবে।</p>
         </div>
     </div>
 </template>
@@ -25,7 +31,7 @@ export default {
         this.user_info()
     },
     computed: {
-        ...mapWritableState(data_store, ['month']),
+        ...mapWritableState(data_store, ['month','unit_active_report_month_info']),
     },
     methods: {
         upload_report: async function (event) {

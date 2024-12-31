@@ -87,7 +87,7 @@ class OrgUnitController extends Controller
     }
     public function store()
     {
-        // dd(auth()->user()->id);
+        // dd(auth()->user());
         $validator = Validator::make(request()->all(), [
             'title' => ['required','unique:org_units,title'],
             'description' => ['required'],

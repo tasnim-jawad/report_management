@@ -7,6 +7,7 @@ use App\Models\Organization\Responsibility;
 use App\Models\Report\ReportInfo;
 use App\Models\Report\ReportManagementControl;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 function check_and_get_unit_info($user_id)
 {
@@ -129,7 +130,7 @@ function common_store($bind, $class, $report_info)
     return response()->json([
         "message" => "permission denied.",
         "errors" => [
-            "message" => ["report edit permission is closed."]
+            "message" => ["এ মাসের জন্য রিপোর্ট গ্রহণ বন্ধ আছে । যেকোনো প্রয়োজনে ঊর্ধ্বতন দায়িত্বশীল এর সাথে যোগাযোগ করুন"]
         ]
 
     ], 403);
@@ -211,6 +212,20 @@ function calculate_increase($model, $total_approved_report_info_ids,$column_name
     $total_increase = $data->sum($column_name_increase);
 
     return $total_increase;
+}
+
+function unit_active_report()
+{
+
+    $user = Auth::user()->org_unit_user()->first();
+    // dd($user->ward_id);
+    $permission = ReportManagementControl::where('is_active', 1)
+            ->where('upper_organization_id', $user->ward_id)
+            ->where('report_type', 'unit')
+            ->orderBy('updated_at', 'DESC')
+            ->first();
+
+    return $permission;
 }
 
 

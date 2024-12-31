@@ -37,7 +37,7 @@
                     </div>
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'unit_id'">
                         <select type="text" :name="field.name" class="form-control">
-                            <option value="">-- select responsibility group --</option>
+                            <option value="">-- select unit --</option>
                             <option v-for="(unit, i) in units" :key="i" :value="unit['id']" >{{unit["title"]}}</option>
                         </select>
                     </div>
@@ -63,6 +63,16 @@ export default {
             responsibilities:[],
             units:[],
             fields1:[
+                {
+                    label:"Unit",
+                    field_type:"select",
+                    name:"unit_id",
+                },
+                {
+                    label:"Responsibility",
+                    field_type:"select",
+                    name:"responsibility_id",
+                },
                 // {
                 //     label:"Role",
                 //     name:"role",
@@ -101,16 +111,7 @@ export default {
                     field_type:"select",
                     name:"blood_group",
                 },
-                {
-                    label:"Responsibility",
-                    field_type:"select",
-                    name:"responsibility_id",
-                },
-                {
-                    label:"Unit",
-                    field_type:"select",
-                    name:"unit_id",
-                },
+                
             ],
 
 

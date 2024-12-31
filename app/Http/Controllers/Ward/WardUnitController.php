@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Ward;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgCity;
+use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgUnit;
+use App\Models\Organization\OrgWard;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class WardUnitController extends Controller
@@ -59,10 +63,20 @@ class WardUnitController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-        $org_ward_user = auth()->user()->org_ward_user;
-        $ward_id = $org_ward_user["ward_id"];
-        $city_id = $org_ward_user["city_id"];
-        $thana_id = $org_ward_user["city_id"];
+        $org_ward_user = Auth::user()->org_ward_user()->first();
+        $city = OrgCity::Where('id',$org_ward_user["city_id"])->first();
+        $thana = OrgThana::where('id',$org_ward_user["thana_id"])->first();
+        $ward = OrgWard::where('id',$org_ward_user["ward_id"])->first();
+        if(!$org_ward_user || (!$thana || !$ward || !$city)){
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => ['org_type_id' => ['ward not found']],
+            ], 422);
+        }
+
+        $city_id = $city->id;
+        $thana_id = $thana->id;
+        $ward_id = $ward->id;
 
         $data = new OrgUnit();
         $data->title = request()->title;

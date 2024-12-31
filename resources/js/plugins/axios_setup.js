@@ -115,10 +115,11 @@ window.axios.interceptors.response.use(
             console.log(error.response || error);
             if (error.response?.data?.status == "server_error" || error.response?.status === 500 || error.response?.status === 403) {
                 console.log(error.response.data.message);
-                window.s_warning(error.response.data.message);
+                // window.s_warning(error.response.data.message);
             }
             if (error.response?.data?.status == "error") {
-                window.s_error(error.response.data.message);
+                // window.s_error(error.response.data.message);
+                window.toaster(error.response.data.message, 'error');
             }
             if (error.response?.status == 401) {
                 location.href = "/login";

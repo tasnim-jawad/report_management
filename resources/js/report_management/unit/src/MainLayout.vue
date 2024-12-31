@@ -214,6 +214,7 @@
 import axios from "axios";
 import { store as data_store } from "./stores/ReportStore";
 import { mapActions, mapWritableState } from 'pinia';
+import moment from "moment";
 export default {
     data: function () {
         return {
@@ -224,7 +225,7 @@ export default {
     },
     created: function () {
         let token = localStorage.getItem("token");
-
+        
         if (!token) {
             window.location.href = "/login";
         }
@@ -234,9 +235,21 @@ export default {
 
         this.auth_user();
         this.set_month();
+        
     },
-    mounted: function () {
+    mounted:async function () {
 
+        let unit_active_report =await axios.get("/report-management-control/unit-active-report")
+            .then((response) => {
+                return response.data.data;
+            })
+            .catch((error) => {
+                console.error("An error occurred while fetching unit active report:", error);
+                return null;
+            });
+            // console.log("Unit active report:", unit_active_report);
+        this.unit_active_report_month_info = unit_active_report;
+        
         // this.isUnitReportPage = window.location.href.includes("unit-report-upload");
         this.isUnitReportPage = window.location.href.includes("unit-report-upload-monthly");
 
@@ -245,7 +258,14 @@ export default {
             let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
                 keyboard: false,
             });
-            modalElement.show();
+            if(this.unit_active_report_month_info){
+                this.month = moment(this.unit_active_report_month_info.month_year).format("YYYY-MM");
+
+                // console.log("this.unit_active_report_month_info",this.unit_active_report_month_info);
+                console.log("this.month",this.month);
+                
+                modalElement.show();
+            }
         }
 
     },
@@ -279,7 +299,7 @@ export default {
         },
         upload_report: async function () {
             console.log("Upload data:", this.month, this.user_id);
-
+            
             // Hide the modal
             const modalElement = window.bootstrap.Modal.getInstance(document.getElementById("staticBackdrop"));
             modalElement?.hide();
@@ -321,7 +341,7 @@ export default {
 
     },
     computed: {
-        ...mapWritableState(data_store, ['month']),
+        ...mapWritableState(data_store, ['month', 'unit_active_report_month_info']),
     },
 };
 </script>
