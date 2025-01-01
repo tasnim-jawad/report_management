@@ -1656,6 +1656,15 @@
             <a href="" class="btn btn-success" v-else-if="joma_status == 'rejected'"
                 @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a>
         </div> -->
+        <div class="joma_din text-center mt-3 pb-5">
+            <a href="" class="btn btn-sm btn-success me-2"
+                @click.prevent="unit_report_status_change('approved')">
+                {{ current_report_status == 'approved' ? 'approved already' : 'Approved' }}</a>
+            <a href="" class="btn btn-sm btn-danger "
+                @click.prevent="unit_report_status_change('rejected')">
+                {{ current_report_status == 'rejected' ? 'Rejected already' : 'Reject' }}
+            </a>
+        </div>
         <a href="" class="print_preview" @click.prevent="print_report()"><i class="fa-solid fa-print"></i></a>
         <router-link :to="{ name: 'Dashboard' }">
             <a href="" class="go_back_to_dashboard"><i class="fa-solid fa-door-open"></i></a>
@@ -1703,6 +1712,7 @@
 import axios from "axios";
 import Comment from "../components/Comment.vue";
 import { store as comment_store } from "../stores/CommentStore";
+import { store as report_store } from "../stores/ReportStore";
 import { mapActions, mapWritableState } from "pinia";
 
 export default {
@@ -1712,6 +1722,8 @@ export default {
             month: '',
             joma_status: null,
             comments: [],
+            current_report_status: null,
+
 
             report_header: {},
             report_sum_data: {},
@@ -1764,6 +1776,8 @@ export default {
             console.error('Error during uploaded_data:', error);
         }
 
+        this.status_set_again();
+
     },
     watch: {
         'report_sum_data.kormosuci_bastobayons': function () {
@@ -1786,6 +1800,10 @@ export default {
     methods: {
         ...mapActions(comment_store, {
             comment_set: 'comment_set'
+        }),
+        ...mapActions(report_store, {
+            set_unit_report_status: 'set_unit_report_status',
+            check_unit_report_status: 'check_unit_report_status',
         }),
         update_store() {
             this.org_type_store = 'unit';
@@ -1973,7 +1991,24 @@ export default {
                 this.joma_status = response.data.report_status
                 console.log("report_status", response)
             }
-        }
+        },
+        unit_report_status_change(status){
+            this.set_unit_report_status({
+                report_month: this.$route.params.month,
+                unit_id: this.$route.params.unit_id,
+                new_status: status
+            });
+            this.status_set_again()
+        },
+        status_set_again:async function () {
+            let status_of_unit = await this.check_unit_report_status({
+                            report_month: this.$route.params.month,
+                            unit_id: this.$route.params.unit_id
+                        });
+            this.current_report_status = status_of_unit.report_status;
+        },
+
+        
 
     },
     computed: {

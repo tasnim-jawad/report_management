@@ -129,4 +129,61 @@ class WardReportStatusController extends Controller
         ], 200);
 
     }
+
+    public function report_status_single_unit(){
+
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'unit_id' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        
+
+        $month = Carbon::parse(request()->month);
+        $unit_id = request()->unit_id;
+        $bangla_month = $month->clone()->locale('bn')->isoFormat('MMMM');
+        // dd($ward_id,$units->toArray(),$month);
+        $report_info = ReportInfo::where('org_type_id', $unit_id)
+            ->where('org_type', 'unit')
+            ->whereYear('month_year', $month->clone()->year)
+            ->whereMonth('month_year', $month->clone()->month)
+            ->get()
+            ->first();
+
+        $report_submit_status = $report_info->report_submit_status ?? 'unsubmitted';
+        $report_approved_status = $report_info->report_approved_status ?? 'pending';
+
+        if ($report_submit_status == 'unsubmitted') {
+            return response()->json([
+                'status' => 'success',
+                'report_status' => "unsubmitted",
+                "message" => "{$bangla_month} মাসের রিপোর্ট জমা দেওয়া হয়নি এখনো।"
+            ], 200);
+        } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'pending') {
+            return response()->json([
+                'status' => 'success',
+                'report_status' => "pending",
+                "message" => "{$bangla_month} মাসের রিপোর্ট জমা হয়েছে । ওয়ার্ডের আপ্রুভের জন্য অপেক্ষমাণ।"
+            ], 200);
+        } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'rejected') {
+            return response()->json([
+                'status' => 'success',
+                'report_status' => "rejected",
+                "message" => "{$bangla_month} মাসের রিপোর্ট রিজেক্ট করা হয়েছে । ভুলগুলি ঠিক করে আবার জমা দিন ।"
+            ], 200);
+        } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'approved') {
+            return response()->json([
+                'status' => 'success',
+                'report_status' => "approved",
+                "message" => "{$bangla_month} মাসের রিপোর্ট ওয়ার্ড গ্রহন করেছে।"
+            ], 200);
+        }
+
+    }
 }

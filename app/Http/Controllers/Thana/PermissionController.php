@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Thana;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgThana;
 use App\Models\Report\ReportManagementControl;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -51,6 +52,13 @@ class PermissionController extends Controller
 
         $month_year = Carbon::parse(request()->month);
         $thana_id = auth()->user()->org_thana_user->thana_id;
+        $thana = OrgThana::find($thana_id);
+        if (!$thana) {
+            return response()->json([
+                'status' => 'fail',
+                'message' => 'থানা খুঁজে পাওয়া যায়নি।'
+            ], 200);
+        }
 
         ReportManagementControl::where('upper_organization_id', $thana_id)
             ->where('report_type', 'ward')

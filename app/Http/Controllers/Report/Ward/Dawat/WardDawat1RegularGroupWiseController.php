@@ -30,7 +30,7 @@ class WardDawat1RegularGroupWiseController extends Controller
 
     public function store_single()
     {
-
+        // dd("controller",$this->report_info);
         return ward_common_store($this, WardDawat1RegularGroupWise::class, $this->report_info);
     }
 

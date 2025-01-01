@@ -5167,7 +5167,7 @@ export default {
 
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;
-
+            console.log("month from uploaded_data load", month);
             let res = await axios.get('/ward/uploaded-data-monthly', {
                 params: {
                     month: month,
@@ -5187,7 +5187,7 @@ export default {
                 this.total_previous = res.data.total_previous,
                     this.total_current_income = res.data.total_current_income,
                     this.in_total = res.data.in_total
-                console.log("this.previous_present", this.previous_present);
+                console.log("this.previous_present", this.month);
 
             }
 
@@ -5400,6 +5400,8 @@ export default {
             return year.toString().replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[digit]);
         },
         data_upload(endpoint) {
+            console.log("data_upload", this.month);
+            
             const { value, name } = event.target;
             axios.post(`/${endpoint}/store-single`, {
                 value,

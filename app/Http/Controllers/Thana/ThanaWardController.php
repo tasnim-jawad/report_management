@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Thana;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgCity;
+use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgWard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -60,8 +62,17 @@ class ThanaWardController extends Controller
             ], 422);
         }
         $org_thana_user = auth()->user()->org_thana_user;
-        $thana_id = $org_thana_user["thana_id"];
-        $city_id = $org_thana_user["city_id"];
+        $city = OrgCity::Where('id',$org_thana_user["city_id"])->first();
+        $thana = OrgThana::where('id',$org_thana_user["thana_id"])->first();
+        
+        if(!$org_thana_user || (!$thana || !$city)){
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => ['org_type_id' => ['thana not found']],
+            ], 422);
+        }
+        $thana_id = $thana->id;
+        $city_id = $city->id;
 
         $data = new OrgWard();
         $data->title = request()->title;

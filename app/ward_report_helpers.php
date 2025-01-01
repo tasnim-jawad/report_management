@@ -14,8 +14,9 @@ use Carbon\Carbon;
 function check_and_get_ward_info($user_id)
 {
     $check_info = false;
-    // dd($user_id);
+    // dd($user_id,request()->month);
     $permission = is_ward_report_upload_permitted(request()->month,$user_id);
+    // dd($permission);
     if ($permission) {
         $resposibilities = auth_user_ward_responsibilities_info($user_id);
         $check_info = ward_report_header_info($resposibilities, $permission, request()->month);
@@ -29,13 +30,15 @@ function is_ward_report_upload_permitted($month,$user_id)
     $ward_user = User::where('id', $user_id)->with('org_ward_user')->get()->first();
     // dd($ward_user->toArray(),$ward_user->org_ward_user->thana_id);
     $upper_organization_id = $ward_user->org_ward_user->thana_id;
-
+    // dd($month->clone()->year,$month->clone()->month);
+    // dd($upper_organization_id);
     $permission = ReportManagementControl::whereYear('month_year', $month->clone()->year)
         ->whereMonth('month_year', $month->clone()->month)
         ->where('is_active', 1)
         ->where('report_type', 'ward')
         ->where('upper_organization_id', $upper_organization_id)
         ->first();
+        dd($permission );
     return $permission;
 }
 
@@ -101,6 +104,7 @@ function ward_common_store($bind, $class, $report_info)
     ], [
         "month.required" => ["মাস সিলেক্ট করুন"]
     ]);
+    dd($report_info);
     if ($report_info) {
         $col_name = request()->name;
         $col_value = request()->value;
@@ -108,7 +112,6 @@ function ward_common_store($bind, $class, $report_info)
         $data = $class::where('report_info_id', $report_info->id)
             // ->where('creator', auth()->user()->id)
             ->first();
-
         if ($data) {
             $data->report_info_id = $report_info->id;
             $data->$col_name = $col_value;

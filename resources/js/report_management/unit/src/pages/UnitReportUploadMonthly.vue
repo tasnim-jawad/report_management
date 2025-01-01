@@ -1686,6 +1686,7 @@
             </div>
         </section>
         <div class="joma_din text-center mt-3 pb-5">
+            <p class="text-danger mb-1">বিঃদ্রঃ রিপোর্ট জমা দেওয়ার পর আর রিপোর্ট পরিবর্তন করা যাবে না ।</p>
             <!-- <a href="" class="btn btn-success" @click.prevent="report_joma">রিপোর্ট জমা দিন</a> -->
             <a href="" class="btn btn-success" v-if="joma_status == 'unsubmitted'" @click.prevent="report_joma">রিপোর্ট
                 জমা দিন</a>
@@ -1978,18 +1979,20 @@ export default {
         },
         report_joma: async function () {
             const month = this.$route.params.month;
-            let response = await axios.get('/unit/report-joma', {
-                params: {
-                    month: month
+            if(confirm('আপনিকি নিশ্চিত? আপনি রিপোর্ট জমা দিতে চান?')){ 
+                let response = await axios.get('/unit/report-joma', {
+                    params: {
+                        month: month
+                    }
+                })
+                if (response.data.status == 'success') {
+                    // this.$router.push({ name: "Montobbo" });
+                    this.report_status()
+                    window.toaster(response.data.message, 'success');
+    
+                    this.joma_status = response.data.report_status
+                    console.log("report_status", response)
                 }
-            })
-            if (response.data.status == 'success') {
-                // this.$router.push({ name: "Montobbo" });
-                this.report_status()
-                window.toaster(response.data.message, 'success');
-
-                this.joma_status = response.data.report_status
-                console.log("report_status", response)
             }
         }
 

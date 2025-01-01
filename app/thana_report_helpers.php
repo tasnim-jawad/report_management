@@ -12,12 +12,22 @@ use App\Models\Report\ReportInfo;
 use App\Models\Report\ReportManagementControl;
 use App\Models\User;
 use Carbon\Carbon;
+/*
+This file contains the following
+functions:
+    1. check_and_get_thana_info
+    2. is_thana_report_upload_permitted 
+    3. auth_user_thana_responsibilities_info
+    4. thana_report_header_info
+    5. thana_common_get
+    6. thana_common_store
+*/
 
 function check_and_get_thana_info($user_id)
 {
     $check_info = false;
     // dd($user_id);
-    $permission = is_thana_report_upload_permitted(request()->month,$user_id);
+    $permission = is_thana_report_upload_permitted(request()->month, $user_id);
     if ($permission) {
         $resposibilities = auth_user_thana_responsibilities_info($user_id);
         $check_info = thana_report_header_info($resposibilities, $permission, request()->month);
@@ -25,7 +35,7 @@ function check_and_get_thana_info($user_id)
     return $check_info;
 }
 
-function is_thana_report_upload_permitted($month,$user_id)
+function is_thana_report_upload_permitted($month, $user_id)
 {
     $month = Carbon::parse($month);
     $thana_user = User::where('id', $user_id)->with('org_thana_user')->get()->first();
@@ -81,7 +91,7 @@ function thana_report_header_info($resposibilities, $permission, $month)
     return $check_info;
 }
 
-function thana_common_get($model, $user_id=null)
+function thana_common_get($model, $user_id = null)
 {
     $responsibilities = auth_user_thana_responsibilities_info(auth()->user()->id ?? $user_id);
     $report_info = thana_report_header_info($responsibilities, null, request()->month);
@@ -174,6 +184,3 @@ function thana_common_store($bind, $class, $report_info)
 //         'approved_units' => $approved_units,
 //     ];
 // }
-
-
-

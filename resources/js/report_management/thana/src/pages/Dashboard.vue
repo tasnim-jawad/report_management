@@ -270,14 +270,46 @@ export default {
             let formatted_month_year = window.formatDate(this.permission_month, 'long_month_year');
             const is_confirmed = confirm(`Are you sure you want to Give Permission for month ${formatted_month_year}? `);
             if (is_confirmed) {
-                let response = await axios.post('/thana/set-ward-report-joma-permission', {
-                    month: this.permission_month,
+                try {
+                    let response = await axios.post('/thana/set-ward-report-joma-permission', {
+                                month: this.permission_month,
+                            });
+                    console.log("status response",response.data.status);
+                    if (response.data.status == 'success') {
+                        this.ward_report_joma_permitted_month()
+                    }else if (response.data.status === 'fail') {
+                        // Show the message from the response
+                        window.toaster(response.data.message, 'error');
+                    }else {
+                        console.warn('Unexpected response:', response.data);
+                        window.toaster('An unexpected error occurred.', 'error');
+                    }
+
+                } catch (error) {
+                    console.error("Error submitting data:", error);
+                    if (error.response) {
+                        switch (error.response.status) {
+                            case 403:
+                                window.toaster(error.response.data.message, 'error');
+                                break;
+                            case 422:
+                                const validationErrors = Object.values(error.response.data.errors).flat().join(', ');
+                                window.toaster(`Validation error: ${validationErrors}`, 'error');
+                                break;
+                            case 500:
+                                window.toaster('Server error. Please try again later.', 'error');
+                                break;
+                            default:
+                                window.toaster('An unexpected error occurred.', 'error');
+                                break;
+                        }
+                    } else if (error.request) {
+                        window.toaster('No response from server. Please check your connection.', 'error');
+                    } else {
+                        window.toaster(`Unexpected error: ${error.message}`, 'error');
+                    }
                 }
-                );
-                // console.log(response.data.status);
-                if (response.data.status == 'success') {
-                    this.ward_report_joma_permitted_month()
-                }
+                
             }
         },
         remove_permission: async function () {

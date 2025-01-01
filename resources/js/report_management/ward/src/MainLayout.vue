@@ -263,6 +263,8 @@ export default {
                 .then(responce => {
                     this.user = responce.data
                     this.user_id = this.user?.user?.id;
+                    console.log("user", this.user);
+                    
                 })
         },
         logout: function () {

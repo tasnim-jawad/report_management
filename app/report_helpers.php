@@ -9,6 +9,22 @@ use App\Models\Report\ReportManagementControl;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
+/* 
+functions:
+    1. check_and_get_unit_info
+    2. is_unit_report_upload_permitted
+    3. auth_user_unit_responsibilities_info
+    4. unit_report_header_info
+    5. common_get
+    6. common_store
+    7. bangla
+    8. bangla_month
+    9. report_info_create
+    10. calculate_previous_present
+    11. calculate_increase
+    12. unit_active_report
+    
+*/
 function check_and_get_unit_info($user_id)
 {
     $check_info = false;
