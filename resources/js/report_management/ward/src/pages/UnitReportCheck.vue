@@ -1665,7 +1665,7 @@
                 {{ current_report_status == 'rejected' ? 'Rejected already' : 'Reject' }}
             </a>
         </div>
-        <a href="" class="print_preview" @click.prevent="print_report()"><i class="fa-solid fa-print"></i></a>
+        <!-- <a href="" class="print_preview" @click.prevent="print_report()"><i class="fa-solid fa-print"></i></a> -->
         <router-link :to="{ name: 'Dashboard' }">
             <a href="" class="go_back_to_dashboard"><i class="fa-solid fa-door-open"></i></a>
         </router-link>

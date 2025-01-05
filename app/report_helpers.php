@@ -195,7 +195,7 @@ function report_info_create($org_type,$org_type_id,$responsibility_id,$responsib
     $data->org_type = $org_type;
     $data->org_type_id = $org_type_id;
     $data->responsibility_id = $responsibility_id ?? 1;
-    $data->responsibility_name = $responsibility_name ?? 'president';
+    $data->responsibility_name = $responsibility_name ?? 'সভাপতি';
     $data->month_year = $month_year;
     $data->report_type = $report_type ?? 'monthly';
     $data->creator = auth()->user()->id;

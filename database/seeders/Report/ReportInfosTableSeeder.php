@@ -20,7 +20,7 @@ class ReportInfosTableSeeder extends Seeder
                     'org_type' => 'unit',
                     'org_type_id' => $i,
                     'responsibility_id' => 1,
-                    'responsibility_name' => 'president',
+                    'responsibility_name' => 'সভাপতি',
                     'month_year' => "2024-" . str_pad($j, 2, '0', STR_PAD_LEFT) . "-01", // Fixes the date format
                     'report_type' => 'monthly',
                     'creator' => 8 + $i,
@@ -34,7 +34,7 @@ class ReportInfosTableSeeder extends Seeder
                     'org_type' => 'ward',
                     'org_type_id' => $i,
                     'responsibility_id' => 1,
-                    'responsibility_name' => 'president',
+                    'responsibility_name' => 'সভাপতি',
                     'month_year' => "2024-" . str_pad($j, 2, '0', STR_PAD_LEFT) . "-01",
                     'report_type' => 'monthly',
                     'creator' => 6 + $i,

@@ -167,7 +167,7 @@
                     <p>থানাঃ {{ this.user?.thana?.title }}</p>
                 </div>
                 <div class="right">
-                    <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                    <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                             class="fa-solid fa-ellipsis-vertical"></i></a>
                     <ul class="dropdown-menu ">
                         <li><a class="dropdown-item" href="#" @click.prevent="logout">Logout</a></li>

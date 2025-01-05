@@ -558,7 +558,7 @@ class WardTotalUnitSubmittedDataController extends Controller
                     'org_type' => 'ward',
                     'org_type_id' => $ward_id,
                     'responsibility_id' => 1,
-                    'responsibility_name' => 'president',
+                    'responsibility_name' => 'সভাপতি',
                     'month_year' => $permission->month_year,
                     'report_type' =>  'monthly',
                     'creator' => $user_id,

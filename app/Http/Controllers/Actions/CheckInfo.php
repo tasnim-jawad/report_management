@@ -31,7 +31,7 @@ class CheckInfo
                     'org_type' => $org_type,
                     'org_type_id' => $org_type_id,
                     'responsibility_id' => 1,
-                    'responsibility_name' => 'president',
+                    'responsibility_name' => 'সভাপতি',
                     'month_year' => $carbon_month,
                     'report_type' =>  'monthly',
                     'creator' => auth()->user()->id,

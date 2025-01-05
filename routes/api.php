@@ -1359,3 +1359,12 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Expense\WardExpenseTargetController::class, 'bulk_import']);
     });
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+*/
+
+require_once __DIR__ . '/../app/Modules/Routes/ApiRoutes.php';

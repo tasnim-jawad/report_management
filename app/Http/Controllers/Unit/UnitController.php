@@ -361,7 +361,7 @@ class UnitController extends Controller
         if ($report_info) {
             $report_info_id = $report_info->id;
         } else {
-            $report_info = report_info_create('unit', $unit_id, 1, 'president', $month, 'monthly');
+            $report_info = report_info_create('unit', $unit_id, 1, 'সভাপতি', $month, 'monthly');
             $report_info_id = $report_info->id;
         }
 
