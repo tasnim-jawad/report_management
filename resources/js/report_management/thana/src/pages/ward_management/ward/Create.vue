@@ -103,7 +103,10 @@ export default {
                         window.toaster('ward create successfuly', 'success');
                         console.log(cevent.target);
 
-                        cevent.target.reset();
+                        const form = document.getElementById('create_ward_form');
+                        form.reset();
+                        this.selected_gender = null;
+                        // cevent.target.reset();
                     })
                     .catch(error => {
                         console.error(error);

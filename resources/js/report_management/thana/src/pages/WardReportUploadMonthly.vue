@@ -5381,7 +5381,10 @@ export default {
         // },
 
         formatBangla(number) {
-            return number !== null && number !== undefined ? number.toLocaleString("bn-BD") : "";
+            if (number == 0 || number === null || number === undefined || isNaN(number)) {
+                return "";
+            }
+            return number.toLocaleString("bn-BD");
         },
         formatMonth(date) {
             return new Date(date).toLocaleString("bn-BD", { month: "long" });

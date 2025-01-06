@@ -17,6 +17,7 @@ use Database\Seeders\Bm\Ward\Expense\WardBmExpensesTableSeeder;
 use Database\Seeders\Bm\Ward\Expense\WardExpenseTargetsTableSeeder;
 use Database\Seeders\Bm\Ward\Income\WardBmIncomeCategoriesTableSeeder;
 use Database\Seeders\Bm\Ward\Income\WardBmIncomesTableSeeder;
+use Database\Seeders\Notification\NotificationsTableSeeder;
 use Database\Seeders\Organization\OrgAreasTableSeeder;
 use Database\Seeders\Organization\OrgCitiesTableSeeder;
 use Database\Seeders\Organization\OrgCityResponsiblesTableSeeder;
@@ -151,6 +152,8 @@ class DatabaseSeeder extends Seeder
             //report table
                 // ReportInfosTableSeeder::class,
                 // ReportManagementControlsTableSeeder::class,
+                // NotificationsTableSeeder::class,
+
             
 
 

@@ -1861,8 +1861,14 @@ export default {
 
             }
         },
+        // formatBangla(number) {
+        //     return number !== null && number !== undefined ? number.toLocaleString("bn-BD") : "";
+        // },
         formatBangla(number) {
-            return number !== null && number !== undefined ? number.toLocaleString("bn-BD") : "";
+            if (number == 0 || number === null || number === undefined || isNaN(number)) {
+                return "";
+            }
+            return number.toLocaleString("bn-BD");
         },
         formatMonth(date) {
             return new Date(date).toLocaleString("bn-BD", { month: "long" });
@@ -1906,6 +1912,9 @@ export default {
         average_data_upload($event, endpoint, multiplier) {
             const { value, name } = $event.target;
             const total = value * multiplier;
+            // const total = isNaN(value * multiplier) ? '' : value * multiplier;
+            console.log('total ',total);
+            
             console.log('average_value', $event.target, total, value, multiplier);
 
             axios.post(`/${endpoint}/store-single`, {

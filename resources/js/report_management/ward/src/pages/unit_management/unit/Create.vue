@@ -102,8 +102,11 @@ export default {
                     .then(responce => {
                         window.toaster('unit create successfuly', 'success');
                         console.log(cevent.target);
-
-                        cevent.target.reset();
+                        
+                        const form = document.getElementById('create_unit_form');
+                        form.reset();
+                        this.selected_gender = null;
+                        // cevent.target.reset();
                     })
                     .catch(error => {
                         console.error(error);

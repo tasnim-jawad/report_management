@@ -1,11 +1,16 @@
 <?php
 
+use App\Models\Notification\Notification;
+use App\Models\Organization\OrgCity;
+use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgType;
 use App\Models\Organization\OrgUnit;
 use App\Models\Organization\OrgUnitResponsible;
+use App\Models\Organization\OrgWard;
 use App\Models\Organization\Responsibility;
 use App\Models\Report\ReportInfo;
 use App\Models\Report\ReportManagementControl;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -244,6 +249,104 @@ function unit_active_report()
     return $permission;
 }
 
+// function notification($user_id, $org_type, $notification_title, $notification_description)
+// {
+//     $org_type_user = 'org_'.$org_type.'_user';
+//     $user_info = User::where('id', $user_id)->first()->$org_type_user; 
+//     if(!$user_info){
+//         return "User not found.";
+//     }
+
+//     $city_id = $user_info->city_id ?? null;
+//     $thana_id = $user_info->thana_id ?? null;
+//     $ward_id = $user_info->ward_id ?? null;
+//     $unit_id = $user_info->unit_id ?? null;
+
+//     $city = $city_id ? OrgCity::where('id', $city_id)->first() : null;
+//     $thana = $thana_id ? OrgThana::where('id', $thana_id)->first() : null;
+//     $ward = $ward_id ? OrgWard::where('id', $ward_id)->first() : null;
+//     $unit = $unit_id ? OrgUnit::where('id', $unit_id)->first() : null;
+
+//     if($org_type == 'city' && !$city){
+//         return "City not found.";
+//     } elseif($org_type == 'thana' && (!$city || !$thana)){
+//         if(!$city){
+//             return "City not found.";
+//         } elseif(!$thana){
+//             return "Thana not found.";
+//         }
+//     } elseif($org_type == 'ward' && (!$city || !$thana || !$ward)){
+//         if(!$city){
+//             return "City not found.";
+//         } elseif(!$thana){
+//             return "Thana not found.";
+//         } elseif(!$ward){
+//             return "Ward not found.";
+//         }
+//     } elseif($org_type == 'unit' && (!$city || !$thana || !$ward || !$unit)){
+//         if(!$city){
+//             return "City not found.";
+//         } elseif(!$thana){
+//             return "Thana not found.";
+//         } elseif(!$ward){
+//             return "Ward not found.";
+//         } elseif(!$unit){
+//             return "Unit not found.";
+//         }
+//     }
+
+//     $notification = new Notification();
+//     $notification->user_id = $user_id;
+//     $notification->city_id = $city_id;
+//     $notification->thana_id = $thana_id;
+//     $notification->ward_id = $ward_id;
+//     $notification->unit_id = $unit_id;
+//     $notification->title = $notification_title;
+//     $notification->description = $notification_description;
+//     $notification->creator = auth()->user()->id;
+//     $notification->status = 1;
+//     $notification->save();
+// }
+
+function notification(
+    $org_type_id, 
+    $org_type, 
+    $notification_title, 
+    $notification_description,
+    $user_id = null
+    )
+    
+    {
+        $city_id = null;
+        $thana_id = null;
+        $ward_id = null;
+        $unit_id = null;
+
+
+        if($org_type == 'city'){
+            $city_id = $org_type_id;
+        } elseif($org_type == 'thana'){
+            $thana_id = $org_type_id;
+        } elseif($org_type == 'ward'){
+            $ward_id = $org_type_id;
+        } elseif($org_type == 'unit'){
+            $unit_id = $org_type_id;
+        }
+
+        $notification = new Notification();
+        $notification->user_id = $user_id;
+        $notification->city_id = $city_id;
+        $notification->thana_id = $thana_id;
+        $notification->ward_id = $ward_id;
+        $notification->unit_id = $unit_id;
+        $notification->title = $notification_title;
+        $notification->description = $notification_description;
+        $notification->creator = auth()->user()->id;
+        $notification->status = 1;
+        $notification->save();
+
+        return $notification;
+    }
 
 
 

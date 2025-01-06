@@ -90,7 +90,7 @@ export const store = defineStore(`comment_store`, {
             console.log(response);
 
             if (response.data.status == 'success') {
-                console.log();
+                // console.log();
 
                 this.get_column_comment_all(
                     this.table_name,
@@ -99,6 +99,8 @@ export const store = defineStore(`comment_store`, {
                     this.org_type_id,
                     this.month_year
                 );
+
+                
             }
 
             // Reset the textarea after submitting

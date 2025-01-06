@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Comment;
 
 use App\Http\Controllers\Actions\CommentCount;
+use App\Http\Controllers\Actions\NotificationStore;
 use App\Http\Controllers\Controller;
 use App\Models\Comment\Comment;
 use App\Models\Organization\Responsibility;
@@ -12,6 +13,10 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Actions\Monthly\MonthlyReport;
+use App\Models\Organization\OrgThana;
+use App\Models\Organization\OrgUnit;
+use App\Models\Organization\OrgWard;
 
 class CommentController extends Controller
 {
@@ -278,11 +283,48 @@ class CommentController extends Controller
         $data->creator = auth()->id();
         $data->save();
 
+        $this->notification_stor($carbon_month, $org_type, $org_type_id);
+        // $notification = new NotificationStore();
+        // $notification->execute('New Comment', 'New Comment has been added for ' . $carbon_month->format('F Y') . ' report', $org_type ,$org_type_id, ) ;
+
         return response()->json([
             'status' => 'success',
             'data' => $data,
         ], 200);
     }
+
+    public function notification_stor($carbon_month, $org_type, $org_type_id){
+        if($org_type == 'city'){
+            $city_id = $org_type_id;
+        } elseif($org_type == 'thana'){
+            $thana = OrgThana::find($org_type_id);
+            $city_id = $thana->org_city_id;
+            $thana_id = $thana->id;
+        } elseif($org_type == 'ward'){
+            $ward = OrgWard::find($org_type_id);
+            $city_id = $ward->org_city_id;
+            $thana_id = $ward->org_thana_id;
+            $ward_id = $ward->id;
+        } elseif($org_type == 'unit'){
+            $unit = OrgUnit::find($org_type_id);
+            $city_id = $unit->org_city_id;
+            $thana_id = $unit->org_thana_id;
+            $ward_id = $unit->org_ward_id;
+            $unit_id = $unit->id;
+        }
+        $notification = new NotificationStore();
+        $notification->execute(
+            'New Comment', 
+            'New Comment has been added for ' . $carbon_month->format('F Y') . ' report',
+            $org_type,
+            $unit_id,
+            $ward_id ,
+            $thana_id,
+            $city_id,
+        );
+    }
+
+
 
     public function update()
     {
@@ -380,4 +422,5 @@ class CommentController extends Controller
             'result' => 'activated',
         ], 200);
     }
+    
 }
