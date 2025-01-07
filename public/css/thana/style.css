@@ -279,6 +279,10 @@ body{
 .report_app_right .report_app_right_top .right{
     /* color: var(--dark); */
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 .report_app_right .report_app_right_top .right ul{
     /* color: var(--dark); */

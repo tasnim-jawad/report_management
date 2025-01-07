@@ -20,32 +20,7 @@ class NotificationStore
         )
         
     {
-        // $city_id = null;
-        // $thana_id = null;
-        // $ward_id = null;
-        // $unit_id = null;
-
-
-        // if($org_type == 'city'){
-        //     $city_id = $org_type_id;
-        // } elseif($org_type == 'thana'){
-        //     $thana_id = $org_type_id;
-        // } elseif($org_type == 'ward'){
-        //     $ward_id = $org_type_id;
-        // } elseif($org_type == 'unit'){
-        //     $unit_id = $org_type_id;
-        // }
-        // dd(
-        //     $notification_title, 
-        //     $notification_description,
-        //     $org_type,
-        //     $unit_id = null,
-        //     $ward_id = null,
-        //     $thana_id = null,
-        //     $city_id = null,
-        //     $user_id = null
-        // );
-
+        
         $notification = new Notification();
         $notification->user_id = $user_id;
         $notification->city_id = $city_id;

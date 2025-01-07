@@ -25,7 +25,6 @@ export const store = defineStore(`custom_store`, {
                     this.user_info = responce.data
                 })
         },
-
     }
 
 

@@ -895,6 +895,16 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::get('/report-joma', [App\Http\Controllers\Unit\UnitController::class, 'report_joma']);
     });
 
+    Route::group(['prefix' => 'notification'], function () {
+        Route::get('/all-notification-for-unit', [App\Http\Controllers\Notification\NotificationController::class, 'all_notification_for_unit']);
+        
+    });
+    Route::group(['prefix' => 'notification-seen'], function () {
+        Route::post('/mark-as-seen', [App\Http\Controllers\Notification\NotificationSeenController::class, 'mark_as_seen']);
+        
+    });
+
+
 
     //**-----------------------------------------------------------**/
     //**-----------------------------------------------------------**/

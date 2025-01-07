@@ -156,6 +156,7 @@
                     <p>ওয়ার্ড: {{ this.user?.ward?.title }}</p>
                 </div>
                 <div class="right">
+                    <notification-button :unit_id="user?.responsibility?.org_unit?.id"></notification-button>
                     <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                             class="fa-solid fa-ellipsis-vertical"></i></a>
                     <ul class="dropdown-menu">
@@ -207,20 +208,55 @@
         <!------------------------------------>
         <!-------------Modal end-------------->
         <!------------------------------------>
+
+        <!-- NOtification Modal -->
+         <!-- Modal -->
+        <div class="modal fade" id="notification_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Notification</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="empty_data">
+                            <p v-if="!all_notifications.length">No new notifications found.</p>
+                        </div>
+                        <div class="all_comment" v-for="(notification, index) in all_notifications" :key="index">
+                            <notification-dropdown :notification="notification"></notification-dropdown>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import NotificationButton from "./components/NotificationButton.vue";
+import NotificationDropdown from "./components/NotificationDropdown.vue";
 import { store as data_store } from "./stores/ReportStore";
+import { store as notification_store } from "./stores/NotificationStore";
 import { mapActions, mapWritableState } from 'pinia';
 import moment from "moment";
 export default {
+    components: {
+        NotificationButton,
+        NotificationDropdown,
+    },
     data: function () {
         return {
             user_id: "",
             user: {},
             isUnitReportPage: false,
+            notifications: [],
         };
     },
     created: function () {
@@ -270,7 +306,7 @@ export default {
 
     },
     methods: {
-        ...mapActions(data_store, ['set_month']),
+        ...mapActions(data_store, ['set_month','get_unit_notification']),
         auth_user: function () {
             axios.get("/user/user_info").then((responce) => {
                 this.user = responce.data;
@@ -336,12 +372,14 @@ export default {
                 console.error("An error occurred while fetching report information:", error);
                 window.s_warning("An unexpected error occurred. Please try again.", 'error');
             }
-        }
+        },
+        
 
 
     },
     computed: {
         ...mapWritableState(data_store, ['month', 'unit_active_report_month_info']),
+        ...mapWritableState(notification_store, ['all_notifications','number_of_notifications']),
     },
 };
 </script>
