@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Actions\NotificationStore;
+use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgType;
 use App\Models\Organization\OrgUnit;
 use App\Models\Organization\OrgUnitResponsible;
@@ -222,6 +224,37 @@ function calculate_songothon3_previous_present($model, $total_approved_report_in
         'total_kormi'=> $total_kormi,
         'total_associate_member'=> $total_associate_member,
     ];
+}
+
+function notification_store($org_type, $org_type_id,$title, $description){
+    if($org_type == 'city'){
+        $city_id = $org_type_id;
+    } elseif($org_type == 'thana'){
+        $thana = OrgThana::find($org_type_id);
+        $city_id = $thana->org_city_id;
+        $thana_id = $thana->id;
+    } elseif($org_type == 'ward'){
+        $ward = OrgWard::find($org_type_id);
+        $city_id = $ward->org_city_id;
+        $thana_id = $ward->org_thana_id;
+        $ward_id = $ward->id;
+    } elseif($org_type == 'unit'){
+        $unit = OrgUnit::find($org_type_id);
+        $city_id = $unit->org_city_id;
+        $thana_id = $unit->org_thana_id;
+        $ward_id = $unit->org_ward_id;
+        $unit_id = $unit->id;
+    }
+    $notification = new NotificationStore();
+    $notification->execute(
+        $title, 
+        $description,
+        $org_type,
+        $unit_id,
+        $ward_id ,
+        $thana_id,
+        $city_id,
+    );
 }
 
 

@@ -156,7 +156,8 @@ export default {
             axios.get("/responsibility/all")
                     .then(response => {
                         if (Array.isArray(response.data.data)) {
-                            this.responsibilities = response.data.data.slice(0, 2);
+                            // this.responsibilities = response.data.data.slice(0, 2);   //(শুধু সভাপতি এবং সেক্রেটারি দেখানোর জন্য)
+                            this.responsibilities = response.data.data; // (সব দায়িত্ব দেখানোর জন্য) 
                         } else {
                             console.error("Expected an array but got:", typeof response.data);
                         }

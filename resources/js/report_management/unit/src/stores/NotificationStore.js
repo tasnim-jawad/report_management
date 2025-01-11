@@ -4,6 +4,8 @@ export const store = defineStore('notification_store', {
     state: () => ({
         all_notifications: [],
         number_of_notifications: 0,
+        notification_list:[],
+        notification_list_number:0,
     }),
     actions: {
         get_unit_notification:async function(unit_id) {
@@ -40,6 +42,28 @@ export const store = defineStore('notification_store', {
                 }
             } catch (e) {
                 console.error('Mark As Read Error', e);
+            }
+        },
+        see_all_notification:async function(unit_id) {
+            if (unit_id) {
+                console.log("see all");
+                
+                try {
+                    let res = await axios.get("/notification/all-notification-for-unit", { 
+                        params: {
+                            unit_id: unit_id, 
+                            all: 1,
+                        }
+                    });
+                    console.log("see all",res);
+                    
+                    if (res.data.status === 'success') {
+                        this.notification_list = res.data.data;
+                        this.notification_list_number = res.data.data.length;
+                    }
+                } catch (e) {
+                    console.error('Get Unit Notification Error', e);
+                }
             }
         },
     }

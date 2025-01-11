@@ -1,6 +1,6 @@
 <template>
     <div class="notification_card">
-        <div class="notification_header" @click="toggleDropdown(notification?.id)">
+        <div class="notification_header" :class="{'notification_seen_bg': notification.is_seen}" @click="toggleDropdown(notification?.id)">
             <p class="notification_title"> {{ notification?.title }}</p>
             <div class="icon">
                 <i :class="isOpen ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down'"></i>
@@ -9,7 +9,9 @@
         <div :class="{'notification_body': true, 'show': isOpen}">
             <p class="notifier">Notifier: {{ notification?.notifier?.full_name }}</p>
             <p class="notification_description">{{ notification?.description }}</p>
+            <!-- <p class="notification_time" v-if="!notification.is_seen">{{ notification?.created_at }}</p> -->
         </div>
+
     </div>
 </template>
 
@@ -64,7 +66,7 @@ export default {
 </script>
 
 <style>
-.notification_card {
+/* .notification_card {
     border: 1px solid #ddd;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -114,6 +116,6 @@ export default {
     max-height: 500px;
     opacity: 1;
     padding: 12px;
-}
+} */
 
 </style>

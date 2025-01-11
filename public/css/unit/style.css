@@ -345,3 +345,61 @@ table{
     max-width: 550px;
     margin: auto;
 }
+
+/* ------------------------ notification dropdown ------------------------ */
+.notification_card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.notification_header {
+    background-color: #f7f7f7;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification_header:hover {
+    background-color: #eaeaea;
+}
+
+.notification_title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.icon i {
+    font-size: 18px;
+}
+
+.notification_body {
+    background-color: #fff;
+    padding: 0 12px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.3s ease, opacity 0.3s ease, padding 0.3s ease; 
+}
+
+.notification_body p {
+    margin: 0;
+    padding: 8px 0;
+}
+
+.notification_body.show {
+    max-height: 500px;
+    opacity: 1;
+    padding: 12px;
+}
+.notification_seen_bg{
+    background-color: #d8dadb;
+}
+
+/* ------------------------ notification dropdown ------------------------ */

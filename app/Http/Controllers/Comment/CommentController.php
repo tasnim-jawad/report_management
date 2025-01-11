@@ -283,7 +283,9 @@ class CommentController extends Controller
         $data->creator = auth()->id();
         $data->save();
 
-        $this->notification_stor($carbon_month, $org_type, $org_type_id);
+        // NotificationStore
+        $title = 'New comment for' . $carbon_month->format('F Y') . ' report';
+        notification_store($org_type,$org_type_id,$title,$comment);
         // $notification = new NotificationStore();
         // $notification->execute('New Comment', 'New Comment has been added for ' . $carbon_month->format('F Y') . ' report', $org_type ,$org_type_id, ) ;
 
@@ -293,36 +295,36 @@ class CommentController extends Controller
         ], 200);
     }
 
-    public function notification_stor($carbon_month, $org_type, $org_type_id){
-        if($org_type == 'city'){
-            $city_id = $org_type_id;
-        } elseif($org_type == 'thana'){
-            $thana = OrgThana::find($org_type_id);
-            $city_id = $thana->org_city_id;
-            $thana_id = $thana->id;
-        } elseif($org_type == 'ward'){
-            $ward = OrgWard::find($org_type_id);
-            $city_id = $ward->org_city_id;
-            $thana_id = $ward->org_thana_id;
-            $ward_id = $ward->id;
-        } elseif($org_type == 'unit'){
-            $unit = OrgUnit::find($org_type_id);
-            $city_id = $unit->org_city_id;
-            $thana_id = $unit->org_thana_id;
-            $ward_id = $unit->org_ward_id;
-            $unit_id = $unit->id;
-        }
-        $notification = new NotificationStore();
-        $notification->execute(
-            'New Comment', 
-            'New Comment has been added for ' . $carbon_month->format('F Y') . ' report',
-            $org_type,
-            $unit_id,
-            $ward_id ,
-            $thana_id,
-            $city_id,
-        );
-    }
+    // public function notification_store($carbon_month, $org_type, $org_type_id,$comment){
+    //     if($org_type == 'city'){
+    //         $city_id = $org_type_id;
+    //     } elseif($org_type == 'thana'){
+    //         $thana = OrgThana::find($org_type_id);
+    //         $city_id = $thana->org_city_id;
+    //         $thana_id = $thana->id;
+    //     } elseif($org_type == 'ward'){
+    //         $ward = OrgWard::find($org_type_id);
+    //         $city_id = $ward->org_city_id;
+    //         $thana_id = $ward->org_thana_id;
+    //         $ward_id = $ward->id;
+    //     } elseif($org_type == 'unit'){
+    //         $unit = OrgUnit::find($org_type_id);
+    //         $city_id = $unit->org_city_id;
+    //         $thana_id = $unit->org_thana_id;
+    //         $ward_id = $unit->org_ward_id;
+    //         $unit_id = $unit->id;
+    //     }
+    //     $notification = new NotificationStore();
+    //     $notification->execute(
+    //         'New comment for' . $carbon_month->format('F Y') . ' report', 
+    //         $comment ,
+    //         $org_type,
+    //         $unit_id,
+    //         $ward_id ,
+    //         $thana_id,
+    //         $city_id,
+    //     );
+    // }
 
 
 

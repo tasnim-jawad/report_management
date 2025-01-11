@@ -91,32 +91,42 @@
                                 সংশোধন
                             </router-link>
                         </li>
+                        <sidebar-dropdown
+                            title="বায়তুলমাল"
+                            name="bm"
+                            :active_dropdown="active_dropdown"
+                            @update_active="set_active_dropdown"
+                        >
+                            <li>
+                                <router-link :to="{name:'BmCategoryUserAll'}">
+                                    <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত ধার্য
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link :to="{ name: 'BmEntryAll' }">
+                                    <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>আয় এন্ট্রি করুন
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link :to="{ name: 'BmExpenseAll' }">
+                                    <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>ব্যয়
+                                    এন্ট্রি করুন
+                                </router-link>
+                            </li>
+                        </sidebar-dropdown>
+                        
                         <!-- <li>
                             <router-link :to="{name:'BmCategoryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>আয়ের খাত সমুূহ
                             </router-link>
                         </li> -->
-                        <!-- <li>
-                            <router-link :to="{name:'BmCategoryUserAll'}">
-                                <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত ধার্য
-                            </router-link>
-                        </li> -->
-                        <li>
-                            <router-link :to="{ name: 'BmEntryAll' }">
-                                <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>আয় এন্ট্রি করুন
-                            </router-link>
-                        </li>
+                        
                         <!-- <li>
                             <router-link :to="{name:'BmExpenseCategoryAll'}">
                                 <span class="icon_margin"><i class="fa-solid fa-layer-group"></i></span>ব্যয়ের খাত সমুূহ
                             </router-link>
                         </li> -->
-                        <li>
-                            <router-link :to="{ name: 'BmExpenseAll' }">
-                                <span class="icon_margin"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>ব্যয়
-                                এন্ট্রি করুন
-                            </router-link>
-                        </li>
+                        
                         <!-- <li>
                             <router-link :to="{name:'BmUserReport'}">
                                 <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM User Report
@@ -228,8 +238,12 @@
 
                     </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div class="modal-footer d-flec justify-content-between">
+                        <!-- <a href="#" class="btn btn-sm btn-primary" @click.prevent="see_all_notification">See all notification</a> -->
+                        <a class="btn btn-sm btn-primary" data-bs-dismiss="modal"  @click="go_to_notification(user?.responsibility?.org_unit?.id)">
+                                See all notification
+                        </a>
+                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
 
                     </div>
                 </div>
@@ -242,14 +256,17 @@
 import axios from "axios";
 import NotificationButton from "./components/NotificationButton.vue";
 import NotificationDropdown from "./components/NotificationDropdown.vue";
+import SidebarDropdown from "./components/SidebarDropdown.vue";
 import { store as data_store } from "./stores/ReportStore";
 import { store as notification_store } from "./stores/NotificationStore";
+import { store as sidebar_dropdown_store } from "./stores/SidebarDropdownStore";
 import { mapActions, mapWritableState } from 'pinia';
 import moment from "moment";
 export default {
     components: {
         NotificationButton,
         NotificationDropdown,
+        SidebarDropdown,
     },
     data: function () {
         return {
@@ -307,6 +324,8 @@ export default {
     },
     methods: {
         ...mapActions(data_store, ['set_month','get_unit_notification']),
+        ...mapActions(notification_store, ['see_all_notification']),
+        ...mapActions(sidebar_dropdown_store, ['set_active_dropdown']),
         auth_user: function () {
             axios.get("/user/user_info").then((responce) => {
                 this.user = responce.data;
@@ -373,6 +392,11 @@ export default {
                 window.s_warning("An unexpected error occurred. Please try again.", 'error');
             }
         },
+        go_to_notification(unit_id = 0) {
+            if (unit_id != 0) {
+                this.$router.push({ name: 'Notification', params: { unit_id: unit_id } });
+            }
+        }
         
 
 
@@ -380,6 +404,7 @@ export default {
     computed: {
         ...mapWritableState(data_store, ['month', 'unit_active_report_month_info']),
         ...mapWritableState(notification_store, ['all_notifications','number_of_notifications']),
+        ...mapWritableState(sidebar_dropdown_store, ['active_dropdown']),
     },
 };
 </script>

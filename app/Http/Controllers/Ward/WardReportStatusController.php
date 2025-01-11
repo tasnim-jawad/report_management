@@ -123,6 +123,11 @@ class WardReportStatusController extends Controller
                 ->whereMonth('date', $carbon_month->month)
                 ->update(['report_approved_status' => $new_status]);
 
+        // Notification store
+        $title = "রিপোর্টের অবস্থা পরিবর্তন";
+        $description = "আপনার রিপোর্টের অবস্থা পরিবর্তন হয়েছে। নতুন অবস্থা: $new_status";
+        notification_store('unit', $unit_id, $title, $description);
+
         return response()->json([
             'status' => 'success',
             "message" => "change status pending to $new_status",
@@ -186,4 +191,6 @@ class WardReportStatusController extends Controller
         }
 
     }
+
+    
 }

@@ -17,6 +17,7 @@ import BmUserReport from '../pages/bm_management/BmUserReport.vue'
 import BmTotalReport from '../pages/bm_management/BmTotalReport.vue'
 import PrintReport from '../pages/PrintReport.vue'
 import UploadReport from '../pages/UploadReport.vue'
+import Notification from '../pages/Notification.vue'
 
 import Jonoshokti from '../pages/Jonoshokti.vue'
 import CreateUser from '../pages/user/CreateUser.vue'
@@ -135,6 +136,12 @@ const routes =
                     name: "EditUser",
                     path: 'edit-user/:user_id',
                     component: EditUser,
+                    props: true,
+                },
+                {
+                    name: "Notification",
+                    path: 'notification/:unit_id',
+                    component: Notification,
                     props: true,
                 },
                 {
