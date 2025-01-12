@@ -54,6 +54,8 @@ import BmExpenseCreate from '../pages/bm_management/bm_expense/Create.vue'
 import BmExpenseDetails from '../pages/bm_management/bm_expense/Details.vue'
 import BmExpenseEdit from '../pages/bm_management/bm_expense/Edit.vue'
 
+import BmUserEntry from './BmUserEntryRoutes'
+
 const routes =
         {
 
@@ -312,7 +314,7 @@ const routes =
                     path: 'upload-report',
                     component: UploadReport,
                 },
-
+                BmUserEntry,
             ]
         }
 

@@ -1,18 +1,20 @@
 <template>
-    <li :class="['dropdown-container', { active: isActive }]">
+    <div :class="['dropdown-container', { active: isActive }]">
       <!-- Dropdown header -->
       <div class="menu" @click="handle_click">
         <p class="title">{{ title }}</p>
         <div class="icon">
-          <i :class="isActive ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down'"></i>
+          <i :class="['fa-solid', { 'fa-angle-up': isActive, 'fa-angle-down': !isActive }]"></i>
         </div>
       </div>
   
       <!-- Dropdown items -->
-      <ul v-show="isActive" class="dropdown">
-        <slot></slot>
-      </ul>
-    </li>
+      <transition name="dropdown">
+        <ul v-if="isActive" class="dropdown">
+          <slot></slot>
+        </ul>
+      </transition>      
+    </div>
   </template>
   
   <script>
@@ -32,46 +34,66 @@
         required: true,
       },
     },
+    data: () => ({
+      active_icon: false,
+    }),
     computed: {
       isActive() {
         return this.active_dropdown === this.name;
-        console.log(this.isActive);
-        
       },
     },
     methods: {
       handle_click() {
         // Emit event to parent to set the active dropdown
         this.$emit("update_active", this.isActive ? null : this.name);
+        this.active_icon = this.isActive == true ? false : true;
+        console.log("this.active_icon",this.active_icon);
+        
+        
       },
     },
   };
   </script>
   
-  <style scoped>
+<style>
   .menu {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: var(--color3);
   }
-  
+
   .dropdown-container.active .menu {
-    background-color: #d3d3d3;
+    background-color: var(--white);
   }
-  
+
   .dropdown {
     list-style: none;
     padding: 0;
     margin: 0;
     border-left: 2px solid #ccc;
-  }
-  .dropdown {
-    transition: max-height 0.3s ease-in-out;
     overflow: hidden;
-    }
+  }
 
-  </style>
+  /* Dropdown Transition */
+  .dropdown-enter-active,
+  .dropdown-leave-active {
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .dropdown-enter {
+    max-height: 0;
+  }
+
+  .dropdown-enter-to {
+    max-height: 300px; /* Adjust as needed */
+  }
+
+  .dropdown-leave-to {
+    max-height: 0;
+  }
+
+</style>
   

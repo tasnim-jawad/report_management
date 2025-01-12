@@ -3,22 +3,20 @@
 namespace App\Http\Controllers\Bm\Income;
 
 use App\Http\Controllers\Controller;
-use App\Models\Bm\Income\BmCategory;
-use App\Models\Bm\Income\BmCategoryUser;
-use App\Models\Bm\Income\BmPaid;
+use App\Models\Bm\Income\BmUserEntry;
 use App\Models\Report\ReportManagementControl;
-use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class BmPaidController extends Controller
+class BmUserEntryController extends Controller
 {
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;
         $orderBy = request()->orderBy ?? 'id';
         $orderByType = request()->orderByType ?? 'ASC';
+        $with = ['bm_category','user'];
 
         $status = 1;
         if (request()->has('status')) {
@@ -26,7 +24,7 @@ class BmPaidController extends Controller
         }
         // dd($status);
 
-        $query = BmPaid::where('status', $status)->orderBy($orderBy, $orderByType);
+        $query = BmUserEntry::where('status', $status)->orderBy($orderBy, $orderByType);
         // $query = User::latest()->get();
 
         if (request()->has('search_key')) {
@@ -39,14 +37,17 @@ class BmPaidController extends Controller
                 ->orWhere('thana_id', '%' . $key . '%')
                 ->orWhere('city_id', '%' . $key . '%')
                 ->orWhere('amount', '%' . $key . '%')
-                ->orWhere('month', '%' . $key . '%')
+                ->orWhere('date', '%' . $key . '%')
                 ->orWhere('bm_category_id', '%' . $key . '%');
 
             });
         }
 
-        $data = $query->paginate($paginate);
-        return response()->json($data);
+        $data = $query->with($with)->paginate($paginate);
+        return response()->json([
+            'status' => "success",
+            'data' => $data,
+        ]);
     }
 
     public function single_unit(){
@@ -70,7 +71,7 @@ class BmPaidController extends Controller
         }
 
         $unit_id = auth()->user()->org_unit_user["unit_id"];
-        $data = BmPaid::with('bm_category')
+        $data = BmUserEntry::with('bm_category')
                         ->where('unit_id',$unit_id)
                         ->whereMonth('month',$passed_month)
                         ->whereYear('month',$passed_year)
@@ -89,7 +90,7 @@ class BmPaidController extends Controller
     public function bm_paid_report($user_id,$bm_category_id){
 
         $year = Carbon::now()->year;
-        $filter = BmPaid::where('user_id',$user_id)->where('bm_category_id',$bm_category_id)
+        $filter = BmUserEntry::where('user_id',$user_id)->where('bm_category_id',$bm_category_id)
                         ->whereYear('month',$year );
         $tatal = $filter->sum('amount');
         $data = $filter->with('bm_category')->with('user')->get();
@@ -116,7 +117,7 @@ class BmPaidController extends Controller
     public function bm_total($month){
         $org_unit_user = User::where('id', auth()->user()->id)->with('org_unit_user')->get()->first()->org_unit_user;
         $date = Carbon::parse($month);
-        $query = BmPaid::query();
+        $query = BmUserEntry::query();
         $filter = $query->whereYear('month',$date->clone()->year)->whereMonth('month',$date->clone()->month)->where('unit_id',$org_unit_user->unit_id);
         $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
         $category_all_id = array_values(array_unique($category));
@@ -125,7 +126,7 @@ class BmPaidController extends Controller
         $data=[];
         // dd($category_all_id);
         foreach($category_all_id as $index => $item){
-            $testQuery = BmPaid::query();
+            $testQuery = BmUserEntry::query();
             $totalAmount = $testQuery->whereYear('month',$date->clone()->year)
                                     ->whereMonth('month',$date->clone()->month)
                                     ->where('bm_category_id',$item)
@@ -157,11 +158,13 @@ class BmPaidController extends Controller
     {
 
         $select = ["*"];
+        $with = ['user'];
         if (request()->has('select_all') && request()->select_all) {
             $select = "*";
         }
-        $data = BmPaid::with('bm_category')->where('id', $id)
+        $data = BmUserEntry::with('bm_category')->where('id', $id)
             ->select($select)
+            ->with($with )
             ->first();
         if ($data) {
             return response([
@@ -177,6 +180,7 @@ class BmPaidController extends Controller
             ], 404);
         }
     }
+
     public function existing_data(){
         $permission  = ReportManagementControl::where('report_type', 'unit')
                                             ->where('is_active', 1)
@@ -187,7 +191,7 @@ class BmPaidController extends Controller
         $permitted_year = $permitted_date->year;
         $unit_info = (object) auth()->user()->org_unit_user;
 
-        $existing_data = BmPaid::where('unit_id',$unit_info->unit_id)
+        $existing_data = BmUserEntry::where('unit_id',$unit_info->unit_id)
                                     ->where('bm_category_id',request()->all()['category_id'])
                                     ->whereYear('month',$permitted_year)
                                     ->whereMonth('month',$permitted_month)
@@ -209,9 +213,10 @@ class BmPaidController extends Controller
     public function store()
     {
         $validator = Validator::make(request()->all(), [
-            'amount' => ['required'],
+            'user_id' => ['required'],
             'bm_category_id' => ['required'],
             'month' => ['required', 'date'],
+            'amount' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -221,77 +226,77 @@ class BmPaidController extends Controller
             ], 422);
         }
 
-        $permission  = ReportManagementControl::where('report_type', 'unit')
-                                            ->where('is_active', 1)
-                                            ->latest()
-                                            ->first();
-        if(!$permission){
-            return response()->json([
-                'err_message' => 'Permission denied',
-                'errors' => [['You do not have the necessary permissions']],
-            ], 403);
-        }
+        // $permission  = ReportManagementControl::where('report_type', 'unit')
+        //                                     ->where('is_active', 1)
+        //                                     ->latest()
+        //                                     ->first();
+        // if(!$permission){
+        //     return response()->json([
+        //         'err_message' => 'Permission denied',
+        //         'errors' => [['You do not have the necessary permissions']],
+        //     ], 403);
+        // }
 
         $passed_date = Carbon::parse(request()->month);
         $passed_month = $passed_date->clone()->month;
         $passed_year = $passed_date->clone()->year;
 
-        $permitted_date = Carbon::parse($permission->month_year);
-        $permitted_month = $permitted_date->month;
-        $permitted_year = $permitted_date->year;
+        // $permitted_date = Carbon::parse($permission->month_year);
+        // $permitted_month = $permitted_date->month;
+        // $permitted_year = $permitted_date->year;
 
-        if($passed_month != $permitted_month || $passed_year !=  $permitted_year){
-            return response()->json([
-                'err_message' => 'Permission denied',
-                'errors' => [['You do not have the necessary permissions']],
-            ], 403);
-        }
+        // if($passed_month != $permitted_month || $passed_year !=  $permitted_year){
+        //     return response()->json([
+        //         'err_message' => 'Permission denied',
+        //         'errors' => [['You do not have the necessary permissions']],
+        //     ], 403);
+        // }
 
         $unit_info = (object) auth()->user()->org_unit_user;
 
-        $already_have_data = BmPaid::where('unit_id',$unit_info->unit_id)
-                                    ->where('bm_category_id',request()->bm_category_id)
-                                    ->whereYear('month',$permitted_year)
-                                    ->whereMonth('month',$permitted_month)
-                                    ->exists();
-        if($already_have_data){
-            $data = BmPaid::where('unit_id',$unit_info->unit_id)
-                            ->where('user_id',$unit_info->user_id)
-                            ->where('ward_id',$unit_info->ward_id)
-                            ->where('thana_id',$unit_info->thana_id)
-                            ->where('city_id',$unit_info->city_id)
-                            ->whereYear('month',$permitted_year)
-                            ->whereMonth('month',$permitted_month)
-                            ->where('bm_category_id',request()->bm_category_id)
-                            ->first();
+        // $already_have_data = BmUserEntry::where('unit_id',$unit_info->unit_id)
+        //                             ->where('bm_category_id',request()->bm_category_id)
+        //                             ->whereYear('month',$permitted_year)
+        //                             ->whereMonth('month',$permitted_month)
+        //                             ->exists();
+        // if($already_have_data){
+        //     $data = BmUserEntry::where('unit_id',$unit_info->unit_id)
+        //                     ->where('user_id',$unit_info->user_id)
+        //                     ->where('ward_id',$unit_info->ward_id)
+        //                     ->where('thana_id',$unit_info->thana_id)
+        //                     ->where('city_id',$unit_info->city_id)
+        //                     ->whereYear('month',$permitted_year)
+        //                     ->whereMonth('month',$permitted_month)
+        //                     ->where('bm_category_id',request()->bm_category_id)
+        //                     ->first();
 
-            $data->amount = request()->amount;
-            $data->creator =  $unit_info->user_id;
-            $data->save();
-            return response()->json($data, 200);
+        //     $data->amount = request()->amount;
+        //     $data->creator =  $unit_info->user_id;
+        //     $data->save();
+        //     return response()->json($data, 200);
 
-        }else{
+        // }else{
 
-            $data = new BmPaid();
+            $data = new BmUserEntry();
             $data->user_id = $unit_info->user_id;
             $data->unit_id = $unit_info->unit_id;
             $data->ward_id = $unit_info->ward_id;
             $data->thana_id = $unit_info->thana_id;
             $data->city_id = $unit_info->city_id;
             $data->amount = request()->amount;
-            $data->month = $permission->month_year;
+            $data->month = $passed_date;
             $data->bm_category_id = request()->bm_category_id;
 
             $data->creator =  $unit_info->user_id;
             $data->save();
 
             return response()->json($data, 200);
-        }
+        // }
     }
 
     public function update()
     {
-        $data = BmPaid::find(request()->id);
+        $data = BmUserEntry::find(request()->id);
         if (!$data) {
             return response()->json([
                 'err_message' => 'validation error',
@@ -343,7 +348,7 @@ class BmPaidController extends Controller
             ], 422);
         }
 
-        $data = BmPaid::find(request()->id);
+        $data = BmUserEntry::find(request()->id);
         $data->status = 0;
         $data->save();
 
@@ -365,7 +370,7 @@ class BmPaidController extends Controller
             ], 422);
         }
 
-        $data = BmPaid::find(request()->id);
+        $data = BmUserEntry::find(request()->id);
         $data->delete();
 
         return response()->json([
@@ -386,7 +391,7 @@ class BmPaidController extends Controller
             ], 422);
         }
 
-        $data = BmPaid::find(request()->id);
+        $data = BmUserEntry::find(request()->id);
         $data->status = 1;
         $data->save();
 

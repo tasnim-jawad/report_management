@@ -106,6 +106,8 @@ export default {
                 });
         },
         toggle_permission: function (user_id) {
+            console.log("from thana",user_id);
+            
             // Find the user for better confirmation and update
             const user = this.users.find(u => u.user_id === user_id);
 

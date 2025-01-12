@@ -98,6 +98,7 @@ class PermissionController extends Controller
     public function toggle_dashboard_permission()
     {
         try {
+            // dd(request()->all());
             $validator = Validator::make(request()->all(), [
                 'user_id' => ['required', 'exists:users,id'],
             ]);

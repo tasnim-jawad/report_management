@@ -904,6 +904,22 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         
     });
 
+    Route::group(['prefix' => 'bm-user-entry'], function () {
+        // Route::get('/single-unit', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'single_unit']);
+        // Route::get('/bm-paid-report/{user_id}/{bm_category_id}', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'bm_paid_report']);
+        // Route::get('/bm-total/{month}', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'bm_total']);
+        // Route::get('/existing-data', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'existing_data']);
+
+        Route::get('/all', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'store']);  //->middleware(StatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'update']);  //->middleware(StatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'soft_delete']);  //->middleware(StatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'destroy']);  //->middleware(StatusChack::class);
+        Route::post('/restore', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'bulk_import']);
+    });
+
 
 
     //**-----------------------------------------------------------**/

@@ -29,16 +29,16 @@ class ThanaWardJonoshoktiController extends Controller
                                 ->orderBy('org_ward_id')
                                 ->orderByRaw('responsibility_id IS NULL, responsibility_id')
                                 ->get();
-
+        // dd($all_user);
         foreach($all_user as $user){
+            // dd($user->user->full_name);
             $final_data[] = [
-                'user_id' =>$user->user->id,
+                'user_id' =>$user->user->id, 
                 'user_name' => $user->user->full_name,
                 'ward' => $user->org_ward->title,
                 'ward_id' =>$user->org_ward->id,
                 'responsibility' => $user->responsibility->title ?? "",
-                'responsibility_id' => $user->responsibility->id ?? "",
-                'is_permitted' => $user->user->is_permitted,
+                'responsibility_id' => $user->responsibility->id ?? ""
             ];
 
         }

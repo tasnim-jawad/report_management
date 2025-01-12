@@ -103,6 +103,11 @@
                                 </router-link>
                             </li>
                             <li>
+                                <router-link :to="{name:'BmUserEntryAll'}">
+                                    <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত বায়তুলমাল
+                                </router-link>
+                            </li>
+                            <li>
                                 <router-link :to="{ name: 'BmEntryAll' }">
                                     <span class="icon_margin"><i class="fa-solid fa-dollar-sign"></i></span>আয় এন্ট্রি করুন
                                 </router-link>
