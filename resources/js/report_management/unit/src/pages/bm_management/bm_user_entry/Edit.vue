@@ -9,17 +9,40 @@
         <div class="card-body">
             <form action="" @submit.prevent="edit_entry">
                 <input type="text" name="id" class="form-control d-none" :value="entry_info.id">
+                
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
                     <div class="form_label">
-                        <label for="">Title</label>
+                        <label for="">নাম</label>
                     </div>
                     <div class="form_input">
-                        <select type="text" name="bm_category_id" class="form-control">
-                            <option value="">-- select responsibility group --</option>
+                        <select name="user_id" class="form-control">
+                            <option value="">-- select user --</option>
+                            <option v-for="(user, i) in unit_user_all" :key="i" :value="user['id']" 
+                                :selected="user['id'] === entry_info.user_id" >
+                                {{user["full_name"]}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+                    <div class="form_label">
+                        <label for="">খাত</label>
+                    </div>
+                    <div class="form_input">
+                        <select  name="bm_category_id" class="form-control">
+                            <option value="">-- select category --</option>
                             <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']"
                             :selected="bm_category['id'] === entry_info.bm_category_id">{{bm_category["title"]}}</option>
 
                         </select>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+                    <div class="form_label">
+                        <label for="">মাস</label>
+                    </div>
+                    <div class="form_input">
+                        <input type="date" name="month" :value="entry_info.month" class="form-control">
                     </div>
                 </div>
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
@@ -38,6 +61,8 @@
 
 <script>
 import axios from 'axios';
+import { store as bm_user_entry_store} from '../../../stores/BmUserEntryStore'
+import { mapActions, mapWritableState } from 'pinia';
 export default {
     props:['entry_id'],
     data:function(){
@@ -49,8 +74,15 @@ export default {
     created:function(){
         this.show_entry();
         this.bm_category_list();
+        this.unit_users_list();
+    },
+    computed:{
+        ...mapWritableState(bm_user_entry_store,['unit_user_all'])
     },
     methods:{
+        ...mapActions(bm_user_entry_store,{
+            unit_users_list:'unit_users_list'
+        }),
         bm_category_list:function(){
             axios.get('/bm-category/all')
                 .then(responce => {
@@ -63,6 +95,8 @@ export default {
                 .then(responce => {
                     if(responce.data.status == "success"){
                         this.entry_info = responce.data.data
+                        console.log("this.entry_info ",this.entry_info );
+                        
                     }
                 })
         },
@@ -70,8 +104,9 @@ export default {
             event.preventDefault();
             let formData = new FormData(event.target);
             for (const entry of formData.entries()) {
-                console.log(entry);
+                console.log("edit_entry",entry);
             }
+
             axios.post(`/bm-user-entry/update`,formData)
                 .then(function (response) {
                     window.toaster('BM Entry Updated successfuly', 'success');

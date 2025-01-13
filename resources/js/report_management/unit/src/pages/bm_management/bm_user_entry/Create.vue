@@ -45,7 +45,8 @@
 import axios from 'axios'
 import { watch } from 'vue';
 import { store as data_store} from "../../../stores/ReportStore";
-import { mapWritableState } from 'pinia';
+import { store as bm_user_entry_store} from "../../../stores/BmUserEntryStore";
+import { mapActions, mapWritableState } from 'pinia';
 
 export default {
     data(){
@@ -72,7 +73,7 @@ export default {
                 },
             ],
             bm_category:[],
-            unit_user_all:[],
+            // unit_user_all:[],
             users_target:"",
             selected_user_id:"",
             selected_bm_category_id:"",
@@ -105,9 +106,13 @@ export default {
 
     computed: {
         ...mapWritableState(data_store, ['month']),
+        ...mapWritableState(bm_user_entry_store, ['unit_user_all']),
     },
 
     methods:{
+        ...mapActions(bm_user_entry_store,{
+            unit_users_list:'unit_users_list',
+        }),
         bm_category_list:function(){
             axios.get('/bm-category/all')
                 .then(responce => {
@@ -116,12 +121,12 @@ export default {
 
                 })
         },
-        unit_users_list:function(){
-            axios.get('/user/show_unit_user')
-                .then(responce =>{
-                    this.unit_user_all = responce.data
-                })
-        },
+        // unit_users_list:function(){
+        //     axios.get('/user/show_unit_user')
+        //         .then(responce =>{
+        //             this.unit_user_all = responce.data
+        //         })
+        // },
         user_target:function(){
             if(this.selected_user_id != "" && this.selected_bm_category_id != ""){
                 axios.get(`/bm-category-user/show_target/${this.selected_user_id}/${this.selected_bm_category_id}`)

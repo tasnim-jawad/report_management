@@ -5,6 +5,7 @@ export const store = defineStore(`bm_user_entry_store`, {
         bm_user_entry:[],
         total_paid:[],
         is_permitted: false,
+        unit_user_all:[]
         
     }),
     actions: {
@@ -30,13 +31,15 @@ export const store = defineStore(`bm_user_entry_store`, {
         submit_delete_form :async function(entry_id){
             try {
                 const form = document.getElementById('delete_entry_form_' + entry_id);
+                console.log("from from",form);
+                
                 if (!form) {
                     console.error('Form not found!');
                     return;
                 }
 
                 const formData = new FormData(form);
-                const response = await axios.post('/bm-paid/destroy', formData);
+                const response = await axios.post('/bm-user-entry/destroy', formData);
 
                 window.toaster('Entry deleted successfully', 'success');
 
@@ -45,6 +48,13 @@ export const store = defineStore(`bm_user_entry_store`, {
             } catch (error) {
                 console.error(error);
             }
+        },
+
+        unit_users_list:function(){
+            axios.get('/user/show_unit_user')
+                .then(responce =>{
+                    this.unit_user_all = responce.data
+                })
         },
     }
 

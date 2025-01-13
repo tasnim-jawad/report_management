@@ -305,8 +305,10 @@ class BmUserEntryController extends Controller
         }
 
         $validator = Validator::make(request()->all(), [
-            'amount' => ['required'],
+            'user_id' => ['required'],
             'bm_category_id' => ['required'],
+            'month' => ['required'],
+            'amount' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -318,27 +320,25 @@ class BmUserEntryController extends Controller
 
         $unit_info = (object) auth()->user()->org_unit_user;
 
-        $data->user_id = $unit_info->user_id;
-        $data->unit_id = $unit_info->unit_id;
-        $data->ward_id = $unit_info->ward_id;
-        $data->thana_id = $unit_info->thana_id;
-        $data->city_id = $unit_info->city_id;
-        $data->amount = request()->amount;
+        $data->user_id = request()->user_id;
+        // $data->unit_id = $unit_info->unit_id;
+        // $data->ward_id = $unit_info->ward_id;
+        // $data->thana_id = $unit_info->thana_id;
+        // $data->city_id = $unit_info->city_id;
         $data->bm_category_id = request()->bm_category_id;
+        $data->month = request()->month;
+        $data->amount = request()->amount;
 
         $data->creator = auth()->id();
         $data->save();
 
-        if (request()->hasFile('image')) {
-            //
-        }
         return response()->json($data, 200);
     }
 
     public function soft_delete()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_paids,id'],
+            'id' => ['required', 'exists:bm_user_entries,id'],
         ]);
 
         if ($validator->fails()) {
@@ -359,8 +359,9 @@ class BmUserEntryController extends Controller
 
     public function destroy()
     {
+        // dd(request()->all());
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_paids,id'],
+            'id' => ['required', 'exists:bm_user_entries,id'],
         ]);
 
         if ($validator->fails()) {
@@ -381,7 +382,7 @@ class BmUserEntryController extends Controller
     public function restore()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:bm_paids,id'],
+            'id' => ['required', 'exists:bm_user_entries,id'],
         ]);
 
         if ($validator->fails()) {
