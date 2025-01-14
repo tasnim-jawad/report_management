@@ -55,6 +55,7 @@ import BmExpenseDetails from '../pages/bm_management/bm_expense/Details.vue'
 import BmExpenseEdit from '../pages/bm_management/bm_expense/Edit.vue'
 
 import BmUserEntry from './BmUserEntryRoutes'
+import UnitShudhi from './UnitShudhiRoutes'
 
 const routes =
         {
@@ -315,6 +316,7 @@ const routes =
                     component: UploadReport,
                 },
                 BmUserEntry,
+                UnitShudhi,
             ]
         }
 

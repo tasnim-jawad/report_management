@@ -920,6 +920,16 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'bulk_import']);
     });
 
+    Route::group(['prefix' => 'unit-shudhi'], function () {
+        Route::get('/all-unit-shudhi', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'all_unit_shudhi']);
+        Route::get('/show/{id}', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'store']);  
+        Route::post('/update', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'update']);  
+        Route::post('/soft_delete', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'soft_delete']);  
+        Route::post('/destroy', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'destroy']);  
+        Route::post('/restore', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'restore']);
+    });
+
 
 
     //**-----------------------------------------------------------**/

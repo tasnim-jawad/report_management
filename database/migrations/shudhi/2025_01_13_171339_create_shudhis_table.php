@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
-{
+{ 
     /**
      * Run the migrations.
      */
@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name',100)->nullable();
             $table->string('mobile',20)->nullable();
             $table->string('target',20)->nullable();
+            $table->enum('org_type',['unit','ward', 'thana', 'city'])->nullable();
             $table->bigInteger('city_id')->nullable();
             $table->bigInteger('thana_id')->nullable();
             $table->bigInteger('ward_id')->nullable();

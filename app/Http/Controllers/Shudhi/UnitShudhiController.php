@@ -5,26 +5,33 @@ namespace App\Http\Controllers\Shudhi;
 use App\Http\Controllers\Controller;
 use App\Models\Shudhi\Shudhi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
-class Shudhicontroller extends Controller
+class UnitShudhiController extends Controller
 {
-    public function all()
+    public function all_unit_shudhi()
     {
+        // dd(request()->all());
         $paginate = (int) request()->paginate ?? 10;
         $orderBy = request()->orderBy ?? 'id';
         $orderByType = request()->orderByType ?? 'ASC';
-        $org_type = request()->org_type;
-        $org_id = request()->org_type;
-        $collumn_name = $org_type.'_id';
-        
+        $org_type = request()->org_type ?? 'unit';
+
         $status = 1;
+
         if (request()->has('status')) {
             $status = request()->status;
         }
         // dd($status);
-        
-        $query = Shudhi::where('status', $status)->orderBy($orderBy, $orderByType);
+        $user = auth()->user()->org_unit_user;
+        $unit_id = $user->unit_id;
+
+        $query = Shudhi::where('status', $status)
+            ->orderBy($orderBy, $orderByType)
+            ->where('org_type',$org_type)
+            ->where('unit_id', $unit_id);
         // $query = User::latest()->get();
 
         if (request()->has('search_key')) {
@@ -76,18 +83,25 @@ class Shudhicontroller extends Controller
             ], 422);
         }
 
-        
+        $user_info = auth()->user()->org_unit_user;
+        $unit_id = $user_info->unit_id;
+        $ward_id = $user_info->ward_id;
+        $thana_id = $user_info->thana_id;
+        $city_id = $user_info->city_id;
+        $org_type = request()->org_type ?? 'unit';
+
 
         $data = new Shudhi();
         $data->name = request()->name;
         $data->mobile = request()->mobile;
         $data->target = request()->target;
+        $data->org_type = $org_type;
         $data->city_id = $city_id ?? null;
         $data->thana_id = $thana_id ?? null;
         $data->ward_id = $ward_id ?? null;
         $data->unit_id = $unit_id ?? null;
-        $data->creator = $creator;
-        $data->status = $status;
+        $data->creator = auth()->id();
+        $data->status = 1;
         $data->save();
 
         return response()->json($data, 200);
@@ -128,28 +142,6 @@ class Shudhicontroller extends Controller
         return response()->json($data, 200);
     }
 
-    public function soft_delete()
-    {
-        $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:shudhis,id'],
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'err_message' => 'validation error',
-                'errors' => $validator->errors(),
-            ], 422);
-        }
-
-        $data = Shudhi::find(request()->id);
-        $data->status = 0;
-        $data->save();
-
-        return response()->json([
-            'result' => 'deactivated',
-        ], 200);
-    }
-
     public function destroy()
     {
         $validator = Validator::make(request()->all(), [
@@ -171,25 +163,4 @@ class Shudhicontroller extends Controller
         ], 200);
     }
 
-    public function restore()
-    {
-        $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:shudhis,id'],
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'err_message' => 'validation error',
-                'errors' => $validator->errors(),
-            ], 422);
-        }
-
-        $data = Shudhi::find(request()->id);
-        $data->status = 1;
-        $data->save();
-
-        return response()->json([
-            'result' => 'activated',
-        ], 200);
-    }
 }

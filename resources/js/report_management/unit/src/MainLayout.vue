@@ -98,6 +98,11 @@
                             @update_active="set_active_dropdown"
                         >
                             <li>
+                                <router-link :to="{name:'UnitShudhiAll'}">
+                                    <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>সুধী তালিকা
+                                </router-link>
+                            </li>
+                            <li>
                                 <router-link :to="{name:'BmCategoryUserAll'}">
                                     <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত ধার্য
                                 </router-link>
