@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            সকল ব্যক্তিগত ধার্যের তালিকা
+            সকল সুধী তালিকা
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UnitShudhiCreate'}" class="text-dark">ব্যক্তিগত ধার্য নির্ধারণ করুন</router-link>
+                <router-link :to="{name:'UnitShudhiCreate'}" class="text-dark">নতুন সুধী তৈরি করুন</router-link>
             </div>
         </div>
         <div class="card-body">
@@ -84,8 +84,8 @@ export default {
             axios.post("/unit-shudhi/destroy",formData)
                     .then(response => {
                         // console.log(response);
-                        window.toaster('Category User delete successfuly', 'success');
-                        this.show_bm_category_user();
+                        window.toaster('Shudhi delete successfuly', 'success');
+                        this.all_unit_shudhi();
                     })
                     .catch(error => {
                         console.error(error);

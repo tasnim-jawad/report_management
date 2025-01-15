@@ -905,11 +905,6 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     });
 
     Route::group(['prefix' => 'bm-user-entry'], function () {
-        // Route::get('/single-unit', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'single_unit']);
-        // Route::get('/bm-paid-report/{user_id}/{bm_category_id}', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'bm_paid_report']);
-        // Route::get('/bm-total/{month}', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'bm_total']);
-        // Route::get('/existing-data', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'existing_data']);
-
         Route::get('/all', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Bm\Income\BmUserEntryController::class, 'store']);  //->middleware(StatusChack::class);
@@ -921,6 +916,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     });
 
     Route::group(['prefix' => 'unit-shudhi'], function () {
+        Route::get('/show-unit-shudhi', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'show_unit_shudhi']);
+
         Route::get('/all-unit-shudhi', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'all_unit_shudhi']);
         Route::get('/show/{id}', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'store']);  
@@ -928,6 +925,54 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::post('/soft_delete', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'soft_delete']);  
         Route::post('/destroy', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'destroy']);  
         Route::post('/restore', [App\Http\Controllers\Shudhi\UnitShudhiController::class, 'restore']);
+    });
+
+    Route::group(['prefix' => 'unit-shudhi-entry'], function () {
+        Route::get('/all', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'all']);
+        Route::get('/month-wise-entry-show', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'month_wise_entry_show']);
+
+        Route::get('/all', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'store']);  //->middleware(StatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'update']);  //->middleware(StatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'soft_delete']);  //->middleware(StatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'destroy']);  //->middleware(StatusChack::class);
+        Route::post('/restore', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'bulk_import']);
+    });
+
+
+    Route::group(['prefix' => 'program'], function () {
+        Route::get('/all', [App\Http\Controllers\Program\ProgramController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Program\ProgramController::class, 'store']); 
+        Route::post('/update', [App\Http\Controllers\Program\ProgramController::class, 'update']); 
+        Route::post('/soft_delete', [App\Http\Controllers\Program\ProgramController::class, 'soft_delete']); 
+        Route::post('/destroy', [App\Http\Controllers\Program\ProgramController::class, 'destroy']); 
+        Route::post('/restore', [App\Http\Controllers\Program\ProgramController::class, 'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Program\ProgramController::class, 'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'program-delegate'], function () {
+        Route::get('/all', [App\Http\Controllers\Program\ProgramDelegateController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramDelegateController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Program\ProgramDelegateController::class, 'store']); 
+        Route::post('/update', [App\Http\Controllers\Program\ProgramDelegateController::class, 'update']); 
+        Route::post('/soft_delete', [App\Http\Controllers\Program\ProgramDelegateController::class, 'soft_delete']); 
+        Route::post('/destroy', [App\Http\Controllers\Program\ProgramDelegateController::class, 'destroy']); 
+        Route::post('/restore', [App\Http\Controllers\Program\ProgramDelegateController::class, 'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Program\ProgramDelegateController::class, 'bulk_import']);
+    });
+
+    Route::group(['prefix' => 'program-schedule'], function () {
+        Route::get('/all', [App\Http\Controllers\Program\ProgramScheduleController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramScheduleController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Program\ProgramScheduleController::class, 'store']); 
+        Route::post('/update', [App\Http\Controllers\Program\ProgramScheduleController::class, 'update']); 
+        Route::post('/soft_delete', [App\Http\Controllers\Program\ProgramScheduleController::class, 'soft_delete']); 
+        Route::post('/destroy', [App\Http\Controllers\Program\ProgramScheduleController::class, 'destroy']); 
+        Route::post('/restore', [App\Http\Controllers\Program\ProgramScheduleController::class, 'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Program\ProgramScheduleController::class, 'bulk_import']);
     });
 
 

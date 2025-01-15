@@ -103,6 +103,11 @@
                                 </router-link>
                             </li>
                             <li>
+                                <router-link :to="{name:'UnitShudhiEntryAll'}">
+                                    <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>সুধী আয় এন্ট্রি করুন
+                                </router-link>
+                            </li>
+                            <li>
                                 <router-link :to="{name:'BmCategoryUserAll'}">
                                     <span class="icon_margin"><i class="fa-solid fa-user-tag"></i></span>ব্যক্তিগত ধার্য
                                 </router-link>

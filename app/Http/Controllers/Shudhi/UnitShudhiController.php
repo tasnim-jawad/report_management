@@ -11,6 +11,42 @@ use Illuminate\Validation\Rule;
 
 class UnitShudhiController extends Controller
 {
+
+    public function show_unit_shudhi()
+    {
+        // $paginate = (int) request()->paginate ?? 10;
+        $orderBy = request()->orderBy ?? 'id';
+        $orderByType = request()->orderByType ?? 'ASC';
+        $org_type = request()->org_type ?? 'unit';
+
+        $status = 1;
+
+        if (request()->has('status')) {
+            $status = request()->status;
+        }
+        // dd($status);
+        $user = auth()->user()->org_unit_user;
+        $unit_id = $user->unit_id;
+
+        $query = Shudhi::where('status', $status)
+            ->orderBy($orderBy, $orderByType)
+            ->where('org_type',$org_type)
+            ->where('unit_id', $unit_id);
+        // $query = User::latest()->get();
+
+        if (request()->has('search_key')) {
+            $key = request()->search_key;
+            $query->where(function ($q) use ($key) {
+                return $q->where('name', '%' . $key . '%')
+                    ->orWhere('mobile', '%' . $key . '%')
+                    ->orWhere('target', '%' . $key . '%');
+            });
+        }
+
+        $datas = $query->get();
+        
+        return response()->json($datas);
+    }
     public function all_unit_shudhi()
     {
         // dd(request()->all());
@@ -58,7 +94,10 @@ class UnitShudhiController extends Controller
             ->select($select)
             ->first();
         if ($data) {
-            return response()->json($data, 200);
+            return response()->json([
+                'status' => 'success',
+                'data' => $data,
+            ], 200);
         } else {
             return response()->json([
                 'err_message' => 'data not found',
@@ -109,6 +148,8 @@ class UnitShudhiController extends Controller
 
     public function update()
     {
+
+        // dd(request()->all());
         $data = Shudhi::find(request()->id);
         if (!$data) {
             return response()->json([
@@ -129,14 +170,24 @@ class UnitShudhiController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-
-        $data->user_id = request()->user_id;
-        $data->city_id = request()->city_id;
-        $data->thana_id = request()->thana_id;
-        $data->ward_id = request()->ward_id;
-        $data->unit_id = request()->unit_id;
-        $data->creator = request()->creator;
-        $data->status = request()->status;
+        $user_info = auth()->user()->org_unit_user;
+        $unit_id = $user_info->unit_id;
+        $ward_id = $user_info->ward_id;
+        $thana_id = $user_info->thana_id;
+        $city_id = $user_info->city_id;
+        $org_type = request()->org_type ?? 'unit';
+        
+        
+        $data->name = request()->name;
+        $data->mobile = request()->mobile;
+        $data->target = request()->target;
+        $data->org_type = $org_type;
+        $data->city_id = $city_id ?? null;
+        $data->thana_id = $thana_id ?? null;
+        $data->ward_id = $ward_id ?? null;
+        $data->unit_id = $unit_id ?? null;
+        $data->creator = auth()->id();
+        $data->status = 1;
         $data->save();
 
         return response()->json($data, 200);

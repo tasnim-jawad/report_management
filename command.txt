@@ -221,3 +221,17 @@ php artisan make:seeder Report/Dawat/Dawat5JonoshadharonsTableSeeder
 php artisan make:model Report/Ward/Dawat/WardDawat5Jonoshadharon -m
 php artisan make:controller Report/Ward/Dawat/WardDawat5JonoshadharonController
 php artisan make:seeder Report/Ward/Dawat/WardDawat5JonoshadharonsTableSeeder
+
+
+php artisan make:model Program/Program -m
+php artisan make:controller Program/ProgramController
+php artisan make:seeder Program/ProgramsTableSeeder
+
+php artisan make:model Program/ProgramDelegate -m
+php artisan make:controller Program/ProgramDelegateController
+php artisan make:seeder Program/ProgramDelegatesTableSeeder
+
+php artisan make:model Program/ProgramSchedule -m
+php artisan make:controller Program/ProgramScheduleController
+php artisan make:seeder Program/ProgramSchedulesTableSeeder
+

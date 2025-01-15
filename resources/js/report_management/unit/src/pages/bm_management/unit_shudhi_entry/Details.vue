@@ -2,9 +2,9 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             Bm Entry Info
-            <!-- <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'CreateUser'}" class="text-dark">Edit</router-link>
-            </div> -->
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UnitShudhiEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
+            </div>
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >
@@ -17,16 +17,20 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Name</td>
-                            <td>{{shudhi_info?.name}}</td>
+                            <td>নাম</td>
+                            <td>{{entry_info?.shudhi?.name}}</td>
                         </tr>
                         <tr>
-                            <td>Mobile</td>
-                            <td>{{shudhi_info?.mobile}}</td>
+                            <td>খাত</td>
+                            <td>{{entry_info?.bm_category?.title}}</td>
                         </tr>
                         <tr>
-                            <td>Target</td>
-                            <td>{{shudhi_info?.target}}</td>
+                            <td>তারিখ</td>
+                            <td>{{entry_info?.month}}</td>
+                        </tr>
+                        <tr>
+                            <td>টাকার পরিমাণ</td>
+                            <td>{{entry_info?.amount}}</td>
                         </tr>
 
                     </tbody>
@@ -39,30 +43,24 @@
 <script>
 import axios from 'axios';
 export default {
-    props:['shudhi_id'],
+    props:['entry_id'],
     data:function(){
         return {
-            shudhi_info:[],
+            entry_info:[],
         }
     },
     created:function(){
-        this.show_unit_shudhi();
+        this.show_entry();
     },
     methods:{
-        show_unit_shudhi :async function(){
-            try{
-                await axios.get(`/unit-shudhi/show/${this.shudhi_id}`)
+        show_entry : function(){
+            axios.get(`/unit-shudhi-entry/show/${this.entry_id}`)
                 .then(responce => {
                     if(responce.data.status == "success"){
-                        this.shudhi_info = responce.data.data
-                        console.log(this.shudhi_info);
+                        this.entry_info = responce.data?.data
                     }
+
                 })
-            }catch(e){
-                console.log("error from shudhi detail page" , e);
-                
-            }
-            
         }
     }
 }
