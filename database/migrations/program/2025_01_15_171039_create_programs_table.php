@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('org_type')->nullable();
+            $table->enum('org_type',['unit','ward','thana','city']);
             $table->bigInteger('city_id')->nullable();
             $table->bigInteger('thana_id')->nullable();
             $table->bigInteger('ward_id')->nullable();

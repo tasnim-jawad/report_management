@@ -42,6 +42,16 @@
                                 <span class="icon_margin"><i class="fa-solid fa-people-group"></i></span>জনশক্তি
                             </router-link>
                         </li>
+                        <li>
+                            <router-link :to="{ name: 'ProgramAll' }">
+                                <span class="icon_margin"><i class="fa-solid fa-book"></i></span>প্রোগ্রাম
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'ProgramDelegateAll' }">
+                                <span class="icon_margin"><i class="fa-solid fa-book"></i></span>প্রোগ্রাম ডেলিগেট
+                            </router-link>
+                        </li>
                         <!-- <li>
                             <router-link :to="{name:'ReportInfo'}">
                                 <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Monthly Report Info

@@ -943,6 +943,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
 
 
     Route::group(['prefix' => 'program'], function () {
+        Route::get('/all-program', [App\Http\Controllers\Program\ProgramController::class, 'all_program']);
+
         Route::get('/all', [App\Http\Controllers\Program\ProgramController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Program\ProgramController::class, 'store']); 
@@ -954,6 +956,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     });
 
     Route::group(['prefix' => 'program-delegate'], function () {
+        Route::get('/all-unit-program', [App\Http\Controllers\Program\ProgramDelegateController::class, 'all_unit_program']);
+
         Route::get('/all', [App\Http\Controllers\Program\ProgramDelegateController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramDelegateController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Program\ProgramDelegateController::class, 'store']); 

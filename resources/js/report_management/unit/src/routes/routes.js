@@ -57,6 +57,8 @@ import BmExpenseEdit from '../pages/bm_management/bm_expense/Edit.vue'
 import BmUserEntry from './BmUserEntryRoutes'
 import UnitShudhi from './UnitShudhiRoutes'
 import UnitShudhiEntry from './UnitShudhiEntryRoutes'
+import Program from './ProgramRoutes'
+import ProgramDelegate from './ProgramDelegateRoutes'
 
 const routes =
         {
@@ -319,6 +321,8 @@ const routes =
                 BmUserEntry,
                 UnitShudhi,
                 UnitShudhiEntry,
+                Program,
+                ProgramDelegate,
             ]
         }
 
