@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Program;
 
+use App\Http\Controllers\Actions\AuthUser;
 use App\Http\Controllers\Controller;
 use App\Models\Program\ProgramDelegate;
 use Illuminate\Http\Request;
@@ -9,6 +10,27 @@ use Illuminate\Support\Facades\Validator;
 
 class ProgramDelegateController extends Controller
 {
+    public function program_wise_delegate(){
+
+        $validator = Validator::make(request()->all(), [
+            'program_id' => ['required', 'exists:programs,id'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $program_id = request()->program_id;
+        $delegates = ProgramDelegate::where('program_id', $program_id)->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $delegates
+        ]);
+    }
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;
@@ -65,9 +87,6 @@ class ProgramDelegateController extends Controller
     {
         $validator = Validator::make(request()->all(), [
             'program_id' => ['required'],
-            'user_id' => ['required'],
-            'time' => ['required'],
-            'is_present' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -76,7 +95,30 @@ class ProgramDelegateController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
+        
+        $org_type = 'unit';
+        $auth_data = AuthUser::execute($org_type);
+        if (request()->has('delegates') && is_array(request()->delegates)) {
+            foreach (request()->delegates as $delegate) {
+                $data = new ProgramDelegate();
+                $data->program_id = request()->program_id;
+                $data->city_id = $auth_data->city_id; 
+                $data->thana_id = $auth_data->thana_id; 
+                $data->ward_id = $auth_data->ward_id; 
+                $data->unit_id = $auth_data->unit_id; 
 
+                $data->user_id = $delegate['user_id'];
+                $data->time = $delegate['time'];
+                $data->is_present = $delegate['is_present'] ?? 0;
+                $data->creator = auth()->id();
+                $data->status = $delegate['status'] ?? 1;
+                $data->save();
+            }
+            return response()->json([
+                'sttus' => 'success',
+                'message' => 'Delegates added successfully']
+            );
+        }
         $data = new ProgramDelegate();
         $data->user_id = request()->user_id;
         $data->program_id = request()->program_id;

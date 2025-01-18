@@ -48,7 +48,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'ProgramDelegateAll' }">
+                            <router-link :to="{ name: 'ProgramDelegateAllProgram' }">
                                 <span class="icon_margin"><i class="fa-solid fa-book"></i></span>প্রোগ্রাম ডেলিগেট
                             </router-link>
                         </li>

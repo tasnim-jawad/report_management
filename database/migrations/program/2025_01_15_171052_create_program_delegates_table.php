@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('unit_id')->nullable();
             
             $table->bigInteger('program_id')->nullable();
-            $table->tinyInteger('is_permitted')->default(1);
+            $table->tinyInteger('is_present')->default(1);
             $table->time('time')->nullable();
 
             $table->bigInteger('creator')->nullable();

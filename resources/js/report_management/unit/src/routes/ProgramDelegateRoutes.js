@@ -1,5 +1,6 @@
 import ProgramDelegate from '../pages/program_management/program_delegate/Layout.vue'
-import ProgramDelegateAll from '../pages/program_management/program_delegate/All.vue'
+import ProgramDelegateAllProgram from '../pages/program_management/program_delegate/AllProgram.vue'
+import ProgramDelegateProgramWiseDelegate from '../pages/program_management/program_delegate/ProgramWiseDelegate.vue'
 import ProgramDelegateCreate from '../pages/program_management/program_delegate/Create.vue'
 import ProgramDelegateDetails from '../pages/program_management/program_delegate/Details.vue'
 import ProgramDelegateEdit from '../pages/program_management/program_delegate/Edit.vue'
@@ -10,9 +11,15 @@ const router ={
     component: ProgramDelegate,
     children:[
         {
-            name: "ProgramDelegateAll",
-            path: 'all',
-            component: ProgramDelegateAll,
+            name: "ProgramDelegateAllProgram",
+            path: 'all-program',
+            component: ProgramDelegateAllProgram,
+        },
+        {
+            name: "ProgramDelegateProgramWiseDelegate",
+            path: 'program-wise-delegate/:program_id',
+            component: ProgramDelegateProgramWiseDelegate,
+            props: true,
         },
         {
             name: "ProgramDelegateCreate",

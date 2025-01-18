@@ -61,6 +61,7 @@ import { store as program_store } from "../../../stores/ProgramStore"
 import { store as data_store } from "../../../stores/ReportStore" 
 import { mapActions, mapWritableState } from 'pinia';
 export default {
+    props:['program_id'],
     data() {
         return {
             bm_category_user:[],
@@ -68,21 +69,23 @@ export default {
     },
 
     created:function(){
-        this.all_unit_program_delegate()
+        this.show_delegates()
     },
     computed:{
         ...mapWritableState(program_delegate_store, [
-            'all_program_delegate',
-            'unit_user_all'
+            'program_wide_delegate',
         ]),
     },
     methods:{
         ...mapActions(program_delegate_store,{
             all_unit_program_delegate:'all_unit_program_delegate',
         }),
-        ...mapActions(program_store,{
-            
-        })
+
+        show_delegates:function(){
+            let program_id = this.program_id
+            console.log("show_delegates",program_id);
+        },
+
         delete_program_delegate : function(program_delegate_id){
             if (window.confirm("Are you sure you want to delete this program delegate ?")) {
                 this.submit_delete_form(program_delegate_id);
