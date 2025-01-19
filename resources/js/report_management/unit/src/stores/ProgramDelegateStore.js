@@ -16,7 +16,7 @@ export const store = defineStore(`program_delegate_store`, {
                             program_id: program_id
                         }
                     });
-                    console.log(response.data);
+                    // console.log(response.data);
                     
                     if (response.data.status == 'success') {
                         this.program_delegates = response.data.data;

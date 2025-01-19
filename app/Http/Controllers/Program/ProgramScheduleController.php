@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Program;
 
 use App\Http\Controllers\Controller;
+use App\Models\Program\ProgramSchedule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProgramScheduleController extends Controller
 {
@@ -19,7 +21,7 @@ class ProgramScheduleController extends Controller
         }
         // dd($status);
 
-        $query = OrgCityResponsible::where('status', $status)->orderBy($orderBy, $orderByType);
+        $query = ProgramSchedule::where('status', $status)->orderBy($orderBy, $orderByType);
         // $query = User::latest()->get();
 
         if (request()->has('search_key')) {
@@ -44,7 +46,7 @@ class ProgramScheduleController extends Controller
         if (request()->has('select_all') && request()->select_all) {
             $select = "*";
         }
-        $data = OrgCityResponsible::where('id', $id)
+        $data = ProgramSchedule::where('id', $id)
             ->select($select)
             ->first();
         if ($data) {
@@ -75,7 +77,7 @@ class ProgramScheduleController extends Controller
             ], 422);
         }
 
-        $data = new OrgCityResponsible();
+        $data = new ProgramSchedule();
         $data->user_id = request()->user_id;
         $data->responsibility_id = request()->responsibility_id;
         $data->org_city_id = request()->org_city_id;
@@ -88,7 +90,7 @@ class ProgramScheduleController extends Controller
 
     public function update()
     {
-        $data = OrgCityResponsible::find(request()->id);
+        $data = ProgramSchedule::find(request()->id);
         if (!$data) {
             return response()->json([
                 'err_message' => 'validation error',
@@ -137,7 +139,7 @@ class ProgramScheduleController extends Controller
             ], 422);
         }
 
-        $data = OrgCityResponsible::find(request()->id);
+        $data = ProgramSchedule::find(request()->id);
         $data->status = 0;
         $data->save();
 
@@ -159,7 +161,7 @@ class ProgramScheduleController extends Controller
             ], 422);
         }
 
-        $data = OrgCityResponsible::find(request()->id);
+        $data = ProgramSchedule::find(request()->id);
         $data->delete();
 
         return response()->json([
@@ -180,7 +182,7 @@ class ProgramScheduleController extends Controller
             ], 422);
         }
 
-        $data = OrgCityResponsible::find(request()->id);
+        $data = ProgramSchedule::find(request()->id);
         $data->status = 1;
         $data->save();
 
