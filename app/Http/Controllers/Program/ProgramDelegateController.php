@@ -23,12 +23,17 @@ class ProgramDelegateController extends Controller
             ], 422);
         }
 
+        $with = ['user','program'];
         $program_id = request()->program_id;
-        $delegates = ProgramDelegate::where('program_id', $program_id)->get();
+        $delegates = ProgramDelegate::where('program_id', $program_id)
+        ->with($with)
+        ->where('status',1)
+        ->get();
 
         return response()->json([
             'status' => 'success',
-            'data' => $delegates
+            'data' => $delegates,
+            'number_of_delegate' => count($delegates)
         ]);
     }
     public function all()
@@ -95,11 +100,21 @@ class ProgramDelegateController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-        
+        //delete all record if exist
+        ProgramDelegate::where('program_id', request()->program_id)->delete();
+
         $org_type = 'unit';
         $auth_data = AuthUser::execute($org_type);
         if (request()->has('delegates') && is_array(request()->delegates)) {
+            $existing_users = ProgramDelegate::where('program_id', request()->program_id)
+                ->where('status',1)
+                ->pluck('user_id')
+                ->toArray();
             foreach (request()->delegates as $delegate) {
+                if (in_array($delegate['user_id'], $existing_users)) {
+                    continue; // Skip duplicate user_id
+                }
+                
                 $data = new ProgramDelegate();
                 $data->program_id = request()->program_id;
                 $data->city_id = $auth_data->city_id; 
@@ -113,22 +128,15 @@ class ProgramDelegateController extends Controller
                 $data->creator = auth()->id();
                 $data->status = $delegate['status'] ?? 1;
                 $data->save();
+
+                // Add newly inserted user_id to existing users array
+                $existing_users[] = $delegate['user_id'];
             }
             return response()->json([
-                'sttus' => 'success',
+                'status' => 'success',
                 'message' => 'Delegates added successfully']
             );
         }
-        $data = new ProgramDelegate();
-        $data->user_id = request()->user_id;
-        $data->program_id = request()->program_id;
-        $data->time = request()->time;
-        $data->is_present = request()->is_present ?? 1;
-        $data->creator = auth()->id();
-        $data->status = request()->status?? 1;
-        $data->save();
-
-        return response()->json($data, 200);
     }
 
     public function update()

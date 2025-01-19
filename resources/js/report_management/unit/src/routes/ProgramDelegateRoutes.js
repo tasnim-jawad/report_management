@@ -34,7 +34,7 @@ const router ={
         },
         {
             name: "ProgramDelegateEdit",
-            path: 'edit/:program_delegate_id',
+            path: 'edit/:program_id',
             component: ProgramDelegateEdit,
             props: true,
         },

@@ -957,6 +957,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
 
     Route::group(['prefix' => 'program-delegate'], function () {
         Route::get('/program-wise-delegate', [App\Http\Controllers\Program\ProgramDelegateController::class, 'program_wise_delegate']);
+        // Route::get('/all-program-delegate', [App\Http\Controllers\Program\ProgramDelegateController::class, 'all_program_delegate']);
 
         Route::get('/all', [App\Http\Controllers\Program\ProgramDelegateController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramDelegateController::class, 'show']);

@@ -3,10 +3,10 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             সকল ডেলিগেট তালিকা
             <div class="unit_select">
-                <select name="unit_id" id="unit_id">
+                <!-- <select name="unit_id" id="unit_id">
                     <option value=""></option>
                     <option :value="unit.id" v-for="(unit,i) in units" :key="i"></option>
-                </select>
+                </select> -->
             </div>
             <div class="btn btn-info btn-sm">
                 <router-link :to="{name:'ProgramDelegateCreate'}" class="text-dark">নতুন ডেলিগেট এড করুন</router-link>
@@ -19,17 +19,17 @@
                     <thead>
                         <tr class="table-dark">
                             <th>Name</th>
-                            <th>mobile</th>
-                            <th>target</th>
-                            <th>Action</th>
+                            <th>Is Present</th>
+                            <th>Time</th>
+                            <!-- <th>Action</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(program_delegate,index) in all_program_delegate" :key="index">
-                            <td>{{program_delegate.name}}</td>
-                            <td>{{program_delegate.mobile}}</td>
-                            <td>{{program_delegate.target}}</td>
-                            <td>
+                        <tr v-for="(program_delegate,index) in program_delegates" :key="index">
+                            <td>{{program_delegate.user.full_name}}</td>
+                            <td>{{program_delegate.is_present == 1 ? 'yes' : 'no'}}</td>
+                            <td>{{program_delegate.time}}</td>
+                            <!-- <td>
                                 <div class="action">
                                     <div class="btn btn-success btn-sm me-2">
                                         <router-link v-if="program_delegate && program_delegate.id"  :to="{name:'ProgramDelegateDetails',params: { program_delegate_id: program_delegate.id }}"  class="text-dark">show</router-link>
@@ -45,7 +45,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </td>
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -64,7 +64,6 @@ export default {
     props:['program_id'],
     data() {
         return {
-            bm_category_user:[],
         }
     },
 
@@ -73,17 +72,19 @@ export default {
     },
     computed:{
         ...mapWritableState(program_delegate_store, [
-            'program_wide_delegate',
+            'program_delegates',
         ]),
     },
     methods:{
         ...mapActions(program_delegate_store,{
-            all_unit_program_delegate:'all_unit_program_delegate',
+            program_wise_delegate:'program_wise_delegate',
         }),
 
-        show_delegates:function(){
+        show_delegates:async function(){
             let program_id = this.program_id
             console.log("show_delegates",program_id);
+            await this.program_wise_delegate(program_id)
+
         },
 
         delete_program_delegate : function(program_delegate_id){
