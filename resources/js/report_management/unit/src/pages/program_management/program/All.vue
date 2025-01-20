@@ -46,6 +46,15 @@
                                     </div>
                                 </div>
                             </td>
+                            <!-- <td>
+                                <div class="action">
+                                    <div class="d-flex justify-center">
+                                        <router-link v-if="program && program.id"  :to="{name:'ProgramScheduleCreate',params: { program_id: program.id }}"  class="text-dark btn btn-primary btn-sm me-2">schedule create</router-link>
+                                        <router-link v-if="program && program.id"  :to="{name:'ProgramScheduleDetails',params: { program_id: program.id }}"  class="text-dark btn btn-primary btn-sm me-2">schedule show</router-link>
+                                        <router-link v-if="program && program.id"  :to="{name:'ProgramScheduleEdit',params: { program_id: program.id }}"  class="text-dark btn btn-primary btn-sm me-2">schedule show</router-link>
+                                    </div>
+                                </div>
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>

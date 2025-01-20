@@ -2,13 +2,46 @@
 
 namespace App\Http\Controllers\Program;
 
+use App\Http\Controllers\Actions\AuthUser;
 use App\Http\Controllers\Controller;
+use App\Models\Program\Program;
 use App\Models\Program\ProgramSchedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ProgramScheduleController extends Controller
 {
+    public function unit_wise_schedule(){
+        $validator = Validator::make(request()->all(), [
+            'org_type' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $org_type = request()->org_type;
+        $data = AuthUser::execute($org_type);
+
+        $org_type_id_column = $org_type.'_id';
+        $org_type_id = $data->$org_type_id_column;
+
+        
+        $unit_all_program = Program::where('org_type', $org_type)
+            ->where($org_type_id_column, $org_type_id)
+            ->where('status', 1)
+            ->pluck('id')
+            ->toArray();
+
+        $unit_program_schedule = ProgramSchedule::whereIn('program_id', $unit_all_program)->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $unit_program_schedule,
+        ]);
+    }
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;

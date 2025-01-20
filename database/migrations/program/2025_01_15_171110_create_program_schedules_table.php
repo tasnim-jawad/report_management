@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('program_schedules', function (Blueprint $table) {
             $table->id();
+            // $table->bigInteger('city_id')->nullable();
+            // $table->bigInteger('thana_id')->nullable();
+            // $table->bigInteger('ward_id')->nullable();
+            // $table->bigInteger('unit_id')->nullable();
+            
             $table->bigInteger('program_id')->nullable();
-
             $table->string('title',100)->nullable();
             $table->tinyInteger('is_completed')->default(0);
 

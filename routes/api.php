@@ -957,7 +957,6 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
 
     Route::group(['prefix' => 'program-delegate'], function () {
         Route::get('/program-wise-delegate', [App\Http\Controllers\Program\ProgramDelegateController::class, 'program_wise_delegate']);
-        // Route::get('/all-program-delegate', [App\Http\Controllers\Program\ProgramDelegateController::class, 'all_program_delegate']);
 
         Route::get('/all', [App\Http\Controllers\Program\ProgramDelegateController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramDelegateController::class, 'show']);
@@ -970,6 +969,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     });
 
     Route::group(['prefix' => 'program-schedule'], function () {
+        Route::get('/unit-wise-schedule', [App\Http\Controllers\Program\ProgramScheduleController::class, 'unit_wise_schedule']);
+
         Route::get('/all', [App\Http\Controllers\Program\ProgramScheduleController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramScheduleController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Program\ProgramScheduleController::class, 'store']); 

@@ -9,7 +9,7 @@
                 </select>
             </div> -->
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'ProgramDelegateCreate'}" class="text-dark">নতুন ডেলিগেট এড করুন</router-link>
+                <router-link :to="{name:'ProgramScheduleCreate'}" class="text-dark">নতুন ডেলিগেট এড করুন</router-link>
             </div>
         </div>
         <div class="card-body">
@@ -19,7 +19,6 @@
                     <thead>
                         <tr class="table-dark">
                             <th>Program title</th>
-                            <th>Delegate number</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -27,11 +26,9 @@
                         <tr v-for="(program,index) in all_program" :key="index">
                             <td>{{program.title}}</td>
                             <td>
-                                {{count_delegates[program.id]?.program_delegate_number}}</td>
-                            <td>
                                 <div class="action">
                                     <div class="d-flex justify-center">
-                                        <router-link v-if="program && program.id"  :to="{name:'ProgramDelegateProgramWiseDelegate',params: { program_id: program.id }}"  class="text-dark btn btn-info btn-sm me-2">show</router-link>
+                                        <router-link v-if="program && program.id"  :to="{name:'ProgramScheduleCreate',params: { program_id: program.id }}"  class="text-dark btn btn-info btn-sm me-2">show</router-link>
                                         <router-link v-if="program && program.id"  :to="{name:'ProgramDelegateEdit',params: { program_id: program.id }}"  class="text-dark btn btn-warning btn-sm me-2">edit</router-link>
                                     </div>
                                 </div>
@@ -46,7 +43,6 @@
 
 <script>
 import axios from 'axios'
-import { store as program_delegate_store } from "../../../stores/ProgramDelegateStore" 
 import { store as program_store } from "../../../stores/ProgramStore" 
 import { store as data_store } from "../../../stores/ReportStore" 
 import { mapActions, mapWritableState } from 'pinia';
@@ -63,31 +59,24 @@ export default {
         ...mapWritableState(program_store, [
             'all_program',
         ]),
-        ...mapWritableState(program_delegate_store, [
-            'count_delegates',
-            'program_delegates',
-        ]),
     },
     methods:{
         ...mapActions(program_store,{
             all_unit_program:'all_unit_program',
         }),
-        ...mapActions(program_delegate_store,{
-            program_wise_delegate:'program_wise_delegate',
-        }),
         
         
     },
-    watch: {
-        all_program: {
-            handler(newPrograms) {
-                newPrograms.forEach((program) => {
-                    this.program_wise_delegate(program.id);
-                });
-            },
-        deep: true, // Watches nested changes
-        },
-    },
+    // watch: {
+    //     all_program: {
+    //         handler(newPrograms) {
+    //             newPrograms.forEach((program) => {
+    //                 this.program_wise_delegate(program.id);
+    //             });
+    //         },
+    //     deep: true, // Watches nested changes
+    //     },
+    // },
 
 }
 </script>

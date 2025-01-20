@@ -52,6 +52,11 @@
                                 <span class="icon_margin"><i class="fa-solid fa-book"></i></span>প্রোগ্রাম ডেলিগেট
                             </router-link>
                         </li>
+                        <li>
+                            <router-link :to="{ name: 'ProgramScheduleAll' }">
+                                <span class="icon_margin"><i class="fa-solid fa-book"></i></span>প্রোগ্রাম শিডিউল
+                            </router-link>
+                        </li>
                         <!-- <li>
                             <router-link :to="{name:'ReportInfo'}">
                                 <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Monthly Report Info

@@ -1,34 +1,34 @@
-import Program from '../pages/program_management/program/Layout.vue'
-import ProgramAll from '../pages/program_management/program/All.vue'
-import ProgramCreate from '../pages/program_management/program/Create.vue'
-import ProgramDetails from '../pages/program_management/program/Details.vue'
-import ProgramEdit from '../pages/program_management/program/Edit.vue'
+import ProgramSchedule from '../pages/program_management/program_schedule/Layout.vue'
+import ProgramScheduleAll from '../pages/program_management/program_schedule/All.vue'
+import ProgramScheduleCreate from '../pages/program_management/program_schedule/Create.vue'
+import ProgramScheduleDetails from '../pages/program_management/program_schedule/Details.vue'
+import ProgramScheduleEdit from '../pages/program_management/program_schedule/Edit.vue'
 
 const router ={
-    name: "Program",
-    path: 'program',
-    component: Program,
+    name: "ProgramSchedule",
+    path: 'program-schedule',
+    component: ProgramSchedule,
     children:[
         {
-            name: "ProgramAll",
+            name: "ProgramScheduleAll",
             path: 'all',
-            component: ProgramAll,
+            component: ProgramScheduleAll,
         },
         {
-            name: "ProgramCreate",
+            name: "ProgramScheduleCreate",
             path: 'create',
-            component: ProgramCreate,
+            component: ProgramScheduleCreate,
         },
         {
-            name: "ProgramDetails",
+            name: "ProgramScheduleDetails",
             path: 'details/:program_id',
-            component: ProgramDetails,
+            component: ProgramScheduleDetails,
             props: true,
         },
         {
-            name: "ProgramEdit",
+            name: "ProgramScheduleEdit",
             path: 'edit/:program_id',
-            component: ProgramEdit,
+            component: ProgramScheduleEdit,
             props: true,
         },
     ]

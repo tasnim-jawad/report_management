@@ -59,6 +59,7 @@ import UnitShudhi from './UnitShudhiRoutes'
 import UnitShudhiEntry from './UnitShudhiEntryRoutes'
 import Program from './ProgramRoutes'
 import ProgramDelegate from './ProgramDelegateRoutes'
+import ProgramSchedule from './ProgramScheduleRoutes'
 
 const routes =
         {
@@ -323,6 +324,7 @@ const routes =
                 UnitShudhiEntry,
                 Program,
                 ProgramDelegate,
+                ProgramSchedule,
             ]
         }
 
