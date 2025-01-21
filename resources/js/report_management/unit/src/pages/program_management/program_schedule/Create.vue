@@ -7,13 +7,13 @@
             </div>
         </div>
         <div class="card-body">
-            <form action="" @submit.prevent="create_program">
+            <form action="" @submit.prevent="create_program_schedule">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <div class="form_label">
                         <label class="" for="">Select program</label>
                     </div>
                     <div class="form_input">
-                        <select class="form-control" name="program_id" id="program_id" v-model="selected_program">
+                        <select class="form-control" name="program_id" id="program_id" v-model="selected_program" disabled>
                             <option value="">-- select program --</option>
                             <option v-for="(program, i) in all_program" :key="i" :value="program.id"  >{{program.title}}</option>
                         </select>
@@ -52,20 +52,22 @@ import { store as data_store} from "../../../stores/ReportStore"
 import { store as program_store} from "../../../stores/ProgramStore"
 import { mapActions, mapWritableState } from 'pinia';
 export default {
+    props: ["program_id"],
     data(){
         return {
+            selected_program:this.program_id,
         }
     },
     created:function(){
-        this.auth_user();
+        // this.auth_user();
         this.all_unit_program();
     },
     computed:{
-        ...mapWritableState(data_store,{
-            unit_user:'unit_user',
-            unit_user_id: 'unit_user_id',
-            unit_id: 'unit_id',
-        }),
+        // ...mapWritableState(data_store,{
+        //     unit_user:'unit_user',
+        //     unit_user_id: 'unit_user_id',
+        //     unit_id: 'unit_id',
+        // }),
         ...mapWritableState(program_store,{
             all_program:'all_program',
         }),
@@ -74,31 +76,31 @@ export default {
         
     },
     methods:{
-        ...mapActions(data_store,{
-            auth_user:'auth_user'
-        }),
+        // ...mapActions(data_store,{
+        //     auth_user:'auth_user'
+        // }),
         ...mapActions(program_store,{
             all_unit_program:'all_unit_program'
         }),
-        create_program:function(){
+        create_program_schedule:function(){
             event.preventDefault();
             let e = event;
             let formData = new FormData(event.target);
-            // formData.append('unit_id', this.value);
-            formData.append('org_type', 'unit');
+            formData.append('program_id', this.program_id);
 
             for (const entry of formData.entries()) {
                 console.log(entry);
             }
-            axios.post('/program/store',formData)
+            axios.post('/program-schedule/store',formData)
                 .then(function (response) {
-                    console.log(response.data.status);
+                    // console.log(response.data.status);
                     if(response.data.status){
-                        window.toaster('New Program Created successfuly', 'success');
-                        e.target.reset();
+                        window.toaster('New Program Schedule Created successfuly', 'success');
+                        // e.target.reset();
+                        this.$router.push({ name: 'ProgramScheduleAllProgram' });
                     }else{
                         window.toaster('Something is wrong', 'error');
-                        e.target.reset();
+                        // e.target.reset();
                     }
                 })
                 .catch(function (error) {

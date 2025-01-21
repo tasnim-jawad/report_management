@@ -3,7 +3,8 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             Program Details
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'ProgramAll'}" class="text-dark">প্রোগ্রাম তালিকা</router-link>
+                <router-link :to="{name:'ProgramScheduleAllProgram'}" class="text-dark">প্রোগ্রাম তালিকা</router-link>
+               
             </div>
         </div>
         <div class="card-body">
@@ -17,33 +18,30 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Title</td>
-                            <td>{{program_info?.title}}</td>
+                            <td>Program Schedule Title</td>
+                            <td>{{program_schedule_info?.title}}</td>
                         </tr>
                         <tr>
-                            <td>Date</td>
-                            <td>{{program_info?.date}}</td>
+                            <td>Ptogram title</td>
+                            <td>{{program_schedule_info?.program?.title}}</td>
                         </tr>
                         <tr>
-                            <td>Location</td>
-                            <td>{{program_info?.location}}</td>
+                            <td>Is completed</td>
+                            <td>{{program_schedule_info?.is_completed == 1 ? 'yes':'no'}}</td>
                         </tr>
-                        <tr>
-                            <td>Time</td>
-                            <td>{{program_info?.time}}</td>
-                        </tr>
-                        <tr>
-                            <td>Description</td>
-                            <td>{{program_info?.description}}</td>
-                        </tr>
-                        <tr>
-                            <td>Guest</td>
-                            <td>{{program_info?.guest}}</td>
-                        </tr>
-
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div class="card-footer">
+            <div class="btn btn-danger btn-sm">
+                <a @click="delete_program_schedule(program_schedule_info.id)" class="text-dark btn btn-danger btn-sm">Delete</a>
+
+                <form :id="'delete_program_schedule_form_'+program_schedule_info.id" >
+                    <input type="text" name="id" :value="program_schedule_info.id" class="d-none">
+                </form>
+            </div>
+            <!-- <router-link :to="{name:'ProgramScheduleAllProgram'}" class="btn btn-danger btn-sm">প্রোগ্রাম শিডিউলটি ডিলিট করুন</router-link> -->
         </div>
     </div>
 </template>
@@ -54,19 +52,19 @@ export default {
     props:['program_id'],
     data:function(){
         return {
-            program_info:[],
+            program_schedule_info:[],
         }
     },
     created:function(){
-        this.show_unit_program();
+        this.show_program_schedule();
     },
     methods:{
-        show_unit_program :async function(){
+        show_program_schedule :async function(){
             try{
-                await axios.get(`/program/show/${this.program_id}`)
+                await axios.get(`/program-schedule/show/${this.program_id}`)
                 .then(response => {
                     if(response.data.status == "success" ){
-                        this.program_info = response.data.data
+                        this.program_schedule_info = response.data.data
                     }
                 })
             }catch(e){
@@ -74,6 +72,28 @@ export default {
                 
             }
             
+        },
+        delete_program_schedule : function(program_schedule_id){
+            if (window.confirm("Are you sure you want to delete this program schedule?")) {
+                this.submit_delete_form(program_schedule_id);
+            } else {
+                window.toaster('Program is safe', 'info');
+            }
+        },
+        submit_delete_form : function(program_schedule_id){
+            event.preventDefault();
+            const formData = new FormData(document.getElementById('delete_program_schedule_form_'+program_schedule_id));
+            axios.post("/program-schedule/destroy",formData)
+                    .then(response => {
+                        // console.log(response);
+                        this.$router.push({ 
+                            name: 'ProgramScheduleAllProgram'
+                        });
+                        window.toaster('Program delete successfuly', 'success');
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
         }
     }
 }

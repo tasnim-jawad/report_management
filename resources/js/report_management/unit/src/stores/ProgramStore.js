@@ -15,7 +15,6 @@ export const store = defineStore(`program_store`, {
         
                 if (response.data.status === 'success') {
                     this.all_program = response.data.data.data;
-                    
                 } else {
                     console.warn('No data found in response:', response.data);
                 }

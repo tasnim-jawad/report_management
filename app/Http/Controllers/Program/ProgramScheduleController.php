@@ -42,6 +42,34 @@ class ProgramScheduleController extends Controller
             'data' => $unit_program_schedule,
         ]);
     }
+
+    public function is_schedule_check(){
+        $validator = Validator::make(request()->all(), [
+            'program_id' => ['required', 'exists:programs,id'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $data = ProgramSchedule::where('program_id', request()->program_id)->first();
+
+        if ($data) {
+            return response()->json([
+                'status' => 'success',
+                'data' => $data
+            ]);
+        }
+    
+        return response()->json([
+            'status' => 'error',
+            'message' => 'No schedule found for the given program ID'
+        ]);
+        
+    }
     public function all()
     {
         $paginate = (int) request()->paginate ?? 10;
@@ -74,16 +102,21 @@ class ProgramScheduleController extends Controller
 
     public function show($id)
     {
-
+        // dd($id);
+        $with = ['program'];
         $select = ["*"];
         if (request()->has('select_all') && request()->select_all) {
             $select = "*";
         }
-        $data = ProgramSchedule::where('id', $id)
+        $data = ProgramSchedule::where('program_id', $id)
             ->select($select)
+            ->with($with)
             ->first();
         if ($data) {
-            return response()->json($data, 200);
+            return response()->json([
+                'status' => 'success',
+                'data' => $data
+            ]);
         } else {
             return response()->json([
                 'err_message' => 'data not found',
@@ -96,11 +129,9 @@ class ProgramScheduleController extends Controller
     public function store()
     {
         $validator = Validator::make(request()->all(), [
-            'user_id' => ['required'],
-            'responsibility_id' => ['required'],
-            'org_city_id' => ['required'],
-            'creator' => ['required'],
-            'status' => ['required'],
+            'program_id' => ['required','exists:programs,id'],
+            'title' => ['required'],
+            'is_completed' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -110,15 +141,20 @@ class ProgramScheduleController extends Controller
             ], 422);
         }
 
-        $data = new ProgramSchedule();
-        $data->user_id = request()->user_id;
-        $data->responsibility_id = request()->responsibility_id;
-        $data->org_city_id = request()->org_city_id;
-        $data->creator = request()->creator;
-        $data->status = request()->status;
+        $data = ProgramSchedule::where('program_id',request()->program_id)->first();
+        if(!$data){
+            $data = new ProgramSchedule();
+        }
+        $data->program_id = request()->program_id;
+        $data->title = request()->title;
+        $data->is_completed = request()->is_completed ?? 0;
+        $data->creator = auth()->id();
+        $data->status = request()->status ?? 1;
         $data->save();
 
         return response()->json($data, 200);
+
+        
     }
 
     public function update()
@@ -132,11 +168,9 @@ class ProgramScheduleController extends Controller
         }
 
         $validator = Validator::make(request()->all(), [
-            'user_id' => ['required'],
-            'responsibility_id' => ['required'],
-            'org_city_id' => ['required'],
-            'creator' => ['required'],
-            'status' => ['required'],
+            'program_id' => ['required','exists:programs,id'],
+            'title' => ['required'],
+            'is_completed' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -146,11 +180,11 @@ class ProgramScheduleController extends Controller
             ], 422);
         }
 
-        $data->user_id = request()->user_id;
-        $data->responsibility_id = request()->responsibility_id;
-        $data->org_city_id = request()->org_city_id;
-        $data->creator = request()->creator;
-        $data->status = request()->status;
+        $data->program_id = request()->program_id;
+        $data->title = request()->title;
+        $data->is_completed = request()->is_completed ?? 0;
+        $data->creator = auth()->id();
+        $data->status = request()->status ?? 1;
         $data->save();
 
         if (request()->hasFile('image')) {
@@ -162,7 +196,7 @@ class ProgramScheduleController extends Controller
     public function soft_delete()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:org_city_responsibles,id'],
+            'id' => ['required', 'exists:program_schedules,id'],
         ]);
 
         if ($validator->fails()) {
@@ -184,7 +218,7 @@ class ProgramScheduleController extends Controller
     public function destroy()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:org_city_responsibles,id'],
+            'id' => ['required', 'exists:program_schedules,id'],
         ]);
 
         if ($validator->fails()) {
@@ -205,7 +239,7 @@ class ProgramScheduleController extends Controller
     public function restore()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:org_city_responsibles,id'],
+            'id' => ['required', 'exists:program_schedules,id'],
         ]);
 
         if ($validator->fails()) {

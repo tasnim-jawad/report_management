@@ -1,5 +1,6 @@
 import ProgramSchedule from '../pages/program_management/program_schedule/Layout.vue'
 import ProgramScheduleAll from '../pages/program_management/program_schedule/All.vue'
+import ProgramScheduleAllProgram from '../pages/program_management/program_schedule/AllProgram.vue'
 import ProgramScheduleCreate from '../pages/program_management/program_schedule/Create.vue'
 import ProgramScheduleDetails from '../pages/program_management/program_schedule/Details.vue'
 import ProgramScheduleEdit from '../pages/program_management/program_schedule/Edit.vue'
@@ -15,9 +16,15 @@ const router ={
             component: ProgramScheduleAll,
         },
         {
+            name: "ProgramScheduleAllProgram",
+            path: 'all-program',
+            component: ProgramScheduleAllProgram,
+        },
+        {
             name: "ProgramScheduleCreate",
-            path: 'create',
+            path: 'create/:program_id',
             component: ProgramScheduleCreate,
+            props: true
         },
         {
             name: "ProgramScheduleDetails",

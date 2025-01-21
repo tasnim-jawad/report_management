@@ -970,6 +970,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
 
     Route::group(['prefix' => 'program-schedule'], function () {
         Route::get('/unit-wise-schedule', [App\Http\Controllers\Program\ProgramScheduleController::class, 'unit_wise_schedule']);
+        Route::get('/is-schedule-check', [App\Http\Controllers\Program\ProgramScheduleController::class, 'is_schedule_check']);
 
         Route::get('/all', [App\Http\Controllers\Program\ProgramScheduleController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Program\ProgramScheduleController::class, 'show']);

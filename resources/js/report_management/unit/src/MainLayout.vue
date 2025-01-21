@@ -53,7 +53,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'ProgramScheduleAll' }">
+                            <router-link :to="{ name: 'ProgramScheduleAllProgram' }">
                                 <span class="icon_margin"><i class="fa-solid fa-book"></i></span>প্রোগ্রাম শিডিউল
                             </router-link>
                         </li>

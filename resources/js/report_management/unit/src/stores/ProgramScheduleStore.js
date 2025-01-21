@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const store = defineStore(`program_delegate_store`, {
+export const store = defineStore(`program_schedule_store`, {
     state: () => ({
         all_program_schedule:[],
     }),
@@ -10,16 +10,14 @@ export const store = defineStore(`program_delegate_store`, {
                 
                 let response = await axios.get('/program-schedule/unit-wise-schedule', {
                     params: {
-                        org_type: unit
+                        org_type: 'unit'
                     }
                 });
                 // console.log(response.data);
                 
                 if (response.data.status == 'success') {
-                    this.program_delegates = response.data.data;
-                    this.count_delegates[program_id] = {
-                        program_delegate_number: response.data.number_of_delegate
-                    };
+                    this.all_program_schedule = response.data.data;
+
                 } else {
                     this.program_delegates=[];
                     console.warn('No data found in response:', response.data);
