@@ -3,16 +3,19 @@
 namespace App\Http\Controllers\Thana;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgWard;
 use App\Models\Report\ReportInfo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ThanaReportStatusController extends Controller
 {
     public function report_status(){
         $thana_id = auth()->user()->org_thana_user["thana_id"];
-        $wards = OrgWard::where('org_thana_id', $thana_id)->get();
+        $thana = OrgThana::where('id',$thana_id)->first();
+        $wards = OrgWard::where('org_thana_id', $thana_id)->where('org_gender',$thana->org_gender)->get();
 
         $month = request()->month;
         // dd($ward_id,$wards->toArray(),$month);
@@ -109,21 +112,22 @@ class ThanaReportStatusController extends Controller
         }
 
         // Bulk update for BmPaid
-        BmPaid::where('unit_id', $unit_id)
-                ->whereYear('month', $carbon_month->year)
-                ->whereMonth('month', $carbon_month->month)
-                ->update(['report_approved_status' => $new_status]);
+        
+        // BmPaid::where('unit_id', $unit_id)
+        //         ->whereYear('month', $carbon_month->year)
+        //         ->whereMonth('month', $carbon_month->month)
+        //         ->update(['report_approved_status' => $new_status]);
 
-        // Bulk update for BmExpense
-        BmExpense::where('unit_id', $unit_id)
-                ->whereYear('date', $carbon_month->year)
-                ->whereMonth('date', $carbon_month->month)
-                ->update(['report_approved_status' => $new_status]);
+        // // Bulk update for BmExpense
+        // BmExpense::where('unit_id', $unit_id)
+        //         ->whereYear('date', $carbon_month->year)
+        //         ->whereMonth('date', $carbon_month->month)
+        //         ->update(['report_approved_status' => $new_status]);
 
-        return response()->json([
-            'status' => 'success',
-            "message" => "change status pending to $new_status",
-        ], 200);
+        // return response()->json([
+        //     'status' => 'success',
+        //     "message" => "change status pending to $new_status",
+        // ], 200);
 
     }
 }

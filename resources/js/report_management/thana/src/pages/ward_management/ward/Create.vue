@@ -1,26 +1,29 @@
 <template>
-    <div class="container">
+    <!-- <div class="container">
         <div class="card mb-2">
             <div class="card-header">
                 Ward Create
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="container">
         <div class="card">
-            <div class="card-header">
-                Ward User Create
+            <div class="card-header d-flex justify-content-between align-items-center">
+                ওয়ার্ড তৈরি করুন 
+                <div class="btn btn-info btn-sm">
+                    <router-link :to="{name:'WardAll'}" class="text-dark"> সকল ওয়ার্ড </router-link>
+                </div>
             </div>
             <div class="card-body">
                 <form action="" id="create_ward_form">
 
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="gender_select" class="form-label">Select gender</label>
                         <select id="gender_select" class="form-select " name="org_gender" aria-label="Default select example" v-model="selected_gender">
                             <option value="men" >পুরুষ</option>
                             <option value="women" >মহিলা</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="mb-3">
                         <label for="ward_title" class="form-label">Write Ward Name</label>
                         <input type="text" class="form-control" id="ward_title" name="title" placeholder="write new ward title">

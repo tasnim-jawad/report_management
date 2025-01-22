@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Organization\OrgUnit;
 use App\Models\Organization\OrgUnitResponsible;
 use App\Models\Organization\OrgUnitUser;
+use App\Models\Organization\OrgWard;
 use App\Models\User;
 use App\Models\User\UserRole;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class WardUnitJonoshoktiController extends Controller
 
     public function all(){
         $ward_id = auth()->user()->org_ward_user["ward_id"];
-        $unit_ids = OrgUnit::where('org_ward_id', $ward_id)->pluck('id');
+        $ward = OrgWard::where('id', $ward_id)->first();
+        $unit_ids = OrgUnit::where('org_ward_id', $ward_id)->where('org_gender',$ward->org_gender)->pluck('id');
 
         $final_data = [];
 

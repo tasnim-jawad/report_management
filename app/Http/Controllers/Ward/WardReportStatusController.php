@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Bm\Expense\BmExpense;
 use App\Models\Bm\Income\BmPaid;
 use App\Models\Organization\OrgUnit;
+use App\Models\Organization\OrgWard;
 use App\Models\Report\ReportInfo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,7 +16,8 @@ class WardReportStatusController extends Controller
 {
     public function report_status(){
         $ward_id = auth()->user()->org_ward_user["ward_id"];
-        $units = OrgUnit::where('org_ward_id', $ward_id)->get();
+        $ward = OrgWard::where('id',$ward_id)->first();
+        $units = OrgUnit::where('org_ward_id', $ward_id)->where('org_gender',$ward->org_gender)->get();
 
         $month = request()->month;
         // dd($ward_id,$units->toArray(),$month);

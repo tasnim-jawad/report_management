@@ -15,7 +15,8 @@ class WardUnitController extends Controller
 {
     public function all(){
         $ward_id = auth()->user()->org_ward_user["ward_id"];
-        $units = OrgUnit::where('org_ward_id',$ward_id)->with('org_type')->with('org_area')->get();
+        $ward = OrgWard::where('id', $ward_id)->first();
+        $units = OrgUnit::where('org_ward_id',$ward_id)->where('org_gender',$ward->org_gender)->with('org_type')->with('org_area')->get();
 
 
         return response()->json([

@@ -6,13 +6,13 @@
         <div class="card-body">
             <form action="" @submit.prevent="edit_unit">
                 <input type="text" name="id" class="form-control d-none" :value="unit_info.id">
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                         <label for="gender_select" class="form-label">Select gender</label>
                         <select id="gender_select" class="form-select " name="org_gender" aria-label="Default select example" v-model="unit_info.org_gender" >
                             <option value="men" >পুরুষ</option>
                             <option value="women" >মহিলা</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="mb-3">
                         <label for="unit_title" class="form-label">Write Unit Name</label>
                         <input type="text" class="form-control" id="unit_title" name="title" placeholder="write new unit title" v-model="unit_info.title">

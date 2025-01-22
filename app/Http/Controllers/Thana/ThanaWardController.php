@@ -13,8 +13,8 @@ class ThanaWardController extends Controller
 {
     public function all(){
         $thana_id = auth()->user()->org_thana_user["thana_id"];
-        $wards = OrgWard::where('org_thana_id',$thana_id)->with('org_type')->with('org_area')->get();
-
+        $thana = OrgThana::where('id',$thana_id)->first();
+        $wards = OrgWard::where('org_thana_id',$thana_id)->where('org_gender',$thana->org_gender)->with('org_type')->with('org_area')->get();
 
         return response()->json([
             'status' => 'success',
@@ -52,7 +52,7 @@ class ThanaWardController extends Controller
             'description' => ['required'],
             'org_type_id' => ['required'],
             'org_area_id' => ['required'],
-            'org_gender' => ['required'],
+            // 'org_gender' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -64,7 +64,7 @@ class ThanaWardController extends Controller
         $org_thana_user = auth()->user()->org_thana_user;
         $city = OrgCity::Where('id',$org_thana_user["city_id"])->first();
         $thana = OrgThana::where('id',$org_thana_user["thana_id"])->first();
-        
+        // dd($thana->org_gender);
         if(!$org_thana_user || (!$thana || !$city)){
             return response()->json([
                 'err_message' => 'validation error',
@@ -81,7 +81,7 @@ class ThanaWardController extends Controller
         $data->org_thana_id = $thana_id ;
         $data->org_type_id = request()->org_type_id;
         $data->org_area_id = request()->org_area_id;
-        $data->org_gender = request()->org_gender;
+        $data->org_gender = $thana->org_gender;
         $data->creator = auth()->user()->id;
         $data->save();
 
@@ -103,7 +103,7 @@ class ThanaWardController extends Controller
             'description' => ['required'],
             'org_type_id' => ['required'],
             'org_area_id' => ['required'],
-            'org_gender' => ['required'],
+            // 'org_gender' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -116,7 +116,7 @@ class ThanaWardController extends Controller
         $data->description = request()->description;
         $data->org_type_id = request()->org_type_id;
         $data->org_area_id = request()->org_area_id;
-        $data->org_gender = request()->org_gender;
+        // $data->org_gender = request()->org_gender;
         $data->creator = auth()->user()->id;
         $data->save();
 

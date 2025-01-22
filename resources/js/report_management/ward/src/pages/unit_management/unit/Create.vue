@@ -14,13 +14,13 @@
             <div class="card-body">
                 <form action="" id="create_unit_form">
 
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="gender_select" class="form-label">Select gender</label>
                         <select id="gender_select" class="form-select " name="org_gender" aria-label="Default select example" v-model="selected_gender">
                             <option value="men" >পুরুষ</option>
                             <option value="women" >মহিলা</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="mb-3">
                         <label for="unit_title" class="form-label">Write Unit Name</label>
                         <input type="text" class="form-control" id="unit_title" name="title" placeholder="write new unit title">
@@ -94,19 +94,12 @@ export default {
             let cevent = event;
             cevent.preventDefault();
             const formData = new FormData(document.getElementById('create_unit_form'));
-            // console.log(formData);
-            formData.forEach((value, key) => {
-                console.log(`${key}: ${value}`);
-            });
             axios.post("ward/unit/store",formData)
                     .then(responce => {
                         window.toaster('unit create successfuly', 'success');
-                        console.log(cevent.target);
-                        
                         const form = document.getElementById('create_unit_form');
                         form.reset();
                         this.selected_gender = null;
-                        // cevent.target.reset();
                     })
                     .catch(error => {
                         console.error(error);

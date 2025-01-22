@@ -1867,6 +1867,7 @@ class WardController extends Controller
         if ($month) {
             $org_ward_user = OrgWardUser::where('user_id', auth()->id())->first();
             $ward_id = $org_ward_user->ward_id;
+            $ward = OrgWard::where('id',$ward_id)->first();
             $month = Carbon::parse(request()->month);
 
             $report_info = ReportInfo::where('org_type_id', $ward_id)

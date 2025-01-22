@@ -109,7 +109,6 @@ export default {
             axios.post('/thana/user/store',formData)
                 .then((response) => {
                     window.toaster('user create successfuly', 'success');
-                    
                     this.$router.push({ name:'UserAll' });
                     
                 })

@@ -106,7 +106,7 @@ export default {
             event.preventDefault();
             let formData = new FormData(event.target);
             axios.post('/ward/user/store',formData)
-                .then(function (response) {
+                .then((response) => {
                     window.toaster('user create successfuly', 'success');
                     this.$router.push({ name:'UserAll' });
                 })

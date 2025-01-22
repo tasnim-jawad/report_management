@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Organization;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgWard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -12,8 +13,11 @@ class OrgWardController extends Controller
 {
     public function thana_wise_ward(){
         $thana_info = (object) auth()->user()->org_thana_user;
+        $thana = OrgThana::where('id',$thana_info->thana_id)->first();
+
         $wards = OrgWard::where('org_thana_id',$thana_info->thana_id)
                 ->where('org_city_id',$thana_info->city_id)
+                ->where('org_gender',$thana->org_gender)
                 ->with(['org_city','org_thana','org_ward_responsible','org_area'])
                 ->get();
         // dd($wards);
