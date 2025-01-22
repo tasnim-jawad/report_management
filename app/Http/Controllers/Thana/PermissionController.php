@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Thana;
 use App\Http\Controllers\Controller;
 use App\Models\Organization\OrgThana;
 use App\Models\Report\ReportManagementControl;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;

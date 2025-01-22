@@ -7,6 +7,7 @@ use App\Http\Controllers\Actions\ReportHeader;
 use App\Http\Controllers\Actions\ReportJoma;
 use App\Http\Middleware\IsGuest;
 use App\Http\Middleware\Unit\IsUnitPermittedUser;
+use App\Http\Middleware\Ward\IsWardPermittedUser;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,7 @@ Route::get('/login', function () {
 
 Route::group(['prefix' => 'dashboard', 'namespace' => '\App\Http\Controllers\Dashboard'], function () {
     Route::get('unit', 'DashboardController@unit')->middleware(IsUnitPermittedUser::class);
-    Route::get('ward', 'DashboardController@ward');
+    Route::get('ward', 'DashboardController@ward')->middleware(IsWardPermittedUser::class);
     Route::get('thana', 'DashboardController@thana');
     Route::get('admin', 'DashboardController@admin');
 });

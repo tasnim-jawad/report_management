@@ -10,7 +10,7 @@
                         <label for="">{{field.label}}</label>
                     </div>
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'blood_group'">
-                        <select type="text" :name="field.name" class="form-control">
+                        <select :name="field.name" class="form-control">
                             <option value="">-- select blood group --</option>
                             <option value="O+">O+</option>
                             <option value="O-">O-</option>
@@ -23,7 +23,7 @@
                         </select>
                     </div>
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'responsibility_id'">
-                        <select type="text" :name="field.name" class="form-control">
+                        <select :name="field.name" class="form-control">
                             <option value="">-- select responsibility group --</option>
                             <option v-for="(responsibility, i) in responsibilities" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
                         </select>
@@ -43,6 +43,7 @@
 
 <script>
 import FormInput from '../../components/FormInput.vue'
+// import router from './router'; 
 
 export default {
     components:{
@@ -106,11 +107,14 @@ export default {
             event.preventDefault();
             let formData = new FormData(event.target);
             axios.post('/thana/user/store',formData)
-                .then(function (response) {
+                .then((response) => {
                     window.toaster('user create successfuly', 'success');
+                    
                     this.$router.push({ name:'UserAll' });
+                    
                 })
-                .catch(function (error) {
+                .catch((error) => {
+                    console.log(error);
                     console.log(error.response);
                 });
         },

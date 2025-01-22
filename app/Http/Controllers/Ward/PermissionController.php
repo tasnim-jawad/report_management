@@ -114,6 +114,7 @@ class PermissionController extends Controller
             $user->is_permitted = !$user->is_permitted;  // Toggle the is_permitted value
             $user->save();
 
+
             return response()->json(['message' => 'Permission toggled successfully']);
 
         } catch (\Throwable $th) {

@@ -18,10 +18,10 @@ import BmTotalReport from '../pages/bm_management/BmTotalReport.vue'
 import PrintReport from '../pages/PrintReport.vue'
 import UploadReport from '../pages/UploadReport.vue'
 
-import Jonoshokti from '../pages/user/All.vue'
-import CreateUser from '../pages/user/Create.vue'
-import ShowUser from '../pages/user/Details.vue'
-import EditUser from '../pages/user/Edit.vue'
+// import Jonoshokti from '../pages/user/All.vue'
+// import CreateUser from '../pages/user/Create.vue'
+// import ShowUser from '../pages/user/Details.vue'
+// import EditUser from '../pages/user/Edit.vue'
 
 import ward_expense_target_routes from './ward_expense_target_routes';
 import bmCategoryRoutes from './bmCategoryRoutes';

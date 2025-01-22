@@ -75,14 +75,17 @@ export default {
         users: {},
         searchQuery: "",
     }),
+    // onMounted:{
+    //     this.show_users();
+    // },
     created: function () {
         this.show_users();
     },
     methods: {
         show_users: function () {
             axios.get("/thana/ward-jonoshokti/all")
-                .then(responce => {
-                    this.users = responce.data
+                .then(response => {
+                    this.users = response.data
                 })
         },
         delete_user: function (user_id) {
@@ -97,7 +100,7 @@ export default {
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_user_form_' + user_id));
             axios.post("/user/destroy", formData)
-                .then(responce => {
+                .then(response => {
                     window.toaster('user delete successfuly', 'success');
                     this.show_users();
                 })
@@ -141,7 +144,6 @@ export default {
                 user.user_name.toLowerCase().includes(this.searchQuery.toLowerCase())
             );
         }
-
     }
 }
 </script>

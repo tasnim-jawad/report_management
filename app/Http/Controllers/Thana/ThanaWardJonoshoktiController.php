@@ -35,6 +35,7 @@ class ThanaWardJonoshoktiController extends Controller
             $final_data[] = [
                 'user_id' =>$user->user->id, 
                 'user_name' => $user->user->full_name,
+                'is_permitted' => $user->user->is_permitted,
                 'ward' => $user->org_ward->title,
                 'ward_id' =>$user->org_ward->id,
                 'responsibility' => $user->responsibility->title ?? "",

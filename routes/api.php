@@ -27,7 +27,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::get('/user_info', [App\Http\Controllers\User\UserController::class, 'user_info']);
         Route::get('/ward-user-info', [App\Http\Controllers\User\UserController::class, 'ward_user_info']);
         Route::get('/thana-user-info', [App\Http\Controllers\User\UserController::class, 'thana_user_info']);
-        Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Ward\PermissionController::class, 'toggle_dashboard_permission']);
+        Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Dashboard\PermissionController::class, 'toggle_dashboard_permission']);
 
         Route::get('/all', [App\Http\Controllers\User\UserController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\User\UserController::class, 'show']);

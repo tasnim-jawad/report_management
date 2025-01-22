@@ -96,14 +96,14 @@ export default {
             if (this.users.length < 2) {
                 return this.users;
             }
-            console.log('sort',this.users);
+            // console.log('sort',this.users);
 
             return this.users.sort((a, b) => {
-                console.log('a',a);
-                console.log('b',b);
-                const responsibilityA = a.org_ward_responsible?.responsibility_id ?? Infinity;
-                const responsibilityB = b.org_ward_responsible?.responsibility_id ?? Infinity;
-                console.log("ss",responsibilityA ,responsibilityB,responsibilityA - responsibilityB);
+                // console.log('a',a.org_thana_responsible[0].responsibility_id);
+                // console.log('b',b.org_thana_responsible[0].responsibility_id);
+                const responsibilityA = a.org_thana_responsible[0]?.responsibility_id ?? Infinity;
+                const responsibilityB = b.org_thana_responsible[0]?.responsibility_id ?? Infinity;
+                // console.log("ss",responsibilityA ,responsibilityB,responsibilityA - responsibilityB);
 
                 return responsibilityA - responsibilityB;
             });

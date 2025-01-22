@@ -45,7 +45,7 @@
                                             }
                                         }" class="text-dark">Responsibility</router-link>
                                     </div>
-
+                                    
                                     <a :class="['btn btn-sm me-2', user.is_permitted == 1 ? 'btn-danger' : 'btn-success']"
                                         @click="toggle_permission(user.user_id)">
 
@@ -72,7 +72,7 @@
 import axios from 'axios'
 export default {
     data: () => ({
-        users: {},
+        users: [],
         searchQuery: "",
     }),
     created: function () {
