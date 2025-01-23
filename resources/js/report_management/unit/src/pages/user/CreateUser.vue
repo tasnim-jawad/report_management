@@ -110,11 +110,9 @@ export default {
             event.preventDefault();
             let formData = new FormData(event.target);
             axios.post('/user/store_unit_user',formData)
-                .then(function (response) {
-                    console.log("redirect");
-
-                    // this.$router.push({ name:'Jonoshokti' });
+                .then((response) => {
                     window.toaster('user create successfuly', 'success');
+                    this.$router.push({ name:'Jonoshokti' });
                 })
                 .catch(function (error) {
                     console.log(error.response);
@@ -125,12 +123,9 @@ export default {
                 // .then(responce => {
                 //     this.responsibilities = responce.data
                 // })
-                .then(response => {
+                .then((response) => {
                     if (Array.isArray(response.data.data)) {
-                        console.log(response.data.data);
                         this.responsibilities = response.data.data.slice(2)
-                        console.log(this.responsibilities );
-
                     } else {
                         console.error("Expected an array but got:", typeof response.data);
                     }

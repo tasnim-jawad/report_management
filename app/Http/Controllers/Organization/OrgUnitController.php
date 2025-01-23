@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Organization;
 
 use App\Http\Controllers\Controller;
 use App\Models\Organization\OrgUnit;
+use App\Models\Organization\OrgWard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
@@ -20,9 +21,11 @@ class OrgUnitController extends Controller
     }
     public function ward_wise_unit(){
         $ward_info = (object) auth()->user()->org_ward_user;
+        $ward = OrgWard::where('id', $ward_info->ward_id)->first();
         $units = OrgUnit::where('org_ward_id',$ward_info->ward_id)
                 ->where('org_thana_id',$ward_info->thana_id)
                 ->where('org_city_id',$ward_info->city_id)
+                ->where('org_gender',$ward->org_gender)
                 ->with(['org_city','org_thana','org_ward','org_unit_responsible','org_area'])
                 ->get();
         // dd($units);

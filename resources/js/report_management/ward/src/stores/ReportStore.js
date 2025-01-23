@@ -4,6 +4,7 @@ export const store = defineStore(`custom_store`, {
     state: () => ({
         month: null,
         loading: true,
+        ward_active_report_month_info: null,
     }),
     getters: {
         $init: () => {

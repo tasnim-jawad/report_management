@@ -151,7 +151,7 @@ export default {
         }
     },
     created: function () {
-        this.set_month()
+        // this.set_month()
         this.report_status()
         this.user_info()
         this.ward_report_status()

@@ -40,7 +40,7 @@ function is_ward_report_upload_permitted($month,$user_id)
         ->where('report_type', 'ward')
         ->where('upper_organization_id', $upper_organization_id)
         ->first();
-        dd($permission );
+        // dd($permission );
     return $permission;
 }
 
@@ -106,7 +106,7 @@ function ward_common_store($bind, $class, $report_info)
     ], [
         "month.required" => ["মাস সিলেক্ট করুন"]
     ]);
-    dd($report_info);
+    // dd($report_info);
     if ($report_info) {
         $col_name = request()->name;
         $col_value = request()->value;
@@ -255,6 +255,31 @@ function notification_store($org_type, $org_type_id,$title, $description){
         $thana_id,
         $city_id,
     );
+}
+
+function active_report($org_type)
+{
+    $org_type_user = 'org_'.$org_type.'_user';
+    $user_info = Auth::user()->$org_type_user()->first();
+
+    $upper_organization_mapping = [
+        'unit' => 'ward_id',
+        'ward' => 'thana_id',
+        'thana' => 'city_id',
+    ];
+
+    $upper_organization_title = $upper_organization_mapping[$org_type] ?? null;
+    if ($upper_organization_title) {
+        $upper_organization_id = $user_info->$upper_organization_title ?? null;
+    }
+    // dd($user->ward_id);
+    $permission = ReportManagementControl::where('is_active', 1)
+            ->where('upper_organization_id', $upper_organization_id)
+            ->where('report_type', $org_type)
+            ->orderBy('updated_at', 'DESC')
+            ->first();
+
+    return $permission;
 }
 
 

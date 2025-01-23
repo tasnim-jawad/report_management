@@ -124,10 +124,10 @@ export default {
     methods:{
         all_units :async function(){
             let response =await axios.get('/ward/unit/all')
-            console.log("Response:",response);
+            // console.log("Response:",response);
             if(response && response.data && response.data.data){
                 this.units = response.data.data
-                console.log("Units",this.units);
+                // console.log("Units",this.units);
             }
         },
         create_user :async function(event){
@@ -137,6 +137,7 @@ export default {
                 let response = await axios.post('/ward/unit-jonoshokti/store', formData);
                 if (response.data.status === 'success') {
                     window.toaster('User created successfully', 'success');
+                    this.$router.push({name:`UnitJonoshoktiAll`})
                 }
             } catch (error) {
                 // Handling error response

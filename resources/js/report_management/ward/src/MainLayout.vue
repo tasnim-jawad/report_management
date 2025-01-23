@@ -228,7 +228,7 @@ export default {
         return {
             user: [],
             user_id: "",
-            isUnitReportPage: false,
+            isWardReportPage: false,
         }
     },
     created: function () {
@@ -244,20 +244,38 @@ export default {
         this.auth_user();
         this.set_month();
     },
-    mounted: function () {
-        this.isUnitReportPage = window.location.href.includes("unit-report-upload");
+    mounted:async function () {
+        let org_type = 'ward';
+        let ward_active_report =await axios.get(`/report-management-control/active-report/${org_type}`)
+            .then((response) => {
+                return response.data.data;
+            })
+            .catch((error) => {
+                console.error("An error occurred while fetching unit active report:", error);
+                return null;
+            });
+        // console.log("ward active report:", ward_active_report);
+        this.ward_active_report_month_info = ward_active_report;
+
+
+        this.isWardReportPage = window.location.href.includes("ward-report-upload-monthly");
 
         // Show the modal if not on 'unit-report-upload' page
-        if (!this.isUnitReportPage) {
+        if (!this.isWardReportPage) {
             let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
                 keyboard: false,
             });
-            modalElement.show();
+
+            if(this.ward_active_report_month_info){
+                this.month = moment(this.ward_active_report_month_info.month_year).format("YYYY-MM");
+                modalElement.show();
+            }
+            // modalElement.show();
         }
 
     },
     methods: {
-        ...mapActions(data_store, ['set_month']),
+        ...mapActions(data_store, ['set_month','ward_active_report_month_info']),
         auth_user: function () {
             axios.get("/user/ward-user-info")
                 .then(responce => {

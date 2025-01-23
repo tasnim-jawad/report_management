@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
-            Edit Program
+        <div class="card-header d-flex justify-content-between align-items-center">
+            প্রোগ্রাম এডিট করুন
+            <div class="">
+                <router-link  :to="{name:'ProgramAll'}" class="text-dark btn btn-info btn-sm">সকল প্রোগ্রাম</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="edit_unit_program">

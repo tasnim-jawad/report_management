@@ -2,7 +2,8 @@
     <div :class="['dropdown-container', { active: isActive }]">
       <!-- Dropdown header -->
       <div class="menu" @click="handle_click">
-        <p class="title">{{ title }}</p>
+
+        <p class="title"> <span class="me-2"><i class="fa-solid fa-square-caret-down"></i></span> {{ title }}</p>
         <div class="icon">
           <i :class="['fa-solid', { 'fa-angle-up': isActive, 'fa-angle-down': !isActive }]"></i>
         </div>
@@ -61,8 +62,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: var(--color3);
+    /* background-color: var(--color3); */
+    text-decoration: none;
+    color: var(--color6);
+    font-size: 15px;
+    font-family: 'solaiman_lipi';
+    transition: background .1s ease-in-out;
+    padding: 10px 26px;
+    border: 2px solid transparent;
   }
 
   .dropdown-container.active .menu {

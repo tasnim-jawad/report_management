@@ -324,7 +324,9 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     });
 
     Route::group(['prefix' => 'report-management-control'], function () {
-        Route::get('/unit-active-report', [App\Http\Controllers\Report\ReportManagementControlController::class, 'unit_active_report']);
+        // Route::get('/unit-active-report', [App\Http\Controllers\Report\ReportManagementControlController::class, 'unit_active_report']);
+        Route::get('/active-report/{org_type}', [App\Http\Controllers\Report\ReportManagementControlController::class, 'active_report']);
+        // Route::get('/ward-active-report', [App\Http\Controllers\Report\ReportManagementControlController::class, 'ward_active_report']);
     });
 
 

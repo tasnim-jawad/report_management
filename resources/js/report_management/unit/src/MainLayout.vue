@@ -321,8 +321,8 @@ export default {
         
     },
     mounted:async function () {
-
-        let unit_active_report =await axios.get("/report-management-control/unit-active-report")
+        let org_type = 'unit';
+        let unit_active_report =await axios.get(`/report-management-control/active-report/${org_type}`)
             .then((response) => {
                 return response.data.data;
             })
@@ -335,7 +335,8 @@ export default {
         
         // this.isUnitReportPage = window.location.href.includes("unit-report-upload");
         this.isUnitReportPage = window.location.href.includes("unit-report-upload-monthly");
-
+        console.log("this.isUnitReportPage",this.isUnitReportPage);
+        
         // Show the modal if not on 'unit-report-upload' page
         if (!this.isUnitReportPage) {
             let modalElement = new window.bootstrap.Modal(document.getElementById("staticBackdrop"), {
