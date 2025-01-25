@@ -186,8 +186,6 @@ export default {
                 //     '3': this.rejected_unit,
                 //     '4': this.approved_unit,
                 // });
-
-
             }
         },
         unit_report_view: function (unit_id, report_month) {

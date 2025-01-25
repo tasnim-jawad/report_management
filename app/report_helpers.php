@@ -117,9 +117,11 @@ function common_store($bind, $class, $report_info)
 {
 
     $bind->validate(request(), [
-        'month' => ['required']
+        'month' => ['required'],
+        'value' => ['numeric','nullable']
     ], [
-        "month.required" => ["মাস সিলেক্ট করুন"]
+        "month.required" => ["মাস সিলেক্ট করুন"],
+        'value.numeric' => 'Only English numbers can be input.',
     ]);
     if ($report_info) {
         $col_name = request()->name;
