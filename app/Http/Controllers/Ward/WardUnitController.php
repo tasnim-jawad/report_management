@@ -55,7 +55,7 @@ class WardUnitController extends Controller
             'description' => ['required'],
             'org_type_id' => ['required'],
             'org_area_id' => ['required'],
-            'org_gender' => ['required'],
+            // 'org_gender' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -87,7 +87,7 @@ class WardUnitController extends Controller
         $data->org_ward_id = $ward_id;
         $data->org_type_id = request()->org_type_id;
         $data->org_area_id = request()->org_area_id;
-        $data->org_gender = request()->org_gender;
+        $data->org_gender = $ward->org_gender;
         $data->creator = auth()->user()->id;
         $data->save();
 

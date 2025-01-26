@@ -4325,7 +4325,7 @@
                                             class="bg-input w-100 text-center" />
                                         <popup :ward_id="report_header?.ward_info?.id"
                                             :table_name="'shomajsheba2_unit_social_works'"
-                                            :field_title="'mayeter_gosol_kotojonke'" :month="month">
+                                            :field_title="'mayeter_gosol'" :month="month">
                                         </popup>
                                     </div>
                                 </td>
