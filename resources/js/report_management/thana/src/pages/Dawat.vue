@@ -7,7 +7,7 @@
                     মাস: <input type="month" @change="get_monthly_data" v-model="month" ref="month" name="month">
                 </div>
             </div>
-            <div class=" px-2">
+            <div class="px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
                         <h1 class="fw-bolder">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদানের তথ্য:</h1>
@@ -16,12 +16,14 @@
                 <div class="card mb-3" v-if="month">
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields8" :label="field.label" :name="field.name"
+                            <form-input v-for="(field, index) in dawat5_jonoshadharon" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload" :endpoint="'thana-dawat5-jonoshadharon'"
                                 :unique_key="5"></form-input>
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
                         <h1 class="fw-semibold">১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (পুরুষ)</h1>
@@ -35,6 +37,8 @@
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
                         <h1 class="fw-semibold">১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (মহিলা)</h1>
@@ -47,6 +51,11 @@
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div class="card mb-3" v-if="month">
+                <div class="card-header">
+                    <h1 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h1>
                 </div>
             </div>
             <div class=" px-2">
@@ -159,6 +168,24 @@ export default {
     components: { FormInput, PreviousNext, Note, Popup },
     data: () => ({
         // month: null,
+        dawat5_jonoshadharon: [
+            {
+                label: 'মোট জনসংখ্যা',
+                name: 'total_population',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'target',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'how_many_have_been_invited_man',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছে ',
+                name: 'how_many_associate_members_created_man',
+            },
+        ],
         dawat1_man: [
             {
                 label: 'কতটি গ্রুপ বের হয়েছে',
@@ -195,40 +222,84 @@ export default {
                 name: 'how_many_associate_members_created_woman',
             },
         ],
-        fields2: [
+        dawat2_jonoshokti_man: [
             {
                 label: 'মোট সদস্য(রুকন) সংখ্যা',
-                name: 'total_rokon',
+                name: 'total_rokon_man',
             },
             {
                 label: 'মোট কর্মী সংখ্যা ',
-                name: 'total_worker',
+                name: 'total_worker_man',
+            },
+        ],
+        dawat2_jonoshokti_woman: [
+            {
+                label: 'মোট সদস্য(রুকন) সংখ্যা',
+                name: 'total_rokon_woman',
             },
             {
+                label: 'মোট কর্মী সংখ্যা ',
+                name: 'total_worker_woman',
+            },
+        ],
+        dawat2_give_dawat_man: [
+            {
                 label: 'কতজন সদস্য(রুকন) ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন',
-                name: 'how_many_were_give_dawat_rokon',
+                name: 'how_many_were_give_dawat_rokon_man',
             },
             {
                 label: 'কতজন কর্মী ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন',
-                name: 'how_many_were_give_dawat_worker',
-            },
-            {
-                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছেন',
-                name: 'how_many_have_been_invited',
-            },
-            {
-                label: 'কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'how_many_associate_members_created',
+                name: 'how_many_were_give_dawat_worker_man',
             },
         ],
-        fields3: [
+        dawat2_give_dawat_woman: [
             {
-                label: 'মোট কতজনকে দাওয়াত প্রদান করা হয়েছে',
-                name: 'how_many_were_give_dawat',
+                label: 'কতজন সদস্য(রুকন) ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন',
+                name: 'how_many_were_give_dawat_rokon_woman',
             },
             {
-                label: 'মোট কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'how_many_associate_members_created',
+                label: 'কতজন কর্মী ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন',
+                name: 'how_many_were_give_dawat_worker_woman',
+            },
+        ],
+        dawat2_invited: [
+            {
+                label: 'পুরুষ',
+                name: 'how_many_have_been_invited_man',
+            },
+            {
+                label: 'মহিলা',
+                name: 'how_many_have_been_invited_woman',
+            },
+        ],
+        dawat2_associate_created: [
+            {
+                label: 'পুরুষ',
+                name: 'how_many_associate_members_created_man',
+            },
+            {
+                label: 'মহিলা',
+                name: 'how_many_associate_members_created_woman',
+            },
+        ],
+        dawat3_give_dawat: [
+            {
+                label: 'পুরুষ',
+                name: 'how_many_were_give_dawat_man',
+            },
+            {
+                label: 'মহিলা',
+                name: 'how_many_were_give_dawat_woman',
+            },
+        ],
+        dawat3_associate_created: [
+            {
+                label: 'পুরুষ',
+                name: 'how_many_associate_members_created_man',
+            },
+            {
+                label: 'মহিলা',
+                name: 'how_many_associate_members_created_woman',
             },
         ],
         fields4: [
@@ -251,7 +322,43 @@ export default {
 
 
         ],
-        fields5: [
+        dawat4_gono_songjog_man: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'total_gono_songjog_group_man',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'total_attended_man',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'how_many_have_been_invited_man',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'how_many_associate_members_created_man',
+            },
+        ],
+        dawat4_gono_songjog_woman: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'total_gono_songjog_group_woman',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'total_attended_woman',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'how_womany_have_been_invited_woman',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'how_womany_associate_members_created_woman',
+            },
+        ],
+        dawat4_jela_mohanogor: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
                 name: 'jela_mohanogor_declared_gonosonjog_group',
@@ -269,25 +376,79 @@ export default {
                 name: 'jela_mohanogor_declared_gonosonjog_associated_created',
             },
         ],
-        fields6: [
+        dawat4_election_man: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
-                name: 'election_gono_songjog_group',
+                name: 'election_gono_songjog_group_man',
             },
             {
                 label: 'অংশগ্রহণকারীর সংখ্যা',
-                name: 'election_attended',
+                name: 'election_attended_man',
             },
             {
                 label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'election_how_many_have_been_invited',
+                name: 'election_how_many_have_been_invited_man',
             },
             {
                 label: 'কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'election_how_many_associate_members_created',
+                name: 'election_how_many_associate_members_created_man',
             },
         ],
-        fields7: [
+        dawat4_election_woman: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'election_gono_songjog_group_woman',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'election_attended_woman',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'election_how_many_have_been_invited_woman',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'election_how_many_associate_members_created_woman',
+            },
+        ],
+        dawat4_ulama_peshajibi_man: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'ulama_peshajibi_gono_songjog_group_man',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'ulama_peshajibi_attended_man',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'ulama_peshajibi_how_many_have_been_invited_man',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'ulama_peshajibi_how_many_associate_members_created_man',
+            },
+        ],
+        dawat4_ulama_peshajibi_woman: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'ulama_peshajibi_gono_songjog_group_woman',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'ulama_peshajibi_attended_woman',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'ulama_peshajibi_how_many_have_been_invited_woman',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'ulama_peshajibi_how_many_associate_members_created_woman',
+            },
+        ],
+        dawat4_other: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
                 name: 'other_gono_songjog_group',
@@ -305,12 +466,8 @@ export default {
                 name: 'other_how_many_associate_members_created',
             },
         ],
-        fields8: [
-            {
-                label: 'মোট জনসংখ্যা:',
-                name: 'total_population',
-            },
-        ],
+
+
         notes: [
             {
                 label: 'বিঃদ্রঃ - ১',

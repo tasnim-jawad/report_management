@@ -1457,6 +1457,26 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
+
+    Route::group(['prefix' => 'thana-dawat2-personal-and-target'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'store_single'])->middleware(WardStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-dawat3-general-program-and-others'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'store_single'])->middleware(WardStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-dawat4-gono-songjog-and-dawat-ovijan'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'store_single'])->middleware(WardStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-dawat5-jonoshadharon'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat5JonoshadharonController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat5JonoshadharonController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
 });
 
 
