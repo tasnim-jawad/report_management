@@ -5006,7 +5006,7 @@
             <div class="montobbo">
                 <h1 class="fs-6 fw-bold">ওয়ার্ড আমীর/সভাপতির মন্তব্য :</h1>
                 <textarea name="montobbo" @change="data_upload('ward-montobbo')" id="" cols="30" class="w-100 bg-input"
-                    rows="5">{{ report_sum_data?.ward_montobbos?.montobbo }}</textarea>
+                    rows="5">{{report_sum_data?.ward_montobbos?.montobbo}}</textarea>
             </div>
         </section>
 

@@ -65,6 +65,8 @@ use Database\Seeders\Report\Songothon\Songothon6BidayiStudentsConnectsTableSeede
 use Database\Seeders\Report\Songothon\Songothon7SoforsTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon8IyanotDataTableSeeder;
 use Database\Seeders\Report\Songothon\Songothon9SangothonikBoithoksTableSeeder;
+use Database\Seeders\Report\Thana\Dawat\ThanaDawat1RegularGroupWisesTableSeeder;
+use Database\Seeders\Report\Thana\Dawat\ThanaDawat5JonoshadharonsTableSeeder;
 use Database\Seeders\Report\Ward\DawahAndProkashona\WardDawahAndProkashonasTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat1JonoshadharonsTableSeeder;
 use Database\Seeders\Report\Ward\Dawat\WardDawat1RegularGroupWisesTableSeeder;
@@ -151,7 +153,7 @@ class DatabaseSeeder extends Seeder
                 // OrgUnitResponsiblesTableSeeder::class,
             //report table
                 // ReportInfosTableSeeder::class,
-                // ReportManagementControlsTableSeeder::class,
+                ReportManagementControlsTableSeeder::class,
                 // NotificationsTableSeeder::class,
 
             
@@ -261,6 +263,21 @@ class DatabaseSeeder extends Seeder
                 // WardMontobbosTableSeeder::class,
             // ward
                 // WardTotalUnitSubmittedDataTableSeeder::class,
+
+
+
+
+            /** ------------------------- **/
+            /** -------- Thana --------- **/
+            /** ------------------------- **/
+
+
+            // dawat
+                ThanaDawat1RegularGroupWisesTableSeeder::class,
+                // WardDawat2PersonalAndTargetsTableSeeder::class,
+                // WardDawat3GeneralProgramAndOthersTableSeeder::class,
+                // WardDawat4GonoSongjogAndDawatOvijansTableSeeder::class,
+                ThanaDawat5JonoshadharonsTableSeeder::class,
         ]);
     }
 }

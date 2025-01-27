@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\StatusChack;
+use App\Http\Middleware\ThanaStatusChack;
 use App\Http\Middleware\WardStatusChack;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -1447,6 +1448,14 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
         Route::post('/destroy', [App\Http\Controllers\Bm\Ward\Expense\WardExpenseTargetController::class, 'destroy']);
         Route::post('/restore', [App\Http\Controllers\Bm\Ward\Expense\WardExpenseTargetController::class, 'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Ward\Expense\WardExpenseTargetController::class, 'bulk_import']);
+    });
+
+
+
+
+    Route::group(['prefix' => 'thana-dawat1-regular-group-wise'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 });
 

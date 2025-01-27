@@ -17,34 +17,33 @@
                     <div class="card-body">
                         <form action="">
                             <form-input v-for="(field, index) in fields8" :label="field.label" :name="field.name"
-                                :key="index" :onchange="dawat_upload" :endpoint="'ward-dawat5-jonoshadharon'"
+                                :key="index" :onchange="dawat_upload" :endpoint="'thana-dawat5-jonoshadharon'"
                                 :unique_key="5"></form-input>
                         </form>
                     </div>
                 </div>
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-semibold">১. নিয়মিত গ্রুপ ভিত্তিক দাওয়াত:</h1>
+                        <h1 class="fw-semibold">১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (পুরুষ)</h1>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <div v-for="(field, index) in fields1" :key="index">
+                            <div v-for="(field, index) in dawat1_man" :key="index">
                                 <form-input :label="field.label" :name="field.name" :onchange="dawat_upload"
-                                    :endpoint="'ward-dawat1-regular-group-wise'" :unique_key="1"></form-input>
-
-                                <!-- for next version -->
-
-                                <!-- <div class="position-relative">
-                                    <popup
-                                        :ward_id="1"
-                                        :table_name="'dawat1_regular_group_wises'"
-                                        :field_title="'how_many_groups_are_out'"
-                                        :month="month"
-                                        >
-                                    </popup>
-                                </div> -->
-
-                                <!-- for next version -->
+                                    :endpoint="'thana-dawat1-regular-group-wise'" :unique_key="1"></form-input>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1 class="fw-semibold">১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (মহিলা)</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div v-for="(field, index) in dawat1_woman" :key="index">
+                                <form-input :label="field.label" :name="field.name" :onchange="dawat_upload"
+                                    :endpoint="'thana-dawat1-regular-group-wise'" :unique_key="1"></form-input>
                             </div>
                         </form>
                     </div>
@@ -58,7 +57,7 @@
                     <div class="card-body">
                         <form action="">
                             <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name"
-                                :onchange="dawat_upload" :endpoint="'ward-dawat2-personal-and-target'" :unique_key="2"
+                                :onchange="dawat_upload" :endpoint="'thana-dawat2-personal-and-target'" :unique_key="2"
                                 :key="index"></form-input>
                         </form>
                     </div>
@@ -73,7 +72,7 @@
                         <form action="">
                             <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
-                                :endpoint="'ward-dawat3-general-program-and-others'" :unique_key="3"></form-input>
+                                :endpoint="'thana-dawat3-general-program-and-others'" :unique_key="3"></form-input>
                         </form>
                     </div>
                 </div>
@@ -95,7 +94,7 @@
                         <form action="">
                             <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
-                                :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
                     </div>
                 </div>
@@ -109,7 +108,7 @@
                         <form action="">
                             <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
-                                :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
                     </div>
                 </div>
@@ -123,7 +122,7 @@
                         <form action="">
                             <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
-                                :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
                     </div>
                 </div>
@@ -137,7 +136,7 @@
                         <form action="">
                             <form-input v-for="(field, index) in fields7" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
-                                :endpoint="'ward-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
                     </div>
                 </div>
@@ -160,22 +159,40 @@ export default {
     components: { FormInput, PreviousNext, Note, Popup },
     data: () => ({
         // month: null,
-        fields1: [
+        dawat1_man: [
             {
                 label: 'কতটি গ্রুপ বের হয়েছে',
-                name: 'how_many_groups_are_out',
+                name: 'how_many_groups_are_out_man',
             },
             {
                 label: 'অংশগ্রহণকারীর সংখ্যা',
-                name: 'number_of_participants',
+                name: 'number_of_participants_man',
             },
             {
                 label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'how_many_have_been_invited',
+                name: 'how_many_have_been_invited_man',
             },
             {
                 label: 'কতজন সহযোগী সদস্য হয়েছে ',
-                name: 'how_many_associate_members_created',
+                name: 'how_many_associate_members_created_man',
+            },
+        ],
+        dawat1_woman: [
+            {
+                label: 'কতটি গ্রুপ বের হয়েছে',
+                name: 'how_many_groups_are_out_woman',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'number_of_participants_woman',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'how_many_have_been_invited_woman',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছে ',
+                name: 'how_many_associate_members_created_woman',
             },
         ],
         fields2: [
@@ -312,6 +329,8 @@ export default {
         });
 
         if (this.month != null) {
+            console.log("this.month",this.month);
+            
             this.get_monthly_data();
         }
     },
@@ -345,11 +364,11 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('ward-dawat1-regular-group-wise', 1);
-            this.get_data_by_api('ward-dawat2-personal-and-target', 2);
-            this.get_data_by_api('ward-dawat3-general-program-and-others', 3);
-            this.get_data_by_api('ward-dawat4-gono-songjog-and-dawat-ovijan', 4);
-            this.get_data_by_api('ward-dawat5-jonoshadharon', 5);
+            this.get_data_by_api('thana-dawat1-regular-group-wise', 1);
+            this.get_data_by_api('thana-dawat2-personal-and-target', 2);
+            this.get_data_by_api('thana-dawat3-general-program-and-others', 3);
+            this.get_data_by_api('thana-dawat4-gono-songjog-and-dawat-ovijan', 4);
+            this.get_data_by_api('thana-dawat5-jonoshadharon', 5);
         }
     }
 

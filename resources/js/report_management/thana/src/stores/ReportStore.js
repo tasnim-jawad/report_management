@@ -12,12 +12,20 @@ export const store = defineStore(`custom_store`, {
     },
     actions: {
         set_month() {
-            const currentDate = new Date();
-            const currentMonth = currentDate.getMonth() + 1;
-            const currentYear = currentDate.getFullYear();
+            // const currentDate = new Date();
+            // const currentMonth = currentDate.getMonth() + 1;
+            // const currentYear = currentDate.getFullYear();
 
-            this.month = `${currentYear}-${currentMonth}`;
+            // this.month = `${currentYear}-${currentMonth}`;
             // console.log(this.month); // Example: "2024-10"
+
+            const currentYear = moment().format("YYYY");
+            const currentMonth = moment().format("MM");
+
+            let seted_month = `${currentYear}-${currentMonth}`;
+            this.month = seted_month; // Already in "YYYY-MM" format
+            console.log("from store",this.month);
+            
         },
         user_info:function(){
             axios.get("/user/thana-user-info")

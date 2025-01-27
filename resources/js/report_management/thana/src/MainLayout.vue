@@ -57,17 +57,17 @@
                                 <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Monthly Report Info
                             </router-link>
                         </li> -->
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'Dawat' }">
                                 <span class="icon_margin"><i class="fa-regular fa-comment"></i></span>দাওয়াত ও তাবলিগ
                             </router-link>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'Department' }">
                                 <span class="icon_margin"><i class="fa-solid fa-puzzle-piece"></i></span>বিভাগ ভিত্তিক
                                 তথ্য
                             </router-link>
-                        </li> -->
+                        </li>
                         <!-- <li>
                             <router-link :to="{ name: 'DawahAndProkashona' }">
                                 <span class="icon_margin"><i class="fa-solid fa-book"></i></span>দাওয়াহ্ ও প্রকাশনা

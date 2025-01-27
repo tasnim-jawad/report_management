@@ -319,7 +319,7 @@ class ThanaController extends Controller
         ], 200);
     }
 
-    public function ward_report_monthly()
+    public function thana_report_monthly()
     {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
@@ -332,12 +332,12 @@ class ThanaController extends Controller
             ], 422);
         }
 
-        $ward_id = auth()->user()->org_ward_user->ward_id;
+        $thana_id = auth()->user()->org_thana_user->thana_id;
 
         $start_month = request()->month;
         $end_month = request()->month;
-        $org_type = 'ward';
-        $org_type_id = $ward_id;
+        $org_type = 'thana';
+        $org_type_id = $thana_id;
         $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
 
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status);
