@@ -10,10 +10,15 @@
             <div class="px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-bolder">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদানের তথ্য:</h1>
+                        <h1 class="fw-bolder">দাওয়াত ও তাবলিগ :</h1>
                     </div>
                 </div>
+            </div>
+            <div class="px-2">
                 <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1 class="fw-bolder">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদানের তথ্য:</h1>
+                    </div>
                     <div class="card-body">
                         <form action="">
                             <form-input v-for="(field, index) in dawat5_jonoshadharon" :label="field.label" :name="field.name"
@@ -53,19 +58,28 @@
                     </div>
                 </div>
             </div>
-            <div class="card mb-3" v-if="month">
-                <div class="card-header">
-                    <h1 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h1>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h1 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:(পুরুষ)</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat2_jonoshokti_man" :label="field.label" :name="field.name"
+                                :onchange="dawat_upload" :endpoint="'thana-dawat2-personal-and-target'" :unique_key="2"
+                                :key="index"></form-input>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h1>
+                        <h1 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:(মহিলা)</h1>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name"
+                            <form-input v-for="(field, index) in dawat2_jonoshokti_woman" :label="field.label" :name="field.name"
                                 :onchange="dawat_upload" :endpoint="'thana-dawat2-personal-and-target'" :unique_key="2"
                                 :key="index"></form-input>
                         </form>
@@ -176,14 +190,6 @@ export default {
             {
                 label: 'টার্গেট',
                 name: 'target',
-            },
-            {
-                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'how_many_have_been_invited_man',
-            },
-            {
-                label: 'কতজন সহযোগী সদস্য হয়েছে ',
-                name: 'how_many_associate_members_created_man',
             },
         ],
         dawat1_man: [
