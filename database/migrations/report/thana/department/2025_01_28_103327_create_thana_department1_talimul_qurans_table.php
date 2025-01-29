@@ -25,6 +25,7 @@ return new class extends Migration
             $table->bigInteger('student_worker_man')->nullable();
             $table->bigInteger('student_worker_woman')->nullable();
 
+
             $table->bigInteger('quran_learning_total_group')->nullable();
             $table->bigInteger('quran_learning_total_students')->nullable();
 

@@ -14,6 +14,8 @@ php artisan make:model Report/Thana/Dawat/ThanaDawat3GeneralProgramAndOthers -m
 php artisan make:controller Report/Thana/Dawat/ThanaDawat3GeneralProgramAndOthersController
 php artisan make:seeder Report/Thana/Dawat/ThanaDawat3GeneralProgramAndOthersTableSeeder
 
+
+
 php artisan make:model Report/Thana/Dawat/ThanaDawat4GonoSongjogAndDawatOvijan -m
 php artisan make:controller Report/Thana/Dawat/ThanaDawat4GonoSongjogAndDawatOvijanController
 php artisan make:seeder Report/Thana/Dawat/ThanaDawat4GonoSongjogAndDawatOvijansTableSeeder

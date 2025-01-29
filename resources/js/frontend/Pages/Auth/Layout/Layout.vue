@@ -1,5 +1,4 @@
 <template>
-
     <div id="authentication">
         <div class="container">
             <div class="background">
@@ -15,8 +14,61 @@
 
 <script>
 export default {
-
-}
+    data() {
+        return {
+            is_auth: 0,
+            auth_info: {},
+        };
+    },
+    created: async function () {
+        await this.check_is_auth();
+    },
+    methods: {
+        check_is_auth: async function () {
+            try {
+                let token = localStorage.getItem("token");
+                if (token) {
+                    let res = await window.axios.get("/user/check_user", {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
+                    if (res.data && res.data.user) {
+                        let role = res.data.user.role;
+                        let prevurl =
+                            sessionStorage.getItem("prevurl") || "#/dashboard";
+                        switch (role) {
+                            case 6:
+                                console.log("unit");
+                                window.location.href = "/dashboard/unit#";
+                                break;
+                            case 5:
+                                console.log("ward");
+                                window.location.href = "/dashboard/ward#";
+                                break;
+                            case 4:
+                                console.log("thana");
+                                window.location.href = "/dashboard/thana#";
+                                break;
+                            case 2:
+                                console.log("admin");
+                                window.location.href = "/dashboard/admin#";
+                                break;
+                            default:
+                                console.log("default");
+                                window.location.href = prevurl;
+                                break;
+                        }
+                    } else {
+                        console.error("User data is missing in the response.");
+                    }
+                }
+            } catch (error) {
+                console.error("Error checking authentication:", error);
+            }
+        },
+    },
+};
 </script>
 <style>
 #authentication {
