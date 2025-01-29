@@ -1,3 +1,11 @@
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//------------------ Department ----------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+
 //////////////////////////////////////////
 -------> ThanaDepartment1TalimulQuran
 //////////////////////////////////////////
@@ -172,9 +180,9 @@ general_dawah_center_increase
 
 mosjid_wise_information_center_increase
 
-general_information_center
 general_information_center_increase
 
+trained_employed_dai
 
 creator
 status
@@ -183,20 +191,112 @@ status
 
 
 //////////////////////////////////////////
--------> ThanaDepartment4DifferentJobHoldersDawat
+-------> ThanaDepartment7DawatInTechnology
 //////////////////////////////////////////
 report_info_id
+
+total_well_known_man
+total_well_known_woman
+
+total_attended_man
+total_attended_woman
+
+creator
+status
+
+
+
 //////////////////////////////////////////
--------> ThanaDepartment4DifferentJobHoldersDawat
+-------> ThanaDepartment8DawatInCulturalActivity
 //////////////////////////////////////////
 report_info_id
+
+total_cultural_team
+total_program
+total_invited
+
+creator
+status
+
+
+
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//------------------ DawahAndProkashona ----------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+
+
 //////////////////////////////////////////
--------> ThanaDepartment4DifferentJobHoldersDawat
+-------> ThanaDawahAndProkashona
 //////////////////////////////////////////
 report_info_id
+
+total_pathagar_increase
+total_pathagar_target
+
+total_online_library_increase
+total_online_library_target
+
+total_online_pathagar_increase
+total_online_pathagar_target
+
+books_in_pathagar
+books_in_pathagar_increase
+books_in_pathagar_target
+
+books_in_online_library_increase
+books_in_online_library_target
+
+book_distribution
+
+unit_book_distribution_center_increase
+unit_book_distribution_center_target
+
+unit_book_distribution
+unit_book_distribution_target
+
+ward_book_sales_center_increase
+
+ward_book_sales
+soft_copy_book_distribution
+dawat_link_distribution
+
+sonar_bangla_increase
+songram_increase
+prithibi_increase
+
+
+
+
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//------------------ Kormosuci ----------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+
 //////////////////////////////////////////
--------> ThanaDepartment4DifferentJobHoldersDawat
+-------> ThanaKormosuciBastobayon
 //////////////////////////////////////////
 report_info_id
 
 
+
+
+
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//------------------ Kormosuci ----------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+
+//////////////////////////////////////////
+-------> ThanaKormosuciBastobayon
+//////////////////////////////////////////
+report_info_id
