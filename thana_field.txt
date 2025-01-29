@@ -227,8 +227,7 @@ status
 //-----------------------------------------------------------\\
 //-----------------------------------------------------------\\
 //-----------------------------------------------------------\\
-a
-fdsjf
+
 
 //////////////////////////////////////////
 -------> ThanaDawahAndProkashona
@@ -270,6 +269,9 @@ songram_increase
 prithibi_increase
 
 
+creator
+status
+
 
 
 //-----------------------------------------------------------\\
@@ -285,19 +287,280 @@ prithibi_increase
 //////////////////////////////////////////
 report_info_id
 
+unit_masik_sadaron_sova_total
+unit_masik_sadaron_sova_target
+unit_masik_sadaron_sova_uposthiti
 
+alochona_sova_total
+alochona_sova_target
+alochona_sova_uposthiti
+
+sudhi_somabesh_total
+sudhi_somabesh_target
+sudhi_somabesh_uposthiti
+
+siratunnabi_mahfil_total
+siratunnabi_mahfil_target
+siratunnabi_mahfil_uposthiti
+
+eid_reunion_total
+eid_reunion_target
+eid_reunion_uposthiti
+
+dars_total
+dars_target
+dars_uposthiti
+
+tafsir_total
+tafsir_target
+tafsir_uposthiti
+
+dawati_jonosova_total
+dawati_jonosova_target
+dawati_jonosova_uposthiti
+
+iftar_mahfil_personal_total
+iftar_mahfil_personal_target
+iftar_mahfil_personal_uposthiti
+
+iftar_mahfil_samostic_total
+iftar_mahfil_samostic_target
+iftar_mahfil_samostic_uposthiti
+
+cha_chakra_total
+cha_chakra_target
+cha_chakra_uposthiti
+
+samostic_khawa_total
+samostic_khawa_target
+samostic_khawa_uposthiti
+
+sikkha_sofor_total
+sikkha_sofor_target
+sikkha_sofor_uposthiti
+
+kirat_protijogita_total
+kirat_protijogita_target
+kirat_protijogita_uposthiti
+
+hamd_nat_protijogita_total
+hamd_nat_protijogita_target
+hamd_nat_protijogita_uposthiti
+
+others_total
+others_target
+others_uposthiti
+
+
+creator
+status
 
 
 
 //-----------------------------------------------------------\\
 //-----------------------------------------------------------\\
 //-----------------------------------------------------------\\
-//------------------ Kormosuci ----------------------------\\
+//------------------ Songothon ----------------------------\\
 //-----------------------------------------------------------\\
 //-----------------------------------------------------------\\
 //-----------------------------------------------------------\\
 
 //////////////////////////////////////////
--------> ThanaKormosuciBastobayon
+-------> ThanaSongothon1Jonosokti
+//////////////////////////////////////////
+report_info_id
+
+
+rokon_briddhi_manonnoyon
+rokon_briddhi_agoto
+rokon_gatti
+rokon_target
+
+worker_briddhi
+worker_gatti
+worker_target
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon2AssociateMember
+//////////////////////////////////////////
+report_info_id
+
+associate_member_man_briddhi
+associate_member_man_target
+
+associate_member_woman_briddhi
+associate_member_woman_target
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon3DepartmentalInformation
+//////////////////////////////////////////
+report_info_id
+
+
+women_rokon_increase_manonnoyon
+women_rokon_increase_agoto
+women_rokon_gatti_manonnoyon
+women_rokon_gatti_sthanantor
+women_rokon_target
+
+women_kormi_increase
+women_kormi_increase
+women_kormi_gatti
+women_kormi_target
+
+women_associate_member_increase
+women_associate_member_gatti
+women_associate_member_target
+
+sromojibi_rokon_increase
+sromojibi_rokon_gatti
+sromojibi_rokon_target
+
+sromojibi_kormi_increase
+sromojibi_kormi_gatti
+sromojibi_kormi_target
+
+sromojibi_associate_member_increase
+sromojibi_associate_member_gatti
+sromojibi_associate_member_target
+
+ulama_rokon_increase
+ulama_rokon_gatti
+ulama_rokon_target
+
+ulama_kormi_increase
+ulama_kormi_gatti
+ulama_kormi_target
+
+ulama_associate_member_increase
+ulama_associate_member_gatti
+ulama_associate_member_target
+
+pesha_jibi_rokon_increase
+pesha_jibi_rokon_gatti
+pesha_jibi_rokon_target
+
+pesha_jibi_kormi_increase
+pesha_jibi_kormi_gatti
+pesha_jibi_kormi_target
+
+pesha_jibi_associate_member_increase
+pesha_jibi_associate_member_gatti
+pesha_jibi_associate_member_target
+
+jubo_rokon_increase
+jubo_rokon_gatti
+jubo_rokon_target
+
+jubo_kormi_increase
+jubo_kormi_gatti
+jubo_kormi_target
+
+jubo_associate_member_increase
+jubo_associate_member_gatti
+jubo_associate_member_target
+vinno_dormalombi_kormi_increase
+vinno_dormalombi_kormi_gatti
+vinno_dormalombi_kormi_target
+
+vinno_dormalombi_associate_member_increase
+vinno_dormalombi_associate_member_gatti
+vinno_dormalombi_associate_member_target
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon4OrganizationalStructure
+//////////////////////////////////////////
+report_info_id
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon5DawatAndParibarikUnit
+//////////////////////////////////////////
+report_info_id
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon6EmarotKayem
+//////////////////////////////////////////
+report_info_id
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon7BidayiStudentsConnect
+//////////////////////////////////////////
+report_info_id
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon8AssociateAndSideOrganization
+//////////////////////////////////////////
+report_info_id
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon9Sofor
+//////////////////////////////////////////
+report_info_id
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon10IyanotData
+//////////////////////////////////////////
+report_info_id
+
+
+creator
+status
+
+//////////////////////////////////////////
+-------> ThanaSongothon11SangothonikBoithok
+//////////////////////////////////////////
+report_info_id
+
+
+creator
+status
+
+
+
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//------------------ Proshikkhon ----------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+//-----------------------------------------------------------\\
+
+//////////////////////////////////////////
+-------> ThanaProshikkhon1Tarbiat
 //////////////////////////////////////////
 report_info_id
