@@ -1,0 +1,25 @@
+1 -> composer require laravel/passport
+2 -> php artisan passport:install
+3 -> php artisan migrate
+4 ->
+User model :
+
+use Laravel\Passport\HasApiTokens;
+
+use HasFactory, Notifiable ,HasApiTokens;
+5 ->
+config->auth.php->
+ 'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
+6-> php artisan passport:client --personal
+
+
+***** for helper function file autoload: *****
+composer dump-autoload
+
+php artisan migrate:rollback --path="database/migrations/*/*"
+php artisan migrate --path="database/migrations/*/*"
+
+// && php artisan passport:client --personal
