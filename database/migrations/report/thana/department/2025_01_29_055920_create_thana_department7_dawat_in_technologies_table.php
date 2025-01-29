@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('thana_department7_dawat_in_technologies', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->unsigned()->nullable();
+            $table->bigInteger('total_well_known_man')->nullable();
+            $table->bigInteger('total_well_known_woman')->nullable();
+
+            $table->bigInteger('total_attended_man')->nullable();
+            $table->bigInteger('total_attended_woman')->nullable();
+
+
+
+            $table->bigInteger('creator')->nullable();
+            $table->tinyInteger('status')->default(1);
+
             $table->timestamps();
         });
     }
