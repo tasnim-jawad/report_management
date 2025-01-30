@@ -141,9 +141,9 @@ php artisan make:model Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodOrg
 php artisan make:controller Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodOrganizationalActivitieController
 php artisan make:seeder Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodOrganizationalActivitiesTableSeeder
 
-php artisan make:model Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodTrainingCourse -m
-php artisan make:controller Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodTrainingCourseController
-php artisan make:seeder Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodTrainingCoursesTableSeeder
+php artisan make:model Report/Thana/Proshikkhon/ThanaProshikkhon3ManobShompodTrainingCourse -m
+php artisan make:controller Report/Thana/Proshikkhon/ThanaProshikkhon3ManobShompodTrainingCourseController
+php artisan make:seeder Report/Thana/Proshikkhon/ThanaProshikkhon3ManobShompodTrainingCoursesTableSeeder
 
 
 
