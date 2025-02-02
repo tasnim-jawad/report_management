@@ -9765,72 +9765,74 @@
                     </h4>
                     <table class="mb-1">
                         <tbody>
-                            <td class="w-25 text-center">
-                                সাধারণ সেবা টিম সংখ্যা
-                            </td>
-                            <td>
-                                <input
-                                    name="number_of_general_service_teams"
-                                    :value="
-                                        formatBangla(
-                                            report_sum_data
-                                                ?.ward_shomajsheba2_group_social_works
-                                                ?.number_of_general_service_teams
-                                        )
-                                    "
-                                    @change="
-                                        data_upload(
-                                            'ward-shomajsheba2-group-social-work'
-                                        )
-                                    "
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
-                            </td>
-                            <td class="w-25 text-center">
-                                টেকনিক্যাল সেবা টিম সংখ্যা
-                            </td>
-                            <td>
-                                <input
-                                    name="number_of_technical_service_teams"
-                                    :value="
-                                        formatBangla(
-                                            report_sum_data
-                                                ?.ward_shomajsheba2_group_social_works
-                                                ?.number_of_technical_service_teams
-                                        )
-                                    "
-                                    @change="
-                                        data_upload(
-                                            'ward-shomajsheba2-group-social-work'
-                                        )
-                                    "
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
-                            </td>
-                            <td class="w-25 text-center">
-                                স্বেচ্ছাসেবক টিম সংখ্যা
-                            </td>
-                            <td>
-                                <input
-                                    name="number_of_volunteer_teams"
-                                    :value="
-                                        formatBangla(
-                                            report_sum_data
-                                                ?.ward_shomajsheba2_group_social_works
-                                                ?.number_of_volunteer_teams
-                                        )
-                                    "
-                                    @change="
-                                        data_upload(
-                                            'ward-shomajsheba2-group-social-work'
-                                        )
-                                    "
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
-                            </td>
+                            <tr>
+                                <td class="w-25 text-center">
+                                    সাধারণ সেবা টিম সংখ্যা
+                                </td>
+                                <td>
+                                    <input
+                                        name="number_of_general_service_teams"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.ward_shomajsheba2_group_social_works
+                                                    ?.number_of_general_service_teams
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'ward-shomajsheba2-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                </td>
+                                <td class="w-25 text-center">
+                                    টেকনিক্যাল সেবা টিম সংখ্যা
+                                </td>
+                                <td>
+                                    <input
+                                        name="number_of_technical_service_teams"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.ward_shomajsheba2_group_social_works
+                                                    ?.number_of_technical_service_teams
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'ward-shomajsheba2-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                </td>
+                                <td class="w-25 text-center">
+                                    স্বেচ্ছাসেবক টিম সংখ্যা
+                                </td>
+                                <td>
+                                    <input
+                                        name="number_of_volunteer_teams"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.ward_shomajsheba2_group_social_works
+                                                    ?.number_of_volunteer_teams
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'ward-shomajsheba2-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="text-center mb-1">

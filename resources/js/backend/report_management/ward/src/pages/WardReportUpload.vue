@@ -3207,34 +3207,36 @@
                 <div class="personal_shamajik_kaj mb-2">
                     <h4 class="fs-6 fw-bold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h4>
                     <table class="text-center  mb-1">
-                        <tr>
-                            <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
-                            <td class="width-20">
-                                <div class="parent_popup">
-                                    <input name="how_many_people_did" :value="formatBangla(shomajsheba1?.how_many_people_did)" @change="data_upload('ward-shomajsheba1-personal-social-work')" type="text" class="bg-input w-100 text-center" />
-                                    <popup
-                                        :ward_id="ward_info.id"
-                                        :table_name="'shomajsheba1_personal_social_works'"
-                                        :field_title="'how_many_people_did'"
-                                        :month="month"
-                                        >
-                                    </popup>
-                                </div>
-                            </td>
-                            <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
-                            <td class="width-20">
-                                <div class="parent_popup">
-                                    <input name="service_received_total" :value="formatBangla(shomajsheba1?.service_received_total)" @change="data_upload('ward-shomajsheba1-personal-social-work')" type="text" class="bg-input w-100 text-center" />
-                                    <popup
-                                        :ward_id="ward_info.id"
-                                        :table_name="'shomajsheba1_personal_social_works'"
-                                        :field_title="'service_received_total'"
-                                        :month="month"
-                                        >
-                                    </popup>
-                                </div>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
+                                <td class="width-20">
+                                    <div class="parent_popup">
+                                        <input name="how_many_people_did" :value="formatBangla(shomajsheba1?.how_many_people_did)" @change="data_upload('ward-shomajsheba1-personal-social-work')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'shomajsheba1_personal_social_works'"
+                                            :field_title="'how_many_people_did'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
+                                </td>
+                                <td class="text-start px-2 w-25">মোট সেবাপ্রাপ্ত সংখ্যা</td>
+                                <td class="width-20">
+                                    <div class="parent_popup">
+                                        <input name="service_received_total" :value="formatBangla(shomajsheba1?.service_received_total)" @change="data_upload('ward-shomajsheba1-personal-social-work')" type="text" class="bg-input w-100 text-center" />
+                                        <popup
+                                            :ward_id="ward_info.id"
+                                            :table_name="'shomajsheba1_personal_social_works'"
+                                            :field_title="'service_received_total'"
+                                            :month="month"
+                                            >
+                                        </popup>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="samostik_shamajik_kaj pt-3 mb-2">
