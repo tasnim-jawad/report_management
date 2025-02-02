@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Thana;
 use App\Http\Controllers\Controller;
 use App\Models\Organization\OrgThanaUser;
 use App\Models\Report\ReportInfo;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -331,8 +332,8 @@ class ThanaController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-
-        $thana_id = auth()->user()->org_thana_user->thana_id;
+        $user_id = request()->user_id;
+        $thana_id =User::where('id',$user_id)->first()->org_thana_user->thana_id;
 
         $start_month = request()->month;
         $end_month = request()->month;
@@ -362,7 +363,7 @@ class ThanaController extends Controller
         $in_total =  $total_current_income - $datas->expense_report->total_amount;
         // -------------------------- bm previous report ------------------------------------
 
-        return view('ward.ward_report_monthly')->with([
+        return view('thana.thana_report_monthly')->with([
             'start_month' => $datas->start_month,
             'end_month' => $datas->end_month,
             'report_header' => $datas->report_header,
