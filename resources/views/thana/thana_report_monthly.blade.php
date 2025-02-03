@@ -20,15 +20,15 @@
             </div>
             <div class="unit_info">
                 <div class="line d-flex flex-wrap ">
-                    <p class="w-75">মাস:</p>
-                    <p class="w-25">সন:</p>
+                    <p class="w-75">মাস: {{ bangla_month(date('F', strtotime($start_month))) }}</p>
+                    <p class="w-25">সন: {{ bangla(date('Y', strtotime($end_month))) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between ">
-                    <p>উপজেলা/থানার নাম :</p>
+                    <p>উপজেলা/থানার নাম : {{ $report_header?->thana_info?->title ?? '' }}</p>
                     <p class="width-40">জেলা/মহানগরী :</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between ">
-                    <p>আমীর/সভাপতির নাম:</p>
+                    <p>আমীর/সভাপতির নাম: {{ $report_header->president ?? '' }}</p>
                 </div>
             </div>
         </section>
@@ -39,6 +39,17 @@
                 <div class="jonoshadharon d-flex flex-wrap justify-content-between ">
                     <p class="fw-bold w-75">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
                         <span>
+                            {{ bangla(
+                                collect([
+                                    $report_sum_data->ward_dawat1_regular_group_wises->how_many_have_been_invited ?? 0,
+                                    $report_sum_data->ward_dawat2_personal_and_targets->how_many_have_been_invited ?? 0,
+                                    $report_sum_data->ward_dawat3_general_program_and_others->how_many_were_give_dawat ?? 0,
+                                    $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans->how_many_have_been_invited ?? 0,
+                                    $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans->jela_mohanogor_declared_gonosonjog_invited ?? 0,
+                                    $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans->election_how_many_have_been_invited ?? 0,
+                                    $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans->other_how_many_have_been_invited ?? 0,
+                                ])->map(fn($value) => is_numeric($value) ? $value : 0)->sum(),
+                            ) }}
                         </span>
                     </p>
                     <p class="fw-bold w-25">মোট জনসংখ্যা:</p>

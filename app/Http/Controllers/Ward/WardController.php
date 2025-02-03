@@ -2130,7 +2130,14 @@ class WardController extends Controller
         }
         // dd(auth()->user());
         $user_id =  request()->user_id;
-        $ward_id = User::where('id',$user_id)->first()->org_ward_user->ward_id;
+        $user = User::where('id', $user_id)->first();
+        if (!$user || !$user->org_ward_user) {
+            return response()->json([
+                'err_message' => 'User or ward user not found',
+            ], 404);
+        }
+        $ward_id = $user->org_ward_user->ward_id;
+        // $ward_id = User::where('id',$user_id)->first()->org_ward_user->ward_id;
         // dd($ward_id);
         $start_month = request()->month;
         $end_month = request()->month;

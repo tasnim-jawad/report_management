@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers\Thana;
 
+use App\Http\Controllers\Actions\BmReport;
+use App\Http\Controllers\Actions\CalculatePreviousPresent;
+use App\Http\Controllers\Actions\DateWiseReportSum;
+use App\Http\Controllers\Actions\ReportHeader;
 use App\Http\Controllers\Controller;
+use App\Models\Bm\Thana\Expense\ThanaBmExpense;
+use App\Models\Bm\Thana\Income\ThanaBmIncome;
 use App\Models\Organization\OrgThanaUser;
 use App\Models\Report\ReportInfo;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class ThanaController extends Controller
@@ -332,8 +339,18 @@ class ThanaController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
+
+
         $user_id = request()->user_id;
-        $thana_id =User::where('id',$user_id)->first()->org_thana_user->thana_id;
+        $user = User::where('id', $user_id)->first();
+
+        if (!$user || !$user->org_thana_user) {
+            return response()->json([
+                'err_message' => 'User or thana user not found',
+            ], 404);
+        }
+
+        $thana_id = $user->org_thana_user->thana_id;
 
         $start_month = request()->month;
         $end_month = request()->month;
@@ -347,31 +364,31 @@ class ThanaController extends Controller
 
         // -------------------------- bm previous report ------------------------------------
         $carbon_start_month = Carbon::parse($start_month);
-        $query = WardBmIncome::query();
+        $query = ThanaBmIncome::query();
         $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
-            ->where('ward_id', $ward_id)
+            ->where('thana_id', $thana_id)
             ->where('report_approved_status', 'approved');
-        $total_previous_income = $filter->sum('amount');
+        $total_previous_income = $filter->sum('amount')?? 0;
 
-        $query = WardBmExpense::query();
+        $query = ThanaBmExpense::query();
         $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
-            ->where('ward_id', $ward_id)
+            ->where('thana_id', $thana_id)
             ->where('report_approved_status', 'approved');
-        $total_previous_expense = $filter->sum('amount');
+        $total_previous_expense = $filter->sum('amount')?? 0;
         $total_previous =  $total_previous_income - $total_previous_expense;
-        $total_current_income =  $total_previous + $datas->income_report->total_amount;
-        $in_total =  $total_current_income - $datas->expense_report->total_amount;
+        $total_current_income =  $total_previous + ($datas->income_report->total_amount ?? 0);
+        $in_total =  $total_current_income - ($datas->expense_report->total_amount ?? 0);
         // -------------------------- bm previous report ------------------------------------
 
         return view('thana.thana_report_monthly')->with([
-            'start_month' => $datas->start_month,
-            'end_month' => $datas->end_month,
-            'report_header' => $datas->report_header,
+            'start_month' => $datas->start_month ?? null,
+            'end_month' => $datas->end_month?? null,
+            'report_header' => $datas->report_header?? [],
 
-            'report_sum_data' => $datas->report_sum_data,
-            'previous_present' => $datas->previous_present,
-            'income_report' => $datas->income_report,
-            'expense_report' => $datas->expense_report,
+            'report_sum_data' => $datas->report_sum_data?? [],
+            'previous_present' => $datas->previous_present?? [],
+            'income_report' => $datas->income_report?? [],
+            'expense_report' => $datas->expense_report?? [],
 
             'total_previous' => $total_previous,
             'total_current_income' => $total_current_income,
@@ -439,7 +456,15 @@ class ThanaController extends Controller
         } else {
             $report_header = null;
         }
+        // $tables = DB::select('SHOW TABLES');
 
+        // Format the result into an array of table names
+        // $table_names = array_map(function($table) {
+        //     return current((array) $table);
+        // }, $tables);
+        
+        // Display the table names
+        // dd($table_names);
         // ---------------------  reports all data to show  ---------------------------
         $dateWiseReportSum = new DateWiseReportSum();
         $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $report_info_ids);
@@ -466,7 +491,7 @@ class ThanaController extends Controller
         // -------------------------- bm expense report ------------------------------------
 
         if (empty($report_sum_data)) {
-            return [];
+            return (object) [];
         } else {
             return (object) [
                 'start_month' => $start_month,

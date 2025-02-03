@@ -155,4 +155,29 @@ class BmReport
 
         return $data;
     }
+
+    //--------------------------- thana --------------------
+    public function get_thana_income_info()
+    {
+        $data = [
+            'category_table_name' => "thana_bm_income_categories",
+            'transaction_table_name' => "thana_bm_incomes",
+            'category_id_column_name_in_transaction_table' => "thana_bm_income_category_id",
+            'month_column' => "month",
+        ];
+
+        return $data;
+    }
+
+    public function get_thana_expense_info()
+    {
+        $data = [
+            'category_table_name' => "thana_bm_expense_categories",
+            'transaction_table_name' => "thana_bm_expenses",
+            'category_id_column_name_in_transaction_table' => "thana_bm_expense_category_id",
+            'month_column' => "date",
+        ];
+
+        return $data;
+    }
 }
