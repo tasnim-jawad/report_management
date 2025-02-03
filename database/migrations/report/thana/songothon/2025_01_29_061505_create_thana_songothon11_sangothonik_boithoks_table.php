@@ -225,20 +225,20 @@ return new class extends Migration
             $table->bigInteger('ward_kormi_sommelon_women_uposthiti')->nullable();
 
             // Upojila Vittik Unit Sovapoti o Secretary Sommelon
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_man_total')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_man_target')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_man_uposthiti')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_women_total')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_women_target')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_women_uposthiti')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_man_total')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_man_target')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_man_uposthiti')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_women_total')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_women_target')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_women_uposthiti')->nullable();
 
             // Thana Vittik Unit Sovapoti o Secretary Sommelon
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_man_total')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_man_target')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_man_uposthiti')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_women_total')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_women_target')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_women_uposthiti')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_man_total')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_man_target')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_man_uposthiti')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_women_total')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_women_target')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_women_uposthiti')->nullable();
 
             // Ulama Boithok
             $table->bigInteger('ulama_boithok_man_total')->nullable();

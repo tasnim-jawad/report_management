@@ -15,10 +15,6 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('report_info_id')->nullable();
 
-            $table->bigInteger('health_worker_training_programs_attendance')->nullable();
-            $table->bigInteger('participated_in_health_care_work')->nullable();
-            $table->bigInteger('served_people')->nullable();
-
             $table->bigInteger('health_worker_produced')->nullable();
             $table->bigInteger('nurse_produced')->nullable();
             $table->bigInteger('dhattri_produced')->nullable();
