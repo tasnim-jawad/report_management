@@ -13,6 +13,27 @@ return new class extends Migration
     {
         Schema::create('thana_songothon8_associate_and_side_organizations', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+
+            $table->bigInteger('total_trade_union')->nullable();
+            $table->bigInteger('total_trade_union_increase')->nullable();
+            $table->bigInteger('total_trade_union_gatti')->nullable();
+
+            $table->bigInteger('total_trust')->nullable();
+            $table->bigInteger('total_trust_increase')->nullable();
+            $table->bigInteger('total_trust_gatti')->nullable();
+
+            $table->bigInteger('total_foundation')->nullable();
+            $table->bigInteger('total_foundation_increase')->nullable();
+            $table->bigInteger('total_foundation_gatti')->nullable();
+
+            $table->bigInteger('total_societie')->nullable();
+            $table->bigInteger('total_societie_increase')->nullable();
+            $table->bigInteger('total_societie_gatti')->nullable();
+
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
             $table->timestamps();
         });
     }

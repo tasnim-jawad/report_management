@@ -13,6 +13,19 @@ return new class extends Migration
     {
         Schema::create('thana_rastrio5_broadcast_and_media', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+
+            $table->string('press_release')->nullable();
+            $table->string('bibriti')->nullable();
+            $table->string('protibad_lipi')->nullable();
+
+            $table->string('social_media_post')->nullable();
+            $table->string('social_media_live_program')->nullable();
+
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
+
             $table->timestamps();
         });
     }

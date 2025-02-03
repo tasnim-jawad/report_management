@@ -13,6 +13,25 @@ return new class extends Migration
     {
         Schema::create('thana_songothon5_dawat_and_paribarik_units', function (Blueprint $table) {
             $table->id();
+
+            $table->bigInteger('report_info_id')->nullable();
+
+            $table->bigInteger('dawati_unit_previous')->nullable();
+            $table->bigInteger('dawati_unit_present')->nullable();
+            $table->bigInteger('dawati_unit_increase')->nullable();
+            $table->bigInteger('dawati_unit_gatti')->nullable();
+            $table->bigInteger('dawati_unit_target')->nullable();
+
+            $table->bigInteger('paribarik_unit_previous')->nullable();
+            $table->bigInteger('paribarik_unit_present')->nullable();
+            $table->bigInteger('paribarik_unit_increase')->nullable();
+            $table->bigInteger('paribarik_unit_gatti')->nullable();
+            $table->bigInteger('paribarik_unit_target')->nullable();
+
+            $table->bigInteger('creator')->nullable();
+            $table->string('status')->nullable();
+
+
             $table->timestamps();
         });
     }

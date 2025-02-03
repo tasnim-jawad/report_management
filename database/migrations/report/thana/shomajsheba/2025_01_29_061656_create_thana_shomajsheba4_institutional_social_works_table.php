@@ -13,6 +13,23 @@ return new class extends Migration
     {
         Schema::create('thana_shomajsheba4_institutional_social_works', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+
+            $table->bigInteger('social_institution_total')->nullable();
+            $table->bigInteger('social_institution_in_thana')->nullable();
+            $table->bigInteger('social_institution_in_ward')->nullable();
+
+            $table->bigInteger('institutional_social_work_total')->nullable();
+            $table->bigInteger('institutional_social_work_in_thana')->nullable();
+            $table->bigInteger('institutional_social_work_in_ward')->nullable();
+
+            $table->bigInteger('new_social_institutions_total')->nullable();
+            $table->bigInteger('new_social_institutions_in_thana')->nullable();
+            $table->bigInteger('new_social_institutions_in_ward')->nullable();
+
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
             $table->timestamps();
         });
     }

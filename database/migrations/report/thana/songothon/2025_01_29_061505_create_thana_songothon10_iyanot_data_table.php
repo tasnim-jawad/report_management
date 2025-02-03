@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('thana_songothon10_iyanot_data', function (Blueprint $table) {
             $table->id();
+
+            $table->bigInteger('report_info_id')->nullable();
+
+            $table->bigInteger('associate_member_total')->nullable();
+            $table->bigInteger('associate_member_total_iyanot_amounts')->nullable();
+            $table->bigInteger('sudhi_total')->nullable();
+            $table->bigInteger('sudi_total_iyanot_amounts')->nullable();
+
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
+
             $table->timestamps();
         });
     }

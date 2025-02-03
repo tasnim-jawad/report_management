@@ -13,6 +13,26 @@ return new class extends Migration
     {
         Schema::create('thana_rastrio3_dibosh_palons', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+
+            $table->bigInteger('shadhinota_o_jatio_dibosh_total_programs')->nullable();
+            $table->bigInteger('shadhinota_o_jatio_dibosh_attend')->nullable();
+
+            $table->bigInteger('bijoy_dibosh_total_programs')->nullable();
+            $table->bigInteger('bijoy_dibosh_attend')->nullable();
+
+            $table->bigInteger('others_total_programs')->nullable();
+            $table->bigInteger('others_attend')->nullable();
+
+            $table->bigInteger('mattrivasha_dibosh_total_programs')->nullable();
+            $table->bigInteger('mattrivasha_dibosh_attend')->nullable();
+
+            $table->bigInteger('international_womens_day')->nullable();
+            $table->bigInteger('may_day')->nullable();
+
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
             $table->timestamps();
         });
     }

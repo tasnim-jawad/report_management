@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('thana_shomajsheba1_preparing_trained_social_workers', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+            $table->bigInteger('trained_social_worker')->nullable();
+            $table->bigInteger('training_courses_this_year_total')->nullable();
+            $table->bigInteger('training_courses_this_year_target')->nullable();
+            $table->bigInteger('people_completed_training_courses_this_year_total')->nullable();
+            $table->bigInteger('people_completed_training_courses_this_year_target')->nullable();
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
             $table->timestamps();
         });
     }

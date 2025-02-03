@@ -13,6 +13,25 @@ return new class extends Migration
     {
         Schema::create('thana_shomajsheba5_health_and_family_kollans', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+
+            $table->bigInteger('health_worker_training_programs_attendance')->nullable();
+            $table->bigInteger('participated_in_health_care_work')->nullable();
+            $table->bigInteger('served_people')->nullable();
+
+            $table->bigInteger('health_worker_produced')->nullable();
+            $table->bigInteger('nurse_produced')->nullable();
+            $table->bigInteger('dhattri_produced')->nullable();
+            $table->bigInteger('parenting_training_program')->nullable();
+
+            $table->bigInteger('health_education_training_program')->nullable();
+            $table->bigInteger('health_education_training_programs_attendance')->nullable();
+            $table->bigInteger('participated_in_health_care_work')->nullable();
+            $table->bigInteger('served_people')->nullable();
+
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('dawah_and_prokashonas', function (Blueprint $table) {
             $table->id();
+
             $table->bigInteger('report_info_id')->unsigned()->nullable();
             // Pathagar (Library) Related
             $table->bigInteger('total_pathagar_increase')->nullable();

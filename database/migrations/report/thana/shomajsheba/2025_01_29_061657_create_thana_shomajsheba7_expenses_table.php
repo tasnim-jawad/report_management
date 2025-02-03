@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('thana_shomajsheba7_expenses', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+            $table->bigInteger('percentage_of_expense')->nullable();
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
             $table->timestamps();
         });
     }

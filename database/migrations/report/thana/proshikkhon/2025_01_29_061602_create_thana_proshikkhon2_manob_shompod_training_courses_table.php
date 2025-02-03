@@ -13,6 +13,19 @@ return new class extends Migration
     {
         Schema::create('thana_proshikkhon2_manob_shompod_training_courses', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+            $table->bigInteger('dawah_uposthiti')->nullable();
+            $table->bigInteger('shomajkormo_uposthiti')->nullable();
+            $table->bigInteger('media_uposthiti')->nullable();
+            $table->bigInteger('ict_uposthiti')->nullable();
+            $table->bigInteger('office_uposthiti')->nullable();
+            $table->bigInteger('financial_management_uposthiti')->nullable();
+            $table->bigInteger('english_language_uposthiti')->nullable();
+            $table->bigInteger('arabic_language_uposthiti')->nullable();
+            $table->bigInteger('trade_oriented_technical_training_uposthiti')->nullable();
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
+
             $table->timestamps();
         });
     }
