@@ -2402,7 +2402,7 @@
 
             if (user_id && month) {
                 // Construct the new URL
-                const redirectUrl = `/dashboard/ward#/ward-report-upload/${month}/${user_id}`;
+                const redirectUrl = `/dashboard/ward#/ward-report-upload-monthly/${month}/${user_id}`;
 
                 // Redirect to the new URL
                 window.location.href = redirectUrl;

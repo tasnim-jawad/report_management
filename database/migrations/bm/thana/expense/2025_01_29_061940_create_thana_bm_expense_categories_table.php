@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('thana_bm_expense_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->bigInteger('parent_id')->default(0);
+
+            $table->bigInteger('creator')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

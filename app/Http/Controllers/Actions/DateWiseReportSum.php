@@ -49,7 +49,7 @@ class DateWiseReportSum
             $selected_columns = array_slice($all_columns, 2, -4);
 
             foreach ($selected_columns as $selected_column) {
-                if ($table_name == 'montobbos' || $table_name == 'ward_montobbos') {
+                if ($table_name == 'montobbos' || $table_name == 'ward_montobbos' || $table_name == 'thana_montobbos') {
                     $text = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)
                         ->selectRaw("GROUP_CONCAT(montobbo SEPARATOR '\n') as montobbo")
                         ->first();
@@ -146,6 +146,57 @@ class DateWiseReportSum
             "ward_songothon7_sofors",
             "ward_songothon8_iyanot_data",
             "ward_songothon9_sangothonik_boithoks"
+        ];
+
+        return $table_names;
+    }
+    public function get_thana_table()
+    {
+        $table_names = [
+            "thana_dawat1_regular_group_wises",
+            "thana_dawat2_personal_and_targets",
+            "thana_dawat3_general_program_and_others",
+            "thana_dawat4_gono_songjog_and_dawat_ovijans",
+            "thana_dawat5_jonoshadharons",
+            "thana_department1_talimul_qurans",
+            "thana_department2_moholla_vittik_dawats",
+            "thana_department3_jubo_somaj_dawats",
+            "thana_department4_different_job_holders_dawats",
+            "thana_department5_paribarik_dawats",
+            "thana_department6_mosjid_dawah_infomation_centers",
+            "thana_department7_dawat_in_technologies",
+            "thana_department8_dawat_in_cultural_activities",
+            "thana_kormosuci_bastobayons",
+            "thana_montobbos",
+            "thana_proshikkhon1_tarbiats",
+            "thana_proshikkhon2_manob_shompod_organizational_activities",
+            "thana_proshikkhon2_manob_shompod_training_courses",
+            "thana_rastrio1_political_communications",
+            "thana_rastrio2_kormoshuchi_bastobayons",
+            "thana_rastrio3_dibosh_palons",
+            "thana_rastrio4_election_activities",
+            "thana_rastrio5_broadcast_and_media",
+            "thana_rastrio6_human_rights",
+            "thana_rastrio7_industry_and_trades",
+            "thana_rastrio8_entrepreneurial_developments",
+            "thana_shomajsheba1_preparing_trained_social_workers",
+            "thana_shomajsheba2_personal_social_works",
+            "thana_shomajsheba3_group_social_works",
+            "thana_shomajsheba4_institutional_social_works",
+            "thana_shomajsheba5_health_and_family_kollans",
+            "thana_shomajsheba6_education_and_research_activities",
+            "thana_shomajsheba7_expenses",
+            "thana_songothon10_iyanot_data",
+            "thana_songothon11_sangothonik_boithoks",
+            "thana_songothon1_jonosoktis",
+            "thana_songothon2_associate_members",
+            "thana_songothon3_departmental_information",
+            "thana_songothon4_organizational_structures",
+            "thana_songothon5_dawat_and_paribarik_units",
+            "thana_songothon6_emarot_kayems",
+            "thana_songothon7_bidayi_students_connects",
+            "thana_songothon8_associate_and_side_organizations",
+            "thana_songothon9_sofors"
         ];
 
         return $table_names;
