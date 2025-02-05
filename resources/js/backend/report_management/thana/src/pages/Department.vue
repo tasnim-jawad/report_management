@@ -29,11 +29,11 @@
             </div>
             <div class="card-body">
                 <div class="mb-1 border-bottom">
-                    <h1 class="font_bng fw-bold">সদস্য (রুকন):</h1>
+                    <h1 class="font_bng fw-bold">কতজন কুরআন শিক্ষা প্রদান করেছেন :</h1>
                 </div>
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields1"
+                        v-for="(field, index) in department1_teacher"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
@@ -43,11 +43,11 @@
                     ></form-input>
                 </form>
                 <div class="mb-1 border-bottom mt-2">
-                    <h1 class="font_bng fw-bold">কর্মী:</h1>
+                    <h1 class="font_bng fw-bold">কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে:</h1>
                 </div>
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields2"
+                        v-for="(field, index) in department1_student"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
@@ -670,43 +670,128 @@ import { mapState, mapWritableState } from "pinia";
 export default {
     components: { FormInput, PreviousNext },
     data: () => ({
-        // month: null,
-        fields1: [
+        // কতজন কুরআন শিক্ষা প্রদান করেছেন 
+        department1_teacher: [
             {
-                label: "কতজন কুরআন শিক্ষা প্রদান করেছেন (পু)",
+                label: "সদস্য(রুকন)-(পুরুষ)",
                 name: "teacher_rokon_man",
             },
             {
-                label: "কতজন কুরআন শিক্ষা প্রদান করেছেন (ম)",
+                label: "সদস্য(রুকন)-(পুরুষ)",
                 name: "teacher_rokon_woman",
             },
             {
-                label: "কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে (পু)",
-                name: "student_rokon_man",
-            },
-            {
-                label: "কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে (ম)",
-                name: "student_rokon_woman",
-            },
-        ],
-        fields2: [
-            {
-                label: "কতজন কুরআন শিক্ষা প্রদান করেছেন (পু)",
+                label: "কর্মী-(পুরুষ)",
                 name: "teacher_worker_man",
             },
             {
-                label: "কতজন কুরআন শিক্ষা প্রদান করেছেন (ম)",
+                label: "কর্মী-(মহিলা)",
                 name: "teacher_worker_woman",
             },
+        ],
+        // কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে
+        department1_student: [
             {
-                label: "কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে (পু)",
+                label: "সদস্য(রুকন)(পুরুষ)",
+                name: "student_rokon_man",
+            },
+            {
+                label: "সদস্য(রুকন)(পুরুষ)",
+                name: "student_rokon_woman",
+            },
+            {
+                label: "কর্মী(পুরুষ)",
                 name: "student_worker_man",
             },
             {
-                label: "কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে (ম)",
+                label: "কর্মী(মহিলা)",
                 name: "student_worker_woman",
             },
         ],
+        // কুরআন শিক্ষার গ্রুপ
+        department1_quran_learning_group: [
+            {
+                label: "মোট সংখ্যা",
+                name: "quran_learning_total_group",
+            },
+            {
+                label: "মোট শিক্ষার্থী সংখ্যা",
+                name: "quran_learning_total_students",
+            },
+        ],
+        // মক্তব
+        department1_moktob: [
+            {
+                label: "মোট সংখ্যা",
+                name: "total_moktob",
+            },
+            {
+                label: "মোট শিক্ষার্থী সংখ্যা",
+                name: "total_moktob_students",
+            },
+        ],
+        // ফোরকানিয়া মাদ্রাসা
+        department1_forkania: [
+            {
+                label: "মোট সংখ্যা",
+                name: "total_forkania_madrasah",
+            },
+            {
+                label: "মোট শিক্ষার্থী সংখ্যা",
+                name: "total_forkania_madrasah_students",
+            },
+        ],
+
+        department1_learned_sohih_tilawat: [
+            {
+                label: "মোট সংখ্যা",
+                name: "how_much_learned_sohih_tilawat",
+            },
+        ],
+
+        department1_invited: [
+            {
+                label: "পুরুষ",
+                name: "how_much_invited_man",
+            },
+            {
+                label: "মহিলা",
+                name: "how_much_invited_woman",
+            },
+        ],
+        department1_associated: [
+            {
+                label: "পুরুষ",
+                name: "how_much_been_associated_man",
+            },
+            {
+                label: "মহিলা",
+                name: "how_much_been_associated_woman",
+            },
+        ],
+
+        department1_total_muallim: [
+            {
+                label: "পুরুষ",
+                name: "total_muallim_man",
+            },
+            {
+                label: "মহিলা",
+                name: "total_muallim_woman",
+            },
+        ],
+
+        department1_muallim_increased: [
+            {
+                label: "পুরুষ",
+                name: "total_muallim_increased_man",
+            },
+            {
+                label: "মহিলা",
+                name: "total_muallim_increased_woman",
+            },
+        ],
+        
     }),
     created: function () {
         window.scrollTo({
@@ -753,19 +838,19 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach((e) => (e.value = ""));
 
-            this.get_data_by_api("ward-department1-talimul-quran", 1);
-            this.get_data_by_api("ward-department2-moholla-vittik-dawat", 2);
-            this.get_data_by_api("ward-department3-jubo-somaj-dawat", 3);
+            this.get_data_by_api("thana-department1-talimul-quran", 1);
+            this.get_data_by_api("thana-department2-moholla-vittik-dawat", 2);
+            this.get_data_by_api("thana-department3-jubo-somaj-dawat", 3);
             this.get_data_by_api(
-                "ward-department4-different-job-holders-dawat",
+                "thana-department4-different-job-holders-dawat",
                 4
             );
-            this.get_data_by_api("ward-department5-paribarik-dawat", 5);
+            this.get_data_by_api("thana-department5-paribarik-dawat", 5);
             this.get_data_by_api(
-                "ward-department6-mosjid-dawah-infomation-centers",
+                "thana-department6-mosjid-dawah-infomation-centers",
                 6
             );
-            this.get_data_by_api("ward-department7-dawat-in-technology", 7);
+            this.get_data_by_api("thana-department7-dawat-in-technology", 7);
         },
     },
 };

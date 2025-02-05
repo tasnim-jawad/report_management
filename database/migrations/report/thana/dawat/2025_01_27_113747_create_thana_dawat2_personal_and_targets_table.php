@@ -30,7 +30,7 @@ return new class extends Migration
             $table->integer('how_many_have_been_invited_woman')->unsigned()->nullable();
 
             $table->integer('how_many_associate_members_created_man')->unsigned()->nullable();
-            $table->integer('how_many_associate_members_created_woman_woman')->unsigned()->nullable();
+            $table->integer('how_many_associate_members_created_woman')->unsigned()->nullable();
             
             $table->integer('creator')->nullable();
             $table->tinyInteger('status')->default(1);

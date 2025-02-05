@@ -11,7 +11,7 @@
         Route::post('/destroy', [App\Http\Controllers\Thana\ThanaUserController::class, 'destroy']);
     });
 
-    Route::group(['prefix' => 'thana/word'], function () {
+    Route::group(['prefix' => 'thana/ward'], function () {
         Route::get('/all', [App\Http\Controllers\Thana\ThanaWardController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Thana\ThanaWardController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Thana\ThanaWardController::class, 'store']);
@@ -21,13 +21,13 @@
         Route::post('/restore', [App\Http\Controllers\Thana\ThanaWardController::class, 'restore']);
     });
 
-    Route::group(['prefix' => 'thana/word'], function () {
+    Route::group(['prefix' => 'thana/ward'], function () {
         Route::get('/report-status', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status']);
         Route::post('/change-status', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'change_status']);
-        Route::post('/report-status-single-word', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status_single_word']);
+        Route::post('/report-status-single-ward', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status_single_ward']);
     });
 
-    Route::group(['prefix' => 'thana/word-jonoshokti'], function () {
+    Route::group(['prefix' => 'thana/ward-jonoshokti'], function () {
         Route::post('/set-responsibility', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'set_responsibility']);
 
         Route::get('/all', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'all']);
@@ -191,12 +191,12 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon3DepartmentalInformationController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon4-word-songothon'], function () {
+    Route::group(['prefix' => 'thana-songothon4-ward-songothon'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon4OrganizationalStructureController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon4OrganizationalStructureController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon5-dawat-and-paribarik-word'], function () {
+    Route::group(['prefix' => 'thana-songothon5-dawat-and-paribarik-ward'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon5DawatAndParibarikUnitController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon5DawatAndParibarikUnitController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
@@ -362,24 +362,24 @@
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'bulk_import'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'ward'], function () {
-        Route::get('/uploaded-data', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_api']);
-        Route::get('/income-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'income_category_wise']);
-        Route::get('/expense-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'expense_category_wise']);
+    Route::group(['prefix' => 'thana'], function () {
+        // Route::get('/uploaded-data', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_api']);
+        // Route::get('/income-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'income_category_wise']);
+        // Route::get('/expense-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'expense_category_wise']);
 
-        Route::get('/check-report-info', [App\Http\Controllers\Thana\ThanaController::class, 'check_report_info']);
-        Route::get('/check-report-info-in-range', [App\Http\Controllers\Thana\ThanaController::class, 'check_report_info_in_range']);
-        Route::get('/uploaded-data-monthly', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_monthly']);
+        // Route::get('/check-report-info', [App\Http\Controllers\Thana\ThanaController::class, 'check_report_info']);
+        // Route::get('/check-report-info-in-range', [App\Http\Controllers\Thana\ThanaController::class, 'check_report_info_in_range']);
+        // Route::get('/uploaded-data-monthly', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_monthly']);
         Route::get('/report-status', [App\Http\Controllers\Thana\ThanaController::class, 'report_status']);
-        Route::get('/report-joma', [App\Http\Controllers\Thana\ThanaController::class, 'report_joma']);
+        // Route::get('/report-joma', [App\Http\Controllers\Thana\ThanaController::class, 'report_joma']);
     });
 
 
 
-    Route::group(['prefix' => 'ward'], function () {
-        Route::post('/word-report-joma-permitted-month', [App\Http\Controllers\Thana\PermissionController::class, 'word_report_joma_permitted_month']);
-        Route::post('/set-word-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'set_word_report_joma_permission']);
-        Route::post('/remove-word-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'remove_word_report_joma_permission']);
+    Route::group(['prefix' => 'thana'], function () {
+        Route::post('/ward-report-joma-permitted-month', [App\Http\Controllers\Thana\PermissionController::class, 'ward_report_joma_permitted_month']);
+        Route::post('/set-ward-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'set_ward_report_joma_permission']);
+        Route::post('/remove-ward-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'remove_ward_report_joma_permission']);
         // Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Thana\PermissionController::class,'toggle_dashboard_permission']);
     });
 

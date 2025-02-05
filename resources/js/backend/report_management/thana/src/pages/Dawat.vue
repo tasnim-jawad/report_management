@@ -1,6 +1,6 @@
 <template>
     <div class="max_with_550_auto">
-        <!-- <h1 class="dofa_heading">দাওয়াত ও তাবলিগ</h1> -->
+        <!-- <h3 class="dofa_heading">দাওয়াত ও তাবলিগ</h3> -->
         <div class="row gx-0">
             <div class="card mb-3 ">
                 <div class="card-header border-bottom-0">
@@ -10,14 +10,14 @@
             <div class="px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-bolder">দাওয়াত ও তাবলিগ :</h1>
+                        <h3 class="fw-bolder">দাওয়াত ও তাবলিগ :</h3>
                     </div>
                 </div>
             </div>
             <div class="px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-bolder">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদানের তথ্য:</h1>
+                        <h3 class="fw-bolder">ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদানের তথ্য:</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
@@ -31,7 +31,7 @@
             <div class="px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-semibold">১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (পুরুষ)</h1>
+                        <h3 class="fw-semibold">১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (পুরুষ)</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
@@ -46,7 +46,7 @@
             <div class="px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-semibold">১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (মহিলা)</h1>
+                        <h3 class="fw-semibold">১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (মহিলা)</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
@@ -61,11 +61,18 @@
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:(পুরুষ)</h1>
+                        <h3 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:(পুরুষ)</h3>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3 class="fw-semibold">মোট জনশক্তি সংখ্যা</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in dawat2_jonoshokti_man" :label="field.label" :name="field.name"
+                            <form-input v-for="(field, index) in dawat2_jonoshokti" :label="field.label" :name="field.name"
                                 :onchange="dawat_upload" :endpoint="'thana-dawat2-personal-and-target'" :unique_key="2"
                                 :key="index"></form-input>
                         </form>
@@ -75,11 +82,11 @@
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-semibold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:(মহিলা)</h1>
+                        <h3 class="fw-semibold">কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in dawat2_jonoshokti_woman" :label="field.label" :name="field.name"
+                            <form-input v-for="(field, index) in dawat2_dawati_worke_did" :label="field.label" :name="field.name"
                                 :onchange="dawat_upload" :endpoint="'thana-dawat2-personal-and-target'" :unique_key="2"
                                 :key="index"></form-input>
                         </form>
@@ -89,13 +96,64 @@
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-semibold">৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত:</h1>
+                        <h3 class="fw-semibold">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name"
-                                :key="index" :onchange="dawat_upload"
-                                :endpoint="'thana-dawat3-general-program-and-others'" :unique_key="3"></form-input>
+                            <form-input v-for="(field, index) in dawat2_invited" :label="field.label" :name="field.name"
+                                :onchange="dawat_upload" :endpoint="'thana-dawat2-personal-and-target'" :unique_key="2"
+                                :key="index"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3 class="fw-semibold">কতজন সহযোগী সদস্য হয়েছেন</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat2_associate_created" :label="field.label" :name="field.name"
+                                :onchange="dawat_upload" :endpoint="'thana-dawat2-personal-and-target'" :unique_key="2"
+                                :key="index"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3 class="fw-semibold">৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত:</h3>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3 class="fw-semibold">কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat3_invited" :label="field.label" :name="field.name"
+                                :onchange="dawat_upload" :endpoint="'thana-dawat3-general-program-and-others'" :unique_key="3"
+                                :key="index"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3 class="fw-semibold">কতজন সহযোগী সদস্য হয়েছেন</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat3_associate_created" :label="field.label" :name="field.name"
+                                :onchange="dawat_upload" :endpoint="'thana-dawat3-general-program-and-others'" :unique_key="3"
+                                :key="index"></form-input>
                         </form>
                     </div>
                 </div>
@@ -104,18 +162,18 @@
             <div class="col-md-12 px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1 class="fw-semibold">৪. গণসংযোগ ও দাওয়াতি অভিযান পালন:</h1>
+                        <h3 class="fw-semibold">৪. গণসংযোগ ও দাওয়াতি অভিযান পালন:</h3>
                     </div>
                 </div>
             </div>
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1>গণসংযোগ দশক/পক্ষ:</h1>
+                        <h3 class="fw-semibold">গণসংযোগ দশক (পুরুষ):</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name"
+                            <form-input v-for="(field, index) in dawat4_gono_songjog_doshok_man" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
                                 :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
@@ -125,11 +183,11 @@
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1>জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান:</h1>
+                        <h3 class="fw-semibold">গণসংযোগ দশক (মহিলা):</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name"
+                            <form-input v-for="(field, index) in dawat4_gono_songjog_doshok_woman" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
                                 :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
@@ -139,11 +197,11 @@
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1>নির্বাচনী আসনে গণসংযোগ সপ্তাহ:</h1>
+                        <h3 class="fw-semibold">গণসংযোগ পক্ষ (পুরুষ):</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name"
+                            <form-input v-for="(field, index) in dawat4_gono_songjog_pokkho_man" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
                                 :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
@@ -153,11 +211,143 @@
             <div class=" px-2">
                 <div class="card mb-3" v-if="month">
                     <div class="card-header">
-                        <h1>অন্যান্য:</h1>
+                        <h3 class="fw-semibold">গণসংযোগ পক্ষ (মহিলা):</h3>
                     </div>
                     <div class="card-body">
                         <form action="">
-                            <form-input v-for="(field, index) in fields7" :label="field.label" :name="field.name"
+                            <form-input v-for="(field, index) in dawat4_gono_songjog_pokkho_woman" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3 class="fw-semibold">জেলা ঘোষিত গণসংযোগ ও দাওয়াতি অভিযান:</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_jela_declared" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3 class="fw-semibold">মহানগরী ঘোষিত গণসংযোগ ও দাওয়াতি অভিযান:</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_mohanogor_declared" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3>নির্বাচনী আসনে গণসংযোগ সপ্তাহ (পুরুষ):</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_election_man" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3>নির্বাচনী আসনে গণসংযোগ সপ্তাহ (মহিলা):</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_election_woman" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3>উলামা গণসংযোগ সপ্তাহ (পুরুষ):</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_ulama_man" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3>উলামা গণসংযোগ সপ্তাহ (মহিলা):</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_ulama_woman" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3>পেশাজীবী গণসংযোগ সপ্তাহ (পুরুষ):</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_peshajibi_man" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3>পেশাজীবী গণসংযোগ সপ্তাহ (মহিলা):</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_peshajibi_woman" :label="field.label" :name="field.name"
+                                :key="index" :onchange="dawat_upload"
+                                :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" px-2">
+                <div class="card mb-3" v-if="month">
+                    <div class="card-header">
+                        <h3>অন্যান্য:</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <form-input v-for="(field, index) in dawat4_other" :label="field.label" :name="field.name"
                                 :key="index" :onchange="dawat_upload"
                                 :endpoint="'thana-dawat4-gono-songjog-and-dawat-ovijan'" :unique_key="4"></form-input>
                         </form>
@@ -228,46 +418,47 @@ export default {
                 name: 'how_many_associate_members_created_woman',
             },
         ],
-        dawat2_jonoshokti_man: [
+        // মোট জনশক্তি সংখ্যা
+        dawat2_jonoshokti: [
             {
-                label: 'মোট সদস্য(রুকন) সংখ্যা',
+                label: 'মোট সদস্য(রুকন) সংখ্যা (পুরুষ)',
                 name: 'total_rokon_man',
             },
             {
-                label: 'মোট কর্মী সংখ্যা ',
-                name: 'total_worker_man',
-            },
-        ],
-        dawat2_jonoshokti_woman: [
-            {
-                label: 'মোট সদস্য(রুকন) সংখ্যা',
+                label: 'মোট সদস্য(রুকন) সংখ্যা (মহিলা)',
                 name: 'total_rokon_woman',
             },
             {
-                label: 'মোট কর্মী সংখ্যা ',
+                label: 'মোট কর্মী সংখ্যা (পুরুষ)',
+                name: 'total_worker_man',
+            },
+            {
+                label: 'মোট কর্মী সংখ্যা (মহিলা)',
                 name: 'total_worker_woman',
             },
         ],
-        dawat2_give_dawat_man: [
+
+        // কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন
+        dawat2_dawati_worke_did: [
             {
-                label: 'কতজন সদস্য(রুকন) ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন',
+                label: 'সদস্য(রুকন)(পুরুষ)',
                 name: 'how_many_were_give_dawat_rokon_man',
             },
             {
-                label: 'কতজন কর্মী ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন',
-                name: 'how_many_were_give_dawat_worker_man',
-            },
-        ],
-        dawat2_give_dawat_woman: [
-            {
-                label: 'কতজন সদস্য(রুকন) ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন',
+                label: 'সদস্য(রুকন)(মহিলা)',
                 name: 'how_many_were_give_dawat_rokon_woman',
             },
             {
-                label: 'কতজন কর্মী ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন',
+                label: 'কর্মী (পুরুষ)',
+                name: 'how_many_were_give_dawat_worker_man',
+            },
+            {
+                label: 'কর্মী (মহিলা)',
                 name: 'how_many_were_give_dawat_worker_woman',
             },
         ],
+
+        // কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
         dawat2_invited: [
             {
                 label: 'পুরুষ',
@@ -278,6 +469,7 @@ export default {
                 name: 'how_many_have_been_invited_woman',
             },
         ],
+        // কতজন সহযোগী সদস্য হয়েছেন
         dawat2_associate_created: [
             {
                 label: 'পুরুষ',
@@ -288,7 +480,8 @@ export default {
                 name: 'how_many_associate_members_created_woman',
             },
         ],
-        dawat3_give_dawat: [
+        // 3-কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
+        dawat3_invited: [
             {
                 label: 'পুরুষ',
                 name: 'how_many_were_give_dawat_man',
@@ -298,6 +491,7 @@ export default {
                 name: 'how_many_were_give_dawat_woman',
             },
         ],
+        // 3-কতজন সহযোগী সদস্য হয়েছেন
         dawat3_associate_created: [
             {
                 label: 'পুরুষ',
@@ -308,80 +502,121 @@ export default {
                 name: 'how_many_associate_members_created_woman',
             },
         ],
-        fields4: [
-            {
-                label: 'মোট গ্রুপ সংখ্যা ',
-                name: 'total_gono_songjog_group',
-            },
-            {
-                label: 'অংশগ্রহণকারীর সংখ্যা',
-                name: 'total_attended',
-            },
-            {
-                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'how_many_have_been_invited',
-            },
-            {
-                label: 'কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'how_many_associate_members_created',
-            },
 
 
-        ],
-        dawat4_gono_songjog_man: [
+        dawat4_gono_songjog_doshok_man: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
-                name: 'total_gono_songjog_group_man',
+                name: 'gono_songjog_doshok_group_man',
             },
             {
                 label: 'অংশগ্রহণকারীর সংখ্যা',
-                name: 'total_attended_man',
+                name: 'gono_songjog_doshok_attended_man',
             },
             {
                 label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'how_many_have_been_invited_man',
+                name: 'gono_songjog_doshok_invited_man',
             },
             {
                 label: 'কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'how_many_associate_members_created_man',
+                name: 'gono_songjog_doshok_associate_members_created_man',
             },
+
         ],
-        dawat4_gono_songjog_woman: [
+        dawat4_gono_songjog_doshok_woman: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
-                name: 'total_gono_songjog_group_woman',
+                name: 'gono_songjog_doshok_group_woman',
             },
             {
                 label: 'অংশগ্রহণকারীর সংখ্যা',
-                name: 'total_attended_woman',
+                name: 'gono_songjog_doshok_attended_woman',
             },
             {
                 label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'how_womany_have_been_invited_woman',
+                name: 'gono_songjog_doshok_invited_woman',
             },
             {
                 label: 'কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'how_womany_associate_members_created_woman',
+                name: 'gono_songjog_doshok_associate_members_created_woman',
             },
+
         ],
-        dawat4_jela_mohanogor: [
+        dawat4_gono_songjog_pokkho_man: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
-                name: 'jela_mohanogor_declared_gonosonjog_group',
+                name: 'gono_songjog_pokkho_group_man',
             },
             {
                 label: 'অংশগ্রহণকারীর সংখ্যা',
-                name: 'jela_mohanogor_declared_gonosonjog_attended',
+                name: 'gono_songjog_pokkho_attended_man',
             },
             {
                 label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'jela_mohanogor_declared_gonosonjog_invited',
+                name: 'gono_songjog_pokkho_invited_man',
             },
             {
                 label: 'কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'jela_mohanogor_declared_gonosonjog_associated_created',
+                name: 'gono_songjog_pokkho_associate_members_created_man',
+            },
+
+        ],
+        dawat4_gono_songjog_pokkho_woman: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'gono_songjog_pokkho_group_woman',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'gono_songjog_pokkho_attended_woman',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'gono_songjog_pokkho_invited_woman',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'gono_songjog_pokkho_associate_members_created_woman',
+            },
+
+        ],
+        dawat4_jela_declared: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'jela_declared_gonosonjog_dawati_ovi_group',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'jela_declared_gonosonjog_dawati_ovi_attended',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'jela_declared_gonosonjog_dawati_ovi_invited',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'jela_declared_gonosonjog_dawati_ovi_associated_created',
             },
         ],
+        dawat4_mohanogor_declared: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'mohanogor_declared_gonosonjog_dawati_ovi_group',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'mohanogor_declared_gonosonjog_dawati_ovi_attended',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'mohanogor_declared_gonosonjog_dawati_ovi_invited',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'mohanogor_declared_gonosonjog_dawati_ovi_associated_created',
+            },
+        ],
+
         dawat4_election_man: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
@@ -418,40 +653,77 @@ export default {
                 name: 'election_how_many_associate_members_created_woman',
             },
         ],
-        dawat4_ulama_peshajibi_man: [
+
+        dawat4_ulama_man: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
-                name: 'ulama_peshajibi_gono_songjog_group_man',
+                name: 'ulama_gono_songjog_group_man',
             },
             {
                 label: 'অংশগ্রহণকারীর সংখ্যা',
-                name: 'ulama_peshajibi_attended_man',
+                name: 'ulama_attended_man',
             },
             {
                 label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'ulama_peshajibi_how_many_have_been_invited_man',
+                name: 'ulama_how_many_have_been_invited_man',
             },
             {
                 label: 'কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'ulama_peshajibi_how_many_associate_members_created_man',
+                name: 'ulama_how_many_associate_members_created_man',
             },
         ],
-        dawat4_ulama_peshajibi_woman: [
+        dawat4_ulama_woman: [
             {
                 label: 'মোট গ্রুপ সংখ্যা ',
-                name: 'ulama_peshajibi_gono_songjog_group_woman',
+                name: 'ulama_gono_songjog_group_woman',
             },
             {
                 label: 'অংশগ্রহণকারীর সংখ্যা',
-                name: 'ulama_peshajibi_attended_woman',
+                name: 'ulama_attended_woman',
             },
             {
                 label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
-                name: 'ulama_peshajibi_how_many_have_been_invited_woman',
+                name: 'ulama_how_many_have_been_invited_woman',
             },
             {
                 label: 'কতজন সহযোগী সদস্য হয়েছেন',
-                name: 'ulama_peshajibi_how_many_associate_members_created_woman',
+                name: 'ulama_how_many_associate_members_created_woman',
+            },
+        ],
+        dawat4_peshajibi_man: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'peshajibi_gono_songjog_group_man',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'peshajibi_attended_man',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'peshajibi_how_many_have_been_invited_man',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'peshajibi_how_many_associate_members_created_man',
+            },
+        ],
+        dawat4_peshajibi_woman: [
+            {
+                label: 'মোট গ্রুপ সংখ্যা ',
+                name: 'peshajibi_gono_songjog_group_woman',
+            },
+            {
+                label: 'অংশগ্রহণকারীর সংখ্যা',
+                name: 'peshajibi_attended_woman',
+            },
+            {
+                label: 'কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে',
+                name: 'peshajibi_how_many_have_been_invited_woman',
+            },
+            {
+                label: 'কতজন সহযোগী সদস্য হয়েছেন',
+                name: 'peshajibi_how_many_associate_members_created_woman',
             },
         ],
         dawat4_other: [
@@ -477,11 +749,11 @@ export default {
         notes: [
             {
                 label: 'বিঃদ্রঃ - ১',
-                name: 'এখান থেকে শুরু',
+                name: 'এখান থেকে রিপোর্ট পুড়ন শুরু হবে',
             },
             {
                 label: 'বিঃদ্রঃ - ২',
-                name: 'চলবে',
+                name: 'Next এবং Previous বাটন দিয়ে সিরিয়ালি আগের এবং পরের পেইজে যেতে পারবেন। ',
             },
         ]
     }),
