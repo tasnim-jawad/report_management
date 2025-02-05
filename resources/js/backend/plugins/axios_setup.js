@@ -1,20 +1,24 @@
-
 import moment from "moment";
 import axios from "axios";
 window.axios = axios;
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
-window.axios.defaults.headers.common["Authorization"] = `Bearer ${window.localStorage?.token}`;
+window.axios.defaults.headers.common[
+    "Authorization"
+] = `Bearer ${window.localStorage?.token}`;
 axios.defaults.baseURL = location.origin + "/api/v1/";
 
 async function setToken(config = {}) {
-    let token = localStorage.getItem('token');
+    let token = localStorage.getItem("token");
 
     if (!token) {
-        localStorage.removeItem('token');
-        return location.href = "/login";
+        localStorage.removeItem("token");
+        return (location.href = "/login");
     }
-    config.headers.set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    config.headers.set(
+        "Authorization",
+        `Bearer ${localStorage.getItem("token")}`
+    );
     // await window.cookieStore
     //     .get("AXRF-TOKEN")
     //     .then((cookie) => {
@@ -64,13 +68,12 @@ window.remove_form_action_classes = function () {
     $(`.error.text-danger`).remove();
 };
 
-
 // window.errorReset = function (event) {
 //     console.log(event.target)
 // }
 
-function errorReset(event){
-    console.log(event.target)
+function errorReset(event) {
+    console.log(event.target);
 }
 
 window.render_form_errors = function (object, selector = "name") {
@@ -113,32 +116,36 @@ window.axios.interceptors.response.use(
             );
         } else {
             console.log(error.response || error);
-            if (error.response?.data?.status == "server_error" || error.response?.status === 500 || error.response?.status === 403) {
+            if (
+                error.response?.data?.status == "server_error" ||
+                error.response?.status === 500 ||
+                error.response?.status === 403
+            ) {
                 console.log(error.response.data.message);
-                // window.s_warning(error.response.data.message);
+                window.s_warning(error.response.data.message);
             }
             if (error.response?.data?.status == "error") {
                 // window.s_error(error.response.data.message);
-                window.toaster(error.response.data.message, 'error');
+                window.toaster(error.response.data.message, "error");
             }
             if (error.response?.status == 401) {
                 location.href = "/login";
             }
 
-            if(Object.keys(error.response?.data?.errors).length){
+            if (Object.keys(error.response?.data?.errors).length) {
                 var object_2 = error.response?.data?.errors;
                 console.log(object_2);
                 for (const key in error.response?.data?.errors) {
                     if (Object.hasOwnProperty.call(object_2, key)) {
                         const element = object_2[key];
                         // console.log(element[0],element);
-                        window.s_error(element[0], 'error');
+                        window.s_error(element[0], "error");
                     }
                 }
-            }else if(error.response?.data?.message){
-                window.toaster(error.response.data.message, 'error');
-            }else{
-                window.toaster('Faild!! Something is wrong.', 'error');
+            } else if (error.response?.data?.message) {
+                window.toaster(error.response.data.message, "error");
+            } else {
+                window.toaster("Faild!! Something is wrong.", "error");
             }
         }
 

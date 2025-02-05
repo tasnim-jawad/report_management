@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('thana_songothon4_organizational_structures', function (Blueprint $table) {
             $table->id();
 
+            $table->bigInteger('report_info_id')->nullable();
+
             $table->bigInteger('pouroshov_previous')->nullable();
             $table->bigInteger('pouroshova_present')->nullable();
             $table->bigInteger('pouroshova_increase')->nullable();

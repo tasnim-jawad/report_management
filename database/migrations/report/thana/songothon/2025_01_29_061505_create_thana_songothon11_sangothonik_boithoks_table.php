@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('thana_songothon11_sangothonik_boithoks', function (Blueprint $table) {
             $table->id();
 
+            $table->bigInteger('report_info_id')->nullable();
+
             $table->bigInteger('upojela_mozlishe_sura_boithok_man_total')->nullable();
             $table->bigInteger('upojela_mozlishe_sura_boithok_man_target')->nullable();
             $table->bigInteger('upojela_mozlishe_sura_boithok_man_uposthiti')->nullable();
