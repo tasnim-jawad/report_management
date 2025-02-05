@@ -838,19 +838,19 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach((e) => (e.value = ""));
 
-            this.get_data_by_api("ward-department1-talimul-quran", 1);
-            this.get_data_by_api("ward-department2-moholla-vittik-dawat", 2);
-            this.get_data_by_api("ward-department3-jubo-somaj-dawat", 3);
+            this.get_data_by_api("thana-department1-talimul-quran", 1);
+            this.get_data_by_api("thana-department2-moholla-vittik-dawat", 2);
+            this.get_data_by_api("thana-department3-jubo-somaj-dawat", 3);
             this.get_data_by_api(
-                "ward-department4-different-job-holders-dawat",
+                "thana-department4-different-job-holders-dawat",
                 4
             );
-            this.get_data_by_api("ward-department5-paribarik-dawat", 5);
+            this.get_data_by_api("thana-department5-paribarik-dawat", 5);
             this.get_data_by_api(
-                "ward-department6-mosjid-dawah-infomation-centers",
+                "thana-department6-mosjid-dawah-infomation-centers",
                 6
             );
-            this.get_data_by_api("ward-department7-dawat-in-technology", 7);
+            this.get_data_by_api("thana-department7-dawat-in-technology", 7);
         },
     },
 };
