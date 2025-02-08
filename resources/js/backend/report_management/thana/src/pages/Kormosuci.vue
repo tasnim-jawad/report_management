@@ -218,7 +218,7 @@ export default {
   components: { FormInput, PreviousNext },
     data: ()=>({
         // month: null,
-        fields1:[
+        unit_masik_sadaron_sova:[
             {
                 label:'সংখ্যা',
                 name:'unit_masik_sadaron_sova_total',
@@ -233,21 +233,7 @@ export default {
             },
 
         ],
-        fields2:[
-            {
-                label:'সংখ্যা',
-                name:'dawati_sova_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'dawati_sova_target',
-            },
-            {
-                label:'মোট উপস্থিতি',
-                name:'dawati_sova_uposthiti',
-            },
-        ],
-        fields3:[
+        alochona_sova:[
             {
                 label:'সংখ্যা',
                 name:'alochona_sova_total',
@@ -260,8 +246,9 @@ export default {
                 label:'মোট উপস্থিতি',
                 name:'alochona_sova_uposthiti',
             },
+
         ],
-        fields4:[
+        sudhi_somabesh:[
             {
                 label:'সংখ্যা',
                 name:'sudhi_somabesh_total',
@@ -274,8 +261,10 @@ export default {
                 label:'মোট উপস্থিতি',
                 name:'sudhi_somabesh_uposthiti',
             },
+
         ],
-        fields5:[
+        
+        siratunnabi_mahfil:[
             {
                 label:'সংখ্যা',
                 name:'siratunnabi_mahfil_total',
@@ -289,7 +278,7 @@ export default {
                 name:'siratunnabi_mahfil_uposthiti',
             },
         ],
-        fields6:[
+        eid_reunion:[
             {
                 label:'সংখ্যা',
                 name:'eid_reunion_total',
@@ -303,7 +292,7 @@ export default {
                 name:'eid_reunion_uposthiti',
             },
         ],
-        fields7:[
+        dars:[
             {
                 label:'সংখ্যা',
                 name:'dars_total',
@@ -317,7 +306,7 @@ export default {
                 name:'dars_uposthiti',
             },
         ],
-        fields8:[
+        tafsir:[
             {
                 label:'সংখ্যা',
                 name:'tafsir_total',
@@ -331,7 +320,7 @@ export default {
                 name:'tafsir_uposthiti',
             },
         ],
-        fields9:[
+        dawati_jonosova:[
             {
                 label:'সংখ্যা',
                 name:'dawati_jonosova_total',
@@ -345,7 +334,7 @@ export default {
                 name:'dawati_jonosova_uposthiti',
             },
         ],
-        fields10:[
+        iftar_mahfil_personal:[
             {
                 label:'সংখ্যা',
                 name:'iftar_mahfil_personal_total',
@@ -359,7 +348,7 @@ export default {
                 name:'iftar_mahfil_personal_uposthiti',
             },
         ],
-        fields11:[
+        iftar_mahfil_samostic:[
             {
                 label:'সংখ্যা',
                 name:'iftar_mahfil_samostic_total',
@@ -373,7 +362,7 @@ export default {
                 name:'iftar_mahfil_samostic_uposthiti',
             },
         ],
-        fields12:[
+        cha_chakra:[
             {
                 label:'সংখ্যা',
                 name:'cha_chakra_total',
@@ -387,7 +376,7 @@ export default {
                 name:'cha_chakra_uposthiti',
             },
         ],
-        fields13:[
+        samostic_khawa:[
             {
                 label:'সংখ্যা',
                 name:'samostic_khawa_total',
@@ -401,7 +390,7 @@ export default {
                 name:'samostic_khawa_uposthiti',
             },
         ],
-        fields14:[
+        sikkha_sofor:[
             {
                 label:'সংখ্যা',
                 name:'sikkha_sofor_total',
@@ -415,7 +404,7 @@ export default {
                 name:'sikkha_sofor_uposthiti',
             },
         ],
-        fields15:[
+        kirat_protijogita:[
             {
                 label:'সংখ্যা',
                 name:'kirat_protijogita_total',
@@ -429,7 +418,7 @@ export default {
                 name:'kirat_protijogita_uposthiti',
             },
         ],
-        fields16:[
+        hamd_nat_protijogita:[
             {
                 label:'সংখ্যা',
                 name:'hamd_nat_protijogita_total',
@@ -443,7 +432,7 @@ export default {
                 name:'hamd_nat_protijogita_uposthiti',
             },
         ],
-        fields17:[
+        others:[
             {
                 label:'সংখ্যা',
                 name:'others_total',

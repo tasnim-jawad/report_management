@@ -15,14 +15,20 @@ return new class extends Migration
             $table->id();
 
             $table->bigInteger('report_info_id')->unsigned()->nullable();
+            $table->bigInteger('total_mosjid')->nullable();
             $table->bigInteger('total_mosjid_increase')->nullable();
+            $table->bigInteger('dawat_included_mosjid')->nullable();
             $table->bigInteger('dawat_included_mosjid_increase')->nullable();
+            $table->bigInteger('mosjid_wise_dawah_center')->nullable();
             $table->bigInteger('mosjid_wise_dawah_center_increase')->nullable();
+            $table->bigInteger('general_dawah_center')->nullable();
             $table->bigInteger('general_dawah_center_increase')->nullable();
+            $table->bigInteger('mosjid_wise_information_center')->nullable();
             $table->bigInteger('mosjid_wise_information_center_increase')->nullable();
+            $table->bigInteger('general_information_center')->nullable();
             $table->bigInteger('general_information_center_increase')->nullable();
             $table->bigInteger('trained_employed_dai')->nullable();
-
+            $table->bigInteger('trained_employed_dai_increase')->nullable();
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

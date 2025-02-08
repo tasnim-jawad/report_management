@@ -20,8 +20,14 @@ return new class extends Migration
             $table->bigInteger('total_young_committee')->nullable();
             $table->bigInteger('total_young_committee_increased')->nullable();
 
+            $table->bigInteger('total_new_somiti')->nullable();
+            $table->bigInteger('total_new_somiti_increased')->nullable();
+
             $table->bigInteger('total_new_club')->nullable();
             $table->bigInteger('total_new_club_increased')->nullable();
+
+            $table->bigInteger('stablished_somiti_total_invited')->nullable();
+            $table->bigInteger('stablished_somiti_total_increased')->nullable();
 
             $table->bigInteger('stablished_club_total_invited')->nullable();
             $table->bigInteger('stablished_club_total_increased')->nullable();

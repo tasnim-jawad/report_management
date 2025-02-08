@@ -17,10 +17,14 @@ return new class extends Migration
             $table->bigInteger('report_info_id')->nullable();
 
             // Associate Member (Men)
+            $table->bigInteger('associate_member_man_previous')->nullable();
+            $table->bigInteger('associate_member_man_present')->nullable();
             $table->bigInteger('associate_member_man_briddhi')->nullable();
             $table->bigInteger('associate_member_man_target')->nullable();
 
             // Associate Member (Women)
+            $table->bigInteger('associate_member_woman_previous')->nullable();
+            $table->bigInteger('associate_member_woman_present')->nullable();
             $table->bigInteger('associate_member_woman_briddhi')->nullable();
             $table->bigInteger('associate_member_woman_target')->nullable();
 

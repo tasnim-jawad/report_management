@@ -162,38 +162,55 @@ export default {
     components: { FormInput, PreviousNext },
     data: ()=>({
         // month:null,
-        fields1:[
-            // {
-            //     label:'সংখ্যা',
-            //     name:'total_pathagar',
-            // },
+        dp_pathagar:[
             {
                 label:'বৃদ্ধি',
                 name:'total_pathagar_increase',
             },
+            {
+                label:'টার্গেট',
+                name:'total_pathagar_target',
+            },
 
         ],
-        fields2:[
-            // {
-            //     label:'সংখ্যা',
-            //     name:'books_in_pathagar',
-            // },
+        dp_online_library:[
             {
                 label:'বৃদ্ধি',
-                name:'books_in_pathagar_increase',
+                name:'total_online_library_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'total_online_library_target',
             },
         ],
-        fields3:[
+        dp_books_in_pathagar:[
+        
+            {
+                label:'বৃদ্ধি',
+                name:'books_in_online_library_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'books_in_online_library_target',
+            },
+        ],
+        dp_books_in_online_library:[
+            {
+                label:'বৃদ্ধি',
+                name:'books_in_online_library_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'books_in_online_library_target',
+            },
+        ],
+        dp_books_in_online_library:[
             {
                 label:'সংখ্যা',
                 name:'book_distribution',
             },
-            // {
-            //     label:'বৃদ্ধি',
-            //     name:'book_distribution_increase',
-            // },
         ],
-        fields4:[
+        dp_unit_book_distribution_center:[
             // {
             //     label:'সংখ্যা',
             //     name:'unit_book_distribution_center',
@@ -202,18 +219,22 @@ export default {
                 label:'বৃদ্ধি',
                 name:'unit_book_distribution_center_increase',
             },
+            {
+                label:'টার্গেট',
+                name:'unit_book_distribution_center_target',
+            },
         ],
-        fields5:[
+        dp_unit_book_distribution:[
             {
                 label:'সংখ্যা',
                 name:'unit_book_distribution',
             },
-            // {
-            //     label:'বৃদ্ধি',
-            //     name:'unit_book_distribution_increase',
-            // },
+            {
+                label:'টার্গেট',
+                name:'unit_book_distribution_target',
+            },
         ],
-        fields6:[
+        dp_ward_book_sales_center:[
             // {
             //     label:'সংখ্যা',
             //     name:'ward_book_sales_center',
@@ -223,17 +244,17 @@ export default {
                 name:'ward_book_sales_center_increase',
             },
         ],
-        fields7:[
+        dp_ward_book_sales:[
+            {
+                label:'সংখ্যা',
+                name:'ward_book_sales',
+            },
             // {
-            //     label:'সংখ্যা',
+            //     label:'বৃদ্ধি',
             //     name:'ward_book_sales',
             // },
-            {
-                label:'বৃদ্ধি',
-                name:'ward_book_sales_increase',
-            },
         ],
-        fields8:[
+        dp_soft_copy_book_distribution:[
             {
                 label:'সংখ্যা',
                 name:'soft_copy_book_distribution',
@@ -243,7 +264,7 @@ export default {
             //     name:'soft_copy_book_distribution_increase',
             // },
         ],
-        fields9:[
+        dp_dawat_link_distribution:[
             {
                 label:'সংখ্যা',
                 name:'dawat_link_distribution',
@@ -253,7 +274,7 @@ export default {
             //     name:'dawat_link_distribution_increase',
             // },
         ],
-        fields10:[
+        dp_sonar_bangla:[
             // {
             //     label:'সংখ্যা',
             //     name:'sonar_bangla',
@@ -263,7 +284,7 @@ export default {
                 name:'sonar_bangla_increase',
             },
         ],
-        fields11:[
+        dp_songram:[
             // {
             //     label:'সংখ্যা',
             //     name:'songram',
@@ -273,7 +294,7 @@ export default {
                 name:'songram_increase',
             },
         ],
-        fields12:[
+        dp_prithibi:[
             // {
             //     label:'সংখ্যা',
             //     name:'prithibi',

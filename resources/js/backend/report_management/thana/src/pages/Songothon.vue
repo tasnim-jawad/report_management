@@ -592,7 +592,11 @@ export default {
             //     name:'rokon_present',
             // },
             {
-                label:'বৃদ্ধি',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'rokon_briddhi',
+            },
+            {
+                label:'বৃদ্ধি আগত',
                 name:'rokon_briddhi',
             },
             {
@@ -665,6 +669,14 @@ export default {
             },
         ],
 
+        // {
+        //     label:'বৃদ্ধি মানোন্নয়ন',
+        //     name:'rokon_briddhi',
+        // },
+        // {
+        //     label:'বৃদ্ধি আগত',
+        //     name:'rokon_briddhi',
+        // },
 
         women_rokon:[
             // {
@@ -676,12 +688,20 @@ export default {
             //     name:'women_rokon_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'women_rokon_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'women_rokon_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'women_rokon_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'women_rokon_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'women_rokon_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'women_rokon_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
