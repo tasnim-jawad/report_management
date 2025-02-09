@@ -582,7 +582,7 @@ export default {
     components: { FormInput, PreviousNext },
     data: ()=>({
         // month: null,
-        rokon:[
+        songothon1_rokon:[
             // {
             //     label:'বিগত মাসের সংখ্যা',
             //     name:'rokon_previous',
@@ -608,7 +608,7 @@ export default {
                 name:'rokon_target',
             },
         ],
-        kormi:[
+        songothon1_kormi:[
             // {
             //     label:'বিগত মাসের সংখ্যা',
             //     name:'worker_previous',
@@ -632,7 +632,7 @@ export default {
 
 
         ],
-        shohojogi_man:[
+        songothon2_shohojogi_man:[
             // {
             //     label:'বিগত মাসের সংখ্যা',
             //     name:'associate_member_man_previous',
@@ -650,7 +650,7 @@ export default {
                 name:'associate_member_man_target',
             },
         ],
-        shohojogi_woman:[
+        songothon2_shohojogi_woman:[
             // {
             //     label:'বিগত মাসের সংখ্যা',
             //     name:'associate_member_woman_previous',
@@ -669,14 +669,10 @@ export default {
             },
         ],
 
-        // {
-        //     label:'বৃদ্ধি মানোন্নয়ন',
-        //     name:'rokon_briddhi',
-        // },
-        // {
-        //     label:'বৃদ্ধি আগত',
-        //     name:'rokon_briddhi',
-        // },
+  
+
+
+        //------------------- thana_songothon3_departmental_information ----------------
 
         women_rokon:[
             // {
@@ -718,12 +714,20 @@ export default {
             //     name:'women_kormi_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'women_kormi_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'women_kormi_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'women_kormi_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'women_kormi_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'women_kormi_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'women_kormi_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -743,10 +747,10 @@ export default {
                 label:'বৃদ্ধি',
                 name:'women_associate_member_increase',
             },
-            {
-                label:'ঘাটতি',
-                name:'women_associate_member_gatti',
-            },
+            // {
+            //     label:'ঘাটতি',
+            //     name:'women_associate_member_gatti',
+            // },
             {
                 label:'টার্গেট',
                 name:'women_associate_member_target',
@@ -764,12 +768,20 @@ export default {
             //     name:'sromojibi_rokon_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'sromojibi_rokon_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'sromojibi_rokon_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'sromojibi_rokon_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'sromojibi_rokon_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'sromojibi_rokon_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'sromojibi_rokon_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -786,12 +798,20 @@ export default {
             //     name:'sromojibi_kormi_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'sromojibi_kormi_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'sromojibi_kormi_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'sromojibi_kormi_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'sromojibi_kormi_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'sromojibi_kormi_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'sromojibi_kormi_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -811,10 +831,10 @@ export default {
                 label:'বৃদ্ধি',
                 name:'sromojibi_associate_member_increase',
             },
-            {
-                label:'ঘাটতি',
-                name:'sromojibi_associate_member_gatti',
-            },
+            // {
+            //     label:'ঘাটতি',
+            //     name:'sromojibi_associate_member_gatti',
+            // },
             {
                 label:'টার্গেট',
                 name:'sromojibi_associate_member_target',
@@ -832,12 +852,20 @@ export default {
             //     name:'ulama_rokon_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'ulama_rokon_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'ulama_rokon_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'ulama_rokon_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'ulama_rokon_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'ulama_rokon_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'ulama_rokon_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -854,12 +882,20 @@ export default {
             //     name:'ulama_kormi_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'ulama_kormi_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'ulama_kormi_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'ulama_kormi_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'ulama_kormi_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'ulama_kormi_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'ulama_kormi_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -879,10 +915,10 @@ export default {
                 label:'বৃদ্ধি',
                 name:'ulama_associate_member_increase',
             },
-            {
-                label:'ঘাটতি',
-                name:'ulama_associate_member_gatti',
-            },
+            // {
+            //     label:'ঘাটতি',
+            //     name:'ulama_associate_member_gatti',
+            // },
             {
                 label:'টার্গেট',
                 name:'ulama_associate_member_target',
@@ -900,12 +936,20 @@ export default {
             //     name:'pesha_jibi_rokon_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'pesha_jibi_rokon_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'pesha_jibi_rokon_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'pesha_jibi_rokon_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'pesha_jibi_rokon_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'pesha_jibi_rokon_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'pesha_jibi_rokon_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -922,12 +966,20 @@ export default {
             //     name:'pesha_jibi_kormi_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'pesha_jibi_kormi_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'pesha_jibi_kormi_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'pesha_jibi_kormi_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'pesha_jibi_kormi_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'pesha_jibi_kormi_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'pesha_jibi_kormi_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -947,10 +999,10 @@ export default {
                 label:'বৃদ্ধি',
                 name:'pesha_jibi_associate_member_increase',
             },
-            {
-                label:'ঘাটতি',
-                name:'pesha_jibi_associate_member_gatti',
-            },
+            // {
+            //     label:'ঘাটতি',
+            //     name:'pesha_jibi_associate_member_gatti',
+            // },
             {
                 label:'টার্গেট',
                 name:'pesha_jibi_associate_member_target',
@@ -968,12 +1020,20 @@ export default {
             //     name:'jubo_rokon_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'jubo_rokon_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'jubo_rokon_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'jubo_rokon_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'jubo_rokon_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'jubo_rokon_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'jubo_rokon_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -990,12 +1050,20 @@ export default {
             //     name:'jubo_kormi_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'jubo_kormi_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'jubo_kormi_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'jubo_kormi_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'jubo_kormi_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'jubo_kormi_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'jubo_kormi_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -1015,13 +1083,95 @@ export default {
                 label:'বৃদ্ধি',
                 name:'jubo_associate_member_increase',
             },
-            {
-                label:'ঘাটতি',
-                name:'jubo_associate_member_gatti',
-            },
+            // {
+            //     label:'ঘাটতি',
+            //     name:'jubo_associate_member_gatti',
+            // },
             {
                 label:'টার্গেট',
                 name:'jubo_associate_member_target',
+            },
+        ],
+        cultural_rokon:[
+            // {
+            //     label:'বিগত মাসের সংখ্যা',
+            //     name:'cultural_rokon_previous',
+            // },
+            // {
+            //     label:'বর্তমান সংখ্যা',
+            //     name:'cultural_rokon_present',
+            // },
+            {
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'cultural_rokon_increase_manonnoyon',
+            },
+            {
+                label:'বৃদ্ধি আগত',
+                name:'cultural_rokon_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'cultural_rokon_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'cultural_rokon_gatti_sthanantor',
+            },
+            {
+                label:'টার্গেট',
+                name:'cultural_rokon_target',
+            },
+        ],
+        cultural_kormi:[
+            // {
+            //     label:'বিগত মাসের সংখ্যা',
+            //     name:'cultural_kormi_previous',
+            // },
+            // {
+            //     label:'বর্তমান সংখ্যা',
+            //     name:'cultural_kormi_present',
+            // },
+            {
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'cultural_kormi_increase_manonnoyon',
+            },
+            {
+                label:'বৃদ্ধি আগত',
+                name:'cultural_kormi_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'cultural_kormi_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'cultural_kormi_gatti_sthanantor',
+            },
+            {
+                label:'টার্গেট',
+                name:'cultural_kormi_target',
+            },
+        ],
+        cultural_associate_member:[
+            // {
+            //     label:'বিগত মাসের সংখ্যা',
+            //     name:'cultural_associate_member_previous',
+            // },
+            // {
+            //     label:'বর্তমান সংখ্যা',
+            //     name:'cultural_associate_member_present',
+            // },
+            {
+                label:'বৃদ্ধি',
+                name:'cultural_associate_member_increase',
+            },
+            // {
+            //     label:'ঘাটতি',
+            //     name:'cultural_associate_member_gatti',
+            // },
+            {
+                label:'টার্গেট',
+                name:'cultural_associate_member_target',
             },
         ],
 
@@ -1037,12 +1187,20 @@ export default {
             //     name:'vinno_dormalombi_kormi_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'vinno_dormalombi_kormi_increase',
+                label:'বৃদ্ধি মানোন্নয়ন',
+                name:'vinno_dormalombi_kormi_increase_manonnoyon',
             },
             {
-                label:'ঘাটতি',
-                name:'vinno_dormalombi_kormi_gatti',
+                label:'বৃদ্ধি আগত',
+                name:'vinno_dormalombi_kormi_increase_agoto',
+            },
+            {
+                label:'ঘাটতি মানোন্নয়ন',
+                name:'vinno_dormalombi_kormi_gatti_manonnoyon',
+            },
+            {
+                label:'ঘাটতি স্থানান্তর',
+                name:'vinno_dormalombi_kormi_gatti_sthanantor',
             },
             {
                 label:'টার্গেট',
@@ -1062,10 +1220,10 @@ export default {
                 label:'বৃদ্ধি',
                 name:'vinno_dormalombi_associate_member_increase',
             },
-            {
-                label:'ঘাটতি',
-                name:'vinno_dormalombi_associate_member_gatti',
-            },
+            // {
+            //     label:'ঘাটতি',
+            //     name:'vinno_dormalombi_associate_member_gatti',
+            // },
             {
                 label:'টার্গেট',
                 name:'vinno_dormalombi_associate_member_target',
@@ -1074,160 +1232,640 @@ export default {
 
 
 
-        general_unit_men:[
+
+        pouroshova: [
             // {
-            //     label:'বিগত মাসের সংখ্যা',
-            //     name:'general_unit_men_previous',
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'pouroshov_previous',
             // },
             // {
-            //     label:'বর্তমান সংখ্যা',
-            //     name:'general_unit_men_present',
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'pouroshova_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'general_unit_men_increase',
+                label: 'বৃদ্ধি',
+                name: 'pouroshova_increase',
             },
             {
-                label:'ঘাটতি',
-                name:'general_unit_men_gatti',
+                label: 'ঘাটতি',
+                name: 'pouroshova_gatti',
             },
             {
-                label:'টার্গেট',
-                name:'general_unit_men_target',
+                label: 'টার্গেট',
+                name: 'pouroshova_target',
             },
         ],
-        general_unit_women:[
+
+        songothito_pouroshova: [
             // {
-            //     label:'বিগত মাসের সংখ্যা',
-            //     name:'general_unit_women_previous',
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothito_pouroshova_previous',
             // },
             // {
-            //     label:'বর্তমান সংখ্যা',
-            //     name:'general_unit_women_present',
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothito_pouroshova_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'general_unit_women_increase',
+                label: 'বৃদ্ধি',
+                name: 'songothito_pouroshova_increase',
             },
             {
-                label:'ঘাটতি',
-                name:'general_unit_women_gatti',
+                label: 'ঘাটতি',
+                name: 'songothito_pouroshova_gatti',
             },
             {
-                label:'টার্গেট',
-                name:'general_unit_women_target',
+                label: 'টার্গেট',
+                name: 'songothito_pouroshova_target',
             },
         ],
-        ulama_unit:[
+
+        union: [
             // {
-            //     label:'বিগত মাসের সংখ্যা',
-            //     name:'ulama_unit_previous',
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'union_previous',
             // },
             // {
-            //     label:'বর্তমান সংখ্যা',
-            //     name:'ulama_unit_present',
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'union_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'ulama_unit_increase',
+                label: 'বৃদ্ধি',
+                name: 'union_increase',
             },
             {
-                label:'ঘাটতি',
-                name:'ulama_unit_gatti',
+                label: 'ঘাটতি',
+                name: 'union_gatti',
             },
             {
-                label:'টার্গেট',
-                name:'ulama_unit_target',
+                label: 'টার্গেট',
+                name: 'union_target',
             },
         ],
-        peshajibi_unit:[
+
+        songothito_union_man: [
             // {
-            //     label:'বিগত মাসের সংখ্যা',
-            //     name:'peshajibi_unit_previous',
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothito_union_man_previous',
             // },
             // {
-            //     label:'বর্তমান সংখ্যা',
-            //     name:'peshajibi_unit_present',
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothito_union_man_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'peshajibi_unit_increase',
+                label: 'বৃদ্ধি',
+                name: 'songothito_union_man_increase',
             },
             {
-                label:'ঘাটতি',
-                name:'peshajibi_unit_gatti',
+                label: 'ঘাটতি',
+                name: 'songothito_union_man_gatti',
             },
             {
-                label:'টার্গেট',
-                name:'peshajibi_unit_target',
+                label: 'টার্গেট',
+                name: 'songothito_union_man_target',
             },
         ],
-        sromik_kollyan_unit:[
+
+        songothito_union_woman: [
             // {
-            //     label:'বিগত মাসের সংখ্যা',
-            //     name:'sromik_kollyan_unit_previous',
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothito_union_woman_previous',
             // },
             // {
-            //     label:'বর্তমান সংখ্যা',
-            //     name:'sromik_kollyan_unit_present',
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothito_union_woman_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'sromik_kollyan_unit_increase',
+                label: 'বৃদ্ধি',
+                name: 'songothito_union_woman_increase',
             },
             {
-                label:'ঘাটতি',
-                name:'sromik_kollyan_unit_gatti',
+                label: 'ঘাটতি',
+                name: 'songothito_union_woman_gatti',
             },
             {
-                label:'টার্গেট',
-                name:'sromik_kollyan_unit_target',
+                label: 'টার্গেট',
+                name: 'songothito_union_woman_target',
             },
         ],
-        jubo_unit:[
+
+        union_without_member_woman: [
             // {
-            //     label:'বিগত মাসের সংখ্যা',
-            //     name:'jubo_unit_previous',
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'union_without_member_woman_previous',
             // },
             // {
-            //     label:'বর্তমান সংখ্যা',
-            //     name:'jubo_unit_present',
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'union_without_member_woman_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'jubo_unit_increase',
+                label: 'বৃদ্ধি',
+                name: 'union_without_member_woman_increase',
             },
             {
-                label:'ঘাটতি',
-                name:'jubo_unit_gatti',
+                label: 'ঘাটতি',
+                name: 'union_without_member_woman_gatti',
             },
             {
-                label:'টার্গেট',
-                name:'jubo_unit_target',
+                label: 'টার্গেট',
+                name: 'union_without_member_woman_target',
             },
         ],
-        media_unit:[
+
+        total_proshashonik_ward_of_city_corporation: [
             // {
-            //     label:'বিগত মাসের সংখ্যা',
-            //     name:'media_unit_previous',
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_proshashonik_ward_of_city_corporation_previous',
             // },
             // {
-            //     label:'বর্তমান সংখ্যা',
-            //     name:'media_unit_present',
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_proshashonik_ward_of_city_corporation_present',
             // },
             {
-                label:'বৃদ্ধি',
-                name:'media_unit_increase',
+                label: 'বৃদ্ধি',
+                name: 'total_proshashonik_ward_of_city_corporation_increase',
             },
             {
-                label:'ঘাটতি',
-                name:'media_unit_gatti',
+                label: 'ঘাটতি',
+                name: 'total_proshashonik_ward_of_city_corporation_gatti',
             },
             {
-                label:'টার্গেট',
-                name:'media_unit_target',
+                label: 'টার্গেট',
+                name: 'total_proshashonik_ward_of_city_corporation_target',
             },
         ],
+
+        total_songothito_ward_of_city_corporation: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothito_ward_of_city_corporation_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothito_ward_of_city_corporation_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothito_ward_of_city_corporation_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothito_ward_of_city_corporation_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothito_ward_of_city_corporation_target',
+            },
+        ],
+
+        total_songothonik_ward_man: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothonik_ward_man_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothonik_ward_man_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothonik_ward_man_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothonik_ward_man_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothonik_ward_man_target',
+            },
+        ],
+
+        total_songothonik_ward_woman: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothonik_ward_woman_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothonik_ward_woman_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothonik_ward_woman_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothonik_ward_woman_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothonik_ward_woman_target',
+            },
+        ],
+
+        total_proshashonik_ward_of_pouroshova: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_proshashonik_ward_of_pouroshova_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_proshashonik_ward_of_pouroshova_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_proshashonik_ward_of_pouroshova_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_proshashonik_ward_of_pouroshova_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_proshashonik_ward_of_pouroshova_target',
+            },
+        ],
+
+        total_proshashonik_ward_of_union: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_proshashonik_ward_of_union_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_proshashonik_ward_of_union_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_proshashonik_ward_of_union_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_proshashonik_ward_of_union_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_proshashonik_ward_of_union_target',
+            },
+        ],
+
+        total_songothito_ward_of_pouroshova: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothito_ward_of_pouroshova_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothito_ward_of_pouroshova_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothito_ward_of_pouroshova_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothito_ward_of_pouroshova_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothito_ward_of_pouroshova_target',
+            },
+        ],
+
+        total_songothito_ward_of_union: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothito_ward_of_union_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothito_ward_of_union_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothito_ward_of_union_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothito_ward_of_union_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothito_ward_of_union_target',
+            },
+        ],
+
+        total_songothonik_ward_of_pouroshova_man: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothonik_ward_of_pouroshova_man_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothonik_ward_of_pouroshova_man_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothonik_ward_of_pouroshova_man_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothonik_ward_of_pouroshova_man_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothonik_ward_of_pouroshova_man_target',
+            },
+        ],
+
+        total_songothonik_ward_of_union_man: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothonik_ward_of_union_man_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothonik_ward_of_union_man_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothonik_ward_of_union_man_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothonik_ward_of_union_man_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothonik_ward_of_union_man_target',
+            },
+        ],
+
+        total_songothonik_ward_of_pouroshova_woman: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothonik_ward_of_pouroshova_woman_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothonik_ward_of_pouroshova_woman_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothonik_ward_of_pouroshova_woman_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothonik_ward_of_pouroshova_woman_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothonik_ward_of_pouroshova_woman_target',
+            },
+        ],
+
+        total_songothonik_ward_of_union_woman: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'total_songothonik_ward_of_union_woman_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'total_songothonik_ward_of_union_woman_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_songothonik_ward_of_union_woman_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_songothonik_ward_of_union_woman_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'total_songothonik_ward_of_union_woman_target',
+            },
+        ],
+
+        songothonik_ward_ulama: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothonik_ward_ulama_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothonik_ward_ulama_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'songothonik_ward_ulama_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'songothonik_ward_ulama_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'songothonik_ward_ulama_target',
+            },
+        ],
+
+        songothonik_ward_peshajibi: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothonik_ward_peshajibi_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothonik_ward_peshajibi_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'songothonik_ward_peshajibi_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'songothonik_ward_peshajibi_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'songothonik_ward_peshajibi_target',
+            },
+        ],
+
+        songothonik_ward_jubo: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothonik_ward_jubo_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothonik_ward_jubo_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'songothonik_ward_jubo_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'songothonik_ward_jubo_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'songothonik_ward_jubo_target',
+            },
+        ],
+
+        songothonik_ward_sromo: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothonik_ward_sromo_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothonik_ward_sromo_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'songothonik_ward_sromo_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'songothonik_ward_sromo_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'songothonik_ward_sromo_target',
+            },
+        ],
+
+        songothonik_ward_media: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothonik_ward_media_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothonik_ward_media_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'songothonik_ward_media_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'songothonik_ward_media_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'songothonik_ward_media_target',
+            },
+        ],
+
+        songothonik_ward_cultural: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'songothonik_ward_cultural_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'songothonik_ward_cultural_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'songothonik_ward_cultural_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'songothonik_ward_cultural_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'songothonik_ward_cultural_target',
+            },
+        ],
+
+        general_unit_men: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'general_unit_men_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'general_unit_men_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'general_unit_men_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'general_unit_men_gatti',
+            },
+        ],
+        general_unit_women: [
+            { label: 'বৃদ্ধি', name: 'general_unit_women_increase' },
+            { label: 'ঘাটতি', name: 'general_unit_women_gatti' },
+            { label: 'টার্গেট', name: 'general_unit_women_target' },
+        ],
+        ulama_unit: [
+            { label: 'বৃদ্ধি', name: 'ulama_unit_increase' },
+            { label: 'ঘাটতি', name: 'ulama_unit_gatti' },
+            { label: 'টার্গেট', name: 'ulama_unit_target' },
+        ],
+        peshajibi_unit_men: [
+            { label: 'বৃদ্ধি', name: 'peshajibi_unit_men_increase' },
+            { label: 'ঘাটতি', name: 'peshajibi_unit_men_gatti' },
+            { label: 'টার্গেট', name: 'peshajibi_unit_men_target' },
+        ],
+        peshajibi_unit_women: [
+            { label: 'বৃদ্ধি', name: 'peshajibi_unit_women_increase' },
+            { label: 'ঘাটতি', name: 'peshajibi_unit_women_gatti' },
+            { label: 'টার্গেট', name: 'peshajibi_unit_women_target' },
+        ],
+        kormojibi_unit_women: [
+            { label: 'বৃদ্ধি', name: 'kormojibi_unit_women_increase' },
+            { label: 'ঘাটতি', name: 'kormojibi_unit_women_gatti' },
+            { label: 'টার্গেট', name: 'kormojibi_unit_women_target' },
+        ],
+        jubo_unit: [
+            { label: 'বৃদ্ধি', name: 'jubo_unit_increase' },
+            { label: 'ঘাটতি', name: 'jubo_unit_gatti' },
+            { label: 'টার্গেট', name: 'jubo_unit_target' },
+        ],
+        sromo_unit_man: [
+            { label: 'বৃদ্ধি', name: 'sromo_unit_man_increase' },
+            { label: 'ঘাটতি', name: 'sromo_unit_man_gatti' },
+            { label: 'টার্গেট', name: 'sromo_unit_man_target' },
+        ],
+        sromo_unit_woman: [
+            { label: 'বৃদ্ধি', name: 'sromo_unit_woman_increase' },
+            { label: 'ঘাটতি', name: 'sromo_unit_woman_gatti' },
+            { label: 'টার্গেট', name: 'sromo_unit_woman_target' },
+        ],
+        media_unit: [
+            { label: 'বৃদ্ধি', name: 'media_unit_increase' },
+            { label: 'ঘাটতি', name: 'media_unit_gatti' },
+            { label: 'টার্গেট', name: 'media_unit_target' },
+        ],
+        cultural_unit: [
+            { label: 'বৃদ্ধি', name: 'cultural_unit_increase' },
+            { label: 'ঘাটতি', name: 'cultural_unit_gatti' },
+            { label: 'টার্গেট', name: 'cultural_unit_target' },
+        ],
+
+
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1277,7 +1915,86 @@ export default {
         ],
 
 
-        Joined_student_man:[
+        songothon6_pouroshova: [
+            {
+                label: 'বৃদ্ধি',
+                name: 'pouroshova_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'pouroshova_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'pouroshova_target',
+            },
+        ],
+
+        songothon6_union: [
+            {
+                label: 'বৃদ্ধি',
+                name: 'union_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'union_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'union_target',
+            },
+        ],
+
+        songothon6_ward_of_city: [
+            {
+                label: 'বৃদ্ধি',
+                name: 'ward_of_city_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'ward_of_city_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'ward_of_city_target',
+            },
+        ],
+
+        songothon6_ward_of_pouroshova: [
+            {
+                label: 'বৃদ্ধি',
+                name: 'ward_of_pouroshova_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'ward_of_pouroshova_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'ward_of_pouroshova_target',
+            },
+        ],
+
+        songothon6_ward_of_union: [
+            {
+                label: 'বৃদ্ধি',
+                name: 'ward_of_union_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'ward_of_union_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'ward_of_union_target',
+            },
+        ],
+
+
+
+
+
+        songothon7_Joined_student_man:[
             {
                 label:'সদস্য',
                 name:'Joined_student_man_member',
@@ -1291,7 +2008,7 @@ export default {
                 name:'Joined_student_man_worker',
             },
         ],
-        Joined_student_woman:[
+        songothon7_Joined_student_woman:[
             {
                 label:'সদস্যা',
                 name:'Joined_student_women_member',
@@ -1306,18 +2023,121 @@ export default {
             },
         ],
 
-
-        sofor:[
+        songothon8_total_trade_union: [
             {
-                label:'ঊর্ধ্বতন দায়িত্বশীলদের সফর',
-                name:'upper_leader_sofor',
+                label: 'বৃদ্ধি',
+                name: 'total_trade_union_increase',
             },
             {
-                label:'ওয়ার্ড আমীর/সভাপতির সফর',
+                label: 'ঘাটতি',
+                name: 'total_trade_union_gatti',
+            },
+        ],
+
+        songothon8_total_trust: [
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_trust_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_trust_gatti',
+            },
+        ],
+
+        songothon8_total_foundation: [
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_foundation_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_foundation_gatti',
+            },
+        ],
+
+        songothon8_total_societie: [
+            {
+                label: 'বৃদ্ধি',
+                name: 'total_societie_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'total_societie_gatti',
+            },
+        ],
+        
+        
+        sofor_man: [
+            {
+                label:'জেলা দায়িত্বশীলদের সফর',
+                name:'jela_daittoshil_total_sofor_man',
+            },
+            {
+                label:'মহানগরী দায়িত্বশীলদের সফর',
+                name:'mohanogor_daittoshil_total_sofor_man',
+            },
+
+            {
+                label:'উপজেলা আমীর/সভাপতির সফর',
+                name:'upojela_president_total_sofor_man',
+            },
+            {
+                label:'থানা আমীর/সভাপতির সফর',
+                name:'thana_president_total_sofor_man',
+            },
+
+            {
+                label:'উপজেলা কর্মপরিষদ সদস্যদের সফর',
+                name:'upojela_kormoporishod_total_sofor_man',
+            },
+            {
+                label:'উপজেলা টিম সদস্যদের সফর',
+                name:'upojela_team_total_sofor_man',
+            },
+            {
+                label:'থানা কর্মপরিষদ সদস্যদের সফর',
+                name:'thana_kormoporishod_total_sofor_man',
+            },
+            {
+                label:'থানা টিম সদস্যদের সফর',
+                name:'thana_team_total_sofor_man',
+            },
+        ],
+        //মহিলা 
+        sofor_woman:[
+            {
+                label:'জেলা দায়িত্বশীলদের সফর',
+                name:'jela_daittoshil_total_sofor_woman',
+            },
+            {
+                label:'মহানগরী দায়িত্বশীলদের সফর',
+                name:'mohanogor_daittoshil_total_sofor_woman',
+            },
+
+            {
+                label:'উপজেলা বিভাগীয় সেক্রেটারির সফর',
                 name:'ward_sovapotir_sofor',
             },
             {
-                label:'ওয়ার্ড শূরা/কর্মপরিষদ/টিম সদস্যদের সফর',
+                label:'থানা বিভাগীয় সেক্রেটারির সফর',
+                name:'ward_sovapotir_sofor',
+            },
+
+            {
+                label:'উপজেলা কর্মপরিষদ সদস্যদের সফর',
+                name:'word_sura_sodosso_sofor',
+            },
+            {
+                label:'উপজেলা টিম সদস্যদের সফর',
+                name:'word_sura_sodosso_sofor',
+            },
+            {
+                label:'থানা কর্মপরিষদ সদস্যদের সফর',
+                name:'word_sura_sodosso_sofor',
+            },
+            {
+                label:'থানা টিম সদস্যদের সফর',
                 name:'word_sura_sodosso_sofor',
             },
         ],
