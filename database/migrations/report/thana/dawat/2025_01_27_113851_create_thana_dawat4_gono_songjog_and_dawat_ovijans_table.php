@@ -14,22 +14,22 @@ return new class extends Migration
         Schema::create('thana_dawat4_gono_songjog_and_dawat_ovijans', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('report_info_id')->unsigned()->nullable();
-            
+
             $table->bigInteger('gono_songjog_doshok_group_man')->nullable();
             $table->bigInteger('gono_songjog_doshok_attended_man')->nullable();
             $table->bigInteger('gono_songjog_doshok_invited_man')->nullable();
             $table->bigInteger('gono_songjog_doshok_associate_members_created_man')->nullable();
-            
+
             $table->bigInteger('gono_songjog_doshok_group_woman')->nullable();
             $table->bigInteger('gono_songjog_doshok_attended_woman')->nullable();
             $table->bigInteger('gono_songjog_doshok_invited_woman')->nullable();
             $table->bigInteger('gono_songjog_doshok_associate_members_created_woman')->nullable();
-            
+
             $table->bigInteger('gono_songjog_pokkho_group_man')->nullable();
             $table->bigInteger('gono_songjog_pokkho_attended_man')->nullable();
             $table->bigInteger('gono_songjog_pokkho_invited_man')->nullable();
             $table->bigInteger('gono_songjog_pokkho_associate_members_created_man')->nullable();
-            
+
             $table->bigInteger('gono_songjog_pokkho_group_woman')->nullable();
             $table->bigInteger('gono_songjog_pokkho_attended_woman')->nullable();
             $table->bigInteger('gono_songjog_pokkho_invited_woman')->nullable();
@@ -74,6 +74,10 @@ return new class extends Migration
             $table->bigInteger('peshajibi_attended_woman')->nullable();
             $table->bigInteger('peshajibi_how_many_have_been_invited_woman')->nullable();
             $table->bigInteger('peshajibi_how_many_associate_members_created_woman')->nullable();
+
+
+
+
 
             $table->bigInteger('other_gono_songjog_group')->nullable();
             $table->bigInteger('other_attended')->nullable();

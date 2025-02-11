@@ -57,7 +57,7 @@ class DateWiseReportSum
                     $result[$table_name][$selected_column] = $text->montobbo;
                 } else {
                     $sum = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)->sum($selected_column);
-                    $result[$table_name][$selected_column] = $sum == 0 ? "" : $sum;
+                    $result[$table_name][$selected_column] = (int) $sum == 0 ? "" : (int) $sum;
                 }
             }
         }

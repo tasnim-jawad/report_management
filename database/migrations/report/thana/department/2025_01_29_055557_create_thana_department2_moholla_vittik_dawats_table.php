@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('thana_department2_moholla_vittik_dawats', function (Blueprint $table) {
             $table->id();
+
             $table->bigInteger('report_info_id')->unsigned()->nullable();
+
             $table->bigInteger('govment_calculated_village_amount')->nullable();
             $table->bigInteger('govment_calculated_moholla_amount')->nullable();
 

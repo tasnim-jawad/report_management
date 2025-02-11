@@ -3,39 +3,33 @@
         <section id="heading" class="mt-3">
             <div class="report_heading position-relative mb-1">
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
-                <h1 class="text-center fs-4">ওয়ার্ড সংগঠনের</h1>
+                <h1 class="text-center fs-4">উপজেলা/থানা সংগঠনের</h1>
                 <h1 class="text-center mb-2 fs-4">
                     মাসিক/ত্রৈমাসিক/ষান্মাসিক/নয় মাসিক/বার্ষিক রিপোর্ট
                 </h1>
-                <div class="org_gender position-absolute">
-                    <p>পুরুষ</p>
-                </div>
             </div>
             <div class="unit_info">
                 <div class="line d-flex flex-wrap">
-                    <p class="w-75">মাস: {{ formatMonth(month) }}</p>
-                    <p class="w-25">সন: {{ formatYear(month) }}</p>
+                    <p class="w-75">
+                        মাস:
+                        {{ formatMonth($start_month) }}
+                    </p>
+                    <p class="w-25">সন: {{ formatMonth($end_month) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between">
                     <p>
-                        ওয়ার্ড নং ও নাম :
-                        {{ report_header?.ward_info?.no || "" }} ও
-                        {{ report_header?.ward_info?.title || "" }}
+                        উপজেলা/থানার নাম :
+                        {{ $report_header?.thana_info?.title ?? "" }}
                     </p>
-                    <p>পৌরসভা/ইউনিয়ন:</p>
-                    <p class="w-25">
-                        উপজেলা/থানা:
-                        {{ report_header?.thana_info?.title || "" }}
-                    </p>
+                    <p class="width-40">জেলা/মহানগরী :</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between">
                     <p>
-                        আমীর/সভাপতির নাম : {{ report_header?.president || "" }}
+                        আমীর/সভাপতির নাম: {{ $report_header?.president ?? "" }}
                     </p>
                 </div>
             </div>
         </section>
-
         <section id="report">
             <div class="dawat mt-1">
                 <h1 class="font-18">দাওয়াত ও তাবলিগ :</h1>
@@ -44,33 +38,11 @@
                 >
                     <p class="fw-bold w-75">
                         ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
-                        <span>{{ total_dawat }}</span>
+                        <span>
+                            {{ total_dawat }}
+                        </span>
                     </p>
-                    <!-- <p class="fw-bold w-25">মোট জনসংখ্যা:</p> -->
-                    <div class="d-flex justify-content-start w-25">
-                        <label for="" class="fw-bold fs-6">মোট জনসংখ্যা:</label>
-                        <div class="parent_popup width-60">
-                            <input
-                                class="border_dot bg-input ps-2 w-100"
-                                name="total_population"
-                                :value="
-                                    formatBangla(
-                                        report_sum_data
-                                            ?.ward_dawat5_jonoshadharons
-                                            ?.total_population ?? ''
-                                    )
-                                "
-                                @change="
-                                    data_upload('ward-dawat5-jonoshadharon')
-                                "
-                                type="text"
-                            />
-                            <comment
-                                :table_name="'ward_dawat5_jonoshadharons'"
-                                :column_name="'total_population'"
-                            />
-                        </div>
-                    </div>
+                    <p class="fw-bold w-25">মোট জনসংখ্যা:</p>
                     <p class="fw-bold ps-3 w-100">
                         টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক)
                         :
@@ -82,33 +54,53 @@
                 </div>
                 <div class="group_dawat mb-1">
                     <h4 class="fs-6 fw-bold">
-                        ১. নিয়মিত গ্রুপভিত্তিক দাওয়াত :
+                        ১. ইউনিটে নিয়মিত গ্রুপভিত্তিক দাওয়াত:
                     </h4>
                     <table class="text-center">
                         <thead>
                             <tr>
-                                <th>কতটি গ্রুপ বের হয়েছে</th>
-                                <th>অংশগ্রহণকারীর সংখ্যা</th>
-                                <th>কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</th>
-                                <th>কতজন সহযোগী সদস্য হয়েছেন</th>
+                                <th class="width-35">বিবরণ</th>
+                                <th>মোট</th>
+                                <th>পুরুষ</th>
+                                <th>মহিলা</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td class="text-start">
+                                    কতটি গ্রুপ বের হয়েছে
+                                </td>
+                                <td>
+                                    <input
+                                        class="bg-input w-100 text-center"
+                                        type="text"
+                                        readonly
+                                        :value="
+                                            total_man_woman_count(
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.how_many_groups_are_out_man,
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.how_many_groups_are_out_woman
+                                            )
+                                        "
+                                    />
+                                </td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="how_many_groups_are_out"
+                                            name="how_many_groups_are_out_man"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_dawat1_regular_group_wises
-                                                        ?.how_many_groups_are_out
+                                                        ?.thana_dawat1_regular_group_wises
+                                                        ?.how_many_groups_are_out_man
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-dawat1-regular-group-wise'
+                                                    'thana-dawat1-regular-group-wise'
                                                 )
                                             "
                                             type="text"
@@ -118,7 +110,7 @@
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
-                                            :table_name="'dawat1_regular_group_wises'"
+                                            :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
                                         >
@@ -128,92 +120,237 @@
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="number_of_participants"
+                                            name="how_many_groups_are_out_woman"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_dawat1_regular_group_wises
-                                                        ?.number_of_participants
+                                                        ?.thana_dawat1_regular_group_wises
+                                                        ?.how_many_groups_are_out_woman
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-dawat1-regular-group-wise'
+                                                    'thana-dawat1-regular-group-wise'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
-                                            :table_name="'dawat1_regular_group_wises'"
-                                            :field_title="'number_of_participants'"
+                                            :table_name="'dawat2_personal_and_targets'"
+                                            :field_title="'total_rokon'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">অংশগ্রহণকারীর সংখ্যা</td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_have_been_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat1_regular_group_wises
-                                                        ?.how_many_have_been_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat1-regular-group-wise'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat1_regular_group_wises'"
-                                            :field_title="'how_many_have_been_invited'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    {{
+                                        total_man_woman_count(
+                                            report_sum_data
+                                                ?.thana_dawat1_regular_group_wises
+                                                ?.number_of_participants_man,
+                                            report_sum_data
+                                                ?.thana_dawat1_regular_group_wises
+                                                ?.number_of_participants_woman
+                                        )
+                                    }}
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_associate_members_created"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat1_regular_group_wises
-                                                        ?.how_many_associate_members_created
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat1-regular-group-wise'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat1_regular_group_wises'"
-                                            :field_title="'how_many_associate_members_created'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <input
+                                        name="number_of_participants_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.number_of_participants_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat1-regular-group-wise'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="number_of_participants_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.number_of_participants_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat1-regular-group-wise'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
+                                </td>
+                                <td>
+                                    {{
+                                        total_man_woman_count(
+                                            report_sum_data
+                                                ?.thana_dawat1_regular_group_wises
+                                                ?.how_many_have_been_invited_man,
+                                            report_sum_data
+                                                ?.thana_dawat1_regular_group_wises
+                                                ?.how_many_have_been_invited_woman
+                                        )
+                                    }}
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_have_been_invited_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.how_many_have_been_invited_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat1-regular-group-wise'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_have_been_invited_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.how_many_have_been_invited_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat1-regular-group-wise'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    কতজন সহযোগী সদস্য হয়েছেন
+                                </td>
+                                <td>
+                                    {{
+                                        total_man_woman_count(
+                                            report_sum_data
+                                                ?.thana_dawat1_regular_group_wises
+                                                ?.how_many_associate_members_created_man,
+                                            report_sum_data
+                                                ?.thana_dawat1_regular_group_wises
+                                                ?.how_many_associate_members_created_woman
+                                        )
+                                    }}
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_associate_members_created_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.how_many_associate_members_created_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat1-regular-group-wise'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_associate_members_created_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.how_many_associate_members_created_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat1-regular-group-wise'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                         </tbody>
@@ -223,113 +360,128 @@
                     <h4 class="fs-6 fw-bold">
                         ২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:
                     </h4>
-                    <table class="text-center">
+                    <table class="text-center mb-1">
                         <thead>
                             <tr>
-                                <th>বিবরণ</th>
+                                <th rowspan="2">বিবরণ</th>
+                                <th colspan="2">পুরুষ</th>
+                                <th colspan="2">মহিলা</th>
+                            </tr>
+                            <tr>
                                 <th class="width-15">সদস্য (রুকন)</th>
                                 <th class="width-15">কর্মী</th>
-                                <th>বিবরণ</th>
-                                <th class="width-15">সংখ্যা</th>
+                                <th class="width-15">সদস্য (রুকন)</th>
+                                <th class="width-15">কর্মী</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-start px-2">
+                                <td class="text-start px-2 width-30">
                                     মোট জনশক্তি সংখ্যা
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="total_rokon"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat2_personal_and_targets
-                                                        ?.total_rokon
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat2-personal-and-target'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat2_personal_and_targets'"
-                                            :field_title="'total_rokon'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <input
+                                        name="total_rokon_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.total_rokon_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="total_worker"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat2_personal_and_targets
-                                                        ?.total_worker
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat2-personal-and-target'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat2_personal_and_targets'"
-                                            :field_title="'total_worker'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
-                                </td>
-                                <td class="text-start px-2">
-                                    কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
+                                    <input
+                                        name="total_worker_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.total_worker_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_have_been_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat2_personal_and_targets
-                                                        ?.how_many_have_been_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat2-personal-and-target'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat2_personal_and_targets'"
-                                            :field_title="'how_many_have_been_invited'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <input
+                                        name="total_rokon_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.total_rokon_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_worker_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.total_worker_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -337,97 +489,268 @@
                                     কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_were_give_dawat_rokon"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat2_personal_and_targets
-                                                        ?.how_many_were_give_dawat_rokon
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat2-personal-and-target'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat2_personal_and_targets'"
-                                            :field_title="'how_many_were_give_dawat_rokon'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <input
+                                        name="how_many_were_give_dawat_rokon_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_were_give_dawat_rokon_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_were_give_dawat_worker"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat2_personal_and_targets
-                                                        ?.how_many_were_give_dawat_worker
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat2-personal-and-target'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat2_personal_and_targets'"
-                                            :field_title="'how_many_were_give_dawat_worker'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <input
+                                        name="how_many_were_give_dawat_worker_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_were_give_dawat_worker_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
+                                <td>
+                                    <input
+                                        name="how_many_were_give_dawat_worker_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_were_give_dawat_worker_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_were_give_dawat_rokon_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_were_give_dawat_rokon_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="text-center">
+                        <thead>
+                            <tr>
+                                <th class="width-33">বিবরণ</th>
+                                <th class="">মোট</th>
+                                <th class="">পুরুষ</th>
+                                <th class="">মহিলা</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start px-2">
+                                    কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
+                                </td>
+                                <td>
+                                    <input
+                                        class="bg-input w-100 text-center"
+                                        type="text"
+                                        readonly
+                                        :value="
+                                            total_man_woman_count(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_have_been_invited_man,
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_have_been_invited_woman
+                                            )
+                                        "
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_have_been_invited_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_have_been_invited_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_have_been_invited_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_have_been_invited_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="text-start px-2">
                                     কতজন সহযোগী সদস্য হয়েছেন
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_associate_members_created"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat2_personal_and_targets
-                                                        ?.how_many_associate_members_created
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat2-personal-and-target'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat2_personal_and_targets'"
-                                            :field_title="'how_many_associate_members_created'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <input
+                                        class="bg-input w-100 text-center"
+                                        type="text"
+                                        readonly
+                                        :value="
+                                            total_man_woman_count(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_associate_members_created_man,
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_associate_members_created_woman
+                                            )
+                                        "
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_associate_members_created_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_associate_members_created_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_associate_members_created_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat2_personal_and_targets
+                                                    ?.how_many_associate_members_created_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat2-personal-and-target'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                         </tbody>
@@ -438,74 +761,162 @@
                         ৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের
                         মাধ্যমে দাওয়াত :
                     </h4>
-                    <table class="text-center table_layout_fixed">
+                    <table class="text-center">
+                        <thead>
+                            <tr>
+                                <th class="width-33">বিবরণ</th>
+                                <th class="">মোট</th>
+                                <th class="">পুরুষ</th>
+                                <th class="">মহিলা</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td class="width-35">
-                                    মোট কতজনকে দাওয়াত প্রদান করা হয়েছে
+                                <td class="text-start px-2">
+                                    কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_were_give_dawat"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat3_general_program_and_others
-                                                        ?.how_many_were_give_dawat
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat3-general-program-and-others'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat3_general_program_and_others'"
-                                            :field_title="'how_many_were_give_dawat'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
-                                </td>
-                                <td class="width-35">
-                                    মোট কতজন সহযোগী সদস্য হয়েছেন
+                                    <input
+                                        class="bg-input w-100 text-center"
+                                        type="text"
+                                        readonly
+                                        :value="
+                                            total_man_woman_count(
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_were_give_dawat_man,
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_were_give_dawat_woman
+                                            )
+                                        "
+                                    />
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_associate_members_created"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat3_general_program_and_others
-                                                        ?.how_many_associate_members_created
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat3-general-program-and-others'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat3_general_program_and_others'"
-                                            :field_title="'how_many_associate_members_created'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <input
+                                        name="how_many_were_give_dawat_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_were_give_dawat_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat3-general-program-and-others'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_were_give_dawat_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_were_give_dawat_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat3-general-program-and-others'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">
+                                    কতজন সহযোগী সদস্য হয়েছেন
+                                </td>
+                                <td>
+                                    <input
+                                        class="bg-input w-100 text-center"
+                                        type="text"
+                                        readonly
+                                        :value="
+                                            total_man_woman_count(
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_associate_members_created_man,
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_associate_members_created_woman
+                                            )
+                                        "
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_associate_members_created_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_associate_members_created_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat3-general-program-and-others'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_associate_members_created_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_associate_members_created_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat3-general-program-and-others'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                         </tbody>
@@ -518,370 +929,1277 @@
                     <table class="text-center">
                         <thead>
                             <tr>
-                                <th class="">বিবরণ</th>
-                                <th class="width-10 px-0">মোট গ্রুপ সংখ্যা</th>
-                                <th class="width-15">অংশগ্রহণকারীর সংখ্যা</th>
-                                <th class="w-25 px-0">
-                                    কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
+                                <th class="width-30">বিবরণ</th>
+                                <th class="width-15">মোট গ্রুপ সংখ্যা</th>
+                                <th class="">মোট অংশগ্রহণকারীর সংখ্যা</th>
+                                <th class="width-20">
+                                    মোট কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                 </th>
-                                <th class="width-19 px-0">
-                                    কতজন সহযোগী সদস্য হয়েছেন
-                                </th>
+                                <th class="">মোট কতজন সহযোগী সদস্য হয়েছেন</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">
-                                    গণসংযোগ দশক / পক্ষ
+                                    গণসংযোগ দশক/পক্ষ (পুরুষ/মহিলা)
                                 </td>
 
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="total_gono_songjog_group"
-                                            :value="
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <p class="fixed-input-30">
+                                            {{
                                                 formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.total_gono_songjog_group
+                                                    this.mass_communication
+                                                        .total_mass_communication_dosok_male
                                                 )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                            }}
+                                        </p>
+                                        <p>/</p>
+                                        <p class="fixed-input-30">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_mass_communication_dosok_female
                                                 )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
-                                            :field_title="'total_gono_songjog_group'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                            }}
+                                        </p>
+                                        <p>|</p>
+                                        <p class="fixed-input-30">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_mass_communication_pokkho_male
+                                                )
+                                            }}
+                                        </p>
+                                        <p>/</p>
+                                        <p class="fixed-input-30">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_mass_communication_pokkho_female
+                                                )
+                                            }}
+                                        </p>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="total_attended"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.total_attended
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
-                                            :field_title="'total_attended'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="gono_songjog_doshok_attended_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_doshok_attended_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_doshok_attended_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_doshok_attended_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p class="mx-1">|</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_pokkho_attended_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_pokkho_attended_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_pokkho_attended_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_pokkho_attended_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_have_been_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.how_many_have_been_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
-                                            :field_title="'how_many_have_been_invited'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="gono_songjog_doshok_invited_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_doshok_invited_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_doshok_invited_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_doshok_invited_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p class="mx-1">|</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_pokkho_invited_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_pokkho_invited_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_pokkho_invited_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_pokkho_invited_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_associate_members_created"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.how_many_associate_members_created
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
-                                            :field_title="'how_many_associate_members_created'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="gono_songjog_doshok_associate_members_created_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_doshok_associate_members_created_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_doshok_associate_members_created_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_doshok_associate_members_created_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p class="mx-1">|</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_pokkho_associate_members_created_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_pokkho_associate_members_created_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="gono_songjog_pokkho_associate_members_created_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_pokkho_associate_members_created_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
-                                    জেলা/মহা: ঘোষিত গণসংযোগ/দাওয়াতি অভিযান
+                                    জেলা/মহা: ঘোষিত গণসংযোগ ও দাও:অভিযান
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="jela_mohanogor_declared_gonosonjog_group"
-                                            :value="
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <p class="fixed-input">
+                                            {{
                                                 formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.jela_mohanogor_declared_gonosonjog_group
+                                                    this.mass_communication
+                                                        .total_jela_decl_mass_comm_ovi
                                                 )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                            }}
+                                        </p>
+                                        <p>/</p>
+                                        <p class="fixed-input">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_mohanogon_decl_mass_comm_ovi
                                                 )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
-                                            :field_title="'jela_mohanogor_declared_gonosonjog_group'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                            }}
+                                        </p>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="jela_mohanogor_declared_gonosonjog_attended"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.jela_mohanogor_declared_gonosonjog_attended
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
-                                            :field_title="'jela_mohanogor_declared_gonosonjog_attended'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="jela_declared_gonosonjog_dawati_ovi_attended"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.jela_declared_gonosonjog_dawati_ovi_attended
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="mohanogor_declared_gonosonjog_dawati_ovi_attended"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.mohanogor_declared_gonosonjog_dawati_ovi_attended
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="jela_mohanogor_declared_gonosonjog_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.jela_mohanogor_declared_gonosonjog_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
-                                            :field_title="'jela_mohanogor_declared_gonosonjog_invited'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="jela_declared_gonosonjog_dawati_ovi_invited"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.jela_declared_gonosonjog_dawati_ovi_invited
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="mohanogor_declared_gonosonjog_dawati_ovi_invited"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.mohanogor_declared_gonosonjog_dawati_ovi_invited
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="jela_mohanogor_declared_gonosonjog_associated_created"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.jela_mohanogor_declared_gonosonjog_associated_created
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
-                                            :field_title="'jela_mohanogor_declared_gonosonjog_associated_created'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="jela_declared_gonosonjog_dawati_ovi_associated_created"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.jela_declared_gonosonjog_dawati_ovi_associated_created
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="mohanogor_declared_gonosonjog_dawati_ovi_associated_created"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.mohanogor_declared_gonosonjog_dawati_ovi_associated_created
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
-                                    নির্বাচনী আসনে গণসংযোগ সপ্তাহ
+                                    নির্বাচনী আসনে গণসংযোগ সপ্তাহ (পু/ম)
                                 </td>
                                 <td>
-                                    <input
-                                        name="election_gono_songjog_group"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.election_gono_songjog_group
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <p class="fixed-input">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_election_mass_comm_week_man
+                                                )
+                                            }}
+                                        </p>
+                                        <p>/</p>
+                                        <p class="fixed-input">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_election_mass_comm_week_woman
+                                                )
+                                            }}
+                                        </p>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="election_attended"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.election_attended
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="election_attended_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.election_attended_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="election_attended_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.election_attended_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="election_how_many_have_been_invited"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.election_how_many_have_been_invited
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="election_how_many_have_been_invited_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.election_how_many_have_been_invited_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="election_how_many_have_been_invited_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.election_how_many_have_been_invited_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="election_how_many_associate_members_created"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.election_how_many_associate_members_created
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="election_how_many_associate_members_created_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.election_how_many_associate_members_created_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="election_how_many_associate_members_created_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.election_how_many_associate_members_created_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start px-2">
+                                    উলামা/পেশাজীবী গণসংযোগ সপ্তাহ (পু/ম)
+                                </td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <p class="fixed-input-30">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_ulama_mass_comm_week_man
+                                                )
+                                            }}
+                                        </p>
+                                        <p>/</p>
+                                        <p class="fixed-input-30">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_ulama_mass_comm_week_woman
+                                                )
+                                            }}
+                                        </p>
+                                        <p>|</p>
+                                        <p class="fixed-input-30">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_pesajibi_mass_comm_week_man
+                                                )
+                                            }}
+                                        </p>
+                                        <p>/</p>
+                                        <p class="fixed-input-30">
+                                            {{
+                                                formatBangla(
+                                                    this.mass_communication
+                                                        .total_pesajibi_mass_comm_week_woman
+                                                )
+                                            }}
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="ulama_attended_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.ulama_attended_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="ulama_attended_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.ulama_attended_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p class="mx-1">|</p>
+                                        <div>
+                                            <input
+                                                name="peshajibi_attended_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.peshajibi_attended_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="peshajibi_attended_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.peshajibi_attended_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="ulama_how_many_have_been_invited_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.ulama_how_many_have_been_invited_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="ulama_how_many_have_been_invited_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.ulama_how_many_have_been_invited_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p class="mx-1">|</p>
+                                        <div>
+                                            <input
+                                                name="peshajibi_how_many_have_been_invited_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.peshajibi_how_many_have_been_invited_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="peshajibi_how_many_have_been_invited_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.peshajibi_how_many_have_been_invited_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="ulama_how_many_associate_members_created_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.ulama_how_many_associate_members_created_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="ulama_how_many_associate_members_created_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.ulama_how_many_associate_members_created_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p class="mx-1">|</p>
+                                        <div>
+                                            <input
+                                                name="peshajibi_how_many_associate_members_created_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.peshajibi_how_many_associate_members_created_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="peshajibi_how_many_associate_members_created_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.peshajibi_how_many_associate_members_created_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">অন্যান্য</td>
                                 <td>
-                                    <input
-                                        name="other_gono_songjog_group"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.other_gono_songjog_group
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    {{
+                                        formatBangla(
+                                            this.mass_communication.total_others
+                                        )
+                                    }}
                                 </td>
                                 <td>
                                     <input
@@ -889,18 +2207,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                    ?.thana_dawat4_gono_songjog_and_dawat_ovijans
                                                     ?.other_attended
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -908,18 +2233,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                    ?.thana_dawat4_gono_songjog_and_dawat_ovijans
                                                     ?.other_how_many_have_been_invited
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -927,32 +2259,39 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                    ?.thana_dawat4_gono_songjog_and_dawat_ovijans
                                                     ?.other_how_many_associate_members_created
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <p>
-                        * গণসংযোগ অভিযান পালনের সময় গ্রুপ সংখ্যা, ব্যক্তিগত ও
-                        গ্রুপভিত্তিক সহযোগী সদস্য বৃদ্ধি সংখ্যা শুধুমাত্র এই
-                        ছকেই বসাতে হবে।
+                        * গণসংযোগ অভিযান পালনের সময় ইউনিট থেকে উপজেলা/থানা
+                        পর্যন্ত গ্রুপ সংখ্যা, ব্যক্তিগত ও গ্রুপভিত্তিক সহযোগী
+                        সদস্য বৃদ্ধি সংখ্যা শুধুমাত্র এই ছকেই বসাতে হবে।
                     </p>
                 </div>
             </div>
             <h1 class="font-18 fw-bold">খ) বিভাগ ভিত্তিক তথ্য :</h1>
             <div class="bivag">
-                <div class="talimul_quran mb-2">
+                <div class="talimul_quran mb-5 pb-5">
                     <h4 class="fs-6 fw-bold">
                         ১. তালিমুল কুরআনের মাধ্যমে দাওয়াত
                     </h4>
@@ -960,8 +2299,8 @@
                         <thead>
                             <tr>
                                 <th class="width-40">ব্যক্তিগত উদ্যোগ</th>
-                                <th class="">সদস্য (রুকন)</th>
-                                <th class="width-15">কর্মী</th>
+                                <th class="">সদস্য (রুকন) (পু/ম)</th>
+                                <th class="width-15">কর্মী (পু/ম)</th>
                                 <th class="width-20">মোট</th>
                             </tr>
                         </thead>
@@ -970,89 +2309,147 @@
                                 <td class="text-start px-2">
                                     কতজন কুরআন শিক্ষা প্রদান করেছেন
                                 </td>
-                                <!-- <td >{{bangla($department1->teacher_rokon?? "")}}</td>
-                                <td >{{bangla($department1->teacher_worker?? "")}}</td> -->
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="teacher_rokon"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.teacher_rokon
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'department1_talimul_qurans'"
-                                            :field_title="'teacher_rokon'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="teacher_rokon_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department1_talimul_qurans
+                                                            ?.teacher_rokon_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="teacher_rokon_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department1_talimul_qurans
+                                                            ?.teacher_rokon_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="teacher_worker"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.teacher_worker
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'department1_talimul_qurans'"
-                                            :field_title="'teacher_worker'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="teacher_worker_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department1_talimul_qurans
+                                                            ?.teacher_worker_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="teacher_worker_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department1_talimul_qurans
+                                                            ?.teacher_worker_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
-
                                 <td>
-                                    <!-- {{ (report_sum_data?.ward_department1_talimul_qurans?.teacher_rokon ?? null) !== null || (report_sum_data?.ward_department1_talimul_qurans?.teacher_worker ??
-                                        null) !== null
-                                        ? formatBangla((report_sum_data?.ward_department1_talimul_qurans?.teacher_rokon ?? 0) + (report_sum_data?.ward_department1_talimul_qurans?.teacher_worker ??
-                                            0))
-                                    : ""
-                                    }} -->
-
                                     {{
-                                        formatBangla(
-                                            (Number(
-                                                report_sum_data
-                                                    ?.ward_department1_talimul_qurans
-                                                    ?.teacher_rokon
-                                            ) ?? 0) +
-                                                (Number(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.teacher_worker
-                                                ) ?? 0)
+                                        get_sum_total(
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.teacher_rokon_man,
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.teacher_rokon_woman,
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.teacher_worker_man,
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.teacher_worker_woman
                                         )
                                     }}
                                 </td>
@@ -1062,87 +2459,146 @@
                                     কতজনকে কুরআন শিক্ষা প্রদান করা হয়েছে
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="student_rokon"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.student_rokon
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'department1_talimul_qurans'"
-                                            :field_title="'student_rokon'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="student_rokon_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department1_talimul_qurans
+                                                            ?.student_rokon_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="student_rokon_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department1_talimul_qurans
+                                                            ?.student_rokon_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="student_worker"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.student_worker
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'department1_talimul_qurans'"
-                                            :field_title="'student_worker'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="student_worker_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department1_talimul_qurans
+                                                            ?.student_worker_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="student_worker_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department1_talimul_qurans
+                                                            ?.student_worker_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <!-- {{ (report_sum_data?.ward_department1_talimul_qurans?.student_rokon ?? null) !==
-                                        null || (report_sum_data?.ward_department1_talimul_qurans?.student_worker ??
-                                            null) !== null
-                                        ? formatBangla((report_sum_data?.ward_department1_talimul_qurans?.student_rokon ??
-                                            0) + (report_sum_data?.ward_department1_talimul_qurans?.student_worker ??
-                                                0))
-                                    : ""
-                                    }} -->
-
                                     {{
-                                        formatBangla(
-                                            (Number(
-                                                report_sum_data
-                                                    ?.ward_department1_talimul_qurans
-                                                    ?.student_rokon
-                                            ) ?? 0) +
-                                                (Number(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.student_worker
-                                                ) ?? 0)
+                                        get_sum_total(
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.teacher_rokon_man,
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.teacher_rokon_woman,
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.teacher_worker_man,
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.teacher_worker_woman
                                         )
                                     }}
                                 </td>
@@ -1150,11 +2606,11 @@
                         </tbody>
                     </table>
                     <div class="d-flex align-items-start gap-2">
-                        <table class="text-center mb-1">
+                        <table class="text-center mb-2">
                             <thead>
                                 <tr>
-                                    <th class="width-40">সামষ্টিক উদ্যোগ</th>
-                                    <th class="width-30">মোট সংখ্যা</th>
+                                    <th class="w-40">সামষ্টিক উদ্যোগ</th>
+                                    <th class="w-30">মোট সংখ্যা</th>
                                     <th class="width-30 px-0">
                                         মোট শিক্ষার্থী সংখ্যা
                                     </th>
@@ -1171,18 +2627,27 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department1_talimul_qurans
+                                                        ?.thana_department1_talimul_qurans
                                                         ?.quran_learning_total_group
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department1-talimul-quran'
+                                                    'thana-department1-talimul-quran'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                     <td>
                                         <input
@@ -1190,18 +2655,27 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department1_talimul_qurans
+                                                        ?.thana_department1_talimul_qurans
                                                         ?.quran_learning_total_students
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department1-talimul-quran'
+                                                    'thana-department1-talimul-quran'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1209,119 +2683,171 @@
                                         মক্তব/ফোরকানিয়া মাদ্রাসা
                                     </td>
                                     <td>
-                                        <div class="d-flex">
-                                            <input
-                                                name="total_moktob"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department1_talimul_qurans
-                                                            ?.total_moktob
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department1-talimul-quran'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="total_forkania_madrasah"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department1_talimul_qurans
-                                                            ?.total_forkania_madrasah
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department1-talimul-quran'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="total_moktob"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department1_talimul_qurans
+                                                                ?.total_moktob
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department1-talimul-quran'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="total_forkania_madrasah"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department1_talimul_qurans
+                                                                ?.total_forkania_madrasah
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department1-talimul-quran'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="d-flex">
-                                            <input
-                                                name="total_moktob_students"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department1_talimul_qurans
-                                                            ?.total_moktob_students
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department1-talimul-quran'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="total_forkania_madrasah_students"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department1_talimul_qurans
-                                                            ?.total_forkania_madrasah_students
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department1-talimul-quran'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="total_moktob_students"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department1_talimul_qurans
+                                                                ?.total_moktob_students
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department1-talimul-quran'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="total_forkania_madrasah_students"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department1_talimul_qurans
+                                                                ?.total_forkania_madrasah_students
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department1-talimul-quran'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <table class="text-center mb-1">
+                        <table class="text-center mb-2">
                             <tbody>
                                 <tr>
                                     <td class="text-start width-70 px-2">
                                         মোট কতজন সহীহ তিলাওয়াত শিখেছেন
                                     </td>
                                     <td class="width-30">
-                                        <div class="parent_popup">
-                                            <input
-                                                name="how_much_learned_sohih_tilawat"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department1_talimul_qurans
-                                                            ?.how_much_learned_sohih_tilawat
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department1-talimul-quran'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department1_talimul_qurans'"
-                                                :field_title="'how_much_learned_sohih_tilawat'"
-                                                :month="month"
-                                            >
-                                            </popup>
-                                        </div>
+                                        <input
+                                            name="how_much_learned_sohih_tilawat"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department1_talimul_qurans
+                                                        ?.how_much_learned_sohih_tilawat
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department1-talimul-quran'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1330,52 +2856,68 @@
                                         (পু/ম)
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <div class="d-flex">
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
                                                 <input
                                                     name="how_much_invited_man"
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_department1_talimul_qurans
+                                                                ?.thana_department1_talimul_qurans
                                                                 ?.how_much_invited_man
                                                         )
                                                     "
                                                     @change="
                                                         data_upload(
-                                                            'ward-department1-talimul-quran'
+                                                            'thana-department1-talimul-quran'
                                                         )
                                                     "
                                                     type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />/
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
                                                 <input
                                                     name="how_much_invited_woman"
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_department1_talimul_qurans
+                                                                ?.thana_department1_talimul_qurans
                                                                 ?.how_much_invited_woman
                                                         )
                                                     "
                                                     @change="
                                                         data_upload(
-                                                            'ward-department1-talimul-quran'
+                                                            'thana-department1-talimul-quran'
                                                         )
                                                     "
                                                     type="text"
-                                                    class="bg-input w-100 text-center"
+                                                    class="bg-input fixed-input-30 text-center"
                                                 />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
                                             </div>
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department1_talimul_qurans'"
-                                                :field_title="'how_much_invited'"
-                                                :month="month"
-                                            >
-                                            </popup>
                                         </div>
                                     </td>
                                 </tr>
@@ -1384,148 +2926,241 @@
                                         মোট কতজন সহযোগী সদস্য হয়েছেন (পু/ম)
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <div class="d-flex">
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
                                                 <input
                                                     name="how_much_been_associated_man"
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_department1_talimul_qurans
+                                                                ?.thana_department1_talimul_qurans
                                                                 ?.how_much_been_associated_man
                                                         )
                                                     "
                                                     @change="
                                                         data_upload(
-                                                            'ward-department1-talimul-quran'
+                                                            'thana-department1-talimul-quran'
                                                         )
                                                     "
                                                     type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />/
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
                                                 <input
                                                     name="how_much_been_associated_woman"
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_department1_talimul_qurans
+                                                                ?.thana_department1_talimul_qurans
                                                                 ?.how_much_been_associated_woman
                                                         )
                                                     "
                                                     @change="
                                                         data_upload(
-                                                            'ward-department1-talimul-quran'
+                                                            'thana-department1-talimul-quran'
                                                         )
                                                     "
                                                     type="text"
-                                                    class="bg-input w-100 text-center"
+                                                    class="bg-input fixed-input-30 text-center"
                                                 />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
                                             </div>
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department1_talimul_qurans'"
-                                                :field_title="'how_much_been_associated'"
-                                                :month="month"
-                                            >
-                                            </popup>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <table class="text-center table_layout_fixed">
+                    <table class="text-center">
+                        <thead>
+                            <tr>
+                                <th class="width-20">
+                                    সর্বমোট মুয়াল্লিম/মুয়াল্লিমা সংখ্যা
+                                </th>
+                                <th>পুরুষ</th>
+                                <th>মহিলা</th>
+                                <th class="width-20">বৃদ্ধি সংখ্যা</th>
+                                <th>পুরুষ</th>
+                                <th>মহিলা</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td class="width-35 text-start">
-                                    তা'লিমুল কুরআন : মুয়াল্লিম সংখ্যা (পু./ম.)
-                                </td>
                                 <td>
-                                    <div class="d-flex">
-                                        <input
-                                            name="total_muallim_man"
-                                            :value="
-                                                formatBangla(
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            {{
+                                                get_sum_total(
                                                     report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.total_muallim_man
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="total_muallim_woman"
-                                            :value="
-                                                formatBangla(
+                                                        ?.thana_department1_talimul_qurans
+                                                        ?.total_muallim_man,
                                                     report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.total_muallim_woman
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                    </div>
-                                </td>
-                                <td class="width-35 text-start">
-                                    বৃদ্ধি সংখ্যা (পু./ম.) :
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input
-                                            name="total_muallim_increased_man"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
+                                                        ?.thana_department1_talimul_qurans
                                                         ?.total_muallim_increased_man
                                                 )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="total_muallim_increased_woman"
-                                            :value="
-                                                formatBangla(
+                                            }}
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            {{
+                                                get_sum_total(
                                                     report_sum_data
-                                                        ?.ward_department1_talimul_qurans
+                                                        ?.thana_department1_talimul_qurans
+                                                        ?.total_muallim_woman,
+                                                    report_sum_data
+                                                        ?.thana_department1_talimul_qurans
                                                         ?.total_muallim_increased_woman
                                                 )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                            }}
+                                        </div>
                                     </div>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_muallim_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department1_talimul_qurans
+                                                    ?.total_muallim_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department1-talimul-quran'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_muallim_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department1_talimul_qurans
+                                                    ?.total_muallim_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department1-talimul-quran'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    {{
+                                        get_sum_total(
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.total_muallim_increased_man,
+                                            report_sum_data
+                                                ?.thana_department1_talimul_qurans
+                                                ?.total_muallim_increased_woman
+                                        )
+                                    }}
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_muallim_increased_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department1_talimul_qurans
+                                                    ?.total_muallim_increased_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department1-talimul-quran'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_muallim_increased_woman"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department1_talimul_qurans
+                                                    ?.total_muallim_increased_woman
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department1-talimul-quran'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="moholla">
+                <div class="moholla pt-5">
                     <h4 class="fs-6 fw-bold">
                         ২. গ্রাম ও মহল্লাভিত্তিক দাওয়াত
                     </h4>
@@ -1537,41 +3172,68 @@
                                         সরকারি হিসাবে গ্রাম/মহল্লা সংখ্যা
                                     </th>
                                     <th class="width-20">
-                                        <div class="d-flex">
-                                            <input
-                                                name="govment_calculated_village_amount"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.govment_calculated_village_amount
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="govment_calculated_moholla_amount"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.govment_calculated_moholla_amount
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="govment_calculated_village_amount"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.govment_calculated_village_amount
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="govment_calculated_moholla_amount"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.govment_calculated_moholla_amount
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </th>
                                     <th class="width-20">বৃদ্ধি</th>
@@ -1583,64 +3245,133 @@
                                         গ্রাম/মহল্লা কমিটি সংখ্যা
                                     </td>
                                     <td>
-                                        <div>
-                                            <span>{{
-                                                formatBangla(
-                                                    previous_present?.total_village_committee_present
-                                                )
-                                            }}</span
-                                            >/
-                                            <span>{{
-                                                formatBangla(
-                                                    previous_present?.total_moholla_committee_present
-                                                )
-                                            }}</span>
-                                            <!-- <input name="total_village_committee"
-                                                :value="formatBangla(report_sum_data?.ward_department2_moholla_vittik_dawats?.total_village_committee)"
-                                                @change="data_upload('ward-department2-moholla-vittik-dawat')"
-                                                type="text" class="bg-input w-100 text-center" />/
-                                            <input name="total_moholla_committee"
-                                                :value="formatBangla(report_sum_data?.ward_department2_moholla_vittik_dawats?.total_moholla_committee)"
-                                                @change="data_upload('ward-department2-moholla-vittik-dawat')"
-                                                type="text" class="bg-input w-100 text-center" /> -->
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="total_village_committee"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.total_village_committee
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="total_moholla_committee"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.total_moholla_committee
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="d-flex">
-                                            <input
-                                                name="total_village_committee_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.total_village_committee_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="total_moholla_committee_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.total_moholla_committee_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="total_village_committee_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.total_village_committee_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="total_moholla_committee_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.total_moholla_committee_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -1650,65 +3381,133 @@
                                         গ্রাম/মহল্লা* সংখ্যা
                                     </td>
                                     <td>
-                                        <div>
-                                            <span>{{
-                                                formatBangla(
-                                                    previous_present?.special_dawat_included_village_present
-                                                )
-                                            }}</span
-                                            >/
-                                            <span>{{
-                                                formatBangla(
-                                                    previous_present?.special_dawat_included_moholla_present
-                                                )
-                                            }}</span>
-
-                                            <!-- <input name="special_dawat_included_village"
-                                                :value="formatBangla(report_sum_data?.ward_department2_moholla_vittik_dawats?.special_dawat_included_village)"
-                                                @change="data_upload('ward-department2-moholla-vittik-dawat')"
-                                                type="text" class="bg-input w-100 text-center" />/
-                                            <input name="special_dawat_included_moholla"
-                                                :value="formatBangla(report_sum_data?.ward_department2_moholla_vittik_dawats?.special_dawat_included_moholla)"
-                                                @change="data_upload('ward-department2-moholla-vittik-dawat')"
-                                                type="text" class="bg-input w-100 text-center" /> -->
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="special_dawat_included_village"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.special_dawat_included_village
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="special_dawat_included_moholla"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.special_dawat_included_moholla
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="d-flex">
-                                            <input
-                                                name="special_dawat_included_village_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.special_dawat_included_village_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="special_dawat_included_moholla_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.special_dawat_included_moholla_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="special_dawat_included_village_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.special_dawat_included_village_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="special_dawat_included_moholla_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.special_dawat_included_moholla_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -1726,42 +3525,60 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department2_moholla_vittik_dawats
+                                                        ?.thana_department2_moholla_vittik_dawats
                                                         ?.how_many_been_invited
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department2-moholla-vittik-dawat'
+                                                    'thana-department2-moholla-vittik-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">
                                         কতজন সহযোগী সদস্য হয়েছেন
                                     </td>
-                                    <td class="width-30">
+                                    <td>
                                         <input
                                             name="how_many_associated_created"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department2_moholla_vittik_dawats
+                                                        ?.thana_department2_moholla_vittik_dawats
                                                         ?.how_many_associated_created
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department2-moholla-vittik-dawat'
+                                                    'thana-department2-moholla-vittik-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                             </tbody>
@@ -1773,9 +3590,7 @@
                     </p>
                 </div>
                 <div class="jubo mb-2">
-                    <h4 class="fs-6 fw-bold">
-                        ৩. যুব বিভাগের মাধ্যমে দাওয়াত*:
-                    </h4>
+                    <h4 class="fs-6 fw-bold">৩. যুব সমাজের মাঝে দাওয়াত*:</h4>
                     <div class="d-flex align-items-start gap-2">
                         <div class="left w-100">
                             <table class="text-center mb-1">
@@ -1797,18 +3612,27 @@
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
-                                                            ?.ward_department3_jubo_somaj_dawats
+                                                            ?.thana_department3_jubo_somaj_dawats
                                                             ?.how_many_young_been_invited
                                                     )
                                                 "
                                                 @change="
                                                     data_upload(
-                                                        'ward-department3-jubo-somaj-dawat'
+                                                        'thana-department3-jubo-somaj-dawat'
                                                     )
                                                 "
                                                 type="text"
-                                                class="bg-input w-100 text-center"
+                                                class="bg-input fixed-input-30 text-center"
                                             />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1821,18 +3645,27 @@
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
-                                                            ?.ward_department3_jubo_somaj_dawats
+                                                            ?.thana_department3_jubo_somaj_dawats
                                                             ?.how_many_young_been_associated
                                                     )
                                                 "
                                                 @change="
                                                     data_upload(
-                                                        'ward-department3-jubo-somaj-dawat'
+                                                        'thana-department3-jubo-somaj-dawat'
                                                     )
                                                 "
                                                 type="text"
-                                                class="bg-input w-100 text-center"
+                                                class="bg-input fixed-input-30 text-center"
                                             />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1855,15 +3688,32 @@
                                 <tr>
                                     <td class="text-start px-2">যুব কমিটি</td>
                                     <td>
-                                        {{
-                                            formatBangla(
-                                                previous_present?.total_young_committee_present
-                                            )
-                                        }}
-                                        <!-- <input name="total_young_committee"
-                                            :value="formatBangla(report_sum_data?.ward_department3_jubo_somaj_dawats?.total_young_committee)"
-                                            @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text"
-                                            class="bg-input w-100 text-center" /> -->
+                                        <input
+                                            name="total_young_committee"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department3_jubo_somaj_dawats
+                                                        ?.total_young_committee
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department3-jubo-somaj-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                     <td>
                                         <input
@@ -1871,18 +3721,27 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department3_jubo_somaj_dawats
+                                                        ?.thana_department3_jubo_somaj_dawats
                                                         ?.total_young_committee_increased
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department3-jubo-somaj-dawat'
+                                                    'thana-department3-jubo-somaj-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1890,14 +3749,32 @@
                                         নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে
                                     </td>
                                     <td>
-                                        {{
-                                            formatBangla(
-                                                previous_present?.total_new_club_present
-                                            )
-                                        }}
-                                        <!-- <input name="total_new_club" :value="formatBangla(report_sum_data?.ward_department3_jubo_somaj_dawats?.total_new_club)"
-                                            @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text"
-                                            class="bg-input w-100 text-center" /> -->
+                                        <input
+                                            name="total_new_club"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department3_jubo_somaj_dawats
+                                                        ?.total_new_club
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department3-jubo-somaj-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                     <td>
                                         <input
@@ -1905,18 +3782,27 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department3_jubo_somaj_dawats
+                                                        ?.thana_department3_jubo_somaj_dawats
                                                         ?.total_new_club_increased
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department3-jubo-somaj-dawat'
+                                                    'thana-department3-jubo-somaj-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1925,15 +3811,32 @@
                                         হয়েছে
                                     </td>
                                     <td>
-                                        {{
-                                            formatBangla(
-                                                previous_present?.stablished_club_total_invited_present
-                                            )
-                                        }}
-                                        <!-- <input name="stablished_club_total_invited"
-                                            :value="formatBangla(report_sum_data?.ward_department3_jubo_somaj_dawats?.stablished_club_total_invited)"
-                                            @change="data_upload('ward-department3-jubo-somaj-dawat')" type="text"
-                                            class="bg-input w-100 text-center" /> -->
+                                        <input
+                                            name="stablished_club_total_invited"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department3_jubo_somaj_dawats
+                                                        ?.stablished_club_total_invited
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department3-jubo-somaj-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                     <td>
                                         <input
@@ -1941,18 +3844,27 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department3_jubo_somaj_dawats
+                                                        ?.thana_department3_jubo_somaj_dawats
                                                         ?.stablished_club_total_increased
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department3-jubo-somaj-dawat'
+                                                    'thana-department3-jubo-somaj-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                             </tbody>
@@ -1967,211 +3879,472 @@
                         <table class="text-center mb-1">
                             <thead>
                                 <tr>
-                                    <th class="width-30 letter_spacing">
-                                        শ্রেণি-পেশার বিবরণ
+                                    <th class="">শ্রেণি-পেশার বিবরণ</th>
+                                    <th class="">
+                                        মোট কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে
                                     </th>
-                                    <th class="w-25 px-0 font-13">
-                                        কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে
-                                    </th>
-                                    <th class="width-20 px-0 font-13">
-                                        কতজন সহযোগী সদস্য হয়েছেন
+                                    <th class="">
+                                        মোট কতজন সহযোগী সদস্য হয়েছেন
                                     </th>
                                     <th class="width-10">টার্গেট</th>
-                                    <th class="font-13 width-15">
-                                        বাস্তবায়নের হার
-                                    </th>
+                                    <th class="">বাস্তবায়নের হার</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="text-start letter_spacing">
-                                        রাজ: ও বিশিষ্ট ব্যক্তিবর্গ
+                                    <td class="text-start px-2">
+                                        রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ (পু/ম)
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="political_and_special_invited"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.political_and_special_invited
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'political_and_special_invited'"
-                                                :month="month"
-                                            >
-                                            </popup>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="political_and_special_invited_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.political_and_special_invited_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="political_and_special_invited_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.political_and_special_invited_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="political_and_special_been_associated"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.political_and_special_been_associated
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'political_and_special_been_associated'"
-                                                :month="month"
-                                            >
-                                            </popup>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="political_and_special_been_associated_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.political_and_special_been_associated_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="political_and_special_been_associated_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.political_and_special_been_associated_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="political_and_special_target"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.political_and_special_target
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'political_and_special_target'"
-                                                :month="month"
-                                            >
-                                            </popup>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="political_and_special_target_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.political_and_special_target_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="political_and_special_target_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.political_and_special_target_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        {{
-                                            formatBangla(
-                                                implementation_rate(
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.political_and_special_target
-                                                    ),
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.political_and_special_been_associated
-                                                    )
+                                        <input
+                                            name="special_dawat_included_moholla_increased"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.special_dawat_included_moholla_increased
                                                 )
-                                            )
-                                        }}
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-start px-2">পেশাজীবী</td>
+                                    <td class="text-start px-2">
+                                        পেশাজীবী (পু/ম)
+                                    </td>
+                                    <td>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="pesha_jibi_invited_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.pesha_jibi_invited_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="pesha_jibi_invited_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.pesha_jibi_invited_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="pesha_jibi_been_associated_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.pesha_jibi_been_associated_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="pesha_jibi_been_associated_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.pesha_jibi_been_associated_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="pesha_jibi_target_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.pesha_jibi_target_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="pesha_jibi_target_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.pesha_jibi_target_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
                                         <input
-                                            name="pesha_jibi_invited"
+                                            name="special_dawat_included_moholla_increased"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.pesha_jibi_invited
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.special_dawat_included_moholla_increased
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
+                                                    'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
-                                    </td>
-                                    <td>
-                                        <input
-                                            name="pesha_jibi_been_associated"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.pesha_jibi_been_associated
-                                                )
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
                                             "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                    </td>
-                                    <td>
-                                        <input
-                                            name="pesha_jibi_target"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.pesha_jibi_target
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                    </td>
-                                    <td>
-                                        {{
-                                            formatBangla(
-                                                implementation_rate(
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.pesha_jibi_target
-                                                    ),
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.pesha_jibi_been_associated
-                                                    )
-                                                )
-                                            )
-                                        }}
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
@@ -2184,18 +4357,27 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
+                                                        ?.thana_department4_different_job_holders_dawats
                                                         ?.olama_masayekh_invited
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
+                                                    'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                     <td>
                                         <input
@@ -2203,18 +4385,27 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
+                                                        ?.thana_department4_different_job_holders_dawats
                                                         ?.olama_masayekh_been_associated
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
+                                                    'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                     <td>
                                         <input
@@ -2222,351 +4413,751 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
+                                                        ?.thana_department4_different_job_holders_dawats
                                                         ?.olama_masayekh_target
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
+                                                    'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
-                                    <td>
-                                        {{
-                                            formatBangla(
-                                                implementation_rate(
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.olama_masayekh_target
-                                                    ),
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.olama_masayekh_been_associated
-                                                    )
-                                                )
-                                            )
-                                        }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="text-center mb-1">
-                            <thead>
-                                <tr>
-                                    <th class="width-30 letter_spacing">
-                                        শ্রেণি-পেশার বিবরণ
-                                    </th>
-                                    <th class="w-25 px-0 font-13">
-                                        কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে
-                                    </th>
-                                    <th class="width-20 px-0 font-13">
-                                        কতজন সহযোগী সদস্য হয়েছেন
-                                    </th>
-                                    <th class="width-10">টার্গেট</th>
-                                    <th class="font-13 width-15">
-                                        বাস্তবায়নের হার
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-start px-1">শ্রমজীবী</td>
                                     <td>
                                         <input
-                                            name="sromo_jibi_invited"
+                                            name="special_dawat_included_moholla_increased"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.sromo_jibi_invited
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.special_dawat_included_moholla_increased
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
+                                                    'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-30 text-center"
                                         />
-                                    </td>
-                                    <td>
-                                        <input
-                                            name="sromo_jibi_been_associated"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.sromo_jibi_been_associated
-                                                )
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
                                             "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                    </td>
-                                    <td>
-                                        <input
-                                            name="sromo_jibi_target"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.sromo_jibi_target
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                    </td>
-                                    <td>
-                                        {{
-                                            formatBangla(
-                                                implementation_rate(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.sromo_jibi_target,
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.sromo_jibi_been_associated
-                                                )
-                                            )
-                                        }}
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td
-                                        class="text-start px-1 letter_spacing font-13"
-                                    >
+                                    <td class="text-start px-2">
+                                        কর্মজীবী মহিলা
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="kormo_jibi_woman_invited"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.kormo_jibi_woman_invited
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="kormo_jibi_woman_been_associated"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.kormo_jibi_woman_been_associated
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="kormo_jibi_woman_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.kormo_jibi_woman_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="special_dawat_included_moholla_increased"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.special_dawat_included_moholla_increased
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">
+                                        শ্রমজীবী (পু/ম)
+                                    </td>
+                                    <td>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="sromo_jibi_invited_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.sromo_jibi_invited_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="sromo_jibi_invited_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.sromo_jibi_invited_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="sromo_jibi_been_associated_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.sromo_jibi_been_associated_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="sromo_jibi_been_associated_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.sromo_jibi_been_associated_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div
+                                            class="d-flex justify-content-center align-items-center"
+                                        >
+                                            <div>
+                                                <input
+                                                    name="sromo_jibi_target_man"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.sromo_jibi_target_man
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <p>/</p>
+                                            <div>
+                                                <input
+                                                    name="sromo_jibi_target_woman"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department4_different_job_holders_dawats
+                                                                ?.sromo_jibi_target_woman
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department4-different-job-holders-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input fixed-input-30 text-center"
+                                                />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info
+                                                            ?.id
+                                                    "
+                                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                                    :field_title="'how_many_groups_are_out'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="special_dawat_included_moholla_increased"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.special_dawat_included_moholla_increased
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">
+                                        মিডিয়া কর্মী
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="media_worker_invited"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.media_worker_invited
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="media_worker_been_associated"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.media_worker_been_associated
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="media_worker_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.media_worker_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="special_dawat_included_moholla_increased"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.special_dawat_included_moholla_increased
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">
                                         প্রান্তিক জনগোষ্ঠী (অতি দরিদ্র)
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="prantik_jonogosti_invited"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.prantik_jonogosti_invited
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'prantik_jonogosti_invited'"
-                                                :month="month"
-                                            >
-                                            </popup>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="prantik_jonogosti_been_associated"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.prantik_jonogosti_been_associated
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'prantik_jonogosti_been_associated'"
-                                                :month="month"
-                                            >
-                                            </popup>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="prantik_jonogosti_target"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.prantik_jonogosti_target
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'prantik_jonogosti_target'"
-                                                :month="month"
-                                            >
-                                            </popup>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        {{
-                                            formatBangla(
-                                                implementation_rate(
+                                        <input
+                                            name="prantik_jonogosti_invited"
+                                            :value="
+                                                formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.prantik_jonogosti_target,
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.prantik_jonogosti_invited
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="prantik_jonogosti_been_associated"
+                                            :value="
+                                                formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
+                                                        ?.thana_department4_different_job_holders_dawats
                                                         ?.prantik_jonogosti_been_associated
                                                 )
-                                            )
-                                        }}
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="prantik_jonogosti_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.prantik_jonogosti_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="special_dawat_included_moholla_increased"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.special_dawat_included_moholla_increased
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-start px-1">
+                                    <td class="text-start px-2">
                                         ভিন্নধর্মাবলম্বী
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="vinno_dormalombi_invited"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.vinno_dormalombi_invited
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'vinno_dormalombi_invited'"
-                                                :month="month"
-                                            >
-                                            </popup>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="vinno_dormalombi_been_associated"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.vinno_dormalombi_been_associated
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'vinno_dormalombi_been_associated'"
-                                                :month="month"
-                                            >
-                                            </popup>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="parent_popup">
-                                            <input
-                                                name="vinno_dormalombi_target"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.vinno_dormalombi_target
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department4-different-job-holders-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department4_different_job_holders_dawats'"
-                                                :field_title="'vinno_dormalombi_target'"
-                                                :month="month"
-                                            >
-                                            </popup>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        {{
-                                            formatBangla(
-                                                implementation_rate(
+                                        <input
+                                            name="vinno_dormalombi_invited"
+                                            :value="
+                                                formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.vinno_dormalombi_target,
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.vinno_dormalombi_invited
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="vinno_dormalombi_been_associated"
+                                            :value="
+                                                formatBangla(
                                                     report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
+                                                        ?.thana_department4_different_job_holders_dawats
                                                         ?.vinno_dormalombi_been_associated
                                                 )
-                                            )
-                                        }}
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="vinno_dormalombi_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.vinno_dormalombi_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
+                                    <td>
+                                        <input
+                                            name="special_dawat_included_moholla_increased"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department4_different_job_holders_dawats
+                                                        ?.special_dawat_included_moholla_increased
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department4-different-job-holders-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                             </tbody>
@@ -2576,74 +5167,16 @@
                 <div class="paribarik mb-2">
                     <h4 class="fs-6 fw-bold">৫. পরিবারভিত্তিক দাওয়াত</h4>
                     <table class="text-center table_layout_fixed">
+                        <thead>
+                            <th>দাওয়াতি কাজে অংশগ্রহণকারী মোট পরিবার</th>
+                            <th>
+                                মোট কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে
+                            </th>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td class="width-35">
-                                    দাওয়াতি কাজে অংশগ্রহণকারী মোট পরিবার সংখ্যা
-                                </td>
-                                <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="total_attended_family"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department5_paribarik_dawats
-                                                        ?.total_attended_family
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department5-paribarik-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'department5_paribarik_dawats'"
-                                            :field_title="'total_attended_family'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
-                                </td>
-                                <td class="width-35">
-                                    মোট কতটি নতুন পরিবারে দাওয়াত পৌঁছানো হয়েছে
-                                </td>
-                                <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="how_many_new_family_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department5_paribarik_dawats
-                                                        ?.how_many_new_family_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department5-paribarik-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'department5_paribarik_dawats'"
-                                            :field_title="'how_many_new_family_invited'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
-                                </td>
+                                <td>54</td>
+                                <td>67</td>
                             </tr>
                         </tbody>
                     </table>
@@ -2667,258 +5200,80 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">মসজিদ</td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            previous_present?.total_mosjid_present
-                                        )
-                                    }}
-                                    <!-- <input name="total_mosjid" :value="formatBangla(report_sum_data?.ward_department6_mosjid_dawah_infomation_centers?.total_mosjid)"
-                                        @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')"
-                                        type="text" class="bg-input w-100 text-center" /> -->
-                                </td>
-                                <td>
-                                    <input
-                                        name="total_mosjid_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_department6_mosjid_dawah_infomation_centers
-                                                    ?.total_mosjid_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-department6-mosjid-dawah-infomation-centers'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
+                                <td>54</td>
+                                <td>21</td>
                                 <td class="text-start px-2">
                                     সাধারণ দাওয়াহ্ সেন্টার
                                 </td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            previous_present?.general_dawah_center_present
-                                        )
-                                    }}
-                                    <!-- <input name="general_dawah_center"
-                                        :value="formatBangla(report_sum_data?.ward_department6_mosjid_dawah_infomation_centers?.general_dawah_center)"
-                                        @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')"
-                                        type="text" class="bg-input w-100 text-center" /> -->
-                                </td>
-                                <td>
-                                    <input
-                                        name="general_dawah_center_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_department6_mosjid_dawah_infomation_centers
-                                                    ?.general_dawah_center_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-department6-mosjid-dawah-infomation-centers'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
+                                <td>32</td>
+                                <td>32</td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     দাওয়াতের আওতাভুক্ত মসজিদ
                                 </td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            previous_present?.dawat_included_mosjid_present
-                                        )
-                                    }}
-                                    <!-- <input name="dawat_included_mosjid"
-                                        :value="formatBangla(report_sum_data?.ward_department6_mosjid_dawah_infomation_centers?.dawat_included_mosjid)"
-                                        @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')"
-                                        type="text" class="bg-input w-100 text-center" /> -->
-                                </td>
-                                <td>
-                                    <input
-                                        name="dawat_included_mosjid_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_department6_mosjid_dawah_infomation_centers
-                                                    ?.dawat_included_mosjid_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-department6-mosjid-dawah-infomation-centers'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
+                                <td>34</td>
+                                <td>45</td>
                                 <td class="text-start px-2">
                                     তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক /সাধারণ)
                                 </td>
-                                <td>
-                                    <div>
-                                        <span>{{
-                                            formatBangla(
-                                                previous_present?.mosjid_wise_information_center_present
-                                            )
-                                        }}</span
-                                        >/
-                                        <span>{{
-                                            formatBangla(
-                                                previous_present?.general_information_center_present
-                                            )
-                                        }}</span>
-
-                                        <!-- <input name="mosjid_wise_information_center"
-                                            :value="formatBangla(report_sum_data?.ward_department6_mosjid_dawah_infomation_centers?.mosjid_wise_information_center)"
-                                            @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')"
-                                            type="text" class="bg-input w-100 text-center" />/
-                                        <input name="general_information_center"
-                                            :value="formatBangla(report_sum_data?.ward_department6_mosjid_dawah_infomation_centers?.general_information_center)"
-                                            @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')"
-                                            type="text" class="bg-input w-100 text-center" /> -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <input
-                                            name="mosjid_wise_information_center_increase"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department6_mosjid_dawah_infomation_centers
-                                                        ?.mosjid_wise_information_center_increase
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department6-mosjid-dawah-infomation-centers'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="general_information_center_increase"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department6_mosjid_dawah_infomation_centers
-                                                        ?.general_information_center_increase
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department6-mosjid-dawah-infomation-centers'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                    </div>
-                                </td>
+                                <td>/</td>
+                                <td>/</td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     মসজিদভিত্তিক দাওয়াহ্ সেন্টার
                                 </td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            previous_present?.mosjid_wise_dawah_center_present
-                                        )
-                                    }}
-                                    <!-- <input name="mosjid_wise_dawah_center"
-                                        :value="formatBangla(report_sum_data?.ward_department6_mosjid_dawah_infomation_centers?.mosjid_wise_dawah_center)"
-                                        @change="data_upload('ward-department6-mosjid-dawah-infomation-centers')"
-                                        type="text" class="bg-input w-100 text-center" /> -->
+                                <td>34</td>
+                                <td>45</td>
+                                <td class="text-start px-2">
+                                    নিয়োজিত প্রশিক্ষিত দাঈ *
                                 </td>
-                                <td>
-                                    <input
-                                        name="mosjid_wise_dawah_center_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_department6_mosjid_dawah_infomation_centers
-                                                    ?.mosjid_wise_dawah_center_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-department6-mosjid-dawah-infomation-centers'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
-                                <td class="text-start px-2"></td>
                                 <td></td>
                                 <td></td>
                             </tr>
                         </tbody>
                     </table>
+                    <p>
+                        *প্রশিক্ষিত দাঈ বলতে কেন্দ্রীয় মডিউলের আলোকে দাওয়াহ
+                        মাস্টার ট্রেইনার দ্বারা প্রশিক্ষিত দাঈদের বুঝানো হয়েছে।
+                    </p>
                 </div>
-                <div
-                    class="tottho_projukti d-flex flex-wrap justify-content-between mb-1"
-                >
-                    <p class="fw-bold fs-6 width-60">
-                        ৭. তথ্যপ্রযুক্তির মাধ্যমে দাওয়াতি কাজের জন্য উপযুক্ত
-                        জনশক্তি সংখ্যা:
-                        <span>
-                            <input
-                                name="total_well_known"
-                                :value="
-                                    formatBangla(
-                                        report_sum_data
-                                            ?.ward_department7_dawat_in_technologies
-                                            ?.total_well_known
-                                    )
-                                "
-                                @change="
-                                    data_upload(
-                                        'ward-department7-dawat-in-technology'
-                                    )
-                                "
-                                type="text"
-                                class="bg-input w-100 text-center"
-                            />
-                        </span>
-                    </p>
-                    <p class="fw-bold fs-6 width-40">
-                        ,অংশগ্রহণকারীর সংখ্যা:
-                        <span>
-                            <input
-                                name="total_attended"
-                                :value="
-                                    formatBangla(
-                                        report_sum_data
-                                            ?.ward_department7_dawat_in_technologies
-                                            ?.total_attended
-                                    )
-                                "
-                                @change="
-                                    data_upload(
-                                        'ward-department7-dawat-in-technology'
-                                    )
-                                "
-                                type="text"
-                                class="bg-input w-100 text-center"
-                            />
-                        </span>
-                    </p>
+                <div class="tottho_projukti mb-2">
+                    <h4 class="fs-6 fw-bold">
+                        ৭. তথ্যপ্রযুক্তির মাধ্যমে দাওয়াত :
+                    </h4>
+                    <table class="text-center table_layout_fixed">
+                        <thead>
+                            <th>মোট উপযুক্ত জনশক্তি সংখ্যা (পুরুষ/মহিলা)</th>
+                            <th>মোট অংশগ্রহণকারী সংখ্যা (পুরুষ/মহিলা)</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>/</td>
+                                <td>/</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="songskriti mb-2">
+                    <h4 class="fs-6 fw-bold">
+                        ৮. সাংস্কৃতিক কাজের মাধ্যমে দাওয়াত:
+                    </h4>
+                    <table class="text-center table_layout_fixed">
+                        <thead>
+                            <th>প্রফেশনাল সাংস্কৃতিক টিম সংখ্যা</th>
+                            <th>মোট দাওয়াতি সাংস্কৃতিক প্রোগ্রাম সংখ্যা</th>
+                            <th>মোট কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>34</td>
+                                <td>45</td>
+                                <td>45</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -12093,6 +14448,8 @@ export default {
                     others: null,
                 },
             },
+
+            mass_communication: {},
         };
     },
 
@@ -12161,10 +14518,96 @@ export default {
                 (this.total_previous = res.data.total_previous),
                     (this.total_current_income = res.data.total_current_income),
                     (this.in_total = res.data.in_total);
-                console.log("this.previous_present", this.previous_present);
+                // console.log("this.previous_present", this.previous_present);
+                this.count_mass_communication(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                );
             }
 
-            console.log("wardUpload", this.month);
+            // console.log("wardUpload", this.month);
+        },
+
+        count_mass_communication: function (response) {
+            let data = response;
+
+            this.mass_communication.total_mass_communication_dosok_male =
+                Number(
+                    data.gono_songjog_doshok_attended_man +
+                        data.gono_songjog_doshok_associate_members_created_man +
+                        data.gono_songjog_doshok_invited_man
+                );
+
+            this.mass_communication.total_mass_communication_dosok_female =
+                Number(
+                    data.gono_songjog_doshok_attended_woman +
+                        data.gono_songjog_doshok_associate_members_created_woman +
+                        data.gono_songjog_doshok_invited_woman
+                );
+
+            this.mass_communication.total_mass_communication_pokkho_male =
+                Number(
+                    data.gono_songjog_pokkho_attended_man +
+                        data.gono_songjog_pokkho_associate_members_created_man +
+                        data.gono_songjog_pokkho_invited_man
+                );
+
+            this.mass_communication.total_mass_communication_pokkho_female =
+                Number(
+                    data.gono_songjog_pokkho_attended_woman +
+                        data.gono_songjog_pokkho_associate_members_created_woman +
+                        data.gono_songjog_pokkho_invited_woman
+                );
+
+            this.mass_communication.total_jela_decl_mass_comm_ovi = Number(
+                data.jela_declared_gonosonjog_dawati_ovi_attended +
+                    data.jela_declared_gonosonjog_dawati_ovi_invited +
+                    data.jela_declared_gonosonjog_dawati_ovi_associated_created
+            );
+            this.mass_communication.total_mohanogon_decl_mass_comm_ovi = Number(
+                data.mohanogor_declared_gonosonjog_dawati_ovi_attended +
+                    data.mohanogor_declared_gonosonjog_dawati_ovi_invited +
+                    data.mohanogor_declared_gonosonjog_dawati_ovi_associated_created
+            );
+            this.mass_communication.total_election_mass_comm_week_man = Number(
+                data.election_attended_man +
+                    data.election_how_many_have_been_invited_man +
+                    data.election_how_many_associate_members_created_man
+            );
+            this.mass_communication.total_election_mass_comm_week_woman =
+                Number(
+                    data.election_attended_woman +
+                        data.election_how_many_have_been_invited_woman +
+                        data.election_how_many_associate_members_created_woman
+                );
+
+            this.mass_communication.total_ulama_mass_comm_week_man = Number(
+                data.ulama_attended_man +
+                    data.ulama_how_many_have_been_invited_man +
+                    data.ulama_how_many_associate_members_created_man
+            );
+            this.mass_communication.total_ulama_mass_comm_week_woman = Number(
+                data.ulama_attended_woman +
+                    data.ulama_how_many_have_been_invited_woman +
+                    data.ulama_how_many_associate_members_created_woman
+            );
+            this.mass_communication.total_pesajibi_mass_comm_week_man = Number(
+                data.peshajibi_attended_man +
+                    data.peshajibi_how_many_have_been_invited_man +
+                    data.peshajibi_how_many_associate_members_created_man
+            );
+            this.mass_communication.total_pesajibi_mass_comm_week_woman =
+                Number(
+                    data.peshajibi_attended_woman +
+                        data.peshajibi_how_many_have_been_invited_woman +
+                        data.peshajibi_how_many_associate_members_created_woman
+                );
+
+            this.mass_communication.total_others = Number(
+                data.other_attended +
+                    data.other_how_many_have_been_invited +
+                    data.other_how_many_associate_members_created
+            );
         },
         average_data: async function ($table_name) {
             const field_mappings = {
@@ -12600,6 +15043,15 @@ export default {
                     popup.style.display === "block" ? "none" : "block";
             }
         },
+
+        total_man_woman_count: function (man, woman) {
+            const total = Number(man || 0) + Number(woman || 0);
+            return this.formatBangla(total);
+        },
+        get_sum_total: function (...args) {
+            let value = args.reduce((sum, num) => sum + Number(num || 0), 0);
+            return this.formatBangla(value);
+        },
     },
     computed: {
         total_dawat: function () {
@@ -12643,6 +15095,14 @@ export default {
 </script>
 
 <style>
+.fixed-input {
+    width: 60px; /* Set a fixed width */
+    text-align: center; /* Center align the text */
+}
+.fixed-input-30 {
+    width: 25px; /* Set a fixed width */
+    text-align: center; /* Center align the text */
+}
 /* @import url("../../../../../../public/css/unit/unit_report_upload.css"); */
 @import url("../../../../../../../public/css/ward/ward_report_upload.css");
 </style>

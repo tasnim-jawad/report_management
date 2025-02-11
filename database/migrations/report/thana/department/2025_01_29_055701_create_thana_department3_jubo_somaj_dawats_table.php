@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('thana_department3_jubo_somaj_dawats', function (Blueprint $table) {
             $table->id();
+
             $table->bigInteger('report_info_id')->unsigned()->nullable();
+
             $table->bigInteger('how_many_young_been_invited')->nullable();
             $table->bigInteger('how_many_young_been_associated')->nullable();
 

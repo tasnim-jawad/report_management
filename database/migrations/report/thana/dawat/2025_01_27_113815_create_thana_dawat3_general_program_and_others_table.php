@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('thana_dawat3_general_program_and_others', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('report_info_id')->unsigned()->nullable();
+
             $table->integer('how_many_were_give_dawat_man')->unsigned()->nullable();
             $table->integer('how_many_were_give_dawat_woman')->unsigned()->nullable();
+
             $table->integer('how_many_associate_members_created_man')->unsigned()->nullable();
             $table->integer('how_many_associate_members_created_woman')->unsigned()->nullable();
+
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();

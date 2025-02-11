@@ -10,6 +10,7 @@ use App\Http\Controllers\Actions\ReportHeader;
 use App\Http\Controllers\Controller;
 use App\Models\Bm\Thana\Expense\ThanaBmExpense;
 use App\Models\Bm\Thana\Income\ThanaBmIncome;
+use App\Models\Bm\Ward\Expense\WardBmExpense;
 use App\Models\Bm\Ward\Income\WardBmIncome;
 use App\Models\Organization\OrgThanaUser;
 use App\Models\Report\ReportInfo;
@@ -421,7 +422,7 @@ class ThanaController extends Controller
         $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
         $is_need_sum = false;
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
-        dd($datas);
+
 
         // -------------------------- bm previous report ------------------------------------
         $carbon_start_month = Carbon::parse($start_month);

@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('report_info_id')->nullable();
             $table->bigInteger('how_many_groups_are_out_man')->nullable();
-            $table->bigInteger('number_of_participants_man')->nullable();
-            $table->bigInteger('how_many_have_been_invited_man')->nullable();
-            $table->bigInteger('how_many_associate_members_created_man')->nullable();
             $table->bigInteger('how_many_groups_are_out_woman')->nullable();
+            $table->bigInteger('number_of_participants_man')->nullable();
             $table->bigInteger('number_of_participants_woman')->nullable();
+            $table->bigInteger('how_many_have_been_invited_man')->nullable();
             $table->bigInteger('how_many_have_been_invited_woman')->nullable();
+            $table->bigInteger('how_many_associate_members_created_man')->nullable();
             $table->bigInteger('how_many_associate_members_created_woman')->nullable();
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
