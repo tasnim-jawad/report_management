@@ -2117,28 +2117,28 @@ export default {
 
             {
                 label:'উপজেলা বিভাগীয় সেক্রেটারির সফর',
-                name:'ward_sovapotir_sofor',
+                name:'upojela_secretariat_total_sofor_woman',
             },
             {
                 label:'থানা বিভাগীয় সেক্রেটারির সফর',
-                name:'ward_sovapotir_sofor',
+                name:'thana_secretariat_total_sofor_woman',
             },
 
             {
                 label:'উপজেলা কর্মপরিষদ সদস্যদের সফর',
-                name:'word_sura_sodosso_sofor',
+                name:'upojela_kormoporishod_total_sofor_woman',
             },
             {
                 label:'উপজেলা টিম সদস্যদের সফর',
-                name:'word_sura_sodosso_sofor',
+                name:'upojela_team_total_sofor_woman',
             },
             {
                 label:'থানা কর্মপরিষদ সদস্যদের সফর',
-                name:'word_sura_sodosso_sofor',
+                name:'thana_kormoporishod_total_sofor_woman',
             },
             {
                 label:'থানা টিম সদস্যদের সফর',
-                name:'word_sura_sodosso_sofor',
+                name:'thana_team_total_sofor_woman',
             },
         ],
 
@@ -2163,134 +2163,477 @@ export default {
             },
         ],
 
+        upojela_mozlishe_sura_boithok_man: [
+            { label: 'সংখ্যা', name: 'upojela_mozlishe_sura_boithok_man_total' },
+            { label: 'টার্গেট', name: 'upojela_mozlishe_sura_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_mozlishe_sura_boithok_man_uposthiti' },
+        ],
+        upojela_mozlishe_sura_boithok_women: [
+            { label: 'সংখ্যা', name: 'upojela_mozlishe_sura_boithok_women_total' },
+            { label: 'টার্গেট', name: 'upojela_mozlishe_sura_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_mozlishe_sura_boithok_women_uposthiti' },
+        ],
+        thana_mozlishe_sura_boithok_man: [
+            { label: 'সংখ্যা', name: 'thana_mozlishe_sura_boithok_man_total' },
+            { label: 'টার্গেট', name: 'thana_mozlishe_sura_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_mozlishe_sura_boithok_man_uposthiti' },
+        ],
+        thana_mozlishe_sura_boithok_women: [
+            { label: 'সংখ্যা', name: 'thana_mozlishe_sura_boithok_women_total' },
+            { label: 'টার্গেট', name: 'thana_mozlishe_sura_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_mozlishe_sura_boithok_women_uposthiti' },
+        ],
+        pourosova_mozlishe_sura_boithok_man: [
+            { label: 'সংখ্যা', name: 'pourosova_mozlishe_sura_boithok_man_total' },
+            { label: 'টার্গেট', name: 'pourosova_mozlishe_sura_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pourosova_mozlishe_sura_boithok_man_uposthiti' },
+        ],
+        pourosova_mozlishe_sura_boithok_women: [
+            { label: 'সংখ্যা', name: 'pourosova_mozlishe_sura_boithok_women_total' },
+            { label: 'টার্গেট', name: 'pourosova_mozlishe_sura_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pourosova_mozlishe_sura_boithok_women_uposthiti' },
+        ],
 
 
-        word_sura_boithok:[
-            {
-                label:'সংখ্যা',
-                name:'word_sura_boithok_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'word_sura_boithok_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'word_sura_boithok_uposthiti',
-            },
+        union_mozlishe_sura_boithok_man: [
+            { label: 'সংখ্যা', name: 'union_mozlishe_sura_boithok_man_total' },
+            { label: 'টার্গেট', name: 'union_mozlishe_sura_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_mozlishe_sura_boithok_man_uposthiti' },
         ],
-        kormoporishod_boithok:[
-            {
-                label:'সংখ্যা',
-                name:'kormoporishod_boithok_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'kormoporishod_boithok_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'kormoporishod_boithok_uposthiti',
-            },
+
+        union_mozlishe_sura_boithok_women: [
+            { label: 'সংখ্যা', name: 'union_mozlishe_sura_boithok_women_total' },
+            { label: 'টার্গেট', name: 'union_mozlishe_sura_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_mozlishe_sura_boithok_women_uposthiti' },
         ],
-        team_boithok:[
-            {
-                label:'সংখ্যা',
-                name:'team_boithok_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'team_boithok_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'team_boithok_uposthiti',
-            },
+
+        upojela_kormoporishod_boithok_man: [
+            { label: 'সংখ্যা', name: 'upojela_kormoporishod_boithok_man_total' },
+            { label: 'টার্গেট', name: 'upojela_kormoporishod_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_kormoporishod_boithok_man_uposthiti' },
         ],
-        word_boithok:[
-            {
-                label:'সংখ্যা',
-                name:'word_boithok_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'word_boithok_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'word_boithok_uposthiti',
-            },
+
+        upojela_kormoporishod_boithok_women: [
+            { label: 'সংখ্যা', name: 'upojela_kormoporishod_boithok_women_total' },
+            { label: 'টার্গেট', name: 'upojela_kormoporishod_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_kormoporishod_boithok_women_uposthiti' },
         ],
-        masik_sodosso_boithok:[
-            {
-                label:'সংখ্যা',
-                name:'masik_sodosso_boithok_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'masik_sodosso_boithok_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'masik_sodosso_boithok_uposthiti',
-            },
+
+        thana_kormoporishod_boithok_man: [
+            { label: 'সংখ্যা', name: 'thana_kormoporishod_boithok_man_total' },
+            { label: 'টার্গেট', name: 'thana_kormoporishod_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_kormoporishod_boithok_man_uposthiti' },
         ],
-        unit_kormi_boithok:[
-            {
-                label:'সংখ্যা',
-                name:'unit_kormi_boithok_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'unit_kormi_boithok_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'unit_kormi_boithok_uposthiti',
-            },
+
+        thana_kormoporishod_boithok_women: [
+            { label: 'সংখ্যা', name: 'thana_kormoporishod_boithok_women_total' },
+            { label: 'টার্গেট', name: 'thana_kormoporishod_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_kormoporishod_boithok_women_uposthiti' },
         ],
-        ulama_somabesh:[
-            {
-                label:'সংখ্যা',
-                name:'ulama_somabesh_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'ulama_somabesh_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'ulama_somabesh_uposthiti',
-            },
+
+        pourosova_kormoporishod_boithok_man: [
+            { label: 'সংখ্যা', name: 'pourosova_kormoporishod_boithok_man_total' },
+            { label: 'টার্গেট', name: 'pourosova_kormoporishod_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pourosova_kormoporishod_boithok_man_uposthiti' },
         ],
-        jubok_somabesh:[
-            {
-                label:'সংখ্যা',
-                name:'jubok_somabesh_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'jubok_somabesh_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'jubok_somabesh_uposthiti',
-            },
+
+        pourosova_kormoporishod_boithok_women: [
+            { label: 'সংখ্যা', name: 'pourosova_kormoporishod_boithok_women_total' },
+            { label: 'টার্গেট', name: 'pourosova_kormoporishod_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pourosova_kormoporishod_boithok_women_uposthiti' },
         ],
-        sromik_somabesh:[
-            {
-                label:'সংখ্যা',
-                name:'sromik_somabesh_total',
-            },
-            {
-                label:'টার্গেট',
-                name:'sromik_somabesh_target',
-            },
-            {
-                label:'টোটাল উপস্থিতি',
-                name:'sromik_somabesh_uposthiti',
-            },
+
+        union_kormoporishod_boithok_man: [
+            { label: 'সংখ্যা', name: 'union_kormoporishod_boithok_man_total' },
+            { label: 'টার্গেট', name: 'union_kormoporishod_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_kormoporishod_boithok_man_uposthiti' },
         ],
+
+        union_kormoporishod_boithok_women: [
+            { label: 'সংখ্যা', name: 'union_kormoporishod_boithok_women_total' },
+            { label: 'টার্গেট', name: 'union_kormoporishod_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_kormoporishod_boithok_women_uposthiti' },
+        ],
+
+        upojela_mashik_rokon_boithok_man: [
+            { label: 'সংখ্যা', name: 'upojela_mashik_rokon_boithok_man_total' },
+            { label: 'টার্গেট', name: 'upojela_mashik_rokon_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_mashik_rokon_boithok_man_uposthiti' },
+        ],
+
+        upojela_mashik_rokon_boithok_women: [
+            { label: 'সংখ্যা', name: 'upojela_mashik_rokon_boithok_women_total' },
+            { label: 'টার্গেট', name: 'upojela_mashik_rokon_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_mashik_rokon_boithok_women_uposthiti' },
+        ],
+
+        thana_mashik_rokon_boithok_man: [
+            { label: 'সংখ্যা', name: 'thana_mashik_rokon_boithok_man_total' },
+            { label: 'টার্গেট', name: 'thana_mashik_rokon_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_mashik_rokon_boithok_man_uposthiti' },
+        ],
+
+        thana_mashik_rokon_boithok_women: [
+            { label: 'সংখ্যা', name: 'thana_mashik_rokon_boithok_women_total' },
+            { label: 'টার্গেট', name: 'thana_mashik_rokon_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_mashik_rokon_boithok_women_uposthiti' },
+        ],
+
+        upojela_boithok_man: [
+            { label: 'সংখ্যা', name: 'upojela_boithok_man_total' },
+            { label: 'টার্গেট', name: 'upojela_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_boithok_man_uposthiti' },
+        ],
+
+        upojela_boithok_women: [
+            { label: 'সংখ্যা', name: 'upojela_boithok_women_total' },
+            { label: 'টার্গেট', name: 'upojela_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_boithok_women_uposthiti' },
+        ],
+
+        thana_boithok_man: [
+            { label: 'সংখ্যা', name: 'thana_boithok_man_total' },
+            { label: 'টার্গেট', name: 'thana_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_boithok_man_uposthiti' },
+        ],
+
+        thana_boithok_women: [
+            { label: 'সংখ্যা', name: 'thana_boithok_women_total' },
+            { label: 'টার্গেট', name: 'thana_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_boithok_women_uposthiti' },
+        ],
+
+        bivagio_committee_boithok_man: [
+            { label: 'সংখ্যা', name: 'bivagio_committee_boithok_man_total' },
+            { label: 'টার্গেট', name: 'bivagio_committee_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'bivagio_committee_boithok_man_uposthiti' },
+        ],
+
+        bivagio_committee_boithok_women: [
+            { label: 'সংখ্যা', name: 'bivagio_committee_boithok_women_total' },
+            { label: 'টার্গেট', name: 'bivagio_committee_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'bivagio_committee_boithok_women_uposthiti' },
+        ],
+
+        pouroshova_boithok_man: [
+            { label: 'সংখ্যা', name: 'pouroshova_boithok_man_total' },
+            { label: 'টার্গেট', name: 'pouroshova_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pouroshova_boithok_man_uposthiti' },
+        ],
+
+        pouroshova_boithok_women: [
+            { label: 'সংখ্যা', name: 'pouroshova_boithok_women_total' },
+            { label: 'টার্গেট', name: 'pouroshova_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pouroshova_boithok_women_uposthiti' },
+        ],
+
+        union_boithok_man: [
+            { label: 'সংখ্যা', name: 'union_boithok_man_total' },
+            { label: 'টার্গেট', name: 'union_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_boithok_man_uposthiti' },
+        ],
+
+        union_boithok_women: [
+            { label: 'সংখ্যা', name: 'union_boithok_women_total' },
+            { label: 'টার্গেট', name: 'union_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_boithok_women_uposthiti' },
+        ],
+
+        ward_boithok_man: [
+            { label: 'সংখ্যা', name: 'ward_boithok_man_total' },
+            { label: 'টার্গেট', name: 'ward_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ward_boithok_man_uposthiti' },
+        ],
+
+        ward_boithok_women: [
+            { label: 'সংখ্যা', name: 'ward_boithok_women_total' },
+            { label: 'টার্গেট', name: 'ward_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ward_boithok_women_uposthiti' },
+        ],
+
+        pouroshova_mashik_rokon_boithok_man: [
+            { label: 'সংখ্যা', name: 'pouroshova_mashik_rokon_boithok_man_total' },
+            { label: 'টার্গেট', name: 'pouroshova_mashik_rokon_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pouroshova_mashik_rokon_boithok_man_uposthiti' },
+        ],
+
+        pouroshova_mashik_rokon_boithok_women: [
+            { label: 'সংখ্যা', name: 'pouroshova_mashik_rokon_boithok_women_total' },
+            { label: 'টার্গেট', name: 'pouroshova_mashik_rokon_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pouroshova_mashik_rokon_boithok_women_uposthiti' },
+        ],
+
+        union_mashik_rokon_boithok_man: [
+            { label: 'সংখ্যা', name: 'union_mashik_rokon_boithok_man_total' },
+            { label: 'টার্গেট', name: 'union_mashik_rokon_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_mashik_rokon_boithok_man_uposthiti' },
+        ],
+
+        union_mashik_rokon_boithok_women: [
+            { label: 'সংখ্যা', name: 'union_mashik_rokon_boithok_women_total' },
+            { label: 'টার্গেট', name: 'union_mashik_rokon_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_mashik_rokon_boithok_women_uposthiti' },
+        ],
+
+        unit_kormi_boithok_man: [
+            { label: 'সংখ্যা', name: 'unit_kormi_boithok_man_total' },
+            { label: 'টার্গেট', name: 'unit_kormi_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'unit_kormi_boithok_man_uposthiti' },
+        ],
+
+        unit_kormi_boithok_women: [
+            { label: 'সংখ্যা', name: 'unit_kormi_boithok_women_total' },
+            { label: 'টার্গেট', name: 'unit_kormi_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'unit_kormi_boithok_women_uposthiti' },
+        ],
+
+        troimasik_rokon_sommelon_man: [
+            { label: 'সংখ্যা', name: 'troimasik_rokon_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'troimasik_rokon_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'troimasik_rokon_sommelon_man_uposthiti' },
+        ],
+
+        troimasik_rokon_sommelon_women: [
+            { label: 'সংখ্যা', name: 'troimasik_rokon_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'troimasik_rokon_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'troimasik_rokon_sommelon_women_uposthiti' },
+        ],
+
+        shanmasik_rokon_sommelon_man: [
+            { label: 'সংখ্যা', name: 'shanmasik_rokon_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'shanmasik_rokon_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'shanmasik_rokon_sommelon_man_uposthiti' },
+        ],
+
+        shanmasik_rokon_sommelon_women: [
+            { label: 'সংখ্যা', name: 'shanmasik_rokon_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'shanmasik_rokon_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'shanmasik_rokon_sommelon_women_uposthiti' },
+        ],
+
+        barshik_rokon_sommelon_man: [
+            { label: 'সংখ্যা', name: 'barshik_rokon_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'barshik_rokon_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'barshik_rokon_sommelon_man_uposthiti' },
+        ],
+
+        barshik_rokon_sommelon_women: [
+            { label: 'সংখ্যা', name: 'barshik_rokon_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'barshik_rokon_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'barshik_rokon_sommelon_women_uposthiti' },
+        ],
+
+
+        upozila_word_sovapoti_sommelon_man: [
+            { label: 'সংখ্যা', name: 'upozila_word_sovapoti_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'upozila_word_sovapoti_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_word_sovapoti_sommelon_man_uposthiti' },
+        ],
+
+        upozila_word_sovapoti_sommelon_women: [
+            { label: 'সংখ্যা', name: 'upozila_word_sovapoti_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'upozila_word_sovapoti_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_word_sovapoti_sommelon_women_uposthiti' },
+        ],
+
+        thana_word_sovapoti_sommelon_man: [
+            { label: 'সংখ্যা', name: 'thana_word_sovapoti_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'thana_word_sovapoti_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_word_sovapoti_sommelon_man_uposthiti' },
+        ],
+
+        thana_word_sovapoti_sommelon_women: [
+            { label: 'সংখ্যা', name: 'thana_word_sovapoti_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'thana_word_sovapoti_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_word_sovapoti_sommelon_women_uposthiti' },
+        ],
+
+        upozila_kormi_sommelon_man: [
+            { label: 'সংখ্যা', name: 'upozila_kormi_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'upozila_kormi_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_kormi_sommelon_man_uposthiti' },
+        ],
+
+        upozila_kormi_sommelon_women: [
+            { label: 'সংখ্যা', name: 'upozila_kormi_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'upozila_kormi_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_kormi_sommelon_women_uposthiti' },
+        ],
+
+        thana_kormi_sommelon_man: [
+            { label: 'সংখ্যা', name: 'thana_kormi_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'thana_kormi_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_kormi_sommelon_man_uposthiti' },
+        ],
+
+        thana_kormi_sommelon_women: [
+            { label: 'সংখ্যা', name: 'thana_kormi_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'thana_kormi_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_kormi_sommelon_women_uposthiti' },
+        ],
+
+        union_kormi_sommelon_man: [
+            { label: 'সংখ্যা', name: 'union_kormi_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'union_kormi_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_kormi_sommelon_man_uposthiti' },
+        ],
+
+        union_kormi_sommelon_women: [
+            { label: 'সংখ্যা', name: 'union_kormi_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'union_kormi_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_kormi_sommelon_women_uposthiti' },
+        ],
+
+        ward_kormi_sommelon_man: [
+            { label: 'সংখ্যা', name: 'ward_kormi_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'ward_kormi_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ward_kormi_sommelon_man_uposthiti' },
+        ],
+
+        ward_kormi_sommelon_women: [
+            { label: 'সংখ্যা', name: 'ward_kormi_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'ward_kormi_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ward_kormi_sommelon_women_uposthiti' },
+        ],
+
+        upozila_unit_sovapoti_sommelon_man: [
+            { label: 'সংখ্যা', name: 'upozila_unit_sovapoti_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'upozila_unit_sovapoti_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_unit_sovapoti_sommelon_man_uposthiti' },
+        ],
+
+        upozila_unit_sovapoti_sommelon_women: [
+            { label: 'সংখ্যা', name: 'upozila_unit_sovapoti_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'upozila_unit_sovapoti_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_unit_sovapoti_sommelon_women_uposthiti' },
+        ],
+
+        thana_unit_sovapoti_sommelon_man: [
+            { label: 'সংখ্যা', name: 'thana_unit_sovapoti_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'thana_unit_sovapoti_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_unit_sovapoti_sommelon_man_uposthiti' },
+        ],
+
+        thana_unit_sovapoti_sommelon_women: [
+            { label: 'সংখ্যা', name: 'thana_unit_sovapoti_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'thana_unit_sovapoti_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_unit_sovapoti_sommelon_women_uposthiti' },
+        ],
+
+        ulama_boithok_man: [
+            { label: 'সংখ্যা', name: 'ulama_boithok_man_total' },
+            { label: 'টার্গেট', name: 'ulama_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ulama_boithok_man_uposthiti' },
+        ],
+
+        ulama_boithok_women: [
+            { label: 'সংখ্যা', name: 'ulama_boithok_women_total' },
+            { label: 'টার্গেট', name: 'ulama_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ulama_boithok_women_uposthiti' },
+        ],
+
+        ulama_somabesh_man: [
+            { label: 'সংখ্যা', name: 'ulama_somabesh_man_total' },
+            { label: 'টার্গেট', name: 'ulama_somabesh_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ulama_somabesh_man_uposthiti' },
+        ],
+
+        ulama_somabesh_women: [
+            { label: 'সংখ্যা', name: 'ulama_somabesh_women_total' },
+            { label: 'টার্গেট', name: 'ulama_somabesh_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ulama_somabesh_women_uposthiti' },
+        ],
+
+        pesha_jibi_boithok_man: [
+            { label: 'সংখ্যা', name: 'pesha_jibi_boithok_man_total' },
+            { label: 'টার্গেট', name: 'pesha_jibi_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pesha_jibi_boithok_man_uposthiti' },
+        ],
+
+        pesha_jibi_boithok_women: [
+            { label: 'সংখ্যা', name: 'pesha_jibi_boithok_women_total' },
+            { label: 'টার্গেট', name: 'pesha_jibi_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pesha_jibi_boithok_women_uposthiti' },
+        ],
+
+        sromik_boithok_man: [
+            { label: 'সংখ্যা', name: 'sromik_boithok_man_total' },
+            { label: 'টার্গেট', name: 'sromik_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'sromik_boithok_man_uposthiti' },
+        ],
+
+        sromik_boithok_women: [
+            { label: 'সংখ্যা', name: 'sromik_boithok_women_total' },
+            { label: 'টার্গেট', name: 'sromik_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'sromik_boithok_women_uposthiti' },
+        ],
+
+        sromik_somabesh_man: [
+            { label: 'সংখ্যা', name: 'sromik_somabesh_man_total' },
+            { label: 'টার্গেট', name: 'sromik_somabesh_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'sromik_somabesh_man_uposthiti' },
+        ],
+
+        sromik_somabesh_women: [
+            { label: 'সংখ্যা', name: 'sromik_somabesh_women_total' },
+            { label: 'টার্গেট', name: 'sromik_somabesh_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'sromik_somabesh_women_uposthiti' },
+        ],
+
+        jubok_boithok_man: [
+            { label: 'সংখ্যা', name: 'jubok_boithok_man_total' },
+            { label: 'টার্গেট', name: 'jubok_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'jubok_boithok_man_uposthiti' },
+        ],
+
+        jubok_boithok_women: [
+            { label: 'সংখ্যা', name: 'jubok_boithok_women_total' },
+            { label: 'টার্গেট', name: 'jubok_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'jubok_boithok_women_uposthiti' },
+        ],
+
+        // Student Daittoshil Boithok
+        student_daittoshil_boithok_man: [
+            { label: 'সংখ্যা', name: 'student_daittoshil_boithok_man_total' },
+            { label: 'টার্গেট', name: 'student_daittoshil_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'student_daittoshil_boithok_man_uposthiti' },
+        ],
+
+        student_daittoshil_boithok_women: [
+            { label: 'সংখ্যা', name: 'student_daittoshil_boithok_women_total' },
+            { label: 'টার্গেট', name: 'student_daittoshil_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'student_daittoshil_boithok_women_uposthiti' },
+        ],
+
+        // Associate Member Somabesh
+        associate_member_somabesh_man: [
+            { label: 'সংখ্যা', name: 'associate_member_somabesh_man_total' },
+            { label: 'টার্গেট', name: 'associate_member_somabesh_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'associate_member_somabesh_man_uposthiti' },
+        ],
+
+        associate_member_somabesh_women: [
+            { label: 'সংখ্যা', name: 'associate_member_somabesh_women_total' },
+            { label: 'টার্গেট', name: 'associate_member_somabesh_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'associate_member_somabesh_women_uposthiti' },
+        ],
+
+        // Associate Member Sommelon
+        associate_member_sommelon_man: [
+            { label: 'সংখ্যা', name: 'associate_member_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'associate_member_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'associate_member_sommelon_man_uposthiti' },
+        ],
+
+        associate_member_sommelon_women: [
+            { label: 'সংখ্যা', name: 'associate_member_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'associate_member_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'associate_member_sommelon_women_uposthiti' },
+        ],
+
+
+
+
 
     }),
     created:function(){

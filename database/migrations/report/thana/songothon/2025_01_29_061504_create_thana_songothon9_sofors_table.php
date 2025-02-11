@@ -31,8 +31,8 @@ return new class extends Migration
             $table->bigInteger('jela_daittoshil_total_sofor_woman')->nullable();
             $table->bigInteger('mohanogor_daittoshil_total_sofor_woman')->nullable();
 
-            $table->bigInteger('upojela_president_total_sofor_woman')->nullable();
-            $table->bigInteger('thana_president_total_sofor_woman')->nullable();
+            $table->bigInteger('upojela_secretariat_total_sofor_woman')->nullable();
+            $table->bigInteger('thana_secretariat_total_sofor_woman')->nullable();
 
             $table->bigInteger('upojela_kormoporishod_total_sofor_woman')->nullable();
             $table->bigInteger('thana_kormoporishod_total_sofor_woman')->nullable();
