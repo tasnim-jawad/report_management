@@ -468,7 +468,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in word_sura_boithok" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in ward_sura_boithok" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
                 </form>
             </div>
@@ -501,7 +501,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in word_boithok" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in ward_boithok" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
                 </form>
             </div>
@@ -2424,28 +2424,28 @@ export default {
         ],
 
 
-        upozila_word_sovapoti_sommelon_man: [
-            { label: 'সংখ্যা', name: 'upozila_word_sovapoti_sommelon_man_total' },
-            { label: 'টার্গেট', name: 'upozila_word_sovapoti_sommelon_man_target' },
-            { label: 'টোটাল উপস্থিতি', name: 'upozila_word_sovapoti_sommelon_man_uposthiti' },
+        upozila_ward_sovapoti_sommelon_man: [
+            { label: 'সংখ্যা', name: 'upozila_ward_sovapoti_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'upozila_ward_sovapoti_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_ward_sovapoti_sommelon_man_uposthiti' },
         ],
 
-        upozila_word_sovapoti_sommelon_women: [
-            { label: 'সংখ্যা', name: 'upozila_word_sovapoti_sommelon_women_total' },
-            { label: 'টার্গেট', name: 'upozila_word_sovapoti_sommelon_women_target' },
-            { label: 'টোটাল উপস্থিতি', name: 'upozila_word_sovapoti_sommelon_women_uposthiti' },
+        upozila_ward_sovapoti_sommelon_women: [
+            { label: 'সংখ্যা', name: 'upozila_ward_sovapoti_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'upozila_ward_sovapoti_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_ward_sovapoti_sommelon_women_uposthiti' },
         ],
 
-        thana_word_sovapoti_sommelon_man: [
-            { label: 'সংখ্যা', name: 'thana_word_sovapoti_sommelon_man_total' },
-            { label: 'টার্গেট', name: 'thana_word_sovapoti_sommelon_man_target' },
-            { label: 'টোটাল উপস্থিতি', name: 'thana_word_sovapoti_sommelon_man_uposthiti' },
+        thana_ward_sovapoti_sommelon_man: [
+            { label: 'সংখ্যা', name: 'thana_ward_sovapoti_sommelon_man_total' },
+            { label: 'টার্গেট', name: 'thana_ward_sovapoti_sommelon_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_ward_sovapoti_sommelon_man_uposthiti' },
         ],
 
-        thana_word_sovapoti_sommelon_women: [
-            { label: 'সংখ্যা', name: 'thana_word_sovapoti_sommelon_women_total' },
-            { label: 'টার্গেট', name: 'thana_word_sovapoti_sommelon_women_target' },
-            { label: 'টোটাল উপস্থিতি', name: 'thana_word_sovapoti_sommelon_women_uposthiti' },
+        thana_ward_sovapoti_sommelon_women: [
+            { label: 'সংখ্যা', name: 'thana_ward_sovapoti_sommelon_women_total' },
+            { label: 'টার্গেট', name: 'thana_ward_sovapoti_sommelon_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_ward_sovapoti_sommelon_women_uposthiti' },
         ],
 
         upozila_kormi_sommelon_man: [

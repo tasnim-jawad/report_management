@@ -178,21 +178,21 @@ return new class extends Migration
             $table->bigInteger('barshik_rokon_sommelon_women_target')->nullable();
             $table->bigInteger('barshik_rokon_sommelon_women_uposthiti')->nullable();
 
-            // Upojila Word Sovapoti Sommelon
-            $table->bigInteger('upozila_word_sovapoti_sommelon_man_total')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_man_target')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_man_uposthiti')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_women_total')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_women_target')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_women_uposthiti')->nullable();
+            // Upojila ward Sovapoti Sommelon
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_man_total')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_man_target')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_man_uposthiti')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_women_total')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_women_target')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_women_uposthiti')->nullable();
 
-            // Thana Word Sovapoti Sommelon
-            $table->bigInteger('thana_word_sovapoti_sommelon_man_total')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_man_target')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_man_uposthiti')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_women_total')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_women_target')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_women_uposthiti')->nullable();
+            // Thana ward Sovapoti Sommelon
+            $table->bigInteger('thana_ward_sovapoti_sommelon_man_total')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_man_target')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_man_uposthiti')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_women_total')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_women_target')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_women_uposthiti')->nullable();
 
             // Upojila Kormi Sommelon
             $table->bigInteger('upozila_kormi_sommelon_man_total')->nullable();
