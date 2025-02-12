@@ -19,7 +19,7 @@ class ThanaDawahAndProkashonaController extends Controller
 
     public function init()
     {
-        $this->report_info = check_and_get_unit_info(auth()->user()->id);
+        $this->report_info = check_and_get_thana_info(auth()->user()->id);
     }
 
     public function get_data()

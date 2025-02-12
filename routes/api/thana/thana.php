@@ -157,6 +157,11 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment7DawatInTechnologyController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
+    Route::group(['prefix' => 'thana-department8-dawat-in-cultural-activity'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment8DawatInCulturalActivityController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment8DawatInCulturalActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
 
 
 

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('thana_department8_dawat_in_cultural_activities', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('report_info_id')->unsigned()->nullable();
+
             $table->bigInteger('total_cultural_team')->nullable();
             $table->bigInteger('total_program')->nullable();
 
