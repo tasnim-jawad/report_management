@@ -272,10 +272,10 @@ export default {
                 label:'মোট সংখ্যা',
                 name:'centrally_announced_political_program',
             },
-            {
-                label:'উপস্থিতি',
-                name:'centrally_announced_political_program_attend',
-            },
+            // {
+            //     label:'উপস্থিতি',
+            //     name:'centrally_announced_political_program_attend',
+            // },
         ],
         locally_announced_jonoshova:[
             {
@@ -353,16 +353,6 @@ export default {
                 name:'bijoy_dibosh_attend',
             },
         ],
-        mattrivasha_dibosh:[
-            {
-                label:'মোট প্রোগ্রাম সংখ্যা',
-                name:'mattrivasha_dibosh_total_programs',
-            },
-            {
-                label:'উপস্থিতি',
-                name:'mattrivasha_dibosh_attend',
-            },
-        ],
         others_dibosh:[
             {
                 label:'মোট প্রোগ্রাম সংখ্যা',
@@ -373,36 +363,260 @@ export default {
                 name:'others_attend',
             },
         ],
-
-
-        councilor_candidate:[
+        mattrivasha_dibosh:[
             {
-                label:'মোট প্রার্থী সংখ্যা',
-                name:'councilor_candidate',
+                label:'মোট প্রোগ্রাম সংখ্যা',
+                name:'mattrivasha_dibosh_total_programs',
             },
             {
-                label:'নির্বাচিত সংখ্যা',
-                name:'councilor_candidate_elected',
-            },
-            {
-                label:'দ্বিতীয় অবস্থান',
-                name:'councilor_candidate_second_position',
+                label:'উপস্থিতি',
+                name:'mattrivasha_dibosh_attend',
             },
         ],
-        member_candidate:[
+        international_womens_day:[
             {
-                label:'মোট প্রার্থী সংখ্যা',
-                name:'member_candidate',
+                label:'মোট প্রোগ্রাম সংখ্যা',
+                name:'international_womens_day_total_programs',
             },
             {
-                label:'নির্বাচিত সংখ্যা',
-                name:'member_candidate_elected',
-            },
-            {
-                label:'দ্বিতীয় অবস্থান',
-                name:'member_candidate_second_position',
+                label:'উপস্থিতি',
+                name:'international_womens_day_attend',
             },
         ],
+        may_day:[
+            {
+                label:'মোট প্রোগ্রাম সংখ্যা',
+                name:'may_day_total_programs',
+            },
+            {
+                label:'উপস্থিতি',
+                name:'may_day_attend',
+            },
+        ],
+
+        //৪. জাতীয় ও স্থানীয় নির্বাচনভিত্তিক কার্যক্রম:
+
+        city_corporation:[
+            {
+                label:'মোট সংখ্যা',
+                name:'city_corporation_total',
+            },
+            {
+                label:'মোট প্রার্থী সংখ্যা',
+                name:'city_corporation_total_candidate',
+            },
+            {
+                label:'অংশগ্রহণ সংখ্যা',
+                name:'city_corporation_total_candidate_participated',
+            },
+            {
+                label:'নির্বাচিত মেয়র সংখ্যা',
+                name:'city_corporation_mayor_candidate_elected',
+            },
+            {
+                label:'নির্বাচিত চেয়ারম্যান সংখ্যা',
+                name:'city_corporation_chairman_candidate_elected',
+            },
+            {
+                label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (পু) ',
+                name:'city_corporation_vice_chairman_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (ম) ',
+                name:'city_corporation_vice_chairman_candidate_woman_elected',
+            },
+            {
+                label:'নির্বাচিত কাউন্সিলর সংখ্যা (পু)',
+                name:'city_corporation_councilor_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত কাউন্সিলর সংখ্যা (ম)',
+                name:'city_corporation_councilor_candidate_woman_elected',
+            },
+            {
+                label:'নির্বাচিত মেম্বার সংখ্যা (পু)',
+                name:'city_corporation_member_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত মেম্বার সংখ্যা (ম)',
+                name:'city_corporation_member_candidate_woman_elected',
+            },
+            {
+                label:'দ্বিতীয় অবস্থান (পু)',
+                name:'city_corporation_member_candidate_man_second_position',
+            },
+            {
+                label:'দ্বিতীয় অবস্থান (ম)',
+                name:'city_corporation_member_candidate_woman_second_position',
+            },
+          
+        ],
+        pouroshova:[
+            {
+                label:'মোট সংখ্যা',
+                name:'pouroshova_total',
+            },
+            {
+                label:'মোট প্রার্থী সংখ্যা',
+                name:'pouroshova_total_candidate',
+            },
+            {
+                label:'অংশগ্রহণ সংখ্যা',
+                name:'pouroshova_total_candidate_participated',
+            },
+            {
+                label:'নির্বাচিত মেয়র সংখ্যা',
+                name:'pouroshova_mayor_candidate_elected',
+            },
+            {
+                label:'নির্বাচিত চেয়ারম্যান সংখ্যা',
+                name:'pouroshova_chairman_candidate_elected',
+            },
+            {
+                label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (পু) ',
+                name:'pouroshova_vice_chairman_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (ম) ',
+                name:'pouroshova_vice_chairman_candidate_woman_elected',
+            },
+            {
+                label:'নির্বাচিত কাউন্সিলর সংখ্যা (পু)',
+                name:'pouroshova_councilor_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত কাউন্সিলর সংখ্যা (ম)',
+                name:'pouroshova_councilor_candidate_woman_elected',
+            },
+            {
+                label:'নির্বাচিত মেম্বার সংখ্যা (পু)',
+                name:'pouroshova_member_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত মেম্বার সংখ্যা (ম)',
+                name:'pouroshova_member_candidate_woman_elected',
+            },
+            {
+                label:'দ্বিতীয় অবস্থান (পু)',
+                name:'pouroshova_member_candidate_man_second_position',
+            },
+            {
+                label:'দ্বিতীয় অবস্থান (ম)',
+                name:'pouroshova_member_candidate_woman_second_position',
+            },
+          
+        ],
+        upojela:[
+            {
+                label:'মোট সংখ্যা',
+                name:'upojela_total',
+            },
+            {
+                label:'মোট প্রার্থী সংখ্যা',
+                name:'upojela_total_candidate',
+            },
+            {
+                label:'অংশগ্রহণ সংখ্যা',
+                name:'upojela_total_candidate_participated',
+            },
+            {
+                label:'নির্বাচিত মেয়র সংখ্যা',
+                name:'upojela_mayor_candidate_elected',
+            },
+            {
+                label:'নির্বাচিত চেয়ারম্যান সংখ্যা',
+                name:'upojela_chairman_candidate_elected',
+            },
+            {
+                label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (পু) ',
+                name:'upojela_vice_chairman_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (ম) ',
+                name:'upojela_vice_chairman_candidate_woman_elected',
+            },
+            {
+                label:'নির্বাচিত কাউন্সিলর সংখ্যা (পু)',
+                name:'upojela_councilor_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত কাউন্সিলর সংখ্যা (ম)',
+                name:'upojela_councilor_candidate_woman_elected',
+            },
+            {
+                label:'নির্বাচিত মেম্বার সংখ্যা (পু)',
+                name:'upojela_member_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত মেম্বার সংখ্যা (ম)',
+                name:'upojela_member_candidate_woman_elected',
+            },
+            {
+                label:'দ্বিতীয় অবস্থান (পু)',
+                name:'upojela_member_candidate_man_second_position',
+            },
+            {
+                label:'দ্বিতীয় অবস্থান (ম)',
+                name:'upojela_member_candidate_woman_second_position',
+            },
+          
+        ],
+        union:[
+            {
+                label:'মোট সংখ্যা',
+                name:'union_total',
+            },
+            {
+                label:'মোট প্রার্থী সংখ্যা',
+                name:'union_total_candidate',
+            },
+            {
+                label:'অংশগ্রহণ সংখ্যা',
+                name:'union_total_candidate_participated',
+            },
+            {
+                label:'নির্বাচিত মেয়র সংখ্যা',
+                name:'union_mayor_candidate_elected',
+            },
+            {
+                label:'নির্বাচিত চেয়ারম্যান সংখ্যা',
+                name:'union_chairman_candidate_elected',
+            },
+            {
+                label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (পু) ',
+                name:'union_vice_chairman_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (ম) ',
+                name:'union_vice_chairman_candidate_woman_elected',
+            },
+            {
+                label:'নির্বাচিত কাউন্সিলর সংখ্যা (পু)',
+                name:'union_councilor_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত কাউন্সিলর সংখ্যা (ম)',
+                name:'union_councilor_candidate_woman_elected',
+            },
+            {
+                label:'নির্বাচিত মেম্বার সংখ্যা (পু)',
+                name:'union_member_candidate_man_elected',
+            },
+            {
+                label:'নির্বাচিত মেম্বার সংখ্যা (ম)',
+                name:'union_member_candidate_woman_elected',
+            },
+            {
+                label:'দ্বিতীয় অবস্থান (পু)',
+                name:'union_member_candidate_man_second_position',
+            },
+            {
+                label:'দ্বিতীয় অবস্থান (ম)',
+                name:'union_member_candidate_woman_second_position',
+            },
+          
+        ],
+
 
         national_vote_kendro:[
             {
@@ -460,12 +674,219 @@ export default {
                 name:'vote_kendro_vittik_unit_target',
             },
         ],
-        election_management:[
+
+
+        //৫. প্রচার ও মিডিয়া:
+        broadcast_and_media:[
             {
-                label:'নির্বাচন পরিচালনা কমিটির বৈঠক সংখ্যা',
-                name:'election_management_committee_meeting',
+                label:'প্রেস বিজ্ঞপ্তি সংখ্যা',
+                name:'press_release',
+            },
+            {
+                label:'বিবৃতি সংখ্যা',
+                name:'bibriti',
+            },
+            {
+                label:'প্রতিবাদ লিপি সংখ্যা',
+                name:'protibad_lipi',
+            },
+            {
+                label:'সামাজিক যোগাযোগ মাধ্যমে পোস্ট সংখ্যা',
+                name:'social_media_post',
+            },
+            {
+                label:'লাইভ প্রোগ্রাম সংখ্যা',
+                name:'social_media_live_program',
             },
         ],
+
+
+
+
+        // ৬. মানবাধিকার
+        rastrio6_human_rights:[
+            {
+                label:'মানবাধিকার সংগঠন প্রতিষ্ঠার সংখ্যা',
+                name:'human_rights_organizations_established',
+            },
+            {
+                label:'জাতীয় মানবাধিকার সংস্থার স্থানীয় শাখা চালুকরণ সংখ্যা',
+                name:'national_human_rights_organizations_local_branches_launched',
+            },
+            {
+                label:'আন্তর্জাতিক মানবাধিকার সংস্থার স্থানীয় শাখা চালুকরণ সংখ্যা',
+                name:'international_human_rights_organizations_local_branches_launched',
+            },
+        ],
+
+        // মানবাধিকার কর্মী তৈরি
+        human_rights_activist_produced:[
+            {
+                label:'সংখ্যা',
+                name:'human_rights_activist_produced_total',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'human_rights_activist_produced_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'human_rights_activist_produced_target',
+            },
+        ],
+
+
+        // ৭. শিল্প ও বাণিজ্য:
+        business_association:[
+            {
+                label:'নির্বাচন সংখ্যা',
+                name:'business_association_election',
+            },
+            {
+                label:'মোট পদ সংখ্যা',
+                name:'business_association_number_of_post',
+            },
+            {
+                label:'অংশগ্রহণকৃত পদ সংখ্যা',
+                name:'business_association_participated',
+            },
+            {
+                label:'নির্বাচিত পদ সংখ্যা',
+                name:'business_association_elected',
+            },
+        ],
+        market_committee:[
+            {
+                label:'নির্বাচন সংখ্যা',
+                name:'market_committee_election',
+            },
+            {
+                label:'মোট পদ সংখ্যা',
+                name:'market_committee_number_of_post',
+            },
+            {
+                label:'অংশগ্রহণকৃত পদ সংখ্যা',
+                name:'market_committee_participated',
+            },
+            {
+                label:'নির্বাচিত পদ সংখ্যা',
+                name:'market_committee_elected',
+            },
+        ],
+        rastrio7_other:[
+            {
+                label:'নির্বাচন সংখ্যা',
+                name:'other_election',
+            },
+            {
+                label:'মোট পদ সংখ্যা',
+                name:'other_number_of_post',
+            },
+            {
+                label:'অংশগ্রহণকৃত পদ সংখ্যা',
+                name:'other_participated',
+            },
+            {
+                label:'নির্বাচিত পদ সংখ্যা',
+                name:'other_elected',
+            },
+        ],
+//         ৮. উদ্যোক্তা তৈরি:
+// বিবরণ
+// কৃষি উদ্যোক্তা তৈরি
+// উদ্যোক্তা তৈরি (সেবা, শিল্প, ব্যবসা-বাণিজ্য ও অন্যান্য)
+// অন্যান্য
+// সংখ্যা
+// টার্গেট
+
+
+
+        krishi_uddogta_toiri:[
+            {
+                label:'সংখ্যা',
+                name:'krishi_uddogta_toiri_total',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'krishi_uddogta_toiri_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'krishi_uddogta_toiri_target',
+            },
+        ],
+        sheba_uddogta_toiri:[
+            {
+                label:'সংখ্যা',
+                name:'sheba_uddogta_toiri_total',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'sheba_uddogta_toiri_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'sheba_uddogta_toiri_target',
+            },
+        ],
+        shilpo_uddogta_toiri:[
+            {
+                label:'সংখ্যা',
+                name:'shilpo_uddogta_toiri_total',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'shilpo_uddogta_toiri_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'shilpo_uddogta_toiri_target',
+            },
+        ],
+        banijjo_uddogta_toiri:[
+            {
+                label:'সংখ্যা',
+                name:'banijjo_uddogta_toiri_total',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'banijjo_uddogta_toiri_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'banijjo_uddogta_toiri_target',
+            },
+        ],
+        other_uddogta_toiri:[
+            {
+                label:'সংখ্যা',
+                name:'other_uddogta_toiri_total',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'other_uddogta_toiri_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'other_uddogta_toiri_target',
+            },
+        ],
+        rastrio8_other:[
+            {
+                label:'সংখ্যা',
+                name:'other_total',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'other_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'other_target',
+            },
+        ],
+
+       
     }),
     created:function(){
         window.scrollTo({

@@ -94,6 +94,36 @@ export default {
     components: { FormInput, PreviousNext },
     data: ()=>({
         // month:null,
+
+//         ১. প্রশিক্ষিত সমাজকর্মী তৈরি (প্রশিক্ষিত সমাজকর্মী বলতে কেন্দ্রীয় মডিউলের আলোকে সমাজকর্ম মাস্টার ট্রেইনার দ্বারা প্রশিক্ষণপ্রাপ্ত জনশক্তিকেই বুঝানো হয়েছে): এ বছর কতজন প্রশিক্ষণ কোর্স সম্পন্ন করেছে
+// মোট প্রশিক্ষিত সমাজকর্মী সংখ্যা
+// এ বছর কয়টি প্রশিক্ষণ কোর্স হয়েছে
+// টার্গেট
+// টার্গেট
+        // ১. প্রশিক্ষিত সমাজকর্মী তৈরি:
+        trained_social_worker:[
+            {
+                label:'মোট প্রশিক্ষিত সমাজকর্মী সংখ্যা',
+                name:'trained_social_worker',
+            },
+            {
+                label:' এ বছর কয়টি প্রশিক্ষণ কোর্স হয়েছে',
+                name:'training_courses_this_year_total',
+            },
+            {
+                label:'প্রশিক্ষণ কোর্স টার্গেট',
+                name:'training_courses_this_year_target',
+            },
+            {
+                label:'এ বছর কতজন প্রশিক্ষণ কোর্স সম্পন্ন করেছে',
+                name:'people_completed_training_courses_this_year_total',
+            },
+            {
+                label:'কোর্স সম্পন্ন কারী টার্গেট',
+                name:'people_completed_training_courses_this_year_target',
+            },
+        ],
+
         personal_shomajsheba:[
             {
                 label:'মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন',
@@ -103,21 +133,20 @@ export default {
                 label:'মোট সেবাপ্রাপ্ত সংখ্যা',
                 name:'service_received_total',
             },
-
-
         ],
+
         service_teams:[
             {
                 label:'সাধারণ সেবা টিম সংখ্যা',
-                name:'number_of_general_service_teams',
+                name:'general_service_team',
             },
             {
                 label:'টেকনিক্যাল সেবা টিম সংখ্যা',
-                name:'number_of_technical_service_teams',
+                name:'technical_service_team',
             },
             {
                 label:'স্বেচ্ছাসেবক টিম সংখ্যা',
-                name:'number_of_volunteer_teams',
+                name:'volunteer_team',
             },
 
         ],
@@ -172,8 +201,16 @@ export default {
                 name:'voluntarily_blood_donation_kotojonke',
             },
             {
+                label:'মাতৃত্বকালীন সময়ে সেবা প্রদান (মোট কতজনকে)',
+                name:'mattrikalin_sheba_prodan',
+            },
+            {
                 label:'নবজাতককে গিফ্‌ট প্রদান (কতজনকে)',
                 name:'nobojatokke_gift_prodan',
+            },
+            {
+                label:'মেডিক্যাল ক্যাম্প (মোট কতটি)',
+                name:'medical_camp',
             },
             {
                 label:'ভ্রাম্যমান স্কুল চালু',
@@ -182,6 +219,13 @@ export default {
             {
                 label:'ভ্রাম্যমান মক্তব চালু',
                 name:'vrammoman_moktob_calu',
+            },
+
+
+
+            {
+                label:'শিক্ষা সহায়তা প্রদান (মোট কতজনকে)',
+                name:'shikkha_shohayota_prodan',
             },
             {
                 label:'টেকনিক্যাল সেবা প্রদান (কতজন )',
@@ -202,6 +246,10 @@ export default {
             {
                 label:'জনসচেতনতামূলক প্রোগ্রাম (কতটি)',
                 name:'public_awareness_programs',
+            },
+            {
+                label:'দুর্যোগকালীন সহায়তা প্রদান (মোট কতজনকে)',
+                name:'durjog_kalin_shohayota_prodan',
             },
             {
                 label:'ত্রাণ বিতরণ (কতজনকে)',
@@ -232,9 +280,80 @@ export default {
                 name:'others',
             },
         ],
+
+
+
+
+
+
+        shomajsheba4_social_institution:[
+            {
+                label:'মোট সংখ্যা',
+                name:'social_institution',
+            },
+            {
+                label:'কতটি সাংগঠনিক থানায়',
+                name:'social_institution_in_thana',
+            },
+            {
+                label:'কতটি সাংগঠনিক ওয়ার্ডে',
+                name:'social_institution_in_ward',
+            },
+        ],
+        shomajsheba4_institutional_social_work:[
+            {
+                label:'মোট সংখ্যা',
+                name:'institutional_social_work',
+            },
+            {
+                label:'কতটি সাংগঠনিক থানায়',
+                name:'institutional_social_work_in_thana',
+            },
+            {
+                label:'কতটি সাংগঠনিক ওয়ার্ডে',
+                name:'institutional_social_work_in_ward',
+            },
+        ],
+        shomajsheba4_new_social_institutions:[
+            {
+                label:'মোট সংখ্যা',
+                name:'new_social_institutions',
+            },
+            {
+                label:'কতটি সাংগঠনিক থানায়',
+                name:'new_social_institutions_in_thana',
+            },
+            {
+                label:'কতটি সাংগঠনিক ওয়ার্ডে',
+                name:'new_social_institutions_in_ward',
+            },
+        ],
+
+
+        // ৫. স্বাস্থ্য ও পরিবার কল্যাণমূলক কাজ
         health_and_family:[
             {
-                label:'স্বাস্থ্যকর্মী প্রশিক্ষণ প্রোগ্রামে মোট অংশগ্রহণকারীর সংখ্যা',
+                label:'স্বাস্থ্যকর্মী তৈরি সংখ্যা',
+                name:'served_people',
+            },
+            {
+                label:'নার্স তৈরি সংখ্যা',
+                name:'served_people',
+            },
+            {
+                label:'ধাত্রী তৈরি সংখ্যা',
+                name:'served_people',
+            },
+            {
+                label:'প্যারেন্টিং প্রশিক্ষণ প্রোগ্রাম সংখ্যা',
+                name:'served_people',
+            },
+            {
+                label:'স্বাস্থ্য শিক্ষামূলক প্রশিক্ষণ প্রোগ্রাম সংখ্যা',
+                name:'served_people',
+            },
+            {
+                label:'মোট অংশগ্রহণকারীর সংখ্যা',
                 name:'health_worker_training_programs_attendance',
             },
             {
@@ -248,20 +367,33 @@ export default {
 
         ],
 
-        shamajik_protishthan:[
+        // ৬. শিক্ষা ও গবেষণামূলক কার্যক্রম: 
+        shomajsheba6_education_and_research:[
             {
-                label:'কতটি সামাজিক প্রতিষ্ঠান রয়েছে',
-                name:'shamajik_protishthan_kototi',
+                label:'আদর্শ শিক্ষক তৈরি',
+                name:'ideal_teacher_produced',
             },
             {
-                label:'কতটি প্রতিষ্ঠানে সামাজিক কাজ হয়েছে',
-                name:'shamajik_protishthan_kototite_kaj_hoyeche',
+                label:'শিক্ষা সেমিনার',
+                name:'shikkha_seminar',
             },
             {
-                label:'কতটি নতুন সামাজিক প্রতিষ্ঠান চালু করা হয়েছে (প্রযোজ্য ক্ষেত্রে)',
-                name:'new_shamajik_protishthan',
+                label:'আলোচনা সভা',
+                name:'alochona_shova',
+            },
+            {
+                label:'অন্যান্য',
+                name:'other',
             },
 
+        ],
+
+        // ৭. সামাজিক কাজের জন্য মোট আয়ের কত শতাংশ ব্যয় হয়েছে :
+        shomajsheba7_expenses:[
+            {
+                label:'কত শতাংশ',
+                name:'percentage_of_expense',
+            },
         ],
 
     }),

@@ -153,115 +153,239 @@ export default {
     data: ()=>({
         // month:null,
 
-        unit_tarbiati_boithok:[
-            {
-                label:'মোট সংখ্যা',
-                name:'unit_tarbiati_boithok',
-            },
-            {
-                label:'টার্গেট',
-                name:'unit_tarbiati_boithok_target',
-            },
-            {
-                label:'উপস্থিতি',
-                name:'unit_tarbiati_boithok_uposthiti',
-            },
+        // Unit Tarbiati Boithok
+        unit_tarbiati_boithok_man: [
+            { label: 'সংখ্যা', name: 'unit_tarbiati_boithok_man_total' },
+            { label: 'টার্গেট', name: 'unit_tarbiati_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'unit_tarbiati_boithok_man_uposthiti' },
         ],
-        ward_kormi_sikkha_boithok:[
-            {
-                label:'মোট সংখ্যা',
-                name:'ward_kormi_sikkha_boithok',
-            },
-            {
-                label:'টার্গেট',
-                name:'ward_kormi_sikkha_boithok_target',
-            },
-            {
-                label:'উপস্থিতি',
-                name:'ward_kormi_sikkha_boithok_uposthiti',
-            },
+
+        unit_tarbiati_boithok_women: [
+            { label: 'সংখ্যা', name: 'unit_tarbiati_boithok_women_total' },
+            { label: 'টার্গেট', name: 'unit_tarbiati_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'unit_tarbiati_boithok_women_uposthiti' },
         ],
-        urdhotono_sikkha_shibir:[
-            {
-                label:'মোট সংখ্যা',
-                name:'urdhotono_sikkha_shibir',
-            },
-            {
-                label:'টার্গেট',
-                name:'urdhotono_sikkha_shibir_target',
-            },
-            {
-                label:'উপস্থিতি',
-                name:'urdhotono_sikkha_shibir_uposthiti',
-            },
+
+        // Upozila Vittik Rokon Shikkha Shibir
+        upozila_vittik_rokon_shikkha_shibir_man: [
+            { label: 'সংখ্যা', name: 'upozila_vittik_rokon_shikkha_shibir_man_total' },
+            { label: 'টার্গেট', name: 'upozila_vittik_rokon_shikkha_shibir_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_vittik_rokon_shikkha_shibir_man_uposthiti' },
         ],
-        urdhotono_sikkha_boithok:[
-            {
-                label:'মোট সংখ্যা',
-                name:'urdhotono_sikkha_boithok',
-            },
-            {
-                label:'টার্গেট',
-                name:'urdhotono_sikkha_boithok_target',
-            },
-            {
-                label:'উপস্থিতি',
-                name:'urdhotono_sikkha_boithok_uposthiti',
-            },
+
+        upozila_vittik_rokon_shikkha_shibir_women: [
+            { label: 'সংখ্যা', name: 'upozila_vittik_rokon_shikkha_shibir_women_total' },
+            { label: 'টার্গেট', name: 'upozila_vittik_rokon_shikkha_shibir_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_vittik_rokon_shikkha_shibir_women_uposthiti' },
         ],
-        gono_sikkha_boithok:[
-            {
-                label:'মোট সংখ্যা',
-                name:'gono_sikkha_boithok',
-            },
-            {
-                label:'টার্গেট',
-                name:'gono_sikkha_boithok_target',
-            },
-            {
-                label:'উপস্থিতি',
-                name:'gono_sikkha_boithok_uposthiti',
-            },
+
+        // Thana Vittik Rokon Shikkha Boithok
+        thana_vittik_rokon_shikkha_boithok_man: [
+            { label: 'সংখ্যা', name: 'thana_vittik_rokon_shikkha_boithok_man_total' },
+            { label: 'টার্গেট', name: 'thana_vittik_rokon_shikkha_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_vittik_rokon_shikkha_boithok_man_uposthiti' },
         ],
-        gono_noisho_ibadot:[
-            {
-                label:'মোট সংখ্যা',
-                name:'gono_noisho_ibadot',
-            },
-            {
-                label:'টার্গেট',
-                name:'gono_noisho_ibadot_target',
-            },
-            {
-                label:'উপস্থিতি',
-                name:'gono_noisho_ibadot_uposthiti',
-            },
+
+        thana_vittik_rokon_shikkha_boithok_women: [
+            { label: 'সংখ্যা', name: 'thana_vittik_rokon_shikkha_boithok_women_total' },
+            { label: 'টার্গেট', name: 'thana_vittik_rokon_shikkha_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_vittik_rokon_shikkha_boithok_women_uposthiti' },
         ],
-        alochona_chokro:[
-            {
-                label:'গ্রুপ সংখ্যা',
-                name:'alochona_chokro_group',
-            },
-            {
-                label:'অধিবেশন সংখ্যা',
-                name:'alochona_chokro_program',
-            },
-            {
-                label:'উপস্থিতি',
-                name:'alochona_chokro_uposthiti',
-            },
+
+        // Upozila Vittik Selected Kormi Shikkha Shibir
+        upozila_vittik_selected_kormi_shikkha_shibir_man: [
+            { label: 'সংখ্যা', name: 'upozila_vittik_selected_kormi_shikkha_shibir_man_total' },
+            { label: 'টার্গেট', name: 'upozila_vittik_selected_kormi_shikkha_shibir_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_vittik_selected_kormi_shikkha_shibir_man_uposthiti' },
         ],
-        darsul_quran:[
+
+        upozila_vittik_selected_kormi_shikkha_shibir_women: [
+            { label: 'সংখ্যা', name: 'upozila_vittik_selected_kormi_shikkha_shibir_women_total' },
+            { label: 'টার্গেট', name: 'upozila_vittik_selected_kormi_shikkha_shibir_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_vittik_selected_kormi_shikkha_shibir_women_uposthiti' },
+        ],
+
+        // Thana Vittik Selected Kormi Shikkha Boithok
+        thana_vittik_selected_kormi_shikkha_boithok_man: [
+            { label: 'সংখ্যা', name: 'thana_vittik_selected_kormi_shikkha_boithok_man_total' },
+            { label: 'টার্গেট', name: 'thana_vittik_selected_kormi_shikkha_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_vittik_selected_kormi_shikkha_boithok_man_uposthiti' },
+        ],
+
+        thana_vittik_selected_kormi_shikkha_boithok_women: [
+            { label: 'সংখ্যা', name: 'thana_vittik_selected_kormi_shikkha_boithok_women_total' },
+            { label: 'টার্গেট', name: 'thana_vittik_selected_kormi_shikkha_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_vittik_selected_kormi_shikkha_boithok_women_uposthiti' },
+        ],
+
+        // Upozila Vittik Kormi Shikkha Shibir
+        upozila_vittik_kormi_shikkha_shibir_man: [
+            { label: 'সংখ্যা', name: 'upozila_vittik_kormi_shikkha_shibir_man_total' },
+            { label: 'টার্গেট', name: 'upozila_vittik_kormi_shikkha_shibir_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_vittik_kormi_shikkha_shibir_man_uposthiti' },
+        ],
+
+        upozila_vittik_kormi_shikkha_shibir_women: [
+            { label: 'সংখ্যা', name: 'upozila_vittik_kormi_shikkha_shibir_women_total' },
+            { label: 'টার্গেট', name: 'upozila_vittik_kormi_shikkha_shibir_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_vittik_kormi_shikkha_shibir_women_uposthiti' },
+        ],
+
+        // Thana Vittik Kormi Shikkha Boithok
+        thana_vittik_kormi_shikkha_boithok_man: [
+            { label: 'সংখ্যা', name: 'thana_vittik_kormi_shikkha_boithok_man_total' },
+            { label: 'টার্গেট', name: 'thana_vittik_kormi_shikkha_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_vittik_kormi_shikkha_boithok_man_uposthiti' },
+        ],
+
+        thana_vittik_kormi_shikkha_boithok_women: [
+            { label: 'সংখ্যা', name: 'thana_vittik_kormi_shikkha_boithok_women_total' },
+            { label: 'টার্গেট', name: 'thana_vittik_kormi_shikkha_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_vittik_kormi_shikkha_boithok_women_uposthiti' },
+        ],
+
+        upozila_former_Student_kormi_training_program_man: [
+            { label: 'সংখ্যা', name: 'upozila_former_Student_kormi_training_program_man_total' },
+            { label: 'টার্গেট', name: 'upozila_former_Student_kormi_training_program_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_former_Student_kormi_training_program_man_uposthiti' },
+        ],
+        upozila_former_Student_kormi_training_program_women: [
+            { label: 'সংখ্যা', name: 'upozila_former_Student_kormi_training_program_women_total' },
+            { label: 'টার্গেট', name: 'upozila_former_Student_kormi_training_program_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upozila_former_Student_kormi_training_program_women_uposthiti' },
+        ],
+        thana_former_Student_kormi_training_program_man: [
+            { label: 'সংখ্যা', name: 'thana_former_Student_kormi_training_program_man_total' },
+            { label: 'টার্গেট', name: 'thana_former_Student_kormi_training_program_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_former_Student_kormi_training_program_man_uposthiti' },
+        ],
+        thana_former_Student_kormi_training_program_women: [
+            { label: 'সংখ্যা', name: 'thana_former_Student_kormi_training_program_women_total' },
+            { label: 'টার্গেট', name: 'thana_former_Student_kormi_training_program_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_former_Student_kormi_training_program_women_uposthiti' },
+        ],
+        pouroshova_kormi_shikkha_boithok_man: [
+            { label: 'সংখ্যা', name: 'pouroshova_kormi_shikkha_boithok_man_total' },
+            { label: 'টার্গেট', name: 'pouroshova_kormi_shikkha_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pouroshova_kormi_shikkha_boithok_man_uposthiti' },
+        ],
+        pouroshova_kormi_shikkha_boithok_women: [
+            { label: 'সংখ্যা', name: 'pouroshova_kormi_shikkha_boithok_women_total' },
+            { label: 'টার্গেট', name: 'pouroshova_kormi_shikkha_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pouroshova_kormi_shikkha_boithok_women_uposthiti' },
+        ],
+        union_kormi_shikkha_boithok_man: [
+            { label: 'সংখ্যা', name: 'union_kormi_shikkha_boithok_man_total' },
+            { label: 'টার্গেট', name: 'union_kormi_shikkha_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_kormi_shikkha_boithok_man_uposthiti' },
+        ],
+        union_kormi_shikkha_boithok_women: [
+            { label: 'সংখ্যা', name: 'union_kormi_shikkha_boithok_women_total' },
+            { label: 'টার্গেট', name: 'union_kormi_shikkha_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_kormi_shikkha_boithok_women_uposthiti' },
+        ],
+        ward_kormi_shikkha_boithok_man: [
+            { label: 'সংখ্যা', name: 'ward_kormi_shikkha_boithok_man_total' },
+            { label: 'টার্গেট', name: 'ward_kormi_shikkha_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ward_kormi_shikkha_boithok_man_uposthiti' },
+        ],
+        ward_kormi_shikkha_boithok_women: [
+            { label: 'সংখ্যা', name: 'ward_kormi_shikkha_boithok_women_total' },
+            { label: 'টার্গেট', name: 'ward_kormi_shikkha_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'ward_kormi_shikkha_boithok_women_uposthiti' },
+        ],
+        gono_sikkha_boithok_man: [
+            { label: 'সংখ্যা', name: 'gono_sikkha_boithok_man_total' },
+            { label: 'টার্গেট', name: 'gono_sikkha_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'gono_sikkha_boithok_man_uposthiti' },
+        ],
+        gono_sikkha_boithok_women: [
+            { label: 'সংখ্যা', name: 'gono_sikkha_boithok_women_total' },
+            { label: 'টার্গেট', name: 'gono_sikkha_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'gono_sikkha_boithok_women_uposthiti' },
+        ],
+        gono_noisho_ibadot_man: [
+            { label: 'সংখ্যা', name: 'gono_noisho_ibadot_man_total' },
+            { label: 'টার্গেট', name: 'gono_noisho_ibadot_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'gono_noisho_ibadot_man_uposthiti' },
+        ],
+        gono_noisho_ibadot_women: [
+            { label: 'সংখ্যা', name: 'gono_noisho_ibadot_women_total' },
+            { label: 'টার্গেট', name: 'gono_noisho_ibadot_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'gono_noisho_ibadot_women_uposthiti' },
+        ],
+        rokon_path_cokro_man: [
+            { label: 'গ্রুপ', name: 'rokon_path_cokro_man_total_group' },
+            { label: 'অধিবেশন', name: 'rokon_path_cokro_man_total_odhibeshon' },
+            { label: 'টোটাল উপস্থিতি', name: 'rokon_path_cokro_man_total_uposthiti' },
+        ],
+        rokon_path_cokro_woman: [
+            { label: 'গ্রুপ', name: 'rokon_path_cokro_woman_total_group' },
+            { label: 'অধিবেশন', name: 'rokon_path_cokro_woman_total_odhibeshon' },
+            { label: 'টোটাল উপস্থিতি', name: 'rokon_path_cokro_woman_total_uposthiti' },
+        ],
+        kormi_path_cokro_man: [
+            { label: 'গ্রুপ', name: 'kormi_path_cokro_man_total_group' },
+            { label: 'অধিবেশন', name: 'kormi_path_cokro_man_total_odhibeshon' },
+            { label: 'টোটাল উপস্থিতি', name: 'kormi_path_cokro_man_total_uposthiti' },
+        ],
+        kormi_path_cokro_woman: [
+            { label: 'গ্রুপ', name: 'kormi_path_cokro_woman_total_group' },
+            { label: 'অধিবেশন', name: 'kormi_path_cokro_woman_total_odhibeshon' },
+            { label: 'টোটাল উপস্থিতি', name: 'kormi_path_cokro_woman_total_uposthiti' },
+        ],
+        kormi_alochona_cokro_man: [
+            { label: 'গ্রুপ', name: 'kormi_alochona_cokro_man_total_group' },
+            { label: 'অধিবেশন', name: 'kormi_alochona_cokro_man_total_odhibeshon' },
+            { label: 'টোটাল উপস্থিতি', name: 'kormi_alochona_cokro_man_total_uposthiti' },
+        ],
+        kormi_alochona_cokro_woman: [
+            { label: 'গ্রুপ', name: 'kormi_alochona_cokro_woman_total_group' },
+            { label: 'অধিবেশন', name: 'kormi_alochona_cokro_woman_total_odhibeshon' },
+            { label: 'টোটাল উপস্থিতি', name: 'kormi_alochona_cokro_woman_total_uposthiti' },
+        ],
+        quran_study_circle_man: [
+            { label: 'গ্রুপ', name: 'quran_study_circle_man_total_group' },
+            { label: 'অধিবেশন', name: 'quran_study_circle_man_total_odhibeshon' },
+            { label: 'টোটাল উপস্থিতি', name: 'quran_study_circle_man_total_uposthiti' },
+        ],
+        quran_study_circle_woman: [
+            { label: 'গ্রুপ', name: 'quran_study_circle_woman_total_group' },
+            { label: 'অধিবেশন', name: 'quran_study_circle_woman_total_odhibeshon' },
+            { label: 'টোটাল উপস্থিতি', name: 'quran_study_circle_woman_total_uposthiti' },
+        ],
+
+        darsul_quran_man:[
             {
                 label:'প্রোগ্রাম সংখ্যা',
-                name:'darsul_quran_program',
+                name:'darsul_quran_man_program',
             },
             {
                 label:'উপস্থিতি',
-                name:'darsul_quran_uposthiti',
+                name:'darsul_quran_man_uposthiti',
             },
         ],
-        sohih_tilawat:[
+        darsul_quran_woman:[
+            {
+                label:'প্রোগ্রাম সংখ্যা',
+                name:'darsul_quran_woman_program',
+            },
+            {
+                label:'উপস্থিতি',
+                name:'darsul_quran_woman_uposthiti',
+            },
+        ],
+        sohih_tilawat_man:[
+            {
+                label:'প্রোগ্রাম সংখ্যা',
+                name:'sohih_tilawat_program',
+            },
+            {
+                label:'উপস্থিতি',
+                name:'sohih_tilawat_uposthiti',
+            },
+        ],
+        sohih_tilawat_man:[
             {
                 label:'প্রোগ্রাম সংখ্যা',
                 name:'sohih_tilawat_program',
@@ -274,41 +398,75 @@ export default {
 
 
 
+
+
+        // উপজেলা/থানা মানবসম্পদ কমিটি সংখ্যা
+        proshikkhon2_committee:[
+            {
+                label:'উপজেলা কমিটি সংখ্যা',
+                name:'upojela_manobshompod_committee',
+            },
+            {
+                label:'থানা কমিটি সংখ্যা',
+                name:'thana_manobshompod_committee',
+            },
+        ],
+
+        // উপজেলা/থানা মানবসম্পদ কমিটির বৈঠক সংখ্যা
+        proshikkhon2_committee:[
+            {
+                label:'উপজেলা কমিটির বৈঠক সংখ্যা',
+                name:'upojela_manobshompod_committee_boithok',
+            },
+            {
+                label:'থানা কমিটির বৈঠক সংখ্যা',
+                name:'thana_manobshompod_committee_boithok',
+            },
+        ],
+
+        // জনশক্তির ক্যারিয়ার মোটিভেশন প্রোগ্রাম সংখ্যা
+        proshikkhon2_career_motivation:[
+            {
+                label:'জনশক্তির ক্যারিয়ার মোটিভেশন প্রোগ্রাম সংখ্যা',
+                name:'manpower_career_motivation_programs',
+            },
+        ],
+        // প্রশিক্ষণ কোর্স: অংশগ্রহণকারীর সংখ্যা
         manob_shompod_unnoyon:[
             {
-                label:'দাওয়াহ - অংশগ্রহণকারীর সংখ্যা',
+                label:'দাওয়াহ',
                 name:'dawah_uposthiti',
             },
             {
-                label:'সমাজকর্ম - অংশগ্রহণকারীর সংখ্যা',
+                label:'সমাজকর্ম',
                 name:'shomajkormo_uposthiti',
             },
             {
-                label:'মিডিয়া - অংশগ্রহণকারীর সংখ্যা',
+                label:'মিডিয়া',
                 name:'media_uposthiti',
             },
             {
-                label:'আইসিটি - অংশগ্রহণকারীর সংখ্যা',
+                label:'আইসিটি',
                 name:'ict_uposthiti',
             },
             {
-                label:'অফিস - অংশগ্রহণকারীর সংখ্যা',
+                label:'অফিস',
                 name:'office_uposthiti',
             },
             {
-                label:'ফিন্যান্সিয়াল ম্যানেজমেন্ট - অংশগ্রহণকারীর সংখ্যা',
+                label:'ফিন্যান্সিয়াল ম্যানেজমেন্ট',
                 name:'financial_management_uposthiti',
             },
             {
-                label:'ইংরেজি ভাষা - অংশগ্রহণকারীর সংখ্যা',
+                label:'ইংরেজি ভাষা',
                 name:'english_language_uposthiti',
             },
             {
-                label:'আরবি ভাষা - অংশগ্রহণকারীর সংখ্যা',
+                label:'আরবি ভাষা',
                 name:'arabic_language_uposthiti',
             },
             {
-                label:'ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ - অংশগ্রহণকারীর সংখ্যা',
+                label:'ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ',
                 name:'trade_oriented_technical_training_uposthiti',
             },
         ],
