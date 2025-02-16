@@ -368,6 +368,7 @@
     });
 
     Route::group(['prefix' => 'thana'], function () {
+
         Route::get('/uploaded-data', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_api']);
         Route::get('/income-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'income_category_wise']);
         Route::get('/expense-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'expense_category_wise']);
@@ -377,8 +378,11 @@
         Route::get('/uploaded-data-monthly', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_monthly']);
         Route::get('/report-status', [App\Http\Controllers\Thana\ThanaController::class, 'report_status']);
         Route::get('/report-joma', [App\Http\Controllers\Thana\ThanaController::class, 'report_joma']);
-    });
 
+
+        Route::get('/get-all-ward-data', [App\Http\Controllers\Thana\ThanaTotalWartSubmittedDataController::class, 'get_all_ward_data']);
+        Route::get('/count-approved-ward', [App\Http\Controllers\Thana\ThanaTotalWartSubmittedDataController::class, 'count_approved_ward']);
+    });
 
 
     Route::group(['prefix' => 'thana'], function () {

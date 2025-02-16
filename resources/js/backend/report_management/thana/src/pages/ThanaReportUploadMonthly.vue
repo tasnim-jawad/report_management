@@ -6324,18 +6324,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_kormosuci_bastobayons
+                                                    ?.thana_kormosuci_bastobayons
                                                     ?.unit_masik_sadaron_sova_total
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-kormosuci-bastobayon'
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -6343,39 +6350,51 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_kormosuci_bastobayons
+                                                    ?.thana_kormosuci_bastobayons
                                                     ?.unit_masik_sadaron_sova_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-kormosuci-bastobayon'
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
                                         name="unit_masik_sadaron_sova_uposthiti"
                                         :value="
                                             formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_kormosuci_bastobayons
-                                                    ?.unit_masik_sadaron_sova
+                                                report_sum_data
+                                                    ?.thana_kormosuci_bastobayons
+                                                    ?.unit_masik_sadaron_sova_uposthiti
                                             )
                                         "
                                         @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-kormosuci-bastobayon',
-                                                kormosuci.unit_masik_sadaron_sova_total
+                                            data_upload(
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -6386,171 +6405,165 @@
                                 <td class="font-13">
                                     <div class="d-flex">
                                         <input
-                                            name="dawati_sova_total"
+                                            name="dawati_jonosova_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.dawati_sova_total
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.dawati_jonosova_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
                                             name="alochona_sova_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.thana_kormosuci_bastobayons
                                                         ?.alochona_sova_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
                                             name="sudhi_somabesh_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.thana_kormosuci_bastobayons
                                                         ?.sudhi_somabesh_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />
                                     </div>
                                 </td>
                                 <td class="font-13">
                                     <div class="d-flex">
                                         <input
-                                            name="dawati_sova_target"
+                                            name="dawati_jonosova_target"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.dawati_sova_target
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.dawati_jonosova_target
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
                                             name="alochona_sova_target"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.thana_kormosuci_bastobayons
                                                         ?.alochona_sova_target
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
                                             name="sudhi_somabesh_target"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.thana_kormosuci_bastobayons
                                                         ?.sudhi_somabesh_target
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />
                                     </div>
                                 </td>
                                 <td class="font-13">
                                     <div class="d-flex">
                                         <input
-                                            name="dawati_sova_uposthiti"
+                                            name="dawati_jonosova_uposthiti"
                                             :value="
                                                 formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.dawati_sova
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.dawati_jonosova_uposthiti
                                                 )
                                             "
                                             @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-kormosuci-bastobayon',
-                                                    kormosuci.dawati_sova_total
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
                                             name="alochona_sova_uposthiti"
                                             :value="
                                                 formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.alochona_sova
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.alochona_sova_uposthiti
                                                 )
                                             "
                                             @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-kormosuci-bastobayon',
-                                                    kormosuci.alochona_sova_total
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
                                             name="sudhi_somabesh_uposthiti"
                                             :value="
                                                 formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.sudhi_somabesh
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.sudhi_somabesh_uposthiti
                                                 )
                                             "
                                             @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-kormosuci-bastobayon',
-                                                    kormosuci.sudhi_somabesh_total
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center"
+                                            class="bg-input fixed-input-20 text-center"
                                         />
                                     </div>
                                 </td>
@@ -6566,18 +6579,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_kormosuci_bastobayons
+                                                    ?.thana_kormosuci_bastobayons
                                                     ?.siratunnabi_mahfil_total
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-kormosuci-bastobayon'
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -6585,39 +6605,51 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_kormosuci_bastobayons
+                                                    ?.thana_kormosuci_bastobayons
                                                     ?.siratunnabi_mahfil_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-kormosuci-bastobayon'
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
                                         name="siratunnabi_mahfil_uposthiti"
                                         :value="
                                             formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_kormosuci_bastobayons
-                                                    ?.siratunnabi_mahfil
+                                                report_sum_data
+                                                    ?.thana_kormosuci_bastobayons
+                                                    ?.siratunnabi_mahfil_uposthiti
                                             )
                                         "
                                         @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-kormosuci-bastobayon',
-                                                kormosuci.siratunnabi_mahfil_total
+                                            data_upload(
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -6629,18 +6661,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_kormosuci_bastobayons
+                                                    ?.thana_kormosuci_bastobayons
                                                     ?.eid_reunion_total
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-kormosuci-bastobayon'
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -6648,39 +6687,51 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_kormosuci_bastobayons
+                                                    ?.thana_kormosuci_bastobayons
                                                     ?.eid_reunion_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-kormosuci-bastobayon'
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
                                         name="eid_reunion_uposthiti"
                                         :value="
                                             formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_kormosuci_bastobayons
-                                                    ?.eid_reunion
+                                                report_sum_data
+                                                    ?.thana_kormosuci_bastobayons
+                                                    ?.eid_reunion_uposthiti
                                             )
                                         "
                                         @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-kormosuci-bastobayon',
-                                                kormosuci.eid_reunion_total
+                                            data_upload(
+                                                'thana-kormosuci-bastobayon'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_kormosuci_bastobayons'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -6698,52 +6749,81 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.thana_kormosuci_bastobayons
                                                         ?.dars_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="tafsir_total"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.tafsir_total
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-kormosuci-bastobayon'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="dawati_jonosova_total"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.dawati_jonosova_total
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup
+                                        >/
+                                        <input
+                                            name="tafsir_total"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.tafsir_total
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup
+                                        >/
+                                        <input
+                                            name="dawati_jonosova_total"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.dawati_jonosova_total
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </div>
                                 </td>
                                 <td class="font-13">
@@ -6753,52 +6833,81 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.thana_kormosuci_bastobayons
                                                         ?.dars_target
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="tafsir_target"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.tafsir_target
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-kormosuci-bastobayon'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="dawati_jonosova_target"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.dawati_jonosova_target
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup
+                                        >/
+                                        <input
+                                            name="tafsir_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.tafsir_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup
+                                        >/
+                                        <input
+                                            name="dawati_jonosova_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.dawati_jonosova_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </div>
                                 </td>
                                 <td class="font-13">
@@ -6807,59 +6916,82 @@
                                             name="dars_uposthiti"
                                             :value="
                                                 formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.dars
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.dars_uposthiti
                                                 )
                                             "
                                             @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-kormosuci-bastobayon',
-                                                    kormosuci.dars_total
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="tafsir_uposthiti"
-                                            :value="
-                                                formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.tafsir
-                                                )
-                                            "
-                                            @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-kormosuci-bastobayon',
-                                                    kormosuci.tafsir_total
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="dawati_jonosova_uposthiti"
-                                            :value="
-                                                formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.dawati_jonosova
-                                                )
-                                            "
-                                            @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-kormosuci-bastobayon',
-                                                    kormosuci.dawati_jonosova_total
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup
+                                        >/
+                                        <input
+                                            name="tafsir_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.tafsir_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup
+                                        >/
+                                        <input
+                                            name="dawati_jonosova_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.dawati_jonosova_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </div>
                                 </td>
                             </tr>
@@ -6888,35 +7020,54 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.thana_kormosuci_bastobayons
                                                         ?.iftar_mahfil_personal_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-kormosuci-bastobayon'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="iftar_mahfil_samostic_total"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_kormosuci_bastobayons
-                                                        ?.iftar_mahfil_samostic_total
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-kormosuci-bastobayon'
+                                                    'thana-kormosuci-bastobayon'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup
+                                        >/
+                                        <input
+                                            name="iftar_mahfil_samostic_total"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.iftar_mahfil_samostic_total
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-kormosuci-bastobayon'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_kormosuci_bastobayons'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </div>
                                 </td>
                                 <td>
@@ -15624,6 +15775,10 @@ export default {
 }
 .fixed-input-30 {
     width: 25px; /* Set a fixed width */
+    text-align: center; /* Center align the text */
+}
+.fixed-input-20 {
+    width: 20px; /* Set a fixed width */
     text-align: center; /* Center align the text */
 }
 /* @import url("../../../../../../public/css/unit/unit_report_upload.css"); */
