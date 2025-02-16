@@ -166,6 +166,7 @@ class DateWiseReportSum
             "thana_department6_mosjid_dawah_infomation_centers",
             "thana_department7_dawat_in_technologies",
             "thana_department8_dawat_in_cultural_activities",
+            "thana_dawah_and_prokashonas",
             "thana_kormosuci_bastobayons",
             "thana_montobbos",
             "thana_proshikkhon1_tarbiats",

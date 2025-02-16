@@ -5175,8 +5175,58 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>54</td>
-                                <td>67</td>
+                                <td>
+                                    <input
+                                        name="total_attended_family"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department5_paribarik_dawats
+                                                    ?.total_attended_family
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department5-paribarik-dawat'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="how_many_new_family_invited"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department5_paribarik_dawats
+                                                    ?.how_many_new_family_invited
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department5-paribarik-dawat'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -5200,37 +5250,224 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">মসজিদ</td>
-                                <td>54</td>
-                                <td>21</td>
+                                <td></td>
+                                <td>
+                                    <input
+                                        name="total_mosjid_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department6_mosjid_dawah_infomation_centers
+                                                    ?.total_mosjid_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department6-mosjid-dawah-infomation-centers'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     সাধারণ দাওয়াহ্ সেন্টার
                                 </td>
-                                <td>32</td>
-                                <td>32</td>
+                                <td></td>
+                                <td>
+                                    <input
+                                        name="general_dawah_center_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department6_mosjid_dawah_infomation_centers
+                                                    ?.general_dawah_center_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department6-mosjid-dawah-infomation-centers'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     দাওয়াতের আওতাভুক্ত মসজিদ
                                 </td>
-                                <td>34</td>
-                                <td>45</td>
+                                <td></td>
+                                <td>
+                                    <input
+                                        name="dawat_included_mosjid_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department6_mosjid_dawah_infomation_centers
+                                                    ?.dawat_included_mosjid_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department6-mosjid-dawah-infomation-centers'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক /সাধারণ)
                                 </td>
-                                <td>/</td>
-                                <td>/</td>
+                                <td></td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="mosjid_wise_information_center_increase"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department6_mosjid_dawah_infomation_centers
+                                                            ?.mosjid_wise_information_center_increase
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department6-mosjid-dawah-infomation-centers'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="general_information_center_increase"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department6_mosjid_dawah_infomation_centers
+                                                            ?.general_information_center_increase
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department6-mosjid-dawah-infomation-centers'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     মসজিদভিত্তিক দাওয়াহ্ সেন্টার
                                 </td>
-                                <td>34</td>
-                                <td>45</td>
+                                <td></td>
+                                <td>
+                                    <input
+                                        name="mosjid_wise_dawah_center_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department6_mosjid_dawah_infomation_centers
+                                                    ?.mosjid_wise_dawah_center_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department6-mosjid-dawah-infomation-centers'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     নিয়োজিত প্রশিক্ষিত দাঈ *
                                 </td>
                                 <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="trained_employed_dai"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department6_mosjid_dawah_infomation_centers
+                                                    ?.trained_employed_dai
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department6-mosjid-dawah-infomation-centers'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -5250,8 +5487,132 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>/</td>
-                                <td>/</td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="total_well_known_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department7_dawat_in_technologies
+                                                            ?.total_well_known_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department7-dawat-in-technology'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="total_well_known_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department7_dawat_in_technologies
+                                                            ?.total_well_known_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department7-dawat-in-technology'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div
+                                        class="d-flex justify-content-center align-items-center"
+                                    >
+                                        <div>
+                                            <input
+                                                name="total_attended_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department7_dawat_in_technologies
+                                                            ?.total_attended_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department7-dawat-in-technology'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                        <p>/</p>
+                                        <div>
+                                            <input
+                                                name="total_attended_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_department7_dawat_in_technologies
+                                                            ?.total_attended_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-department7-dawat-in-technology'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input fixed-input-30 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="
+                                                    report_header?.ward_info?.id
+                                                "
+                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :field_title="'how_many_groups_are_out'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -5268,9 +5629,84 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>34</td>
-                                <td>45</td>
-                                <td>45</td>
+                                <td>
+                                    <input
+                                        name="total_cultural_team"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department8_dawat_in_cultural_activities
+                                                    ?.total_cultural_team
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department8-dawat-in-cultural-activity'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_program"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department8_dawat_in_cultural_activities
+                                                    ?.total_program
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department8-dawat-in-cultural-activity'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_invited"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_department8_dawat_in_cultural_activities
+                                                    ?.total_invited
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-department8-dawat-in-cultural-activity'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -5311,16 +5747,25 @@
                                     :value="
                                         formatBangla(
                                             report_sum_data
-                                                ?.ward_dawah_and_prokashonas
+                                                ?.thana_dawah_and_prokashonas
                                                 ?.total_pathagar_increase
                                         )
                                     "
                                     @change="
-                                        data_upload('ward-dawah-and-prokashona')
+                                        data_upload(
+                                            'thana-dawah-and-prokashona'
+                                        )
                                     "
                                     type="text"
-                                    class="bg-input w-100 text-center"
+                                    class="bg-input fixed-input-30 text-center"
                                 />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                    :field_title="'how_many_groups_are_out'"
+                                    :month="month"
+                                >
+                                </popup>
                             </td>
 
                             <td class="text-start px-2">
@@ -5335,7 +5780,7 @@
                                     )
                                 }}
                                 <!-- <input name="ward_book_sales_center"
-                                    :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.ward_book_sales_center)"
+                                    :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.ward_book_sales_center)"
                                     @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" /> -->
                             </td>
@@ -5345,16 +5790,25 @@
                                     :value="
                                         formatBangla(
                                             report_sum_data
-                                                ?.ward_dawah_and_prokashonas
+                                                ?.thana_dawah_and_prokashonas
                                                 ?.ward_book_sales_center_increase
                                         )
                                     "
                                     @change="
-                                        data_upload('ward-dawah-and-prokashona')
+                                        data_upload(
+                                            'thana-dawah-and-prokashona'
+                                        )
                                     "
                                     type="text"
-                                    class="bg-input w-100 text-center"
+                                    class="bg-input fixed-input-30 text-center"
                                 />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                    :field_title="'how_many_groups_are_out'"
+                                    :month="month"
+                                >
+                                </popup>
                             </td>
                         </tr>
                         <tr>
@@ -5368,26 +5822,35 @@
                                     )
                                 }}
                                 <!-- <input name="books_in_pathagar"
-                                    :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.books_in_pathagar)"
+                                    :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.books_in_pathagar)"
                                     @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
                                 <input
-                                    name="books_in_pathagar_increase"
+                                    name="books_in_pathagar"
                                     :value="
                                         formatBangla(
                                             report_sum_data
-                                                ?.ward_dawah_and_prokashonas
-                                                ?.books_in_pathagar_increase
+                                                ?.thana_dawah_and_prokashonas
+                                                ?.books_in_pathagar
                                         )
                                     "
                                     @change="
-                                        data_upload('ward-dawah-and-prokashona')
+                                        data_upload(
+                                            'thana-dawah-and-prokashona'
+                                        )
                                     "
                                     type="text"
-                                    class="bg-input w-100 text-center"
+                                    class="bg-input fixed-input-30 text-center"
                                 />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                    :field_title="'how_many_groups_are_out'"
+                                    :month="month"
+                                >
+                                </popup>
                             </td>
 
                             <td class="text-start px-2">ওয়ার্ডে বই বিক্রয়</td>
@@ -5399,26 +5862,35 @@
                                         previous_present?.ward_book_sales_present
                                     )
                                 }}
-                                <!-- <input name="ward_book_sales" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.ward_book_sales)"
+                                <!-- <input name="ward_book_sales" :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.ward_book_sales)"
                                     @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
                                 <input
-                                    name="ward_book_sales_increase"
+                                    name="ward_book_sales"
                                     :value="
                                         formatBangla(
                                             report_sum_data
-                                                ?.ward_dawah_and_prokashonas
-                                                ?.ward_book_sales_increase
+                                                ?.thana_dawah_and_prokashonas
+                                                ?.ward_book_sales
                                         )
                                     "
                                     @change="
-                                        data_upload('ward-dawah-and-prokashona')
+                                        data_upload(
+                                            'thana-dawah-and-prokashona'
+                                        )
                                     "
                                     type="text"
-                                    class="bg-input w-100 text-center"
+                                    class="bg-input fixed-input-30 text-center"
                                 />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                    :field_title="'how_many_groups_are_out'"
+                                    :month="month"
+                                >
+                                </popup>
                             </td>
                         </tr>
                         <tr>
@@ -5426,24 +5898,32 @@
                             <!-- <td >{{bangla($dawah_prokashona->book_distribution?? "")}}</td>
                             <td >{{bangla($dawah_prokashona->book_distribution_increase?? "")}}</td> -->
                             <td>
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'ward_dawat1_regular_group_wises'"
+                                    :field_title="'how_many_groups_are_out'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
+                            <td>
                                 <input
                                     name="book_distribution"
                                     :value="
                                         formatBangla(
                                             report_sum_data
-                                                ?.ward_dawah_and_prokashonas
+                                                ?.thana_dawah_and_prokashonas
                                                 ?.book_distribution
                                         )
                                     "
                                     @change="
-                                        data_upload('ward-dawah-and-prokashona')
+                                        data_upload(
+                                            'thana-dawah-and-prokashona'
+                                        )
                                     "
                                     type="text"
-                                    class="bg-input w-100 text-center"
+                                    class="bg-input fixed-input-30 text-center"
                                 />
-                            </td>
-                            <td>
-                                <!-- <input name="book_distribution_increase" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> -->
                             </td>
 
                             <td class="text-start px-2">
@@ -5453,12 +5933,12 @@
                             <td >{{bangla($dawah_prokashona->soft_copy_book_distribution_increase?? "")}}</td> -->
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <!-- <input
                                         name="soft_copy_book_distribution"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.ward_thana_dawah_and_prokashonas
                                                     ?.soft_copy_book_distribution
                                             )
                                         "
@@ -5469,10 +5949,10 @@
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'dawah_and_prokashonas'"
+                                        :table_name="'thana_dawah_and_prokashonas'"
                                         :field_title="'soft_copy_book_distribution'"
                                         :month="month"
                                     >
@@ -5481,10 +5961,26 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <!-- <input name="soft_copy_book_distribution_increase" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.soft_copy_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> -->
+                                    <input
+                                        name="soft_copy_book_distribution"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawah_and_prokashonas
+                                                    ?.soft_copy_book_distribution
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawah-and-prokashona'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'dawah_and_prokashonas'"
+                                        :table_name="'thana_dawah_and_prokashonas'"
                                         :field_title="'soft_copy_book_distribution_increase'"
                                         :month="month"
                                     >
@@ -5504,12 +6000,12 @@
                                         )
                                     }}
                                     <!-- <input name="unit_book_distribution_center"
-                                        :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.unit_book_distribution_center)"
+                                        :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.unit_book_distribution_center)"
                                         @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> -->
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'dawah_and_prokashonas'"
+                                        :table_name="'thana_dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_center'"
                                         :month="month"
                                     >
@@ -5523,13 +6019,13 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.thana_dawah_and_prokashonas
                                                     ?.unit_book_distribution_center_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-dawah-and-prokashona'
+                                                'thana-dawah-and-prokashona'
                                             )
                                         "
                                         type="text"
@@ -5537,7 +6033,7 @@
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'dawah_and_prokashonas'"
+                                        :table_name="'thana_dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_center_increase'"
                                         :month="month"
                                     >
@@ -5550,12 +6046,12 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <!-- <input
                                         name="dawat_link_distribution"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.ward_thana_dawah_and_prokashonas
                                                     ?.dawat_link_distribution
                                             )
                                         "
@@ -5566,10 +6062,10 @@
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'dawah_and_prokashonas'"
+                                        :table_name="'thana_dawah_and_prokashonas'"
                                         :field_title="'dawat_link_distribution'"
                                         :month="month"
                                     >
@@ -5578,13 +6074,27 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <!-- <input name="dawat_link_distribution_increase"
-                                        :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.dawat_link_distribution_increase)"
-                                        @change="data_upload('ward-dawah-and-prokashona')" type="text"
-                                        class="bg-input w-100 text-center" /> -->
+                                    <input
+                                        name="dawat_link_distribution"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawah_and_prokashonas
+                                                    ?.dawat_link_distribution
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawah-and-prokashona'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'dawah_and_prokashonas'"
+                                        :table_name="'thana_dawah_and_prokashonas'"
                                         :field_title="'dawat_link_distribution_increase'"
                                         :month="month"
                                     >
@@ -5596,12 +6106,12 @@
                             <td class="text-start px-2">ইউনিটে বই বিলি</td>
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <!-- <input
                                         name="unit_book_distribution"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.ward_thana_dawah_and_prokashonas
                                                     ?.unit_book_distribution
                                             )
                                         "
@@ -5612,10 +6122,10 @@
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'dawah_and_prokashonas'"
+                                        :table_name="'thana_dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution'"
                                         :month="month"
                                     >
@@ -5624,13 +6134,26 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <!-- <input name="unit_book_distribution_increase"
-                                        :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.unit_book_distribution_increase)"
-                                        @change="data_upload('ward-dawah-and-prokashona')" type="text"
-                                        class="bg-input w-100 text-center" /> -->
+                                    <input
+                                        name="unit_book_distribution"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawah_and_prokashonas
+                                                    ?.unit_book_distribution
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawah-and-prokashona'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'dawah_and_prokashonas'"
+                                        :table_name="'thana_dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
                                     >
@@ -5661,69 +6184,69 @@
                                         )
                                     }}</span>
 
-                                    <!-- <input name="sonar_bangla" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.sonar_bangla)"
+                                    <!-- <input name="sonar_bangla" :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.sonar_bangla)"
                                         @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" />/
-                                    <input name="songram" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.songram)"
+                                    <input name="songram" :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.songram)"
                                         @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" />/
-                                    <input name="prithibi" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.prithibi)"
+                                    <input name="prithibi" :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.prithibi)"
                                         @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> -->
                                 </div>
                             </td>
                             <td>
-                                <div class="d-flex">
+                                <div class="d-flex justify-content-center">
                                     <input
                                         name="sonar_bangla_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.thana_dawah_and_prokashonas
                                                     ?.sonar_bangla_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-dawah-and-prokashona'
+                                                'thana-dawah-and-prokashona'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />/
                                     <input
                                         name="songram_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.thana_dawah_and_prokashonas
                                                     ?.songram_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-dawah-and-prokashona'
+                                                'thana-dawah-and-prokashona'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />/
                                     <input
                                         name="prithibi_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.thana_dawah_and_prokashonas
                                                     ?.prithibi_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-dawah-and-prokashona'
+                                                'thana-dawah-and-prokashona'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
                                 </div>
                             </td>
@@ -5735,42 +6258,42 @@
                     <popup-note
                         :label="'সোনার বাংলা মোট সংখ্যা'"
                         :ward_id="report_header?.ward_info?.id"
-                        :table_name="'dawah_and_prokashonas'"
+                        :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'sonar_bangla'"
                         :month="month"
                     />
                     <popup-note
                         :label="'সোনার বাংলা বৃদ্ধি'"
                         :ward_id="report_header?.ward_info?.id"
-                        :table_name="'dawah_and_prokashonas'"
+                        :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'sonar_bangla_increase'"
                         :month="month"
                     />
                     <popup-note
                         :label="'সংগ্রাম মোট সংখ্যা'"
                         :ward_id="report_header?.ward_info?.id"
-                        :table_name="'dawah_and_prokashonas'"
+                        :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'songram'"
                         :month="month"
                     />
                     <popup-note
                         :label="'সংগ্রাম বৃদ্ধি'"
                         :ward_id="report_header?.ward_info?.id"
-                        :table_name="'dawah_and_prokashonas'"
+                        :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'songram_increase'"
                         :month="month"
                     />
                     <popup-note
                         :label="'পৃথিবী মোট সংখ্যা'"
                         :ward_id="report_header?.ward_info?.id"
-                        :table_name="'dawah_and_prokashonas'"
+                        :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'prithibi'"
                         :month="month"
                     />
                     <popup-note
                         :label="'পৃথিবী বৃদ্ধি'"
                         :ward_id="report_header?.ward_info?.id"
-                        :table_name="'dawah_and_prokashonas'"
+                        :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'prithibi_increase'"
                         :month="month"
                     />

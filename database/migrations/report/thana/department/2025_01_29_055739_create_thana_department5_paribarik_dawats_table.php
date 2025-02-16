@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('thana_department5_paribarik_dawats', function (Blueprint $table) {
+
             $table->id();
 
             $table->bigInteger('report_info_id')->unsigned()->nullable();

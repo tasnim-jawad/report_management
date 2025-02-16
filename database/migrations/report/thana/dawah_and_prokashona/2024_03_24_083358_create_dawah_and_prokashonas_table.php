@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dawah_and_prokashonas', function (Blueprint $table) {
+        Schema::create('thana_dawah_and_prokashonas', function (Blueprint $table) {
             $table->id();
 
             $table->bigInteger('report_info_id')->unsigned()->nullable();

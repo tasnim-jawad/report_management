@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('report_info_id')->unsigned()->nullable();
             
+
             $table->bigInteger('total_cultural_team')->nullable();
             $table->bigInteger('total_program')->nullable();
             $table->bigInteger('total_invited')->nullable();
