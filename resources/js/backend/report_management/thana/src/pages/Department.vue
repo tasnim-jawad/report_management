@@ -38,7 +38,7 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -52,7 +52,7 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -68,12 +68,12 @@
                 </div>
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields3"
+                        v-for="(field, index) in department1_quran_learning_group"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -82,12 +82,12 @@
                 </div>
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields4"
+                        v-for="(field, index) in department1_moktob"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -96,12 +96,12 @@
                 </div>
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields5"
+                        v-for="(field, index) in department1_forkania"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -116,7 +116,23 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
+                        :unique_key="1"
+                    ></form-input>
+                </form>
+                <div class="mb-1 border-bottom mt-2">
+                    <h1 class="font_bng fw-bold">
+                        মোট কতজন সহীহ তিলাওয়াত শিখেছেন:
+                    </h1>
+                </div>
+                <form action="">
+                    <form-input
+                        v-for="(field, index) in department1_learned_sohih_tilawat"
+                        :label="field.label"
+                        :name="field.name"
+                        :key="index"
+                        :onchange="dawat_upload"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -127,12 +143,12 @@
                 </div>
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields7"
+                        v-for="(field, index) in department1_invited"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -143,12 +159,12 @@
                 </div>
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields8"
+                        v-for="(field, index) in department1_associated"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -156,7 +172,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-body">
-                <div class="mb-1 border-bottom mt-2">
+                <!-- <div class="mb-1 border-bottom mt-2">
                     <h1 class="font_bng fw-bold">
                         তা'লিমুল কুরআন : মুয়াল্লিম সংখ্যা :
                     </h1>
@@ -168,23 +184,23 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
-                </form>
+                </form> -->
                 <div class="mb-1 border-bottom mt-2">
                     <h1 class="font_bng fw-bold">
-                        তা'লিমুল কুরআন : বৃদ্ধি সংখ্যা :
+                        সর্বমোট মুয়াল্লিম/মুয়াল্লিমা : বৃদ্ধি সংখ্যা :
                     </h1>
                 </div>
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields10"
+                        v-for="(field, index) in department1_muallim_increased"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department1-talimul-quran'"
+                        :endpoint="'thana-department1-talimul-quran'"
                         :unique_key="1"
                     ></form-input>
                 </form>
@@ -198,17 +214,17 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>সরকারি হিসাবে:</h1>
+                <h1>সরকারি হিসাবে গ্রাম/মহল্লা সংখ্যা:</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields11"
+                        v-for="(field, index) in department2_govment_calculated"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department2-moholla-vittik-dawat'"
+                        :endpoint="'thana-department2-moholla-vittik-dawat'"
                         :unique_key="2"
                     ></form-input>
                 </form>
@@ -216,17 +232,17 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>গ্রাম কমিটি:</h1>
+                <h1>মোট গ্রাম/মহল্লা কমিটি বৃদ্ধি:</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields12"
+                        v-for="(field, index) in department2_committee_increased"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department2-moholla-vittik-dawat'"
+                        :endpoint="'thana-department2-moholla-vittik-dawat'"
                         :unique_key="2"
                     ></form-input>
                 </form>
@@ -234,41 +250,41 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>মহল্লা কমিটি :</h1>
+                <h1>বিশেষ দাওয়াতের অন্তর্ভুক্ত মোট গ্রাম/মহল্লা বৃদ্ধি:</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields13"
+                        v-for="(field, index) in department2_special_dawat_included"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department2-moholla-vittik-dawat'"
+                        :endpoint="'thana-department2-moholla-vittik-dawat'"
                         :unique_key="2"
                     ></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
-            <div class="card-header">
+            <!-- <div class="card-header">
                 <h1>বিশেষ দাওয়াতের অন্তর্ভুক্ত গ্রাম:</h1>
-            </div>
+            </div> -->
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields14"
+                        v-for="(field, index) in department2_invited_and_associated"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department2-moholla-vittik-dawat'"
+                        :endpoint="'thana-department2-moholla-vittik-dawat'"
                         :unique_key="2"
                     ></form-input>
                 </form>
             </div>
         </div>
-        <div class="card mb-3" v-if="month">
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>বিশেষ দাওয়াতের অন্তর্ভুক্ত মহল্লা:</h1>
             </div>
@@ -280,13 +296,13 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department2-moholla-vittik-dawat'"
+                        :endpoint="'thana-department2-moholla-vittik-dawat'"
                         :unique_key="2"
                     ></form-input>
                 </form>
             </div>
-        </div>
-        <div class="card mb-3" v-if="month">
+        </div> -->
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-body">
                 <form action="">
                     <form-input
@@ -295,12 +311,12 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department2-moholla-vittik-dawat'"
+                        :endpoint="'thana-department2-moholla-vittik-dawat'"
                         :unique_key="2"
                     ></form-input>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <div class="card mb-3" v-if="month">
             <div class="card-header">
@@ -311,12 +327,12 @@
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields17"
+                        v-for="(field, index) in department3_young_dawat"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department3-jubo-somaj-dawat'"
+                        :endpoint="'thana-department3-jubo-somaj-dawat'"
                         :unique_key="3"
                     ></form-input>
                 </form>
@@ -324,17 +340,17 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>যুব কমিটি:</h1>
+                <h1>নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে - বৃদ্ধি :</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields18"
+                        v-for="(field, index) in department3_new_somiti_club"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department3-jubo-somaj-dawat'"
+                        :endpoint="'thana-department3-jubo-somaj-dawat'"
                         :unique_key="3"
                     ></form-input>
                 </form>
@@ -342,23 +358,23 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে:</h1>
+                <h1>প্রতিষ্ঠিত সমিতি/ক্লাবে দাওয়াত পৌঁছানো হয়েছে - বৃদ্ধি :</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields19"
+                        v-for="(field, index) in department4_new_somiti_club"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department3-jubo-somaj-dawat'"
+                        :endpoint="'thana-department3-jubo-somaj-dawat'"
                         :unique_key="3"
                     ></form-input>
                 </form>
             </div>
         </div>
-        <div class="card mb-3" v-if="month">
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>প্রতিষ্ঠিত সমিতি/ক্লাবে দাওয়াত পৌঁছানো হয়েছে:</h1>
             </div>
@@ -370,12 +386,12 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department3-jubo-somaj-dawat'"
+                        :endpoint="'thana-department3-jubo-somaj-dawat'"
                         :unique_key="3"
                     ></form-input>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <div class="card mb-3" v-if="month">
             <div class="card-header">
@@ -386,17 +402,17 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ :</h1>
+                <h1>রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ (পু) :</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields21"
+                        v-for="(field, index) in department4_political_and_special_man"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department4-different-job-holders-dawat'"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
                         :unique_key="4"
                     ></form-input>
                 </form>
@@ -404,17 +420,17 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>পেশাজীবী :</h1>
+                <h1>রাজনৈতিক ও বিশিষ্ট ব্যক্তিবর্গ (ম) :</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields22"
+                        v-for="(field, index) in department4_political_and_special_woman"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department4-different-job-holders-dawat'"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
                         :unique_key="4"
                     ></form-input>
                 </form>
@@ -422,17 +438,17 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>উলামা মাশায়েখ :</h1>
+                <h1>পেশাজীবী (পু) :</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields23"
+                        v-for="(field, index) in department4_pesha_jibi_man"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department4-different-job-holders-dawat'"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
                         :unique_key="4"
                     ></form-input>
                 </form>
@@ -440,17 +456,107 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>শ্রমজীবী :</h1>
+                <h1>পেশাজীবী(ম) :</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields24"
+                        v-for="(field, index) in department4_pesha_jibi_woman"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department4-different-job-holders-dawat'"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
+                        :unique_key="4"
+                    ></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উলামা-মাশায়েখ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input
+                        v-for="(field, index) in department4_olama_masayekh"
+                        :label="field.label"
+                        :name="field.name"
+                        :key="index"
+                        :onchange="dawat_upload"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
+                        :unique_key="4"
+                    ></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>কর্মজীবী মহিলা:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input
+                        v-for="(field, index) in department4_kormo_jibi_woman"
+                        :label="field.label"
+                        :name="field.name"
+                        :key="index"
+                        :onchange="dawat_upload"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
+                        :unique_key="4"
+                    ></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>শ্রমজীবী (পু):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input
+                        v-for="(field, index) in department4_sromo_jibi_man"
+                        :label="field.label"
+                        :name="field.name"
+                        :key="index"
+                        :onchange="dawat_upload"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
+                        :unique_key="4"
+                    ></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>শ্রমজীবী(ম):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input
+                        v-for="(field, index) in department4_sromo_jibi_woman"
+                        :label="field.label"
+                        :name="field.name"
+                        :key="index"
+                        :onchange="dawat_upload"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
+                        :unique_key="4"
+                    ></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মিডিয়া কর্মী:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input
+                        v-for="(field, index) in department4_media_worker"
+                        :label="field.label"
+                        :name="field.name"
+                        :key="index"
+                        :onchange="dawat_upload"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
                         :unique_key="4"
                     ></form-input>
                 </form>
@@ -463,7 +569,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields25"
+                        v-for="(field, index) in department4_prantik_jonogosti"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
@@ -481,7 +587,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields26"
+                        v-for="(field, index) in department4_vinno_dormalombi"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
@@ -502,12 +608,12 @@
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields27"
+                        v-for="(field, index) in department5_paribarik_dawat"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department5-paribarik-dawat'"
+                        :endpoint="'thana-department5-paribarik-dawat'"
                         :unique_key="5"
                     ></form-input>
                 </form>
@@ -517,18 +623,18 @@
         <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1 class="fw-semibold">
-                    ৬. মসজিদ/দাওয়াহ্ সেন্টার/তথ্যসেবা কেন্দ্রভিত্তিক দাওয়াত :
+                    ৬. মসজিদ/দাওয়াহ্ সেন্টার/তথ্যসেবা কেন্দ্রভিত্তিক দাওয়াত - বৃদ্ধি :
                 </h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
-            <div class="card-header">
+            <!-- <div class="card-header">
                 <h1>মসজিদ:</h1>
-            </div>
+            </div> -->
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields28"
+                        v-for="(field, index) in department6_mosjid_dawah"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
@@ -539,7 +645,7 @@
                 </form>
             </div>
         </div>
-        <div class="card mb-3" v-if="month">
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>দাওয়াতের আওতাভুক্ত মসজিদ:</h1>
             </div>
@@ -556,8 +662,8 @@
                     ></form-input>
                 </form>
             </div>
-        </div>
-        <div class="card mb-3" v-if="month">
+        </div> -->
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>মসজিদভিত্তিক দাওয়াহ্ সেন্টার:</h1>
             </div>
@@ -574,8 +680,8 @@
                     ></form-input>
                 </form>
             </div>
-        </div>
-        <div class="card mb-3" v-if="month">
+        </div> -->
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>সাধারণ দাওয়াহ্ সেন্টার :</h1>
             </div>
@@ -592,8 +698,8 @@
                     ></form-input>
                 </form>
             </div>
-        </div>
-        <div class="card mb-3" v-if="month">
+        </div> -->
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক) :</h1>
             </div>
@@ -610,8 +716,8 @@
                     ></form-input>
                 </form>
             </div>
-        </div>
-        <div class="card mb-3" v-if="month">
+        </div> -->
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>তথ্যসেবা কেন্দ্র (সাধারণ) :</h1>
             </div>
@@ -628,7 +734,7 @@
                     ></form-input>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <div class="card mb-3" v-if="month">
             <div class="card-header">
@@ -636,20 +742,66 @@
             </div>
         </div>
         <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মোট উপযুক্ত জনশক্তি সংখ্যা :</h1>
+            </div>
             <div class="card-body">
                 <form action="">
                     <form-input
-                        v-for="(field, index) in fields34"
+                        v-for="(field, index) in department7_well_known"
                         :label="field.label"
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department7-dawat-in-technology'"
+                        :endpoint="'thana-department7-dawat-in-technology'"
                         :unique_key="7"
                     ></form-input>
                 </form>
             </div>
         </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মোট অংশগ্রহণকারী সংখ্যা :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input
+                        v-for="(field, index) in department7_attended"
+                        :label="field.label"
+                        :name="field.name"
+                        :key="index"
+                        :onchange="dawat_upload"
+                        :endpoint="'thana-department7-dawat-in-technology'"
+                        :unique_key="7"
+                    ></form-input>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৮. সাংস্কৃতিক কাজের মাধ্যমে দাওয়াত:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <!-- <div class="card-header">
+                <h1>মোট উপযুক্ত জনশক্তি সংখ্যা :</h1>
+            </div> -->
+            <div class="card-body">
+                <form action="">
+                    <form-input
+                        v-for="(field, index) in department8_cultural"
+                        :label="field.label"
+                        :name="field.name"
+                        :key="index"
+                        :onchange="dawat_upload"
+                        :endpoint="'thana-department8-dawat-in-cultural-activity'"
+                        :unique_key="8"
+                    ></form-input>
+                </form>
+            </div>
+        </div>
+        
 
         <previous-next
             :prev-route="{ name: 'Dawat' }"
@@ -948,7 +1100,7 @@ export default {
 
 
         // উলামা-মাশায়েখ
-        department4_pesha_jibi_man: [
+        department4_olama_masayekh: [
             {
                 label: "মোট কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে",
                 name: "olama_masayekh_invited",
@@ -963,7 +1115,7 @@ export default {
             },
         ],
         // কর্মজীবী মহিলা
-        department4_pesha_jibi_woman: [
+        department4_kormo_jibi_woman: [
             {
                 label: "মোট কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে",
                 name: "kormo_jibi_woman_invited",
@@ -1203,6 +1355,7 @@ export default {
                 6
             );
             this.get_data_by_api("thana-department7-dawat-in-technology", 7);
+            this.get_data_by_api("thana-department8-dawat-in-cultural-activity", 8);
         },
     },
 };

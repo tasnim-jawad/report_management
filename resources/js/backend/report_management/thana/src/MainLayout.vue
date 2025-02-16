@@ -102,11 +102,11 @@
                                 >বিভাগ ভিত্তিক তথ্য
                             </router-link>
                         </li>
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'DawahAndProkashona' }">
                                 <span class="icon_margin"><i class="fa-solid fa-book"></i></span>দাওয়াহ্ ও প্রকাশনা
                             </router-link>
-                        </li> -->
+                        </li>
                         <!-- <li>
                             <router-link :to="{ name: 'Kormosuci' }">
                                 <span class="icon_margin"><i class="fa-solid fa-handshake"></i></span>কর্মসূচি
