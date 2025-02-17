@@ -1326,7 +1326,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>বিভাগীয় কমিটিসমূহের বৈঠক:(পুরুষ)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1337,7 +1337,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>বিভাগীয় কমিটিসমূহের বৈঠক:(মহিলা)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1348,7 +1348,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>পৌরসভা বৈঠক:(পুরুষ)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1359,7 +1359,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>পৌরসভা বৈঠক:(মহিলা)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1370,7 +1370,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ইউনিয়ন বৈঠক:(পুরুষ)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1381,7 +1381,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ইউনিয়ন বৈঠক:(মহিলা)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1392,7 +1392,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ওয়ার্ড বৈঠক:(পুরুষ)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1403,7 +1403,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ওয়ার্ড বৈঠক:(মহিলা)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1414,7 +1414,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>পৌরসভা মাসিক সদস্য (রুকন) বৈঠক:(পুরুষ)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1425,7 +1425,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>পৌরসভা মাসিক সদস্য (রুকন) বৈঠক:(মহিলা)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1436,7 +1436,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ইউনিয়ন মাসিক সদস্য (রুকন) বৈঠক:(পুরুষ)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1447,7 +1447,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ইউনিয়ন মাসিক সদস্য (রুকন) বৈঠক:(মহিলা)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1458,7 +1458,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ইউনিটে মোট কর্মী বৈঠক:(পুরুষ)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1469,7 +1469,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ইউনিটে মোট কর্মী বৈঠক:(মহিলা)</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -1480,7 +1480,62 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+                <h1>ত্রৈমাসিক সদস্য (রুকন) সম্মেলন:(পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ত্রৈমাসিক সদস্য (রুকন) সম্মেলন:(মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ষাম্মাসিক সদস্য (রুকন) সম্মেলন:(পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ষাম্মাসিক সদস্য (রুকন) সম্মেলন:(মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>বার্ষিক সদস্য (রুকন) সম্মেলন:(পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>বার্ষিক সদস্য (রুকন) সম্মেলন:(মহিলা)</h1>
             </div>
             <div class="card-body">
                 <form action="">
