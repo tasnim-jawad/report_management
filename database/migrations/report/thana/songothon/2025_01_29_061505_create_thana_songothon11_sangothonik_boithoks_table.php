@@ -72,6 +72,36 @@ return new class extends Migration
             $table->bigInteger('union_kormoporishod_boithok_women_total')->nullable();
             $table->bigInteger('union_kormoporishod_boithok_women_target')->nullable();
             $table->bigInteger('union_kormoporishod_boithok_women_uposthiti')->nullable();
+            
+            
+            
+            $table->bigInteger('upojela_team_boithok_man_total')->nullable();
+            $table->bigInteger('upojela_team_boithok_man_target')->nullable();
+            $table->bigInteger('upojela_team_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('upojela_team_boithok_women_total')->nullable();
+            $table->bigInteger('upojela_team_boithok_women_target')->nullable();
+            $table->bigInteger('upojela_team_boithok_women_uposthiti')->nullable();
+
+            $table->bigInteger('thana_team_boithok_man_total')->nullable();
+            $table->bigInteger('thana_team_boithok_man_target')->nullable();
+            $table->bigInteger('thana_team_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('thana_team_boithok_women_total')->nullable();
+            $table->bigInteger('thana_team_boithok_women_target')->nullable();
+            $table->bigInteger('thana_team_boithok_women_uposthiti')->nullable();
+
+            $table->bigInteger('pourosova_team_boithok_man_total')->nullable();
+            $table->bigInteger('pourosova_team_boithok_man_target')->nullable();
+            $table->bigInteger('pourosova_team_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('pourosova_team_boithok_women_total')->nullable();
+            $table->bigInteger('pourosova_team_boithok_women_target')->nullable();
+            $table->bigInteger('pourosova_team_boithok_women_uposthiti')->nullable();
+
+            $table->bigInteger('union_team_boithok_man_total')->nullable();
+            $table->bigInteger('union_team_boithok_man_target')->nullable();
+            $table->bigInteger('union_team_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('union_team_boithok_women_total')->nullable();
+            $table->bigInteger('union_team_boithok_women_target')->nullable();
+            $table->bigInteger('union_team_boithok_women_uposthiti')->nullable();
 
 
             $table->bigInteger('upojela_mashik_rokon_boithok_man_total')->nullable();

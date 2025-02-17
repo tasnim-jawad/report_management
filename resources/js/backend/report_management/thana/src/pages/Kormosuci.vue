@@ -17,30 +17,30 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields1" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in unit_masik_sadaron_sova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
-        <div class="card mb-3" v-if="month">
+        <!-- <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>দাওয়াতি সভা:</h1>
             </div>
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in fields2" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
-        </div>
+        </div> -->
         <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>আলোচনা সভা:</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in alochona_sova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -50,8 +50,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in sudhi_somabesh" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -61,8 +61,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in siratunnabi_mahfil" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -72,8 +72,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in eid_reunion" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -83,8 +83,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields7" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in dars" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -94,8 +94,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields8" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in tafsir" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -105,8 +105,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields9" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in dawati_jonosova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -116,8 +116,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields10" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in iftar_mahfil_personal" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -127,8 +127,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields11" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in iftar_mahfil_samostic" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -138,8 +138,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields12" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in cha_chakra" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -149,8 +149,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields13" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in samostic_khawa" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -160,8 +160,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields14" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in sikkha_sofor" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -171,8 +171,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields15" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in kirat_protijogita" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -182,8 +182,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields16" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in hamd_nat_protijogita" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -193,8 +193,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields17" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-kormosuci-bastobayon'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in others" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-kormosuci-bastobayon'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -487,7 +487,7 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('ward-kormosuci-bastobayon', 1);
+            this.get_data_by_api('thana-kormosuci-bastobayon', 1);
         }
     }
 

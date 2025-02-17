@@ -22,8 +22,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in rokon" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon1-jonosokti'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in songothon1_rokon" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon1-jonosokti'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -33,8 +33,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in kormi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon1-jonosokti'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in songothon1_kormi" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon1-jonosokti'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -49,8 +49,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in shohojogi_man" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon2-associate-member'" :unique_key="2"></form-input>
+                    <form-input v-for="(field, index) in songothon2_shohojogi_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon2-associate-member'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
@@ -60,8 +60,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in shohojogi_woman" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon2-associate-member'" :unique_key="2"></form-input>
+                    <form-input v-for="(field, index) in songothon2_shohojogi_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon2-associate-member'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
@@ -78,7 +78,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in women_rokon" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -89,7 +89,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in women_kormi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -100,7 +100,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in women_associate_member" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -113,7 +113,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in sromojibi_rokon" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -124,7 +124,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in sromojibi_kormi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -135,7 +135,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in sromojibi_associate_member" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -148,7 +148,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in ulama_rokon" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -159,7 +159,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in ulama_kormi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -170,7 +170,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in ulama_associate_member" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -183,7 +183,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in pesha_jibi_rokon" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -194,7 +194,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in pesha_jibi_kormi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -205,7 +205,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in pesha_jibi_associate_member" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -218,7 +218,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in jubo_rokon" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -229,7 +229,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in jubo_kormi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -240,7 +240,41 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in jubo_associate_member" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাহিত্য ও সংস্কৃতি - সদস্য (রুকন):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in cultural_rokon" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাহিত্য ও সংস্কৃতি - কর্মী:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in cultural_kormi" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাহিত্য ও সংস্কৃতি - সহযোগী সদস্য:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in cultural_associate_member" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -253,7 +287,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in vinno_dormalombi_kormi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -264,7 +298,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in vinno_dormalombi_associate_member" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon3-departmental-information'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon3-departmental-information'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -272,7 +306,299 @@
 
         <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">৪. ইউনিট সংগঠন:</h1>
+                <h1 class="fw-semibold">৪. সাংগঠনিক কাঠামো:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in pouroshova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সংগঠিত পৌরসভা:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothito_pouroshova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়ন:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in union" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সংগঠিত ইউনিয়ন:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothito_union" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ইউনিয়ন (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in sangothonik_union_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ইউনিয়ন (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in sangothonik_union_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>কতটি ইউনিয়নে সদস্য (রুকন) নেই:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in union_without_member_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সিটি কর্পোরেশনের মোট প্রশাসনিক ওয়ার্ড:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_proshashonik_ward_of_city_corporation" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সিটি কর্পোরেশনের মোট সংগঠিত ওয়ার্ড :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothito_ward_of_city_corporation" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মোট সাংগঠনিক ওয়ার্ড (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothonik_ward_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মোট সাংগঠনিক ওয়ার্ড (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothonik_ward_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভার মোট প্রশাসনিক ওয়ার্ড:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_proshashonik_ward_of_pouroshova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়নের মোট প্রশাসনিক ওয়ার্ড:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_proshashonik_ward_of_union" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভার মোট সংগঠিত ওয়ার্ড :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothito_ward_of_pouroshova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়নের মোট সংগঠিত ওয়ার্ড :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothito_ward_of_union" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভার মোট সাংগঠনিক ওয়ার্ড (পুঃ) :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothonik_ward_of_pouroshova_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়নের মোট সাংগঠনিক ওয়ার্ড (পুঃ) :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothonik_ward_of_union_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভার মোট সাংগঠনিক ওয়ার্ড (ম:) :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothonik_ward_of_pouroshova_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়নের মোট সাংগঠনিক ওয়ার্ড (ম:) :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in total_songothonik_ward_of_union_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <!-- <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>অন্যান্য সাংগঠনিক ওয়ার্ড:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in media_unit" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div> -->
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ওয়ার্ড (উলামা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothonik_ward_ulama" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ওয়ার্ড (পেশাজীবী):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothonik_ward_peshajibi" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ওয়ার্ড (যুব):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothonik_ward_jubo" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ওয়ার্ড (म):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothonik_ward_sromo" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ওয়ার্ড (মিডিয়া):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothonik_ward_media" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাংগঠনিক ওয়ার্ড (সাহিত্য ও সংস্কৃতি):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothonik_ward_cultural" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">ইউনিট সংগঠন:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -282,7 +608,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in general_unit_men" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon4-unit-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -293,7 +619,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in general_unit_women" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon4-unit-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -304,29 +630,40 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in ulama_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon4-unit-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>পেশাজীবী ইউনিট:</h1>
+                <h1>পেশাজীবী ইউনিট (পুরুষ):</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in peshajibi_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon4-unit-songothon'" :unique_key="4"></form-input>
+                    <form-input v-for="(field, index) in peshajibi_unit_men" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>শ্রমিক কল্যাণ ইউনিট:</h1>
+                <h1>পেশাজীবী ইউনিট (মহিলা):</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in sromik_kollyan_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon4-unit-songothon'" :unique_key="4"></form-input>
+                    <form-input v-for="(field, index) in peshajibi_unit_women" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>কর্মজীবী ইউনিট (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in kormojibi_unit_women" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -337,10 +674,33 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in jubo_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon4-unit-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>শ্রম ইউনিট (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in sromo_unit_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>শ্রম ইউনিট (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in sromo_unit_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        
         <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>মিডিয়া ইউনিট:</h1>
@@ -348,7 +708,18 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in media_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon4-unit-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সাহিত্য ও সংস্কৃতি ইউনিট:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in cultural_unit" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -367,7 +738,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in dawati_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon5-dawat-and-paribarik-unit'" :unique_key="5"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon5-dawat-and-paribarik-ward'" :unique_key="5"></form-input>
                 </form>
             </div>
         </div>
@@ -378,7 +749,68 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in paribarik_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon5-dawat-and-paribarik-unit'" :unique_key="5"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon5-dawat-and-paribarik-ward'" :unique_key="5"></form-input>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৬. এমারত কায়েম::</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothon6_pouroshova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon6-emarot-kayem'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়ন:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothon6_union" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon6-emarot-kayem'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ওয়ার্ড (সিটিতে):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothon6_ward_of_city" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon6-emarot-kayem'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ওয়ার্ড (পৌরতে):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothon6_ward_of_pouroshova" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon6-emarot-kayem'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ওয়ার্ড (ইউনিয়নে):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothon6_ward_of_union" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon6-emarot-kayem'" :unique_key="6"></form-input>
                 </form>
             </div>
         </div>
@@ -386,7 +818,7 @@
 
         <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">৬. বিদায়ী ছাত্র-ছাত্রী জনশক্তির সংগঠনে যোগদান:</h1>
+                <h1 class="fw-semibold">৭. বিদায়ী ছাত্র-ছাত্রী জনশক্তির সংগঠনে যোগদান:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -395,8 +827,8 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in Joined_student_man" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon6-bidayi-students-connect'" :unique_key="6"></form-input>
+                    <form-input v-for="(field, index) in songothon7_Joined_student_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon7-bidayi-students-connect'" :unique_key="7"></form-input>
                 </form>
             </div>
         </div>
@@ -406,31 +838,106 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in Joined_student_woman" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon6-bidayi-students-connect'" :unique_key="6"></form-input>
+                    <form-input v-for="(field, index) in songothon7_Joined_student_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon7-bidayi-students-connect'" :unique_key="7"></form-input>
                 </form>
             </div>
         </div>
 
 
+
+
+
+
+
         <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">৭. সফর:</h1>
+                <h1 class="fw-semibold">৮. সহযোগী ও পার্শ্ব সংগঠন বিভাগ :</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মোট ট্রেড ইউনিয়ন সংখ্যা:</h1>
+            </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in sofor" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon7-sofor'" :unique_key="7"></form-input>
+                    <form-input v-for="(field, index) in songothon8_total_trade_union" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon8-associate-and-side-organization'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মোট ট্রাস্ট:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothon8_total_trust" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon8-associate-and-side-organization'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মোট ফাউন্ডেশন:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothon8_total_foundation" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon8-associate-and-side-organization'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মোট সোসাইটি:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in songothon8_total_societie" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon8-associate-and-side-organization'" :unique_key="8"></form-input>
                 </form>
             </div>
         </div>
 
 
+
+
+        
         <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">৮. ইয়ানত দাতা:</h1>
+                <h1 class="fw-semibold">৯. সফর:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সফর (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in sofor_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon9-sofor'" :unique_key="9"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>সফর (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in sofor_woman" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon9-sofor'" :unique_key="9"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">১০. ইয়ানত দাতা::</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -440,7 +947,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in associate_member_iyanot" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon8-iyanot-data'" :unique_key="8"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon10-iyanot-data'" :unique_key="10"></form-input>
                 </form>
             </div>
         </div>
@@ -451,116 +958,835 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in sudi_iyanot" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon8-iyanot-data'" :unique_key="8"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon10-iyanot-data'" :unique_key="10"></form-input>
                 </form>
             </div>
         </div>
+
+
+
 
 
         <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">৯. সাংগঠনিক বৈঠকাদি:</h1>
+                <h1 class="fw-semibold">১১. সাংগঠনিক সভা-সম্মেলন:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>ওয়ার্ড শূরা বৈঠক:</h1>
+                <h1>উপজেলা মজলিসে শূরা বৈঠক (পুরুষ):</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in ward_sura_boithok" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>ওয়ার্ড কর্মপরিষদ বৈঠক:</h1>
+                <h1>উপজেলা মজলিসে শূরা বৈঠক (মহিলা):</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in kormoporishod_boithok" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>ওয়ার্ড টিম বৈঠক:</h1>
+                <h1>থানা মজলিসে শূরা বৈঠক (পুরুষ)::</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in team_boithok" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>ওয়ার্ড বৈঠক:</h1>
+                <h1>থানা মজলিসে শূরা বৈঠক (মহিলা)::</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in ward_boithok" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>মাসিক সদস্য (রুকন) বৈঠক:</h1>
+                <h1>পৌরসভা মজলিসে শূরা বৈঠক (পুরুষ)::</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in masik_sodosso_boithok" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>ইউনিটে মোট কর্মী বৈঠক:</h1>
+                <h1>পৌরসভা মজলিসে শূরা বৈঠক (মহিলা):</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in unit_kormi_boithok" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>উলামা সমাবেশ:</h1>
+                <h1>ইউনিয়ন মজলিসে শূরা বৈঠক (পুরুষ)::</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in ulama_somabesh" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>যুবক সমাবেশ:</h1>
+                <h1>ইউনিয়ন মজলিসে শূরা বৈঠক (মহিলা):</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in jubok_somabesh" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>শ্রমিকদের সমাবেশ:</h1>
+                <h1>উপজেলা কর্মপরিষদ বৈঠক (পুরুষ):</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in sromik_somabesh" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-songothon9-sangothonik-boithok'" :unique_key="9"></form-input>
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
                 </form>
             </div>
         </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা কর্মপরিষদ বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা কর্মপরিষদ বৈঠক (পুরুষ)::</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা কর্মপরিষদ বৈঠক (মহিলা)::</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা কর্মপরিষদ বৈঠক (পুরুষ)::</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা কর্মপরিষদ বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়ন কর্মপরিষদ বৈঠক (পুরুষ)::</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়ন কর্মপরিষদ বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা টিম বৈঠক (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা টিম বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা টিম বৈঠক (পুরুষ)::</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা টিম বৈঠক (মহিলা)::</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা টিম বৈঠক (পুরুষ)::</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা টিম বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়ন টিম বৈঠক (পুরুষ)::</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়ন টিম বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক মাসিক সদস্য (রুকন) বৈঠক:(পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক মাসিক সদস্য (রুকন) বৈঠক:(মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক মাসিক সদস্য (রুকন) বৈঠক:(পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক মাসিক সদস্য (রুকন) বৈঠক:(মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা বৈঠক:(পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা বৈঠক:(মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা বৈঠক:(পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা বৈঠক:(মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>রদস্ফসদফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফদস্ফ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela_mozlishe_sura_boithok_man" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-songothon11-sangothonik-boithok'" :unique_key="11"></form-input>
+                </form>
+            </div>
+        </div>
+
 
 
         <previous-next
@@ -1302,7 +2528,7 @@ export default {
             },
         ],
 
-        songothito_union_man: [
+        songothito_union: [
             // {
             //     label: 'বিগত মাসের সংখ্যা',
             //     name: 'songothito_union_man_previous',
@@ -1324,27 +2550,49 @@ export default {
                 name: 'songothito_union_man_target',
             },
         ],
-
-        songothito_union_woman: [
+        sangothonik_union_man: [
             // {
             //     label: 'বিগত মাসের সংখ্যা',
-            //     name: 'songothito_union_woman_previous',
+            //     name: 'sangothonik_union_man_previous',
             // },
             // {
             //     label: 'বর্তমান সংখ্যা',
-            //     name: 'songothito_union_woman_present',
+            //     name: 'sangothonik_union_man_present',
             // },
             {
                 label: 'বৃদ্ধি',
-                name: 'songothito_union_woman_increase',
+                name: 'sangothonik_union_man_increase',
             },
             {
                 label: 'ঘাটতি',
-                name: 'songothito_union_woman_gatti',
+                name: 'sangothonik_union_man_gatti',
             },
             {
                 label: 'টার্গেট',
-                name: 'songothito_union_woman_target',
+                name: 'sangothonik_union_man_target',
+            },
+        ],
+
+        sangothonik_union_woman: [
+            // {
+            //     label: 'বিগত মাসের সংখ্যা',
+            //     name: 'sangothonik_union_woman_previous',
+            // },
+            // {
+            //     label: 'বর্তমান সংখ্যা',
+            //     name: 'sangothonik_union_woman_present',
+            // },
+            {
+                label: 'বৃদ্ধি',
+                name: 'sangothonik_union_woman_increase',
+            },
+            {
+                label: 'ঘাটতি',
+                name: 'sangothonik_union_woman_gatti',
+            },
+            {
+                label: 'টার্গেট',
+                name: 'sangothonik_union_woman_target',
             },
         ],
 
@@ -1914,6 +3162,10 @@ export default {
             },
         ],
 
+//         ৬. এমারত কায়েম:
+// সংগঠন
+// পৌরসভা/ইউনিয়ন
+// ওয়ার্ড (সিটি/পৌর/ইউনিয়ন)
 
         songothon6_pouroshova: [
             {
@@ -2163,6 +3415,45 @@ export default {
             },
         ],
 
+//         ১১. সাংগঠনিক সভা-সম্মেলন:
+// মোট সংখ্যা
+// টার্গেট
+// গড় উপস্থিতি
+// 片
+// কর্মসূচির ধরন (পুরুষ ও মহিলা)
+// পুরুষ
+// মহিলা
+// পুরুষ
+// মহিলা
+// 3.
+// মজলিসে শূরা বৈঠক (উপজেলা-থানা/পৌরসভা/ইউনিয়
+// 2.
+// কর্মপরিষদ/টিম বৈঠক (উপজেলা-থানা/ পৌরসভা/ইউি
+// /
+// 7
+// /
+// 0.
+// 8.
+// উপজেলা/থানাভিত্তিক মাসিক সদস্য (রুকন) বৈঠক (ক্ষেত্রে) উপজেলা/থানা বৈঠক
+// Q. বিভাগীয় কমিটিসমূহের বৈঠক
+// १.
+// ৮.
+// ৯.
+// পৌরসভা/ইউনিয়ন/ওয়ার্ড বৈঠক
+// পৌরসভা/ইউনিয়ন মাসিক সদস্য (রুকন) বৈঠক ইউনিটে মোট কর্মী বৈঠক
+// ত্রৈমাসিক/ ষাম্মাসিক/বার্ষিক সদস্য (রুকন) সম্মেলন
+// ১০. উপজেলা/থানা ভিত্তিক ওয়ার্ড সভাপতি সম্মেলন
+// ১১. উপজেলা/থানা পর্যায়ে কর্মী সম্মেলন
+// ১২. ইউনিয়ন/ ওয়ার্ড পর্যায়ে কর্মী সম্মেলন
+// ১৩. উপজেলা/থানা ভিত্তিক ইউনিট সভাপতি ও সেক্রেটারি সম্মেলন
+// ১৪. উলামা বৈঠক/সমাবেশ
+// ১৫. পেশাজীবীদের নিয়ে বৈঠক
+// ১৬. শ্রমিকদের নিয়ে বৈঠক/সমাবেশ
+// ১৭. যুবকদের নিয়ে বৈঠক
+// ১৮. ছাত্র/ছাত্রী দায়িত্বশীলদের সাথে বৈঠক
+// ১৯. সহযোগী সদস্য সমাবেশ/সম্মেলন
+// ২০. অন্যান্য
+
         upojela_mozlishe_sura_boithok_man: [
             { label: 'সংখ্যা', name: 'upojela_mozlishe_sura_boithok_man_total' },
             { label: 'টার্গেট', name: 'upojela_mozlishe_sura_boithok_man_target' },
@@ -2254,6 +3545,58 @@ export default {
             { label: 'টার্গেট', name: 'union_kormoporishod_boithok_women_target' },
             { label: 'টোটাল উপস্থিতি', name: 'union_kormoporishod_boithok_women_uposthiti' },
         ],
+
+        upojela_team_boithok_man: [
+            { label: 'সংখ্যা', name: 'upojela_team_boithok_man_total' },
+            { label: 'টার্গেট', name: 'upojela_team_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_team_boithok_man_uposthiti' },
+        ],
+
+        upojela_team_boithok_women: [
+            { label: 'সংখ্যা', name: 'upojela_team_boithok_women_total' },
+            { label: 'টার্গেট', name: 'upojela_team_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'upojela_team_boithok_women_uposthiti' },
+        ],
+
+        thana_team_boithok_man: [
+            { label: 'সংখ্যা', name: 'thana_team_boithok_man_total' },
+            { label: 'টার্গেট', name: 'thana_team_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_team_boithok_man_uposthiti' },
+        ],
+
+        thana_team_boithok_women: [
+            { label: 'সংখ্যা', name: 'thana_team_boithok_women_total' },
+            { label: 'টার্গেট', name: 'thana_team_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'thana_team_boithok_women_uposthiti' },
+        ],
+
+        pourosova_team_boithok_man: [
+            { label: 'সংখ্যা', name: 'pourosova_team_boithok_man_total' },
+            { label: 'টার্গেট', name: 'pourosova_team_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pourosova_team_boithok_man_uposthiti' },
+        ],
+
+        pourosova_team_boithok_women: [
+            { label: 'সংখ্যা', name: 'pourosova_team_boithok_women_total' },
+            { label: 'টার্গেট', name: 'pourosova_team_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'pourosova_team_boithok_women_uposthiti' },
+        ],
+
+        union_team_boithok_man: [
+            { label: 'সংখ্যা', name: 'union_team_boithok_man_total' },
+            { label: 'টার্গেট', name: 'union_team_boithok_man_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_team_boithok_man_uposthiti' },
+        ],
+
+        union_team_boithok_women: [
+            { label: 'সংখ্যা', name: 'union_team_boithok_women_total' },
+            { label: 'টার্গেট', name: 'union_team_boithok_women_target' },
+            { label: 'টোটাল উপস্থিতি', name: 'union_team_boithok_women_uposthiti' },
+        ],
+
+
+        // উপজেলা/থানাভিত্তিক মাসিক সদস্য (রুকন) বৈঠক (ক্ষেত্রে) উপজেলা/থানা বৈঠক
+
 
         upojela_mashik_rokon_boithok_man: [
             { label: 'সংখ্যা', name: 'upojela_mashik_rokon_boithok_man_total' },
@@ -2676,15 +4019,17 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('ward-songothon1-jonosokti', 1);
-            this.get_data_by_api('ward-songothon2-associate-member', 2);
-            this.get_data_by_api('ward-songothon3-departmental-information', 3);
-            this.get_data_by_api('ward-songothon4-unit-songothon', 4);
-            this.get_data_by_api('ward-songothon5-dawat-and-paribarik-unit', 5);
-            this.get_data_by_api('ward-songothon6-bidayi-students-connect', 6);
-            this.get_data_by_api('ward-songothon7-sofor', 7);
-            this.get_data_by_api('ward-songothon8-iyanot-data', 8);
-            this.get_data_by_api('ward-songothon9-sangothonik-boithok', 9);
+            this.get_data_by_api('thana-songothon1-jonosokti', 1);
+            this.get_data_by_api('thana-songothon2-associate-member', 2);
+            this.get_data_by_api('thana-songothon3-departmental-information', 3);
+            this.get_data_by_api('thana-songothon4-ward-songothon', 4);
+            this.get_data_by_api('thana-songothon5-dawat-and-paribarik-ward', 5);
+            this.get_data_by_api('thana-songothon6-emarot-kayem', 6);
+            this.get_data_by_api('thana-songothon7-bidayi-students-connect', 7);
+            this.get_data_by_api('thana-songothon8-associate-and-side-organization', 8);
+            this.get_data_by_api('thana-songothon9-sofor', 9);
+            this.get_data_by_api('thana-songothon10-iyanot-data', 10);
+            this.get_data_by_api('thana-songothon11-sangothonik-boithok', 11);
         }
     }
 

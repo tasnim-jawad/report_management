@@ -107,17 +107,17 @@
                                 <span class="icon_margin"><i class="fa-solid fa-book"></i></span>দাওয়াহ্ ও প্রকাশনা
                             </router-link>
                         </li>
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'Kormosuci' }">
                                 <span class="icon_margin"><i class="fa-solid fa-handshake"></i></span>কর্মসূচি
                                 বাস্তবায়ন
                             </router-link>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'Songothon' }">
                                 <span class="icon_margin"><i class="fa-solid fa-sitemap"></i></span>সংগঠন
                             </router-link>
-                        </li> -->
+                        </li>
                         <!-- <li>
                             <router-link :to="{ name: 'Proshikkhon' }">
                                 <span class="icon_margin"><i class="fa-solid fa-chalkboard-user"></i></span>প্ৰশিক্ষণ

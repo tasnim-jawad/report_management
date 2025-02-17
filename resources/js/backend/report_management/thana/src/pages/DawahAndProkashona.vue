@@ -61,7 +61,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields3" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_book_distribution" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields4" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_unit_book_distribution_center" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -83,7 +83,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields5" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_unit_book_distribution" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -94,7 +94,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields6" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_ward_book_sales_center" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -105,7 +105,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields7" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_ward_book_sales" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -116,7 +116,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields8" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_soft_copy_book_distribution" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -127,7 +127,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields9" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_dawat_link_distribution" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -138,7 +138,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields10" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_sonar_bangla" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -149,7 +149,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields11" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_songram" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -160,7 +160,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in fields12" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in dp_prithibi" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-dawah-and-prokashona'" :unique_key="1"></form-input>
                 </form>
             </div>
@@ -226,12 +226,12 @@ export default {
                 name:'books_in_online_library_target',
             },
         ],
-        // dp_books_in_online_library:[
-        //     {
-        //         label:'সংখ্যা',
-        //         name:'book_distribution',
-        //     },
-        // ],
+        dp_book_distribution:[
+            {
+                label:'সংখ্যা',
+                name:'book_distribution',
+            },
+        ],
         dp_unit_book_distribution_center:[
             // {
             //     label:'সংখ্যা',
