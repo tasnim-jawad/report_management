@@ -8139,18 +8139,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon2_associate_members
+                                                    ?.thana_songothon2_associate_members
                                                     ?.associate_member_man_briddhi
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon2-associate-member'
+                                                'thana-songothon2-associate-member'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon2_associate_members'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8158,18 +8165,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon2_associate_members
+                                                    ?.thana_songothon2_associate_members
                                                     ?.associate_member_man_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon2-associate-member'
+                                                'thana-songothon2-associate-member'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon2_associate_members'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     {{
@@ -8214,18 +8228,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon2_associate_members
+                                                    ?.thana_songothon2_associate_members
                                                     ?.associate_member_woman_briddhi
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon2-associate-member'
+                                                'thana-songothon2-associate-member'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon2_associate_members'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8233,18 +8254,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon2_associate_members
+                                                    ?.thana_songothon2_associate_members
                                                     ?.associate_member_woman_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon2-associate-member'
+                                                'thana-songothon2-associate-member'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon2_associate_members'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     {{
@@ -8464,41 +8492,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="women_rokon_increase"
+                                        name="women_rokon_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_rokon_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.women_rokon_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="women_rokon_gatti"
+                                        name="women_rokon_gatti_sthanantor"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_rokon_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.women_rokon_gatti_sthanantor
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8506,18 +8548,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.women_rokon_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -8542,41 +8591,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="women_kormi_increase"
+                                        name="women_kormi_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_kormi_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.women_kormi_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="women_kormi_gatti"
+                                        name="women_kormi_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_kormi_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.women_kormi_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8584,18 +8647,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.women_kormi_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -8624,18 +8694,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.women_associate_member_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8643,18 +8720,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.women_associate_member_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8662,18 +8746,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.women_associate_member_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
 
@@ -8684,59 +8775,61 @@
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
                                     <!-- <input name="sromojibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.sromojibi_rokon_previous ??
-                                                ""
-                                        )
-                                    }}
                                 </td>
                                 <td>
                                     <!-- <input name="sromojibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.sromojibi_rokon_present ??
-                                                ""
-                                        )
-                                    }}
                                 </td>
                                 <td>
                                     <input
-                                        name="sromojibi_rokon_increase"
+                                        name="sromojibi_rokon_increase_agoto"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_rokon_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.sromojibi_rokon_increase_agoto
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="sromojibi_rokon_gatti"
+                                        name="sromojibi_rokon_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_rokon_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.sromojibi_rokon_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8744,18 +8837,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.sromojibi_rokon_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -8780,41 +8880,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="sromojibi_kormi_increase"
+                                        name="sromojibi_kormi_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_kormi_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.sromojibi_kormi_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="sromojibi_kormi_gatti"
+                                        name="sromojibi_kormi_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_kormi_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.sromojibi_kormi_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8822,18 +8936,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.sromojibi_kormi_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -8862,18 +8983,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.sromojibi_associate_member_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8881,18 +9009,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.sromojibi_associate_member_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8900,18 +9035,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.sromojibi_associate_member_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
 
@@ -8940,41 +9082,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="ulama_rokon_increase"
+                                        name="ulama_rokon_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_rokon_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.ulama_rokon_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="ulama_rokon_gatti"
+                                        name="ulama_rokon_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_rokon_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.ulama_rokon_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -8982,18 +9138,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.ulama_rokon_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -9018,41 +9181,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="ulama_kormi_increase"
+                                        name="ulama_kormi_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_kormi_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.ulama_kormi_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="ulama_kormi_gatti"
+                                        name="ulama_kormi_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_kormi_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.ulama_kormi_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9060,18 +9237,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.ulama_kormi_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -9100,18 +9284,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.ulama_associate_member_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9119,18 +9310,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.ulama_associate_member_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9138,18 +9336,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.ulama_associate_member_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
 
@@ -9178,41 +9383,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="pesha_jibi_rokon_increase"
+                                        name="pesha_jibi_rokon_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_rokon_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.pesha_jibi_rokon_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="pesha_jibi_rokon_gatti"
+                                        name="pesha_jibi_rokon_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_rokon_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.pesha_jibi_rokon_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9220,18 +9439,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.pesha_jibi_rokon_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -9256,41 +9482,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="pesha_jibi_kormi_increase"
+                                        name="pesha_jibi_kormi_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_kormi_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.pesha_jibi_kormi_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="pesha_jibi_kormi_gatti"
+                                        name="pesha_jibi_kormi_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_kormi_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.pesha_jibi_kormi_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9298,18 +9538,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.pesha_jibi_kormi_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -9338,18 +9585,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.pesha_jibi_associate_member_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9357,18 +9611,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.pesha_jibi_associate_member_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9376,18 +9637,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.pesha_jibi_associate_member_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
 
@@ -9416,41 +9684,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="jubo_rokon_increase"
+                                        name="jubo_rokon_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_rokon_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.jubo_rokon_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="jubo_rokon_gatti"
+                                        name="jubo_rokon_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_rokon_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.jubo_rokon_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9458,18 +9740,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.jubo_rokon_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -9494,41 +9783,55 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="jubo_kormi_increase"
+                                        name="jubo_kormi_increase_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_kormi_increase
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.jubo_kormi_increase_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="jubo_kormi_gatti"
+                                        name="jubo_kormi_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_kormi_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.jubo_kormi_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9536,18 +9839,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.jubo_kormi_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
                             <tr>
@@ -9576,18 +9886,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.jubo_associate_member_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9595,18 +9912,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.jubo_associate_member_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -9614,18 +9938,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.jubo_associate_member_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                             </tr>
 
@@ -9677,12 +10008,12 @@
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="vinno_dormalombi_kormi_increase"
+                                            name="cultural_rokon_increase_manonnoyon"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
                                                         ?.ward_songothon3_departmental_information
-                                                        ?.vinno_dormalombi_kormi_increase
+                                                        ?.cultural_rokon_increase_manonnoyon
                                                 )
                                             "
                                             @change="
@@ -9706,32 +10037,39 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="vinno_dormalombi_kormi_gatti"
+                                        name="cultural_rokon_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.vinno_dormalombi_kormi_gatti
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.cultural_rokon_gatti_manonnoyon
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon3_departmental_information'"
+                                        :field_title="'associate_member_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="vinno_dormalombi_kormi_target"
+                                            name="cultural_rokon_target"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
                                                         ?.ward_songothon3_departmental_information
-                                                        ?.vinno_dormalombi_kormi_target
+                                                        ?.cultural_rokon_target
                                                 )
                                             "
                                             @change="
@@ -9799,12 +10137,12 @@
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="vinno_dormalombi_associate_member_increase"
+                                            name="cultural_associate_member_increase"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
                                                         ?.ward_songothon3_departmental_information
-                                                        ?.vinno_dormalombi_associate_member_increase
+                                                        ?.cultural_associate_member_increase
                                                 )
                                             "
                                             @change="
@@ -9828,12 +10166,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="vinno_dormalombi_associate_member_gatti"
+                                        name="cultural_associate_member_gatti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.ward_songothon3_departmental_information
-                                                    ?.vinno_dormalombi_associate_member_gatti
+                                                    ?.cultural_associate_member_gatti
                                             )
                                         "
                                         @change="
@@ -9848,12 +10186,12 @@
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="vinno_dormalombi_associate_member_target"
+                                            name="cultural_associate_member_target"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
                                                         ?.ward_songothon3_departmental_information
-                                                        ?.vinno_dormalombi_associate_member_target
+                                                        ?.cultural_associate_member_target
                                                 )
                                             "
                                             @change="
