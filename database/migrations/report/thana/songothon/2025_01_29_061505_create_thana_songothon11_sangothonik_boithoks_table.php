@@ -343,6 +343,14 @@ return new class extends Migration
             $table->bigInteger('associate_member_sommelon_women_total')->nullable();
             $table->bigInteger('associate_member_sommelon_women_target')->nullable();
             $table->bigInteger('associate_member_sommelon_women_uposthiti')->nullable();
+            
+            // other
+            $table->bigInteger('other_man_total')->nullable();
+            $table->bigInteger('other_man_target')->nullable();
+            $table->bigInteger('other_man_uposthiti')->nullable();
+            $table->bigInteger('other_women_total')->nullable();
+            $table->bigInteger('other_women_target')->nullable();
+            $table->bigInteger('other_women_uposthiti')->nullable();
 
             $table->timestamps();
         });
