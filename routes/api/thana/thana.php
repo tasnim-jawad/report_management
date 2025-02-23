@@ -70,7 +70,6 @@
     Route::group(['prefix' => 'thana-dawat2-personal-and-target'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'store_single'])->middleware(ThanaStatusChack::class);
-
         Route::get('/all', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'store']);
@@ -196,19 +195,19 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon3DepartmentalInformationController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon4-ward-songothon'], function () {
+    Route::group(['prefix' => 'thana-songothon4-organizational-structure'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon4OrganizationalStructureController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon4OrganizationalStructureController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon5-dawat-and-paribarik-ward'], function () {
+    Route::group(['prefix' => 'thana-songothon5-dawat-and-paribarik-unit'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon5DawatAndParibarikUnitController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon5DawatAndParibarikUnitController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
     Route::group(['prefix' => 'thana-songothon6-bidayi-students-connect'], function () {
-        Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon6EmarotKayemController::class, 'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon6EmarotKayemController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon7BidayiStudentsConnectController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon7BidayiStudentsConnectController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
     Route::group(['prefix' => 'thana-songothon7-sofor'], function () {

@@ -18,9 +18,11 @@ return new class extends Migration
             $table->bigInteger('unit_tarbiati_boithok_man_total')->nullable();
             $table->bigInteger('unit_tarbiati_boithok_man_target')->nullable();
             $table->bigInteger('unit_tarbiati_boithok_man_uposthiti')->nullable();
+
             $table->bigInteger('unit_tarbiati_boithok_women_total')->nullable();
             $table->bigInteger('unit_tarbiati_boithok_women_target')->nullable();
             $table->bigInteger('unit_tarbiati_boithok_women_uposthiti')->nullable();
+
             $table->bigInteger('upozila_vittik_rokon_shikkha_shibir_man_total')->nullable();
             $table->bigInteger('upozila_vittik_rokon_shikkha_shibir_man_target')->nullable();
             $table->bigInteger('upozila_vittik_rokon_shikkha_shibir_man_uposthiti')->nullable();
@@ -82,12 +84,15 @@ return new class extends Migration
             $table->bigInteger('union_kormi_shikkha_boithok_women_total')->nullable();
             $table->bigInteger('union_kormi_shikkha_boithok_women_target')->nullable();
             $table->bigInteger('union_kormi_shikkha_boithok_women_uposthiti')->nullable();
+
             $table->bigInteger('ward_kormi_shikkha_boithok_man_total')->nullable();
             $table->bigInteger('ward_kormi_shikkha_boithok_man_target')->nullable();
             $table->bigInteger('ward_kormi_shikkha_boithok_man_uposthiti')->nullable();
+
             $table->bigInteger('ward_kormi_shikkha_boithok_women_total')->nullable();
             $table->bigInteger('ward_kormi_shikkha_boithok_women_target')->nullable();
             $table->bigInteger('ward_kormi_shikkha_boithok_women_uposthiti')->nullable();
+
             $table->bigInteger('gono_sikkha_boithok_man_total')->nullable();
             $table->bigInteger('gono_sikkha_boithok_man_target')->nullable();
             $table->bigInteger('gono_sikkha_boithok_man_uposthiti')->nullable();

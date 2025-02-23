@@ -34,6 +34,12 @@ return new class extends Migration
             $table->bigInteger('union_gatti')->nullable();
             $table->bigInteger('union_target')->nullable();
 
+            $table->bigInteger('songothito_union_previous')->nullable();
+            $table->bigInteger('songothito_union_present')->nullable();
+            $table->bigInteger('songothito_union_increase')->nullable();
+            $table->bigInteger('songothito_union_gatti')->nullable();
+            $table->bigInteger('songothito_union_target')->nullable();
+
             $table->bigInteger('songothito_union_man_previous')->nullable();
             $table->bigInteger('songothito_union_man_present')->nullable();
             $table->bigInteger('songothito_union_man_increase')->nullable();

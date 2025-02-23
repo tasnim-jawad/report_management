@@ -10008,17 +10008,17 @@
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="cultural_rokon_increase_manonnoyon"
+                                            name="cultural_kormi_increase_manonnoyon"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon3_departmental_information
-                                                        ?.cultural_rokon_increase_manonnoyon
+                                                        ?.thana_songothon3_departmental_information
+                                                        ?.cultural_kormi_increase_manonnoyon
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon3-departmental-information'
+                                                    'thana-songothon3-departmental-information'
                                                 )
                                             "
                                             type="text"
@@ -10037,12 +10037,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="cultural_rokon_gatti_manonnoyon"
+                                        name="cultural_kormi_gatti_manonnoyon"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon3_departmental_information
-                                                    ?.cultural_rokon_gatti_manonnoyon
+                                                    ?.cultural_kormi_gatti_manonnoyon
                                             )
                                         "
                                         @change="
@@ -10064,17 +10064,17 @@
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="cultural_rokon_target"
+                                            name="cultural_kormi_target"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon3_departmental_information
-                                                        ?.cultural_rokon_target
+                                                        ?.thana_songothon3_departmental_information
+                                                        ?.cultural_kormi_target
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon3-departmental-information'
+                                                    'thana-songothon3-departmental-information'
                                                 )
                                             "
                                             type="text"
@@ -10096,7 +10096,7 @@
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <!-- <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                        <!-- <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_previous)" @change="data_upload('thana-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
                                                 previous_present?.vinno_dormalombi_associate_member_previous ??
@@ -10116,7 +10116,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <!-- <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
+                                        <!-- <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_present)" @change="data_upload('thana-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
                                                 previous_present?.vinno_dormalombi_associate_member_present ??
@@ -10141,13 +10141,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon3_departmental_information
+                                                        ?.thana_songothon3_departmental_information
                                                         ?.cultural_associate_member_increase
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon3-departmental-information'
+                                                    'thana-songothon3-departmental-information'
                                                 )
                                             "
                                             type="text"
@@ -10170,13 +10170,13 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon3_departmental_information
+                                                    ?.thana_songothon3_departmental_information
                                                     ?.cultural_associate_member_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon3-departmental-information'
+                                                'thana-songothon3-departmental-information'
                                             )
                                         "
                                         type="text"
@@ -10190,13 +10190,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon3_departmental_information
+                                                        ?.thana_songothon3_departmental_information
                                                         ?.cultural_associate_member_target
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon3-departmental-information'
+                                                    'thana-songothon3-departmental-information'
                                                 )
                                             "
                                             type="text"
@@ -10221,49 +10221,3441 @@
                     </p>
                 </div>
 
-                <div class="unit_shongothon mb-3 pt-3">
-                    <h4 class="fs-6">৪. ইউনিট সংগঠন:</h4>
-                    <table class="text-center mb-1">
+                <div class="thana_shongothon mb-2">
+                    <h4 class="fs-6">৪. সাংগঠনিক কাঠামো*:</h4>
+                    <table class="text-center mb-2 table_layout_fixed">
                         <thead>
                             <tr>
-                                <th class="width-20">ইউনিটের ধরন</th>
-                                <th class="width-15">বিগত সময়ের সংখ্যা</th>
-                                <th class="width-15">বর্তমান সংখ্যা</th>
-                                <th class="width-10">বৃদ্ধি</th>
-                                <th class="width-10">ঘাটতি</th>
-                                <th class="width-15">টার্গেট</th>
-                                <th class="width-15">বাস্তবায়নের হার</th>
+                                <th class="width-30">সংগঠনের ধরন</th>
+                                <th class="width-">বিগত সময়ের সংখ্যা</th>
+                                <th class="width-">বর্তমান সংখ্যা</th>
+                                <th class="width-">বৃদ্ধি</th>
+                                <th class="width-">ঘাটতি</th>
+                                <th class="width-">টার্গেট</th>
+                                <th class="width-">বাস্তবায়নের হার</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">পৌরসভা</td>
+                                <td>
+                                    <input
+                                        name="pouroshov_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.pouroshov_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="pouroshova_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.pouroshova_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="pouroshova_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.pouroshova_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="pouroshova_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.pouroshova_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="pouroshova_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.pouroshova_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সংগঠিত পৌরসভা</td>
+                                <td>
+                                    <input
+                                        name="songothito_pouroshova_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_pouroshova_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_pouroshova_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_pouroshova_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_pouroshova_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_pouroshova_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_pouroshova_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_pouroshova_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_pouroshova_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_pouroshova_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">ইউনিয়ন</td>
+                                <td>
+                                    <input
+                                        name="union_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">সংগঠিত ইউনিয়ন</td>
+                                <td>
+                                    <input
+                                        name="songothito_union_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সাংগঠনিক ইউনিয়ন (পুরুষ)
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_man_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_man_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_man_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_man_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_man_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_man_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_man_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_man_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_man_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_man_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সাংগঠনিক ইউনিয়ন (মহিলা)
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_woman_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_woman_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_woman_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_woman_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_woman_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_woman_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_woman_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_woman_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothito_union_woman_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothito_union_woman_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    কতটি ইউনিয়নে সদস্য (রুকন) নেই
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_without_member_woman_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_without_member_woman_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_without_member_woman_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_without_member_woman_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_without_member_woman_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_without_member_woman_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_without_member_woman_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_without_member_woman_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_without_member_woman_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.union_without_member_woman_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সিটি কর্পোরেশনের মোট প্রশাসনিক ওয়ার্ড
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_city_corporation_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_city_corporation_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_city_corporation_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_city_corporation_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_city_corporation_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_city_corporation_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_city_corporation_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_city_corporation_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_city_corporation_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_city_corporation_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সিটি কর্পোরেশনের মোট সংগঠিত ওয়ার্ড
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_city_corporation_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_city_corporation_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_city_corporation_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_city_corporation_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_city_corporation_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_city_corporation_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_city_corporation_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_city_corporation_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_city_corporation_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_city_corporation_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    মোট সাংগঠনিক ওয়ার্ড (পুরুষ)
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_man_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_man_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_man_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_man_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_man_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_man_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_man_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_man_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_man_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_man_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    মোট সাংগঠনিক ওয়ার্ড (মহিলা)
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_woman_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_woman_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_woman_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_woman_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_woman_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_woman_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_woman_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_woman_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_woman_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_woman_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    পৌরসভা/ইউনিয়নের মোট প্রশাসনিক ওয়ার্ড
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_pouroshova_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_pouroshova_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_proshashonik_ward_of_union_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_union_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_pouroshova_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_pouroshova_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_proshashonik_ward_of_union_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_union_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_pouroshova_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_pouroshova_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_proshashonik_ward_of_union_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_union_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_pouroshova_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_pouroshova_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_proshashonik_ward_of_union_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_union_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_proshashonik_ward_of_pouroshova_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_pouroshova_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_proshashonik_ward_of_union_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_proshashonik_ward_of_union_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>/</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    পৌরসভা/ইউনিয়নের মোট সংগঠিত ওয়ার্ড
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_pouroshova_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_pouroshova_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothito_ward_of_union_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_union_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_pouroshova_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_pouroshova_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothito_ward_of_union_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_union_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_pouroshova_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_pouroshova_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothito_ward_of_union_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_union_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_pouroshova_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_pouroshova_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothito_ward_of_union_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_union_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothito_ward_of_pouroshova_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_pouroshova_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothito_ward_of_union_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothito_ward_of_union_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>/</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    পৌরসভা/ইউনিয়নের মোট সাংগঠনিক ওয়ার্ড (পুঃ)
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_man_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_man_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_man_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_man_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_man_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_man_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_man_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_man_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_man_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_man_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_man_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_man_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_man_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_man_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_man_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_man_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_man_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_man_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_man_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_man_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>/</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    পৌরসভা/ইউনিয়নের মোট সাংগঠনিক ওয়ার্ড (ম:)
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_woman_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_woman_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_woman_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_woman_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_woman_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_woman_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_woman_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_woman_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_woman_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_woman_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_woman_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_woman_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_woman_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_woman_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_woman_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_woman_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="total_songothonik_ward_of_pouroshova_woman_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_pouroshova_woman_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="total_songothonik_ward_of_union_woman_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.total_songothonik_ward_of_union_woman_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>/</td>
+                            </tr>
+                            <tr>
+                                <td class="">অন্যান্য সাংগঠনিক ওয়ার্ড</td>
+                                <td colspan="6"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সাংগঠনিক ওয়ার্ড (উলামা)
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_ulama_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_ulama_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_ulama_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_ulama_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_ulama_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_ulama_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_ulama_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_ulama_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_ulama_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_ulama_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সাংগঠনিক ওয়ার্ড (পেশাজীবী)
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_peshajibi_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_peshajibi_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_peshajibi_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_peshajibi_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_peshajibi_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_peshajibi_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_peshajibi_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_peshajibi_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_peshajibi_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_peshajibi_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সাংগঠনিক ওয়ার্ড (যুব)
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_jubo_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_jubo_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_jubo_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_jubo_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_jubo_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_jubo_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_jubo_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_jubo_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_jubo_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_jubo_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সাংগঠনিক ওয়ার্ড (শ্রম)
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_sromo_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_sromo_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_sromo_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_sromo_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_sromo_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_sromo_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_sromo_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_sromo_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_sromo_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_sromo_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সাংগঠনিক ওয়ার্ড (মিডিয়া)
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_media_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_media_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_media_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_media_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_media_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_media_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_media_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_media_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_media_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_media_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    সাংগঠনিক ওয়ার্ড (সাহিত্য ও সংস্কৃতি)
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_cultural_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_cultural_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_cultural_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_cultural_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_cultural_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_cultural_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_cultural_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_cultural_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="songothonik_ward_cultural_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.songothonik_ward_cultural_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="text-center mb-1 table_layout_fixed">
+                        <thead>
+                            <tr>
+                                <th class="width-30">ইউনিট সংগঠন</th>
+                                <th class="">বিগত সময়ের সংখ্যা</th>
+                                <th class="">বর্তমান সংখ্যা</th>
+                                <th class="">বৃদ্ধি</th>
+                                <th class="">ঘাটতি</th>
+                                <th class="">টার্গেট</th>
+                                <th class="">বাস্তবায়নের হার</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (পুরুষ)</td>
-                                <!-- <td>{{bangla($songothon4->general_unit_men_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_present?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_target?? "")}}</td>
                                 <td>
-                                    {{bangla(implementation_rate($songothon4->general_unit_men_target, $songothon4->general_unit_men_increase))}}
-                                </td> -->
-
-                                <td>
-                                    <!-- <input name="general_unit_men_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.general_unit_men_previous ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="general_unit_men_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.general_unit_men_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    <!-- <input name="general_unit_men_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.general_unit_men_present ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="general_unit_men_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.general_unit_men_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10271,18 +13663,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.general_unit_men_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10290,18 +13689,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.general_unit_men_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10309,61 +13715,81 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.general_unit_men_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            implementation_rate(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_men_target,
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_men_increase
-                                            )
-                                        )
-                                    }}
-                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (মহিলা)</td>
-                                <!-- <td>{{bangla($songothon4->general_unit_women_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_present?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_target?? "")}}</td>
                                 <td>
-                                    {{bangla(implementation_rate($songothon4->general_unit_women_target, $songothon4->general_unit_women_increase))}}
-                                </td> -->
-                                <td>
-                                    <!-- <input name="general_unit_women_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.general_unit_women_previous ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="general_unit_women_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.general_unit_women_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    <!-- <input name="general_unit_women_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.general_unit_women_present ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="general_unit_women_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.general_unit_women_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10371,18 +13797,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.general_unit_women_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10390,18 +13823,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.general_unit_women_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10409,61 +13849,81 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.general_unit_women_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            implementation_rate(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_women_target,
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_women_increase
-                                            )
-                                        )
-                                    }}
-                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="text-start">উলামা ইউনিট</td>
-                                <!-- <td>{{bangla($songothon4->ulama_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->ulama_unit_present?? "")}}</td>
-                                <td>{{bangla($songothon4->ulama_unit_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->ulama_unit_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->ulama_unit_target?? "")}}</td>
                                 <td>
-                                    {{bangla(implementation_rate($songothon4->ulama_unit_target, $songothon4->ulama_unit_increase))}}
-                                </td> -->
-                                <td>
-                                    <!-- <input name="ulama_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.ulama_unit_previous ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="ulama_unit_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.ulama_unit_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    <!-- <input name="ulama_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.ulama_unit_present ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="ulama_unit_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.ulama_unit_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10471,18 +13931,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.ulama_unit_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10490,18 +13957,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.ulama_unit_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10509,261 +13983,489 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.ulama_unit_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            implementation_rate(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.ulama_unit_target,
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.ulama_unit_increase
-                                            )
-                                        )
-                                    }}
-                                </td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <td class="text-start">পেশাজীবী ইউনিট</td>
-                                <!-- <td>{{bangla($songothon4->peshajibi_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->peshajibi_unit_present?? "")}}</td>
-                                <td>{{bangla($songothon4->peshajibi_unit_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->peshajibi_unit_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->peshajibi_unit_target?? "")}}</td>
-                                <td>
-                                    {{bangla(implementation_rate($songothon4->peshajibi_unit_target, $songothon4->peshajibi_unit_increase))}}
-                                </td> -->
-                                <td>
-                                    <!-- <input name="peshajibi_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.peshajibi_unit_previous ??
-                                                ""
-                                        )
-                                    }}
-                                </td>
-                                <td>
-                                    <!-- <input name="peshajibi_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.peshajibi_unit_present ??
-                                                ""
-                                        )
-                                    }}
+                                <td class="text-start">
+                                    পেশাজীবী ইউনিট (পুরুষ)
                                 </td>
                                 <td>
                                     <input
-                                        name="peshajibi_unit_increase"
+                                        name="peshajibi_unit_men_previous"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.peshajibi_unit_increase
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_men_previous
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="peshajibi_unit_gatti"
+                                        name="peshajibi_unit_men_present"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.peshajibi_unit_gatti
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_men_present
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="peshajibi_unit_target"
+                                        name="peshajibi_unit_men_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.peshajibi_unit_target
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_men_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    {{
-                                        formatBangla(
-                                            implementation_rate(
+                                    <input
+                                        name="peshajibi_unit_men_gatti"
+                                        :value="
+                                            formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.peshajibi_unit_target,
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.peshajibi_unit_increase
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_men_gatti
                                             )
-                                        )
-                                    }}
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
+                                <td>
+                                    <input
+                                        name="peshajibi_unit_men_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_men_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <td class="text-start">শ্রমিক কল্যাণ ইউনিট</td>
-                                <!-- <td>{{bangla($songothon4->sromik_kollyan_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->sromik_kollyan_unit_present?? "")}}</td>
-                                <td>{{bangla($songothon4->sromik_kollyan_unit_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->sromik_kollyan_unit_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->sromik_kollyan_unit_target?? "")}}</td>
-                                <td>
-                                    {{bangla(implementation_rate($songothon4->sromik_kollyan_unit_target, $songothon4->sromik_kollyan_unit_increase))}}
-                                </td> -->
-                                <td>
-                                    <!-- <input name="sromik_kollyan_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.sromik_kollyan_unit_previous ??
-                                                ""
-                                        )
-                                    }}
-                                </td>
-                                <td>
-                                    <!-- <input name="sromik_kollyan_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.sromik_kollyan_unit_present ??
-                                                ""
-                                        )
-                                    }}
+                                <td class="text-start">
+                                    পেশাজীবী ইউনিট (মহিলা)
                                 </td>
                                 <td>
                                     <input
-                                        name="sromik_kollyan_unit_increase"
+                                        name="peshajibi_unit_women_previous"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.sromik_kollyan_unit_increase
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_women_previous
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="sromik_kollyan_unit_gatti"
+                                        name="peshajibi_unit_women_present"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.sromik_kollyan_unit_gatti
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_women_present
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="sromik_kollyan_unit_target"
+                                        name="peshajibi_unit_women_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.sromik_kollyan_unit_target
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_women_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    {{
-                                        formatBangla(
-                                            implementation_rate(
+                                    <input
+                                        name="peshajibi_unit_women_gatti"
+                                        :value="
+                                            formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.sromik_kollyan_unit_target,
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.sromik_kollyan_unit_increase
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_women_gatti
                                             )
-                                        )
-                                    }}
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
+                                <td>
+                                    <input
+                                        name="peshajibi_unit_women_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.peshajibi_unit_women_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    কর্মজীবী ইউনিট (মহিলা)
+                                </td>
+                                <td>
+                                    <input
+                                        name="kormojibi_unit_women_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.kormojibi_unit_women_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="kormojibi_unit_women_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.kormojibi_unit_women_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="kormojibi_unit_women_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.kormojibi_unit_women_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="kormojibi_unit_women_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.kormojibi_unit_women_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="kormojibi_unit_women_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.kormojibi_unit_women_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="text-start">যুব ইউনিট</td>
-                                <!-- <td>{{bangla($songothon4->jubo_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->jubo_unit_present?? "")}}</td>
-                                <td>{{bangla($songothon4->jubo_unit_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->jubo_unit_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->jubo_unit_target?? "")}}</td>
                                 <td>
-                                    {{bangla(implementation_rate($songothon4->jubo_unit_target, $songothon4->jubo_unit_increase))}}
-                                </td> -->
-                                <td>
-                                    <!-- <input name="jubo_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.jubo_unit_previous ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="jubo_unit_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.jubo_unit_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    <!-- <input name="jubo_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.jubo_unit_present ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="jubo_unit_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.jubo_unit_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10771,18 +14473,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.jubo_unit_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10790,18 +14499,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.jubo_unit_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10809,61 +14525,349 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.jubo_unit_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">শ্রম ইউনিট (পুরুষ)</td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_man_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_man_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    {{
-                                        formatBangla(
-                                            implementation_rate(
+                                    <input
+                                        name="sromo_unit_man_present"
+                                        :value="
+                                            formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.jubo_unit_target,
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.jubo_unit_increase
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_man_present
                                             )
-                                        )
-                                    }}
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_man_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_man_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_man_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_man_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_man_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_man_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">শ্রম ইউনিট (মহিলা)</td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_woman_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_woman_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_woman_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_woman_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_woman_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_woman_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_woman_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_woman_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="sromo_unit_woman_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.sromo_unit_woman_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="text-start">মিডিয়া ইউনিট</td>
-                                <!-- <td>{{bangla($songothon4->media_unit_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->media_unit_present?? "")}}</td>
-                                <td>{{bangla($songothon4->media_unit_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->media_unit_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->media_unit_target?? "")}}</td>
                                 <td>
-                                    {{bangla(implementation_rate($songothon4->media_unit_target, $songothon4->media_unit_increase))}}
-                                </td> -->
-                                <td>
-                                    <!-- <input name="media_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.media_unit_previous ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="media_unit_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.media_unit_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
-                                    <!-- <input name="media_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.media_unit_present ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="media_unit_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.media_unit_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10871,18 +14875,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.media_unit_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10890,18 +14901,25 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.media_unit_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -10909,343 +14927,183 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
+                                                    ?.thana_songothon4_organizational_structures
                                                     ?.media_unit_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon4-unit-songothon'
+                                                'thana-songothon4-organizational-structure'
                                             )
                                         "
                                         type="text"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-input fixed-input-30 text-center"
                                     />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            implementation_rate(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.media_unit_target,
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.media_unit_increase
-                                            )
-                                        )
-                                    }}
-                                </td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <td class="text-end">সর্বমোট ইউনিট সংখ্যা</td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            Number(
-                                                previous_present?.general_unit_men_previous ??
-                                                    0
-                                            ) +
-                                                Number(
-                                                    previous_present?.general_unit_women_previous ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.ulama_unit_previous ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.peshajibi_unit_previous ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.sromik_kollyan_unit_previous ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.jubo_unit_previous ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.media_unit_previous ??
-                                                        0
-                                                ) || ""
-                                        )
-                                    }}
+                                <td class="text-start">
+                                    সাহিত্য ও সংস্কৃতি ইউনিট
                                 </td>
                                 <td>
-                                    {{
-                                        formatBangla(
-                                            Number(
-                                                previous_present?.general_unit_men_present ??
-                                                    0
-                                            ) +
-                                                Number(
-                                                    previous_present?.general_unit_women_present ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.ulama_unit_present ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.peshajibi_unit_present ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.sromik_kollyan_unit_present ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.jubo_unit_present ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    previous_present?.media_unit_present ??
-                                                        0
-                                                ) || ""
-                                        )
-                                    }}
-                                </td>
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            Number(
+                                    <input
+                                        name="cultural_unit_previous"
+                                        :value="
+                                            formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_men_increase ??
-                                                    0
-                                            ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.general_unit_women_increase ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.ulama_unit_increase ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.peshajibi_unit_increase ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.sromik_kollyan_unit_increase ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.jubo_unit_increase ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.media_unit_increase ??
-                                                        0
-                                                ) || ""
-                                        )
-                                    }}
-                                </td>
-
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            Number(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_men_gatti ??
-                                                    0
-                                            ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.general_unit_women_gatti ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.ulama_unit_gatti ?? 0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.peshajibi_unit_gatti ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.sromik_kollyan_unit_gatti ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.jubo_unit_gatti ?? 0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.media_unit_gatti ?? 0
-                                                ) || ""
-                                        )
-                                    }}
-                                </td>
-
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            Number(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_men_target ??
-                                                    0
-                                            ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.general_unit_women_target ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.ulama_unit_target ?? 0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.peshajibi_unit_target ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.sromik_kollyan_unit_target ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.jubo_unit_target ?? 0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.media_unit_target ?? 0
-                                                ) || ""
-                                        )
-                                    }}
-                                </td>
-
-                                <td>
-                                    {{
-                                        formatBangla(
-                                            implementation_rate(
-                                                // First argument: Target values summed
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.general_unit_men_target ??
-                                                        0
-                                                ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.general_unit_women_target ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.ulama_unit_target ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.peshajibi_unit_target ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.sromik_kollyan_unit_target ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.jubo_unit_target ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.media_unit_target ??
-                                                            0
-                                                    ),
-                                                // Second argument: Increase values summed
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon4_unit_songothons
-                                                        ?.general_unit_men_increase ??
-                                                        0
-                                                ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.general_unit_women_increase ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.ulama_unit_increase ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.peshajibi_unit_increase ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.sromik_kollyan_unit_increase ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.jubo_unit_increase ??
-                                                            0
-                                                    ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon4_unit_songothons
-                                                            ?.media_unit_increase ??
-                                                            0
-                                                    )
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.cultural_unit_previous
                                             )
-                                        )
-                                    }}
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
+                                <td>
+                                    <input
+                                        name="cultural_unit_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.cultural_unit_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="cultural_unit_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.cultural_unit_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="cultural_unit_gatti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.cultural_unit_gatti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="cultural_unit_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon4_organizational_structures
+                                                    ?.cultural_unit_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon4-organizational-structure'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-30 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon4_organizational_structures'"
+                                        :field_title="'unit_book_distribution_increase'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-end">সর্বমোট ইউনিট</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
+                    <p class="font-13">
+                        *সংগঠনের কাজের সুবিধার্থে বিভিন্ন স্তরের প্রশাসনিক
+                        কাঠামোকে এক বা একাধিক ভাগে বিভক্ত করে কাঠামো
+                        পুনর্বিন্যাসকে সাংগঠনিক উপজেলা/থানা, পৌরসভা, ইউনিয়ন ও
+                        ওয়ার্ড বুঝাৰে।
+                    </p>
                 </div>
+
                 <div class="paribarik mb-2">
                     <h4 class="fs-6">৫. দাওয়াতি ও পারিবারিক ইউনিট*:</h4>
                     <table class="text-center mb-1 table_layout_fixed">
@@ -11263,22 +15121,42 @@
                             <tr>
                                 <td class="text-start">মোট দাওয়াতি ইউনিট</td>
                                 <td>
-                                    <!-- <input name="dawati_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.dawati_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.dawati_unit_previous ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="dawati_unit_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon5_dawat_and_paribarik_units
+                                                    ?.dawati_unit_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon5-dawat-and-paribarik-unit'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
                                 </td>
                                 <td>
-                                    <!-- <input name="dawati_unit_present" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.dawati_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.dawati_unit_present ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="dawati_unit_present"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon5_dawat_and_paribarik_units
+                                                    ?.dawati_unit_present
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon5-dawat-and-paribarik-unit'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
                                 </td>
                                 <td>
                                     <input
@@ -11286,13 +15164,13 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon5_dawat_and_paribarik_units
+                                                    ?.thana_songothon5_dawat_and_paribarik_units
                                                     ?.dawati_unit_increase
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon5-dawat-and-paribarik-unit'
+                                                'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
                                         type="text"
@@ -11305,13 +15183,13 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon5_dawat_and_paribarik_units
+                                                    ?.thana_songothon5_dawat_and_paribarik_units
                                                     ?.dawati_unit_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon5-dawat-and-paribarik-unit'
+                                                'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
                                         type="text"
@@ -11324,13 +15202,13 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon5_dawat_and_paribarik_units
+                                                    ?.thana_songothon5_dawat_and_paribarik_units
                                                     ?.dawati_unit_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon5-dawat-and-paribarik-unit'
+                                                'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
                                         type="text"
@@ -11341,32 +15219,43 @@
                             <tr>
                                 <td class="text-start">মোট পারিবারিক ইউনিট</td>
                                 <td>
-                                    <!-- <input name="paribarik_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.paribarik_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
-                                    {{
-                                        formatBangla(
-                                            previous_present?.paribarik_unit_previous ??
-                                                ""
-                                        )
-                                    }}
+                                    <input
+                                        name="paribarik_unit_previous"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_songothon5_dawat_and_paribarik_units
+                                                    ?.paribarik_unit_previous
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-songothon5-dawat-and-paribarik-unit'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <!-- <input name="paribarik_unit_present" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.paribarik_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
-                                        {{
-                                            formatBangla(
-                                                previous_present?.paribarik_unit_present ??
-                                                    ""
-                                            )
-                                        }}
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
+                                        <input
+                                            name="paribarik_unit_present"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_songothon5_dawat_and_paribarik_units
+                                                        ?.paribarik_unit_present
+                                                )
                                             "
-                                            :table_name="'songothon5_dawat_and_paribarik_units'"
-                                            :field_title="'paribarik_unit_total'"
-                                            :month="month"
-                                        >
-                                        </popup>
+                                            @change="
+                                                data_upload(
+                                                    'thana-songothon5-dawat-and-paribarik-unit'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
                                     </div>
                                 </td>
                                 <td>
@@ -11376,13 +15265,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon5_dawat_and_paribarik_units
+                                                        ?.thana_songothon5_dawat_and_paribarik_units
                                                         ?.paribarik_unit_increase
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon5-dawat-and-paribarik-unit'
+                                                    'thana-songothon5-dawat-and-paribarik-unit'
                                                 )
                                             "
                                             type="text"
@@ -11405,13 +15294,13 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_songothon5_dawat_and_paribarik_units
+                                                    ?.thana_songothon5_dawat_and_paribarik_units
                                                     ?.paribarik_unit_gatti
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-songothon5-dawat-and-paribarik-unit'
+                                                'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
                                         type="text"
@@ -11425,13 +15314,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon5_dawat_and_paribarik_units
+                                                        ?.thana_songothon5_dawat_and_paribarik_units
                                                         ?.paribarik_unit_target
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon5-dawat-and-paribarik-unit'
+                                                    'thana-songothon5-dawat-and-paribarik-unit'
                                                 )
                                             "
                                             type="text"
@@ -11481,13 +15370,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
+                                                        ?.thana_songothon6_bidayi_students_connects
                                                         ?.Joined_student_man_member
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
+                                                    'thana-songothon6-bidayi-students-connect'
                                                 )
                                             "
                                             type="text"
@@ -11498,13 +15387,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
+                                                        ?.thana_songothon6_bidayi_students_connects
                                                         ?.Joined_student_women_member
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
+                                                    'thana-songothon6-bidayi-students-connect'
                                                 )
                                             "
                                             type="text"
@@ -11519,13 +15408,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
+                                                        ?.thana_songothon6_bidayi_students_connects
                                                         ?.Joined_student_man_associate
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
+                                                    'thana-songothon6-bidayi-students-connect'
                                                 )
                                             "
                                             type="text"
@@ -11536,13 +15425,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
+                                                        ?.thana_songothon6_bidayi_students_connects
                                                         ?.Joined_student_women_associate
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
+                                                    'thana-songothon6-bidayi-students-connect'
                                                 )
                                             "
                                             type="text"
@@ -11557,13 +15446,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
+                                                        ?.thana_songothon6_bidayi_students_connects
                                                         ?.Joined_student_man_worker
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
+                                                    'thana-songothon6-bidayi-students-connect'
                                                 )
                                             "
                                             type="text"
@@ -11574,13 +15463,13 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
+                                                        ?.thana_songothon6_bidayi_students_connects
                                                         ?.Joined_student_women_worker
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
+                                                    'thana-songothon6-bidayi-students-connect'
                                                 )
                                             "
                                             type="text"
@@ -11614,13 +15503,13 @@
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
-                                                            ?.ward_songothon7_sofors
+                                                            ?.thana_songothon9_sofors
                                                             ?.upper_leader_sofor
                                                     )
                                                 "
                                                 @change="
                                                     data_upload(
-                                                        'ward-songothon7-sofor'
+                                                        'thana-songothon7-sofor'
                                                     )
                                                 "
                                                 type="text"
@@ -11703,13 +15592,13 @@
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_songothon8_iyanot_data
+                                                                ?.thana_songothon10_iyanot_data
                                                                 ?.associate_member_total
                                                         )
                                                     "
                                                     @change="
                                                         data_upload(
-                                                            'ward-songothon8-iyanot-data'
+                                                            'thana-songothon8-iyanot-data'
                                                         )
                                                     "
                                                     type="text"
@@ -11734,13 +15623,13 @@
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_songothon8_iyanot_data
+                                                                ?.thana_songothon10_iyanot_data
                                                                 ?.associate_member_total_iyanot_amounts
                                                         )
                                                     "
                                                     @change="
                                                         data_upload(
-                                                            'ward-songothon8-iyanot-data'
+                                                            'thana-songothon8-iyanot-data'
                                                         )
                                                     "
                                                     type="text"
@@ -11752,7 +15641,7 @@
                                                             ?.id
                                                     "
                                                     :table_name="'songothon8_iyanot_data'"
-                                                    :field_title="'associate_member_total_iyanot_amounts'"
+                                                    :field_title="'associate_member_total'"
                                                     :month="month"
                                                 >
                                                 </popup>
@@ -11768,13 +15657,13 @@
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_songothon8_iyanot_data
+                                                                ?.thana_songothon10_iyanot_data
                                                                 ?.sudhi_total
                                                         )
                                                     "
                                                     @change="
                                                         data_upload(
-                                                            'ward-songothon8-iyanot-data'
+                                                            'thana-songothon8-iyanot-data'
                                                         )
                                                     "
                                                     type="text"
@@ -11786,7 +15675,7 @@
                                                             ?.id
                                                     "
                                                     :table_name="'songothon8_iyanot_data'"
-                                                    :field_title="'sudhi_total'"
+                                                    :field_title="'associate_member_total'"
                                                     :month="month"
                                                 >
                                                 </popup>
@@ -11799,13 +15688,13 @@
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_songothon8_iyanot_data
+                                                                ?.thana_songothon10_iyanot_data
                                                                 ?.sudi_total_iyanot_amounts
                                                         )
                                                     "
                                                     @change="
                                                         data_upload(
-                                                            'ward-songothon8-iyanot-data'
+                                                            'thana-songothon8-iyanot-data'
                                                         )
                                                     "
                                                     type="text"
@@ -11817,7 +15706,7 @@
                                                             ?.id
                                                     "
                                                     :table_name="'songothon8_iyanot_data'"
-                                                    :field_title="'sudi_total_iyanot_amounts'"
+                                                    :field_title="'associate_member_total'"
                                                     :month="month"
                                                 >
                                                 </popup>
@@ -11854,7 +15743,7 @@
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_songothon9_sangothonik_boithoks
+                                                        ?.thana_songothon11_sangothonik_boithoks
                                                         ?.word_sura_boithok_total
                                                 )
                                             "
@@ -12440,17 +16329,17 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="unit_tarbiati_boithok"
+                                        name="unit_tarbiati_boithok_man_total"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_proshikkhon1_tarbiats
-                                                    ?.unit_tarbiati_boithok
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.unit_tarbiati_boithok_man_total
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-proshikkhon1-tarbiat'
+                                                'thana-proshikkhon1-tarbiat'
                                             )
                                         "
                                         type="text"
@@ -12459,17 +16348,17 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="unit_tarbiati_boithok_target"
+                                        name="unit_tarbiati_boithok_man_total"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_proshikkhon1_tarbiats
-                                                    ?.unit_tarbiati_boithok_target
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.unit_tarbiati_boithok_man_total
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-proshikkhon1-tarbiat'
+                                                'thana-proshikkhon1-tarbiat'
                                             )
                                         "
                                         type="text"
@@ -12478,19 +16367,17 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="unit_tarbiati_boithok_uposthiti"
+                                        name="unit_tarbiati_boithok_man_total"
                                         :value="
                                             formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_proshikkhon1_tarbiats
-                                                    ?.unit_tarbiati_boithok
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.unit_tarbiati_boithok_man_total
                                             )
                                         "
                                         @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-proshikkhon1-tarbiat',
-                                                proshikkhon1.unit_tarbiati_boithok
+                                            data_upload(
+                                                'thana-proshikkhon1-tarbiat'
                                             )
                                         "
                                         type="text"
@@ -12505,17 +16392,17 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="ward_kormi_sikkha_boithok"
+                                        name="ward_kormi_shikkha_boithok_man_total"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_proshikkhon1_tarbiats
-                                                    ?.ward_kormi_sikkha_boithok
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.ward_kormi_shikkha_boithok_man_total
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-proshikkhon1-tarbiat'
+                                                'thana-proshikkhon1-tarbiat'
                                             )
                                         "
                                         type="text"
@@ -12524,17 +16411,17 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="ward_kormi_sikkha_boithok_target"
+                                        name="ward_kormi_shikkha_boithok_man_target"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.ward_proshikkhon1_tarbiats
-                                                    ?.ward_kormi_sikkha_boithok_target
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.ward_kormi_shikkha_boithok_man_target
                                             )
                                         "
                                         @change="
                                             data_upload(
-                                                'ward-proshikkhon1-tarbiat'
+                                                'thana-proshikkhon1-tarbiat'
                                             )
                                         "
                                         type="text"
@@ -12543,19 +16430,17 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="ward_kormi_sikkha_boithok_uposthiti"
+                                        name="ward_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_proshikkhon1_tarbiats
-                                                    ?.ward_kormi_sikkha_boithok
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.ward_kormi_shikkha_boithok_man_uposthiti
                                             )
                                         "
                                         @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-proshikkhon1-tarbiat',
-                                                proshikkhon1.ward_kormi_sikkha_boithok
+                                            data_upload(
+                                                'thana-proshikkhon1-tarbiat'
                                             )
                                         "
                                         type="text"
@@ -12572,34 +16457,34 @@
                                 <td>
                                     <div class="d-flex">
                                         <input
-                                            name="urdhotono_sikkha_shibir"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.urdhotono_sikkha_shibir
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />/
                                         <input
-                                            name="urdhotono_sikkha_boithok"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.urdhotono_sikkha_boithok
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
@@ -12610,34 +16495,34 @@
                                 <td>
                                     <div class="d-flex">
                                         <input
-                                            name="urdhotono_sikkha_shibir_target"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.urdhotono_sikkha_shibir_target
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />/
                                         <input
-                                            name="urdhotono_sikkha_boithok_target"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.urdhotono_sikkha_boithok_target
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
@@ -12648,38 +16533,34 @@
                                 <td>
                                     <div class="d-flex">
                                         <input
-                                            name="urdhotono_sikkha_shibir_uposthiti"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.urdhotono_sikkha_shibir
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.urdhotono_sikkha_shibir
+                                                data_upload(
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />/
                                         <input
-                                            name="urdhotono_sikkha_boithok_uposthiti"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.urdhotono_sikkha_boithok
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.urdhotono_sikkha_boithok
+                                                data_upload(
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
@@ -12696,34 +16577,34 @@
                                 <td>
                                     <div class="d-flex">
                                         <input
-                                            name="gono_sikkha_boithok"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.gono_sikkha_boithok
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />/
                                         <input
-                                            name="gono_noisho_ibadot"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.gono_noisho_ibadot
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
@@ -12734,34 +16615,34 @@
                                 <td>
                                     <div class="d-flex">
                                         <input
-                                            name="gono_sikkha_boithok_target"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.gono_sikkha_boithok_target
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />/
                                         <input
-                                            name="gono_noisho_ibadot_target"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.gono_noisho_ibadot_target
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
@@ -12772,38 +16653,34 @@
                                 <td>
                                     <div class="d-flex">
                                         <input
-                                            name="gono_sikkha_boithok_uposthiti"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.gono_sikkha_boithok
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.gono_sikkha_boithok
+                                                data_upload(
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />/
                                         <input
-                                            name="gono_noisho_ibadot_uposthiti"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
-                                                    average_uposthiti
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.gono_noisho_ibadot
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.gono_noisho_ibadot
+                                                data_upload(
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
@@ -12821,17 +16698,17 @@
                                             >গ্রুপ সংখ্যা:</span
                                         >
                                         <input
-                                            name="alochona_chokro_group"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.alochona_chokro_group
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
@@ -12845,39 +16722,37 @@
                                             >অধিবেশন সংখ্যা:</span
                                         >
                                         <input
-                                            name="alochona_chokro_program"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.alochona_chokro_program
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
-                                            class="bg-input w-100 text-center flex-grow-1 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                     </div>
                                 </td>
                                 <td>
                                     <input
-                                        name="alochona_chokro_uposthiti"
+                                        name="unit_tarbiati_boithok_man_total"
                                         :value="
                                             formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_proshikkhon1_tarbiats
-                                                    ?.alochona_chokro
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.unit_tarbiati_boithok_man_total
                                             )
                                         "
                                         @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-proshikkhon1-tarbiat',
-                                                proshikkhon1.alochona_chokro_program
+                                            data_upload(
+                                                'thana-proshikkhon1-tarbiat'
                                             )
                                         "
                                         type="text"
@@ -12896,34 +16771,34 @@
                                             >প্রোগ্রাম সংখ্যা :</span
                                         >
                                         <input
-                                            name="darsul_quran_program"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.darsul_quran_program
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
                                             class="bg-input w-100 text-center"
                                         />/
                                         <input
-                                            name="sohih_tilawat_program"
+                                            name="unit_tarbiati_boithok_man_total"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
-                                                        ?.ward_proshikkhon1_tarbiats
-                                                        ?.sohih_tilawat_program
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_man_total
                                                 )
                                             "
                                             @change="
                                                 data_upload(
-                                                    'ward-proshikkhon1-tarbiat'
+                                                    'thana-proshikkhon1-tarbiat'
                                                 )
                                             "
                                             type="text"
