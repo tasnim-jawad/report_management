@@ -1386,6 +1386,7 @@
                     </table>
                     <p class="font-14">*দাওয়াতি ইউনিট ও পারিবারিক ইউনিটের সংখ্যা মোট সাংগঠনিক ইউনিটে অন্তর্ভুক্ত হবে না।</p>
                 </div>
+
                 <div class="emarat_kayem mb-2">
                     <h4 class="fs-6 fw-bold">৬. এমারত কায়েম:</h4>
                     <table class="text-center mb-1 table_layout_fixed">
@@ -1420,6 +1421,7 @@
                         </tbody>
                     </table>
                 </div>
+
                 <div class="bidai_chatro mb-2">
                     <h4 class="fs-6 fw-bold">৭. বিদায়ী ছাত্র-ছাত্রী জনশক্তির সংগঠনে যোগদান:</h4>
                     <table class="text-center  mb-1 table_layout_fixed">
@@ -1441,6 +1443,7 @@
                         </tbody>
                     </table>
                 </div>
+                
                 <div class="parsho_songothon margin_bottom_170">
                     <h4 class="fs-6 fw-bold">৮. সহযোগী ও পার্শ্ব সংগঠন বিভাগ:</h4>
                     <table class="text-center  mb-1 table_layout_fixed">

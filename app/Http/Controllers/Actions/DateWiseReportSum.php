@@ -188,7 +188,6 @@ class DateWiseReportSum
             "thana_shomajsheba6_education_and_research_activities",
             "thana_shomajsheba7_expenses",
             "thana_songothon10_iyanot_data",
-            "thana_songothon11_sangothonik_boithoks",
             "thana_songothon1_jonosoktis",
             "thana_songothon2_associate_members",
             "thana_songothon3_departmental_information",
@@ -198,7 +197,8 @@ class DateWiseReportSum
             "thana_songothon6_bidayi_students_connects",
             "thana_songothon8_associate_and_side_organizations",
             "thana_songothon9_sofors",
-            "thana_songothon10_iyanot_data"
+            "thana_songothon10_iyanot_data",
+            "thana_songothon11_sangothonik_boithoks"
         ];
 
         return $table_names;
