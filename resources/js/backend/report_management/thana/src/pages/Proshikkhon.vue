@@ -18,15 +18,461 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>ইউনিটে তারবিয়াতী বৈঠক :</h1>
+                <h1>ইউনিটে মোট তারবিয়াতী বৈঠক (পুরুষ):</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in unit_tarbiati_boithok" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিটে মোট তারবিয়াতী বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক সদস্য (রুকন) শিক্ষাশিবির (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক সদস্য (রুকন) শিক্ষাশিবির (মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক সদস্য (রুকন) শিক্ষাশিবির (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক সদস্য (রুকন) শিক্ষাশিবির (মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক সদস্য (রুকন) শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক সদস্য (রুকন) শিক্ষা বৈঠক (মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক সদস্য (রুকন) শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক সদস্য (রুকন) শিক্ষা বৈঠক (মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক বাছাইকৃত কর্মীদের শিক্ষাশিবির (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক বাছাইকৃত কর্মীদের শিক্ষাশিবির (মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক বাছাইকৃত কর্মীদের শিক্ষাশিবির (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক বাছাইকৃত কর্মীদের শিক্ষাশিবির (মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক বাছাইকৃত কর্মীদের শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক বাছাইকৃত কর্মীদের শিক্ষা বৈঠক (মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক বাছাইকৃত কর্মীদের শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক বাছাইকৃত কর্মীদের শিক্ষা বৈঠক (মহিলা)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক কর্মীদের শিক্ষাশিবির (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক কর্মীদের শিক্ষাশিবির (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক কর্মীদের শিক্ষাশিবির (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক কর্মীদের শিক্ষাশিবির (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক কর্মীদের শিক্ষা বৈঠক (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক কর্মীদের শিক্ষা বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক কর্মীদের শিক্ষা বৈঠক (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানা ভিত্তিক কর্মীদের শিক্ষা বৈঠক (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক সাবেক ছাত্র/ছাত্রী কর্মীদের প্রশিক্ষণ প্রোগ্রাম (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা ভিত্তিক সাবেক ছাত্র/ছাত্রী কর্মীদের প্রশিক্ষণ প্রোগ্রাম (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানাভিত্তিক সাবেক ছাত্র/ছাত্রী কর্মীদের প্রশিক্ষণ প্রোগ্রাম (পুরুষ):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>থানাভিত্তিক সাবেক ছাত্র/ছাত্রী কর্মীদের প্রশিক্ষণ প্রোগ্রাম (মহিলা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা-ইউনিয়ন/ওয়ার্ড ভিত্তিক কর্মী শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা-ইউনিয়ন/ওয়ার্ড ভিত্তিক কর্মী শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা-ইউনিয়ন/ওয়ার্ড ভিত্তিক কর্মী শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা-ইউনিয়ন/ওয়ার্ড ভিত্তিক কর্মী শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা-ইউনিয়ন/ওয়ার্ড ভিত্তিক কর্মী শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>পৌরসভা-ইউনিয়ন/ওয়ার্ড ভিত্তিক কর্মী শিক্ষা বৈঠক (পুরুষ)</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>fgdhfghdfhgfdhgfdhfdhgfhdfh</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>fgdhfghdfhgfdhgfdhfdhgfhdfh</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>fgdhfghdfhgfdhgfdhfdhgfhdfh</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>fgdhfghdfhgfdhgfdhfdhgfhdfh</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in tttttttttttttttttttttt" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>ওয়ার্ডভিত্তিক কর্মী শিক্ষা বৈঠক :</h1>

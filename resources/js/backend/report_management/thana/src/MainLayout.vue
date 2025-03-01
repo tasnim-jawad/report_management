@@ -118,11 +118,11 @@
                                 <span class="icon_margin"><i class="fa-solid fa-sitemap"></i></span>সংগঠন
                             </router-link>
                         </li>
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'Proshikkhon' }">
                                 <span class="icon_margin"><i class="fa-solid fa-chalkboard-user"></i></span>প্ৰশিক্ষণ
                             </router-link>
-                        </li> -->
+                        </li>
                         <!-- <li>
                             <router-link :to="{ name: 'Shomajsheba' }">
                                 <span class="icon_margin"><i class="fa-solid fa-share-from-square"></i></span>সমাজ
