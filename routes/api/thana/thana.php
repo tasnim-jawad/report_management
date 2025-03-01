@@ -246,7 +246,7 @@
         Route::get('/data', [App\Http\Controllers\Report\Thana\Proshikkhon\ThanaProshikkhon2ManobShompodOrganizationalActivitieController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Proshikkhon\ThanaProshikkhon2ManobShompodOrganizationalActivitieController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
-    Route::group(['prefix' => 'thana-proshikkhon2-manob-shompod-traning-course'], function () {
+    Route::group(['prefix' => 'thana-proshikkhon3-manob-shompod-traning-course'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Proshikkhon\ThanaProshikkhon2ManobShompodTrainingCourseController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Proshikkhon\ThanaProshikkhon2ManobShompodTrainingCourseController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });

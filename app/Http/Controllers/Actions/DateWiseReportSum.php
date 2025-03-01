@@ -171,7 +171,7 @@ class DateWiseReportSum
             "thana_montobbos",
             "thana_proshikkhon1_tarbiats",
             "thana_proshikkhon2_manob_shompod_organizational_activities",
-            "thana_proshikkhon2_manob_shompod_training_courses",
+            "thana_proshikkhon3_manob_shompod_training_courses",
             "thana_rastrio1_political_communications",
             "thana_rastrio2_kormoshuchi_bastobayons",
             "thana_rastrio3_dibosh_palons",

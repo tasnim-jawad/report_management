@@ -315,6 +315,14 @@ return new class extends Migration
             $table->bigInteger('associate_member_sommelon_women_target')->nullable();
             $table->bigInteger('associate_member_sommelon_women_uposthiti')->nullable();
 
+            // Others
+            $table->bigInteger('others_man_total')->nullable();
+            $table->bigInteger('others_man_target')->nullable();
+            $table->bigInteger('others_man_uposthiti')->nullable();
+            $table->bigInteger('others_women_total')->nullable();
+            $table->bigInteger('others_women_target')->nullable();
+            $table->bigInteger('others_women_uposthiti')->nullable();
+
             $table->string('creator')->nullable();
             $table->string('status')->nullable();
 
