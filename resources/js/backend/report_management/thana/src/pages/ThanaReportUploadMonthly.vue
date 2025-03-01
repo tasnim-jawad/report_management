@@ -24462,7 +24462,60 @@
                                             :month="month"
                                         >
                                         </popup>
-                                        / 454 / 345
+                                        /
+                                        <input
+                                            name="shomajkormo_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon3_manob_shompod_training_courses
+                                                        ?.shomajkormo_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon3-manob-shompod-traning-course'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-20 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'shomajkormo_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <input
+                                            name="media_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon3_manob_shompod_training_courses
+                                                        ?.media_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon3-manob-shompod-traning-course'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-20 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'media_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                 </tr>
                                 <tr>
@@ -24470,13 +24523,175 @@
                                         আইসিটি/ অফিস/ফিন্যান্সিয়াল
                                         ম্যানেজমেন্ট/ইংরেজি ভাষা/আরবি ভাষা
                                     </td>
-                                    <td>543 / 454 / 345 / 454 / 345</td>
+                                    <td>
+                                        <input
+                                            name="ict_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon3_manob_shompod_training_courses
+                                                        ?.ict_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon3-manob-shompod-traning-course'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-20 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'ict_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <input
+                                            name="office_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon3_manob_shompod_training_courses
+                                                        ?.office_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon3-manob-shompod-traning-course'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-20 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'office_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <input
+                                            name="financial_management_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon3_manob_shompod_training_courses
+                                                        ?.financial_management_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon3-manob-shompod-traning-course'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-20 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'financial_management_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <input
+                                            name="english_language_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon3_manob_shompod_training_courses
+                                                        ?.english_language_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon3-manob-shompod-traning-course'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-20 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'english_language_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <input
+                                            name="arabic_language_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon3_manob_shompod_training_courses
+                                                        ?.arabic_language_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon3-manob-shompod-traning-course'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-20 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'arabic_language_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">
                                         ট্রেডভিত্তিক কারিগরি প্রশিক্ষণ*
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        <input
+                                            name="trade_oriented_technical_training_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon3_manob_shompod_training_courses
+                                                        ?.trade_oriented_technical_training_uposthiti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon3-manob-shompod-traning-course'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-20 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'trade_oriented_technical_training_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -24518,11 +24733,136 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>34</td>
-                                <td>54</td>
-                                <td>56</td>
-                                <td>76</td>
-                                <td>21</td>
+                                <td>
+                                    <input
+                                        name="trained_social_worker"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba1_preparing_trained_social_workers
+                                                    ?.trained_social_worker
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba1-personal-preparing-trained-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'trained_social_worker'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="training_courses_this_year_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba1_preparing_trained_social_workers
+                                                    ?.training_courses_this_year_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba1-personal-preparing-trained-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'training_courses_this_year_total'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="training_courses_this_year_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba1_preparing_trained_social_workers
+                                                    ?.training_courses_this_year_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba1-personal-preparing-trained-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'training_courses_this_year_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="people_completed_training_courses_this_year_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba1_preparing_trained_social_workers
+                                                    ?.people_completed_training_courses_this_year_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba1-personal-preparing-trained-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'people_completed_training_courses_this_year_total'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="people_completed_training_courses_this_year_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba1_preparing_trained_social_workers
+                                                    ?.people_completed_training_courses_this_year_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba1-personal-preparing-trained-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'people_completed_training_courses_this_year_target'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -24536,11 +24876,61 @@
                             <td class="text-center width-40">
                                 মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন
                             </td>
-                            <td></td>
+                            <td>
+                                <input
+                                    name="how_many_people_did"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba2_personal_social_works
+                                                ?.how_many_people_did
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba2-personal-group-social-work'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'how_many_people_did'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
                             <td class="text-center width-30">
                                 মোট সেবাপ্রাপ্ত সংখ্যা
                             </td>
-                            <td></td>
+                            <td>
+                                <input
+                                    name="service_received_total"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba2_personal_social_works
+                                                ?.service_received_total
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba2-personal-group-social-work'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'service_received_total'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
                         </tbody>
                     </table>
                 </div>
@@ -24559,9 +24949,84 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>34</td>
-                                <td>56</td>
-                                <td>76</td>
+                                <td>
+                                    <input
+                                        name="general_service_team"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.general_service_team
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'general_service_team'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="technical_service_team"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.technical_service_team
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'technical_service_team'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="volunteer_team"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.volunteer_team
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'volunteer_team'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -24579,123 +25044,898 @@
                                 <td class="text-start px-2">
                                     ছোট-ছোট উন্নয়নমূলক কাজ
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="minor_unnoyonmulok_kaj"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.minor_unnoyonmulok_kaj
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'minor_unnoyonmulok_kaj'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     শিক্ষা সহায়তা প্রদান (মোট কতজনকে )
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="shikkha_shohayota_prodan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.shikkha_shohayota_prodan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'shikkha_shohayota_prodan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2 font-13">
                                     সামাজিক অনুষ্ঠানে অশংগ্রহণ/সহায়তা প্রদান
                                     (সংখ্যা / কতজনকে)
                                 </td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="shamajik_onusthane_ongshogrohon "
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.shamajik_onusthane_ongshogrohon
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'shamajik_onusthane_ongshogrohon '"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="shamajik_onusthane_shohayota_prodan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.shamajik_onusthane_shohayota_prodan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'shamajik_onusthane_shohayota_prodan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     টেকনিক্যাল সেবা প্রদান (মোট কতজন/কতজনকে)
                                 </td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="technical_services_kotojon"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.technical_services_kotojon
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'technical_services_kotojon'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="technical_services_prodan_kotojonke"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.technical_services_prodan_kotojonke
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'technical_services_prodan_kotojonke'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     সামাজিক বিরোধ মীমাংসা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="shamajik_birodh_mimangsha"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.shamajik_birodh_mimangsha
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'shamajik_birodh_mimangsha'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     অনলাইনের মাধ্যমে সেবা প্রদান (মোট কতজনকে )
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="online_services_prodan_kotojonke"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.online_services_prodan_kotojonke
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'online_services_prodan_kotojonke'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     মানবিক সহায়তা প্রদান (কতজনকে)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="manobik_shohayota_prodan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.manobik_shohayota_prodan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'manobik_shohayota_prodan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     বৃক্ষরোপন (মোট কতটি)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="brikkho_ropon"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.brikkho_ropon
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'brikkho_ropon'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     কর্জে হাসানা প্রদান (কতজনকে )
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="korje_hasana_prodan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.korje_hasana_prodan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'korje_hasana_prodan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     জনসচেতনতামূলক প্রোগ্রাম (মোট কতটি)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="public_awareness_programs"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.public_awareness_programs
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'public_awareness_programs'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     পরিষ্কার-পরিচ্ছন্নতা/মশক নিধন অভিযান
                                 </td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="porishkar_poricchonnota_ovijan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.porishkar_poricchonnota_ovijan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'porishkar_poricchonnota_ovijan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="moshok_nidhon_ovijan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.moshok_nidhon_ovijan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'moshok_nidhon_ovijan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     দুর্যোগকালীন সহায়তা প্রদান (মোট কতজনকে)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="durjog_kalin_shohayota_prodan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.durjog_kalin_shohayota_prodan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'durjog_kalin_shohayota_prodan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     রোগীর পরিচর্যা/চিকিৎসা সহায়তা প্রদান (মোট
                                     কতজনকে)
                                 </td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="rogir_poricorja"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.rogir_poricorja
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'rogir_poricorja'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="medical_shohayota_prodan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.medical_shohayota_prodan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'medical_shohayota_prodan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     ত্রাণ বিতরণ (মোট কতজনকে)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="tran_bitoron"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.tran_bitoron
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'tran_bitoron'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     স্বেচ্ছায় রক্ত দান (কতজন/কতজনকে)
                                 </td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="voluntarily_blood_donation_kotojon"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.voluntarily_blood_donation_kotojon
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'voluntarily_blood_donation_kotojon'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="voluntarily_blood_donation_kotojonke"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.voluntarily_blood_donation_kotojonke
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'voluntarily_blood_donation_kotojonke'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     ভিন্নধর্মাবলম্বীদের সেবা প্রদান (মোট কতজন /
                                     কতজনকে)
                                 </td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="vinnodhormabolombider_service_prodan_kotojon"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.vinnodhormabolombider_service_prodan_kotojon
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vinnodhormabolombider_service_prodan_kotojon'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="vinnodhormabolombider_service_prodan_kotojonke"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.vinnodhormabolombider_service_prodan_kotojonke
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vinnodhormabolombider_service_prodan_kotojonke'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     মাতৃত্বকালীন সময়ে সেবা প্রদান (মোট কতজনকে)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="mattrikalin_sheba_prodan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.mattrikalin_sheba_prodan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'mattrikalin_sheba_prodan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     মাইয়্যেতের গোসল (কতজনকে )
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="mayeter_gosol_kotojonke"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.mayeter_gosol_kotojonke
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'mayeter_gosol_kotojonke'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     নবজাতককে গিফ্‌ট প্রদান (কতজনকে)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="nobojatokke_gift_prodan"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.nobojatokke_gift_prodan
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'nobojatokke_gift_prodan'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     জানাযায় অংশগ্রহণ (মোট কতটি)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="janajay_ongshogrohon"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.janajay_ongshogrohon
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'janajay_ongshogrohon'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     মেডিক্যাল ক্যাম্প (মোট কতটি)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="medical_camp"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.medical_camp
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'medical_camp'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     স্বল্প পুঁজিতে কর্মসংস্থানের সহায়তা
                                     (কতজনকে)
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="low_capital_employment_kotojonke"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.low_capital_employment_kotojonke
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'low_capital_employment_kotojonke'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     ভ্রাম্যমান স্কুল/মক্তব চালু
                                 </td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="vrammoman_school_calu"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.vrammoman_school_calu
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vrammoman_school_calu'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                    /
+                                    <input
+                                        name="vrammoman_moktob_calu"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.vrammoman_moktob_calu
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vrammoman_moktob_calu'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">অন্যান্য......</td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="others"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba3_group_social_works
+                                                    ?.others
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba3-group-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'others'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -24718,25 +25958,250 @@
                                 <td class="text-start px-2">
                                     সামাজিক প্রতিষ্ঠান রয়েছে
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="social_institution_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.social_institution_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'social_institution_total'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="social_institution_in_thana"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.social_institution_in_thana
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'social_institution_in_thana'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="social_institution_in_ward"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.social_institution_in_ward
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'social_institution_in_ward'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     প্রতিষ্ঠানভিত্তিক সামাজিক কাজ হয়েছে
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="institutional_social_work_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.institutional_social_work_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'institutional_social_work_total'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="institutional_social_work_in_thana"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.institutional_social_work_in_thana
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'institutional_social_work_in_thana'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="institutional_social_work_in_ward"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.institutional_social_work_in_ward
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'institutional_social_work_in_ward'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     নতুন সামাজিক প্রতিষ্ঠান চালু করা
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="new_social_institutions_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.new_social_institutions_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'new_social_institutions_total'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="new_social_institutions_in_thana"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.new_social_institutions_in_thana
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'new_social_institutions_in_thana'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="new_social_institutions_in_ward"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba4_institutional_social_works
+                                                    ?.new_social_institutions_in_ward
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba4-institutional-social-work'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'new_social_institutions_in_ward'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -24751,42 +26216,242 @@
                                 <td class="text-start px-2 width-35">
                                     স্বাস্থ্যকর্মী তৈরি সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="health_worker_produced"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba5_health_and_family_kollans
+                                                    ?.health_worker_produced
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba5-helth-and-family-kollan'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'health_worker_produced'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2 width-35">
                                     স্বাস্থ্য শিক্ষামূলক প্রশিক্ষণ প্রোগ্রাম
                                     সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="health_education_training_program"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba5_health_and_family_kollans
+                                                    ?.health_education_training_program
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba5-helth-and-family-kollan'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'health_education_training_program'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     নার্স তৈরি সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="nurse_produced"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba5_health_and_family_kollans
+                                                    ?.nurse_produced
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba5-helth-and-family-kollan'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'nurse_produced'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     মোট অংশগ্রহণকারীর সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="health_education_training_programs_attendance"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba5_health_and_family_kollans
+                                                    ?.health_education_training_programs_attendance
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba5-helth-and-family-kollan'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'health_education_training_programs_attendance'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     ধাত্রী তৈরি সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="dhattri_produced"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba5_health_and_family_kollans
+                                                    ?.dhattri_produced
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba5-helth-and-family-kollan'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'dhattri_produced'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     মোট কতজন স্বাস্থ্যসেবা কাজে অংশগ্রহণ করেছেন
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="participated_in_health_care_work"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba5_health_and_family_kollans
+                                                    ?.participated_in_health_care_work
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba5-helth-and-family-kollan'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'participated_in_health_care_work'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     প্যারেন্টিং প্রশিক্ষণ প্রোগ্রাম সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="parenting_training_program"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba5_health_and_family_kollans
+                                                    ?.parenting_training_program
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba5-helth-and-family-kollan'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'parenting_training_program'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                                 <td class="text-start px-2">
                                     মোট সেবাপ্রাপ্ত সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="served_people"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_shomajsheba5_health_and_family_kollans
+                                                    ?.served_people
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-shomajsheba5-helth-and-family-kollan'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'served_people'"
+                                        :month="month"
+                                    >
+                                    </popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -24810,19 +26475,219 @@
                     <tbody>
                         <tr>
                             <td class="text-start px-2">আদর্শ শিক্ষক তৈরি</td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <input
+                                    name="ideal_teacher_produced"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba6_education_and_research_activities
+                                                ?.ideal_teacher_produced
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba6-education-and-research-activitie'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'ideal_teacher_produced'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
+                            <td>
+                                <input
+                                    name="ideal_teacher_produced_target"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba6_education_and_research_activities
+                                                ?.ideal_teacher_produced_target
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba6-education-and-research-activitie'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'ideal_teacher_produced_target'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
                             <td class="text-start px-2">আলোচনা সভা</td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <input
+                                    name="alochona_shova"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba6_education_and_research_activities
+                                                ?.alochona_shova
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba6-education-and-research-activitie'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'alochona_shova'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
+                            <td>
+                                <input
+                                    name="alochona_shova_target"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba6_education_and_research_activities
+                                                ?.alochona_shova_target
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba6-education-and-research-activitie'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'alochona_shova_target'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">শিক্ষা সেমিনার</td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <input
+                                    name="shikkha_seminar"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba6_education_and_research_activities
+                                                ?.shikkha_seminar
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba6-education-and-research-activitie'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'shikkha_seminar'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
+                            <td>
+                                <input
+                                    name="shikkha_seminar_target"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba6_education_and_research_activities
+                                                ?.shikkha_seminar_target
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba6-education-and-research-activitie'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'shikkha_seminar_target'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
                             <td class="text-start px-2">অন্যান্য</td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <input
+                                    name="other"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba6_education_and_research_activities
+                                                ?.other
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba6-education-and-research-activitie'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'other'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
+                            <td>
+                                <input
+                                    name="other_target"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.thana_shomajsheba6_education_and_research_activities
+                                                ?.other_target
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'thana-shomajsheba6-education-and-research-activitie'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input fixed-input-20 text-center"
+                                />
+                                <popup
+                                    :ward_id="report_header?.ward_info?.id"
+                                    :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                    :field_title="'other_target'"
+                                    :month="month"
+                                >
+                                </popup>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -24832,7 +26697,28 @@
                     ৭. সামাজিক কাজের জন্য মোট আয়ের কত শতাংশ ব্যয় হয়েছে :
                 </h4>
                 <div class="box">
-                    <span class="">54 %</span>
+                    <span class="">
+                        <input
+                            name="percentage_of_expense"
+                            :value="
+                                formatBangla(
+                                    report_sum_data?.thana_shomajsheba7_expenses
+                                        ?.percentage_of_expense
+                                )
+                            "
+                            @change="data_upload('thana-shomajsheba7-expense')"
+                            type="text"
+                            class="bg-input fixed-input-20 text-center"
+                        />
+                        <popup
+                            :ward_id="report_header?.ward_info?.id"
+                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                            :field_title="'percentage_of_expense'"
+                            :month="month"
+                        >
+                        </popup>
+                        %</span
+                    >
                 </div>
             </div>
 
@@ -24853,15 +26739,111 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">রাজনৈতিক ব্যক্তিবর্গ</td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="rajnoitik_bekti_jogajog_koreche_kotojon"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio1_political_communications
+                                                    ?.rajnoitik_bekti_jogajog_koreche_kotojon
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio1-political-communication'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'rajnoitik_bekti_jogajog_koreche_kotojon'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="rajnoitik_bekti_jogajog_koreche_kotojonke"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio1_political_communications
+                                                    ?.rajnoitik_bekti_jogajog_koreche_kotojonke
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio1-political-communication'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'rajnoitik_bekti_jogajog_koreche_kotojonke'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">
                                     প্রশাসনিক ব্যক্তিবর্গ
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="proshoshonik_bekti_jogajog_koreche_kotojon"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio1_political_communications
+                                                    ?.proshoshonik_bekti_jogajog_koreche_kotojon
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio1-political-communication'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'proshoshonik_bekti_jogajog_koreche_kotojon'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="proshoshonik_bekti_jogajog_koreche_kotojonke"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio1_political_communications
+                                                    ?.proshoshonik_bekti_jogajog_koreche_kotojonke
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio1-political-communication'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'proshoshonik_bekti_jogajog_koreche_kotojonke'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -24881,23 +26863,336 @@
                                 <td class="text-start px-2">
                                     কেন্দ্র ঘোষিত রাজনৈতিক কর্মসূচি পালন
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="centrally_announced_political_program"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.centrally_announced_political_program
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'centrally_announced_political_program'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="centrally_announced_political_program_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.centrally_announced_political_program_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'centrally_announced_political_program_attend'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     স্থানীয়ভাবে ঘোষিত কর্মসূচি :
                                     জনসভা/সমাবেশ/মিছিল
                                 </td>
-                                <td>43 / 45 / 76</td>
-                                <td>43 / 45 / 76</td>
+                                <td>
+                                    <input
+                                        name="locally_announced_jonoshova"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.locally_announced_jonoshova
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'locally_announced_jonoshova'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="locally_announced_shomabesh"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.locally_announced_shomabesh
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'locally_announced_shomabesh'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="locally_announced_michil"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.locally_announced_michil
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'locally_announced_michil'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="locally_announced_jonoshova_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.locally_announced_jonoshova_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'locally_announced_jonoshova_attend'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="locally_announced_shomabesh_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.locally_announced_shomabesh_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'locally_announced_shomabesh_attend'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="locally_announced_michil_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.locally_announced_michil_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'locally_announced_michil_attend'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
                                     পোস্টার/লিফলেট/বুকলেট/স্মারকলিপি বিতরণ
                                 </td>
-                                <td>43 / 45 / 76 / 43</td>
-                                <td class="text-start px-2">অন্যান্য:-</td>
+                                <td>
+                                    <input
+                                        name="poster_bitoron"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.poster_bitoron
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'poster_bitoron'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="leaflet_bitoron"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.leaflet_bitoron
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'leaflet_bitoron'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="booklet_bitoron"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.booklet_bitoron
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'booklet_bitoron'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="sharoklipi_bitoron"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.sharoklipi_bitoron
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'sharoklipi_bitoron'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td class="text-start px-2">
+                                    অন্যান্য:-
+                                    <input
+                                        name="others"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                    ?.others
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio2-kormoshuchi-bastobayon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'others'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -24923,31 +27218,319 @@
                                 <td class="text-start">
                                     স্বাধীনতা ও জাতীয় দিবস
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="shadhinota_o_jatio_dibosh_total_programs"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.shadhinota_o_jatio_dibosh_total_programs
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'shadhinota_o_jatio_dibosh_total_programs'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="shadhinota_o_jatio_dibosh_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.shadhinota_o_jatio_dibosh_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'shadhinota_o_jatio_dibosh_attend'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                                 <td class="text-start">
                                     আন্তর্জাতিক মাতৃভাষা দিবস
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="mattrivasha_dibosh_total_programs"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.mattrivasha_dibosh_total_programs
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'mattrivasha_dibosh_total_programs'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="mattrivasha_dibosh_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.mattrivasha_dibosh_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'mattrivasha_dibosh_attend'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">বিজয় দিবস</td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="bijoy_dibosh_total_programs"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.bijoy_dibosh_total_programs
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'bijoy_dibosh_total_programs'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="bijoy_dibosh_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.bijoy_dibosh_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'bijoy_dibosh_attend'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                                 <td class="text-start">
                                     আন্তর্জাতিক নারী দিবস
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="international_womens_day"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.international_womens_day
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'international_womens_day'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="international_womens_day_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.international_womens_day_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'international_womens_day_attend'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">অন্যান্য</td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="others_total_programs"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.others_total_programs
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'others_total_programs'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="others_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.others_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'others_attend'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                                 <td class="text-start">মে দিবস</td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="may_day"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.may_day
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'may_day'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="may_day_attend"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio3_dibosh_palons
+                                                    ?.may_day_attend
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio3-dibosh-palon'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'may_day_attend'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -24977,33 +27560,1282 @@
                                 <td class="text-start px-2">
                                     সিটি কর্পো:/পৌরসভা
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>/</td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="city_corporation_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_total'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_total'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="city_corporation_total_candidate"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_total_candidate
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_total_candidate'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_total_candidate"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_total_candidate
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_total_candidate'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="city_corporation_total_candidate_participated"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_total_candidate_participated
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_total_candidate_participated'"
+                                        :month="month"
+                                    ></popup
+                                    >/
+                                    <input
+                                        name="pouroshova_total_candidate_participated"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_total_candidate_participated
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_total_candidate_participated'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+
+                                <td>
+                                    <input
+                                        name="city_corporation_Mayor_candidate_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_Mayor_candidate_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_Mayor_candidate_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_Mayor_candidate_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_Mayor_candidate_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_Mayor_candidate_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    |
+                                    <input
+                                        name="pouroshova_chairman_candidate_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_chairman_candidate_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_chairman_candidate_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="city_corporation_chairman_candidate_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_chairman_candidate_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_chairman_candidate_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="city_corporation_vice_chairman_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_vice_chairman_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_vice_chairman_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_vice_chairman_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_vice_chairman_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_vice_chairman_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    |
+                                    <input
+                                        name="city_corporation_vice_chairman_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_vice_chairman_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_vice_chairman_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_vice_chairman_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_vice_chairman_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_vice_chairman_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="city_corporation_councilor_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_councilor_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_councilor_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_councilor_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_councilor_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_councilor_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="city_corporation_councilor_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_councilor_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_councilor_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_councilor_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_councilor_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_councilor_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    |
+                                    <input
+                                        name="city_corporation_member_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_member_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_member_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_member_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_member_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_member_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="city_corporation_member_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_member_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_member_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_member_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_member_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_member_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="city_corporation_member_candidate_man_second_position"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_member_candidate_man_second_position
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_member_candidate_man_second_position'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_member_candidate_man_second_position"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_member_candidate_man_second_position
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_member_candidate_man_second_position'"
+                                        :month="month"
+                                    ></popup>
+                                    |
+                                    <input
+                                        name="city_corporation_member_candidate_woman_second_position"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.city_corporation_member_candidate_woman_second_position
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'city_corporation_member_candidate_woman_second_position'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_member_candidate_woman_second_position"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_member_candidate_woman_second_position
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_member_candidate_woman_second_position'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">উপজেলা পরিষদ</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>/</td>
-                                <td></td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="upojela_porishod_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_total'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="upojela_porishod_total_candidate"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_total_candidate
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_total_candidate'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="upojela_porishod_total_candidate_participated"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_total_candidate_participated
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_total_candidate_participated'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="upojela_porishod_Mayor_candidate_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_Mayor_candidate_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_Mayor_candidate_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="upojela_porishod_chairman_candidate_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_chairman_candidate_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_chairman_candidate_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="upojela_porishod_vice_chairman_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_vice_chairman_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_vice_chairman_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="upojela_porishod_vice_chairman_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_vice_chairman_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_vice_chairman_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="upojela_porishod_councilor_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_councilor_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_councilor_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="upojela_porishod_member_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_member_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_member_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    |
+                                    <input
+                                        name="upojela_porishod_councilor_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_councilor_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_councilor_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="upojela_porishod_member_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_member_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_member_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="upojela_porishod_vice_chairman_candidate_man_second_position"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_vice_chairman_candidate_man_second_position
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_vice_chairman_candidate_man_second_position'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="upojela_porishod_vice_chairman_candidate_woman_second_position"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_porishod_vice_chairman_candidate_woman_second_position
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_porishod_vice_chairman_candidate_woman_second_position'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start px-2">ইউনিয়ন পরিষদ</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>/</td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="union_porishod_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_total'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_porishod_total_candidate"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_total_candidate
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_total_candidate'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_porishod_total_candidate_participated"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_total_candidate_participated
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_total_candidate_participated'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_porishod_Mayor_candidate_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_Mayor_candidate_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_Mayor_candidate_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="union_porishod_chairman_candidate_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_chairman_candidate_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_chairman_candidate_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_porishod_vice_chairman_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_vice_chairman_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_vice_chairman_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="union_porishod_vice_chairman_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_vice_chairman_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_vice_chairman_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_porishod_councilor_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_councilor_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_councilor_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="union_porishod_member_candidate_man_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_member_candidate_man_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_member_candidate_man_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    |
+                                    <input
+                                        name="union_porishod_councilor_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_councilor_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_councilor_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="union_porishod_member_candidate_woman_elected"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_member_candidate_woman_elected
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_member_candidate_woman_elected'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="union_porishod_vice_chairman_candidate_man_second_position"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_vice_chairman_candidate_man_second_position
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_vice_chairman_candidate_man_second_position'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="union_porishod_vice_chairman_candidate_woman_second_position"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_porishod_vice_chairman_candidate_woman_second_position
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_porishod_vice_chairman_candidate_woman_second_position'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -25023,23 +28855,383 @@
                                 <td class="text-start">
                                     মোট ভোট কেন্দ্র (জাতীয়/স্থানীয়)
                                 </td>
-                                <td>/</td>
-                                <td>/</td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="national_vote_kendro"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.national_vote_kendro
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'national_vote_kendro'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="local_vote_kendro"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.local_vote_kendro
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'local_vote_kendro'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="national_vote_kendro_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.national_vote_kendro_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'national_vote_kendro_increase'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="local_vote_kendro_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.local_vote_kendro_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'local_vote_kendro_increase'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="national_vote_kendro_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.national_vote_kendro_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'national_vote_kendro_target'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="local_vote_kendro_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.local_vote_kendro_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'local_vote_kendro_target'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">ভোট কেন্দ্র কমিটি</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="vote_kendro_committee"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.vote_kendro_committee
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vote_kendro_committee'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="vote_kendro_committee_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.vote_kendro_committee_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vote_kendro_committee_increase'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="vote_kendro_committee_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.vote_kendro_committee_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vote_kendro_committee_target'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">
                                     কেন্দ্র/ বুথভিত্তিক ইউনিট
                                 </td>
-                                <td>/</td>
-                                <td>/</td>
-                                <td>/</td>
+                                <td>
+                                    <input
+                                        name="vote_kendro_vittik_unit"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.vote_kendro_vittik_unit
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vote_kendro_vittik_unit'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="booth_vittik_unit"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.booth_vittik_unit
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'booth_vittik_unit'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="vote_kendro_vittik_unit_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.vote_kendro_vittik_unit_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vote_kendro_vittik_unit_increase'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="booth_vittik_unit_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.booth_vittik_unit_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'booth_vittik_unit_increase'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="vote_kendro_vittik_unit_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.vote_kendro_vittik_unit_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'vote_kendro_vittik_unit_target'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="booth_vittik_unit_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.booth_vittik_unit_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'booth_vittik_unit_target'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -25050,7 +29242,126 @@
                                     উপজেলা/থানা/পৌরসভা/ইউনিয়ন/ওয়ার্ডভিত্তিক
                                     নির্বাচন পরিচালনা কমিটির বৈঠক সংখ্যা
                                 </td>
-                                <td>32 / 23 / 32 / 433 / 45</td>
+                                <td>
+                                    <input
+                                        name="upojela_vittik_election_management_committee_meeting"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.upojela_vittik_election_management_committee_meeting
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'upojela_vittik_election_management_committee_meeting'"
+                                        :month="month"
+                                    ></popup>
+                                    /<input
+                                        name="thana_vittik_election_management_committee_meeting"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.thana_vittik_election_management_committee_meeting
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'thana_vittik_election_management_committee_meeting'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="pouroshova_vittik_election_management_committee_meeting"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.pouroshova_vittik_election_management_committee_meeting
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'pouroshova_vittik_election_management_committee_meeting'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="union_vittik_election_management_committee_meeting"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.union_vittik_election_management_committee_meeting
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'union_vittik_election_management_committee_meeting'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="ward_vittik_election_management_committee_meeting"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio4_election_activities
+                                                    ?.ward_vittik_election_management_committee_meeting
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio4-election-activitie'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'ward_vittik_election_management_committee_meeting'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -25072,8 +29383,128 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>34 / 54 / 54</td>
-                                <td>45 / 43</td>
+                                <td>
+                                    <input
+                                        name="press_release"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio5_broadcast_and_media
+                                                    ?.press_release
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio5-broad-cast-and-media'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'press_release'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="bibriti"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio5_broadcast_and_media
+                                                    ?.bibriti
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio5-broad-cast-and-media'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'bibriti'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="protibad_lipi"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio5_broadcast_and_media
+                                                    ?.protibad_lipi
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio5-broad-cast-and-media'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'protibad_lipi'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td>
+                                    <input
+                                        name="social_media_post"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio5_broadcast_and_media
+                                                    ?.social_media_post
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio5-broad-cast-and-media'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'social_media_post'"
+                                        :month="month"
+                                    ></popup>
+                                    /
+                                    <input
+                                        name="social_media_live_program"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio5_broadcast_and_media
+                                                    ?.social_media_live_program
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio5-broad-cast-and-media'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'social_media_live_program'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -25086,20 +29517,140 @@
                                 <td class="text-start w-25">
                                     মানবাধিকার সংগঠন প্রতিষ্ঠার সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="human_rights_organizations_established"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio6_human_rights
+                                                    ?.human_rights_organizations_established
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio6-human-right'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'human_rights_organizations_established'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                                 <td class="text-start" colspan="3">
                                     জাতীয় ও আন্তর্জাতিক মানবাধিকার সংস্থার
                                     স্থানীয় শাখা চালুকরণ সংখ্যা
                                 </td>
-                                <td></td>
+                                <td>
+                                    <input
+                                        name="international_human_rights_organizations_local_branches_launched"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio6_human_rights
+                                                    ?.international_human_rights_organizations_local_branches_launched
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio6-human-right'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'international_human_rights_organizations_local_branches_launched'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">
                                     মানবাধিকার কর্মী তৈরি
                                 </td>
-                                <td class="text-start">সংখ্যা-</td>
-                                <td class="text-start" colspan="2">বৃদ্ধি-</td>
-                                <td class="text-start" colspan="2">টার্গেট-</td>
+                                <td class="text-start">সংখ্যা-
+                                    <input
+                                        name="human_rights_activist_produced_total"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio6_human_rights
+                                                    ?.human_rights_activist_produced_total
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio6-human-right'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'human_rights_activist_produced_total'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td class="text-start" colspan="2">বৃদ্ধি-
+                                    <input
+                                        name="human_rights_activist_produced_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio6_human_rights
+                                                    ?.human_rights_activist_produced_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio6-human-right'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'human_rights_activist_produced_increase'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
+                                <td class="text-start" colspan="2">টার্গেট-
+                                    <input
+                                        name="human_rights_activist_produced_target"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_rastrio6_human_rights
+                                                    ?.human_rights_activist_produced_target
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-rastrio6-human-right'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input fixed-input-20 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                        :field_title="'human_rights_activist_produced_target'"
+                                        :month="month"
+                                    ></popup>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

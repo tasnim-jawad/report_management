@@ -16,9 +16,13 @@ return new class extends Migration
             $table->bigInteger('report_info_id')->nullable();
 
             $table->bigInteger('ideal_teacher_produced')->nullable();
+            $table->bigInteger('ideal_teacher_produced_target')->nullable();
             $table->bigInteger('shikkha_seminar')->nullable();
+            $table->bigInteger('shikkha_seminar_target')->nullable();
             $table->bigInteger('alochona_shova')->nullable();
+            $table->bigInteger('alochona_shova_target')->nullable();
             $table->bigInteger('other')->nullable();
+            $table->bigInteger('other_target')->nullable();
 
             $table->string('creator')->nullable();
             $table->string('status')->nullable();

@@ -262,8 +262,8 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba2PersonalSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
     Route::group(['prefix' => 'thana-shomajsheba3-group-social-work'], function () {
-        Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba2PersonalSocialWorkController::class, 'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba2PersonalSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
     Route::group(['prefix' => 'thana-shomajsheba3-health-and-family-kollan'], function () {
@@ -310,6 +310,14 @@
     Route::group(['prefix' => 'thana-rastrio4-election-activitie'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-rastrio5-broad-cast-and-media'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio5BroadcastAndMediaController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio5BroadcastAndMediaController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-rastrio6-human-right'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio6HumanRightsController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio6HumanRightsController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
     Route::group(['prefix' => 'thana-montobbo'], function () {
