@@ -319,6 +319,14 @@
         Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio6HumanRightsController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio6HumanRightsController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
+    Route::group(['prefix' => 'thana-rastrio7-industry-and-trade'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio7IndustryAndTradeController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio7IndustryAndTradeController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-rastrio8-entrepreneurial-developments'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio8EntrepreneurialDevelopmentController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio8EntrepreneurialDevelopmentController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
 
     Route::group(['prefix' => 'thana-montobbo'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Montobbo\ThanaMontobboController::class, 'get_data']);
