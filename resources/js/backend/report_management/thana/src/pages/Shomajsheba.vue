@@ -13,27 +13,40 @@
         </div>
         <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h1>
+                <h1 class="fw-semibold">১. প্রশিক্ষিত সমাজকর্মী তৈরি (প্রশিক্ষিত সমাজকর্মী বলতে কেন্দ্রীয় মডিউলের আলোকে সমাজকর্ম মাস্টার ট্রেইনার দ্বারা প্রশিক্ষণপ্রাপ্ত জনশক্তিকেই বুঝানো হয়েছে):</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in trained_social_worker" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba1-personal-preparing-trained-social-work'" :unique_key="1"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">২. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in personal_shomajsheba" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba1-personal-social-work'" :unique_key="1"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba2-personal-group-social-work'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">২. সামষ্টিক/সেবা টিমের মাধ্যমে সামাজিক কাজ (প্রযোজ্য ক্ষেত্রে):</h1>
+                <h1 class="fw-semibold">৩. সামষ্টিক / সেবা টিমের মাধ্যমে সামাজিক কাজ (প্রযোজ্য ক্ষেত্রে):</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in service_teams" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba2-group-social-work'" :unique_key="2"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba3-group-social-work'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -41,25 +54,10 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in group_social_works" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba2-group-social-work'" :unique_key="2"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba3-group-social-work'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
-
-        <div class="card mb-1" v-if="month">
-            <div class="card-header">
-                <h1 class="fw-semibold">৩. স্বাস্থ্য ও পরিবার কল্যাণমূলক কাজ:</h1>
-            </div>
-        </div>
-        <div class="card mb-3" v-if="month">
-            <div class="card-body">
-                <form action="">
-                    <form-input v-for="(field, index) in health_and_family" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba3-health-and-family-kollan'" :unique_key="3"></form-input>
-                </form>
-            </div>
-        </div>
-
 
         <div class="card mb-1" v-if="month">
             <div class="card-header">
@@ -67,10 +65,81 @@
             </div>
         </div>
         <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">সামাজিক প্রতিষ্ঠান রয়েছে:</h1>
+            </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in shamajik_protishthan" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-shomajsheba4-institutional-social-work'" :unique_key="4"></form-input>
+                    <form-input v-for="(field, index) in shomajsheba4_social_institution" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba4-institutional-social-work'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">প্রতিষ্ঠানভিত্তিক সামাজিক কাজ হয়েছে:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in shomajsheba4_institutional_social_work" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba4-institutional-social-work'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">নতুন সামাজিক প্রতিষ্ঠান চালু করা:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in shomajsheba4_new_social_institutions" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba4-institutional-social-work'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৫. স্বাস্থ্য ও পরিবার কল্যাণমূলক কাজ:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in health_and_family" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba5-helth-and-family-kollan'" :unique_key="5"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৬. শিক্ষা ও গবেষণামূলক কার্যক্রম:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in shomajsheba6_education_and_research" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba6-education-and-research-activitie'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৭. সামাজিক কাজের জন্য মোট আয়ের কত শতাংশ ব্যয় হয়েছে:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in shomajsheba7_expenses" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-shomajsheba7-expense'" :unique_key="7"></form-input>
                 </form>
             </div>
         </div>
@@ -95,11 +164,6 @@ export default {
     data: ()=>({
         // month:null,
 
-//         ১. প্রশিক্ষিত সমাজকর্মী তৈরি (প্রশিক্ষিত সমাজকর্মী বলতে কেন্দ্রীয় মডিউলের আলোকে সমাজকর্ম মাস্টার ট্রেইনার দ্বারা প্রশিক্ষণপ্রাপ্ত জনশক্তিকেই বুঝানো হয়েছে): এ বছর কতজন প্রশিক্ষণ কোর্স সম্পন্ন করেছে
-// মোট প্রশিক্ষিত সমাজকর্মী সংখ্যা
-// এ বছর কয়টি প্রশিক্ষণ কোর্স হয়েছে
-// টার্গেট
-// টার্গেট
         // ১. প্রশিক্ষিত সমাজকর্মী তৈরি:
         trained_social_worker:[
             {
@@ -437,10 +501,13 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('ward-shomajsheba1-personal-social-work', 1);
-            this.get_data_by_api('ward-shomajsheba2-group-social-work', 2);
-            this.get_data_by_api('ward-shomajsheba3-health-and-family-kollan', 3);
-            this.get_data_by_api('ward-shomajsheba4-institutional-social-work', 4);
+            this.get_data_by_api('thana-shomajsheba1-personal-preparing-trained-social-work', 1);
+            this.get_data_by_api('thana-shomajsheba2-personal-group-social-work', 2);
+            this.get_data_by_api('thana-shomajsheba3-group-social-work', 3);
+            this.get_data_by_api('thana-shomajsheba4-institutional-social-work', 4);
+            this.get_data_by_api('thana-shomajsheba5-helth-and-family-kollan', 5);
+            this.get_data_by_api('thana-shomajsheba6-education-and-research-activitie', 6);
+            this.get_data_by_api('thana-shomajsheba7-expense', 7);
         }
     }
 

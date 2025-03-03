@@ -268,10 +268,10 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba2PersonalSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-shomajsheba3-health-and-family-kollan'], function () {
-        Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
-    });
+    // Route::group(['prefix' => 'thana-shomajsheba3-health-and-family-kollan'], function () {
+    //     Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'get_data']);
+    //     Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    // });
 
     Route::group(['prefix' => 'thana-shomajsheba4-institutional-social-work'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba4InstitutionalSocialWorkController::class, 'get_data']);

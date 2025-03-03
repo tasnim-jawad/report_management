@@ -123,12 +123,12 @@
                                 <span class="icon_margin"><i class="fa-solid fa-chalkboard-user"></i></span>প্ৰশিক্ষণ
                             </router-link>
                         </li>
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'Shomajsheba' }">
                                 <span class="icon_margin"><i class="fa-solid fa-share-from-square"></i></span>সমাজ
                                 সংস্কার ও সমাজসেবা
                             </router-link>
-                        </li> -->
+                        </li>
                         <!-- <li>
                             <router-link :to="{ name: 'Rastrio' }">
                                 <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও
