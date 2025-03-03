@@ -406,8 +406,8 @@
         Route::get('/report-joma', [App\Http\Controllers\Thana\ThanaController::class, 'report_joma']);
 
 
-        Route::get('/get-all-ward-data', [App\Http\Controllers\Thana\ThanaTotalWartSubmittedDataController::class, 'get_all_ward_data']);
-        Route::get('/count-approved-ward', [App\Http\Controllers\Thana\ThanaTotalWartSubmittedDataController::class, 'count_approved_ward']);
+        Route::get('/get-all-ward-data', [App\Http\Controllers\Thana\ThanaTotalWardSubmittedDataController::class, 'get_all_ward_data']);
+        Route::get('/count-approved-ward', [App\Http\Controllers\Thana\ThanaTotalWardSubmittedDataController::class, 'count_approved_ward']);
     });
 
 

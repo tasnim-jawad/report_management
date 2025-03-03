@@ -36,7 +36,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
-class ThanaTotalWartSubmittedDataController extends Controller
+class ThanaTotalWardSubmittedDataController extends Controller
 {
     public function data_generate()
     {
@@ -866,11 +866,11 @@ class ThanaTotalWartSubmittedDataController extends Controller
             ]);
     }
 
-    public function get_all_unit_data()
+    public function get_all_ward_data()
     {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
-            'ward_id' => ['required'],
+            'thana_id' => ['required'],
             'table_name' => ['required'],
             'field_title' => ['required'],
         ]);
@@ -881,19 +881,19 @@ class ThanaTotalWartSubmittedDataController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-        $data = approved_unit_ids(request()->ward_id, request()->month);
+        $data = approved_ward_ids(request()->thana_id, request()->month);
 
-        $unit_wise_data  = [];
+        $ward_wise_data  = [];
         $total = 0;
-        foreach ($data['approved_units'] as $approved_unit) {
-            // dd($approved_unit['report_info_id']);
+        foreach ($data['approved_wards'] as $approved_ward) {
+            // dd($approved_ward['report_info_id']);
 
             $data = DB::table(request()->table_name)
-                ->where('report_info_id', $approved_unit['report_info_id'])
+                ->where('report_info_id', $approved_ward['report_info_id'])
                 ->value(request()->field_title);
             // dd("value",$data);
-            $unit_wise_data[] = [
-                'unit_title' => $approved_unit['unit_title'],
+            $ward_wise_data[] = [
+                'ward_title' => $approved_ward['ward_title'],
                 'value' => $data,
             ];
 
@@ -903,7 +903,7 @@ class ThanaTotalWartSubmittedDataController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'unit_wise_data' => $unit_wise_data,
+            'ward_wise_data' => $ward_wise_data,
             'total' => $total,
         ], 200);
     }

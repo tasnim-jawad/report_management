@@ -38,7 +38,7 @@ export default {
             type: String,
             required: true,
         },
-        ward_id: {
+        thana_id: {
             type: Number,
             required: true,
             default: 0,
@@ -83,7 +83,7 @@ export default {
                 },
             });
             if (response.data.status == "success") {
-                this.unit_wise_data = response?.data?.unit_wise_data;
+                this.ward_wise_data = response?.data?.ward_wise_data;
                 this.total = response?.data?.total;
             }
         },

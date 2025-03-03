@@ -14,7 +14,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
-/* 
+/*
 functions:
     1. check_and_get_unit_info
     2. is_unit_report_upload_permitted
@@ -28,7 +28,7 @@ functions:
     10. calculate_previous_present
     11. calculate_increase
     12. unit_active_report
-    
+
 */
 
 function check_and_get_unit_info($user_id)
@@ -116,6 +116,7 @@ function common_get($model, $user_id = null)
 
 function common_store($bind, $class, $report_info)
 {
+   
     $rules = [
         'month' => ['required'],
         'value' => ['numeric', 'nullable'],
@@ -264,7 +265,7 @@ function unit_active_report()
 // function notification($user_id, $org_type, $notification_title, $notification_description)
 // {
 //     $org_type_user = 'org_'.$org_type.'_user';
-//     $user_info = User::where('id', $user_id)->first()->$org_type_user; 
+//     $user_info = User::where('id', $user_id)->first()->$org_type_user;
 //     if(!$user_info){
 //         return "User not found.";
 //     }
