@@ -8,7 +8,12 @@
         </div>
         <div class="card mb-1" v-if="month">
             <div class="card-header">
-                <h1 class="fw-semibold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h1>
+                <h1 class="fw-semibold">রাষ্ট্রীয় সংস্কার ও সংশোধন:</h1>
+            </div>
+        </div>
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">১. রাজনৈতিক ও প্রশাসনিক যোগাযোগ:</h1>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
@@ -18,7 +23,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in rajnoitik_bekti" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio1-political-communication'" :unique_key="1"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio1-political-communication'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -29,7 +34,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in proshoshonik_bekti" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio1-political-communication'" :unique_key="1"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio1-political-communication'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>
@@ -47,7 +52,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in centrally_announced_political_program" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
@@ -58,7 +63,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in locally_announced_jonoshova" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
@@ -69,7 +74,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in locally_announced_shomabesh" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
@@ -80,7 +85,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in locally_announced_michil" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
@@ -88,7 +93,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in others" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio2-kormoshuchi-bastobayon'" :unique_key="2"></form-input>
                 </form>
             </div>
         </div>
@@ -106,7 +111,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in shadhinota_o_jatio_dibosh" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -117,7 +122,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in bijoy_dibosh" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -128,7 +133,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in mattrivasha_dibosh" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -139,7 +144,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in others_dibosh" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
                 </form>
             </div>
         </div>
@@ -157,7 +162,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in councilor_candidate" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -168,7 +173,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in member_candidate" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -180,7 +185,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in national_vote_kendro" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -191,7 +196,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in local_vote_kendro" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -202,7 +207,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in vote_kendro_committee" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -213,7 +218,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in vote_kendro_vittik_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -221,7 +226,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in election_management" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'ward-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -791,13 +796,14 @@ export default {
                 name:'other_elected',
             },
         ],
-//         ৮. উদ্যোক্তা তৈরি:
-// বিবরণ
-// কৃষি উদ্যোক্তা তৈরি
-// উদ্যোক্তা তৈরি (সেবা, শিল্প, ব্যবসা-বাণিজ্য ও অন্যান্য)
-// অন্যান্য
-// সংখ্যা
-// টার্গেট
+
+        // ৮. উদ্যোক্তা তৈরি:
+        // বিবরণ
+        // কৃষি উদ্যোক্তা তৈরি
+        // উদ্যোক্তা তৈরি (সেবা, শিল্প, ব্যবসা-বাণিজ্য ও অন্যান্য)
+        // অন্যান্য
+        // সংখ্যা
+        // টার্গেট
 
 
 
@@ -928,10 +934,10 @@ export default {
             let els = document.querySelectorAll('input[type="text"]');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('ward-rastrio1-political-communication', 1);
-            this.get_data_by_api('ward-rastrio2-kormoshuchi-bastobayon', 2);
-            this.get_data_by_api('ward-rastrio3-dibosh-palon', 3);
-            this.get_data_by_api('ward-rastrio4-election-activitie', 4);
+            this.get_data_by_api('thana-rastrio1-political-communication', 1);
+            this.get_data_by_api('thana-rastrio2-kormoshuchi-bastobayon', 2);
+            this.get_data_by_api('thana-rastrio3-dibosh-palon', 3);
+            this.get_data_by_api('thana-rastrio4-election-activitie', 4);
         }
     }
 

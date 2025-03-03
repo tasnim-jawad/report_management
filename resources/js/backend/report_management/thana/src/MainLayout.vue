@@ -129,12 +129,12 @@
                                 সংস্কার ও সমাজসেবা
                             </router-link>
                         </li>
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'Rastrio' }">
                                 <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও
                                 সংশোধন
                             </router-link>
-                        </li> -->
+                        </li>
                         <!-- <li>
                             <router-link :to="{ name: 'Montobbo' }">
                                 <span class="icon_margin"><i class="fa-solid fa-comments"></i></span>মন্তব্য
