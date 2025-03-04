@@ -1085,6 +1085,7 @@ export default {
                 name:'sheba_uddogta_toiri_target',
             },
         ],
+
         shilpo_uddogta_toiri:[
             {
                 label:'সংখ্যা',
@@ -1099,6 +1100,7 @@ export default {
                 name:'shilpo_uddogta_toiri_target',
             },
         ],
+        
         banijjo_uddogta_toiri:[
             {
                 label:'সংখ্যা',
