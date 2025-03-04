@@ -126,6 +126,19 @@
                 </form>
             </div>
         </div>
+        
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>অন্যান্য:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in others_dibosh" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+        
         <div class="card mb-3" v-if="month">
             <div class="card-header">
                 <h1>আন্তর্জাতিক মাতৃভাষা দিবস:</h1>
@@ -137,13 +150,25 @@
                 </form>
             </div>
         </div>
+
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>অন্যান্য:</h1>
+                <h1>আন্তর্জাতিক নারী দিবস:</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in others_dibosh" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in international_womens_day" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মে দিবস:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in may_day" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-rastrio3-dibosh-palon'" :unique_key="3"></form-input>
                 </form>
             </div>
@@ -157,26 +182,50 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>কাউন্সিলর:</h1>
+                <h1>সিটি কর্পোরেশন:</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in councilor_candidate" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in city_corporation" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>মেম্বার:</h1>
+                <h1>পৌরসভা:</h1>
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in member_candidate" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in pouroshova" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উপজেলা পরিষদ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in upojela" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ইউনিয়ন পরিষদ:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in union" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+
+
 
         <div class="card mb-3" v-if="month">
             <div class="card-header">
@@ -213,7 +262,7 @@
         </div>
         <div class="card mb-3" v-if="month">
             <div class="card-header">
-                <h1>কেন্দ্র/ বুথভিত্তিক ইউনিট:</h1>
+                <h1>কেন্দ্র ভিত্তিক ইউনিট:</h1>
             </div>
             <div class="card-body">
                 <form action="">
@@ -223,14 +272,177 @@
             </div>
         </div>
         <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>বুথ ভিত্তিক ইউনিট:</h1>
+            </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in election_management" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in booth_vittik_unit" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in election_management_committee_meeting" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-rastrio4-election-activitie'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
 
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৫. প্রচার ও মিডিয়া:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in broadcast_and_media" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio5-broadcast-and-media'" :unique_key="5"></form-input>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৬. মানবাধিকার :</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in rastrio6_human_rights" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio6-human-right'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>মানবাধিকার কর্মী তৈরি :</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in human_rights_activist_produced" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio6-human-right'" :unique_key="6"></form-input>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৭. শিল্প ও বাণিজ্য: :</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>ব্যবসায়ী সমিতি:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in business_association" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio7-industry-and-trade'" :unique_key="7"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>বাজার কমিটি:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in market_committee" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio7-industry-and-trade'" :unique_key="7"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>অন্যান্য:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in rastrio7_other" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio7-industry-and-trade'" :unique_key="7"></form-input>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="card mb-1" v-if="month">
+            <div class="card-header">
+                <h1 class="fw-semibold">৮. উদ্যোক্তা তৈরি:</h1>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>কৃষি উদ্যোক্তা তৈরি:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in krishi_uddogta_toiri" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio8-entrepreneurial-development'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উদ্যোক্তা তৈরি (সেবা):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in sheba_uddogta_toiri" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio8-entrepreneurial-development'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উদ্যোক্তা তৈরি (শিল্প):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in shilpo_uddogta_toiri" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio8-entrepreneurial-development'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উদ্যোক্তা তৈরি (ব্যবসা-বাণিজ্য):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in banijjo_uddogta_toiri" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio8-entrepreneurial-development'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>উদ্যোক্তা তৈরি (অন্যান্য):</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in other_uddogta_toiri" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio8-entrepreneurial-development'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-3" v-if="month">
+            <div class="card-header">
+                <h1>অন্যান্য:</h1>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <form-input v-for="(field, index) in rastrio8_other" :label="field.label" :name="field.name" :key="index"
+                    :onchange="dawat_upload" :endpoint="'thana-rastrio8-entrepreneurial-development'" :unique_key="8"></form-input>
+                </form>
+            </div>
+        </div>
 
         <previous-next
                 :prev-route="{ name: 'Shomajsheba' }"
@@ -679,6 +891,43 @@ export default {
                 name:'vote_kendro_vittik_unit_target',
             },
         ],
+        booth_vittik_unit:[
+            {
+                label:'সংখ্যা',
+                name:'booth_vittik_unit',
+            },
+            {
+                label:'বৃদ্ধি',
+                name:'booth_vittik_unit_increase',
+            },
+            {
+                label:'টার্গেট',
+                name:'booth_vittik_unit_target',
+            },
+        ],
+
+        election_management_committee_meeting:[
+            {
+                label:'উপজেলা ভিত্তিক',
+                name:'upojela_vittik_election_management_committee_meeting',
+            },
+            {
+                label:'থানা ভিত্তিক',
+                name:'thana_vittik_election_management_committee_meeting',
+            },
+            {
+                label:'পৌরসভা ভিত্তিক',
+                name:'pouroshova_vittik_election_management_committee_meeting',
+            },
+            {
+                label:'ইউনিয়ন ভিত্তিক',
+                name:'union_vittik_election_management_committee_meeting',
+            },
+            {
+                label:'ওয়ার্ড ভিত্তিক',
+                name:'ward_vittik_election_management_committee_meeting',
+            },
+        ],
 
 
         //৫. প্রচার ও মিডিয়া:
@@ -796,6 +1045,7 @@ export default {
                 name:'other_elected',
             },
         ],
+
 
         // ৮. উদ্যোক্তা তৈরি:
         // বিবরণ
@@ -938,6 +1188,10 @@ export default {
             this.get_data_by_api('thana-rastrio2-kormoshuchi-bastobayon', 2);
             this.get_data_by_api('thana-rastrio3-dibosh-palon', 3);
             this.get_data_by_api('thana-rastrio4-election-activitie', 4);
+            this.get_data_by_api('thana-rastrio5-broadcast-and-media',5);
+            this.get_data_by_api('thana-rastrio6-human-right', 6);
+            this.get_data_by_api('thana-rastrio7-industry-and-trade', 7);
+            this.get_data_by_api('thana-rastrio8-entrepreneurial-development', 8);
         }
     }
 

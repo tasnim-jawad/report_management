@@ -314,6 +314,26 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
+    Route::group(['prefix' => 'thana-rastrio5-broadcast-and-media'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-rastrio6-human-right'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-rastrio7-industry-and-trade'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-rastrio8-entrepreneurial-development'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
     Route::group(['prefix' => 'thana-montobbo'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Montobbo\ThanaMontobboController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Montobbo\ThanaMontobboController::class, 'store_single'])->middleware(ThanaStatusChack::class);
