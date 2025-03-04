@@ -107,9 +107,6 @@ function thana_common_get($model, $user_id = null)
 
 function thana_common_store($bind, $class, $report_info)
 {
-
-
-
     $bind->validate(request(), [
         'month' => ['required']
     ], [

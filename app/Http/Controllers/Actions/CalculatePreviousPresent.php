@@ -474,6 +474,11 @@ class CalculatePreviousPresent
                 'columns' => ['increase' => 'total_young_committee_increased'],
                 'type' => 'increase',
             ],
+            'number_of_participants' => [
+                'table' => 'thana_department3_jubo_somaj_dawats',
+                'columns' => ['increase' => 'total_young_committee_increased'],
+                'type' => 'increase',
+            ],
 
 
         ];
