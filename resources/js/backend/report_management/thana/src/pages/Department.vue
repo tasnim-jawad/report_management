@@ -574,7 +574,7 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'department4-different-job-holders-dawat'"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
                         :unique_key="4"
                     ></form-input>
                 </form>
@@ -592,7 +592,7 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'department4-different-job-holders-dawat'"
+                        :endpoint="'thana-department4-different-job-holders-dawat'"
                         :unique_key="4"
                     ></form-input>
                 </form>
@@ -639,7 +639,7 @@
                         :name="field.name"
                         :key="index"
                         :onchange="dawat_upload"
-                        :endpoint="'ward-department6-mosjid-dawah-infomation-centers'"
+                        :endpoint="'thana-department6-mosjid-dawah-infomation-centers'"
                         :unique_key="6"
                     ></form-input>
                 </form>
@@ -1229,11 +1229,11 @@ export default {
         department6_mosjid_dawah: [
             {
                 label: "মসজিদ বৃদ্ধি",
-                name: "total_mosjid_increase বৃদ্ধি",
+                name: "total_mosjid_increase",
             },
             {
                 label: "দাওয়াতের আওতাভুক্ত মসজিদ বৃদ্ধি",
-                name: "dawat_included_mosjid_increase বৃদ্ধি",
+                name: "dawat_included_mosjid_increase",
             },
             {
                 label: "মসজিদভিত্তিক দাওয়াহ্ সেন্টার বৃদ্ধি",
@@ -1289,7 +1289,7 @@ export default {
             },
             {
                 label: "মোট দাওয়াতি সাংস্কৃতিক প্রোগ্রাম সংখ্যা",
-                name: "total_program বৃদ্ধি",
+                name: "total_program",
             },
             {
                 label: "মোট কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে",
@@ -1345,15 +1345,9 @@ export default {
             this.get_data_by_api("thana-department1-talimul-quran", 1);
             this.get_data_by_api("thana-department2-moholla-vittik-dawat", 2);
             this.get_data_by_api("thana-department3-jubo-somaj-dawat", 3);
-            this.get_data_by_api(
-                "thana-department4-different-job-holders-dawat",
-                4
-            );
+            this.get_data_by_api("thana-department4-different-job-holders-dawat",4);
             this.get_data_by_api("thana-department5-paribarik-dawat", 5);
-            this.get_data_by_api(
-                "thana-department6-mosjid-dawah-infomation-centers",
-                6
-            );
+            this.get_data_by_api("thana-department6-mosjid-dawah-infomation-centers", 6);
             this.get_data_by_api("thana-department7-dawat-in-technology", 7);
             this.get_data_by_api("thana-department8-dawat-in-cultural-activity", 8);
         },
