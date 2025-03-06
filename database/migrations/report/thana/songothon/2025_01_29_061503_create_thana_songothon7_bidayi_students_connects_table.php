@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('thana_songothon7_bidayi_students_connects', function (Blueprint $table) {
+        Schema::create('thana_songothon6_bidayi_students_connects', function (Blueprint $table) {
             $table->id();
 
             $table->bigInteger('report_info_id')->nullable();
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('thana_songothon7_bidayi_students_connects');
+        Schema::dropIfExists('thana_songothon6_bidayi_students_connects');
     }
 };

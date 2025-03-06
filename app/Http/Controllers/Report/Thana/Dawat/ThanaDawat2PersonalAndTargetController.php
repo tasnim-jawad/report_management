@@ -24,6 +24,7 @@ class ThanaDawat2PersonalAndTargetController extends Controller
 
     public function get_data()
     {
+
         return thana_common_get(ThanaDawat2PersonalAndTarget::class);
     }
 

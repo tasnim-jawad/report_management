@@ -73,7 +73,7 @@
                                 <td>
                                     <input
                                         class="bg-input w-100 text-center"
-                                        :type="type"
+                                        type="text"
                                         readonly
                                         :value="
                                             total_man_woman_count(
@@ -103,12 +103,12 @@
                                                     'thana-dawat1-regular-group-wise'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :thana_id="
-                                                report_header?.thana_info?.id
+                                            :ward_id="
+                                                report_header?.ward_info?.id
                                             "
                                             :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
@@ -133,9 +133,18 @@
                                                     'thana-dawat1-regular-group-wise'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
+                                        <!-- <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'dawat2_personal_and_targets'"
+                                            :field_title="'total_rokon'"
+                                            :month="month"
+                                        >
+                                        </popup> -->
                                     </div>
                                 </td>
                             </tr>
@@ -154,34 +163,30 @@
                                     }}
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
-                                        <input
-                                            name="number_of_participants_man"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_dawat1_regular_group_wises
-                                                        ?.number_of_participants_man
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-dawat1-regular-group-wise'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                                report_header?.thana_info?.id
-                                            "
-                                            :table_name="'ward_dawat1_regular_group_wises'"
-                                            :field_title="'how_many_groups_are_out_woman'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <input
+                                        name="number_of_participants_man"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_dawat1_regular_group_wises
+                                                    ?.number_of_participants_man
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-dawat1-regular-group-wise'
+                                            )
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    <popup
+                                        :ward_id="report_header?.ward_info?.id"
+                                        :table_name="'ward_dawat1_regular_group_wises'"
+                                        :field_title="'how_many_groups_are_out'"
+                                        :month="month"
+                                    >
+                                    </popup>
                                 </td>
                                 <td>
                                     <input
@@ -198,7 +203,7 @@
                                                 'thana-dawat1-regular-group-wise'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -227,7 +232,6 @@
                                     }}
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
                                     <input
                                         name="how_many_have_been_invited_man"
                                         :value="
@@ -242,7 +246,7 @@
                                                 'thana-dawat1-regular-group-wise'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -252,7 +256,6 @@
                                         :month="month"
                                     >
                                     </popup>
-                                </div>
                                 </td>
                                 <td>
                                     <input
@@ -269,7 +272,7 @@
                                                 'thana-dawat1-regular-group-wise'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -298,7 +301,6 @@
                                     }}
                                 </td>
                                 <td>
-                                    <div class="parent_popup">
                                     <input
                                         name="how_many_associate_members_created_man"
                                         :value="
@@ -313,7 +315,7 @@
                                                 'thana-dawat1-regular-group-wise'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -323,7 +325,6 @@
                                         :month="month"
                                     >
                                     </popup>
-                                </div>
                                 </td>
                                 <td>
                                     <input
@@ -340,7 +341,7 @@
                                                 'thana-dawat1-regular-group-wise'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -393,7 +394,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -419,7 +420,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -445,7 +446,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -471,7 +472,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -502,7 +503,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -528,7 +529,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -554,7 +555,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -580,7 +581,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -611,7 +612,7 @@
                                 <td>
                                     <input
                                         class="bg-input w-100 text-center"
-                                        :type="type"
+                                        type="text"
                                         readonly
                                         :value="
                                             total_man_woman_count(
@@ -640,7 +641,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -666,7 +667,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -685,7 +686,7 @@
                                 <td>
                                     <input
                                         class="bg-input w-100 text-center"
-                                        :type="type"
+                                        type="text"
                                         readonly
                                         :value="
                                             total_man_woman_count(
@@ -714,7 +715,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -740,7 +741,7 @@
                                                 'thana-dawat2-personal-and-target'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -777,7 +778,7 @@
                                 <td>
                                     <input
                                         class="bg-input w-100 text-center"
-                                        :type="type"
+                                        type="text"
                                         readonly
                                         :value="
                                             total_man_woman_count(
@@ -806,7 +807,7 @@
                                                 'thana-dawat3-general-program-and-others'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -832,7 +833,7 @@
                                                 'thana-dawat3-general-program-and-others'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -851,7 +852,7 @@
                                 <td>
                                     <input
                                         class="bg-input w-100 text-center"
-                                        :type="type"
+                                        type="text"
                                         readonly
                                         :value="
                                             total_man_woman_count(
@@ -880,7 +881,7 @@
                                                 'thana-dawat3-general-program-and-others'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -906,7 +907,7 @@
                                                 'thana-dawat3-general-program-and-others'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -1003,7 +1004,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1032,7 +1033,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1061,7 +1062,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1090,7 +1091,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1124,7 +1125,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1153,7 +1154,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1182,7 +1183,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1211,7 +1212,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1245,7 +1246,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1274,7 +1275,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1303,7 +1304,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1332,7 +1333,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1394,7 +1395,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1423,7 +1424,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1457,7 +1458,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1486,7 +1487,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1520,7 +1521,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1549,7 +1550,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1611,7 +1612,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1640,7 +1641,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1674,7 +1675,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1703,7 +1704,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1737,7 +1738,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1766,7 +1767,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input text-center"
                                             />
                                             <popup
@@ -1846,7 +1847,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1875,7 +1876,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1904,7 +1905,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1933,7 +1934,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1967,7 +1968,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -1996,7 +1997,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2025,7 +2026,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2054,7 +2055,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2088,7 +2089,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2117,7 +2118,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2146,7 +2147,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2175,7 +2176,7 @@
                                                         'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2215,7 +2216,7 @@
                                                 'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -2241,7 +2242,7 @@
                                                 'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -2267,7 +2268,7 @@
                                                 'thana-dawat4-gono-songjog-and-dawat-ovijan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -2327,7 +2328,7 @@
                                                         'thana-department1-talimul-quran'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2356,7 +2357,7 @@
                                                         'thana-department1-talimul-quran'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2390,7 +2391,7 @@
                                                         'thana-department1-talimul-quran'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2419,7 +2420,7 @@
                                                         'thana-department1-talimul-quran'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2476,7 +2477,7 @@
                                                         'thana-department1-talimul-quran'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2505,7 +2506,7 @@
                                                         'thana-department1-talimul-quran'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2539,7 +2540,7 @@
                                                         'thana-department1-talimul-quran'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2568,7 +2569,7 @@
                                                         'thana-department1-talimul-quran'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -2635,7 +2636,7 @@
                                                     'thana-department1-talimul-quran'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -2663,7 +2664,7 @@
                                                     'thana-department1-talimul-quran'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -2700,7 +2701,7 @@
                                                             'thana-department1-talimul-quran'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -2730,7 +2731,7 @@
                                                             'thana-department1-talimul-quran'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -2765,7 +2766,7 @@
                                                             'thana-department1-talimul-quran'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -2795,7 +2796,7 @@
                                                             'thana-department1-talimul-quran'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -2835,7 +2836,7 @@
                                                     'thana-department1-talimul-quran'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -2873,7 +2874,7 @@
                                                             'thana-department1-talimul-quran'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -2903,7 +2904,7 @@
                                                             'thana-department1-talimul-quran'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -2943,7 +2944,7 @@
                                                             'thana-department1-talimul-quran'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -2973,7 +2974,7 @@
                                                             'thana-department1-talimul-quran'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3054,7 +3055,7 @@
                                                 'thana-department1-talimul-quran'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -3080,7 +3081,7 @@
                                                 'thana-department1-talimul-quran'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -3118,7 +3119,7 @@
                                                 'thana-department1-talimul-quran'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -3144,7 +3145,7 @@
                                                 'thana-department1-talimul-quran'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -3189,7 +3190,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3219,7 +3220,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3262,7 +3263,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3292,7 +3293,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3327,7 +3328,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3357,7 +3358,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3398,7 +3399,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3428,7 +3429,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3463,7 +3464,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3493,7 +3494,7 @@
                                                             'thana-department2-moholla-vittik-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3533,7 +3534,7 @@
                                                     'thana-department2-moholla-vittik-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -3566,7 +3567,7 @@
                                                     'thana-department2-moholla-vittik-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -3620,7 +3621,7 @@
                                                         'thana-department3-jubo-somaj-dawat'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -3653,7 +3654,7 @@
                                                         'thana-department3-jubo-somaj-dawat'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -3687,13 +3688,32 @@
                                 <tr>
                                     <td class="text-start px-2">যুব কমিটি</td>
                                     <td>
-                                        {{
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.previous_present
-                                                    ?.total_young_committee
-                                            )
-                                        }}
+                                        <input
+                                            name="total_young_committee"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department3_jubo_somaj_dawats
+                                                        ?.total_young_committee
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department3-jubo-somaj-dawat'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input fixed-input-30 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </td>
                                     <td>
                                         <input
@@ -3710,7 +3730,7 @@
                                                     'thana-department3-jubo-somaj-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -3743,7 +3763,7 @@
                                                     'thana-department3-jubo-somaj-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -3771,7 +3791,7 @@
                                                     'thana-department3-jubo-somaj-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -3805,7 +3825,7 @@
                                                     'thana-department3-jubo-somaj-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -3833,7 +3853,7 @@
                                                     'thana-department3-jubo-somaj-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -3894,7 +3914,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3924,7 +3944,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3959,7 +3979,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -3989,7 +4009,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4024,7 +4044,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4054,7 +4074,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4085,7 +4105,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4122,7 +4142,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4152,7 +4172,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4187,7 +4207,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4217,7 +4237,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4252,7 +4272,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4282,7 +4302,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4313,7 +4333,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4346,7 +4366,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4374,7 +4394,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4402,7 +4422,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4430,7 +4450,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4463,7 +4483,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4491,7 +4511,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4519,7 +4539,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4547,7 +4567,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4584,7 +4604,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4614,7 +4634,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4649,7 +4669,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4679,7 +4699,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4714,7 +4734,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4744,7 +4764,7 @@
                                                             'thana-department4-different-job-holders-dawat'
                                                         )
                                                     "
-                                                    :type="type"
+                                                    type="text"
                                                     class="bg-input fixed-input-30 text-center"
                                                 />
                                                 <popup
@@ -4775,7 +4795,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4808,7 +4828,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4836,7 +4856,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4864,7 +4884,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4892,7 +4912,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4925,7 +4945,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4953,7 +4973,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -4981,7 +5001,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -5009,7 +5029,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -5042,7 +5062,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -5070,7 +5090,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -5098,7 +5118,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -5126,7 +5146,7 @@
                                                     'thana-department4-different-job-holders-dawat'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-30 text-center"
                                         />
                                         <popup
@@ -5170,7 +5190,7 @@
                                                 'thana-department5-paribarik-dawat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5196,7 +5216,7 @@
                                                 'thana-department5-paribarik-dawat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5246,7 +5266,7 @@
                                                 'thana-department6-mosjid-dawah-infomation-centers'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5276,7 +5296,7 @@
                                                 'thana-department6-mosjid-dawah-infomation-centers'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5308,7 +5328,7 @@
                                                 'thana-department6-mosjid-dawah-infomation-centers'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5342,7 +5362,7 @@
                                                         'thana-department6-mosjid-dawah-infomation-centers'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -5371,7 +5391,7 @@
                                                         'thana-department6-mosjid-dawah-infomation-centers'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -5407,7 +5427,7 @@
                                                 'thana-department6-mosjid-dawah-infomation-centers'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5437,7 +5457,7 @@
                                                 'thana-department6-mosjid-dawah-infomation-centers'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5486,7 +5506,7 @@
                                                         'thana-department7-dawat-in-technology'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -5515,7 +5535,7 @@
                                                         'thana-department7-dawat-in-technology'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -5549,7 +5569,7 @@
                                                         'thana-department7-dawat-in-technology'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -5578,7 +5598,7 @@
                                                         'thana-department7-dawat-in-technology'
                                                     )
                                                 "
-                                                :type="type"
+                                                type="text"
                                                 class="bg-input fixed-input-30 text-center"
                                             />
                                             <popup
@@ -5624,7 +5644,7 @@
                                                 'thana-department8-dawat-in-cultural-activity'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5650,7 +5670,7 @@
                                                 'thana-department8-dawat-in-cultural-activity'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5676,7 +5696,7 @@
                                                 'thana-department8-dawat-in-cultural-activity'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5718,7 +5738,7 @@
                                     )
                                 }}
                                 <!-- <input name="total_pathagar" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.total_pathagar)"
-                                    @change="data_upload('ward-dawah-and-prokashona')" :type="type"
+                                    @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
@@ -5736,7 +5756,7 @@
                                             'thana-dawah-and-prokashona'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-30 text-center"
                                 />
                                 <popup
@@ -5761,7 +5781,7 @@
                                 }}
                                 <!-- <input name="ward_book_sales_center"
                                     :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.ward_book_sales_center)"
-                                    @change="data_upload('ward-dawah-and-prokashona')" :type="type"
+                                    @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
@@ -5779,7 +5799,7 @@
                                             'thana-dawah-and-prokashona'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-30 text-center"
                                 />
                                 <popup
@@ -5803,7 +5823,7 @@
                                 }}
                                 <!-- <input name="books_in_pathagar"
                                     :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.books_in_pathagar)"
-                                    @change="data_upload('ward-dawah-and-prokashona')" :type="type"
+                                    @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
@@ -5821,7 +5841,7 @@
                                             'thana-dawah-and-prokashona'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-30 text-center"
                                 />
                                 <popup
@@ -5843,7 +5863,7 @@
                                     )
                                 }}
                                 <!-- <input name="ward_book_sales" :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.ward_book_sales)"
-                                    @change="data_upload('ward-dawah-and-prokashona')" :type="type"
+                                    @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
@@ -5861,7 +5881,7 @@
                                             'thana-dawah-and-prokashona'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-30 text-center"
                                 />
                                 <popup
@@ -5901,7 +5921,7 @@
                                             'thana-dawah-and-prokashona'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-30 text-center"
                                 />
                             </td>
@@ -5927,7 +5947,7 @@
                                                 'ward-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     /> -->
                                     <popup
@@ -5955,7 +5975,7 @@
                                                 'thana-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -5981,7 +6001,7 @@
                                     }}
                                     <!-- <input name="unit_book_distribution_center"
                                         :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.unit_book_distribution_center)"
-                                        @change="data_upload('ward-dawah-and-prokashona')" :type="type"
+                                        @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> -->
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -6008,7 +6028,7 @@
                                                 'thana-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6040,7 +6060,7 @@
                                                 'ward-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     /> -->
                                     <popup
@@ -6068,7 +6088,7 @@
                                                 'thana-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
 
@@ -6100,7 +6120,7 @@
                                                 'ward-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     /> -->
                                     <popup
@@ -6128,7 +6148,7 @@
                                                 'thana-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6165,13 +6185,13 @@
                                     }}</span>
 
                                     <!-- <input name="sonar_bangla" :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.sonar_bangla)"
-                                        @change="data_upload('ward-dawah-and-prokashona')" :type="type"
+                                        @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" />/
                                     <input name="songram" :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.songram)"
-                                        @change="data_upload('ward-dawah-and-prokashona')" :type="type"
+                                        @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" />/
                                     <input name="prithibi" :value="formatBangla(report_sum_data?.ward_thana_dawah_and_prokashonas?.prithibi)"
-                                        @change="data_upload('ward-dawah-and-prokashona')" :type="type"
+                                        @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> -->
                                 </div>
                             </td>
@@ -6191,7 +6211,7 @@
                                                 'thana-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />/
                                     <input
@@ -6208,7 +6228,7 @@
                                                 'thana-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />/
                                     <input
@@ -6225,7 +6245,7 @@
                                                 'thana-dawah-and-prokashona'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                 </div>
@@ -6313,7 +6333,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6339,7 +6359,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6365,7 +6385,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6398,7 +6418,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
@@ -6415,7 +6435,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
@@ -6432,7 +6452,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                     </div>
@@ -6453,7 +6473,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
@@ -6470,7 +6490,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
@@ -6487,7 +6507,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                     </div>
@@ -6508,7 +6528,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
@@ -6525,7 +6545,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />/
                                         <input
@@ -6542,7 +6562,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                     </div>
@@ -6568,7 +6588,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6594,7 +6614,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6620,7 +6640,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6650,7 +6670,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6676,7 +6696,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6702,7 +6722,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -6738,7 +6758,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -6765,7 +6785,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -6792,7 +6812,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -6822,7 +6842,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -6849,7 +6869,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -6876,7 +6896,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -6906,7 +6926,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -6933,7 +6953,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -6960,7 +6980,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7009,7 +7029,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7036,7 +7056,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7066,7 +7086,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7093,7 +7113,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                     </div>
@@ -7114,7 +7134,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7141,7 +7161,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7177,7 +7197,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7204,7 +7224,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7231,7 +7251,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7261,7 +7281,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7288,7 +7308,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7315,7 +7335,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7345,7 +7365,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7372,7 +7392,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7399,7 +7419,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7435,7 +7455,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7462,7 +7482,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7492,7 +7512,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7519,7 +7539,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7549,7 +7569,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7576,7 +7596,7 @@
                                                     'thana-kormosuci-bastobayon'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7609,7 +7629,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -7635,7 +7655,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -7661,7 +7681,7 @@
                                                 'thana-kormosuci-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -7856,7 +7876,7 @@
                                                     'thana-songothon1-jonosokti'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
 
@@ -7879,7 +7899,7 @@
                                                     'thana-songothon1-jonosokti'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                     </div>
@@ -7900,7 +7920,7 @@
                                                     'thana-songothon1-jonosokti'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7930,7 +7950,7 @@
                                                     'thana-songothon1-jonosokti'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -7984,7 +8004,7 @@
                                                     'thana-songothon1-jonosokti'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -8014,7 +8034,7 @@
                                                     'thana-songothon1-jonosokti'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -8044,7 +8064,7 @@
                                                     'thana-songothon1-jonosokti'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -8096,7 +8116,7 @@
                                     মোট সহযোগী সদস্য (পুরুষ)
                                 </td>
                                 <td>
-                                    <!-- <input name="associate_member_man_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_previous)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="associate_member_man_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_previous)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.associate_member_man_previous ??
@@ -8105,7 +8125,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="associate_member_man_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_present)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="associate_member_man_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_present)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.associate_member_man_present ??
@@ -8128,7 +8148,7 @@
                                                 'thana-songothon2-associate-member'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8154,7 +8174,7 @@
                                                 'thana-songothon2-associate-member'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8185,7 +8205,7 @@
                                     মোট সহযোগী সদস্য (মহিলা)
                                 </td>
                                 <td>
-                                    <!-- <input name="associate_member_woman_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_previous)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="associate_member_woman_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_previous)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.associate_member_woman_previous ??
@@ -8194,7 +8214,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="associate_member_woman_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_present)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="associate_member_woman_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_present)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.associate_member_woman_present ??
@@ -8217,7 +8237,7 @@
                                                 'thana-songothon2-associate-member'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8243,7 +8263,7 @@
                                                 'thana-songothon2-associate-member'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8453,7 +8473,7 @@
                                 <td class="text-start">সদস্য (রুকন)</td>
 
                                 <td>
-                                    <!-- <input name="women_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="women_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.women_rokon_previous ??
@@ -8462,7 +8482,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="women_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="women_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.women_rokon_present ??
@@ -8485,7 +8505,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8511,7 +8531,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8537,7 +8557,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8552,7 +8572,7 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td>
-                                    <!-- <input name="women_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="women_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.women_kormi_previous ??
@@ -8561,7 +8581,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="women_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="women_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.women_kormi_present ??
@@ -8584,7 +8604,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8610,7 +8630,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8636,7 +8656,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8651,7 +8671,7 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
-                                    <!-- <input name="women_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="women_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.women_associate_member_previous ??
@@ -8660,7 +8680,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="women_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="women_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.women_associate_member_present ??
@@ -8683,7 +8703,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8709,7 +8729,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8735,7 +8755,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8754,10 +8774,10 @@
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
-                                    <!-- <input name="sromojibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="sromojibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                 </td>
                                 <td>
-                                    <!-- <input name="sromojibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="sromojibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                 </td>
                                 <td>
                                     <input
@@ -8774,7 +8794,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8800,7 +8820,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8826,7 +8846,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8841,7 +8861,7 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td>
-                                    <!-- <input name="sromojibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="sromojibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.sromojibi_kormi_previous ??
@@ -8850,7 +8870,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="sromojibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="sromojibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.sromojibi_kormi_present ??
@@ -8873,7 +8893,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8899,7 +8919,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8925,7 +8945,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8940,7 +8960,7 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
-                                    <!-- <input name="sromojibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="sromojibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.sromojibi_associate_member_previous ??
@@ -8949,7 +8969,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="sromojibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="sromojibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.sromojibi_associate_member_present ??
@@ -8972,7 +8992,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -8998,7 +9018,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9024,7 +9044,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9043,7 +9063,7 @@
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
-                                    <!-- <input name="ulama_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="ulama_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.ulama_rokon_previous ??
@@ -9052,7 +9072,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="ulama_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="ulama_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.ulama_rokon_present ??
@@ -9075,7 +9095,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9101,7 +9121,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9127,7 +9147,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9142,7 +9162,7 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td>
-                                    <!-- <input name="ulama_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="ulama_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.ulama_kormi_previous ??
@@ -9151,7 +9171,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="ulama_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="ulama_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.ulama_kormi_present ??
@@ -9174,7 +9194,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9200,7 +9220,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9226,7 +9246,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9241,7 +9261,7 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
-                                    <!-- <input name="ulama_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="ulama_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.ulama_associate_member_previous ??
@@ -9250,7 +9270,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="ulama_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="ulama_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.ulama_associate_member_present ??
@@ -9273,7 +9293,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9299,7 +9319,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9325,7 +9345,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9344,7 +9364,7 @@
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
-                                    <!-- <input name="pesha_jibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="pesha_jibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.pesha_jibi_rokon_previous ??
@@ -9353,7 +9373,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="pesha_jibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="pesha_jibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.pesha_jibi_rokon_present ??
@@ -9376,7 +9396,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9402,7 +9422,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9428,7 +9448,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9443,7 +9463,7 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td>
-                                    <!-- <input name="pesha_jibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="pesha_jibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.pesha_jibi_kormi_previous ??
@@ -9452,7 +9472,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="pesha_jibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="pesha_jibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.pesha_jibi_kormi_present ??
@@ -9475,7 +9495,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9501,7 +9521,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9527,7 +9547,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9542,7 +9562,7 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
-                                    <!-- <input name="pesha_jibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="pesha_jibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.pesha_jibi_associate_member_previous ??
@@ -9551,7 +9571,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="pesha_jibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="pesha_jibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.pesha_jibi_associate_member_present ??
@@ -9574,7 +9594,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9600,7 +9620,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9626,7 +9646,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9645,7 +9665,7 @@
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
-                                    <!-- <input name="jubo_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="jubo_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.jubo_rokon_previous ??
@@ -9654,7 +9674,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="jubo_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="jubo_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.jubo_rokon_present ??
@@ -9677,7 +9697,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9703,7 +9723,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9729,7 +9749,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9744,7 +9764,7 @@
                             <tr>
                                 <td class="text-start">কর্মী</td>
                                 <td>
-                                    <!-- <input name="jubo_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="jubo_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.jubo_kormi_previous ??
@@ -9753,7 +9773,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="jubo_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="jubo_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.jubo_kormi_present ??
@@ -9776,7 +9796,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9802,7 +9822,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9828,7 +9848,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9843,7 +9863,7 @@
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
-                                    <!-- <input name="jubo_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="jubo_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.jubo_associate_member_previous ??
@@ -9852,7 +9872,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <!-- <input name="jubo_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                    <!-- <input name="jubo_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
                                             previous_present?.jubo_associate_member_present ??
@@ -9875,7 +9895,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9901,7 +9921,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9927,7 +9947,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -9947,7 +9967,7 @@
                                 <td class="text-start">কর্মী</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <!-- <input name="vinno_dormalombi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                        <!-- <input name="vinno_dormalombi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
                                                 previous_present?.vinno_dormalombi_kormi_previous ??
@@ -9967,7 +9987,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <!-- <input name="vinno_dormalombi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                        <!-- <input name="vinno_dormalombi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
                                                 previous_present?.vinno_dormalombi_kormi_present ??
@@ -10001,7 +10021,7 @@
                                                     'thana-songothon3-departmental-information'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -10030,7 +10050,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10057,7 +10077,7 @@
                                                     'thana-songothon3-departmental-information'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -10076,7 +10096,7 @@
                                 <td class="text-start">সহযোগী সদস্য</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <!-- <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_previous)" @change="data_upload('thana-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                        <!-- <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_previous)" @change="data_upload('thana-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
                                                 previous_present?.vinno_dormalombi_associate_member_previous ??
@@ -10096,7 +10116,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <!-- <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_present)" @change="data_upload('thana-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
+                                        <!-- <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_present)" @change="data_upload('thana-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
                                                 previous_present?.vinno_dormalombi_associate_member_present ??
@@ -10130,7 +10150,7 @@
                                                     'thana-songothon3-departmental-information'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -10159,7 +10179,7 @@
                                                 'thana-songothon3-departmental-information'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                 </td>
@@ -10179,7 +10199,7 @@
                                                     'thana-songothon3-departmental-information'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -10233,7 +10253,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10259,7 +10279,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10285,7 +10305,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10311,7 +10331,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10337,7 +10357,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10367,7 +10387,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10393,7 +10413,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10419,7 +10439,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10445,7 +10465,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10471,7 +10491,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10501,7 +10521,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10527,7 +10547,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10553,7 +10573,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10579,7 +10599,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10605,7 +10625,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10635,7 +10655,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10661,7 +10681,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10687,7 +10707,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10713,7 +10733,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10739,7 +10759,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10771,7 +10791,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10797,7 +10817,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10823,7 +10843,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10849,7 +10869,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10875,7 +10895,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10907,7 +10927,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10933,7 +10953,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10959,7 +10979,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -10985,7 +11005,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11011,7 +11031,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11043,7 +11063,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11069,7 +11089,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11095,7 +11115,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11121,7 +11141,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11147,7 +11167,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11179,7 +11199,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11205,7 +11225,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11231,7 +11251,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11257,7 +11277,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11283,7 +11303,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11315,7 +11335,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11341,7 +11361,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11367,7 +11387,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11393,7 +11413,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11419,7 +11439,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11451,7 +11471,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11477,7 +11497,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11503,7 +11523,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11529,7 +11549,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11555,7 +11575,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11587,7 +11607,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11613,7 +11633,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11639,7 +11659,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11665,7 +11685,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11691,7 +11711,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
@@ -11723,7 +11743,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11748,7 +11768,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11774,7 +11794,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11799,7 +11819,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11825,7 +11845,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11850,7 +11870,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11876,7 +11896,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11901,7 +11921,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11927,7 +11947,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11952,7 +11972,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -11984,7 +12004,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12009,7 +12029,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12035,7 +12055,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12060,7 +12080,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12086,7 +12106,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12111,7 +12131,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12137,7 +12157,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12162,7 +12182,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12188,7 +12208,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12213,7 +12233,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12245,7 +12265,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12270,7 +12290,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12296,7 +12316,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12321,7 +12341,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12347,7 +12367,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12372,7 +12392,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12398,7 +12418,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12423,7 +12443,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12449,7 +12469,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12474,7 +12494,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12506,7 +12526,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12531,7 +12551,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12557,7 +12577,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12582,7 +12602,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12608,7 +12628,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12633,7 +12653,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12659,7 +12679,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12684,7 +12704,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12710,7 +12730,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12735,7 +12755,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -12771,7 +12791,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -12797,7 +12817,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -12823,7 +12843,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -12849,7 +12869,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -12875,7 +12895,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -12907,7 +12927,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -12933,7 +12953,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -12959,7 +12979,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -12985,7 +13005,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13011,7 +13031,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13043,7 +13063,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13069,7 +13089,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13095,7 +13115,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13121,7 +13141,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13147,7 +13167,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13179,7 +13199,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13205,7 +13225,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13231,7 +13251,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13257,7 +13277,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13283,7 +13303,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13315,7 +13335,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13341,7 +13361,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13367,7 +13387,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13393,7 +13413,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13419,7 +13439,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13451,7 +13471,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13477,7 +13497,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13503,7 +13523,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13529,7 +13549,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13555,7 +13575,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13600,7 +13620,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13626,7 +13646,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13652,7 +13672,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13678,7 +13698,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13704,7 +13724,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13734,7 +13754,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13760,7 +13780,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13786,7 +13806,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13812,7 +13832,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13838,7 +13858,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13868,7 +13888,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13894,7 +13914,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13920,7 +13940,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13946,7 +13966,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -13972,7 +13992,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14004,7 +14024,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14030,7 +14050,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14056,7 +14076,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14082,7 +14102,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14108,7 +14128,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14140,7 +14160,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14166,7 +14186,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14192,7 +14212,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14218,7 +14238,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14244,7 +14264,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14276,7 +14296,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14302,7 +14322,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14328,7 +14348,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14354,7 +14374,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14380,7 +14400,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14410,7 +14430,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14436,7 +14456,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14462,7 +14482,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14488,7 +14508,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14514,7 +14534,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14544,7 +14564,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14570,7 +14590,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14596,7 +14616,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14622,7 +14642,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14648,7 +14668,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14678,7 +14698,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14704,7 +14724,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14730,7 +14750,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14756,7 +14776,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14782,7 +14802,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14812,7 +14832,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14838,7 +14858,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14864,7 +14884,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14890,7 +14910,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14916,7 +14936,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14948,7 +14968,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -14974,7 +14994,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15000,7 +15020,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15026,7 +15046,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15052,7 +15072,7 @@
                                                 'thana-songothon4-organizational-structure'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15115,7 +15135,7 @@
                                                 'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                 </td>
@@ -15134,7 +15154,7 @@
                                                 'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                 </td>
@@ -15153,7 +15173,7 @@
                                                 'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                 </td>
@@ -15172,7 +15192,7 @@
                                                 'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                 </td>
@@ -15191,7 +15211,7 @@
                                                 'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                 </td>
@@ -15213,7 +15233,7 @@
                                                 'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                 </td>
@@ -15233,7 +15253,7 @@
                                                     'thana-songothon5-dawat-and-paribarik-unit'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                     </div>
@@ -15254,7 +15274,7 @@
                                                     'thana-songothon5-dawat-and-paribarik-unit'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -15283,7 +15303,7 @@
                                                 'thana-songothon5-dawat-and-paribarik-unit'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input w-100 text-center"
                                     />
                                 </td>
@@ -15303,7 +15323,7 @@
                                                     'thana-songothon5-dawat-and-paribarik-unit'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
@@ -15357,7 +15377,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15382,7 +15402,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15408,7 +15428,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15433,7 +15453,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15459,7 +15479,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15484,7 +15504,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15510,7 +15530,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15535,7 +15555,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15561,7 +15581,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15586,7 +15606,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15617,7 +15637,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15642,7 +15662,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15667,7 +15687,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15693,7 +15713,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15718,7 +15738,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15743,7 +15763,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15769,7 +15789,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15794,7 +15814,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15819,7 +15839,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15845,7 +15865,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15870,7 +15890,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15895,7 +15915,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15921,7 +15941,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15946,7 +15966,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -15971,7 +15991,7 @@
                                                 'thana-songothon6-emarot-kayem'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16020,7 +16040,7 @@
                                                 'thana-songothon6-bidayi-students-connect'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16045,7 +16065,7 @@
                                                 'thana-songothon6-bidayi-students-connect'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16071,7 +16091,7 @@
                                                 'thana-songothon6-bidayi-students-connect'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16096,7 +16116,7 @@
                                                 'thana-songothon6-bidayi-students-connect'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16122,7 +16142,7 @@
                                                 'thana-songothon6-bidayi-students-connect'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16147,7 +16167,7 @@
                                                 'thana-songothon6-bidayi-students-connect'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16188,7 +16208,7 @@
                                                 'thana-songothon8-associate-and-side-organizations'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16217,7 +16237,7 @@
                                                 'thana-songothon8-associate-and-side-organizations'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16248,7 +16268,7 @@
                                                 'thana-songothon8-associate-and-side-organizations'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16273,7 +16293,7 @@
                                                 'thana-songothon8-associate-and-side-organizations'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16303,7 +16323,7 @@
                                                 'thana-songothon8-associate-and-side-organizations'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16328,7 +16348,7 @@
                                                 'thana-songothon8-associate-and-side-organizations'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16366,7 +16386,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16391,7 +16411,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16421,7 +16441,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16446,7 +16466,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16477,7 +16497,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16502,7 +16522,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16532,7 +16552,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16557,7 +16577,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16589,7 +16609,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16614,7 +16634,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16644,7 +16664,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16669,7 +16689,7 @@
                                                 'thana-songothon9-sofors'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16712,7 +16732,7 @@
                                                 'thana-songothon10-iyanot-data'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16737,7 +16757,7 @@
                                                 'thana-songothon10-iyanot-data'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16763,7 +16783,7 @@
                                                 'thana-songothon10-iyanot-data'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16788,7 +16808,7 @@
                                                 'thana-songothon10-iyanot-data'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-30 text-center"
                                     />
                                     <popup
@@ -16846,7 +16866,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -16871,7 +16891,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -16896,7 +16916,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -16922,7 +16942,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -16947,7 +16967,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -16972,7 +16992,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -16998,7 +17018,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17023,7 +17043,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17048,7 +17068,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17074,7 +17094,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17099,7 +17119,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17124,7 +17144,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17150,7 +17170,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17175,7 +17195,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17200,7 +17220,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17233,7 +17253,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17258,7 +17278,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17283,7 +17303,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17309,7 +17329,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17334,7 +17354,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17359,7 +17379,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17385,7 +17405,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17410,7 +17430,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17435,7 +17455,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17461,7 +17481,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17486,7 +17506,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17511,7 +17531,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17537,7 +17557,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17562,7 +17582,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17587,7 +17607,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17620,7 +17640,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17646,7 +17666,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17672,7 +17692,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17698,7 +17718,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17724,7 +17744,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17754,7 +17774,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17780,7 +17800,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17806,7 +17826,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17832,7 +17852,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17858,7 +17878,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17890,7 +17910,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17916,7 +17936,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17942,7 +17962,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17968,7 +17988,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -17994,7 +18014,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18026,7 +18046,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18051,7 +18071,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18076,7 +18096,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18102,7 +18122,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18127,7 +18147,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18152,7 +18172,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18178,7 +18198,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18203,7 +18223,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18228,7 +18248,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18254,7 +18274,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18279,7 +18299,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18304,7 +18324,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18330,7 +18350,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18355,7 +18375,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18380,7 +18400,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18412,7 +18432,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18437,7 +18457,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18463,7 +18483,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18488,7 +18508,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18514,7 +18534,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18539,7 +18559,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18565,7 +18585,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18590,7 +18610,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18616,7 +18636,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18641,7 +18661,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18673,7 +18693,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18699,7 +18719,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18725,7 +18745,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18751,7 +18771,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18777,7 +18797,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18810,7 +18830,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18835,7 +18855,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18860,7 +18880,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18886,7 +18906,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18911,7 +18931,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18936,7 +18956,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18962,7 +18982,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -18987,7 +19007,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19012,7 +19032,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19038,7 +19058,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19063,7 +19083,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19088,7 +19108,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19114,7 +19134,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19139,7 +19159,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19164,7 +19184,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19196,7 +19216,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19221,7 +19241,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19247,7 +19267,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19272,7 +19292,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19298,7 +19318,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19323,7 +19343,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19349,7 +19369,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19374,7 +19394,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19400,7 +19420,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19425,7 +19445,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19457,7 +19477,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19482,7 +19502,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19508,7 +19528,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19533,7 +19553,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19559,7 +19579,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19584,7 +19604,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19610,7 +19630,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19635,7 +19655,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19661,7 +19681,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19686,7 +19706,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19718,7 +19738,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19743,7 +19763,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19769,7 +19789,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19794,7 +19814,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19820,7 +19840,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19845,7 +19865,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19871,7 +19891,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19896,7 +19916,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19922,7 +19942,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19947,7 +19967,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -19980,7 +20000,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20005,7 +20025,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20031,7 +20051,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20056,7 +20076,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20082,7 +20102,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20107,7 +20127,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20133,7 +20153,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20158,7 +20178,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20184,7 +20204,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20209,7 +20229,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20239,7 +20259,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20264,7 +20284,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20290,7 +20310,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20315,7 +20335,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20341,7 +20361,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20366,7 +20386,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20392,7 +20412,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20417,7 +20437,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20443,7 +20463,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20468,7 +20488,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20500,7 +20520,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20526,7 +20546,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20552,7 +20572,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20578,7 +20598,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20604,7 +20624,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20636,7 +20656,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20661,7 +20681,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20687,7 +20707,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20712,7 +20732,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20738,7 +20758,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20763,7 +20783,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20789,7 +20809,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20814,7 +20834,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20840,7 +20860,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20865,7 +20885,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20895,7 +20915,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20921,7 +20941,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20947,7 +20967,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20973,7 +20993,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -20999,7 +21019,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21031,7 +21051,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21057,7 +21077,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21083,7 +21103,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21109,7 +21129,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21135,7 +21155,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21167,7 +21187,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21192,7 +21212,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21218,7 +21238,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21243,7 +21263,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21269,7 +21289,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21294,7 +21314,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21320,7 +21340,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21345,7 +21365,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21371,7 +21391,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21396,7 +21416,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21426,7 +21446,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21452,7 +21472,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21478,7 +21498,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21504,7 +21524,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21530,7 +21550,7 @@
                                                 'thana-songothon11-sangothonik-boithoks'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21593,7 +21613,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21619,7 +21639,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21645,7 +21665,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21671,7 +21691,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21697,7 +21717,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21730,7 +21750,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21755,7 +21775,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21781,7 +21801,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21806,7 +21826,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21832,7 +21852,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21857,7 +21877,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21883,7 +21903,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21908,7 +21928,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21934,7 +21954,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21959,7 +21979,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -21992,7 +22012,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22017,7 +22037,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22043,7 +22063,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22068,7 +22088,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22094,7 +22114,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22119,7 +22139,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22145,7 +22165,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22170,7 +22190,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22196,7 +22216,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22221,7 +22241,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22254,7 +22274,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22279,7 +22299,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22305,7 +22325,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22330,7 +22350,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22356,7 +22376,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22381,7 +22401,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22407,7 +22427,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22432,7 +22452,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22458,7 +22478,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22483,7 +22503,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22516,7 +22536,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22541,7 +22561,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22567,7 +22587,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22592,7 +22612,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22618,7 +22638,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22643,7 +22663,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22669,7 +22689,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22694,7 +22714,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22720,7 +22740,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22745,7 +22765,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22778,7 +22798,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22803,7 +22823,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22828,7 +22848,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22854,7 +22874,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22879,7 +22899,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22904,7 +22924,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22930,7 +22950,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22955,7 +22975,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -22980,7 +23000,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23006,7 +23026,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23031,7 +23051,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23056,7 +23076,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23082,7 +23102,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23107,7 +23127,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23132,7 +23152,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23162,7 +23182,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23188,7 +23208,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23214,7 +23234,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23240,7 +23260,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23266,7 +23286,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23296,7 +23316,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23322,7 +23342,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23348,7 +23368,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23374,7 +23394,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23400,7 +23420,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23453,7 +23473,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23479,7 +23499,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23505,7 +23525,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23531,7 +23551,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23557,7 +23577,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23583,7 +23603,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23615,7 +23635,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23640,7 +23660,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23666,7 +23686,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23691,7 +23711,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23717,7 +23737,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23742,7 +23762,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23768,7 +23788,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23793,7 +23813,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23819,7 +23839,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23844,7 +23864,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23870,7 +23890,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23895,7 +23915,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23925,7 +23945,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23951,7 +23971,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -23977,7 +23997,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24003,7 +24023,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24029,7 +24049,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24055,7 +24075,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24090,7 +24110,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24105,7 +24125,7 @@
                                     <span class="font-13"
                                         >প্রোগ্রাম সংখ্যা:</span
                                     >
-                                    <input
+                                     <input
                                         name="darsul_quran_woman_program"
                                         :value="
                                             formatBangla(
@@ -24119,7 +24139,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24145,7 +24165,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24171,7 +24191,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24197,7 +24217,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24223,7 +24243,7 @@
                                                 'thana-proshikkhon1-tarbiat'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24274,7 +24294,7 @@
                                                     'thana-proshikkhon2-manob-shompod-organizational-activitie'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24301,7 +24321,7 @@
                                                     'thana-proshikkhon2-manob-shompod-organizational-activitie'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24329,7 +24349,7 @@
                                                     'thana-proshikkhon2-manob-shompod-organizational-activitie'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24356,7 +24376,7 @@
                                                     'thana-proshikkhon2-manob-shompod-organizational-activitie'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24384,7 +24404,7 @@
                                                     'thana-proshikkhon2-manob-shompod-organizational-activitie'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24430,7 +24450,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24457,7 +24477,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24484,7 +24504,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24518,7 +24538,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24545,7 +24565,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24572,7 +24592,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24599,7 +24619,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24626,7 +24646,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24659,7 +24679,7 @@
                                                     'thana-proshikkhon3-manob-shompod-traning-course'
                                                 )
                                             "
-                                            :type="type"
+                                            type="text"
                                             class="bg-input fixed-input-20 text-center"
                                         />
                                         <popup
@@ -24728,7 +24748,7 @@
                                                 'thana-shomajsheba1-personal-preparing-trained-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24754,7 +24774,7 @@
                                                 'thana-shomajsheba1-personal-preparing-trained-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24780,7 +24800,7 @@
                                                 'thana-shomajsheba1-personal-preparing-trained-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24806,7 +24826,7 @@
                                                 'thana-shomajsheba1-personal-preparing-trained-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24832,7 +24852,7 @@
                                                 'thana-shomajsheba1-personal-preparing-trained-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24871,7 +24891,7 @@
                                             'thana-shomajsheba2-personal-group-social-work'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -24900,7 +24920,7 @@
                                             'thana-shomajsheba2-personal-group-social-work'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -24944,7 +24964,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24970,7 +24990,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -24996,7 +25016,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25039,7 +25059,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25068,7 +25088,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25100,7 +25120,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25125,7 +25145,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25154,7 +25174,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25179,7 +25199,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25210,7 +25230,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25239,7 +25259,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25270,7 +25290,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25299,7 +25319,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25330,7 +25350,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25359,7 +25379,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25390,7 +25410,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25415,7 +25435,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25444,7 +25464,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25476,7 +25496,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25501,7 +25521,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25530,7 +25550,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25561,7 +25581,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25586,7 +25606,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25616,7 +25636,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25641,7 +25661,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25672,7 +25692,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25701,7 +25721,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25732,7 +25752,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25761,7 +25781,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25792,7 +25812,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25822,7 +25842,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25853,7 +25873,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25878,7 +25898,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25905,7 +25925,7 @@
                                                 'thana-shomajsheba3-group-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25953,7 +25973,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -25979,7 +25999,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26005,7 +26025,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26036,7 +26056,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26062,7 +26082,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26088,7 +26108,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26119,7 +26139,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26145,7 +26165,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26171,7 +26191,7 @@
                                                 'thana-shomajsheba4-institutional-social-work'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26211,7 +26231,7 @@
                                                 'thana-shomajsheba5-helth-and-family-kollan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26241,7 +26261,7 @@
                                                 'thana-shomajsheba5-helth-and-family-kollan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26272,7 +26292,7 @@
                                                 'thana-shomajsheba5-helth-and-family-kollan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26301,7 +26321,7 @@
                                                 'thana-shomajsheba5-helth-and-family-kollan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26332,7 +26352,7 @@
                                                 'thana-shomajsheba5-helth-and-family-kollan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26361,7 +26381,7 @@
                                                 'thana-shomajsheba5-helth-and-family-kollan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26392,7 +26412,7 @@
                                                 'thana-shomajsheba5-helth-and-family-kollan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26421,7 +26441,7 @@
                                                 'thana-shomajsheba5-helth-and-family-kollan'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26470,7 +26490,7 @@
                                             'thana-shomajsheba6-education-and-research-activitie'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -26496,7 +26516,7 @@
                                             'thana-shomajsheba6-education-and-research-activitie'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -26523,7 +26543,7 @@
                                             'thana-shomajsheba6-education-and-research-activitie'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -26549,7 +26569,7 @@
                                             'thana-shomajsheba6-education-and-research-activitie'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -26578,7 +26598,7 @@
                                             'thana-shomajsheba6-education-and-research-activitie'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -26604,7 +26624,7 @@
                                             'thana-shomajsheba6-education-and-research-activitie'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -26631,7 +26651,7 @@
                                             'thana-shomajsheba6-education-and-research-activitie'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -26657,7 +26677,7 @@
                                             'thana-shomajsheba6-education-and-research-activitie'
                                         )
                                     "
-                                    :type="type"
+                                    type="text"
                                     class="bg-input fixed-input-20 text-center"
                                 />
                                 <popup
@@ -26687,7 +26707,7 @@
                                 )
                             "
                             @change="data_upload('thana-shomajsheba7-expense')"
-                            :type="type"
+                            type="text"
                             class="bg-input fixed-input-20 text-center"
                         />
                         <popup
@@ -26734,7 +26754,7 @@
                                                 'thana-rastrio1-political-communication'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26759,7 +26779,7 @@
                                                 'thana-rastrio1-political-communication'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26789,7 +26809,7 @@
                                                 'thana-rastrio1-political-communication'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26814,7 +26834,7 @@
                                                 'thana-rastrio1-political-communication'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26858,7 +26878,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26883,7 +26903,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26914,7 +26934,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26938,7 +26958,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26962,7 +26982,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -26987,7 +27007,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27011,7 +27031,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27035,7 +27055,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27065,7 +27085,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27089,7 +27109,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27113,7 +27133,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27137,7 +27157,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27163,7 +27183,7 @@
                                                 'thana-rastrio2-kormoshuchi-bastobayon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27213,7 +27233,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27238,7 +27258,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27266,7 +27286,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27291,7 +27311,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27319,7 +27339,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27344,7 +27364,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27372,7 +27392,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27397,7 +27417,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27425,7 +27445,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27450,7 +27470,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27476,7 +27496,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27501,7 +27521,7 @@
                                                 'thana-rastrio3-dibosh-palon'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27555,7 +27575,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27579,7 +27599,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27604,7 +27624,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27628,7 +27648,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27653,7 +27673,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27677,7 +27697,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27703,7 +27723,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27727,7 +27747,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27751,7 +27771,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27775,7 +27795,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27800,7 +27820,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27824,7 +27844,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27848,7 +27868,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27872,7 +27892,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27897,7 +27917,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27921,7 +27941,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27945,7 +27965,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27969,7 +27989,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -27993,7 +28013,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28017,7 +28037,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28041,7 +28061,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28065,7 +28085,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28090,7 +28110,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28114,7 +28134,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28138,7 +28158,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28162,7 +28182,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28190,7 +28210,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28215,7 +28235,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28240,7 +28260,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28265,7 +28285,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28289,7 +28309,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28314,7 +28334,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28338,7 +28358,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28363,7 +28383,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28387,7 +28407,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28411,7 +28431,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28435,7 +28455,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28460,7 +28480,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28484,7 +28504,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28512,7 +28532,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28537,7 +28557,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28562,7 +28582,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28587,7 +28607,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28611,7 +28631,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28636,7 +28656,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28660,7 +28680,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28685,7 +28705,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28709,7 +28729,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28733,7 +28753,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28757,7 +28777,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28782,7 +28802,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28806,7 +28826,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28850,7 +28870,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28874,7 +28894,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28899,7 +28919,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28923,7 +28943,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28948,7 +28968,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -28972,7 +28992,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29000,7 +29020,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29025,7 +29045,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29050,7 +29070,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29080,7 +29100,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29104,7 +29124,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29129,7 +29149,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29153,7 +29173,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29178,7 +29198,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29202,7 +29222,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29237,7 +29257,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29260,7 +29280,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29284,7 +29304,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29308,7 +29328,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29332,7 +29352,7 @@
                                                 'thana-rastrio4-election-activitie'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29378,7 +29398,7 @@
                                                 'thana-rastrio5-broad-cast-and-media'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29402,7 +29422,7 @@
                                                 'thana-rastrio5-broad-cast-and-media'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29426,7 +29446,7 @@
                                                 'thana-rastrio5-broad-cast-and-media'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29451,7 +29471,7 @@
                                                 'thana-rastrio5-broad-cast-and-media'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29475,7 +29495,7 @@
                                                 'thana-rastrio5-broad-cast-and-media'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29512,7 +29532,7 @@
                                                 'thana-rastrio6-human-right'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29541,7 +29561,7 @@
                                                 'thana-rastrio6-human-right'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29556,8 +29576,7 @@
                                 <td class="text-start">
                                     মানবাধিকার কর্মী তৈরি
                                 </td>
-                                <td class="text-start">
-                                    সংখ্যা-
+                                <td class="text-start">সংখ্যা-
                                     <input
                                         name="human_rights_activist_produced_total"
                                         :value="
@@ -29572,7 +29591,7 @@
                                                 'thana-rastrio6-human-right'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29582,8 +29601,7 @@
                                         :month="month"
                                     ></popup>
                                 </td>
-                                <td class="text-start" colspan="2">
-                                    বৃদ্ধি-
+                                <td class="text-start" colspan="2">বৃদ্ধি-
                                     <input
                                         name="human_rights_activist_produced_increase"
                                         :value="
@@ -29598,7 +29616,7 @@
                                                 'thana-rastrio6-human-right'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29608,8 +29626,7 @@
                                         :month="month"
                                     ></popup>
                                 </td>
-                                <td class="text-start" colspan="2">
-                                    টার্গেট-
+                                <td class="text-start" colspan="2">টার্গেট-
                                     <input
                                         name="human_rights_activist_produced_target"
                                         :value="
@@ -29624,7 +29641,7 @@
                                                 'thana-rastrio6-human-right'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29670,7 +29687,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29694,7 +29711,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29705,7 +29722,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                    <input
+                                      <input
                                         name="business_association_number_of_post"
                                         :value="
                                             formatBangla(
@@ -29719,7 +29736,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29729,7 +29746,7 @@
                                         :month="month"
                                     ></popup>
                                     /
-                                    <input
+                                  <input
                                         name="market_committee_number_of_post"
                                         :value="
                                             formatBangla(
@@ -29743,7 +29760,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29754,7 +29771,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                    <input
+                                      <input
                                         name="business_association_participated"
                                         :value="
                                             formatBangla(
@@ -29768,7 +29785,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29778,7 +29795,7 @@
                                         :month="month"
                                     ></popup>
                                     /
-                                    <input
+                                  <input
                                         name="market_committee_participated"
                                         :value="
                                             formatBangla(
@@ -29792,7 +29809,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29803,7 +29820,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                    <input
+                                      <input
                                         name="business_association_elected"
                                         :value="
                                             formatBangla(
@@ -29817,7 +29834,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29827,7 +29844,7 @@
                                         :month="month"
                                     ></popup>
                                     /
-                                    <input
+                                  <input
                                         name="market_committee_elected"
                                         :value="
                                             formatBangla(
@@ -29841,7 +29858,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29855,7 +29872,7 @@
                             <tr>
                                 <td class="text-start">অন্যান্য</td>
                                 <td>
-                                    <input
+                                      <input
                                         name="other_election"
                                         :value="
                                             formatBangla(
@@ -29869,7 +29886,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29880,7 +29897,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                    <input
+                                      <input
                                         name="other_number_of_post"
                                         :value="
                                             formatBangla(
@@ -29894,7 +29911,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29905,7 +29922,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                    <input
+                                      <input
                                         name="other_participated"
                                         :value="
                                             formatBangla(
@@ -29919,7 +29936,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29930,8 +29947,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-
-                                    <input
+                                      <input
                                         name="other_elected"
                                         :value="
                                             formatBangla(
@@ -29945,7 +29961,7 @@
                                                 'thana-rastrio7-industry-and-trade'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -29988,7 +30004,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30013,7 +30029,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30038,7 +30054,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30069,7 +30085,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30093,7 +30109,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30117,7 +30133,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30141,7 +30157,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30166,7 +30182,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30190,7 +30206,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30214,7 +30230,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30238,7 +30254,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30263,7 +30279,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30287,7 +30303,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30311,7 +30327,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30335,7 +30351,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30363,7 +30379,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30388,7 +30404,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30413,7 +30429,7 @@
                                                 'thana-rastrio8-entrepreneurial-developments'
                                             )
                                         "
-                                        :type="type"
+                                        type="text"
                                         class="bg-input fixed-input-20 text-center"
                                     />
                                     <popup
@@ -30666,7 +30682,6 @@ export default {
     components: { Popup, PopupNote },
     data() {
         return {
-            type: "text",
             month: "",
             // org_type: {},
             // ward_info: {},

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('thana_shomajsheba3_group_social_works', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('report_info_id')->nullable();
+
             $table->bigInteger('general_service_team')->nullable();
             $table->bigInteger('technical_service_team')->nullable();
             $table->bigInteger('volunteer_team')->nullable();

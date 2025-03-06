@@ -171,7 +171,7 @@ class DateWiseReportSum
             "thana_montobbos",
             "thana_proshikkhon1_tarbiats",
             "thana_proshikkhon2_manob_shompod_organizational_activities",
-            "thana_proshikkhon2_manob_shompod_training_courses",
+            "thana_proshikkhon3_manob_shompod_training_courses",
             "thana_rastrio1_political_communications",
             "thana_rastrio2_kormoshuchi_bastobayons",
             "thana_rastrio3_dibosh_palons",
@@ -188,16 +188,17 @@ class DateWiseReportSum
             "thana_shomajsheba6_education_and_research_activities",
             "thana_shomajsheba7_expenses",
             "thana_songothon10_iyanot_data",
-            "thana_songothon11_sangothonik_boithoks",
             "thana_songothon1_jonosoktis",
             "thana_songothon2_associate_members",
             "thana_songothon3_departmental_information",
             "thana_songothon4_organizational_structures",
             "thana_songothon5_dawat_and_paribarik_units",
             "thana_songothon6_emarot_kayems",
-            "thana_songothon7_bidayi_students_connects",
+            "thana_songothon6_bidayi_students_connects",
             "thana_songothon8_associate_and_side_organizations",
-            "thana_songothon9_sofors"
+            "thana_songothon9_sofors",
+            "thana_songothon10_iyanot_data",
+            "thana_songothon11_sangothonik_boithoks"
         ];
 
         return $table_names;

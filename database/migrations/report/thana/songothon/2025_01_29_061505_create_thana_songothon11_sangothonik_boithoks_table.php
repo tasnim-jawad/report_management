@@ -190,6 +190,7 @@ return new class extends Migration
             $table->bigInteger('troimasik_rokon_sommelon_man_total')->nullable();
             $table->bigInteger('troimasik_rokon_sommelon_man_target')->nullable();
             $table->bigInteger('troimasik_rokon_sommelon_man_uposthiti')->nullable();
+
             $table->bigInteger('troimasik_rokon_sommelon_women_total')->nullable();
             $table->bigInteger('troimasik_rokon_sommelon_women_target')->nullable();
             $table->bigInteger('troimasik_rokon_sommelon_women_uposthiti')->nullable();
@@ -355,6 +356,17 @@ return new class extends Migration
 
             $table->bigInteger('creator')->nullable();
             $table->bigInteger('status')->nullable();
+
+            // Others
+            $table->bigInteger('others_man_total')->nullable();
+            $table->bigInteger('others_man_target')->nullable();
+            $table->bigInteger('others_man_uposthiti')->nullable();
+            $table->bigInteger('others_women_total')->nullable();
+            $table->bigInteger('others_women_target')->nullable();
+            $table->bigInteger('others_women_uposthiti')->nullable();
+
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
 
             $table->timestamps();
         });

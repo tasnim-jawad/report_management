@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('thana_proshikkhon3_manob_shompod_training_courses', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('report_info_id')->nullable();
+
             $table->bigInteger('dawah_uposthiti')->nullable();
             $table->bigInteger('shomajkormo_uposthiti')->nullable();
             $table->bigInteger('media_uposthiti')->nullable();
