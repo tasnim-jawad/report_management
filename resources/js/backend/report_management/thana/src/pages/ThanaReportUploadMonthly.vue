@@ -86,7 +86,6 @@
                                             )
                                         "
                                     />
-
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -115,7 +114,7 @@
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
                                         >
-                                       </popup>
+                                        </popup>
                                     </div>
                                 </td>
                                 <td>
@@ -137,7 +136,6 @@
                                             :type="type"
                                             class="bg-input w-100 text-center"
                                         />
-
                                     </div>
                                 </td>
                             </tr>
@@ -156,24 +154,25 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="number_of_participants_man"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_dawat1_regular_group_wises
-                                                    ?.number_of_participants_man
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-dawat1-regular-group-wise'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
+                                    <div class="parent_popup">
+                                        <input
+                                            name="number_of_participants_man"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat1_regular_group_wises
+                                                        ?.number_of_participants_man
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat1-regular-group-wise'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
                                             :thana_id="
                                                 report_header?.thana_info?.id
                                             "
@@ -181,7 +180,8 @@
                                             :field_title="'how_many_groups_are_out_woman'"
                                             :month="month"
                                         >
-                                       </popup>
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     <input
@@ -227,6 +227,7 @@
                                     }}
                                 </td>
                                 <td>
+                                    <div class="parent_popup">
                                     <input
                                         name="how_many_have_been_invited_man"
                                         :value="
@@ -251,6 +252,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                </div>
                                 </td>
                                 <td>
                                     <input
@@ -296,6 +298,7 @@
                                     }}
                                 </td>
                                 <td>
+                                    <div class="parent_popup">
                                     <input
                                         name="how_many_associate_members_created_man"
                                         :value="
@@ -320,6 +323,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                </div>
                                 </td>
                                 <td>
                                     <input
@@ -3683,7 +3687,13 @@
                                 <tr>
                                     <td class="text-start px-2">যুব কমিটি</td>
                                     <td>
-                                      {{ formatBangla(report_sum_data?.previous_present?.total_young_committee) }}
+                                        {{
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.previous_present
+                                                    ?.total_young_committee
+                                            )
+                                        }}
                                     </td>
                                     <td>
                                         <input
@@ -24095,7 +24105,7 @@
                                     <span class="font-13"
                                         >প্রোগ্রাম সংখ্যা:</span
                                     >
-                                     <input
+                                    <input
                                         name="darsul_quran_woman_program"
                                         :value="
                                             formatBangla(
@@ -29546,7 +29556,8 @@
                                 <td class="text-start">
                                     মানবাধিকার কর্মী তৈরি
                                 </td>
-                                <td class="text-start">সংখ্যা-
+                                <td class="text-start">
+                                    সংখ্যা-
                                     <input
                                         name="human_rights_activist_produced_total"
                                         :value="
@@ -29571,7 +29582,8 @@
                                         :month="month"
                                     ></popup>
                                 </td>
-                                <td class="text-start" colspan="2">বৃদ্ধি-
+                                <td class="text-start" colspan="2">
+                                    বৃদ্ধি-
                                     <input
                                         name="human_rights_activist_produced_increase"
                                         :value="
@@ -29596,7 +29608,8 @@
                                         :month="month"
                                     ></popup>
                                 </td>
-                                <td class="text-start" colspan="2">টার্গেট-
+                                <td class="text-start" colspan="2">
+                                    টার্গেট-
                                     <input
                                         name="human_rights_activist_produced_target"
                                         :value="
@@ -29692,7 +29705,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                      <input
+                                    <input
                                         name="business_association_number_of_post"
                                         :value="
                                             formatBangla(
@@ -29716,7 +29729,7 @@
                                         :month="month"
                                     ></popup>
                                     /
-                                  <input
+                                    <input
                                         name="market_committee_number_of_post"
                                         :value="
                                             formatBangla(
@@ -29741,7 +29754,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                      <input
+                                    <input
                                         name="business_association_participated"
                                         :value="
                                             formatBangla(
@@ -29765,7 +29778,7 @@
                                         :month="month"
                                     ></popup>
                                     /
-                                  <input
+                                    <input
                                         name="market_committee_participated"
                                         :value="
                                             formatBangla(
@@ -29790,7 +29803,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                      <input
+                                    <input
                                         name="business_association_elected"
                                         :value="
                                             formatBangla(
@@ -29814,7 +29827,7 @@
                                         :month="month"
                                     ></popup>
                                     /
-                                  <input
+                                    <input
                                         name="market_committee_elected"
                                         :value="
                                             formatBangla(
@@ -29842,7 +29855,7 @@
                             <tr>
                                 <td class="text-start">অন্যান্য</td>
                                 <td>
-                                      <input
+                                    <input
                                         name="other_election"
                                         :value="
                                             formatBangla(
@@ -29867,7 +29880,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                      <input
+                                    <input
                                         name="other_number_of_post"
                                         :value="
                                             formatBangla(
@@ -29892,7 +29905,7 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                      <input
+                                    <input
                                         name="other_participated"
                                         :value="
                                             formatBangla(
@@ -29917,7 +29930,8 @@
                                     ></popup>
                                 </td>
                                 <td>
-                                      <input
+
+                                    <input
                                         name="other_elected"
                                         :value="
                                             formatBangla(
