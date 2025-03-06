@@ -82,6 +82,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dawah_and_prokashonas');
+        Schema::dropIfExists('thana_dawah_and_prokashonas');
     }
 };

@@ -23,7 +23,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in unit_tarbiati_boithok_man" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thanauuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'" :unique_key="1"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-proshikkhon1-tarbiat'" :unique_key="1"></form-input>
                 </form>
             </div>
         </div>

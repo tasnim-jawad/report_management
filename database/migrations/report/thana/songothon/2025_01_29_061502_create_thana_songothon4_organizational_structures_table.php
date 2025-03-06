@@ -34,17 +34,23 @@ return new class extends Migration
             $table->bigInteger('union_gatti')->nullable();
             $table->bigInteger('union_target')->nullable();
 
-            $table->bigInteger('songothito_union_man_previous')->nullable();
-            $table->bigInteger('songothito_union_man_present')->nullable();
-            $table->bigInteger('songothito_union_man_increase')->nullable();
-            $table->bigInteger('songothito_union_man_gatti')->nullable();
-            $table->bigInteger('songothito_union_man_target')->nullable();
+            $table->bigInteger('songothito_union_previous')->nullable();
+            $table->bigInteger('songothito_union_present')->nullable();
+            $table->bigInteger('songothito_union_increase')->nullable();
+            $table->bigInteger('songothito_union_gatti')->nullable();
+            $table->bigInteger('songothito_union_target')->nullable();
 
-            $table->bigInteger('songothito_union_woman_previous')->nullable();
-            $table->bigInteger('songothito_union_woman_present')->nullable();
-            $table->bigInteger('songothito_union_woman_increase')->nullable();
-            $table->bigInteger('songothito_union_woman_gatti')->nullable();
-            $table->bigInteger('songothito_union_woman_target')->nullable();
+            $table->bigInteger('sangothonik_union_man_previous')->nullable();
+            $table->bigInteger('sangothonik_union_man_present')->nullable();
+            $table->bigInteger('sangothonik_union_man_increase')->nullable();
+            $table->bigInteger('sangothonik_union_man_gatti')->nullable();
+            $table->bigInteger('sangothonik_union_man_target')->nullable();
+
+            $table->bigInteger('sangothonik_union_woman_previous')->nullable();
+            $table->bigInteger('sangothonik_union_woman_present')->nullable();
+            $table->bigInteger('sangothonik_union_woman_increase')->nullable();
+            $table->bigInteger('sangothonik_union_woman_gatti')->nullable();
+            $table->bigInteger('sangothonik_union_woman_target')->nullable();
 
             $table->bigInteger('union_without_member_woman_previous')->nullable();
             $table->bigInteger('union_without_member_woman_present')->nullable();

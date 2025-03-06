@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('thana_montobbos', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('report_info_id')->nullable();
+            $table->longText('montobbo')->nullable();
+            $table->bigInteger('creator')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

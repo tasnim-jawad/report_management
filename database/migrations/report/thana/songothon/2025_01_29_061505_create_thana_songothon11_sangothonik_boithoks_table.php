@@ -352,6 +352,10 @@ return new class extends Migration
             $table->bigInteger('other_women_target')->nullable();
             $table->bigInteger('other_women_uposthiti')->nullable();
 
+
+            $table->bigInteger('creator')->nullable();
+            $table->bigInteger('status')->nullable();
+
             $table->timestamps();
         });
     }

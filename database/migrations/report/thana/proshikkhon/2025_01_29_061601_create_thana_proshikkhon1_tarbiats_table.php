@@ -30,6 +30,20 @@ return new class extends Migration
             $table->bigInteger('upozila_vittik_rokon_shikkha_shibir_women_target')->nullable();
             $table->bigInteger('upozila_vittik_rokon_shikkha_shibir_women_uposthiti')->nullable();
             
+            $table->bigInteger('upozila_vittik_rokon_shikkha_boithok_man_total')->nullable();
+            $table->bigInteger('upozila_vittik_rokon_shikkha_boithok_man_target')->nullable();
+            $table->bigInteger('upozila_vittik_rokon_shikkha_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('upozila_vittik_rokon_shikkha_boithok_women_total')->nullable();
+            $table->bigInteger('upozila_vittik_rokon_shikkha_boithok_women_target')->nullable();
+            $table->bigInteger('upozila_vittik_rokon_shikkha_boithok_women_uposthiti')->nullable();
+            
+            $table->bigInteger('thana_vittik_rokon_shikkha_shibir_man_total')->nullable();
+            $table->bigInteger('thana_vittik_rokon_shikkha_shibir_man_target')->nullable();
+            $table->bigInteger('thana_vittik_rokon_shikkha_shibir_man_uposthiti')->nullable();
+            $table->bigInteger('thana_vittik_rokon_shikkha_shibir_women_total')->nullable();
+            $table->bigInteger('thana_vittik_rokon_shikkha_shibir_women_target')->nullable();
+            $table->bigInteger('thana_vittik_rokon_shikkha_shibir_women_uposthiti')->nullable();
+            
             $table->bigInteger('thana_vittik_rokon_shikkha_boithok_man_total')->nullable();
             $table->bigInteger('thana_vittik_rokon_shikkha_boithok_man_target')->nullable();
             $table->bigInteger('thana_vittik_rokon_shikkha_boithok_man_uposthiti')->nullable();
@@ -43,6 +57,20 @@ return new class extends Migration
             $table->bigInteger('upozila_vittik_selected_kormi_shikkha_shibir_women_total')->nullable();
             $table->bigInteger('upozila_vittik_selected_kormi_shikkha_shibir_women_target')->nullable();
             $table->bigInteger('upozila_vittik_selected_kormi_shikkha_shibir_women_uposthiti')->nullable();
+        
+            $table->bigInteger('upozila_vittik_selected_kormi_shikkha_boithok_man_total')->nullable();
+            $table->bigInteger('upozila_vittik_selected_kormi_shikkha_boithok_man_target')->nullable();
+            $table->bigInteger('upozila_vittik_selected_kormi_shikkha_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('upozila_vittik_selected_kormi_shikkha_boithok_women_total')->nullable();
+            $table->bigInteger('upozila_vittik_selected_kormi_shikkha_boithok_women_target')->nullable();
+            $table->bigInteger('upozila_vittik_selected_kormi_shikkha_boithok_women_uposthiti')->nullable();
+        
+            $table->bigInteger('thana_vittik_selected_kormi_shikkha_shibir_man_total')->nullable();
+            $table->bigInteger('thana_vittik_selected_kormi_shikkha_shibir_man_target')->nullable();
+            $table->bigInteger('thana_vittik_selected_kormi_shikkha_shibir_man_uposthiti')->nullable();
+            $table->bigInteger('thana_vittik_selected_kormi_shikkha_shibir_women_total')->nullable();
+            $table->bigInteger('thana_vittik_selected_kormi_shikkha_shibir_women_target')->nullable();
+            $table->bigInteger('thana_vittik_selected_kormi_shikkha_shibir_women_uposthiti')->nullable();
             
             $table->bigInteger('thana_vittik_selected_kormi_shikkha_boithok_man_total')->nullable();
             $table->bigInteger('thana_vittik_selected_kormi_shikkha_boithok_man_target')->nullable();
@@ -57,6 +85,21 @@ return new class extends Migration
             $table->bigInteger('upozila_vittik_kormi_shikkha_shibir_women_total')->nullable();
             $table->bigInteger('upozila_vittik_kormi_shikkha_shibir_women_target')->nullable();
             $table->bigInteger('upozila_vittik_kormi_shikkha_shibir_women_uposthiti')->nullable();
+            
+            $table->bigInteger('upozila_vittik_kormi_shikkha_boithok_man_total')->nullable();
+            $table->bigInteger('upozila_vittik_kormi_shikkha_boithok_man_target')->nullable();
+            $table->bigInteger('upozila_vittik_kormi_shikkha_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('upozila_vittik_kormi_shikkha_boithok_women_total')->nullable();
+            $table->bigInteger('upozila_vittik_kormi_shikkha_boithok_women_target')->nullable();
+            $table->bigInteger('upozila_vittik_kormi_shikkha_boithok_women_uposthiti')->nullable();
+            
+            
+            $table->bigInteger('thana_vittik_kormi_shikkha_shibir_man_total')->nullable();
+            $table->bigInteger('thana_vittik_kormi_shikkha_shibir_man_target')->nullable();
+            $table->bigInteger('thana_vittik_kormi_shikkha_shibir_man_uposthiti')->nullable();
+            $table->bigInteger('thana_vittik_kormi_shikkha_shibir_women_total')->nullable();
+            $table->bigInteger('thana_vittik_kormi_shikkha_shibir_women_target')->nullable();
+            $table->bigInteger('thana_vittik_kormi_shikkha_shibir_women_uposthiti')->nullable();
             
             $table->bigInteger('thana_vittik_kormi_shikkha_boithok_man_total')->nullable();
             $table->bigInteger('thana_vittik_kormi_shikkha_boithok_man_target')->nullable();

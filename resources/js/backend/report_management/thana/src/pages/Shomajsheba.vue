@@ -353,7 +353,7 @@ export default {
         shomajsheba4_social_institution:[
             {
                 label:'মোট সংখ্যা',
-                name:'social_institution',
+                name:'social_institution_total',
             },
             {
                 label:'কতটি সাংগঠনিক থানায়',
@@ -367,7 +367,7 @@ export default {
         shomajsheba4_institutional_social_work:[
             {
                 label:'মোট সংখ্যা',
-                name:'institutional_social_work',
+                name:'institutional_social_work_total',
             },
             {
                 label:'কতটি সাংগঠনিক থানায়',
@@ -381,7 +381,7 @@ export default {
         shomajsheba4_new_social_institutions:[
             {
                 label:'মোট সংখ্যা',
-                name:'new_social_institutions',
+                name:'new_social_institutions_total',
             },
             {
                 label:'কতটি সাংগঠনিক থানায়',
@@ -398,27 +398,27 @@ export default {
         health_and_family:[
             {
                 label:'স্বাস্থ্যকর্মী তৈরি সংখ্যা',
-                name:'served_people',
+                name:'health_worker_produced',
             },
             {
                 label:'নার্স তৈরি সংখ্যা',
-                name:'served_people',
+                name:'nurse_produced',
             },
             {
                 label:'ধাত্রী তৈরি সংখ্যা',
-                name:'served_people',
+                name:'dhattri_produced',
             },
             {
                 label:'প্যারেন্টিং প্রশিক্ষণ প্রোগ্রাম সংখ্যা',
-                name:'served_people',
+                name:'parenting_training_program',
             },
             {
                 label:'স্বাস্থ্য শিক্ষামূলক প্রশিক্ষণ প্রোগ্রাম সংখ্যা',
-                name:'served_people',
+                name:'health_education_training_program',
             },
             {
                 label:'মোট অংশগ্রহণকারীর সংখ্যা',
-                name:'health_worker_training_programs_attendance',
+                name:'health_education_training_programs_attendance',
             },
             {
                 label:'কতজন স্বাস্থ্যসেবা কাজে অংশগ্রহণ করেছেন',

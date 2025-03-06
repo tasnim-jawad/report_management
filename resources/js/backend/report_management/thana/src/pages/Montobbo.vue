@@ -18,7 +18,7 @@
                             <label for="">থানা আমীরের মন্তব্য :</label>
                         </div>
                         <div class="form_input w-100">
-                            <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`ward-montobbo`)" id="montobboText" rows="10"></textarea>
+                            <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`thana-montobbo`)" id="montobboText" rows="10"></textarea>
                         </div>
                     </div>
                 </form>

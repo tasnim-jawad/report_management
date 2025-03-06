@@ -1973,11 +1973,11 @@ export default {
             // },
             {
                 label:'বৃদ্ধি মানোন্নয়ন',
-                name:'rokon_briddhi',
+                name:'rokon_briddhi_manonnoyon',
             },
             {
                 label:'বৃদ্ধি আগত',
-                name:'rokon_briddhi',
+                name:'rokon_briddhi_agoto',
             },
             {
                 label:'ঘাটতি',

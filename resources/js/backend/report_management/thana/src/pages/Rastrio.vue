@@ -726,110 +726,110 @@ export default {
         upojela:[
             {
                 label:'মোট সংখ্যা',
-                name:'upojela_total',
+                name:'upojela_porishod_total',
             },
             {
                 label:'মোট প্রার্থী সংখ্যা',
-                name:'upojela_total_candidate',
+                name:'upojela_porishod_total_candidate',
             },
             {
                 label:'অংশগ্রহণ সংখ্যা',
-                name:'upojela_total_candidate_participated',
+                name:'upojela_porishod_total_candidate_participated',
             },
             {
                 label:'নির্বাচিত মেয়র সংখ্যা',
-                name:'upojela_mayor_candidate_elected',
+                name:'upojela_porishod_mayor_candidate_elected',
             },
             {
                 label:'নির্বাচিত চেয়ারম্যান সংখ্যা',
-                name:'upojela_chairman_candidate_elected',
+                name:'upojela_porishod_chairman_candidate_elected',
             },
             {
                 label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (পু) ',
-                name:'upojela_vice_chairman_candidate_man_elected',
+                name:'upojela_porishod_vice_chairman_candidate_man_elected',
             },
             {
                 label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (ম) ',
-                name:'upojela_vice_chairman_candidate_woman_elected',
+                name:'upojela_porishod_vice_chairman_candidate_woman_elected',
             },
             {
                 label:'নির্বাচিত কাউন্সিলর সংখ্যা (পু)',
-                name:'upojela_councilor_candidate_man_elected',
+                name:'upojela_porishod_councilor_candidate_man_elected',
             },
             {
                 label:'নির্বাচিত কাউন্সিলর সংখ্যা (ম)',
-                name:'upojela_councilor_candidate_woman_elected',
+                name:'upojela_porishod_councilor_candidate_woman_elected',
             },
             {
                 label:'নির্বাচিত মেম্বার সংখ্যা (পু)',
-                name:'upojela_member_candidate_man_elected',
+                name:'upojela_porishod_member_candidate_man_elected',
             },
             {
                 label:'নির্বাচিত মেম্বার সংখ্যা (ম)',
-                name:'upojela_member_candidate_woman_elected',
+                name:'upojela_porishod_member_candidate_woman_elected',
             },
             {
                 label:'দ্বিতীয় অবস্থান (পু)',
-                name:'upojela_member_candidate_man_second_position',
+                name:'upojela_porishod_member_candidate_man_second_position',
             },
             {
                 label:'দ্বিতীয় অবস্থান (ম)',
-                name:'upojela_member_candidate_woman_second_position',
+                name:'upojela_porishod_member_candidate_woman_second_position',
             },
           
         ],
         union:[
             {
                 label:'মোট সংখ্যা',
-                name:'union_total',
+                name:'union_porishod_total',
             },
             {
                 label:'মোট প্রার্থী সংখ্যা',
-                name:'union_total_candidate',
+                name:'union_porishod_total_candidate',
             },
             {
                 label:'অংশগ্রহণ সংখ্যা',
-                name:'union_total_candidate_participated',
+                name:'union_porishod_total_candidate_participated',
             },
             {
                 label:'নির্বাচিত মেয়র সংখ্যা',
-                name:'union_mayor_candidate_elected',
+                name:'union_porishod_mayor_candidate_elected',
             },
             {
                 label:'নির্বাচিত চেয়ারম্যান সংখ্যা',
-                name:'union_chairman_candidate_elected',
+                name:'union_porishod_chairman_candidate_elected',
             },
             {
                 label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (পু) ',
-                name:'union_vice_chairman_candidate_man_elected',
+                name:'union_porishod_vice_chairman_candidate_man_elected',
             },
             {
                 label:'নির্বাচিত ভাইস-চেয়ারম্যান সংখ্যা (ম) ',
-                name:'union_vice_chairman_candidate_woman_elected',
+                name:'union_porishod_vice_chairman_candidate_woman_elected',
             },
             {
                 label:'নির্বাচিত কাউন্সিলর সংখ্যা (পু)',
-                name:'union_councilor_candidate_man_elected',
+                name:'union_porishod_councilor_candidate_man_elected',
             },
             {
                 label:'নির্বাচিত কাউন্সিলর সংখ্যা (ম)',
-                name:'union_councilor_candidate_woman_elected',
+                name:'union_porishod_councilor_candidate_woman_elected',
             },
             {
                 label:'নির্বাচিত মেম্বার সংখ্যা (পু)',
-                name:'union_member_candidate_man_elected',
+                name:'union_porishod_member_candidate_man_elected',
             },
             {
                 label:'নির্বাচিত মেম্বার সংখ্যা (ম)',
-                name:'union_member_candidate_woman_elected',
+                name:'union_porishod_member_candidate_woman_elected',
             },
             {
                 label:'দ্বিতীয় অবস্থান (পু)',
-                name:'union_member_candidate_man_second_position',
+                name:'union_porishod_member_candidate_man_second_position',
             },
             {
                 label:'দ্বিতীয় অবস্থান (ম)',
-                name:'union_member_candidate_woman_second_position',
+                name:'union_porishod_member_candidate_woman_second_position',
             },
           
         ],
