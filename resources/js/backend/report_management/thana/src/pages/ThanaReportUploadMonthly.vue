@@ -228,31 +228,33 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                    <input
-                                        name="how_many_have_been_invited_man"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_dawat1_regular_group_wises
-                                                    ?.how_many_have_been_invited_man
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-dawat1-regular-group-wise'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'ward_dawat1_regular_group_wises'"
-                                        :field_title="'how_many_groups_are_out'"
-                                        :month="month"
-                                    >
-                                    </popup>
-                                </div>
+                                        <input
+                                            name="how_many_have_been_invited_man"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat1_regular_group_wises
+                                                        ?.how_many_have_been_invited_man
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat1-regular-group-wise'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     <input
@@ -299,31 +301,33 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                    <input
-                                        name="how_many_associate_members_created_man"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_dawat1_regular_group_wises
-                                                    ?.how_many_associate_members_created_man
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-dawat1-regular-group-wise'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'ward_dawat1_regular_group_wises'"
-                                        :field_title="'how_many_groups_are_out'"
-                                        :month="month"
-                                    >
-                                    </popup>
-                                </div>
+                                        <input
+                                            name="how_many_associate_members_created_man"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat1_regular_group_wises
+                                                        ?.how_many_associate_members_created_man
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat1-regular-group-wise'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :field_title="'how_many_groups_are_out'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     <input
@@ -379,56 +383,62 @@
                                     মোট জনশক্তি সংখ্যা
                                 </td>
                                 <td>
-                                    <input
-                                        name="total_rokon_man"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_dawat2_personal_and_targets
-                                                    ?.total_rokon_man
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-dawat2-personal-and-target'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'ward_dawat1_regular_group_wises'"
-                                        :field_title="'how_many_groups_are_out'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="total_rokon_man"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.total_rokon_man
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat2-personal-and-target'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="
+                                                report_header?.ward_info?.id
+                                            "
+                                            :table_name="'ward_dawat2_personal_and_targets'"
+                                            :field_title="'total_rokon'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="total_worker_man"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_dawat2_personal_and_targets
-                                                    ?.total_worker_man
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-dawat2-personal-and-target'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'ward_dawat1_regular_group_wises'"
-                                        :field_title="'how_many_groups_are_out'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="total_worker_man"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.total_worker_man
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat2-personal-and-target'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="report_header?.ward_info?.id"
+                                            :table_name="'ward_dawat2_personal_and_targets'"
+                                            :field_title="'total_worker'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                  </div>
                                 </td>
                                 <td>
                                     <input
@@ -488,32 +498,35 @@
                                     কতজন ব্যক্তিগতভাবে দাওয়াতি কাজ করেছেন
                                 </td>
                                 <td>
-                                    <input
-                                        name="how_many_were_give_dawat_rokon_man"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_dawat2_personal_and_targets
-                                                    ?.how_many_were_give_dawat_rokon_man
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-dawat2-personal-and-target'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'ward_dawat1_regular_group_wises'"
-                                        :field_title="'how_many_groups_are_out'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="how_many_were_give_dawat_rokon_man"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.how_many_were_give_dawat_rokon_man
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat2-personal-and-target'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="report_header?.ward_info?.id"
+                                            :table_name="'ward_dawat2_personal_and_targets'"
+                                            :field_title="'how_many_were_give_dawat_rokon'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="parent_popup">
                                     <input
                                         name="how_many_were_give_dawat_worker_man"
                                         :value="
@@ -533,11 +546,12 @@
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'ward_dawat1_regular_group_wises'"
-                                        :field_title="'how_many_groups_are_out'"
+                                        :table_name="'ward_dawat2_personal_and_targets'"
+                                        :field_title="'how_many_were_give_dawat_worker'"
                                         :month="month"
                                     >
                                     </popup>
+                                </div>
                                 </td>
                                 <td>
                                     <input
@@ -609,21 +623,23 @@
                                     কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                 </td>
                                 <td>
-                                    <input
-                                        class="bg-input w-100 text-center"
-                                        :type="type"
-                                        readonly
-                                        :value="
-                                            total_man_woman_count(
-                                                report_sum_data
-                                                    ?.thana_dawat2_personal_and_targets
-                                                    ?.how_many_have_been_invited_man,
-                                                report_sum_data
-                                                    ?.thana_dawat2_personal_and_targets
-                                                    ?.how_many_have_been_invited_woman
-                                            )
-                                        "
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            class="bg-input w-100 text-center"
+                                            :type="type"
+                                            readonly
+                                            :value="
+                                                total_man_woman_count(
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.how_many_have_been_invited_man,
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.how_many_have_been_invited_woman
+                                                )
+                                            "
+                                        />
+                                    </div>
                                 </td>
                                 <td>
                                     <input
@@ -775,6 +791,7 @@
                                     কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                 </td>
                                 <td>
+                                    <div class="parent_popup">
                                     <input
                                         class="bg-input w-100 text-center"
                                         :type="type"
@@ -790,6 +807,7 @@
                                             )
                                         "
                                     />
+                                </div>
                                 </td>
                                 <td>
                                     <input
@@ -29930,7 +29948,6 @@
                                     ></popup>
                                 </td>
                                 <td>
-
                                     <input
                                         name="other_elected"
                                         :value="
