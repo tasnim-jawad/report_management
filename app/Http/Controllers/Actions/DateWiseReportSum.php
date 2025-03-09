@@ -194,7 +194,7 @@ class DateWiseReportSum
             "thana_songothon4_organizational_structures",
             "thana_songothon5_dawat_and_paribarik_units",
             "thana_songothon6_emarot_kayems",
-            "thana_songothon6_bidayi_students_connects",
+            "thana_songothon7_bidayi_students_connects",
             "thana_songothon8_associate_and_side_organizations",
             "thana_songothon9_sofors",
             "thana_songothon10_iyanot_data",

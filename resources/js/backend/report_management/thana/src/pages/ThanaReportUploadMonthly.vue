@@ -16011,7 +16011,7 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.thana_songothon6_bidayi_students_connects
+                                                    ?.thana_songothon7_bidayi_students_connects
                                                     ?.Joined_student_man_member
                                             )
                                         "
@@ -16036,7 +16036,7 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.thana_songothon6_bidayi_students_connects
+                                                    ?.thana_songothon7_bidayi_students_connects
                                                     ?.Joined_student_women_member
                                             )
                                         "
@@ -16062,7 +16062,7 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.thana_songothon6_bidayi_students_connects
+                                                    ?.thana_songothon7_bidayi_students_connects
                                                     ?.Joined_student_man_associate
                                             )
                                         "
@@ -16087,7 +16087,7 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.thana_songothon6_bidayi_students_connects
+                                                    ?.thana_songothon7_bidayi_students_connects
                                                     ?.Joined_student_women_associate
                                             )
                                         "
@@ -16113,7 +16113,7 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.thana_songothon6_bidayi_students_connects
+                                                    ?.thana_songothon7_bidayi_students_connects
                                                     ?.Joined_student_man_worker
                                             )
                                         "
@@ -16138,7 +16138,7 @@
                                         :value="
                                             formatBangla(
                                                 report_sum_data
-                                                    ?.thana_songothon6_bidayi_students_connects
+                                                    ?.thana_songothon7_bidayi_students_connects
                                                     ?.Joined_student_women_worker
                                             )
                                         "

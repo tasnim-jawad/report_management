@@ -316,7 +316,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in pouroshova" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -327,7 +327,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in songothito_pouroshova" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -338,7 +338,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in union" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -349,7 +349,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in songothito_union" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -360,7 +360,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in sangothonik_union_man" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -371,7 +371,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in sangothonik_union_woman" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -382,7 +382,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in union_without_member_woman" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -393,7 +393,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_proshashonik_ward_of_city_corporation" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -404,7 +404,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothito_ward_of_city_corporation" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -415,7 +415,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothonik_ward_man" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -426,7 +426,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothonik_ward_woman" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -437,7 +437,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_proshashonik_ward_of_pouroshova" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -448,7 +448,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_proshashonik_ward_of_union" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -459,7 +459,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothito_ward_of_pouroshova" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -470,7 +470,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothito_ward_of_union" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -481,7 +481,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothonik_ward_of_pouroshova_man" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -492,7 +492,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothonik_ward_of_union_man" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -503,7 +503,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothonik_ward_of_pouroshova_woman" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -514,7 +514,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in total_songothonik_ward_of_union_woman" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -525,7 +525,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in media_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div> -->
@@ -536,7 +536,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in songothonik_ward_ulama" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -547,7 +547,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in songothonik_ward_peshajibi" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -558,7 +558,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in songothonik_ward_jubo" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -569,7 +569,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in songothonik_ward_sromo" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -580,7 +580,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in songothonik_ward_media" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -591,7 +591,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in songothonik_ward_cultural" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -608,7 +608,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in general_unit_men" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -619,7 +619,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in general_unit_women" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -630,7 +630,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in ulama_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -641,7 +641,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in peshajibi_unit_men" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -652,7 +652,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in peshajibi_unit_women" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -663,7 +663,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in kormojibi_unit_women" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -674,7 +674,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in jubo_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -685,7 +685,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in sromo_unit_man" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -696,7 +696,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in sromo_unit_woman" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -708,7 +708,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in media_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -719,7 +719,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in cultural_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon4-ward-songothon'" :unique_key="4"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
         </div>
@@ -738,7 +738,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in dawati_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon5-dawat-and-paribarik-ward'" :unique_key="5"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon5-dawat-and-paribarik-unit'" :unique_key="5"></form-input>
                 </form>
             </div>
         </div>
@@ -749,7 +749,7 @@
             <div class="card-body">
                 <form action="">
                     <form-input v-for="(field, index) in paribarik_unit" :label="field.label" :name="field.name" :key="index"
-                    :onchange="dawat_upload" :endpoint="'thana-songothon5-dawat-and-paribarik-ward'" :unique_key="5"></form-input>
+                    :onchange="dawat_upload" :endpoint="'thana-songothon5-dawat-and-paribarik-unit'" :unique_key="5"></form-input>
                 </form>
             </div>
         </div>
@@ -4191,8 +4191,8 @@ export default {
             this.get_data_by_api('thana-songothon1-jonosokti', 1);
             this.get_data_by_api('thana-songothon2-associate-member', 2);
             this.get_data_by_api('thana-songothon3-departmental-information', 3);
-            this.get_data_by_api('thana-songothon4-ward-songothon', 4);
-            this.get_data_by_api('thana-songothon5-dawat-and-paribarik-ward', 5);
+            this.get_data_by_api('thana-songothon4-organizational-structure', 4);
+            this.get_data_by_api('thana-songothon5-dawat-and-paribarik-unit', 5);
             this.get_data_by_api('thana-songothon6-emarot-kayem', 6);
             this.get_data_by_api('thana-songothon7-bidayi-students-connect', 7);
             this.get_data_by_api('thana-songothon8-associate-and-side-organization', 8);
