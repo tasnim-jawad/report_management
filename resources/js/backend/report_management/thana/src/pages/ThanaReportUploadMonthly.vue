@@ -27359,12 +27359,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="international_womens_day"
+                                        name="international_womens_day_total_programs"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_rastrio3_dibosh_palons
-                                                    ?.international_womens_day
+                                                    ?.international_womens_day_total_programs
                                             )
                                         "
                                         @change="
@@ -27378,7 +27378,7 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'international_womens_day'"
+                                        :field_title="'international_womens_day_total_programs'"
                                         :month="month"
                                     ></popup>
                                 </td>
@@ -27463,12 +27463,12 @@
                                 <td class="text-start">মে দিবস</td>
                                 <td>
                                     <input
-                                        name="may_day"
+                                        name="may_day_total_programs"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_rastrio3_dibosh_palons
-                                                    ?.may_day
+                                                    ?.may_day_total_programs
                                             )
                                         "
                                         @change="
@@ -27482,7 +27482,7 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'may_day'"
+                                        :field_title="'may_day_total_programs'"
                                         :month="month"
                                     ></popup>
                                 </td>

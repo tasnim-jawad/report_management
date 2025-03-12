@@ -1653,8 +1653,10 @@ mattrivasha_dibosh_attend
 mattrivasha_dibosh_total_programs
 mattrivasha_dibosh_attend
 
-international_womens_day
-may_day
+international_womens_day_total_programs
+international_womens_day_attend
+may_day_total_programs
+may_day_attend
 
 creator
 status
