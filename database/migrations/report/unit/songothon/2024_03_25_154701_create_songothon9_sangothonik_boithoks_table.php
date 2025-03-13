@@ -150,12 +150,12 @@ return new class extends Migration
             // $table->bigInteger('barsik_rokon_sommelon_women_target')->nullable();
             // $table->bigInteger('barsik_rokon_sommelon_women_uposthiti')->nullable();
 
-            // $table->bigInteger('upozila_word_sovapoti_sommelon_man_total')->nullable();
-            // $table->bigInteger('upozila_word_sovapoti_sommelon_man_target')->nullable();
-            // $table->bigInteger('upozila_word_sovapoti_sommelon_man_uposthiti')->nullable();
-            // $table->bigInteger('upozila_word_sovapoti_sommelon_women_total')->nullable();
-            // $table->bigInteger('upozila_word_sovapoti_sommelon_women_target')->nullable();
-            // $table->bigInteger('upozila_word_sovapoti_sommelon_women_uposthiti')->nullable();
+            // $table->bigInteger('upozila_ward_sovapoti_sommelon_man_total')->nullable();
+            // $table->bigInteger('upozila_ward_sovapoti_sommelon_man_target')->nullable();
+            // $table->bigInteger('upozila_ward_sovapoti_sommelon_man_uposthiti')->nullable();
+            // $table->bigInteger('upozila_ward_sovapoti_sommelon_women_total')->nullable();
+            // $table->bigInteger('upozila_ward_sovapoti_sommelon_women_target')->nullable();
+            // $table->bigInteger('upozila_ward_sovapoti_sommelon_women_uposthiti')->nullable();
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

@@ -40,11 +40,11 @@ return new class extends Migration
             $table->bigInteger('songothito_union_gatti')->nullable();
             $table->bigInteger('songothito_union_target')->nullable();
 
-            $table->bigInteger('songothito_union_man_previous')->nullable();
-            $table->bigInteger('songothito_union_man_present')->nullable();
-            $table->bigInteger('songothito_union_man_increase')->nullable();
-            $table->bigInteger('songothito_union_man_gatti')->nullable();
-            $table->bigInteger('songothito_union_man_target')->nullable();
+            // $table->bigInteger('songothito_union_man_previous')->nullable();
+            // $table->bigInteger('songothito_union_man_present')->nullable();
+            // $table->bigInteger('songothito_union_man_increase')->nullable();
+            // $table->bigInteger('songothito_union_man_gatti')->nullable();
+            // $table->bigInteger('songothito_union_man_target')->nullable();
 
             $table->bigInteger('sangothonik_union_man_previous')->nullable();
             $table->bigInteger('sangothonik_union_man_present')->nullable();

@@ -10748,12 +10748,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_man_previous"
+                                        name="sangothonik_union_man_previous"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_man_previous
+                                                    ?.sangothonik_union_man_previous
                                             )
                                         "
                                         @change="
@@ -10774,12 +10774,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_man_present"
+                                        name="sangothonik_union_man_present"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_man_present
+                                                    ?.sangothonik_union_man_present
                                             )
                                         "
                                         @change="
@@ -10800,12 +10800,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_man_increase"
+                                        name="sangothonik_union_man_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_man_increase
+                                                    ?.sangothonik_union_man_increase
                                             )
                                         "
                                         @change="
@@ -10826,12 +10826,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_man_gatti"
+                                        name="sangothonik_union_man_gatti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_man_gatti
+                                                    ?.sangothonik_union_man_gatti
                                             )
                                         "
                                         @change="
@@ -10852,12 +10852,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_man_target"
+                                        name="sangothonik_union_man_target"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_man_target
+                                                    ?.sangothonik_union_man_target
                                             )
                                         "
                                         @change="
@@ -10884,12 +10884,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_woman_previous"
+                                        name="sangothonik_union_woman_previous"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_woman_previous
+                                                    ?.sangothonik_union_woman_previous
                                             )
                                         "
                                         @change="
@@ -10910,12 +10910,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_woman_present"
+                                        name="sangothonik_union_woman_present"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_woman_present
+                                                    ?.sangothonik_union_woman_present
                                             )
                                         "
                                         @change="
@@ -10936,12 +10936,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_woman_increase"
+                                        name="sangothonik_union_woman_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_woman_increase
+                                                    ?.sangothonik_union_woman_increase
                                             )
                                         "
                                         @change="
@@ -10962,12 +10962,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_woman_gatti"
+                                        name="sangothonik_union_woman_gatti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_woman_gatti
+                                                    ?.sangothonik_union_woman_gatti
                                             )
                                         "
                                         @change="
@@ -10988,12 +10988,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="songothito_union_woman_target"
+                                        name="sangothonik_union_woman_target"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.songothito_union_woman_target
+                                                    ?.sangothonik_union_woman_target
                                             )
                                         "
                                         @change="
@@ -16007,7 +16007,7 @@
                                         "
                                         @change="
                                             data_upload(
-                                                'thana-songothon6-bidayi-students-connect'
+                                                'thana-songothon7-bidayi-students-connect'
                                             )
                                         "
                                         :type="type"
@@ -16032,7 +16032,7 @@
                                         "
                                         @change="
                                             data_upload(
-                                                'thana-songothon6-bidayi-students-connect'
+                                                'thana-songothon7-bidayi-students-connect'
                                             )
                                         "
                                         :type="type"
@@ -16058,7 +16058,7 @@
                                         "
                                         @change="
                                             data_upload(
-                                                'thana-songothon6-bidayi-students-connect'
+                                                'thana-songothon7-bidayi-students-connect'
                                             )
                                         "
                                         :type="type"
@@ -16083,7 +16083,7 @@
                                         "
                                         @change="
                                             data_upload(
-                                                'thana-songothon6-bidayi-students-connect'
+                                                'thana-songothon7-bidayi-students-connect'
                                             )
                                         "
                                         :type="type"
@@ -16109,7 +16109,7 @@
                                         "
                                         @change="
                                             data_upload(
-                                                'thana-songothon6-bidayi-students-connect'
+                                                'thana-songothon7-bidayi-students-connect'
                                             )
                                         "
                                         :type="type"
@@ -16134,7 +16134,7 @@
                                         "
                                         @change="
                                             data_upload(
-                                                'thana-songothon6-bidayi-students-connect'
+                                                'thana-songothon7-bidayi-students-connect'
                                             )
                                         "
                                         :type="type"
@@ -16509,12 +16509,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="upojela_president_total_sofor_woman"
+                                        name="upojela_secretariat_total_sofor_woman"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon9_sofors
-                                                    ?.upojela_president_total_sofor_woman
+                                                    ?.upojela_secretariat_total_sofor_woman
                                             )
                                         "
                                         @change="
@@ -16528,18 +16528,18 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
-                                        :field_title="'upojela_president_total_sofor_woman'"
+                                        :field_title="'upojela_secretariat_total_sofor_woman'"
                                         :month="month"
                                     >
                                     </popup>
                                     /
                                     <input
-                                        name="thana_president_total_sofor_woman"
+                                        name="thana_secretariat_total_sofor_woman"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon9_sofors
-                                                    ?.thana_president_total_sofor_woman
+                                                    ?.thana_secretariat_total_sofor_woman
                                             )
                                         "
                                         @change="
@@ -16553,7 +16553,7 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
-                                        :field_title="'thana_president_total_sofor_woman'"
+                                        :field_title="'thana_secretariat_total_sofor_woman'"
                                         :month="month"
                                     >
                                     </popup>
@@ -19173,12 +19173,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="upozila_word_sovapoti_sommelon_man_total"
+                                        name="upozila_ward_sovapoti_sommelon_man_total"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_word_sovapoti_sommelon_man_total
+                                                    ?.upozila_ward_sovapoti_sommelon_man_total
                                             )
                                         "
                                         @change="
@@ -19192,18 +19192,18 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'upozila_word_sovapoti_sommelon_man_total'"
+                                        :field_title="'upozila_ward_sovapoti_sommelon_man_total'"
                                         :month="month"
                                     >
                                     </popup>
                                     /
                                     <input
-                                        name="thana_word_sovapoti_sommelon_man_total"
+                                        name="thana_ward_sovapoti_sommelon_man_total"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_man_total
+                                                    ?.thana_ward_sovapoti_sommelon_man_total
                                             )
                                         "
                                         @change="
@@ -19217,19 +19217,19 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'thana_word_sovapoti_sommelon_man_total'"
+                                        :field_title="'thana_ward_sovapoti_sommelon_man_total'"
                                         :month="month"
                                     >
                                     </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="upozila_word_sovapoti_sommelon_women_total"
+                                        name="upozila_ward_sovapoti_sommelon_women_total"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_word_sovapoti_sommelon_women_total
+                                                    ?.upozila_ward_sovapoti_sommelon_women_total
                                             )
                                         "
                                         @change="
@@ -19243,18 +19243,18 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'upozila_word_sovapoti_sommelon_women_total'"
+                                        :field_title="'upozila_ward_sovapoti_sommelon_women_total'"
                                         :month="month"
                                     >
                                     </popup>
                                     /
                                     <input
-                                        name="thana_word_sovapoti_sommelon_women_total"
+                                        name="thana_ward_sovapoti_sommelon_women_total"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_women_total
+                                                    ?.thana_ward_sovapoti_sommelon_women_total
                                             )
                                         "
                                         @change="
@@ -19268,19 +19268,19 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'thana_word_sovapoti_sommelon_women_total'"
+                                        :field_title="'thana_ward_sovapoti_sommelon_women_total'"
                                         :month="month"
                                     >
                                     </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="upozila_word_sovapoti_sommelon_man_target"
+                                        name="upozila_ward_sovapoti_sommelon_man_target"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_word_sovapoti_sommelon_man_target
+                                                    ?.upozila_ward_sovapoti_sommelon_man_target
                                             )
                                         "
                                         @change="
@@ -19294,18 +19294,18 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'upozila_word_sovapoti_sommelon_man_target'"
+                                        :field_title="'upozila_ward_sovapoti_sommelon_man_target'"
                                         :month="month"
                                     >
                                     </popup>
                                     /
                                     <input
-                                        name="thana_word_sovapoti_sommelon_man_target"
+                                        name="thana_ward_sovapoti_sommelon_man_target"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_man_target
+                                                    ?.thana_ward_sovapoti_sommelon_man_target
                                             )
                                         "
                                         @change="
@@ -19319,19 +19319,19 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'thana_word_sovapoti_sommelon_man_target'"
+                                        :field_title="'thana_ward_sovapoti_sommelon_man_target'"
                                         :month="month"
                                     >
                                     </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="upozila_word_sovapoti_sommelon_man_uposthiti"
+                                        name="upozila_ward_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_word_sovapoti_sommelon_man_uposthiti
+                                                    ?.upozila_ward_sovapoti_sommelon_man_uposthiti
                                             )
                                         "
                                         @change="
@@ -19345,18 +19345,18 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'upozila_word_sovapoti_sommelon_man_uposthiti'"
+                                        :field_title="'upozila_ward_sovapoti_sommelon_man_uposthiti'"
                                         :month="month"
                                     >
                                     </popup>
                                     /
                                     <input
-                                        name="thana_word_sovapoti_sommelon_man_uposthiti"
+                                        name="thana_ward_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_man_uposthiti
+                                                    ?.thana_ward_sovapoti_sommelon_man_uposthiti
                                             )
                                         "
                                         @change="
@@ -19370,19 +19370,19 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'thana_word_sovapoti_sommelon_man_uposthiti'"
+                                        :field_title="'thana_ward_sovapoti_sommelon_man_uposthiti'"
                                         :month="month"
                                     >
                                     </popup>
                                 </td>
                                 <td>
                                     <input
-                                        name="upozila_word_sovapoti_sommelon_women_uposthiti"
+                                        name="upozila_ward_sovapoti_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_word_sovapoti_sommelon_women_uposthiti
+                                                    ?.upozila_ward_sovapoti_sommelon_women_uposthiti
                                             )
                                         "
                                         @change="
@@ -19396,18 +19396,18 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'upozila_word_sovapoti_sommelon_women_uposthiti'"
+                                        :field_title="'upozila_ward_sovapoti_sommelon_women_uposthiti'"
                                         :month="month"
                                     >
                                     </popup>
                                     /
                                     <input
-                                        name="thana_word_sovapoti_sommelon_women_uposthiti"
+                                        name="thana_ward_sovapoti_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_women_uposthiti
+                                                    ?.thana_ward_sovapoti_sommelon_women_uposthiti
                                             )
                                         "
                                         @change="
@@ -19421,7 +19421,7 @@
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'thana_word_sovapoti_sommelon_women_uposthiti'"
+                                        :field_title="'thana_ward_sovapoti_sommelon_women_uposthiti'"
                                         :month="month"
                                     >
                                     </popup>

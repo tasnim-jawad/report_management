@@ -2685,23 +2685,23 @@ export default {
         songothito_union: [
             // {
             //     label: 'বিগত মাসের সংখ্যা',
-            //     name: 'songothito_union_man_previous',
+            //     name: 'songothito_union_previous',
             // },
             // {
             //     label: 'বর্তমান সংখ্যা',
-            //     name: 'songothito_union_man_present',
+            //     name: 'songothito_union_present',
             // },
             {
                 label: 'বৃদ্ধি',
-                name: 'songothito_union_man_increase',
+                name: 'songothito_union_increase',
             },
             {
                 label: 'ঘাটতি',
-                name: 'songothito_union_man_gatti',
+                name: 'songothito_union_gatti',
             },
             {
                 label: 'টার্গেট',
-                name: 'songothito_union_man_target',
+                name: 'songothito_union_target',
             },
         ],
         sangothonik_union_man: [
