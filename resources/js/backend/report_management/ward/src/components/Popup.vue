@@ -4,7 +4,7 @@
             <i class="fa fa-list" ></i>
         </span>
         <div class="unit_data_popup" :class="{active:is_popup_visible}">
-            <!-- <span>{{popup_data }}</span> -->
+            <p class="bg-primary text-white">ইউনিটের মাসিক কাজ</p>
             <table class="table table-striped mb-0">
                 <tbody class="">
                     <tr v-for="(unit,index) in unit_wise_data" :key="index">
