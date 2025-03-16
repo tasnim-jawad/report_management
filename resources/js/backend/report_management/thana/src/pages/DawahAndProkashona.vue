@@ -209,11 +209,11 @@ export default {
         
             {
                 label:'বৃদ্ধি',
-                name:'books_in_online_library_increase',
+                name:'books_in_pathagar_increase',
             },
             {
                 label:'টার্গেট',
-                name:'books_in_online_library_target',
+                name:'books_in_pathagar_target',
             },
         ],
         dp_books_in_online_library:[

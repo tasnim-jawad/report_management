@@ -209,7 +209,7 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon6EmarotKayemController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon6-bidayi-students-connect'], function () {
+    Route::group(['prefix' => 'thana-songothon7-bidayi-students-connect'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon7BidayiStudentsConnectController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon7BidayiStudentsConnectController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
@@ -294,8 +294,6 @@
         Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba7ExpenseController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba7ExpenseController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
-
-
 
 
 
@@ -420,6 +418,7 @@
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'bulk_import'])->middleware(ThanaStatusChack::class);
     });
 
+
     Route::group(['prefix' => 'thana'], function () {
 
         Route::get('/uploaded-data', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_api']);
@@ -446,6 +445,7 @@
     });
 
 
+
     Route::group(['prefix' => 'comment'], function () {
         Route::get('/parent-category', [App\Http\Controllers\Comment\CommentController::class, 'parent_category']);
         Route::get('/index', [App\Http\Controllers\Comment\CommentController::class, 'index']);
@@ -461,3 +461,5 @@
         Route::post('/restore', [App\Http\Controllers\Comment\CommentController::class, 'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Comment\CommentController::class, 'bulk_import']);
     });
+
+
