@@ -3,6 +3,7 @@
 use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgThanaResponsible;
 use App\Models\Organization\OrgType;
+use App\Models\Organization\OrgWard;
 // use App\Models\Organization\OrgUnit;
 // use App\Models\Organization\OrgUnitResponsible;
 // use App\Models\Organization\OrgWard;
@@ -16,7 +17,7 @@ use Carbon\Carbon;
 This file contains the following
 functions:
     1. check_and_get_thana_info
-    2. is_thana_report_upload_permitted 
+    2. is_thana_report_upload_permitted
     3. auth_user_thana_responsibilities_info
     4. thana_report_header_info
     5. thana_common_get
@@ -106,7 +107,6 @@ function thana_common_get($model, $user_id = null)
 
 function thana_common_store($bind, $class, $report_info)
 {
-
     $bind->validate(request(), [
         'month' => ['required']
     ], [
@@ -114,8 +114,10 @@ function thana_common_store($bind, $class, $report_info)
     ]);
     if ($report_info) {
         $col_name = request()->name;
-        $col_value = request()->value;
-
+        $col_value = (int) request()->value;
+        if($col_name === 'montobbo'){
+            $col_value = request()->value;
+        }
         $data = $class::where('report_info_id', $report_info->id)
             // ->where('creator', auth()->user()->id)
             ->first();
@@ -139,48 +141,47 @@ function thana_common_store($bind, $class, $report_info)
         ], 201);
     }
 
-    return response()->json([
-        "message" => "permission denied.",
-        "errors" => [
-            "message" => ["এ মাসের জন্য রিপোর্ট গ্রহণ বন্ধ আছে । যেকোনো প্রয়োজনে ঊর্ধ্বতন দায়িত্বশীল এর সাথে যোগাযোগ করুন"]
-        ]
-
-    ], 403);
+    if (!$report_info) {
+        return response([
+            "status" => "permission_denied",
+            "message" => "এ মাসের জন্য রিপোর্ট গ্রহণ বন্ধ আছে । যেকোনো প্রয়োজনে ঊর্ধ্বতন দায়িত্বশীল এর সাথে যোগাযোগ করুন",
+        ], 403);
+    }
 }
 
-// function approved_unit_ids($ward_id, $month)
-// {
-//     $month = Carbon::parse($month);
-//     $units = OrgUnit::where('org_ward_id',$ward_id)->get();
+function approved_ward_ids($thana_id, $month)
+{
+    $month = Carbon::parse($month);
+    $wards = OrgWard::where('org_thana_id',$thana_id)->get();
 
-//     $unit_ids = [];
-//     $approved_report_info_ids = [];
-//     $approved_unit_ids = [];
-//     $approved_units = [];
-//     foreach ($units as $index => $unit) {
-//         $unit_id = $unit->id;
-//         $unit_ids[] = $unit_id;
-//         $report_info = ReportInfo::where('org_type_id', $unit_id)
-//                 ->where('org_type', 'unit')
-//                 ->whereYear('month_year', $month->clone()->year)
-//                 ->whereMonth('month_year', $month->clone()->month)
-//                 ->where('report_approved_status','approved')
-//                 ->where('status', 1)
-//                 ->get()
-//                 ->first();
+    $ward_ids = [];
+    $approved_report_info_ids = [];
+    $approved_ward_ids = [];
+    $approved_wards = [];
+    foreach ($wards as $index => $ward) {
+        $ward_id = $ward->id;
+        $ward_ids[] = $ward_id;
+        $report_info = ReportInfo::where('org_type_id', $ward_id)
+                ->where('org_type', 'ward')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->where('report_approved_status','approved')
+                ->where('status', 1)
+                ->get()
+                ->first();
 
-//         if($report_info){
-//             $approved_report_info_ids[] = $report_info->id;
-//             $approved_unit_ids[] = $report_info->org_type_id;
-//             $approved_units[] = [
-//                 'unit_id' =>$unit->id,
-//                 'unit_title' =>$unit->title,
-//                 'report_info_id' =>$report_info->id,
-//             ];
-//         }
-//     }
-//     return [
-//         'approved_report_info_ids' => $approved_report_info_ids,
-//         'approved_units' => $approved_units,
-//     ];
-// }
+        if($report_info){
+            $approved_report_info_ids[] = $report_info->id;
+            $approved_ward_ids[] = $report_info->org_type_id;
+            $approved_wards[] = [
+                'ward_id' =>$ward->id,
+                'ward_title' =>$ward->title,
+                'report_info_id' =>$report_info->id,
+            ];
+        }
+    }
+    return [
+        'approved_report_info_ids' => $approved_report_info_ids,
+        'approved_wards' => $approved_wards,
+    ];
+}

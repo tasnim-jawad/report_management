@@ -251,3 +251,4 @@ php artisan make:model Bm/Thana/Income/ThanaBmIncome -m
 php artisan make:controller Bm/Thana/Income/ThanaBmIncomeController
 php artisan make:seeder Bm/Thana/Income/ThanaBmIncomesTableSeeder
 
+fsdfas

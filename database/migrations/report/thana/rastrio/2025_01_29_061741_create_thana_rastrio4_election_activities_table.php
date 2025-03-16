@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('city_corporation_total')->nullable();
             $table->bigInteger('city_corporation_total_candidate')->nullable();
             $table->bigInteger('city_corporation_total_candidate_participated')->nullable();
-            $table->bigInteger('city_corporation_Mayor_candidate_elected')->nullable();
+            $table->bigInteger('city_corporation_mayor_candidate_elected')->nullable();
             $table->bigInteger('city_corporation_chairman_candidate_elected')->nullable();
             $table->bigInteger('city_corporation_vice_chairman_candidate_man_elected')->nullable();
             $table->bigInteger('city_corporation_vice_chairman_candidate_woman_elected')->nullable();

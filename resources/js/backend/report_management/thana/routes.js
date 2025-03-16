@@ -1,45 +1,43 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from "vue-router";
 import main_route from "./src/routes/routes";
 import WardReportUpload from "./src/pages/WardReportUpload.vue";
-import WardReportUploadMonthly from "./src/pages/WardReportUploadMonthly.vue";
+import ThanaReportUploadMonthly from "./src/pages/ThanaReportUploadMonthly.vue";
 import UnitReportCheck from "./src/pages/UnitReportCheck.vue";
 
 const router = createRouter({
     history: createWebHashHistory(),
-    linkActiveClass: 'active',
-    linkExactActiveClass: 'active',
+    linkActiveClass: "active",
+    linkExactActiveClass: "active",
     routes: [
         {
             name: "WardReportUpload",
-            path: '/ward-report-upload/:month/:user_id',
+            path: "/ward-report-upload/:month/:user_id",
             component: WardReportUpload,
-            props: true
+            props: true,
         },
         {
-            name: "WardReportUploadMonthly",
-            path: '/ward-report-upload-monthly/:month/:user_id',
-            component: WardReportUploadMonthly,
-            props: true
+            name: "ThanaReportUploadMonthly",
+            path: "/thana-report-upload-monthly/:month/:user_id",
+            component: ThanaReportUploadMonthly,
+            props: true,
         },
         {
             name: "UnitReportCheck",
-            path: '/unit-report-check/:month/:unit_id',
+            path: "/unit-report-check/:month/:unit_id",
             component: UnitReportCheck,
-            props: true
+            props: true,
         },
         main_route,
-    ]
-})
+    ],
+});
 // previous route store
 router.beforeEach((to, from, next) => {
-    to.href.length > 2 &&
-        window.sessionStorage.setItem('prevurl', to.href);
+    to.href.length > 2 && window.sessionStorage.setItem("prevurl", to.href);
     next();
 });
 
 router.afterEach((to, from) => {
     let el = document.querySelector(`[href="${to.href}"]`);
-})
+});
 
 export default router;
-

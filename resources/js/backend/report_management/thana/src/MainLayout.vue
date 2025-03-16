@@ -102,44 +102,44 @@
                                 >বিভাগ ভিত্তিক তথ্য
                             </router-link>
                         </li>
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'DawahAndProkashona' }">
                                 <span class="icon_margin"><i class="fa-solid fa-book"></i></span>দাওয়াহ্ ও প্রকাশনা
                             </router-link>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'Kormosuci' }">
                                 <span class="icon_margin"><i class="fa-solid fa-handshake"></i></span>কর্মসূচি
                                 বাস্তবায়ন
                             </router-link>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'Songothon' }">
                                 <span class="icon_margin"><i class="fa-solid fa-sitemap"></i></span>সংগঠন
                             </router-link>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'Proshikkhon' }">
                                 <span class="icon_margin"><i class="fa-solid fa-chalkboard-user"></i></span>প্ৰশিক্ষণ
                             </router-link>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'Shomajsheba' }">
                                 <span class="icon_margin"><i class="fa-solid fa-share-from-square"></i></span>সমাজ
                                 সংস্কার ও সমাজসেবা
                             </router-link>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'Rastrio' }">
                                 <span class="icon_margin"><i class="fa-solid fa-globe"></i></span>রাষ্ট্রীয় সংস্কার ও
                                 সংশোধন
                             </router-link>
-                        </li> -->
-                        <!-- <li>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'Montobbo' }">
                                 <span class="icon_margin"><i class="fa-solid fa-comments"></i></span>মন্তব্য
                             </router-link>
-                        </li> -->
+                        </li>
                         <!-- <li>
                             <router-link :to="{ name: 'BmCategoryAll' }">
                                 <span class="icon_margin"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>আয়ের
@@ -182,11 +182,13 @@
                                 <span class="icon_margin"><i class="fa-solid fa-print"></i></span>রিপোর্ট প্রিন্ট
                             </router-link>
                         </li> -->
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'UploadReport' }">
-                                <span class="icon_margin"><i class="fa-solid fa-print"></i></span>রিপোর্ট আপলোড
+                                <span class="icon_margin"
+                                    ><i class="fa-solid fa-print"></i></span
+                                >রিপোর্ট আপলোড
                             </router-link>
-                        </li> -->
+                        </li>
                     </ul>
                 </nav>
             </aside>

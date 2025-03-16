@@ -57,7 +57,7 @@ class DateWiseReportSum
                     $result[$table_name][$selected_column] = $text->montobbo;
                 } else {
                     $sum = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)->sum($selected_column);
-                    $result[$table_name][$selected_column] = $sum == 0 ? "" : $sum;
+                    $result[$table_name][$selected_column] = (int) $sum == 0 ? "" : (int) $sum;
                 }
             }
         }
@@ -166,11 +166,12 @@ class DateWiseReportSum
             "thana_department6_mosjid_dawah_infomation_centers",
             "thana_department7_dawat_in_technologies",
             "thana_department8_dawat_in_cultural_activities",
+            "thana_dawah_and_prokashonas",
             "thana_kormosuci_bastobayons",
             "thana_montobbos",
             "thana_proshikkhon1_tarbiats",
             "thana_proshikkhon2_manob_shompod_organizational_activities",
-            "thana_proshikkhon2_manob_shompod_training_courses",
+            "thana_proshikkhon3_manob_shompod_training_courses",
             "thana_rastrio1_political_communications",
             "thana_rastrio2_kormoshuchi_bastobayons",
             "thana_rastrio3_dibosh_palons",
@@ -187,7 +188,6 @@ class DateWiseReportSum
             "thana_shomajsheba6_education_and_research_activities",
             "thana_shomajsheba7_expenses",
             "thana_songothon10_iyanot_data",
-            "thana_songothon11_sangothonik_boithoks",
             "thana_songothon1_jonosoktis",
             "thana_songothon2_associate_members",
             "thana_songothon3_departmental_information",
@@ -196,7 +196,9 @@ class DateWiseReportSum
             "thana_songothon6_emarot_kayems",
             "thana_songothon7_bidayi_students_connects",
             "thana_songothon8_associate_and_side_organizations",
-            "thana_songothon9_sofors"
+            "thana_songothon9_sofors",
+            "thana_songothon10_iyanot_data",
+            "thana_songothon11_sangothonik_boithoks"
         ];
 
         return $table_names;

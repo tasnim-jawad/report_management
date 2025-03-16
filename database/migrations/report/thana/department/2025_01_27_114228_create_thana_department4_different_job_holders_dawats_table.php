@@ -25,10 +25,10 @@ return new class extends Migration
 
             // Pesha Jibi (Professional) Category
             $table->bigInteger('pesha_jibi_invited_man')->nullable();
-            $table->bigInteger('pesha_jibi_been_associated_man')->nullable();
-            $table->bigInteger('pesha_jibi_target_man')->nullable();
             $table->bigInteger('pesha_jibi_invited_woman')->nullable();
+            $table->bigInteger('pesha_jibi_been_associated_man')->nullable();
             $table->bigInteger('pesha_jibi_been_associated_woman')->nullable();
+            $table->bigInteger('pesha_jibi_target_man')->nullable();
             $table->bigInteger('pesha_jibi_target_woman')->nullable();
 
             // Olama Masayekh Category
@@ -43,10 +43,10 @@ return new class extends Migration
 
             // Sromo Jibi (Labor) Category
             $table->bigInteger('sromo_jibi_invited_man')->nullable();
-            $table->bigInteger('sromo_jibi_been_associated_man')->nullable();
-            $table->bigInteger('sromo_jibi_target_man')->nullable();
             $table->bigInteger('sromo_jibi_invited_woman')->nullable();
+            $table->bigInteger('sromo_jibi_been_associated_man')->nullable();
             $table->bigInteger('sromo_jibi_been_associated_woman')->nullable();
+            $table->bigInteger('sromo_jibi_target_man')->nullable();
             $table->bigInteger('sromo_jibi_target_woman')->nullable();
 
             // Media Worker Category

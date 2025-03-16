@@ -29,11 +29,11 @@ return new class extends Migration
             $table->bigInteger('quran_learning_total_group')->nullable();
             $table->bigInteger('quran_learning_total_students')->nullable();
 
-            $table->bigInteger('total_forkania_madrasah')->nullable();
-            $table->bigInteger('total_forkania_madrasah_students')->nullable();
-
             $table->bigInteger('total_moktob')->nullable();
             $table->bigInteger('total_moktob_students')->nullable();
+
+            $table->bigInteger('total_forkania_madrasah')->nullable();
+            $table->bigInteger('total_forkania_madrasah_students')->nullable();
 
             $table->bigInteger('how_much_learned_sohih_tilawat')->nullable();
 

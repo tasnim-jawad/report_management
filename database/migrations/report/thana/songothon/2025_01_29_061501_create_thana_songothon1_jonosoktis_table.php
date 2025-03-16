@@ -17,12 +17,16 @@ return new class extends Migration
             $table->bigInteger('report_info_id')->nullable();
 
             // Rokon Briddhi (Membership Growth)
+            $table->bigInteger('rokon_previous')->nullable();
+            $table->bigInteger('rokon_present')->nullable();
             $table->bigInteger('rokon_briddhi_manonnoyon')->nullable();
             $table->bigInteger('rokon_briddhi_agoto')->nullable();
             $table->bigInteger('rokon_gatti')->nullable();
             $table->bigInteger('rokon_target')->nullable();
 
             // Worker Growth
+            $table->bigInteger('worker_previous')->nullable();
+            $table->bigInteger('worker_present')->nullable();
             $table->bigInteger('worker_briddhi')->nullable();
             $table->bigInteger('worker_gatti')->nullable();
             $table->bigInteger('worker_target')->nullable();

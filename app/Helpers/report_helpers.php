@@ -14,7 +14,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
-/* 
+/*
 functions:
     1. check_and_get_unit_info
     2. is_unit_report_upload_permitted
@@ -28,8 +28,9 @@ functions:
     10. calculate_previous_present
     11. calculate_increase
     12. unit_active_report
-    
+
 */
+
 function check_and_get_unit_info($user_id)
 {
     $check_info = false;
@@ -100,7 +101,7 @@ function unit_report_header_info($resposibilities, $permission, $month)
 
 
 
-function common_get($model, $user_id=null)
+function common_get($model, $user_id = null)
 {
     $responsibilities = auth_user_unit_responsibilities_info(auth()->user()->id ?? $user_id);
     $report_info = unit_report_header_info($responsibilities, null, request()->month);
@@ -115,23 +116,24 @@ function common_get($model, $user_id=null)
 
 function common_store($bind, $class, $report_info)
 {
+   
     $rules = [
         'month' => ['required'],
         'value' => ['numeric', 'nullable'],
     ];
-    
+
     $messages = [
         "month.required" => ["মাস সিলেক্ট করুন"],
         'value.numeric' => 'Only English numbers can be input.',
     ];
-    
+
     // If request()->name is "montobbo", allow 'value' to be a string
     if (request()->name === 'montobbo') {
         $rules['value'] = ['string', 'nullable'];
     }
 
     $bind->validate(request(), $rules, $messages);
-    
+
     if ($report_info) {
         $col_name = request()->name;
         $col_value = request()->value;
@@ -159,17 +161,17 @@ function common_store($bind, $class, $report_info)
         ], 201);
     }
 
-    return response()->json([
-        "message" => "permission denied.",
-        "errors" => [
-            "message" => ["এ মাসের জন্য রিপোর্ট গ্রহণ বন্ধ আছে । যেকোনো প্রয়োজনে ঊর্ধ্বতন দায়িত্বশীল এর সাথে যোগাযোগ করুন"]
-        ]
-
-    ], 403);
+    if (!$report_info) {
+        return response([
+            "status" => "permission_denied",
+            "message" => "এ মাসের জন্য রিপোর্ট গ্রহণ বন্ধ আছে । যেকোনো প্রয়োজনে ঊর্ধ্বতন দায়িত্বশীল এর সাথে যোগাযোগ করুন",
+        ]);
+    }
 }
 
 
-function bangla($englishNumber) {
+function bangla($englishNumber)
+{
     $banglaDigits = array(
         '0' => '০',
         '1' => '১',
@@ -186,7 +188,8 @@ function bangla($englishNumber) {
     return strtr($englishNumber, $banglaDigits);
 }
 
-function bangla_month($english_month) {
+function bangla_month($english_month)
+{
     $bangla_month = [
         'January' => 'জানুয়ারি',
         'February' => 'ফেব্রুয়ারি',
@@ -205,7 +208,8 @@ function bangla_month($english_month) {
     return $bangla_month[$english_month] ?? $english_month;
 }
 
-function report_info_create($org_type,$org_type_id,$responsibility_id,$responsibility_name,$month_year,$report_type){
+function report_info_create($org_type, $org_type_id, $responsibility_id, $responsibility_name, $month_year, $report_type)
+{
     // dd($month_year);
     $data = new ReportInfo();
     $data->org_type = $org_type;
@@ -235,7 +239,7 @@ function calculate_previous_present($model, $total_approved_report_info_ids, $co
     return $total;
 }
 
-function calculate_increase($model, $total_approved_report_info_ids,$column_name_increase)
+function calculate_increase($model, $total_approved_report_info_ids, $column_name_increase)
 {
     // Fetch data based on the provided model and report_info_ids
     $data = $model::whereIn('report_info_id', $total_approved_report_info_ids)->get();
@@ -248,22 +252,20 @@ function calculate_increase($model, $total_approved_report_info_ids,$column_name
 
 function unit_active_report()
 {
-
     $user = Auth::user()->org_unit_user()->first();
     // dd($user->ward_id);
     $permission = ReportManagementControl::where('is_active', 1)
-            ->where('upper_organization_id', $user->ward_id)
-            ->where('report_type', 'unit')
-            ->orderBy('updated_at', 'DESC')
-            ->first();
-
+        ->where('upper_organization_id', $user->ward_id)
+        ->where('report_type', 'unit')
+        ->orderBy('updated_at', 'DESC')
+        ->first();
     return $permission;
 }
 
 // function notification($user_id, $org_type, $notification_title, $notification_description)
 // {
 //     $org_type_user = 'org_'.$org_type.'_user';
-//     $user_info = User::where('id', $user_id)->first()->$org_type_user; 
+//     $user_info = User::where('id', $user_id)->first()->$org_type_user;
 //     if(!$user_info){
 //         return "User not found.";
 //     }
@@ -320,44 +322,39 @@ function unit_active_report()
 // }
 
 function notification(
-    $org_type_id, 
-    $org_type, 
-    $notification_title, 
+    $org_type_id,
+    $org_type,
+    $notification_title,
     $notification_description,
     $user_id = null
-    )
-    
-    {
-        $city_id = null;
-        $thana_id = null;
-        $ward_id = null;
-        $unit_id = null;
+) {
+    $city_id = null;
+    $thana_id = null;
+    $ward_id = null;
+    $unit_id = null;
 
 
-        if($org_type == 'city'){
-            $city_id = $org_type_id;
-        } elseif($org_type == 'thana'){
-            $thana_id = $org_type_id;
-        } elseif($org_type == 'ward'){
-            $ward_id = $org_type_id;
-        } elseif($org_type == 'unit'){
-            $unit_id = $org_type_id;
-        }
-
-        $notification = new Notification();
-        $notification->user_id = $user_id;
-        $notification->city_id = $city_id;
-        $notification->thana_id = $thana_id;
-        $notification->ward_id = $ward_id;
-        $notification->unit_id = $unit_id;
-        $notification->title = $notification_title;
-        $notification->description = $notification_description;
-        $notification->creator = auth()->user()->id;
-        $notification->status = 1;
-        $notification->save();
-
-        return $notification;
+    if ($org_type == 'city') {
+        $city_id = $org_type_id;
+    } elseif ($org_type == 'thana') {
+        $thana_id = $org_type_id;
+    } elseif ($org_type == 'ward') {
+        $ward_id = $org_type_id;
+    } elseif ($org_type == 'unit') {
+        $unit_id = $org_type_id;
     }
 
+    $notification = new Notification();
+    $notification->user_id = $user_id;
+    $notification->city_id = $city_id;
+    $notification->thana_id = $thana_id;
+    $notification->ward_id = $ward_id;
+    $notification->unit_id = $unit_id;
+    $notification->title = $notification_title;
+    $notification->description = $notification_description;
+    $notification->creator = auth()->user()->id;
+    $notification->status = 1;
+    $notification->save();
 
-
+    return $notification;
+}

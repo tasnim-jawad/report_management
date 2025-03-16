@@ -188,12 +188,12 @@ class Songothon9SangothonikBoithokController extends Controller
                     // ->orWhere('barsik_rokon_sommelon_women_target', '%' . $key . '%')
                     // ->orWhere('barsik_rokon_sommelon_women_uposthiti', '%' . $key . '%')
 
-                    // ->orWhere('upozila_word_sovapoti_sommelon_man_total', '%' . $key . '%')
-                    // ->orWhere('upozila_word_sovapoti_sommelon_man_target', '%' . $key . '%')
-                    // ->orWhere('upozila_word_sovapoti_sommelon_man_uposthiti', '%' . $key . '%')
-                    // ->orWhere('upozila_word_sovapoti_sommelon_women_total', '%' . $key . '%')
-                    // ->orWhere('upozila_word_sovapoti_sommelon_women_target', '%' . $key . '%')
-                    // ->orWhere('upozila_word_sovapoti_sommelon_women_uposthiti', '%' . $key . '%');
+                    // ->orWhere('upozila_ward_sovapoti_sommelon_man_total', '%' . $key . '%')
+                    // ->orWhere('upozila_ward_sovapoti_sommelon_man_target', '%' . $key . '%')
+                    // ->orWhere('upozila_ward_sovapoti_sommelon_man_uposthiti', '%' . $key . '%')
+                    // ->orWhere('upozila_ward_sovapoti_sommelon_women_total', '%' . $key . '%')
+                    // ->orWhere('upozila_ward_sovapoti_sommelon_women_target', '%' . $key . '%')
+                    // ->orWhere('upozila_ward_sovapoti_sommelon_women_uposthiti', '%' . $key . '%');
 
                 });
             }
@@ -362,12 +362,12 @@ class Songothon9SangothonikBoithokController extends Controller
                 // 'barsik_rokon_sommelon_women_target' => ['required'],
                 // 'barsik_rokon_sommelon_women_uposthiti' => ['required'],
 
-                // 'upozila_word_sovapoti_sommelon_man_total' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_man_target' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_man_uposthiti' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_women_total' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_women_target' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_women_uposthiti' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_man_total' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_man_target' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_man_uposthiti' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_women_total' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_women_target' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_women_uposthiti' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -517,12 +517,12 @@ class Songothon9SangothonikBoithokController extends Controller
             // $data->barsik_rokon_sommelon_women_target = request()->barsik_rokon_sommelon_women_target;
             // $data->barsik_rokon_sommelon_women_uposthiti = request()->barsik_rokon_sommelon_women_uposthiti;
 
-            // $data->upozila_word_sovapoti_sommelon_man_total = request()->upozila_word_sovapoti_sommelon_man_total;
-            // $data->upozila_word_sovapoti_sommelon_man_target = request()->upozila_word_sovapoti_sommelon_man_target;
-            // $data->upozila_word_sovapoti_sommelon_man_uposthiti = request()->upozila_word_sovapoti_sommelon_man_uposthiti;
-            // $data->upozila_word_sovapoti_sommelon_women_total = request()->upozila_word_sovapoti_sommelon_women_total;
-            // $data->upozila_word_sovapoti_sommelon_women_target = request()->upozila_word_sovapoti_sommelon_women_target;
-            // $data->upozila_word_sovapoti_sommelon_women_uposthiti = request()->upozila_word_sovapoti_sommelon_women_uposthiti;
+            // $data->upozila_ward_sovapoti_sommelon_man_total = request()->upozila_ward_sovapoti_sommelon_man_total;
+            // $data->upozila_ward_sovapoti_sommelon_man_target = request()->upozila_ward_sovapoti_sommelon_man_target;
+            // $data->upozila_ward_sovapoti_sommelon_man_uposthiti = request()->upozila_ward_sovapoti_sommelon_man_uposthiti;
+            // $data->upozila_ward_sovapoti_sommelon_women_total = request()->upozila_ward_sovapoti_sommelon_women_total;
+            // $data->upozila_ward_sovapoti_sommelon_women_target = request()->upozila_ward_sovapoti_sommelon_women_target;
+            // $data->upozila_ward_sovapoti_sommelon_women_uposthiti = request()->upozila_ward_sovapoti_sommelon_women_uposthiti;
 
             $data->creator = request()->creator;
             $data->status = request()->status;
@@ -678,12 +678,12 @@ class Songothon9SangothonikBoithokController extends Controller
                 // 'barsik_rokon_sommelon_women_target' => ['required'],
                 // 'barsik_rokon_sommelon_women_uposthiti' => ['required'],
 
-                // 'upozila_word_sovapoti_sommelon_man_total' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_man_target' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_man_uposthiti' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_women_total' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_women_target' => ['required'],
-                // 'upozila_word_sovapoti_sommelon_women_uposthiti' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_man_total' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_man_target' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_man_uposthiti' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_women_total' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_women_target' => ['required'],
+                // 'upozila_ward_sovapoti_sommelon_women_uposthiti' => ['required'],
 
                 'creator' => ['required'],
                 'status' => ['required'],
@@ -832,12 +832,12 @@ class Songothon9SangothonikBoithokController extends Controller
             // $data->barsik_rokon_sommelon_women_target = request()->barsik_rokon_sommelon_women_target;
             // $data->barsik_rokon_sommelon_women_uposthiti = request()->barsik_rokon_sommelon_women_uposthiti;
 
-            // $data->upozila_word_sovapoti_sommelon_man_total = request()->upozila_word_sovapoti_sommelon_man_total;
-            // $data->upozila_word_sovapoti_sommelon_man_target = request()->upozila_word_sovapoti_sommelon_man_target;
-            // $data->upozila_word_sovapoti_sommelon_man_uposthiti = request()->upozila_word_sovapoti_sommelon_man_uposthiti;
-            // $data->upozila_word_sovapoti_sommelon_women_total = request()->upozila_word_sovapoti_sommelon_women_total;
-            // $data->upozila_word_sovapoti_sommelon_women_target = request()->upozila_word_sovapoti_sommelon_women_target;
-            // $data->upozila_word_sovapoti_sommelon_women_uposthiti = request()->upozila_word_sovapoti_sommelon_women_uposthiti;
+            // $data->upozila_ward_sovapoti_sommelon_man_total = request()->upozila_ward_sovapoti_sommelon_man_total;
+            // $data->upozila_ward_sovapoti_sommelon_man_target = request()->upozila_ward_sovapoti_sommelon_man_target;
+            // $data->upozila_ward_sovapoti_sommelon_man_uposthiti = request()->upozila_ward_sovapoti_sommelon_man_uposthiti;
+            // $data->upozila_ward_sovapoti_sommelon_women_total = request()->upozila_ward_sovapoti_sommelon_women_total;
+            // $data->upozila_ward_sovapoti_sommelon_women_target = request()->upozila_ward_sovapoti_sommelon_women_target;
+            // $data->upozila_ward_sovapoti_sommelon_women_uposthiti = request()->upozila_ward_sovapoti_sommelon_women_uposthiti;
 
             $data->creator = request()->creator;
             $data->status = request()->status;

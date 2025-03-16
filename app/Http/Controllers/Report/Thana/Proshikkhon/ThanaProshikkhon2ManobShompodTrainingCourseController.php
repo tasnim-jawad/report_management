@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class ThanaProshikkhon2ManobShompodTrainingCourseController extends Controller
 {
+
     protected $report_info = false;
     public function __construct()
     {

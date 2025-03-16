@@ -11,7 +11,7 @@
         Route::post('/destroy', [App\Http\Controllers\Thana\ThanaUserController::class, 'destroy']);
     });
 
-    Route::group(['prefix' => 'thana/word'], function () {
+    Route::group(['prefix' => 'thana/ward'], function () {
         Route::get('/all', [App\Http\Controllers\Thana\ThanaWardController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Thana\ThanaWardController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Thana\ThanaWardController::class, 'store']);
@@ -21,13 +21,13 @@
         Route::post('/restore', [App\Http\Controllers\Thana\ThanaWardController::class, 'restore']);
     });
 
-    Route::group(['prefix' => 'thana/word'], function () {
+    Route::group(['prefix' => 'thana/ward'], function () {
         Route::get('/report-status', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status']);
         Route::post('/change-status', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'change_status']);
-        Route::post('/report-status-single-word', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status_single_word']);
+        Route::post('/report-status-single-ward', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status_single_ward']);
     });
 
-    Route::group(['prefix' => 'thana/word-jonoshokti'], function () {
+    Route::group(['prefix' => 'thana/ward-jonoshokti'], function () {
         Route::post('/set-responsibility', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'set_responsibility']);
 
         Route::get('/all', [App\Http\Controllers\Thana\ThanaWardJonoshoktiController::class, 'all']);
@@ -57,20 +57,19 @@
         Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'store_single'])->middleware(ThanaStatusChack::class);
 
-        Route::get('/all', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'all']);
-        Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'show']);
-        Route::post('/store', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'store']);
-        Route::post('/update', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'destroy']);
-        Route::post('/restore', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'bulk_import']);
+        // Route::get('/all', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'all']);
+        // Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'show']);
+        // Route::post('/store', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'store']);
+        // Route::post('/update', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'update']);
+        // Route::post('/soft_delete', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'soft_delete']);
+        // Route::post('/destroy', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'destroy']);
+        // Route::post('/restore', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'restore']);
+        // Route::post('/bulk_import', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat1RegularGroupWiseController::class, 'bulk_import']);
     });
 
     Route::group(['prefix' => 'thana-dawat2-personal-and-target'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'store_single'])->middleware(ThanaStatusChack::class);
-
         Route::get('/all', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'show']);
         Route::post('/store', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat2PersonalAndTargetController::class, 'store']);
@@ -85,28 +84,28 @@
         Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'store_single'])->middleware(ThanaStatusChack::class);
 
-        Route::get('/all', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'all']);
-        Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'show']);
-        Route::post('/store', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'store']);
-        Route::post('/update', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'destroy']);
-        Route::post('/restore', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'bulk_import']);
+        // Route::get('/all', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'all']);
+        // Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'show']);
+        // Route::post('/store', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'store']);
+        // Route::post('/update', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'update']);
+        // Route::post('/soft_delete', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'soft_delete']);
+        // Route::post('/destroy', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'destroy']);
+        // Route::post('/restore', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'restore']);
+        // Route::post('/bulk_import', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat3GeneralProgramAndOthersController::class, 'bulk_import']);
     });
 
     Route::group(['prefix' => 'thana-dawat4-gono-songjog-and-dawat-ovijan'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'store_single'])->middleware(ThanaStatusChack::class);
 
-        Route::get('/all', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'all']);
-        Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'show']);
-        Route::post('/store', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'store']);
-        Route::post('/update', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'destroy']);
-        Route::post('/restore', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'bulk_import']);
+        // Route::get('/all', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'all']);
+        // Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'show']);
+        // Route::post('/store', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'store']);
+        // Route::post('/update', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'update']);
+        // Route::post('/soft_delete', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'soft_delete']);
+        // Route::post('/destroy', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'destroy']);
+        // Route::post('/restore', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'restore']);
+        // Route::post('/bulk_import', [App\Http\Controllers\Report\Thana\Dawat\ThanaDawat4GonoSongjogAndDawatOvijanController::class, 'bulk_import']);
     });
 
 
@@ -117,14 +116,14 @@
         Route::get('/data', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'store_single'])->middleware(ThanaStatusChack::class);
 
-        Route::get('/all', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'all']);
-        Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'show']);
-        Route::post('/store', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'store']);
-        Route::post('/update', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'destroy']);
-        Route::post('/restore', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'bulk_import']);
+        // Route::get('/all', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'all']);
+        // Route::get('/show/{id}', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'show']);
+        // Route::post('/store', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'store']);
+        // Route::post('/update', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'update']);
+        // Route::post('/soft_delete', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'soft_delete']);
+        // Route::post('/destroy', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'destroy']);
+        // Route::post('/restore', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'restore']);
+        // Route::post('/bulk_import', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment1TalimulQuranController::class, 'bulk_import']);
     });
 
     Route::group(['prefix' => 'thana-department2-moholla-vittik-dawat'], function () {
@@ -155,6 +154,11 @@
     Route::group(['prefix' => 'thana-department7-dawat-in-technology'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment7DawatInTechnologyController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment7DawatInTechnologyController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-department8-dawat-in-cultural-activity'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment8DawatInCulturalActivityController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Department\ThanaDepartment8DawatInCulturalActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
 
@@ -191,34 +195,52 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon3DepartmentalInformationController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon4-word-songothon'], function () {
+    Route::group(['prefix' => 'thana-songothon4-organizational-structure'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon4OrganizationalStructureController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon4OrganizationalStructureController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon5-dawat-and-paribarik-word'], function () {
+    Route::group(['prefix' => 'thana-songothon5-dawat-and-paribarik-unit'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon5DawatAndParibarikUnitController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon5DawatAndParibarikUnitController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
-
-    Route::group(['prefix' => 'thana-songothon6-bidayi-students-connect'], function () {
+    Route::group(['prefix' => 'thana-songothon6-emarot-kayem'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon6EmarotKayemController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon6EmarotKayemController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon7-sofor'], function () {
+    Route::group(['prefix' => 'thana-songothon7-bidayi-students-connect'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon7BidayiStudentsConnectController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon7BidayiStudentsConnectController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon8-iyanot-data'], function () {
+
+    Route::group(['prefix' => 'thana-songothon8-associate-and-side-organizations'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon8AssociateAndSideOrganizationController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon8AssociateAndSideOrganizationController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-songothon9-sangothonik-boithok'], function () {
+    Route::group(['prefix' => 'thana-songothon9-sofors'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon9SoforController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon9SoforController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-songothon10-iyanot-data'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon10IyanotDataController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon10IyanotDataController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-songothon11-sangothonik-boithok'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon11SangothonikBoithokController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon11SangothonikBoithokController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-songothon10-iyanot-data'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon10IyanotDataController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon10IyanotDataController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-songothon11-sangothonik-boithoks'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon11SangothonikBoithokController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Songothon\ThanaSongothon11SangothonikBoithokController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
 
@@ -231,7 +253,7 @@
         Route::get('/data', [App\Http\Controllers\Report\Thana\Proshikkhon\ThanaProshikkhon2ManobShompodOrganizationalActivitieController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Proshikkhon\ThanaProshikkhon2ManobShompodOrganizationalActivitieController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
-    Route::group(['prefix' => 'thana-proshikkhon2-manob-shompod-traning-course'], function () {
+    Route::group(['prefix' => 'thana-proshikkhon3-manob-shompod-traning-course'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Proshikkhon\ThanaProshikkhon2ManobShompodTrainingCourseController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Proshikkhon\ThanaProshikkhon2ManobShompodTrainingCourseController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
@@ -247,11 +269,11 @@
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba2PersonalSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
     Route::group(['prefix' => 'thana-shomajsheba3-group-social-work'], function () {
-        Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba2PersonalSocialWorkController::class, 'get_data']);
-        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba2PersonalSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'thana-shomajsheba3-health-and-family-kollan'], function () {
+    Route::group(['prefix' => 'thana-shomajsheba3-group-social-work'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Shomajsheba\ThanaShomajsheba3GroupSocialWorkController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
@@ -275,8 +297,6 @@
 
 
 
-
-
     Route::group(['prefix' => 'thana-rastrio1-political-communication'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio1PoliticalCommunicationController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio1PoliticalCommunicationController::class, 'store_single'])->middleware(ThanaStatusChack::class);
@@ -295,6 +315,42 @@
     Route::group(['prefix' => 'thana-rastrio4-election-activitie'], function () {
         Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'get_data']);
         Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio4ElectionActivityController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-rastrio5-broad-cast-and-media'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio5BroadcastAndMediaController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio5BroadcastAndMediaController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-rastrio6-human-right'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio6HumanRightsController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio6HumanRightsController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-rastrio7-industry-and-trade'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio7IndustryAndTradeController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio7IndustryAndTradeController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+    Route::group(['prefix' => 'thana-rastrio8-entrepreneurial-developments'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio8EntrepreneurialDevelopmentController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio8EntrepreneurialDevelopmentController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-rastrio5-broadcast-and-media'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio5BroadcastAndMediaController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio5BroadcastAndMediaController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-rastrio6-human-right'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio6HumanRightsController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio6HumanRightsController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-rastrio7-industry-and-trade'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio7IndustryAndTradeController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio7IndustryAndTradeController::class, 'store_single'])->middleware(ThanaStatusChack::class);
+    });
+
+    Route::group(['prefix' => 'thana-rastrio8-entrepreneurial-development'], function () {
+        Route::get('/data', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio8EntrepreneurialDevelopmentController::class, 'get_data']);
+        Route::post('/store-single', [App\Http\Controllers\Report\Thana\Rastrio\ThanaRastrio8EntrepreneurialDevelopmentController::class, 'store_single'])->middleware(ThanaStatusChack::class);
     });
 
     Route::group(['prefix' => 'thana-montobbo'], function () {
@@ -362,7 +418,9 @@
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'bulk_import'])->middleware(ThanaStatusChack::class);
     });
 
-    Route::group(['prefix' => 'ward'], function () {
+
+    Route::group(['prefix' => 'thana'], function () {
+
         Route::get('/uploaded-data', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_api']);
         Route::get('/income-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'income_category_wise']);
         Route::get('/expense-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'expense_category_wise']);
@@ -372,16 +430,20 @@
         Route::get('/uploaded-data-monthly', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_monthly']);
         Route::get('/report-status', [App\Http\Controllers\Thana\ThanaController::class, 'report_status']);
         Route::get('/report-joma', [App\Http\Controllers\Thana\ThanaController::class, 'report_joma']);
+
+
+        Route::get('/get-all-ward-data', [App\Http\Controllers\Thana\ThanaTotalWardSubmittedDataController::class, 'get_all_ward_data']);
+        Route::get('/count-approved-ward', [App\Http\Controllers\Thana\ThanaTotalWardSubmittedDataController::class, 'count_approved_ward']);
     });
 
 
-
-    Route::group(['prefix' => 'ward'], function () {
-        Route::post('/word-report-joma-permitted-month', [App\Http\Controllers\Thana\PermissionController::class, 'word_report_joma_permitted_month']);
-        Route::post('/set-word-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'set_word_report_joma_permission']);
-        Route::post('/remove-word-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'remove_word_report_joma_permission']);
+    Route::group(['prefix' => 'thana'], function () {
+        Route::post('/ward-report-joma-permitted-month', [App\Http\Controllers\Thana\PermissionController::class, 'ward_report_joma_permitted_month']);
+        Route::post('/set-ward-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'set_ward_report_joma_permission']);
+        Route::post('/remove-ward-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'remove_ward_report_joma_permission']);
         // Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Thana\PermissionController::class,'toggle_dashboard_permission']);
     });
+
 
 
     Route::group(['prefix' => 'comment'], function () {
@@ -399,3 +461,5 @@
         Route::post('/restore', [App\Http\Controllers\Comment\CommentController::class, 'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Comment\CommentController::class, 'bulk_import']);
     });
+
+

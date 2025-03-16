@@ -24,12 +24,13 @@ class ThanaDawat2PersonalAndTargetController extends Controller
 
     public function get_data()
     {
+
         return thana_common_get(ThanaDawat2PersonalAndTarget::class);
     }
 
     public function store_single()
     {
-        // dd("controller",$this->report_info);
+        // dd("controller", $this->report_info);
         return thana_common_store($this, ThanaDawat2PersonalAndTarget::class, $this->report_info);
     }
 }

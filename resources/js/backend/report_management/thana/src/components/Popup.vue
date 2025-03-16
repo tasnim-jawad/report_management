@@ -1,19 +1,19 @@
 <template>
-    <div class="unit_info_icon" >
+    <div class="unit_info_icon">
         <span class="i_icon" @click="toggle_popup">
-            <i class="fa fa-list" ></i>
+            <i class="fa fa-list"></i>
         </span>
-        <div class="unit_data_popup" :class="{active:is_popup_visible}">
+        <div class="unit_data_popup" :class="{ active: is_popup_visible }">
             <!-- <span>{{popup_data }}</span> -->
             <table class="table table-striped mb-0">
                 <tbody class="">
-                    <tr v-for="(unit,index) in unit_wise_data" :key="index">
+                    <tr v-for="(unit, index) in unit_wise_data" :key="index">
                         <td>{{ unit.unit_title }}</td>
                         <td>{{ unit.value }}</td>
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td>{{ total ?? 0}}</td>
+                        <td>{{ total ?? 0 }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
     props: {
@@ -38,7 +38,7 @@ export default {
             type: String,
             required: true,
         },
-        ward_id: {
+        thana_id: {
             type: Number,
             required: true,
             default: 0,
@@ -46,53 +46,49 @@ export default {
         month: {
             type: String,
             required: true,
-        }
+        },
     },
     data() {
         return {
             is_popup_visible: false,
-            unit_wise_data:[],
-            total:null
+            unit_wise_data: [],
+            total: null,
         };
     },
-    created:function(){
-
-    },
+    created: function () {},
     methods: {
         toggle_popup() {
-
-            [...document.querySelectorAll('.unit_data_popup')].forEach(i=>i.classList.remove('active'))
+            [...document.querySelectorAll(".unit_data_popup")].forEach((i) =>
+                i.classList.remove("active")
+            );
 
             this.is_popup_visible = !this.is_popup_visible;
 
-            if(this.is_popup_visible){
-                if(!this.total){
-                    this.get_all_unit_data()
+            if (this.is_popup_visible) {
+                if (!this.total) {
+                    this.get_all_unit_data();
                 }
             }
         },
 
-        get_all_unit_data:async function() {
-            console.log("this.ward_id",this.ward_id);
+        get_all_unit_data: async function () {
+            console.log("this.thana_id", this.thana_id);
 
-            let response = await axios.get('/ward/get-all-unit-data',{
+            let response = await axios.get("/thana/get-all-ward-data", {
                 params: {
-                    ward_id: this.ward_id,
+                    thana_id: this.thana_id,
                     table_name: this.table_name,
                     field_title: this.field_title,
                     month: this.month,
-                }
-            })
-            if(response.data.status == 'success'){
-                this.unit_wise_data = response?.data?.unit_wise_data;
+                },
+            });
+            if (response.data.status == "success") {
+                this.ward_wise_data = response?.data?.ward_wise_data;
                 this.total = response?.data?.total;
             }
-
-        }
-    }
+        },
+    },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

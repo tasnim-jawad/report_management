@@ -15,10 +15,10 @@
                     <!-- <div class="d-flex flex-wrap gap-2 mb-2 align-items-center"> -->
                         <div class="d-flex flex-wrap flex-column gap-2 mb-2 align-items-center">
                         <div class="form_label w-100">
-                            <label for="">ওয়ার্ড সভাপতির মন্তব্য :</label>
+                            <label for="">থানা আমীরের মন্তব্য :</label>
                         </div>
                         <div class="form_input w-100">
-                            <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`ward-montobbo`)" id="montobboText" rows="10"></textarea>
+                            <textarea class="w-100 form-control" name="montobbo" @change="single_upload(`thana-montobbo`)" id="montobboText" rows="10"></textarea>
                         </div>
                     </div>
                 </form>
@@ -95,11 +95,11 @@ export default {
             let els = document.querySelectorAll('textarea');
             els = [...els].forEach(e => e.value = '');
 
-            this.get_data_by_api('ward-montobbo');
+            this.get_data_by_api('thana-montobbo');
         },
         report_status: async function () {
             const month = this.month;
-            let response = await axios.get('/ward/report-status', {
+            let response = await axios.get('/thana/report-status', {
                 params: {
                     month: month
                 }
@@ -111,7 +111,7 @@ export default {
         report_joma: async function () {
             if (window.confirm("আপনি কি জমা দানের বিষয়ে নিশ্চিত?")) {
                 const month = this.$route.params.month;
-                let response = await axios.get('/ward/report-joma', {
+                let response = await axios.get('/thana/report-joma', {
                     params: {
                         month: month
                     }

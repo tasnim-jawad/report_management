@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('thana_songothon11_sangothonik_boithoks', function (Blueprint $table) {
             $table->id();
 
+            $table->bigInteger('report_info_id')->nullable();
+
             $table->bigInteger('upojela_mozlishe_sura_boithok_man_total')->nullable();
             $table->bigInteger('upojela_mozlishe_sura_boithok_man_target')->nullable();
             $table->bigInteger('upojela_mozlishe_sura_boithok_man_uposthiti')->nullable();
@@ -70,6 +72,36 @@ return new class extends Migration
             $table->bigInteger('union_kormoporishod_boithok_women_total')->nullable();
             $table->bigInteger('union_kormoporishod_boithok_women_target')->nullable();
             $table->bigInteger('union_kormoporishod_boithok_women_uposthiti')->nullable();
+            
+            
+            
+            $table->bigInteger('upojela_team_boithok_man_total')->nullable();
+            $table->bigInteger('upojela_team_boithok_man_target')->nullable();
+            $table->bigInteger('upojela_team_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('upojela_team_boithok_women_total')->nullable();
+            $table->bigInteger('upojela_team_boithok_women_target')->nullable();
+            $table->bigInteger('upojela_team_boithok_women_uposthiti')->nullable();
+
+            $table->bigInteger('thana_team_boithok_man_total')->nullable();
+            $table->bigInteger('thana_team_boithok_man_target')->nullable();
+            $table->bigInteger('thana_team_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('thana_team_boithok_women_total')->nullable();
+            $table->bigInteger('thana_team_boithok_women_target')->nullable();
+            $table->bigInteger('thana_team_boithok_women_uposthiti')->nullable();
+
+            $table->bigInteger('pourosova_team_boithok_man_total')->nullable();
+            $table->bigInteger('pourosova_team_boithok_man_target')->nullable();
+            $table->bigInteger('pourosova_team_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('pourosova_team_boithok_women_total')->nullable();
+            $table->bigInteger('pourosova_team_boithok_women_target')->nullable();
+            $table->bigInteger('pourosova_team_boithok_women_uposthiti')->nullable();
+
+            $table->bigInteger('union_team_boithok_man_total')->nullable();
+            $table->bigInteger('union_team_boithok_man_target')->nullable();
+            $table->bigInteger('union_team_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('union_team_boithok_women_total')->nullable();
+            $table->bigInteger('union_team_boithok_women_target')->nullable();
+            $table->bigInteger('union_team_boithok_women_uposthiti')->nullable();
 
 
             $table->bigInteger('upojela_mashik_rokon_boithok_man_total')->nullable();
@@ -158,6 +190,7 @@ return new class extends Migration
             $table->bigInteger('troimasik_rokon_sommelon_man_total')->nullable();
             $table->bigInteger('troimasik_rokon_sommelon_man_target')->nullable();
             $table->bigInteger('troimasik_rokon_sommelon_man_uposthiti')->nullable();
+
             $table->bigInteger('troimasik_rokon_sommelon_women_total')->nullable();
             $table->bigInteger('troimasik_rokon_sommelon_women_target')->nullable();
             $table->bigInteger('troimasik_rokon_sommelon_women_uposthiti')->nullable();
@@ -176,21 +209,21 @@ return new class extends Migration
             $table->bigInteger('barshik_rokon_sommelon_women_target')->nullable();
             $table->bigInteger('barshik_rokon_sommelon_women_uposthiti')->nullable();
 
-            // Upojila Word Sovapoti Sommelon
-            $table->bigInteger('upozila_word_sovapoti_sommelon_man_total')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_man_target')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_man_uposthiti')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_women_total')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_women_target')->nullable();
-            $table->bigInteger('upozila_word_sovapoti_sommelon_women_uposthiti')->nullable();
+            // Upojila ward Sovapoti Sommelon
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_man_total')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_man_target')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_man_uposthiti')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_women_total')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_women_target')->nullable();
+            $table->bigInteger('upozila_ward_sovapoti_sommelon_women_uposthiti')->nullable();
 
-            // Thana Word Sovapoti Sommelon
-            $table->bigInteger('thana_word_sovapoti_sommelon_man_total')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_man_target')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_man_uposthiti')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_women_total')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_women_target')->nullable();
-            $table->bigInteger('thana_word_sovapoti_sommelon_women_uposthiti')->nullable();
+            // Thana ward Sovapoti Sommelon
+            $table->bigInteger('thana_ward_sovapoti_sommelon_man_total')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_man_target')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_man_uposthiti')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_women_total')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_women_target')->nullable();
+            $table->bigInteger('thana_ward_sovapoti_sommelon_women_uposthiti')->nullable();
 
             // Upojila Kormi Sommelon
             $table->bigInteger('upozila_kormi_sommelon_man_total')->nullable();
@@ -225,20 +258,20 @@ return new class extends Migration
             $table->bigInteger('ward_kormi_sommelon_women_uposthiti')->nullable();
 
             // Upojila Vittik Unit Sovapoti o Secretary Sommelon
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_man_total')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_man_target')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_man_uposthiti')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_women_total')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_women_target')->nullable();
-            $table->bigInteger('upozila_vittik_unit_sovapoti_o_secretary_sommelon_women_uposthiti')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_man_total')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_man_target')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_man_uposthiti')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_women_total')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_women_target')->nullable();
+            $table->bigInteger('upozila_unit_sovapoti_sommelon_women_uposthiti')->nullable();
 
             // Thana Vittik Unit Sovapoti o Secretary Sommelon
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_man_total')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_man_target')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_man_uposthiti')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_women_total')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_women_target')->nullable();
-            $table->bigInteger('thana_vittik_unit_sovapoti_o_secretary_sommelon_women_uposthiti')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_man_total')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_man_target')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_man_uposthiti')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_women_total')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_women_target')->nullable();
+            $table->bigInteger('thana_unit_sovapoti_sommelon_women_uposthiti')->nullable();
 
             // Ulama Boithok
             $table->bigInteger('ulama_boithok_man_total')->nullable();
@@ -311,6 +344,29 @@ return new class extends Migration
             $table->bigInteger('associate_member_sommelon_women_total')->nullable();
             $table->bigInteger('associate_member_sommelon_women_target')->nullable();
             $table->bigInteger('associate_member_sommelon_women_uposthiti')->nullable();
+            
+            // other
+            // $table->bigInteger('other_man_total')->nullable();
+            // $table->bigInteger('other_man_target')->nullable();
+            // $table->bigInteger('other_man_uposthiti')->nullable();
+            // $table->bigInteger('other_women_total')->nullable();
+            // $table->bigInteger('other_women_target')->nullable();
+            // $table->bigInteger('other_women_uposthiti')->nullable();
+
+
+            // $table->bigInteger('creator')->nullable();
+            // $table->bigInteger('status')->nullable();
+
+            // Others
+            $table->bigInteger('others_man_total')->nullable();
+            $table->bigInteger('others_man_target')->nullable();
+            $table->bigInteger('others_man_uposthiti')->nullable();
+            $table->bigInteger('others_women_total')->nullable();
+            $table->bigInteger('others_women_target')->nullable();
+            $table->bigInteger('others_women_uposthiti')->nullable();
+
+            $table->string('creator')->nullable();
+            $table->string('status')->nullable();
 
             $table->timestamps();
         });
