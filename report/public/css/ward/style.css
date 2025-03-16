@@ -1,0 +1,358 @@
+
+:root {
+    --dark: #222E3C;
+    --color2: #F5F7FB;
+    --color3: #3B7DDD;
+    --color4: #e9ecef;
+    --color5: #495057;
+    --color6: #adb5bd;
+    --white: white;
+    --color7: #394190;
+}
+
+@keyframes dropdownAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+@font-face {
+    font-family: 'solaiman_lipi';
+    src: url('../../fonts/SolaimanLipi.ttf');
+}
+
+.eng{
+    font-family: sans-serif;
+}
+
+.font_bng{
+    font-family: 'solaiman_lipi';
+}
+body{
+    font-family: 'solaiman_lipi';
+}
+.icon_margin{
+    margin-right: 12px;
+}
+.border{
+    border: 1px solid red;
+}
+.report_app{
+    height: 100svh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+}
+
+.report_app_left{
+    position: absolute;
+    z-index: 1;
+    background-color: var(--dark);
+    width: 230px;
+    left: -230px;
+    opacity: 0;
+    transition: left .3s ease-in-out, opacity .3s ease-in-out;
+}
+.report_app_left_toggle{
+    left: 0px;
+    z-index: 1;
+    opacity: 1;
+}
+.close_sidebar{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 4px 0px;
+    border-radius: 50%;
+    background-color: rgb(130, 155, 177);
+    color: red;
+    font-size: 16px;
+    line-height: 16px;
+    width: 24px;
+    text-align: center;
+}
+.side_nav{
+    height: 100vh;
+    overflow: scroll;
+    padding-bottom: 30px;
+    scrollbar-width: none;
+    opacity: 1;
+    transition: opacity .2s .3s ease-in-out;
+}
+
+.side_nav .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--color4);
+}
+
+.side_nav .logo img{
+    height: 50px;
+    max-width: 100%;
+
+}
+.side_nav .profile_view{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px;
+
+}
+.side_nav .profile_view .profile_pic{
+    margin-right: 10px;
+}
+.side_nav .profile_view .circle{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color3);
+
+}
+.side_nav .profile_view .circle .image_body{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.side_nav .profile_view .circle .image_body img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:center;
+}
+.side_nav .profile_info{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.side_nav .profile_info h5{
+    color:var(--color4);
+    font-size: 16px;
+    font-family: sans-serif;
+    margin: 5px 0px 5px 0px;
+}
+.side_nav .profile_info p{
+    color:var(--color6);
+    font-size: 14px;
+    font-family: sans-serif;
+}
+.report_app_right{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    background-color: var(--color2);
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.side_nav .options .block_title{
+    color: var(--color4);
+    font-size: 12px;
+    font-family: sans-serif;
+    padding: 24px 24px 6px;
+}
+/* .side_nav .options li{} */
+.side_nav .options li a{
+    text-decoration: none;
+    color: var(--color6);
+    font-size: 15px;
+    font-family: 'solaiman_lipi';
+    transition: background .1s ease-in-out;
+    display: block;
+    padding: 10px 26px;
+    border: 2px solid transparent;
+}
+.side_nav .options a.active,
+.side_nav .options a.router-link-active,
+.side_nav .options a.router-link-exact-active,
+.side_nav .options li:hover a{
+    color: var(--color4);
+    background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .088) 50%, transparent);
+    border-left-color: #3b7ddd;
+}
+/* .side_nav .options li:hover {} */
+.report_app_right .report_app_right_top{
+    background-color: var(--white);
+    box-shadow: 0 0 2rem 0 rgba(33,37,41,.1);
+    padding: 0.875rem 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.report_app_right .report_app_right_top .left a{
+    color: var(--dark);
+}
+.report_app_right .report_app_right_top .middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+}
+.report_app_right .report_app_right_top .middle p{
+    color: var(--dark);
+    border: 1px solid var(--color3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'solaiman_lipi';
+
+}
+.report_app_right .report_app_right_top .right a{
+    color: var(--dark);
+    border: none;
+}
+.report_app_right .report_app_right_top .right{
+    /* color: var(--dark); */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.report_app_right .report_app_right_top .right ul{
+    /* color: var(--dark); */
+    /* position: relative; */
+    top: 60px;
+}
+/* .report_app_right header .left{} */
+.route_body{
+    padding: 0.875rem;
+}
+.route_content{
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+}
+/* .form_label{
+    width: 200px;
+}
+.form_input{
+    flex: 1;
+} */
+/* .dofa_heading{
+    font-size: 18px;
+    margin-bottom: 10px;
+} */
+.dropdown-menu {
+    background-color: var(--white);
+    position: absolute;
+    border-radius: 0;
+    box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,.05);
+    /* top: 161px; */
+}
+
+.dropdown-menu.show{
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: dropdownAnimation;
+    animation-timing-function: ease;
+    top: 30px !important;
+}
+.dropdown-menu .dropdown-item{
+    background-color: transparent;
+    border: 0;
+    border-radius: 5px;
+    clear: both;
+    color: var(--color6);
+    display: block;
+    font-weight: 400;
+    padding: 5px 20px;
+    text-align: inherit;
+    white-space: nowrap;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background .1s ease-in-out, color .1s ease-in-out;
+}
+.action{
+    min-width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a{
+        text-wrap: nowrap;
+    }
+
+}
+.label_width{
+    width: 215px;
+}
+.card .card-header,
+.card .card-header h1{
+    font-family: 'solaiman_lipi';
+}
+table{
+    font-family: 'solaiman_lipi';
+}
+
+/* FormInput component desigen */
+.form_label{
+    width: 200px;
+    flex:2;
+}
+.form_label label{
+    font-size: 16px;
+    font-family: 'solaiman_lipi';
+}
+.form_input{
+    flex: 1;
+}
+.form_input input{
+    min-width: 70px;
+    padding: 5px 5px;
+    text-align: center;
+
+}
+
+
+/* FormInput component design */
+
+.height-fit-content{
+    height:fit-content;
+}
+
+.previous_next_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_width_95px{
+    width: 95px;
+}
+.scrollbar_width_none{
+    scrollbar-width: none;
+}
+
+.notes{
+    font-family: 'solaiman_lipi';
+    padding: 10px 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+
+}
+.max_with_550_auto{
+    max-width: 550px;
+    margin: auto;
+}
+

@@ -1,0 +1,254 @@
+//--------------------------\\
+//-------- Dawat ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/Dawat/ThanaDawat1RegularGroupWise -m
+php artisan make:controller Report/Thana/Dawat/ThanaDawat1RegularGroupWiseController
+php artisan make:seeder Report/Thana/Dawat/ThanaDawat1RegularGroupWisesTableSeeder
+
+php artisan make:model Report/Thana/Dawat/ThanaDawat2PersonalAndTarget -m
+php artisan make:controller Report/Thana/Dawat/ThanaDawat2PersonalAndTargetController
+php artisan make:seeder Report/Thana/Dawat/ThanaDawat2PersonalAndTargetsTableSeeder
+
+php artisan make:model Report/Thana/Dawat/ThanaDawat3GeneralProgramAndOthers -m
+php artisan make:controller Report/Thana/Dawat/ThanaDawat3GeneralProgramAndOthersController
+php artisan make:seeder Report/Thana/Dawat/ThanaDawat3GeneralProgramAndOthersTableSeeder
+
+
+
+php artisan make:model Report/Thana/Dawat/ThanaDawat4GonoSongjogAndDawatOvijan -m
+php artisan make:controller Report/Thana/Dawat/ThanaDawat4GonoSongjogAndDawatOvijanController
+php artisan make:seeder Report/Thana/Dawat/ThanaDawat4GonoSongjogAndDawatOvijansTableSeeder
+
+php artisan make:model Report/Thana/Dawat/ThanaDawat5Jonoshadharon -m
+php artisan make:controller Report/Thana/Dawat/ThanaDawat5JonoshadharonController
+php artisan make:seeder Report/Thana/Dawat/ThanaDawat5JonoshadharonsTableSeeder
+
+
+//--------------------------\\
+//-------- Department ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/Department/ThanaDepartment1TalimulQuran -m
+php artisan make:controller Report/Thana/Department/ThanaDepartment1TalimulQuranController
+php artisan make:seeder Report/Thana/Department/ThanaDepartment1TalimulQuransTableSeeder
+
+php artisan make:model Report/Thana/Department/ThanaDepartment2MohollaVittikDawat -m
+php artisan make:controller Report/Thana/Department/ThanaDepartment2MohollaVittikDawatController
+php artisan make:seeder Report/Thana/Department/ThanaDepartment2MohollaVittikDawatsTableSeeder
+
+php artisan make:model Report/Thana/Department/ThanaDepartment3JuboSomajDawat -m
+php artisan make:controller Report/Thana/Department/ThanaDepartment3JuboSomajDawatController
+php artisan make:seeder Report/Thana/Department/ThanaDepartment3JuboSomajDawatsTableSeeder
+
+php artisan make:model Report/Thana/Department/ThanaDepartment4DifferentJobHoldersDawat -m
+php artisan make:controller Report/Thana/Department/ThanaDepartment4DifferentJobHoldersDawatController
+php artisan make:seeder Report/Thana/Department/ThanaDepartment4DifferentJobHoldersDawatsTableSeeder
+
+php artisan make:model Report/Thana/Department/ThanaDepartment5ParibarikDawat -m
+php artisan make:controller Report/Thana/Department/ThanaDepartment5ParibarikDawatController
+php artisan make:seeder Report/Thana/Department/ThanaDepartment5ParibarikDawatsTableSeeder
+
+php artisan make:model Report/Thana/Department/ThanaDepartment6MosjidDawahInfomationCenter -m
+php artisan make:controller Report/Thana/Department/ThanaDepartment6MosjidDawahInfomationCenterController
+php artisan make:seeder Report/Thana/Department/ThanaDepartment6MosjidDawahInfomationCentersTableSeeder
+
+php artisan make:model Report/Thana/Department/ThanaDepartment7DawatInTechnology -m
+php artisan make:controller Report/Thana/Department/ThanaDepartment7DawatInTechnologyController
+php artisan make:seeder Report/Thana/Department/ThanaDepartment7DawatInTechnologiesTableSeeder
+
+php artisan make:model Report/Thana/Department/ThanaDepartment8DawatInCulturalActivity -m
+php artisan make:controller Report/Thana/Department/ThanaDepartment8DawatInCulturalActivityController
+php artisan make:seeder Report/Thana/Department/ThanaDepartment8DawatInCulturalActivitiesTableSeeder
+
+
+//--------------------------\\
+//-------- DawahAndProkashona ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/DawahAndProkashona/ThanaDawahAndProkashona -m
+php artisan make:controller Report/Thana/DawahAndProkashona/ThanaDawahAndProkashonaController
+php artisan make:seeder Report/Thana/DawahAndProkashona/ThanaDawahAndProkashonasTableSeeder
+
+//--------------------------\\
+//-------- Kormosuci ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/Kormosuci/ThanaKormosuciBastobayon -m
+php artisan make:controller Report/Thana/Kormosuci/ThanaKormosuciBastobayonController
+php artisan make:seeder Report/Thana/Kormosuci/ThanaKormosuciBastobayonsTableSeeder
+
+
+//--------------------------\\
+//-------- Songothon ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon1Jonosokti -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon1JonosoktiController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon1JonosoktisTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon2AssociateMember -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon2AssociateMemberController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon2AssociateMembersTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon3DepartmentalInformation -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon3DepartmentalInformationController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon3DepartmentalInformationTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon4OrganizationalStructure -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon4OrganizationalStructureController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon4OrganizationalStructuresTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon5DawatAndParibarikUnit -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon5DawatAndParibarikUnitController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon5DawatAndParibarikUnitsTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon6EmarotKayem -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon6EmarotKayemController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon6EmarotKayemsTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon7BidayiStudentsConnect -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon7BidayiStudentsConnectController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon7BidayiStudentsConnectsTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon8AssociateAndSideOrganization -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon8AssociateAndSideOrganizationController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon8AssociateAndSideOrganizationsTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon9Sofor -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon9SoforController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon9SoforsTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon10IyanotData -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon10IyanotDataController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon10IyanotDataTableSeeder
+
+php artisan make:model Report/Thana/Songothon/ThanaSongothon11SangothonikBoithok -m
+php artisan make:controller Report/Thana/Songothon/ThanaSongothon11SangothonikBoithokController
+php artisan make:seeder Report/Thana/Songothon/ThanaSongothon11SangothonikBoithoksTableSeeder
+
+
+
+//--------------------------\\
+//-------- Proshikkhon ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/Proshikkhon/ThanaProshikkhon1Tarbiat -m
+php artisan make:controller Report/Thana/Proshikkhon/ThanaProshikkhon1TarbiatController
+php artisan make:seeder Report/Thana/Proshikkhon/ThanaProshikkhon1TarbiatsTableSeeder
+
+php artisan make:model Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodOrganizationalActivity -m
+php artisan make:controller Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodOrganizationalActivitieController
+php artisan make:seeder Report/Thana/Proshikkhon/ThanaProshikkhon2ManobShompodOrganizationalActivitiesTableSeeder
+
+php artisan make:model Report/Thana/Proshikkhon/ThanaProshikkhon3ManobShompodTrainingCourse -m
+php artisan make:controller Report/Thana/Proshikkhon/ThanaProshikkhon3ManobShompodTrainingCourseController
+php artisan make:seeder Report/Thana/Proshikkhon/ThanaProshikkhon3ManobShompodTrainingCoursesTableSeeder
+
+
+
+//--------------------------\\
+//-------- Shomajsheba ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/Shomajsheba/ThanaShomajsheba1PreparingTrainedSocialWorker -m
+php artisan make:controller Report/Thana/Shomajsheba/ThanaShomajsheba1PreparingTrainedSocialWorkerController
+php artisan make:seeder Report/Thana/Shomajsheba/ThanaShomajsheba1PreparingTrainedSocialWorkersTableSeeder
+
+php artisan make:model Report/Thana/Shomajsheba/ThanaShomajsheba2PersonalSocialWork -m
+php artisan make:controller Report/Thana/Shomajsheba/ThanaShomajsheba2PersonalSocialWorkController
+php artisan make:seeder Report/Thana/Shomajsheba/ThanaShomajsheba2PersonalSocialWorksTableSeeder
+
+php artisan make:model Report/Thana/Shomajsheba/ThanaShomajsheba3GroupSocialWork -m
+php artisan make:controller Report/Thana/Shomajsheba/ThanaShomajsheba3GroupSocialWorkController
+php artisan make:seeder Report/Thana/Shomajsheba/ThanaShomajsheba3GroupSocialWorksTableSeeder
+
+php artisan make:model Report/Thana/Shomajsheba/ThanaShomajsheba4InstitutionalSocialWork -m
+php artisan make:controller Report/Thana/Shomajsheba/ThanaShomajsheba4InstitutionalSocialWorkController
+php artisan make:seeder Report/Thana/Shomajsheba/ThanaShomajsheba4InstitutionalSocialWorksTableSeeder
+
+php artisan make:model Report/Thana/Shomajsheba/ThanaShomajsheba5HealthAndFamilyKollan -m
+php artisan make:controller Report/Thana/Shomajsheba/ThanaShomajsheba5HealthAndFamilyKollanController
+php artisan make:seeder Report/Thana/Shomajsheba/ThanaShomajsheba5HealthAndFamilyKollansTableSeeder
+
+php artisan make:model Report/Thana/Shomajsheba/ThanaShomajsheba6EducationAndResearchActivity -m
+php artisan make:controller Report/Thana/Shomajsheba/ThanaShomajsheba6EducationAndResearchActivityController
+php artisan make:seeder Report/Thana/Shomajsheba/ThanaShomajsheba6EducationAndResearchActivitiesTableSeeder
+
+php artisan make:model Report/Thana/Shomajsheba/ThanaShomajsheba7Expense -m
+php artisan make:controller Report/Thana/Shomajsheba/ThanaShomajsheba7ExpenseController
+php artisan make:seeder Report/Thana/Shomajsheba/ThanaShomajsheba7ExpensesTableSeeder
+
+
+//--------------------------\\
+//-------- Rastrio ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/Rastrio/ThanaRastrio1PoliticalCommunication -m
+php artisan make:controller Report/Thana/Rastrio/ThanaRastrio1PoliticalCommunicationController
+php artisan make:seeder Report/Thana/Rastrio/ThanaRastrio1PoliticalCommunicationsTableSeeder
+
+php artisan make:model Report/Thana/Rastrio/ThanaRastrio2KormoshuchiBastobayon -m
+php artisan make:controller Report/Thana/Rastrio/ThanaRastrio2KormoshuchiBastobayonController
+php artisan make:seeder Report/Thana/Rastrio/ThanaRastrio2KormoshuchiBastobayonsTableSeeder
+
+php artisan make:model Report/Thana/Rastrio/ThanaRastrio3DiboshPalon -m
+php artisan make:controller Report/Thana/Rastrio/ThanaRastrio3DiboshPalonController
+php artisan make:seeder Report/Thana/Rastrio/ThanaRastrio3DiboshPalonsTableSeeder
+
+php artisan make:model Report/Thana/Rastrio/ThanaRastrio4ElectionActivity -m
+php artisan make:controller Report/Thana/Rastrio/ThanaRastrio4ElectionActivityController
+php artisan make:seeder Report/Thana/Rastrio/ThanaRastrio4ElectionActivitiesTableSeeder
+------------
+php artisan make:model Report/Thana/Rastrio/ThanaRastrio5BroadcastAndMedia -m
+php artisan make:controller Report/Thana/Rastrio/ThanaRastrio5BroadcastAndMediaController
+php artisan make:seeder Report/Thana/Rastrio/ThanaRastrio5BroadcastAndMediasTableSeeder
+
+php artisan make:model Report/Thana/Rastrio/ThanaRastrio6HumanRights -m
+php artisan make:controller Report/Thana/Rastrio/ThanaRastrio6HumanRightsController
+php artisan make:seeder Report/Thana/Rastrio/ThanaRastrio6HumanRightsTableSeeder
+
+php artisan make:model Report/Thana/Rastrio/ThanaRastrio7IndustryAndTrade -m
+php artisan make:controller Report/Thana/Rastrio/ThanaRastrio7IndustryAndTradeController
+php artisan make:seeder Report/Thana/Rastrio/ThanaRastrio7IndustryAndTradesTableSeeder
+
+php artisan make:model Report/Thana/Rastrio/ThanaRastrio8EntrepreneurialDevelopment -m
+php artisan make:controller Report/Thana/Rastrio/ThanaRastrio8EntrepreneurialDevelopmentController
+php artisan make:seeder Report/Thana/Rastrio/ThanaRastrio8EntrepreneurialDevelopmentsTableSeeder
+
+
+
+
+//--------------------------\\
+//-------- Bm Expense ---------\\
+//--------------------------\\
+
+php artisan make:model Bm/Thana/Expense/ThanaBmExpenseCategory -m
+php artisan make:controller Bm/Thana/Expense/ThanaBmExpenseCategoryController
+php artisan make:seeder Bm/Thana/Expense/ThanaBmExpenseCategoriesTableSeeder
+
+php artisan make:model Bm/Thana/Expense/ThanaBmExpense -m
+php artisan make:controller Bm/Thana/Expense/ThanaBmExpenseController
+php artisan make:seeder Bm/Thana/Expense/ThanaBmExpensesTableSeeder
+
+//--------------------------\\
+//-------- Montobbo ---------\\
+//--------------------------\\
+
+php artisan make:model Report/Thana/Montobbo/ThanaMontobbo -m
+php artisan make:controller Report/Thana/Montobbo/ThanaMontobboController
+php artisan make:seeder Report/Thana/Montobbo/ThanaMontobbosTableSeeder
+
+//--------------------------\\
+//-------- Bm Income ---------\\
+//--------------------------\\
+
+php artisan make:model Bm/Thana/Income/ThanaBmIncomeCategory -m
+php artisan make:controller Bm/Thana/Income/ThanaBmIncomeCategoryController
+php artisan make:seeder Bm/Thana/Income/ThanaBmIncomeCategoriesTableSeeder
+
+php artisan make:model Bm/Thana/Income/ThanaBmIncome -m
+php artisan make:controller Bm/Thana/Income/ThanaBmIncomeController
+php artisan make:seeder Bm/Thana/Income/ThanaBmIncomesTableSeeder
+
+fsdfas
