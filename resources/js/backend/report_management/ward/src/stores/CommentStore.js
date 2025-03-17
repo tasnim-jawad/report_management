@@ -30,7 +30,7 @@ export const store = defineStore(`comment_store`, {
         },
 
         get_column_comment_all: async function (table_name, column_name) {
-
+            console.log("mo", this.month_year);
             let params = {
                 month: this.month_year,
                 org_type: this.org_type,
@@ -40,7 +40,7 @@ export const store = defineStore(`comment_store`, {
                 comment_text: this.comment_text,
             }
 
-            console.log("comment store -----", params);
+            console.log("from comment store:- params-----", params);
 
             let response = await axios.get('/comment/column-comment-all', {
                 params: {
