@@ -417,3 +417,16 @@ th {
     border-bottom: 2px dashed black;
     flex: 1;
 }
+
+.number_of_comments {
+    position: absolute;
+    line-height: 11px;
+    width: 11px;
+    font-size: 9px;
+    background-color: #ff0c0c;
+    border-radius: 50%;
+    color: white;
+    top: -8px;
+    right: -7px;
+    z-index: 999;
+}

@@ -9,6 +9,7 @@ export const store = defineStore(`comment_store`, {
         column_name: null,
         comment_text: '',
         all_comment: [],
+        all_comment_count: [],
     }),
     // getters: {
     //     $init: () => {
@@ -105,6 +106,30 @@ export const store = defineStore(`comment_store`, {
 
             // Reset the textarea after submitting
             this.comment_text = '';
+        },
+
+        comment_count: async function () {
+            let params = {
+                month: `${this.month_year}-01`,
+                org_type: this.org_type,
+                org_type_id: this.org_type_id,
+            }
+
+            console.log("comment_count_params", params);
+
+
+            let response = await axios.get('/comment/count-comment', {
+                params: {
+                    month: `${this.month_year}-01`,
+                    org_type: this.org_type,
+                    org_type_id: this.org_type_id,
+                }
+            })
+            console.log(response);
+
+            if (response.data.status == 'success') {
+                this.all_comment_count = response.data.data;
+            }
         }
     }
 

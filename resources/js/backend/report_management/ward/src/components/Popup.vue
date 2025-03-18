@@ -3,7 +3,10 @@
         <span class="i_icon" @click="toggle_popup">
             <i class="fa fa-list" ></i>
         </span>
-        <div class="unit_data_popup" :class="{active:is_popup_visible}">
+        <div v-if="number_of_comment" class="number_of_comments d-flex justify-content-center text-center">
+            <p>{{ number_of_comment }}</p>
+        </div>
+        <div class="unit_data_popup text-center" :class="{active:is_popup_visible}">
             <p class="bg-primary text-white">ইউনিটের মাসিক কাজ</p>
             <table class="table table-striped mb-0">
                 <tbody class="">
@@ -28,8 +31,6 @@
                     <p class="ps-3 mb-0 font_size_12">{{ comment?.comment }}</p>
                 </div>
             </div>
-               
-            
         </div>
     </div>
 </template>
@@ -67,7 +68,8 @@ export default {
         return {
             is_popup_visible: false,
             unit_wise_data:[],
-            total:null
+            total:null,
+            number_of_comment: 0,
         };
     },
     // mounted:function(){
@@ -127,8 +129,41 @@ export default {
             month_year_store: 'month_year',
             comment_text_store: 'comment_text',
             all_comment_store: 'all_comment',
-            all_comment_store: 'all_comment',
+            all_comment_count: 'all_comment_count',
         }),
+
+        is_ready_to_count: function () {
+            return (
+                this.org_type_store &&
+                this.org_type_id_store &&
+                this.month_year_store
+            );
+        },
+    },
+
+    watch: {
+        // table_name: {
+        //     immediate: true,
+        //     handler(new_value) {
+        //         this.table_name_store = new_value;
+        //     },
+        // },
+        // field_title: {
+        //     immediate: true,
+        //     handler(new_value) {
+        //         this.column_name_store = new_value;
+        //     },
+        // },
+        all_comment_count: function () {
+            if (this.all_comment_count && this.table_name && this.field_title) {
+                const result = this.all_comment_count.find(
+                    (item) => item.table_name === this.table_name && item.column_name === this.field_title
+                );
+
+                this.number_of_comment = result.number_of_comment
+            }
+
+        }
     },
 
 

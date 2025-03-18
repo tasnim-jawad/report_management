@@ -11979,6 +11979,8 @@
 import axios from "axios";
 import Popup from "../components/Popup.vue";
 import PopupNote from "../components/PopupNote.vue";
+import { store as comment_store } from "../stores/CommentStore";
+import { mapActions, mapWritableState } from "pinia";
 
 export default {
     components: { Popup, PopupNote },
@@ -12071,13 +12073,27 @@ export default {
         };
     },
 
-    created() {
-        this.uploaded_data();
-        // this.income_category()
-        // this.expense_category()
-        // this.bm_category_wise()/
-        // this.bm_expense_category_wise()
-        this.report_status();
+    created: async function () {
+        // this.uploaded_data();
+        // this.report_status();
+
+        try {
+            await this.uploaded_data()
+            await this.report_status()
+
+            // Set the values after uploaded_data() is done
+            this.org_type_store = 'ward';
+            this.org_type_id_store = this.report_header?.ward_info?.id || null;
+            this.month_year_store = this.month || '';
+            this.is_data_are_set = true
+            if (this.is_data_are_set) {
+                console.log("this.is_data_are_set" ,this.is_data_are_set);
+
+                this.comment_count();
+            }
+        } catch (error) {
+            console.error('Error during uploaded_data:', error);
+        }
     },
     watch: {
         "report_sum_data.ward_kormosuci_bastobayons": function () {
@@ -12113,6 +12129,9 @@ export default {
         },
     },
     methods: {
+        ...mapActions(comment_store, {
+            comment_count: 'comment_count'
+        }),
         uploaded_data: async function () {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;
@@ -12645,6 +12664,14 @@ export default {
         },
     },
     computed: {
+        ...mapWritableState(comment_store, {
+            org_type_store: 'org_type',
+            org_type_id_store: 'org_type_id',
+            month_year_store: 'month_year',
+            comment_text_store: 'comment_text',
+            all_comment_store: 'all_comment',
+            is_data_are_set: 'is_data_are_set',
+        }),
         total_dawat: function () {
             const total =
                 Number(

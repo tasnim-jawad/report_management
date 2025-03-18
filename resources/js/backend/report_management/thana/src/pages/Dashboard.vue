@@ -191,6 +191,8 @@ export default {
             }
         },
         ward_report_view: function (ward_id, report_month) {
+            console.log(ward_id, report_month);
+            
             // window.open(`/ward/ward/report-check?ward_id=${ward_id}&month=${report_month}`)
             // window.open(`/ward/report-check?ward_id=${ward_id}&month=${report_month}`)
             if (ward_id, report_month) {
