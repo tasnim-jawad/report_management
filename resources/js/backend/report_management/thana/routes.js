@@ -23,7 +23,7 @@ const router = createRouter({
         },
         {
             name: "WardReportCheck",
-            path: "/unit-report-check/:month/:unit_id",
+            path: "/ward-report-check/:month/:ward_id",
             component: WardReportCheck,
             props: true,
         },

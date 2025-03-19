@@ -197,7 +197,7 @@ export default {
             // window.open(`/ward/report-check?ward_id=${ward_id}&month=${report_month}`)
             if (ward_id, report_month) {
                 this.$router.push({
-                    name: 'wardReportCheck',
+                    name: 'WardReportCheck',
                     params: {
                         month: report_month,
                         ward_id: ward_id

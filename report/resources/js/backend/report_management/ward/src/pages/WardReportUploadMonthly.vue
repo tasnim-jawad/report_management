@@ -12117,7 +12117,7 @@ export default {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;
             console.log("month from uploaded_data load", month);
-            let res = await axios.get("/ward/uploaded-data-monthly", {
+            let res = await axios.get("thana/ward/report-check", {
                 params: {
                     month: month,
                     user_id: user_id,

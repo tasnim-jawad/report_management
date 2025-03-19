@@ -2234,6 +2234,57 @@ class WardController extends Controller
             'in_total' => $in_total,
         ], 200);
     }
+    public function report_check()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'ward_id' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+        $ward_id = request()->ward_id;
+
+        $start_month = request()->month;
+        $end_month = request()->month;
+        $org_type = 'ward';
+        $org_type_id = $ward_id;
+        $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
+        $is_need_sum = false;
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
+        // dd($datas);
+
+               // -------------------------- bm previous report ------------------------------------
+               $carbon_start_month = Carbon::parse($start_month);
+               $query = WardBmIncome::query();
+               $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
+                   ->where('ward_id', $ward_id)
+                   ->where('report_approved_status', 'approved');
+               $total_previous_income = $filter->sum('amount');
+
+               $query = WardBmExpense::query();
+               $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
+                   ->where('ward_id', $ward_id)
+                   ->where('report_approved_status', 'approved');
+               $total_previous_expense = $filter->sum('amount');
+               $total_previous =  $total_previous_income - $total_previous_expense;
+               $total_current_income =  $total_previous + $datas->income_report->total_amount;
+               $in_total =  $total_current_income - $datas->expense_report->total_amount;
+               // -------------------------- bm previous report ------------------------------------
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $datas,
+
+            'total_previous' => $total_previous,
+            'total_current_income' => $total_current_income,
+            'in_total' => $in_total,
+        ], 200);
+    }
 
     public function report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'], $is_need_sum = true, $report_info_ids = null)
     {
