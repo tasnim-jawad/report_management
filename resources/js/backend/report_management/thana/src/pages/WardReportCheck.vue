@@ -85,7 +85,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat1_regular_group_wises?.how_many_groups_are_out) }}
                                         <comment 
-                                            :table_name="'dawat1_regular_group_wises'" 
+                                            :table_name="'ward_dawat1_regular_group_wises'" 
                                             :column_name="'how_many_groups_are_out'" 
                                         />
                                     </div>
@@ -94,7 +94,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat1_regular_group_wises?.number_of_participants) }}
                                         <comment 
-                                            :table_name="'dawat1_regular_group_wises'" 
+                                            :table_name="'ward_dawat1_regular_group_wises'" 
                                             :column_name="'number_of_participants'" 
                                         />
                                     </div>
@@ -103,7 +103,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat1_regular_group_wises?.how_many_have_been_invited) }}
                                         <comment 
-                                            :table_name="'dawat1_regular_group_wises'" 
+                                            :table_name="'ward_dawat1_regular_group_wises'" 
                                             :column_name="'how_many_have_been_invited'" 
                                         />
                                     </div>
@@ -112,7 +112,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat1_regular_group_wises?.how_many_associate_members_created) }}
                                         <comment 
-                                            :table_name="'dawat1_regular_group_wises'" 
+                                            :table_name="'ward_dawat1_regular_group_wises'" 
                                             :column_name="'how_many_associate_members_created'" 
                                         />
                                     </div>
@@ -144,7 +144,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat2_personal_and_targets?.total_rokon) }}
                                         <comment 
-                                            :table_name="'dawat2_personal_and_targets'" 
+                                            :table_name="'ward_dawat2_personal_and_targets'" 
                                             :column_name="'total_rokon'" 
                                         />
                                     </div>
@@ -153,7 +153,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat2_personal_and_targets?.total_worker) }}
                                         <comment 
-                                            :table_name="'dawat2_personal_and_targets'" 
+                                            :table_name="'ward_dawat2_personal_and_targets'" 
                                             :column_name="'total_worker'" 
                                         />
                                     </div>
@@ -165,7 +165,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat2_personal_and_targets?.how_many_have_been_invited) }}
                                         <comment 
-                                            :table_name="'dawat2_personal_and_targets'" 
+                                            :table_name="'ward_dawat2_personal_and_targets'" 
                                             :column_name="'how_many_have_been_invited'" 
                                         />
                                     </div>
@@ -180,7 +180,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat2_personal_and_targets?.how_many_were_give_dawat_rokon) }}
                                         <comment 
-                                            :table_name="'dawat2_personal_and_targets'" 
+                                            :table_name="'ward_dawat2_personal_and_targets'" 
                                             :column_name="'how_many_were_give_dawat_rokon'" 
                                         />
                                     </div>
@@ -189,7 +189,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat2_personal_and_targets?.how_many_were_give_dawat_worker) }}
                                         <comment 
-                                            :table_name="'dawat2_personal_and_targets'" 
+                                            :table_name="'ward_dawat2_personal_and_targets'" 
                                             :column_name="'how_many_were_give_dawat_worker'" 
                                         />
                                     </div>
@@ -201,7 +201,7 @@
                                     <div class="parent_popup">
                                         {{ formatBangla(report_sum_data?.ward_dawat2_personal_and_targets?.how_many_associate_members_created) }}
                                         <comment 
-                                            :table_name="'dawat2_personal_and_targets'" 
+                                            :table_name="'ward_dawat2_personal_and_targets'" 
                                             :column_name="'how_many_associate_members_created'" 
                                         />
                                     </div>
@@ -11752,6 +11752,41 @@
                 ><i class="fa-solid fa-door-open"></i
             ></a>
         </router-link>
+
+        <!-- Modal -->
+        <div class="modal fade" id="comment_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="comment_form_container">
+                            <form class="mb-2">
+                                <div class="mb-2">
+                                    <label for="comment" class="form-label">Add Comment</label>
+                                    <textarea name="comment" id="comment" class="form-control"
+                                        v-model="comment_text_store"></textarea>
+                                </div>
+                                <a href="#" class="btn btn-success" @click.prevent="comment_set">Add
+                                    comment</a>
+                            </form>
+                        </div>
+                        <pre>{{ all_comment_store ? "" : 'No data available' }}</pre> <!-- Debug output -->
+                        <div class="all_comment" v-for="(comment, index) in all_comment_store" :key="index">
+                            <p> <strong>{{ comment?.user?.full_name }} :- </strong> {{ comment?.comment }}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -11760,6 +11795,7 @@ import axios from "axios";
 import Popup from "../components/Popup.vue";
 import PopupNote from "../components/PopupNote.vue";
 import { store as comment_store } from "../stores/CommentStore";
+import { store as report_store } from "../stores/ReportStore";
 import { mapActions, mapWritableState } from "pinia";
 import Comment from "../components/Comment.vue";
 
@@ -11855,23 +11891,12 @@ export default {
     },
 
     created: async function () {
-        // this.uploaded_data();
-        // this.report_status();
 
         try {
             await this.uploaded_data()
-            await this.report_status()
-
-            // Set the values after uploaded_data() is done
             this.org_type_store = 'ward';
             this.org_type_id_store = this.report_header?.ward_info?.id || null;
             this.month_year_store = this.month || '';
-            // this.is_data_are_set = true
-            // if (this.is_data_are_set) {
-            //     console.log("this.is_data_are_set" ,this.is_data_are_set);
-
-            //     this.comment_count();
-            // }
         } catch (error) {
             console.error('Error during uploaded_data:', error);
         }
@@ -11892,37 +11917,52 @@ export default {
         "report_sum_data.ward_rastrio3_dibosh_palons": function () {
             this.average_data("ward_rastrio3_dibosh_palons");
         },
-        // kormosuci: function () {
-        //     this.average_data();
-        // },
-        // songothon9: function () {
-        //     this.average_data();
-        // },
-        // proshikkhon1: function () {
-        //     this.average_data();
-        // },
-        // rastrio2: function () {
-        //     this.average_data();
-        // },
-
+   
         total_income: function () {
             console.log(typeof this.total_income);
+        },
+
+        report_header: {
+            handler() {
+                this.update_store();
+            },
+            deep: true,
+        },
+        month(newMonth) {
+            this.update_store();
+        },
+        column_name_store: function (new_value) {
+            console.log(new_value)
         },
     },
     methods: {
         ...mapActions(comment_store, {
-            comment_count: 'comment_count'
+            comment_set: 'comment_set'
         }),
+        ...mapActions(report_store, {
+            set_ward_report_status: 'set_ward_report_status',
+            check_ward_report_status: 'check_ward_report_status',
+        }),
+        update_store() {
+            this.org_type_store = 'ward';
+            this.org_type_id_store = this.report_header?.ward_info?.id || null;
+            this.month_year_store = this.month || '';
+        },
+
         uploaded_data: async function () {
+            console.log("uploaded data from report check");
+            
             const month = this.$route.params.month;
             const ward_id = this.$route.params.ward_id;
-            console.log("month from uploaded_data load", month);
+            console.log("month from uploaded_data load", month,ward_id);
             let res = await axios.get("/ward/report-check", {
                 params: {
                     month: month,
-                    user_id: user_id,
+                    ward_id: ward_id,
                 },
             });
+            console.log("res from ward", res);
+            
 
             if (res.data.status == "success") {
                 console.log("res", res.data.data.end_month);
@@ -12034,108 +12074,6 @@ export default {
             }
         },
 
-        // average_data: async function () {
-        //     // -------------- kormosuci --------------
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.unit_masik_sadaron_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.kormosuci.unit_masik_sadaron_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dawati_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.dawati_sova_uposthiti ?? 0) / (this.kormosuci.dawati_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.alochona_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.alochona_sova_uposthiti ?? 0) / (this.kormosuci.alochona_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.sudhi_somabesh =
-        //         this.kormosuci ? Math.round((this.kormosuci.sudhi_somabesh_uposthiti ?? 0) / (this.kormosuci.sudhi_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.siratunnabi_mahfil =
-        //         this.kormosuci ? Math.round((this.kormosuci.siratunnabi_mahfil_uposthiti ?? 0) / (this.kormosuci.siratunnabi_mahfil_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.eid_reunion =
-        //         this.kormosuci ? Math.round((this.kormosuci.eid_reunion_uposthiti ?? 0) / (this.kormosuci.eid_reunion_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dars =
-        //         this.kormosuci ? Math.round((this.kormosuci.dars_uposthiti ?? 0) / (this.kormosuci.dars_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.tafsir =
-        //         this.kormosuci ? Math.round((this.kormosuci.tafsir_uposthiti ?? 0) / (this.kormosuci.tafsir_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dawati_jonosova =
-        //         this.kormosuci ? Math.round((this.kormosuci.dawati_jonosova_uposthiti ?? 0) / (this.kormosuci.dawati_jonosova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.iftar_mahfil_personal =
-        //         this.kormosuci ? Math.round((this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.iftar_mahfil_samostic =
-        //         this.kormosuci ? Math.round((this.kormosuci.iftar_mahfil_samostic_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_samostic_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.cha_chakra =
-        //         this.kormosuci ? Math.round((this.kormosuci.cha_chakra_uposthiti ?? 0) / (this.kormosuci.cha_chakra_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.samostic_khawa =
-        //         this.kormosuci ? Math.round((this.kormosuci.samostic_khawa_uposthiti ?? 0) / (this.kormosuci.samostic_khawa_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.sikkha_sofor =
-        //         this.kormosuci ? Math.round((this.kormosuci.sikkha_sofor_uposthiti ?? 0) / (this.kormosuci.sikkha_sofor_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.kirat_protijogita =
-        //         this.kormosuci ? Math.round((this.kormosuci.kirat_protijogita_uposthiti ?? 0) / (this.kormosuci.kirat_protijogita_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.hamd_nat_protijogita =
-        //         this.kormosuci ? Math.round((this.kormosuci.hamd_nat_protijogita_uposthiti ?? 0) / (this.kormosuci.hamd_nat_protijogita_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.others =
-        //         this.kormosuci ? Math.round((this.kormosuci.others_uposthiti ?? 0) / (this.kormosuci.others_total ?? 1)) : 0;
-        //     // -------------- kormosuci --------------
-
-        //     // -------------- songothon9 --------------
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.word_sura_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.word_sura_boithok_uposthiti ?? 0) / (this.songothon9.word_sura_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.kormoporishod_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.kormoporishod_boithok_uposthiti ?? 0) / (this.songothon9.kormoporishod_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.team_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.team_boithok_uposthiti ?? 0) / (this.songothon9.team_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.word_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.word_boithok_uposthiti ?? 0) / (this.songothon9.word_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.masik_sodosso_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.masik_sodosso_boithok_uposthiti ?? 0) / (this.songothon9.masik_sodosso_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.unit_kormi_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.unit_kormi_boithok_uposthiti ?? 0) / (this.songothon9.unit_kormi_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.ulama_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.ulama_somabesh_uposthiti ?? 0) / (this.songothon9.ulama_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.jubok_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.jubok_somabesh_uposthiti ?? 0) / (this.songothon9.jubok_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.sromik_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.sromik_somabesh_uposthiti ?? 0) / (this.songothon9.sromik_somabesh_total ?? 1)) : 0;
-        //     // -------------- songothon9 --------------
-
-        //     // -------------- proshikkhon1 --------------
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.unit_tarbiati_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.unit_tarbiati_boithok_uposthiti ?? 0) / (this.proshikkhon1.unit_tarbiati_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.ward_kormi_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.ward_kormi_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.ward_kormi_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_shibir =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.urdhotono_sikkha_shibir_uposthiti ?? 0) / (this.proshikkhon1.urdhotono_sikkha_shibir ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.urdhotono_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.urdhotono_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.gono_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.gono_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_noisho_ibadot =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.gono_noisho_ibadot_uposthiti ?? 0) / (this.proshikkhon1.gono_noisho_ibadot ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.alochona_chokro =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.alochona_chokro_uposthiti ?? 0) / (this.proshikkhon1.alochona_chokro_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.darsul_quran =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.darsul_quran_uposthiti ?? 0) / (this.proshikkhon1.darsul_quran_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.sohih_tilawat =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.sohih_tilawat_uposthiti ?? 0) / (this.proshikkhon1.sohih_tilawat_program ?? 1)) : 0;
-        //     // -------------- proshikkhon1 --------------
-
-        //     // -------------- rastrio2 --------------
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.centrally_announced_political_program =
-        //         this.rastrio2 ? Math.round((this.rastrio2.centrally_announced_political_program_attend ?? 0) / (this.rastrio2.centrally_announced_political_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_jonoshova =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_jonoshova_attend ?? 0) / (this.rastrio2.locally_announced_jonoshova ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_shomabesh =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_shomabesh_attend ?? 0) / (this.rastrio2.locally_announced_shomabesh ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_michil =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_michil_attend ?? 0) / (this.rastrio2.locally_announced_michil ?? 1)) : 0;
-        //     // -------------- rastrio2 --------------
-
-        //     // -------------- rastrio3 --------------
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.shadhinota_o_jatio_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.shadhinota_o_jatio_dibosh_attend ?? 0) / (this.rastrio3.shadhinota_o_jatio_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.bijoy_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.bijoy_dibosh_attend ?? 0) / (this.rastrio3.bijoy_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.mattrivasha_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.mattrivasha_dibosh_attend ?? 0) / (this.rastrio3.mattrivasha_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.others =
-        //         this.rastrio3 ? Math.round((this.rastrio3.others_attend ?? 0) / (this.rastrio3.others_total_programs ?? 1)) : 0;
-        //     // -------------- rastrio3 --------------
-        // },
 
         formatBangla(number) {
             if (
@@ -12402,9 +12340,11 @@ export default {
 
         report_status: async function () {
             const month = this.$route.params.month;
+            const ward_id = this.$route.params.ward_id;
             let response = await axios.get("/ward/report-status", {
                 params: {
                     month: month,
+                    ward_id: ward_id,
                 },
             });
             if (response.data.status == "success") {

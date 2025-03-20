@@ -351,6 +351,7 @@ Route::group(['prefix' => 'ward'], function () {
     Route::get('/income-category-wise', [App\Http\Controllers\Ward\WardController::class, 'income_category_wise']);
     Route::get('/expense-category-wise', [App\Http\Controllers\Ward\WardController::class, 'expense_category_wise']);
 
+    Route::get('/report-check', [App\Http\Controllers\Ward\WardController::class, 'report_check']);
     Route::get('/check-report-info', [App\Http\Controllers\Ward\WardController::class, 'check_report_info']);
     Route::get('/check-report-info-in-range', [App\Http\Controllers\Ward\WardController::class, 'check_report_info_in_range']);
     Route::get('/uploaded-data-monthly', [App\Http\Controllers\Ward\WardController::class, 'report_upload_monthly']);

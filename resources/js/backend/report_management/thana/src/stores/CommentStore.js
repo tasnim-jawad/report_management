@@ -77,7 +77,7 @@ export const store = defineStore(`comment_store`, {
                 column_name: this.column_name,
                 comment_text: this.comment_text,
             }
-            console.log("comment store", params);
+            console.log("comment store pdsfasfds", params);
 
             let response = await axios.post('/comment/store', {
                 month: `${this.month_year}-01`,

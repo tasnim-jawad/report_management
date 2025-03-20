@@ -446,20 +446,21 @@
 
 
 
-    Route::group(['prefix' => 'comment'], function () {
-        Route::get('/parent-category', [App\Http\Controllers\Comment\CommentController::class, 'parent_category']);
-        Route::get('/index', [App\Http\Controllers\Comment\CommentController::class, 'index']);
-        Route::get('/column-comment-all', [App\Http\Controllers\Comment\CommentController::class, 'column_comment_all']);
-        Route::get('/count-comment', [App\Http\Controllers\Comment\CommentController::class, 'count_comment']);
+    // Route::group(['prefix' => 'comment'], function () {
+    
+    //     Route::get('/parent-category', [App\Http\Controllers\Comment\CommentController::class, 'parent_category']);
+    //     Route::get('/index', [App\Http\Controllers\Comment\CommentController::class, 'index']);
+    //     Route::get('/column-comment-all', [App\Http\Controllers\Comment\CommentController::class, 'column_comment_all']);
+    //     Route::get('/count-comment', [App\Http\Controllers\Comment\CommentController::class, 'count_comment']);
 
-        Route::get('/all', [App\Http\Controllers\Comment\CommentController::class, 'all']);
-        Route::get('/show/{id}', [App\Http\Controllers\Comment\CommentController::class, 'show']);
-        Route::post('/store', [App\Http\Controllers\Comment\CommentController::class, 'store']);
-        Route::post('/update', [App\Http\Controllers\Comment\CommentController::class, 'update']);
-        Route::post('/soft_delete', [App\Http\Controllers\Comment\CommentController::class, 'soft_delete']);
-        Route::post('/destroy', [App\Http\Controllers\Comment\CommentController::class, 'destroy']);
-        Route::post('/restore', [App\Http\Controllers\Comment\CommentController::class, 'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Comment\CommentController::class, 'bulk_import']);
-    });
+    //     Route::get('/all', [App\Http\Controllers\Comment\CommentController::class, 'all']);
+    //     Route::get('/show/{id}', [App\Http\Controllers\Comment\CommentController::class, 'show']);
+    //     Route::post('/store/thana', [App\Http\Controllers\Comment\CommentController::class, 'store']);
+    //     Route::post('/update', [App\Http\Controllers\Comment\CommentController::class, 'update']);
+    //     Route::post('/soft_delete', [App\Http\Controllers\Comment\CommentController::class, 'soft_delete']);
+    //     Route::post('/destroy', [App\Http\Controllers\Comment\CommentController::class, 'destroy']);
+    //     Route::post('/restore', [App\Http\Controllers\Comment\CommentController::class, 'restore']);
+    //     Route::post('/bulk_import', [App\Http\Controllers\Comment\CommentController::class, 'bulk_import']);
+    // });
 
 
