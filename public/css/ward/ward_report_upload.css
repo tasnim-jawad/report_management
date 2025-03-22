@@ -220,6 +220,9 @@ ul li {
 .width-10px {
     width: 15px;
 }
+.width-130px {
+    width: 130px;
+}
 
 .border_dot {
     border-bottom: 1px dotted black;

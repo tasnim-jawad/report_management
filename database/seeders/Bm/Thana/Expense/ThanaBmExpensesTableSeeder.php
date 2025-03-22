@@ -12,6 +12,6 @@ class ThanaBmExpensesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        dd("php artisan db:seed --class=ModelNameSeeder");
     }
 }

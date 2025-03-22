@@ -50,7 +50,7 @@ export default {
         this.table_name_store = this.table_name;
         this.column_name_store = this.column_name;
 
-        console.log(this.table_name_store, this.column_name_store);
+        // console.log(this.table_name_store, this.column_name_store);
 
     },
     computed: {
