@@ -25,7 +25,7 @@ class OrgThana extends Model
 
     public function org_thana_responsible()
     {
-        return $this->hasMany(OrgThanaResponsible::class);
+        return $this->hasOne(OrgThanaResponsible::class);
     }
 
     public function org_type()

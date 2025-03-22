@@ -86,7 +86,7 @@ class User extends Authenticatable
     }
     public function org_thana_responsible()
     {
-        return $this->hasMany(OrgThanaResponsible::class);
+        return $this->hasOne(OrgThanaResponsible::class);
     }
     public function org_ward_responsibilities()
     {

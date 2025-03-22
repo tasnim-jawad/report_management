@@ -238,17 +238,21 @@ function calculate_songothon3_previous_present($model, $total_approved_report_in
 
 function notification_store($org_type, $org_type_id, $title, $description)
 {
+    // dd($org_type);
     if ($org_type == 'city') {
         $city_id = $org_type_id;
     } elseif ($org_type == 'thana') {
         $thana = OrgThana::find($org_type_id);
         $city_id = $thana->org_city_id;
         $thana_id = $thana->id;
+        $ward_id = null;
+        $unit_id = null;
     } elseif ($org_type == 'ward') {
         $ward = OrgWard::find($org_type_id);
         $city_id = $ward->org_city_id;
         $thana_id = $ward->org_thana_id;
         $ward_id = $ward->id;
+        $unit_id = null;
     } elseif ($org_type == 'unit') {
         $unit = OrgUnit::find($org_type_id);
         $city_id = $unit->org_city_id;

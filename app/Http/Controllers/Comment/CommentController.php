@@ -261,10 +261,10 @@ class CommentController extends Controller
         $org_type_serial = auth()->user()->role;
         $org_type_title = UserRole::where('serial', $org_type_serial)->first()->title;
         $org_responsible = 'org_' . $org_type_title . '_responsible';
-        
-        dd(auth()->user()->org_thana_responsible->responsibility_id);
+
+        // dd(auth()->user()->org_thana_responsible->responsibility_id);
         $commenter_responsibility_id = auth()->user()->$org_responsible?->responsibility_id;
-        dd($commenter_responsibility_id);
+        // dd("dasd",$commenter_responsibility_id);
         $commenter_responsibility_name = $commenter_responsibility_id
             ? Responsibility::find($commenter_responsibility_id)?->title
             : null;
@@ -318,7 +318,7 @@ class CommentController extends Controller
     //     }
     //     $notification = new NotificationStore();
     //     $notification->execute(
-    //         'New comment for' . $carbon_month->format('F Y') . ' report', 
+    //         'New comment for' . $carbon_month->format('F Y') . ' report',
     //         $comment ,
     //         $org_type,
     //         $unit_id,
@@ -426,5 +426,5 @@ class CommentController extends Controller
             'result' => 'activated',
         ], 200);
     }
-    
+
 }
