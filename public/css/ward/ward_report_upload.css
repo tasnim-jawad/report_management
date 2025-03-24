@@ -433,3 +433,58 @@ th {
     right: -7px;
     z-index: 999;
 }
+
+/* ------------------------------comment into modal --------------------- */
+
+#comment_modal{
+    .modal-header{
+        background-color: var(--color3);
+        color: white;
+        font-family: system-ui;
+        font-weight: 600;
+    }
+
+}
+
+.all_comment {
+    margin-bottom: 1rem;
+}
+
+.comment-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-author {
+    color: #333;
+    font-weight: 600;
+}
+
+.comment-index {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.comment-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* ------------------------------comment into modal --------------------- */

@@ -22,13 +22,13 @@
             </table>
             <p class="bg-primary text-white">মন্তব্য</p>
             <div class="comment_list text-start px-1">
-                <div class="single_comment border rounded p-1 mb-2 bg-light">
+                <!-- <div class="single_comment border rounded p-1 mb-2 bg-light">
                     <p class="fw-bold mb-1 font_size_12">মুহাম্মাদঃ</p>
                     <p class="ps-3 mb-0 font_size_12">তুমি একটা ভালো চেলায়ে দফে দফজএস</p>
-                </div>
+                </div> -->
                 <div class="single_comment border rounded p-1 mb-2 bg-light" v-for="(comment, index) in all_comment_store" :key="index">
-                    <p class="fw-bold mb-1 font_size_12">{{ comment?.user?.full_name }}</p>
-                    <p class="ps-3 mb-0 font_size_12">{{ comment?.comment }}</p>
+                    <p class="fw-bold mb-1 font_size_12">{{ comment?.user?.full_name }}:</p>
+                    <p class="ps-3 mb-0 font_size_12">-> {{ comment?.comment }}</p>
                 </div>
             </div>
         </div>
@@ -51,6 +51,14 @@ export default {
             required: true,
         },
         field_title: {
+            type: String,
+            required: true,
+        },
+        ward_table_name: {
+            type: String,
+            required: true,
+        },
+        ward_column_name: {
             type: String,
             required: true,
         },
@@ -90,6 +98,7 @@ export default {
             if(this.is_popup_visible){
                 if(!this.total){
                     this.get_all_unit_data()
+
                 }
             }
         },
@@ -116,7 +125,10 @@ export default {
                 this.month_year_store = this.month;
                 this.org_type_store = 'ward';
                 this.org_type_id_store = this.ward_id;
-                this.get_column_comment_all(this.table_name, this.field_title);
+                if(this.ward_table_name != "none" && this.ward_column_name != "none"){
+                    this.get_column_comment_all(this.ward_table_name, this.ward_column_name);
+                }
+                // this.get_column_comment_all(this.ward_table_name, this.ward_column_name);
             }
 
         },
@@ -155,12 +167,20 @@ export default {
         //     },
         // },
         all_comment_count: function () {
-            if (this.all_comment_count && this.table_name && this.field_title) {
-                const result = this.all_comment_count.find(
-                    (item) => item.table_name === this.table_name && item.column_name === this.field_title
-                );
+            if (this.all_comment_count && this.ward_table_name && this.ward_column_name) {
 
-                this.number_of_comment = result.number_of_comment
+                // console.log("all_comment_count",this.all_comment_count);
+                // console.log("this.table_name",this.ward_table_name);
+                // console.log("this.field_title",this.field_title);
+                
+                const result = this.all_comment_count.find(
+                    (item) => item.table_name === this.ward_table_name && item.column_name === this.ward_column_name
+                );
+                console.log(result);
+                
+                this.number_of_comment = result ? result.number_of_comment : 0;
+            } else {
+                this.number_of_comment = 0;
             }
 
         }

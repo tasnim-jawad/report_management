@@ -125,10 +125,12 @@ export const store = defineStore(`comment_store`, {
                     org_type_id: this.org_type_id,
                 }
             })
-            console.log(response);
+            console.log("count comment response.data.data",response.data.data);
 
             if (response.data.status == 'success') {
                 this.all_comment_count = response.data.data;
+                console.log("this.all_comment_count ", this.all_comment_count);
+                
             }
         }
     }

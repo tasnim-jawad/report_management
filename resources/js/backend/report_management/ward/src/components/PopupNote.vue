@@ -7,6 +7,8 @@
             :ward_id="ward_id"
             :table_name="table_name"
             :field_title="field_title"
+            :ward_table_name="ward_table_name"
+            :ward_column_name="ward_column_name"
             :month="month"
         />
     </div>
@@ -25,6 +27,14 @@ export default {
             required: true,
         },
         field_title: {
+            type: String,
+            required: true,
+        },
+        ward_table_name: {
+            type: String,
+            required: true,
+        },
+        ward_column_name: {
             type: String,
             required: true,
         },

@@ -118,6 +118,8 @@
                                             "
                                             :table_name="'dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
+                                            :ward_table_name="'ward_dawat1_regular_group_wises'"
+                                            :ward_column_name="'how_many_groups_are_out'"
                                             :month="month"
                                         >
                                         </popup>
@@ -148,6 +150,8 @@
                                             "
                                             :table_name="'dawat1_regular_group_wises'"
                                             :field_title="'number_of_participants'"
+                                            :ward_table_name="'ward_dawat1_regular_group_wises'"
+                                            :ward_column_name="'number_of_participants'"
                                             :month="month"
                                         >
                                         </popup>
@@ -178,6 +182,8 @@
                                             "
                                             :table_name="'dawat1_regular_group_wises'"
                                             :field_title="'how_many_have_been_invited'"
+                                            :ward_table_name="'ward_dawat1_regular_group_wises'"
+                                            :ward_column_name="'how_many_have_been_invited'"
                                             :month="month"
                                         >
                                         </popup>
@@ -208,6 +214,8 @@
                                             "
                                             :table_name="'dawat1_regular_group_wises'"
                                             :field_title="'how_many_associate_members_created'"
+                                            :ward_table_name="'ward_dawat1_regular_group_wises'"
+                                            :ward_column_name="'how_many_associate_members_created'"
                                             :month="month"
                                         >
                                         </popup>
@@ -261,6 +269,8 @@
                                             "
                                             :table_name="'dawat2_personal_and_targets'"
                                             :field_title="'total_rokon'"
+                                            :ward_table_name="'ward_dawat2_personal_and_targets'"
+                                            :ward_column_name="'total_rokon'"
                                             :month="month"
                                         >
                                         </popup>
@@ -291,6 +301,8 @@
                                             "
                                             :table_name="'dawat2_personal_and_targets'"
                                             :field_title="'total_worker'"
+                                            :ward_table_name="'ward_dawat2_personal_and_targets'"
+                                            :ward_column_name="'total_worker'"
                                             :month="month"
                                         >
                                         </popup>
@@ -324,6 +336,8 @@
                                             "
                                             :table_name="'dawat2_personal_and_targets'"
                                             :field_title="'how_many_have_been_invited'"
+                                            :ward_table_name="'ward_dawat2_personal_and_targets'"
+                                            :ward_column_name="'how_many_have_been_invited'"
                                             :month="month"
                                         >
                                         </popup>
@@ -359,6 +373,8 @@
                                             "
                                             :table_name="'dawat2_personal_and_targets'"
                                             :field_title="'how_many_were_give_dawat_rokon'"
+                                            :ward_table_name="'ward_dawat2_personal_and_targets'"
+                                            :ward_column_name="'how_many_were_give_dawat_rokon'"
                                             :month="month"
                                         >
                                         </popup>
@@ -389,6 +405,8 @@
                                             "
                                             :table_name="'dawat2_personal_and_targets'"
                                             :field_title="'how_many_were_give_dawat_worker'"
+                                            :ward_table_name="'ward_dawat2_personal_and_targets'"
+                                            :ward_column_name="'how_many_were_give_dawat_worker'"
                                             :month="month"
                                         >
                                         </popup>
@@ -422,6 +440,8 @@
                                             "
                                             :table_name="'dawat2_personal_and_targets'"
                                             :field_title="'how_many_associate_members_created'"
+                                            :ward_table_name="'ward_dawat2_personal_and_targets'"
+                                            :ward_column_name="'how_many_associate_members_created'"
                                             :month="month"
                                         >
                                         </popup>
@@ -467,6 +487,8 @@
                                             "
                                             :table_name="'dawat3_general_program_and_others'"
                                             :field_title="'how_many_were_give_dawat'"
+                                            :ward_table_name="'ward_dawat3_general_program_and_others'"
+                                            :ward_column_name="'how_many_were_give_dawat'"
                                             :month="month"
                                         >
                                         </popup>
@@ -500,6 +522,8 @@
                                             "
                                             :table_name="'dawat3_general_program_and_others'"
                                             :field_title="'how_many_associate_members_created'"
+                                            :ward_table_name="'ward_dawat3_general_program_and_others'"
+                                            :ward_column_name="'how_many_associate_members_created'"
                                             :month="month"
                                         >
                                         </popup>
@@ -558,6 +582,8 @@
                                             "
                                             :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'total_gono_songjog_group'"
+                                            :ward_table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :ward_column_name="'total_gono_songjog_group'"
                                             :month="month"
                                         >
                                         </popup>
@@ -588,6 +614,8 @@
                                             "
                                             :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'total_attended'"
+                                            :ward_table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :ward_column_name="'total_attended'"
                                             :month="month"
                                         >
                                         </popup>
@@ -618,6 +646,8 @@
                                             "
                                             :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'how_many_have_been_invited'"
+                                            :ward_table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :ward_column_name="'how_many_have_been_invited'"
                                             :month="month"
                                         >
                                         </popup>
@@ -648,6 +678,8 @@
                                             "
                                             :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'how_many_associate_members_created'"
+                                            :ward_table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :ward_column_name="'how_many_associate_members_created'"
                                             :month="month"
                                         >
                                         </popup>
@@ -683,6 +715,8 @@
                                             "
                                             :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'jela_mohanogor_declared_gonosonjog_group'"
+                                            :ward_table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :ward_column_name="'jela_mohanogor_declared_gonosonjog_group'"
                                             :month="month"
                                         >
                                         </popup>
@@ -713,6 +747,8 @@
                                             "
                                             :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'jela_mohanogor_declared_gonosonjog_attended'"
+                                            :ward_table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :ward_column_name="'jela_mohanogor_declared_gonosonjog_attended'"
                                             :month="month"
                                         >
                                         </popup>
@@ -743,6 +779,8 @@
                                             "
                                             :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'jela_mohanogor_declared_gonosonjog_invited'"
+                                            :ward_table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :ward_column_name="'jela_mohanogor_declared_gonosonjog_invited'"
                                             :month="month"
                                         >
                                         </popup>
@@ -773,6 +811,8 @@
                                             "
                                             :table_name="'dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'jela_mohanogor_declared_gonosonjog_associated_created'"
+                                            :ward_table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :ward_column_name="'jela_mohanogor_declared_gonosonjog_associated_created'"
                                             :month="month"
                                         >
                                         </popup>
@@ -784,161 +824,210 @@
                                     নির্বাচনী আসনে গণসংযোগ সপ্তাহ
                                 </td>
                                 <td>
-                                    <input
-                                        name="election_gono_songjog_group"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.election_gono_songjog_group
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="election_gono_songjog_group"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.election_gono_songjog_group
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                        :column_name="'election_gono_songjog_group'" />
+
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="election_attended"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.election_attended
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="election_attended"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.election_attended
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'election_attended'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="election_how_many_have_been_invited"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.election_how_many_have_been_invited
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="election_how_many_have_been_invited"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.election_how_many_have_been_invited
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'election_how_many_have_been_invited'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="election_how_many_associate_members_created"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.election_how_many_associate_members_created
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="election_how_many_associate_members_created"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.election_how_many_associate_members_created
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'election_how_many_associate_members_created'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start px-2">অন্যান্য</td>
                                 <td>
-                                    <input
-                                        name="other_gono_songjog_group"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.other_gono_songjog_group
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="other_gono_songjog_group"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.other_gono_songjog_group
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'other_gono_songjog_group'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="other_attended"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.other_attended
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="other_attended"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.other_attended
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'other_attended'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="other_how_many_have_been_invited"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.other_how_many_have_been_invited
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="other_how_many_have_been_invited"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.other_how_many_have_been_invited
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'other_how_many_have_been_invited'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="other_how_many_associate_members_created"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                                                    ?.other_how_many_associate_members_created
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-dawat4-gono-songjog-and-dawat-ovijan'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="other_how_many_associate_members_created"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.other_how_many_associate_members_created
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                            :column_name="'other_how_many_associate_members_created'" 
+                                        />
+                                    </div>
                                 </td>
                             </tr>
+
                         </tbody>
                     </table>
                     <p>
@@ -995,6 +1084,8 @@
                                             "
                                             :table_name="'department1_talimul_qurans'"
                                             :field_title="'teacher_rokon'"
+                                            :ward_table_name="'ward_department1_talimul_qurans'"
+                                            :ward_column_name="'teacher_rokon'"
                                             :month="month"
                                         >
                                         </popup>
@@ -1025,6 +1116,8 @@
                                             "
                                             :table_name="'department1_talimul_qurans'"
                                             :field_title="'teacher_worker'"
+                                            :ward_table_name="'ward_department1_talimul_qurans'"
+                                            :ward_column_name="'teacher_worker'"
                                             :month="month"
                                         >
                                         </popup>
@@ -1084,6 +1177,8 @@
                                             "
                                             :table_name="'department1_talimul_qurans'"
                                             :field_title="'student_rokon'"
+                                            :ward_table_name="'ward_department1_talimul_qurans'"
+                                            :ward_column_name="'student_rokon'"
                                             :month="month"
                                         >
                                         </popup>
@@ -1114,6 +1209,8 @@
                                             "
                                             :table_name="'department1_talimul_qurans'"
                                             :field_title="'student_worker'"
+                                            :ward_table_name="'ward_department1_talimul_qurans'"
+                                            :ward_column_name="'student_worker'"
                                             :month="month"
                                         >
                                         </popup>
@@ -1160,61 +1257,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="text-start px-2">
-                                        কুরআন শিক্ষার গ্রুপ
-                                    </td>
+                                    <td class="text-start px-2">কুরআন শিক্ষার গ্রুপ</td>
                                     <td>
-                                        <input
-                                            name="quran_learning_total_group"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.quran_learning_total_group
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                    </td>
-                                    <td>
-                                        <input
-                                            name="quran_learning_total_students"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.quran_learning_total_students
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-start px-2">
-                                        মক্তব/ফোরকানিয়া মাদ্রাসা
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
+                                        <div class="parent_popup">
                                             <input
-                                                name="total_moktob"
+                                                name="quran_learning_total_group"
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
                                                             ?.ward_department1_talimul_qurans
-                                                            ?.total_moktob
+                                                            ?.quran_learning_total_group
                                                     )
                                                 "
                                                 @change="
@@ -1224,52 +1276,22 @@
                                                 "
                                                 type="text"
                                                 class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="total_forkania_madrasah"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department1_talimul_qurans
-                                                            ?.total_forkania_madrasah
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department1-talimul-quran'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department1_talimul_qurans'"
+                                                :column_name="'quran_learning_total_group'" 
                                             />
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="d-flex">
+                                        <div class="parent_popup">
                                             <input
-                                                name="total_moktob_students"
+                                                name="quran_learning_total_students"
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
                                                             ?.ward_department1_talimul_qurans
-                                                            ?.total_moktob_students
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department1-talimul-quran'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="total_forkania_madrasah_students"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department1_talimul_qurans
-                                                            ?.total_forkania_madrasah_students
+                                                            ?.quran_learning_total_students
                                                     )
                                                 "
                                                 @change="
@@ -1280,10 +1302,120 @@
                                                 type="text"
                                                 class="bg-input w-100 text-center"
                                             />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department1_talimul_qurans'"
+                                                :column_name="'quran_learning_total_students'" 
+                                            />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start px-2">মক্তব/ফোরকানিয়া মাদ্রাসা</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_moktob"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department1_talimul_qurans
+                                                                ?.total_moktob
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department1-talimul-quran'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department1_talimul_qurans'"
+                                                    :column_name="'total_moktob'" 
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_forkania_madrasah"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department1_talimul_qurans
+                                                                ?.total_forkania_madrasah
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department1-talimul-quran'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department1_talimul_qurans'"
+                                                    :column_name="'total_forkania_madrasah'" 
+                                                />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_moktob_students"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department1_talimul_qurans
+                                                                ?.total_moktob_students
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department1-talimul-quran'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department1_talimul_qurans'"
+                                                    :column_name="'total_moktob_students'" 
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_forkania_madrasah_students"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department1_talimul_qurans
+                                                                ?.total_forkania_madrasah_students
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department1-talimul-quran'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department1_talimul_qurans'"
+                                                    :column_name="'total_forkania_madrasah_students'" 
+                                                />
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
+
                         </table>
                         <table class="text-center mb-1">
                             <tbody>
@@ -1316,6 +1448,8 @@
                                                 "
                                                 :table_name="'department1_talimul_qurans'"
                                                 :field_title="'how_much_learned_sohih_tilawat'"
+                                                :ward_table_name="'ward_department1_talimul_qurans'"
+                                                :ward_column_name="'how_much_learned_sohih_tilawat'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -1328,8 +1462,8 @@
                                         (পু/ম)
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <div class="d-flex">
+                                        <div class="d-flex">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="how_much_invited_man"
                                                     :value="
@@ -1346,7 +1480,15 @@
                                                     "
                                                     type="text"
                                                     class="bg-input w-100 text-center"
-                                                />/
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department1_talimul_qurans'"
+                                                    :column_name="'how_much_invited_man'" 
+                                                />
+
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
                                                 <input
                                                     name="how_much_invited_woman"
                                                     :value="
@@ -1364,16 +1506,19 @@
                                                     type="text"
                                                     class="bg-input w-100 text-center"
                                                 />
+                                                <popup
+                                                    :ward_id="
+                                                        report_header?.ward_info?.id
+                                                        "
+                                                    :table_name="'department1_talimul_qurans'"
+                                                    :field_title="'how_much_invited'"
+                                                    :ward_table_name="'ward_department1_talimul_qurans'"
+                                                    :ward_column_name="'how_much_invited_woman'"
+                                                    :month="month"
+                                                    >
+                                                </popup>
+
                                             </div>
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department1_talimul_qurans'"
-                                                :field_title="'how_much_invited'"
-                                                :month="month"
-                                            >
-                                            </popup>
                                         </div>
                                     </td>
                                 </tr>
@@ -1382,52 +1527,62 @@
                                         মোট কতজন সহযোগী সদস্য হয়েছেন (পু/ম)
                                     </td>
                                     <td>
-                                        <div class="parent_popup">
-                                            <div class="d-flex">
-                                                <input
-                                                    name="how_much_been_associated_man"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.ward_department1_talimul_qurans
-                                                                ?.how_much_been_associated_man
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'ward-department1-talimul-quran'
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />/
-                                                <input
-                                                    name="how_much_been_associated_woman"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.ward_department1_talimul_qurans
-                                                                ?.how_much_been_associated_woman
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'ward-department1-talimul-quran'
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />
-                                            </div>
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'department1_talimul_qurans'"
-                                                :field_title="'how_much_been_associated'"
-                                                :month="month"
-                                            >
-                                            </popup>
+                                        <div class="d-flex">
+                                                <div class="parent_popup">
+                                                    <input
+                                                        name="how_much_been_associated_man"
+                                                        :value="
+                                                            formatBangla(
+                                                                report_sum_data
+                                                                    ?.ward_department1_talimul_qurans
+                                                                    ?.how_much_been_associated_man
+                                                            )
+                                                        "
+                                                        @change="
+                                                            data_upload(
+                                                                'ward-department1-talimul-quran'
+                                                            )
+                                                        "
+                                                        type="text"
+                                                        class="bg-input w-100 text-center"
+                                                    />
+                                                    <comment-from-thana 
+                                                        :table_name="'ward_department1_talimul_qurans'"
+                                                        :column_name="'how_much_been_associated_man'" 
+                                                    />
+                                                </div>
+                                                /
+                                                <div class="parent_popup">
+                                                    <input
+                                                        name="how_much_been_associated_woman"
+                                                        :value="
+                                                            formatBangla(
+                                                                report_sum_data
+                                                                    ?.ward_department1_talimul_qurans
+                                                                    ?.how_much_been_associated_woman
+                                                            )
+                                                        "
+                                                        @change="
+                                                            data_upload(
+                                                                'ward-department1-talimul-quran'
+                                                            )
+                                                        "
+                                                        type="text"
+                                                        class="bg-input w-100 text-center"
+                                                    />
+                                                    <popup
+                                                        :ward_id="
+                                                            report_header?.ward_info?.id
+                                                        "
+                                                        :table_name="'department1_talimul_qurans'"
+                                                        :field_title="'how_much_been_associated'"
+                                                        :ward_table_name="'ward_department1_talimul_qurans'"
+                                                        :ward_column_name="'how_much_been_associated_woman'"
+                                                        :month="month"
+                                                    >
+                                                    </popup>
+
+                                                </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -1442,83 +1597,115 @@
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input
-                                            name="total_muallim_man"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.total_muallim_man
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="total_muallim_woman"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.total_muallim_woman
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="total_muallim_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department1_talimul_qurans
+                                                            ?.total_muallim_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            
+                                            <comment-from-thana 
+                                                :table_name="'ward_department1_talimul_qurans'"
+                                                :column_name="'total_muallim_man'" 
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="total_muallim_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department1_talimul_qurans
+                                                            ?.total_muallim_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            
+                                            <comment-from-thana 
+                                                :table_name="'ward_department1_talimul_qurans'"
+                                                :column_name="'total_muallim_woman'" 
+                                            />
+                                        </div>
                                     </div>
                                 </td>
+
                                 <td class="width-35 text-start">
                                     বৃদ্ধি সংখ্যা (পু./ম.) :
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input
-                                            name="total_muallim_increased_man"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.total_muallim_increased_man
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="total_muallim_increased_woman"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department1_talimul_qurans
-                                                        ?.total_muallim_increased_woman
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department1-talimul-quran'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="total_muallim_increased_man"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department1_talimul_qurans
+                                                            ?.total_muallim_increased_man
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            
+                                            <comment-from-thana 
+                                                :table_name="'ward_department1_talimul_qurans'"
+                                                :column_name="'total_muallim_increased_man'" 
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="total_muallim_increased_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department1_talimul_qurans
+                                                            ?.total_muallim_increased_woman
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department1-talimul-quran'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            
+                                            <comment-from-thana 
+                                                :table_name="'ward_department1_talimul_qurans'"
+                                                :column_name="'total_muallim_increased_woman'" 
+                                            />
+                                        </div>
                                     </div>
                                 </td>
+
                             </tr>
                         </tbody>
                     </table>
@@ -1536,41 +1723,55 @@
                                     </th>
                                     <th class="width-20">
                                         <div class="d-flex">
-                                            <input
-                                                name="govment_calculated_village_amount"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.govment_calculated_village_amount
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="govment_calculated_moholla_amount"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.govment_calculated_moholla_amount
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="govment_calculated_village_amount"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department2_moholla_vittik_dawats
+                                                                ?.govment_calculated_village_amount
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                    :column_name="'govment_calculated_village_amount'" 
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="govment_calculated_moholla_amount"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department2_moholla_vittik_dawats
+                                                                ?.govment_calculated_moholla_amount
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                    :column_name="'govment_calculated_moholla_amount'" 
+                                                />
+                                            </div>
                                         </div>
+
                                     </th>
                                     <th class="width-20">বৃদ্ধি</th>
                                 </tr>
@@ -1605,41 +1806,55 @@
                                     </td>
                                     <td>
                                         <div class="d-flex">
-                                            <input
-                                                name="total_village_committee_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.total_village_committee_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="total_moholla_committee_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.total_moholla_committee_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_village_committee_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department2_moholla_vittik_dawats
+                                                                ?.total_village_committee_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                    :column_name="'total_village_committee_increased'" 
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_moholla_committee_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department2_moholla_vittik_dawats
+                                                                ?.total_moholla_committee_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                    :column_name="'total_moholla_committee_increased'" 
+                                                />
+                                            </div>
                                         </div>
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -1673,42 +1888,56 @@
                                     </td>
                                     <td>
                                         <div class="d-flex">
-                                            <input
-                                                name="special_dawat_included_village_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.special_dawat_included_village_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="special_dawat_included_moholla_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department2_moholla_vittik_dawats
-                                                            ?.special_dawat_included_moholla_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department2-moholla-vittik-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="special_dawat_included_village_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department2_moholla_vittik_dawats
+                                                                ?.special_dawat_included_village_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                    :column_name="'special_dawat_included_village_increased'" 
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="special_dawat_included_moholla_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department2_moholla_vittik_dawats
+                                                                ?.special_dawat_included_moholla_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                    :column_name="'special_dawat_included_moholla_increased'" 
+                                                />
+                                            </div>
                                         </div>
                                     </td>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -1719,23 +1948,29 @@
                                         কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                     </td>
                                     <td class="width-30">
-                                        <input
-                                            name="how_many_been_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department2_moholla_vittik_dawats
-                                                        ?.how_many_been_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department2-moholla-vittik-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="how_many_been_invited"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department2_moholla_vittik_dawats
+                                                            ?.how_many_been_invited
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department2-moholla-vittik-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                :column_name="'how_many_been_invited'" 
+                                            />
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1743,23 +1978,29 @@
                                         কতজন সহযোগী সদস্য হয়েছেন
                                     </td>
                                     <td class="width-30">
-                                        <input
-                                            name="how_many_associated_created"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department2_moholla_vittik_dawats
-                                                        ?.how_many_associated_created
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department2-moholla-vittik-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="how_many_associated_created"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department2_moholla_vittik_dawats
+                                                            ?.how_many_associated_created
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department2-moholla-vittik-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                :column_name="'how_many_associated_created'" 
+                                            />
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -1786,27 +2027,32 @@
                                 <tbody>
                                     <tr>
                                         <td class="text-start px-2">
-                                            কতজন যুবকের মাঝে দাওয়াত পৌঁছানো
-                                            হয়েছে
+                                            কতজন যুবকের মাঝে দাওয়াত পৌঁছানো হয়েছে
                                         </td>
                                         <td>
-                                            <input
-                                                name="how_many_young_been_invited"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department3_jubo_somaj_dawats
-                                                            ?.how_many_young_been_invited
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department3-jubo-somaj-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="how_many_young_been_invited"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department3_jubo_somaj_dawats
+                                                                ?.how_many_young_been_invited
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department3-jubo-somaj-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                    :column_name="'how_many_young_been_invited'" 
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1814,26 +2060,33 @@
                                             কতজন যুবক সহযোগী সদস্য হয়েছেন
                                         </td>
                                         <td>
-                                            <input
-                                                name="how_many_young_been_associated"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_department3_jubo_somaj_dawats
-                                                            ?.how_many_young_been_associated
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-department3-jubo-somaj-dawat'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="how_many_young_been_associated"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_department3_jubo_somaj_dawats
+                                                                ?.how_many_young_been_associated
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-department3-jubo-somaj-dawat'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana 
+                                                    :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                    :column_name="'how_many_young_been_associated'" 
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
+
                             </table>
                             <p class="font-11">
                                 * যুব বিভাগের কাজের ক্ষেত্রে ছাত্র সংগঠনের সাবেক
@@ -1864,24 +2117,31 @@
                                             class="bg-input w-100 text-center" /> -->
                                     </td>
                                     <td>
-                                        <input
-                                            name="total_young_committee_increased"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department3_jubo_somaj_dawats
-                                                        ?.total_young_committee_increased
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department3-jubo-somaj-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="total_young_committee_increased"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department3_jubo_somaj_dawats
+                                                            ?.total_young_committee_increased
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department3-jubo-somaj-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                :column_name="'total_young_committee_increased'" 
+                                            />
+                                        </div>
                                     </td>
+
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">
@@ -1898,24 +2158,31 @@
                                             class="bg-input w-100 text-center" /> -->
                                     </td>
                                     <td>
-                                        <input
-                                            name="total_new_club_increased"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department3_jubo_somaj_dawats
-                                                        ?.total_new_club_increased
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department3-jubo-somaj-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="total_new_club_increased"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department3_jubo_somaj_dawats
+                                                            ?.total_new_club_increased
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department3-jubo-somaj-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                :column_name="'total_new_club_increased'" 
+                                            />
+                                        </div>
                                     </td>
+
                                 </tr>
                                 <tr>
                                     <td class="text-start px-2">
@@ -1934,24 +2201,31 @@
                                             class="bg-input w-100 text-center" /> -->
                                     </td>
                                     <td>
-                                        <input
-                                            name="stablished_club_total_increased"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department3_jubo_somaj_dawats
-                                                        ?.stablished_club_total_increased
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department3-jubo-somaj-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="stablished_club_total_increased"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department3_jubo_somaj_dawats
+                                                            ?.stablished_club_total_increased
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department3-jubo-somaj-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                :column_name="'stablished_club_total_increased'" 
+                                            />
+                                        </div>
                                     </td>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -2010,6 +2284,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'political_and_special_invited'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'political_and_special_invited'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2040,6 +2316,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'political_and_special_been_associated'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'political_and_special_been_associated'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2070,6 +2348,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'political_and_special_target'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'political_and_special_target'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2097,62 +2377,81 @@
                                 <tr>
                                     <td class="text-start px-2">পেশাজীবী</td>
                                     <td>
-                                        <input
-                                            name="pesha_jibi_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.pesha_jibi_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="pesha_jibi_invited"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.pesha_jibi_invited
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'pesha_jibi_invited'" 
+                                            />
+                                        </div>
                                     </td>
                                     <td>
-                                        <input
-                                            name="pesha_jibi_been_associated"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.pesha_jibi_been_associated
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="pesha_jibi_been_associated"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.pesha_jibi_been_associated
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'pesha_jibi_been_associated'" 
+                                            />
+                                        </div>
                                     </td>
                                     <td>
-                                        <input
-                                            name="pesha_jibi_target"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.pesha_jibi_target
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="pesha_jibi_target"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.pesha_jibi_target
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'pesha_jibi_target'" 
+                                            />
+                                        </div>
                                     </td>
+
                                     <td>
                                         {{
                                             formatBangla(
@@ -2177,62 +2476,81 @@
                                         উলামা মাশায়েখ
                                     </td>
                                     <td>
-                                        <input
-                                            name="olama_masayekh_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.olama_masayekh_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="olama_masayekh_invited"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.olama_masayekh_invited
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'olama_masayekh_invited'" 
+                                            />
+                                        </div>
                                     </td>
                                     <td>
-                                        <input
-                                            name="olama_masayekh_been_associated"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.olama_masayekh_been_associated
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="olama_masayekh_been_associated"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.olama_masayekh_been_associated
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'olama_masayekh_been_associated'" 
+                                            />
+                                        </div>
                                     </td>
                                     <td>
-                                        <input
-                                            name="olama_masayekh_target"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.olama_masayekh_target
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="olama_masayekh_target"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.olama_masayekh_target
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'olama_masayekh_target'" 
+                                            />
+                                        </div>
                                     </td>
+
                                     <td>
                                         {{
                                             formatBangla(
@@ -2276,62 +2594,81 @@
                                 <tr>
                                     <td class="text-start px-1">শ্রমজীবী</td>
                                     <td>
-                                        <input
-                                            name="sromo_jibi_invited"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.sromo_jibi_invited
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="sromo_jibi_invited"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.sromo_jibi_invited
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'sromo_jibi_invited'" 
+                                            />
+                                        </div>
                                     </td>
                                     <td>
-                                        <input
-                                            name="sromo_jibi_been_associated"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.sromo_jibi_been_associated
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="sromo_jibi_been_associated"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.sromo_jibi_been_associated
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'sromo_jibi_been_associated'" 
+                                            />
+                                        </div>
                                     </td>
                                     <td>
-                                        <input
-                                            name="sromo_jibi_target"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department4_different_job_holders_dawats
-                                                        ?.sromo_jibi_target
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department4-different-job-holders-dawat'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="sromo_jibi_target"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department4_different_job_holders_dawats
+                                                            ?.sromo_jibi_target
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department4-different-job-holders-dawat'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana 
+                                                :table_name="'ward_department4_different_job_holders_dawats'"
+                                                :column_name="'sromo_jibi_target'" 
+                                            />
+                                        </div>
                                     </td>
+
                                     <td>
                                         {{
                                             formatBangla(
@@ -2378,6 +2715,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'prantik_jonogosti_invited'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'prantik_jonogosti_invited'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2408,6 +2747,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'prantik_jonogosti_been_associated'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'prantik_jonogosti_been_associated'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2438,6 +2779,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'prantik_jonogosti_target'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'prantik_jonogosti_target'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2487,6 +2830,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'vinno_dormalombi_invited'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'vinno_dormalombi_invited'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2517,6 +2862,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'vinno_dormalombi_been_associated'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'vinno_dormalombi_been_associated'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2547,6 +2894,8 @@
                                                 "
                                                 :table_name="'department4_different_job_holders_dawats'"
                                                 :field_title="'vinno_dormalombi_target'"
+                                                :ward_table_name="'ward_department4_different_job_holders_dawats'"
+                                                :ward_column_name="'vinno_dormalombi_target'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -2604,6 +2953,8 @@
                                             "
                                             :table_name="'department5_paribarik_dawats'"
                                             :field_title="'total_attended_family'"
+                                            :ward_table_name="'ward_department5_paribarik_dawats'"
+                                            :ward_column_name="'total_attended_family'"
                                             :month="month"
                                         >
                                         </popup>
@@ -2637,6 +2988,8 @@
                                             "
                                             :table_name="'department5_paribarik_dawats'"
                                             :field_title="'how_many_new_family_invited'"
+                                            :ward_table_name="'ward_department5_paribarik_dawats'"
+                                            :ward_column_name="'how_many_new_family_invited'"
                                             :month="month"
                                         >
                                         </popup>
@@ -2676,24 +3029,31 @@
                                         type="text" class="bg-input w-100 text-center" /> -->
                                 </td>
                                 <td>
-                                    <input
-                                        name="total_mosjid_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_department6_mosjid_dawah_infomation_centers
-                                                    ?.total_mosjid_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-department6-mosjid-dawah-infomation-centers'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="total_mosjid_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_department6_mosjid_dawah_infomation_centers
+                                                        ?.total_mosjid_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-department6-mosjid-dawah-infomation-centers'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
+                                            :column_name="'total_mosjid_increase'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td class="text-start px-2">
                                     সাধারণ দাওয়াহ্ সেন্টার
                                 </td>
@@ -2709,24 +3069,31 @@
                                         type="text" class="bg-input w-100 text-center" /> -->
                                 </td>
                                 <td>
-                                    <input
-                                        name="general_dawah_center_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_department6_mosjid_dawah_infomation_centers
-                                                    ?.general_dawah_center_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-department6-mosjid-dawah-infomation-centers'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="general_dawah_center_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_department6_mosjid_dawah_infomation_centers
+                                                        ?.general_dawah_center_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-department6-mosjid-dawah-infomation-centers'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <comment-from-thana 
+                                            :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
+                                            :column_name="'general_dawah_center_increase'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
@@ -2744,24 +3111,32 @@
                                         type="text" class="bg-input w-100 text-center" /> -->
                                 </td>
                                 <td>
-                                    <input
-                                        name="dawat_included_mosjid_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_department6_mosjid_dawah_infomation_centers
-                                                    ?.dawat_included_mosjid_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-department6-mosjid-dawah-infomation-centers'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="dawat_included_mosjid_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_department6_mosjid_dawah_infomation_centers
+                                                        ?.dawat_included_mosjid_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-department6-mosjid-dawah-infomation-centers'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
+                                            :column_name="'dawat_included_mosjid_increase'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td class="text-start px-2">
                                     তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক /সাধারণ)
                                 </td>
@@ -2791,42 +3166,58 @@
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input
-                                            name="mosjid_wise_information_center_increase"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department6_mosjid_dawah_infomation_centers
-                                                        ?.mosjid_wise_information_center_increase
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department6-mosjid-dawah-infomation-centers'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="general_information_center_increase"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_department6_mosjid_dawah_infomation_centers
-                                                        ?.general_information_center_increase
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-department6-mosjid-dawah-infomation-centers'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="mosjid_wise_information_center_increase"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department6_mosjid_dawah_infomation_centers
+                                                            ?.mosjid_wise_information_center_increase
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department6-mosjid-dawah-infomation-centers'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            
+                                            <comment-from-thana 
+                                                :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
+                                                :column_name="'mosjid_wise_information_center_increase'" 
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="general_information_center_increase"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_department6_mosjid_dawah_infomation_centers
+                                                            ?.general_information_center_increase
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-department6-mosjid-dawah-infomation-centers'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            
+                                            <comment-from-thana 
+                                                :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
+                                                :column_name="'general_information_center_increase'" 
+                                            />
+                                        </div>
                                     </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start px-2">
@@ -2844,24 +3235,32 @@
                                         type="text" class="bg-input w-100 text-center" /> -->
                                 </td>
                                 <td>
-                                    <input
-                                        name="mosjid_wise_dawah_center_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_department6_mosjid_dawah_infomation_centers
-                                                    ?.mosjid_wise_dawah_center_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-department6-mosjid-dawah-infomation-centers'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="mosjid_wise_dawah_center_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_department6_mosjid_dawah_infomation_centers
+                                                        ?.mosjid_wise_dawah_center_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'ward-department6-mosjid-dawah-infomation-centers'
+                                                )
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
+                                            :column_name="'mosjid_wise_dawah_center_increase'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td class="text-start px-2"></td>
                                 <td></td>
                                 <td></td>
@@ -2876,45 +3275,59 @@
                         ৭. তথ্যপ্রযুক্তির মাধ্যমে দাওয়াতি কাজের জন্য উপযুক্ত
                         জনশক্তি সংখ্যা:
                         <span>
-                            <input
-                                name="total_well_known"
-                                :value="
-                                    formatBangla(
-                                        report_sum_data
-                                            ?.ward_department7_dawat_in_technologies
-                                            ?.total_well_known
-                                    )
-                                "
-                                @change="
-                                    data_upload(
-                                        'ward-department7-dawat-in-technology'
-                                    )
-                                "
-                                type="text"
-                                class="bg-input w-100 text-center"
-                            />
+                            <div class="parent_popup">
+                                <input
+                                    name="total_well_known"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.ward_department7_dawat_in_technologies
+                                                ?.total_well_known
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'ward-department7-dawat-in-technology'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input w-100 text-center"
+                                />
+                                
+                                <comment-from-thana 
+                                    :table_name="'ward_department7_dawat_in_technologies'"
+                                    :column_name="'total_well_known'" 
+                                />
+                            </div>
                         </span>
                     </p>
                     <p class="fw-bold fs-6 width-40">
                         ,অংশগ্রহণকারীর সংখ্যা:
                         <span>
-                            <input
-                                name="total_attended"
-                                :value="
-                                    formatBangla(
-                                        report_sum_data
-                                            ?.ward_department7_dawat_in_technologies
-                                            ?.total_attended
-                                    )
-                                "
-                                @change="
-                                    data_upload(
-                                        'ward-department7-dawat-in-technology'
-                                    )
-                                "
-                                type="text"
-                                class="bg-input w-100 text-center"
-                            />
+                            <div class="parent_popup">
+                                <input
+                                    name="total_attended"
+                                    :value="
+                                        formatBangla(
+                                            report_sum_data
+                                                ?.ward_department7_dawat_in_technologies
+                                                ?.total_attended
+                                        )
+                                    "
+                                    @change="
+                                        data_upload(
+                                            'ward-department7-dawat-in-technology'
+                                        )
+                                    "
+                                    type="text"
+                                    class="bg-input w-100 text-center"
+                                />
+                                
+                                <comment-from-thana 
+                                    :table_name="'ward_department7_dawat_in_technologies'"
+                                    :column_name="'total_attended'" 
+                                />
+                            </div>
                         </span>
                     </p>
                 </div>
@@ -2949,22 +3362,30 @@
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
-                                <input
-                                    name="total_pathagar_increase"
-                                    :value="
-                                        formatBangla(
-                                            report_sum_data
-                                                ?.ward_dawah_and_prokashonas
-                                                ?.total_pathagar_increase
-                                        )
-                                    "
-                                    @change="
-                                        data_upload('ward-dawah-and-prokashona')
-                                    "
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                                <div class="parent_popup">
+                                    <input
+                                        name="total_pathagar_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.total_pathagar_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload('ward-dawah-and-prokashona')
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    
+                                    <comment-from-thana 
+                                        :table_name="'ward_dawah_and_prokashonas'"
+                                        :column_name="'total_pathagar_increase'" 
+                                    />
+                                </div>
                             </td>
+
 
                             <td class="text-start px-2">
                                 ওয়ার্ডে বই বিক্রয় কেন্দ্র
@@ -2983,22 +3404,30 @@
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
-                                <input
-                                    name="ward_book_sales_center_increase"
-                                    :value="
-                                        formatBangla(
-                                            report_sum_data
-                                                ?.ward_dawah_and_prokashonas
-                                                ?.ward_book_sales_center_increase
-                                        )
-                                    "
-                                    @change="
-                                        data_upload('ward-dawah-and-prokashona')
-                                    "
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                                <div class="parent_popup">
+                                    <input
+                                        name="ward_book_sales_center_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.ward_book_sales_center_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload('ward-dawah-and-prokashona')
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    
+                                    <comment-from-thana 
+                                        :table_name="'ward_dawah_and_prokashonas'"
+                                        :column_name="'ward_book_sales_center_increase'" 
+                                    />
+                                </div>
                             </td>
+
                         </tr>
                         <tr>
                             <td class="text-start px-2">বই</td>
@@ -3016,22 +3445,30 @@
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
-                                <input
-                                    name="books_in_pathagar_increase"
-                                    :value="
-                                        formatBangla(
-                                            report_sum_data
-                                                ?.ward_dawah_and_prokashonas
-                                                ?.books_in_pathagar_increase
-                                        )
-                                    "
-                                    @change="
-                                        data_upload('ward-dawah-and-prokashona')
-                                    "
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                                <div class="parent_popup">
+                                    <input
+                                        name="books_in_pathagar_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.books_in_pathagar_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload('ward-dawah-and-prokashona')
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    
+                                    <comment-from-thana 
+                                        :table_name="'ward_dawah_and_prokashonas'"
+                                        :column_name="'books_in_pathagar_increase'" 
+                                    />
+                                </div>
                             </td>
+
 
                             <td class="text-start px-2">ওয়ার্ডে বই বিক্রয়</td>
                             <!-- <td >{{bangla($dawah_prokashona->ward_book_sales?? "")}}</td>
@@ -3047,44 +3484,60 @@
                                     class="bg-input w-100 text-center" /> -->
                             </td>
                             <td>
-                                <input
-                                    name="ward_book_sales_increase"
-                                    :value="
-                                        formatBangla(
-                                            report_sum_data
-                                                ?.ward_dawah_and_prokashonas
-                                                ?.ward_book_sales_increase
-                                        )
-                                    "
-                                    @change="
-                                        data_upload('ward-dawah-and-prokashona')
-                                    "
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                                <div class="parent_popup">
+                                    <input
+                                        name="ward_book_sales_increase"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.ward_book_sales_increase
+                                            )
+                                        "
+                                        @change="
+                                            data_upload('ward-dawah-and-prokashona')
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    
+                                    <comment-from-thana 
+                                        :table_name="'ward_dawah_and_prokashonas'"
+                                        :column_name="'ward_book_sales_increase'" 
+                                    />
+                                </div>
                             </td>
+
                         </tr>
                         <tr>
                             <td class="text-start px-2">বই বিলি</td>
                             <!-- <td >{{bangla($dawah_prokashona->book_distribution?? "")}}</td>
                             <td >{{bangla($dawah_prokashona->book_distribution_increase?? "")}}</td> -->
                             <td>
-                                <input
-                                    name="book_distribution"
-                                    :value="
-                                        formatBangla(
-                                            report_sum_data
-                                                ?.ward_dawah_and_prokashonas
-                                                ?.book_distribution
-                                        )
-                                    "
-                                    @change="
-                                        data_upload('ward-dawah-and-prokashona')
-                                    "
-                                    type="text"
-                                    class="bg-input w-100 text-center"
-                                />
+                                <div class="parent_popup">
+                                    <input
+                                        name="book_distribution"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.ward_dawah_and_prokashonas
+                                                    ?.book_distribution
+                                            )
+                                        "
+                                        @change="
+                                            data_upload('ward-dawah-and-prokashona')
+                                        "
+                                        type="text"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    
+                                    <comment-from-thana 
+                                        :table_name="'ward_dawah_and_prokashonas'"
+                                        :column_name="'book_distribution'" 
+                                    />
+                                </div>
                             </td>
+
                             <td>
                                 <!-- <input name="book_distribution_increase" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> -->
                             </td>
@@ -3117,6 +3570,8 @@
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'soft_copy_book_distribution'"
+                                        :ward_table_name="'ward_dawah_and_prokashonas'"
+                                        :ward_column_name="'soft_copy_book_distribution'"
                                         :month="month"
                                     >
                                     </popup>
@@ -3125,13 +3580,15 @@
                             <td>
                                 <div class="parent_popup">
                                     <!-- <input name="soft_copy_book_distribution_increase" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.soft_copy_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> -->
-                                    <popup
+                                    <!-- <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'soft_copy_book_distribution_increase'"
+                                        :ward_table_name="'none'"
+                                        :ward_column_name="'none'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </div>
                             </td>
                         </tr>
@@ -3150,13 +3607,15 @@
                                         :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.unit_book_distribution_center)"
                                         @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> -->
-                                    <popup
+                                    <!-- <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_center'"
+                                        :ward_table_name="'none'"
+                                        :ward_column_name="'none'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </div>
                             </td>
                             <td>
@@ -3182,6 +3641,8 @@
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_center_increase'"
+                                        :ward_table_name="'ward_dawah_and_prokashonas'"
+                                        :ward_column_name="'unit_book_distribution_center_increase'"
                                         :month="month"
                                     >
                                     </popup>
@@ -3214,6 +3675,8 @@
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'dawat_link_distribution'"
+                                        :ward_table_name="'ward_dawah_and_prokashonas'"
+                                        :ward_column_name="'dawat_link_distribution'"
                                         :month="month"
                                     >
                                     </popup>
@@ -3225,13 +3688,15 @@
                                         :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.dawat_link_distribution_increase)"
                                         @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> -->
-                                    <popup
+                                    <!-- <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'dawat_link_distribution_increase'"
+                                        :ward_table_name="'none'"
+                                        :ward_column_name="'none'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </div>
                             </td>
                         </tr>
@@ -3260,6 +3725,8 @@
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution'"
+                                        :ward_table_name="'ward_dawah_and_prokashonas'"
+                                        :ward_column_name="'unit_book_distribution'"
                                         :month="month"
                                     >
                                     </popup>
@@ -3271,13 +3738,15 @@
                                         :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.unit_book_distribution_increase)"
                                         @change="data_upload('ward-dawah-and-prokashona')" type="text"
                                         class="bg-input w-100 text-center" /> -->
-                                    <popup
+                                    <!-- <popup
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_increase'"
+                                        :ward_table_name="'none'"
+                                        :ward_column_name="'none'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </div>
                             </td>
 
@@ -3375,46 +3844,52 @@
                 </table>
                 <p>*সংগঠন অনুমোদিত</p>
                 <div class="do_not_print">
-                    <popup-note
+                    <!-- <popup-note
                         :label="'সোনার বাংলা মোট সংখ্যা'"
                         :ward_id="report_header?.ward_info?.id"
                         :table_name="'dawah_and_prokashonas'"
                         :field_title="'sonar_bangla'"
                         :month="month"
-                    />
+                    /> -->
                     <popup-note
                         :label="'সোনার বাংলা বৃদ্ধি'"
                         :ward_id="report_header?.ward_info?.id"
                         :table_name="'dawah_and_prokashonas'"
                         :field_title="'sonar_bangla_increase'"
+                        :ward_table_name="'ward_dawah_and_prokashonas'"
+                        :ward_column_name="'sonar_bangla_increase'"
                         :month="month"
                     />
-                    <popup-note
+                    <!-- <popup-note
                         :label="'সংগ্রাম মোট সংখ্যা'"
                         :ward_id="report_header?.ward_info?.id"
                         :table_name="'dawah_and_prokashonas'"
                         :field_title="'songram'"
                         :month="month"
-                    />
+                    /> -->
                     <popup-note
                         :label="'সংগ্রাম বৃদ্ধি'"
                         :ward_id="report_header?.ward_info?.id"
                         :table_name="'dawah_and_prokashonas'"
                         :field_title="'songram_increase'"
+                        :ward_table_name="'ward_dawah_and_prokashonas'"
+                        :ward_column_name="'songram_increase'"
                         :month="month"
                     />
-                    <popup-note
+                    <!-- <popup-note
                         :label="'পৃথিবী মোট সংখ্যা'"
                         :ward_id="report_header?.ward_info?.id"
                         :table_name="'dawah_and_prokashonas'"
                         :field_title="'prithibi'"
                         :month="month"
-                    />
+                    /> -->
                     <popup-note
                         :label="'পৃথিবী বৃদ্ধি'"
                         :ward_id="report_header?.ward_info?.id"
                         :table_name="'dawah_and_prokashonas'"
                         :field_title="'prithibi_increase'"
+                        :ward_table_name="'ward_dawah_and_prokashonas'"
+                        :ward_column_name="'prithibi_increase'"
                         :month="month"
                     />
                 </div>
@@ -4494,13 +4969,17 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_total'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'unit_masik_sadaron_sova_total'"
                     :month="month"
                 />
                 <popup-note
-                    :label="'ইউনিটে মাসিক সাধারণ সভা বৃদ্ধি'"
+                    :label="'ইউনিটে মাসিক সাধারণ সভা টার্গেট'"
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_target'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'unit_masik_sadaron_sova_target'"
                     :month="month"
                 />
                 <popup-note
@@ -4508,6 +4987,8 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_uposthiti'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'unit_masik_sadaron_sova_uposthiti'"
                     :month="month"
                 />
                 <popup-note
@@ -4515,13 +4996,17 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_total'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'iftar_mahfil_personal_total'"
                     :month="month"
                 />
                 <popup-note
-                    :label="'ইফতার মাহফিল (ব্যক্তিগত) বৃদ্ধি'"
+                    :label="'ইফতার মাহফিল (ব্যক্তিগত) টার্গেট'"
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_target'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'iftar_mahfil_personal_target'"
                     :month="month"
                 />
                 <popup-note
@@ -4529,6 +5014,8 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_uposthiti'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'iftar_mahfil_personal_uposthiti'"
                     :month="month"
                 />
                 <popup-note
@@ -4536,13 +5023,17 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_total'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'iftar_mahfil_samostic_total'"
                     :month="month"
                 />
                 <popup-note
-                    :label="'ইফতার মাহফিল (সাংগঠনিক) বৃদ্ধি'"
+                    :label="'ইফতার মাহফিল (সাংগঠনিক) টার্গেট'"
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_target'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'iftar_mahfil_samostic_target'"
                     :month="month"
                 />
                 <popup-note
@@ -4550,6 +5041,8 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_uposthiti'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'iftar_mahfil_samostic_uposthiti'"
                     :month="month"
                 />
                 <popup-note
@@ -4557,13 +5050,17 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'cha_chakra_total'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'cha_chakra_total'"
                     :month="month"
                 />
                 <popup-note
-                    :label="'চা চক্র বৃদ্ধি'"
+                    :label="'চা চক্র টার্গেট'" 
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'cha_chakra_target'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'cha_chakra_target'"
                     :month="month"
                 />
                 <popup-note
@@ -4571,6 +5068,8 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'cha_chakra_uposthiti'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'cha_chakra_uposthiti'"
                     :month="month"
                 />
                 <popup-note
@@ -4578,13 +5077,17 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_total'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'samostic_khawa_total'"
                     :month="month"
                 />
                 <popup-note
-                    :label="'সামষ্টিক খাওয়া বৃদ্ধি'"
+                    :label="'সামষ্টিক খাওয়া টার্গেট'"
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_target'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'samostic_khawa_target'"
                     :month="month"
                 />
                 <popup-note
@@ -4592,6 +5095,8 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_uposthiti'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'samostic_khawa_uposthiti'"
                     :month="month"
                 />
                 <popup-note
@@ -4599,13 +5104,17 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_total'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'sikkha_sofor_total'"
                     :month="month"
                 />
                 <popup-note
-                    :label="'শিক্ষা সফর বৃদ্ধি'"
+                    :label="'শিক্ষা সফর টার্গেট'"
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_target'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'sikkha_sofor_target'"
                     :month="month"
                 />
                 <popup-note
@@ -4613,6 +5122,8 @@
                     :ward_id="report_header?.ward_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_uposthiti'"
+                    :ward_table_name="'ward_kormosuci_bastobayons'"
+                    :ward_column_name="'sikkha_sofor_uposthiti'"
                     :month="month"
                 />
             </div>
@@ -4649,15 +5160,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'rokon_previous'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -4669,15 +5182,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'rokon_present'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -4705,6 +5220,8 @@
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'rokon_briddhi'"
+                                            :ward_table_name="'ward_songothon1_jonosoktis'"
+                                            :ward_column_name="'rokon_briddhi'"
                                             :month="month"
                                         >
                                         </popup>
@@ -4735,6 +5252,8 @@
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'rokon_gatti'"
+                                            :ward_table_name="'ward_songothon1_jonosoktis'"
+                                            :ward_column_name="'rokon_gatti'"
                                             :month="month"
                                         >
                                         </popup>
@@ -4765,6 +5284,8 @@
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'rokon_target'"
+                                            :ward_table_name="'ward_songothon1_jonosoktis'"
+                                            :ward_column_name="'rokon_target'"
                                             :month="month"
                                         >
                                         </popup>
@@ -4797,15 +5318,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'worker_previous'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -4817,15 +5340,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'worker_present'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -4853,6 +5378,8 @@
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'worker_briddhi'"
+                                            :ward_table_name="'ward_songothon1_jonosoktis'"
+                                            :ward_column_name="'worker_briddhi'"
                                             :month="month"
                                         >
                                         </popup>
@@ -4883,6 +5410,8 @@
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'worker_gatti'"
+                                            :ward_table_name="'ward_songothon1_jonosoktis'"
+                                            :ward_column_name="'worker_gatti'"
                                             :month="month"
                                         >
                                         </popup>
@@ -4913,6 +5442,8 @@
                                             "
                                             :table_name="'songothon1_jonosoktis'"
                                             :field_title="'worker_target'"
+                                            :ward_table_name="'ward_songothon1_jonosoktis'"
+                                            :ward_column_name="'worker_target'"
                                             :month="month"
                                         >
                                         </popup>
@@ -4974,43 +5505,54 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="associate_member_man_briddhi"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon2_associate_members
-                                                    ?.associate_member_man_briddhi
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon2-associate-member'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="associate_member_man_briddhi"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon2_associate_members
+                                                        ?.associate_member_man_briddhi
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon2-associate-member')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon2_associate_members'"
+                                            :column_name="'associate_member_man_briddhi'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="associate_member_man_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon2_associate_members
-                                                    ?.associate_member_man_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon2-associate-member'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="associate_member_man_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon2_associate_members
+                                                        ?.associate_member_man_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon2-associate-member')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon2_associate_members'"
+                                            :column_name="'associate_member_man_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -5049,43 +5591,54 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="associate_member_woman_briddhi"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon2_associate_members
-                                                    ?.associate_member_woman_briddhi
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon2-associate-member'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="associate_member_woman_briddhi"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon2_associate_members
+                                                        ?.associate_member_woman_briddhi
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon2-associate-member')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon2_associate_members'"
+                                            :column_name="'associate_member_woman_briddhi'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="associate_member_woman_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon2_associate_members
-                                                    ?.associate_member_woman_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon2-associate-member'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="associate_member_woman_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon2_associate_members
+                                                        ?.associate_member_woman_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon2-associate-member')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon2_associate_members'"
+                                            :column_name="'associate_member_woman_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -5122,15 +5675,17 @@
                                                     )
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'associate_member_previous'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -5147,15 +5702,17 @@
                                                     )
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'associate_member_present'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -5182,6 +5739,8 @@
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'associate_member_briddhi'"
+                                            :ward_table_name="'none'"
+                                            :ward_column_name="'none'"
                                             :month="month"
                                         >
                                         </popup>
@@ -5211,6 +5770,8 @@
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'associate_member_target'"
+                                            :ward_table_name="'none'"
+                                            :ward_column_name="'none'"
                                             :month="month"
                                         >
                                         </popup>
@@ -5303,62 +5864,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_rokon_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_rokon_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_rokon_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_rokon_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_rokon_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_rokon_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_rokon_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_rokon_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_rokon_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_rokon_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_rokon_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_rokon_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_rokon_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_rokon_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_rokon_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -5381,62 +5958,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_kormi_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_kormi_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_kormi_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_kormi_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_kormi_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_kormi_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_kormi_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_kormi_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_kormi_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_kormi_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_kormi_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_kormi_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_kormi_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_kormi_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_kormi_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -5459,62 +6052,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_associate_member_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_associate_member_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_associate_member_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_associate_member_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_associate_member_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_associate_member_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_associate_member_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_associate_member_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_associate_member_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_associate_member_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="women_associate_member_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.women_associate_member_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="women_associate_member_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.women_associate_member_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'women_associate_member_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
 
                             <tr>
@@ -5541,62 +6150,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_rokon_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_rokon_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_rokon_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_rokon_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_rokon_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_rokon_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_rokon_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_rokon_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_rokon_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_rokon_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_rokon_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_rokon_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_rokon_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_rokon_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_rokon_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -5619,62 +6244,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_kormi_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_kormi_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_kormi_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_kormi_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_kormi_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_kormi_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_kormi_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_kormi_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_kormi_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_kormi_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_kormi_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_kormi_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_kormi_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_kormi_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_kormi_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -5697,62 +6338,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_associate_member_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_associate_member_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_associate_member_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_associate_member_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_associate_member_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_associate_member_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_associate_member_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_associate_member_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_associate_member_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_associate_member_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromojibi_associate_member_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.sromojibi_associate_member_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromojibi_associate_member_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.sromojibi_associate_member_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'sromojibi_associate_member_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
 
                             <tr>
@@ -5779,62 +6436,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_rokon_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_rokon_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_rokon_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_rokon_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_rokon_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_rokon_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_rokon_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_rokon_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_rokon_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_rokon_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_rokon_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_rokon_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_rokon_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_rokon_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_rokon_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -5857,62 +6530,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_kormi_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_kormi_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_kormi_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_kormi_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_kormi_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_kormi_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_kormi_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_kormi_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_kormi_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_kormi_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_kormi_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_kormi_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_kormi_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_kormi_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_kormi_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -5935,62 +6624,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_associate_member_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_associate_member_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_associate_member_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_associate_member_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_associate_member_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_associate_member_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_associate_member_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_associate_member_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_associate_member_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_associate_member_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_associate_member_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.ulama_associate_member_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_associate_member_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.ulama_associate_member_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'ulama_associate_member_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
 
                             <tr>
@@ -6017,62 +6722,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_rokon_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_rokon_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_rokon_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_rokon_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_rokon_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_rokon_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_rokon_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_rokon_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_rokon_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_rokon_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_rokon_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_rokon_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_rokon_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_rokon_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_rokon_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -6095,62 +6816,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_kormi_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_kormi_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_kormi_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_kormi_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_kormi_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_kormi_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_kormi_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_kormi_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_kormi_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_kormi_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_kormi_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_kormi_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_kormi_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_kormi_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_kormi_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -6173,62 +6910,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_associate_member_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_associate_member_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_associate_member_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_associate_member_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_associate_member_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_associate_member_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_associate_member_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_associate_member_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_associate_member_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_associate_member_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="pesha_jibi_associate_member_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.pesha_jibi_associate_member_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="pesha_jibi_associate_member_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.pesha_jibi_associate_member_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'pesha_jibi_associate_member_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
 
                             <tr>
@@ -6255,62 +7008,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_rokon_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_rokon_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_rokon_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_rokon_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_rokon_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_rokon_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_rokon_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_rokon_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_rokon_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_rokon_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_rokon_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_rokon_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_rokon_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_rokon_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_rokon_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -6333,62 +7102,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_kormi_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_kormi_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_kormi_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_kormi_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_kormi_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_kormi_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_kormi_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_kormi_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_kormi_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_kormi_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_kormi_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_kormi_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_kormi_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_kormi_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_kormi_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -6411,62 +7196,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_associate_member_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_associate_member_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_associate_member_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_associate_member_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_associate_member_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_associate_member_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_associate_member_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_associate_member_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_associate_member_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_associate_member_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_associate_member_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon3_departmental_information
-                                                    ?.jubo_associate_member_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon3-departmental-information'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_associate_member_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon3_departmental_information
+                                                        ?.jubo_associate_member_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon3-departmental-information')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon3_departmental_information'"
+                                            :column_name="'jubo_associate_member_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
 
                             <tr>
@@ -6483,15 +7284,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'vinno_dormalombi_worker_previous'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -6503,15 +7306,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'vinno_dormalombi_worker_present'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -6539,6 +7344,8 @@
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'vinno_dormalombi_worker_briddhi'"
+                                            :ward_table_name="'ward_songothon3_departmental_information'"
+                                            :ward_column_name="'vinno_dormalombi_kormi_increase'"
                                             :month="month"
                                         >
                                         </popup>
@@ -6588,6 +7395,8 @@
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'vinno_dormalombi_worker_target'"
+                                            :ward_table_name="'ward_songothon3_departmental_information'"
+                                            :ward_column_name="'vinno_dormalombi_kormi_target'"
                                             :month="month"
                                         >
                                         </popup>
@@ -6605,15 +7414,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'vinno_dormalombi_associate_member_previous'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -6625,15 +7436,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'vinno_dormalombi_associate_member_present'"
+                                            :ward_table_name="'tttttttttttttttttttttttttttttt'"
+                                            :ward_column_name="'ccccccccccccccccccccccccccccc'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -6661,6 +7474,8 @@
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'vinno_dormalombi_associate_member_briddhi'"
+                                            :ward_table_name="'ward_songothon3_departmental_information'"
+                                            :ward_column_name="'vinno_dormalombi_associate_member_increase'"
                                             :month="month"
                                         >
                                         </popup>
@@ -6710,6 +7525,8 @@
                                             "
                                             :table_name="'songothon2_associate_members'"
                                             :field_title="'vinno_dormalombi_associate_member_target'"
+                                            :ward_table_name="'ward_songothon3_departmental_information'"
+                                            :ward_column_name="'vinno_dormalombi_associate_member_target'"
                                             :month="month"
                                         >
                                         </popup>
@@ -6740,15 +7557,6 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (পুরুষ)</td>
-                                <!-- <td>{{bangla($songothon4->general_unit_men_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_present?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_men_target?? "")}}</td>
-                                <td>
-                                    {{bangla(implementation_rate($songothon4->general_unit_men_target, $songothon4->general_unit_men_increase))}}
-                                </td> -->
-
                                 <td>
                                     <!-- <input name="general_unit_men_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
@@ -6768,62 +7576,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="general_unit_men_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_men_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="general_unit_men_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.general_unit_men_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'general_unit_men_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="general_unit_men_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_men_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="general_unit_men_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.general_unit_men_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'general_unit_men_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="general_unit_men_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_men_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="general_unit_men_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.general_unit_men_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'general_unit_men_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -6841,14 +7665,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (মহিলা)</td>
-                                <!-- <td>{{bangla($songothon4->general_unit_women_previous?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_present?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_increase?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_gatti?? "")}}</td>
-                                <td>{{bangla($songothon4->general_unit_women_target?? "")}}</td>
-                                <td>
-                                    {{bangla(implementation_rate($songothon4->general_unit_women_target, $songothon4->general_unit_women_increase))}}
-                                </td> -->
+                                
                                 <td>
                                     <!-- <input name="general_unit_women_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
@@ -6868,62 +7685,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="general_unit_women_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_women_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="general_unit_women_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.general_unit_women_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'general_unit_women_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="general_unit_women_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_women_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="general_unit_women_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.general_unit_women_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'general_unit_women_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="general_unit_women_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.general_unit_women_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="general_unit_women_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.general_unit_women_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'general_unit_women_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -6968,62 +7801,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_unit_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.ulama_unit_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_unit_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.ulama_unit_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'ulama_unit_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_unit_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.ulama_unit_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_unit_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.ulama_unit_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'ulama_unit_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="ulama_unit_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.ulama_unit_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ulama_unit_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.ulama_unit_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'ulama_unit_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -7068,62 +7917,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="peshajibi_unit_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.peshajibi_unit_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="peshajibi_unit_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.peshajibi_unit_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'peshajibi_unit_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="peshajibi_unit_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.peshajibi_unit_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="peshajibi_unit_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.peshajibi_unit_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'peshajibi_unit_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="peshajibi_unit_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.peshajibi_unit_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="peshajibi_unit_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.peshajibi_unit_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'peshajibi_unit_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -7168,62 +8033,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromik_kollyan_unit_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.sromik_kollyan_unit_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromik_kollyan_unit_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.sromik_kollyan_unit_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'sromik_kollyan_unit_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromik_kollyan_unit_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.sromik_kollyan_unit_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromik_kollyan_unit_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.sromik_kollyan_unit_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'sromik_kollyan_unit_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="sromik_kollyan_unit_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.sromik_kollyan_unit_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="sromik_kollyan_unit_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.sromik_kollyan_unit_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'sromik_kollyan_unit_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -7268,62 +8149,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_unit_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.jubo_unit_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_unit_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.jubo_unit_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'jubo_unit_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_unit_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.jubo_unit_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_unit_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.jubo_unit_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'jubo_unit_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="jubo_unit_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.jubo_unit_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="jubo_unit_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.jubo_unit_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'jubo_unit_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -7368,62 +8265,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="media_unit_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.media_unit_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="media_unit_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.media_unit_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'media_unit_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="media_unit_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.media_unit_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="media_unit_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.media_unit_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'media_unit_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="media_unit_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon4_unit_songothons
-                                                    ?.media_unit_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon4-unit-songothon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="media_unit_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon4_unit_songothons
+                                                        ?.media_unit_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon4-unit-songothon')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon4_unit_songothons'"
+                                            :column_name="'media_unit_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                                 <td>
                                     {{
                                         formatBangla(
@@ -7783,62 +8696,78 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
-                                        name="dawati_unit_increase"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon5_dawat_and_paribarik_units
-                                                    ?.dawati_unit_increase
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon5-dawat-and-paribarik-unit'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="dawati_unit_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon5_dawat_and_paribarik_units
+                                                        ?.dawati_unit_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon5-dawat-and-paribarik-unit')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'dawati_unit_increase'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="dawati_unit_gatti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon5_dawat_and_paribarik_units
-                                                    ?.dawati_unit_gatti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon5-dawat-and-paribarik-unit'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="dawati_unit_gatti"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon5_dawat_and_paribarik_units
+                                                        ?.dawati_unit_gatti
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon5-dawat-and-paribarik-unit')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'dawati_unit_gatti'" 
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="dawati_unit_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_songothon5_dawat_and_paribarik_units
-                                                    ?.dawati_unit_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-songothon5-dawat-and-paribarik-unit'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        <input
+                                            name="dawati_unit_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.ward_songothon5_dawat_and_paribarik_units
+                                                        ?.dawati_unit_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload('ward-songothon5-dawat-and-paribarik-unit')
+                                            "
+                                            type="text"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        
+                                        <comment-from-thana 
+                                            :table_name="'ward_songothon5_dawat_and_paribarik_units'"
+                                            :column_name="'dawati_unit_target'" 
+                                        />
+                                    </div>
                                 </td>
+
                             </tr>
                             <tr>
                                 <td class="text-start">মোট পারিবারিক ইউনিট</td>
@@ -7860,15 +8789,17 @@
                                                     ""
                                             )
                                         }}
-                                        <popup
+                                        <!-- <popup
                                             :ward_id="
                                                 report_header?.ward_info?.id
                                             "
                                             :table_name="'songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_total'"
+                                            :ward_table_name="'none'"
+                                            :ward_column_name="'none'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -7896,6 +8827,8 @@
                                             "
                                             :table_name="'songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_increase'"
+                                            :ward_table_name="'ward_songothon5_dawat_and_paribarik_units'"
+                                            :ward_column_name="'paribarik_unit_increase'"
                                             :month="month"
                                         >
                                         </popup>
@@ -7945,6 +8878,8 @@
                                             "
                                             :table_name="'songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_target'"
+                                            :ward_table_name="'ward_songothon5_dawat_and_paribarik_units'"
+                                            :ward_column_name="'paribarik_unit_target'"
                                             :month="month"
                                         >
                                         </popup>
@@ -7978,119 +8913,159 @@
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input
-                                            name="Joined_student_man_member"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
-                                                        ?.Joined_student_man_member
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="Joined_student_women_member"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
-                                                        ?.Joined_student_women_member
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="Joined_student_man_member"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_songothon6_bidayi_students_connects
+                                                            ?.Joined_student_man_member
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-songothon6-bidayi-students-connect'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana
+                                                :table_name="'ward_songothon6_bidayi_students_connects'"
+                                                :column_name="'Joined_student_man_member'"
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="Joined_student_women_member"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_songothon6_bidayi_students_connects
+                                                            ?.Joined_student_women_member
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-songothon6-bidayi-students-connect'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana
+                                                :table_name="'ward_songothon6_bidayi_students_connects'"
+                                                :column_name="'Joined_student_women_member'"
+                                            />
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input
-                                            name="Joined_student_man_associate"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
-                                                        ?.Joined_student_man_associate
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="Joined_student_women_associate"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
-                                                        ?.Joined_student_women_associate
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="Joined_student_man_associate"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_songothon6_bidayi_students_connects
+                                                            ?.Joined_student_man_associate
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-songothon6-bidayi-students-connect'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana
+                                                :table_name="'ward_songothon6_bidayi_students_connects'"
+                                                :column_name="'Joined_student_man_associate'"
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="Joined_student_women_associate"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_songothon6_bidayi_students_connects
+                                                            ?.Joined_student_women_associate
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-songothon6-bidayi-students-connect'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana
+                                                :table_name="'ward_songothon6_bidayi_students_connects'"
+                                                :column_name="'Joined_student_women_associate'"
+                                            />
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <input
-                                            name="Joined_student_man_worker"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
-                                                        ?.Joined_student_man_worker
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="Joined_student_women_worker"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_songothon6_bidayi_students_connects
-                                                        ?.Joined_student_women_worker
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-songothon6-bidayi-students-connect'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            <input
+                                                name="Joined_student_man_worker"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_songothon6_bidayi_students_connects
+                                                            ?.Joined_student_man_worker
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-songothon6-bidayi-students-connect'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana
+                                                :table_name="'ward_songothon6_bidayi_students_connects'"
+                                                :column_name="'Joined_student_man_worker'"
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="Joined_student_women_worker"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.ward_songothon6_bidayi_students_connects
+                                                            ?.Joined_student_women_worker
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'ward-songothon6-bidayi-students-connect'
+                                                    )
+                                                "
+                                                type="text"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <comment-from-thana
+                                                :table_name="'ward_songothon6_bidayi_students_connects'"
+                                                :column_name="'Joined_student_women_worker'"
+                                            />
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -8111,23 +9086,29 @@
                                             ঊর্ধ্বতন দায়িত্বশীলদের সফর
                                         </td>
                                         <td>
-                                            <input
-                                                name="upper_leader_sofor"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_songothon7_sofors
-                                                            ?.upper_leader_sofor
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-songothon7-sofor'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="upper_leader_sofor"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_songothon7_sofors
+                                                                ?.upper_leader_sofor
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-songothon7-sofor'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana
+                                                    :table_name="'ward_songothon7_sofors'"
+                                                    :column_name="'upper_leader_sofor'"
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -8135,51 +9116,63 @@
                                             ওয়ার্ড আমীর/সভাপতির সফর
                                         </td>
                                         <td>
-                                            <input
-                                                name="ward_sovapotir_sofor"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_songothon7_sofors
-                                                            ?.ward_sovapotir_sofor
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-songothon7-sofor'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="ward_sovapotir_sofor"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_songothon7_sofors
+                                                                ?.ward_sovapotir_sofor
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-songothon7-sofor'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana
+                                                    :table_name="'ward_songothon7_sofors'"
+                                                    :column_name="'ward_sovapotir_sofor'"
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-start px-2">
-                                            ওয়ার্ড শূরা/কর্মপরিষদ/টিম সদস্যদের
-                                            সফর
+                                            ওয়ার্ড শূরা/কর্মপরিষদ/টিম সদস্যদের সফর
                                         </td>
                                         <td>
-                                            <input
-                                                name="word_sura_sodosso_sofor"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_songothon7_sofors
-                                                            ?.word_sura_sodosso_sofor
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-songothon7-sofor'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="word_sura_sodosso_sofor"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.ward_songothon7_sofors
+                                                                ?.word_sura_sodosso_sofor
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'ward-songothon7-sofor'
+                                                        )
+                                                    "
+                                                    type="text"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <comment-from-thana
+                                                    :table_name="'ward_songothon7_sofors'"
+                                                    :column_name="'word_sura_sodosso_sofor'"
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
+
                             </table>
                         </div>
 
@@ -8224,6 +9217,8 @@
                                                     "
                                                     :table_name="'songothon8_iyanot_data'"
                                                     :field_title="'associate_member_total'"
+                                                    :ward_table_name="'ward_songothon8_iyanot_data'"
+                                                    :ward_column_name="'associate_member_total'"
                                                     :month="month"
                                                 >
                                                 </popup>
@@ -8255,6 +9250,8 @@
                                                     "
                                                     :table_name="'songothon8_iyanot_data'"
                                                     :field_title="'associate_member_total_iyanot_amounts'"
+                                                    :ward_table_name="'ward_songothon8_iyanot_data'"
+                                                    :ward_column_name="'associate_member_total_iyanot_amounts'"
                                                     :month="month"
                                                 >
                                                 </popup>
@@ -8289,6 +9286,8 @@
                                                     "
                                                     :table_name="'songothon8_iyanot_data'"
                                                     :field_title="'sudhi_total'"
+                                                    :ward_table_name="'ward_songothon8_iyanot_data'"
+                                                    :ward_column_name="'sudhi_total'"
                                                     :month="month"
                                                 >
                                                 </popup>
@@ -8320,6 +9319,8 @@
                                                     "
                                                     :table_name="'songothon8_iyanot_data'"
                                                     :field_title="'sudi_total_iyanot_amounts'"
+                                                    :ward_table_name="'ward_songothon8_iyanot_data'"
+                                                    :ward_column_name="'sudi_total_iyanot_amounts'"
                                                     :month="month"
                                                 >
                                                 </popup>
@@ -8679,6 +9680,8 @@
                                             "
                                             :table_name="'songothon9_sangothonik_boithoks'"
                                             :field_title="'unit_kormi_boithok_total'"
+                                            :ward_table_name="'ward_songothon9_sangothonik_boithoks'"
+                                            :ward_column_name="'unit_kormi_boithok_total'"
                                             :month="month"
                                         >
                                         </popup>
@@ -8730,6 +9733,8 @@
                                             "
                                             :table_name="'songothon9_sangothonik_boithoks'"
                                             :field_title="'unit_kormi_boithok_uposthiti'"
+                                            :ward_table_name="'ward_songothon9_sangothonik_boithoks'"
+                                            :ward_column_name="'unit_kormi_boithok'"
                                             :month="month"
                                         >
                                         </popup>
@@ -9719,6 +10724,8 @@
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'shomajsheba1_personal_social_works'"
                                         :field_title="'how_many_people_did'"
+                                        :ward_table_name="'ward_shomajsheba1_personal_social_works'"
+                                        :ward_column_name="'how_many_people_did'"
                                         :month="month"
                                     >
                                     </popup>
@@ -9750,6 +10757,8 @@
                                         :ward_id="report_header?.ward_info?.id"
                                         :table_name="'shomajsheba1_personal_social_works'"
                                         :field_title="'service_received_total'"
+                                        :ward_table_name="'ward_shomajsheba1_personal_social_works'"
+                                        :ward_column_name="'service_received_total'"
                                         :month="month"
                                     >
                                     </popup>
@@ -9941,6 +10950,8 @@
                                                 "
                                                 :table_name="'shomajsheba2_unit_social_works'"
                                                 :field_title="'shamajik_onusthane_ongshogrohon'"
+                                                :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                                :ward_column_name="'shamajik_onusthane_ongshogrohon'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -9970,6 +10981,8 @@
                                                 "
                                                 :table_name="'shomajsheba2_unit_social_works'"
                                                 :field_title="'shamajik_onusthane_shohayota_prodan'"
+                                                :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                                :ward_column_name="'shamajik_onusthane_shohayota_prodan'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -10028,6 +11041,8 @@
                                             "
                                             :table_name="'shomajsheba2_unit_social_works'"
                                             :field_title="'shamajik_birodh_mimangsha'"
+                                            :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                            :ward_column_name="'shamajik_birodh_mimangsha'"
                                             :month="month"
                                         >
                                         </popup>
@@ -10085,6 +11100,8 @@
                                             "
                                             :table_name="'shomajsheba2_unit_social_works'"
                                             :field_title="'manobik_shohayota_prodan'"
+                                            :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                            :ward_column_name="'manobik_shohayota_prodan'"
                                             :month="month"
                                         >
                                         </popup>
@@ -10151,6 +11168,8 @@
                                             "
                                             :table_name="'shomajsheba2_unit_social_works'"
                                             :field_title="'korje_hasana_prodan'"
+                                            :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                            :ward_column_name="'korje_hasana_prodan'"
                                             :month="month"
                                         >
                                         </popup>
@@ -10295,6 +11314,8 @@
                                                 "
                                                 :table_name="'shomajsheba2_unit_social_works'"
                                                 :field_title="'rogir_poricorja'"
+                                                :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                                :ward_column_name="'rogir_poricorja'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -10324,6 +11345,8 @@
                                                 "
                                                 :table_name="'shomajsheba2_unit_social_works'"
                                                 :field_title="'medical_shohayota_prodan'"
+                                                :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                                :ward_column_name="'medical_shohayota_prodan'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -10358,6 +11381,8 @@
                                             "
                                             :table_name="'shomajsheba2_unit_social_works'"
                                             :field_title="'mayeter_gosol'"
+                                            :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                            :ward_column_name="'mayeter_gosol_kotojonke'"
                                             :month="month"
                                         >
                                         </popup>
@@ -10394,6 +11419,8 @@
                                                 "
                                                 :table_name="'shomajsheba2_unit_social_works'"
                                                 :field_title="'voluntarily_blood_donation_kotojon'"
+                                                :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                                :ward_column_name="'voluntarily_blood_donation_kotojon'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -10423,6 +11450,8 @@
                                                 "
                                                 :table_name="'shomajsheba2_unit_social_works'"
                                                 :field_title="'voluntarily_blood_donation_kotojonke'"
+                                                :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                                :ward_column_name="'voluntarily_blood_donation_kotojonke'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -10481,6 +11510,8 @@
                                             "
                                             :table_name="'shomajsheba2_unit_social_works'"
                                             :field_title="'nobojatokke_gift_prodan'"
+                                            :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                            :ward_column_name="'nobojatokke_gift_prodan'"
                                             :month="month"
                                         >
                                         </popup>
@@ -10578,6 +11609,8 @@
                                             "
                                             :table_name="'shomajsheba2_unit_social_works'"
                                             :field_title="'others'"
+                                            :ward_table_name="'ward_shomajsheba2_group_social_works'"
+                                            :ward_column_name="'others'"
                                             :month="month"
                                         >
                                         </popup>
@@ -11972,6 +13005,47 @@
                 ><i class="fa-solid fa-door-open"></i
             ></a>
         </router-link>
+
+        <!-- Modal -->
+        <div class="modal fade" id="comment_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- <div class="comment_form_container">
+                            <form class="mb-2">
+                                <div class="mb-2">
+                                    <label for="comment" class="form-label">Add Comment</label>
+                                    <textarea name="comment" id="comment" class="form-control"
+                                        v-model="comment_text_store"></textarea>
+                                </div>
+                                <a href="#" class="btn btn-success" @click.prevent="comment_set">Add
+                                    comment</a>
+                            </form>
+                        </div> -->
+                        <!-- <pre>{{ all_comment_store ? "" : 'No data available' }}</pre> Debug output -->
+                        <div class="all_comment" v-for="(comment, index) in all_comment_store" :key="index">
+                            <div class="comment-card">
+                                <div class="comment-header">
+                                    <strong class="comment-author">{{ comment?.user?.full_name }}</strong>
+                                    <span class="comment-index">#{{ index + 1 }}</span>
+                                </div>
+                                <p class="comment-text">{{ comment?.comment }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -11979,11 +13053,12 @@
 import axios from "axios";
 import Popup from "../components/Popup.vue";
 import PopupNote from "../components/PopupNote.vue";
+import CommentFromThana from "../components/CommentFromThana.vue";
 import { store as comment_store } from "../stores/CommentStore";
 import { mapActions, mapWritableState } from "pinia";
 
 export default {
-    components: { Popup, PopupNote },
+    components: { Popup, PopupNote, CommentFromThana },
     data() {
         return {
             month: "",

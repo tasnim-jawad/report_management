@@ -2242,125 +2242,125 @@
             <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
                 <comment-note
                     :label="'ইউনিটে মাসিক সাধারণ সভা মোট সংখ্যা'"
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_total'"
                 />
                 <comment-note
                     :label="'ইউনিটে মাসিক সাধারণ সভা বৃদ্ধি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_target'"
                     
                 />
                 <comment-note
                     :label="'ইউনিটে মাসিক সাধারণ সভা মোট উপস্থিতি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_uposthiti'"
                     
                 />
                 <comment-note
                     :label="'ইফতার মাহফিল (ব্যক্তিগত) মোট সংখ্যা'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_total'"
                     
                 />
                 <comment-note
                     :label="'ইফতার মাহফিল (ব্যক্তিগত) বৃদ্ধি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_target'"
                     
                 />
                 <comment-note
                     :label="'ইফতার মাহফিল (ব্যক্তিগত) মোট উপস্থিতি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_uposthiti'"
                     
                 />
                 <comment-note
                     :label="'ইফতার মাহফিল (সাংগঠনিক) মোট সংখ্যা'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_total'"
                     
                 />
                 <comment-note
                     :label="'ইফতার মাহফিল (সাংগঠনিক) বৃদ্ধি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_target'"
                     
                 />
                 <comment-note
                     :label="'ইফতার মাহফিল (সাংগঠনিক) মোট উপস্থিতি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_uposthiti'"
                     
                 />
                 <comment-note
                     :label="'চা চক্র মোট সংখ্যা'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'cha_chakra_total'"
                     
                 />
                 <comment-note
                     :label="'চা চক্র বৃদ্ধি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'cha_chakra_target'"
                     
                 />
                 <comment-note
                     :label="'চা চক্র মোট উপস্থিতি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'cha_chakra_uposthiti'"
                     
                 />
                 <comment-note
                     :label="'সামষ্টিক খাওয়া মোট সংখ্যা'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_total'"
                     
                 />
                 <comment-note
                     :label="'সামষ্টিক খাওয়া বৃদ্ধি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_target'"
                     
                 />
                 <comment-note
                     :label="'সামষ্টিক খাওয়া মোট উপস্থিতি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_uposthiti'"
                     
                 />
                 <comment-note
                     :label="'শিক্ষা সফর মোট সংখ্যা'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_total'"
                     
                 />
                 <comment-note
                     :label="'শিক্ষা সফর বৃদ্ধি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_target'"
                     
                 />
                 <comment-note
                     :label="'শিক্ষা সফর মোট উপস্থিতি'"
                     
-                    :table_name="'kormosuci_bastobayons'"
+                    :table_name="'ward_kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_uposthiti'"
                     
                 />
@@ -4666,7 +4666,7 @@
                                             <div class="parent_popup">
                                                 {{ formatBangla(report_sum_data?.ward_songothon7_sofors?.upper_leader_sofor) }}
                                                 <comment
-                                                    :table_name="'ward_songothon7_sofor'"
+                                                    :table_name="'ward_songothon7_sofors'"
                                                     :column_name="'upper_leader_sofor'"
                                                 />
                                             </div>
@@ -4680,7 +4680,7 @@
                                             <div class="parent_popup">
                                                 {{ formatBangla(report_sum_data?.ward_songothon7_sofors?.ward_sovapotir_sofor) }}
                                                 <comment
-                                                    :table_name="'ward_songothon7_sofor'"
+                                                    :table_name="'ward_songothon7_sofors'"
                                                     :column_name="'ward_sovapotir_sofor'"
                                                 />
                                             </div>
@@ -4694,7 +4694,7 @@
                                             <div class="parent_popup">
                                                 {{ formatBangla(report_sum_data?.ward_songothon7_sofors?.word_sura_sodosso_sofor) }}
                                                 <comment
-                                                    :table_name="'ward_songothon7_sofor'"
+                                                    :table_name="'ward_songothon7_sofors'"
                                                     :column_name="'word_sura_sodosso_sofor'"
                                                 />
                                             </div>
@@ -6185,83 +6185,38 @@
                                 <tbody>
                                     <tr>
                                         <td class="text-start px-2 font-14">
-                                            পোস্টার/লিফলেট/বুকলেট/স্মারকলিপি
-                                            বিতরণ
+                                            পোস্টার/লিফলেট/বুকলেট/স্মারকলিপি বিতরণ
                                         </td>
                                         <td class="font-13">
-                                            <!-- {{bangla($rastrio2->poster_bitoron?? "")}}/
-                                            {{bangla($rastrio2->leaflet_bitoron?? "")}}/
-                                            {{bangla($rastrio2->booklet_bitoron?? "")}}/
-                                            {{bangla($rastrio2->sharoklipi_bitoron?? "")}} -->
                                             <div class="d-flex">
-                                                <input
-                                                    name="poster_bitoron"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.ward_rastrio2_kormoshuchi_bastobayons
-                                                                ?.poster_bitoron
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'ward-rastrio2-kormoshuchi-bastobayon'
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />/
-                                                <input
-                                                    name="leaflet_bitoron"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.ward_rastrio2_kormoshuchi_bastobayons
-                                                                ?.leaflet_bitoron
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'ward-rastrio2-kormoshuchi-bastobayon'
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />/
-                                                <input
-                                                    name="booklet_bitoron"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.ward_rastrio2_kormoshuchi_bastobayons
-                                                                ?.booklet_bitoron
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'ward-rastrio2-kormoshuchi-bastobayon'
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />/
-                                                <input
-                                                    name="sharoklipi_bitoron"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.ward_rastrio2_kormoshuchi_bastobayons
-                                                                ?.sharoklipi_bitoron
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'ward-rastrio2-kormoshuchi-bastobayon'
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />
+                                                <div class="parent_popup">
+                                                    {{ formatBangla(report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.poster_bitoron) }}
+                                                    <comment 
+                                                        :table_name="'ward_rastrio2_kormoshuchi_bastobayons'" 
+                                                        :column_name="'poster_bitoron'"
+                                                    />
+                                                </div> /
+                                                <div class="parent_popup">
+                                                    {{ formatBangla(report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.leaflet_bitoron) }}
+                                                    <comment 
+                                                        :table_name="'ward_rastrio2_kormoshuchi_bastobayons'" 
+                                                        :column_name="'leaflet_bitoron'"
+                                                    />
+                                                </div> /
+                                                <div class="parent_popup">
+                                                    {{ formatBangla(report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.booklet_bitoron) }}
+                                                    <comment 
+                                                        :table_name="'ward_rastrio2_kormoshuchi_bastobayons'" 
+                                                        :column_name="'booklet_bitoron'"
+                                                    />
+                                                </div> /
+                                                <div class="parent_popup">
+                                                    {{ formatBangla(report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.sharoklipi_bitoron) }}
+                                                    <comment 
+                                                        :table_name="'ward_rastrio2_kormoshuchi_bastobayons'" 
+                                                        :column_name="'sharoklipi_bitoron'"
+                                                    />
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -6269,28 +6224,18 @@
                                         <td class="text-start px-2">
                                             অন্যান্য
                                         </td>
-                                        <!-- <td>{{bangla($rastrio2->others?? "")}}</td> -->
                                         <td>
-                                            <input
-                                                name="others"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio2_kormoshuchi_bastobayons
-                                                            ?.others
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio2-kormoshuchi-bastobayon'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.others) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio2_kormoshuchi_bastobayons'" 
+                                                    :column_name="'others'"
+                                                />
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
+
                             </table>
                         </div>
                     </div>
@@ -6313,179 +6258,88 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-start">
-                                    স্বাধীনতা ও জাতীয় দিবস
+                                <td class="text-start">স্বাধীনতা ও জাতীয় দিবস</td>
+                                <td>
+                                    <div class="parent_popup">
+                                        {{ formatBangla(report_sum_data?.ward_rastrio3_dibosh_palons?.shadhinota_o_jatio_dibosh_total_programs) }}
+                                        <comment 
+                                            :table_name="'ward_rastrio3_dibosh_palons'" 
+                                            :column_name="'shadhinota_o_jatio_dibosh_total_programs'"
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="shadhinota_o_jatio_dibosh_total_programs"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_rastrio3_dibosh_palons
-                                                    ?.shadhinota_o_jatio_dibosh_total_programs
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-rastrio3-dibosh-palon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        {{ formatBangla(average_uposthiti?.ward_rastrio3_dibosh_palons?.shadhinota_o_jatio_dibosh) }}
+                                        <comment 
+                                            :table_name="'ward_rastrio3_dibosh_palons'" 
+                                            :column_name="'shadhinota_o_jatio_dibosh_attend'"
+                                        />
+                                    </div>
+                                </td>
+                                <td class="text-start">আন্তর্জাতিক মাতৃভাষা দিবস</td>
+                                <td>
+                                    <div class="parent_popup">
+                                        {{ formatBangla(report_sum_data?.ward_rastrio3_dibosh_palons?.mattrivasha_dibosh_total_programs) }}
+                                        <comment 
+                                            :table_name="'ward_rastrio3_dibosh_palons'" 
+                                            :column_name="'mattrivasha_dibosh_total_programs'"
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="shadhinota_o_jatio_dibosh_attend"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_rastrio3_dibosh_palons
-                                                    ?.shadhinota_o_jatio_dibosh
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-rastrio3-dibosh-palon',
-                                                rastrio3.shadhinota_o_jatio_dibosh_total_programs
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
-                                <td class="text-start">
-                                    আন্তর্জাতিক মাতৃভাষা দিবস
-                                </td>
-                                <td>
-                                    <input
-                                        name="mattrivasha_dibosh_total_programs"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_rastrio3_dibosh_palons
-                                                    ?.mattrivasha_dibosh_total_programs
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-rastrio3-dibosh-palon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                </td>
-                                <td>
-                                    <input
-                                        name="mattrivasha_dibosh_attend"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_rastrio3_dibosh_palons
-                                                    ?.mattrivasha_dibosh
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-rastrio3-dibosh-palon',
-                                                rastrio3.mattrivasha_dibosh_total_programs
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        {{ formatBangla(average_uposthiti?.ward_rastrio3_dibosh_palons?.mattrivasha_dibosh) }}
+                                        <comment 
+                                            :table_name="'ward_rastrio3_dibosh_palons'" 
+                                            :column_name="'mattrivasha_dibosh_attend'"
+                                        />
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-start">বিজয় দিবস</td>
                                 <td>
-                                    <input
-                                        name="bijoy_dibosh_total_programs"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_rastrio3_dibosh_palons
-                                                    ?.bijoy_dibosh_total_programs
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-rastrio3-dibosh-palon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        {{ formatBangla(report_sum_data?.ward_rastrio3_dibosh_palons?.bijoy_dibosh_total_programs) }}
+                                        <comment 
+                                            :table_name="'ward_rastrio3_dibosh_palons'" 
+                                            :column_name="'bijoy_dibosh_total_programs'"
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="bijoy_dibosh_attend"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_rastrio3_dibosh_palons
-                                                    ?.bijoy_dibosh
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-rastrio3-dibosh-palon',
-                                                rastrio3.bijoy_dibosh_total_programs
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        {{ formatBangla(average_uposthiti?.ward_rastrio3_dibosh_palons?.bijoy_dibosh) }}
+                                        <comment 
+                                            :table_name="'ward_rastrio3_dibosh_palons'" 
+                                            :column_name="'bijoy_dibosh_attend'"
+                                        />
+                                    </div>
                                 </td>
                                 <td class="text-start">অন্যান্য</td>
                                 <td>
-                                    <input
-                                        name="others_total_programs"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.ward_rastrio3_dibosh_palons
-                                                    ?.others_total_programs
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'ward-rastrio3-dibosh-palon'
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        {{ formatBangla(report_sum_data?.ward_rastrio3_dibosh_palons?.others_total_programs) }}
+                                        <comment 
+                                            :table_name="'ward_rastrio3_dibosh_palons'" 
+                                            :column_name="'others_total_programs'"
+                                        />
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="others_attend"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.ward_rastrio3_dibosh_palons
-                                                    ?.others
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'ward-rastrio3-dibosh-palon',
-                                                rastrio3.others_total_programs
-                                            )
-                                        "
-                                        type="text"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                    <div class="parent_popup">
+                                        {{ formatBangla(average_uposthiti?.ward_rastrio3_dibosh_palons?.others) }}
+                                        <comment 
+                                            :table_name="'ward_rastrio3_dibosh_palons'" 
+                                            :column_name="'others_attend'"
+                                        />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+
                 </div>
                 <div class="nirbachon">
                     <h4 class="fs-6 fw-bold">
@@ -6506,127 +6360,65 @@
                                     কাউন্সিলর/মেম্বার
                                 </td>
                                 <td>
-                                    <!-- {{bangla($rastrio4->councilor_candidate?? "")}} /
-                                    {{bangla($rastrio4->member_candidate?? "")}} -->
                                     <div class="d-flex">
-                                        <input
-                                            name="councilor_candidate"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_rastrio4_election_activities
-                                                        ?.councilor_candidate
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-rastrio4-election-activitie'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="member_candidate"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_rastrio4_election_activities
-                                                        ?.member_candidate
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-rastrio4-election-activitie'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.councilor_candidate) }}
+                                            <comment 
+                                                :table_name="'ward_rastrio4_election_activities'" 
+                                                :column_name="'councilor_candidate'"
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.member_candidate) }}
+                                            <comment 
+                                                :table_name="'ward_rastrio4_election_activities'" 
+                                                :column_name="'member_candidate'"
+                                            />
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <!-- {{bangla($rastrio4->councilor_candidate_elected?? "")}} /
-                                    {{bangla($rastrio4->member_candidate_elected?? "")}} -->
                                     <div class="d-flex">
-                                        <input
-                                            name="councilor_candidate_elected"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_rastrio4_election_activities
-                                                        ?.councilor_candidate_elected
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-rastrio4-election-activitie'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="member_candidate_elected"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_rastrio4_election_activities
-                                                        ?.member_candidate_elected
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-rastrio4-election-activitie'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.councilor_candidate_elected) }}
+                                            <comment 
+                                                :table_name="'ward_rastrio4_election_activities'" 
+                                                :column_name="'councilor_candidate_elected'"
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.member_candidate_elected) }}
+                                            <comment 
+                                                :table_name="'ward_rastrio4_election_activities'" 
+                                                :column_name="'member_candidate_elected'"
+                                            />
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <!-- {{bangla($rastrio4->councilor_candidate_second_position?? "")}} /
-                                    {{bangla($rastrio4->member_candidate_second_position?? "")}} -->
                                     <div class="d-flex">
-                                        <input
-                                            name="councilor_candidate_second_position"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_rastrio4_election_activities
-                                                        ?.councilor_candidate_second_position
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-rastrio4-election-activitie'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />/
-                                        <input
-                                            name="member_candidate_second_position"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_rastrio4_election_activities
-                                                        ?.member_candidate_second_position
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-rastrio4-election-activitie'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.councilor_candidate_second_position) }}
+                                            <comment 
+                                                :table_name="'ward_rastrio4_election_activities'" 
+                                                :column_name="'councilor_candidate_second_position'"
+                                            />
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.member_candidate_second_position) }}
+                                            <comment 
+                                                :table_name="'ward_rastrio4_election_activities'" 
+                                                :column_name="'member_candidate_second_position'"
+                                            />
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
+
                     </table>
                     <div class="d-flex align-items-start gap-2">
                         <table class="text-center mb-2 width-60">
@@ -6646,17 +6438,7 @@
                                         মোট ভোট কেন্দ্র (জাতীয়/স্থানীয়)
                                     </td>
                                     <td>
-                                        <!-- {{bangla($rastrio4->national_vote_kendro?? "")}} /
-                                        {{bangla($rastrio4->local_vote_kendro?? "")}} -->
                                         <div>
-                                            <!-- <input name="national_vote_kendro"
-                                                :value="formatBangla(report_sum_data?.ward_rastrio4_election_activities?.national_vote_kendro)"
-                                                @change="data_upload('ward-rastrio4-election-activitie')" type="text"
-                                                class="bg-input w-100 text-center" />/
-                                            <input name="local_vote_kendro"
-                                                :value="formatBangla(report_sum_data?.ward_rastrio4_election_activities?.local_vote_kendro)"
-                                                @change="data_upload('ward-rastrio4-election-activitie')" type="text"
-                                                class="bg-input w-100 text-center" /> -->
                                             <span>{{
                                                 formatBangla(
                                                     previous_present.national_vote_kendro_present
@@ -6671,85 +6453,45 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <!-- {{bangla($rastrio4->national_vote_kendro_increase?? "")}} /
-                                        {{bangla($rastrio4->local_vote_kendro_increase?? "")}} -->
                                         <div class="d-flex">
-                                            <input
-                                                name="national_vote_kendro_increase"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio4_election_activities
-                                                            ?.national_vote_kendro_increase
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="local_vote_kendro_increase"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio4_election_activities
-                                                            ?.local_vote_kendro_increase
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.national_vote_kendro_increase) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio4_election_activities'" 
+                                                    :column_name="'national_vote_kendro_increase'"
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.local_vote_kendro_increase) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio4_election_activities'" 
+                                                    :column_name="'local_vote_kendro_increase'"
+                                                />
+                                            </div>
+
                                         </div>
                                     </td>
                                     <td>
-                                        <!-- {{bangla($rastrio4->national_vote_kendro_target?? "")}} /
-                                        {{bangla($rastrio4->local_vote_kendro_target?? "")}} -->
                                         <div class="d-flex">
-                                            <input
-                                                name="national_vote_kendro_target"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio4_election_activities
-                                                            ?.national_vote_kendro_target
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="local_vote_kendro_target"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio4_election_activities
-                                                            ?.local_vote_kendro_target
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.national_vote_kendro_target) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio4_election_activities'" 
+                                                    :column_name="'national_vote_kendro_target'"
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.local_vote_kendro_target) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio4_election_activities'" 
+                                                    :column_name="'local_vote_kendro_target'"
+                                                />
+                                            </div>
                                         </div>
                                     </td>
+
                                 </tr>
                                 <tr>
                                     <td class="text-start">
@@ -6757,17 +6499,7 @@
                                         ইউনিট
                                     </td>
                                     <td>
-                                        <!-- {{bangla($rastrio4->vote_kendro_committee?? "")}} /
-                                        {{bangla($rastrio4->vote_kendro_vittik_unit?? "")}} -->
                                         <div>
-                                            <!-- <input name="vote_kendro_committee"
-                                                :value="formatBangla(report_sum_data?.ward_rastrio4_election_activities?.vote_kendro_committee)"
-                                                @change="data_upload('ward-rastrio4-election-activitie')" type="text"
-                                                class="bg-input w-100 text-center" />/
-                                            <input name="vote_kendro_vittik_unit"
-                                                :value="formatBangla(report_sum_data?.ward_rastrio4_election_activities?.vote_kendro_vittik_unit)"
-                                                @change="data_upload('ward-rastrio4-election-activitie')" type="text"
-                                                class="bg-input w-100 text-center" /> -->
                                             <span>{{
                                                 formatBangla(
                                                     previous_present.vote_kendro_committee_present
@@ -6782,85 +6514,44 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <!-- {{bangla($rastrio4->vote_kendro_committee_increase?? "")}} /
-                                        {{bangla($rastrio4->vote_kendro_vittik_unit_increase?? "")}} -->
                                         <div class="d-flex">
-                                            <input
-                                                name="vote_kendro_committee_increase"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio4_election_activities
-                                                            ?.vote_kendro_committee_increase
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="vote_kendro_vittik_unit_increase"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio4_election_activities
-                                                            ?.vote_kendro_vittik_unit_increase
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.vote_kendro_committee_increase) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio4_election_activities'" 
+                                                    :column_name="'vote_kendro_committee_increase'"
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.vote_kendro_vittik_unit_increase) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio4_election_activities'" 
+                                                    :column_name="'vote_kendro_vittik_unit_increase'"
+                                                />
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <!-- {{bangla($rastrio4->vote_kendro_committee_target?? "")}} /
-                                        {{bangla($rastrio4->vote_kendro_vittik_unit_target?? "")}} -->
                                         <div class="d-flex">
-                                            <input
-                                                name="vote_kendro_committee_target"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio4_election_activities
-                                                            ?.vote_kendro_committee_target
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />/
-                                            <input
-                                                name="vote_kendro_vittik_unit_target"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.ward_rastrio4_election_activities
-                                                            ?.vote_kendro_vittik_unit_target
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'ward-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                type="text"
-                                                class="bg-input w-100 text-center"
-                                            />
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.vote_kendro_committee_target) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio4_election_activities'" 
+                                                    :column_name="'vote_kendro_committee_target'"
+                                                />
+                                            </div>
+                                            /
+                                            <div class="parent_popup">
+                                                {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.vote_kendro_vittik_unit_target) }}
+                                                <comment 
+                                                    :table_name="'ward_rastrio4_election_activities'" 
+                                                    :column_name="'vote_kendro_vittik_unit_target'"
+                                                />
+                                            </div>
                                         </div>
                                     </td>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -6876,24 +6567,15 @@
                                 <tr>
                                     <!-- <td>{{bangla($rastrio4->election_management_committee_meeting?? "")}}</td> -->
                                     <td>
-                                        <input
-                                            name="election_management_committee_meeting"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_rastrio4_election_activities
-                                                        ?.election_management_committee_meeting
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'ward-rastrio4-election-activitie'
-                                                )
-                                            "
-                                            type="text"
-                                            class="bg-input w-100 text-center"
-                                        />
+                                        <div class="parent_popup">
+                                            {{ formatBangla(report_sum_data?.ward_rastrio4_election_activities?.election_management_committee_meeting) }}
+                                            <comment 
+                                                :table_name="'ward_rastrio4_election_activities'" 
+                                                :column_name="'election_management_committee_meeting'"
+                                            />
+                                        </div>
                                     </td>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -6908,8 +6590,24 @@
                 <table class="text-center mb-1 table_layout_fixed">
                     <thead>
                         <tr>
-                            <th class="text-center" colspan="2">আয়ের বিবরণ</th>
-                            <th class="text-center" colspan="2">জমার পরিমাণ</th>
+                            <th class="text-center" colspan="2">
+                                <div class="parent_popup">
+                                    আয়ের বিবরণ
+                                    <comment
+                                        :table_name="'income_table'"
+                                        :column_name="'income'"
+                                    />
+                                </div>
+                            </th>
+                            <th class="text-center" colspan="2">
+                                <div class="parent_popup">
+                                    জমার পরিমাণ
+                                    <comment
+                                        :table_name="'expense_table'"
+                                        :column_name="'expense'"
+                                    />
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -7047,15 +6745,18 @@
             </div>
             <div class="montobbo">
                 <h1 class="fs-6 fw-bold">ওয়ার্ড আমীর/সভাপতির মন্তব্য :</h1>
-                <textarea
-                    name="montobbo"
-                    @change="data_upload('ward-montobbo')"
-                    id=""
-                    cols="30"
-                    class="w-100 bg-input"
-                    rows="5"
-                    >{{ report_sum_data?.ward_montobbos?.montobbo }}</textarea
-                >
+                <div class="parent_popup">
+                    <p>
+                        {{
+                            report_sum_data?.ward_montobbos?.montobbo ??
+                            "মন্তব্য নাই"
+                        }}
+                    </p>
+                    <comment
+                        :table_name="'ward_montobbos'"
+                        :column_name="'montobbo'"
+                    />
+                </div>
             </div>
         </section>
 
