@@ -4844,7 +4844,7 @@
                                             {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.word_sura_boithok) }}
                                             <comment
                                                 :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                                :column_name="'word_sura_boithok'"
+                                                :column_name="'word_sura_boithok_uposthiti'"
                                             />
                                         </div>
                                         /
@@ -4852,7 +4852,7 @@
                                             {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.kormoporishod_boithok) }}
                                             <comment
                                                 :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                                :column_name="'kormoporishod_boithok'"
+                                                :column_name="'kormoporishod_boithok_uposthiti'"
                                             />
                                         </div>
                                         /
@@ -4860,7 +4860,7 @@
                                             {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.team_boithok) }}
                                             <comment
                                                 :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                                :column_name="'team_boithok'"
+                                                :column_name="'team_boithok_uposthiti'"
                                             />
                                         </div>
                                     </div>
@@ -4893,7 +4893,7 @@
                                         {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.word_boithok) }}
                                         <comment
                                             :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                            :column_name="'word_boithok'"
+                                            :column_name="'word_boithok_uposthiti'"
                                         />
                                     </div>
                                 </td>
@@ -4925,7 +4925,7 @@
                                         {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.masik_sodosso_boithok) }}
                                         <comment
                                             :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                            :column_name="'masik_sodosso_boithok'"
+                                            :column_name="'masik_sodosso_boithok_uposthiti'"
                                         />
                                     </div>
                                 </td>
@@ -4957,7 +4957,7 @@
                                         {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.unit_kormi_boithok) }}
                                         <comment
                                             :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                            :column_name="'unit_kormi_boithok'"
+                                            :column_name="'unit_kormi_boithok_uposthiti'"
                                         />
                                     </div>
                                 </td>
@@ -5022,21 +5022,21 @@
                                             {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.ulama_somabesh) }}
                                             <comment
                                                 :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                                :column_name="'ulama_somabesh'"
+                                                :column_name="'ulama_somabesh_uposthiti'"
                                             />
                                         </div>/
                                         <div class="parent_popup">
                                             {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.jubok_somabesh) }}
                                             <comment
                                                 :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                                :column_name="'jubok_somabesh'"
+                                                :column_name="'jubok_somabesh_uposthiti'"
                                             />
                                         </div>/
                                         <div class="parent_popup">
                                             {{ formatBangla(average_uposthiti?.ward_songothon9_sangothonik_boithoks?.sromik_somabesh) }}
                                             <comment
                                                 :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                                :column_name="'sromik_somabesh'"
+                                                :column_name="'sromik_somabesh_uposthiti'"
                                             />
                                         </div>
                                     </div>
@@ -5294,7 +5294,7 @@
                                         {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.alochona_chokro) }}
                                         <comment
                                             :table_name="'ward_proshikkhon1_tarbiats'"
-                                            :column_name="'alochona_chokro'"
+                                            :column_name="'alochona_chokro_uposthiti'"
                                         />
                                     </div>
                                 </td>
@@ -5333,7 +5333,7 @@
                                             {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.darsul_quran) }}
                                             <comment
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
-                                                :column_name="'darsul_quran'"
+                                                :column_name="'darsul_quran_uposthiti'"
                                             />
                                         </div>
                                         /
@@ -5341,7 +5341,7 @@
                                             {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.sohih_tilawat) }}
                                             <comment
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
-                                                :column_name="'sohih_tilawat'"
+                                                :column_name="'sohih_tilawat_uposthiti'"
                                             />
                                         </div>
                                     </div>

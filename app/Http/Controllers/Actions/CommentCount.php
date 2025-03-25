@@ -181,7 +181,9 @@ class CommentCount
             "ward_songothon6_bidayi_students_connects",
             "ward_songothon7_sofors",
             "ward_songothon8_iyanot_data",
-            "ward_songothon9_sangothonik_boithoks"
+            "ward_songothon9_sangothonik_boithoks",
+            "income_table",
+            "expense_table",
         ];
 
         return $table_names;
@@ -241,7 +243,9 @@ class CommentCount
             "thana_songothon6_emarot_kayems",
             "thana_songothon7_bidayi_students_connects",
             "thana_songothon8_associate_and_side_organizations",
-            "thana_songothon9_sofors"
+            "thana_songothon9_sofors",
+            "income_table",
+            "expense_table",
         ];
     }
 }
