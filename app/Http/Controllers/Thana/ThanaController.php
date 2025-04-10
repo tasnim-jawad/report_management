@@ -39,12 +39,12 @@ class ThanaController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-        $ward_info = (object) auth()->user()->org_ward_user;
+        $thana_info = (object) auth()->user()->org_thana_user;
         $month = Carbon::parse(request()->month);
 
         $query = ThanaBmExpense::query();
-        $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('ward_id', $ward_info->ward_id);
-        $data = $filter->with('ward_bm_expense_category')->get();
+        $filter = $query->whereYear('date', $month->clone()->year)->whereMonth('date', $month->clone()->month)->where('thana_id', $thana_info->thana_id);
+        $data = $filter->with('thana_bm_expense_category')->get();
 
         return response()->json([
             'status' => 'success',
@@ -64,12 +64,13 @@ class ThanaController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-        $ward_info = (object) auth()->user()->org_ward_user;
+        $thana_info = (object) auth()->user()->org_thana_user;
+
         $month = Carbon::parse(request()->month);
 
-        $query = WardBmIncome::query();
-        $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('ward_id', $ward_info->ward_id);
-        $data = $filter->with('ward_bm_income_category')->get();
+        $query = ThanaBmIncome::query();
+        $filter = $query->whereYear('month', $month->clone()->year)->whereMonth('month', $month->clone()->month)->where('thana_id', $thana_info->thana_id);
+        $data = $filter->with('thana_bm_income_category')->get();
         // dd("income_category_wise", $data->toArray());
         return response()->json([
             'status' => 'success',
