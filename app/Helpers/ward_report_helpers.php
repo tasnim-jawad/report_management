@@ -293,6 +293,6 @@ function active_report($org_type)
         ->where('report_type', $org_type)
         ->orderBy('updated_at', 'DESC')
         ->first();
-
+    // dd($permission);
     return $permission;
 }

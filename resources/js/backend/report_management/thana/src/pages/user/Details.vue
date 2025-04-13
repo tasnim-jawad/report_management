@@ -1,7 +1,13 @@
 <template>
     <div class="card">
-        <div class="card-header">
+        <!-- <div class="card-header">
             Show User
+        </div> -->
+        <div class="card-header d-flex justify-content-between align-items-center">
+            Show User
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UserAll'}" class="text-dark">সকল জনশক্তি</router-link>
+            </div>
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >

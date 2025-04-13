@@ -1947,22 +1947,22 @@ class WardController extends Controller
                 'err_message' => 'Report information not found.',
             ], 404);
         }
-
+        // dd($report_info->report_submit_status,$report_info->report_approved_status);
         if ($report_info->report_submit_status == 'unsubmitted' && $report_info->report_approved_status == 'pending') {
             $report_info->report_submit_status = 'submitted';
-            $report_info->report_approved_status = 'approved';
+            $report_info->report_approved_status = 'pending';
             $report_info->save();
             // Update related BmPaid records
             WardBmIncome::where('ward_id', $ward_id)
                     ->whereYear('month', $month->year)
                     ->whereMonth('month', $month->month)
-                    ->update(['report_submit_status' => 'submitted','report_approved_status' => 'approved']);
+                    ->update(['report_submit_status' => 'submitted','report_approved_status' => 'pending']);
 
             // Update related BmExpense records
             WardBmExpense::where('ward_id', $ward_id)
                 ->whereYear('date', $month->year)
                 ->whereMonth('date', $month->month)
-                ->update(['report_submit_status' => 'submitted','report_approved_status' => 'approved']);
+                ->update(['report_submit_status' => 'submitted','report_approved_status' => 'pending']);
 
             return response()->json([
                 'status' => 'success',
@@ -1977,13 +1977,13 @@ class WardController extends Controller
             WardBmIncome::where('ward_id', $ward_id)
                     ->whereYear('month', $month->year)
                     ->whereMonth('month', $month->month)
-                    ->update(['report_submit_status' => 'pending']);
+                    ->update(['report_approved_status' => 'pending']);
 
             // Update related BmExpense records
             WardBmExpense::where('ward_id', $ward_id)
                 ->whereYear('date', $month->year)
                 ->whereMonth('date', $month->month)
-                ->update(['report_submit_status' => 'pending']);
+                ->update(['report_approved_status' => 'pending']);
 
             return response()->json([
                 'status' => 'success',

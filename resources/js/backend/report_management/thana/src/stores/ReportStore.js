@@ -33,6 +33,27 @@ export const store = defineStore(`custom_store`, {
                     this.user_info = responce.data
                 })
         },
+
+        set_ward_report_status: function ({ward_id, report_month, new_status}) {
+            console.log("ward_id, report_month, new_status",ward_id, report_month, new_status);
+            
+            // window.open(`/ward/ward/report-check?ward_id=${ward_id}&month=${report_month}`)
+            const is_confirmed = confirm(`Are you sure you want to Change Submission Status to ${new_status}?`);
+            if (is_confirmed) {
+                let response = axios.post('/thana/ward/change-status', {
+                    ward_id: ward_id,
+                    month: report_month,
+                    new_status: new_status
+                });
+            }
+        },
+        check_ward_report_status: async function ({ward_id, report_month}) {
+            let response = await axios.post('/thana/ward/report-status-single-ward', {
+                ward_id: ward_id,
+                month: report_month
+            });
+            return response.data;
+        },
     }
 
 

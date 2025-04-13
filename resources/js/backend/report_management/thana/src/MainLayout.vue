@@ -325,19 +325,58 @@ export default {
         this.auth_user();
         this.set_month();
     },
-    mounted: function () {
-        this.isUnitReportPage =
-            window.location.href.includes("unit-report-upload");
+    // mounted: function () {
+    //     this.isUnitReportPage =
+    //         window.location.href.includes("unit-report-upload");
+
+    //     // Show the modal if not on 'unit-report-upload' page
+    //     if (!this.isUnitReportPage) {
+    //         let modalElement = new window.bootstrap.Modal(
+    //             document.getElementById("staticBackdrop"),
+    //             {
+    //                 keyboard: false,
+    //             }
+    //         );
+    //         // modalElement.show();  // যেহেতু এখন রিপোর্ট আপলোডের পেইজ নাই তাই এটা কমেন্ট করা হয়েছে
+    //     }
+    // },
+    mounted: async function () {
+        let org_type = "thana";
+        let thana_active_report = await axios
+            .get(`/report-management-control/active-report/${org_type}`)
+            .then((response) => {
+                return response.data.data;
+            })
+            .catch((error) => {
+                console.error(
+                    "An error occurred while fetching unit active report:",
+                    error
+                );
+                return null;
+            });
+        // console.log("ward active report:", ward_active_report);
+        this.thana_active_report_month_info = thana_active_report;
+
+        this.isThanaReportPage = window.location.href.includes(
+            "thana-report-upload-monthly"
+        );
 
         // Show the modal if not on 'unit-report-upload' page
-        if (!this.isUnitReportPage) {
+        if (!this.isThanaReportPage) {
             let modalElement = new window.bootstrap.Modal(
                 document.getElementById("staticBackdrop"),
                 {
                     keyboard: false,
                 }
             );
-            // modalElement.show();  // যেহেতু এখন রিপোর্ট আপলোডের পেইজ নাই তাই এটা কমেন্ট করা হয়েছে
+
+            if (this.thana_active_report_month_info) {
+                this.month = moment(
+                    this.thana_active_report_month_info.month_year
+                ).format("YYYY-MM");
+                modalElement.show();
+            }
+            // modalElement.show();
         }
     },
     methods: {
@@ -389,16 +428,16 @@ export default {
             }
             try {
                 // Check report info
-                const { data } = await axios.get("/ward/check-report-info", {
+                const { data } = await axios.get("/thana/check-report-info", {
                     params: { month: this.month },
                 });
-                console.log("from ward mainlayout", data);
+                console.log("from thana mainlayout", data);
 
                 if (data.data) {
                     if (this.user_id) {
                         // Navigate to report upload route
                         return this.$router.push({
-                            name: "WardReportUploadMonthly",
+                            name: "ThanaReportUploadMonthly",
                             params: {
                                 month: this.month,
                                 user_id: this.user_id,

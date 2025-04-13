@@ -6760,8 +6760,7 @@
             </div>
         </section>
 
-        <div class="joma_din text-center mt-3 pb-5">
-            <!-- <a href="" class="btn btn-success" @click.prevent="report_joma">রিপোর্ট জমা দিন</a> -->
+        <!-- <div class="joma_din text-center mt-3 pb-5">
             <a
                 href=""
                 class="btn btn-success"
@@ -6776,7 +6775,17 @@
                 @click.prevent="report_joma"
                 >রিপোর্ট পুনরায় জমা দিন</a
             >
+        </div> -->
+        <div class="joma_din text-center mt-3 pb-5">
+            <a href="" class="btn btn-sm btn-success me-2"
+                @click.prevent="ward_report_status_change('approved')">
+                {{ current_report_status == 'approved' ? 'approved already' : 'Approved' }}</a>
+            <a href="" class="btn btn-sm btn-danger "
+                @click.prevent="ward_report_status_change('rejected')">
+                {{ current_report_status == 'rejected' ? 'Rejected already' : 'Reject' }}
+            </a>
         </div>
+
         <a href="" class="print_preview" @click.prevent="print_report()"
             ><i class="fa-solid fa-print"></i
         ></a>
@@ -6843,6 +6852,7 @@ export default {
             // thana_info: {},
             // president: {},
             joma_status: null,
+            current_report_status: null,
 
             report_header: {},
             report_sum_data: {},
@@ -6934,6 +6944,8 @@ export default {
         } catch (error) {
             console.error('Error during uploaded_data:', error);
         }
+
+        this.status_set_again();
     },
     watch: {
         "report_sum_data.ward_kormosuci_bastobayons": function () {
@@ -7269,71 +7281,7 @@ export default {
                 });
         },
 
-        // bm_category_wise: async function () {
-        //     const month = this.$route.params.month;
-
-        //     let res = await axios.get('/ward/income-category-wise', {
-        //         params: {
-        //             month: month
-        //         }
-        //     })
-        //     if (res) {
-        //         this.bm_cat_wise = res.data?.data
-        //     }
-        // },
-        // bm_categoty_amount: function (bm_cat_id) {
-        //     // console.log(bm_cat_id,this.bm_cat_wise);
-        //     if (this.bm_cat_wise != null) {
-        //         // console.log("inside",bm_cat_id,this.bm_cat_wise )
-        //         const element = this.bm_cat_wise.find(el => {
-        //             if (el.ward_bm_income_category && el.ward_bm_income_category.id == bm_cat_id) {
-        //                 return el
-        //             }
-        //         });
-        //         // console.log("inside element",element)
-        //         if (element) {
-        //             return element.amount;
-        //         } else {
-        //             // console.log("element not found")
-        //         }
-        //     } else {
-        //         return "";
-        //     }
-        // },
-
-        // bm_expense_category_wise: async function () {
-        //     const month = this.$route.params.month;
-
-        //     let res = await axios.get('/ward/expense-category-wise', {
-        //         params: {
-        //             month: month
-        //         }
-        //     })
-        //     if (res) {
-        //         this.expense_cat_wise = res.data?.data
-        //     }
-        // },
-
-        // expense_categoty_amount: function (expense_cat_id) {
-        //     // console.log("expense_categoty_amount",expense_cat_id);
-        //     // console.log("this.expense_cat_wise",this.expense_cat_wise);
-
-        //     if (this.expense_cat_wise != null) {
-        //         // console.log("expanxe inside",this.expense_cat_wise);
-        //         const element = this.expense_cat_wise.find(element => {
-        //             if (element.ward_bm_expense_category && element.ward_bm_expense_category.id == expense_cat_id) {
-        //                 return element
-        //             }
-        //         });
-        //         if (element) {
-        //             return element.amount;
-        //         } else {
-        //             // console.log("element not found")
-        //         }
-        //     } else {
-        //         return "";
-        //     }
-        // },
+       
 
         expense_store: function (ward_bm_expense_category_id, amount) {
             const month = this.$route.params.month;
@@ -7411,6 +7359,21 @@ export default {
                     "info"
                 );
             }
+        },
+        ward_report_status_change(status){
+            this.set_ward_report_status({
+                report_month: this.$route.params.month,
+                ward_id: this.$route.params.ward_id,
+                new_status: status
+            });
+            this.status_set_again()
+        },
+        status_set_again:async function () {
+            let status_of_ward = await this.check_ward_report_status({
+                            report_month: this.$route.params.month,
+                            ward_id: this.$route.params.ward_id
+                        });
+            this.current_report_status = status_of_ward.report_status;
         },
         toggle_popup(event) {
             const parent = event.currentTarget.closest(".unit_info_icon");

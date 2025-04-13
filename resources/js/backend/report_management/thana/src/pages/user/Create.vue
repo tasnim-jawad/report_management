@@ -1,7 +1,13 @@
 <template>
     <div class="card">
-        <div class="card-header">
+        <!-- <div class="card-header">
             Create User
+        </div> -->
+        <div class="card-header d-flex justify-content-between align-items-center">
+            Create User
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UserAll'}" class="text-dark">সকল জনশক্তি</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_user">
