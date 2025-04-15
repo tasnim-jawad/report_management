@@ -7,6 +7,7 @@ use App\Models\Bm\Ward\Expense\WardExpenseTarget;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class WardExpenseTargetController extends Controller
 {
@@ -114,12 +115,27 @@ class WardExpenseTargetController extends Controller
     }
     public function store()
     {
-        $validator = Validator::make(request()->all(), [
-            'ward_id' => ['required'],
-            'ward_bm_expense_category_id' => ['required'],
-            'amount' => ['required'],
-            'start_from' => ['required'],
-        ]);
+        $validator = Validator::make(request()->all(), 
+            [
+                'ward_id' => ['required'],
+                'ward_bm_expense_category_id' => ['required'],
+                'amount' => ['required'],
+                'start_from' => ['required',
+                                    Rule::unique('ward_expense_targets')
+                                        ->where(function ($query) {
+                                            return $query->where('ward_id', request('ward_id'))
+                                                        ->where('ward_bm_expense_category_id', request('ward_bm_expense_category_id'));
+                                        }),
+                                ],
+            ],
+            [
+                'ward_id.required' => 'The ward field is required.',
+                'ward_bm_expense_category_id.required' => 'The expense category is required.',
+                'amount.required' => 'The amount is required.',
+                'start_from.required' => 'The start date is required.',
+                'start_from.unique' => 'This start date already exists for the selected ward and expense category.',
+            ]
+    );
 
         if ($validator->fails()) {
             return response()->json([

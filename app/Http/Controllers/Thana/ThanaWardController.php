@@ -47,13 +47,22 @@ class ThanaWardController extends Controller
     }
     public function store()
     {
-        $validator = Validator::make(request()->all(), [
-            'title' => ['required','unique:org_wards,title'],
-            'description' => ['required'],
-            'org_type_id' => ['required'],
-            'org_area_id' => ['required'],
-            // 'org_gender' => ['required'],
-        ]);
+        $validator = Validator::make(request()->all(), 
+            [
+                'title' => ['required','unique:org_wards,title'],
+                'description' => ['required'],
+                'org_type_id' => ['required'],
+                'org_area_id' => ['required'],
+                // 'org_gender' => ['required'],
+            ], 
+            [
+                'title.required' => 'Please enter a title.',
+                'title.unique' => 'This title already exists.',
+                'description.required' => 'Description is mandatory.',
+                'org_type_id.required' => 'Please select an organization type.',
+                'org_area_id.required' => 'Please select an area.',
+            ]
+        );
 
         if ($validator->fails()) {
             return response()->json([
@@ -98,13 +107,22 @@ class ThanaWardController extends Controller
             ], 422);
         }
 
-        $validator = Validator::make(request()->all(), [
-            'title' => ['required', 'unique:org_wards,title,' . request()->id],
-            'description' => ['required'],
-            'org_type_id' => ['required'],
-            'org_area_id' => ['required'],
-            // 'org_gender' => ['required'],
-        ]);
+        $validator = Validator::make(request()->all(), 
+            [
+                'title' => ['required', 'unique:org_wards,title,' . request()->id],
+                'description' => ['required'],
+                'org_type_id' => ['required'],
+                'org_area_id' => ['required'],
+                // 'org_gender' => ['required'],
+            ], 
+            [
+                'title.required' => 'Please enter a title.',
+                'title.unique' => 'This title already exists.',
+                'description.required' => 'Description is mandatory.',
+                'org_type_id.required' => 'Please select an organization type.',
+                'org_area_id.required' => 'Please select an area.',
+            ]
+        );
 
         if ($validator->fails()) {
             return response()->json([

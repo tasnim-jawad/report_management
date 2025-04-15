@@ -40,7 +40,7 @@
                                         <router-link :to="{name:'WardExpenseTargetEdit',params: { ward_expense_target_id: ward_expense_target.id }}"  class="text-dark">Edit</router-link>
                                     </div>
                                     <div class="btn btn-danger btn-sm">
-                                        <a @click="delete_category(ward_expense_target.id)" class="text-dark">Delete</a>
+                                        <a @click="delete_ward_expense_target(ward_expense_target.id)" class="text-dark">Delete</a>
 
                                         <form :id="'delete_ward_expense_target_form_'+ward_expense_target.id" >
                                             <input type="text" name="id" :value="ward_expense_target.id" class="d-none">
@@ -88,22 +88,22 @@ export default {
 
                 })
         },
-        delete_category : function(category_id){
+        delete_ward_expense_target : function(ward_expense_target_id){
             if (window.confirm("Are you sure you want to delete this Target?")) {
-                this.submit_delete_form(category_id);
+                this.submit_delete_form(ward_expense_target_id);
             } else {
                 window.toaster('user info is safe', 'info');
             }
 
         },
-        submit_delete_form : function(category_id){
+        submit_delete_form : function(ward_expense_target_id){
             event.preventDefault();
-            const formData = new FormData(document.getElementById('delete_category_form_'+category_id));
-            axios.post("/bm-category/destroy",formData)
+            const formData = new FormData(document.getElementById('delete_ward_expense_target_form_'+ward_expense_target_id));
+            axios.post("/ward-expense-target/destroy",formData)
                     .then(response => {
                         console.log(response);
-                        window.toaster('category delete successfuly', 'success');
-                        this.show_bm_category();
+                        window.toaster('ward expense target delete successfuly', 'success');
+                        this.show_ward_expense_target();
                     })
                     .catch(error => {
                         console.error(error);

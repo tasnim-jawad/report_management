@@ -141,42 +141,68 @@ export default {
                 this.loading = true;
                 let formData = new FormData(event.target);
                 let response = await axios.post("/user/login", formData);
-                console.log(response);
+                console.log("login",response);
 
                 if (response?.status === 200) {
                     let data = response.data;
+                    console.log("data.user.is_permitted", data.user.is_permitted);
+                    
                     if (data.access_token) {
-                        window.s_alert("Login Successfully");
-                        localStorage.setItem("token", data.access_token);
-                        localStorage.setItem("role", data.user?.role);
-                        let prevurl =
+                        if (data.user.is_permitted === 0) {
+                            let upper_org_responsible = 'upper_org_responsible_person';
+                            switch (data.user?.role) {
+                                case 6:
+                                    upper_org_responsible = 'ward president';
+                                    break;
+                                case 5:
+                                    upper_org_responsible = 'thana amir';
+                                    break;
+                                case 4:
+                                    upper_org_responsible = 'city amir';
+                                    break;
+                            }
+                            window.s_warning(
+                                `You are not allowed to login. Please contact with ${upper_org_responsible}.`
+                            );
+
+                            localStorage.removeItem("token");
+                            sessionStorage.removeItem("prevurl");
+
+                        }else if (data.user.is_permitted === 1) {
+                            window.s_alert("Login Successfully");
+                            localStorage.setItem("token", data.access_token);
+                            localStorage.setItem("role", data.user?.role);
+                            
+                            let prevurl =
                             sessionStorage.getItem("prevurl") || "/dashboard";
-                        switch (data.user?.role) {
-                            case 6:
-                                console.log("unit");
-                                window.location.href =
-                                    "/dashboard/unit#" + prevurl;
-                                break;
-                            case 5:
-                                console.log("ward");
-                                window.location.href =
-                                    "/dashboard/ward#" + prevurl;
-                                break;
-                            case 4:
-                                console.log("thana");
-                                window.location.href =
-                                    "/dashboard/thana#" + prevurl;
-                                break;
-                            case 2:
-                                console.log("admin");
-                                window.location.href =
-                                    "/dashboard/admin#" + prevurl;
-                                break;
-                            default:
-                                console.log("default");
-                                window.location.href = prevurl;
-                                break;
+                            switch (data.user?.role) {
+                                case 6:
+                                    console.log("unit");
+                                    window.location.href =
+                                        "/dashboard/unit#" + prevurl;
+                                    break;
+                                case 5:
+                                    console.log("ward");
+                                    window.location.href =
+                                        "/dashboard/ward#" + prevurl;
+                                    break;
+                                case 4:
+                                    console.log("thana");
+                                    window.location.href =
+                                        "/dashboard/thana#" + prevurl;
+                                    break;
+                                case 2:
+                                    console.log("admin");
+                                    window.location.href =
+                                        "/dashboard/admin#" + prevurl;
+                                    break;
+                                default:
+                                    console.log("default");
+                                    window.location.href = prevurl;
+                                    break;
+                            }
                         }
+
                     }
                 }
             } catch (error) {

@@ -24,7 +24,7 @@
                         <td>{{index + 1}}</td>
                         <td>{{user.full_name}}</td>
                         <!-- <td>{{user.org_thana_responsible[0]?.responsibility?.title}}</td> -->
-                        <td>{{user.org_thana_responsible[0]?.responsibility?.title}}</td>
+                        <td>{{user.org_thana_responsible?.responsibility?.title}}</td>
                         <td>{{user.telegram_name}}</td>
                         <td>{{user.blood_group}}</td>
                         <td>
@@ -68,6 +68,8 @@ export default {
                     this.users = responce.data
 
                 })
+            // console.log("thana user",this.users);
+            
         },
         delete_user : function(user_id){
             if (window.confirm("Are you sure you want to delete this user?")) {
@@ -98,11 +100,13 @@ export default {
             }
             // console.log('sort',this.users);
 
-            return this.users.sort((a, b) => {
-                // console.log('a',a.org_thana_responsible[0].responsibility_id);
-                // console.log('b',b.org_thana_responsible[0].responsibility_id);
-                const responsibilityA = a.org_thana_responsible[0]?.responsibility_id ?? Infinity;
-                const responsibilityB = b.org_thana_responsible[0]?.responsibility_id ?? Infinity;
+            return this.users?.sort((a, b) => {
+                // console.log('only a',a);
+                // console.log('only b',b);
+                // console.log('a',a.org_thana_responsible?.responsibility_id);
+                // console.log('b',b.org_thana_responsible?.responsibility_id);
+                const responsibilityA = a.org_thana_responsible?.responsibility_id ?? Infinity;
+                const responsibilityB = b.org_thana_responsible?.responsibility_id ?? Infinity;
                 // console.log("ss",responsibilityA ,responsibilityB,responsibilityA - responsibilityB);
 
                 return responsibilityA - responsibilityB;

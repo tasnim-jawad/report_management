@@ -112,8 +112,8 @@ export default {
             console.log('sort',this.users);
 
             return this.users.sort((a, b) => {
-                console.log('a',a);
-                console.log('b',b);
+                // console.log('a',a);
+                // console.log('b',b);
                 const responsibilityA = a.org_ward_responsible?.responsibility_id ?? Infinity;
                 const responsibilityB = b.org_ward_responsible?.responsibility_id ?? Infinity;
                 console.log("ss",responsibilityA ,responsibilityB,responsibilityA - responsibilityB);
