@@ -37,7 +37,7 @@
                                     <td>
                                         <select class="form-control" name="user_id" v-model="row.user_id" :class="{ error: errors[index] && errors[index].user_id }">
                                             <option value="">-- select --</option>
-                                            <option v-for="(user, i) in unit_user_all" :key="i" :value="user.id" 
+                                            <option v-for="(user, i) in thana_user_all" :key="i" :value="user.id" 
                                             :disabled="already_selected_users.includes(user.id) && row.user_id !== user.id"
                                             >
                                                 {{user.full_name}}
@@ -88,15 +88,15 @@ export default {
         }
     },
     created:function(){
-        this.all_org_type_program('unit');
-        this.unit_users_list();
+        this.all_org_type_program('thana');
+        this.thana_users_list();
     },
     computed:{
         ...mapWritableState(program_store, [
             'all_program',
         ]),
         ...mapWritableState(program_delegate_store, [
-            'unit_user_all',
+            'thana_user_all',
             'all_program_delegate',
             'program_delegates',
         ]),
@@ -127,7 +127,7 @@ export default {
             all_org_type_program:'all_org_type_program'
         }),
         ...mapActions(program_delegate_store,{
-            unit_users_list:'unit_users_list',
+            thana_users_list:'thana_users_list',
             program_wise_delegate:'program_wise_delegate',
         }),
         add_row:function(){

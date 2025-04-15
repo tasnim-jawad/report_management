@@ -106,7 +106,7 @@
         methods:{
 
             // auth_user: function(){
-            //     axios.get("/user/user_info")
+            //     axios.get("/user/user-info")
             //         .then(responce =>{
             //             // console.log(responce);
             //             this.user = responce.data

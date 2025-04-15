@@ -101,7 +101,7 @@ export default {
                     .then(response => {
                         // console.log(response);
                         window.toaster('Shudhi delete successfuly', 'success');
-                        this.all_org_type_program_delegate('unit');
+                        this.all_org_type_program_delegate('thana');
                     })
                     .catch(error => {
                         console.error(error);

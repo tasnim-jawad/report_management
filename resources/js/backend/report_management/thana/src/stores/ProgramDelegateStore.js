@@ -5,7 +5,7 @@ export const store = defineStore(`program_delegate_store`, {
         all_program_delegate:[],
         program_delegates:[],
         count_delegates:[],
-        unit_user_all:[],
+        thana_user_all:[],
     }),
     actions: {
         program_wise_delegate:async function(program_id){
@@ -53,11 +53,14 @@ export const store = defineStore(`program_delegate_store`, {
             }
         },
         
-        unit_users_list:function(){
-            axios.get('/user/show_unit_user')
+        thana_users_list:function(){
+            axios.get('/thana/user/show')
                 .then(responce =>{
-                    this.unit_user_all = responce.data
+                    
+                    this.thana_user_all = responce.data
                 })
+
+            console.log('this.thana_user_all', this.thana_user_all);
         },
 
         previous_delegate:async function(program_id){

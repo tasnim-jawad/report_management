@@ -60,7 +60,7 @@ export default {
     },
     created:function(){
         // this.auth_user();
-        this.all_org_type_program('unit');
+        this.all_org_type_program('thana');
     },
     computed:{
         // ...mapWritableState(data_store,{

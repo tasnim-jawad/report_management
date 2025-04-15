@@ -31,7 +31,7 @@ Route::group(['prefix' => 'program-delegate'], function () {
 });
 
 Route::group(['prefix' => 'program-schedule'], function () {
-    Route::get('/unit-wise-schedule', [App\Http\Controllers\Program\ProgramScheduleController::class, 'unit_wise_schedule']);
+    Route::get('/org-type-wise-schedule', [App\Http\Controllers\Program\ProgramScheduleController::class, 'org_type_wise_schedule']);
     Route::get('/is-schedule-check', [App\Http\Controllers\Program\ProgramScheduleController::class, 'is_schedule_check']);
 
     Route::get('/all', [App\Http\Controllers\Program\ProgramScheduleController::class, 'all']);

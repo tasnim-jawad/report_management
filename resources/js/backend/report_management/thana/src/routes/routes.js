@@ -32,6 +32,11 @@ import BmExpenseRoutes from './BmExpenseRoutes';
 import ward_routes from './ward_routes';
 import ward_jonoshokti_routes from './ward_jonoshokti_routes';
 import ward_user_routes from './ward_user_routes';
+
+import Program from './ProgramRoutes'
+import ProgramDelegate from './ProgramDelegateRoutes'
+import ProgramSchedule from './ProgramScheduleRoutes'
+
 // import BmCategoryAll from '../pages/bm_management/bm_category/All.vue'
 // import BmCategoryCreate from '../pages/bm_management/bm_category/Create.vue'
 // import BmCategoryDetails from '../pages/bm_management/bm_category/Details.vue'
@@ -152,6 +157,9 @@ const routes =
                 ward_routes,
                 ward_jonoshokti_routes,
                 ward_user_routes,
+                Program,
+                ProgramDelegate,
+                ProgramSchedule,
             ]
         }
 

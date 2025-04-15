@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ProgramScheduleController extends Controller
 {
-    public function unit_wise_schedule(){
+    public function org_type_wise_schedule(){
         $validator = Validator::make(request()->all(), [
             'org_type' => ['required'],
         ]);

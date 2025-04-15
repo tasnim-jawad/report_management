@@ -69,7 +69,7 @@ export default {
         },
 
         user_info:async function () {
-            await axios.get("/user/user_info")
+            await axios.get("/user/user-info")
                 .then(responce => {
                     this.user_id = responce?.data?.user?.id;
                 })

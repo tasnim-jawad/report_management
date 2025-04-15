@@ -71,8 +71,8 @@ export default {
     },
 
     created:async function(){
-        await this.all_org_type_program('unit');
-        await this.all_org_type_program_schedule('unit');
+        await this.all_org_type_program('thana');
+        await this.all_org_type_program_schedule('thana');
 
         this.exist_schedule_set();
         

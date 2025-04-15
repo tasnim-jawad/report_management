@@ -5,11 +5,11 @@ export const store = defineStore(`program_store`, {
         all_program:[],
     }),
     actions: {
-        all_org_type_program: async function () {
+        all_org_type_program: async function (org_type) {
             try {
                 let response = await axios.get('/program/all-program', {
                     params: {
-                        org_type: 'unit'
+                        org_type: org_type
                     }
                 });
         

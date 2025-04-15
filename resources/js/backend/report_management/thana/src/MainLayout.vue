@@ -55,6 +55,31 @@
                             </router-link>
                         </li>
                         <li>
+                            <router-link :to="{ name: 'ProgramAll' }">
+                                <span class="icon_margin"
+                                    ><i class="fa-solid fa-book"></i></span
+                                >প্রোগ্রাম
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link
+                                :to="{ name: 'ProgramDelegateAllProgram' }"
+                            >
+                                <span class="icon_margin"
+                                    ><i class="fa-solid fa-book"></i></span
+                                >প্রোগ্রাম ডেলিগেট
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link
+                                :to="{ name: 'ProgramScheduleAllProgram' }"
+                            >
+                                <span class="icon_margin"
+                                    ><i class="fa-solid fa-book"></i></span
+                                >প্রোগ্রাম শিডিউল
+                            </router-link>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'WardAll' }">
                                 <span class="icon_margin"
                                     ><i

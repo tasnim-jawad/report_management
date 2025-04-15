@@ -23,7 +23,7 @@ export const store = defineStore('custom_store', {
             this.month = `${currentYear}-${currentMonth}`;
         },
         auth_user:async function () {
-            await axios.get("/user/user_info").then((responce) => {
+            await axios.get("/user/user-info").then((responce) => {
                 this.unit_user = responce.data;
                 this.unit_user_id = this.unit_user?.user?.id;
                 this.unit_id = this.unit_user?.responsibility?.org_unit?.id;

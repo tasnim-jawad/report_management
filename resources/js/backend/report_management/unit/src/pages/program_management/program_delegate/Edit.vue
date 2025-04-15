@@ -90,7 +90,7 @@ export default {
     },
     created:function(){
         this.selected_program = this.program_id
-        this.all_unit_program();
+        this.all_org_type_program('unit');
         this.unit_users_list();
     },
     computed:{
@@ -126,7 +126,7 @@ export default {
     },
     methods:{
         ...mapActions(program_store,{
-            all_unit_program:'all_unit_program'
+            all_org_type_program:'all_org_type_program'
         }),
         ...mapActions(program_delegate_store,{
             unit_users_list:'unit_users_list',

@@ -59,8 +59,8 @@ export default {
     },
 
     created:function(){
-        this.all_org_type_program('unit')
-        this.all_org_type_program_schedule('unit')
+        this.all_org_type_program('thana')
+        this.all_org_type_program_schedule('thana')
     },
     computed:{
         ...mapWritableState(program_store, [

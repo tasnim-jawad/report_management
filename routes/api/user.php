@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => '/user'], function () {
-    Route::get('/user_info', [App\Http\Controllers\User\UserController::class, 'user_info']);
+    Route::get('/user-info', [App\Http\Controllers\User\UserController::class, 'user_info']);
     Route::get('/ward-user-info', [App\Http\Controllers\User\UserController::class, 'ward_user_info']);
     Route::get('/thana-user-info', [App\Http\Controllers\User\UserController::class, 'thana_user_info']);
     Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Dashboard\PermissionController::class, 'toggle_dashboard_permission']);
@@ -17,6 +17,12 @@ Route::group(['prefix' => '/user'], function () {
     Route::post('/destroy', [App\Http\Controllers\User\UserController::class, 'destroy']);
     Route::post('/restore', [App\Http\Controllers\User\UserController::class, 'restore']);
     Route::post('/bulk_import', [App\Http\Controllers\User\UserController::class, 'bulk_import']);
+});
+
+Route::group(['prefix' => '/user'], function () {
+    Route::get('/show_unit_user', [App\Http\Controllers\Unit\UnitUserController::class, 'show_unit_user']);
+    Route::post('/store_unit_user', [App\Http\Controllers\Unit\UnitUserController::class, 'store_unit_user']);
+    Route::post('/update_unit_user', [App\Http\Controllers\Unit\UnitUserController::class, 'update_unit_user']);
 });
 
 Route::group(['prefix' => '/user'], function () {

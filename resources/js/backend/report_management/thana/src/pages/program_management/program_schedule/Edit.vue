@@ -57,7 +57,7 @@ export default {
         }
     },
     created:function(){
-        this.all_org_type_program('unit');
+        this.all_org_type_program('thana');
         this.show_program_schedule();
         
     },

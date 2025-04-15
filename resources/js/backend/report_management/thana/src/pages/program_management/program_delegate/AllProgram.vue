@@ -57,7 +57,7 @@ export default {
     },
 
     created:async function(){
-        await this.all_org_type_program('unit');
+        await this.all_org_type_program('thana');
     },
     computed:{
         ...mapWritableState(program_store, [

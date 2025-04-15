@@ -29,6 +29,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     require_once __DIR__ . '/api/user.php';
     require_once __DIR__ . '/api/org.php';
     require_once __DIR__ . '/api/report.php';
+    require_once __DIR__ . '/api/program/program.php';
     /*
 |--------------------------------------------------------------------------
 | unit api
@@ -40,7 +41,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     require_once __DIR__ . '/api/unit/songothon.php';
     require_once __DIR__ . '/api/unit/somajsheba.php';
     require_once __DIR__ . '/api/unit/bm.php';
-    require_once __DIR__ . '/api/unit/program.php';
+    // require_once __DIR__ . '/api/unit/program.php';
     require_once __DIR__ . '/api/unit/others.php';
 
     /*

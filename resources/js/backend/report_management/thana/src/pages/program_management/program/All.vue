@@ -76,7 +76,7 @@ export default {
     },
 
     created:function(){
-        this.all_org_type_program('unit')
+        this.all_org_type_program('thana')
     },
     computed:{
         ...mapWritableState(program_store, [
@@ -102,7 +102,7 @@ export default {
                     .then(response => {
                         // console.log(response);
                         window.toaster('Program delete successfuly', 'success');
-                        this.all_org_type_program('unit');
+                        this.all_org_type_program('thana');
                     })
                     .catch(error => {
                         console.error(error);

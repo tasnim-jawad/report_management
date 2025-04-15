@@ -103,7 +103,7 @@ export default {
             }
         },
         user_info: function () {
-            axios.get("/user/user_info")
+            axios.get("/user/user-info")
                 .then(responce => {
                     this.user = responce.data
                 })

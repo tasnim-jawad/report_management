@@ -517,7 +517,7 @@ export default {
         ...mapActions(notification_store, ["see_all_notification"]),
         ...mapActions(sidebar_dropdown_store, ["set_active_dropdown"]),
         auth_user: function () {
-            axios.get("/user/user_info").then((responce) => {
+            axios.get("/user/user-info").then((responce) => {
                 this.user = responce.data;
                 this.user_id = this.user?.user?.id;
             });
