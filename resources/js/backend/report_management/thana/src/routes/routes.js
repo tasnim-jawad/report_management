@@ -32,6 +32,8 @@ import BmExpenseRoutes from './BmExpenseRoutes';
 
 import ThanaBmUserEntryRoutes from './ThanaBmUserEntryRoutes';
 import ThanaBmCategoryUserRoutes from './ThanaBmCategoryUserRoutes';
+import ThanaShudhiRoutes from './ThanaShudhiRoutes';
+import ThanaShudhiEntryRoutes from './ThanaShudhiEntryRoutes';
 
 
 import ward_routes from './ward_routes';
@@ -162,6 +164,8 @@ const routes =
 
                 ThanaBmUserEntryRoutes,
                 ThanaBmCategoryUserRoutes,
+                ThanaShudhiRoutes,
+                ThanaShudhiEntryRoutes,
                 
                 ward_routes,
                 ward_jonoshokti_routes,

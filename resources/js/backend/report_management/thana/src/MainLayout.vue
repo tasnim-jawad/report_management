@@ -166,18 +166,18 @@
                             :active_dropdown="active_dropdown"
                             @update_active="set_active_dropdown"
                         > -->
-                            <!-- <li>
-                                <router-link :to="{ name: 'UnitShudhiAll' }">
+                            <li>
+                                <router-link :to="{ name: 'ThanaShudhiAll' }">
                                     <span class="icon_margin"
                                         ><i
                                             class="fa-solid fa-user-tag"
                                         ></i></span
                                     >সুধী তালিকা
                                 </router-link>
-                            </li> -->
-                            <!-- <li>
+                            </li>
+                            <li>
                                 <router-link
-                                    :to="{ name: 'UnitShudhiEntryAll' }"
+                                    :to="{ name: 'ThanaShudhiEntryAll' }"
                                 >
                                     <span class="icon_margin"
                                         ><i
@@ -185,7 +185,7 @@
                                         ></i></span
                                     >সুধী আয় এন্ট্রি করুন
                                 </router-link>
-                            </li> -->
+                            </li>
                             <li>
                                 <router-link
                                     :to="{ name: 'ThanaBmCategoryUserAll' }"
