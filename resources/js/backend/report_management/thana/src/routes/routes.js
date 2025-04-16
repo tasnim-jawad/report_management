@@ -26,9 +26,14 @@ import UploadReport from '../pages/UploadReport.vue'
 import ward_expense_target_routes from './ward_expense_target_routes';
 import bmCategoryRoutes from './bmCategoryRoutes';
 import BmEntryRoutes from './BmEntryRoutes';
-import BmCategoryUserRoutes from './BmCategoryUserRoutes';
+import BmCategoryUserRoutes from './ThanaBmCategoryUserRoutes';
 import BmExpenseCategoryRoutes from './BmExpenseCategoryRoutes';
 import BmExpenseRoutes from './BmExpenseRoutes';
+
+import ThanaBmUserEntryRoutes from './ThanaBmUserEntryRoutes';
+import ThanaBmCategoryUserRoutes from './ThanaBmCategoryUserRoutes';
+
+
 import ward_routes from './ward_routes';
 import ward_jonoshokti_routes from './ward_jonoshokti_routes';
 import ward_user_routes from './ward_user_routes';
@@ -154,6 +159,10 @@ const routes =
                 BmCategoryUserRoutes,
                 BmExpenseCategoryRoutes,
                 BmExpenseRoutes,
+
+                ThanaBmUserEntryRoutes,
+                ThanaBmCategoryUserRoutes,
+                
                 ward_routes,
                 ward_jonoshokti_routes,
                 ward_user_routes,

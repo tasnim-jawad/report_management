@@ -1,10 +1,10 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Bm Entry Info
-            <!-- <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'CreateUser'}" class="text-dark">Edit</router-link>
-            </div> -->
+            ব্যক্তিগত আয়ের বিবরণ ডিটেইল 
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'ThanaBmUserEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
+            </div>
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >
@@ -17,12 +17,20 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Title</td>
-                            <td>{{category_user_info?.bm_category?.title}}</td>
+                            <td>নাম</td>
+                            <td>{{entry_info?.user?.full_name}}</td>
                         </tr>
                         <tr>
-                            <td>Amount</td>
-                            <td>{{category_user_info?.amount}}</td>
+                            <td>খাত</td>
+                            <td>{{entry_info?.thana_bm_income_category?.title}}</td>
+                        </tr>
+                        <tr>
+                            <td>তারিখ</td>
+                            <td>{{entry_info?.month}}</td>
+                        </tr>
+                        <tr>
+                            <td>টাকার পরিমাণ</td>
+                            <td>{{entry_info?.amount}}</td>
                         </tr>
 
                     </tbody>
@@ -35,24 +43,23 @@
 <script>
 import axios from 'axios';
 export default {
-    props:['category_user_id'],
+    props:['entry_id'],
     data:function(){
         return {
-            category_user_info:[],
+            entry_info:[],
         }
     },
     created:function(){
-        this.show_category_user();
+        this.show_entry();
     },
     methods:{
-        show_category_user : function(){
-            axios.get(`/bm-category-user/show/${this.category_user_id}`)
+        show_entry : function(){
+            axios.get(`/thana-bm-user-entry/show/${this.entry_id}`)
                 .then(responce => {
-                    console.log("category_user---" ,responce);
                     if(responce.data.status == "success"){
-                        this.category_user_info = responce.data.data
-                        console.log(this.category_user_info);
+                        this.entry_info = responce.data?.data
                     }
+
                 })
         }
     }

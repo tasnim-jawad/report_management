@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Create Bm Entry
+            ব্যক্তিগত আয়ের বিবরণ এন্ট্রি করুন 
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'BmUserEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
+                <router-link :to="{name:'ThanaBmUserEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
             </div>
         </div>
         <div class="card-body">
@@ -16,12 +16,12 @@
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'user_id'">
                         <select type="text" :name="field.name" class="form-control" v-model="selected_user_id" >
                             <option value="">-- select user --</option>
-                            <option v-for="(user, i) in unit_user_all" :key="i" :value="user['id']" >{{user["full_name"]}}</option>
+                            <option v-for="(user, i) in thana_user_all" :key="i" :value="user['id']" >{{user["full_name"]}}</option>
 
                         </select>
                     </div>
 
-                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'bm_category_id'">
+                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'thana_bm_income_category_id'">
                         <select type="text" :name="field.name" class="form-control" v-model="selected_bm_category_id">
                             <option value="">-- select Category --</option>
                             <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option>
@@ -45,7 +45,7 @@
 import axios from 'axios'
 import { watch } from 'vue';
 import { store as data_store} from "../../../stores/ReportStore";
-import { store as bm_user_entry_store} from "../../../stores/BmUserEntryStore";
+import { store as thana_bm_user_entry_store} from "../../../stores/ThanaBmUserEntryStore";
 import { mapActions, mapWritableState } from 'pinia';
 
 export default {
@@ -59,7 +59,7 @@ export default {
                 },
                 {
                     label:"Title",
-                    name:"bm_category_id",
+                    name:"thana_bm_income_category_id",
                     field_type:"select",
                 },
                 {
@@ -73,7 +73,7 @@ export default {
                 },
             ],
             bm_category:[],
-            // unit_user_all:[],
+            // thana_user_all:[],
             users_target:"",
             selected_user_id:"",
             selected_bm_category_id:"",
@@ -83,7 +83,7 @@ export default {
     },
     created:function(){
         this.bm_category_list();
-        this.unit_users_list();
+        this.thana_users_list();
 
         if (!this.month) {
             this.$router.push({ name: "BmUserEntryAll" });
@@ -106,30 +106,24 @@ export default {
 
     computed: {
         ...mapWritableState(data_store, ['month']),
-        ...mapWritableState(bm_user_entry_store, ['unit_user_all']),
+        ...mapWritableState(thana_bm_user_entry_store, ['thana_user_all']),
     },
 
     methods:{
-        ...mapActions(bm_user_entry_store,{
-            unit_users_list:'unit_users_list',
+        ...mapActions(thana_bm_user_entry_store,{
+            thana_users_list:'thana_users_list',
         }),
         bm_category_list:function(){
-            axios.get('/bm-category/all')
+            axios.get('/thana-bm-income-category/all')
                 .then(responce => {
                     this.bm_category = responce.data
                     // console.log(this.bm_category);
 
                 })
         },
-        // unit_users_list:function(){
-        //     axios.get('/user/show_unit_user')
-        //         .then(responce =>{
-        //             this.unit_user_all = responce.data
-        //         })
-        // },
         user_target:function(){
             if(this.selected_user_id != "" && this.selected_bm_category_id != ""){
-                axios.get(`/bm-category-user/show_target/${this.selected_user_id}/${this.selected_bm_category_id}`)
+                axios.get(`/thana-bm-category-user/show_target/${this.selected_user_id}/${this.selected_bm_category_id}`)
                     .then(response =>{
                         if(response.data.status == 'success'){
                             if (response?.data?.data?.amount) {
@@ -144,17 +138,6 @@ export default {
             }
 
         },
-        // existing_data :async function(){
-        //     let response = await  axios.get('/bm-paid/existing-data',{
-        //                         params: {
-        //                             category_id: this.selected_bm_category_id,
-        //                         }
-        //                     });
-
-        //     if(response.data.status == "success"){
-        //         this.amount = response.data.amount;
-        //     }
-        // },
         create_entry:function($event){
             $event.preventDefault();
             let e = $event;
@@ -163,7 +146,7 @@ export default {
             // for (const entry of formData.entries()) {
             //     console.log(entry);
             // }
-            axios.post('/bm-user-entry/store',formData)
+            axios.post('/thana-bm-user-entry/store',formData)
                 .then(function (response) {
                     console.log(response.statusText);
                     window.toaster('New BM entry Created successfuly', 'success');

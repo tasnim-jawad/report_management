@@ -160,6 +160,71 @@
                                 সংশোধন
                             </router-link>
                         </li>
+                        <!-- <sidebar-dropdown
+                            title="বায়তুলমাল"
+                            name="bm"
+                            :active_dropdown="active_dropdown"
+                            @update_active="set_active_dropdown"
+                        > -->
+                            <!-- <li>
+                                <router-link :to="{ name: 'UnitShudhiAll' }">
+                                    <span class="icon_margin"
+                                        ><i
+                                            class="fa-solid fa-user-tag"
+                                        ></i></span
+                                    >সুধী তালিকা
+                                </router-link>
+                            </li> -->
+                            <!-- <li>
+                                <router-link
+                                    :to="{ name: 'UnitShudhiEntryAll' }"
+                                >
+                                    <span class="icon_margin"
+                                        ><i
+                                            class="fa-solid fa-user-tag"
+                                        ></i></span
+                                    >সুধী আয় এন্ট্রি করুন
+                                </router-link>
+                            </li> -->
+                            <li>
+                                <router-link
+                                    :to="{ name: 'ThanaBmCategoryUserAll' }"
+                                >
+                                    <span class="icon_margin"
+                                        ><i
+                                            class="fa-solid fa-user-tag"
+                                        ></i></span
+                                    >ব্যক্তিগত ধার্য
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link :to="{ name: 'ThanaBmUserEntryAll' }">
+                                    <span class="icon_margin"
+                                        ><i
+                                            class="fa-solid fa-user-tag"
+                                        ></i></span
+                                    >ব্যক্তিগত বায়তুলমাল
+                                </router-link>
+                            </li>
+                            <!-- <li>
+                                <router-link :to="{ name: 'BmEntryAll' }">
+                                    <span class="icon_margin"
+                                        ><i
+                                            class="fa-solid fa-dollar-sign"
+                                        ></i></span
+                                    >আয় এন্ট্রি করুন
+                                </router-link>
+                            </li> -->
+                            <!-- <li>
+                                <router-link :to="{ name: 'BmExpenseAll' }">
+                                    <span class="icon_margin"
+                                        ><i
+                                            class="fa-solid fa-circle-dollar-to-slot"
+                                        ></i></span
+                                    >ব্যয় এন্ট্রি করুন
+                                </router-link>
+                            </li> -->
+                        <!-- </sidebar-dropdown> -->
                         <li>
                             <router-link :to="{ name: 'Montobbo' }">
                                 <span class="icon_margin"><i class="fa-solid fa-comments"></i></span>মন্তব্য

@@ -1,7 +1,13 @@
 <template>
     <div class="card">
-        <div class="card-header">
+        <!-- <div class="card-header">
             ব্যক্তিগত ধার্য নির্ধারণ করুন
+        </div> -->
+        <div class="card-header d-flex justify-content-between align-items-center">
+            ব্যক্তিগত ধার্য নির্ধারণ করুন
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'ThanaBmCategoryUserAll'}" class="text-dark">সকল ব্যক্তিগত ধার্যের তালিকা</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_category_user">
@@ -12,11 +18,11 @@
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'user_id'">
                         <select type="text" :name="field.name" class="form-control">
                             <option value="">-- select User --</option>
-                            <option v-for="(user, i) in unit_user_all" :key="i" :value="user['id']" >{{user["full_name"]}}</option>
+                            <option v-for="(user, i) in thana_user_all" :key="i" :value="user['id']" >{{user["full_name"]}}</option>
 
                         </select>
                     </div>
-                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'bm_category_id'">
+                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'thana_bm_income_category_id'">
                         <select type="text" :name="field.name" class="form-control">
                             <option value="">-- select Category --</option>
                             <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option>
@@ -53,8 +59,8 @@ export default {
                     field_type:"select",
                 },
                 {
-                    label:"Title",
-                    name:"bm_category_id",
+                    label:"Category",
+                    name:"thana_bm_income_category_id",
                     field_type:"select",
                 },
                 {
@@ -68,27 +74,27 @@ export default {
                 },
             ],
             bm_category:[],
-            unit_user_all:[],
+            thana_user_all:[],
 
         }
     },
     created:function(){
         this.bm_category_list();
-        this.unit_users_list();
+        this.thana_users_list();
     },
     methods:{
         bm_category_list:function(){
-            axios.get('/bm-category/all')
+            axios.get('/thana-bm-income-category/all')
                 .then(responce => {
                     this.bm_category = responce.data
                     // console.log(this.bm_category);
 
                 })
         },
-        unit_users_list:function(){
-            axios.get('/user/show_unit_user')
+        thana_users_list:function(){
+            axios.get('/thana/user/show')
                 .then(responce =>{
-                    this.unit_user_all = responce.data
+                    this.thana_user_all = responce.data
                 })
         },
         create_category_user:function(){
@@ -98,7 +104,7 @@ export default {
             for (const entry of formData.entries()) {
                 console.log(entry);
             }
-            axios.post('/bm-category-user/store',formData)
+            axios.post('/thana-bm-category-user/store',formData)
                 .then(function (response) {
                     console.log(response.data.status);
                     if(response.data.status){

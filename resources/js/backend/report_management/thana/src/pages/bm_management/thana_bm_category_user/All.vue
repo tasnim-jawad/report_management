@@ -3,7 +3,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             সকল ব্যক্তিগত ধার্যের তালিকা
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'BmCategoryUserCreate'}" class="text-dark">ব্যক্তিগত ধার্য নির্ধারণ করুন</router-link>
+                <router-link :to="{name:'ThanaBmCategoryUserCreate'}" class="text-dark">ব্যক্তিগত ধার্য নির্ধারণ করুন</router-link>
             </div>
         </div>
         <div class="card-body">
@@ -20,15 +20,15 @@
                     <tbody>
                         <tr v-for="(category_user,index) in bm_category_user" :key="index">
                             <td>{{category_user.user.full_name}}</td>
-                            <td>{{category_user.bm_category.title}}</td>
+                            <td>{{category_user.thana_bm_income_category.title}}</td>
                             <td>{{category_user.amount}}</td>
                             <td>
                                 <div class="action">
                                     <div class="btn btn-success btn-sm me-2">
-                                        <router-link :to="{name:'BmCategoryUserDetails',params: { category_user_id: category_user.id }}"  class="text-dark">show</router-link>
+                                        <router-link :to="{name:'ThanaBmCategoryUserDetails',params: { category_user_id: category_user.id }}"  class="text-dark">show</router-link>
                                     </div>
                                     <div class="btn btn-warning btn-sm me-2">
-                                        <router-link :to="{name:'BmCategoryUserEdit',params: { category_user_id: category_user.id }}"  class="text-dark">Edit</router-link>
+                                        <router-link :to="{name:'ThanaBmCategoryUserEdit',params: { category_user_id: category_user.id }}"  class="text-dark">Edit</router-link>
                                     </div>
                                     <div class="btn btn-danger btn-sm">
                                         <a @click="delete_category_user(category_user.id)" class="text-dark">Delete</a>
@@ -61,7 +61,7 @@ export default {
     },
     methods:{
         show_bm_category_user : function(){
-            axios.get('/bm-category-user/single-unit')
+            axios.get('/thana-bm-category-user/single-thana')
                 .then(response => {
                     this.bm_category_user = response.data
                     console.log(this.bm_category_user);
@@ -79,7 +79,7 @@ export default {
         submit_delete_form : function(category_user_id){
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_category_user_form_'+category_user_id));
-            axios.post("/bm-category-user/destroy",formData)
+            axios.post("/thana-bm-category-user/destroy",formData)
                     .then(response => {
                         // console.log(response);
                         window.toaster('Category User delete successfuly', 'success');

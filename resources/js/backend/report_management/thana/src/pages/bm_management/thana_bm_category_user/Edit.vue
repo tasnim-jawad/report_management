@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
-            Edit Bm Category User
+        <div class="card-header d-flex justify-content-between align-items-center">
+            ব্যক্তিগত ধার্য এডিট করুন
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'ThanaBmCategoryUserAll'}" class="text-dark">সকল ব্যক্তিগত ধার্যের তালিকা</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="edit_category_user">
