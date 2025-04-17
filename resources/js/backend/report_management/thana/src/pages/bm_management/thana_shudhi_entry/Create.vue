@@ -14,7 +14,7 @@
                         <label for="">{{field.label}}</label>
                     </div>
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'shudhi_id'">
-                        <select type="text" :name="field.name" class="form-control" v-model="selected_user_id" >
+                        <select type="text" :name="field.name" :id="field.name" class="form-control" v-model="selected_user_id" >
                             <option value="">-- select user --</option>
                             <option v-for="(shudhi, i) in thana_shudhi_all" :key="i" :value="shudhi['id']" >{{shudhi["name"]}}</option>
 
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'thana_bm_income_category_id'">
-                        <select type="text" :name="field.name" class="form-control" v-model="selected_bm_category_id">
+                        <select type="text" :name="field.name" :id="field.name" class="form-control" v-model="selected_bm_category_id">
                             <option value="">-- select Category --</option>
                             <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option>
 

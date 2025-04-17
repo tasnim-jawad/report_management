@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-3">
         <div class="card-header">
-           ওয়ার্ডের মাসিক রিপোর্ট
+           থানার মাসিক রিপোর্ট
         </div>
         <div class="card-body border-bottom-0">
             <form ref="report_form" action="" method="GET">
@@ -33,7 +33,7 @@
     </div>
     <div class="card mb-3">
         <div class="card-header">
-            মাসিক ইউনিট রিপোর্ট (এপ্রুভড ইউনিটের টোটাল ) - টোটাল ইউনিট - {{ total_units_counts }} টি এবং এপ্রুভড হয়েছে - {{ approved_units_count }}  টি।
+            মাসিক ইউনিট রিপোর্ট (এপ্রুভড ইউনিটের টোটাল ) - টোটাল ইউনিট - {{ total_wards_counts }} টি এবং এপ্রুভড হয়েছে - {{ approved_wards_count }}  টি।
         </div>
         <div class="card-body border-bottom-0">
             <form ref="report_form" action="" method="GET" >
@@ -59,8 +59,8 @@ export default {
             end_month: null,
             user: [],
             approved_unit:[],
-            approved_units_count:'',
-            total_units_counts:'',
+            approved_wards_count:'',
+            total_wards_counts:'',
         }
     },
     created:function(){
@@ -90,13 +90,32 @@ export default {
             }
 
             try {
-                const { data } = await axios.get('/ward/check-report-info', {
+                const { data } = await axios.get('/thana/check-report-info', {
                     params: { month: this.month }
                 });
 
                 if (data.data) {
-                    const url = `/ward/ward-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}&print=true`;
-                    window.open(url);
+                    // (blade file create korar por ei nicher 2ta line uncomment kora hobe , ebong porer line gula comment kora hobe)  
+                    
+                    // const url = `/ward/ward-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}&print=true`;
+                    // window.open(url);
+
+                    this.user_id = this.user?.user?.id;
+                    if (this.user_id) {
+                        // Navigate to report upload route
+                        return this.$router.push({
+                            name: "ThanaReportUploadMonthly",
+                            params: {
+                                month: this.month,
+                                user_id: this.user_id,
+                            },
+                        });
+                    } else {
+                        return window.s_warning(
+                            "User ID is missing. Please ensure it is provided.",
+                            "error"
+                        );
+                    }
                 } else {
                     const errMessage = 'আপনার রিপোর্ট দেখার অনুমতি নেই। রিপোর্ট দেখার অনুমতির জন্য আপনার ঊর্ধ্বতন দায়িত্বশীলের সাথে যোগাযোগ করুন।';
                     window.s_warning(errMessage, 'error');
@@ -121,7 +140,7 @@ export default {
                 this.start_month = `${current_year}-01`; // January of the current year
                 this.end_month = `${current_year}-12`;
             }
-            let response = await axios.get('/ward/check-report-info-in-range', {
+            let response = await axios.get('/thana/check-report-info-in-range', {
                 params: {
                     start_month: this.start_month,
                     end_month: this.end_month
@@ -129,27 +148,35 @@ export default {
             });
             // console.log(response);
             if(response.data.data){
-                window.open(`/ward/report/ward-report-sum?user_id=${this.user?.user?.id}&start_month=${this.start_month}&end_month=${this.end_month}&print=true`)
+                // window.open(`/ward/report/ward-report-sum?user_id=${this.user?.user?.id}&start_month=${this.start_month}&end_month=${this.end_month}&print=true`)
+
+                return this.$router.push({
+                    name: "ThanaSumReport",
+                    params: {
+                        start_month: this.start_month,
+                        end_month: this.end_month
+                    },
+                });
             }else{
                 const errMessage = 'আপনার এই মাস গুলিতে কোনো প্রতিবেদন অনুমোদন হয়নি।';
                 window.s_warning(errMessage, 'error');
             }
         },
         user_info:function(){
-            axios.get("/user/ward-user-info")
+            axios.get("/user/thana-user-info")
                 .then(responce =>{
                     this.user = responce.data
                 })
         },
         report_status:async function(){
-            let response = await axios.get('/ward/unit/report-status', {
+            let response = await axios.get('/thana/ward/report-status', {
                             params: {
                                 month: this.month
                             }
                         })
             if(response.data.status == 'success'){
-                this.approved_unit = null,
-                this.approved_unit = response.data.approved_unit ?? [];
+                this.approved_ward = null,
+                this.approved_ward = response.data.approved_ward ?? [];
 
                 // this.unsubmitted_unit = response.data.unsubmitted_unit
                 // this.pending_unit = response.data.pending_unit
@@ -167,17 +194,17 @@ export default {
         },
         count_units:async function(){
             if(this.month){
-                let response = await axios.get('/ward/count-approved-unit', {
+                let response = await axios.get('/thana/count-approved-ward', {
                                 params: {
                                     month: this.month
                                 }
                             })
                 if(response.data.status == 'success'){
-                    let approved = response.data.approved_units;
-                    let total = response.data.total_units;
+                    let approved = response.data.approved_wards;
+                    let total = response.data.total_wards;
 
-                    this.approved_units_count = this.formatBangla(approved)
-                    this.total_units_counts = this.formatBangla(total)
+                    this.approved_wards_count = this.formatBangla(approved)
+                    this.total_wards_counts = this.formatBangla(total)
                 }
             }
         }

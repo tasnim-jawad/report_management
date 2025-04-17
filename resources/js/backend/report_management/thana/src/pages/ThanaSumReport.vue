@@ -12,9 +12,11 @@
                 <div class="line d-flex flex-wrap">
                     <p class="w-75">
                         মাস:
-                        {{ formatMonth(month) }}
+                        {{ formatMonth(start_month)  }}
+                         - 
+                        {{ formatMonth(end_month)  }}
                     </p>
-                    <p class="w-25">সন: {{ formatYear(month) }}</p>
+                    <p class="w-25">সন: {{ formatYear(end_month) }}</p>
                 </div>
                 <div class="line d-flex flex-wrap justify-content-between">
                     <p>
@@ -41,10 +43,45 @@
                     <p class="fw-bold w-75">
                         ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
                         <span>
-                            {{ total_dawat }}
+                            <!-- {{ total_dawat }} -->
+
+                            {{
+                                get_sum_total(
+                                    report_sum_data?.thana_dawat1_regular_group_wises?.how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat1_regular_group_wises?.how_many_have_been_invited_woman,
+                                    
+                                    report_sum_data?.thana_dawat2_personal_and_targets?.how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat2_personal_and_targets?.how_many_have_been_invited_woman,
+                                    
+                                    report_sum_data?.thana_dawat3_general_program_and_others?.how_many_were_give_dawat_man,
+                                    report_sum_data?.thana_dawat3_general_program_and_others?.how_many_were_give_dawat_woman,
+                                    
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_doshok_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_doshok_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_pokkho_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_pokkho_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.jela_declared_gonosonjog_dawati_ovi_invited,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.mohanogor_declared_gonosonjog_dawati_ovi_invited,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.election_how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.election_how_many_have_been_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.ulama_how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.ulama_how_many_have_been_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.peshajibi_how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.peshajibi_how_many_have_been_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.other_how_many_have_been_invited,
+                                )
+                            }}
                         </span>
                     </p>
-                    <p class="fw-bold w-25">মোট জনসংখ্যা:</p>
+                    <p class="fw-bold w-25">মোট জনসংখ্যা:
+                        {{
+                        formatBangla(
+                                report_sum_data
+                                    ?.thana_dawat5_jonoshadharons
+                                    ?.total_population
+                            )
+                        }}
+                    </p>
                     <p class="fw-bold ps-3 w-100">
                         টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক)
                         :
@@ -33272,34 +33309,18 @@
                                         <tr
                                             v-for="(
                                                 bm_cat, index
-                                            ) in bm_income_categories"
+                                            ) in income_report.category_wise_data"
                                             :key="index"
                                         >
                                             <td
                                                 class="text-start px-2 w-50 border_bottom"
                                             >
-                                                {{ bm_cat.title }}
+                                                {{ bm_cat.category_name }}
                                             </td>
                                             <td class="border_left_bottom">
-                                                <input
-                                                    name="bm_entry"
-                                                    :value="
-                                                        formatBangla(
-                                                            bm_categoty_amount(
-                                                                bm_cat.id
-                                                            )
-                                                        )
-                                                    "
-                                                    @change="
-                                                        income_store(
-                                                            bm_cat.id,
-                                                            $event.target.value
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />
+                                                {{ formatBangla(parseInt(bm_cat.amount) ?? "") }}
                                             </td>
+                                            
                                         </tr>
                                     </tbody>
                                 </table>
@@ -33310,33 +33331,16 @@
                                         <tr
                                             v-for="(
                                                 expense_cat, index
-                                            ) in bm_expense_categories"
+                                            ) in expense_report.category_wise_data"
                                             :key="index"
                                         >
                                             <td
                                                 class="text-start px-2 w-50 border_bottom"
                                             >
-                                                {{ expense_cat.title }}
+                                                {{ expense_cat.category_name }}
                                             </td>
                                             <td class="border_left_bottom">
-                                                <input
-                                                    name="bm_entry"
-                                                    :value="
-                                                        formatBangla(
-                                                            expense_categoty_amount(
-                                                                expense_cat.id
-                                                            )
-                                                        )
-                                                    "
-                                                    @change="
-                                                        expense_store(
-                                                            expense_cat.id,
-                                                            $event.target.value
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />
+                                                {{ formatBangla(parseInt(expense_cat.amount) ?? "") }}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -33526,10 +33530,10 @@ export default {
 
     created() {
         this.uploaded_data();
-        this.income_category();
-        this.expense_category();
-        this.bm_category_wise();
-        this.bm_expense_category_wise();
+        // this.income_category();
+        // this.expense_category();
+        // this.bm_category_wise();
+        // this.bm_expense_category_wise();
         this.report_status();
     },
     watch: {
@@ -33548,38 +33552,27 @@ export default {
         "report_sum_data.ward_rastrio3_dibosh_palons": function () {
             this.average_data("ward_rastrio3_dibosh_palons");
         },
-        // kormosuci: function () {
-        //     this.average_data();
-        // },
-        // songothon9: function () {
-        //     this.average_data();
-        // },
-        // proshikkhon1: function () {
-        //     this.average_data();
-        // },
-        // rastrio2: function () {
-        //     this.average_data();
-        // },
-
         total_income: function () {
             console.log(typeof this.total_income);
         },
     },
     methods: {
         uploaded_data: async function () {
-            const month = this.$route.params.month;
-            const user_id = this.$route.params.user_id;
+            const start_month = this.$route.params.start_month;
+            const end_month = this.$route.params.end_month;
 
-            let res = await axios.get("/thana/uploaded-data-monthly", {
+            let res = await axios.get("/thana/report/thana-report-sum", {
                 params: {
-                    month: month,
-                    user_id: user_id,
+                    start_month: start_month,
+                    end_month: end_month,
                 },
             });
 
             if (res.data.status == "success") {
                 console.log("res", res.data.data.end_month);
                 (this.month = res.data.data.end_month),
+                (this.start_month = res.data.data.start_month),
+                (this.end_month = res.data.data.end_month),
                     (this.report_header = res.data.data.report_header),
                     (this.report_sum_data = res.data.data.report_sum_data),
                     (this.previous_present = res.data.data.previous_present),
@@ -33999,127 +33992,127 @@ export default {
 
         //     return " ";
         // },
-        bm_expense_category_wise: async function () {
-            const month = this.$route.params.month;
+        // bm_expense_category_wise: async function () {
+        //     const month = this.$route.params.month;
 
-            let res = await axios.get("/thana/expense-category-wise", {
-                params: {
-                    month: month,
-                },
-            });
-            if (res) {
-                this.expense_cat_wise = res.data?.data;
-            }
-        },
-        bm_category_wise: async function () {
-            const month = this.$route.params.month;
+        //     let res = await axios.get("/thana/expense-category-wise", {
+        //         params: {
+        //             month: month,
+        //         },
+        //     });
+        //     if (res) {
+        //         this.expense_cat_wise = res.data?.data;
+        //     }
+        // },
+        // bm_category_wise: async function () {
+        //     const month = this.$route.params.month;
 
-            let res = await axios.get("/thana/income-category-wise", {
-                params: {
-                    month: month,
-                },
-            });
-            if (res) {
-                this.bm_cat_wise = res.data?.data;
-            }
-        },
-        expense_category: async function () {
-            let res = await axios.get("/thana-bm-expense-category/all");
-            if (res.data.status == "success") {
-                this.bm_expense_categories = res?.data?.data?.data;
-            }
-        },
-        income_category: async function () {
-            let res = await axios.get("/thana-bm-income-category/all");
-            if (res) {
-                this.bm_income_categories = res.data?.data;
-            }
-        },
-        income_store: function (thana_bm_income_category_id, amount) {
-            const month = this.$route.params.month;
-            const formData = {
-                thana_bm_income_category_id: thana_bm_income_category_id,
-                amount: amount,
-                month: month,
-            };
-            axios
-                .post("/thana-bm-income/store", formData)
-                .then(function (response) {
-                    window.toaster(
-                        "New BM entry Created successfuly",
-                        "success"
-                    );
-                })
-                .catch(function (error) {
-                    console.log(error.response);
-                });
-        },
+        //     let res = await axios.get("/thana/income-category-wise", {
+        //         params: {
+        //             month: month,
+        //         },
+        //     });
+        //     if (res) {
+        //         this.bm_cat_wise = res.data?.data;
+        //     }
+        // },
+        // expense_category: async function () {
+        //     let res = await axios.get("/thana-bm-expense-category/all");
+        //     if (res.data.status == "success") {
+        //         this.bm_expense_categories = res?.data?.data?.data;
+        //     }
+        // },
+        // income_category: async function () {
+        //     let res = await axios.get("/thana-bm-income-category/all");
+        //     if (res) {
+        //         this.bm_income_categories = res.data?.data;
+        //     }
+        // },
+        // income_store: function (thana_bm_income_category_id, amount) {
+        //     const month = this.$route.params.month;
+        //     const formData = {
+        //         thana_bm_income_category_id: thana_bm_income_category_id,
+        //         amount: amount,
+        //         month: month,
+        //     };
+        //     axios
+        //         .post("/thana-bm-income/store", formData)
+        //         .then(function (response) {
+        //             window.toaster(
+        //                 "New BM entry Created successfuly",
+        //                 "success"
+        //             );
+        //         })
+        //         .catch(function (error) {
+        //             console.log(error.response);
+        //         });
+        // },
 
-        bm_categoty_amount: function (bm_cat_id) {
-            // console.log("log", bm_cat_id, this.bm_cat_wise);
-            if (this.bm_cat_wise != null) {
-                // console.log("inside",bm_cat_id,this.bm_cat_wise )
-                const element = this.bm_cat_wise.find((el) => {
-                    if (
-                        el.thana_bm_income_category &&
-                        el.thana_bm_income_category.id == bm_cat_id
-                    ) {
-                        return el;
-                    }
-                });
-                // console.log("inside element",element)
-                if (element) {
-                    return element.amount;
-                } else {
-                    // console.log("element not found")
-                }
-            } else {
-                return "";
-            }
-        },
-        expense_categoty_amount: function (expense_cat_id) {
-            // console.log("expense_categoty_amount",expense_cat_id);
-            // console.log("this.expense_cat_wise",this.expense_cat_wise);
+        // bm_categoty_amount: function (bm_cat_id) {
+        //     // console.log("log", bm_cat_id, this.bm_cat_wise);
+        //     if (this.bm_cat_wise != null) {
+        //         // console.log("inside",bm_cat_id,this.bm_cat_wise )
+        //         const element = this.bm_cat_wise.find((el) => {
+        //             if (
+        //                 el.thana_bm_income_category &&
+        //                 el.thana_bm_income_category.id == bm_cat_id
+        //             ) {
+        //                 return el;
+        //             }
+        //         });
+        //         // console.log("inside element",element)
+        //         if (element) {
+        //             return element.amount;
+        //         } else {
+        //             // console.log("element not found")
+        //         }
+        //     } else {
+        //         return "";
+        //     }
+        // },
+        // expense_categoty_amount: function (expense_cat_id) {
+        //     // console.log("expense_categoty_amount",expense_cat_id);
+        //     // console.log("this.expense_cat_wise",this.expense_cat_wise);
 
-            if (this.expense_cat_wise != null) {
-                // console.log("expanxe inside",this.expense_cat_wise);
-                const element = this.expense_cat_wise.find((element) => {
-                    if (
-                        element.thana_bm_expense_category &&
-                        element.thana_bm_expense_category.id == expense_cat_id
-                    ) {
-                        return element;
-                    }
-                });
-                if (element) {
-                    return element.amount;
-                } else {
-                    // console.log("element not found")
-                }
-            } else {
-                return "";
-            }
-        },
+        //     if (this.expense_cat_wise != null) {
+        //         // console.log("expanxe inside",this.expense_cat_wise);
+        //         const element = this.expense_cat_wise.find((element) => {
+        //             if (
+        //                 element.thana_bm_expense_category &&
+        //                 element.thana_bm_expense_category.id == expense_cat_id
+        //             ) {
+        //                 return element;
+        //             }
+        //         });
+        //         if (element) {
+        //             return element.amount;
+        //         } else {
+        //             // console.log("element not found")
+        //         }
+        //     } else {
+        //         return "";
+        //     }
+        // },
 
-        expense_store: function (thana_bm_expense_category_id, amount) {
-            const month = this.$route.params.month;
-            const formData = {
-                thana_bm_expense_category_id: thana_bm_expense_category_id,
-                amount: amount,
-                month: month,
-            };
-            axios
-                .post("/thana-bm-expense/store", formData)
-                .then(function (response) {
-                    window.toaster(
-                        "New Expense entry Created successfuly",
-                        "success"
-                    );
-                })
-                .catch(function (error) {
-                    console.log(error.response);
-                });
-        },
+        // expense_store: function (thana_bm_expense_category_id, amount) {
+        //     const month = this.$route.params.month;
+        //     const formData = {
+        //         thana_bm_expense_category_id: thana_bm_expense_category_id,
+        //         amount: amount,
+        //         month: month,
+        //     };
+        //     axios
+        //         .post("/thana-bm-expense/store", formData)
+        //         .then(function (response) {
+        //             window.toaster(
+        //                 "New Expense entry Created successfuly",
+        //                 "success"
+        //             );
+        //         })
+        //         .catch(function (error) {
+        //             console.log(error.response);
+        //         });
+        // },
         print_report: function () {
             // Set opacity to 0 for all elements with the 'i_icon' class
             document
@@ -34136,23 +34129,8 @@ export default {
             const printPreview = document.querySelector(".print_preview");
             if (printPreview) printPreview.style.display = "none";
 
-          
-            document.querySelectorAll(".bg-input").forEach((element) => {
-                element.style.setProperty("background-color", "#ffffff12", "important")
-            });
-        
-            
-
             // Trigger the print dialog
             window.print();
-            // const month = this.$route.params.month;
-            // const user_id = this.$route.params.user_id;
-            // const url = `/thana/report?user_id=${user_id}&month=${month}&print=true`;
-            // window.location.href = url;
-
-            // setTimeout(() => {
-            //     window.print(); // Trigger the print dialog
-            // }, 200);
         },
 
         implementation_rate: function (target, achieved) {

@@ -13,7 +13,7 @@
                         <label for="">{{field.label}}</label>
                     </div>
                     <div class="form_input" v-if="field.field_type == 'select'">
-                        <select type="text" :name="field.name" class="form-control text-center" v-model="selected_ward_bm_expense_category_id">
+                        <select type="text" :name="field.name" class="form-control text-center" v-model="selected_thana_bm_expense_category_id">
                             <option value="">-- select Category --</option>
                             <option v-for="(bm_category, i) in bm_expense_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option>
 
@@ -39,7 +39,7 @@ export default {
             fields1:[
                 {
                     label:"Title",
-                    name:"ward_bm_expense_category_id",
+                    name:"thana_bm_expense_category_id",
                     field_type:"select",
                 },
                 {
@@ -48,7 +48,7 @@ export default {
                 },
             ],
             bm_expense_category:[],
-            selected_ward_bm_expense_category_id:"",
+            selected_thana_bm_expense_category_id:"",
             amount: "",
 
         }
@@ -60,7 +60,7 @@ export default {
         }
     },
     watch:{
-        selected_ward_bm_expense_category_id:function(){
+        selected_thana_bm_expense_category_id:function(){
             this.existing_data();
         }
     },
@@ -69,7 +69,7 @@ export default {
     },
     methods:{
         expense_category_list:function(){
-            axios.get('/ward-bm-expense-category/all')
+            axios.get('/thana-bm-expense-category/all')
                 .then(responce => {
                     if(responce.data.status == 'success'){
                         this.bm_expense_category = responce?.data?.data
@@ -78,9 +78,9 @@ export default {
                 })
         },
         existing_data :async function(){
-            let response = await  axios.get('/ward-bm-expense/existing-data',{
+            let response = await  axios.get('/thana-bm-expense/existing-data',{
                                 params: {
-                                    category_id: this.selected_ward_bm_expense_category_id,
+                                    category_id: this.selected_thana_bm_expense_category_id,
                                 }
                             });
 
@@ -96,7 +96,7 @@ export default {
             for (const entry of formData.entries()) {
                 console.log(entry);
             }
-            axios.post('/ward-bm-expense/store',formData)
+            axios.post('/thana-bm-expense/store',formData)
                 .then(function (response) {
                     console.log(response.statusText);
                     window.toaster('New BM Expense Created successfuly', 'success');

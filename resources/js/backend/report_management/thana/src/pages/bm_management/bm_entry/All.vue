@@ -92,7 +92,7 @@ export default {
     },
     methods:{
         show_bm_entry :async function(){
-            console.log("show_bm_entry ------");
+            console.log("show_bm_entry ");
 
             let response = await  axios.get('/thana-bm-income/single-thana',{
                                 params: { month: this.month  }

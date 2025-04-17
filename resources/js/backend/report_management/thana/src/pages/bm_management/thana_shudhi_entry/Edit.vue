@@ -47,7 +47,7 @@
                 </div>
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
                     <div class="form_label">
-                        <label for="">Amount</label>
+                        <label for="">টাকার পরিমাণ</label>
                     </div>
                     <div class="form_input">
                         <input type="text" name="amount" :value="entry_info.amount" class="form-control">

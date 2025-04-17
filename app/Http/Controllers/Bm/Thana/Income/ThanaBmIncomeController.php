@@ -209,7 +209,7 @@ class ThanaBmIncomeController extends Controller
     public function store()
     {
         $validator = Validator::make(request()->all(), [
-            'amount' => ['required'],
+            'amount' => ['required', 'integer'],
             'thana_bm_income_category_id' => ['required'],
             'month' => ['required', 'date'],
         ]);
@@ -296,7 +296,7 @@ class ThanaBmIncomeController extends Controller
         }
 
         $validator = Validator::make(request()->all(), [
-            'amount' => ['required'],
+            'amount' => ['required', 'integer'],
             'thana_bm_income_category_id' => ['required'],
         ]);
 

@@ -47,13 +47,13 @@ class ThanaBmExpenseController extends Controller
         ]);
     }
 
-    public function single_ward()
+    public function single_thana()
     {
         $passed_date = Carbon::parse(request()->all()['month']);
         $passed_month = $passed_date->month;
         $passed_year = $passed_date->year;
 
-        $permission  = ReportManagementControl::where('report_type', 'ward')
+        $permission  = ReportManagementControl::where('report_type', 'thana')
             ->where('is_active', 1)
             ->latest()
             ->first();
@@ -66,10 +66,10 @@ class ThanaBmExpenseController extends Controller
         } else {
             $is_permitted = false;
         }
-        // dd(auth()->user(),auth()->user()->org_ward_user["ward_id"]);
-        $ward_id = auth()->user()->org_ward_user["ward_id"];
-        $data = ThanaBmExpense::with('ward_bm_expense_category')
-            ->where('ward_id', $ward_id)
+        // dd(auth()->user(),auth()->user()->org_thana_user["thana_id"]);
+        $thana_id = auth()->user()->org_thana_user["thana_id"];
+        $data = ThanaBmExpense::with('thana_bm_expense_category')
+            ->where('thana_id', $thana_id)
             ->whereMonth('date', $passed_month)
             ->whereYear('date', $passed_year)
             ->get();
@@ -86,12 +86,12 @@ class ThanaBmExpenseController extends Controller
 
     public function bm_total_expense($month)
     {
-        $org_ward_user = User::where('id', auth()->user()->id)->with('org_ward_user')->get()->first()->org_ward_user;
+        $org_thana_user = User::where('id', auth()->user()->id)->with('org_thana_user')->get()->first()->org_thana_user;
         $date = Carbon::parse($month);
         $query = ThanaBmExpense::query();
-        $filter = $query->whereYear('date', $date->clone()->year)->whereMonth('date', $date->clone()->month)->where('ward_id', $org_ward_user->ward_id);
+        $filter = $query->whereYear('date', $date->clone()->year)->whereMonth('date', $date->clone()->month)->where('thana_id', $org_thana_user->thana_id);
         $total_expense = $filter->sum('amount');
-        $category_id = $filter->with('ward_bm_expense_category')->pluck('ward_bm_expense_category_id')->all();
+        $category_id = $filter->with('thana_bm_expense_category')->pluck('thana_bm_expense_category_id')->all();
         $category_unique_id = array_values(array_unique($category_id));
 
         $data = [];
@@ -99,8 +99,8 @@ class ThanaBmExpenseController extends Controller
             $testQuery = ThanaBmExpense::query();
             $totalAmount = $testQuery->whereYear('date', $date->clone()->year)
                 ->whereMonth('date', $date->clone()->month)
-                ->where('ward_bm_expense_category_id', $item)
-                ->where('ward_id', $org_ward_user->ward_id)
+                ->where('thana_bm_expense_category_id', $item)
+                ->where('thana_id', $org_thana_user->thana_id)
                 ->sum('amount');
             $bmCategory = ThanaBmExpenseCategory::find($item);
             $data[$index]['amount'] = $totalAmount;
@@ -131,7 +131,7 @@ class ThanaBmExpenseController extends Controller
         if (request()->has('select_all') && request()->select_all) {
             $select = "*";
         }
-        $data = ThanaBmExpense::with('ward_bm_expense_category')->where('id', $id)
+        $data = ThanaBmExpense::with('thana_bm_expense_category')->where('id', $id)
             ->select($select)
             ->first();
         if ($data) {
@@ -151,7 +151,7 @@ class ThanaBmExpenseController extends Controller
     public function existing_data()
     {
         // dd(request()->all()['category_id']);
-        $permission  = ReportManagementControl::where('report_type', 'ward')
+        $permission  = ReportManagementControl::where('report_type', 'thana')
             ->where('is_active', 1)
             ->latest()
             ->first();
@@ -168,10 +168,10 @@ class ThanaBmExpenseController extends Controller
         // $permitted_date = Carbon::parse($permission->month_year);
         // $permitted_month = $permitted_date->month;
         // $permitted_year = $permitted_date->year;
-        $ward_info = (object) auth()->user()->org_ward_user;
+        $thana_info = (object) auth()->user()->org_thana_user;
 
-        $existing_data = ThanaBmExpense::where('ward_id', $ward_info->ward_id)
-            ->where('ward_bm_expense_category_id', request()->all()['category_id'])
+        $existing_data = ThanaBmExpense::where('thana_id', $thana_info->thana_id)
+            ->where('thana_bm_expense_category_id', request()->all()['category_id'])
             ->whereYear('date', $permitted_year)
             ->whereMonth('date', $permitted_month)
             ->first();
@@ -190,8 +190,9 @@ class ThanaBmExpenseController extends Controller
     }
     public function store()
     {
+        // dd(request()->all());
         $validator = Validator::make(request()->all(), [
-            'amount' => ['required'],
+            'amount' => ['required', 'integer'],
             'thana_bm_expense_category_id' => ['required'],
             'month' => ['required', 'date'],
         ]);
@@ -279,8 +280,8 @@ class ThanaBmExpenseController extends Controller
         }
 
         $validator = Validator::make(request()->all(), [
-            'amount' => ['required'],
-            'ward_bm_expense_category_id' => ['required'],
+            'amount' => ['required', 'integer'],
+            'thana_bm_expense_category_id' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -289,11 +290,11 @@ class ThanaBmExpenseController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-
-        $passed_date = Carbon::parse($data->month);
+        // dd($data);
+        $passed_date = Carbon::parse($data->date);
         $passed_month = $passed_date->month;
         $passed_year = $passed_date->year;
-        $permission = ReportManagementControl::where('report_type', 'ward')
+        $permission = ReportManagementControl::where('report_type', 'thana')
             ->where('is_active', 1)
             ->latest()
             ->first();
@@ -304,7 +305,7 @@ class ThanaBmExpenseController extends Controller
 
         if ($passed_month == $permitted_month && $passed_year == $permitted_year) {
             $data->amount = request()->amount;
-            $data->ward_bm_expense_category_id = request()->ward_bm_expense_category_id;
+            $data->thana_bm_expense_category_id = request()->thana_bm_expense_category_id;
 
             $data->creator = auth()->id();
             $data->save();
@@ -321,7 +322,7 @@ class ThanaBmExpenseController extends Controller
     public function soft_delete()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:ward_bm_expenses,id'],
+            'id' => ['required', 'exists:thana_bm_expenses,id'],
         ]);
 
         if ($validator->fails()) {
@@ -343,7 +344,7 @@ class ThanaBmExpenseController extends Controller
     public function destroy()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:ward_bm_expenses,id'],
+            'id' => ['required', 'exists:thana_bm_expenses,id'],
         ]);
 
         if ($validator->fails()) {
@@ -364,7 +365,7 @@ class ThanaBmExpenseController extends Controller
     public function restore()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:ward_bm_expenses,id'],
+            'id' => ['required', 'exists:thana_bm_expenses,id'],
         ]);
 
         if ($validator->fails()) {

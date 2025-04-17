@@ -14,10 +14,10 @@
                         <label for="">Title</label>
                     </div>
                     <div class="form_input">
-                        <select type="text" name="ward_bm_expense_category_id" class="form-control text-center">
+                        <select type="text" name="thana_bm_expense_category_id" class="form-control text-center">
                             <option value="">-- select category --</option>
                             <option v-for="(bm_expense_category, i) in expense_category.data" :key="i" :value="bm_expense_category['id']"
-                            :selected="bm_expense_category['id'] === expense_info.ward_bm_expense_category_id">{{bm_expense_category["title"]}}</option>
+                            :selected="bm_expense_category['id'] === expense_info.thana_bm_expense_category_id">{{bm_expense_category["title"]}}</option>
 
                         </select>
                     </div>
@@ -52,14 +52,14 @@ export default {
     },
     methods:{
         bm_category_list:function(){
-            axios.get('/ward-bm-expense-category/all')
+            axios.get('/thana-bm-expense-category/all')
                 .then(responce => {
                     this.expense_category = responce?.data?.data
                     console.log('expense_category',this.expense_category);
                 })
         },
         show_expense: function(){
-            axios.get(`/ward-bm-expense/show/${this.expense_id}`)
+            axios.get(`/thana-bm-expense/show/${this.expense_id}`)
                 .then(responce => {
                     if(responce.data.status == "success"){
                         this.expense_info = responce?.data?.data
@@ -72,7 +72,7 @@ export default {
             for (const entry of formData.entries()) {
                 console.log(entry);
             }
-            axios.post(`/ward-bm-expense/update`,formData)
+            axios.post(`/thana-bm-expense/update`,formData)
                 .then(function (response) {
                     window.toaster('BM Expense Updated successfuly', 'success');
                 })

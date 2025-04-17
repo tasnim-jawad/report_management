@@ -65,7 +65,7 @@ window.remove_form_action_classes = function () {
     $(".loader_body").removeClass("active");
     $("input,select,textarea").removeClass("border-danger");
     $("form button").prop("disabled", false);
-    $(`.error.text-danger`).remove();
+    $(`.text-danger`).remove();
 };
 
 // window.errorReset = function (event) {
@@ -91,7 +91,7 @@ window.render_form_errors = function (object, selector = "name") {
              */
             if (el) {
                 $(
-                    `<div class="error text-danger">${element[0]}</div>`
+                    `<div class="text-danger mt-1">${element[0]}</div>`
                 ).insertAfter(el);
                 el.classList.add("border-danger");
             }

@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import main_route from "./src/routes/routes";
 import WardReportUpload from "./src/pages/WardReportUpload.vue";
 import ThanaReportUploadMonthly from "./src/pages/ThanaReportUploadMonthly.vue";
+import ThanaSumReport from "./src/pages/ThanaSumReport.vue";
 import WardReportCheck from "./src/pages/WardReportCheck.vue";
 
 const router = createRouter({
@@ -19,6 +20,12 @@ const router = createRouter({
             name: "ThanaReportUploadMonthly",
             path: "/thana-report-upload-monthly/:month/:user_id",
             component: ThanaReportUploadMonthly,
+            props: true,
+        },
+        {
+            name: "ThanaSumReport",
+            path: "/thana-sum-report/:start_month/:end_month",
+            component: ThanaSumReport,
             props: true,
         },
         {

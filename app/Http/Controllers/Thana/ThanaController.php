@@ -214,7 +214,7 @@ class ThanaController extends Controller
         }
     }
 
-    public function ward_report_sum()
+    public function thana_report_sum()
     {
         $validator = Validator::make(request()->all(), [
             'start_month' => ['required', 'date'],
@@ -228,50 +228,97 @@ class ThanaController extends Controller
             ], 422);
         }
 
-        $ward_id = auth()->user()->org_ward_user->ward_id;
+        $thana_id = auth()->user()->org_thana_user->thana_id;
 
         $start_month = request()->start_month;
         $end_month = request()->end_month;
-        $org_type = 'ward';
-        $org_type_id = $ward_id;
-        // $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
-
-        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id);
-        // dd($datas);
+        $org_type = 'thana';
+        $org_type_id = $thana_id;
+        $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
+        $is_need_sum = true;
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
 
 
         // -------------------------- bm previous report ------------------------------------
         $carbon_start_month = Carbon::parse($start_month);
-        $query = WardBmIncome::query();
+        $query = ThanaBmIncome::query();
         $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
-            ->where('ward_id', $ward_id)
+            ->where('thana_id', $thana_id)
             ->where('report_approved_status', 'approved');
         $total_previous_income = $filter->sum('amount');
 
-        $query = WardBmExpense::query();
+        $query = ThanaBmExpense::query();
         $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
-            ->where('ward_id', $ward_id)
+            ->where('thana_id', $thana_id)
             ->where('report_approved_status', 'approved');
         $total_previous_expense = $filter->sum('amount');
         $total_previous =  $total_previous_income - $total_previous_expense;
         $total_current_income =  $total_previous + $datas->income_report->total_amount;
         $in_total =  $total_current_income - $datas->expense_report->total_amount;
         // -------------------------- bm previous report ------------------------------------
-        // dd($datas->start_month,$datas->end_month,);
-        return view('ward.ward_report_sum')->with([
-            'start_month' => $datas->start_month,
-            'end_month' => $datas->end_month,
-            'report_header' => $datas->report_header,
 
-            'report_sum_data' => $datas->report_sum_data,
-            'previous_present' => $datas->previous_present,
-            'income_report' => $datas->income_report,
-            'expense_report' => $datas->expense_report,
+        return response()->json([
+            'status' => 'success',
+            'data' => $datas,
 
             'total_previous' => $total_previous,
             'total_current_income' => $total_current_income,
             'in_total' => $in_total,
-        ]);
+        ], 200);
+
+        // $thana_id = auth()->user()->org_thana_user->thana_id;
+
+        // $start_month = request()->start_month;
+        // $end_month = request()->end_month;
+        // $org_type = 'thana';
+        // $org_type_id = $thana_id;
+        // // $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
+
+        // $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id);
+        // // dd($datas);
+
+
+        // // -------------------------- bm previous report ------------------------------------
+        // $carbon_start_month = Carbon::parse($start_month);
+        // $query = ThanaBmIncome::query();
+        // $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
+        //     ->where('thana_id', $thana_id)
+        //     ->where('report_approved_status', 'approved');
+        // $total_previous_income = $filter->sum('amount');
+
+        // $query = ThanaBmExpense::query();
+        // $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
+        //     ->where('thana_id', $thana_id)
+        //     ->where('report_approved_status', 'approved');
+        // $total_previous_expense = $filter->sum('amount');
+        // $total_previous =  $total_previous_income - $total_previous_expense;
+        // $total_current_income =  $total_previous + $datas->income_report->total_amount;
+        // $in_total =  $total_current_income - $datas->expense_report->total_amount;
+        // // -------------------------- bm previous report ------------------------------------
+        // // dd($datas->start_month,$datas->end_month,);
+        // return view('ward.ward_report_sum')->with([
+        //     'start_month' => $datas->start_month,
+        //     'end_month' => $datas->end_month,
+        //     'report_header' => $datas->report_header,
+
+        //     'report_sum_data' => $datas->report_sum_data,
+        //     'previous_present' => $datas->previous_present,
+        //     'income_report' => $datas->income_report,
+        //     'expense_report' => $datas->expense_report,
+
+        //     'total_previous' => $total_previous,
+        //     'total_current_income' => $total_current_income,
+        //     'in_total' => $in_total,
+        // ]);
+
+        // return response()->json([
+        //     'status' => 'success',
+        //     'data' => $datas,
+
+        //     'total_previous' => $total_previous,
+        //     'total_current_income' => $total_current_income,
+        //     'in_total' => $in_total,
+        // ], 200);
     }
 
     public function check_report_info()
@@ -316,8 +363,8 @@ class ThanaController extends Controller
         $start_month = Carbon::parse(request()->start_month);
         $end_month = Carbon::parse(request()->end_month);
 
-        $org_type = 'ward';
-        $org_type_id = auth()->user()->org_ward_user->ward_id;
+        $org_type = 'thana';
+        $org_type_id = auth()->user()->org_thana_user->thana_id;
         $report_approved_status = ['approved'];
 
         $report_info_ids = ReportInfo::whereBetween('month_year', [$start_month->startOfMonth(), $end_month->endOfMonth()])
@@ -427,13 +474,13 @@ class ThanaController extends Controller
 
         // -------------------------- bm previous report ------------------------------------
         $carbon_start_month = Carbon::parse($start_month);
-        $query = WardBmIncome::query();
+        $query = ThanaBmIncome::query();
         $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
             ->where('thana_id', $thana_id)
             ->where('report_approved_status', 'approved');
         $total_previous_income = $filter->sum('amount');
 
-        $query = WardBmExpense::query();
+        $query = ThanaBmExpense::query();
         $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
             ->where('thana_id', $thana_id)
             ->where('report_approved_status', 'approved');

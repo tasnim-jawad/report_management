@@ -24,7 +24,7 @@
                     <tbody>
                         <tr>
                             <td>Title</td>
-                            <td>{{expense_info?.ward_bm_expense_category?.title}}</td>
+                            <td>{{expense_info?.thana_bm_expense_category?.title}}</td>
                         </tr>
                         <tr>
                             <td>Amount</td>
@@ -52,7 +52,7 @@ export default {
     },
     methods:{
         show_expense : function(){
-            axios.get(`/ward-bm-expense/show/${this.expense_id}`)
+            axios.get(`/thana-bm-expense/show/${this.expense_id}`)
                 .then(responce => {
                     if(responce.data.status == "success"){
                         this.expense_info = responce?.data?.data

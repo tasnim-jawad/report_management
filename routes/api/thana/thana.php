@@ -426,7 +426,7 @@
     });
 
     Route::group(['prefix' => 'thana-bm-expense'], function () {
-        Route::get('/single-ward', [App\Http\Controllers\Bm\Thana\Expense\ThanaBmExpenseController::class, 'single_ward']);
+        Route::get('/single-thana', [App\Http\Controllers\Bm\Thana\Expense\ThanaBmExpenseController::class, 'single_thana']);
         Route::get('/bm-total-expense/{month}', [App\Http\Controllers\Bm\Thana\Expense\ThanaBmExpenseController::class, 'bm_total_expense']);
         Route::get('/existing-data', [App\Http\Controllers\Bm\Thana\Expense\ThanaBmExpenseController::class, 'existing_data']);
 
@@ -487,6 +487,18 @@
         Route::get('/get-all-ward-data', [App\Http\Controllers\Thana\ThanaTotalWardSubmittedDataController::class, 'get_all_ward_data']);
         Route::get('/count-approved-ward', [App\Http\Controllers\Thana\ThanaTotalWardSubmittedDataController::class, 'count_approved_ward']);
     });
+    
+    
+    // ------------------------------------------------------------------
+    // ------------------------------------------------------------------
+    
+    // from web route . it is tomporary 
+    Route::group(['prefix' => 'thana', 'namespace' => '\App\Http\Controllers\Thana'], function () {
+        Route::get('report/thana-report-sum', 'ThanaController@thana_report_sum');
+    });
+
+    // ------------------------------------------------------------------
+    // ------------------------------------------------------------------
 
 
     Route::group(['prefix' => 'thana'], function () {

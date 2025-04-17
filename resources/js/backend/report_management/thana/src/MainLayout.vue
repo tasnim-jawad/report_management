@@ -215,7 +215,7 @@
                                     >আয় এন্ট্রি করুন
                                 </router-link>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <router-link :to="{ name: 'BmExpenseAll' }">
                                     <span class="icon_margin"
                                         ><i
@@ -223,7 +223,7 @@
                                         ></i></span
                                     >ব্যয় এন্ট্রি করুন
                                 </router-link>
-                            </li> -->
+                            </li>
                         <!-- </sidebar-dropdown> -->
                         <li>
                             <router-link :to="{ name: 'Montobbo' }">
@@ -267,11 +267,11 @@
                                 <span class="icon_margin"><i class="fa-solid fa-user-plus"></i></span>BM Total Report
                             </router-link>
                         </li> -->
-                        <!-- <li>
+                        <li>
                             <router-link :to="{ name: 'PrintReport' }">
                                 <span class="icon_margin"><i class="fa-solid fa-print"></i></span>রিপোর্ট প্রিন্ট
                             </router-link>
-                        </li> -->
+                        </li>
                         <li>
                             <router-link :to="{ name: 'UploadReport' }">
                                 <span class="icon_margin"

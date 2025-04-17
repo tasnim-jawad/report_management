@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Actions;
 
 use App\Http\Controllers\Controller;
+use App\Models\Organization\OrgCity;
 use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgType;
 use App\Models\Organization\OrgUnit;
@@ -15,7 +16,7 @@ class ReportHeader
 {
     public function execute($org_type, $org_type_id)
     {
-        $unit_info = $ward_info = $thana_info = $president = null;
+        $unit_info = $ward_info = $thana_info = $city_info = $president = null;
 
         // Fetch details based on organization type
         switch ($org_type) {
@@ -45,6 +46,8 @@ class ReportHeader
                 if (!$thana_info) {
                     return response()->json(['error' => 'Thana not found'], 404);
                 }
+
+                $city_info = OrgCity::find($thana_info->org_city_id);
                 $org_type_title = OrgType::where('id', $thana_info->org_type_id)->first()->title;
                 break;
 
@@ -74,7 +77,7 @@ class ReportHeader
             'unit_info' => $unit_info,
             'ward_info' => $ward_info,
             'thana_info' => $thana_info,
-            'thana_info' => $thana_info,
+            'city_info' => $city_info,
             'org_type' => $org_type_title,
             'president' => $president,
         ];
