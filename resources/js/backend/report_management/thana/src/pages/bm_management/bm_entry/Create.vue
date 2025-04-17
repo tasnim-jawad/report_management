@@ -21,10 +21,10 @@
                         </select>
                     </div> -->
 
-                    <div class="form_input" v-if="field.field_type == 'select' && field.name == 'ward_bm_income_category_id'">
+                    <div class="form_input" v-if="field.field_type == 'select' && field.name == 'thana_bm_income_category_id'">
                         <select type="text" :name="field.name" class="form-control text-center" v-model="selected_bm_category_id">
                             <option value="">-- select Category --</option>
-                            <option v-for="(ward_bm_category, i) in ward_bm_category.data" :key="i" :value="ward_bm_category['id']" >{{ward_bm_category["title"]}}</option>
+                            <option v-for="(thana_bm_category, i) in thana_bm_category.data" :key="i" :value="thana_bm_category['id']" >{{thana_bm_category["title"]}}</option>
 
                         </select>
                     </div>
@@ -58,7 +58,7 @@ export default {
                 // },
                 {
                     label:"Title",
-                    name:"ward_bm_income_category_id",
+                    name:"thana_bm_income_category_id",
                     field_type:"select",
                 },
                 // {
@@ -71,7 +71,7 @@ export default {
                     name:"amount",
                 },
             ],
-            ward_bm_category:[],
+            thana_bm_category:[],
             unit_user_all:[],
             users_target:"",
             selected_user_id:"",
@@ -108,9 +108,9 @@ export default {
 
     methods:{
         bm_category_list:function(){
-            axios.get('/ward-bm-income-category/all')
+            axios.get('/thana-bm-income-category/all')
                 .then(responce => {
-                    this.ward_bm_category = responce.data
+                    this.thana_bm_category = responce.data
                     // console.log(this.bm_category);
 
                 })
