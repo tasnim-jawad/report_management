@@ -13,15 +13,15 @@
                     <div class="form_label">
                         <label for="">{{field.label}}</label>
                     </div>
-                    <div class="form_input" v-if="field.field_type == 'select' && field.name == 'user_id'">
+                    <!-- <div class="form_input" v-if="field.field_type == 'select' && field.name == 'user_id'">
                         <select type="text" :name="field.name" class="form-control" v-model="selected_user_id" >
                             <option value="">-- select user --</option>
                             <option v-for="(user, i) in unit_user_all" :key="i" :value="user['id']" >{{user["full_name"]}}</option>
 
                         </select>
-                    </div>
+                    </div> -->
 
-                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'ward_bm_income_category_id'">
+                    <div class="form_input" v-if="field.field_type == 'select' && field.name == 'ward_bm_income_category_id'">
                         <select type="text" :name="field.name" class="form-control text-center" v-model="selected_bm_category_id">
                             <option value="">-- select Category --</option>
                             <option v-for="(ward_bm_category, i) in ward_bm_category.data" :key="i" :value="ward_bm_category['id']" >{{ward_bm_category["title"]}}</option>
@@ -145,9 +145,9 @@ export default {
 
         // },
         existing_data :async function(){
-            let response = await  axios.get('/ward-bm-income/existing-data',{
+            let response = await  axios.get('/thana-bm-income/existing-data',{
                                 params: {
-                                    ward_bm_income_category_id: this.selected_bm_category_id,
+                                    thana_bm_income_category_id: this.selected_bm_category_id,
                                 }
                             });
 
@@ -163,7 +163,7 @@ export default {
             // for (const entry of formData.entries()) {
             //     console.log(entry);
             // }
-            axios.post('/ward-bm-income/store',formData)
+            axios.post('/thana-bm-income/store',formData)
                 .then(function (response) {
                     console.log(response.statusText);
                     window.toaster('BM entry successfull', 'success');

@@ -29,9 +29,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(entry,index) in unit_shudhi_entry" :key="index">
+                        <tr v-for="(entry,index) in thana_shudhi_entry" :key="index">
                             <td>{{entry.shudhi.name}}</td>
-                            <td>{{entry.bm_category.title}}</td>
+                            <td>{{entry.thana_bm_income_category.title}}</td>
                             <td>{{entry.month}}</td>
                             <td>{{entry.amount}}</td>
                             <td>

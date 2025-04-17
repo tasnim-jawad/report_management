@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Edit Bm entry
+            Edit Shudhi entry
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UnitShudhiEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
+                <router-link :to="{name:'ThanaShudhiEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
             </div>
         </div>
         <div class="card-body">
@@ -29,10 +29,10 @@
                         <label for="">খাত</label>
                     </div>
                     <div class="form_input">
-                        <select  name="bm_category_id" class="form-control">
+                        <select  name="thana_bm_income_category_id" class="form-control">
                             <option value="">-- select category --</option>
                             <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']"
-                            :selected="bm_category['id'] === entry_info.bm_category_id">{{bm_category["title"]}}</option>
+                            :selected="bm_category['id'] === entry_info.thana_bm_income_category_id">{{bm_category["title"]}}</option>
 
                         </select>
                     </div>
@@ -84,7 +84,7 @@ export default {
             thana_shudhi_list:'thana_shudhi_list'
         }),
         bm_category_list:function(){
-            axios.get('/bm-category/all')
+            axios.get('/thana-bm-income-category/all')
                 .then(responce => {
                     this.bm_category = responce.data
                     console.log(this.bm_category);

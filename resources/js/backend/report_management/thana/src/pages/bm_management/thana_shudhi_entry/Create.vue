@@ -16,12 +16,12 @@
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'shudhi_id'">
                         <select type="text" :name="field.name" class="form-control" v-model="selected_user_id" >
                             <option value="">-- select user --</option>
-                            <option v-for="(shudhi, i) in unit_shudhi_all" :key="i" :value="shudhi['id']" >{{shudhi["name"]}}</option>
+                            <option v-for="(shudhi, i) in thana_shudhi_all" :key="i" :value="shudhi['id']" >{{shudhi["name"]}}</option>
 
                         </select>
                     </div>
 
-                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'bm_category_id'">
+                    <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'thana_bm_income_category_id'">
                         <select type="text" :name="field.name" class="form-control" v-model="selected_bm_category_id">
                             <option value="">-- select Category --</option>
                             <option v-for="(bm_category, i) in bm_category.data" :key="i" :value="bm_category['id']" >{{bm_category["title"]}}</option>
@@ -59,7 +59,7 @@ export default {
                 },
                 {
                     label:"খাত",
-                    name:"bm_category_id",
+                    name:"thana_bm_income_category_id",
                     field_type:"select",
                 },
                 {
@@ -84,10 +84,10 @@ export default {
     },
     created:function(){
         this.bm_category_list();
-        this.unit_shudhi_list();
+        this.thana_shudhi_list();
 
         if (!this.month) {
-            this.$router.push({ name: "UnitShudhiEntryAll" });
+            this.$router.push({ name: "thanaShudhiEntryAll" });
         }
     },
 
@@ -107,15 +107,15 @@ export default {
 
     computed: {
         ...mapWritableState(data_store, ['month']),
-        ...mapWritableState(thana_shudhi_entry_store, ['unit_shudhi_all']),
+        ...mapWritableState(thana_shudhi_entry_store, ['thana_shudhi_all']),
     },
 
     methods:{
         ...mapActions(thana_shudhi_entry_store,{
-            unit_shudhi_list:'unit_shudhi_list',
+            thana_shudhi_list:'thana_shudhi_list',
         }),
         bm_category_list:function(){
-            axios.get('/bm-category/all')
+            axios.get('/thana-bm-income-category/all')
                 .then(responce => {
                     this.bm_category = responce.data
                     // console.log(this.bm_category);
@@ -149,7 +149,7 @@ export default {
             // for (const entry of formData.entries()) {
             //     console.log(entry);
             // }
-            axios.post('/unit-shudhi-entry/store',formData)
+            axios.post('/thana-shudhi-entry/store',formData)
                 .then(function (response) {
                     console.log(response.statusText);
                     window.toaster('New shudhi entry Created successfuly', 'success');

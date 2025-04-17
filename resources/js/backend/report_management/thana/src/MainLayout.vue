@@ -206,7 +206,7 @@
                                     >ব্যক্তিগত বায়তুলমাল
                                 </router-link>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <router-link :to="{ name: 'BmEntryAll' }">
                                     <span class="icon_margin"
                                         ><i
@@ -214,7 +214,7 @@
                                         ></i></span
                                     >আয় এন্ট্রি করুন
                                 </router-link>
-                            </li> -->
+                            </li>
                             <!-- <li>
                                 <router-link :to="{ name: 'BmExpenseAll' }">
                                     <span class="icon_margin"

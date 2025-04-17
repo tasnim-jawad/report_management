@@ -376,10 +376,10 @@
     Route::group(['prefix' => 'thana-bm-user-entry'], function () {
         Route::get('/all', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'all']);
         Route::get('/show/{id}', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'store']);  //->middleware(StatusChack::class);
-        Route::post('/update', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'update']);  //->middleware(StatusChack::class);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'soft_delete']);  //->middleware(StatusChack::class);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'destroy']);  //->middleware(StatusChack::class);
+        Route::post('/store', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'store']);  //->middleware(ThanaStatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'update']);  //->middleware(ThanaStatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'soft_delete']);  //->middleware(ThanaStatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'destroy']);  //->middleware(ThanaStatusChack::class);
         Route::post('/restore', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'restore']);
         Route::post('/bulk_import', [App\Http\Controllers\Bm\Thana\Income\ThanaBmUserEntryController::class, 'bulk_import']);
     });
@@ -397,17 +397,17 @@
     });
     
     Route::group(['prefix' => 'thana-shudhi-entry'], function () {
-        Route::get('/all', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'all']);
-        Route::get('/month-wise-entry-show', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'month_wise_entry_show']);
+        Route::get('/all', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'all']);
+        Route::get('/month-wise-entry-show', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'month_wise_entry_show']);
     
-        Route::get('/all', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'all']);
-        Route::get('/show/{id}', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'show']);
-        Route::post('/store', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'store']);  //->middleware(StatusChack::class);
-        Route::post('/update', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'update']);  //->middleware(StatusChack::class);
-        Route::post('/soft_delete', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'soft_delete']);  //->middleware(StatusChack::class);
-        Route::post('/destroy', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'destroy']);  //->middleware(StatusChack::class);
-        Route::post('/restore', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'restore']);
-        Route::post('/bulk_import', [App\Http\Controllers\Bm\Income\UnitShudhiEntryController::class, 'bulk_import']);
+        Route::get('/all', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'all']);
+        Route::get('/show/{id}', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'show']);
+        Route::post('/store', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'store']);  //->middleware(ThanaStatusChack::class);
+        Route::post('/update', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'update']);  //->middleware(ThanaStatusChack::class);
+        Route::post('/soft_delete', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'soft_delete']);  //->middleware(ThanaStatusChack::class);
+        Route::post('/destroy', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'destroy']);  //->middleware(ThanaStatusChack::class);
+        Route::post('/restore', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'restore']);
+        Route::post('/bulk_import', [App\Http\Controllers\Bm\Thana\Income\ThanaShudhiEntryController::class, 'bulk_import']);
     });
 
 
@@ -455,8 +455,8 @@
     });
 
     Route::group(['prefix' => 'thana-bm-income'], function () {
-        Route::get('/single-ward', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'single_ward']);
-        Route::get('/bm-income-report/{user_id}/{ward_bm_income_category_id}', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'bm_income_report']);
+        Route::get('/single-thana', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'single_thana']);
+        Route::get('/bm-income-report/{user_id}/{thana_bm_income_category_id}', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'bm_income_report']);
         Route::get('/bm-total/{month}', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'bm_income_total']);
         Route::get('/existing-data', [App\Http\Controllers\Bm\Thana\Income\ThanaBmIncomeController::class, 'existing_data']);
 

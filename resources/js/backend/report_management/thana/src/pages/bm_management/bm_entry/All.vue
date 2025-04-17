@@ -31,7 +31,7 @@
                     <tbody>
                         <tr v-for="(entry,index) in bm_entry" :key="index">
                             <!-- <td>{{entry.user.full_name}}</td> -->
-                            <td>{{entry?.ward_bm_income_category?.title}}</td>
+                            <td>{{entry?.thana_bm_income_category?.title}}</td>
                             <td>{{ new Date(entry.month).toLocaleString('default', { month: 'long' }) +' ' + new Date(entry.month).getFullYear().toString().slice(-2)}}</td>
                             <td>{{entry?.amount}}</td>
                             <td>
@@ -94,7 +94,7 @@ export default {
         show_bm_entry :async function(){
             console.log("show_bm_entry ------");
 
-            let response = await  axios.get('/ward-bm-income/single-ward',{
+            let response = await  axios.get('/thana-bm-income/single-thana',{
                                 params: { month: this.month  }
                             });
 
@@ -117,7 +117,7 @@ export default {
         submit_delete_form : function(entry_id){
             event.preventDefault();
             const formData = new FormData(document.getElementById('delete_entry_form_'+entry_id));
-            axios.post("/ward-bm-income/destroy",formData)
+            axios.post("/thana-bm-income/destroy",formData)
                     .then(response => {
                         window.toaster('Entry delete successfuly', 'success');
                         this.show_bm_entry();

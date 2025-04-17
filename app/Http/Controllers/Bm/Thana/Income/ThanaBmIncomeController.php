@@ -42,13 +42,13 @@ class ThanaBmIncomeController extends Controller
         return response()->json($data);
     }
 
-    public function single_ward()
+    public function single_thana()
     {
         $passed_date = Carbon::parse(request()->all()['month']);
         $passed_month = $passed_date->month;
         $passed_year = $passed_date->year;
         // dd($passed_month ,$passed_year );
-        $permission = ReportManagementControl::where('report_type', 'ward')
+        $permission = ReportManagementControl::where('report_type', 'thana')
             ->where('is_active', 1)
             ->latest()
             ->first();
@@ -62,9 +62,9 @@ class ThanaBmIncomeController extends Controller
             $is_permitted = false;
         }
 
-        $ward_id = auth()->user()->org_ward_user["ward_id"];
-        $data = ThanaBmIncome::with('ward_bm_income_category')
-            ->where('ward_id', $ward_id)
+        $thana_id = auth()->user()->org_thana_user["thana_id"];
+        $data = ThanaBmIncome::with('thana_bm_income_category')
+            ->where('thana_id', $thana_id)
             ->whereMonth('month', $passed_month)
             ->whereYear('month', $passed_year)
             ->get();
@@ -79,14 +79,14 @@ class ThanaBmIncomeController extends Controller
         ], 200);
     }
 
-    public function bm_income_report($user_id, $ward_bm_income_category_id)
+    public function bm_income_report($user_id, $thana_bm_income_category_id)
     {
 
         $year = Carbon::now()->year;
-        $filter = ThanaBmIncome::where('user_id', $user_id)->where('ward_bm_income_category_id', $ward_bm_income_category_id)
+        $filter = ThanaBmIncome::where('user_id', $user_id)->where('thana_bm_income_category_id', $thana_bm_income_category_id)
             ->whereYear('month', $year);
         $tatal = $filter->sum('amount');
-        $data = $filter->with('ward_bm_income_category')->with('user')->get();
+        $data = $filter->with('thana_bm_income_category')->with('user')->get();
         $month_count = $data->count();
 
         // dd($user_id,$bm_category_id,$year ,$filter ,$tatal ,$data,$month_count);
@@ -109,11 +109,11 @@ class ThanaBmIncomeController extends Controller
 
     public function bm_income_total($month)
     {
-        $org_ward_user = User::where('id', auth()->user()->id)->with('org_ward_user')->get()->first()->org_ward_user;
+        $org_thana_user = User::where('id', auth()->user()->id)->with('org_thana_user')->get()->first()->org_thana_user;
         $date = Carbon::parse($month);
         $query = ThanaBmIncome::query();
-        $filter = $query->whereYear('month', $date->clone()->year)->whereMonth('month', $date->clone()->month)->where('ward_id', $org_ward_user->ward_id);
-        $category = $filter->with('ward_bm_income_category')->pluck(' ')->all();
+        $filter = $query->whereYear('month', $date->clone()->year)->whereMonth('month', $date->clone()->month)->where('thana_id', $org_thana_user->thana_id);
+        $category = $filter->with('thana_bm_income_category')->pluck(' ')->all();
         $category_all_id = array_values(array_unique($category));
         $total_income = $filter->sum('amount');
 
@@ -124,7 +124,7 @@ class ThanaBmIncomeController extends Controller
             $totalAmount = $testQuery->whereYear('month', $date->clone()->year)
                 ->whereMonth('month', $date->clone()->month)
                 ->where('bm_category_id', $item)
-                ->where('unit_id', $org_ward_user->ward_id)
+                ->where('unit_id', $org_thana_user->thana_id)
                 ->sum('amount');
             $ThanaBmIncomeCategory = ThanaBmIncomeCategory::find($item);
             $data[$index]['amount'] = $totalAmount;
@@ -155,7 +155,7 @@ class ThanaBmIncomeController extends Controller
         if (request()->has('select_all') && request()->select_all) {
             $select = "*";
         }
-        $data = ThanaBmIncome::with('ward_bm_income_category')->where('id', $id)
+        $data = ThanaBmIncome::with('thana_bm_income_category')->where('id', $id)
             ->select($select)
             ->first();
         if ($data) {
@@ -174,7 +174,7 @@ class ThanaBmIncomeController extends Controller
     }
     public function existing_data()
     {
-        $permission  = ReportManagementControl::where('report_type', 'ward')
+        $permission  = ReportManagementControl::where('report_type', 'thana')
             ->where('is_active', 1)
             ->latest()
             ->first();
@@ -186,10 +186,10 @@ class ThanaBmIncomeController extends Controller
         // $permitted_date = Carbon::parse($permission->month_year);
         // $permitted_month = $permitted_date->month;
         // $permitted_year = $permitted_date->year;
-        $ward_info = (object) auth()->user()->org_ward_user;
+        $thana_info = (object) auth()->user()->org_thana_user;
 
-        $existing_data = ThanaBmIncome::where('ward_id', $ward_info->ward_id)
-            ->where('ward_bm_income_category_id', request()->all()['ward_bm_income_category_id'])
+        $existing_data = ThanaBmIncome::where('thana_id', $thana_info->thana_id)
+            ->where('thana_bm_income_category_id', request()->all()['thana_bm_income_category_id'])
             ->whereYear('month', $permitted_year)
             ->whereMonth('month', $permitted_month)
             ->first();
@@ -297,7 +297,7 @@ class ThanaBmIncomeController extends Controller
 
         $validator = Validator::make(request()->all(), [
             'amount' => ['required'],
-            'ward_bm_income_category_id' => ['required'],
+            'thana_bm_income_category_id' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -310,7 +310,7 @@ class ThanaBmIncomeController extends Controller
         $passed_date = Carbon::parse($data->month);
         $passed_month = $passed_date->month;
         $passed_year = $passed_date->year;
-        $permission = ReportManagementControl::where('report_type', 'ward')
+        $permission = ReportManagementControl::where('report_type', 'thana')
             ->where('is_active', 1)
             ->latest()
             ->first();
@@ -319,14 +319,13 @@ class ThanaBmIncomeController extends Controller
         $permitted_year = $permitted_date ? $permitted_date->year : null;
 
         if ($passed_month == $permitted_month && $passed_year == $permitted_year) {
-            $ward_info = (object) auth()->user()->org_ward_user;
+            $thana_info = (object) auth()->user()->org_thana_user;
 
-            $data->user_id = $ward_info->user_id;
-            $data->ward_id = $ward_info->ward_id;
-            $data->thana_id = $ward_info->thana_id;
-            $data->city_id = $ward_info->city_id;
+            $data->user_id = $thana_info->user_id;
+            $data->thana_id = $thana_info->thana_id;
+            $data->city_id = $thana_info->city_id;
             $data->amount = request()->amount;
-            $data->ward_bm_income_category_id = request()->ward_bm_income_category_id;
+            $data->thana_bm_income_category_id = request()->thana_bm_income_category_id;
 
             $data->creator = auth()->id();
             $data->save();
@@ -343,7 +342,7 @@ class ThanaBmIncomeController extends Controller
     public function soft_delete()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:ward_bm_incomes,id'],
+            'id' => ['required', 'exists:thana_bm_incomes,id'],
         ]);
 
         if ($validator->fails()) {
@@ -365,7 +364,7 @@ class ThanaBmIncomeController extends Controller
     public function destroy()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:ward_bm_incomes,id'],
+            'id' => ['required', 'exists:thana_bm_incomes,id'],
         ]);
 
         if ($validator->fails()) {
@@ -386,7 +385,7 @@ class ThanaBmIncomeController extends Controller
     public function restore()
     {
         $validator = Validator::make(request()->all(), [
-            'id' => ['required', 'exists:ward_bm_incomes,id'],
+            'id' => ['required', 'exists:thana_bm_incomes,id'],
         ]);
 
         if ($validator->fails()) {

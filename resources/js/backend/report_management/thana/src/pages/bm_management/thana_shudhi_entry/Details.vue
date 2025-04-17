@@ -3,7 +3,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             Bm Entry Info
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UnitShudhiEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
+                <router-link :to="{name:'ThanaShudhiEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
             </div>
         </div>
         <div class="card-body">
