@@ -99,10 +99,7 @@
                                             name="how_many_groups_are_out"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat1_regular_group_wises
-                                                        ?.how_many_groups_are_out
-                                                )
+                                                    report_sum_data?.ward_dawat1_regular_group_wises?.how_many_groups_are_out)
                                             "
                                             @change="
                                                 data_upload(
@@ -131,9 +128,7 @@
                                             name="number_of_participants"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
-                                                        ?.ward_dawat1_regular_group_wises
-                                                        ?.number_of_participants
+                                                    report_sum_data?.ward_dawat1_regular_group_wises?.number_of_participants
                                                 )
                                             "
                                             @change="
@@ -2357,20 +2352,20 @@
                                     </td>
                                     <td>
                                         {{
-                                            formatBangla(
-                                                implementation_rate(
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.political_and_special_target
-                                                    ),
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_department4_different_job_holders_dawats
-                                                            ?.political_and_special_been_associated
-                                                    )
+                                            
+                                            implementation_rate(
+                                                Number(
+                                                    report_sum_data
+                                                        ?.ward_department4_different_job_holders_dawats
+                                                        ?.political_and_special_target
+                                                ),
+                                                Number(
+                                                    report_sum_data
+                                                        ?.ward_department4_different_job_holders_dawats
+                                                        ?.political_and_special_been_associated
                                                 )
                                             )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -2454,7 +2449,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     Number(
                                                         report_sum_data
@@ -2467,7 +2462,7 @@
                                                             ?.pesha_jibi_been_associated
                                                     )
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -2553,7 +2548,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     Number(
                                                         report_sum_data
@@ -2566,7 +2561,7 @@
                                                             ?.olama_masayekh_been_associated
                                                     )
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -2671,7 +2666,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     report_sum_data
                                                         ?.ward_department4_different_job_holders_dawats
@@ -2680,7 +2675,7 @@
                                                         ?.ward_department4_different_job_holders_dawats
                                                         ?.sromo_jibi_been_associated
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -2788,7 +2783,7 @@
                                     </td>
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     report_sum_data
                                                         ?.ward_department4_different_job_holders_dawats
@@ -2797,7 +2792,7 @@
                                                         ?.ward_department4_different_job_holders_dawats
                                                         ?.prantik_jonogosti_been_associated
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -2903,7 +2898,7 @@
                                     </td>
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     report_sum_data
                                                         ?.ward_department4_different_job_holders_dawats
@@ -2912,7 +2907,7 @@
                                                         ?.ward_department4_different_job_holders_dawats
                                                         ?.vinno_dormalombi_been_associated
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -3965,7 +3960,9 @@
                                             average_data_upload(
                                                 $event,
                                                 'ward-kormosuci-bastobayon',
-                                                kormosuci.unit_masik_sadaron_sova_total
+                                                report_sum_data
+                                                    ?.ward_kormosuci_bastobayons
+                                                    ?.unit_masik_sadaron_sova_total
                                             )
                                         "
                                         type="text"
@@ -4103,7 +4100,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.dawati_sova_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.dawati_sova_total
                                                 )
                                             "
                                             type="text"
@@ -4122,7 +4121,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.alochona_sova_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.alochona_sova_total
                                                 )
                                             "
                                             type="text"
@@ -4141,7 +4142,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.sudhi_somabesh_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.sudhi_somabesh_total
                                                 )
                                             "
                                             type="text"
@@ -4207,7 +4210,9 @@
                                             average_data_upload(
                                                 $event,
                                                 'ward-kormosuci-bastobayon',
-                                                kormosuci.siratunnabi_mahfil_total
+                                                report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.siratunnabi_mahfil_total
                                             )
                                         "
                                         type="text"
@@ -4270,7 +4275,9 @@
                                             average_data_upload(
                                                 $event,
                                                 'ward-kormosuci-bastobayon',
-                                                kormosuci.eid_reunion_total
+                                                report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.eid_reunion_total
                                             )
                                         "
                                         type="text"
@@ -4411,7 +4418,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.dars_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.dars_total
                                                 )
                                             "
                                             type="text"
@@ -4430,7 +4439,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.tafsir_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.tafsir_total
                                                 )
                                             "
                                             type="text"
@@ -4449,7 +4460,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.dawati_jonosova_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.dawati_jonosova_total
                                                 )
                                             "
                                             type="text"
@@ -4567,7 +4580,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.iftar_mahfil_personal_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.iftar_mahfil_personal_total
                                                 )
                                             "
                                             type="text"
@@ -4586,7 +4601,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.iftar_mahfil_samostic_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.iftar_mahfil_samostic_total
                                                 )
                                             "
                                             type="text"
@@ -4725,7 +4742,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.cha_chakra_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.cha_chakra_total
                                                 )
                                             "
                                             type="text"
@@ -4744,7 +4763,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.samostic_khawa_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.samostic_khawa_total
                                                 )
                                             "
                                             type="text"
@@ -4763,7 +4784,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.sikkha_sofor_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.sikkha_sofor_total
                                                 )
                                             "
                                             type="text"
@@ -4868,7 +4891,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.kirat_protijogita_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.kirat_protijogita_total
                                                 )
                                             "
                                             type="text"
@@ -4887,7 +4912,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-kormosuci-bastobayon',
-                                                    kormosuci.hamd_nat_protijogita_total
+                                                    report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.hamd_nat_protijogita_total
                                                 )
                                             "
                                             type="text"
@@ -4951,7 +4978,9 @@
                                             average_data_upload(
                                                 $event,
                                                 'ward-kormosuci-bastobayon',
-                                                kormosuci.others_total
+                                                report_sum_data
+                                                        ?.ward_kormosuci_bastobayons
+                                                        ?.others_total
                                             )
                                         "
                                         type="text"
@@ -5293,7 +5322,7 @@
                                 </td>
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon1_jonosoktis
@@ -5302,7 +5331,7 @@
                                                     ?.ward_songothon1_jonosoktis
                                                     ?.rokon_briddhi
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -5451,7 +5480,7 @@
                                 </td>
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon1_jonosoktis
@@ -5460,7 +5489,7 @@
                                                     ?.ward_songothon1_jonosoktis
                                                     ?.worker_briddhi
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -13386,6 +13415,8 @@ export default {
     },
     watch: {
         "report_sum_data.ward_kormosuci_bastobayons": function () {
+            console.log("watch , report_sum_data.ward_kormosuci_bastobayons");
+            
             this.average_data("ward_kormosuci_bastobayons");
         },
         "report_sum_data.ward_songothon9_sangothonik_boithoks": function () {
@@ -13400,6 +13431,8 @@ export default {
         "report_sum_data.ward_rastrio3_dibosh_palons": function () {
             this.average_data("ward_rastrio3_dibosh_palons");
         },
+
+
         // kormosuci: function () {
         //     this.average_data();
         // },
@@ -13450,6 +13483,7 @@ export default {
             console.log("wardUpload", this.month);
         },
         average_data: async function ($table_name) {
+            // console.log("table_name", $table_name);
             const field_mappings = {
                 ward_kormosuci_bastobayons: [
                     "unit_masik_sadaron_sova",
@@ -13526,6 +13560,8 @@ export default {
                 field_mappings[$table_name] &&
                 this.report_sum_data[$table_name]
             ) {
+                // console.log("inside if");
+                
                 const fields = field_mappings[$table_name];
                 const attendance_suffix = attendance_key_suffix[$table_name];
                 const total_suffix = total_key_suffix[$table_name];
@@ -13533,11 +13569,16 @@ export default {
                 fields.forEach((field) => {
                     const uposthiti_key = `${field}${attendance_suffix}`;
                     const total_key = `${field}${total_suffix}`;
+                    // console.log("uposthiti_key",uposthiti_key);
+                    // console.log("total_key",total_key);
+                    
                     this.average_uposthiti[$table_name][field] = Math.round(
                         (this.report_sum_data[$table_name][uposthiti_key] ??
                             0) /
                             (this.report_sum_data[$table_name][total_key] ?? 1)
                     );
+                    // console.log(this.average_uposthiti);
+                    
                 });
             }
         },
@@ -13681,23 +13722,23 @@ export default {
                     console.log("Data uploaded successfully");
                     if (
                         [
-                            "unit_masik_sadaron_sova",
-                            "dawati_sova",
-                            "alochona_sova",
-                            "sudhi_somabesh",
-                            "siratunnabi_mahfil",
-                            "eid_reunion",
-                            "dars",
-                            "tafsir",
-                            "dawati_jonosova",
-                            "iftar_mahfil_personal",
-                            "iftar_mahfil_samostic",
-                            "cha_chakra",
-                            "samostic_khawa",
-                            "sikkha_sofor",
-                            "kirat_protijogita",
-                            "hamd_nat_protijogita",
-                            "others",
+                            "unit_masik_sadaron_sova_total",
+                            "dawati_sova_total",
+                            "alochona_sova_total",
+                            "sudhi_somabesh_total",
+                            "siratunnabi_mahfil_total",
+                            "eid_reunion_total",
+                            "dars_total",
+                            "tafsir_total",
+                            "dawati_jonosova_total",
+                            "iftar_mahfil_personal_total",
+                            "iftar_mahfil_samostic_total",
+                            "cha_chakra_total",
+                            "samostic_khawa_total",
+                            "sikkha_sofor_total",
+                            "kirat_protijogita_total",
+                            "hamd_nat_protijogita_total",
+                            "others_total",
                             // average_songothon9
                             "word_sura_boithok_total",
                             "kormoporishod_boithok_total",
@@ -13761,7 +13802,11 @@ export default {
                     console.error("Error uploading data", error);
                 });
         },
+
         implementation_rate(target, achieved) {
+            console.log("target", target);
+            console.log("achieved", achieved);
+            
             if (target && achieved && target !== 0) {
                 return Math.round((achieved / target) * 100) + "%";
             }

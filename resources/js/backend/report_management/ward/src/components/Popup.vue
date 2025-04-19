@@ -176,7 +176,7 @@ export default {
                 const result = this.all_comment_count.find(
                     (item) => item.table_name === this.ward_table_name && item.column_name === this.ward_column_name
                 );
-                console.log(result);
+                // console.log(result);
                 
                 this.number_of_comment = result ? result.number_of_comment : 0;
             } else {

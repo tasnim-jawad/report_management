@@ -31,7 +31,7 @@ export const store = defineStore(`comment_store`, {
         },
 
         get_column_comment_all: async function (table_name, column_name) {
-            console.log("mo", this.month_year);
+            // console.log("mo", this.month_year);
             let params = {
                 month: this.month_year,
                 org_type: this.org_type,
@@ -41,7 +41,7 @@ export const store = defineStore(`comment_store`, {
                 comment_text: this.comment_text,
             }
 
-            console.log("from comment store:- params-----", params);
+            // console.log("from comment store:- params-----", params);
 
             let response = await axios.get('/comment/column-comment-all', {
                 params: {
@@ -52,7 +52,7 @@ export const store = defineStore(`comment_store`, {
                     column_name: column_name,
                 }
             })
-            console.log(response);
+            // console.log(response);
 
             if (response.data.status == 'success') {
                 this.all_comment = [...response?.data?.data];
@@ -62,10 +62,10 @@ export const store = defineStore(`comment_store`, {
 
         },
         comment_set: async function () {
-            console.log("store", this.comment_text);
+            // console.log("store", this.comment_text);
 
             if (this.comment_text.trim() === '') {
-                console.log('Comment cannot be empty.');
+                // console.log('Comment cannot be empty.');
                 return;
             }
 
@@ -78,7 +78,7 @@ export const store = defineStore(`comment_store`, {
                 column_name: this.column_name,
                 comment_text: this.comment_text,
             }
-            console.log("comment store", params);
+            // console.log("comment store", params);
 
             let response = await axios.post('/comment/store', {
                 month: `${this.month_year}-01`,
@@ -88,7 +88,7 @@ export const store = defineStore(`comment_store`, {
                 column_name: this.column_name,
                 comment: this.comment_text,
             })
-            console.log(response);
+            // console.log(response);
 
             if (response.data.status == 'success') {
                 // console.log();
@@ -115,7 +115,7 @@ export const store = defineStore(`comment_store`, {
                 org_type_id: this.org_type_id,
             }
 
-            console.log("comment_count_params", params);
+            // console.log("comment_count_params", params);
 
 
             let response = await axios.get('/comment/count-comment', {
@@ -125,11 +125,11 @@ export const store = defineStore(`comment_store`, {
                     org_type_id: this.org_type_id,
                 }
             })
-            console.log("count comment response.data.data",response.data.data);
+            // console.log("count comment response.data.data",response.data.data);
 
             if (response.data.status == 'success') {
                 this.all_comment_count = response.data.data;
-                console.log("this.all_comment_count ", this.all_comment_count);
+                // console.log("this.all_comment_count ", this.all_comment_count);
                 
             }
         }

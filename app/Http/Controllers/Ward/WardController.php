@@ -17,7 +17,9 @@ use App\Models\Bm\Ward\Expense\WardBmExpense;
 use App\Models\Bm\Ward\Expense\WardBmExpenseCategory;
 use App\Models\Bm\Ward\Income\WardBmIncome;
 use App\Models\Bm\Ward\Income\WardBmIncomeCategory;
+use App\Models\Organization\OrgCity;
 use App\Models\Organization\OrgThana;
+use App\Models\Organization\OrgThanaUser;
 use App\Models\Organization\OrgType;
 use App\Models\Organization\OrgUnit;
 use App\Models\Organization\OrgWard;
@@ -1264,11 +1266,11 @@ class WardController extends Controller
     //     $units = OrgUnit::where('org_ward_id', $ward_id)->get();
 
     //     $report_info_ids = [];
-    //     $unit_ids = [];
-    //     $approved_unit_ids = [];
+    //     $ward_ids = [];
+    //     $approved_ward_ids = [];
     //     foreach ($units as $index => $unit) {
     //         $unit_id = $unit->id;
-    //         $unit_ids[] = $unit_id;
+    //         $ward_ids[] = $unit_id;
     //         $report_info = ReportInfo::where('org_type_id', $unit_id)
     //             ->where('org_type', 'unit')
     //             ->whereYear('month_year', $month->clone()->year)
@@ -1281,10 +1283,10 @@ class WardController extends Controller
     //         if ($report_info) {
     //             $report_info_id = $report_info->id;
     //             $report_info_ids[] = $report_info_id;
-    //             $approved_unit_ids[] = $report_info->org_type_id;
+    //             $approved_ward_ids[] = $report_info->org_type_id;
     //         }
     //     }
-    //     // dd($unit_ids,$report_info_ids,$approved_unit_ids,$month);
+    //     // dd($ward_ids,$report_info_ids,$approved_ward_ids,$month);
 
     //     $all_dawat1 = [
     //         'how_many_groups_are_out' => 0,
@@ -1697,9 +1699,9 @@ class WardController extends Controller
     //     $filter = $query->whereYear('month', $month->clone()->year)
     //         ->whereMonth('month', $month->clone()->month)
     //         ->where('ward_id', $ward_id)
-    //         ->whereIn('unit_id', $approved_unit_ids)
+    //         ->whereIn('unit_id', $approved_ward_ids)
     //         ->where('status', 1);
-    //     // dd($approved_unit_ids,$filter->get()->all(),$filter->sum('amount'));
+    //     // dd($approved_ward_ids,$filter->get()->all(),$filter->sum('amount'));
 
     //     $category = $filter->with('bm_category')->pluck('bm_category_id')->all();
     //     $category_all_id = array_values(array_unique($category));
@@ -1712,7 +1714,7 @@ class WardController extends Controller
     //             ->whereMonth('month', $month->clone()->month)
     //             ->where('bm_category_id', $item)
     //             ->where('ward_id', $ward_id)
-    //             ->whereIn('unit_id', $approved_unit_ids)
+    //             ->whereIn('unit_id', $approved_ward_ids)
     //             ->sum('amount');
     //         $bmCategory = BmCategory::find($item);
     //         $all_income_category_wise[$index]['amount'] = $totalAmount;
@@ -1725,7 +1727,7 @@ class WardController extends Controller
     //     $filter = $query->whereYear('date', $month->clone()->year)
     //         ->whereMonth('date', $month->clone()->month)
     //         ->where('ward_id', $ward_id)
-    //         ->whereIn('unit_id', $approved_unit_ids)
+    //         ->whereIn('unit_id', $approved_ward_ids)
     //         ->where('status', 1);
     //     $total_expense = $filter->sum('amount');
     //     $category_id = $filter->with('bm_expense_category')->pluck('bm_expense_category_id')->all();
@@ -1738,7 +1740,7 @@ class WardController extends Controller
     //             ->whereMonth('date', $month->clone()->month)
     //             ->where('bm_expense_category_id', $item)
     //             ->where('ward_id', $ward_id)
-    //             ->whereIn('unit_id', $approved_unit_ids)
+    //             ->whereIn('unit_id', $approved_ward_ids)
     //             ->sum('amount');
     //         $bmCategory = BmExpenseCategory::find($item);
     //         $all_expense_category_wise[$index]['amount'] = $totalAmount;
@@ -2284,6 +2286,84 @@ class WardController extends Controller
             'total_current_income' => $total_current_income,
             'in_total' => $in_total,
         ], 200);
+    }
+
+    public function total_approved_unit_report()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'user_id' => ['required', 'exists:org_thana_users,user_id'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $month = Carbon::parse(request()->month);
+        $thana_id = OrgThanaUser::where('user_id', request()->user_id)->value('thana_id');
+        $thana_info = OrgThana::find($thana_id);
+        $city_info = $thana_info ? OrgCity::find($thana_info->org_city_id) : null;
+        $wards = OrgWard::where('org_thana_id', $thana_id)->get();
+
+        $report_info_ids = [];
+        $ward_ids = [];
+        $approved_ward_ids = [];
+        foreach ($wards as $ward) {
+            $ward_id = $ward->id;
+            $ward_ids[] = $ward_id;
+            $report_info = ReportInfo::where('org_type_id', $ward_id)
+                ->where('org_type', 'ward')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->where('report_approved_status', 'approved')
+                ->where('status', 1)
+                ->get()
+                ->first();
+
+            if ($report_info) {
+                $report_info_id = $report_info->id;
+                $report_info_ids[] = $report_info_id;
+                $approved_ward_ids[] = $report_info->org_type_id;
+            }
+        }
+        $ward_count = count($approved_ward_ids);
+        $ward_titles = [];
+        foreach ($approved_ward_ids as $ward_id) {
+            $ward_info = OrgWard::find($ward_id);
+            if ($ward_info) {
+                $ward_titles[] = $ward_info->title;
+            }
+        }
+
+        $start_month = request()->month;
+        $end_month = request()->month;
+        $org_type = 'ward';
+        $org_type_id = $approved_ward_ids;
+        $report_approved_status = ['approved'];   //enum('pending','approved','rejected')
+        $is_need_sum = false;
+        $reportInfoIds = $report_info_ids;
+        $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum, $reportInfoIds);
+
+        $report_header = (object) [
+            'ward_count' => $ward_count,
+            'ward_titles' => $ward_titles,
+            'thana_info' => $thana_info,
+            'city_info' => $city_info,
+        ];
+
+        return view('ward.total_approved_ward_report')->with([
+            'start_month' => $datas->start_month,
+            'end_month' => $datas->end_month,
+            'report_header' => $report_header,
+
+            'report_sum_data' => $datas->report_sum_data,
+            'previous_present' => $datas->previous_present,
+            'income_report' => $datas->income_report,
+            'expense_report' => $datas->expense_report,
+        ]);
     }
 
     public function report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'], $is_need_sum = true, $report_info_ids = null)
