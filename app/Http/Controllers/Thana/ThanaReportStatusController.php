@@ -126,14 +126,14 @@ class ThanaReportStatusController extends Controller
                 ->update(['report_approved_status' => $new_status]);
 
         // Notification store
-        // $title = "রিপোর্টের অবস্থা পরিবর্তন";
-        // $description = "আপনার রিপোর্টের অবস্থা পরিবর্তন হয়েছে। নতুন অবস্থা: $new_status";
-        // notification_store('unit', $unit_id, $title, $description);
+        $title = "রিপোর্টের অবস্থা পরিবর্তন";
+        $description = "আপনার রিপোর্টের অবস্থা পরিবর্তন হয়েছে। নতুন অবস্থা: $new_status";
+        notification_store('ward', $ward_id, $title, $description);
 
-        // return response()->json([
-        //     'status' => 'success',
-        //     "message" => "change status pending to $new_status",
-        // ], 200);
+        return response()->json([
+            'status' => 'success',
+            "message" => "change status pending to $new_status",
+        ], 200);
 
     }
 

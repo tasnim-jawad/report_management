@@ -260,10 +260,13 @@ export default {
         },
         ward_report_joma_permitted_month: async function () {
             let response = await axios.post('/thana/ward-report-joma-permitted-month',);
+            console.log("from ward_report_joma_permitted_month", response.data);
+            
             if (response.data.status == 'success') {
                 const month_year = response.data.data.month_year
                 let formatted_month_year = window.formatDate(month_year, 'long_month_year');
                 this.permitted_month_text = formatted_month_year
+                console.log("from permitted_month_text", this.permitted_month_text);
             } else {
                 this.permitted_month_text = ''
             }

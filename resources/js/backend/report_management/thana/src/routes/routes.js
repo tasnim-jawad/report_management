@@ -17,6 +17,7 @@ import BmUserReport from '../pages/bm_management/BmUserReport.vue'
 import BmTotalReport from '../pages/bm_management/BmTotalReport.vue'
 import PrintReport from '../pages/PrintReport.vue'
 import UploadReport from '../pages/UploadReport.vue'
+import Notification from '../pages/Notification.vue'
 
 // import Jonoshokti from '../pages/user/All.vue'
 // import CreateUser from '../pages/user/Create.vue'
@@ -154,6 +155,12 @@ const routes =
                     name: "UploadReport",
                     path: 'upload-report',
                     component: UploadReport,
+                },
+                {
+                    name: "Notification",
+                    path: 'notification/:thana_id',
+                    component: Notification,
+                    props: true,
                 },
                 ward_expense_target_routes,
                 bmCategoryRoutes,

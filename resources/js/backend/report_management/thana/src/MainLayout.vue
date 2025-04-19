@@ -297,6 +297,9 @@
                     <p>মহানগরীঃ {{ this.user?.city?.title }}</p>
                 </div>
                 <div class="right">
+                    <notification-button
+                        :thana_id="user?.responsibility?.org_thana?.id"
+                    ></notification-button>
                     <a
                         class="btn"
                         href="#"
@@ -387,19 +390,96 @@
         <!------------------------------------>
         <!-------------Modal end-------------->
         <!------------------------------------>
+
+        <!-- NOtification Modal -->
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="notification_modal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Notification
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="empty_data">
+                            <p v-if="!all_notifications.length">
+                                No new notifications found.
+                            </p>
+                        </div>
+                        <div
+                            class="all_comment"
+                            v-for="(notification, index) in all_notifications"
+                            :key="index"
+                        >
+                            <notification-dropdown
+                                :notification="notification"
+                            ></notification-dropdown>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer d-flec justify-content-between">
+                        <!-- <a href="#" class="btn btn-sm btn-primary" @click.prevent="see_all_notification">See all notification</a> -->
+                        <a
+                            class="btn btn-sm btn-primary"
+                            data-bs-dismiss="modal"
+                            @click="
+                                go_to_notification(
+                                    user?.responsibility?.org_thana?.id
+                                )
+                            "
+                        >
+                            See all notification
+                        </a>
+                        <button
+                            type="button"
+                            class="btn btn-sm btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import NotificationButton from "./components/NotificationButton.vue";
+import NotificationDropdown from "./components/NotificationDropdown.vue";
+import SidebarDropdown from "./components/SidebarDropdown.vue";
 import { store as data_store } from "./stores/ReportStore";
+import { store as notification_store } from "./stores/NotificationStore";
+import { store as sidebar_dropdown_store } from "./stores/SidebarDropdownStore";
 import { mapActions, mapWritableState } from "pinia";
+import moment from "moment";
+
 export default {
+    components: {
+        NotificationButton,
+        NotificationDropdown,
+        SidebarDropdown,
+    },
     data: function () {
         return {
             user: [],
             user_id: "",
-            isUnitReportPage: false,
+            isThanaReportPage: false,
+            notifications: [],
         };
     },
     created: function () {
@@ -471,6 +551,7 @@ export default {
     },
     methods: {
         ...mapActions(data_store, ["set_month"]),
+        ...mapActions(notification_store, ["see_all_notification"]),
         auth_user: function () {
             axios.get("/user/thana-user-info").then((responce) => {
                 this.user = responce.data;
@@ -557,11 +638,38 @@ export default {
                 );
             }
         },
+        go_to_notification(thana_id = 0) {
+            if (thana_id != 0) {
+                this.$router.push({
+                    name: "Notification",
+                    params: { thana_id: thana_id },
+                });
+            }
+        },
     },
     computed: {
         ...mapWritableState(data_store, ["month"]),
+
+        ...mapWritableState(notification_store, [
+            "all_notifications",
+            "number_of_notifications",
+        ]),
+        ...mapWritableState(sidebar_dropdown_store, ["active_dropdown"]),
     },
 };
 </script>
 
-<style></style>
+<style>
+
+#notification_modal .modal-header{
+    background-color: var(--color3);
+    color: white;
+    font-family: system-ui;
+    font-weight: 600;
+}
+
+#notification_modal .modal-body{
+    overflow-x: auto;
+    max-height: 400px;
+}
+</style>

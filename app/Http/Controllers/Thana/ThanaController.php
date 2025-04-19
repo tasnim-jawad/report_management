@@ -106,7 +106,7 @@ class ThanaController extends Controller
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "pending",
-                    "message" => "রিপোর্ট জমা হয়েছে । থানার আপ্রুভের জন্য অপেক্ষমাণ।"
+                    "message" => "রিপোর্ট জমা হয়েছে । মহানগরীর আপ্রুভের জন্য অপেক্ষমাণ।"
                 ], 200);
             } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'rejected') {
                 return response()->json([
@@ -118,7 +118,7 @@ class ThanaController extends Controller
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "approved",
-                    "message" => "এ মাসের রিপোর্ট থানা গ্রহন করেছে।"
+                    "message" => "এ মাসের রিপোর্ট মহানগরী গ্রহন করেছে।"
                 ], 200);
             }
         }

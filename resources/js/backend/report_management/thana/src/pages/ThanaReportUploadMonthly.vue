@@ -34273,5 +34273,5 @@ export default {
     text-align: center; /* Center align the text */
 }
 /* @import url("../../../../../../public/css/unit/unit_report_upload.css"); */
-@import url("../../../../../../../public/css/ward/ward_report_upload.css");
+@import url("../../../../../../../public/css/thana/thana_report_upload.css");
 </style>

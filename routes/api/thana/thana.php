@@ -542,3 +542,13 @@
     // });
 
 
+    Route::group(['prefix' => 'notification'], function () {
+        Route::get('/all-notification-for-thana', [App\Http\Controllers\Notification\NotificationController::class, 'all_notification_for_thana']);
+    });
+
+    
+    // Route::group(['prefix' => 'notification-seen'], function () {
+    //     Route::post('/mark-as-seen', [App\Http\Controllers\Notification\NotificationSeenController::class, 'mark_as_seen']);
+    // });
+
+

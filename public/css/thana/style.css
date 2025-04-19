@@ -348,3 +348,50 @@ body{
     width: 215px;
 }
 
+
+/* ------------------------------notificatyio button  --------------------- */
+
+.notification_icon{
+    position: relative;
+    .i_icon{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        background-color: var(--color3);
+        position: relative;
+        z-index: 999;
+        border-radius: 5px;
+        color: white;
+    }
+}
+.number_of_notifications{
+
+    position: absolute;
+    line-height: 11px;
+    width: 11px;
+    font-size: 9px;
+    background-color: #ff0c0c;
+    border-radius: 50%;
+    color: white;
+    top: -8px;
+    right: -7px;
+    z-index: 999;
+}
+#notification_modal{
+    .modal-header{
+        background-color: var(--color3);
+        color: white;
+        font-family: system-ui;
+        font-weight: 600;
+    }
+    .modal-body{
+        overflow-x: auto;
+        max-height: 400px;
+    }
+
+}
+
+/* ------------------------------notificatyio button  --------------------- */
+
