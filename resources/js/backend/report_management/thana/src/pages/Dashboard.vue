@@ -13,13 +13,14 @@
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap justify-content-start align-items-center gap-2">
-                <p v-if="permitted_month_text != ''">পারমিটেড মাসঃ {{ permitted_month_text }}</p>
-                <p v-else class="text-danger">কোনো মাসেই রিপোর্ট জমা দেয়ার কোনো অনুমতি নেই</p>
-                <a href="" @click.prevent="remove_permission" class="btn btn-sm btn-danger "
-                    v-if="permitted_month_text != ''">remove permission</a>
+                <!-- {{ permitted_month_text }} -->
+                <p v-show="permitted_month_text != ''">পারমিটেড মাসঃ {{ permitted_month_text }}</p>
+                <p style="color: red;"  v-show="!permitted_month_text" >কোনো মাসেই রিপোর্ট জমা দেয়ার কোনো অনুমতি নেই</p>
+                <a href="" @click.prevent="remove_permission" class="btn btn-sm btn-danger" 
+                    v-show="permitted_month_text != ''" >remove permission</a>
             </div>
-            <div class="d-flex flex-wrap justify-content-start align-items-center mt-3 gap-2">
-                <input type="month" v-model="permission_month" ref="month" name="month">
+            <div  class="d-flex flex-wrap justify-content-start align-items-center mt-3 gap-2">
+                <input type="month" v-model="permission_month"  name="month">
                 <a href="" @click.prevent="set_permission" class="btn btn-sm btn-success ">Set New permission</a>
             </div>
         </div>
@@ -30,14 +31,14 @@
             <p><strong>Permitted Month:</strong> November(static)</p>
             <form ref="" action="">
                 <input type="text" class="d-none" name="user_id" :value = "this.user?.user?.id" >
-                মাস: <input type="month" v-model="month" name="month">
+                মাস: <input type="month"  name="month">
                 <button class="btn btn-success ms-5" type="button" @click.prevent="ward_report_submission_permission">দেখুন</button>
             </form>
         </div>
     </div> -->
     <div class="card">
         <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-            All wards Status <input type="month" v-model="month" ref="month" name="month">
+            All wards Status <input type="month" v-model="month"  name="month">
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive">
@@ -139,7 +140,7 @@ export default {
     props: ['user_id'],
     data() {
         return {
-            permission_month: null,
+            permission_month: '',
             unsubmitted_ward: [],
             pending_ward: [],
             rejected_ward: [],
@@ -148,6 +149,8 @@ export default {
             user: [],
             report_status_message: '',
             permitted_month_text: '',
+
+            loaded: false,
         }
     },
     created: function () {
@@ -156,6 +159,9 @@ export default {
         this.user_info()
         this.thana_report_status()
         this.ward_report_joma_permitted_month()
+
+        this.loaded = true
+       
     },
     computed: {
         ...mapWritableState(data_store, ['month']),

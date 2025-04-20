@@ -13,13 +13,15 @@
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap justify-content-start align-items-center gap-2">
-                <p v-if="permitted_month_text != ''">পারমিটেড মাসঃ {{ permitted_month_text }}</p>
-                <p v-else class="text-danger">কোনো মাসেই রিপোর্ট জমা দেয়ার কোনো অনুমতি নেই</p>
+                <p v-show="permitted_month_text != ''">পারমিটেড মাসঃ {{ permitted_month_text }}</p>
+                <p style="color: red;"  v-show="!permitted_month_text" >
+                    কোনো মাসেই রিপোর্ট জমা দেয়ার কোনো অনুমতি নেই
+                </p>
                 <a href="" @click.prevent="remove_permission" class="btn btn-sm btn-danger "
-                    v-if="permitted_month_text != ''">remove permission</a>
+                    v-show="permitted_month_text != ''">remove permission</a>
             </div>
             <div class="d-flex flex-wrap justify-content-start align-items-center mt-3 gap-2">
-                <input type="month" v-model="permission_month" ref="month" name="month">
+                <input type="month" v-model="permission_month"  name="month">
                 <a href="" @click.prevent="set_permission" class="btn btn-sm btn-success ">Set New permission</a>
             </div>
         </div>
@@ -37,7 +39,7 @@
     </div> -->
     <div class="card">
         <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-            All Units Status <input type="month" v-model="month" ref="month" name="month">
+            All Units Status <input type="month" v-model="month" name="month">
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive">
@@ -139,7 +141,7 @@ export default {
     props: ['user_id'],
     data() {
         return {
-            permission_month: null,
+            permission_month: '',
             unsubmitted_unit: [],
             pending_unit: [],
             rejected_unit: [],
