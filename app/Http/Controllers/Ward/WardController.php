@@ -2260,23 +2260,23 @@ class WardController extends Controller
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
         // dd($datas);
 
-               // -------------------------- bm previous report ------------------------------------
-               $carbon_start_month = Carbon::parse($start_month);
-               $query = WardBmIncome::query();
-               $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
-                   ->where('ward_id', $ward_id)
-                   ->where('report_approved_status', 'approved');
-               $total_previous_income = $filter->sum('amount');
+        // -------------------------- bm previous report ------------------------------------
+        $carbon_start_month = Carbon::parse($start_month);
+        $query = WardBmIncome::query();
+        $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
+            ->where('ward_id', $ward_id)
+            ->where('report_approved_status', 'approved');
+        $total_previous_income = $filter->sum('amount');
 
-               $query = WardBmExpense::query();
-               $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
-                   ->where('ward_id', $ward_id)
-                   ->where('report_approved_status', 'approved');
-               $total_previous_expense = $filter->sum('amount');
-               $total_previous =  $total_previous_income - $total_previous_expense;
-               $total_current_income =  $total_previous + $datas->income_report->total_amount;
-               $in_total =  $total_current_income - $datas->expense_report->total_amount;
-               // -------------------------- bm previous report ------------------------------------
+        $query = WardBmExpense::query();
+        $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
+            ->where('ward_id', $ward_id)
+            ->where('report_approved_status', 'approved');
+        $total_previous_expense = $filter->sum('amount');
+        $total_previous =  $total_previous_income - $total_previous_expense;
+        $total_current_income =  $total_previous + $datas->income_report->total_amount;
+        $in_total =  $total_current_income - $datas->expense_report->total_amount;
+        // -------------------------- bm previous report ------------------------------------
 
         return response()->json([
             'status' => 'success',
@@ -2288,7 +2288,7 @@ class WardController extends Controller
         ], 200);
     }
 
-    public function total_approved_unit_report()
+    public function total_approved_ward_report()
     {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
@@ -2347,6 +2347,25 @@ class WardController extends Controller
         $reportInfoIds = $report_info_ids;
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum, $reportInfoIds);
 
+
+        // -------------------------- bm previous report ------------------------------------
+        $carbon_start_month = Carbon::parse($start_month);
+        $query = WardBmIncome::query();
+        $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
+            ->whereIn('ward_id', $approved_ward_ids)
+            ->where('report_approved_status', 'approved');
+        $total_previous_income = $filter->sum('amount');
+
+        $query = WardBmExpense::query();
+        $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
+            ->whereIn('ward_id', $approved_ward_ids)
+            ->where('report_approved_status', 'approved');
+        $total_previous_expense = $filter->sum('amount');
+        $total_previous =  $total_previous_income - $total_previous_expense;
+        $total_current_income =  $total_previous + $datas->income_report->total_amount;
+        $in_total =  $total_current_income - $datas->expense_report->total_amount;
+        // -------------------------- bm previous report ------------------------------------
+
         $report_header = (object) [
             'ward_count' => $ward_count,
             'ward_titles' => $ward_titles,
@@ -2363,6 +2382,10 @@ class WardController extends Controller
             'previous_present' => $datas->previous_present,
             'income_report' => $datas->income_report,
             'expense_report' => $datas->expense_report,
+
+            'total_previous' => $total_previous,
+            'total_current_income' => $total_current_income,
+            'in_total' => $in_total,
         ]);
     }
 

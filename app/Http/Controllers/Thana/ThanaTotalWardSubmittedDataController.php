@@ -8,6 +8,7 @@ use App\Models\Bm\Expense\BmExpenseCategory;
 use App\Models\Bm\Income\BmCategory;
 use App\Models\Bm\Income\BmPaid;
 use App\Models\Organization\OrgUnit;
+use App\Models\Organization\OrgWard;
 use App\Models\Report\DawahAndProkashona\DawahAndProkashona;
 use App\Models\Report\Dawat\Dawat1RegularGroupWise;
 use App\Models\Report\Dawat\Dawat2PersonalAndTarget;
@@ -907,7 +908,7 @@ class ThanaTotalWardSubmittedDataController extends Controller
             'total' => $total,
         ], 200);
     }
-    public function count_approved_unit()
+    public function count_approved_ward()
     {
         $validator = Validator::make(request()->all(), [
             'month' => ['required', 'date'],
@@ -919,14 +920,14 @@ class ThanaTotalWardSubmittedDataController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-        $ward_id = auth()->user()->org_ward_user->ward_id;
-        $data =  approved_unit_ids($ward_id, request()->month);
-        $total_units = OrgUnit::where('org_ward_id', $ward_id)->count();
-        $approved_units = count($data['approved_units']);
+        $thana_id = auth()->user()->org_thana_user->thana_id;
+        $data =  approved_ward_ids($thana_id, request()->month);
+        $total_wards = OrgWard::where('org_thana_id', $thana_id)->count();
+        $approved_wards = count($data['approved_wards']);
         return response()->json([
             'status' => 'success',
-            'total_units' => $total_units,
-            'approved_units' => $approved_units,
+            'total_wards' => $total_wards,
+            'approved_wards' => $approved_wards,
         ], 200);
     }
 }

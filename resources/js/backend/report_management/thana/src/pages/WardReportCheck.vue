@@ -1130,7 +1130,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     Number(
                                                         report_sum_data
@@ -1143,7 +1143,7 @@
                                                             ?.political_and_special_been_associated
                                                     )
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -1179,7 +1179,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     Number(
                                                         report_sum_data
@@ -1192,7 +1192,7 @@
                                                             ?.pesha_jibi_been_associated
                                                     )
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -1230,7 +1230,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     Number(
                                                         report_sum_data
@@ -1243,7 +1243,7 @@
                                                             ?.olama_masayekh_been_associated
                                                     )
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -1300,7 +1300,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     report_sum_data
                                                         ?.ward_department4_different_job_holders_dawats
@@ -1309,7 +1309,7 @@
                                                         ?.ward_department4_different_job_holders_dawats
                                                         ?.sromo_jibi_been_associated
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -1349,7 +1349,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                           
                                                 implementation_rate(
                                                     report_sum_data
                                                         ?.ward_department4_different_job_holders_dawats
@@ -1358,7 +1358,7 @@
                                                         ?.ward_department4_different_job_holders_dawats
                                                         ?.prantik_jonogosti_been_associated
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -1396,7 +1396,7 @@
 
                                     <td>
                                         {{
-                                            formatBangla(
+                                            
                                                 implementation_rate(
                                                     report_sum_data
                                                         ?.ward_department4_different_job_holders_dawats
@@ -1405,7 +1405,7 @@
                                                         ?.ward_department4_different_job_holders_dawats
                                                         ?.vinno_dormalombi_been_associated
                                                 )
-                                            )
+                                            
                                         }}
                                     </td>
                                 </tr>
@@ -2442,7 +2442,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon1_jonosoktis
@@ -2451,7 +2451,7 @@
                                                     ?.ward_songothon1_jonosoktis
                                                     ?.rokon_briddhi
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -2512,7 +2512,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon1_jonosoktis
@@ -2521,7 +2521,7 @@
                                                     ?.ward_songothon1_jonosoktis
                                                     ?.worker_briddhi
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -2586,7 +2586,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon2_associate_members
@@ -2595,7 +2595,7 @@
                                                     ?.ward_songothon2_associate_members
                                                     ?.associate_member_man_briddhi
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -2642,7 +2642,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon2_associate_members
@@ -2651,7 +2651,7 @@
                                                     ?.ward_songothon2_associate_members
                                                     ?.associate_member_woman_briddhi
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -2739,7 +2739,7 @@
                                 </td>
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 Number(
                                                     report_sum_data
@@ -2766,7 +2766,7 @@
                                                             0
                                                     )
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -3741,7 +3741,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -3750,7 +3750,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.general_unit_men_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -3805,7 +3805,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -3814,7 +3814,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.general_unit_women_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -3869,7 +3869,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -3878,7 +3878,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.ulama_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -3932,7 +3932,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -3941,7 +3941,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.peshajibi_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -3996,7 +3996,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -4005,7 +4005,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.sromik_kollyan_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -4059,7 +4059,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -4068,7 +4068,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.jubo_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -4123,7 +4123,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -4132,7 +4132,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.media_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -4349,7 +4349,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 // First argument: Target values summed
                                                 Number(
@@ -4438,7 +4438,7 @@
                                                             0
                                                     )
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -5088,7 +5088,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.unit_tarbiati_boithok_uposthiti) }}
+                                        {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.unit_tarbiati_boithok) }}
                                         <comment
                                             :table_name="'ward_proshikkhon1_tarbiats'"
                                             :column_name="'unit_tarbiati_boithok_uposthiti'"
@@ -5120,7 +5120,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.ward_kormi_sikkha_boithok_uposthiti) }}
+                                        {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.ward_kormi_sikkha_boithok) }}
                                         <comment
                                             :table_name="'ward_proshikkhon1_tarbiats'"
                                             :column_name="'ward_kormi_sikkha_boithok_uposthiti'"
@@ -5176,7 +5176,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_shibir_uposthiti) }}
+                                            {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_shibir) }}
                                             <comment
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'urdhotono_sikkha_shibir_uposthiti'"
@@ -5184,7 +5184,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_boithok_uposthiti) }}
+                                            {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_boithok) }}
                                             <comment
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'urdhotono_sikkha_boithok_uposthiti'"
@@ -5240,7 +5240,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_sikkha_boithok_uposthiti) }}
+                                            {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_sikkha_boithok) }}
                                             <comment
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'gono_sikkha_boithok_uposthiti'"
@@ -5248,7 +5248,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_noisho_ibadot_uposthiti) }}
+                                            {{ formatBangla(average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_noisho_ibadot) }}
                                             <comment
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'gono_noisho_ibadot_uposthiti'"
@@ -7095,9 +7095,9 @@ export default {
             const total_key_suffix = {
                 ward_kormosuci_bastobayons: "_total",
                 ward_songothon9_sangothonik_boithoks: "_total",
-                ward_proshikkhon1_tarbiats: "_total",
+                ward_proshikkhon1_tarbiats: "",
                 ward_rastrio2_kormoshuchi_bastobayons: "",
-                ward_rastrio3_dibosh_palons: "",
+                ward_rastrio3_dibosh_palons: "_total_programs",
             };
 
             if (
@@ -7160,23 +7160,23 @@ export default {
                     console.log("Data uploaded successfully");
                     if (
                         [
-                            "unit_masik_sadaron_sova",
-                            "dawati_sova",
-                            "alochona_sova",
-                            "sudhi_somabesh",
-                            "siratunnabi_mahfil",
-                            "eid_reunion",
-                            "dars",
-                            "tafsir",
-                            "dawati_jonosova",
-                            "iftar_mahfil_personal",
-                            "iftar_mahfil_samostic",
-                            "cha_chakra",
-                            "samostic_khawa",
-                            "sikkha_sofor",
-                            "kirat_protijogita",
-                            "hamd_nat_protijogita",
-                            "others",
+                            "unit_masik_sadaron_sova_total",
+                            "dawati_sova_total",
+                            "alochona_sova_total",
+                            "sudhi_somabesh_total",
+                            "siratunnabi_mahfil_total",
+                            "eid_reunion_total",
+                            "dars_total",
+                            "tafsir_total",
+                            "dawati_jonosova_total",
+                            "iftar_mahfil_personal_total",
+                            "iftar_mahfil_samostic_total",
+                            "cha_chakra_total",
+                            "samostic_khawa_total",
+                            "sikkha_sofor_total",
+                            "kirat_protijogita_total",
+                            "hamd_nat_protijogita_total",
+                            "others_total",
                             // average_songothon9
                             "word_sura_boithok_total",
                             "kormoporishod_boithok_total",
@@ -7240,13 +7240,13 @@ export default {
                     console.error("Error uploading data", error);
                 });
         },
-        implementation_rate(target, achieved) {
-            if (target && achieved && target !== 0) {
-                return Math.round((achieved / target) * 100) + "%";
-            }
+        // implementation_rate(target, achieved) {
+        //     if (target && achieved && target !== 0) {
+        //         return Math.round((achieved / target) * 100) + "%";
+        //     }
 
-            return " ";
-        },
+        //     return " ";
+        // },
         // expense_category: async function () {
         //     let res = await axios.get('/ward-bm-expense-category/all')
         //     if (res.data.status == 'success') {

@@ -33,15 +33,15 @@
     </div>
     <div class="card mb-3">
         <div class="card-header">
-            মাসিক ইউনিট রিপোর্ট (এপ্রুভড ইউনিটের টোটাল ) - টোটাল ইউনিট - {{ total_wards_counts }} টি এবং এপ্রুভড হয়েছে - {{ approved_wards_count }}  টি।
+            মাসিক ওয়ার্ড রিপোর্ট (এপ্রুভড ওয়ার্ডের টোটাল ) - টোটাল ওয়ার্ড - {{ total_wards_counts }} টি এবং এপ্রুভড হয়েছে - {{ approved_wards_count }}  টি।
         </div>
         <div class="card-body border-bottom-0">
             <form ref="report_form" action="" method="GET" >
                 <input type="text" class="d-none" name="user_id" :value = "this.user?.user?.id" >
                 মাস: <input type="month" v-model="month" name="month" @change="report_status">
-                <button class="btn btn-success ms-5" type="button" @click.prevent="total_unit_report" v-if="approved_unit.length">দেখুন</button>
+                <button class="btn btn-success ms-5" type="button" @click.prevent="total_ward_report" v-if="approved_ward.length">দেখুন</button>
             </form>
-            <p class="text-danger mt-2" v-if="!approved_unit.length">সিলেক্ট করা মাসে কোনো রিপোর্ট জমা হয়নি</p>
+            <p style="color: red;" class="mt-2" v-show="!approved_ward.length">সিলেক্ট করা মাসে কোনো রিপোর্ট জমা হয়নি</p>
         </div>
     </div>
 </template>
@@ -58,7 +58,7 @@ export default {
             start_month: null,
             end_month: null,
             user: [],
-            approved_unit:[],
+            approved_ward:[],
             approved_wards_count:'',
             total_wards_counts:'',
         }
@@ -125,10 +125,10 @@ export default {
                 window.s_warning("An unexpected error occurred. Please try again.", 'error');
             }
         },
-        total_unit_report: function(){
+        total_ward_report: function(){
             if(this.month != null){
                 // window.open(`/ward/unit/total-unit-report?user_id=${this.user?.user?.id}&month=${this.month}`)
-                window.open(`/unit/total-approved-unit-report?user_id=${this.user?.user?.id}&month=${this.month}`)
+                window.open(`/ward/total-approved-ward-report?user_id=${this.user?.user?.id}&month=${this.month}`)
             }
         },
         report_sum: async function (sum_type) {
