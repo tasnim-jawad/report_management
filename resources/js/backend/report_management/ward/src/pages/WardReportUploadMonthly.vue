@@ -5584,7 +5584,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon2_associate_members
@@ -5593,7 +5593,7 @@
                                                     ?.ward_songothon2_associate_members
                                                     ?.associate_member_man_briddhi
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -5670,7 +5670,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon2_associate_members
@@ -5679,7 +5679,7 @@
                                                     ?.ward_songothon2_associate_members
                                                     ?.associate_member_woman_briddhi
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -5808,7 +5808,7 @@
                                 </td>
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 Number(
                                                     report_sum_data
@@ -5835,7 +5835,7 @@
                                                             0
                                                     )
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -7679,7 +7679,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -7688,7 +7688,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.general_unit_men_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -7788,7 +7788,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -7797,7 +7797,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.general_unit_women_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -7904,7 +7904,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -7913,7 +7913,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.ulama_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -8020,7 +8020,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -8029,7 +8029,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.peshajibi_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -8136,7 +8136,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -8145,7 +8145,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.sromik_kollyan_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -8252,7 +8252,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -8261,7 +8261,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.jubo_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -8368,7 +8368,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 report_sum_data
                                                     ?.ward_songothon4_unit_songothons
@@ -8377,7 +8377,7 @@
                                                     ?.ward_songothon4_unit_songothons
                                                     ?.media_unit_increase
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -8594,7 +8594,7 @@
 
                                 <td>
                                     {{
-                                        formatBangla(
+                                        
                                             implementation_rate(
                                                 // First argument: Target values summed
                                                 Number(
@@ -8683,7 +8683,7 @@
                                                             0
                                                     )
                                             )
-                                        )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -9529,7 +9529,9 @@
                                                     average_data_upload(
                                                         $event,
                                                         'ward-songothon9-sangothonik-boithok',
-                                                        songothon9.word_sura_boithok_total
+                                                        report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.word_sura_boithok_total
                                                     )
                                                 "
                                                 type="text"
@@ -9554,7 +9556,9 @@
                                                     average_data_upload(
                                                         $event,
                                                         'ward-songothon9-sangothonik-boithok',
-                                                        songothon9.kormoporishod_boithok_total
+                                                        report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.kormoporishod_boithok_total
                                                     )
                                                 "
                                                 type="text"
@@ -9579,7 +9583,9 @@
                                                     average_data_upload(
                                                         $event,
                                                         'ward-songothon9-sangothonik-boithok',
-                                                        songothon9.team_boithok_total
+                                                        report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.team_boithok_total
                                                     )
                                                 "
                                                 type="text"
@@ -9662,7 +9668,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-songothon9-sangothonik-boithok',
-                                                    songothon9.word_boithok_total
+                                                    report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.word_boithok_total
                                                 )
                                             "
                                             type="text"
@@ -9744,7 +9752,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-songothon9-sangothonik-boithok',
-                                                    songothon9.masik_sodosso_boithok_total
+                                                    report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.masik_sodosso_boithok_total
                                                 )
                                             "
                                             type="text"
@@ -9836,7 +9846,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-songothon9-sangothonik-boithok',
-                                                    songothon9.unit_kormi_boithok_total
+                                                    report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.unit_kormi_boithok_total
                                                 )
                                             "
                                             type="text"
@@ -10028,7 +10040,9 @@
                                                     average_data_upload(
                                                         $event,
                                                         'ward-songothon9-sangothonik-boithok',
-                                                        songothon9.ulama_somabesh_total
+                                                        report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.ulama_somabesh_total
                                                     )
                                                 "
                                                 type="text"
@@ -10054,7 +10068,9 @@
                                                     average_data_upload(
                                                         $event,
                                                         'ward-songothon9-sangothonik-boithok',
-                                                        songothon9.jubok_somabesh_total
+                                                        report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.jubok_somabesh_total
                                                     )
                                                 "
                                                 type="text"
@@ -10080,7 +10096,9 @@
                                                     average_data_upload(
                                                         $event,
                                                         'ward-songothon9-sangothonik-boithok',
-                                                        songothon9.sromik_somabesh_total
+                                                        report_sum_data
+                                                            ?.ward_songothon9_sangothonik_boithoks
+                                                            ?.sromik_somabesh_total
                                                     )
                                                 "
                                                 type="text"
@@ -10166,7 +10184,7 @@
                                             @change="average_data_upload(
                                                 $event, 
                                                 'ward-proshikkhon1-tarbiat', 
-                                                proshikkhon1.unit_tarbiati_boithok
+                                                report_sum_data?.ward_proshikkhon1_tarbiats?.unit_tarbiati_boithok
                                             )"
                                             type="text"
                                             class="bg-input w-100 text-center"
@@ -10228,7 +10246,7 @@
                                             @change="average_data_upload(
                                                 $event,
                                                 'ward-proshikkhon1-tarbiat',
-                                                proshikkhon1.ward_kormi_sikkha_boithok
+                                                report_sum_data?.ward_proshikkhon1_tarbiats?.ward_kormi_sikkha_boithok
                                             )"
                                             type="text"
                                             class="bg-input w-100 text-center"
@@ -10327,7 +10345,7 @@
                                                 @change="average_data_upload(
                                                     $event,
                                                     'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.urdhotono_sikkha_shibir
+                                                    report_sum_data?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_shibir
                                                 )"
                                                 type="text"
                                                 class="bg-input w-100 text-center"
@@ -10347,7 +10365,7 @@
                                                 @change="average_data_upload(
                                                     $event,
                                                     'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.urdhotono_sikkha_boithok
+                                                    report_sum_data?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_boithok
                                                 )"
                                                 type="text"
                                                 class="bg-input w-100 text-center"
@@ -10447,7 +10465,7 @@
                                                 @change="average_data_upload(
                                                     $event,
                                                     'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.gono_sikkha_boithok
+                                                    report_sum_data?.ward_proshikkhon1_tarbiats?.gono_sikkha_boithok
                                                 )"
                                                 type="text"
                                                 class="bg-input w-100 text-center"
@@ -10467,7 +10485,7 @@
                                                 @change="average_data_upload(
                                                     $event,
                                                     'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.gono_noisho_ibadot
+                                                    report_sum_data?.ward_proshikkhon1_tarbiats?.gono_noisho_ibadot
                                                 )"
                                                 type="text"
                                                 class="bg-input w-100 text-center"
@@ -10534,7 +10552,7 @@
                                             @change="average_data_upload(
                                                 $event,
                                                 'ward-proshikkhon1-tarbiat',
-                                                proshikkhon1.alochona_chokro_program
+                                                report_sum_data?.ward_proshikkhon1_tarbiats?.alochona_chokro_program
                                             )"
                                             type="text"
                                             class="bg-input w-100 text-center"
@@ -10599,7 +10617,7 @@
                                                 @change="average_data_upload(
                                                     $event,
                                                     'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.darsul_quran_program
+                                                    report_sum_data?.ward_proshikkhon1_tarbiats?.darsul_quran_program
                                                 )"
                                                 type="text"
                                                 class="bg-input w-100 text-center"
@@ -10618,7 +10636,7 @@
                                                 @change="average_data_upload(
                                                     $event,
                                                     'ward-proshikkhon1-tarbiat',
-                                                    proshikkhon1.sohih_tilawat_program
+                                                    report_sum_data?.ward_proshikkhon1_tarbiats?.sohih_tilawat_program
                                                 )"
                                                 type="text"
                                                 class="bg-input w-100 text-center"
@@ -12074,7 +12092,7 @@
                                                         average_data_upload(
                                                             $event,
                                                             'ward-rastrio2-kormoshuchi-bastobayon',
-                                                            rastrio2.centrally_announced_political_program
+                                                            report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.centrally_announced_political_program
                                                         )
                                                     "
                                                     type="text"
@@ -12170,7 +12188,7 @@
                                                             average_data_upload(
                                                                 $event,
                                                                 'ward-rastrio2-kormoshuchi-bastobayon',
-                                                                rastrio2.locally_announced_jonoshova
+                                                                report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_jonoshova
                                                             )
                                                         "
                                                         type="text"
@@ -12194,7 +12212,7 @@
                                                             average_data_upload(
                                                                 $event,
                                                                 'ward-rastrio2-kormoshuchi-bastobayon',
-                                                                rastrio2.locally_announced_shomabesh
+                                                                report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_shomabesh
                                                             )
                                                         "
                                                         type="text"
@@ -12218,7 +12236,7 @@
                                                             average_data_upload(
                                                                 $event,
                                                                 'ward-rastrio2-kormoshuchi-bastobayon',
-                                                                rastrio2.locally_announced_michil
+                                                                report_sum_data?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_michil
                                                             )
                                                         "
                                                         type="text"
@@ -12430,7 +12448,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-rastrio3-dibosh-palon',
-                                                    rastrio3.shadhinota_o_jatio_dibosh_total_programs
+                                                    report_sum_data
+                                                        ?.ward_rastrio3_dibosh_palons
+                                                        ?.shadhinota_o_jatio_dibosh_total_programs
                                                 )
                                             "
                                             type="text"
@@ -12483,7 +12503,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-rastrio3-dibosh-palon',
-                                                    rastrio3.mattrivasha_dibosh_total_programs
+                                                    report_sum_data
+                                                        ?.ward_rastrio3_dibosh_palons
+                                                        ?.mattrivasha_dibosh_total_programs
                                                 )
                                             "
                                             type="text"
@@ -12538,7 +12560,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-rastrio3-dibosh-palon',
-                                                    rastrio3.bijoy_dibosh_total_programs
+                                                    report_sum_data
+                                                        ?.ward_rastrio3_dibosh_palons
+                                                        ?.bijoy_dibosh_total_programs
                                                 )
                                             "
                                             type="text"
@@ -12591,7 +12615,9 @@
                                                 average_data_upload(
                                                     $event,
                                                     'ward-rastrio3-dibosh-palon',
-                                                    rastrio3.others_total_programs
+                                                    report_sum_data
+                                                        ?.ward_rastrio3_dibosh_palons
+                                                        ?.others_total_programs
                                                 )
                                             "
                                             type="text"
@@ -13551,9 +13577,9 @@ export default {
             const total_key_suffix = {
                 ward_kormosuci_bastobayons: "_total",
                 ward_songothon9_sangothonik_boithoks: "_total",
-                ward_proshikkhon1_tarbiats: "_total",
+                ward_proshikkhon1_tarbiats: "",
                 ward_rastrio2_kormoshuchi_bastobayons: "",
-                ward_rastrio3_dibosh_palons: "",
+                ward_rastrio3_dibosh_palons: "_total_programs",
             };
 
             if (
@@ -13803,16 +13829,16 @@ export default {
                 });
         },
 
-        implementation_rate(target, achieved) {
-            console.log("target", target);
-            console.log("achieved", achieved);
+        // implementation_rate(target, achieved) {
+        //     console.log("target", target);
+        //     console.log("achieved", achieved);
             
-            if (target && achieved && target !== 0) {
-                return Math.round((achieved / target) * 100) + "%";
-            }
+        //     if (target && achieved && target !== 0) {
+        //         return Math.round((achieved / target) * 100) + "%";
+        //     }
 
-            return " ";
-        },
+        //     return " ";
+        // },
         // expense_category: async function () {
         //     let res = await axios.get('/ward-bm-expense-category/all')
         //     if (res.data.status == 'success') {
