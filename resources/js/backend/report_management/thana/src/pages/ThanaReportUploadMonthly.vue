@@ -176,7 +176,7 @@
                                                 report_header?.thana_info?.id
                                             "
                                             :table_name="'ward_dawat1_regular_group_wises'"
-                                            :field_title="'how_many_groups_are_out_woman'"
+                                            :field_title="'number_of_participants'"
                                             :month="month"
                                         >
                                         </popup>
@@ -201,7 +201,9 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -245,11 +247,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="report_header?.thana_info?.id"
                                             :table_name="'ward_dawat1_regular_group_wises'"
-                                            :field_title="'how_many_groups_are_out'"
+                                            :field_title="'how_many_have_been_invited'"
                                             :month="month"
                                         >
                                         </popup>
@@ -274,7 +274,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -318,11 +318,11 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat1_regular_group_wises'"
-                                            :field_title="'how_many_groups_are_out'"
+                                            :field_title="'how_many_associate_members_created'"
                                             :month="month"
                                         >
                                         </popup>
@@ -347,7 +347,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -401,9 +401,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat2_personal_and_targets'"
                                             :field_title="'total_rokon'"
                                             :month="month"
@@ -431,9 +431,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat2_personal_and_targets'"
                                             :field_title="'total_worker'"
                                             :month="month"
@@ -460,7 +460,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -486,7 +486,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -518,9 +518,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat2_personal_and_targets'"
                                             :field_title="'how_many_were_give_dawat_rokon'"
                                             :month="month"
@@ -548,9 +548,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat2_personal_and_targets'"
                                             :field_title="'how_many_were_give_dawat_worker'"
                                             :month="month"
@@ -577,7 +577,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -603,7 +603,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -666,11 +666,11 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat2_personal_and_targets'"
-                                            :field_title="'how_many_were_give_dawat_rokon'"
+                                            :field_title="'how_many_have_been_invited'"
                                             :month="month"
                                         >
                                         </popup>
@@ -694,13 +694,13 @@
                                         :type="type"
                                         class="bg-input w-100 text-center"
                                     />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                    <!-- <popup
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                             </tr>
                             <tr>
@@ -744,11 +744,11 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat2_personal_and_targets'"
-                                            :field_title="'how_many_were_give_dawat_worker'"
+                                            :field_title="'how_many_associate_members_created'"
                                             :month="month"
                                         >
                                         </popup>
@@ -772,13 +772,13 @@
                                         :type="type"
                                         class="bg-input w-100 text-center"
                                     />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                    <!-- <popup
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                             </tr>
                         </tbody>
@@ -842,9 +842,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat3_general_program_and_others'"
                                             :field_title="'how_many_were_give_dawat'"
                                             :month="month"
@@ -870,13 +870,13 @@
                                         :type="type"
                                         class="bg-input w-100 text-center"
                                     />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                    <!-- <popup
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                             </tr>
                             <tr>
@@ -920,8 +920,8 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
+                                            :thana_id="
+                                                report_header?.thana_info?.id
                                             "
                                             :table_name="'ward_dawat3_general_program_and_others'"
                                             :field_title="'how_many_associate_members_created'"
@@ -949,7 +949,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -983,28 +983,29 @@
                                 </td>
 
                                 <td>
-                                    <div
-                                        class="d-flex justify-content-center align-items-center"
-                                    >
+                                    <div class="d-flex justify-content-center align-items-center">
                                         <div class="parent_popup">
-                                            <p class="w-100 text-center">
-                                                {{
+                                            <input
+                                                name="gono_songjog_doshok_group_man"
+                                                :value="
                                                     formatBangla(
-                                                        this.mass_communication
-                                                            .total_mass_communication_dosok_group
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_doshok_group_man
                                                     )
-                                                }}
-                                                {{
-                                                    formatBangla(
-                                                        this.mass_communication
-                                                            .total_mass_communication_dosok_male
-                                                    )
-                                                }}
-                                            </p>
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
                                                 "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'total_gono_songjog_group'"
                                                 :month="month"
@@ -1012,43 +1013,61 @@
                                             </popup>
                                         </div>
                                         <p>/</p>
-                                        <p class="w-100 text-center">
-                                            {{
-                                                formatBangla(
-                                                    this.mass_communication
-                                                        .total_mass_communication_dosok_female
-                                                )
-                                            }}
-                                        </p>
-                                        <p>|</p>
-                                        <!-- <div class="parent_popup"> -->
-                                        <p class="w-100 text-center">
-                                            {{
-                                                formatBangla(
-                                                    this.mass_communication
-                                                        .total_mass_communication_pokkho_male
-                                                )
-                                            }}
-                                        </p>
-                                        <!-- <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
+                                        <div class="parent_popup">
+                                            <input
+                                                name="gono_songjog_doshok_group_woman"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.gono_songjog_doshok_group_woman
+                                                    )
                                                 "
-                                                :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
-                                                :field_title="'total_attended'"
-                                                :month="month"
-                                            >
-                                            </popup> -->
-                                        <!-- </div> -->
-                                        <p>/</p>
-                                        <p class="w-100 text-center">
-                                            {{
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                        </div>
+                                        <p>|</p>
+                                        <input
+                                            name="gono_songjog_pokkho_group_man"
+                                            :value="
                                                 formatBangla(
-                                                    this.mass_communication
-                                                        .total_mass_communication_pokkho_female
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.gono_songjog_pokkho_group_man
                                                 )
-                                            }}
-                                        </p>
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <p>/</p>
+                                        <input
+                                            name="gono_songjog_pokkho_group_woman"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.gono_songjog_pokkho_group_woman
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
                                     </div>
                                 </td>
                                 <td>
@@ -1075,12 +1094,11 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
+                                                    :thana_id="
+                                                        report_header?.thana_info?.id
                                                     "
                                                     :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
-                                                    :field_title="'total_gono_songjog_group'"
+                                                    :field_title="'total_attended'"
                                                     :month="month"
                                                 >
                                                 </popup>
@@ -1105,15 +1123,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p class="mx-1">|</p>
                                         <div>
@@ -1136,8 +1154,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <!-- <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
@@ -1166,15 +1184,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1201,11 +1219,11 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
-                                                :field_title="'how_many_associate_members_created'"
+                                                :field_title="'how_many_have_been_invited'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -1229,15 +1247,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p class="mx-1">|</p>
                                         <div>
@@ -1258,15 +1276,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'how_many_associate_members_created'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p>/</p>
                                         <div>
@@ -1287,15 +1305,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1322,9 +1340,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'how_many_associate_members_created'"
                                                 :month="month"
@@ -1350,15 +1368,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p class="mx-1">|</p>
                                         <div>
@@ -1379,15 +1397,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p>/</p>
                                         <div>
@@ -1408,15 +1426,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1427,37 +1445,53 @@
                                 </td>
                                 <td>
                                     <div
-                                        class="d-flex justify-content-center align-items-center"
-                                    >
+                                        class="d-flex justify-content-center align-items-center">
                                         <div class="parent_popup">
-                                            <p class="fixed-input">
-                                                {{
+                                            <input
+                                                name="jela_declared_gonosonjog_dawati_ovi_group"
+                                                :value="
                                                     formatBangla(
-                                                        this.mass_communication
-                                                            .total_jela_decl_mass_comm_ovi
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.jela_declared_gonosonjog_dawati_ovi_group
                                                     )
-                                                }}
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
-                                                    :field_title="'jela_mohanogor_declared_gonosonjog_group'"
-                                                    :month="month"
-                                                >
-                                                </popup>
-                                            </p>
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="
+                                                    report_header?.thana_info?.id
+                                                "
+                                                :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
+                                                :field_title="'jela_mohanogor_declared_gonosonjog_group'"
+                                                :month="month"
+                                            >
+                                            </popup>
                                         </div>
                                         <p>/</p>
-                                        <p class="fixed-input">
-                                            {{
+                                        <input
+                                            name="mohanogor_declared_gonosonjog_dawati_ovi_group"
+                                            :value="
                                                 formatBangla(
-                                                    this.mass_communication
-                                                        .total_mohanogon_decl_mass_comm_ovi
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.mohanogor_declared_gonosonjog_dawati_ovi_group
                                                 )
-                                            }}
-                                        </p>
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
                                     </div>
                                 </td>
                                 <td>
@@ -1480,12 +1514,12 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'jela_mohanogor_declared_gonosonjog_attended'"
                                                 :month="month"
@@ -1509,17 +1543,17 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1546,9 +1580,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'jela_mohanogor_declared_gonosonjog_invited'"
                                                 :month="month"
@@ -1572,17 +1606,17 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1606,12 +1640,12 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'jela_mohanogor_declared_gonosonjog_associated_created'"
                                                 :month="month"
@@ -1635,17 +1669,17 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1659,17 +1693,26 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <p class="fixed-input">
-                                                {{
+                                            <input
+                                                name="election_gono_songjog_group_man"
+                                                :value="
                                                     formatBangla(
-                                                        this.mass_communication
-                                                            .total_election_mass_comm_week_man
+                                                        report_sum_data
+                                                            ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                            ?.election_gono_songjog_group_man
                                                     )
-                                                }}
-                                            </p>
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
+                                                :thana_id="
+                                                    report_header?.thana_info?.id
                                                 "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'election_gono_songjog_group'"
@@ -1678,14 +1721,23 @@
                                             </popup>
                                         </div>
                                         <p>/</p>
-                                        <p class="fixed-input">
-                                            {{
+                                        <input
+                                            name="election_gono_songjog_group_woman"
+                                            :value="
                                                 formatBangla(
-                                                    this.mass_communication
-                                                        .total_election_mass_comm_week_woman
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.election_gono_songjog_group_woman
                                                 )
-                                            }}
-                                        </p>
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
                                     </div>
                                 </td>
                                 <td>
@@ -1708,12 +1760,12 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'election_attended'"
                                                 :month="month"
@@ -1737,17 +1789,17 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1774,9 +1826,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'election_how_many_have_been_invited'"
                                                 :month="month"
@@ -1800,17 +1852,17 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1834,14 +1886,14 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
-                                                :field_title="'election_how_many_have_been_invited'"
+                                                :field_title="'election_how_many_associate_members_created'"
                                                 :month="month"
                                             >
                                             </popup>
@@ -1863,17 +1915,17 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -1886,41 +1938,109 @@
                                     <div
                                         class="d-flex justify-content-center align-items-center"
                                     >
-                                        <p class="w-100">
+                                        <!-- <p class="w-100">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
                                                         .total_ulama_mass_comm_week_man
                                                 )
                                             }}
-                                        </p>
+                                        </p> -->
+                                        <input
+                                            name="ulama_gono_songjog_group_man"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.ulama_gono_songjog_group_man
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
                                         <p>/</p>
-                                        <p class="w-100">
+                                        <!-- <p class="w-100">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
                                                         .total_ulama_mass_comm_week_woman
                                                 )
                                             }}
-                                        </p>
+                                        </p> -->
+                                        <input
+                                            name="ulama_gono_songjog_group_woman"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.ulama_gono_songjog_group_woman
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
                                         <p>|</p>
-                                        <p class="w-100">
+                                        <!-- <p class="w-100">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
                                                         .total_pesajibi_mass_comm_week_man
                                                 )
                                             }}
-                                        </p>
+                                        </p> -->
+                                        <input
+                                            name="peshajibi_gono_songjog_group_man"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.peshajibi_gono_songjog_group_man
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
                                         <p>/</p>
-                                        <p class="w-100">
+                                        <!-- <p class="w-100">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
                                                         .total_pesajibi_mass_comm_week_woman
                                                 )
                                             }}
-                                        </p>
+                                        </p> -->
+                                        <input
+                                            name="peshajibi_gono_songjog_group_woman"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.peshajibi_gono_songjog_group_woman
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
                                     </div>
                                 </td>
                                 <td>
@@ -1945,15 +2065,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
-                                                :field_title="'how_many_groups_are_out'"
+                                                :field_title="'other_gono_songjog_group'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p>/</p>
                                         <div>
@@ -1974,15 +2094,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p class="mx-1">|</p>
                                         <div>
@@ -2003,15 +2123,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p>/</p>
                                         <div>
@@ -2032,15 +2152,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -2066,15 +2186,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p>/</p>
                                         <div>
@@ -2095,15 +2215,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p class="mx-1">|</p>
                                         <div>
@@ -2124,15 +2244,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p>/</p>
                                         <div>
@@ -2153,15 +2273,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -2187,15 +2307,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p>/</p>
                                         <div>
@@ -2216,15 +2336,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p class="mx-1">|</p>
                                         <div>
@@ -2245,15 +2365,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                         <p>/</p>
                                         <div>
@@ -2274,15 +2394,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -2291,15 +2411,32 @@
                                 <td class="text-start px-2">অন্যান্য</td>
                                 <td>
                                     <div class="parent_popup">
-                                        {{
+                                        <!-- {{
                                             formatBangla(
                                                 this.mass_communication
                                                     .total_others
                                             )
-                                        }}
+                                        }} -->
+                                        <input
+                                            name="other_gono_songjog_group"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                                                        ?.other_gono_songjog_group
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-dawat4-gono-songjog-and-dawat-ovijan'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
+                                            :thana_id="
+                                                report_header?.thana_info?.id
                                             "
                                             :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'other_gono_songjog_group'"
@@ -2328,9 +2465,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'other_attended'"
                                             :month="month"
@@ -2358,9 +2495,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'other_how_many_have_been_invited'"
                                             :month="month"
@@ -2388,10 +2525,10 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
+                                            :thana_id="
+                                                report_header?.thana_info?.id
                                             "
-                                            :table_name="'ward_dawat1_regular_group_wises'"
+                                            :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                             :field_title="'other_how_many_associate_members_created'"
                                             :month="month"
                                         >
@@ -2451,9 +2588,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department1_talimul_qurans'"
                                                 :field_title="'teacher_rokon'"
                                                 :month="month"
@@ -2479,15 +2616,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -2514,10 +2651,10 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
+                                                :table_name="'ward_department1_talimul_qurans'"
                                                 :field_title="'teacher_worker'"
                                                 :month="month"
                                             >
@@ -2542,15 +2679,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -2600,8 +2737,8 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
+                                                :thana_id="
+                                                    report_header?.thana_info?.id
                                                 "
                                                 :table_name="'ward_department1_talimul_qurans'"
                                                 :field_title="'student_rokon'"
@@ -2628,15 +2765,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -2663,8 +2800,8 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
+                                                :thana_id="
+                                                    report_header?.thana_info?.id
                                                 "
                                                 :table_name="'ward_department1_talimul_qurans'"
                                                 :field_title="'student_worker'"
@@ -2691,15 +2828,15 @@
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
                                             />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -2760,9 +2897,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department1_talimul_qurans'"
                                                 :field_title="'quran_learning_total_group'"
                                                 :month="month"
@@ -2790,9 +2927,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department1_talimul_qurans'"
                                                 :field_title="'quran_learning_total_students'"
                                                 :month="month"
@@ -2828,8 +2965,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department1_talimul_qurans'"
@@ -2840,33 +2977,35 @@
                                             </div>
                                             <p>/</p>
                                             <div>
-                                                <input
-                                                    name="total_forkania_madrasah"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department1_talimul_qurans
-                                                                ?.total_forkania_madrasah
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department1-talimul-quran'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_dawat1_regular_group_wises'"
-                                                    :field_title="'how_many_groups_are_out'"
-                                                    :month="month"
-                                                >
-                                                </popup>
+                                                <div class="parent_popup">
+                                                    <input
+                                                        name="total_forkania_madrasah"
+                                                        :value="
+                                                            formatBangla(
+                                                                report_sum_data
+                                                                    ?.thana_department1_talimul_qurans
+                                                                    ?.total_forkania_madrasah
+                                                            )
+                                                        "
+                                                        @change="
+                                                            data_upload(
+                                                                'thana-department1-talimul-quran'
+                                                            )
+                                                        "
+                                                        :type="type"
+                                                        class="bg-input w-100 text-center"
+                                                    />
+                                                    <popup
+                                                        :thana_id="
+                                                            report_header?.thana_info
+                                                                ?.id
+                                                        "
+                                                        :table_name="'ward_department1_talimul_qurans'"
+                                                        :field_title="'total_forkania_madrasah'"
+                                                        :month="month"
+                                                    >
+                                                    </popup>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -2893,8 +3032,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department1_talimul_qurans'"
@@ -2905,33 +3044,35 @@
                                             </div>
                                             <p>/</p>
                                             <div>
-                                                <input
-                                                    name="total_forkania_madrasah_students"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department1_talimul_qurans
-                                                                ?.total_forkania_madrasah_students
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department1-talimul-quran'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_department1_talimul_qurans'"
-                                                    :field_title="'total_forkania_madrasah_students'"
-                                                    :month="month"
-                                                >
-                                                </popup>
+                                                <div class="parent_popup">
+                                                    <input
+                                                        name="total_forkania_madrasah_students"
+                                                        :value="
+                                                            formatBangla(
+                                                                report_sum_data
+                                                                    ?.thana_department1_talimul_qurans
+                                                                    ?.total_forkania_madrasah_students
+                                                            )
+                                                        "
+                                                        @change="
+                                                            data_upload(
+                                                                'thana-department1-talimul-quran'
+                                                            )
+                                                        "
+                                                        :type="type"
+                                                        class="bg-input w-100 text-center"
+                                                    />
+                                                    <popup
+                                                        :thana_id="
+                                                            report_header?.thana_info
+                                                                ?.id
+                                                        "
+                                                        :table_name="'ward_department1_talimul_qurans'"
+                                                        :field_title="'total_forkania_madrasah_students'"
+                                                        :month="month"
+                                                    >
+                                                    </popup>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -2964,9 +3105,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department1_talimul_qurans'"
                                                 :field_title="'how_much_learned_sohih_tilawat'"
                                                 :month="month"
@@ -3003,8 +3144,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department1_talimul_qurans'"
@@ -3015,33 +3156,35 @@
                                             </div>
                                             <p>/</p>
                                             <div>
-                                                <input
-                                                    name="how_much_invited_woman"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department1_talimul_qurans
-                                                                ?.how_much_invited_woman
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department1-talimul-quran'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_department1_talimul_qurans'"
-                                                    :field_title="'how_much_invited_woman'"
-                                                    :month="month"
-                                                >
-                                                </popup>
+                                                <div class="parent_popup">
+                                                    <input
+                                                        name="how_much_invited_woman"
+                                                        :value="
+                                                            formatBangla(
+                                                                report_sum_data
+                                                                    ?.thana_department1_talimul_qurans
+                                                                    ?.how_much_invited_woman
+                                                            )
+                                                        "
+                                                        @change="
+                                                            data_upload(
+                                                                'thana-department1-talimul-quran'
+                                                            )
+                                                        "
+                                                        :type="type"
+                                                        class="bg-input w-100 text-center"
+                                                    />
+                                                    <popup
+                                                        :thana_id="
+                                                            report_header?.thana_info
+                                                                ?.id
+                                                        "
+                                                        :table_name="'ward_department1_talimul_qurans'"
+                                                        :field_title="'how_much_invited_woman'"
+                                                        :month="month"
+                                                    >
+                                                    </popup>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -3073,8 +3216,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department1_talimul_qurans'"
@@ -3085,33 +3228,35 @@
                                             </div>
                                             <p>/</p>
                                             <div>
-                                                <input
-                                                    name="how_much_been_associated_woman"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department1_talimul_qurans
-                                                                ?.how_much_been_associated_woman
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department1-talimul-quran'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_department1_talimul_qurans'"
-                                                    :field_title="'how_much_been_associated_woman'"
-                                                    :month="month"
-                                                >
-                                                </popup>
+                                                <div class="parent_popup">
+                                                    <input
+                                                        name="how_much_been_associated_woman"
+                                                        :value="
+                                                            formatBangla(
+                                                                report_sum_data
+                                                                    ?.thana_department1_talimul_qurans
+                                                                    ?.how_much_been_associated_woman
+                                                            )
+                                                        "
+                                                        @change="
+                                                            data_upload(
+                                                                'thana-department1-talimul-quran'
+                                                            )
+                                                        "
+                                                        :type="type"
+                                                        class="bg-input w-100 text-center"
+                                                    />
+                                                    <popup
+                                                        :thana_id="
+                                                            report_header?.thana_info
+                                                                ?.id
+                                                        "
+                                                        :table_name="'ward_department1_talimul_qurans'"
+                                                        :field_title="'how_much_been_associated_woman'"
+                                                        :month="month"
+                                                    >
+                                                    </popup>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -3184,15 +3329,15 @@
                                             :type="type"
                                             class="bg-input w-100 text-center"
                                         />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                        <!-- <popup
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_department1_talimul_qurans'"
                                             :field_title="'total_muallim_man'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -3214,15 +3359,15 @@
                                             :type="type"
                                             class="bg-input w-100 text-center"
                                         />
-                                        <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                        <!-- <popup
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -3238,7 +3383,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <div class="position-relative">
+                                    <div class="parent_popup">
                                         <input
                                             name="total_muallim_increased_man"
                                             :value="
@@ -3257,18 +3402,18 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
-                                            :table_name="'ward_dawat1_regular_group_wises'"
-                                            :field_title="'how_many_groups_are_out'"
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
+                                            :table_name="'ward_department1_talimul_qurans'"
+                                            :field_title="'total_muallim_increased_man'"
                                             :month="month"
                                         >
                                         </popup>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="position-relative">
+                                    <div class="parent_popup">
                                         <input
                                             name="total_muallim_increased_woman"
                                             :value="
@@ -3287,9 +3432,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_department1_talimul_qurans'"
                                             :field_title="'total_muallim_increased_woman'"
                                             :month="month"
@@ -3316,7 +3461,7 @@
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="govment_calculated_village_amount"
                                                     :value="
@@ -3335,9 +3480,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
+                                                    :thana_id="
+                                                        report_header?.thana_info?.id
                                                     "
                                                     :table_name="'ward_department2_moholla_vittik_dawats'"
                                                     :field_title="'govment_calculated_village_amount'"
@@ -3347,33 +3491,34 @@
                                             </div>
                                             <p>/</p>
                                             <div>
-                                                <input
-                                                    name="govment_calculated_moholla_amount"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department2_moholla_vittik_dawats
-                                                                ?.govment_calculated_moholla_amount
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department2-moholla-vittik-dawat'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
-                                                    :field_title="'govment_calculated_moholla_amount'"
-                                                    :month="month"
-                                                >
-                                                </popup>
+                                                <div class="parent_popup">
+                                                    <input
+                                                        name="govment_calculated_moholla_amount"
+                                                        :value="
+                                                            formatBangla(
+                                                                report_sum_data
+                                                                    ?.thana_department2_moholla_vittik_dawats
+                                                                    ?.govment_calculated_moholla_amount
+                                                            )
+                                                        "
+                                                        @change="
+                                                            data_upload(
+                                                                'thana-department2-moholla-vittik-dawat'
+                                                            )
+                                                        "
+                                                        :type="type"
+                                                        class="bg-input w-100 text-center"
+                                                    />
+                                                    <popup
+                                                        :thana_id="
+                                                            report_header?.thana_info?.id
+                                                        "
+                                                        :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                        :field_title="'govment_calculated_moholla_amount'"
+                                                        :month="month"
+                                                    >
+                                                    </popup>
+                                                </div>
                                             </div>
                                         </div>
                                     </th>
@@ -3407,16 +3552,16 @@
                                                     :type="type"
                                                     class="bg-input w-100 text-center"
                                                 />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                <!-- <popup
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
                                                     :field_title="'how_many_groups_are_out'"
                                                     :month="month"
                                                 >
-                                                </popup>
+                                                </popup> -->
                                             </div>
                                             <p>/</p>
                                             <div>
@@ -3437,16 +3582,16 @@
                                                     :type="type"
                                                     class="bg-input w-100 text-center"
                                                 />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                <!-- <popup
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
                                                     :field_title="'how_many_groups_are_out'"
                                                     :month="month"
                                                 >
-                                                </popup>
+                                                </popup> -->
                                             </div>
                                         </div>
                                     </td>
@@ -3454,7 +3599,7 @@
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="total_village_committee_increased"
                                                     :value="
@@ -3473,18 +3618,18 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
-                                                    :table_name="'ward_dawat1_regular_group_wises'"
-                                                    :field_title="'how_many_groups_are_out'"
+                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                    :field_title="'total_village_committee_increased'"
                                                     :month="month"
                                                 >
                                                 </popup>
                                             </div>
                                             <p>/</p>
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="total_moholla_committee_increased"
                                                     :value="
@@ -3503,8 +3648,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department2_moholla_vittik_dawats'"
@@ -3543,16 +3688,16 @@
                                                     :type="type"
                                                     class="bg-input w-100 text-center"
                                                 />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                <!-- <popup
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
                                                     :field_title="'how_many_groups_are_out'"
                                                     :month="month"
                                                 >
-                                                </popup>
+                                                </popup> -->
                                             </div>
                                             <p>/</p>
                                             <div>
@@ -3573,16 +3718,16 @@
                                                     :type="type"
                                                     class="bg-input w-100 text-center"
                                                 />
-                                                <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                <!-- <popup
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
                                                     :field_title="'how_many_groups_are_out'"
                                                     :month="month"
                                                 >
-                                                </popup>
+                                                </popup> -->
                                             </div>
                                         </div>
                                     </td>
@@ -3590,7 +3735,7 @@
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="special_dawat_included_village_increased"
                                                     :value="
@@ -3609,9 +3754,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
-                                                            ?.id
+                                                    :thana_id="
+                                                        report_header?.thana_info?.id
                                                     "
                                                     :table_name="'ward_department2_moholla_vittik_dawats'"
                                                     :field_title="'special_dawat_included_village_increased'"
@@ -3620,7 +3764,7 @@
                                                 </popup>
                                             </div>
                                             <p>/</p>
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="special_dawat_included_moholla_increased"
                                                     :value="
@@ -3639,8 +3783,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department2_moholla_vittik_dawats'"
@@ -3661,7 +3805,7 @@
                                         কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                     </td>
                                     <td class="width-30">
-                                        <div class="position-relative">
+                                        <div class="parent_popup">
                                             <input
                                                 name="how_many_been_invited"
                                                 :value="
@@ -3680,10 +3824,10 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
+                                                :thana_id="
+                                                    report_header?.thana_info?.id
                                                 "
-                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :table_name="'ward_department2_moholla_vittik_dawats'"
                                                 :field_title="'how_many_been_invited'"
                                                 :month="month"
                                             >
@@ -3715,10 +3859,10 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
+                                                :thana_id="
+                                                    report_header?.thana_info?.id
                                                 "
-                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :table_name="'ward_department2_moholla_vittik_dawats'"
                                                 :field_title="'how_many_associated_created'"
                                                 :month="month"
                                             >
@@ -3752,7 +3896,7 @@
                                             হয়েছে
                                         </td>
                                         <td>
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="how_many_young_been_invited"
                                                     :value="
@@ -3771,8 +3915,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department3_jubo_somaj_dawats'"
@@ -3788,7 +3932,7 @@
                                             কতজন যুবক সহযোগী সদস্য হয়েছেন
                                         </td>
                                         <td>
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="how_many_young_been_associated"
                                                     :value="
@@ -3807,8 +3951,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department3_jubo_somaj_dawats'"
@@ -3839,7 +3983,7 @@
                                 <tr>
                                     <td class="text-start px-2">যুব কমিটি</td>
                                     <td>
-                                        <div class="position-relative">
+                                        <div class="parent_popup">
                                             {{
                                                 formatBangla(
                                                     report_sum_data
@@ -3847,15 +3991,15 @@
                                                         ?.total_young_committee
                                                 )
                                             }}
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                            <!-- <popup
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department3_jubo_somaj_dawats'"
                                                 :field_title="'total_young_committee'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </td>
                                     <td>
@@ -3878,10 +4022,10 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
+                                                :thana_id="
+                                                    report_header?.thana_info?.id
                                                 "
-                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :table_name="'ward_department3_jubo_somaj_dawats'"
                                                 :field_title="'total_young_committee_increased'"
                                                 :month="month"
                                             >
@@ -3894,63 +4038,124 @@
                                         নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে
                                     </td>
                                     <td>
-                                        <div class="position-relative">
-                                            <input
-                                                name="total_new_club"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.thana_department3_jubo_somaj_dawats
-                                                            ?.total_new_club
-                                                    )
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_new_somiti"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department3_jubo_somaj_dawats
+                                                                ?.total_new_somiti
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department3-jubo-somaj-dawat'
+                                                        )
+                                                    "
+                                                    :type="type"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <!-- <popup
+                                                    :thana_id="
+                                                    report_header?.thana_info?.id
                                                 "
-                                                @change="
-                                                    data_upload(
-                                                        'thana-department3-jubo-somaj-dawat'
-                                                    )
+                                                    :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                    :field_title="'total_new_club'"
+                                                    :month="month"
+                                                >
+                                                </popup> -->
+                                            </div>
+                                            <p>/</p>
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_new_club"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department3_jubo_somaj_dawats
+                                                                ?.total_new_club
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department3-jubo-somaj-dawat'
+                                                        )
+                                                    "
+                                                    :type="type"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <!-- <popup
+                                                    :thana_id="
+                                                    report_header?.thana_info?.id
                                                 "
-                                                :type="type"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'ward_department3_jubo_somaj_dawats'"
-                                                :field_title="'total_new_club'"
-                                                :month="month"
-                                            >
-                                            </popup>
+                                                    :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                    :field_title="'total_new_club'"
+                                                    :month="month"
+                                                >
+                                                </popup> -->
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="position-relative">
-                                            <input
-                                                name="total_new_club_increased"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.thana_department3_jubo_somaj_dawats
-                                                            ?.total_new_club_increased
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'thana-department3-jubo-somaj-dawat'
-                                                    )
-                                                "
-                                                :type="type"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
-                                                :table_name="'ward_dawat1_regular_group_wises'"
-                                                :field_title="'total_new_club_increased'"
-                                                :month="month"
-                                            >
-                                            </popup>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_new_club_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department3_jubo_somaj_dawats
+                                                                ?.total_new_club_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department3-jubo-somaj-dawat'
+                                                        )
+                                                    "
+                                                    :type="type"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <popup
+                                                    :thana_id="
+                                                        report_header?.thana_info?.id
+                                                    "
+                                                    :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                    :field_title="'total_new_club_increased'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="total_new_club_increased"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department3_jubo_somaj_dawats
+                                                                ?.total_new_club_increased
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department3-jubo-somaj-dawat'
+                                                        )
+                                                    "
+                                                    :type="type"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <popup
+                                                    :thana_id="
+                                                        report_header?.thana_info?.id
+                                                    "
+                                                    :table_name="'ward_department3_jubo_somaj_dawats'"
+                                                    :field_title="'total_new_club_increased'"
+                                                    :month="month"
+                                                >
+                                                </popup>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -3979,9 +4184,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department3_jubo_somaj_dawats'"
                                                 :field_title="'stablished_club_total_increased'"
                                                 :month="month"
@@ -4009,9 +4214,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department3_jubo_somaj_dawats'"
                                                 :field_title="'stablished_club_total_increased'"
                                                 :month="month"
@@ -4071,8 +4276,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4101,8 +4306,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4136,8 +4341,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4166,8 +4371,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4201,8 +4406,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4231,8 +4436,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4302,8 +4507,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department4_different_job_holders_dawats'"
@@ -4332,8 +4537,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4367,8 +4572,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department4_different_job_holders_dawats'"
@@ -4397,8 +4602,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4432,8 +4637,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4462,8 +4667,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4530,9 +4735,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'olama_masayekh_invited'"
                                                 :month="month"
@@ -4560,9 +4765,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'olama_masayekh_been_associated'"
                                                 :month="month"
@@ -4590,9 +4795,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'olama_masayekh_target'"
                                                 :month="month"
@@ -4640,9 +4845,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
@@ -4668,9 +4873,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
@@ -4696,9 +4901,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
@@ -4749,8 +4954,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department4_different_job_holders_dawats'"
@@ -4779,8 +4984,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4814,8 +5019,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department4_different_job_holders_dawats'"
@@ -4844,8 +5049,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4879,8 +5084,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4909,8 +5114,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_dawat1_regular_group_wises'"
@@ -4976,9 +5181,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
@@ -5004,9 +5209,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
@@ -5032,9 +5237,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawat1_regular_group_wises'"
                                             :field_title="'how_many_groups_are_out'"
                                             :month="month"
@@ -5082,9 +5287,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'prantik_jonogosti_invited'"
                                                 :month="month"
@@ -5112,9 +5317,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'prantik_jonogosti_been_associated'"
                                                 :month="month"
@@ -5142,9 +5347,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'prantik_jonogosti_target'"
                                                 :month="month"
@@ -5193,9 +5398,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'vinno_dormalombi_invited'"
                                                 :month="month"
@@ -5223,9 +5428,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'vinno_dormalombi_been_associated'"
                                                 :month="month"
@@ -5253,9 +5458,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department4_different_job_holders_dawats'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
@@ -5315,9 +5520,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_department5_paribarik_dawats'"
                                             :field_title="'total_attended_family'"
                                             :month="month"
@@ -5345,9 +5550,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_department5_paribarik_dawats'"
                                             :field_title="'how_many_new_family_invited'"
                                             :month="month"
@@ -5399,9 +5604,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
                                             :field_title="'total_mosjid_increase'"
                                             :month="month"
@@ -5433,9 +5638,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
                                             :field_title="'general_dawah_center_increase'"
                                             :month="month"
@@ -5469,9 +5674,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
                                             :field_title="'dawat_included_mosjid_increase'"
                                             :month="month"
@@ -5506,9 +5711,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
                                                 :field_title="'mosjid_wise_information_center_increase'"
                                                 :month="month"
@@ -5536,8 +5741,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
@@ -5575,9 +5780,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
                                             :field_title="'mosjid_wise_dawah_center_increase'"
                                             :month="month"
@@ -5608,7 +5813,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -5657,9 +5862,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department7_dawat_in_technologies'"
                                                 :field_title="'total_well_known'"
                                                 :month="month"
@@ -5686,9 +5891,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
@@ -5720,9 +5925,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_department7_dawat_in_technologies'"
                                                 :field_title="'total_attended'"
                                                 :month="month"
@@ -5749,9 +5954,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_dawat1_regular_group_wises'"
                                                 :field_title="'how_many_groups_are_out'"
                                                 :month="month"
@@ -5795,7 +6000,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -5821,7 +6026,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -5847,7 +6052,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawat1_regular_group_wises'"
                                         :field_title="'how_many_groups_are_out'"
                                         :month="month"
@@ -5908,7 +6113,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawah_and_prokashonas'"
                                         :field_title="'total_pathagar_increase'"
                                         :month="month"
@@ -5953,7 +6158,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawah_and_prokashonas'"
                                         :field_title="'ward_book_sales_center_increase'"
                                         :month="month"
@@ -5997,7 +6202,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawah_and_prokashonas'"
                                         :field_title="'books_in_pathagar_increase'"
                                         :month="month"
@@ -6039,7 +6244,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawah_and_prokashonas'"
                                         :field_title="'ward_book_sales_increase'"
                                         :month="month"
@@ -6073,7 +6278,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawah_and_prokashonas'"
                                         :field_title="'book_distribution'"
                                         :month="month"
@@ -6107,7 +6312,7 @@
                                         class="bg-input w-100 text-center"
                                     /> -->
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_dawah_and_prokashonas'"
                                         :field_title="'soft_copy_book_distribution'"
                                         :month="month"
@@ -6135,7 +6340,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'soft_copy_book_distribution_increase'"
                                         :month="month"
@@ -6160,7 +6365,7 @@
                                         @change="data_upload('ward-dawah-and-prokashona')" :type="type"
                                         class="bg-input w-100 text-center" /> -->
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_center'"
                                         :month="month"
@@ -6188,7 +6393,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_center_increase'"
                                         :month="month"
@@ -6220,7 +6425,7 @@
                                         class="bg-input w-100 text-center"
                                     /> -->
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'dawat_link_distribution'"
                                         :month="month"
@@ -6249,7 +6454,7 @@
                                     />
 
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'dawat_link_distribution_increase'"
                                         :month="month"
@@ -6280,7 +6485,7 @@
                                         class="bg-input w-100 text-center"
                                     /> -->
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution'"
                                         :month="month"
@@ -6308,7 +6513,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'dawah_and_prokashonas'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -6372,9 +6577,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawah_and_prokashonas'"
                                             :field_title="'sonar_bangla_increase'"
                                             :month="month"
@@ -6401,9 +6606,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawah_and_prokashonas'"
                                             :field_title="'songram_increase'"
                                             :month="month"
@@ -6430,9 +6635,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_dawah_and_prokashonas'"
                                             :field_title="'prithibi_increase'"
                                             :month="month"
@@ -6449,42 +6654,42 @@
                 <div class="do_not_print">
                     <popup-note
                         :label="'সোনার বাংলা মোট সংখ্যা'"
-                        :ward_id="report_header?.ward_info?.id"
+                        :thana_id="report_header?.thana_info?.id"
                         :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'sonar_bangla'"
                         :month="month"
                     />
                     <popup-note
                         :label="'সোনার বাংলা বৃদ্ধি'"
-                        :ward_id="report_header?.ward_info?.id"
+                        :thana_id="report_header?.thana_info?.id"
                         :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'sonar_bangla_increase'"
                         :month="month"
                     />
                     <popup-note
                         :label="'সংগ্রাম মোট সংখ্যা'"
-                        :ward_id="report_header?.ward_info?.id"
+                        :thana_id="report_header?.thana_info?.id"
                         :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'songram'"
                         :month="month"
                     />
                     <popup-note
                         :label="'সংগ্রাম বৃদ্ধি'"
-                        :ward_id="report_header?.ward_info?.id"
+                        :thana_id="report_header?.thana_info?.id"
                         :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'songram_increase'"
                         :month="month"
                     />
                     <popup-note
                         :label="'পৃথিবী মোট সংখ্যা'"
-                        :ward_id="report_header?.ward_info?.id"
+                        :thana_id="report_header?.thana_info?.id"
                         :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'prithibi'"
                         :month="month"
                     />
                     <popup-note
                         :label="'পৃথিবী বৃদ্ধি'"
-                        :ward_id="report_header?.ward_info?.id"
+                        :thana_id="report_header?.thana_info?.id"
                         :table_name="'thana_dawah_and_prokashonas'"
                         :field_title="'prithibi_increase'"
                         :month="month"
@@ -6530,8 +6735,8 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
+                                            :thana_id="
+                                                report_header?.thana_info?.id
                                             "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'unit_masik_sadaron_sova_total'"
@@ -6560,9 +6765,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'unit_masik_sadaron_sova_target'"
                                             :month="month"
@@ -6590,9 +6795,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'unit_masik_sadaron_sova'"
                                             :month="month"
@@ -6627,9 +6832,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dawati_sova_total'"
                                                 :month="month"
@@ -6656,9 +6861,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'alochona_sova_total'"
                                                 :month="month"
@@ -6685,9 +6890,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'sudhi_somabesh_total'"
                                                 :month="month"
@@ -6717,9 +6922,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dawati_sova_target'"
                                                 :month="month"
@@ -6746,9 +6951,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'alochona_sova_target'"
                                                 :month="month"
@@ -6775,9 +6980,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'sudhi_somabesh_target'"
                                                 :month="month"
@@ -6807,9 +7012,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dawati_sova'"
                                                 :month="month"
@@ -6836,9 +7041,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'alochona_sova'"
                                                 :month="month"
@@ -6865,9 +7070,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'sudhi_somabesh'"
                                                 :month="month"
@@ -6902,9 +7107,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'siratunnabi_mahfil_total'"
                                             :month="month"
@@ -6932,9 +7137,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'siratunnabi_mahfil_target'"
                                             :month="month"
@@ -6962,9 +7167,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'siratunnabi_mahfil'"
                                             :month="month"
@@ -6996,9 +7201,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'eid_reunion_total'"
                                             :month="month"
@@ -7026,9 +7231,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'eid_reunion_target'"
                                             :month="month"
@@ -7056,9 +7261,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'eid_reunion'"
                                             :month="month"
@@ -7096,9 +7301,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dars_total'"
                                                 :month="month"
@@ -7125,9 +7330,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'tafsir_total'"
                                                 :month="month"
@@ -7154,9 +7359,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dawati_jonosova_total'"
                                                 :month="month"
@@ -7186,9 +7391,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dars_target'"
                                                 :month="month"
@@ -7215,9 +7420,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'unit_book_distribution_increase'"
                                                 :month="month"
@@ -7244,9 +7449,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dawati_jonosova_target'"
                                                 :month="month"
@@ -7276,9 +7481,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dars'"
                                                 :month="month"
@@ -7305,9 +7510,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'tafsir'"
                                                 :month="month"
@@ -7334,9 +7539,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'dawati_jonosova'"
                                                 :month="month"
@@ -7385,9 +7590,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'iftar_mahfil_personal_total'"
                                                 :month="month"
@@ -7414,9 +7619,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'iftar_mahfil_samostic_total'"
                                                 :month="month"
@@ -7446,9 +7651,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'iftar_mahfil_personal_target'"
                                                 :month="month"
@@ -7475,9 +7680,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'iftar_mahfil_samostic_target'"
                                                 :month="month"
@@ -7507,9 +7712,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'unit_book_distribution_increase'"
                                                 :month="month"
@@ -7537,9 +7742,9 @@
                                             />
 
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'iftar_mahfil_samostic_uposthiti'"
                                                 :month="month"
@@ -7575,9 +7780,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'cha_chakra_total'"
                                                 :month="month"
@@ -7604,9 +7809,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'samostic_khawa_total'"
                                                 :month="month"
@@ -7633,9 +7838,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'sikkha_sofor_total'"
                                                 :month="month"
@@ -7665,9 +7870,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'cha_chakra_target'"
                                                 :month="month"
@@ -7694,9 +7899,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'unit_book_distribution_increase'"
                                                 :month="month"
@@ -7723,9 +7928,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'sikkha_sofor_target'"
                                                 :month="month"
@@ -7755,9 +7960,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'thana_kormosuci_bastobayons'"
                                                 :field_title="'cha_chakra'"
                                                 :month="month"
@@ -7784,9 +7989,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'samostic_khawa'"
                                                 :month="month"
@@ -7813,9 +8018,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'sikkha_sofor'"
                                                 :month="month"
@@ -7851,9 +8056,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'kirat_protijogita_total'"
                                                 :month="month"
@@ -7880,9 +8085,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'unit_book_distribution_increase'"
                                                 :month="month"
@@ -7912,9 +8117,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'kirat_protijogita_target'"
                                                 :month="month"
@@ -7941,9 +8146,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'hamd_nat_protijogita_target'"
                                                 :month="month"
@@ -7973,9 +8178,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_kormosuci_bastobayons'"
                                                 :field_title="'kirat_protijogita'"
                                                 :month="month"
@@ -8002,9 +8207,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'thana_kormosuci_bastobayons'"
                                                 :field_title="'hamd_nat_protijogita'"
                                                 :month="month"
@@ -8037,9 +8242,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'others_total'"
                                             :month="month"
@@ -8067,9 +8272,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'others_target'"
                                             :month="month"
@@ -8097,9 +8302,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_kormosuci_bastobayons'"
                                             :field_title="'others'"
                                             :month="month"
@@ -8118,126 +8323,126 @@
             >
                 <popup-note
                     :label="'ইউনিটে মাসিক সাধারণ সভা মোট সংখ্যা'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_total'"
                     :month="month"
                 />
                 <popup-note
                     :label="'ইউনিটে মাসিক সাধারণ সভা বৃদ্ধি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_target'"
                     :month="month"
                 />
                 <popup-note
                     :label="'ইউনিটে মাসিক সাধারণ সভা মোট উপস্থিতি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'unit_masik_sadaron_sova_uposthiti'"
                     :month="month"
                 />
                 <popup-note
                     :label="'ইফতার মাহফিল (ব্যক্তিগত) মোট সংখ্যা'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_total'"
                     :month="month"
                 />
                 <popup-note
                     :label="'ইফতার মাহফিল (ব্যক্তিগত) বৃদ্ধি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_target'"
                     :month="month"
                 />
                 <popup-note
                     :label="'ইফতার মাহফিল (ব্যক্তিগত) মোট উপস্থিতি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_personal_uposthiti'"
                     :month="month"
                 />
                 <popup-note
                     :label="'ইফতার মাহফিল (সাংগঠনিক) মোট সংখ্যা'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_total'"
                     :month="month"
                 />
                 <popup-note
                     :label="'ইফতার মাহফিল (সাংগঠনিক) বৃদ্ধি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_target'"
                     :month="month"
                 />
                 <popup-note
                     :label="'ইফতার মাহফিল (সাংগঠনিক) মোট উপস্থিতি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'iftar_mahfil_samostic_uposthiti'"
                     :month="month"
                 />
                 <popup-note
                     :label="'চা চক্র মোট সংখ্যা'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'cha_chakra_total'"
                     :month="month"
                 />
                 <popup-note
                     :label="'চা চক্র বৃদ্ধি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'cha_chakra_target'"
                     :month="month"
                 />
                 <popup-note
                     :label="'চা চক্র মোট উপস্থিতি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'cha_chakra_uposthiti'"
                     :month="month"
                 />
                 <popup-note
                     :label="'সামষ্টিক খাওয়া মোট সংখ্যা'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_total'"
                     :month="month"
                 />
                 <popup-note
                     :label="'সামষ্টিক খাওয়া বৃদ্ধি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_target'"
                     :month="month"
                 />
                 <popup-note
                     :label="'সামষ্টিক খাওয়া মোট উপস্থিতি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'samostic_khawa_uposthiti'"
                     :month="month"
                 />
                 <popup-note
                     :label="'শিক্ষা সফর মোট সংখ্যা'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_total'"
                     :month="month"
                 />
                 <popup-note
                     :label="'শিক্ষা সফর বৃদ্ধি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_target'"
                     :month="month"
                 />
                 <popup-note
                     :label="'শিক্ষা সফর মোট উপস্থিতি'"
-                    :ward_id="report_header?.ward_info?.id"
+                    :thana_id="report_header?.thana_info?.id"
                     :table_name="'kormosuci_bastobayons'"
                     :field_title="'sikkha_sofor_uposthiti'"
                     :month="month"
@@ -8270,9 +8475,9 @@
                                 <td>
                                     <div class="position-relative">
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'rokon_previous'"
                                             :month="month"
@@ -8283,9 +8488,9 @@
                                 <td>
                                     <div class="position-relative">
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'rokon_present'"
                                             :month="month"
@@ -8362,9 +8567,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'rokon_gatti'"
                                             :month="month"
@@ -8392,9 +8597,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'rokon_target'"
                                             :month="month"
@@ -8422,9 +8627,9 @@
                                         </div>
 
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'rokon_target'"
                                             :month="month"
@@ -8439,9 +8644,9 @@
                                 <td>
                                     <div class="position-relative">
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'worker_previous'"
                                             :month="month"
@@ -8452,9 +8657,9 @@
                                 <td>
                                     <div class="position-relative">
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'rokon_gatti'"
                                             :month="month"
@@ -8482,9 +8687,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'worker_briddhi'"
                                             :month="month"
@@ -8512,9 +8717,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'worker_gatti'"
                                             :month="month"
@@ -8542,9 +8747,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'worker_target'"
                                             :month="month"
@@ -8572,9 +8777,9 @@
                                         </div>
 
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon1_jonosoktis'"
                                             :field_title="'rokon_target'"
                                             :month="month"
@@ -8615,9 +8820,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_man_previous'"
                                             :month="month"
@@ -8635,9 +8840,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_man_present'"
                                             :month="month"
@@ -8665,9 +8870,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_man_briddhi'"
                                             :month="month"
@@ -8695,9 +8900,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_man_target'"
                                             :month="month"
@@ -8736,9 +8941,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_woman_previous'"
                                             :month="month"
@@ -8756,9 +8961,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_woman_present'"
                                             :month="month"
@@ -8786,9 +8991,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'unit_book_distribution_increase'"
                                             :month="month"
@@ -8816,9 +9021,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_woman_target'"
                                             :month="month"
@@ -8865,9 +9070,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_previous'"
                                             :month="month"
@@ -8890,9 +9095,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_present'"
                                             :month="month"
@@ -8919,9 +9124,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_briddhi'"
                                             :month="month"
@@ -8948,9 +9153,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon2_associate_members'"
                                             :field_title="'associate_member_target'"
                                             :month="month"
@@ -9036,9 +9241,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_rokon_previous'"
                                             :month="month"
@@ -9056,9 +9261,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_rokon_present'"
                                             :month="month"
@@ -9086,9 +9291,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_rokon_increase'"
                                             :month="month"
@@ -9116,9 +9321,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon3_departmental_information'"
                                             :field_title="'women_rokon_gatti'"
                                             :month="month"
@@ -9146,9 +9351,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon3_departmental_information'"
                                             :field_title="'women_rokon_target'"
                                             :month="month"
@@ -9169,9 +9374,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon3_departmental_information'"
                                             :field_title="'women_kormi_previous'"
                                             :month="month"
@@ -9189,9 +9394,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon3_departmental_information'"
                                             :field_title="'women_kormi_present'"
                                             :month="month"
@@ -9219,9 +9424,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_kormi_increase'"
                                             :month="month"
@@ -9249,9 +9454,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_kormi_gatti'"
                                             :month="month"
@@ -9279,9 +9484,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_kormi_target'"
                                             :month="month"
@@ -9302,9 +9507,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_associate_member_previous'"
                                             :month="month"
@@ -9322,9 +9527,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_associate_member_present'"
                                             :month="month"
@@ -9352,9 +9557,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_associate_member_increase'"
                                             :month="month"
@@ -9382,9 +9587,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'associate_member_target'"
                                             :month="month"
@@ -9412,9 +9617,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'women_associate_member_target'"
                                             :month="month"
@@ -9433,9 +9638,9 @@
                                     <!-- <input name="sromojibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                     <div class="position-relative">
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_rokon_previous'"
                                             :month="month"
@@ -9447,9 +9652,9 @@
                                     <!-- <input name="sromojibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                     <div class="position-relative">
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_rokon_present'"
                                             :month="month"
@@ -9477,9 +9682,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_rokon_increase'"
                                             :month="month"
@@ -9507,9 +9712,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_rokon_gatti'"
                                             :month="month"
@@ -9537,9 +9742,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_rokon_target'"
                                             :month="month"
@@ -9560,9 +9765,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_kormi_previous'"
                                             :month="month"
@@ -9580,9 +9785,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_kormi_previous'"
                                             :month="month"
@@ -9610,9 +9815,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_kormi_increase'"
                                             :month="month"
@@ -9640,9 +9845,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_kormi_gatti'"
                                             :month="month"
@@ -9670,9 +9875,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_kormi_target'"
                                             :month="month"
@@ -9693,9 +9898,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_associate_member_previous'"
                                             :month="month"
@@ -9713,9 +9918,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_associate_member_present'"
                                             :month="month"
@@ -9743,9 +9948,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_associate_member_increase'"
                                             :month="month"
@@ -9773,9 +9978,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_associate_member_gatti'"
                                             :month="month"
@@ -9803,9 +10008,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'sromojibi_associate_member_target'"
                                             :month="month"
@@ -9830,9 +10035,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_rokon_previous'"
                                             :month="month"
@@ -9850,9 +10055,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_rokon_present'"
                                             :month="month"
@@ -9880,9 +10085,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_rokon_increase'"
                                             :month="month"
@@ -9910,9 +10115,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon3_departmental_information'"
                                             :field_title="'ulama_rokon_gatti'"
                                             :month="month"
@@ -9940,9 +10145,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'associate_member_target'"
                                             :month="month"
@@ -9963,9 +10168,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_kormi_previous'"
                                             :month="month"
@@ -9983,9 +10188,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_kormi_present'"
                                             :month="month"
@@ -10013,9 +10218,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_kormi_increase'"
                                             :month="month"
@@ -10043,9 +10248,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_kormi_gatti'"
                                             :month="month"
@@ -10073,9 +10278,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_kormi_target'"
                                             :month="month"
@@ -10096,9 +10301,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_associate_member_previous'"
                                             :month="month"
@@ -10116,9 +10321,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_associate_member_present'"
                                             :month="month"
@@ -10146,9 +10351,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_associate_member_increase'"
                                             :month="month"
@@ -10176,9 +10381,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_associate_member_gatti'"
                                             :month="month"
@@ -10206,9 +10411,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'ulama_associate_member_target'"
                                             :month="month"
@@ -10233,9 +10438,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_rokon_previous'"
                                             :month="month"
@@ -10253,9 +10458,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_rokon_previous'"
                                             :month="month"
@@ -10283,9 +10488,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_rokon_increase'"
                                             :month="month"
@@ -10313,9 +10518,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_rokon_gatti'"
                                             :month="month"
@@ -10343,9 +10548,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_rokon_target'"
                                             :month="month"
@@ -10366,9 +10571,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_kormi_previous'"
                                             :month="month"
@@ -10386,9 +10591,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_kormi_present'"
                                             :month="month"
@@ -10416,9 +10621,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_kormi_increase'"
                                             :month="month"
@@ -10446,9 +10651,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_kormi_gatti'"
                                             :month="month"
@@ -10476,9 +10681,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_kormi_target'"
                                             :month="month"
@@ -10499,9 +10704,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_associate_member_previous'"
                                             :month="month"
@@ -10519,9 +10724,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_associate_member_present'"
                                             :month="month"
@@ -10549,9 +10754,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_associate_member_increase'"
                                             :month="month"
@@ -10579,9 +10784,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_associate_member_gatti'"
                                             :month="month"
@@ -10609,9 +10814,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'pesha_jibi_associate_member_target'"
                                             :month="month"
@@ -10636,9 +10841,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_rokon_previous'"
                                             :month="month"
@@ -10656,9 +10861,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_rokon_present'"
                                             :month="month"
@@ -10686,9 +10891,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_rokon_increase'"
                                             :month="month"
@@ -10716,9 +10921,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_rokon_gatti'"
                                             :month="month"
@@ -10746,9 +10951,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_rokon_target'"
                                             :month="month"
@@ -10769,9 +10974,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_kormi_previous'"
                                             :month="month"
@@ -10789,9 +10994,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_kormi_previous'"
                                             :month="month"
@@ -10819,9 +11024,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_kormi_increase'"
                                             :month="month"
@@ -10849,9 +11054,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_kormi_gatti'"
                                             :month="month"
@@ -10879,9 +11084,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_kormi_target'"
                                             :month="month"
@@ -10902,9 +11107,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_associate_member_previous'"
                                             :month="month"
@@ -10922,9 +11127,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_associate_member_present'"
                                             :month="month"
@@ -10952,9 +11157,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_associate_member_increase'"
                                             :month="month"
@@ -10982,9 +11187,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_associate_member_gatti'"
                                             :month="month"
@@ -11012,9 +11217,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'jubo_associate_member_target'"
                                             :month="month"
@@ -11039,9 +11244,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_kormi_previous'"
                                             :month="month"
@@ -11059,9 +11264,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_kormi_present'"
                                             :month="month"
@@ -11089,9 +11294,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_kormi_increase'"
                                             :month="month"
@@ -11118,7 +11323,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_songothon3_departmental_information'"
                                         :field_title="'vinno_dormalombi_kormi_gatti'"
                                         :month="month"
@@ -11145,9 +11350,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_kormi_target'"
                                             :month="month"
@@ -11168,9 +11373,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_associate_member_previous'"
                                             :month="month"
@@ -11188,9 +11393,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_associate_member_present'"
                                             :month="month"
@@ -11218,9 +11423,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_associate_member_increase'"
                                             :month="month"
@@ -11248,9 +11453,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_associate_member_gatti'"
                                             :month="month"
@@ -11278,9 +11483,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :field_title="'vinno_dormalombi_associate_member_target'"
                                             :month="month"
@@ -11332,7 +11537,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11358,7 +11563,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11384,7 +11589,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11410,7 +11615,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11436,7 +11641,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11481,7 +11686,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11507,7 +11712,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11533,7 +11738,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11559,7 +11764,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11585,7 +11790,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11630,7 +11835,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11656,7 +11861,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11682,7 +11887,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11708,7 +11913,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11734,7 +11939,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11779,7 +11984,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11805,7 +12010,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11831,7 +12036,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11857,7 +12062,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11883,7 +12088,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11930,7 +12135,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11956,7 +12161,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -11982,7 +12187,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12008,7 +12213,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12034,7 +12239,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12081,7 +12286,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12107,7 +12312,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12133,7 +12338,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12159,7 +12364,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12185,7 +12390,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12232,7 +12437,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12258,7 +12463,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12284,7 +12489,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12310,7 +12515,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12336,7 +12541,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12383,7 +12588,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12409,7 +12614,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12435,7 +12640,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12461,7 +12666,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12487,7 +12692,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12534,7 +12739,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12560,7 +12765,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12586,7 +12791,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12612,7 +12817,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12638,7 +12843,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12685,7 +12890,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12711,7 +12916,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12737,7 +12942,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12763,7 +12968,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12789,7 +12994,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12836,7 +13041,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12862,7 +13067,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12888,7 +13093,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12914,7 +13119,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12940,7 +13145,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -12989,7 +13194,7 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="report_header?.ward_info?.id"
+                                                :thana_id="report_header?.thana_info?.id"
                                                 :table_name="'thana_songothon4_organizational_structures'"
                                                 :field_title="'unit_book_distribution_increase'"
                                                 :month="month"
@@ -13016,7 +13221,7 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="report_header?.ward_info?.id"
+                                            :thana_id="report_header?.thana_info?.id"
                                             :table_name="'thana_songothon4_organizational_structures'"
                                             :field_title="'unit_book_distribution_increase'"
                                             :month="month"
@@ -13044,7 +13249,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13069,7 +13274,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13097,7 +13302,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13122,7 +13327,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13150,7 +13355,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13175,7 +13380,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13203,7 +13408,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13228,7 +13433,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13292,7 +13497,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13317,7 +13522,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13345,7 +13550,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13370,7 +13575,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13398,7 +13603,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13423,7 +13628,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13451,7 +13656,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13476,7 +13681,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13504,7 +13709,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13529,7 +13734,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13593,7 +13798,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13618,7 +13823,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13646,7 +13851,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13671,7 +13876,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13699,7 +13904,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13724,7 +13929,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13752,7 +13957,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13777,7 +13982,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13805,7 +14010,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13830,7 +14035,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13894,7 +14099,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13919,7 +14124,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13947,7 +14152,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -13972,7 +14177,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14000,7 +14205,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14025,7 +14230,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14053,7 +14258,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14078,7 +14283,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14106,7 +14311,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14131,7 +14336,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14198,7 +14403,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14224,7 +14429,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14250,7 +14455,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14276,7 +14481,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14302,7 +14507,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14349,7 +14554,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14375,7 +14580,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14401,7 +14606,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14427,7 +14632,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14453,7 +14658,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14500,7 +14705,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14526,7 +14731,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14552,7 +14757,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14578,7 +14783,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14604,7 +14809,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14651,7 +14856,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14677,7 +14882,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14703,7 +14908,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14729,7 +14934,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14755,7 +14960,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14802,7 +15007,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14828,7 +15033,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14854,7 +15059,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14880,7 +15085,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14906,7 +15111,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14953,7 +15158,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -14979,7 +15184,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15005,7 +15210,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15031,7 +15236,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15057,7 +15262,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15118,9 +15323,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_men_previous'"
                                             :month="month"
@@ -15148,9 +15353,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_men_present'"
                                             :month="month"
@@ -15178,9 +15383,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_men_increase'"
                                             :month="month"
@@ -15208,9 +15413,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_men_gatti'"
                                             :month="month"
@@ -15238,9 +15443,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_men_target'"
                                             :month="month"
@@ -15265,9 +15470,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_men_target'"
                                             :month="month"
@@ -15298,9 +15503,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_women_previous'"
                                             :month="month"
@@ -15328,9 +15533,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_women_present'"
                                             :month="month"
@@ -15358,9 +15563,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_women_increase'"
                                             :month="month"
@@ -15388,9 +15593,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_women_gatti'"
                                             :month="month"
@@ -15418,9 +15623,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_women_target'"
                                             :month="month"
@@ -15445,9 +15650,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'general_unit_women_target'"
                                             :month="month"
@@ -15478,9 +15683,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'ulama_unit_previous'"
                                             :month="month"
@@ -15508,9 +15713,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'ulama_unit_present'"
                                             :month="month"
@@ -15538,9 +15743,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'ulama_unit_increase'"
                                             :month="month"
@@ -15568,9 +15773,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'ulama_unit_gatti'"
                                             :month="month"
@@ -15598,9 +15803,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'ulama_unit_target'"
                                             :month="month"
@@ -15625,9 +15830,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'ulama_unit_target'"
                                             :month="month"
@@ -15660,9 +15865,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'peshajibi_unit_previous'"
                                             :month="month"
@@ -15690,9 +15895,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'peshajibi_unit_present'"
                                             :month="month"
@@ -15720,9 +15925,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'peshajibi_unit_increase'"
                                             :month="month"
@@ -15750,9 +15955,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'peshajibi_unit_gatti'"
                                             :month="month"
@@ -15780,9 +15985,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'peshajibi_unit_target'"
                                             :month="month"
@@ -15807,9 +16012,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'peshajibi_unit_target'"
                                             :month="month"
@@ -15841,7 +16046,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15867,7 +16072,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15893,7 +16098,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15919,7 +16124,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15945,7 +16150,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -15992,7 +16197,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16018,7 +16223,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16044,7 +16249,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16070,7 +16275,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16096,7 +16301,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16142,9 +16347,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'jubo_unit_previous'"
                                             :month="month"
@@ -16172,9 +16377,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'jubo_unit_present'"
                                             :month="month"
@@ -16202,9 +16407,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'jubo_unit_increase'"
                                             :month="month"
@@ -16232,9 +16437,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'jubo_unit_gatti'"
                                             :month="month"
@@ -16262,9 +16467,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'jubo_unit_target'"
                                             :month="month"
@@ -16310,7 +16515,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16336,7 +16541,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16362,7 +16567,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16388,7 +16593,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16414,7 +16619,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16459,7 +16664,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16485,7 +16690,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16511,7 +16716,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16537,7 +16742,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16563,7 +16768,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16609,9 +16814,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'media_unit_previous'"
                                             :month="month"
@@ -16639,9 +16844,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'media_unit_present'"
                                             :month="month"
@@ -16669,9 +16874,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'media_unit_increase'"
                                             :month="month"
@@ -16699,9 +16904,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'media_unit_gatti'"
                                             :month="month"
@@ -16729,9 +16934,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'media_unit_target'"
                                             :month="month"
@@ -16756,9 +16961,9 @@
                                             )
                                         }}
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon4_unit_songothons'"
                                             :field_title="'media_unit_target'"
                                             :month="month"
@@ -16790,7 +16995,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16816,7 +17021,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16842,7 +17047,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16868,7 +17073,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -16894,7 +17099,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
@@ -17450,9 +17655,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon5_dawat_and_paribarik_units'"
                                             :field_title="'dawati_unit_previous'"
                                             :month="month"
@@ -17480,9 +17685,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon5_dawat_and_paribarik_units'"
                                             :field_title="'dawati_unit_present'"
                                             :month="month"
@@ -17510,9 +17715,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon5_dawat_and_paribarik_units'"
                                             :field_title="'dawati_unit_increase'"
                                             :month="month"
@@ -17540,9 +17745,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon5_dawat_and_paribarik_units'"
                                             :field_title="'dawati_unit_gatti'"
                                             :month="month"
@@ -17594,9 +17799,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_previous'"
                                             :month="month"
@@ -17624,9 +17829,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_present'"
                                             :month="month"
@@ -17654,9 +17859,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_increase'"
                                             :month="month"
@@ -17684,9 +17889,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_gatti'"
                                             :month="month"
@@ -17714,9 +17919,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'songothon5_dawat_and_paribarik_units'"
                                             :field_title="'paribarik_unit_target'"
                                             :month="month"
@@ -17769,7 +17974,7 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="report_header?.ward_info?.id"
+                                            :thana_id="report_header?.thana_info?.id"
                                             :table_name="'thana_songothon6_emarot_kayems'"
                                             :field_title="'pouroshova_previous'"
                                             :month="month"
@@ -17794,7 +17999,7 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="report_header?.ward_info?.id"
+                                            :thana_id="report_header?.thana_info?.id"
                                             :table_name="'thana_songothon6_emarot_kayems'"
                                             :field_title="'union_previous'"
                                             :month="month"
@@ -17822,7 +18027,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon6_emarot_kayems'"
                                         :field_title="'pouroshova_present'"
                                         :month="month"
@@ -17847,7 +18052,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'union_present'"
                                         :month="month"
@@ -17875,7 +18080,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon6_emarot_kayems'"
                                         :field_title="'pouroshova_increase'"
                                         :month="month"
@@ -17900,7 +18105,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'union_increase'"
                                         :month="month"
@@ -17928,7 +18133,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon6_emarot_kayems'"
                                         :field_title="'pouroshova_gatti'"
                                         :month="month"
@@ -17953,7 +18158,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'union_gatti'"
                                         :month="month"
@@ -17981,7 +18186,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon6_emarot_kayems'"
                                         :field_title="'pouroshova_target'"
                                         :month="month"
@@ -18006,7 +18211,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'union_target'"
                                         :month="month"
@@ -18039,7 +18244,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_city_previous'"
                                         :month="month"
@@ -18064,7 +18269,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_pouroshova_previous'"
                                         :month="month"
@@ -18089,7 +18294,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_union_previous'"
                                         :month="month"
@@ -18117,7 +18322,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_city_present'"
                                         :month="month"
@@ -18142,7 +18347,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_pouroshova_present'"
                                         :month="month"
@@ -18167,7 +18372,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_union_present'"
                                         :month="month"
@@ -18195,7 +18400,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_city_increase'"
                                         :month="month"
@@ -18220,7 +18425,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_pouroshova_increase'"
                                         :month="month"
@@ -18245,7 +18450,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_union_increase'"
                                         :month="month"
@@ -18273,7 +18478,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_city_gatti'"
                                         :month="month"
@@ -18298,7 +18503,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_pouroshova_gatti'"
                                         :month="month"
@@ -18323,7 +18528,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_union_gatti'"
                                         :month="month"
@@ -18351,7 +18556,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_city_target'"
                                         :month="month"
@@ -18376,7 +18581,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_pouroshova_target'"
                                         :month="month"
@@ -18401,7 +18606,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'ward_of_union_target'"
                                         :month="month"
@@ -18453,9 +18658,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon6_bidayi_students_connects'"
                                                 :field_title="'Joined_student_man_member'"
                                                 :month="month"
@@ -18482,9 +18687,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon6_bidayi_students_connects'"
                                                 :field_title="'Joined_student_women_member'"
                                                 :month="month"
@@ -18514,9 +18719,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon6_bidayi_students_connects'"
                                                 :field_title="'Joined_student_man_associate'"
                                                 :month="month"
@@ -18543,9 +18748,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon6_bidayi_students_connects'"
                                                 :field_title="'Joined_student_women_associate'"
                                                 :month="month"
@@ -18575,9 +18780,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon6_bidayi_students_connects'"
                                                 :field_title="'Joined_student_man_worker'"
                                                 :month="month"
@@ -18604,9 +18809,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'songothon5_dawat_and_paribarik_units'"
                                                 :field_title="'Joined_student_women_worker'"
                                                 :month="month"
@@ -18649,7 +18854,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'total_trade_union'"
                                         :month="month"
@@ -18678,7 +18883,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'total_societie'"
                                         :month="month"
@@ -18710,7 +18915,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'total_trade_union_increase'"
                                         :month="month"
@@ -18735,7 +18940,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'total_trade_union_gatti'"
                                         :month="month"
@@ -18767,7 +18972,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'total_trust_increase'"
                                         :month="month"
@@ -18792,7 +18997,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
                                         :field_title="'total_trust_gatti'"
                                         :month="month"
@@ -18832,7 +19037,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'jela_daittoshil_total_sofor_man'"
                                         :month="month"
@@ -18857,7 +19062,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'mohanogor_daittoshil_total_sofor_man'"
                                         :month="month"
@@ -18889,7 +19094,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'jela_daittoshil_total_sofor_woman'"
                                         :month="month"
@@ -18914,7 +19119,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'mohanogor_daittoshil_total_sofor_woman'"
                                         :month="month"
@@ -18947,7 +19152,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'upojela_president_total_sofor_man'"
                                         :month="month"
@@ -18972,7 +19177,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'thana_president_total_sofor_man'"
                                         :month="month"
@@ -19004,7 +19209,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'upojela_president_total_sofor_woman'"
                                         :month="month"
@@ -19029,7 +19234,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'thana_president_total_sofor_woman'"
                                         :month="month"
@@ -19063,7 +19268,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'upojela_team_total_sofor_man'"
                                         :month="month"
@@ -19088,7 +19293,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'thana_team_total_sofor_man'"
                                         :month="month"
@@ -19120,7 +19325,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'upojela_team_total_sofor_woman'"
                                         :month="month"
@@ -19145,7 +19350,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon9_sofors'"
                                         :field_title="'thana_team_total_sofor_woman'"
                                         :month="month"
@@ -19191,9 +19396,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon8_iyanot_data'"
                                                 :field_title="'associate_member_total'"
                                                 :month="month"
@@ -19220,9 +19425,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon8_iyanot_data'"
                                                 :field_title="'sudhi_total'"
                                                 :month="month"
@@ -19252,9 +19457,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon8_iyanot_data'"
                                                 :field_title="'associate_member_total_iyanot_amounts'"
                                                 :month="month"
@@ -19281,9 +19486,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_songothon8_iyanot_data'"
                                                 :field_title="'sudi_total_iyanot_amounts'"
                                                 :month="month"
@@ -19344,9 +19549,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'upojela_mozlishe_sura_boithok_man_total'"
                                             :month="month"
@@ -19371,9 +19576,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'pourosova_mozlishe_sura_boithok_man_total'"
                                             :month="month"
@@ -19398,9 +19603,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'union_mozlishe_sura_boithok_man_total'"
                                             :month="month"
@@ -19428,7 +19633,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mozlishe_sura_boithok_women_total'"
                                         :month="month"
@@ -19453,7 +19658,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_mozlishe_sura_boithok_women_total'"
                                         :month="month"
@@ -19478,7 +19683,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mozlishe_sura_boithok_women_total'"
                                         :month="month"
@@ -19506,7 +19711,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mozlishe_sura_boithok_man_target'"
                                         :month="month"
@@ -19531,7 +19736,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_mozlishe_sura_boithok_man_target'"
                                         :month="month"
@@ -19556,7 +19761,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mozlishe_sura_boithok_man_target'"
                                         :month="month"
@@ -19584,7 +19789,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mozlishe_sura_boithok_man_uposthiti'"
                                         :month="month"
@@ -19609,7 +19814,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_mozlishe_sura_boithok_man_uposthiti'"
                                         :month="month"
@@ -19634,7 +19839,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mozlishe_sura_boithok_man_uposthiti'"
                                         :month="month"
@@ -19662,7 +19867,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mozlishe_sura_boithok_women_uposthiti'"
                                         :month="month"
@@ -19687,7 +19892,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_mozlishe_sura_boithok_women_uposthiti'"
                                         :month="month"
@@ -19712,7 +19917,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mozlishe_sura_boithok_women_uposthiti'"
                                         :month="month"
@@ -19747,7 +19952,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_kormoporishod_boithok_man_total'"
                                         :month="month"
@@ -19772,7 +19977,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_kormoporishod_boithok_man_total'"
                                         :month="month"
@@ -19797,7 +20002,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormoporishod_boithok_man_total'"
                                         :month="month"
@@ -19825,7 +20030,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_kormoporishod_boithok_women_total'"
                                         :month="month"
@@ -19850,7 +20055,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_kormoporishod_boithok_women_total'"
                                         :month="month"
@@ -19875,7 +20080,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormoporishod_boithok_women_total'"
                                         :month="month"
@@ -19903,7 +20108,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_kormoporishod_boithok_man_target'"
                                         :month="month"
@@ -19928,7 +20133,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_kormoporishod_boithok_man_target'"
                                         :month="month"
@@ -19953,7 +20158,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormoporishod_boithok_man_target'"
                                         :month="month"
@@ -19981,7 +20186,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_kormoporishod_boithok_man_uposthiti'"
                                         :month="month"
@@ -20006,7 +20211,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_kormoporishod_boithok_man_uposthiti'"
                                         :month="month"
@@ -20031,7 +20236,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormoporishod_boithok_man_uposthiti'"
                                         :month="month"
@@ -20059,7 +20264,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_kormoporishod_boithok_women_uposthiti'"
                                         :month="month"
@@ -20084,7 +20289,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pourosova_kormoporishod_boithok_women_uposthiti'"
                                         :month="month"
@@ -20109,7 +20314,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormoporishod_boithok_women_uposthiti'"
                                         :month="month"
@@ -20143,7 +20348,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mashik_rokon_boithok_man_total'"
                                         :month="month"
@@ -20169,7 +20374,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mashik_rokon_boithok_women_total'"
                                         :month="month"
@@ -20195,7 +20400,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mashik_rokon_boithok_man_target'"
                                         :month="month"
@@ -20221,7 +20426,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mashik_rokon_boithok_man_uposthiti'"
                                         :month="month"
@@ -20247,7 +20452,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_mashik_rokon_boithok_women_uposthiti'"
                                         :month="month"
@@ -20277,7 +20482,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_boithok_man_total'"
                                         :month="month"
@@ -20303,7 +20508,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_boithok_women_total'"
                                         :month="month"
@@ -20329,7 +20534,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_boithok_man_target'"
                                         :month="month"
@@ -20355,7 +20560,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_boithok_man_uposthiti'"
                                         :month="month"
@@ -20381,7 +20586,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_boithok_women_uposthiti'"
                                         :month="month"
@@ -20413,7 +20618,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'bivagio_committee_boithok_man_total'"
                                         :month="month"
@@ -20439,7 +20644,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'bivagio_committee_boithok_women_total'"
                                         :month="month"
@@ -20465,7 +20670,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'bivagio_committee_boithok_man_target'"
                                         :month="month"
@@ -20491,7 +20696,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'bivagio_committee_boithok_man_uposthiti'"
                                         :month="month"
@@ -20517,7 +20722,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'bivagio_committee_boithok_women_uposthiti'"
                                         :month="month"
@@ -20550,7 +20755,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_boithok_man_total'"
                                         :month="month"
@@ -20575,7 +20780,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_boithok_man_total'"
                                         :month="month"
@@ -20600,7 +20805,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_boithok_man_total'"
                                         :month="month"
@@ -20628,7 +20833,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_boithok_women_total'"
                                         :month="month"
@@ -20653,7 +20858,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_boithok_women_total'"
                                         :month="month"
@@ -20678,7 +20883,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_boithok_women_total'"
                                         :month="month"
@@ -20706,7 +20911,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_boithok_man_target'"
                                         :month="month"
@@ -20731,7 +20936,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_boithok_man_target'"
                                         :month="month"
@@ -20756,7 +20961,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_boithok_man_target'"
                                         :month="month"
@@ -20784,7 +20989,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_boithok_man_uposthiti'"
                                         :month="month"
@@ -20809,7 +21014,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_boithok_man_uposthiti'"
                                         :month="month"
@@ -20834,7 +21039,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_boithok_man_uposthiti'"
                                         :month="month"
@@ -20862,7 +21067,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_boithok_women_uposthiti'"
                                         :month="month"
@@ -20887,7 +21092,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_boithok_women_uposthiti'"
                                         :month="month"
@@ -20912,7 +21117,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_boithok_women_uposthiti'"
                                         :month="month"
@@ -20946,7 +21151,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_mashik_rokon_boithok_man_total'"
                                         :month="month"
@@ -20971,7 +21176,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mashik_rokon_boithok_man_total'"
                                         :month="month"
@@ -20999,7 +21204,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_mashik_rokon_boithok_women_total'"
                                         :month="month"
@@ -21024,7 +21229,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mashik_rokon_boithok_women_total'"
                                         :month="month"
@@ -21052,7 +21257,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_mashik_rokon_boithok_man_target'"
                                         :month="month"
@@ -21077,7 +21282,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mashik_rokon_boithok_man_target'"
                                         :month="month"
@@ -21105,7 +21310,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_mashik_rokon_boithok_man_uposthiti'"
                                         :month="month"
@@ -21130,7 +21335,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mashik_rokon_boithok_man_uposthiti'"
                                         :month="month"
@@ -21158,7 +21363,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_mashik_rokon_boithok_women_uposthiti'"
                                         :month="month"
@@ -21183,7 +21388,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_mashik_rokon_boithok_women_uposthiti'"
                                         :month="month"
@@ -21216,7 +21421,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'unit_kormi_boithok_man_total'"
                                         :month="month"
@@ -21242,7 +21447,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'unit_kormi_boithok_women_total'"
                                         :month="month"
@@ -21268,7 +21473,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'unit_kormi_boithok_man_target'"
                                         :month="month"
@@ -21294,7 +21499,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'unit_kormi_boithok_man_uposthiti'"
                                         :month="month"
@@ -21320,7 +21525,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'unit_kormi_boithok_women_uposthiti'"
                                         :month="month"
@@ -21354,7 +21559,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'troimasik_rokon_sommelon_man_total'"
                                         :month="month"
@@ -21379,7 +21584,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'shanmasik_rokon_sommelon_man_total'"
                                         :month="month"
@@ -21404,7 +21609,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'barshik_rokon_sommelon_man_total'"
                                         :month="month"
@@ -21432,7 +21637,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'troimasik_rokon_sommelon_women_total'"
                                         :month="month"
@@ -21457,7 +21662,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'troimasik_rokon_sommelon_women_total'"
                                         :month="month"
@@ -21482,7 +21687,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'troimasik_rokon_sommelon_women_total'"
                                         :month="month"
@@ -21510,7 +21715,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'troimasik_rokon_sommelon_man_target'"
                                         :month="month"
@@ -21535,7 +21740,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'shanmasik_rokon_sommelon_man_target'"
                                         :month="month"
@@ -21560,7 +21765,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'barshik_rokon_sommelon_man_target'"
                                         :month="month"
@@ -21588,7 +21793,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'troimasik_rokon_sommelon_man_uposthiti'"
                                         :month="month"
@@ -21613,7 +21818,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'shanmasik_rokon_sommelon_man_uposthiti'"
                                         :month="month"
@@ -21638,7 +21843,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'barshik_rokon_sommelon_man_uposthiti'"
                                         :month="month"
@@ -21666,7 +21871,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'troimasik_rokon_sommelon_women_uposthiti'"
                                         :month="month"
@@ -21691,7 +21896,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'shanmasik_rokon_sommelon_women_uposthiti'"
                                         :month="month"
@@ -21716,7 +21921,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'barshik_rokon_sommelon_women_uposthiti'"
                                         :month="month"
@@ -21750,7 +21955,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_word_sovapoti_sommelon_man_total'"
                                         :month="month"
@@ -21775,7 +21980,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_word_sovapoti_sommelon_man_total'"
                                         :month="month"
@@ -21803,7 +22008,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_word_sovapoti_sommelon_women_total'"
                                         :month="month"
@@ -21828,7 +22033,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_word_sovapoti_sommelon_women_total'"
                                         :month="month"
@@ -21856,7 +22061,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_word_sovapoti_sommelon_man_target'"
                                         :month="month"
@@ -21881,7 +22086,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_word_sovapoti_sommelon_man_target'"
                                         :month="month"
@@ -21909,7 +22114,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_word_sovapoti_sommelon_man_uposthiti'"
                                         :month="month"
@@ -21934,7 +22139,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_word_sovapoti_sommelon_man_uposthiti'"
                                         :month="month"
@@ -21962,7 +22167,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_word_sovapoti_sommelon_women_uposthiti'"
                                         :month="month"
@@ -21987,7 +22192,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_word_sovapoti_sommelon_women_uposthiti'"
                                         :month="month"
@@ -22021,7 +22226,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_kormi_sommelon_man_total'"
                                         :month="month"
@@ -22046,7 +22251,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_kormi_sommelon_man_total'"
                                         :month="month"
@@ -22074,7 +22279,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_kormi_sommelon_women_total'"
                                         :month="month"
@@ -22099,7 +22304,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_kormi_sommelon_women_total'"
                                         :month="month"
@@ -22127,7 +22332,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_kormi_sommelon_man_target'"
                                         :month="month"
@@ -22152,7 +22357,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_kormi_sommelon_man_target'"
                                         :month="month"
@@ -22180,7 +22385,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_kormi_sommelon_man_uposthiti'"
                                         :month="month"
@@ -22205,7 +22410,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_kormi_sommelon_man_uposthiti'"
                                         :month="month"
@@ -22233,7 +22438,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_kormi_sommelon_women_uposthiti'"
                                         :month="month"
@@ -22258,7 +22463,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_kormi_sommelon_women_uposthiti'"
                                         :month="month"
@@ -22292,7 +22497,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormi_sommelon_man_total'"
                                         :month="month"
@@ -22317,7 +22522,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_kormi_sommelon_man_total'"
                                         :month="month"
@@ -22345,7 +22550,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormi_sommelon_women_total'"
                                         :month="month"
@@ -22370,7 +22575,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_kormi_sommelon_women_total'"
                                         :month="month"
@@ -22398,7 +22603,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormi_sommelon_man_target'"
                                         :month="month"
@@ -22423,7 +22628,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_kormi_sommelon_man_target'"
                                         :month="month"
@@ -22451,7 +22656,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormi_sommelon_man_uposthiti'"
                                         :month="month"
@@ -22476,7 +22681,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_kormi_sommelon_man_uposthiti'"
                                         :month="month"
@@ -22504,7 +22709,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_kormi_sommelon_women_uposthiti'"
                                         :month="month"
@@ -22529,7 +22734,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_kormi_sommelon_women_uposthiti'"
                                         :month="month"
@@ -22564,7 +22769,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_unit_sovapoti_sommelon_man_total'"
                                         :month="month"
@@ -22589,7 +22794,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_unit_sovapoti_sommelon_man_total'"
                                         :month="month"
@@ -22617,7 +22822,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_unit_sovapoti_sommelon_women_total'"
                                         :month="month"
@@ -22642,7 +22847,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_unit_sovapoti_sommelon_women_total'"
                                         :month="month"
@@ -22670,7 +22875,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_unit_sovapoti_sommelon_man_target'"
                                         :month="month"
@@ -22695,7 +22900,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_unit_sovapoti_sommelon_man_target'"
                                         :month="month"
@@ -22723,7 +22928,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_unit_sovapoti_sommelon_man_uposthiti'"
                                         :month="month"
@@ -22748,7 +22953,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_unit_sovapoti_sommelon_man_uposthiti'"
                                         :month="month"
@@ -22776,7 +22981,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upozila_unit_sovapoti_sommelon_women_uposthiti'"
                                         :month="month"
@@ -22801,7 +23006,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_unit_sovapoti_sommelon_women_uposthiti'"
                                         :month="month"
@@ -22833,7 +23038,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_boithok_man_total'"
                                         :month="month"
@@ -22858,7 +23063,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_somabesh_man_total'"
                                         :month="month"
@@ -22886,7 +23091,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_boithok_women_total'"
                                         :month="month"
@@ -22911,7 +23116,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_somabesh_women_total'"
                                         :month="month"
@@ -22939,7 +23144,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_boithok_man_target'"
                                         :month="month"
@@ -22964,7 +23169,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_somabesh_man_target'"
                                         :month="month"
@@ -22992,7 +23197,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_boithok_man_uposthiti'"
                                         :month="month"
@@ -23017,7 +23222,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_somabesh_man_uposthiti'"
                                         :month="month"
@@ -23045,7 +23250,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_boithok_women_uposthiti'"
                                         :month="month"
@@ -23070,7 +23275,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ulama_somabesh_women_uposthiti'"
                                         :month="month"
@@ -23103,7 +23308,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pesha_jibi_boithok_man_total'"
                                         :month="month"
@@ -23129,7 +23334,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pesha_jibi_boithok_women_total'"
                                         :month="month"
@@ -23155,7 +23360,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pesha_jibi_boithok_man_target'"
                                         :month="month"
@@ -23181,7 +23386,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pesha_jibi_boithok_man_uposthiti'"
                                         :month="month"
@@ -23207,7 +23412,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pesha_jibi_boithok_women_uposthiti'"
                                         :month="month"
@@ -23240,7 +23445,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_boithok_man_total'"
                                         :month="month"
@@ -23265,7 +23470,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_somabesh_man_total'"
                                         :month="month"
@@ -23293,7 +23498,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_boithok_women_total'"
                                         :month="month"
@@ -23318,7 +23523,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_somabesh_women_total'"
                                         :month="month"
@@ -23346,7 +23551,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_boithok_man_target'"
                                         :month="month"
@@ -23371,7 +23576,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_somabesh_man_target'"
                                         :month="month"
@@ -23399,7 +23604,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_boithok_man_uposthiti'"
                                         :month="month"
@@ -23424,7 +23629,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_somabesh_man_uposthiti'"
                                         :month="month"
@@ -23452,7 +23657,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_boithok_women_uposthiti'"
                                         :month="month"
@@ -23477,7 +23682,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'sromik_somabesh_women_uposthiti'"
                                         :month="month"
@@ -23508,7 +23713,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'jubok_boithok_man_total'"
                                         :month="month"
@@ -23534,7 +23739,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'jubok_boithok_women_total'"
                                         :month="month"
@@ -23560,7 +23765,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'jubok_boithok_man_target'"
                                         :month="month"
@@ -23586,7 +23791,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'jubok_boithok_man_uposthiti'"
                                         :month="month"
@@ -23612,7 +23817,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'jubok_boithok_women_uposthiti'"
                                         :month="month"
@@ -23644,7 +23849,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'student_daittoshil_boithok_man_total'"
                                         :month="month"
@@ -23670,7 +23875,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'student_daittoshil_boithok_women_total'"
                                         :month="month"
@@ -23696,7 +23901,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'student_daittoshil_boithok_man_target'"
                                         :month="month"
@@ -23722,7 +23927,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'student_daittoshil_boithok_man_uposthiti'"
                                         :month="month"
@@ -23748,7 +23953,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'student_daittoshil_boithok_women_uposthiti'"
                                         :month="month"
@@ -23781,7 +23986,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_somabesh_man_total'"
                                         :month="month"
@@ -23806,7 +24011,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_sommelon_man_total'"
                                         :month="month"
@@ -23834,7 +24039,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_somabesh_women_total'"
                                         :month="month"
@@ -23859,7 +24064,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_sommelon_women_total'"
                                         :month="month"
@@ -23887,7 +24092,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_somabesh_man_target'"
                                         :month="month"
@@ -23912,7 +24117,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_sommelon_man_target'"
                                         :month="month"
@@ -23940,7 +24145,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_somabesh_man_uposthiti'"
                                         :month="month"
@@ -23965,7 +24170,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_sommelon_man_uposthiti'"
                                         :month="month"
@@ -23993,7 +24198,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_somabesh_women_uposthiti'"
                                         :month="month"
@@ -24018,7 +24223,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'associate_member_sommelon_women_uposthiti'"
                                         :month="month"
@@ -24049,7 +24254,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'others_man_total'"
                                         :month="month"
@@ -24075,7 +24280,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'others_women_total'"
                                         :month="month"
@@ -24101,7 +24306,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'others_man_target'"
                                         :month="month"
@@ -24127,7 +24332,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'others_man_uposthiti'"
                                         :month="month"
@@ -24153,7 +24358,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'others_women_uposthiti'"
                                         :month="month"
@@ -24216,7 +24421,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'unit_tarbiati_boithok_man_total'"
                                         :month="month"
@@ -24242,7 +24447,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'unit_tarbiati_boithok_women_total'"
                                         :month="month"
@@ -24268,7 +24473,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'unit_tarbiati_boithok_man_target'"
                                         :month="month"
@@ -24294,7 +24499,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'unit_tarbiati_boithok_man_uposthiti'"
                                         :month="month"
@@ -24320,7 +24525,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'unit_tarbiati_boithok_women_uposthiti'"
                                         :month="month"
@@ -24354,7 +24559,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_rokon_shikkha_shibir_man_total'"
                                         :month="month"
@@ -24379,7 +24584,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_rokon_shikkha_boithok_man_total'"
                                         :month="month"
@@ -24407,7 +24612,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_rokon_shikkha_shibir_women_total'"
                                         :month="month"
@@ -24432,7 +24637,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_rokon_shikkha_boithok_women_total'"
                                         :month="month"
@@ -24460,7 +24665,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_rokon_shikkha_shibir_man_target'"
                                         :month="month"
@@ -24485,7 +24690,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_rokon_shikkha_boithok_man_target'"
                                         :month="month"
@@ -24513,7 +24718,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_rokon_shikkha_shibir_man_uposthiti'"
                                         :month="month"
@@ -24538,7 +24743,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_rokon_shikkha_boithok_man_uposthiti'"
                                         :month="month"
@@ -24566,7 +24771,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_rokon_shikkha_shibir_women_uposthiti'"
                                         :month="month"
@@ -24591,7 +24796,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_rokon_shikkha_boithok_women_uposthiti'"
                                         :month="month"
@@ -24626,7 +24831,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_selected_kormi_shikkha_shibir_man_total'"
                                         :month="month"
@@ -24651,7 +24856,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_selected_kormi_shikkha_boithok_man_total'"
                                         :month="month"
@@ -24679,7 +24884,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_selected_kormi_shikkha_shibir_women_total'"
                                         :month="month"
@@ -24704,7 +24909,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_selected_kormi_shikkha_boithok_women_total'"
                                         :month="month"
@@ -24732,7 +24937,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_selected_kormi_shikkha_shibir_man_target'"
                                         :month="month"
@@ -24757,7 +24962,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_selected_kormi_shikkha_boithok_man_target'"
                                         :month="month"
@@ -24785,7 +24990,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_selected_kormi_shikkha_shibir_man_uposthiti'"
                                         :month="month"
@@ -24810,7 +25015,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_selected_kormi_shikkha_boithok_man_uposthiti'"
                                         :month="month"
@@ -24838,7 +25043,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_selected_kormi_shikkha_shibir_women_uposthiti'"
                                         :month="month"
@@ -24863,7 +25068,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_selected_kormi_shikkha_boithok_women_uposthiti'"
                                         :month="month"
@@ -24898,7 +25103,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_kormi_shikkha_shibir_man_total'"
                                         :month="month"
@@ -24923,7 +25128,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_kormi_shikkha_boithok_man_total'"
                                         :month="month"
@@ -24951,7 +25156,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_kormi_shikkha_shibir_women_total'"
                                         :month="month"
@@ -24976,7 +25181,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_kormi_shikkha_boithok_women_total'"
                                         :month="month"
@@ -25004,7 +25209,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_kormi_shikkha_shibir_man_target'"
                                         :month="month"
@@ -25029,7 +25234,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_kormi_shikkha_boithok_man_target'"
                                         :month="month"
@@ -25057,7 +25262,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_kormi_shikkha_shibir_man_uposthiti'"
                                         :month="month"
@@ -25082,7 +25287,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_kormi_shikkha_boithok_man_uposthiti'"
                                         :month="month"
@@ -25110,7 +25315,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_vittik_kormi_shikkha_shibir_women_uposthiti'"
                                         :month="month"
@@ -25135,7 +25340,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_vittik_kormi_shikkha_boithok_women_uposthiti'"
                                         :month="month"
@@ -25170,7 +25375,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_former_Student_kormi_training_program_man_total'"
                                         :month="month"
@@ -25195,7 +25400,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_former_Student_kormi_training_program_man_total'"
                                         :month="month"
@@ -25223,7 +25428,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_former_Student_kormi_training_program_women_total'"
                                         :month="month"
@@ -25248,7 +25453,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_former_Student_kormi_training_program_women_total'"
                                         :month="month"
@@ -25276,7 +25481,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_former_Student_kormi_training_program_man_target'"
                                         :month="month"
@@ -25301,7 +25506,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_former_Student_kormi_training_program_man_target'"
                                         :month="month"
@@ -25329,7 +25534,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_former_Student_kormi_training_program_man_uposthiti'"
                                         :month="month"
@@ -25354,7 +25559,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_former_Student_kormi_training_program_man_uposthiti'"
                                         :month="month"
@@ -25382,7 +25587,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'upozila_former_Student_kormi_training_program_women_uposthiti'"
                                         :month="month"
@@ -25407,7 +25612,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'thana_former_Student_kormi_training_program_women_uposthiti'"
                                         :month="month"
@@ -25442,7 +25647,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'pouroshova_kormi_shikkha_boithok_man_total'"
                                         :month="month"
@@ -25467,7 +25672,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'union_kormi_shikkha_boithok_man_total'"
                                         :month="month"
@@ -25492,7 +25697,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'ward_kormi_shikkha_boithok_man_total'"
                                         :month="month"
@@ -25520,7 +25725,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'pouroshova_kormi_shikkha_boithok_women_total'"
                                         :month="month"
@@ -25545,7 +25750,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'union_kormi_shikkha_boithok_women_total'"
                                         :month="month"
@@ -25570,7 +25775,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'ward_kormi_shikkha_boithok_women_total'"
                                         :month="month"
@@ -25598,7 +25803,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'pouroshova_kormi_shikkha_boithok_man_target'"
                                         :month="month"
@@ -25623,7 +25828,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'union_kormi_shikkha_boithok_man_target'"
                                         :month="month"
@@ -25648,7 +25853,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'ward_kormi_shikkha_boithok_man_target'"
                                         :month="month"
@@ -25676,7 +25881,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'pouroshova_kormi_shikkha_boithok_man_uposthiti'"
                                         :month="month"
@@ -25701,7 +25906,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'union_kormi_shikkha_boithok_man_uposthiti'"
                                         :month="month"
@@ -25726,7 +25931,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'ward_kormi_shikkha_boithok_man_uposthiti'"
                                         :month="month"
@@ -25754,7 +25959,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'pouroshova_kormi_shikkha_boithok_women_uposthiti'"
                                         :month="month"
@@ -25779,7 +25984,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'union_kormi_shikkha_boithok_women_uposthiti'"
                                         :month="month"
@@ -25804,7 +26009,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'ward_kormi_shikkha_boithok_women_uposthiti'"
                                         :month="month"
@@ -25835,7 +26040,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_sikkha_boithok_man_total'"
                                         :month="month"
@@ -25861,7 +26066,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_sikkha_boithok_women_total'"
                                         :month="month"
@@ -25887,7 +26092,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_sikkha_boithok_man_target'"
                                         :month="month"
@@ -25913,7 +26118,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_sikkha_boithok_man_uposthiti'"
                                         :month="month"
@@ -25939,7 +26144,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_sikkha_boithok_women_uposthiti'"
                                         :month="month"
@@ -25969,7 +26174,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_noisho_ibadot_man_total'"
                                         :month="month"
@@ -25995,7 +26200,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_noisho_ibadot_women_total'"
                                         :month="month"
@@ -26021,7 +26226,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_noisho_ibadot_man_target'"
                                         :month="month"
@@ -26047,7 +26252,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_noisho_ibadot_man_uposthiti'"
                                         :month="month"
@@ -26073,7 +26278,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'gono_noisho_ibadot_women_uposthiti'"
                                         :month="month"
@@ -26126,7 +26331,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'rokon_path_cokro_man_total_group'"
                                         :month="month"
@@ -26152,7 +26357,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'rokon_path_cokro_woman_total_group'"
                                         :month="month"
@@ -26178,7 +26383,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'rokon_path_cokro_man_total_odhibeshon'"
                                         :month="month"
@@ -26204,7 +26409,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'rokon_path_cokro_woman_total_odhibeshon'"
                                         :month="month"
@@ -26230,7 +26435,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'rokon_path_cokro_man_total_uposthiti'"
                                         :month="month"
@@ -26256,7 +26461,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'rokon_path_cokro_woman_total_uposthiti'"
                                         :month="month"
@@ -26289,7 +26494,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_path_cokro_man_total_group'"
                                         :month="month"
@@ -26314,7 +26519,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_alochona_cokro_man_total_group'"
                                         :month="month"
@@ -26342,7 +26547,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_path_cokro_woman_total_group'"
                                         :month="month"
@@ -26367,7 +26572,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_alochona_cokro_woman_total_group'"
                                         :month="month"
@@ -26395,7 +26600,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_path_cokro_man_total_odhibeshon'"
                                         :month="month"
@@ -26420,7 +26625,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_alochona_cokro_man_total_odhibeshon'"
                                         :month="month"
@@ -26448,7 +26653,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_path_cokro_woman_total_odhibeshon'"
                                         :month="month"
@@ -26473,7 +26678,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_alochona_cokro_woman_total_odhibeshon'"
                                         :month="month"
@@ -26501,7 +26706,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_path_cokro_man_total_uposthiti'"
                                         :month="month"
@@ -26526,7 +26731,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_alochona_cokro_man_total_uposthiti'"
                                         :month="month"
@@ -26554,7 +26759,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_path_cokro_woman_total_uposthiti'"
                                         :month="month"
@@ -26579,7 +26784,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'kormi_alochona_cokro_woman_total_uposthiti'"
                                         :month="month"
@@ -26610,7 +26815,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'quran_study_circle_man_total_group'"
                                         :month="month"
@@ -26636,7 +26841,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'quran_study_circle_woman_total_group'"
                                         :month="month"
@@ -26662,7 +26867,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'quran_study_circle_man_total_odhibeshon'"
                                         :month="month"
@@ -26688,7 +26893,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'quran_study_circle_woman_total_odhibeshon'"
                                         :month="month"
@@ -26714,7 +26919,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'quran_study_circle_man_total_uposthiti'"
                                         :month="month"
@@ -26740,7 +26945,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'quran_study_circle_woman_total_uposthiti'"
                                         :month="month"
@@ -26776,7 +26981,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'darsul_quran_man_program'"
                                         :month="month"
@@ -26807,7 +27012,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'darsul_quran_woman_program'"
                                         :month="month"
@@ -26834,7 +27039,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'darsul_quran_man_odhibeshon'"
                                         :month="month"
@@ -26860,7 +27065,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'darsul_quran_woman_odhibeshon'"
                                         :month="month"
@@ -26886,7 +27091,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'darsul_quran_man_uposthiti'"
                                         :month="month"
@@ -26912,7 +27117,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
                                         :field_title="'darsul_quran_woman_uposthiti'"
                                         :month="month"
@@ -26964,9 +27169,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'upojela_manobshompod_committee'"
                                             :month="month"
@@ -26991,9 +27196,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'thana_manobshompod_committee'"
                                             :month="month"
@@ -27021,9 +27226,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'upojela_manobshompod_committee_boithok'"
                                             :month="month"
@@ -27048,9 +27253,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'thana_manobshompod_committee_boithok'"
                                             :month="month"
@@ -27078,9 +27283,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'manpower_career_motivation_programs'"
                                             :month="month"
@@ -27128,8 +27333,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
@@ -27158,8 +27363,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
@@ -27188,8 +27393,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
@@ -27227,8 +27432,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
@@ -27257,8 +27462,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
@@ -27287,8 +27492,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
@@ -27317,8 +27522,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
@@ -27347,8 +27552,8 @@
                                                     class="bg-input w-100 text-center"
                                                 />
                                                 <popup
-                                                    :ward_id="
-                                                        report_header?.ward_info
+                                                    :thana_id="
+                                                        report_header?.thana_info
                                                             ?.id
                                                     "
                                                     :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
@@ -27384,9 +27589,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_proshikkhon2_manob_shompod_unnoyons'"
                                                 :field_title="'trade_oriented_technical_training_uposthiti'"
                                                 :month="month"
@@ -27454,7 +27659,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'trained_social_worker'"
                                         :month="month"
@@ -27480,7 +27685,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'training_courses_this_year_total'"
                                         :month="month"
@@ -27506,7 +27711,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'training_courses_this_year_target'"
                                         :month="month"
@@ -27532,7 +27737,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'people_completed_training_courses_this_year_total'"
                                         :month="month"
@@ -27558,7 +27763,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'people_completed_training_courses_this_year_target'"
                                         :month="month"
@@ -27598,7 +27803,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_shomajsheba1_personal_social_works'"
                                         :field_title="'how_many_people_did'"
                                         :month="month"
@@ -27629,7 +27834,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_shomajsheba1_personal_social_works'"
                                         :field_title="'service_received_total'"
                                         :month="month"
@@ -27675,9 +27880,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'number_of_general_service_teams'"
                                             :month="month"
@@ -27705,9 +27910,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'number_of_technical_service_teams'"
                                             :month="month"
@@ -27735,9 +27940,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'number_of_volunteer_teams'"
                                             :month="month"
@@ -27782,9 +27987,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'minor_unnoyonmulok_kaj'"
                                             :month="month"
@@ -27815,9 +28020,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'shikkha_shohayota_prodan'"
                                             :month="month"
@@ -27854,9 +28059,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'shamajik_onusthane_ongshogrohon '"
                                                 :month="month"
@@ -27883,9 +28088,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'shamajik_onusthane_shohayota_prodan'"
                                                 :month="month"
@@ -27920,9 +28125,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'technical_services_prodan_kotojonke'"
                                                 :month="month"
@@ -27949,9 +28154,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'online_services_prodan_kotojonke'"
                                                 :month="month"
@@ -27985,9 +28190,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'shamajik_birodh_mimangsha'"
                                             :month="month"
@@ -28018,9 +28223,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'online_services_prodan_kotojonke'"
                                             :month="month"
@@ -28053,9 +28258,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'shomajsheba2_unit_social_works'"
                                             :field_title="'manobik_shohayota_prodan'"
                                             :month="month"
@@ -28086,9 +28291,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'brikkho_ropon'"
                                             :month="month"
@@ -28121,9 +28326,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'korje_hasana_prodan'"
                                             :month="month"
@@ -28154,9 +28359,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'public_awareness_programs'"
                                             :month="month"
@@ -28192,9 +28397,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'porishkar_poricchonnota_ovijan'"
                                                 :month="month"
@@ -28221,9 +28426,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'thana_songothon11_sangothonik_boithoks'"
                                                 :field_title="'moshok_nidhon_ovijan'"
                                                 :month="month"
@@ -28255,9 +28460,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'durjog_kalin_shohayota_prodan'"
                                             :month="month"
@@ -28294,9 +28499,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'rogir_poricorja'"
                                                 :month="month"
@@ -28323,9 +28528,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'medical_shohayota_prodan'"
                                                 :month="month"
@@ -28357,9 +28562,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'tran_bitoron'"
                                             :month="month"
@@ -28395,9 +28600,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'voluntarily_blood_donation_kotojon'"
                                                 :month="month"
@@ -28424,9 +28629,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'voluntarily_blood_donation_kotojonke'"
                                                 :month="month"
@@ -28462,9 +28667,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'vinnodhormabolombider_service_prodan_kotojon'"
                                                 :month="month"
@@ -28491,9 +28696,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'vinnodhormabolombider_service_prodan_kotojonke'"
                                                 :month="month"
@@ -28527,9 +28732,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'mattrikalin_sheba_prodan'"
                                             :month="month"
@@ -28560,9 +28765,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'mayeter_gosol_kotojonke'"
                                             :month="month"
@@ -28595,9 +28800,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'nobojatokke_gift_prodan'"
                                             :month="month"
@@ -28628,9 +28833,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'janajay_ongshogrohon'"
                                             :month="month"
@@ -28663,9 +28868,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'medical_camp'"
                                             :month="month"
@@ -28697,9 +28902,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'low_capital_employment_kotojonke'"
                                             :month="month"
@@ -28735,9 +28940,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'vrammoman_school_calu'"
                                                 :month="month"
@@ -28764,9 +28969,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_shomajsheba2_group_social_works'"
                                                 :field_title="'vrammoman_moktob_calu'"
                                                 :month="month"
@@ -28796,9 +29001,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba2_group_social_works'"
                                             :field_title="'others'"
                                             :month="month"
@@ -28848,9 +29053,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'social_institution_total'"
                                             :month="month"
@@ -28877,7 +29082,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'social_institution_in_thana'"
                                         :month="month"
@@ -28903,7 +29108,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'social_institution_in_ward'"
                                         :month="month"
@@ -28934,7 +29139,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'institutional_social_work_total'"
                                         :month="month"
@@ -28960,7 +29165,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'institutional_social_work_in_thana'"
                                         :month="month"
@@ -28986,7 +29191,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'institutional_social_work_in_ward'"
                                         :month="month"
@@ -29017,7 +29222,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'new_social_institutions_total'"
                                         :month="month"
@@ -29043,7 +29248,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'new_social_institutions_in_thana'"
                                         :month="month"
@@ -29069,7 +29274,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'new_social_institutions_in_ward'"
                                         :month="month"
@@ -29109,7 +29314,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'health_worker_produced'"
                                         :month="month"
@@ -29139,7 +29344,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'health_education_training_program'"
                                         :month="month"
@@ -29170,7 +29375,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'nurse_produced'"
                                         :month="month"
@@ -29199,7 +29404,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'health_education_training_programs_attendance'"
                                         :month="month"
@@ -29230,7 +29435,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'dhattri_produced'"
                                         :month="month"
@@ -29259,7 +29464,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'participated_in_health_care_work'"
                                         :month="month"
@@ -29290,7 +29495,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'parenting_training_program'"
                                         :month="month"
@@ -29320,9 +29525,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_shomajsheba3_health_and_family_kollans'"
                                             :field_title="'served_people'"
                                             :month="month"
@@ -29372,7 +29577,7 @@
                                     class="bg-input w-100 text-center"
                                 />
                                 <popup
-                                    :ward_id="report_header?.ward_info?.id"
+                                    :thana_id="report_header?.thana_info?.id"
                                     :table_name="'thana_songothon11_sangothonik_boithoks'"
                                     :field_title="'ideal_teacher_produced'"
                                     :month="month"
@@ -29398,7 +29603,7 @@
                                     class="bg-input w-100 text-center"
                                 />
                                 <popup
-                                    :ward_id="report_header?.ward_info?.id"
+                                    :thana_id="report_header?.thana_info?.id"
                                     :table_name="'thana_songothon11_sangothonik_boithoks'"
                                     :field_title="'ideal_teacher_produced_target'"
                                     :month="month"
@@ -29425,7 +29630,7 @@
                                     class="bg-input w-100 text-center"
                                 />
                                 <popup
-                                    :ward_id="report_header?.ward_info?.id"
+                                    :thana_id="report_header?.thana_info?.id"
                                     :table_name="'thana_songothon11_sangothonik_boithoks'"
                                     :field_title="'alochona_shova'"
                                     :month="month"
@@ -29451,7 +29656,7 @@
                                     class="bg-input w-100 text-center"
                                 />
                                 <popup
-                                    :ward_id="report_header?.ward_info?.id"
+                                    :thana_id="report_header?.thana_info?.id"
                                     :table_name="'thana_songothon11_sangothonik_boithoks'"
                                     :field_title="'alochona_shova_target'"
                                     :month="month"
@@ -29480,7 +29685,7 @@
                                     class="bg-input w-100 text-center"
                                 />
                                 <popup
-                                    :ward_id="report_header?.ward_info?.id"
+                                    :thana_id="report_header?.thana_info?.id"
                                     :table_name="'thana_songothon11_sangothonik_boithoks'"
                                     :field_title="'shikkha_seminar'"
                                     :month="month"
@@ -29506,7 +29711,7 @@
                                     class="bg-input w-100 text-center"
                                 />
                                 <popup
-                                    :ward_id="report_header?.ward_info?.id"
+                                    :thana_id="report_header?.thana_info?.id"
                                     :table_name="'thana_songothon11_sangothonik_boithoks'"
                                     :field_title="'shikkha_seminar_target'"
                                     :month="month"
@@ -29533,7 +29738,7 @@
                                     class="bg-input w-100 text-center"
                                 />
                                 <popup
-                                    :ward_id="report_header?.ward_info?.id"
+                                    :thana_id="report_header?.thana_info?.id"
                                     :table_name="'thana_songothon11_sangothonik_boithoks'"
                                     :field_title="'other'"
                                     :month="month"
@@ -29559,7 +29764,7 @@
                                     class="bg-input w-100 text-center"
                                 />
                                 <popup
-                                    :ward_id="report_header?.ward_info?.id"
+                                    :thana_id="report_header?.thana_info?.id"
                                     :table_name="'thana_songothon11_sangothonik_boithoks'"
                                     :field_title="'other_target'"
                                     :month="month"
@@ -29590,7 +29795,7 @@
                                 class="bg-input w-100 text-center"
                             />
                             <popup
-                                :ward_id="report_header?.ward_info?.id"
+                                :thana_id="report_header?.thana_info?.id"
                                 :table_name="'thana_songothon11_sangothonik_boithoks'"
                                 :field_title="'percentage_of_expense'"
                                 :month="month"
@@ -29637,9 +29842,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio1_political_communications'"
                                             :field_title="'rajnoitik_bekti_jogajog_koreche_kotojon'"
                                             :month="month"
@@ -29666,9 +29871,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio1_political_communications'"
                                             :field_title="'rajnoitik_bekti_jogajog_koreche_kotojonke'"
                                             :month="month"
@@ -29700,9 +29905,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio1_political_communications'"
                                             :field_title="'proshoshonik_bekti_jogajog_koreche_kotojon'"
                                             :month="month"
@@ -29729,9 +29934,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio1_political_communications'"
                                             :field_title="'proshoshonik_bekti_jogajog_koreche_kotojonke'"
                                             :month="month"
@@ -29777,9 +29982,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                             :field_title="'centrally_announced_political_program'"
                                             :month="month"
@@ -29806,9 +30011,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                             :field_title="'centrally_announced_political_program_attend'"
                                             :month="month"
@@ -29844,9 +30049,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'locally_announced_jonoshova'"
                                                 :month="month"
@@ -29872,9 +30077,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'locally_announced_shomabesh'"
                                                 :month="month"
@@ -29900,9 +30105,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'locally_announced_michil'"
                                                 :month="month"
@@ -29933,9 +30138,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'locally_announced_jonoshova_attend'"
                                                 :month="month"
@@ -29961,9 +30166,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'locally_announced_shomabesh_attend'"
                                                 :month="month"
@@ -29989,9 +30194,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'locally_announced_michil_attend'"
                                                 :month="month"
@@ -30027,9 +30232,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'poster_bitoron'"
                                                 :month="month"
@@ -30055,9 +30260,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'leaflet_bitoron'"
                                                 :month="month"
@@ -30083,9 +30288,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'booklet_bitoron'"
                                                 :month="month"
@@ -30111,9 +30316,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio2_kormoshuchi_bastobayons'"
                                                 :field_title="'sharoklipi_bitoron'"
                                                 :month="month"
@@ -30142,9 +30347,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'others'"
                                             :month="month"
@@ -30196,9 +30401,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'shadhinota_o_jatio_dibosh_total_programs'"
                                             :month="month"
@@ -30225,9 +30430,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'shadhinota_o_jatio_dibosh_attend'"
                                             :month="month"
@@ -30257,9 +30462,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'mattrivasha_dibosh_total_programs'"
                                             :month="month"
@@ -30286,9 +30491,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'mattrivasha_dibosh_attend'"
                                             :month="month"
@@ -30318,9 +30523,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'bijoy_dibosh_total_programs'"
                                             :month="month"
@@ -30347,9 +30552,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'bijoy_dibosh_attend'"
                                             :month="month"
@@ -30379,9 +30584,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'international_womens_day'"
                                             :month="month"
@@ -30408,9 +30613,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'international_womens_day_attend'"
                                             :month="month"
@@ -30440,9 +30645,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'others_total_programs'"
                                             :month="month"
@@ -30469,9 +30674,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'others_attend'"
                                             :month="month"
@@ -30499,9 +30704,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'may_day'"
                                             :month="month"
@@ -30528,9 +30733,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio3_dibosh_palons'"
                                             :field_title="'may_day_attend'"
                                             :month="month"
@@ -30586,7 +30791,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_total'"
                                         :month="month"
@@ -30610,7 +30815,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_total'"
                                         :month="month"
@@ -30637,7 +30842,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_total_candidate'"
                                         :month="month"
@@ -30661,7 +30866,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_total_candidate'"
                                         :month="month"
@@ -30688,7 +30893,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_total_candidate_participated'"
                                         :month="month"
@@ -30712,7 +30917,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_total_candidate_participated'"
                                         :month="month"
@@ -30740,7 +30945,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_Mayor_candidate_elected'"
                                         :month="month"
@@ -30764,7 +30969,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_Mayor_candidate_elected'"
                                         :month="month"
@@ -30788,7 +30993,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_chairman_candidate_elected'"
                                         :month="month"
@@ -30812,7 +31017,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_chairman_candidate_elected'"
                                         :month="month"
@@ -30839,7 +31044,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_vice_chairman_candidate_man_elected'"
                                         :month="month"
@@ -30863,7 +31068,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_vice_chairman_candidate_man_elected'"
                                         :month="month"
@@ -30887,7 +31092,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_vice_chairman_candidate_woman_elected'"
                                         :month="month"
@@ -30911,7 +31116,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_vice_chairman_candidate_woman_elected'"
                                         :month="month"
@@ -30938,7 +31143,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_councilor_candidate_man_elected'"
                                         :month="month"
@@ -30962,7 +31167,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_councilor_candidate_man_elected'"
                                         :month="month"
@@ -30986,7 +31191,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_councilor_candidate_woman_elected'"
                                         :month="month"
@@ -31010,7 +31215,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_councilor_candidate_woman_elected'"
                                         :month="month"
@@ -31034,7 +31239,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_member_candidate_man_elected'"
                                         :month="month"
@@ -31058,7 +31263,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_member_candidate_man_elected'"
                                         :month="month"
@@ -31082,7 +31287,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_member_candidate_woman_elected'"
                                         :month="month"
@@ -31106,7 +31311,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_member_candidate_woman_elected'"
                                         :month="month"
@@ -31133,7 +31338,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_member_candidate_man_second_position'"
                                         :month="month"
@@ -31157,7 +31362,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_member_candidate_man_second_position'"
                                         :month="month"
@@ -31181,7 +31386,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_member_candidate_woman_second_position'"
                                         :month="month"
@@ -31205,7 +31410,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_member_candidate_woman_second_position'"
                                         :month="month"
@@ -31234,7 +31439,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_total'"
                                         :month="month"
@@ -31259,7 +31464,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_total_candidate'"
                                         :month="month"
@@ -31284,7 +31489,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_total_candidate_participated'"
                                         :month="month"
@@ -31310,7 +31515,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_Mayor_candidate_elected'"
                                         :month="month"
@@ -31334,7 +31539,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_chairman_candidate_elected'"
                                         :month="month"
@@ -31361,7 +31566,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_vice_chairman_candidate_man_elected'"
                                         :month="month"
@@ -31385,7 +31590,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_vice_chairman_candidate_woman_elected'"
                                         :month="month"
@@ -31412,7 +31617,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_councilor_candidate_man_elected'"
                                         :month="month"
@@ -31436,7 +31641,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_member_candidate_man_elected'"
                                         :month="month"
@@ -31460,7 +31665,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_councilor_candidate_woman_elected'"
                                         :month="month"
@@ -31484,7 +31689,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_member_candidate_woman_elected'"
                                         :month="month"
@@ -31511,7 +31716,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_vice_chairman_candidate_man_second_position'"
                                         :month="month"
@@ -31535,7 +31740,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_vice_chairman_candidate_woman_second_position'"
                                         :month="month"
@@ -31564,7 +31769,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_total'"
                                         :month="month"
@@ -31589,7 +31794,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_total_candidate'"
                                         :month="month"
@@ -31614,7 +31819,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_total_candidate_participated'"
                                         :month="month"
@@ -31640,7 +31845,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_Mayor_candidate_elected'"
                                         :month="month"
@@ -31664,7 +31869,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_chairman_candidate_elected'"
                                         :month="month"
@@ -31691,7 +31896,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_vice_chairman_candidate_man_elected'"
                                         :month="month"
@@ -31715,7 +31920,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_vice_chairman_candidate_woman_elected'"
                                         :month="month"
@@ -31742,7 +31947,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_councilor_candidate_man_elected'"
                                         :month="month"
@@ -31766,7 +31971,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_member_candidate_man_elected'"
                                         :month="month"
@@ -31790,7 +31995,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_councilor_candidate_woman_elected'"
                                         :month="month"
@@ -31814,7 +32019,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_member_candidate_woman_elected'"
                                         :month="month"
@@ -31841,7 +32046,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_vice_chairman_candidate_man_second_position'"
                                         :month="month"
@@ -31865,7 +32070,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_vice_chairman_candidate_woman_second_position'"
                                         :month="month"
@@ -31912,9 +32117,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'national_vote_kendro'"
                                                 :month="month"
@@ -31940,9 +32145,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'local_vote_kendro'"
                                                 :month="month"
@@ -31971,9 +32176,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'national_vote_kendro_increase'"
                                                 :month="month"
@@ -31999,9 +32204,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'local_vote_kendro_increase'"
                                                 :month="month"
@@ -32030,9 +32235,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'national_vote_kendro_target'"
                                                 :month="month"
@@ -32058,9 +32263,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'local_vote_kendro_target'"
                                                 :month="month"
@@ -32091,9 +32296,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio4_election_activities'"
                                             :field_title="'vote_kendro_committee'"
                                             :month="month"
@@ -32120,9 +32325,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio4_election_activities'"
                                             :field_title="'vote_kendro_committee_increase'"
                                             :month="month"
@@ -32149,9 +32354,9 @@
                                             class="bg-input w-100 text-center"
                                         />
                                         <popup
-                                            :ward_id="
-                                                report_header?.ward_info?.id
-                                            "
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
                                             :table_name="'ward_rastrio4_election_activities'"
                                             :field_title="'vote_kendro_committee_target'"
                                             :month="month"
@@ -32184,9 +32389,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'vote_kendro_vittik_unit'"
                                                 :month="month"
@@ -32212,9 +32417,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'booth_vittik_unit'"
                                                 :month="month"
@@ -32243,9 +32448,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'vote_kendro_vittik_unit_increase'"
                                                 :month="month"
@@ -32271,9 +32476,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'booth_vittik_unit_increase'"
                                                 :month="month"
@@ -32302,9 +32507,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'vote_kendro_vittik_unit_target'"
                                                 :month="month"
@@ -32330,9 +32535,9 @@
                                                 class="bg-input w-100 text-center"
                                             />
                                             <popup
-                                                :ward_id="
-                                                    report_header?.ward_info?.id
-                                                "
+                                                :thana_id="
+                                                report_header?.thana_info?.id
+                                            "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'booth_vittik_unit_target'"
                                                 :month="month"
@@ -32370,7 +32575,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_vittik_election_management_committee_meeting'"
                                         :month="month"
@@ -32393,7 +32598,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'thana_vittik_election_management_committee_meeting'"
                                         :month="month"
@@ -32417,7 +32622,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_vittik_election_management_committee_meeting'"
                                         :month="month"
@@ -32441,7 +32646,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_vittik_election_management_committee_meeting'"
                                         :month="month"
@@ -32465,7 +32670,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'ward_vittik_election_management_committee_meeting'"
                                         :month="month"
@@ -32513,7 +32718,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'press_release'"
                                         :month="month"
@@ -32537,7 +32742,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'bibriti'"
                                         :month="month"
@@ -32561,7 +32766,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'protibad_lipi'"
                                         :month="month"
@@ -32588,7 +32793,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'social_media_post'"
                                         :month="month"
@@ -32612,7 +32817,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'social_media_live_program'"
                                         :month="month"
@@ -32650,7 +32855,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'human_rights_organizations_established'"
                                         :month="month"
@@ -32679,7 +32884,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'international_human_rights_organizations_local_branches_launched'"
                                         :month="month"
@@ -32711,7 +32916,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'human_rights_activist_produced_total'"
                                         :month="month"
@@ -32739,7 +32944,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'human_rights_activist_produced_increase'"
                                         :month="month"
@@ -32767,7 +32972,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'human_rights_activist_produced_target'"
                                         :month="month"
@@ -32815,7 +33020,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'business_association_election'"
                                         :month="month"
@@ -32839,7 +33044,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'market_committee_election'"
                                         :month="month"
@@ -32866,7 +33071,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'business_association_number_of_post'"
                                         :month="month"
@@ -32890,7 +33095,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'market_committee_number_of_post'"
                                         :month="month"
@@ -32917,7 +33122,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'business_association_participated'"
                                         :month="month"
@@ -32941,7 +33146,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'market_committee_participated'"
                                         :month="month"
@@ -32968,7 +33173,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'business_association_elected'"
                                         :month="month"
@@ -32992,7 +33197,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'market_committee_elected'"
                                         :month="month"
@@ -33021,7 +33226,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'other_election'"
                                         :month="month"
@@ -33046,7 +33251,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'other_number_of_post'"
                                         :month="month"
@@ -33071,7 +33276,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'other_participated'"
                                         :month="month"
@@ -33096,7 +33301,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'other_elected'"
                                         :month="month"
@@ -33139,7 +33344,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'krishi_uddogta_toiri_total'"
                                         :month="month"
@@ -33164,7 +33369,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'krishi_uddogta_toiri_increase'"
                                         :month="month"
@@ -33189,7 +33394,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'krishi_uddogta_toiri_target'"
                                         :month="month"
@@ -33221,7 +33426,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'sheba_uddogta_toiri_total'"
                                         :month="month"
@@ -33245,7 +33450,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'shilpo_uddogta_toiri_total'"
                                         :month="month"
@@ -33269,7 +33474,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'banijjo_uddogta_toiri_total'"
                                         :month="month"
@@ -33293,7 +33498,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'other_uddogta_toiri_total'"
                                         :month="month"
@@ -33320,7 +33525,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'sheba_uddogta_toiri_increase'"
                                         :month="month"
@@ -33344,7 +33549,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'shilpo_uddogta_toiri_increase'"
                                         :month="month"
@@ -33368,7 +33573,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'banijjo_uddogta_toiri_increase'"
                                         :month="month"
@@ -33392,7 +33597,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'other_uddogta_toiri_increase'"
                                         :month="month"
@@ -33419,7 +33624,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'sheba_uddogta_toiri_target'"
                                         :month="month"
@@ -33443,7 +33648,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'shilpo_uddogta_toiri_target'"
                                         :month="month"
@@ -33467,7 +33672,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'banijjo_uddogta_toiri_target'"
                                         :month="month"
@@ -33491,7 +33696,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'other_uddogta_toiri_target'"
                                         :month="month"
@@ -33520,7 +33725,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'other_total'"
                                         :month="month"
@@ -33545,7 +33750,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'other_increase'"
                                         :month="month"
@@ -33570,7 +33775,7 @@
                                         class="bg-input w-100 text-center"
                                     />
                                     <popup
-                                        :ward_id="report_header?.ward_info?.id"
+                                        :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'other_target'"
                                         :month="month"

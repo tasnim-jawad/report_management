@@ -73,6 +73,8 @@ export default {
 
         get_all_unit_data: async function () {
             console.log("this.thana_id", this.thana_id);
+            console.log("this.table_name --", this.table_name);
+            console.log("this.field_title --", this.field_title);
 
             let response = await axios.get("/thana/get-all-ward-data", {
                 params: {

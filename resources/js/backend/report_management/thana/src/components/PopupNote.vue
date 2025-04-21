@@ -4,7 +4,7 @@
         <p>*** {{ label }}</p>
         <div class="line"></div>
         <popup
-            :ward_id="ward_id"
+            :thana_id="thana_id"
             :table_name="table_name"
             :field_title="field_title"
             :month="month"
@@ -28,7 +28,7 @@ export default {
             type: String,
             required: true,
         },
-        ward_id: {
+        thana_id: {
             type: Number,
             required: true,
             default: 0,
