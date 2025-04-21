@@ -41,7 +41,7 @@
                 মাস: <input type="month" v-model="month" name="month" @change="report_status">
                 <button class="btn btn-success ms-5" type="button" @click.prevent="total_ward_report" v-if="approved_ward.length">দেখুন</button>
             </form>
-            <p style="color: red;" class="mt-2" v-show="!approved_ward.length">সিলেক্ট করা মাসে কোনো রিপোর্ট জমা হয়নি</p>
+            <p style="color: red;" class="mt-2" v-if="!approved_ward.length">সিলেক্ট করা মাসে কোনো রিপোর্ট জমা হয়নি</p>
         </div>
     </div>
 </template>

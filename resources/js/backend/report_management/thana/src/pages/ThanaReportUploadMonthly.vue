@@ -62,7 +62,7 @@
                         <thead>
                             <tr>
                                 <th class="width-35">বিবরণ</th>
-                                <th>মোট</th>
+                                <th class="width-20">মোট</th>
                                 <th>পুরুষ</th>
                                 <th>মহিলা</th>
                             </tr>
@@ -73,21 +73,18 @@
                                     কতটি গ্রুপ বের হয়েছে
                                 </td>
                                 <td>
-                                    <input
-                                        class="bg-input w-100 text-center"
-                                        :type="type"
-                                        readonly
-                                        :value="
+                                    <p class="text-center">
+                                        {{
                                             total_man_woman_count(
-                                                report_sum_data
-                                                    ?.thana_dawat1_regular_group_wises
-                                                    ?.how_many_groups_are_out_man,
-                                                report_sum_data
-                                                    ?.thana_dawat1_regular_group_wises
-                                                    ?.how_many_groups_are_out_woman
-                                            )
-                                        "
-                                    />
+                                                    report_sum_data
+                                                        ?.thana_dawat1_regular_group_wises
+                                                        ?.how_many_groups_are_out_man,
+                                                    report_sum_data
+                                                        ?.thana_dawat1_regular_group_wises
+                                                        ?.how_many_groups_are_out_woman
+                                                )
+                                        }}
+                                    </p>
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -990,7 +987,13 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <p class="fixed-input-30">
+                                            <p class="w-100 text-center">
+                                                {{
+                                                    formatBangla(
+                                                        this.mass_communication
+                                                            .total_mass_communication_dosok_group
+                                                    )
+                                                }}
                                                 {{
                                                     formatBangla(
                                                         this.mass_communication
@@ -1009,7 +1012,7 @@
                                             </popup>
                                         </div>
                                         <p>/</p>
-                                        <p class="fixed-input-30">
+                                        <p class="w-100 text-center">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
@@ -1019,7 +1022,7 @@
                                         </p>
                                         <p>|</p>
                                         <!-- <div class="parent_popup"> -->
-                                        <p class="fixed-input-30">
+                                        <p class="w-100 text-center">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
@@ -1038,7 +1041,7 @@
                                             </popup> -->
                                         <!-- </div> -->
                                         <p>/</p>
-                                        <p class="fixed-input-30">
+                                        <p class="w-100 text-center">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
@@ -1069,7 +1072,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -1100,7 +1103,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1130,7 +1133,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <!-- <popup
                                                     :ward_id="
@@ -1161,7 +1164,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1195,7 +1198,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1224,7 +1227,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1253,7 +1256,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1282,7 +1285,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1316,7 +1319,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1345,7 +1348,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1374,7 +1377,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1403,7 +1406,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1540,7 +1543,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1768,7 +1771,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1883,7 +1886,7 @@
                                     <div
                                         class="d-flex justify-content-center align-items-center"
                                     >
-                                        <p class="fixed-input-30">
+                                        <p class="w-100">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
@@ -1892,7 +1895,7 @@
                                             }}
                                         </p>
                                         <p>/</p>
-                                        <p class="fixed-input-30">
+                                        <p class="w-100">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
@@ -1901,7 +1904,7 @@
                                             }}
                                         </p>
                                         <p>|</p>
-                                        <p class="fixed-input-30">
+                                        <p class="w-100">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
@@ -1910,7 +1913,7 @@
                                             }}
                                         </p>
                                         <p>/</p>
-                                        <p class="fixed-input-30">
+                                        <p class="w-100">
                                             {{
                                                 formatBangla(
                                                     this.mass_communication
@@ -1940,7 +1943,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1969,7 +1972,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -1998,7 +2001,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2027,7 +2030,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2061,7 +2064,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2090,7 +2093,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2119,7 +2122,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2148,7 +2151,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2182,7 +2185,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2211,7 +2214,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2240,7 +2243,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2269,7 +2272,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2322,7 +2325,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -2352,7 +2355,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -2382,7 +2385,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -2445,7 +2448,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2474,7 +2477,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2492,7 +2495,7 @@
                                     <div
                                         class="d-flex justify-content-center align-items-center"
                                     >
-                                        <div class="position-relative">
+                                        <div class="parent_popup">
                                             <input
                                                 name="teacher_worker_man"
                                                 :value="
@@ -2508,7 +2511,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2537,7 +2540,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2578,7 +2581,7 @@
                                     <div
                                         class="d-flex justify-content-center align-items-center"
                                     >
-                                        <div class="position-relative">
+                                        <div class="parent_popup">
                                             <input
                                                 name="student_rokon_man"
                                                 :value="
@@ -2594,7 +2597,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2623,7 +2626,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2641,7 +2644,7 @@
                                     <div
                                         class="d-flex justify-content-center align-items-center"
                                     >
-                                        <div class="position-relative">
+                                        <div class="parent_popup">
                                             <input
                                                 name="student_worker_man"
                                                 :value="
@@ -2657,7 +2660,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2686,7 +2689,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2725,8 +2728,8 @@
                         <table class="text-center mb-2">
                             <thead>
                                 <tr>
-                                    <th class="w-40">সামষ্টিক উদ্যোগ</th>
-                                    <th class="w-30">মোট সংখ্যা</th>
+                                    <th class="width-40">সামষ্টিক উদ্যোগ</th>
+                                    <th class="width-30">মোট সংখ্যা</th>
                                     <th class="width-30 px-0">
                                         মোট শিক্ষার্থী সংখ্যা
                                     </th>
@@ -2738,7 +2741,7 @@
                                         কুরআন শিক্ষার গ্রুপ
                                     </td>
                                     <td>
-                                        <div class="position-relative">
+                                        <div class="parent_popup">
                                             <input
                                                 name="quran_learning_total_group"
                                                 :value="
@@ -2754,7 +2757,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2768,7 +2771,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="position-relative">
+                                        <div class="parent_popup">
                                             <input
                                                 name="quran_learning_total_students"
                                                 :value="
@@ -2784,7 +2787,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2806,7 +2809,7 @@
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="total_moktob"
                                                     :value="
@@ -2822,7 +2825,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -2852,7 +2855,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -2871,7 +2874,7 @@
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="total_moktob_students"
                                                     :value="
@@ -2887,7 +2890,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -2917,7 +2920,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -2942,7 +2945,7 @@
                                         মোট কতজন সহীহ তিলাওয়াত শিখেছেন
                                     </td>
                                     <td class="width-30">
-                                        <div class="position-relative">
+                                        <div class="parent_popup">
                                             <input
                                                 name="how_much_learned_sohih_tilawat"
                                                 :value="
@@ -2958,7 +2961,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -2981,7 +2984,7 @@
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="how_much_invited_man"
                                                     :value="
@@ -2997,7 +3000,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3027,7 +3030,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3051,7 +3054,7 @@
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
-                                            <div class="position-relative">
+                                            <div class="parent_popup">
                                                 <input
                                                     name="how_much_been_associated_man"
                                                     :value="
@@ -3067,7 +3070,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3097,7 +3100,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3179,7 +3182,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -3209,7 +3212,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -3251,7 +3254,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -3281,7 +3284,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -3329,7 +3332,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3359,7 +3362,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3402,7 +3405,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3432,7 +3435,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3467,7 +3470,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3497,7 +3500,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3538,7 +3541,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3568,7 +3571,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3603,7 +3606,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3633,7 +3636,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3674,7 +3677,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -3709,7 +3712,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -3765,7 +3768,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3801,7 +3804,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -3872,7 +3875,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -3907,7 +3910,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -3937,7 +3940,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -3973,7 +3976,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -4003,7 +4006,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -4030,14 +4033,14 @@
                             <thead>
                                 <tr>
                                     <th class="">শ্রেণি-পেশার বিবরণ</th>
-                                    <th class="">
+                                    <th class="width-20">
                                         মোট কতজনের মাঝে দাওয়াত পৌঁছানো হয়েছে
                                     </th>
-                                    <th class="">
+                                    <th class="width-20">
                                         মোট কতজন সহযোগী সদস্য হয়েছেন
                                     </th>
                                     <th class="width-10">টার্গেট</th>
-                                    <th class="">বাস্তবায়নের হার</th>
+                                    <th class="width-20">বাস্তবায়নের হার</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -4065,7 +4068,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4095,7 +4098,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4130,7 +4133,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4160,7 +4163,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4195,7 +4198,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4225,7 +4228,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4296,7 +4299,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4326,7 +4329,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4361,7 +4364,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4391,7 +4394,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4426,7 +4429,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4456,7 +4459,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4524,7 +4527,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -4554,7 +4557,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -4584,7 +4587,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -4634,7 +4637,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -4662,7 +4665,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -4690,7 +4693,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -4743,7 +4746,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4773,7 +4776,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4808,7 +4811,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4838,7 +4841,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4873,7 +4876,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4903,7 +4906,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -4970,7 +4973,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -4998,7 +5001,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -5026,7 +5029,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -5076,7 +5079,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5106,7 +5109,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5136,7 +5139,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5187,7 +5190,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5217,7 +5220,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5247,7 +5250,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5309,7 +5312,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -5339,7 +5342,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -5393,7 +5396,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -5427,7 +5430,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -5463,7 +5466,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -5500,7 +5503,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5530,7 +5533,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-30 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -5569,7 +5572,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -5602,7 +5605,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -5651,7 +5654,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5680,7 +5683,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5714,7 +5717,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5743,7 +5746,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -5789,7 +5792,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -5815,7 +5818,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -5841,7 +5844,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -5902,7 +5905,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -5947,7 +5950,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -5991,7 +5994,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -6033,7 +6036,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -6067,7 +6070,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -6129,7 +6132,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -6366,7 +6369,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -6395,7 +6398,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -6424,7 +6427,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -6621,7 +6624,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -6650,7 +6653,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -6679,7 +6682,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -6711,7 +6714,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -6740,7 +6743,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -6769,7 +6772,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -6801,7 +6804,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -6830,7 +6833,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -6859,7 +6862,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -8295,7 +8298,7 @@
                                         class="d-flex justify-content-between align-items-center"
                                     >
                                         <span style="font-size: 12px"
-                                            >মনোনয়ন -
+                                            >মনোনয়ন-
                                         </span>
                                         <input
                                             name="rokon_briddhi_manonnoyon"
@@ -8312,13 +8315,13 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
 
                                         |
 
                                         <span style="font-size: 12px"
-                                            >আগত -
+                                            >আগত-
                                         </span>
                                         <input
                                             name="rokon_briddhi_agoto"
@@ -8335,7 +8338,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                     </div>
                                 </td>
@@ -12966,57 +12969,63 @@
                                     পৌরসভা/ইউনিয়নের মোট প্রশাসনিক ওয়ার্ড
                                 </td>
                                 <td>
-                                    <input
-                                        name="total_proshashonik_ward_of_pouroshova_previous"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon4_organizational_structures
-                                                    ?.total_proshashonik_ward_of_pouroshova_previous
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon4-organizational-structure'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input fixed-input-20 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'thana_songothon4_organizational_structures'"
-                                        :field_title="'unit_book_distribution_increase'"
-                                        :month="month"
-                                    >
-                                    </popup>
-                                    /
-                                    <input
-                                        name="total_proshashonik_ward_of_union_previous"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon4_organizational_structures
-                                                    ?.total_proshashonik_ward_of_union_previous
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon4-organizational-structure'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input fixed-input-20 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'thana_songothon4_organizational_structures'"
-                                        :field_title="'unit_book_distribution_increase'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="parent_popup">
+                                            <input
+                                                name="total_proshashonik_ward_of_pouroshova_previous"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon4_organizational_structures
+                                                            ?.total_proshashonik_ward_of_pouroshova_previous
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon4-organizational-structure'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :ward_id="report_header?.ward_info?.id"
+                                                :table_name="'thana_songothon4_organizational_structures'"
+                                                :field_title="'unit_book_distribution_increase'"
+                                                :month="month"
+                                            >
+                                            </popup>
+
+                                        </div>
+                                        /
+                                        <input
+                                            name="total_proshashonik_ward_of_union_previous"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_songothon4_organizational_structures
+                                                        ?.total_proshashonik_ward_of_union_previous
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-songothon4-organizational-structure'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="report_header?.ward_info?.id"
+                                            :table_name="'thana_songothon4_organizational_structures'"
+                                            :field_title="'unit_book_distribution_increase'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_proshashonik_ward_of_pouroshova_present"
                                         :value="
@@ -13032,7 +13041,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13057,7 +13066,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13066,8 +13075,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_proshashonik_ward_of_pouroshova_increase"
                                         :value="
@@ -13083,7 +13094,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13108,7 +13119,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13117,8 +13128,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_proshashonik_ward_of_pouroshova_gatti"
                                         :value="
@@ -13134,7 +13147,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13159,7 +13172,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13168,8 +13181,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_proshashonik_ward_of_pouroshova_target"
                                         :value="
@@ -13185,7 +13200,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13210,7 +13225,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13219,6 +13234,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     {{
@@ -13257,6 +13273,7 @@
                                     পৌরসভা/ইউনিয়নের মোট সংগঠিত ওয়ার্ড
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothito_ward_of_pouroshova_previous"
                                         :value="
@@ -13272,7 +13289,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13297,7 +13314,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13306,8 +13323,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothito_ward_of_pouroshova_present"
                                         :value="
@@ -13323,7 +13342,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13348,7 +13367,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13357,8 +13376,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothito_ward_of_pouroshova_increase"
                                         :value="
@@ -13374,7 +13395,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13399,7 +13420,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13408,8 +13429,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothito_ward_of_pouroshova_gatti"
                                         :value="
@@ -13425,7 +13448,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13450,7 +13473,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13459,8 +13482,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothito_ward_of_pouroshova_target"
                                         :value="
@@ -13476,7 +13501,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13501,7 +13526,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13510,6 +13535,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     {{
@@ -13548,6 +13574,7 @@
                                     পৌরসভা/ইউনিয়নের মোট সাংগঠনিক ওয়ার্ড (পুঃ)
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_man_previous"
                                         :value="
@@ -13563,7 +13590,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13588,7 +13615,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13597,8 +13624,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_man_present"
                                         :value="
@@ -13614,7 +13643,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13639,7 +13668,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13648,8 +13677,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_man_increase"
                                         :value="
@@ -13665,7 +13696,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13690,7 +13721,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13699,8 +13730,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_man_gatti"
                                         :value="
@@ -13716,7 +13749,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13741,7 +13774,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13750,8 +13783,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_man_target"
                                         :value="
@@ -13767,7 +13802,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13792,7 +13827,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13801,6 +13836,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     {{
@@ -13839,6 +13875,7 @@
                                     পৌরসভা/ইউনিয়নের মোট সাংগঠনিক ওয়ার্ড (ম:)
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_woman_previous"
                                         :value="
@@ -13854,7 +13891,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13879,7 +13916,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13888,8 +13925,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_woman_present"
                                         :value="
@@ -13905,7 +13944,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13930,7 +13969,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13938,9 +13977,11 @@
                                         :field_title="'unit_book_distribution_increase'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup>.
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_woman_increase"
                                         :value="
@@ -13956,7 +13997,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13981,7 +14022,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -13990,8 +14031,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_woman_gatti"
                                         :value="
@@ -14007,7 +14050,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14032,7 +14075,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14041,8 +14084,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_songothonik_ward_of_pouroshova_woman_target"
                                         :value="
@@ -14058,7 +14103,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14083,7 +14128,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14092,6 +14137,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     {{
@@ -14149,7 +14195,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14175,7 +14221,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14201,7 +14247,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14227,7 +14273,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14253,7 +14299,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14300,7 +14346,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14326,7 +14372,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14352,7 +14398,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14378,7 +14424,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14404,7 +14450,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14451,7 +14497,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14477,7 +14523,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14503,7 +14549,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14529,7 +14575,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14555,7 +14601,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14602,7 +14648,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14628,7 +14674,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14654,7 +14700,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14680,7 +14726,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14706,7 +14752,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14753,7 +14799,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14779,7 +14825,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14805,7 +14851,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14831,7 +14877,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14857,7 +14903,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14904,7 +14950,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14930,7 +14976,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14956,7 +15002,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -14982,7 +15028,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15008,7 +15054,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15069,7 +15115,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15099,7 +15145,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15129,7 +15175,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15159,7 +15205,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15189,7 +15235,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15249,7 +15295,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15279,7 +15325,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15309,7 +15355,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15339,7 +15385,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15369,7 +15415,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15429,7 +15475,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15459,7 +15505,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15489,7 +15535,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15519,7 +15565,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15549,7 +15595,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15611,7 +15657,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15641,7 +15687,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15671,7 +15717,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15701,7 +15747,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15731,7 +15777,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -15792,7 +15838,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15818,7 +15864,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15844,7 +15890,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15870,7 +15916,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15896,7 +15942,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15943,7 +15989,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15969,7 +16015,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -15995,7 +16041,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16021,7 +16067,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16047,7 +16093,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16093,7 +16139,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16123,7 +16169,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16153,7 +16199,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16183,7 +16229,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16213,7 +16259,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16261,7 +16307,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16287,7 +16333,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16313,7 +16359,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16339,7 +16385,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16365,7 +16411,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16410,7 +16456,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16436,7 +16482,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16462,7 +16508,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16488,7 +16534,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16514,7 +16560,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16560,7 +16606,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16590,7 +16636,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16620,7 +16666,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16650,7 +16696,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16680,7 +16726,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-30 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -16741,7 +16787,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16767,7 +16813,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16793,7 +16839,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16819,7 +16865,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -16845,7 +16891,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17704,57 +17750,60 @@
                             <tr>
                                 <td class="text-start">পৌরসভা/ইউনিয়ন</td>
                                 <td>
-                                    <input
-                                        name="pouroshova_previous"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon6_emarot_kayems
-                                                    ?.pouroshova_previous
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon6-emarot-kayem'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input fixed-input-30 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'thana_songothon6_emarot_kayems'"
-                                        :field_title="'pouroshova_previous'"
-                                        :month="month"
-                                    >
-                                    </popup>
-                                    /
-                                    <input
-                                        name="union_previous"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon6_emarot_kayems
-                                                    ?.union_previous
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon6-emarot-kayem'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input fixed-input-30 text-center"
-                                    />
-                                    <popup
-                                        :ward_id="report_header?.ward_info?.id"
-                                        :table_name="'thana_songothon6_emarot_kayems'"
-                                        :field_title="'union_previous'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <input
+                                            name="pouroshova_previous"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_songothon6_emarot_kayems
+                                                        ?.pouroshova_previous
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-songothon6-emarot-kayem'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="report_header?.ward_info?.id"
+                                            :table_name="'thana_songothon6_emarot_kayems'"
+                                            :field_title="'pouroshova_previous'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <input
+                                            name="union_previous"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_songothon6_emarot_kayems
+                                                        ?.union_previous
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-songothon6-emarot-kayem'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :ward_id="report_header?.ward_info?.id"
+                                            :table_name="'thana_songothon6_emarot_kayems'"
+                                            :field_title="'union_previous'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_present"
                                         :value="
@@ -17770,7 +17819,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17795,7 +17844,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17804,8 +17853,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_increase"
                                         :value="
@@ -17821,7 +17872,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17846,7 +17897,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17855,8 +17906,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_gatti"
                                         :value="
@@ -17872,7 +17925,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17897,7 +17950,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17906,8 +17959,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_target"
                                         :value="
@@ -17923,7 +17978,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17948,7 +18003,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -17957,6 +18012,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -17964,6 +18020,7 @@
                                     ওয়ার্ড (সিটি/পৌর/ইউনিয়ন)
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ward_of_city_previous"
                                         :value="
@@ -17979,7 +18036,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18004,7 +18061,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18029,7 +18086,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18038,8 +18095,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ward_of_city_present"
                                         :value="
@@ -18055,7 +18114,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18080,7 +18139,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18105,7 +18164,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18114,8 +18173,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ward_of_city_increase"
                                         :value="
@@ -18131,7 +18192,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18156,7 +18217,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18181,7 +18242,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18190,8 +18251,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ward_of_city_gatti"
                                         :value="
@@ -18207,7 +18270,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18232,7 +18295,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18257,7 +18320,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18266,8 +18329,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ward_of_city_target"
                                         :value="
@@ -18283,7 +18348,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18308,7 +18373,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18333,7 +18398,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18342,6 +18407,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -18384,7 +18450,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -18413,7 +18479,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -18445,7 +18511,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -18474,7 +18540,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -18506,7 +18572,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -18535,7 +18601,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -18580,7 +18646,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18609,7 +18675,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18625,6 +18691,7 @@
                                     মোট ট্রেড ইউনিয়ন বৃদ্ধি/ ঘাটতি সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_trade_union_increase"
                                         :value="
@@ -18640,7 +18707,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18665,7 +18732,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18674,12 +18741,14 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">
                                     ট্রাস্ট, ফাউন্ডেশন ও সোসাইটি বৃদ্ধি/ঘাটতি
                                     সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="total_trust_increase"
                                         :value="
@@ -18695,7 +18764,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18720,7 +18789,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18729,6 +18798,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -18743,6 +18813,7 @@
                                     জেলা/মহানগরী দায়িত্বশীলদের মোট সফর সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="jela_daittoshil_total_sofor_man"
                                         :value="
@@ -18758,7 +18829,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18783,7 +18854,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18792,12 +18863,14 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td class="text-start px-2 width-40">
                                     জেলা/মহানগরী মহিলা বিভাগীয় দায়িত্বশীলদের
                                     সফর সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="jela_daittoshil_total_sofor_woman"
                                         :value="
@@ -18813,7 +18886,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18838,7 +18911,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18847,6 +18920,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -18854,6 +18928,7 @@
                                     উপজেলা/থানা আমীর/সভাপতির মোট সফর সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_president_total_sofor_man"
                                         :value="
@@ -18869,7 +18944,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18894,7 +18969,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18903,12 +18978,14 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td class="text-start px-2">
                                     উপজেলা/থানা মহিলা বিভাগীয় সেক্রেটারির মোট
                                     সফর সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_president_total_sofor_woman"
                                         :value="
@@ -18924,7 +19001,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18949,7 +19026,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -18958,6 +19035,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -18966,6 +19044,7 @@
                                     সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_team_total_sofor_man"
                                         :value="
@@ -18981,7 +19060,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19006,7 +19085,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19015,12 +19094,14 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td class="text-start font-13 ps-2">
                                     উপজেলা/থানা মহিলা বিভাগীয় কর্মপরিষদ / টিম
                                     সদস্যদের মোট সফর সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_team_total_sofor_woman"
                                         :value="
@@ -19036,7 +19117,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19061,7 +19142,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-30 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19070,6 +19151,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -19077,12 +19159,12 @@
                 </div>
                 <div class="yanot mb-2">
                     <h4 class="fs-6 fw-bold">১০. ইয়ানত দাতা:</h4>
-                    <table class="text-center mb-1 table_layout_fixed">
+                    <table class="mb-1 table_layout_fixed">
                         <thead>
                             <tr>
                                 <th class="">নতুন ইয়ানত দাতা</th>
-                                <th class="">মোট সংখ্যা</th>
-                                <th class="">অর্থের পরিমাণ</th>
+                                <th class="text-center">মোট সংখ্যা</th>
+                                <th class="text-center">অর্থের পরিমাণ</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -19106,7 +19188,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -19135,7 +19217,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -19167,7 +19249,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -19196,7 +19278,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-30 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -19259,7 +19341,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -19286,7 +19368,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -19313,7 +19395,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -19327,6 +19409,7 @@
                                     </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_mozlishe_sura_boithok_women_total"
                                         :value="
@@ -19342,7 +19425,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19367,7 +19450,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19392,7 +19475,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19401,8 +19484,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_mozlishe_sura_boithok_man_target"
                                         :value="
@@ -19418,7 +19503,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19443,7 +19528,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19468,7 +19553,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19477,8 +19562,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_mozlishe_sura_boithok_man_uposthiti"
                                         :value="
@@ -19494,7 +19581,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19519,7 +19606,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19544,7 +19631,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19553,8 +19640,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_mozlishe_sura_boithok_women_uposthiti"
                                         :value="
@@ -19570,7 +19659,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19595,7 +19684,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19620,7 +19709,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19629,6 +19718,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -19638,6 +19728,7 @@
                                     (উপজেলা-থানা/পৌরসভা/ইউনিয়ন)
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_kormoporishod_boithok_man_total"
                                         :value="
@@ -19653,7 +19744,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19678,7 +19769,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19703,7 +19794,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19712,8 +19803,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_kormoporishod_boithok_women_total"
                                         :value="
@@ -19729,7 +19822,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19754,7 +19847,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19779,7 +19872,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19788,8 +19881,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_kormoporishod_boithok_man_target"
                                         :value="
@@ -19805,7 +19900,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19830,7 +19925,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19855,7 +19950,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19864,8 +19959,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_kormoporishod_boithok_man_uposthiti"
                                         :value="
@@ -19881,7 +19978,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19906,7 +20003,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19931,7 +20028,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19940,8 +20037,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_kormoporishod_boithok_women_uposthiti"
                                         :value="
@@ -19957,7 +20056,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -19982,7 +20081,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20007,7 +20106,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20016,6 +20115,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -20040,7 +20140,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20066,7 +20166,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20092,7 +20192,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20118,7 +20218,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20144,7 +20244,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20174,7 +20274,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20200,7 +20300,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20226,7 +20326,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20252,7 +20352,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20278,7 +20378,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20310,7 +20410,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20336,7 +20436,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20362,7 +20462,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20388,7 +20488,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20414,7 +20514,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20431,6 +20531,7 @@
                                     পৌরসভা/ইউনিয়ন/ওয়ার্ড বৈঠক
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_boithok_man_total"
                                         :value="
@@ -20446,7 +20547,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20471,7 +20572,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20496,7 +20597,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20505,8 +20606,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_boithok_women_total"
                                         :value="
@@ -20522,7 +20625,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20547,7 +20650,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20572,7 +20675,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20581,8 +20684,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_boithok_man_target"
                                         :value="
@@ -20598,7 +20703,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20623,7 +20728,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20648,7 +20753,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20657,8 +20762,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_boithok_man_uposthiti"
                                         :value="
@@ -20674,7 +20781,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20699,7 +20806,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20724,7 +20831,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20733,8 +20840,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_boithok_women_uposthiti"
                                         :value="
@@ -20750,7 +20859,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20775,7 +20884,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20800,7 +20909,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20809,6 +20918,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -20817,6 +20927,7 @@
                                     পৌরসভা/ইউনিয়ন মাসিক সদস্য (রুকন) বৈঠক
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_mashik_rokon_boithok_man_total"
                                         :value="
@@ -20832,7 +20943,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20857,7 +20968,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20866,8 +20977,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_mashik_rokon_boithok_women_total"
                                         :value="
@@ -20883,7 +20996,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20908,7 +21021,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20917,8 +21030,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_mashik_rokon_boithok_man_target"
                                         :value="
@@ -20934,7 +21049,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20959,7 +21074,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -20968,8 +21083,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_mashik_rokon_boithok_man_uposthiti"
                                         :value="
@@ -20985,7 +21102,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21010,7 +21127,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21019,8 +21136,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_mashik_rokon_boithok_women_uposthiti"
                                         :value="
@@ -21036,7 +21155,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21061,7 +21180,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21070,6 +21189,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -21093,7 +21213,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21119,7 +21239,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21145,7 +21265,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21171,7 +21291,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21197,7 +21317,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21215,6 +21335,7 @@
                                     সম্মেলন
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="troimasik_rokon_sommelon_man_total"
                                         :value="
@@ -21230,7 +21351,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21255,7 +21376,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21280,7 +21401,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21289,8 +21410,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="troimasik_rokon_sommelon_women_total"
                                         :value="
@@ -21306,7 +21429,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21331,7 +21454,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21356,7 +21479,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21365,8 +21488,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="troimasik_rokon_sommelon_man_target"
                                         :value="
@@ -21382,7 +21507,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21407,7 +21532,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21432,7 +21557,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21441,8 +21566,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="troimasik_rokon_sommelon_man_uposthiti"
                                         :value="
@@ -21458,7 +21585,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21483,7 +21610,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21508,7 +21635,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21517,8 +21644,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="troimasik_rokon_sommelon_women_uposthiti"
                                         :value="
@@ -21534,7 +21663,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21559,7 +21688,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21584,7 +21713,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21593,6 +21722,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
@@ -21601,6 +21731,7 @@
                                     উপজেলা/থানা ভিত্তিক ওয়ার্ড সভাপতি সম্মেলন
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_word_sovapoti_sommelon_man_total"
                                         :value="
@@ -21616,7 +21747,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21641,7 +21772,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21650,8 +21781,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_word_sovapoti_sommelon_women_total"
                                         :value="
@@ -21667,7 +21800,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21692,7 +21825,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21701,8 +21834,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_word_sovapoti_sommelon_man_target"
                                         :value="
@@ -21718,7 +21853,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21743,7 +21878,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21752,8 +21887,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_word_sovapoti_sommelon_man_uposthiti"
                                         :value="
@@ -21769,7 +21906,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21794,7 +21931,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21803,8 +21940,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_word_sovapoti_sommelon_women_uposthiti"
                                         :value="
@@ -21820,7 +21959,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21845,7 +21984,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21854,6 +21993,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                </div>
                                 </td>
                             </tr>
                             <tr>
@@ -21862,6 +22002,7 @@
                                     উপজেলা/থানা পর্যায়ে কর্মী সম্মেলন
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_kormi_sommelon_man_total"
                                         :value="
@@ -21877,7 +22018,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21902,7 +22043,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21911,8 +22052,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_kormi_sommelon_women_total"
                                         :value="
@@ -21928,7 +22071,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21953,7 +22096,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -21962,8 +22105,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_kormi_sommelon_man_target"
                                         :value="
@@ -21979,7 +22124,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22004,7 +22149,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22013,8 +22158,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_kormi_sommelon_man_uposthiti"
                                         :value="
@@ -22030,7 +22177,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22055,7 +22202,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22064,8 +22211,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_kormi_sommelon_women_uposthiti"
                                         :value="
@@ -22081,7 +22230,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22106,7 +22255,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22115,6 +22264,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -22123,6 +22273,7 @@
                                     ইউনিয়ন/ওয়ার্ড পর্যায়ে কর্মী সম্মেলন
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_kormi_sommelon_man_total"
                                         :value="
@@ -22138,7 +22289,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22163,7 +22314,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22172,8 +22323,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_kormi_sommelon_women_total"
                                         :value="
@@ -22189,7 +22342,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22214,7 +22367,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22223,8 +22376,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_kormi_sommelon_man_target"
                                         :value="
@@ -22240,7 +22395,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22265,7 +22420,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22274,8 +22429,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_kormi_sommelon_man_uposthiti"
                                         :value="
@@ -22291,7 +22448,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22316,7 +22473,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22325,8 +22482,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_kormi_sommelon_women_uposthiti"
                                         :value="
@@ -22342,7 +22501,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22367,7 +22526,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22376,6 +22535,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -22385,6 +22545,7 @@
                                     সেক্রেটারি সম্মেলন
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_unit_sovapoti_sommelon_man_total"
                                         :value="
@@ -22400,7 +22561,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22425,7 +22586,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22434,8 +22595,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_unit_sovapoti_sommelon_women_total"
                                         :value="
@@ -22451,7 +22614,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22476,7 +22639,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22485,8 +22648,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_unit_sovapoti_sommelon_man_target"
                                         :value="
@@ -22502,7 +22667,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22527,7 +22692,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22536,8 +22701,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_unit_sovapoti_sommelon_man_uposthiti"
                                         :value="
@@ -22553,7 +22720,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22578,7 +22745,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22587,8 +22754,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_unit_sovapoti_sommelon_women_uposthiti"
                                         :value="
@@ -22604,7 +22773,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22629,7 +22798,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22638,12 +22807,14 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="">১৪.</td>
                                 <td class="text-start">উলামা বৈঠক/সমাবেশ</td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ulama_boithok_man_total"
                                         :value="
@@ -22659,7 +22830,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22684,7 +22855,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22693,8 +22864,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ulama_boithok_women_total"
                                         :value="
@@ -22710,7 +22883,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22735,7 +22908,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22744,8 +22917,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ulama_boithok_man_target"
                                         :value="
@@ -22761,7 +22936,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22786,7 +22961,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22795,8 +22970,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ulama_boithok_man_uposthiti"
                                         :value="
@@ -22812,7 +22989,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22837,7 +23014,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22846,8 +23023,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ulama_boithok_women_uposthiti"
                                         :value="
@@ -22863,7 +23042,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22888,7 +23067,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22897,6 +23076,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -22920,7 +23100,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22946,7 +23126,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22972,7 +23152,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -22998,7 +23178,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23024,7 +23204,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23041,6 +23221,7 @@
                                     শ্রমিকদের নিয়ে বৈঠক/সমাবেশ
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sromik_boithok_man_total"
                                         :value="
@@ -23056,7 +23237,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23081,7 +23262,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23090,8 +23271,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sromik_boithok_women_total"
                                         :value="
@@ -23107,7 +23290,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23132,7 +23315,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23141,8 +23324,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sromik_boithok_man_target"
                                         :value="
@@ -23158,7 +23343,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23183,7 +23368,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23192,8 +23377,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sromik_boithok_man_uposthiti"
                                         :value="
@@ -23209,7 +23396,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23234,7 +23421,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23243,8 +23430,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sromik_boithok_women_uposthiti"
                                         :value="
@@ -23260,7 +23449,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23285,7 +23474,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23294,6 +23483,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -23315,7 +23505,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23341,7 +23531,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23367,7 +23557,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23393,7 +23583,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23419,7 +23609,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23451,7 +23641,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23477,7 +23667,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23503,7 +23693,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23529,7 +23719,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23555,7 +23745,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23572,6 +23762,7 @@
                                     সহযোগী সদস্য সমাবেশ/সম্মেলন
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="associate_member_somabesh_man_total"
                                         :value="
@@ -23587,7 +23778,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23612,7 +23803,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23621,8 +23812,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="associate_member_somabesh_women_total"
                                         :value="
@@ -23638,7 +23831,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23663,7 +23856,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23672,8 +23865,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="associate_member_somabesh_man_target"
                                         :value="
@@ -23689,7 +23884,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23714,7 +23909,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23723,8 +23918,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="associate_member_somabesh_man_uposthiti"
                                         :value="
@@ -23740,7 +23937,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23765,7 +23962,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23774,8 +23971,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="associate_member_somabesh_women_uposthiti"
                                         :value="
@@ -23791,7 +23990,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23816,7 +24015,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23825,6 +24024,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -23846,7 +24046,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23872,7 +24072,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23898,7 +24098,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23924,7 +24124,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -23950,7 +24150,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24013,7 +24213,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24039,7 +24239,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24065,7 +24265,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24091,7 +24291,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24117,7 +24317,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24135,6 +24335,7 @@
                                     শিক্ষাশিবির/শিক্ষা বৈঠক
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_rokon_shikkha_shibir_man_total"
                                         :value="
@@ -24150,7 +24351,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24175,7 +24376,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24184,8 +24385,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_rokon_shikkha_shibir_women_total"
                                         :value="
@@ -24201,7 +24404,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24226,7 +24429,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24235,8 +24438,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_rokon_shikkha_shibir_man_target"
                                         :value="
@@ -24252,7 +24457,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24277,7 +24482,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24286,8 +24491,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_rokon_shikkha_shibir_man_uposthiti"
                                         :value="
@@ -24303,7 +24510,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24328,7 +24535,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24337,8 +24544,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_rokon_shikkha_shibir_women_uposthiti"
                                         :value="
@@ -24354,7 +24563,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24379,7 +24588,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24388,6 +24597,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -24397,6 +24607,7 @@
                                     শিক্ষাশিবির/শিক্ষা বৈঠক
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_man_total"
                                         :value="
@@ -24412,7 +24623,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24437,7 +24648,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24446,8 +24657,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_women_total"
                                         :value="
@@ -24463,7 +24676,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24488,7 +24701,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24497,8 +24710,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_man_target"
                                         :value="
@@ -24514,7 +24729,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24539,7 +24754,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24548,8 +24763,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_man_uposthiti"
                                         :value="
@@ -24565,7 +24782,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24590,7 +24807,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24599,8 +24816,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_women_uposthiti"
                                         :value="
@@ -24616,7 +24835,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24641,7 +24860,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24650,6 +24869,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -24659,6 +24879,7 @@
                                     শিক্ষাশিবির/শিক্ষা বৈঠক
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_kormi_shikkha_shibir_man_total"
                                         :value="
@@ -24674,7 +24895,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24699,7 +24920,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24708,8 +24929,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_kormi_shikkha_shibir_women_total"
                                         :value="
@@ -24725,7 +24948,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24750,7 +24973,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24759,8 +24982,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_kormi_shikkha_shibir_man_target"
                                         :value="
@@ -24776,7 +25001,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24801,7 +25026,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24810,8 +25035,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_kormi_shikkha_shibir_man_uposthiti"
                                         :value="
@@ -24827,7 +25054,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24852,7 +25079,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24861,8 +25088,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_vittik_kormi_shikkha_shibir_women_uposthiti"
                                         :value="
@@ -24878,7 +25107,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24903,7 +25132,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24912,6 +25141,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -24921,6 +25151,7 @@
                                     কর্মীদের প্রশিক্ষণ প্রোগ্রাম
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_former_Student_kormi_training_program_man_total"
                                         :value="
@@ -24936,7 +25167,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24961,7 +25192,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -24970,8 +25201,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_former_Student_kormi_training_program_women_total"
                                         :value="
@@ -24987,7 +25220,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25012,7 +25245,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25021,8 +25254,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_former_Student_kormi_training_program_man_target"
                                         :value="
@@ -25038,7 +25273,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25063,7 +25298,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25072,8 +25307,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_former_Student_kormi_training_program_man_uposthiti"
                                         :value="
@@ -25089,7 +25326,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25114,7 +25351,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25123,8 +25360,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upozila_former_Student_kormi_training_program_women_uposthiti"
                                         :value="
@@ -25140,7 +25379,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25165,7 +25404,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25174,6 +25413,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -25183,6 +25423,7 @@
                                     বৈঠক
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_kormi_shikkha_boithok_man_total"
                                         :value="
@@ -25198,7 +25439,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25223,7 +25464,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25248,7 +25489,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25257,8 +25498,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_kormi_shikkha_boithok_women_total"
                                         :value="
@@ -25274,7 +25517,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25299,7 +25542,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25324,7 +25567,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25333,8 +25576,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_kormi_shikkha_boithok_man_target"
                                         :value="
@@ -25350,7 +25595,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25375,7 +25620,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25400,7 +25645,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25409,8 +25654,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
@@ -25426,7 +25673,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25451,7 +25698,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25476,7 +25723,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25485,8 +25732,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="pouroshova_kormi_shikkha_boithok_women_uposthiti"
                                         :value="
@@ -25502,7 +25751,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25527,7 +25776,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25552,7 +25801,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25561,6 +25810,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -25582,7 +25832,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25608,7 +25858,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25634,7 +25884,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25660,7 +25910,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25686,7 +25936,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25716,7 +25966,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25742,7 +25992,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25768,7 +26018,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25794,7 +26044,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25820,7 +26070,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25873,7 +26123,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25899,7 +26149,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25925,7 +26175,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25951,7 +26201,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -25977,7 +26227,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26003,7 +26253,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26020,6 +26270,7 @@
                                     কর্মী পাঠচক্র /আলোচনা চক্র
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="kormi_path_cokro_man_total_group"
                                         :value="
@@ -26035,7 +26286,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26060,7 +26311,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26069,8 +26320,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="kormi_path_cokro_woman_total_group"
                                         :value="
@@ -26086,7 +26339,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26111,7 +26364,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26120,8 +26373,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="kormi_path_cokro_man_total_odhibeshon"
                                         :value="
@@ -26137,7 +26392,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26162,7 +26417,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26171,8 +26426,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="kormi_path_cokro_woman_total_odhibeshon"
                                         :value="
@@ -26188,7 +26445,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26213,7 +26470,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26222,8 +26479,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="kormi_path_cokro_man_total_uposthiti"
                                         :value="
@@ -26239,7 +26498,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26264,7 +26523,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26273,8 +26532,10 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="kormi_path_cokro_woman_total_uposthiti"
                                         :value="
@@ -26290,7 +26551,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26315,7 +26576,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26324,6 +26585,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -26345,7 +26607,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26371,7 +26633,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26397,7 +26659,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26423,7 +26685,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26449,7 +26711,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26475,7 +26737,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26492,7 +26754,8 @@
                                     দারস/সহীহ কুরআন তিলাওয়াত অনুশীলন
                                 </td>
                                 <td class="text-start">
-                                    <span class="font-13"
+                                    <div class="d-flex justify-content-center align-items-center">
+                                    <span class="font-13 text-nowrap"
                                         >প্রোগ্রাম সংখ্যা:</span
                                     >
                                     <input
@@ -26510,7 +26773,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26519,9 +26782,11 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td class="text-start">
-                                    <span class="font-13"
+                                    <div class="d-flex justify-content-center align-items-center">
+                                    <span class="font-13 text-nowrap"
                                         >প্রোগ্রাম সংখ্যা:</span
                                     >
                                     <input
@@ -26539,7 +26804,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26548,6 +26813,7 @@
                                         :month="month"
                                     >
                                     </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     <input
@@ -26565,7 +26831,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26591,7 +26857,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26617,7 +26883,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26643,7 +26909,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -26679,6 +26945,7 @@
                             <tbody>
                                 <tr>
                                     <td>
+                                        <div class="d-flex justify-content-center align-items-center">
                                         <input
                                             name="upojela_manobshompod_committee"
                                             :value="
@@ -26694,7 +26961,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -26721,7 +26988,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -26732,8 +26999,10 @@
                                             :month="month"
                                         >
                                         </popup>
+                                        </div>
                                     </td>
                                     <td>
+                                        <div class="d-flex justify-content-center align-items-center">
                                         <input
                                             name="upojela_manobshompod_committee_boithok"
                                             :value="
@@ -26749,7 +27018,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -26776,7 +27045,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -26787,8 +27056,10 @@
                                             :month="month"
                                         >
                                         </popup>
+                                        </div>
                                     </td>
                                     <td>
+                                        
                                         <input
                                             name="manpower_career_motivation_programs"
                                             :value="
@@ -26804,7 +27075,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -26854,7 +27125,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-20 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -26884,7 +27155,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-20 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -26914,7 +27185,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-20 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -26953,7 +27224,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-20 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -26983,7 +27254,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-20 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -27013,7 +27284,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-20 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -27043,7 +27314,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-20 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -27073,7 +27344,7 @@
                                                         )
                                                     "
                                                     :type="type"
-                                                    class="bg-input fixed-input-20 text-center"
+                                                    class="bg-input w-100 text-center"
                                                 />
                                                 <popup
                                                     :ward_id="
@@ -27110,7 +27381,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -27180,7 +27451,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -27206,7 +27477,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -27232,7 +27503,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -27258,7 +27529,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -27284,7 +27555,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -27324,7 +27595,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -27355,7 +27626,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -27401,7 +27672,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27431,7 +27702,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27461,7 +27732,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27508,7 +27779,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27541,7 +27812,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27580,7 +27851,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -27609,7 +27880,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -27646,7 +27917,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -27675,7 +27946,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -27711,7 +27982,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27744,7 +28015,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27779,7 +28050,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27812,7 +28083,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27847,7 +28118,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27880,7 +28151,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -27918,7 +28189,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -27947,7 +28218,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -27981,7 +28252,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28020,7 +28291,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -28049,7 +28320,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -28083,7 +28354,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28121,7 +28392,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -28150,7 +28421,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -28188,7 +28459,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -28217,7 +28488,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -28253,7 +28524,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28286,7 +28557,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28321,7 +28592,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28354,7 +28625,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28389,7 +28660,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28423,7 +28694,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28461,7 +28732,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -28490,7 +28761,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -28522,7 +28793,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28574,7 +28845,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -28603,7 +28874,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28629,7 +28900,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28660,7 +28931,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28686,7 +28957,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28712,7 +28983,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28743,7 +29014,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28769,7 +29040,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28795,7 +29066,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28835,7 +29106,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28865,7 +29136,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28896,7 +29167,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28925,7 +29196,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28956,7 +29227,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -28985,7 +29256,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -29016,7 +29287,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -29046,7 +29317,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29098,7 +29369,7 @@
                                         )
                                     "
                                     :type="type"
-                                    class="bg-input fixed-input-20 text-center"
+                                    class="bg-input w-100 text-center"
                                 />
                                 <popup
                                     :ward_id="report_header?.ward_info?.id"
@@ -29124,7 +29395,7 @@
                                         )
                                     "
                                     :type="type"
-                                    class="bg-input fixed-input-20 text-center"
+                                    class="bg-input w-100 text-center"
                                 />
                                 <popup
                                     :ward_id="report_header?.ward_info?.id"
@@ -29151,7 +29422,7 @@
                                         )
                                     "
                                     :type="type"
-                                    class="bg-input fixed-input-20 text-center"
+                                    class="bg-input w-100 text-center"
                                 />
                                 <popup
                                     :ward_id="report_header?.ward_info?.id"
@@ -29177,7 +29448,7 @@
                                         )
                                     "
                                     :type="type"
-                                    class="bg-input fixed-input-20 text-center"
+                                    class="bg-input w-100 text-center"
                                 />
                                 <popup
                                     :ward_id="report_header?.ward_info?.id"
@@ -29206,7 +29477,7 @@
                                         )
                                     "
                                     :type="type"
-                                    class="bg-input fixed-input-20 text-center"
+                                    class="bg-input w-100 text-center"
                                 />
                                 <popup
                                     :ward_id="report_header?.ward_info?.id"
@@ -29232,7 +29503,7 @@
                                         )
                                     "
                                     :type="type"
-                                    class="bg-input fixed-input-20 text-center"
+                                    class="bg-input w-100 text-center"
                                 />
                                 <popup
                                     :ward_id="report_header?.ward_info?.id"
@@ -29259,7 +29530,7 @@
                                         )
                                     "
                                     :type="type"
-                                    class="bg-input fixed-input-20 text-center"
+                                    class="bg-input w-100 text-center"
                                 />
                                 <popup
                                     :ward_id="report_header?.ward_info?.id"
@@ -29285,7 +29556,7 @@
                                         )
                                     "
                                     :type="type"
-                                    class="bg-input fixed-input-20 text-center"
+                                    class="bg-input w-100 text-center"
                                 />
                                 <popup
                                     :ward_id="report_header?.ward_info?.id"
@@ -29305,27 +29576,29 @@
                 </h4>
                 <div class="box">
                     <span class="">
-                        <input
-                            name="percentage_of_expense"
-                            :value="
-                                formatBangla(
-                                    report_sum_data?.thana_shomajsheba7_expenses
-                                        ?.percentage_of_expense
-                                )
-                            "
-                            @change="data_upload('thana-shomajsheba7-expense')"
-                            :type="type"
-                            class="bg-input fixed-input-20 text-center"
-                        />
-                        <popup
-                            :ward_id="report_header?.ward_info?.id"
-                            :table_name="'thana_songothon11_sangothonik_boithoks'"
-                            :field_title="'percentage_of_expense'"
-                            :month="month"
-                        >
-                        </popup>
-                        %</span
-                    >
+                        <div class="d-flex justify-content-center align-items-center">
+                            <input
+                                name="percentage_of_expense"
+                                :value="
+                                    formatBangla(
+                                        report_sum_data?.thana_shomajsheba7_expenses
+                                            ?.percentage_of_expense
+                                    )
+                                "
+                                @change="data_upload('thana-shomajsheba7-expense')"
+                                :type="type"
+                                class="bg-input w-100 text-center"
+                            />
+                            <popup
+                                :ward_id="report_header?.ward_info?.id"
+                                :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                :field_title="'percentage_of_expense'"
+                                :month="month"
+                            >
+                            </popup>
+                            %
+                        </div>
+                    </span>
                 </div>
             </div>
 
@@ -29361,7 +29634,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29390,7 +29663,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29424,7 +29697,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29453,7 +29726,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29501,7 +29774,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29530,7 +29803,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29568,7 +29841,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29596,7 +29869,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29624,7 +29897,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29657,7 +29930,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29685,7 +29958,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29713,7 +29986,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29751,7 +30024,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29779,7 +30052,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29807,7 +30080,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29835,7 +30108,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -29866,7 +30139,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29890,12 +30163,12 @@
                     <table class="text-center mb-1">
                         <thead>
                             <tr>
-                                <th>দিবসসমূহ</th>
-                                <th>মোট প্রোগ্রাম সংখ্যা</th>
-                                <th>গড় উপস্থিতি</th>
-                                <th>দিবসসমূহ</th>
-                                <th>মোট প্রোগ্রাম সংখ্যা</th>
-                                <th>গড় উপস্থিতি</th>
+                                <th class="width-20">দিবসসমূহ</th>
+                                <th class="width-15">মোট প্রোগ্রাম সংখ্যা</th>
+                                <th class="width-15">গড় উপস্থিতি</th>
+                                <th class="width-20">দিবসসমূহ</th>
+                                <th class="width-15">মোট প্রোগ্রাম সংখ্যা</th>
+                                <th class="width-15">গড় উপস্থিতি</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29920,7 +30193,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29949,7 +30222,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -29981,7 +30254,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30010,7 +30283,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30042,7 +30315,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30071,7 +30344,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30103,7 +30376,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30132,7 +30405,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30164,7 +30437,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30193,7 +30466,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30223,7 +30496,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30252,7 +30525,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -30275,17 +30548,17 @@
                     <table class="text-center mb-1">
                         <thead>
                             <tr>
-                                <th rowspan="2">নির্বাচনের ধরন</th>
-                                <th rowspan="2">মোট সংখ্যা</th>
-                                <th rowspan="2">মোট প্রার্থী সংখ্যা</th>
-                                <th rowspan="2">অংশগ্রহণ সংখ্যা</th>
-                                <th colspan="3">নির্বাচিত সংখ্যা</th>
-                                <th rowspan="2">দ্বিতীয় অবস্থান (পু/ম)</th>
+                                <th class="width-15" rowspan="2">নির্বাচনের ধরন</th>
+                                <th class="width-10" rowspan="2">মোট সংখ্যা</th>
+                                <th class="width-10" rowspan="2">মোট প্রার্থী সংখ্যা</th>
+                                <th class="width-10" rowspan="2">অংশগ্রহণ সংখ্যা</th>
+                                <th class="width-40" colspan="3">নির্বাচিত সংখ্যা</th>
+                                <th class="width-15" rowspan="2">দ্বিতীয় অবস্থান (পু/ম)</th>
                             </tr>
                             <tr>
-                                <th>মেয়র/চেয়ারম্যান</th>
-                                <th>ভাইস-চেয়ারম্যান (পু/ম)</th>
-                                <th>কাউন্সিলর/মেম্বার (পু/ম)</th>
+                                <th class="font-12" >মেয়র/চেয়ারম্যান</th>
+                                <th class="font-12 text-nowrap" >ভাইস-চেয়ারম্যান (পু/ম)</th>
+                                <th class="font-12" >কাউন্সিলর/মেম্বার (পু/ম)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30294,6 +30567,7 @@
                                     সিটি কর্পো:/পৌরসভা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="city_corporation_total"
                                         :value="
@@ -30309,7 +30583,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30333,7 +30607,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30341,8 +30615,10 @@
                                         :field_title="'pouroshova_total'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="city_corporation_total_candidate"
                                         :value="
@@ -30358,7 +30634,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30382,7 +30658,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30390,8 +30666,10 @@
                                         :field_title="'pouroshova_total_candidate'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="city_corporation_total_candidate_participated"
                                         :value="
@@ -30407,7 +30685,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30431,7 +30709,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30439,9 +30717,11 @@
                                         :field_title="'pouroshova_total_candidate_participated'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
 
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="city_corporation_Mayor_candidate_elected"
                                         :value="
@@ -30457,7 +30737,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30481,7 +30761,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30505,7 +30785,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30529,7 +30809,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30537,8 +30817,10 @@
                                         :field_title="'city_corporation_chairman_candidate_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="city_corporation_vice_chairman_candidate_man_elected"
                                         :value="
@@ -30554,7 +30836,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30578,7 +30860,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30602,7 +30884,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30626,7 +30908,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30634,8 +30916,10 @@
                                         :field_title="'pouroshova_vice_chairman_candidate_woman_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="city_corporation_councilor_candidate_man_elected"
                                         :value="
@@ -30651,7 +30935,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30675,7 +30959,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30699,7 +30983,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30723,7 +31007,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30747,7 +31031,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30771,7 +31055,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30795,7 +31079,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30819,7 +31103,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30827,8 +31111,10 @@
                                         :field_title="'pouroshova_member_candidate_woman_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="city_corporation_member_candidate_man_second_position"
                                         :value="
@@ -30844,7 +31130,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30868,7 +31154,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30892,7 +31178,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30916,7 +31202,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30924,6 +31210,7 @@
                                         :field_title="'pouroshova_member_candidate_woman_second_position'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -30944,7 +31231,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30969,7 +31256,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -30994,7 +31281,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31004,6 +31291,7 @@
                                     ></popup>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_porishod_Mayor_candidate_elected"
                                         :value="
@@ -31019,7 +31307,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31043,7 +31331,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31051,8 +31339,10 @@
                                         :field_title="'upojela_porishod_chairman_candidate_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_porishod_vice_chairman_candidate_man_elected"
                                         :value="
@@ -31068,7 +31358,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31092,7 +31382,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31100,8 +31390,10 @@
                                         :field_title="'upojela_porishod_vice_chairman_candidate_woman_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_porishod_councilor_candidate_man_elected"
                                         :value="
@@ -31117,7 +31409,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31141,7 +31433,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31165,7 +31457,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31189,7 +31481,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31197,8 +31489,10 @@
                                         :field_title="'upojela_porishod_member_candidate_woman_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_porishod_vice_chairman_candidate_man_second_position"
                                         :value="
@@ -31214,7 +31508,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31238,7 +31532,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31246,6 +31540,7 @@
                                         :field_title="'upojela_porishod_vice_chairman_candidate_woman_second_position'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -31266,7 +31561,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31291,7 +31586,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31316,7 +31611,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31326,6 +31621,7 @@
                                     ></popup>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_porishod_Mayor_candidate_elected"
                                         :value="
@@ -31341,7 +31637,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31365,7 +31661,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31373,8 +31669,10 @@
                                         :field_title="'union_porishod_chairman_candidate_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_porishod_vice_chairman_candidate_man_elected"
                                         :value="
@@ -31390,7 +31688,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31414,7 +31712,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31422,8 +31720,10 @@
                                         :field_title="'union_porishod_vice_chairman_candidate_woman_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_porishod_councilor_candidate_man_elected"
                                         :value="
@@ -31439,7 +31739,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31463,7 +31763,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31487,7 +31787,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31511,7 +31811,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31519,8 +31819,10 @@
                                         :field_title="'union_porishod_member_candidate_woman_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="union_porishod_vice_chairman_candidate_man_second_position"
                                         :value="
@@ -31536,7 +31838,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31560,7 +31862,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -31568,6 +31870,7 @@
                                         :field_title="'union_porishod_vice_chairman_candidate_woman_second_position'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -31606,7 +31909,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31634,7 +31937,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31665,7 +31968,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31693,7 +31996,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31724,7 +32027,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31752,7 +32055,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31785,7 +32088,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -31814,7 +32117,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -31843,7 +32146,7 @@
                                                 )
                                             "
                                             :type="type"
-                                            class="bg-input fixed-input-20 text-center"
+                                            class="bg-input w-100 text-center"
                                         />
                                         <popup
                                             :ward_id="
@@ -31878,7 +32181,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31906,7 +32209,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31937,7 +32240,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31965,7 +32268,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -31996,7 +32299,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -32024,7 +32327,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input fixed-input-20 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :ward_id="
@@ -32043,11 +32346,12 @@
                     <table class="text-center mb-2 table_layout_fixed">
                         <tbody>
                             <tr>
-                                <td class="font-14 text-start">
+                                <td class="font-14 text-start text-nowrap">
                                     উপজেলা/থানা/পৌরসভা/ইউনিয়ন/ওয়ার্ডভিত্তিক
                                     নির্বাচন পরিচালনা কমিটির বৈঠক সংখ্যা
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="upojela_vittik_election_management_committee_meeting"
                                         :value="
@@ -32063,7 +32367,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32086,7 +32390,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32110,7 +32414,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32134,7 +32438,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32158,7 +32462,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32166,6 +32470,7 @@
                                         :field_title="'ward_vittik_election_management_committee_meeting'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -32189,6 +32494,7 @@
                         <tbody>
                             <tr>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="press_release"
                                         :value="
@@ -32204,7 +32510,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32228,7 +32534,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32252,7 +32558,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32260,8 +32566,10 @@
                                         :field_title="'protibad_lipi'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="social_media_post"
                                         :value="
@@ -32277,7 +32585,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32301,7 +32609,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32309,6 +32617,7 @@
                                         :field_title="'social_media_live_program'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -32338,7 +32647,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32367,7 +32676,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32382,6 +32691,7 @@
                                     মানবাধিকার কর্মী তৈরি
                                 </td>
                                 <td class="text-start">
+                                    <div class="d-flex justify-content-center align-items-center">
                                     সংখ্যা-
                                     <input
                                         name="human_rights_activist_produced_total"
@@ -32398,7 +32708,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32406,8 +32716,10 @@
                                         :field_title="'human_rights_activist_produced_total'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td class="text-start" colspan="2">
+                                    <div class="d-flex justify-content-center align-items-center">
                                     বৃদ্ধি-
                                     <input
                                         name="human_rights_activist_produced_increase"
@@ -32424,7 +32736,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32432,8 +32744,10 @@
                                         :field_title="'human_rights_activist_produced_increase'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td class="text-start" colspan="2">
+                                    <div class="d-flex justify-content-center align-items-center">
                                     টার্গেট-
                                     <input
                                         name="human_rights_activist_produced_target"
@@ -32450,7 +32764,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32458,6 +32772,7 @@
                                         :field_title="'human_rights_activist_produced_target'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -32481,6 +32796,7 @@
                                     ব্যবসায়ী সমিতি/বাজার কমিটি
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="business_association_election"
                                         :value="
@@ -32496,7 +32812,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32520,7 +32836,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32528,8 +32844,10 @@
                                         :field_title="'market_committee_election'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="business_association_number_of_post"
                                         :value="
@@ -32545,7 +32863,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32569,7 +32887,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32577,8 +32895,10 @@
                                         :field_title="'market_committee_number_of_post'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="business_association_participated"
                                         :value="
@@ -32594,7 +32914,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32618,7 +32938,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32626,8 +32946,10 @@
                                         :field_title="'market_committee_participated'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="business_association_elected"
                                         :value="
@@ -32643,7 +32965,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32667,7 +32989,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32675,6 +32997,7 @@
                                         :field_title="'market_committee_elected'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -32695,7 +33018,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32720,7 +33043,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32745,7 +33068,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32770,7 +33093,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32788,7 +33111,7 @@
                     <table class="text-center mb-2 table_layout_fixed">
                         <thead>
                             <tr>
-                                <th>বিবরণ</th>
+                                <th class="width-40">বিবরণ</th>
                                 <th>সংখ্যা</th>
                                 <th>বৃদ্ধি</th>
                                 <th>টার্গেট</th>
@@ -32813,7 +33136,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32838,7 +33161,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32863,7 +33186,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32879,6 +33202,7 @@
                                     ও অন্যান্য)
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sheba_uddogta_toiri_total"
                                         :value="
@@ -32894,7 +33218,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32918,7 +33242,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32942,7 +33266,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32966,7 +33290,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -32974,8 +33298,10 @@
                                         :field_title="'other_uddogta_toiri_total'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sheba_uddogta_toiri_increase"
                                         :value="
@@ -32991,7 +33317,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33015,7 +33341,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33039,7 +33365,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33063,7 +33389,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33071,8 +33397,10 @@
                                         :field_title="'other_uddogta_toiri_increase'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sheba_uddogta_toiri_target"
                                         :value="
@@ -33088,7 +33416,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33112,7 +33440,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33136,7 +33464,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33160,7 +33488,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33168,6 +33496,7 @@
                                         :field_title="'other_uddogta_toiri_target'"
                                         :month="month"
                                     ></popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -33188,7 +33517,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33213,7 +33542,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -33238,7 +33567,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input fixed-input-20 text-center"
+                                        class="bg-input w-100 text-center"
                                     />
                                     <popup
                                         :ward_id="report_header?.ward_info?.id"
@@ -34260,18 +34589,10 @@ export default {
 </script>
 
 <style>
-.fixed-input {
-    width: 60px; /* Set a fixed width */
-    text-align: center; /* Center align the text */
+
+.width-30px{
+    width: 30px;
 }
-.fixed-input-30 {
-    width: 25px; /* Set a fixed width */
-    text-align: center; /* Center align the text */
-}
-.fixed-input-20 {
-    width: 20px; /* Set a fixed width */
-    text-align: center; /* Center align the text */
-}
-/* @import url("../../../../../../public/css/unit/unit_report_upload.css"); */
+
 @import url("../../../../../../../public/css/thana/thana_report_upload.css");
 </style>

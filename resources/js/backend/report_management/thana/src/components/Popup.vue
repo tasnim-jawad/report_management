@@ -7,9 +7,9 @@
             <!-- <span>{{popup_data }}</span> -->
             <table class="table table-striped mb-0">
                 <tbody class="">
-                    <tr v-for="(unit, index) in unit_wise_data" :key="index">
-                        <td>{{ unit.unit_title }}</td>
-                        <td>{{ unit.value }}</td>
+                    <tr v-for="(ward, index) in ward_wise_data" :key="index">
+                        <td>{{ ward.ward_title }}</td>
+                        <td>{{ ward.value }}</td>
                     </tr>
                     <tr>
                         <td>Total</td>
@@ -51,7 +51,7 @@ export default {
     data() {
         return {
             is_popup_visible: false,
-            unit_wise_data: [],
+            ward_wise_data: [],
             total: null,
         };
     },

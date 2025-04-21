@@ -15,6 +15,9 @@ body{
 .font-13{
     font-size: 13px;
 }
+.font-14{
+    font-size: 14px;
+}
 
 /* width by % */
 .width-10{
@@ -58,6 +61,9 @@ body{
     width: 80%;
 }
 
+.width-30px{
+    width: 30px;
+}
 .bg-input{
     background-color: #d5f3ff;
 }
