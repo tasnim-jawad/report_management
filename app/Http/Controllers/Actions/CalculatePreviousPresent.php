@@ -52,6 +52,40 @@ class CalculatePreviousPresent
                     $total_approved_report_info_ids_present,
                     $columns['increase']
                 );
+            } elseif ($config['type'] === 'pp_increase_both_gatti_both') {
+                $results["{$key}_previous"] = $this->calculate_pp_increase_both_gatti_both(
+                    $table,
+                    $total_approved_report_info_ids_previous,
+                    $columns['increase_manonnoyon'],
+                    $columns['increase_agoto'],
+                    $columns['decrease_manonnoyon'],
+                    $columns['decrease_sthanantor'],
+                );
+
+                $results["{$key}_present"] = $this->calculate_pp_increase_both_gatti_both(
+                    $table,
+                    $total_approved_report_info_ids_present,
+                    $columns['increase_manonnoyon'],
+                    $columns['increase_agoto'],
+                    $columns['decrease_manonnoyon'],
+                    $columns['decrease_sthanantor'],
+                );
+            } elseif ($config['type'] === 'pp_increase_both_gatti_one') {
+                $results["{$key}_previous"] = $this->calculate_pp_increase_both_gatti_one(
+                    $table,
+                    $total_approved_report_info_ids_previous,
+                    $columns['increase_manonnoyon'],
+                    $columns['increase_agoto'],
+                    $columns['decrease']
+                );
+
+                $results["{$key}_present"] = $this->calculate_pp_increase_both_gatti_one(
+                    $table,
+                    $total_approved_report_info_ids_present,
+                    $columns['increase_manonnoyon'],
+                    $columns['increase_agoto'],
+                    $columns['decrease']
+                );
             }
         }
 
@@ -83,6 +117,33 @@ class CalculatePreviousPresent
         return DB::table($table)
             ->whereIn('report_info_id', $report_info_ids)
             ->sum($increase_column);
+    }
+    
+    private function calculate_pp_increase_both_gatti_both($table, $report_info_ids, $increase_manonnoyon, $increase_agoto ,$decrease_manonnoyon ,$decrease_sthanantor)
+    {
+        return 
+            (
+                DB::table($table)->whereIn('report_info_id', $report_info_ids)->sum($increase_manonnoyon) +
+                DB::table($table)->whereIn('report_info_id', $report_info_ids)->sum($increase_agoto) 
+            )
+                -
+            (
+                DB::table($table)->whereIn('report_info_id', $report_info_ids)->sum($decrease_manonnoyon) +
+                DB::table($table)->whereIn('report_info_id', $report_info_ids)->sum($decrease_sthanantor) 
+            );
+    }
+
+    private function calculate_pp_increase_both_gatti_one($table, $report_info_ids, $increase_manonnoyon, $increase_agoto ,$decrease)
+    {
+        return 
+            (
+                DB::table($table)->whereIn('report_info_id', $report_info_ids)->sum($increase_manonnoyon) +
+                DB::table($table)->whereIn('report_info_id', $report_info_ids)->sum($increase_agoto) 
+            )
+                -
+            (
+                DB::table($table)->whereIn('report_info_id', $report_info_ids)->sum($decrease) 
+            );
     }
 
     private function get_unit_calculations()
@@ -469,16 +530,168 @@ class CalculatePreviousPresent
     {
         return [
 
-            'total_young_committee' => [
-                'table' => 'thana_department3_jubo_somaj_dawats',
-                'columns' => ['increase' => 'total_young_committee_increased'],
+            'total_muallim_man' => [
+                'table' => 'thana_department1_talimul_qurans',
+                'columns' => ['increase' => 'total_muallim_increased_man'],
                 'type' => 'increase',
             ],
-            'number_of_participants' => [
-                'table' => 'thana_department3_jubo_somaj_dawats',
-                'columns' => ['increase' => 'total_young_committee_increased'],
+            'total_muallim_woman' => [
+                'table' => 'thana_department1_talimul_qurans',
+                'columns' => ['increase' => 'total_muallim_increased_woman'],
                 'type' => 'increase',
             ],
+
+            // ২. গ্রাম ও মহল্লাভিত্তিক দাওয়াত
+            'total_village_committee' => [
+                'table' => 'thana_department2_moholla_vittik_dawats',
+                'columns' => ['increase' => 'total_village_committee_increased'],
+                'type' => 'increase',
+            ],
+            'total_moholla_committee' => [
+                'table' => 'thana_department2_moholla_vittik_dawats',
+                'columns' => ['increase' => 'total_moholla_committee_increased'],
+                'type' => 'increase',
+            ],
+            'special_dawat_included_village' => [
+                'table' => 'thana_department2_moholla_vittik_dawats',
+                'columns' => ['increase' => 'special_dawat_included_village_increased'],
+                'type' => 'increase',
+            ],
+            'special_dawat_included_moholla' => [
+                'table' => 'thana_department2_moholla_vittik_dawats',
+                'columns' => ['increase' => 'special_dawat_included_moholla_increased'],
+                'type' => 'increase',
+            ],
+
+            // ৩. যুব সমাজের মাঝে দাওয়াত*:
+            'total_new_somiti' => [
+                'table' => 'thana_department3_jubo_somaj_dawats',
+                'columns' => ['increase' => 'total_new_somiti_increased'],
+                'type' => 'increase',
+            ],
+            'total_new_club' => [
+                'table' => 'thana_department3_jubo_somaj_dawats',
+                'columns' => ['increase' => 'total_new_club_increased'],
+                'type' => 'increase',
+            ],
+            'stablished_somiti_total_invited' => [
+                'table' => 'thana_department3_jubo_somaj_dawats',
+                'columns' => ['increase' => 'stablished_somiti_total_increased'],
+                'type' => 'increase',
+            ],
+            'stablished_club_total_invited' => [
+                'table' => 'thana_department3_jubo_somaj_dawats',
+                'columns' => ['increase' => 'stablished_club_total_increased'],
+                'type' => 'increase',
+            ],
+
+            // ৬. মসজিদ/দাওয়াহ্ সেন্টার/তথ্যসেবা কেন্দ্রভিত্তিক দাওয়াত
+            'total_mosjid' => [
+                'table' => 'thana_department6_mosjid_dawah_infomation_centers',
+                'columns' => ['increase' => 'total_mosjid_increase'],
+                'type' => 'increase',
+            ],
+            'dawat_included_mosjid' => [
+                'table' => 'thana_department6_mosjid_dawah_infomation_centers',
+                'columns' => ['increase' => 'dawat_included_mosjid_increase'],
+                'type' => 'increase',
+            ],
+            'mosjid_wise_dawah_center' => [
+                'table' => 'thana_department6_mosjid_dawah_infomation_centers',
+                'columns' => ['increase' => 'mosjid_wise_dawah_center_increase'],
+                'type' => 'increase',
+            ],
+            'general_dawah_center' => [
+                'table' => 'thana_department6_mosjid_dawah_infomation_centers',
+                'columns' => ['increase' => 'general_dawah_center_increase'],
+                'type' => 'increase',
+            ],
+            'mosjid_wise_information_center' => [
+                'table' => 'thana_department6_mosjid_dawah_infomation_centers',
+                'columns' => ['increase' => 'mosjid_wise_information_center_increase'],
+                'type' => 'increase',
+            ],
+            'general_information_center' => [
+                'table' => 'thana_department6_mosjid_dawah_infomation_centers',
+                'columns' => ['increase' => 'general_information_center_increase'],
+                'type' => 'increase',
+            ],
+            'trained_employed_dai' => [
+                'table' => 'thana_department6_mosjid_dawah_infomation_centers',
+                'columns' => ['increase' => 'trained_employed_dai_increase'],
+                'type' => 'increase',
+            ],
+
+
+
+            // গ) দাওয়াহ্ ও প্রকাশনা:
+            // 'total_pathagar' => [
+            //     'table' => 'thana_dawah_and_prokashonas',
+            //     'columns' => ['increase' => 'total_pathagar_increase'],
+            //     'type' => 'increase',
+            // ],
+            // 'special_dawat_included_moholla' => [
+            //     'table' => 'thana_dawah_and_prokashonas',
+            //     'columns' => ['increase' => 'special_dawat_included_moholla_increase'],
+            //     'type' => 'increase',
+            // ],
+            // 'special_dawat_included_moholla' => [
+            //     'table' => 'thana_dawah_and_prokashonas',
+            //     'columns' => ['increase' => 'special_dawat_included_moholla_increase'],
+            //     'type' => 'increase',
+            // ],
+            // 'special_dawat_included_moholla' => [
+            //     'table' => 'thana_dawah_and_prokashonas',
+            //     'columns' => ['increase' => 'special_dawat_included_moholla_increase'],
+            //     'type' => 'increase',
+            // ],
+            // 'special_dawat_included_moholla' => [
+            //     'table' => 'thana_dawah_and_prokashonas',
+            //     'columns' => ['increase' => 'special_dawat_included_moholla_increase'],
+            //     'type' => 'increase',
+            // ],
+            // 'special_dawat_included_moholla' => [
+            //     'table' => 'thana_dawah_and_prokashonas',
+            //     'columns' => ['increase' => 'special_dawat_included_moholla_increase'],
+            //     'type' => 'increase',
+            // ],
+            // 'special_dawat_included_moholla' => [
+            //     'table' => 'thana_dawah_and_prokashonas',
+            //     'columns' => ['increase' => 'special_dawat_included_moholla_increase'],
+            //     'type' => 'increase',
+            // ],
+
+
+
+
+            'column_previous_present' => [
+                'table' => 'ward_songothon5_dawat_and_paribarik_units',
+                'columns' => ['increase' => 'paribarik_unit_increase', 'decrease' => 'paribarik_unit_gatti'],
+                'type' => 'previous_present',
+            ],
+
+            'pp_increase_both_gatti_both' => [
+                'table' => 'ward_songothon5_dawat_and_paribarik_units',
+                'columns' => [
+                    'increase_manonnoyon' => 'paribarik_unit_increase', 
+                    'increase_agoto' => 'paribarik_unit_gatti',
+                    'decrease_manonnoyon' => 'paribarik_unit_gatti',
+                    'decrease_sthanantor' => 'paribarik_unit_gatti'
+                ],
+                'type' => 'pp_increase_both_gatti_both',
+            ],
+
+
+            'pp_increase_both_gatti_one' => [
+                'table' => 'ward_songothon5_dawat_and_paribarik_units',
+                'columns' => [
+                    'increase_manonnoyon' => 'paribarik_unit_increase', 
+                    'increase_agoto' => 'paribarik_unit_gatti',
+                    'decrease' => 'paribarik_unit_gatti'
+                ],
+                'type' => 'pp_increase_both_gatti_one',
+            ],
+
 
 
         ];
