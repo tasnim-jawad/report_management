@@ -3291,19 +3291,6 @@
                                                 )
                                             }}
                                         </div>
-                                        <!-- <p>/</p>
-                                        <div>
-                                            {{
-                                                get_sum_total(
-                                                    report_sum_data
-                                                        ?.thana_department1_talimul_qurans
-                                                        ?.total_muallim_woman,
-                                                    report_sum_data
-                                                        ?.thana_department1_talimul_qurans
-                                                        ?.total_muallim_increased_woman
-                                                )
-                                            }}
-                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
@@ -3313,32 +3300,6 @@
                                                 previous_present?.total_muallim_man_present
                                             )
                                         }}
-                                        <!-- <input
-                                            name="total_muallim_man"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_department1_talimul_qurans
-                                                        ?.total_muallim_man
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-department1-talimul-quran'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        /> -->
-                                        <!-- <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_department1_talimul_qurans'"
-                                            :field_title="'total_muallim_man'"
-                                            :month="month"
-                                        >
-                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -3348,32 +3309,6 @@
                                                 previous_present?.total_muallim_woman_present
                                             )
                                         }}
-                                        <!-- <input
-                                            name="total_muallim_woman"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_department1_talimul_qurans
-                                                        ?.total_muallim_woman
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-department1-talimul-quran'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        /> -->
-                                        <!-- <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_dawat1_regular_group_wises'"
-                                            :field_title="'how_many_groups_are_out'"
-                                            :month="month"
-                                        >
-                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -3547,33 +3482,6 @@
                                                             ""
                                                     )
                                                 }}
-                                                <!-- <input
-                                                    name="total_village_committee"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department2_moholla_vittik_dawats
-                                                                ?.total_village_committee
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department2-moholla-vittik-dawat'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                /> -->
-                                                <!-- <popup
-                                                    :thana_id="
-                                                        report_header?.thana_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_dawat1_regular_group_wises'"
-                                                    :field_title="'how_many_groups_are_out'"
-                                                    :month="month"
-                                                >
-                                                </popup> -->
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
@@ -3583,33 +3491,6 @@
                                                             ""
                                                     )
                                                 }}
-                                                <!-- <input
-                                                    name="total_moholla_committee"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department2_moholla_vittik_dawats
-                                                                ?.total_moholla_committee
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department2-moholla-vittik-dawat'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                /> -->
-                                                <!-- <popup
-                                                    :thana_id="
-                                                        report_header?.thana_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_dawat1_regular_group_wises'"
-                                                    :field_title="'how_many_groups_are_out'"
-                                                    :month="month"
-                                                >
-                                                </popup> -->
                                             </div>
                                         </div>
                                     </td>
@@ -3623,7 +3504,7 @@
                                                     :value="
                                                         formatBangla(
                                                             report_sum_data
-                                                                ?.ward_department2_moholla_vittik_dawats
+                                                                ?.thana_department2_moholla_vittik_dawats
                                                                 ?.total_village_committee_increased
                                                         )
                                                     "
@@ -3695,33 +3576,6 @@
                                                             ""
                                                     )
                                                 }}
-                                                <!-- <input
-                                                    name="special_dawat_included_village"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department2_moholla_vittik_dawats
-                                                                ?.special_dawat_included_village
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department2-moholla-vittik-dawat'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                /> -->
-                                                <!-- <popup
-                                                    :thana_id="
-                                                        report_header?.thana_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_dawat1_regular_group_wises'"
-                                                    :field_title="'how_many_groups_are_out'"
-                                                    :month="month"
-                                                >
-                                                </popup> -->
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
@@ -3731,33 +3585,6 @@
                                                             ""
                                                     )
                                                 }}
-                                                <!-- <input
-                                                    name="special_dawat_included_moholla"
-                                                    :value="
-                                                        formatBangla(
-                                                            report_sum_data
-                                                                ?.thana_department2_moholla_vittik_dawats
-                                                                ?.special_dawat_included_moholla
-                                                        )
-                                                    "
-                                                    @change="
-                                                        data_upload(
-                                                            'thana-department2-moholla-vittik-dawat'
-                                                        )
-                                                    "
-                                                    :type="type"
-                                                    class="bg-input w-100 text-center"
-                                                /> -->
-                                                <!-- <popup
-                                                    :thana_id="
-                                                        report_header?.thana_info
-                                                            ?.id
-                                                    "
-                                                    :table_name="'ward_dawat1_regular_group_wises'"
-                                                    :field_title="'how_many_groups_are_out'"
-                                                    :month="month"
-                                                >
-                                                </popup> -->
                                             </div>
                                         </div>
                                     </td>
@@ -4016,20 +3843,10 @@
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(
-                                                    report_sum_data
-                                                        ?.previous_present
-                                                        ?.total_young_committee
+                                                    previous_present?.total_young_committee_present ??
+                                                        ""
                                                 )
                                             }}
-                                            <!-- <popup
-                                                :thana_id="
-                                                report_header?.thana_info?.id
-                                            "
-                                                :table_name="'ward_department3_jubo_somaj_dawats'"
-                                                :field_title="'total_young_committee'"
-                                                :month="month"
-                                            >
-                                            </popup> -->
                                         </div>
                                     </td>
                                     <td>
@@ -5862,7 +5679,6 @@
                                 <td class="text-start px-2">
                                     মসজিদভিত্তিক দাওয়াহ্ সেন্টার
                                 </td>
-                                <td></td>
                                 <td>
                                     <div class="parent_popup">
                                         {{
@@ -5871,6 +5687,36 @@
                                                     ""
                                             )
                                         }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="mosjid_wise_dawah_center_increase"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_department6_mosjid_dawah_infomation_centers
+                                                        ?.mosjid_wise_dawah_center_increase
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-department6-mosjid-dawah-infomation-centers'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="
+                                            report_header?.thana_info?.id
+                                        "
+                                            :table_name="'ward_department6_mosjid_dawah_infomation_centers'"
+                                            :field_title="'mosjid_wise_dawah_center_increase'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </div>
                                 </td>
                                 <td class="text-start px-2">
@@ -5886,12 +5732,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="trained_employed_dai"
+                                        name="trained_employed_dai_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_department6_mosjid_dawah_infomation_centers
-                                                    ?.trained_employed_dai
+                                                    ?.trained_employed_dai_increase
                                             )
                                         "
                                         @change="
@@ -6179,7 +6025,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.total_pathagar_present ??
                                                     ""
                                             )
                                         }}
@@ -6188,7 +6034,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.total_online_library_present ??
                                                     ""
                                             )
                                         }}
@@ -6296,7 +6142,7 @@
                             <td>
                                 {{
                                     formatBangla(
-                                        previous_present?._present ??
+                                        previous_present?.ward_book_sales_center_present ??
                                             ""
                                     )
                                 }}
@@ -6337,7 +6183,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.books_in_pathagar_present ??
                                                     ""
                                             )
                                         }}
@@ -6346,7 +6192,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.books_in_online_library_present ??
                                                     ""
                                             )
                                         }}
@@ -6560,7 +6406,7 @@
                                 <div class="parent_popup">
                                     {{
                                         formatBangla(
-                                            previous_present?._present ??
+                                            previous_present?.unit_book_distribution_center_present ??
                                                 ""
                                         )
                                     }}
@@ -7043,12 +6889,12 @@
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
-                                                name="dawati_jonosova_total"
+                                                name="dawati_sova_total"
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.dawati_jonosova_total
+                                                            ?.dawati_sova_total
                                                     )
                                                 "
                                                 @change="
@@ -7133,12 +6979,12 @@
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
-                                                name="dawati_jonosova_target"
+                                                name="dawati_sova_target"
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.dawati_jonosova_target
+                                                            ?.dawati_sova_target
                                                     )
                                                 "
                                                 @change="
@@ -7223,12 +7069,12 @@
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
-                                                name="dawati_jonosova_uposthiti"
+                                                name="dawati_sova_uposthiti"
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.dawati_jonosova_uposthiti
+                                                            ?.dawati_sova_uposthiti
                                                     )
                                                 "
                                                 @change="
@@ -8991,7 +8837,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.rokon_previous ??
                                                     ""
                                             )
                                         }}
@@ -9001,7 +8847,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.rokon_present ??
                                                     ""
                                             )
                                         }}
@@ -9138,10 +8984,9 @@
                                                             ?.rokon_target
                                                     ),
                                                     Number(
-                                                        report_sum_data
-                                                            ?.thana_songothon1_jonosoktis
-                                                            ?.rokon_briddhi_manonnoyon
-                                                    )
+                                                        (report_sum_data?.thana_songothon1_jonosoktis?.rokon_briddhi_manonnoyon ?? 0) +
+                                                        (report_sum_data?.thana_songothon1_jonosoktis?.rokon_briddhi_agoto ?? 0)
+                                                    ),
                                                 )
                                             }}
                                         </div>
@@ -9164,7 +9009,7 @@
                                 <td>
                                     {{
                                         formatBangla(
-                                            previous_present?._previous ??
+                                            previous_present?.worker_previous ??
                                                 ""
                                         )
                                     }}
@@ -9172,7 +9017,7 @@
                                 <td>
                                     {{
                                         formatBangla(
-                                            previous_present?._present ??
+                                            previous_present?.worker_present ??
                                                 ""
                                         )
                                     }}
@@ -9326,7 +9171,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.associate_member_man_previous ??
                                                     ""
                                             )
                                         }}
@@ -9337,7 +9182,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.associate_member_man_present ??
                                                     ""
                                             )
                                         }}
@@ -9538,10 +9383,10 @@
                                                     previous_present?.associate_member_man_previous ??
                                                         0
                                                 ) +
-                                                    Number(
-                                                        previous_present?.associate_member_woman_previous ??
-                                                            0
-                                                    )
+                                                Number(
+                                                    previous_present?.associate_member_woman_previous ??
+                                                        0
+                                                )
                                             )
                                         }}
                                     </div>
@@ -9554,10 +9399,10 @@
                                                     previous_present?.associate_member_man_present ??
                                                         0
                                                 ) +
-                                                    Number(
-                                                        previous_present?.associate_member_woman_present ??
-                                                            0
-                                                    )
+                                                Number(
+                                                    previous_present?.associate_member_woman_present ??
+                                                        0
+                                                )
                                             )
                                         }}
                                     </div>
@@ -9568,13 +9413,13 @@
                                             formatBangla(
                                                 Number(
                                                     report_sum_data
-                                                        ?.ward_songothon2_associate_members
+                                                        ?.thana_songothon2_associate_members
                                                         ?.associate_member_man_briddhi ??
                                                         0
                                                 ) +
                                                     Number(
                                                         report_sum_data
-                                                            ?.ward_songothon2_associate_members
+                                                            ?.thana_songothon2_associate_members
                                                             ?.associate_member_woman_briddhi ??
                                                             0
                                                     )
@@ -9597,13 +9442,13 @@
                                             formatBangla(
                                                 Number(
                                                     report_sum_data
-                                                        ?.ward_songothon2_associate_members
+                                                        ?.thana_songothon2_associate_members
                                                         ?.associate_member_man_target ??
                                                         0
                                                 ) +
                                                     Number(
                                                         report_sum_data
-                                                            ?.ward_songothon2_associate_members
+                                                            ?.thana_songothon2_associate_members
                                                             ?.associate_member_woman_target ??
                                                             0
                                                     )
@@ -9622,34 +9467,34 @@
                                 </td>
                                 <td>
                                     {{
-                                        formatBangla(
-                                            implementation_rate(
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon2_associate_members
-                                                        ?.associate_member_man_target ??
-                                                        0
-                                                ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon2_associate_members
-                                                            ?.associate_member_woman_target ??
-                                                            0
-                                                    ),
-                                                Number(
-                                                    report_sum_data
-                                                        ?.ward_songothon2_associate_members
-                                                        ?.associate_member_man_briddhi ??
-                                                        0
-                                                ) +
-                                                    Number(
-                                                        report_sum_data
-                                                            ?.ward_songothon2_associate_members
-                                                            ?.associate_member_woman_briddhi ??
-                                                            0
-                                                    )
+                                        
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon2_associate_members
+                                                    ?.associate_member_man_target ??
+                                                    0
+                                            ) +
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon2_associate_members
+                                                    ?.associate_member_woman_target ??
+                                                    0
+                                            ),
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon2_associate_members
+                                                    ?.associate_member_man_briddhi ??
+                                                    0
+                                            ) +
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon2_associate_members
+                                                    ?.associate_member_woman_briddhi ??
+                                                    0
                                             )
                                         )
+                                        
                                     }}
                                 </td>
                             </tr>
@@ -9863,6 +9708,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.women_rokon_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.women_rokon_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.women_rokon_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -10040,6 +9900,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.women_kormi_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.women_kormi_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.women_kormi_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -10097,38 +9972,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <!-- <div class="d-flex justify-content-center align-items-center">
-                                    <div class="parent_popup">
-                                        <input
-                                            name="women_associate_member_gatti"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_songothon3_departmental_information
-                                                        ?.women_associate_member_gatti
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-songothon3-departmental-information'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_songothon3_departmental_information'"
-                                            :field_title="'women_associate_member_gatti'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
-                                    </div> -->
-                                </td>
+                                <td></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -10159,6 +10003,20 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.women_associate_member_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.women_associate_member_increase ?? 0) 
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
 
                             <tr>
@@ -10167,32 +10025,24 @@
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
                                 <td>
-                                    <!-- <input name="sromojibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
-                                    <!-- <div class="parent_popup">
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_songothon3_departmental_information'"
-                                            :field_title="'sromojibi_rokon_previous'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div> -->
+                                    <div class="previous parent_popup">
+                                        {{
+                                            formatBangla(
+                                                previous_present?.sromojibi_rokon_previous ??
+                                                    ""
+                                            )
+                                        }}
+                                    </div>
                                 </td>
                                 <td>
-                                    <!-- <input name="sromojibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
-                                    <!-- <div class="parent_popup">
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_songothon3_departmental_information'"
-                                            :field_title="'sromojibi_rokon_present'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div> -->
+                                    <div class="present parent_popup">
+                                        {{
+                                            formatBangla(
+                                                previous_present?.sromojibi_rokon_present ??
+                                                    ""
+                                            )
+                                        }}
+                                    </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
@@ -10345,6 +10195,21 @@
                                         >
                                         </popup>
                                     </div>
+                                </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.sromojibi_rokon_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.sromojibi_rokon_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.sromojibi_rokon_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
                                 </td>
                             </tr>
                             <tr>
@@ -10523,6 +10388,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.sromojibi_kormi_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.sromojibi_kormi_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.sromojibi_kormi_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -10580,36 +10460,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <!-- <div class="parent_popup">
-                                        <input
-                                            name="sromojibi_associate_member_gatti"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_songothon3_departmental_information
-                                                        ?.sromojibi_associate_member_gatti
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-songothon3-departmental-information'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_songothon3_departmental_information'"
-                                            :field_title="'sromojibi_associate_member_gatti'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div> -->
-                                </td>
+                                <td></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -10639,6 +10490,20 @@
                                         >
                                         </popup>
                                     </div>
+                                </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.sromojibi_associate_member_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.sromojibi_associate_member_increase ?? 0) 
+                                            ),
+                                        )
+                                    }}
                                 </td>
                             </tr>
 
@@ -10821,6 +10686,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.ulama_rokon_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.ulama_rokon_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.ulama_rokon_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -10999,6 +10879,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.ulama_kormi_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.ulama_kormi_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.ulama_kormi_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -11074,36 +10969,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <!-- <div class="parent_popup">
-                                        <input
-                                            name="ulama_associate_member_gatti"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_songothon3_departmental_information
-                                                        ?.ulama_associate_member_gatti
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-songothon3-departmental-information'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_songothon3_departmental_information'"
-                                            :field_title="'ulama_associate_member_gatti'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div> -->
-                                </td>
+                                <td></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -11133,6 +10999,20 @@
                                         >
                                         </popup>
                                     </div>
+                                </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.ulama_associate_member_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.ulama_associate_member_increase ?? 0) 
+                                            ),
+                                        )
+                                    }}
                                 </td>
                             </tr>
 
@@ -11333,6 +11213,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.pesha_jibi_rokon_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.pesha_jibi_rokon_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.pesha_jibi_rokon_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -11529,6 +11424,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.pesha_jibi_kormi_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.pesha_jibi_kormi_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.pesha_jibi_kormi_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -11604,36 +11514,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <!-- <div class="parent_popup">
-                                        <input
-                                            name="pesha_jibi_associate_member_gatti"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_songothon3_departmental_information
-                                                        ?.pesha_jibi_associate_member_gatti
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-songothon3-departmental-information'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_songothon3_departmental_information'"
-                                            :field_title="'pesha_jibi_associate_member_gatti'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div> -->
-                                </td>
+                                <td></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -11663,6 +11544,20 @@
                                         >
                                         </popup>
                                     </div>
+                                </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.pesha_jibi_associate_member_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.pesha_jibi_associate_member_increase ?? 0) 
+                                            ),
+                                        )
+                                    }}
                                 </td>
                             </tr>
 
@@ -11863,6 +11758,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.jubo_rokon_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.jubo_rokon_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.jubo_rokon_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -12058,6 +11968,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.jubo_kormi_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.jubo_kormi_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.jubo_kormi_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -12133,36 +12058,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <!-- <div class="parent_popup">
-                                        <input
-                                            name="jubo_associate_member_gatti"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_songothon3_departmental_information
-                                                        ?.jubo_associate_member_gatti
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-songothon3-departmental-information'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_songothon3_departmental_information'"
-                                            :field_title="'jubo_associate_member_gatti'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div> -->
-                                </td>
+                                <td></td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
                                     <div class="parent_popup">
@@ -12195,6 +12091,20 @@
                                     </div>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.jubo_associate_member_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.jubo_associate_member_increase ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
 
                             <tr>
@@ -12207,7 +12117,7 @@
                                         <!-- <input name="jubo_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.cultural_rokon_previous ??
                                                     ""
                                             )
                                         }}
@@ -12218,7 +12128,7 @@
                                         <!-- <input name="jubo_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.cultural_rokon_present ??
                                                     ""
                                             )
                                         }}
@@ -12376,6 +12286,21 @@
                                         </popup> -->
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.cultural_rokon_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.cultural_rokon_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.cultural_rokon_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
@@ -12384,7 +12309,7 @@
                                         <!-- <input name="jubo_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.cultural_kormi_previous ??
                                                     ""
                                             )
                                         }}
@@ -12404,7 +12329,7 @@
                                         <!-- <input name="jubo_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.cultural_kormi_present ??
                                                     ""
                                             )
                                         }}
@@ -12571,6 +12496,21 @@
                                         </popup> -->
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.cultural_kormi_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.cultural_kormi_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.cultural_kormi_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -12579,7 +12519,7 @@
                                         <!-- <input name="jubo_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.cultural_associate_member_previous ??
                                                     ""
                                             )
                                         }}
@@ -12599,7 +12539,7 @@
                                         <!-- <input name="jubo_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.cultural_associate_member_present ??
                                                     ""
                                             )
                                         }}
@@ -12707,6 +12647,20 @@
                                         </popup> -->
                                     </div>
                                     </div>
+                                </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.cultural_associate_member_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.cultural_associate_member_increase ?? 0) 
+                                            ),
+                                        )
+                                    }}
                                 </td>
                             </tr>
 
@@ -12903,6 +12857,21 @@
                                         </popup>
                                     </div>
                                 </td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.vinno_dormalombi_kormi_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.vinno_dormalombi_kormi_increase_manonnoyon ?? 0) +
+                                                (report_sum_data?.thana_songothon3_departmental_information?.vinno_dormalombi_kormi_increase_agoto ?? 0)
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
@@ -12978,45 +12947,16 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <!-- <div class="parent_popup">
-                                        <input
-                                            name="cultural_associate_member_gatti"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_songothon3_departmental_information
-                                                        ?.cultural_associate_member_gatti
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-songothon3-departmental-information'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_songothon3_departmental_information'"
-                                            :field_title="'vinno_dormalombi_associate_member_gatti'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div> -->
-                                </td>
+                                <td></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="cultural_associate_member_target"
+                                            name="vinno_dormalombi_associate_member_target"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
                                                         ?.thana_songothon3_departmental_information
-                                                        ?.cultural_associate_member_target
+                                                        ?.vinno_dormalombi_associate_member_target
                                                 )
                                             "
                                             @change="
@@ -13038,7 +12978,20 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td>
+                                    {{
+                                        implementation_rate(
+                                            Number(
+                                                report_sum_data
+                                                    ?.thana_songothon3_departmental_information
+                                                    ?.vinno_dormalombi_associate_member_target
+                                            ),
+                                            Number(
+                                                (report_sum_data?.thana_songothon3_departmental_information?.vinno_dormalombi_associate_member_increase ?? 0) 
+                                            ),
+                                        )
+                                    }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -13068,7 +13021,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.pouroshova_previous ??
                                                     ""
                                             )
                                         }}
@@ -13102,7 +13055,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.pouroshova_present ??
                                                     ""
                                             )
                                         }}
@@ -13233,7 +13186,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.songothito_pouroshova_previous ??
                                                     ""
                                             )
                                         }}
@@ -13243,7 +13196,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.songothito_pouroshova_present ??
                                                     ""
                                             )
                                         }}
@@ -13374,7 +13327,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.union_previous ??
                                                     ""
                                             )
                                         }}
@@ -13408,7 +13361,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.union_present ??
                                                     ""
                                             )
                                         }}
@@ -13539,7 +13492,7 @@
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.songothito_union_previous ??
                                                     ""
                                             )
                                         }}
@@ -13573,7 +13526,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.songothito_union_present ??
                                                     ""
                                             )
                                         }}
@@ -13706,7 +13659,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.sangothonik_union_man_previous ??
                                                     ""
                                             )
                                         }}
@@ -13716,7 +13669,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.sangothonik_union_man_present ??
                                                     ""
                                             )
                                         }}
@@ -13825,7 +13778,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.sangothonik_union_woman_previous ??
                                                     ""
                                             )
                                         }}
@@ -13859,7 +13812,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.sangothonik_union_woman_present ??
                                                     ""
                                             )
                                         }}
@@ -13992,18 +13945,18 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.union_without_member_previous ??
                                                     ""
                                             )
                                         }}
                                     </div>
                                     <!-- <input
-                                        name="union_without_member_woman_previous"
+                                        name="union_without_member_previous"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_previous
+                                                    ?.union_without_member_previous
                                             )
                                         "
                                         @change="
@@ -14026,18 +13979,18 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.union_without_member_present ??
                                                     ""
                                             )
                                         }}
                                     </div>
                                     <!-- <input
-                                        name="union_without_member_woman_present"
+                                        name="union_without_member_present"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_present
+                                                    ?.union_without_member_present
                                             )
                                         "
                                         @change="
@@ -14058,12 +14011,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="union_without_member_woman_increase"
+                                        name="union_without_member_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_increase
+                                                    ?.union_without_member_increase
                                             )
                                         "
                                         @change="
@@ -14084,12 +14037,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="union_without_member_woman_gatti"
+                                        name="union_without_member_gatti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_gatti
+                                                    ?.union_without_member_gatti
                                             )
                                         "
                                         @change="
@@ -14110,12 +14063,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="union_without_member_woman_target"
+                                        name="union_without_member_target"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_target
+                                                    ?.union_without_member_target
                                             )
                                         "
                                         @change="
@@ -14140,12 +14093,12 @@
                                             Number(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_target
+                                                    ?.union_without_member_target
                                             ),
                                             Number(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_increase
+                                                    ?.union_without_member_increase
                                             )
                                         )
                                     }}
@@ -14159,7 +14112,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.total_proshashonik_ward_of_city_corporation_previous ??
                                                     ""
                                             )
                                         }}
@@ -14193,7 +14146,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.total_proshashonik_ward_of_city_corporationpresent_present ??
                                                     ""
                                             )
                                         }}
@@ -14326,7 +14279,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.total_songothito_ward_of_city_corporation_previous ??
                                                     ""
                                             )
                                         }}
@@ -14360,7 +14313,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.total_songothito_ward_of_city_corporation_present ??
                                                     ""
                                             )
                                         }}
@@ -14493,7 +14446,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.total_songothonik_ward_man_previous ??
                                                     ""
                                             )
                                         }}
@@ -14527,7 +14480,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.total_songothonik_ward_man_present ??
                                                     ""
                                             )
                                         }}
@@ -14660,7 +14613,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.total_songothonik_ward_woman_previous ??
                                                     ""
                                             )
                                         }}
@@ -14694,7 +14647,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.total_songothonik_ward_woman_present ??
                                                     ""
                                             )
                                         }}
@@ -14828,7 +14781,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.total_proshashonik_ward_of_pouroshova_previous ??
                                                         ""
                                                 )
                                             }}
@@ -14837,7 +14790,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.total_proshashonik_ward_of_union_previous ??
                                                         ""
                                                 )
                                             }}
@@ -14850,7 +14803,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.total_proshashonik_ward_of_pouroshova_present ??
                                                         ""
                                                 )
                                             }}
@@ -14859,7 +14812,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.total_proshashonik_ward_of_union_present ??
                                                         ""
                                                 )
                                             }}
@@ -15066,7 +15019,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.total_songothito_ward_of_pouroshova_previous ??
                                                         ""
                                                 )
                                             }}
@@ -15075,7 +15028,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.total_songothito_ward_of_union_previous ??
                                                         ""
                                                 )
                                             }}
@@ -15088,7 +15041,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.total_songothito_ward_of_pouroshova_present ??
                                                         ""
                                                 )
                                             }}
@@ -15097,7 +15050,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.total_songothito_ward_of_union_present ??
                                                         ""
                                                 )
                                             }}
@@ -15304,7 +15257,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.total_songothonik_ward_of_pouroshova_man_previous ??
                                                         ""
                                                 )
                                             }}
@@ -15313,7 +15266,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.total_songothonik_ward_of_union_man_previous ??
                                                         ""
                                                 )
                                             }}
@@ -15326,7 +15279,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.total_songothonik_ward_of_pouroshova_man_present ??
                                                         ""
                                                 )
                                             }}
@@ -15335,7 +15288,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.total_songothonik_ward_of_union_man_present ??
                                                         ""
                                                 )
                                             }}
@@ -15542,7 +15495,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.total_songothonik_ward_of_pouroshova_woman_previous ??
                                                         ""
                                                 )
                                             }}
@@ -15551,7 +15504,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.total_songothonik_ward_of_union_woman_previous ??
                                                         ""
                                                 )
                                             }}
@@ -15564,7 +15517,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.total_songothonik_ward_of_pouroshova_woman_present ??
                                                         ""
                                                 )
                                             }}
@@ -15573,7 +15526,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.total_songothonik_ward_of_union_woman_present ??
                                                         ""
                                                 )
                                             }}
@@ -15783,7 +15736,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.songothonik_ward_ulama_previous ??
                                                     ""
                                             )
                                         }}
@@ -15793,7 +15746,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.songothonik_ward_ulama_present ??
                                                     ""
                                             )
                                         }}
@@ -15902,7 +15855,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.songothonik_ward_peshajibi_previous ??
                                                     ""
                                             )
                                         }}
@@ -15912,7 +15865,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.songothonik_ward_peshajibi_present ??
                                                     ""
                                             )
                                         }}
@@ -16021,7 +15974,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.songothonik_ward_jubo_previous ??
                                                     ""
                                             )
                                         }}
@@ -16031,7 +15984,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.songothonik_ward_jubo_present ??
                                                     ""
                                             )
                                         }}
@@ -16140,7 +16093,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.songothonik_ward_sromo_previous ??
                                                     ""
                                             )
                                         }}
@@ -16150,7 +16103,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.songothonik_ward_sromo_present ??
                                                     ""
                                             )
                                         }}
@@ -16259,7 +16212,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.songothonik_ward_media_previous ??
                                                     ""
                                             )
                                         }}
@@ -16269,7 +16222,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.songothonik_ward_media_present ??
                                                     ""
                                             )
                                         }}
@@ -16378,7 +16331,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.songothonik_ward_cultural_previous ??
                                                     ""
                                             )
                                         }}
@@ -16388,7 +16341,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.songothonik_ward_cultural_present ??
                                                     ""
                                             )
                                         }}
@@ -16510,7 +16463,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.general_unit_men_previous ??
                                                     ""
                                             )
                                         }}
@@ -16520,7 +16473,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.general_unit_men_present ??
                                                     ""
                                             )
                                         }}
@@ -16650,7 +16603,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.general_unit_women_previous ??
                                                     ""
                                             )
                                         }}
@@ -16660,7 +16613,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.general_unit_women_present ??
                                                     ""
                                             )
                                         }}
@@ -16790,7 +16743,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.ulama_unit_previous ??
                                                     ""
                                             )
                                         }}
@@ -16800,7 +16753,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.ulama_unit_present ??
                                                     ""
                                             )
                                         }}
@@ -16932,7 +16885,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.peshajibi_unit_men_previous ??
                                                     ""
                                             )
                                         }}
@@ -16942,7 +16895,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.peshajibi_unit_men_present ??
                                                     ""
                                             )
                                         }}
@@ -17074,7 +17027,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.peshajibi_unit_women_previous ??
                                                     ""
                                             )
                                         }}
@@ -17084,7 +17037,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.peshajibi_unit_women_present ??
                                                     ""
                                             )
                                         }}
@@ -17193,7 +17146,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.kormojibi_unit_women_previous ??
                                                     ""
                                             )
                                         }}
@@ -17203,7 +17156,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.kormojibi_unit_women_present ??
                                                     ""
                                             )
                                         }}
@@ -17310,7 +17263,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.jubo_unit_previous ??
                                                     ""
                                             )
                                         }}
@@ -17320,7 +17273,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.jubo_unit_present ??
                                                     ""
                                             )
                                         }}
@@ -17439,7 +17392,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.sromo_unit_man_previous ??
                                                     ""
                                             )
                                         }}
@@ -17449,7 +17402,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.sromo_unit_man_present ??
                                                     ""
                                             )
                                         }}
@@ -17556,7 +17509,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.sromo_unit_woman_previous ??
                                                     ""
                                             )
                                         }}
@@ -17566,7 +17519,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.sromo_unit_woman_present ??
                                                     ""
                                             )
                                         }}
@@ -17673,7 +17626,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.media_unit_previous ??
                                                     ""
                                             )
                                         }}
@@ -17683,7 +17636,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.media_unit_present ??
                                                     ""
                                             )
                                         }}
@@ -17815,7 +17768,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.cultural_unit_previous ??
                                                     ""
                                             )
                                         }}
@@ -17825,7 +17778,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.cultural_unit_present ??
                                                     ""
                                             )
                                         }}
@@ -17929,130 +17882,82 @@
                             <tr>
                                 <td class="text-end">সর্বমোট ইউনিট</td>
                                 <td>
-                                    <!-- {{
+                                    {{
                                         formatBangla(
                                             Number(
-                                                report_sum_data
-                                                    ?.thana_songothon4_organizational_structures
-                                                    ?.general_unit_men_previous ??
-                                                    0
+                                                previous_present?.general_unit_men_previous ?? 0
                                             ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.general_unit_women_previous ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.ulama_unit_previous ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.peshajibi_unit_men_previous
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.peshajibi_unit_women_previous ??
-                                                        0
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.kormojibi_unit_women_previous
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.jubo_unit_previous
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.sromo_unit_man_previous
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.sromo_unit_woman_previous
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.media_unit_previous
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.cultural_unit_previous
-                                                )
+                                            Number(
+                                                previous_present?.general_unit_women_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.ulama_unit_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.peshajibi_unit_men_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.peshajibi_unit_women_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.kormojibi_unit_women_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.jubo_unit_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.sromo_unit_man_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.sromo_unit_woman_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.media_unit_previous ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.cultural_unit_previous ?? 0
+                                            )
                                         )
-                                    }} -->
+                                    }}
                                 </td>
                                 <td>
-                                    <!-- {{
+                                    {{
                                         formatBangla(
                                             Number(
-                                                report_sum_data
-                                                    ?.thana_songothon4_organizational_structures
-                                                    ?.general_unit_men_present
+                                                previous_present?.general_unit_men_present ?? 0
                                             ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.general_unit_women_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.ulama_unit_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.peshajibi_unit_men_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.peshajibi_unit_women_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.kormojibi_unit_women_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.jubo_unit_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.sromo_unit_man_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.sromo_unit_woman_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.media_unit_present
-                                                ) +
-                                                Number(
-                                                    report_sum_data
-                                                        ?.thana_songothon4_organizational_structures
-                                                        ?.cultural_unit_present
-                                                )
+                                            Number(
+                                                previous_present?.general_unit_women_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.ulama_unit_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.peshajibi_unit_men_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.peshajibi_unit_women_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.kormojibi_unit_women_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.jubo_unit_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.sromo_unit_man_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.sromo_unit_woman_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.media_unit_present ?? 0
+                                            ) +
+                                            Number(
+                                                previous_present?.cultural_unit_present ?? 0
+                                            )
                                         )
-                                    }} -->
+                                    }}
                                 </td>
                                 <td>
                                     {{
@@ -18442,7 +18347,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.dawati_unit_previous ??
                                                     ""
                                             )
                                         }}
@@ -18452,7 +18357,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.dawati_unit_present ??
                                                     ""
                                             )
                                         }}
@@ -18555,7 +18460,7 @@
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._previous ??
+                                                previous_present?.paribarik_unit_previous ??
                                                     ""
                                             )
                                         }}
@@ -18565,7 +18470,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.paribarik_unit_present ??
                                                     ""
                                             )
                                         }}
@@ -18691,7 +18596,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.pouroshova_emarot_previous ??
                                                         ""
                                                 )
                                             }}
@@ -18700,7 +18605,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.union_emarot_previous ??
                                                         ""
                                                 )
                                             }}
@@ -18713,7 +18618,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.pouroshova_emarot_present ??
                                                         ""
                                                 )
                                             }}
@@ -18722,7 +18627,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.union_emarot_present ??
                                                         ""
                                                 )
                                             }}
@@ -18898,7 +18803,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.ward_of_city_emarot_previous ??
                                                         ""
                                                 )
                                             }}
@@ -18907,7 +18812,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.ward_of_pouroshova_emarot_previous ??
                                                         ""
                                                 )
                                             }}
@@ -18916,7 +18821,7 @@
                                         <div class="previous parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._previous ??
+                                                    previous_present?.ward_of_union_emarot_previous ??
                                                         ""
                                                 )
                                             }}
@@ -18929,7 +18834,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.ward_of_city_emarot_present ??
                                                         ""
                                                 )
                                             }}
@@ -18938,7 +18843,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.ward_of_pouroshova_emarot_present ??
                                                         ""
                                                 )
                                             }}
@@ -18947,7 +18852,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.ward_of_union_emarot_present ??
                                                         ""
                                                 )
                                             }}
@@ -29855,34 +29760,16 @@
                                     সামাজিক প্রতিষ্ঠান রয়েছে
                                 </td>
                                 <td>
-                                    <!-- <div class="parent_popup">
-                                        <input
-                                            name="social_institution_total"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_shomajsheba4_institutional_social_works
-                                                        ?.social_institution_total
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-shomajsheba4-institutional-social-work'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                            :field_title="'social_institution_total'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div> -->
+                                    {{
+                                        get_sum_total(
+                                            report_sum_data
+                                                ?.thana_shomajsheba4_institutional_social_works
+                                                ?.social_institution_in_thana,
+                                            report_sum_data
+                                                ?.thana_shomajsheba4_institutional_social_works
+                                                ?.social_institution_in_ward,
+                                        )
+                                    }}
                                 </td>
                                 <td>
                                     <input
@@ -29944,30 +29831,16 @@
                                     প্রতিষ্ঠানভিত্তিক সামাজিক কাজ হয়েছে
                                 </td>
                                 <td>
-                                    <!-- <input
-                                        name="institutional_social_work_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_shomajsheba4_institutional_social_works
-                                                    ?.institutional_social_work_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-shomajsheba4-institutional-social-work'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'institutional_social_work_total'"
-                                        :month="month"
-                                    >
-                                    </popup> -->
+                                    {{
+                                        get_sum_total(
+                                            report_sum_data
+                                                ?.thana_shomajsheba4_institutional_social_works
+                                                ?.institutional_social_work_in_thana,
+                                            report_sum_data
+                                                ?.thana_shomajsheba4_institutional_social_works
+                                                ?.institutional_social_work_in_ward,
+                                        )
+                                    }}
                                 </td>
                                 <td>
                                     <input
@@ -30029,30 +29902,16 @@
                                     নতুন সামাজিক প্রতিষ্ঠান চালু করা
                                 </td>
                                 <td>
-                                    <!-- <input
-                                        name="new_social_institutions_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_shomajsheba4_institutional_social_works
-                                                    ?.new_social_institutions_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-shomajsheba4-institutional-social-work'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'new_social_institutions_total'"
-                                        :month="month"
-                                    >
-                                    </popup> -->
+                                    {{
+                                        get_sum_total(
+                                            report_sum_data
+                                                ?.thana_shomajsheba4_institutional_social_works
+                                                ?.new_social_institutions_in_thana,
+                                            report_sum_data
+                                                ?.thana_shomajsheba4_institutional_social_works
+                                                ?.new_social_institutions_in_ward,
+                                        )
+                                    }}
                                 </td>
                                 <td>
                                     <input
@@ -31728,8 +31587,8 @@
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_total_candidate_participated'"
                                         :month="month"
-                                    ></popup -->
-                                    >/
+                                    ></popup> -->
+                                    /
                                     <input
                                         name="pouroshova_total_candidate_participated"
                                         :value="
@@ -32978,74 +32837,20 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.national_vote_kendro_present ??
                                                         ""
                                                 )
                                             }}
                                         </div>
-                                        <!-- <div class="parent_popup">
-                                            <input
-                                                name="national_vote_kendro"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.thana_rastrio4_election_activities
-                                                            ?.national_vote_kendro
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'thana-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                :type="type"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :thana_id="
-                                                report_header?.thana_info?.id
-                                            "
-                                                :table_name="'ward_rastrio4_election_activities'"
-                                                :field_title="'national_vote_kendro'"
-                                                :month="month"
-                                            ></popup>
-                                        </div> -->
                                         /
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.local_vote_kendro_present ??
                                                         ""
                                                 )
                                             }}
                                         </div>
-                                        <!-- <div class="parent_popup">
-                                            <input
-                                                name="local_vote_kendro"
-                                                :value="
-                                                    formatBangla(
-                                                        report_sum_data
-                                                            ?.thana_rastrio4_election_activities
-                                                            ?.local_vote_kendro
-                                                    )
-                                                "
-                                                @change="
-                                                    data_upload(
-                                                        'thana-rastrio4-election-activitie'
-                                                    )
-                                                "
-                                                :type="type"
-                                                class="bg-input w-100 text-center"
-                                            />
-                                            <popup
-                                                :thana_id="
-                                                report_header?.thana_info?.id
-                                            "
-                                                :table_name="'ward_rastrio4_election_activities'"
-                                                :field_title="'local_vote_kendro'"
-                                                :month="month"
-                                            ></popup>
-                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
@@ -33173,38 +32978,11 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.vote_kendro_committee_present ??
                                                     ""
                                             )
                                         }}
                                     </div>
-                                    <!-- <div class="parent_popup">
-                                        <input
-                                            name="vote_kendro_committee"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_rastrio4_election_activities
-                                                        ?.vote_kendro_committee
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-rastrio4-election-activitie'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="
-                                            report_header?.thana_info?.id
-                                        "
-                                            :table_name="'ward_rastrio4_election_activities'"
-                                            :field_title="'vote_kendro_committee'"
-                                            :month="month"
-                                        ></popup>
-                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -33275,7 +33053,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.vote_kendro_vittik_unit_present ??
                                                         ""
                                                 )
                                             }}
@@ -33311,7 +33089,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.booth_vittik_unit_present ??
                                                         ""
                                                 )
                                             }}
@@ -33810,10 +33588,10 @@
                                 <td class="text-start">
                                     <div class="d-flex justify-content-center align-items-center">
                                     সংখ্যা-
-                                    <div class="present parent_popup">
+                                    <div class="present parent_popup text-center">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.human_rights_activist_produced_present ??
                                                     ""
                                             )
                                         }}
@@ -34231,7 +34009,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.krishi_uddogta_toiri_present ??
                                                     ""
                                             )
                                         }}
@@ -34292,7 +34070,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.sheba_uddogta_toiri_present ??
                                                         ""
                                                 )
                                             }}
@@ -34301,7 +34079,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.shilpo_uddogta_toiri_present ??
                                                         ""
                                                 )
                                             }}
@@ -34310,7 +34088,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.banijjo_uddogta_toiri_present ??
                                                         ""
                                                 )
                                             }}
@@ -34319,7 +34097,7 @@
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
-                                                    previous_present?._present ??
+                                                    previous_present?.other_uddogta_toiri_present ??
                                                         ""
                                                 )
                                             }}
@@ -34531,7 +34309,7 @@
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
-                                                previous_present?._present ??
+                                                previous_present?.other_present ??
                                                     ""
                                             )
                                         }}
@@ -34805,7 +34583,7 @@ export default {
             in_total: null,
 
             average_uposthiti: {
-                ward_kormosuci_bastobayons: {
+                thana_kormosuci_bastobayons: {
                     unit_masik_sadaron_sova: null,
                     dawati_sova: null,
                     alochona_sova: null,
@@ -34824,16 +34602,87 @@ export default {
                     hamd_nat_protijogita: null,
                     others: null,
                 },
-                ward_songothon9_sangothonik_boithoks: {
-                    word_sura_boithok: null,
-                    kormoporishod_boithok: null,
-                    team_boithok: null,
-                    word_boithok: null,
-                    masik_sodosso_boithok: null,
-                    unit_kormi_boithok: null,
-                    ulama_somabesh: null,
-                    jubok_somabesh: null,
-                    sromik_somabesh: null,
+                thana_songothon11_sangothonik_boithoks: {
+                    upojela_mozlishe_sura_boithok_man: null,
+                    upojela_mozlishe_sura_boithok_women: null,
+                    thana_mozlishe_sura_boithok_man: null,
+                    thana_mozlishe_sura_boithok_women: null,
+                    pourosova_mozlishe_sura_boithok_man: null,
+                    pourosova_mozlishe_sura_boithok_woman: null,
+                    union_mozlishe_sura_boithok_man: null,
+                    union_mozlishe_sura_boithok_women: null,
+
+                    upojela_kormoporishod_boithok_man: null,
+                    upojela_kormoporishod_boithok_woman: null,
+                    thana_kormoporishod_boithok_man: null,
+                    thana_kormoporishod_boithok_woman: null,
+                    pourosova_kormoporishod_boithok_man: null,
+                    pourosova_kormoporishod_boithok_woman: null,
+                    union_kormoporishod_boithok_man: null,
+                    union_kormoporishod_boithok_woman: null,
+
+                    upojela_team_boithok_man: null,
+                    upojela_team_boithok_woman: null,
+                    thana_team_boithok_man: null,
+                    thana_team_boithok_woman: null,
+                    pourosova_team_boithok_man: null,
+                    pourosova_team_boithok_woman: null,
+                    union_team_boithok_man: null,
+                    union_team_boithok_woman: null,
+                    
+                    upojela_mashik_rokon_boithok_man: null,
+                    upojela_mashik_rokon_boithok_woman: null,
+                    thana_mashik_rokon_boithok_man: null,
+                    thana_mashik_rokon_boithok_woman: null,
+
+                    upojela_boithok_man: null,
+                    upojela_boithok_woman: null,
+                    thana_boithok_man: null,
+                    thana_boithok_woman: null,
+
+                    bivagio_committee_boithok_man: null,
+                    bivagio_committee_boithok_woman: null,
+
+                    pouroshova_boithok_man: null,
+                    pouroshova_boithok_woman: null,
+                    union_boithok_man: null,
+                    union_boithok_woman: null,
+                    ward_boithok_man: null,
+                    ward_boithok_woman: null,
+
+                    pouroshova_mashik_rokon_boithok_man: null,
+                    pouroshova_mashik_rokon_boithok_woman: null,
+                    union_mashik_rokon_boithok_man: null,
+                    union_mashik_rokon_boithok_woman: null,
+
+                    unit_kormi_boithok_man: null,
+                    unit_kormi_boithok_woman: null,
+
+                    troimasik_rokon_sommelon_man: null,
+                    troimasik_rokon_sommelon_woman: null,
+                    shanmasik_rokon_sommelon_man: null,
+                    shanmasik_rokon_sommelon_woman: null,
+                    barshik_rokon_sommelon_man: null,
+                    barshik_rokon_sommelon_woman: null,
+
+                    upozila_ward_sovapoti_sommelon_man: null,
+                    upozila_ward_sovapoti_sommelon_woman: null,
+                    thana_ward_sovapoti_sommelon_man: null,
+                    thana_ward_sovapoti_sommelon_woman: null,
+
+                    upozila_kormi_sommelon_man: null,
+                    upozila_kormi_sommelon_woman: null,
+                    thana_kormi_sommelon_man: null,
+                    thana_kormi_sommelon_woman: null,
+                    union_kormi_sommelon_man: null,
+                    union_kormi_sommelon_woman: null,
+                    ward_kormi_sommelon_man: null,
+                    ward_kormi_sommelon_woman: null,
+
+                    upozila_unit_sovapoti_sommelon_man: null,
+                    upozila_unit_sovapoti_sommelon_woman: null,
+                    thana_unit_sovapoti_sommelon_man: null,
+                    thana_unit_sovapoti_sommelon_woman: null,
                 },
                 ward_proshikkhon1_tarbiats: {
                     unit_tarbiati_boithok: null,
@@ -34873,37 +34722,22 @@ export default {
         this.report_status();
     },
     watch: {
-        "report_sum_data.ward_kormosuci_bastobayons": function () {
-            this.average_data("ward_kormosuci_bastobayons");
+        "report_sum_data.thana_kormosuci_bastobayons": function () {
+            this.average_data("thana_kormosuci_bastobayons");
         },
-        "report_sum_data.ward_songothon9_sangothonik_boithoks": function () {
-            this.average_data("ward_songothon9_sangothonik_boithoks");
-        },
-        "report_sum_data.ward_proshikkhon1_tarbiats": function () {
-            this.average_data("ward_proshikkhon1_tarbiats");
-        },
-        "report_sum_data.ward_rastrio2_kormoshuchi_bastobayons": function () {
-            this.average_data("ward_rastrio2_kormoshuchi_bastobayons");
-        },
-        "report_sum_data.ward_rastrio3_dibosh_palons": function () {
-            this.average_data("ward_rastrio3_dibosh_palons");
-        },
-        // kormosuci: function () {
-        //     this.average_data();
+        // "report_sum_data.ward_songothon9_sangothonik_boithoks": function () {
+        //     this.average_data("ward_songothon9_sangothonik_boithoks");
         // },
-        // songothon9: function () {
-        //     this.average_data();
+        // "report_sum_data.ward_proshikkhon1_tarbiats": function () {
+        //     this.average_data("ward_proshikkhon1_tarbiats");
         // },
-        // proshikkhon1: function () {
-        //     this.average_data();
+        // "report_sum_data.ward_rastrio2_kormoshuchi_bastobayons": function () {
+        //     this.average_data("ward_rastrio2_kormoshuchi_bastobayons");
         // },
-        // rastrio2: function () {
-        //     this.average_data();
+        // "report_sum_data.ward_rastrio3_dibosh_palons": function () {
+        //     this.average_data("ward_rastrio3_dibosh_palons");
         // },
-
-        total_income: function () {
-            console.log(typeof this.total_income);
-        },
+       
     },
     methods: {
         uploaded_data: async function () {
@@ -35024,7 +34858,7 @@ export default {
         },
         average_data: async function ($table_name) {
             const field_mappings = {
-                ward_kormosuci_bastobayons: [
+                thana_kormosuci_bastobayons: [
                     "unit_masik_sadaron_sova",
                     "dawati_sova",
                     "alochona_sova",
@@ -35043,40 +34877,40 @@ export default {
                     "hamd_nat_protijogita",
                     "others",
                 ],
-                ward_songothon9_sangothonik_boithoks: [
-                    "word_sura_boithok",
-                    "kormoporishod_boithok",
-                    "team_boithok",
-                    "word_boithok",
-                    "masik_sodosso_boithok",
-                    "unit_kormi_boithok",
-                    "ulama_somabesh",
-                    "jubok_somabesh",
-                    "sromik_somabesh",
-                ],
-                ward_proshikkhon1_tarbiats: [
-                    "unit_tarbiati_boithok",
-                    "ward_kormi_sikkha_boithok",
-                    "urdhotono_sikkha_shibir",
-                    "urdhotono_sikkha_boithok",
-                    "gono_sikkha_boithok",
-                    "gono_noisho_ibadot",
-                    "alochona_chokro",
-                    "darsul_quran",
-                    "sohih_tilawat",
-                ],
-                ward_rastrio2_kormoshuchi_bastobayons: [
-                    "centrally_announced_political_program",
-                    "locally_announced_jonoshova",
-                    "locally_announced_shomabesh",
-                    "locally_announced_michil",
-                ],
-                ward_rastrio3_dibosh_palons: [
-                    "shadhinota_o_jatio_dibosh",
-                    "bijoy_dibosh",
-                    "mattrivasha_dibosh",
-                    "others",
-                ],
+                // ward_songothon9_sangothonik_boithoks: [
+                //     "word_sura_boithok",
+                //     "kormoporishod_boithok",
+                //     "team_boithok",
+                //     "word_boithok",
+                //     "masik_sodosso_boithok",
+                //     "unit_kormi_boithok",
+                //     "ulama_somabesh",
+                //     "jubok_somabesh",
+                //     "sromik_somabesh",
+                // ],
+                // ward_proshikkhon1_tarbiats: [
+                //     "unit_tarbiati_boithok",
+                //     "ward_kormi_sikkha_boithok",
+                //     "urdhotono_sikkha_shibir",
+                //     "urdhotono_sikkha_boithok",
+                //     "gono_sikkha_boithok",
+                //     "gono_noisho_ibadot",
+                //     "alochona_chokro",
+                //     "darsul_quran",
+                //     "sohih_tilawat",
+                // ],
+                // ward_rastrio2_kormoshuchi_bastobayons: [
+                //     "centrally_announced_political_program",
+                //     "locally_announced_jonoshova",
+                //     "locally_announced_shomabesh",
+                //     "locally_announced_michil",
+                // ],
+                // ward_rastrio3_dibosh_palons: [
+                //     "shadhinota_o_jatio_dibosh",
+                //     "bijoy_dibosh",
+                //     "mattrivasha_dibosh",
+                //     "others",
+                // ],
             };
 
             const attendance_key_suffix = {
@@ -35218,16 +35052,26 @@ export default {
         //     // -------------- rastrio3 --------------
         // },
 
-        formatBangla(number) {
-            if (
-                number == 0 ||
-                number === null ||
-                number === undefined ||
-                isNaN(number)
-            ) {
+        // formatBangla(number) {
+        //     if (
+        //         number == 0 ||
+        //         number === null ||
+        //         number === undefined ||
+        //         isNaN(number)
+        //     ) {
+        //         return "";
+        //     }
+        //     return number.toLocaleString("bn-BD");
+        // },
+        
+        formatBangla(value) {
+            const num = Number(value);           // "204" → 204
+
+            if (!num || !Number.isFinite(num)) { // catches 0, NaN, null, undefined, ""
                 return "";
             }
-            return number.toLocaleString("bn-BD");
+
+            return num.toLocaleString("bn-BD");  // "২০৪"
         },
         formatMonth(date) {
             return new Date(date).toLocaleString("bn-BD", { month: "long" });

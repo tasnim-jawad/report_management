@@ -58,11 +58,11 @@ return new class extends Migration
             $table->bigInteger('sangothonik_union_woman_gatti')->nullable();
             $table->bigInteger('sangothonik_union_woman_target')->nullable();
 
-            $table->bigInteger('union_without_member_woman_previous')->nullable();
-            $table->bigInteger('union_without_member_woman_present')->nullable();
-            $table->bigInteger('union_without_member_woman_increase')->nullable();
-            $table->bigInteger('union_without_member_woman_gatti')->nullable();
-            $table->bigInteger('union_without_member_woman_target')->nullable();
+            $table->bigInteger('union_without_member_previous')->nullable();
+            $table->bigInteger('union_without_member_present')->nullable();
+            $table->bigInteger('union_without_member_increase')->nullable();
+            $table->bigInteger('union_without_member_gatti')->nullable();
+            $table->bigInteger('union_without_member_target')->nullable();
 
             $table->bigInteger('total_proshashonik_ward_of_city_corporation_previous')->nullable();
             $table->bigInteger('total_proshashonik_ward_of_city_corporation_present')->nullable();

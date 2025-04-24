@@ -7,14 +7,7 @@
 <div class="parent_popup">
 
 
-<div class="present parent_popup">
-    {{
-        formatBangla(
-            previous_present?._present ??
-                ""
-        )
-    }}
-</div>
+
 <div class="previous parent_popup">
     {{
         formatBangla(
@@ -23,22 +16,71 @@
         )
     }}
 </div>
+<div class="present parent_popup">
+    {{
+        formatBangla(
+            previous_present?._present ??
+                ""
+        )
+    }}
+</div>
+
 _present
 
 _previous
 
 
 
+{{
+    get_sum_total(
+        report_sum_data
+            ?.thana_department1_talimul_qurans
+            ?.teacher_rokon_man,
+        report_sum_data
+            ?.thana_department1_talimul_qurans
+            ?.teacher_rokon_woman,
+        report_sum_data
+            ?.thana_department1_talimul_qurans
+            ?.teacher_worker_man,
+        report_sum_data
+            ?.thana_department1_talimul_qurans
+            ?.teacher_worker_woman
+    )
+}}
+
+
+
+
+formatBangla(
+    Number(
+        previous_present?.associate_member_man_previous ??
+            0
+    ) +
+    Number(
+        previous_present?.associate_member_woman_previous ??
+            0
+    )
+)
 
 
 
 
 
-
-
-
-
-
+<td>
+    {{
+        implementation_rate(
+            Number(
+                report_sum_data
+                    ?.thana_songothon3_departmental_information
+                    ?.women_kormi_target
+            ),
+            Number(
+                (report_sum_data?.thana_songothon3_departmental_information?.women_kormi_increase_manonnoyon ?? 0) +
+                (report_sum_data?.thana_songothon3_departmental_information?.women_kormi_increase_agoto ?? 0)
+            ),
+        )
+    }}
+</td>
 
 
 
@@ -129,3 +171,4 @@ _previous
         :month="month"
     />
 </div>
+

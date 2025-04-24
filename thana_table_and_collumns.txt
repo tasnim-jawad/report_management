@@ -332,6 +332,9 @@
     "unit_masik_sadaron_sova_total",
     "unit_masik_sadaron_sova_target",
     "unit_masik_sadaron_sova_uposthiti",
+    "dawati_sova_total",
+    "dawati_sova_target",
+    "dawati_sova_uposthiti",
     "alochona_sova_total",
     "alochona_sova_target",
     "alochona_sova_uposthiti",
@@ -1325,11 +1328,15 @@
     "songothito_union_increase",
     "songothito_union_gatti",
     "songothito_union_target",
+
+    // বাদ দিয়েছি ----------------------------->
     "songothito_union_man_previous",
     "songothito_union_man_present",
     "songothito_union_man_increase",
     "songothito_union_man_gatti",
     "songothito_union_man_target",
+    // বাদ দিয়েছি ----------------------------->
+
     "sangothonik_union_man_previous",
     "sangothonik_union_man_present",
     "sangothonik_union_man_increase",
@@ -1340,11 +1347,12 @@
     "sangothonik_union_woman_increase",
     "sangothonik_union_woman_gatti",
     "sangothonik_union_woman_target",
-    "union_without_member_woman_previous",
-    "union_without_member_woman_present",
-    "union_without_member_woman_increase",
-    "union_without_member_woman_gatti",
-    "union_without_member_woman_target",
+
+    "union_without_member_previous",
+    "union_without_member_present",
+    "union_without_member_increase",
+    "union_without_member_gatti",
+    "union_without_member_target",
     "total_proshashonik_ward_of_city_corporation_previous",
     "total_proshashonik_ward_of_city_corporation_present",
     "total_proshashonik_ward_of_city_corporation_increase",

@@ -381,7 +381,7 @@
             </div>
             <div class="card-body">
                 <form action="">
-                    <form-input v-for="(field, index) in union_without_member_woman" :label="field.label" :name="field.name" :key="index"
+                    <form-input v-for="(field, index) in union_without_member" :label="field.label" :name="field.name" :key="index"
                     :onchange="dawat_upload" :endpoint="'thana-songothon4-organizational-structure'" :unique_key="4"></form-input>
                 </form>
             </div>
@@ -2750,26 +2750,26 @@ export default {
             },
         ],
 
-        union_without_member_woman: [
+        union_without_member: [
             // {
             //     label: 'বিগত মাসের সংখ্যা',
-            //     name: 'union_without_member_woman_previous',
+            //     name: 'union_without_member_previous',
             // },
             // {
             //     label: 'বর্তমান সংখ্যা',
-            //     name: 'union_without_member_woman_present',
+            //     name: 'union_without_member_present',
             // },
             {
                 label: 'বৃদ্ধি',
-                name: 'union_without_member_woman_increase',
+                name: 'union_without_member_increase',
             },
             {
                 label: 'ঘাটতি',
-                name: 'union_without_member_woman_gatti',
+                name: 'union_without_member_gatti',
             },
             {
                 label: 'টার্গেট',
-                name: 'union_without_member_woman_target',
+                name: 'union_without_member_target',
             },
         ],
 

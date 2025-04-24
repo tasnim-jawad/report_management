@@ -11050,12 +11050,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="union_without_member_woman_previous"
+                                        name="union_without_member_previous"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_previous
+                                                    ?.union_without_member_previous
                                             )
                                         "
                                         @change="
@@ -11076,12 +11076,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="union_without_member_woman_present"
+                                        name="union_without_member_present"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_present
+                                                    ?.union_without_member_present
                                             )
                                         "
                                         @change="
@@ -11102,12 +11102,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="union_without_member_woman_increase"
+                                        name="union_without_member_increase"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_increase
+                                                    ?.union_without_member_increase
                                             )
                                         "
                                         @change="
@@ -11128,12 +11128,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="union_without_member_woman_gatti"
+                                        name="union_without_member_gatti"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_gatti
+                                                    ?.union_without_member_gatti
                                             )
                                         "
                                         @change="
@@ -11154,12 +11154,12 @@
                                 </td>
                                 <td>
                                     <input
-                                        name="union_without_member_woman_target"
+                                        name="union_without_member_target"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon4_organizational_structures
-                                                    ?.union_without_member_woman_target
+                                                    ?.union_without_member_target
                                             )
                                         "
                                         @change="

@@ -23,6 +23,11 @@ return new class extends Migration
             $table->bigInteger('unit_masik_sadaron_sova_uposthiti')->nullable();
 
             // Alochona Sova
+            $table->bigInteger('dawati_sova_total')->nullable();
+            $table->bigInteger('dawati_sova_target')->nullable();
+            $table->bigInteger('dawati_sova_uposthiti')->nullable();
+
+            // Alochona Sova
             $table->bigInteger('alochona_sova_total')->nullable();
             $table->bigInteger('alochona_sova_target')->nullable();
             $table->bigInteger('alochona_sova_uposthiti')->nullable();
