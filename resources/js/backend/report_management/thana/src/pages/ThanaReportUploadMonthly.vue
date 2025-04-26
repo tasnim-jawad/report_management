@@ -23143,7 +23143,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.upozila_kormi_sommelon_women
                                             )
                                         "
                                         @change="
@@ -23152,7 +23152,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.upozila_kormi_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -23172,7 +23172,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.thana_kormi_sommelon_women
                                             )
                                         "
                                         @change="
@@ -23181,7 +23181,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.thana_kormi_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -23369,7 +23369,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.union_kormi_sommelon_man
                                             )
                                         "
                                         @change="
@@ -23378,7 +23378,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.union_kormi_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -23398,7 +23398,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.ward_kormi_sommelon_man
                                             )
                                         "
                                         @change="
@@ -23407,7 +23407,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.ward_kormi_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -23430,7 +23430,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.union_kormi_sommelon_women
                                             )
                                         "
                                         @change="
@@ -23439,7 +23439,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.union_kormi_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -23459,7 +23459,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.ward_kormi_sommelon_women
                                             )
                                         "
                                         @change="
@@ -23468,7 +23468,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.ward_kormi_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -23657,7 +23657,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.upozila_unit_sovapoti_sommelon_man
                                             )
                                         "
                                         @change="
@@ -23666,7 +23666,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.upozila_unit_sovapoti_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -23686,7 +23686,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.thana_unit_sovapoti_sommelon_man
                                             )
                                         "
                                         @change="
@@ -23695,7 +23695,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.thana_unit_sovapoti_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -23718,7 +23718,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.upozila_unit_sovapoti_sommelon_women
                                             )
                                         "
                                         @change="
@@ -23727,7 +23727,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.upozila_unit_sovapoti_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -23747,7 +23747,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.thana_unit_sovapoti_sommelon_women
                                             )
                                         "
                                         @change="
@@ -23756,7 +23756,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.thana_unit_sovapoti_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -23942,7 +23942,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.ulama_boithok_man
                                             )
                                         "
                                         @change="
@@ -23951,7 +23951,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.ulama_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -23971,7 +23971,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.ulama_somabesh_man
                                             )
                                         "
                                         @change="
@@ -23980,7 +23980,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.ulama_somabesh_man_total
                                             )
                                         "
                                         :type="type"
@@ -24003,7 +24003,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.ulama_boithok_women
                                             )
                                         "
                                         @change="
@@ -24012,7 +24012,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.ulama_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -24032,7 +24032,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.ulama_somabesh_women
                                             )
                                         "
                                         @change="
@@ -24041,7 +24041,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.ulama_somabesh_women_total
                                             )
                                         "
                                         :type="type"
@@ -24147,7 +24147,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.pesha_jibi_boithok_man
                                             )
                                         "
                                         @change="
@@ -24156,7 +24156,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.pesha_jibi_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -24177,7 +24177,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.pesha_jibi_boithok_women
                                             )
                                         "
                                         @change="
@@ -24186,7 +24186,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.pesha_jibi_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -24373,7 +24373,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.sromik_boithok_man
                                             )
                                         "
                                         @change="
@@ -24382,7 +24382,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.sromik_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -24402,7 +24402,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.sromik_somabesh_man
                                             )
                                         "
                                         @change="
@@ -24411,7 +24411,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.sromik_somabesh_man_total
                                             )
                                         "
                                         :type="type"
@@ -24434,7 +24434,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.sromik_boithok_women
                                             )
                                         "
                                         @change="
@@ -24443,7 +24443,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.sromik_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -24463,7 +24463,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.sromik_somabesh_women
                                             )
                                         "
                                         @change="
@@ -24472,7 +24472,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.sromik_somabesh_women_total
                                             )
                                         "
                                         :type="type"
@@ -24576,7 +24576,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.jubok_boithok_man
                                             )
                                         "
                                         @change="
@@ -24585,7 +24585,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.jubok_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -24606,7 +24606,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.jubok_boithok_women
                                             )
                                         "
                                         @change="
@@ -24615,7 +24615,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.jubok_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -24720,7 +24720,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.student_daittoshil_boithok_man
                                             )
                                         "
                                         @change="
@@ -24729,7 +24729,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.student_daittoshil_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -24750,7 +24750,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.student_daittoshil_boithok_women
                                             )
                                         "
                                         @change="
@@ -24759,7 +24759,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.student_daittoshil_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -24946,7 +24946,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.associate_member_somabesh_man
                                             )
                                         "
                                         @change="
@@ -24955,7 +24955,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.associate_member_somabesh_man_total
                                             )
                                         "
                                         :type="type"
@@ -24975,7 +24975,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.associate_member_sommelon_man
                                             )
                                         "
                                         @change="
@@ -24984,7 +24984,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.associate_member_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -25007,7 +25007,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.associate_member_somabesh_women
                                             )
                                         "
                                         @change="
@@ -25016,7 +25016,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.associate_member_somabesh_women_total
                                             )
                                         "
                                         :type="type"
@@ -25036,7 +25036,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.associate_member_sommelon_women
                                             )
                                         "
                                         @change="
@@ -25045,7 +25045,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.associate_member_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -25149,7 +25149,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.others_man
                                             )
                                         "
                                         @change="
@@ -25158,7 +25158,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.others_man_total
                                             )
                                         "
                                         :type="type"
@@ -25179,7 +25179,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man
+                                                    ?.others_women
                                             )
                                         "
                                         @change="
@@ -25188,7 +25188,7 @@
                                                 'thana-songothon11-sangothonik-boithoks',
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?._total
+                                                    ?.others_women_total
                                             )
                                         "
                                         :type="type"
@@ -25471,7 +25471,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.unit_tarbiati_boithok_women
                                             )
                                         "
                                         @change="
@@ -25480,7 +25480,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.unit_tarbiati_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -25668,7 +25668,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.upozila_vittik_rokon_shikkha_shibir_man
                                             )
                                         "
                                         @change="
@@ -25677,7 +25677,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.upozila_vittik_rokon_shikkha_shibir_man_total
                                             )
                                         "
                                         :type="type"
@@ -25697,7 +25697,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.thana_vittik_rokon_shikkha_boithok_man
                                             )
                                         "
                                         @change="
@@ -25706,7 +25706,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.thana_vittik_rokon_shikkha_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -25729,7 +25729,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.upozila_vittik_rokon_shikkha_shibir_women
                                             )
                                         "
                                         @change="
@@ -25738,7 +25738,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.upozila_vittik_rokon_shikkha_shibir_women_total
                                             )
                                         "
                                         :type="type"
@@ -25758,7 +25758,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.thana_vittik_rokon_shikkha_boithok_women
                                             )
                                         "
                                         @change="
@@ -25767,7 +25767,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.thana_vittik_rokon_shikkha_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -25956,7 +25956,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_man
                                             )
                                         "
                                         @change="
@@ -25965,7 +25965,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_man_total
                                             )
                                         "
                                         :type="type"
@@ -25985,7 +25985,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_man
                                             )
                                         "
                                         @change="
@@ -25994,7 +25994,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -26017,7 +26017,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_women
                                             )
                                         "
                                         @change="
@@ -26026,7 +26026,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_women_total
                                             )
                                         "
                                         :type="type"
@@ -26046,7 +26046,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_women
                                             )
                                         "
                                         @change="
@@ -26055,7 +26055,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -26244,7 +26244,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.upozila_vittik_kormi_shikkha_shibir_man
                                             )
                                         "
                                         @change="
@@ -26253,7 +26253,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.upozila_vittik_kormi_shikkha_shibir_man_total
                                             )
                                         "
                                         :type="type"
@@ -26273,7 +26273,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.thana_vittik_kormi_shikkha_boithok_man
                                             )
                                         "
                                         @change="
@@ -26282,7 +26282,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.thana_vittik_kormi_shikkha_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -26305,7 +26305,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.upozila_vittik_kormi_shikkha_shibir_women
                                             )
                                         "
                                         @change="
@@ -26314,7 +26314,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.upozila_vittik_kormi_shikkha_shibir_women_total
                                             )
                                         "
                                         :type="type"
@@ -26334,7 +26334,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.thana_vittik_kormi_shikkha_boithok_women
                                             )
                                         "
                                         @change="
@@ -26343,7 +26343,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.thana_vittik_kormi_shikkha_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -26532,7 +26532,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.upozila_former_Student_kormi_training_program_man
                                             )
                                         "
                                         @change="
@@ -26541,7 +26541,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.upozila_former_Student_kormi_training_program_man_total
                                             )
                                         "
                                         :type="type"
@@ -26561,7 +26561,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.thana_former_Student_kormi_training_program_man
                                             )
                                         "
                                         @change="
@@ -26570,7 +26570,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.thana_former_Student_kormi_training_program_man_total
                                             )
                                         "
                                         :type="type"
@@ -26593,7 +26593,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.upozila_former_Student_kormi_training_program_women
                                             )
                                         "
                                         @change="
@@ -26602,7 +26602,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.upozila_former_Student_kormi_training_program_women_total
                                             )
                                         "
                                         :type="type"
@@ -26622,7 +26622,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.thana_former_Student_kormi_training_program_women
                                             )
                                         "
                                         @change="
@@ -26631,7 +26631,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.thana_former_Student_kormi_training_program_women_total
                                             )
                                         "
                                         :type="type"
@@ -26895,7 +26895,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.pouroshova_kormi_shikkha_boithok_man
                                             )
                                         "
                                         @change="
@@ -26904,7 +26904,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.pouroshova_kormi_shikkha_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -26924,7 +26924,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.union_kormi_shikkha_boithok_man
                                             )
                                         "
                                         @change="
@@ -26933,7 +26933,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.union_kormi_shikkha_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -26953,7 +26953,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.ward_kormi_shikkha_boithok_man
                                             )
                                         "
                                         @change="
@@ -26962,7 +26962,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.ward_kormi_shikkha_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -26985,7 +26985,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.pouroshova_kormi_shikkha_boithok_women
                                             )
                                         "
                                         @change="
@@ -26994,7 +26994,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.pouroshova_kormi_shikkha_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -27014,7 +27014,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.union_kormi_shikkha_boithok_women
                                             )
                                         "
                                         @change="
@@ -27023,7 +27023,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.union_kormi_shikkha_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -27043,7 +27043,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.ward_kormi_shikkha_boithok_women
                                             )
                                         "
                                         @change="
@@ -27052,7 +27052,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.ward_kormi_shikkha_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -27156,7 +27156,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.gono_sikkha_boithok_man
                                             )
                                         "
                                         @change="
@@ -27165,7 +27165,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.gono_sikkha_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -27186,7 +27186,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.gono_sikkha_boithok_women
                                             )
                                         "
                                         @change="
@@ -27195,7 +27195,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.gono_sikkha_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -27298,7 +27298,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.gono_noisho_ibadot_man
                                             )
                                         "
                                         @change="
@@ -27307,7 +27307,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.gono_noisho_ibadot_man_total
                                             )
                                         "
                                         :type="type"
@@ -27328,7 +27328,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.gono_noisho_ibadot_women
                                             )
                                         "
                                         @change="
@@ -27337,7 +27337,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total
+                                                    ?.gono_noisho_ibadot_women_total
                                             )
                                         "
                                         :type="type"
@@ -27489,7 +27489,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.rokon_path_cokro_man
                                             )
                                         "
                                         @change="
@@ -27498,7 +27498,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total_odhibeshon
+                                                    ?.rokon_path_cokro_man_total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27519,7 +27519,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.rokon_path_cokro_woman
                                             )
                                         "
                                         @change="
@@ -27528,7 +27528,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total_odhibeshon
+                                                    ?.rokon_path_cokro_woman_total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27768,7 +27768,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.kormi_path_cokro_man
                                             )
                                         "
                                         @change="
@@ -27777,7 +27777,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total_odhibeshon
+                                                    ?.kormi_path_cokro_man_total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27797,7 +27797,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.kormi_alochona_cokro_man
                                             )
                                         "
                                         @change="
@@ -27806,7 +27806,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total_odhibeshon
+                                                    ?.kormi_alochona_cokro_man_total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27829,7 +27829,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.kormi_path_cokro_woman
                                             )
                                         "
                                         @change="
@@ -27838,7 +27838,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total_odhibeshon
+                                                    ?.kormi_path_cokro_woman_total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27858,7 +27858,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.kormi_alochona_cokro_woman
                                             )
                                         "
                                         @change="
@@ -27867,7 +27867,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total_odhibeshon
+                                                    ?.kormi_alochona_cokro_woman_total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27997,7 +27997,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.quran_study_circle_man
                                             )
                                         "
                                         @change="
@@ -28006,7 +28006,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total_odhibeshon
+                                                    ?.quran_study_circle_man_total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -28027,7 +28027,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rrrrrrrrrrr
+                                                    ?.quran_study_circle_woman
                                             )
                                         "
                                         @change="
@@ -28036,7 +28036,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?._total_odhibeshon
+                                                    ?.quran_study_circle_woman_total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -28284,7 +28284,7 @@
                                             formatBangla(
                                                 average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.darsul_quran_woman
+                                                    ?.sohih_tilawat_woman
                                             )
                                         "
                                         @change="
@@ -28293,7 +28293,7 @@
                                                 'thana-proshikkhon1-tarbiat',
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.darsul_quran_woman_program
+                                                    ?.sohih_tilawat_woman_program
                                             )
                                         "
                                         :type="type"
@@ -31268,7 +31268,7 @@
                                                 formatBangla(
                                                     average_uposthiti
                                                         ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                        ?.rrrrrrrrrrrrrrrrr
+                                                        ?.centrally_announced_political_program
                                                 )
                                             "
                                             @change="
@@ -31277,7 +31277,7 @@
                                                     'thana-rastrio2-kormoshuchi-bastobayon',
                                                     report_sum_data
                                                         ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                        ?._total
+                                                        ?.centrally_announced_political_program
                                                 )
                                             "
                                             :type="type"
@@ -31399,7 +31399,7 @@
                                                     formatBangla(
                                                         average_uposthiti
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?.rrrrrrrrrrrrrrrrr
+                                                            ?.locally_announced_jonoshova
                                                     )
                                                 "
                                                 @change="
@@ -31408,7 +31408,7 @@
                                                         'thana-rastrio2-kormoshuchi-bastobayon',
                                                         report_sum_data
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?._total
+                                                            ?.locally_announced_jonoshova
                                                     )
                                                 "
                                                 :type="type"
@@ -31431,7 +31431,7 @@
                                                     formatBangla(
                                                         average_uposthiti
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?.rrrrrrrrrrrrrrrrr
+                                                            ?.locally_announced_shomabesh
                                                     )
                                                 "
                                                 @change="
@@ -31440,7 +31440,7 @@
                                                         'thana-rastrio2-kormoshuchi-bastobayon',
                                                         report_sum_data
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?._total
+                                                            ?.locally_announced_shomabesh
                                                     )
                                                 "
                                                 :type="type"
@@ -31463,7 +31463,7 @@
                                                     formatBangla(
                                                         average_uposthiti
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?.rrrrrrrrrrrrrrrrr
+                                                            ?.locally_announced_michil
                                                     )
                                                 "
                                                 @change="
@@ -31472,7 +31472,7 @@
                                                         'thana-rastrio2-kormoshuchi-bastobayon',
                                                         report_sum_data
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?._total
+                                                            ?.locally_announced_michil
                                                     )
                                                 "
                                                 :type="type"
@@ -31703,7 +31703,7 @@
                                                     formatBangla(
                                                         average_uposthiti
                                                             ?.thana_rastrio3_dibosh_palons
-                                                            ?.rrrrrrrrrrrrrrrrr
+                                                            ?.shadhinota_o_jatio_dibosh
                                                     )
                                                 "
                                                 @change="
@@ -31712,7 +31712,7 @@
                                                         'thana-rastrio3-dibosh-palon',
                                                         report_sum_data
                                                             ?.thana_rastrio3_dibosh_palons
-                                                            ?._total_programs
+                                                            ?.shadhinota_o_jatio_dibosh_total_programs
                                                     )
                                                 "
                                             :type="type"
@@ -31768,7 +31768,7 @@
                                                 formatBangla(
                                                     average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.rrrrrrrrrrrrrrrrr
+                                                        ?.mattrivasha_dibosh
                                                 )
                                             "
                                             @change="
@@ -31777,7 +31777,7 @@
                                                     'thana-rastrio3-dibosh-palon',
                                                     report_sum_data
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?._total_programs
+                                                        ?.mattrivasha_dibosh_total_programs
                                                 )
                                             "
                                             :type="type"
@@ -31833,7 +31833,7 @@
                                                 formatBangla(
                                                     average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.rrrrrrrrrrrrrrrrr
+                                                        ?.bijoy_dibosh
                                                 )
                                             "
                                             @change="
@@ -31842,7 +31842,7 @@
                                                     'thana-rastrio3-dibosh-palon',
                                                     report_sum_data
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?._total_programs
+                                                        ?.bijoy_dibosh_total_programs
                                                 )
                                             "
                                             :type="type"
@@ -31898,7 +31898,7 @@
                                                 formatBangla(
                                                     average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.rrrrrrrrrrrrrrrrr
+                                                        ?.international_womens_day
                                                 )
                                             "
                                             @change="
@@ -31907,7 +31907,7 @@
                                                     'thana-rastrio3-dibosh-palon',
                                                     report_sum_data
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?._total_programs
+                                                        ?.international_womens_day_total_programs
                                                 )
                                             "
                                             :type="type"
@@ -31963,7 +31963,7 @@
                                                 formatBangla(
                                                     average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.rrrrrrrrrrrrrrrrr
+                                                        ?.others
                                                 )
                                             "
                                             @change="
@@ -31972,7 +31972,7 @@
                                                     'thana-rastrio3-dibosh-palon',
                                                     report_sum_data
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?._total_programs
+                                                        ?.others_total_programs
                                                 )
                                             "
                                             :type="type"
@@ -32026,7 +32026,7 @@
                                                 formatBangla(
                                                     average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.rrrrrrrrrrrrrrrrr
+                                                        ?.may_day
                                                 )
                                             "
                                             @change="
@@ -32035,7 +32035,7 @@
                                                     'thana-rastrio3-dibosh-palon',
                                                     report_sum_data
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?._total_programs
+                                                        ?.may_day_total_programs
                                                 )
                                             "
                                             :type="type"
@@ -35399,11 +35399,6 @@ export default {
                     locally_announced_jonoshova: null,
                     locally_announced_shomabesh: null,
                     locally_announced_michil: null,
-                    poster_bitoron: null,
-                    leaflet_bitoron: null,
-                    booklet_bitoron: null,
-                    sharoklipi_bitoron: null,
-                    others: null
                 },
                 thana_rastrio3_dibosh_palons: {
                     shadhinota_o_jatio_dibosh: null,
@@ -35763,11 +35758,6 @@ export default {
                     "locally_announced_jonoshova",
                     "locally_announced_shomabesh",
                     "locally_announced_michil",
-                    "poster_bitoron",
-                    "leaflet_bitoron",
-                    "booklet_bitoron",
-                    "sharoklipi_bitoron",
-                    "others",
                 ],
 
                 thana_rastrio3_dibosh_palons: [
@@ -36045,28 +36035,24 @@ export default {
                             "gono_noisho_ibadot_man_total",
                             "gono_noisho_ibadot_women_total",
                             // average thana_proshikkhon1_tarbiats 2nd part
-                            "rokon_path_cokro_man_total",
-                            "rokon_path_cokro_woman_total",
-                            "kormi_path_cokro_man_total",
-                            "kormi_path_cokro_woman_total",
-                            "kormi_alochona_cokro_man_total",
-                            "kormi_alochona_cokro_woman_total",
-                            "quran_study_circle_man_total",
-                            "quran_study_circle_woman_total",
-                            "darsul_quran_man_total",
-                            "darsul_quran_woman_total",
-                            "sohih_tilawat_man_total",
-                            "sohih_tilawat_woman_total",
+                            "rokon_path_cokro_man_total_odhibeshon",
+                            "rokon_path_cokro_woman_total_odhibeshon",
+                            "kormi_path_cokro_man_total_odhibeshon",
+                            "kormi_path_cokro_woman_total_odhibeshon",
+                            "kormi_alochona_cokro_man_total_odhibeshon",
+                            "kormi_alochona_cokro_woman_total_odhibeshon",
+                            "quran_study_circle_man_total_odhibeshon",
+                            "quran_study_circle_woman_total_odhibeshon",
+                            // average thana_proshikkhon1_tarbiats 3rd part
+                            "darsul_quran_man_program",
+                            "darsul_quran_woman_program",
+                            "sohih_tilawat_man_program",
+                            "sohih_tilawat_woman_program",
                             // average thana_rastrio2_kormoshuchi_bastobayons
                             "centrally_announced_political_program",
                             "locally_announced_jonoshova",
                             "locally_announced_shomabesh",
                             "locally_announced_michil",
-                            "poster_bitoron",
-                            "leaflet_bitoron",
-                            "booklet_bitoron",
-                            "sharoklipi_bitoron",
-                            "others",
                             // average thana_rastrio3_dibosh_palons
                             "shadhinota_o_jatio_dibosh_total_programs",
                             "bijoy_dibosh_total_programs",
