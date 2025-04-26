@@ -510,6 +510,7 @@
     "gono_noisho_ibadot_women_total",
     "gono_noisho_ibadot_women_target",
     "gono_noisho_ibadot_women_uposthiti",
+
     "rokon_path_cokro_man_total_group",
     "rokon_path_cokro_man_total_odhibeshon",
     "rokon_path_cokro_man_total_uposthiti",
@@ -534,11 +535,10 @@
     "quran_study_circle_woman_total_group",
     "quran_study_circle_woman_total_odhibeshon",
     "quran_study_circle_woman_total_uposthiti",
+
     "darsul_quran_man_program",
-    "darsul_quran_man_odhibeshon",
     "darsul_quran_man_uposthiti",
     "darsul_quran_woman_program",
-    "darsul_quran_woman_odhibeshon",
     "darsul_quran_woman_uposthiti",
     "sohih_tilawat_man_program",
     "sohih_tilawat_man_uposthiti",

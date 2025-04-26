@@ -206,16 +206,18 @@ return new class extends Migration
             
 
             $table->bigInteger('darsul_quran_man_program')->nullable();
-            $table->bigInteger('darsul_quran_man_odhibeshon')->nullable();
+            // $table->bigInteger('darsul_quran_man_odhibeshon')->nullable();
             $table->bigInteger('darsul_quran_man_uposthiti')->nullable();
             $table->bigInteger('darsul_quran_woman_program')->nullable();
-            $table->bigInteger('darsul_quran_woman_odhibeshon')->nullable();
+            // $table->bigInteger('darsul_quran_woman_odhibeshon')->nullable();
             $table->bigInteger('darsul_quran_woman_uposthiti')->nullable();
             
 
             $table->bigInteger('sohih_tilawat_man_program')->nullable();
+            // $table->bigInteger('sohih_tilawat_man_odhibeshon')->nullable();
             $table->bigInteger('sohih_tilawat_man_uposthiti')->nullable();
             $table->bigInteger('sohih_tilawat_woman_program')->nullable();
+            // $table->bigInteger('sohih_tilawat_woman_odhibeshon')->nullable();
             $table->bigInteger('sohih_tilawat_woman_uposthiti')->nullable();
 
             $table->string('creator')->nullable();

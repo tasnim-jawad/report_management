@@ -6855,14 +6855,18 @@
                                             name="unit_masik_sadaron_sova_uposthiti"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_kormosuci_bastobayons
-                                                        ?.unit_masik_sadaron_sova_uposthiti
+                                                        ?.unit_masik_sadaron_sova
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-kormosuci-bastobayon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-kormosuci-bastobayon',
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.unit_masik_sadaron_sova_total
                                                 )
                                             "
                                             :type="type"
@@ -7072,14 +7076,18 @@
                                                 name="dawati_sova_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.dawati_sova_uposthiti
+                                                            ?.dawati_sova
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.dawati_sova_total
                                                     )
                                                 "
                                                 :type="type"
@@ -7100,15 +7108,19 @@
                                             <input
                                                 name="alochona_sova_uposthiti"
                                                 :value="
-                                                    formatBangla(
-                                                        report_sum_data
+                                                formatBangla(
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.alochona_sova_uposthiti
+                                                            ?.alochona_sova
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.alochona_sova_total
                                                     )
                                                 "
                                                 :type="type"
@@ -7130,14 +7142,18 @@
                                                 name="sudhi_somabesh_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.sudhi_somabesh_uposthiti
+                                                            ?.sudhi_somabesh
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.sudhi_somabesh_total
                                                     )
                                                 "
                                                 :type="type"
@@ -7227,14 +7243,18 @@
                                             name="siratunnabi_mahfil_uposthiti"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_kormosuci_bastobayons
-                                                        ?.siratunnabi_mahfil_uposthiti
+                                                        ?.siratunnabi_mahfil
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-kormosuci-bastobayon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-kormosuci-bastobayon',
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.siratunnabi_mahfil_total
                                                 )
                                             "
                                             :type="type"
@@ -7321,14 +7341,18 @@
                                             name="eid_reunion_uposthiti"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_kormosuci_bastobayons
-                                                        ?.eid_reunion_uposthiti
+                                                        ?.eid_reunion
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-kormosuci-bastobayon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-kormosuci-bastobayon',
+                                                    report_sum_data
+                                                        ?.thana_kormosuci_bastobayons
+                                                        ?.eid_reunion_total
                                                 )
                                             "
                                             :type="type"
@@ -7541,14 +7565,18 @@
                                                 name="dars_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
-                                                            ?.thana_kormosuci_bastobayons
-                                                            ?.dars_uposthiti
-                                                    )
+                                                            average_uposthiti
+                                                                ?.thana_kormosuci_bastobayons
+                                                                ?.dars
+                                                        )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.dars_total
                                                     )
                                                 "
                                                 :type="type"
@@ -7570,14 +7598,18 @@
                                                 name="tafsir_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.tafsir_uposthiti
+                                                            ?.tafsir
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.tafsir_total
                                                     )
                                                 "
                                                 :type="type"
@@ -7599,14 +7631,18 @@
                                                 name="dawati_jonosova_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.dawati_jonosova_uposthiti
+                                                            ?.dawati_jonosova
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.dawati_jonosova_total
                                                     )
                                                 "
                                                 :type="type"
@@ -7772,14 +7808,18 @@
                                                 name="iftar_mahfil_personal_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.iftar_mahfil_personal_uposthiti
+                                                            ?.iftar_mahfil_personal
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.iftar_mahfil_personal_total
                                                     )
                                                 "
                                                 :type="type"
@@ -7801,14 +7841,18 @@
                                                 name="iftar_mahfil_samostic_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.iftar_mahfil_samostic_uposthiti
+                                                            ?.iftar_mahfil_samostic
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.iftar_mahfil_samostic_total
                                                     )
                                                 "
                                                 :type="type"
@@ -8020,14 +8064,18 @@
                                                 name="cha_chakra_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.cha_chakra_uposthiti
+                                                            ?.cha_chakra
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.cha_chakra_total
                                                     )
                                                 "
                                                 :type="type"
@@ -8049,14 +8097,18 @@
                                                 name="samostic_khawa_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.samostic_khawa_uposthiti
+                                                            ?.samostic_khawa
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.samostic_khawa_total
                                                     )
                                                 "
                                                 :type="type"
@@ -8078,14 +8130,18 @@
                                                 name="sikkha_sofor_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.sikkha_sofor_uposthiti
+                                                            ?.sikkha_sofor
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.sikkha_sofor_total
                                                     )
                                                 "
                                                 :type="type"
@@ -8238,14 +8294,18 @@
                                                 name="kirat_protijogita_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.kirat_protijogita_uposthiti
+                                                            ?.kirat_protijogita
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.kirat_protijogita_total
                                                     )
                                                 "
                                                 :type="type"
@@ -8267,14 +8327,18 @@
                                                 name="hamd_nat_protijogita_uposthiti"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_kormosuci_bastobayons
-                                                            ?.hamd_nat_protijogita_uposthiti
+                                                            ?.hamd_nat_protijogita
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-kormosuci-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.hamd_nat_protijogita_total
                                                     )
                                                 "
                                                 :type="type"
@@ -8361,17 +8425,21 @@
                                         <input
                                             name="others_uposthiti"
                                             :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_kormosuci_bastobayons
-                                                        ?.others_uposthiti
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-kormosuci-bastobayon'
-                                                )
-                                            "
+                                                    formatBangla(
+                                                        average_uposthiti
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.others
+                                                    )
+                                                "
+                                                @change="
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-kormosuci-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_kormosuci_bastobayons
+                                                            ?.others_total
+                                                    )
+                                                "
                                             :type="type"
                                             class="bg-input w-100 text-center"
                                         />
@@ -20254,14 +20322,18 @@
                                         name="upojela_mozlishe_sura_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_mozlishe_sura_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -20279,14 +20351,18 @@
                                         name="pourosova_mozlishe_sura_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pourosova_mozlishe_sura_boithok_man_uposthiti
+                                                    ?.pourosova_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pourosova_mozlishe_sura_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -20304,14 +20380,18 @@
                                         name="union_mozlishe_sura_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_mozlishe_sura_boithok_man_uposthiti
+                                                    ?.union_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_mozlishe_sura_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -20332,14 +20412,18 @@
                                         name="upojela_mozlishe_sura_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_mozlishe_sura_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -20357,14 +20441,18 @@
                                         name="pourosova_mozlishe_sura_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pourosova_mozlishe_sura_boithok_women_uposthiti
+                                                    ?.pourosova_mozlishe_sura_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pourosova_mozlishe_sura_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -20382,14 +20470,18 @@
                                         name="union_mozlishe_sura_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_mozlishe_sura_boithok_women_uposthiti
+                                                    ?.union_mozlishe_sura_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_mozlishe_sura_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -20651,14 +20743,18 @@
                                         name="upojela_kormoporishod_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_kormoporishod_boithok_man_uposthiti
+                                                    ?.upojela_kormoporishod_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_kormoporishod_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -20676,14 +20772,18 @@
                                         name="pourosova_kormoporishod_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pourosova_kormoporishod_boithok_man_uposthiti
+                                                    ?.pourosova_kormoporishod_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pourosova_kormoporishod_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -20701,14 +20801,18 @@
                                         name="union_kormoporishod_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_kormoporishod_boithok_man_uposthiti
+                                                    ?.union_kormoporishod_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_kormoporishod_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -20729,14 +20833,18 @@
                                         name="upojela_kormoporishod_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_kormoporishod_boithok_women_uposthiti
+                                                    ?.upojela_kormoporishod_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_kormoporishod_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -20754,14 +20862,18 @@
                                         name="pourosova_kormoporishod_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pourosova_kormoporishod_boithok_women_uposthiti
+                                                    ?.pourosova_kormoporishod_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pourosova_kormoporishod_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -20779,14 +20891,18 @@
                                         name="union_kormoporishod_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_kormoporishod_boithok_women_uposthiti
+                                                    ?.union_kormoporishod_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_kormoporishod_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -20891,14 +21007,18 @@
                                         name="upojela_mashik_rokon_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mashik_rokon_boithok_man_uposthiti
+                                                    ?.upojela_mashik_rokon_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_mashik_rokon_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -20917,14 +21037,18 @@
                                         name="upojela_mashik_rokon_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mashik_rokon_boithok_women_uposthiti
+                                                    ?.upojela_mashik_rokon_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_mashik_rokon_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -21025,14 +21149,18 @@
                                         name="upojela_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_boithok_man_uposthiti
+                                                    ?.upojela_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -21051,14 +21179,18 @@
                                         name="upojela_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_boithok_women_uposthiti
+                                                    ?.upojela_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -21161,14 +21293,18 @@
                                         name="bivagio_committee_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.bivagio_committee_boithok_man_uposthiti
+                                                    ?.bivagio_committee_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.bivagio_committee_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -21187,14 +21323,18 @@
                                         name="bivagio_committee_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.bivagio_committee_boithok_women_uposthiti
+                                                    ?.bivagio_committee_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.bivagio_committee_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -21456,14 +21596,18 @@
                                         name="pouroshova_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pouroshova_boithok_man_uposthiti
+                                                    ?.pouroshova_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pouroshova_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -21481,14 +21625,18 @@
                                         name="union_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_boithok_man_uposthiti
+                                                    ?.union_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -21506,14 +21654,18 @@
                                         name="ward_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_boithok_man_uposthiti
+                                                    ?.ward_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.ward_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -21534,14 +21686,18 @@
                                         name="pouroshova_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pouroshova_boithok_women_uposthiti
+                                                    ?.pouroshova_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pouroshova_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -21559,14 +21715,18 @@
                                         name="union_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_boithok_women_uposthiti
+                                                    ?.union_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -21584,14 +21744,18 @@
                                         name="ward_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_boithok_women_uposthiti
+                                                    ?.ward_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.ward_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -21777,14 +21941,18 @@
                                         name="pouroshova_mashik_rokon_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pouroshova_mashik_rokon_boithok_man_uposthiti
+                                                    ?.pouroshova_mashik_rokon_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pouroshova_mashik_rokon_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -21802,14 +21970,18 @@
                                         name="union_mashik_rokon_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_mashik_rokon_boithok_man_uposthiti
+                                                    ?.union_mashik_rokon_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_mashik_rokon_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -21830,14 +22002,18 @@
                                         name="pouroshova_mashik_rokon_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pouroshova_mashik_rokon_boithok_women_uposthiti
+                                                    ?.pouroshova_mashik_rokon_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pouroshova_mashik_rokon_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -21855,14 +22031,18 @@
                                         name="union_mashik_rokon_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_mashik_rokon_boithok_women_uposthiti
+                                                    ?.union_mashik_rokon_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_mashik_rokon_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -21966,14 +22146,18 @@
                                         name="unit_kormi_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.unit_kormi_boithok_man_uposthiti
+                                                    ?.unit_kormi_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.unit_kormi_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -21992,14 +22176,18 @@
                                         name="unit_kormi_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.unit_kormi_boithok_women_uposthiti
+                                                    ?.unit_kormi_boithok_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.unit_kormi_boithok_women_total
                                             )
                                         "
                                         :type="type"
@@ -22260,14 +22448,18 @@
                                         name="troimasik_rokon_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.troimasik_rokon_sommelon_man_uposthiti
+                                                    ?.troimasik_rokon_sommelon_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.troimasik_rokon_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -22285,14 +22477,18 @@
                                         name="shanmasik_rokon_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.shanmasik_rokon_sommelon_man_uposthiti
+                                                    ?.shanmasik_rokon_sommelon_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.shanmasik_rokon_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -22310,14 +22506,18 @@
                                         name="barshik_rokon_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.barshik_rokon_sommelon_man_uposthiti
+                                                    ?.barshik_rokon_sommelon_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.barshik_rokon_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -22338,14 +22538,18 @@
                                         name="troimasik_rokon_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.troimasik_rokon_sommelon_women_uposthiti
+                                                    ?.troimasik_rokon_sommelon_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.troimasik_rokon_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -22363,14 +22567,18 @@
                                         name="shanmasik_rokon_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.shanmasik_rokon_sommelon_women_uposthiti
+                                                    ?.shanmasik_rokon_sommelon_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.shanmasik_rokon_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -22388,14 +22596,18 @@
                                         name="barshik_rokon_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.barshik_rokon_sommelon_women_uposthiti
+                                                    ?.barshik_rokon_sommelon_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.barshik_rokon_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -22581,14 +22793,18 @@
                                         name="upozila_word_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_word_sovapoti_sommelon_man_uposthiti
+                                                    ?.upozila_ward_sovapoti_sommelon_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upozila_ward_sovapoti_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -22606,14 +22822,18 @@
                                         name="thana_word_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_man_uposthiti
+                                                    ?.thana_ward_sovapoti_sommelon_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_ward_sovapoti_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -22634,14 +22854,18 @@
                                         name="upozila_word_sovapoti_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_word_sovapoti_sommelon_women_uposthiti
+                                                    ?.upozila_ward_sovapoti_sommelon_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upozila_ward_sovapoti_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -22659,14 +22883,18 @@
                                         name="thana_word_sovapoti_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_women_uposthiti
+                                                    ?.thana_ward_sovapoti_sommelon_women
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_ward_sovapoti_sommelon_women_total
                                             )
                                         "
                                         :type="type"
@@ -22852,14 +23080,18 @@
                                         name="upozila_kormi_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_kormi_sommelon_man_uposthiti
+                                                    ?.upozila_kormi_sommelon_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upozila_kormi_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -22877,14 +23109,18 @@
                                         name="thana_kormi_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_kormi_sommelon_man_uposthiti
+                                                    ?.thana_kormi_sommelon_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_kormi_sommelon_man_total
                                             )
                                         "
                                         :type="type"
@@ -22905,14 +23141,18 @@
                                         name="upozila_kormi_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_kormi_sommelon_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -22930,14 +23170,18 @@
                                         name="thana_kormi_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_kormi_sommelon_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23123,14 +23367,18 @@
                                         name="union_kormi_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_kormi_sommelon_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23148,14 +23396,18 @@
                                         name="ward_kormi_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_kormi_sommelon_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23176,14 +23428,18 @@
                                         name="union_kormi_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_kormi_sommelon_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23201,14 +23457,18 @@
                                         name="ward_kormi_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_kormi_sommelon_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23395,14 +23655,18 @@
                                         name="upozila_unit_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_unit_sovapoti_sommelon_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23420,14 +23684,18 @@
                                         name="thana_unit_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_unit_sovapoti_sommelon_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23448,14 +23716,18 @@
                                         name="upozila_unit_sovapoti_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upozila_unit_sovapoti_sommelon_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23473,14 +23745,18 @@
                                         name="thana_unit_sovapoti_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_unit_sovapoti_sommelon_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23664,14 +23940,18 @@
                                         name="ulama_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_boithok_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23689,14 +23969,18 @@
                                         name="ulama_somabesh_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_somabesh_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23717,14 +24001,18 @@
                                         name="ulama_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_boithok_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23742,14 +24030,18 @@
                                         name="ulama_somabesh_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_somabesh_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23853,14 +24145,18 @@
                                         name="pesha_jibi_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pesha_jibi_boithok_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -23879,14 +24175,18 @@
                                         name="pesha_jibi_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pesha_jibi_boithok_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24071,14 +24371,18 @@
                                         name="sromik_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_boithok_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24096,14 +24400,18 @@
                                         name="sromik_somabesh_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_somabesh_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24124,14 +24432,18 @@
                                         name="sromik_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_boithok_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24149,14 +24461,18 @@
                                         name="sromik_somabesh_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_somabesh_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24258,14 +24574,18 @@
                                         name="jubok_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.jubok_boithok_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24284,14 +24604,18 @@
                                         name="jubok_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.jubok_boithok_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24394,14 +24718,18 @@
                                         name="student_daittoshil_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24420,14 +24748,18 @@
                                         name="student_daittoshil_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24612,14 +24944,18 @@
                                         name="associate_member_somabesh_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.associate_member_somabesh_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24637,14 +24973,18 @@
                                         name="associate_member_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.associate_member_sommelon_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24665,14 +25005,18 @@
                                         name="associate_member_somabesh_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.associate_member_somabesh_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24690,14 +25034,18 @@
                                         name="associate_member_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.associate_member_sommelon_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24799,14 +25147,18 @@
                                         name="others_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.others_man_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -24825,14 +25177,18 @@
                                         name="others_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.others_women_uposthiti
+                                                    ?.upojela_mozlishe_sura_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-songothon11-sangothonik-boithoks',
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25083,14 +25439,18 @@
                                         name="unit_tarbiati_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.unit_tarbiati_boithok_man_uposthiti
+                                                    ?.unit_tarbiati_boithok_man
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.unit_tarbiati_boithok_man_total
                                             )
                                         "
                                         :type="type"
@@ -25109,14 +25469,18 @@
                                         name="unit_tarbiati_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.unit_tarbiati_boithok_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25302,14 +25666,18 @@
                                         name="upozila_vittik_rokon_shikkha_shibir_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_rokon_shikkha_shibir_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25327,14 +25695,18 @@
                                         name="thana_vittik_rokon_shikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_rokon_shikkha_boithok_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25355,14 +25727,18 @@
                                         name="upozila_vittik_rokon_shikkha_shibir_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_rokon_shikkha_shibir_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25380,14 +25756,18 @@
                                         name="thana_vittik_rokon_shikkha_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_rokon_shikkha_boithok_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25574,14 +25954,18 @@
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25599,14 +25983,18 @@
                                         name="thana_vittik_selected_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25627,14 +26015,18 @@
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25652,14 +26044,18 @@
                                         name="thana_vittik_selected_kormi_shikkha_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25846,14 +26242,18 @@
                                         name="upozila_vittik_kormi_shikkha_shibir_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_kormi_shikkha_shibir_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25871,14 +26271,18 @@
                                         name="thana_vittik_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_kormi_shikkha_boithok_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25899,14 +26303,18 @@
                                         name="upozila_vittik_kormi_shikkha_shibir_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_kormi_shikkha_shibir_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -25924,14 +26332,18 @@
                                         name="thana_vittik_kormi_shikkha_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_kormi_shikkha_boithok_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26118,14 +26530,18 @@
                                         name="upozila_former_Student_kormi_training_program_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_former_Student_kormi_training_program_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26143,14 +26559,18 @@
                                         name="thana_former_Student_kormi_training_program_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_former_Student_kormi_training_program_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26171,14 +26591,18 @@
                                         name="upozila_former_Student_kormi_training_program_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_former_Student_kormi_training_program_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26196,14 +26620,18 @@
                                         name="thana_former_Student_kormi_training_program_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_former_Student_kormi_training_program_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26465,14 +26893,18 @@
                                         name="pouroshova_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.pouroshova_kormi_shikkha_boithok_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26490,14 +26922,18 @@
                                         name="union_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.union_kormi_shikkha_boithok_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26515,14 +26951,18 @@
                                         name="ward_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.ward_kormi_shikkha_boithok_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26543,14 +26983,18 @@
                                         name="pouroshova_kormi_shikkha_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.pouroshova_kormi_shikkha_boithok_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26568,14 +27012,18 @@
                                         name="union_kormi_shikkha_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.union_kormi_shikkha_boithok_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26593,14 +27041,18 @@
                                         name="ward_kormi_shikkha_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.ward_kormi_shikkha_boithok_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26702,14 +27154,18 @@
                                         name="gono_sikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.gono_sikkha_boithok_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26728,14 +27184,18 @@
                                         name="gono_sikkha_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.gono_sikkha_boithok_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26836,14 +27296,18 @@
                                         name="gono_noisho_ibadot_man_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.gono_noisho_ibadot_man_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -26862,14 +27326,18 @@
                                         name="gono_noisho_ibadot_women_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.gono_noisho_ibadot_women_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total
                                             )
                                         "
                                         :type="type"
@@ -27019,14 +27487,18 @@
                                         name="rokon_path_cokro_man_total_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rokon_path_cokro_man_total_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27045,14 +27517,18 @@
                                         name="rokon_path_cokro_woman_total_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.rokon_path_cokro_woman_total_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27290,14 +27766,18 @@
                                         name="kormi_path_cokro_man_total_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.kormi_path_cokro_man_total_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27315,14 +27795,18 @@
                                         name="kormi_alochona_cokro_man_total_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.kormi_alochona_cokro_man_total_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27343,14 +27827,18 @@
                                         name="kormi_path_cokro_woman_total_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.kormi_path_cokro_woman_total_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27368,14 +27856,18 @@
                                         name="kormi_alochona_cokro_woman_total_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.kormi_alochona_cokro_woman_total_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27503,14 +27995,18 @@
                                         name="quran_study_circle_man_total_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.quran_study_circle_man_total_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27529,14 +28025,18 @@
                                         name="quran_study_circle_woman_total_uposthiti"
                                         :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.quran_study_circle_woman_total_uposthiti
+                                                    ?.rrrrrrrrrrr
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?._total_odhibeshon
                                             )
                                         "
                                         :type="type"
@@ -27559,7 +28059,7 @@
                                 <td class="text-start">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <span class="font-13 text-nowrap"
-                                        >প্রোগ্রাম সংখ্যা:</span
+                                        >প্রোগ্রাম:</span
                                     >
                                     <input
                                         name="darsul_quran_man_program"
@@ -27568,6 +28068,24 @@
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
                                                     ?.darsul_quran_man_program
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-proshikkhon1-tarbiat'
+                                            )
+                                        "
+                                        :type="type"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    /
+                                    <input
+                                        name="sohih_tilawat_man_program"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.sohih_tilawat_man_program
                                             )
                                         "
                                         @change="
@@ -27590,7 +28108,7 @@
                                 <td class="text-start">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <span class="font-13 text-nowrap"
-                                        >প্রোগ্রাম সংখ্যা:</span
+                                        >প্রোগ্রাম:</span
                                     >
                                     <input
                                         name="darsul_quran_woman_program"
@@ -27609,6 +28127,25 @@
                                         :type="type"
                                         class="bg-input w-100 text-center"
                                     />
+                                    /
+                                    <input
+                                        name="sohih_tilawat_woman_program"
+                                        :value="
+                                            formatBangla(
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.sohih_tilawat_woman_program
+                                            )
+                                        "
+                                        @change="
+                                            data_upload(
+                                                'thana-proshikkhon1-tarbiat'
+                                            )
+                                        "
+                                        :type="type"
+                                        class="bg-input w-100 text-center"
+                                    />
+
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27619,7 +28156,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input
+                                    <!-- <input
                                         name="darsul_quran_man_odhibeshon"
                                         :value="
                                             formatBangla(
@@ -27635,7 +28172,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27645,7 +28182,7 @@
                                     </popup> -->
                                 </td>
                                 <td>
-                                    <input
+                                    <!-- <input
                                         name="darsul_quran_woman_odhibeshon"
                                         :value="
                                             formatBangla(
@@ -27661,7 +28198,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27671,56 +28208,98 @@
                                     </popup> -->
                                 </td>
                                 <td>
-                                    <input
-                                        name="darsul_quran_man_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_proshikkhon1_tarbiats
-                                                    ?.darsul_quran_man_uposthiti
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <!-- <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_proshikkhon1_tarbiats'"
-                                        :field_title="'darsul_quran_man_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup> -->
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <input
+                                            name="darsul_quran_man_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.darsul_quran_man
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-proshikkhon1-tarbiat',
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.darsul_quran_man_program
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        /
+                                        <input
+                                            name="sohih_tilawat_man_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.sohih_tilawat_man
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-proshikkhon1-tarbiat',
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.sohih_tilawat_man_program
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                    </div>
                                 </td>
                                 <td>
+                                    <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="darsul_quran_woman_uposthiti"
                                         :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.darsul_quran_woman
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-proshikkhon1-tarbiat',
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.darsul_quran_woman_program
+                                                )
+                                            "
+                                        :type="type"
+                                        class="bg-input w-100 text-center"
+                                    />
+                                    /
+                                    <input
+                                        name="sohih_tilawat_woman_uposthiti"
+                                        :value="
                                             formatBangla(
-                                                report_sum_data
+                                                average_uposthiti
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.darsul_quran_woman_uposthiti
+                                                    ?.darsul_quran_woman
                                             )
                                         "
                                         @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
+                                            average_data_upload(
+                                                $event,
+                                                'thana-proshikkhon1-tarbiat',
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.darsul_quran_woman_program
                                             )
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
                                     />
-                                    <!-- <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_proshikkhon1_tarbiats'"
-                                        :field_title="'darsul_quran_woman_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup> -->
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -30687,14 +31266,18 @@
                                             name="centrally_announced_political_program_attend"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                        ?.centrally_announced_political_program_attend
+                                                        ?.rrrrrrrrrrrrrrrrr
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-rastrio2-kormoshuchi-bastobayon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-rastrio2-kormoshuchi-bastobayon',
+                                                    report_sum_data
+                                                        ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                        ?._total
                                                 )
                                             "
                                             :type="type"
@@ -30814,14 +31397,18 @@
                                                 name="locally_announced_jonoshova_attend"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?.locally_announced_jonoshova_attend
+                                                            ?.rrrrrrrrrrrrrrrrr
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-rastrio2-kormoshuchi-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-rastrio2-kormoshuchi-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                            ?._total
                                                     )
                                                 "
                                                 :type="type"
@@ -30842,14 +31429,18 @@
                                                 name="locally_announced_shomabesh_attend"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?.locally_announced_shomabesh_attend
+                                                            ?.rrrrrrrrrrrrrrrrr
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-rastrio2-kormoshuchi-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-rastrio2-kormoshuchi-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                            ?._total
                                                     )
                                                 "
                                                 :type="type"
@@ -30870,14 +31461,18 @@
                                                 name="locally_announced_michil_attend"
                                                 :value="
                                                     formatBangla(
-                                                        report_sum_data
+                                                        average_uposthiti
                                                             ?.thana_rastrio2_kormoshuchi_bastobayons
-                                                            ?.locally_announced_michil_attend
+                                                            ?.rrrrrrrrrrrrrrrrr
                                                     )
                                                 "
                                                 @change="
-                                                    data_upload(
-                                                        'thana-rastrio2-kormoshuchi-bastobayon'
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-rastrio2-kormoshuchi-bastobayon',
+                                                        report_sum_data
+                                                            ?.thana_rastrio2_kormoshuchi_bastobayons
+                                                            ?._total
                                                     )
                                                 "
                                                 :type="type"
@@ -31105,17 +31700,21 @@
                                         <input
                                             name="shadhinota_o_jatio_dibosh_attend"
                                             :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_rastrio3_dibosh_palons
-                                                        ?.shadhinota_o_jatio_dibosh_attend
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-rastrio3-dibosh-palon'
-                                                )
-                                            "
+                                                    formatBangla(
+                                                        average_uposthiti
+                                                            ?.thana_rastrio3_dibosh_palons
+                                                            ?.rrrrrrrrrrrrrrrrr
+                                                    )
+                                                "
+                                                @change="
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-rastrio3-dibosh-palon',
+                                                        report_sum_data
+                                                            ?.thana_rastrio3_dibosh_palons
+                                                            ?._total_programs
+                                                    )
+                                                "
                                             :type="type"
                                             class="bg-input w-100 text-center"
                                         />
@@ -31167,14 +31766,18 @@
                                             name="mattrivasha_dibosh_attend"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.mattrivasha_dibosh_attend
+                                                        ?.rrrrrrrrrrrrrrrrr
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-rastrio3-dibosh-palon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-rastrio3-dibosh-palon',
+                                                    report_sum_data
+                                                        ?.thana_rastrio3_dibosh_palons
+                                                        ?._total_programs
                                                 )
                                             "
                                             :type="type"
@@ -31228,14 +31831,18 @@
                                             name="bijoy_dibosh_attend"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.bijoy_dibosh_attend
+                                                        ?.rrrrrrrrrrrrrrrrr
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-rastrio3-dibosh-palon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-rastrio3-dibosh-palon',
+                                                    report_sum_data
+                                                        ?.thana_rastrio3_dibosh_palons
+                                                        ?._total_programs
                                                 )
                                             "
                                             :type="type"
@@ -31289,14 +31896,18 @@
                                             name="international_womens_day_attend"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.international_womens_day_attend
+                                                        ?.rrrrrrrrrrrrrrrrr
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-rastrio3-dibosh-palon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-rastrio3-dibosh-palon',
+                                                    report_sum_data
+                                                        ?.thana_rastrio3_dibosh_palons
+                                                        ?._total_programs
                                                 )
                                             "
                                             :type="type"
@@ -31350,14 +31961,18 @@
                                             name="others_attend"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.others_attend
+                                                        ?.rrrrrrrrrrrrrrrrr
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-rastrio3-dibosh-palon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-rastrio3-dibosh-palon',
+                                                    report_sum_data
+                                                        ?.thana_rastrio3_dibosh_palons
+                                                        ?._total_programs
                                                 )
                                             "
                                             :type="type"
@@ -31409,14 +32024,18 @@
                                             name="may_day_attend"
                                             :value="
                                                 formatBangla(
-                                                    report_sum_data
+                                                    average_uposthiti
                                                         ?.thana_rastrio3_dibosh_palons
-                                                        ?.may_day_attend
+                                                        ?.rrrrrrrrrrrrrrrrr
                                                 )
                                             "
                                             @change="
-                                                data_upload(
-                                                    'thana-rastrio3-dibosh-palon'
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-rastrio3-dibosh-palon',
+                                                    report_sum_data
+                                                        ?.thana_rastrio3_dibosh_palons
+                                                        ?._total_programs
                                                 )
                                             "
                                             :type="type"
@@ -34608,105 +35227,193 @@ export default {
                     thana_mozlishe_sura_boithok_man: null,
                     thana_mozlishe_sura_boithok_women: null,
                     pourosova_mozlishe_sura_boithok_man: null,
-                    pourosova_mozlishe_sura_boithok_woman: null,
+                    pourosova_mozlishe_sura_boithok_women: null,
                     union_mozlishe_sura_boithok_man: null,
                     union_mozlishe_sura_boithok_women: null,
 
                     upojela_kormoporishod_boithok_man: null,
-                    upojela_kormoporishod_boithok_woman: null,
+                    upojela_kormoporishod_boithok_women: null,
                     thana_kormoporishod_boithok_man: null,
-                    thana_kormoporishod_boithok_woman: null,
+                    thana_kormoporishod_boithok_women: null,
                     pourosova_kormoporishod_boithok_man: null,
-                    pourosova_kormoporishod_boithok_woman: null,
+                    pourosova_kormoporishod_boithok_women: null,
                     union_kormoporishod_boithok_man: null,
-                    union_kormoporishod_boithok_woman: null,
+                    union_kormoporishod_boithok_women: null,
 
                     upojela_team_boithok_man: null,
-                    upojela_team_boithok_woman: null,
+                    upojela_team_boithok_women: null,
                     thana_team_boithok_man: null,
-                    thana_team_boithok_woman: null,
+                    thana_team_boithok_women: null,
                     pourosova_team_boithok_man: null,
-                    pourosova_team_boithok_woman: null,
+                    pourosova_team_boithok_women: null,
                     union_team_boithok_man: null,
-                    union_team_boithok_woman: null,
+                    union_team_boithok_women: null,
                     
                     upojela_mashik_rokon_boithok_man: null,
-                    upojela_mashik_rokon_boithok_woman: null,
+                    upojela_mashik_rokon_boithok_women: null,
                     thana_mashik_rokon_boithok_man: null,
-                    thana_mashik_rokon_boithok_woman: null,
+                    thana_mashik_rokon_boithok_women: null,
 
                     upojela_boithok_man: null,
-                    upojela_boithok_woman: null,
+                    upojela_boithok_women: null,
                     thana_boithok_man: null,
-                    thana_boithok_woman: null,
+                    thana_boithok_women: null,
 
                     bivagio_committee_boithok_man: null,
-                    bivagio_committee_boithok_woman: null,
+                    bivagio_committee_boithok_women: null,
 
                     pouroshova_boithok_man: null,
-                    pouroshova_boithok_woman: null,
+                    pouroshova_boithok_women: null,
                     union_boithok_man: null,
-                    union_boithok_woman: null,
+                    union_boithok_women: null,
                     ward_boithok_man: null,
-                    ward_boithok_woman: null,
+                    ward_boithok_women: null,
 
                     pouroshova_mashik_rokon_boithok_man: null,
-                    pouroshova_mashik_rokon_boithok_woman: null,
+                    pouroshova_mashik_rokon_boithok_women: null,
                     union_mashik_rokon_boithok_man: null,
-                    union_mashik_rokon_boithok_woman: null,
+                    union_mashik_rokon_boithok_women: null,
 
                     unit_kormi_boithok_man: null,
-                    unit_kormi_boithok_woman: null,
+                    unit_kormi_boithok_women: null,
 
                     troimasik_rokon_sommelon_man: null,
-                    troimasik_rokon_sommelon_woman: null,
+                    troimasik_rokon_sommelon_women: null,
                     shanmasik_rokon_sommelon_man: null,
-                    shanmasik_rokon_sommelon_woman: null,
+                    shanmasik_rokon_sommelon_women: null,
                     barshik_rokon_sommelon_man: null,
-                    barshik_rokon_sommelon_woman: null,
+                    barshik_rokon_sommelon_women: null,
 
                     upozila_ward_sovapoti_sommelon_man: null,
-                    upozila_ward_sovapoti_sommelon_woman: null,
+                    upozila_ward_sovapoti_sommelon_women: null,
                     thana_ward_sovapoti_sommelon_man: null,
-                    thana_ward_sovapoti_sommelon_woman: null,
+                    thana_ward_sovapoti_sommelon_women: null,
 
                     upozila_kormi_sommelon_man: null,
-                    upozila_kormi_sommelon_woman: null,
+                    upozila_kormi_sommelon_women: null,
                     thana_kormi_sommelon_man: null,
-                    thana_kormi_sommelon_woman: null,
+                    thana_kormi_sommelon_women: null,
                     union_kormi_sommelon_man: null,
-                    union_kormi_sommelon_woman: null,
+                    union_kormi_sommelon_women: null,
                     ward_kormi_sommelon_man: null,
-                    ward_kormi_sommelon_woman: null,
+                    ward_kormi_sommelon_women: null,
 
                     upozila_unit_sovapoti_sommelon_man: null,
-                    upozila_unit_sovapoti_sommelon_woman: null,
+                    upozila_unit_sovapoti_sommelon_women: null,
                     thana_unit_sovapoti_sommelon_man: null,
-                    thana_unit_sovapoti_sommelon_woman: null,
+                    thana_unit_sovapoti_sommelon_women: null,
+
+                    ulama_boithok_man: null,
+                    ulama_boithok_women: null,
+                    ulama_somabesh_man: null,
+                    ulama_somabesh_women: null,
+                    pesha_jibi_boithok_man: null,
+                    pesha_jibi_boithok_women: null,
+                    
+                    sromik_boithok_man: null,
+                    sromik_boithok_women: null,
+                    sromik_somabesh_man: null,
+                    sromik_somabesh_women: null,
+
+                    jubok_boithok_man: null,
+                    jubok_boithok_women: null,
+                    student_daittoshil_boithok_man: null,
+                    student_daittoshil_boithok_women: null,
+
+                    associate_member_somabesh_man: null,
+                    associate_member_somabesh_women: null,
+                    associate_member_sommelon_man: null,
+                    associate_member_sommelon_women: null,
+
+                    others_man: null,
+                    others_women: null,
                 },
-                ward_proshikkhon1_tarbiats: {
-                    unit_tarbiati_boithok: null,
-                    ward_kormi_sikkha_boithok: null,
-                    urdhotono_sikkha_shibir: null,
-                    urdhotono_sikkha_boithok: null,
-                    gono_sikkha_boithok: null,
-                    gono_noisho_ibadot: null,
-                    alochona_chokro: null,
-                    darsul_quran: null,
-                    sohih_tilawat: null,
+                thana_proshikkhon1_tarbiats: {
+                    unit_tarbiati_boithok_man: null,
+                    unit_tarbiati_boithok_women: null,
+
+                    upozila_vittik_rokon_shikkha_shibir_man: null,
+                    upozila_vittik_rokon_shikkha_shibir_women: null,
+                    upozila_vittik_rokon_shikkha_boithok_man: null,
+                    upozila_vittik_rokon_shikkha_boithok_women: null,
+
+                    thana_vittik_rokon_shikkha_shibir_man: null,
+                    thana_vittik_rokon_shikkha_shibir_women: null,
+                    thana_vittik_rokon_shikkha_boithok_man: null,
+                    thana_vittik_rokon_shikkha_boithok_women: null,
+
+                    upozila_vittik_selected_kormi_shikkha_shibir_man: null,
+                    upozila_vittik_selected_kormi_shikkha_shibir_women: null,
+                    upozila_vittik_selected_kormi_shikkha_boithok_man: null,
+                    upozila_vittik_selected_kormi_shikkha_boithok_women: null,
+
+                    thana_vittik_selected_kormi_shikkha_shibir_man: null,
+                    thana_vittik_selected_kormi_shikkha_shibir_women: null,
+                    thana_vittik_selected_kormi_shikkha_boithok_man: null,
+                    thana_vittik_selected_kormi_shikkha_boithok_women: null,
+
+                    upozila_vittik_kormi_shikkha_shibir_man: null,
+                    upozila_vittik_kormi_shikkha_shibir_women: null,
+                    upozila_vittik_kormi_shikkha_boithok_man: null,
+                    upozila_vittik_kormi_shikkha_boithok_women: null,
+
+                    thana_vittik_kormi_shikkha_shibir_man: null,
+                    thana_vittik_kormi_shikkha_shibir_women: null,
+                    thana_vittik_kormi_shikkha_boithok_man: null,
+                    thana_vittik_kormi_shikkha_boithok_women: null,
+                    former_Student_kormi_training_program: null,
+
+                    upozila_former_Student_kormi_training_program_man: null,
+                    upozila_former_Student_kormi_training_program_women: null,
+                    thana_former_Student_kormi_training_program_man: null,
+                    thana_former_Student_kormi_training_program_women: null,
+
+                    pouroshova_kormi_shikkha_boithok_man: null,
+                    pouroshova_kormi_shikkha_boithok_women: null,
+                    union_kormi_shikkha_boithok_man: null,
+                    union_kormi_shikkha_boithok_women: null,
+                    ward_kormi_shikkha_boithok_man: null,
+                    ward_kormi_shikkha_boithok_women: null,
+
+                    gono_sikkha_boithok_man: null,
+                    gono_sikkha_boithok_women: null,
+                    gono_noisho_ibadot_man: null,
+                    gono_noisho_ibadot_women: null,
+
+                    rokon_path_cokro_man: null,
+                    rokon_path_cokro_woman: null,
+                    kormi_path_cokro_man: null,
+                    kormi_path_cokro_woman: null,
+                    kormi_alochona_cokro_man: null,
+                    kormi_alochona_cokro_woman: null,
+                    quran_study_circle_man: null,
+                    quran_study_circle_woman: null,
+                    darsul_quran_man: null,
+                    darsul_quran_woman: null,
+                    sohih_tilawat_man: null,
+                    sohih_tilawat_woman: null,
                 },
-                ward_rastrio2_kormoshuchi_bastobayons: {
+
+                thana_rastrio2_kormoshuchi_bastobayons: {
                     centrally_announced_political_program: null,
                     locally_announced_jonoshova: null,
                     locally_announced_shomabesh: null,
                     locally_announced_michil: null,
+                    poster_bitoron: null,
+                    leaflet_bitoron: null,
+                    booklet_bitoron: null,
+                    sharoklipi_bitoron: null,
+                    others: null
                 },
-                ward_rastrio3_dibosh_palons: {
+                thana_rastrio3_dibosh_palons: {
                     shadhinota_o_jatio_dibosh: null,
                     bijoy_dibosh: null,
-                    mattrivasha_dibosh: null,
                     others: null,
-                },
+                    mattrivasha_dibosh: null,
+                    international_womens_day: null,
+                    may_day: null
+                }
+
             },
 
             mass_communication: {},
@@ -34725,18 +35432,18 @@ export default {
         "report_sum_data.thana_kormosuci_bastobayons": function () {
             this.average_data("thana_kormosuci_bastobayons");
         },
-        // "report_sum_data.ward_songothon9_sangothonik_boithoks": function () {
-        //     this.average_data("ward_songothon9_sangothonik_boithoks");
-        // },
-        // "report_sum_data.ward_proshikkhon1_tarbiats": function () {
-        //     this.average_data("ward_proshikkhon1_tarbiats");
-        // },
-        // "report_sum_data.ward_rastrio2_kormoshuchi_bastobayons": function () {
-        //     this.average_data("ward_rastrio2_kormoshuchi_bastobayons");
-        // },
-        // "report_sum_data.ward_rastrio3_dibosh_palons": function () {
-        //     this.average_data("ward_rastrio3_dibosh_palons");
-        // },
+        "report_sum_data.thana_songothon11_sangothonik_boithoks": function () {
+            this.average_data("thana_songothon11_sangothonik_boithoks");
+        },
+        "report_sum_data.thana_proshikkhon1_tarbiats": function () {
+            this.average_data("thana_proshikkhon1_tarbiats");
+        },
+        "report_sum_data.thana_rastrio2_kormoshuchi_bastobayons": function () {
+            this.average_data("thana_rastrio2_kormoshuchi_bastobayons");
+        },
+        "report_sum_data.thana_rastrio3_dibosh_palons": function () {
+            this.average_data("thana_rastrio3_dibosh_palons");
+        },
        
     },
     methods: {
@@ -34877,56 +35584,217 @@ export default {
                     "hamd_nat_protijogita",
                     "others",
                 ],
-                // ward_songothon9_sangothonik_boithoks: [
-                //     "word_sura_boithok",
-                //     "kormoporishod_boithok",
-                //     "team_boithok",
-                //     "word_boithok",
-                //     "masik_sodosso_boithok",
-                //     "unit_kormi_boithok",
-                //     "ulama_somabesh",
-                //     "jubok_somabesh",
-                //     "sromik_somabesh",
-                // ],
-                // ward_proshikkhon1_tarbiats: [
-                //     "unit_tarbiati_boithok",
-                //     "ward_kormi_sikkha_boithok",
-                //     "urdhotono_sikkha_shibir",
-                //     "urdhotono_sikkha_boithok",
-                //     "gono_sikkha_boithok",
-                //     "gono_noisho_ibadot",
-                //     "alochona_chokro",
-                //     "darsul_quran",
-                //     "sohih_tilawat",
-                // ],
-                // ward_rastrio2_kormoshuchi_bastobayons: [
-                //     "centrally_announced_political_program",
-                //     "locally_announced_jonoshova",
-                //     "locally_announced_shomabesh",
-                //     "locally_announced_michil",
-                // ],
-                // ward_rastrio3_dibosh_palons: [
-                //     "shadhinota_o_jatio_dibosh",
-                //     "bijoy_dibosh",
-                //     "mattrivasha_dibosh",
-                //     "others",
-                // ],
+                thana_songothon11_sangothonik_boithoks: [
+                    "upojela_mozlishe_sura_boithok_man",
+                    "upojela_mozlishe_sura_boithok_women",
+                    "thana_mozlishe_sura_boithok_man",
+                    "thana_mozlishe_sura_boithok_women",
+                    "pourosova_mozlishe_sura_boithok_man",
+                    "pourosova_mozlishe_sura_boithok_women",
+                    "union_mozlishe_sura_boithok_man",
+                    "union_mozlishe_sura_boithok_women",
+
+                    "upojela_kormoporishod_boithok_man",
+                    "upojela_kormoporishod_boithok_women",
+                    "thana_kormoporishod_boithok_man",
+                    "thana_kormoporishod_boithok_women",
+                    "pourosova_kormoporishod_boithok_man",
+                    "pourosova_kormoporishod_boithok_women",
+                    "union_kormoporishod_boithok_man",
+                    "union_kormoporishod_boithok_women",
+
+                    "upojela_team_boithok_man",
+                    "upojela_team_boithok_women",
+                    "thana_team_boithok_man",
+                    "thana_team_boithok_women",
+                    "pourosova_team_boithok_man",
+                    "pourosova_team_boithok_women",
+                    "union_team_boithok_man",
+                    "union_team_boithok_women",
+                    
+                    "upojela_mashik_rokon_boithok_man",
+                    "upojela_mashik_rokon_boithok_women",
+                    "thana_mashik_rokon_boithok_man",
+                    "thana_mashik_rokon_boithok_women",
+
+                    "upojela_boithok_man",
+                    "upojela_boithok_women",
+                    "thana_boithok_man",
+                    "thana_boithok_women",
+
+                    "bivagio_committee_boithok_man",
+                    "bivagio_committee_boithok_women",
+
+                    "pouroshova_boithok_man",
+                    "pouroshova_boithok_women",
+                    "union_boithok_man",
+                    "union_boithok_women",
+                    "ward_boithok_man",
+                    "ward_boithok_women",
+
+                    "pouroshova_mashik_rokon_boithok_man",
+                    "pouroshova_mashik_rokon_boithok_women",
+                    "union_mashik_rokon_boithok_man",
+                    "union_mashik_rokon_boithok_women",
+
+                    "unit_kormi_boithok_man",
+                    "unit_kormi_boithok_women",
+
+                    "troimasik_rokon_sommelon_man",
+                    "troimasik_rokon_sommelon_women",
+                    "shanmasik_rokon_sommelon_man",
+                    "shanmasik_rokon_sommelon_women",
+                    "barshik_rokon_sommelon_man",
+                    "barshik_rokon_sommelon_women",
+
+                    "upozila_ward_sovapoti_sommelon_man",
+                    "upozila_ward_sovapoti_sommelon_women",
+                    "thana_ward_sovapoti_sommelon_man",
+                    "thana_ward_sovapoti_sommelon_women",
+
+                    "upozila_kormi_sommelon_man",
+                    "upozila_kormi_sommelon_women",
+                    "thana_kormi_sommelon_man",
+                    "thana_kormi_sommelon_women",
+                    "union_kormi_sommelon_man",
+                    "union_kormi_sommelon_women",
+                    "ward_kormi_sommelon_man",
+                    "ward_kormi_sommelon_women",
+
+                    "upozila_unit_sovapoti_sommelon_man",
+                    "upozila_unit_sovapoti_sommelon_women",
+                    "thana_unit_sovapoti_sommelon_man",
+                    "thana_unit_sovapoti_sommelon_women",
+
+                    "ulama_boithok_man",
+                    "ulama_boithok_women",
+                    "ulama_somabesh_man",
+                    "ulama_somabesh_women",
+                    "pesha_jibi_boithok_man",
+                    "pesha_jibi_boithok_women",
+                    
+                    "sromik_boithok_man",
+                    "sromik_boithok_women",
+                    "sromik_somabesh_man",
+                    "sromik_somabesh_women",
+
+                    "jubok_boithok_man",
+                    "jubok_boithok_women",
+                    "student_daittoshil_boithok_man",
+                    "student_daittoshil_boithok_women",
+
+                    "associate_member_somabesh_man",
+                    "associate_member_somabesh_women",
+                    "associate_member_sommelon_man",
+                    "associate_member_sommelon_women",
+
+                    "others_man",
+                    "others_women",
+                ],
+
+                thana_proshikkhon1_tarbiats: [
+                    "unit_tarbiati_boithok_man",
+                    "unit_tarbiati_boithok_women",
+
+                    "upozila_vittik_rokon_shikkha_shibir_man",
+                    "upozila_vittik_rokon_shikkha_shibir_women",
+                    "upozila_vittik_rokon_shikkha_boithok_man",
+                    "upozila_vittik_rokon_shikkha_boithok_women",
+
+                    "thana_vittik_rokon_shikkha_shibir_man",
+                    "thana_vittik_rokon_shikkha_shibir_women",
+                    "thana_vittik_rokon_shikkha_boithok_man",
+                    "thana_vittik_rokon_shikkha_boithok_women",
+
+                    "upozila_vittik_selected_kormi_shikkha_shibir_man",
+                    "upozila_vittik_selected_kormi_shikkha_shibir_women",
+                    "upozila_vittik_selected_kormi_shikkha_boithok_man",
+                    "upozila_vittik_selected_kormi_shikkha_boithok_women",
+
+                    "thana_vittik_selected_kormi_shikkha_shibir_man",
+                    "thana_vittik_selected_kormi_shikkha_shibir_women",
+                    "thana_vittik_selected_kormi_shikkha_boithok_man",
+                    "thana_vittik_selected_kormi_shikkha_boithok_women",
+
+                    "upozila_vittik_kormi_shikkha_shibir_man",
+                    "upozila_vittik_kormi_shikkha_shibir_women",
+                    "upozila_vittik_kormi_shikkha_boithok_man",
+                    "upozila_vittik_kormi_shikkha_boithok_women",
+
+                    "thana_vittik_kormi_shikkha_shibir_man",
+                    "thana_vittik_kormi_shikkha_shibir_women",
+                    "thana_vittik_kormi_shikkha_boithok_man",
+                    "thana_vittik_kormi_shikkha_boithok_women",
+                    "former_Student_kormi_training_program",
+
+                    "upozila_former_Student_kormi_training_program_man",
+                    "upozila_former_Student_kormi_training_program_women",
+                    "thana_former_Student_kormi_training_program_man",
+                    "thana_former_Student_kormi_training_program_women",
+
+                    "pouroshova_kormi_shikkha_boithok_man",
+                    "pouroshova_kormi_shikkha_boithok_women",
+                    "union_kormi_shikkha_boithok_man",
+                    "union_kormi_shikkha_boithok_women",
+                    "ward_kormi_shikkha_boithok_man",
+                    "ward_kormi_shikkha_boithok_women",
+
+                    "gono_sikkha_boithok_man",
+                    "gono_sikkha_boithok_women",
+                    "gono_noisho_ibadot_man",
+                    "gono_noisho_ibadot_women",
+                    // ------------------------------------
+                    "rokon_path_cokro_man",
+                    "rokon_path_cokro_woman",
+                    "kormi_path_cokro_man",
+                    "kormi_path_cokro_woman",
+                    "kormi_alochona_cokro_man",
+                    "kormi_alochona_cokro_woman",
+                    "quran_study_circle_man",
+                    "quran_study_circle_woman",
+                    "darsul_quran_man",
+                    "darsul_quran_woman",
+                    "sohih_tilawat_man",
+                    "sohih_tilawat_woman",
+                ],
+
+                thana_rastrio2_kormoshuchi_bastobayons: [
+                    "centrally_announced_political_program",
+                    "locally_announced_jonoshova",
+                    "locally_announced_shomabesh",
+                    "locally_announced_michil",
+                    "poster_bitoron",
+                    "leaflet_bitoron",
+                    "booklet_bitoron",
+                    "sharoklipi_bitoron",
+                    "others",
+                ],
+
+                thana_rastrio3_dibosh_palons: [
+                    "shadhinota_o_jatio_dibosh",
+                    "bijoy_dibosh",
+                    "others",
+                    "mattrivasha_dibosh",
+                    "international_womens_day",
+                    "may_day",
+                ],
+
             };
 
             const attendance_key_suffix = {
-                ward_kormosuci_bastobayons: "_uposthiti",
-                ward_songothon9_sangothonik_boithoks: "_uposthiti",
-                ward_proshikkhon1_tarbiats: "_uposthiti",
-                ward_rastrio2_kormoshuchi_bastobayons: "_attend",
-                ward_rastrio3_dibosh_palons: "_attend",
+                thana_kormosuci_bastobayons: "_uposthiti",
+                thana_songothon11_sangothonik_boithoks: "_uposthiti",
+                thana_proshikkhon1_tarbiats: "_uposthiti",
+                thana_rastrio2_kormoshuchi_bastobayons: "_attend",
+                thana_rastrio3_dibosh_palons: "_attend",
             };
 
             const total_key_suffix = {
-                ward_kormosuci_bastobayons: "_total",
-                ward_songothon9_sangothonik_boithoks: "_total",
-                ward_proshikkhon1_tarbiats: "_total",
-                ward_rastrio2_kormoshuchi_bastobayons: "",
-                ward_rastrio3_dibosh_palons: "",
+                thana_kormosuci_bastobayons: "_total",
+                thana_songothon11_sangothonik_boithoks: "_total",
+                thana_proshikkhon1_tarbiats: "_total",
+                thana_rastrio2_kormoshuchi_bastobayons: "",
+                thana_rastrio3_dibosh_palons: "_total_programs",
             };
 
             if (
@@ -34938,119 +35806,50 @@ export default {
                 const total_suffix = total_key_suffix[$table_name];
 
                 fields.forEach((field) => {
-                    const uposthiti_key = `${field}${attendance_suffix}`;
-                    const total_key = `${field}${total_suffix}`;
+                    //spacial fields that need to be identify differently
+                    const special_fields_1 = [
+                        "rokon_path_cokro_man",
+                        "rokon_path_cokro_woman",
+                        "kormi_path_cokro_man",
+                        "kormi_path_cokro_woman",
+                        "kormi_alochona_cokro_man",
+                        "kormi_alochona_cokro_woman",
+                        "quran_study_circle_man",
+                        "quran_study_circle_woman",
+                    ];
+                    const special_fields_2 = [
+                        "darsul_quran_man",
+                        "darsul_quran_woman",
+                        "sohih_tilawat_man",
+                        "sohih_tilawat_woman",
+                    ];
+
+                    let uposthiti_key = "";
+                    let total_key = "";
+
+                    if (special_fields_1.includes(field)) {
+                        
+                        uposthiti_key = `${field}_total_uposthiti`; 
+                        total_key = `${field}_total_odhibeshon`;
+
+                    } else if(special_fields_2.includes(field)) {
+                        
+                        uposthiti_key = `${field}_uposthiti`; 
+                        total_key = `${field}_program`;
+
+                    } else {
+                        
+                        uposthiti_key = `${field}${attendance_suffix}`;
+                        total_key = `${field}${total_suffix}`;
+                    }
+
                     this.average_uposthiti[$table_name][field] = Math.round(
-                        (this.report_sum_data[$table_name][uposthiti_key] ??
-                            0) /
+                        (this.report_sum_data[$table_name][uposthiti_key] ?? 0) /
                             (this.report_sum_data[$table_name][total_key] ?? 1)
                     );
                 });
             }
         },
-
-        // average_data: async function () {
-        //     // -------------- kormosuci --------------
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.unit_masik_sadaron_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.kormosuci.unit_masik_sadaron_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dawati_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.dawati_sova_uposthiti ?? 0) / (this.kormosuci.dawati_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.alochona_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.alochona_sova_uposthiti ?? 0) / (this.kormosuci.alochona_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.sudhi_somabesh =
-        //         this.kormosuci ? Math.round((this.kormosuci.sudhi_somabesh_uposthiti ?? 0) / (this.kormosuci.sudhi_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.siratunnabi_mahfil =
-        //         this.kormosuci ? Math.round((this.kormosuci.siratunnabi_mahfil_uposthiti ?? 0) / (this.kormosuci.siratunnabi_mahfil_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.eid_reunion =
-        //         this.kormosuci ? Math.round((this.kormosuci.eid_reunion_uposthiti ?? 0) / (this.kormosuci.eid_reunion_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dars =
-        //         this.kormosuci ? Math.round((this.kormosuci.dars_uposthiti ?? 0) / (this.kormosuci.dars_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.tafsir =
-        //         this.kormosuci ? Math.round((this.kormosuci.tafsir_uposthiti ?? 0) / (this.kormosuci.tafsir_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dawati_jonosova =
-        //         this.kormosuci ? Math.round((this.kormosuci.dawati_jonosova_uposthiti ?? 0) / (this.kormosuci.dawati_jonosova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.iftar_mahfil_personal =
-        //         this.kormosuci ? Math.round((this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.iftar_mahfil_samostic =
-        //         this.kormosuci ? Math.round((this.kormosuci.iftar_mahfil_samostic_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_samostic_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.cha_chakra =
-        //         this.kormosuci ? Math.round((this.kormosuci.cha_chakra_uposthiti ?? 0) / (this.kormosuci.cha_chakra_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.samostic_khawa =
-        //         this.kormosuci ? Math.round((this.kormosuci.samostic_khawa_uposthiti ?? 0) / (this.kormosuci.samostic_khawa_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.sikkha_sofor =
-        //         this.kormosuci ? Math.round((this.kormosuci.sikkha_sofor_uposthiti ?? 0) / (this.kormosuci.sikkha_sofor_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.kirat_protijogita =
-        //         this.kormosuci ? Math.round((this.kormosuci.kirat_protijogita_uposthiti ?? 0) / (this.kormosuci.kirat_protijogita_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.hamd_nat_protijogita =
-        //         this.kormosuci ? Math.round((this.kormosuci.hamd_nat_protijogita_uposthiti ?? 0) / (this.kormosuci.hamd_nat_protijogita_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.others =
-        //         this.kormosuci ? Math.round((this.kormosuci.others_uposthiti ?? 0) / (this.kormosuci.others_total ?? 1)) : 0;
-        //     // -------------- kormosuci --------------
-
-        //     // -------------- songothon9 --------------
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.word_sura_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.word_sura_boithok_uposthiti ?? 0) / (this.songothon9.word_sura_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.kormoporishod_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.kormoporishod_boithok_uposthiti ?? 0) / (this.songothon9.kormoporishod_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.team_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.team_boithok_uposthiti ?? 0) / (this.songothon9.team_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.word_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.word_boithok_uposthiti ?? 0) / (this.songothon9.word_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.masik_sodosso_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.masik_sodosso_boithok_uposthiti ?? 0) / (this.songothon9.masik_sodosso_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.unit_kormi_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.unit_kormi_boithok_uposthiti ?? 0) / (this.songothon9.unit_kormi_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.ulama_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.ulama_somabesh_uposthiti ?? 0) / (this.songothon9.ulama_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.jubok_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.jubok_somabesh_uposthiti ?? 0) / (this.songothon9.jubok_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.sromik_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.sromik_somabesh_uposthiti ?? 0) / (this.songothon9.sromik_somabesh_total ?? 1)) : 0;
-        //     // -------------- songothon9 --------------
-
-        //     // -------------- proshikkhon1 --------------
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.unit_tarbiati_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.unit_tarbiati_boithok_uposthiti ?? 0) / (this.proshikkhon1.unit_tarbiati_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.ward_kormi_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.ward_kormi_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.ward_kormi_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_shibir =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.urdhotono_sikkha_shibir_uposthiti ?? 0) / (this.proshikkhon1.urdhotono_sikkha_shibir ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.urdhotono_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.urdhotono_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.gono_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.gono_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_noisho_ibadot =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.gono_noisho_ibadot_uposthiti ?? 0) / (this.proshikkhon1.gono_noisho_ibadot ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.alochona_chokro =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.alochona_chokro_uposthiti ?? 0) / (this.proshikkhon1.alochona_chokro_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.darsul_quran =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.darsul_quran_uposthiti ?? 0) / (this.proshikkhon1.darsul_quran_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.sohih_tilawat =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.sohih_tilawat_uposthiti ?? 0) / (this.proshikkhon1.sohih_tilawat_program ?? 1)) : 0;
-        //     // -------------- proshikkhon1 --------------
-
-        //     // -------------- rastrio2 --------------
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.centrally_announced_political_program =
-        //         this.rastrio2 ? Math.round((this.rastrio2.centrally_announced_political_program_attend ?? 0) / (this.rastrio2.centrally_announced_political_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_jonoshova =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_jonoshova_attend ?? 0) / (this.rastrio2.locally_announced_jonoshova ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_shomabesh =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_shomabesh_attend ?? 0) / (this.rastrio2.locally_announced_shomabesh ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_michil =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_michil_attend ?? 0) / (this.rastrio2.locally_announced_michil ?? 1)) : 0;
-        //     // -------------- rastrio2 --------------
-
-        //     // -------------- rastrio3 --------------
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.shadhinota_o_jatio_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.shadhinota_o_jatio_dibosh_attend ?? 0) / (this.rastrio3.shadhinota_o_jatio_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.bijoy_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.bijoy_dibosh_attend ?? 0) / (this.rastrio3.bijoy_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.mattrivasha_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.mattrivasha_dibosh_attend ?? 0) / (this.rastrio3.mattrivasha_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.others =
-        //         this.rastrio3 ? Math.round((this.rastrio3.others_attend ?? 0) / (this.rastrio3.others_total_programs ?? 1)) : 0;
-        //     // -------------- rastrio3 --------------
-        // },
 
         // formatBangla(number) {
         //     if (
@@ -35096,53 +35895,185 @@ export default {
                     console.log("Data uploaded successfully");
                     if (
                         [
-                            "unit_masik_sadaron_sova",
-                            "dawati_sova",
-                            "alochona_sova",
-                            "sudhi_somabesh",
-                            "siratunnabi_mahfil",
-                            "eid_reunion",
-                            "dars",
-                            "tafsir",
-                            "dawati_jonosova",
-                            "iftar_mahfil_personal",
-                            "iftar_mahfil_samostic",
-                            "cha_chakra",
-                            "samostic_khawa",
-                            "sikkha_sofor",
-                            "kirat_protijogita",
-                            "hamd_nat_protijogita",
-                            "others",
-                            // average_songothon9
-                            "word_sura_boithok_total",
-                            "kormoporishod_boithok_total",
-                            "team_boithok_total",
-                            "word_boithok_total",
-                            "masik_sodosso_boithok_total",
-                            "unit_kormi_boithok_total",
-                            "ulama_somabesh_total",
-                            "jubok_somabesh_total",
-                            "sromik_somabesh_total",
-                            // average_proshikkhon1
-                            "unit_tarbiati_boithok",
-                            "ward_kormi_sikkha_boithok",
-                            "urdhotono_sikkha_shibir",
-                            "urdhotono_sikkha_boithok",
-                            "gono_sikkha_boithok",
-                            "gono_noisho_ibadot",
-                            "alochona_chokro",
-                            "darsul_quran",
-                            "sohih_tilawat",
-                            // average_rastrio2
+                            // average thana_kormosuci_bastobayons
+                            "unit_masik_sadaron_sova_total",
+                            "dawati_sova_total",
+                            "alochona_sova_total",
+                            "sudhi_somabesh_total",
+                            "siratunnabi_mahfil_total",
+                            "eid_reunion_total",
+                            "dars_total",
+                            "tafsir_total",
+                            "dawati_jonosova_total",
+                            "iftar_mahfil_personal_total",
+                            "iftar_mahfil_samostic_total",
+                            "cha_chakra_total",
+                            "samostic_khawa_total",
+                            "sikkha_sofor_total",
+                            "kirat_protijogita_total",
+                            "hamd_nat_protijogita_total",
+                            "others_total",
+                            // average thana_songothon11_sangothonik_boithoks
+                            "upojela_mozlishe_sura_boithok_man_total",
+                            "upojela_mozlishe_sura_boithok_women_total",
+                            "thana_mozlishe_sura_boithok_man_total",
+                            "thana_mozlishe_sura_boithok_women_total",
+                            "pourosova_mozlishe_sura_boithok_man_total",
+                            "pourosova_mozlishe_sura_boithok_women_total",
+                            "union_mozlishe_sura_boithok_man_total",
+                            "union_mozlishe_sura_boithok_women_total",
+                            "upojela_kormoporishod_boithok_man_total",
+                            "upojela_kormoporishod_boithok_women_total",
+                            "thana_kormoporishod_boithok_man_total",
+                            "thana_kormoporishod_boithok_women_total",
+                            "pourosova_kormoporishod_boithok_man_total",
+                            "pourosova_kormoporishod_boithok_women_total",
+                            "union_kormoporishod_boithok_man_total",
+                            "union_kormoporishod_boithok_women_total",
+                            "upojela_team_boithok_man_total",
+                            "upojela_team_boithok_women_total",
+                            "thana_team_boithok_man_total",
+                            "thana_team_boithok_women_total",
+                            "pourosova_team_boithok_man_total",
+                            "pourosova_team_boithok_women_total",
+                            "union_team_boithok_man_total",
+                            "union_team_boithok_women_total",
+                            "upojela_mashik_rokon_boithok_man_total",
+                            "upojela_mashik_rokon_boithok_women_total",
+                            "thana_mashik_rokon_boithok_man_total",
+                            "thana_mashik_rokon_boithok_women_total",
+                            "upojela_boithok_man_total",
+                            "upojela_boithok_women_total",
+                            "thana_boithok_man_total",
+                            "thana_boithok_women_total",
+                            "bivagio_committee_boithok_man_total",
+                            "bivagio_committee_boithok_women_total",
+                            "pouroshova_boithok_man_total",
+                            "pouroshova_boithok_women_total",
+                            "union_boithok_man_total",
+                            "union_boithok_women_total",
+                            "ward_boithok_man_total",
+                            "ward_boithok_women_total",
+                            "pouroshova_mashik_rokon_boithok_man_total",
+                            "pouroshova_mashik_rokon_boithok_women_total",
+                            "union_mashik_rokon_boithok_man_total",
+                            "union_mashik_rokon_boithok_women_total",
+                            "unit_kormi_boithok_man_total",
+                            "unit_kormi_boithok_women_total",
+                            "troimasik_rokon_sommelon_man_total",
+                            "troimasik_rokon_sommelon_women_total",
+                            "shanmasik_rokon_sommelon_man_total",
+                            "shanmasik_rokon_sommelon_women_total",
+                            "barshik_rokon_sommelon_man_total",
+                            "barshik_rokon_sommelon_women_total",
+                            "upozila_ward_sovapoti_sommelon_man_total",
+                            "upozila_ward_sovapoti_sommelon_women_total",
+                            "thana_ward_sovapoti_sommelon_man_total",
+                            "thana_ward_sovapoti_sommelon_women_total",
+                            "upozila_kormi_sommelon_man_total",
+                            "upozila_kormi_sommelon_women_total",
+                            "thana_kormi_sommelon_man_total",
+                            "thana_kormi_sommelon_women_total",
+                            "union_kormi_sommelon_man_total",
+                            "union_kormi_sommelon_women_total",
+                            "ward_kormi_sommelon_man_total",
+                            "ward_kormi_sommelon_women_total",
+                            "upozila_unit_sovapoti_sommelon_man_total",
+                            "upozila_unit_sovapoti_sommelon_women_total",
+                            "thana_unit_sovapoti_sommelon_man_total",
+                            "thana_unit_sovapoti_sommelon_women_total",
+                            "ulama_boithok_man_total",
+                            "ulama_boithok_women_total",
+                            "ulama_somabesh_man_total",
+                            "ulama_somabesh_women_total",
+                            "pesha_jibi_boithok_man_total",
+                            "pesha_jibi_boithok_women_total",
+                            "sromik_boithok_man_total",
+                            "sromik_boithok_women_total",
+                            "sromik_somabesh_man_total",
+                            "sromik_somabesh_women_total",
+                            "jubok_boithok_man_total",
+                            "jubok_boithok_women_total",
+                            "student_daittoshil_boithok_man_total",
+                            "student_daittoshil_boithok_women_total",
+                            "associate_member_somabesh_man_total",
+                            "associate_member_somabesh_women_total",
+                            "associate_member_sommelon_man_total",
+                            "associate_member_sommelon_women_total",
+                            "others_man_total",
+                            "others_women_total",
+                            // average thana_proshikkhon1_tarbiats
+                            "unit_tarbiati_boithok_man_total",
+                            "unit_tarbiati_boithok_women_total",
+                            "upozila_vittik_rokon_shikkha_shibir_man_total",
+                            "upozila_vittik_rokon_shikkha_shibir_women_total",
+                            "upozila_vittik_rokon_shikkha_boithok_man_total",
+                            "upozila_vittik_rokon_shikkha_boithok_women_total",
+                            "thana_vittik_rokon_shikkha_shibir_man_total",
+                            "thana_vittik_rokon_shikkha_shibir_women_total",
+                            "thana_vittik_rokon_shikkha_boithok_man_total",
+                            "thana_vittik_rokon_shikkha_boithok_women_total",
+                            "upozila_vittik_selected_kormi_shikkha_shibir_man_total",
+                            "upozila_vittik_selected_kormi_shikkha_shibir_women_total",
+                            "upozila_vittik_selected_kormi_shikkha_boithok_man_total",
+                            "upozila_vittik_selected_kormi_shikkha_boithok_women_total",
+                            "thana_vittik_selected_kormi_shikkha_shibir_man_total",
+                            "thana_vittik_selected_kormi_shikkha_shibir_women_total",
+                            "thana_vittik_selected_kormi_shikkha_boithok_man_total",
+                            "thana_vittik_selected_kormi_shikkha_boithok_women_total",
+                            "upozila_vittik_kormi_shikkha_shibir_man_total",
+                            "upozila_vittik_kormi_shikkha_shibir_women_total",
+                            "upozila_vittik_kormi_shikkha_boithok_man_total",
+                            "upozila_vittik_kormi_shikkha_boithok_women_total",
+                            "thana_vittik_kormi_shikkha_shibir_man_total",
+                            "thana_vittik_kormi_shikkha_shibir_women_total",
+                            "thana_vittik_kormi_shikkha_boithok_man_total",
+                            "thana_vittik_kormi_shikkha_boithok_women_total",
+                            "former_Student_kormi_training_program_total",
+                            "upozila_former_Student_kormi_training_program_man_total",
+                            "upozila_former_Student_kormi_training_program_women_total",
+                            "thana_former_Student_kormi_training_program_man_total",
+                            "thana_former_Student_kormi_training_program_women_total",
+                            "pourosova_kormi_shikkha_boithok_man_total",
+                            "pourosova_kormi_shikkha_boithok_women_total",
+                            "union_kormi_shikkha_boithok_man_total",
+                            "union_kormi_shikkha_boithok_women_total",
+                            "ward_kormi_shikkha_boithok_man_total",
+                            "ward_kormi_shikkha_boithok_women_total",
+                            "gono_sikkha_boithok_man_total",
+                            "gono_sikkha_boithok_women_total",
+                            "gono_noisho_ibadot_man_total",
+                            "gono_noisho_ibadot_women_total",
+                            // average thana_proshikkhon1_tarbiats 2nd part
+                            "rokon_path_cokro_man_total",
+                            "rokon_path_cokro_woman_total",
+                            "kormi_path_cokro_man_total",
+                            "kormi_path_cokro_woman_total",
+                            "kormi_alochona_cokro_man_total",
+                            "kormi_alochona_cokro_woman_total",
+                            "quran_study_circle_man_total",
+                            "quran_study_circle_woman_total",
+                            "darsul_quran_man_total",
+                            "darsul_quran_woman_total",
+                            "sohih_tilawat_man_total",
+                            "sohih_tilawat_woman_total",
+                            // average thana_rastrio2_kormoshuchi_bastobayons
                             "centrally_announced_political_program",
                             "locally_announced_jonoshova",
                             "locally_announced_shomabesh",
                             "locally_announced_michil",
-                            // average_rastrio3
+                            "poster_bitoron",
+                            "leaflet_bitoron",
+                            "booklet_bitoron",
+                            "sharoklipi_bitoron",
+                            "others",
+                            // average thana_rastrio3_dibosh_palons
                             "shadhinota_o_jatio_dibosh_total_programs",
                             "bijoy_dibosh_total_programs",
-                            "mattrivasha_dibosh_total_programs",
                             "others_total_programs",
+                            "mattrivasha_dibosh_total_programs",
+                            "international_womens_day_total_programs",
+                            "may_day_total_programs"
                         ].includes(name)
                     ) {
                         this.uploaded_data(); // Call uploaded_data if name matches

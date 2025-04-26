@@ -13609,108 +13609,6 @@ export default {
             }
         },
 
-        // average_data: async function () {
-        //     // -------------- kormosuci --------------
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.unit_masik_sadaron_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.unit_masik_sadaron_sova_uposthiti ?? 0) / (this.kormosuci.unit_masik_sadaron_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dawati_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.dawati_sova_uposthiti ?? 0) / (this.kormosuci.dawati_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.alochona_sova =
-        //         this.kormosuci ? Math.round((this.kormosuci.alochona_sova_uposthiti ?? 0) / (this.kormosuci.alochona_sova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.sudhi_somabesh =
-        //         this.kormosuci ? Math.round((this.kormosuci.sudhi_somabesh_uposthiti ?? 0) / (this.kormosuci.sudhi_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.siratunnabi_mahfil =
-        //         this.kormosuci ? Math.round((this.kormosuci.siratunnabi_mahfil_uposthiti ?? 0) / (this.kormosuci.siratunnabi_mahfil_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.eid_reunion =
-        //         this.kormosuci ? Math.round((this.kormosuci.eid_reunion_uposthiti ?? 0) / (this.kormosuci.eid_reunion_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dars =
-        //         this.kormosuci ? Math.round((this.kormosuci.dars_uposthiti ?? 0) / (this.kormosuci.dars_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.tafsir =
-        //         this.kormosuci ? Math.round((this.kormosuci.tafsir_uposthiti ?? 0) / (this.kormosuci.tafsir_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.dawati_jonosova =
-        //         this.kormosuci ? Math.round((this.kormosuci.dawati_jonosova_uposthiti ?? 0) / (this.kormosuci.dawati_jonosova_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.iftar_mahfil_personal =
-        //         this.kormosuci ? Math.round((this.kormosuci.iftar_mahfil_personal_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_personal_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.iftar_mahfil_samostic =
-        //         this.kormosuci ? Math.round((this.kormosuci.iftar_mahfil_samostic_uposthiti ?? 0) / (this.kormosuci.iftar_mahfil_samostic_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.cha_chakra =
-        //         this.kormosuci ? Math.round((this.kormosuci.cha_chakra_uposthiti ?? 0) / (this.kormosuci.cha_chakra_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.samostic_khawa =
-        //         this.kormosuci ? Math.round((this.kormosuci.samostic_khawa_uposthiti ?? 0) / (this.kormosuci.samostic_khawa_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.sikkha_sofor =
-        //         this.kormosuci ? Math.round((this.kormosuci.sikkha_sofor_uposthiti ?? 0) / (this.kormosuci.sikkha_sofor_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.kirat_protijogita =
-        //         this.kormosuci ? Math.round((this.kormosuci.kirat_protijogita_uposthiti ?? 0) / (this.kormosuci.kirat_protijogita_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.hamd_nat_protijogita =
-        //         this.kormosuci ? Math.round((this.kormosuci.hamd_nat_protijogita_uposthiti ?? 0) / (this.kormosuci.hamd_nat_protijogita_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_kormosuci_bastobayons?.others =
-        //         this.kormosuci ? Math.round((this.kormosuci.others_uposthiti ?? 0) / (this.kormosuci.others_total ?? 1)) : 0;
-        //     // -------------- kormosuci --------------
-
-        //     // -------------- songothon9 --------------
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.word_sura_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.word_sura_boithok_uposthiti ?? 0) / (this.songothon9.word_sura_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.kormoporishod_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.kormoporishod_boithok_uposthiti ?? 0) / (this.songothon9.kormoporishod_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.team_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.team_boithok_uposthiti ?? 0) / (this.songothon9.team_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.word_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.word_boithok_uposthiti ?? 0) / (this.songothon9.word_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.masik_sodosso_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.masik_sodosso_boithok_uposthiti ?? 0) / (this.songothon9.masik_sodosso_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.unit_kormi_boithok =
-        //         this.songothon9 ? Math.round((this.songothon9.unit_kormi_boithok_uposthiti ?? 0) / (this.songothon9.unit_kormi_boithok_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.ulama_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.ulama_somabesh_uposthiti ?? 0) / (this.songothon9.ulama_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.jubok_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.jubok_somabesh_uposthiti ?? 0) / (this.songothon9.jubok_somabesh_total ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_songothon9_sangothonik_boithoks?.sromik_somabesh =
-        //         this.songothon9 ? Math.round((this.songothon9.sromik_somabesh_uposthiti ?? 0) / (this.songothon9.sromik_somabesh_total ?? 1)) : 0;
-        //     // -------------- songothon9 --------------
-
-        //     // -------------- proshikkhon1 --------------
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.unit_tarbiati_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.unit_tarbiati_boithok_uposthiti ?? 0) / (this.proshikkhon1.unit_tarbiati_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.ward_kormi_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.ward_kormi_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.ward_kormi_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_shibir =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.urdhotono_sikkha_shibir_uposthiti ?? 0) / (this.proshikkhon1.urdhotono_sikkha_shibir ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.urdhotono_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.urdhotono_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.urdhotono_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_sikkha_boithok =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.gono_sikkha_boithok_uposthiti ?? 0) / (this.proshikkhon1.gono_sikkha_boithok ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.gono_noisho_ibadot =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.gono_noisho_ibadot_uposthiti ?? 0) / (this.proshikkhon1.gono_noisho_ibadot ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.alochona_chokro =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.alochona_chokro_uposthiti ?? 0) / (this.proshikkhon1.alochona_chokro_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.darsul_quran =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.darsul_quran_uposthiti ?? 0) / (this.proshikkhon1.darsul_quran_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_proshikkhon1_tarbiats?.sohih_tilawat =
-        //         this.proshikkhon1 ? Math.round((this.proshikkhon1.sohih_tilawat_uposthiti ?? 0) / (this.proshikkhon1.sohih_tilawat_program ?? 1)) : 0;
-        //     // -------------- proshikkhon1 --------------
-
-        //     // -------------- rastrio2 --------------
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.centrally_announced_political_program =
-        //         this.rastrio2 ? Math.round((this.rastrio2.centrally_announced_political_program_attend ?? 0) / (this.rastrio2.centrally_announced_political_program ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_jonoshova =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_jonoshova_attend ?? 0) / (this.rastrio2.locally_announced_jonoshova ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_shomabesh =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_shomabesh_attend ?? 0) / (this.rastrio2.locally_announced_shomabesh ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio2_kormoshuchi_bastobayons?.locally_announced_michil =
-        //         this.rastrio2 ? Math.round((this.rastrio2.locally_announced_michil_attend ?? 0) / (this.rastrio2.locally_announced_michil ?? 1)) : 0;
-        //     // -------------- rastrio2 --------------
-
-        //     // -------------- rastrio3 --------------
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.shadhinota_o_jatio_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.shadhinota_o_jatio_dibosh_attend ?? 0) / (this.rastrio3.shadhinota_o_jatio_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.bijoy_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.bijoy_dibosh_attend ?? 0) / (this.rastrio3.bijoy_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.mattrivasha_dibosh =
-        //         this.rastrio3 ? Math.round((this.rastrio3.mattrivasha_dibosh_attend ?? 0) / (this.rastrio3.mattrivasha_dibosh_total_programs ?? 1)) : 0;
-        //     this.average_uposthiti?.ward_rastrio3_dibosh_palons?.others =
-        //         this.rastrio3 ? Math.round((this.rastrio3.others_attend ?? 0) / (this.rastrio3.others_total_programs ?? 1)) : 0;
-        //     // -------------- rastrio3 --------------
-        // },
 
         formatBangla(number) {
             if (
@@ -13723,6 +13621,7 @@ export default {
             }
             return number.toLocaleString("bn-BD");
         },
+        
         formatMonth(date) {
             return new Date(date).toLocaleString("bn-BD", { month: "long" });
         },

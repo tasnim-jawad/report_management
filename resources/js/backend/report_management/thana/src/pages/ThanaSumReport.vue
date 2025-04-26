@@ -26587,7 +26587,7 @@
                                     </popup>
                                 </td>
                                 <td>
-                                    <input
+                                    <!-- <input
                                         name="darsul_quran_man_odhibeshon"
                                         :value="
                                             formatBangla(
@@ -26610,10 +26610,10 @@
                                         :field_title="'darsul_quran_man_odhibeshon'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                                 <td>
-                                    <input
+                                    <!-- <input
                                         name="darsul_quran_woman_odhibeshon"
                                         :value="
                                             formatBangla(
@@ -26636,7 +26636,7 @@
                                         :field_title="'darsul_quran_woman_odhibeshon'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                                 <td>
                                     <input
