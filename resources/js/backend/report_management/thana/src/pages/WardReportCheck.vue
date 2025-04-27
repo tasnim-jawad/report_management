@@ -7433,7 +7433,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* @import url("../../../../../../public/css/unit/unit_report_upload.css"); */
 @import url("../../../../../../../public/css/ward/ward_report_upload.css");
 </style>
