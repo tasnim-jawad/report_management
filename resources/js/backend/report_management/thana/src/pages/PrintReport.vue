@@ -90,36 +90,56 @@ export default {
             }
 
             try {
-                const { data } = await axios.get('/thana/check-report-info', {
-                    params: { month: this.month }
-                });
-
-                if (data.data) {
-                    // (blade file create korar por ei nicher 2ta line uncomment kora hobe , ebong porer line gula comment kora hobe)  
-                    
-                    // const url = `/ward/ward-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}&print=true`;
-                    // window.open(url);
-
-                    this.user_id = this.user?.user?.id;
-                    if (this.user_id) {
-                        // Navigate to report upload route
-                        return this.$router.push({
-                            name: "ThanaReportUploadMonthly",
-                            params: {
-                                month: this.month,
-                                user_id: this.user_id,
-                            },
-                        });
-                    } else {
-                        return window.s_warning(
-                            "User ID is missing. Please ensure it is provided.",
-                            "error"
-                        );
+                let response = await axios.get('/thana/check-report-info-in-range', {
+                    params: {
+                        start_month: this.month,
+                        end_month: this.month
                     }
-                } else {
-                    const errMessage = 'আপনার রিপোর্ট দেখার অনুমতি নেই। রিপোর্ট দেখার অনুমতির জন্য আপনার ঊর্ধ্বতন দায়িত্বশীলের সাথে যোগাযোগ করুন।';
+                });
+                if(response.data.data){
+                    // window.open(`/ward/report/ward-report-sum?user_id=${this.user?.user?.id}&start_month=${this.start_month}&end_month=${this.end_month}&print=true`)
+
+                    return this.$router.push({
+                        name: "ThanaSumReport",
+                        params: {
+                            start_month: this.month,
+                            end_month: this.month
+                        },
+                    });
+                }else{
+                    const errMessage = 'আপনার এই মাসের প্রতিবেদন অনুমোদন হয়নি।';
                     window.s_warning(errMessage, 'error');
                 }
+                // const { data } = await axios.get('/thana/check-report-info', {
+                //     params: { month: this.month }
+                // });
+
+                // if (data.data) {
+                //     // (blade file create korar por ei nicher 2ta line uncomment kora hobe , ebong porer line gula comment kora hobe)  
+                    
+                //     // const url = `/ward/ward-report-monthly?user_id=${this.user?.user?.id}&month=${this.month}&print=true`;
+                //     // window.open(url);
+
+                //     this.user_id = this.user?.user?.id;
+                //     if (this.user_id) {
+                //         // Navigate to report upload route
+                //         return this.$router.push({
+                //             name: "ThanaReportUploadMonthly",
+                //             params: {
+                //                 month: this.month,
+                //                 user_id: this.user_id,
+                //             },
+                //         });
+                //     } else {
+                //         return window.s_warning(
+                //             "User ID is missing. Please ensure it is provided.",
+                //             "error"
+                //         );
+                //     }
+                // } else {
+                //     const errMessage = 'আপনার রিপোর্ট দেখার অনুমতি নেই। রিপোর্ট দেখার অনুমতির জন্য আপনার ঊর্ধ্বতন দায়িত্বশীলের সাথে যোগাযোগ করুন।';
+                //     window.s_warning(errMessage, 'error');
+                // }
             } catch (error) {
                 console.error("An error occurred while fetching report information:", error);
                 window.s_warning("An unexpected error occurred. Please try again.", 'error');
@@ -146,7 +166,6 @@ export default {
                     end_month: this.end_month
                 }
             });
-            // console.log(response);
             if(response.data.data){
                 // window.open(`/ward/report/ward-report-sum?user_id=${this.user?.user?.id}&start_month=${this.start_month}&end_month=${this.end_month}&print=true`)
 
@@ -175,9 +194,11 @@ export default {
                             }
                         })
             if(response.data.status == 'success'){
-                this.approved_ward = null,
+                this.approved_ward = [],
                 this.approved_ward = response.data.approved_ward ?? [];
-
+                console.log("approved_ward", this.approved_ward);
+                console.log("approved_ward month", this.month);
+                
                 // this.unsubmitted_unit = response.data.unsubmitted_unit
                 // this.pending_unit = response.data.pending_unit
                 // this.rejected_unit = response.data.rejected_unit

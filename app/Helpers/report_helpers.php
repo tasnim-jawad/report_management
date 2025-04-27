@@ -358,3 +358,13 @@ function notification(
 
     return $notification;
 }
+
+function convertBanglaToEnglish($input){
+    $banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+    $englishDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+    
+    $englishNumber = str_replace($banglaDigits, $englishDigits, $input);
+    $cleanNumber = preg_replace('/\D/', '', $englishNumber);
+    return (int) $cleanNumber;
+}

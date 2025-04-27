@@ -114,7 +114,7 @@ function thana_common_store($bind, $class, $report_info)
     ]);
     if ($report_info) {
         $col_name = request()->name;
-        $col_value = (int) request()->value;
+        $col_value = convertBanglaToEnglish(request()->value);
         if($col_name === 'montobbo'){
             $col_value = request()->value;
         }

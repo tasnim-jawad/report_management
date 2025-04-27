@@ -36369,10 +36369,16 @@ export default {
     },
     mounted() {
         window.addEventListener('afterprint', this.handleAfterPrint);
-        },
-        beforeUnmount() {
-            window.removeEventListener('afterprint', this.handleAfterPrint);
-        },
+
+        document.querySelectorAll('.unit_info_icon').forEach((icon) => {
+            if (!icon.closest('.parent_popup')) {
+                icon.classList.add('d-none');
+            }
+        });
+    },
+    beforeUnmount() {
+        window.removeEventListener('afterprint', this.handleAfterPrint);
+    },
     };
 </script>
 

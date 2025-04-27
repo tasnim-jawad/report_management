@@ -264,7 +264,7 @@ class ThanaController extends Controller
         $end_month = request()->end_month;
         $org_type = 'thana';
         $org_type_id = $thana_id;
-        $report_approved_status = ['pending', 'approved', 'rejected'];   //enum('pending','approved','rejected')
+        $report_approved_status = ['approved'];   //enum('pending','approved','rejected')
         $is_need_sum = true;
         $datas = $this->report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $is_need_sum);
 

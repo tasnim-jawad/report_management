@@ -13,8 +13,9 @@
                     <p class="w-75">
                         মাস:
                         {{ formatMonth(start_month)  }}
-                         - 
-                        {{ formatMonth(end_month)  }}
+                        <span v-if="start_month != end_month"> - 
+                            {{ formatMonth(end_month)  }}
+                        </span>
                     </p>
                     <p class="w-25">সন: {{ formatYear(end_month) }}</p>
                 </div>
