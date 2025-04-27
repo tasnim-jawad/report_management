@@ -45,7 +45,7 @@ class ThanaStatusChack
             return response()->json([
                 'err_message' => 'Permission denied',
                 // 'errors' => [['You do not have the necessary permissions']],
-                'errors' => [['মুরব্বী মুরব্বী উমহু হু হু হু']],
+                'errors' => [['এ মাসের রিপোর্ট জমা হয়েছে । অনুমদনের জন্য অপেক্ষমাণ আছে । তাই এখন কোন পরিবর্তন করা যাবে না।']],
             ], 403);
 
         }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'rejected'){
@@ -57,7 +57,7 @@ class ThanaStatusChack
             return response()->json([
                 'err_message' => 'Permission denied',
                 // 'errors' => [['You do not have the necessary permissions']],
-                'errors' => [['মুরব্বী মুরব্বী উমহু হু হু হু']],
+                'errors' => [['এ মাসের রিপোর্ট অনুমদনের হয়েছে । তাই এখন কোন পরিবর্তন করা যাবে না।']],
             ], 403);
         }
     }

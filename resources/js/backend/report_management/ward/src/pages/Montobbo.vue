@@ -109,7 +109,7 @@ export default {
         },
         report_joma: async function () {
             if (window.confirm("আপনি কি জমা দানের বিষয়ে নিশ্চিত?")) {
-                const month = this.$route.params.month;
+                // const month = this.$route.params.month;
                 let response = await axios.get('/ward/report-joma', {
                     params: {
                         month: month

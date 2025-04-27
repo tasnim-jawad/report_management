@@ -35148,12 +35148,19 @@
                 @click.prevent="report_joma"
                 >রিপোর্ট জমা দিন</a
             >
-            <a
+            <!-- <a
                 href=""
                 class="btn btn-success"
                 v-else-if="joma_status == 'rejected'"
                 @click.prevent="report_joma"
                 >রিপোর্ট পুনরায় জমা দিন</a
+            > -->
+            <a
+                href=""
+                class="btn btn-danger"
+                v-else-if="joma_status == 'approved'"
+                @click.prevent="report_joma"
+                >রিপোর্ট রিজেক্ট করুন</a
             >
         </div>
         <a href="" class="print_preview" @click.prevent="print_report()"
@@ -36281,7 +36288,7 @@ export default {
         report_joma: async function () {
             if (window.confirm("আপনি কি জমা দানের বিষয়ে নিশ্চিত?")) {
                 const month = this.$route.params.month;
-                let response = await axios.get("/ward/report-joma", {
+                let response = await axios.get("/thana/report-joma", {
                     params: {
                         month: month,
                     },

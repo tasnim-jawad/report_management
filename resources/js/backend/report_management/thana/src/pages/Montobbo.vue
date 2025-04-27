@@ -26,7 +26,8 @@
         </div>
         <div class="joma_din text-center mb-3">
             <a href="" class="btn btn-success" v-if="joma_status == 'unsubmitted'" @click.prevent="report_joma">রিপোর্ট জমা দিন</a>
-            <a href="" class="btn btn-success" v-else-if="joma_status == 'rejected'" @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a>
+            <!-- <a href="" class="btn btn-success" v-else-if="joma_status == 'rejected'" @click.prevent="report_joma">রিপোর্ট পুনরায় জমা দিন</a> -->
+            <a href="" class="btn btn-danger" v-else-if="joma_status == 'approved'" @click.prevent="report_joma">রিপোর্ট রিজেক্ট করুন</a>
         </div>
         <previous-next
                 :prev-route="{ name: 'Rastrio' }"
@@ -109,11 +110,13 @@ export default {
             }
         },
         report_joma: async function () {
+            console.log("month", this.month);
+            
             if (window.confirm("আপনি কি জমা দানের বিষয়ে নিশ্চিত?")) {
-                const month = this.$route.params.month;
+                // const month = this.$route.params.month;
                 let response = await axios.get('/thana/report-joma', {
                     params: {
-                        month: month
+                        month: this.month
                     }
                 })
                 if (response.data.status == 'success') {
@@ -127,7 +130,15 @@ export default {
                 window.toaster("রিপোর্ট জমা বন্ধ করা হয়েছে । অনুগ্রহ করে সমস্ত প্রয়োজনীয় তথ্য পূরণ করুন ", 'info');
             }
         },
-    }
+    },
+    watch: {
+        month: function (newVal, oldVal) {
+            if (newVal != oldVal) {
+                // this.get_monthly_data();
+                this.report_status();
+            }
+        }
+    },
 
 }
 </script>

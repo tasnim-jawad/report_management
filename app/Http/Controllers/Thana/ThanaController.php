@@ -14,6 +14,7 @@ use App\Models\Bm\Ward\Expense\WardBmExpense;
 use App\Models\Bm\Ward\Income\WardBmIncome;
 use App\Models\Organization\OrgThanaUser;
 use App\Models\Report\ReportInfo;
+use App\Models\Report\ReportManagementControl;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -128,17 +129,17 @@ class ThanaController extends Controller
     {
 
         $month = Carbon::parse(request()->month);
-        $org_ward_user = OrgWardUser::where('user_id', auth()->id())->first();
+        $org_thana_user = OrgThanaUser::where('user_id', auth()->id())->first();
 
-        if (!$org_ward_user) {
+        if (!$org_thana_user) {
             return response()->json([
-                'err_message' => 'Ward information not found for this user.',
+                'err_message' => 'Thana information not found for this user.',
             ], 404);
         }
 
-        $ward_id = $org_ward_user->ward_id;
+        $thana_id = $org_thana_user->thana_id;
 
-        $permission  = ReportManagementControl::where('report_type', 'ward')
+        $permission  = ReportManagementControl::where('report_type', 'thana')
             ->whereYear('month_year', $month->clone()->year)
             ->whereMonth('month_year', $month->clone()->month)
             ->where('is_active', 1)
@@ -152,8 +153,8 @@ class ThanaController extends Controller
         }
 
         // Fetch ReportInfo
-        $report_info = ReportInfo::where('org_type_id', $ward_id)
-            ->where('org_type', 'ward')
+        $report_info = ReportInfo::where('org_type_id', $thana_id)
+            ->where('org_type', 'thana')
             ->whereYear('month_year', $month->year)
             ->whereMonth('month_year', $month->month)
             ->first();
@@ -169,13 +170,13 @@ class ThanaController extends Controller
             $report_info->report_approved_status = 'approved';
             $report_info->save();
             // Update related BmPaid records
-            WardBmIncome::where('ward_id', $ward_id)
+            ThanaBmIncome::where('thana_id', $thana_id)
                 ->whereYear('month', $month->year)
                 ->whereMonth('month', $month->month)
                 ->update(['report_submit_status' => 'submitted', 'report_approved_status' => 'approved']);
 
             // Update related BmExpense records
-            WardBmExpense::where('ward_id', $ward_id)
+            ThanaBmExpense::where('thana_id', $thana_id)
                 ->whereYear('date', $month->year)
                 ->whereMonth('date', $month->month)
                 ->update(['report_submit_status' => 'submitted', 'report_approved_status' => 'approved']);
@@ -190,22 +191,51 @@ class ThanaController extends Controller
             $report_info->save();
 
             // Update related BmPaid records
-            WardBmIncome::where('ward_id', $ward_id)
+            ThanaBmIncome::where('thana_id', $thana_id)
                 ->whereYear('month', $month->year)
                 ->whereMonth('month', $month->month)
-                ->update(['report_submit_status' => 'pending']);
+                ->update(['report_approved_status' => 'pending']);
 
             // Update related BmExpense records
-            WardBmExpense::where('ward_id', $ward_id)
+            ThanaBmExpense::where('thana_id', $thana_id)
                 ->whereYear('date', $month->year)
                 ->whereMonth('date', $month->month)
-                ->update(['report_submit_status' => 'pending']);
+                ->update(['report_approved_status' => 'pending']);
 
             return response()->json([
                 'status' => 'success',
                 'report_status' => "rejected",
                 "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
             ], 200);
+
+        // ----------------------------------------------
+        // ----------------------------------------------
+        // ----------------extra added ------------------
+        } else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'approved') {
+            $report_info->report_submit_status = 'unsubmitted';
+            $report_info->report_approved_status = 'pending';
+            $report_info->save();
+
+            // Update related BmPaid records
+            ThanaBmIncome::where('thana_id', $thana_id)
+                ->whereYear('month', $month->year)
+                ->whereMonth('month', $month->month)
+                ->update(['report_approved_status' => 'pending']);
+
+            // Update related BmExpense records
+            ThanaBmExpense::where('thana_id', $thana_id)
+                ->whereYear('date', $month->year)
+                ->whereMonth('date', $month->month)
+                ->update(['report_approved_status' => 'pending']);
+
+            return response()->json([
+                'status' => 'success',
+                'report_status' => "rejected",
+                "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
+            ], 200);
+        // ----------------extra added ------------------
+        // ----------------------------------------------
+        // ----------------------------------------------
         } else {
             return response()->json([
                 'err_message' => 'No Content',
@@ -557,4 +587,6 @@ class ThanaController extends Controller
             ];
         }
     }
+
+    
 }
