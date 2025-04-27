@@ -4,6 +4,10 @@ export const store = defineStore(`custom_store`, {
     state: () => ({
         month: null,
         loading: true,
+        thana_active_report_month_info: null,
+        thana_user:null,
+        thana_user_id: 0,
+        thana_id: 0,
     }),
     getters: {
         $init: () => {

@@ -287,7 +287,7 @@ function active_report($org_type)
     if ($upper_organization_title) {
         $upper_organization_id = $user_info->$upper_organization_title ?? null;
     }
-    // dd($user->ward_id);
+    // dd($upper_organization_id);
     $permission = ReportManagementControl::where('is_active', 1)
         ->where('upper_organization_id', $upper_organization_id)
         ->where('report_type', $org_type)

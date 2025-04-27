@@ -648,7 +648,10 @@ export default {
         },
     },
     computed: {
-        ...mapWritableState(data_store, ["month"]),
+        ...mapWritableState(data_store, [
+            "month",
+            "thana_active_report_month_info",
+        ]),
 
         ...mapWritableState(notification_store, [
             "all_notifications",

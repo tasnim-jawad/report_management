@@ -36325,6 +36325,9 @@ export default {
             let value = args.reduce((sum, num) => sum + Number(num || 0), 0);
             return this.formatBangla(value);
         },
+        handleAfterPrint() {
+            location.reload();
+        }
     },
     computed: {
         total_dawat: function () {
@@ -36364,7 +36367,13 @@ export default {
             return this.formatBangla(total);
         },
     },
-};
+    mounted() {
+        window.addEventListener('afterprint', this.handleAfterPrint);
+        },
+        beforeUnmount() {
+            window.removeEventListener('afterprint', this.handleAfterPrint);
+        },
+    };
 </script>
 
 <style>
