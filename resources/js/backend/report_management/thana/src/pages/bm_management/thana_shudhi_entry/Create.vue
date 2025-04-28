@@ -14,7 +14,7 @@
                         <label for="">{{field.label}}</label>
                     </div>
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'shudhi_id'">
-                        <select type="text" :name="field.name" :id="field.name" class="form-control" v-model="selected_user_id" >
+                        <select type="text" :name="field.name" :id="field.name" class="form-control" v-model="selected_shudhi_id" >
                             <option value="">-- select user --</option>
                             <option v-for="(shudhi, i) in thana_shudhi_all" :key="i" :value="shudhi['id']" >{{shudhi["name"]}}</option>
 
@@ -92,7 +92,7 @@ export default {
     },
 
     watch:{
-        selected_user_id:function(){
+        selected_shudhi_id:function(){
             this.users_target = ""
             this.shudhi_target();
         },
@@ -126,7 +126,7 @@ export default {
             console.log("shudhi_target is not functional, after update it will work");
             
             // if(this.selected_shudhi_id != "" && this.selected_bm_category_id != ""){
-            //     axios.get(`/unit-shudhi/show/${this.selected_user_id}/${this.selected_bm_category_id}`)
+            //     axios.get(`/unit-shudhi/show/${this.selected_shudhi_id}/${this.selected_bm_category_id}`)
             //         .then(response =>{
             //             if(response.data.status == 'success'){
             //                 if (response?.data?.data?.amount) {

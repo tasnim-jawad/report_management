@@ -12,7 +12,9 @@ export const store = defineStore(`custom_store`, {
     getters: {
         $init: () => {
             this.set_month(); // Call set_month when the store is initialized
+            // this.set_permission_auto();
         }
+        // setInterval(this.set_permission_auto, 24 * 60 * 60 * 1000);
     },
     actions: {
         set_month() {
@@ -58,6 +60,42 @@ export const store = defineStore(`custom_store`, {
             });
             return response.data;
         },
+
+        set_permission_auto: function (permission) {
+            const new_permission_set_date = 28;
+            const today = new Date();
+
+            if (today.getDate() === new_permission_set_date) {
+                console.log("today",today);
+                
+                this.permission_set();
+            }
+        },
+        permission_set: function () {
+            const today = new Date();
+            let forward_month = today.getMonth() + 1;
+            let year = today.getFullYear();
+
+            if (forward_month === 12) {
+                forward_month = 0;  // Wrap around to January (0)
+                year += 1;  // Increment the year
+            }
+            const formatted_month = String(forward_month + 1).padStart(2, '0');
+            let next_month = `${year}-${formatted_month}`;
+            console.log("next_month",next_month);
+            
+            axios.post('/thana/set-thana-report-joma-permission', {
+                    month: next_month
+                })
+                .then(response => {
+                    console.log('permission', response.data);
+                })
+                .catch(error => {
+                    console.error('API call error:', error);
+                });
+            
+        }
+
     }
 
 

@@ -134,4 +134,60 @@ class PermissionController extends Controller
 
         }
     }
+
+    public function set_thana_report_joma_permission()
+    {
+        // dd(request()->all());
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $month_year = Carbon::parse(request()->month);
+        $thana_id = auth()->user()->org_thana_user->thana_id;
+        $thana = OrgThana::find($thana_id);
+        // dd($thana);
+        $city_id = $thana->org_city_id;
+        if (!$thana) {
+            return response()->json([
+                'status' => 'fail',
+                'message' => 'থানা খুঁজে পাওয়া যায়নি।'
+            ], 200);
+        }
+
+        ReportManagementControl::where('upper_organization_id', $city_id)
+            ->where('report_type', 'thana')
+            ->update(['is_active' => 0]);
+
+        $data = ReportManagementControl::where('upper_organization_id', $city_id)
+            ->where('report_type', 'thana')
+            ->whereYear('month_year', $month_year->clone()->year)
+            ->whereMonth('month_year', $month_year->clone()->month)
+            ->latest()
+            ->first();
+        if ($data) {
+            $data->update(['is_active' => 1]);
+        } else {
+
+            $data = new ReportManagementControl();
+            $data->month_year = $month_year->clone()->toDateString();
+            $data->report_type = 'thana';
+            $data->upper_organization_id = $city_id;
+            $data->is_active = 1;
+
+            $data->creator = auth()->id();
+            $data->save();
+        }
+
+        return response()->json([
+            'status' => 'success',
+            "message" => "পারমিশন আপডেট করা হয়েছে ।"
+        ], 200);
+    }
 }

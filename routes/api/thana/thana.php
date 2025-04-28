@@ -504,6 +504,7 @@
     Route::group(['prefix' => 'thana'], function () {
         Route::post('/ward-report-joma-permitted-month', [App\Http\Controllers\Thana\PermissionController::class, 'ward_report_joma_permitted_month']);
         Route::post('/set-ward-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'set_ward_report_joma_permission']);
+        Route::post('/set-thana-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'set_thana_report_joma_permission']);
         Route::post('/remove-ward-report-joma-permission', [App\Http\Controllers\Thana\PermissionController::class, 'remove_ward_report_joma_permission']);
         // Route::post('/toggle-dashboard-permission', [App\Http\Controllers\Thana\PermissionController::class,'toggle_dashboard_permission']);
     });

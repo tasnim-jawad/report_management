@@ -66,14 +66,15 @@ export default {
     created:function(){
         this.user_info()
         this.report_status()
-        this.count_units()
+        this.count_wards()
     },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },
     watch:{
         month:function(){
-            this.count_units()
+            this.count_wards()
+            this.report_status()
         }
     },
     methods:{
@@ -196,8 +197,8 @@ export default {
             if(response.data.status == 'success'){
                 this.approved_ward = [],
                 this.approved_ward = response.data.approved_ward ?? [];
-                console.log("approved_ward", this.approved_ward);
-                console.log("approved_ward month", this.month);
+                // console.log("approved_ward", this.approved_ward);
+                // console.log("approved_ward month", this.month);
                 
                 // this.unsubmitted_unit = response.data.unsubmitted_unit
                 // this.pending_unit = response.data.pending_unit
@@ -213,7 +214,7 @@ export default {
 
             }
         },
-        count_units:async function(){
+        count_wards:async function(){
             if(this.month){
                 let response = await axios.get('/thana/count-approved-ward', {
                                 params: {

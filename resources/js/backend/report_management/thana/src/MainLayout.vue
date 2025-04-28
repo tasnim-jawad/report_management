@@ -494,6 +494,7 @@ export default {
 
         this.auth_user();
         this.set_month();
+        this.set_permission_auto();
     },
     // mounted: function () {
     //     this.isUnitReportPage =
@@ -550,7 +551,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(data_store, ["set_month"]),
+        ...mapActions(data_store, ["set_month","set_permission_auto"]),
         ...mapActions(notification_store, ["see_all_notification"]),
         auth_user: function () {
             axios.get("/user/thana-user-info").then((responce) => {
