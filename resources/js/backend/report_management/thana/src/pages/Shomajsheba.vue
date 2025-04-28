@@ -471,6 +471,13 @@ export default {
             this.get_monthly_data();
         }
     },
+    watch: {
+        month: function (new_value) {
+            if (new_value != null) {
+                this.get_monthly_data();
+            }
+        },
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },
@@ -498,7 +505,7 @@ export default {
                 });
         },
         get_monthly_data: function () {
-            let els = document.querySelectorAll('input[type="text"]');
+            let els = document.querySelectorAll('input[type="number"]');
             els = [...els].forEach(e => e.value = '');
 
             this.get_data_by_api('thana-shomajsheba1-personal-preparing-trained-social-work', 1);

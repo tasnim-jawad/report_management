@@ -62,6 +62,14 @@ export default {
         }
         this.report_status();
     },
+    watch: {
+        month: function (new_value) {
+            if (new_value != null) {
+                this.get_monthly_data();
+                this.report_status();
+            }
+        },
+    },
     computed: {
         ...mapWritableState(data_store, ['month']),
     },
