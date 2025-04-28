@@ -337,6 +337,9 @@ table{
 .button_width_95px{
     width: 95px;
 }
+.button_width_100px{
+    width: 100px;
+}
 .scrollbar_width_none{
     scrollbar-width: none;
 }

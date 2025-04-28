@@ -34,7 +34,7 @@
         </section>
         <section id="report">
             <div class="dawat mt-1">
-                <h1 class="font-18">দাওয়াত ও তাবলিগ :</h1>
+                <h1 class="fw-bold font-18">দাওয়াত ও তাবলিগ :</h1>
                 <div
                     class="jonoshadharon d-flex flex-wrap justify-content-between"
                 >
@@ -44,11 +44,67 @@
                             {{ total_dawat }}
                         </span>
                     </p>
-                    <p class="fw-bold w-25">মোট জনসংখ্যা:</p>
-                    <p class="fw-bold ps-3 w-100">
-                        টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক)
-                        :
-                    </p>
+                    <div class="fw-bold w-25 d-flex flex-wrap justify-content-start">
+                        মোট জনসংখ্যা:
+                        <div class="parent_popup width-60">
+                            <input
+                                name="total_population"
+                                :value="
+                                    formatBangla(
+                                        report_sum_data
+                                            ?.thana_dawat5_jonoshadharons
+                                            ?.total_population
+                                    )
+                                "
+                                @change="
+                                    data_upload(
+                                        'thana-dawat5-jonoshadharon'
+                                    )
+                                "
+                                :type="type"
+                                class="bg-input w-100 text-center"
+                            />
+                            <popup
+                                :thana_id="report_header?.thana_info?.id"
+                                :table_name="'ward_dawat5_jonoshadharons'"
+                                :field_title="'total_population'"
+                                :month="month"
+                            >
+                            </popup>
+                        </div>
+                    </div>
+                    <div class="target_input w-100 d-flex flex-wrap justify-content-start">
+                        <p class="fw-bold ps-3">
+                            টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক)
+                            :
+                        </p>
+                        <div class="parent_popup w-25">
+                            <input
+                                name="target"
+                                :value="
+                                    formatBangla(
+                                        report_sum_data
+                                            ?.thana_dawat5_jonoshadharons
+                                            ?.target
+                                    )
+                                "
+                                @change="
+                                    data_upload(
+                                        'thana-dawat5-jonoshadharon'
+                                    )
+                                "
+                                :type="type"
+                                class="bg-input w-100 text-center"
+                            />
+                            <!-- <popup
+                                :thana_id="report_header?.thana_info?.id"
+                                :table_name="'ward_dawat5_jonoshadharons'"
+                                :field_title="'target'"
+                                :month="month"
+                            >
+                            </popup> -->
+                        </div>
+                    </div>
                     <p class="ps-3 font-13">
                         * দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত
                         দাওয়াত প্রদান সংখ্যা যোগ করে এখানে বসাতে হবে ।
@@ -35461,7 +35517,7 @@ export default {
             });
 
             if (res.data.status == "success") {
-                console.log("res", res.data.data.end_month);
+                // console.log("res", res.data.data.end_month);
                 (this.month = res.data.data.end_month),
                     (this.report_header = res.data.data.report_header),
                     (this.report_sum_data = res.data.data.report_sum_data),
@@ -36282,7 +36338,7 @@ export default {
             });
             if (response.data.status == "success") {
                 this.joma_status = response.data.report_status;
-                console.log("report_status", response);
+                // console.log("report_status", response);
             }
         },
         report_joma: async function () {
@@ -36299,7 +36355,7 @@ export default {
                     window.toaster(response.data.message, "success");
 
                     this.joma_status = response.data.report_status;
-                    console.log("report_status", response);
+                    // console.log("report_status", response);
                 }
             } else {
                 window.toaster(
@@ -36333,35 +36389,92 @@ export default {
         total_dawat: function () {
             const total =
                 Number(
-                    this.report_sum_data?.ward_dawat1_regular_group_wises
-                        ?.how_many_have_been_invited || 0
+                    this.report_sum_data?.thana_dawat1_regular_group_wises
+                        ?.how_many_have_been_invited_man || 0
                 ) +
                 Number(
-                    this.report_sum_data?.ward_dawat2_personal_and_targets
-                        ?.how_many_have_been_invited || 0
+                    this.report_sum_data?.thana_dawat1_regular_group_wises
+                        ?.how_many_have_been_invited_woman || 0
                 ) +
                 Number(
-                    this.report_sum_data?.ward_dawat3_general_program_and_others
-                        ?.how_many_were_give_dawat || 0
+                    this.report_sum_data?.thana_dawat2_personal_and_targets
+                        ?.how_many_have_been_invited_man || 0
                 ) +
                 Number(
-                    this.report_sum_data
-                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                        ?.how_many_have_been_invited || 0
+                    this.report_sum_data?.thana_dawat2_personal_and_targets
+                        ?.how_many_have_been_invited_woman || 0
                 ) +
                 Number(
-                    this.report_sum_data
-                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                        ?.jela_mohanogor_declared_gonosonjog_invited || 0
+                    this.report_sum_data?.thana_dawat3_general_program_and_others
+                        ?.how_many_were_give_dawat_man || 0
                 ) +
                 Number(
-                    this.report_sum_data
-                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
-                        ?.election_how_many_have_been_invited || 0
+                    this.report_sum_data?.thana_dawat3_general_program_and_others
+                        ?.how_many_were_give_dawat_woman || 0
                 ) +
                 Number(
                     this.report_sum_data
-                        ?.ward_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.gono_songjog_doshok_invited_man || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.gono_songjog_doshok_invited_woman || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.gono_songjog_pokkho_invited_man || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.gono_songjog_pokkho_invited_woman || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.jela_declared_gonosonjog_dawati_ovi_invited || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.mohanogor_declared_gonosonjog_dawati_ovi_invited || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.election_how_many_have_been_invited_man || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.election_how_many_have_been_invited_woman || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.ulama_how_many_have_been_invited_man || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.ulama_how_many_have_been_invited_woman || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.peshajibi_how_many_have_been_invited_man || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
+                        ?.peshajibi_how_many_have_been_invited_woman || 0
+                ) +
+                Number(
+                    this.report_sum_data
+                        ?.thana_dawat4_gono_songjog_and_dawat_ovijans
                         ?.other_how_many_have_been_invited || 0
                 );
             return this.formatBangla(total);

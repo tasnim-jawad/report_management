@@ -16,7 +16,7 @@
                             <div class="circle">
                                 <div class="image_body">
                                     <img
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrumPKQMsrYtosDWTVcOvkXleWBlJhdshg2k3qyomSQ&s"
+                                        src="/images/avatar.jpg"
                                         alt=""
                                     />
                                 </div>
@@ -294,7 +294,7 @@
                     <p>
                         থানাঃ {{ this.user?.responsibility?.org_thana?.title }}
                     </p>
-                    <p>মহানগরীঃ {{ this.user?.city?.title }}</p>
+                    <p class="city_name">মহানগরীঃ {{ this.user?.city?.title }}</p>
                 </div>
                 <div class="right">
                     <notification-button
@@ -675,4 +675,15 @@ export default {
     overflow-x: auto;
     max-height: 400px;
 }
+
+@media screen and (max-width: 768px) {
+    .report_app_right .report_app_right_top .middle{
+        flex: 1;
+    }
+    .report_app_right .report_app_right_top .middle .city_name{
+        display: none;
+    }
+    
+}
+
 </style>

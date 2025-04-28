@@ -17,7 +17,7 @@
                                 <div class="image_body">
                                     <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrumPKQMsrYtosDWTVcOvkXleWBlJhdshg2k3qyomSQ&s" alt="" /> -->
                                     <!-- <img :src="`/images/${user?.user?.image}`" alt=""> -->
-                                    <img src="/images/default.jpg" alt="" />
+                                    <img src="/images/avatar.jpg" alt="" />
                                 </div>
                             </div>
                         </div>
