@@ -371,7 +371,7 @@ body{
         justify-content: center;
         align-items: center;
         padding: 3px;
-        background-color: var(--color3);
+        background-color: #ffffffa6;
         position: relative;
         z-index: 999;
         border-radius: 5px;

@@ -216,12 +216,21 @@ ul li {
 }
 
 .bg-input {
-    background-color: #00000012;
+    background-color: #fff;
+}
+.bg-calc {
+    background-color: #a9a9a930;
+}
+.bg-block {
+    background-color: #0000004a;
 }
 
 /* width by px */
 .width-10px {
     width: 15px;
+}
+.width-20px {
+    width: 20px;
 }
 .width-130px {
     width: 130px;
@@ -373,7 +382,7 @@ th {
         justify-content: center;
         align-items: center;
         padding: 3px;
-        background-color: #87cefaa6;
+        background-color: #ffffffa6;
         border-radius: 50%;
         position: relative;
         z-index: 999;

@@ -62,7 +62,7 @@
                                     )
                                 "
                                 :type="type"
-                                class="bg-input w-100 text-center"
+                                class="bg-input w-100 text-center border_dot"
                             />
                             <popup
                                 :thana_id="report_header?.thana_info?.id"
@@ -94,7 +94,7 @@
                                     )
                                 "
                                 :type="type"
-                                class="bg-input w-100 text-center"
+                                class="bg-input w-100 text-center border_dot"
                             />
                             <!-- <popup
                                 :thana_id="report_header?.thana_info?.id"
@@ -128,7 +128,7 @@
                                 <td class="text-start">
                                     কতটি গ্রুপ বের হয়েছে
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <p class="text-center">
                                         {{
                                             total_man_woman_count(
@@ -196,7 +196,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">অংশগ্রহণকারীর সংখ্যা</td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         total_man_woman_count(
                                             report_sum_data
@@ -271,7 +271,7 @@
                                 <td class="text-start">
                                     কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         total_man_woman_count(
                                             report_sum_data
@@ -342,7 +342,7 @@
                                 <td class="text-start">
                                     কতজন সহযোগী সদস্য হয়েছেন
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         total_man_woman_count(
                                             report_sum_data
@@ -669,7 +669,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="text-center">
+                    <table class="text-center table_layout_fixed">
                         <thead>
                             <tr>
                                 <th class="width-33">বিবরণ</th>
@@ -683,9 +683,19 @@
                                 <td class="text-start px-2">
                                     কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
-                                        <input
+                                        {{
+                                            total_man_woman_count(
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.how_many_have_been_invited_man,
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.how_many_have_been_invited_woman
+                                                )
+                                        }}
+                                        <!-- <input
                                             class="bg-input w-100 text-center"
                                             :type="type"
                                             readonly
@@ -699,7 +709,7 @@
                                                         ?.how_many_have_been_invited_woman
                                                 )
                                             "
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
                                 <td>
@@ -763,22 +773,21 @@
                                 <td class="text-start px-2">
                                     কতজন সহযোগী সদস্য হয়েছেন
                                 </td>
-                                <td>
-                                    <input
-                                        class="bg-input w-100 text-center"
-                                        :type="type"
-                                        readonly
-                                        :value="
+                                <td class="bg-calc">
+                                    <div class="parent_popup">
+                                        {{
                                             total_man_woman_count(
-                                                report_sum_data
-                                                    ?.thana_dawat2_personal_and_targets
-                                                    ?.how_many_associate_members_created_man,
-                                                report_sum_data
-                                                    ?.thana_dawat2_personal_and_targets
-                                                    ?.how_many_associate_members_created_woman
-                                            )
-                                        "
-                                    />
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.how_many_associate_members_created_man,
+                                                    report_sum_data
+                                                        ?.thana_dawat2_personal_and_targets
+                                                        ?.how_many_associate_members_created_woman
+                                                )
+                                        }}
+                                    </div>
+
+                                    
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -845,7 +854,7 @@
                         ৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের
                         মাধ্যমে দাওয়াত :
                     </h4>
-                    <table class="text-center">
+                    <table class="text-center table_layout_fixed">
                         <thead>
                             <tr>
                                 <th class="width-33">বিবরণ</th>
@@ -859,9 +868,19 @@
                                 <td class="text-start px-2">
                                     কতজনের নিকট দাওয়াত পৌঁছানো হয়েছে
                                 </td>
-                                <td>
+                                <td  class="bg-calc">
                                     <div class="parent_popup">
-                                        <input
+                                        {{
+                                            total_man_woman_count(
+                                                    report_sum_data
+                                                        ?.thana_dawat3_general_program_and_others
+                                                        ?.how_many_were_give_dawat_man,
+                                                    report_sum_data
+                                                        ?.thana_dawat3_general_program_and_others
+                                                        ?.how_many_were_give_dawat_woman
+                                                )
+                                        }}
+                                        <!-- <input
                                             class="bg-input w-100 text-center"
                                             :type="type"
                                             readonly
@@ -875,7 +894,7 @@
                                                         ?.how_many_were_give_dawat_woman
                                                 )
                                             "
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
                                 <td>
@@ -939,8 +958,18 @@
                                 <td class="text-start px-2">
                                     কতজন সহযোগী সদস্য হয়েছেন
                                 </td>
-                                <td>
-                                    <input
+                                <td  class="bg-calc">
+                                    {{
+                                        total_man_woman_count(
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_associate_members_created_man,
+                                                report_sum_data
+                                                    ?.thana_dawat3_general_program_and_others
+                                                    ?.how_many_associate_members_created_woman
+                                            )
+                                    }}
+                                    <!-- <input
                                         class="bg-input w-100 text-center"
                                         :type="type"
                                         readonly
@@ -954,7 +983,7 @@
                                                     ?.how_many_associate_members_created_woman
                                             )
                                         "
-                                    />
+                                    /> -->
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -2747,7 +2776,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         get_sum_total(
                                             report_sum_data
@@ -2896,7 +2925,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         get_sum_total(
                                             report_sum_data
@@ -3335,7 +3364,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
+                                <td class="bg-calc">
                                     <div
                                         class="d-flex justify-content-center align-items-center"
                                     >
@@ -3349,7 +3378,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -3358,7 +3387,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td  class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -3367,7 +3396,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         get_sum_total(
                                             report_sum_data
@@ -3527,7 +3556,7 @@
                                     <td class="text-start px-2">
                                         গ্রাম/মহল্লা কমিটি সংখ্যা
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
@@ -3621,7 +3650,7 @@
                                         বিশেষ দাওয়াতের অন্তর্ভুক্ত
                                         গ্রাম/মহল্লা* সংখ্যা
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         <div
                                             class="d-flex justify-content-center align-items-center"
                                         >
@@ -3895,7 +3924,7 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">যুব কমিটি</td>
-                                    <td>
+                                    <td class="bg-calc">
                                         <div class="parent_popup">
                                             {{
                                                 formatBangla(
@@ -3940,7 +3969,7 @@
                                     <td class="text-start px-2">
                                         নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         <div class="d-flex justify-content-center align-items-center">
                                             <div class="parent_popup">
                                                 {{
@@ -4080,7 +4109,7 @@
                                         প্রতিষ্ঠিত সমিতি/ক্লাবে দাওয়াত পৌঁছানো
                                         হয়েছে
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         <div class="d-flex justify-content-center align-items-center">
                                             <div class="parent_popup">
                                                 {{
@@ -4384,7 +4413,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             implementation_rate(
                                                 Number(
@@ -4615,7 +4644,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             implementation_rate(
                                                 Number(
@@ -4741,7 +4770,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             implementation_rate(
                                                 Number(
@@ -4846,7 +4875,7 @@
                                         >
                                         </popup>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             implementation_rate(
                                                 Number(
@@ -5062,7 +5091,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             implementation_rate(
                                                 Number(
@@ -5182,7 +5211,7 @@
                                         >
                                         </popup> -->
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             implementation_rate(
                                                 Number(
@@ -5293,7 +5322,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             implementation_rate(
                                                 Number(
@@ -5404,7 +5433,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             implementation_rate(
                                                 Number(
@@ -5519,7 +5548,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">মসজিদ</td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.total_mosjid_present ??
@@ -5560,7 +5589,7 @@
                                 <td class="text-start px-2">
                                     সাধারণ দাওয়াহ্ সেন্টার
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.general_dawah_center_present ??
@@ -5603,7 +5632,7 @@
                                 <td class="text-start px-2">
                                     দাওয়াতের আওতাভুক্ত মসজিদ
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.dawat_included_mosjid_present ??
@@ -5644,7 +5673,7 @@
                                 <td class="text-start px-2">
                                     তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক /সাধারণ)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="parent_popup">
                                             {{
@@ -5735,7 +5764,7 @@
                                 <td class="text-start px-2">
                                     মসজিদভিত্তিক দাওয়াহ্ সেন্টার
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -5778,7 +5807,7 @@
                                 <td class="text-start px-2">
                                     নিয়োজিত প্রশিক্ষিত দাঈ *
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.trained_employed_dai_present ??
@@ -6076,7 +6105,7 @@
                     <tbody>
                         <tr>
                             <td class="text-start px-2">পাঠাগার/অনলাইন লাইব্রেরি</td>
-                            <td>
+                            <td class="bg-calc">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="parent_popup">
                                         {{
@@ -6195,7 +6224,7 @@
                             <td class="text-start px-2">
                                 ওয়ার্ডে বই বিক্রয় কেন্দ্র
                             </td>
-                            <td>
+                            <td class="bg-calc">
                                 {{
                                     formatBangla(
                                         previous_present?.ward_book_sales_center_present ??
@@ -6234,7 +6263,7 @@
                         </tr>
                         <tr>
                             <td class="text-start px-2 font-13">পাঠাগার/অনলাইন লাইব্রেরিতে বই</td>
-                            <td>
+                            <td class="bg-calc">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="parent_popup">
                                         {{
@@ -6380,7 +6409,7 @@
                                     </popup>
                                 </div>
                             </td>
-                            <td></td>
+                            <td class="bg-block"></td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">বই বিলি</td>
@@ -6414,8 +6443,8 @@
                                     </popup>
                                 </div>
                             </td>
-                            <td></td>
-                            <td></td>
+                            <td class="bg-block"></td>
+                            <td class="bg-block"></td>
 
                             <td class="text-start px-2">
                                 বইয়ের সফট কপি বিলি*
@@ -6450,15 +6479,13 @@
                                     </popup>
                                 </div>
                             </td>
-                            <td>
-                                
-                            </td>
+                            <td class="bg-block"></td>
                         </tr>
                         <tr>
                             <td class="text-start px-2">
                                 ইউনিটে বই বিলিকেন্দ্র
                             </td>
-                            <td>
+                            <td class="bg-calc">
                                 <div class="parent_popup">
                                     {{
                                         formatBangla(
@@ -6548,7 +6575,7 @@
                                     </popup>
                                 </div>
                             </td>
-                            <td>
+                            <td class="bg-block">
                                 <!-- <div class="parent_popup">
                                     <input
                                         name="dawat_link_distribution"
@@ -6608,7 +6635,7 @@
                                     </popup>
                                 </div>
                             </td>
-                            <td>
+                            <td class="bg-block">
                                 <!-- <div class="parent_popup">
                                     <input
                                         name="unit_book_distribution"
@@ -6659,7 +6686,7 @@
                             <td class="text-start px-2 font-12">
                                 সোনার বাংলা/সংগ্রাম/পৃথিবী কত কপি চলে
                             </td>
-                            <td>
+                            <td class="bg-calc">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="parent_popup">
                                         {{
@@ -6789,13 +6816,13 @@
                         :field_title="'sonar_bangla'"
                         :month="month"
                     /> -->
-                    <popup-note
+                    <!-- <popup-note
                         :label="'সোনার বাংলা বৃদ্ধি'"
                         :thana_id="report_header?.thana_info?.id"
                         :table_name="'ward_dawah_and_prokashonas'"
                         :field_title="'sonar_bangla_increase'"
                         :month="month"
-                    />
+                    /> -->
                     <!-- <popup-note
                         :label="'সংগ্রাম মোট সংখ্যা'"
                         :thana_id="report_header?.thana_info?.id"
@@ -6803,13 +6830,13 @@
                         :field_title="'songram'"
                         :month="month"
                     /> -->
-                    <popup-note
+                    <!-- <popup-note
                         :label="'সংগ্রাম বৃদ্ধি'"
                         :thana_id="report_header?.thana_info?.id"
                         :table_name="'ward_dawah_and_prokashonas'"
                         :field_title="'songram_increase'"
                         :month="month"
-                    />
+                    /> -->
                     <!-- <popup-note
                         :label="'পৃথিবী মোট সংখ্যা'"
                         :thana_id="report_header?.thana_info?.id"
@@ -6817,23 +6844,23 @@
                         :field_title="'prithibi'"
                         :month="month"
                     /> -->
-                    <popup-note
+                    <!-- <popup-note
                         :label="'পৃথিবী বৃদ্ধি'"
                         :thana_id="report_header?.thana_info?.id"
                         :table_name="'ward_dawah_and_prokashonas'"
                         :field_title="'prithibi_increase'"
                         :month="month"
-                    />
+                    /> -->
                 </div>
             </div>
             <h1 class="font-18 fw-bold">ঘ) কর্মসূচি বাস্তবায়ন</h1>
             <div class="job_holder mb-1">
                 <div class="d-flex align-items-start gap-2">
-                    <table class="text-center mb-1">
+                    <table class="text-center mb-1 table_layout_fixed">
                         <thead>
                             <tr>
-                                <th class="width-10px">ক্র</th>
-                                <th class="w-50">কর্মসূচির বিবরণ</th>
+                                <th class="width-20px">ক্র</th>
+                                <th class="width-30">কর্মসূচির বিবরণ</th>
                                 <th class="">মোট সংখ্যা</th>
                                 <th class="">টার্গেট</th>
                                 <th class="">গড় উপস্থিতি</th>
@@ -6942,10 +6969,10 @@
                             </tr>
                             <tr>
                                 <td>২.</td>
-                                <td class="text-start font-13 px-2">
+                                <td class="text-start px-2">
                                     দাওয়াতি সভা/আলোচনা সভা/সুধী সমাবেশ
                                 </td>
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -7035,7 +7062,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -7125,7 +7152,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -7428,13 +7455,11 @@
                             </tr>
                             <tr>
                                 <td>৫.</td>
-                                <td
-                                    class="text-start font-13 letter_spacing px-1"
-                                >
+                                <td class="text-start letter_spacing px-1">
                                     দারস/তাফসীর/দাওয়াতি জনসভা ও ইসলামী মাহফিল
                                 </td>
 
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -7524,7 +7549,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -7614,7 +7639,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -7717,19 +7742,6 @@
                                     </div>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-                    <table class="text-center mb-1">
-                        <thead>
-                            <tr>
-                                <th class="width-10px">ক্র</th>
-                                <th class="w-50">কর্মসূচির বিবরণ</th>
-                                <th class="">মোট সংখ্যা</th>
-                                <th class="">টার্গেট</th>
-                                <th class="">গড় উপস্থিতি</th>
-                            </tr>
-                        </thead>
-                        <tbody>
                             <tr>
                                 <td>৬.</td>
                                 <td class="text-start">
@@ -7933,7 +7945,7 @@
                                 <td class="text-start px-2">
                                     চা চক্র/সামষ্টিক খাওয়া/শিক্ষা সফর
                                 </td>
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -8023,7 +8035,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -8113,7 +8125,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="font-13">
+                                <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
@@ -8513,6 +8525,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
             <div
@@ -8957,7 +8970,7 @@
                                 <td class="text-start px-2">
                                     সর্বমোট সদস্য (রুকন)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -8967,7 +8980,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -9097,7 +9110,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <div>
                                             {{
@@ -9130,7 +9143,7 @@
                             <tr>
                                 <td class="text-start px-2">সর্বমোট কর্মী</td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.worker_previous ??
@@ -9138,7 +9151,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.worker_present ??
@@ -9236,7 +9249,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <div>
                                             {{
@@ -9290,7 +9303,7 @@
                                 <td class="text-start px-2">
                                     মোট সহযোগী সদস্য (পুরুষ)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="associate_member_man_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_previous)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
                                     <div class="parent_popup">
                                         {{
@@ -9301,7 +9314,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="associate_member_man_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_present)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
                                     <div class="parent_popup">
                                         {{
@@ -9372,7 +9385,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -9393,7 +9406,7 @@
                                 <td class="text-start px-2">
                                     মোট সহযোগী সদস্য (মহিলা)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="associate_member_woman_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_previous)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -9404,7 +9417,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="associate_member_woman_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_present)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -9475,7 +9488,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -9496,7 +9509,7 @@
                                 <td class="text-start px-2">
                                     সর্বমোট সহযোগী সদস্য সংখ্যা**
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- {{ formatBangla((previous_present?.associate_member_man_previous ??
                                             0) + (previous_present?.associate_member_woman_previous ?? 0) || '')
@@ -9515,7 +9528,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -9531,7 +9544,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -9560,7 +9573,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -9589,7 +9602,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                         implementation_rate(
@@ -9658,7 +9671,7 @@
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
 
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="women_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -9669,7 +9682,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="women_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -9832,7 +9845,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -9850,7 +9863,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="women_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -9861,7 +9874,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="women_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10024,7 +10037,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -10042,7 +10055,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="women_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10053,7 +10066,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="women_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10096,7 +10109,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td class="bg-block"></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -10127,7 +10140,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -10148,7 +10161,7 @@
                                     শ্রম*
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -10158,7 +10171,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -10320,7 +10333,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -10338,7 +10351,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="sromojibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10349,7 +10362,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="sromojibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10512,7 +10525,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -10530,7 +10543,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="sromojibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10541,7 +10554,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="sromojibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10584,7 +10597,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td class="bg-block"></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -10615,7 +10628,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -10636,7 +10649,7 @@
                                     উলামা
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="ulama_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10647,7 +10660,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="ulama_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10810,7 +10823,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -10828,7 +10841,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="ulama_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10839,7 +10852,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="ulama_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11003,7 +11016,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -11021,7 +11034,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="ulama_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11041,7 +11054,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="ulama_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11093,7 +11106,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td class="bg-block"></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -11124,7 +11137,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -11145,7 +11158,7 @@
                                     পেশাজীবী
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="pesha_jibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11165,7 +11178,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="pesha_jibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11337,7 +11350,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -11355,7 +11368,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="pesha_jibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11375,7 +11388,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="pesha_jibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11548,7 +11561,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -11566,7 +11579,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="pesha_jibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11586,7 +11599,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="pesha_jibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11638,7 +11651,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td class="bg-block"></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -11669,7 +11682,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -11690,7 +11703,7 @@
                                     যুব
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11710,7 +11723,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11882,7 +11895,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -11900,7 +11913,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -11920,7 +11933,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12092,7 +12105,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -12110,7 +12123,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12130,7 +12143,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12182,7 +12195,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td class="bg-block"></td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
                                     <div class="parent_popup">
@@ -12215,7 +12228,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -12236,7 +12249,7 @@
                                     সাহিত্য ও <br> সংস্কৃতি
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12247,7 +12260,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12410,7 +12423,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -12428,7 +12441,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12448,7 +12461,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12620,7 +12633,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -12638,7 +12651,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12658,7 +12671,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="jubo_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12710,7 +12723,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <!-- <div class="parent_popup">
                                         <input
                                             name="jubo_associate_member_gatti"
@@ -12772,7 +12785,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -12793,7 +12806,7 @@
                                     ভিন্নধর্মাবলম্বী
                                 </td>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12813,7 +12826,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -12981,7 +12994,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -12999,7 +13012,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_previous)" @change="data_upload('thana-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -13019,7 +13032,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_present)" @change="data_upload('thana-songothon3-departmental-information')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -13071,7 +13084,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td class="bg-block"></td>
                                 <td>
                                     <div class="parent_popup">
                                         <input
@@ -13102,7 +13115,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -13141,7 +13154,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">পৌরসভা</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -13175,7 +13188,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -13287,7 +13300,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -13306,7 +13319,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সংগঠিত পৌরসভা</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -13316,7 +13329,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -13428,7 +13441,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -13447,7 +13460,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">ইউনিয়ন</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -13481,7 +13494,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -13593,7 +13606,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -13612,7 +13625,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সংগঠিত ইউনিয়ন</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -13646,7 +13659,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -13758,7 +13771,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -13779,7 +13792,7 @@
                                 <td class="text-start">
                                     সাংগঠনিক ইউনিয়ন (পুরুষ)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -13789,7 +13802,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -13877,7 +13890,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -13898,7 +13911,7 @@
                                 <td class="text-start">
                                     সাংগঠনিক ইউনিয়ন (মহিলা)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -13932,7 +13945,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -14044,7 +14057,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -14065,7 +14078,7 @@
                                 <td class="text-start">
                                     কতটি ইউনিয়নে সদস্য (রুকন) নেই
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -14099,7 +14112,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -14211,7 +14224,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -14232,7 +14245,7 @@
                                 <td class="text-start">
                                     সিটি কর্পোরেশনের মোট প্রশাসনিক ওয়ার্ড
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -14266,7 +14279,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -14378,7 +14391,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -14399,7 +14412,7 @@
                                 <td class="text-start">
                                     সিটি কর্পোরেশনের মোট সংগঠিত ওয়ার্ড
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -14433,7 +14446,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -14545,7 +14558,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -14566,7 +14579,7 @@
                                 <td class="text-start">
                                     মোট সাংগঠনিক ওয়ার্ড (পুরুষ)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -14600,7 +14613,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -14712,7 +14725,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -14733,7 +14746,7 @@
                                 <td class="text-start">
                                     মোট সাংগঠনিক ওয়ার্ড (মহিলা)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -14767,7 +14780,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -14879,7 +14892,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -14900,7 +14913,7 @@
                                 <td class="text-start">
                                     পৌরসভা/ইউনিয়নের মোট প্রশাসনিক ওয়ার্ড
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="previous parent_popup">
                                             {{
@@ -14922,7 +14935,7 @@
                                         
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="present parent_popup">
                                             {{
@@ -15102,7 +15115,7 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -15138,7 +15151,7 @@
                                 <td class="text-start">
                                     পৌরসভা/ইউনিয়নের মোট সংগঠিত ওয়ার্ড
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="previous parent_popup">
                                             {{
@@ -15160,7 +15173,7 @@
                                         
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="present parent_popup">
                                             {{
@@ -15340,7 +15353,7 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -15376,7 +15389,7 @@
                                 <td class="text-start">
                                     পৌরসভা/ইউনিয়নের মোট সাংগঠনিক ওয়ার্ড (পুঃ)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="previous parent_popup">
                                             {{
@@ -15398,7 +15411,7 @@
                                         
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="present parent_popup">
                                             {{
@@ -15578,7 +15591,7 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -15614,7 +15627,7 @@
                                 <td class="text-start">
                                     পৌরসভা/ইউনিয়নের মোট সাংগঠনিক ওয়ার্ড (ম:)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="previous parent_popup">
                                             {{
@@ -15636,7 +15649,7 @@
                                         
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="present parent_popup">
                                             {{
@@ -15816,7 +15829,7 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -15856,7 +15869,7 @@
                                 <td class="text-start">
                                     সাংগঠনিক ওয়ার্ড (উলামা)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -15866,7 +15879,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -15954,7 +15967,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -15975,7 +15988,7 @@
                                 <td class="text-start">
                                     সাংগঠনিক ওয়ার্ড (পেশাজীবী)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -15985,7 +15998,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -16073,7 +16086,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -16094,7 +16107,7 @@
                                 <td class="text-start">
                                     সাংগঠনিক ওয়ার্ড (যুব)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -16104,7 +16117,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -16192,7 +16205,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -16213,7 +16226,7 @@
                                 <td class="text-start">
                                     সাংগঠনিক ওয়ার্ড (শ্রম)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -16223,7 +16236,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -16311,7 +16324,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -16332,7 +16345,7 @@
                                 <td class="text-start">
                                     সাংগঠনিক ওয়ার্ড (মিডিয়া)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -16342,7 +16355,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -16430,7 +16443,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -16451,7 +16464,7 @@
                                 <td class="text-start">
                                     সাংগঠনিক ওয়ার্ড (সাহিত্য ও সংস্কৃতি)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -16461,7 +16474,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -16549,7 +16562,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -16583,7 +16596,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (পুরুষ)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -16593,7 +16606,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -16693,7 +16706,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             implementation_rate(
@@ -16723,7 +16736,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (মহিলা)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -16733,7 +16746,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -16833,7 +16846,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             implementation_rate(
@@ -16863,7 +16876,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">উলামা ইউনিট</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -16873,7 +16886,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -16973,7 +16986,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             implementation_rate(
@@ -17005,7 +17018,7 @@
                                 <td class="text-start">
                                     পেশাজীবী ইউনিট (পুরুষ)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -17015,7 +17028,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -17115,7 +17128,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             implementation_rate(
@@ -17147,7 +17160,7 @@
                                 <td class="text-start">
                                     পেশাজীবী ইউনিট (মহিলা)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -17157,7 +17170,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -17245,7 +17258,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -17266,7 +17279,7 @@
                                 <td class="text-start">
                                     কর্মজীবী ইউনিট (মহিলা)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -17276,7 +17289,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -17364,7 +17377,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -17383,7 +17396,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">যুব ইউনিট</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -17393,7 +17406,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -17493,7 +17506,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -17512,7 +17525,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">শ্রম ইউনিট (পুরুষ)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -17522,7 +17535,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -17610,7 +17623,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -17629,7 +17642,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">শ্রম ইউনিট (মহিলা)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -17639,7 +17652,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -17727,7 +17740,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -17746,7 +17759,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">মিডিয়া ইউনিট</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -17756,7 +17769,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -17856,7 +17869,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             implementation_rate(
@@ -17888,7 +17901,7 @@
                                 <td class="text-start">
                                     সাহিত্য ও সংস্কৃতি ইউনিট
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -17898,7 +17911,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -17986,7 +17999,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -18005,7 +18018,7 @@
                             </tr>
                             <tr>
                                 <td class="text-end">সর্বমোট ইউনিট</td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -18044,7 +18057,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -18083,7 +18096,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -18145,7 +18158,7 @@
                                     }}
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -18207,7 +18220,7 @@
                                     }}
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -18269,7 +18282,7 @@
                                     }}
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         implementation_rate(
                                             Number(
@@ -18467,7 +18480,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">মোট দাওয়াতি ইউনিট</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -18477,7 +18490,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -18580,7 +18593,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">মোট পারিবারিক ইউনিট</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="previous parent_popup">
                                         {{
                                             formatBangla(
@@ -18590,7 +18603,7 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -18715,7 +18728,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">পৌরসভা/ইউনিয়ন</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="previous parent_popup">
                                             {{
@@ -18737,7 +18750,7 @@
                                         
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="present parent_popup">
                                             {{
@@ -18922,7 +18935,7 @@
                                 <td class="text-start">
                                     ওয়ার্ড (সিটি/পৌর/ইউনিয়ন)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="previous parent_popup">
                                             {{
@@ -18953,7 +18966,7 @@
                                         
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="present parent_popup">
                                             {{
@@ -28211,7 +28224,7 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <!-- <input
                                         name="darsul_quran_man_odhibeshon"
                                         :value="
@@ -28237,7 +28250,7 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <!-- <input
                                         name="darsul_quran_woman_odhibeshon"
                                         :value="
@@ -30394,7 +30407,7 @@
                                 <td class="text-start px-2">
                                     সামাজিক প্রতিষ্ঠান রয়েছে
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         get_sum_total(
                                             report_sum_data
@@ -30465,7 +30478,7 @@
                                 <td class="text-start px-2">
                                     প্রতিষ্ঠানভিত্তিক সামাজিক কাজ হয়েছে
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         get_sum_total(
                                             report_sum_data
@@ -30536,7 +30549,7 @@
                                 <td class="text-start px-2">
                                     নতুন সামাজিক প্রতিষ্ঠান চালু করা
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         get_sum_total(
                                             report_sum_data
@@ -31117,7 +31130,7 @@
                                 "
                                 @change="data_upload('thana-shomajsheba7-expense')"
                                 :type="type"
-                                class="bg-input w-100 text-center"
+                                class="bg-input w-100 text-center border_dot"
                             />
                             <!-- <popup
                                 :thana_id="report_header?.thana_info?.id"
@@ -33507,7 +33520,7 @@
                                 <td class="text-start">
                                     মোট ভোট কেন্দ্র (জাতীয়/স্থানীয়)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center">
                                         <div class="present parent_popup">
                                             {{
@@ -33649,7 +33662,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">ভোট কেন্দ্র কমিটি</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -33722,7 +33735,7 @@
                                 <td class="text-start">
                                     কেন্দ্র/ বুথভিত্তিক ইউনিট
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     
                                     <div class="d-flex justify-content-between">
                                         <div class="present parent_popup">
@@ -34260,7 +34273,7 @@
                                 <td class="text-start">
                                     মানবাধিকার কর্মী তৈরি
                                 </td>
-                                <td class="text-start">
+                                <td class="text-start bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                     সংখ্যা-
                                     <div class="present parent_popup text-center">
@@ -34680,7 +34693,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">কৃষি উদ্যোক্তা তৈরি</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(
@@ -34740,7 +34753,7 @@
                                     উদ্যোক্তা তৈরি (সেবা, শিল্প, ব্যবসা-বাণিজ্য
                                     ও অন্যান্য)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="present parent_popup">
                                             {{
@@ -34980,7 +34993,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">অন্যান্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="present parent_popup">
                                         {{
                                             formatBangla(

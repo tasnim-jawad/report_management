@@ -1,7 +1,7 @@
 <template>
     <div class="unit_info_icon">
         <span class="i_icon" @click="toggle_popup">
-            <i class="fa fa-list"></i>
+            <i class="fa-solid fa-caret-down"></i>
         </span>
         <div class="unit_data_popup" :class="{ active: is_popup_visible }">
             <!-- <span>{{popup_data }}</span> -->
@@ -93,4 +93,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.unit_info_icon .i_icon {
+    background-color: #ffffffa6;
+}
+.i_icon i{
+    width: 7px;
+    line-height: 7px;
+}
+</style>
