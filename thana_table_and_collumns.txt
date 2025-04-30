@@ -76,6 +76,7 @@
     "books_in_online_library_increase",
     "books_in_online_library_target",
     "book_distribution",
+    "book_distribution_target",
     "unit_book_distribution_center",
     "unit_book_distribution_center_increase",
     "unit_book_distribution_center_target",
@@ -1579,6 +1580,7 @@
     "thana_kormoporishod_total_sofor_man",
     "upojela_team_total_sofor_man",
     "thana_team_total_sofor_man",
+    
     "jela_daittoshil_total_sofor_woman",
     "mohanogor_daittoshil_total_sofor_woman",
     "upojela_secretariat_total_sofor_woman",

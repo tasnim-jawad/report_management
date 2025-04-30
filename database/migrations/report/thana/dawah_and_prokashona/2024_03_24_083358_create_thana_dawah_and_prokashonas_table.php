@@ -42,6 +42,7 @@ return new class extends Migration
 
             // Book Distribution Related
             $table->bigInteger('book_distribution')->nullable();
+            $table->bigInteger('book_distribution_target')->nullable();
 
             // Unit Book Distribution Center Related
             $table->bigInteger('unit_book_distribution_center')->nullable();
