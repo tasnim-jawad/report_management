@@ -1,7 +1,10 @@
 <template>
     <div class="card mb-3" >
-        <div class="card-header">
-            <h1>Edit user</h1>
+        <div class="card-header d-flex justify-content-between align-items-center">
+            জনশক্তি এডিট 
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'Jonoshokti'}" class="text-dark">সকল জনশক্তি</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="edit_user">
@@ -71,7 +74,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" >
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" v-if="user_responsibile.responsibility_id != 1 && user_responsibile.responsibility_id != 2">
                     <div class="form_label">
                         <label for="">Responsibility</label>
                     </div>

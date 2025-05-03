@@ -51,7 +51,7 @@ export const store = defineStore(`bm_user_entry_store`, {
         },
 
         unit_users_list:function(){
-            axios.get('/user/show_unit_user')
+            axios.get('/unit/user/show')
                 .then(responce =>{
                     this.unit_user_all = responce.data
                 })

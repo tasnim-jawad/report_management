@@ -165,7 +165,8 @@ function common_store($bind, $class, $report_info)
         return response([
             "status" => "permission_denied",
             "message" => "এ মাসের জন্য রিপোর্ট গ্রহণ বন্ধ আছে । যেকোনো প্রয়োজনে ঊর্ধ্বতন দায়িত্বশীল এর সাথে যোগাযোগ করুন",
-        ]);
+        ], 403);
+        
     }
 }
 

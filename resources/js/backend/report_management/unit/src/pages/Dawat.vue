@@ -246,6 +246,12 @@ export default {
             axios.post(`${endpoint}/store-single`, {
                 value, name, month
             })
+            // .then(() => {
+            //     console.log('Upload successful', 'success');
+            // })
+            // .catch(() => {
+            //     window.toaster('Upload failed. Please try again.', 'error');
+            // });
         },
         get_data_by_api: function (endpoint, unique_key) {
             axios.get(`${endpoint}/data?month=${this.month}-01`)

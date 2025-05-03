@@ -25,10 +25,11 @@ Route::group(['prefix' => '/user'], function () {
     Route::post('/update_unit_user', [App\Http\Controllers\Unit\UnitUserController::class, 'update_unit_user']);
 });
 
-Route::group(['prefix' => '/user'], function () {
-    Route::get('/show_unit_user', [App\Http\Controllers\Unit\UnitUserController::class, 'show_unit_user']);
-    Route::post('/store_unit_user', [App\Http\Controllers\Unit\UnitUserController::class, 'store_unit_user']);
-    Route::post('/update_unit_user', [App\Http\Controllers\Unit\UnitUserController::class, 'update_unit_user']);
+Route::group(['prefix' => 'unit/user'], function () {
+    Route::get('/show', [App\Http\Controllers\Unit\UnitUserController::class, 'show']);
+    // Route::post('/store', [App\Http\Controllers\Unit\UnitUserController::class, 'store']);
+    // Route::post('/update', [App\Http\Controllers\Unit\UnitUserController::class, 'update']);
+    // Route::post('/destroy', [App\Http\Controllers\Unit\UnitUserController::class, 'destroy']);
 });
 
 

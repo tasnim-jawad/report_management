@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
-            Create User
+        <div class="card-header d-flex justify-content-between align-items-center">
+            জনশক্তি তৈরি
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'Jonoshokti'}" class="text-dark">সকল জনশক্তি</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_user">

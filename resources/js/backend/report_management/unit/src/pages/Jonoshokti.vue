@@ -20,7 +20,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(user,index) in users" :key="index">
+                        <tr v-for="(user,index) in sortedUsers" :key="index">
                             <td>{{index + 1}}</td>
                             <td>{{user.full_name}}</td>
                             <td>{{user.gender}}</td>
@@ -55,14 +55,14 @@
 import axios from 'axios'
 export default {
     data:()=>({
-        users:{},
+        users:[],
     }),
     created:function(){
         this.show_users();
     },
     methods:{
         show_users : function(){
-            axios.get("/user/show_unit_user")
+            axios.get("/unit/user/show")
                 .then(responce => {
                     this.users = responce.data
                 })
@@ -88,7 +88,28 @@ export default {
                     });
         }
 
-    }
+    },
+    computed: {
+        sortedUsers:function(){
+            if (this.users.length < 2) {
+                return this.users;
+            }
+            console.log('sort',this.users);
+
+            return this.users?.sort((a, b) => {
+                // console.log('only a',a);
+                // console.log('only b',b);
+                // console.log('a',a.org_unit_responsible?.responsibility_id);
+                // console.log('b',b.org_unit_responsible?.responsibility_id);
+                const responsibilityA = a.org_unit_responsible[0]?.responsibility_id ?? Infinity;
+                const responsibilityB = b.org_unit_responsible[0]?.responsibility_id ?? Infinity;
+                // console.log("ss",responsibilityA ,responsibilityB,responsibilityA - responsibilityB);
+
+                return responsibilityA - responsibilityB;
+            });
+        }
+
+    },
 }
 </script>
 

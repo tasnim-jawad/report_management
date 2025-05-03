@@ -2,6 +2,7 @@
 
 namespace App\Models\Organization;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,7 +17,7 @@ class OrgUnit extends Model
 
     public function org_unit_responsible()
     {
-        return $this->hasMany(OrgUnitResponsible::class);
+        return $this->hasOne(OrgUnitResponsible::class);
     }
 
     public function org_type()
@@ -39,5 +40,15 @@ class OrgUnit extends Model
     public function org_ward()
     {
         return $this->belongsTo(OrgWard::class);
+    }
+
+
+    public function unit_to_user()
+    {
+        return $this->hasManyThrough(User::class ,OrgUnitUser::class,  'unit_id','id','id','user_id');
+    }
+    public function unit_to_responsibility()
+    {
+        return $this->hasManyThrough(Responsibility::class ,OrgUnitResponsible::class,  'org_unit_id','id','id','responsibility_id');
     }
 }

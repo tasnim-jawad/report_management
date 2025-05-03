@@ -9,12 +9,27 @@ use App\Models\Organization\OrgUnitUser;
 use App\Models\Organization\OrgWardUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class UnitUserController extends Controller
 {
+    public function show()
+    {
+        $unit_id = auth()->user()->org_unit_user["unit_id"];
+        $unit = OrgUnit::find($unit_id);
+        $users = $unit->unit_to_user()->with([
+            'org_unit_responsible',
+            'org_unit_responsible.responsibility'
+        ])->get();
+        // dd($users->toArray());
+
+        return response()->json($users);
+    }
+
+
     public function show_unit_user(){
         // $all_unit_users = User::whereExist("id")
         $unit_id = auth()->user()->org_unit_user["unit_id"];
@@ -55,31 +70,33 @@ class UnitUserController extends Controller
             ], 422);
         }
 
-        $auth_unit_all = OrgUnitUser::where('user_id', auth()->id())->first();
-        $auth_user_unit = $auth_unit_all->unit_id;
-        $auth_unit = OrgUnit::where('id',$auth_user_unit)->first();
-        $gender = $auth_unit->org_gender == 'men'? 'male':'female';
-        $auth_user_ward = $auth_unit_all->ward_id;
-        $auth_user_thana = $auth_unit_all->thana_id;
-        $auth_user_city = $auth_unit_all->city_id;
+        DB::beginTransaction();
 
-        $user = new User();
-        $user->role = auth()->user()->role;
-        $user->full_name = request()->full_name;
-        $user->gender = $gender;
-        $user->telegram_name = request()->telegram_name;
-        $user->telegram_id = request()->telegram_id;
-        $user->email = request()->email;
-        $user->password = Hash::make(request()->password);
-        $user->blood_group = request()->blood_group;
-        $user->creator = auth()->id();
-        $user->save();
+        try {
 
-        if ($user->save()){
-            $user_id = User::where('email', request()->email)->latest()->first()->id;
+            $auth_unit_all = OrgUnitUser::where('user_id', auth()->id())->first();
+            $auth_user_unit = $auth_unit_all->unit_id;
+            $auth_unit = OrgUnit::where('id',$auth_user_unit)->first();
+            $gender = $auth_unit->org_gender == 'men'? 'male':'female';
+            $auth_user_ward = $auth_unit_all->ward_id;
+            $auth_user_thana = $auth_unit_all->thana_id;
+            $auth_user_city = $auth_unit_all->city_id;
+
+            $user = new User();
+            $user->role = auth()->user()->role;
+            $user->full_name = request()->full_name;
+            $user->gender = $gender;
+            $user->telegram_name = request()->telegram_name;
+            $user->telegram_id = request()->telegram_id;
+            $user->email = request()->email;
+            $user->password = Hash::make(request()->password);
+            $user->blood_group = request()->blood_group;
+            $user->creator = auth()->id();
+            $user->save();
+
 
             $org_unit_user = new OrgUnitUser();
-            $org_unit_user->user_id = $user_id;
+            $org_unit_user->user_id = $user->id;
             $org_unit_user->city_id =$auth_user_city;
             $org_unit_user->thana_id =$auth_user_thana;
             $org_unit_user->ward_id =$auth_user_ward;
@@ -87,14 +104,40 @@ class UnitUserController extends Controller
             $org_unit_user->creator = auth()->id();
             $org_unit_user->save();
 
-            $org_unit_responsibles = new OrgUnitResponsible();
-            $org_unit_responsibles->user_id = $user_id;
-            $org_unit_responsibles->responsibility_id = request()->responsibility_id;
-            $org_unit_responsibles->org_unit_id = $auth_user_unit;
-            $org_unit_responsibles->creator = auth()->id();
-            $org_unit_responsibles->save();
+            
+            if (request()->responsibility_id){
+                // $user_id = User::where('email', request()->email)->latest()->first()->id;
+
+                // $org_unit_user = new OrgUnitUser();
+                // $org_unit_user->user_id = $user_id;
+                // $org_unit_user->city_id =$auth_user_city;
+                // $org_unit_user->thana_id =$auth_user_thana;
+                // $org_unit_user->ward_id =$auth_user_ward;
+                // $org_unit_user->unit_id =$auth_user_unit;
+                // $org_unit_user->creator = auth()->id();
+                // $org_unit_user->save();
+
+                $org_unit_responsibles = new OrgUnitResponsible();
+                $org_unit_responsibles->user_id = $user->id;
+                $org_unit_responsibles->responsibility_id = request()->responsibility_id ?? null;
+                $org_unit_responsibles->org_unit_id = $auth_user_unit;
+                $org_unit_responsibles->creator = auth()->id();
+                $org_unit_responsibles->save();
+
+                // return response()->json([$org_unit_user,$user,$org_unit_responsibles], 200);
+            }
+
+            DB::commit();
 
             return response()->json([$org_unit_user,$user,$org_unit_responsibles], 200);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'err_message' => 'Transaction failed',
+                'error' => $e->getMessage(),
+            ], 500);
         }
 
 
@@ -135,24 +178,28 @@ class UnitUserController extends Controller
         $user->save();
 
         if($org_unit_responsibles){
+            if ($org_unit_responsibles->responsibility_id == 1 || $org_unit_responsibles->responsibility_id == 2) {
+                return response()->json([$user], 200);
+            } else {
+                $org_unit_responsibles->responsibility_id = request()->responsibility_id;
+                $org_unit_responsibles->save();
 
-            $org_unit_responsibles->responsibility_id = request()->responsibility_id;
-            $org_unit_responsibles->save();
-
-            return response()->json([$user,$org_unit_responsibles], 200);
-
+                return response()->json([$user,$org_unit_responsibles], 200);
+            }
         }else if(!$org_unit_responsibles){
-            $auth_unit_all = OrgUnitUser::where('user_id', auth()->id())->first();
-            $auth_user_unit = $auth_unit_all->unit_id;
-
-            $org_unit_responsibles = new OrgUnitResponsible();
-            $org_unit_responsibles->user_id = request()->id;
-            $org_unit_responsibles->responsibility_id = request()->responsibility_id;
-            $org_unit_responsibles->org_unit_id = $auth_user_unit;
-            $org_unit_responsibles->creator = auth()->id();
-            $org_unit_responsibles->save();
-
-            return response()->json([$user,$org_unit_responsibles], 200);
+            if (request()->responsibility_id) {
+                $auth_unit_all = OrgUnitUser::where('user_id', auth()->id())->first();
+                $auth_user_unit = $auth_unit_all->unit_id;
+    
+                $org_unit_responsibles = new OrgUnitResponsible();
+                $org_unit_responsibles->user_id = request()->id;
+                $org_unit_responsibles->responsibility_id = request()->responsibility_id;
+                $org_unit_responsibles->org_unit_id = $auth_user_unit;
+                $org_unit_responsibles->creator = auth()->id();
+                $org_unit_responsibles->save();
+    
+                return response()->json([$user,$org_unit_responsibles], 200);
+            }
         }
     }
 }
