@@ -21214,13 +21214,13 @@
                                             :type="type"
                                             class="bg-input w-100 text-center"
                                         />
-                                        <!-- <popup
+                                        <popup
                                             :thana_id="report_header?.thana_info?.id"
-                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                            :field_title="'ward_boithok_man_total'"
+                                            :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                            :field_title="'word_boithok_total'"
                                             :month="month"
                                         >
-                                        </popup> -->
+                                        </popup>
                                     </div>
                                     </div>
                                 </td>
@@ -21304,80 +21304,82 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
-                                        name="pouroshova_boithok_man_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pouroshova_boithok_man_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'pouroshova_boithok_man_target'"
-                                        :month="month"
-                                    >
-                                    </popup>
-                                    /
-                                    <input
-                                        name="union_boithok_man_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_boithok_man_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'union_boithok_man_target'"
-                                        :month="month"
-                                    >
-                                    </popup
-                                    >/
-                                    <input
-                                        name="ward_boithok_man_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_boithok_man_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'ward_boithok_man_target'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                        <input
+                                            name="pouroshova_boithok_man_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.pouroshova_boithok_man_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-songothon11-sangothonik-boithoks'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'pouroshova_boithok_man_target'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <input
+                                            name="union_boithok_man_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.union_boithok_man_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-songothon11-sangothonik-boithoks'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'union_boithok_man_target'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="ward_boithok_man_target"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ward_boithok_man_target
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'word_boithok_target'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -21440,34 +21442,36 @@
                                     >
                                     </popup>
                                     /
-                                    <input
-                                        name="ward_boithok_man_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_boithok_man
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_boithok_man_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'ward_boithok_man_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="ward_boithok_man_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.ward_boithok_man
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.ward_boithok_man_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                            :field_title="'word_boithok_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                     </div>
                                 </td>
                                 <td>
@@ -21854,30 +21858,32 @@
                                     ইউনিটে মোট কর্মী বৈঠক
                                 </td>
                                 <td>
-                                    <input
-                                        name="unit_kormi_boithok_man_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.unit_kormi_boithok_man_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'unit_kormi_boithok_man_total'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="unit_kormi_boithok_man_total"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.unit_kormi_boithok_man_total
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-songothon11-sangothonik-boithoks'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                            :field_title="'unit_kormi_boithok_total'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
                                     <input
@@ -21906,90 +21912,96 @@
                                     </popup>
                                 </td>
                                 <td>
-                                    <input
-                                        name="unit_kormi_boithok_man_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.unit_kormi_boithok_man_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'unit_kormi_boithok_man_target'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="unit_kormi_boithok_man_target"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.unit_kormi_boithok_man_target
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-songothon11-sangothonik-boithoks'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                            :field_title="'unit_kormi_boithok_target'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="unit_kormi_boithok_man_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.unit_kormi_boithok_man
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.unit_kormi_boithok_man_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'unit_kormi_boithok_man_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="unit_kormi_boithok_man_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.unit_kormi_boithok_man
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.unit_kormi_boithok_man_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                            :field_title="'unit_kormi_boithok_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="unit_kormi_boithok_women_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.unit_kormi_boithok_women
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.unit_kormi_boithok_women_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'unit_kormi_boithok_women_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="parent_popup">
+                                        <input
+                                            name="unit_kormi_boithok_women_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.unit_kormi_boithok_women
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.unit_kormi_boithok_women_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                            :field_title="'unit_kormi_boithok_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -23592,30 +23604,32 @@
                                     >
                                     </popup>
                                     /
-                                    <input
-                                        name="ulama_somabesh_man_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_somabesh_man_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'ulama_somabesh_man_total'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                        <div class="parent_popup">
+                                            <input
+                                                name="ulama_somabesh_man_total"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ulama_somabesh_man_total
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'ulama_somabesh_total'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -23698,30 +23712,32 @@
                                     >
                                     </popup>
                                     /
-                                    <input
-                                        name="ulama_somabesh_man_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_somabesh_man_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'ulama_somabesh_man_target'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                        <div class="parent_popup">
+                                            <input
+                                                name="ulama_somabesh_man_target"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ulama_somabesh_man_target
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'ulama_somabesh_target'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -23755,34 +23771,36 @@
                                     >
                                     </popup>
                                     /
-                                    <input
-                                        name="ulama_somabesh_man_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_somabesh_man
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_somabesh_man_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'ulama_somabesh_man_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                        <div class="parent_popup">
+                                            <input
+                                                name="ulama_somabesh_man_uposthiti"
+                                                :value="
+                                                    formatBangla(
+                                                        average_uposthiti
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ulama_somabesh_man
+                                                    )
+                                                "
+                                                @change="
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-songothon11-sangothonik-boithoks',
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ulama_somabesh_man_total
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'ulama_somabesh_uposthiti'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -24023,30 +24041,32 @@
                                     >
                                     </popup>
                                     /
-                                    <input
-                                        name="sromik_somabesh_man_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_somabesh_man_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'sromik_somabesh_man_total'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                        <div class="parent_popup">
+                                            <input
+                                                name="sromik_somabesh_man_total"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.sromik_somabesh_man_total
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'sromik_somabesh_total'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -24129,91 +24149,95 @@
                                     >
                                     </popup>
                                     /
-                                    <input
-                                        name="sromik_somabesh_man_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_somabesh_man_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'sromik_somabesh_man_target'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                        <div class="parent_popup">
+                                            <input
+                                                name="sromik_somabesh_man_target"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.sromik_somabesh_man_target
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'sromik_somabesh_target'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
-                                        name="sromik_boithok_man_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_boithok_man
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_boithok_man_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'sromik_boithok_man_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
-                                    /
-                                    <input
-                                        name="sromik_somabesh_man_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_somabesh_man
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_somabesh_man_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'sromik_somabesh_man_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                        <input
+                                            name="sromik_boithok_man_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.sromik_boithok_man
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.sromik_boithok_man_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'sromik_boithok_man_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="sromik_somabesh_man_uposthiti"
+                                                :value="
+                                                    formatBangla(
+                                                        average_uposthiti
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.sromik_somabesh_man
+                                                    )
+                                                "
+                                                @change="
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-songothon11-sangothonik-boithoks',
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.sromik_somabesh_man_total
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'sromik_somabesh_uposthiti'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -24998,7 +25022,7 @@
                 </div>
             </div>
             <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
-                <popup-note
+                <!-- <popup-note
                     :label="'ওয়ার্ড বৈঠক মোট সংখ্যা'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
@@ -25016,11 +25040,11 @@
                     :label="'ওয়ার্ড বৈঠক মোট উপস্থিতি'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
-                    :field_title="'word_boithok_target'"
+                    :field_title="'word_boithok_uposthiti'"
                     :month="month"
-                />
+                /> -->
 
-                <popup-note
+                <!-- <popup-note
                     :label="'ইউনিটে মোট কর্মী বৈঠক মোট সংখ্যা'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
@@ -25038,13 +25062,13 @@
                     :label="'ইউনিটে মোট কর্মী বৈঠক মোট উপস্থিতি'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
-                    :field_title="'unit_kormi_boithok_target'"
+                    :field_title="'unit_kormi_boithok_uposthiti'"
                     :month="month"
-                />
+                /> -->
 
                 
 
-                <popup-note
+                <!-- <popup-note
                     :label="'উলামা সমাবেশ মোট সংখ্যা'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
@@ -25062,12 +25086,12 @@
                     :label="'উলামা সমাবেশ মোট উপস্থিতি'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
-                    :field_title="'ulama_somabesh_target'"
+                    :field_title="'ulama_somabesh_uposthiti'"
                     :month="month"
-                />
+                /> -->
 
 
-                <popup-note
+                <!-- <popup-note
                     :label="'যুবকদের নিয়ে সমাবেশ মোট সংখ্যা'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
@@ -25087,10 +25111,10 @@
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
                     :field_title="'jubok_somabesh_target'"
                     :month="month"
-                />
+                /> -->
 
 
-                <popup-note
+                <!-- <popup-note
                     :label="'শ্রমিকদের নিয়ে সমাবেশ মোট সংখ্যা'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
@@ -25108,9 +25132,9 @@
                     :label="'শ্রমিকদের নিয়ে সমাবেশ মোট উপস্থিতি'"
                     :thana_id="report_header?.thana_info?.id"
                     :table_name="'ward_songothon9_sangothonik_boithoks'"
-                    :field_title="'sromik_somabesh_target'"
+                    :field_title="'sromik_somabesh_uposthiti'"
                     :month="month"
-                />
+                /> -->
 
 
             </div>
@@ -28235,7 +28259,7 @@
                         :month="month"
                     /> -->
                 </div>
-                <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
+                <!-- <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
                     <popup-note
                         :label="'দারস্ মোট সংখ্যা'"
                         :thana_id="report_header?.thana_info?.id"
@@ -28250,8 +28274,8 @@
                         :field_title="'darsul_quran_uposthiti'"
                         :month="month"
                     />
-                </div>
-                <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
+                </div> -->
+                <!-- <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
                     <popup-note
                         :label="'সহীহ কুরআন তিলা:অনু: মোট সংখ্যা'"
                         :thana_id="report_header?.thana_info?.id"
@@ -28266,7 +28290,7 @@
                         :field_title="'sohih_tilawat_uposthiti'"
                         :month="month"
                     />
-                </div>
+                </div> -->
 
 
                 <div class="hrd">
