@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             ব্যক্তিগত ধার্য নির্ধারণ করুন
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'BmCategoryUserAll'}" class="text-dark">সকল ব্যক্তিগত ধার্যের তালিকা</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_category_user">

@@ -199,6 +199,7 @@ body{
     align-items: center;
     gap: 10px;
     color: var(--dark);
+    
 }
 .report_app_right .report_app_right_top .middle p{
     color: var(--dark);

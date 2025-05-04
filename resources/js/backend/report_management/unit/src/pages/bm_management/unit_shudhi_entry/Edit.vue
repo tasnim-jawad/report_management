@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Edit Bm entry
+            সুধী আয় এডিট করুন
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UnitShudhiEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
+                <router-link :to="{name:'UnitShudhiEntryAll'}" class="text-dark">সুধী আয়ের বিবরণ</router-link>
             </div>
         </div>
         <div class="card-body">

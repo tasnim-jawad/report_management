@@ -228,7 +228,7 @@
                     <p>
                         ওয়ার্ডঃ {{ this.user?.responsibility?.org_ward?.title }}
                     </p>
-                    <p>থানাঃ {{ this.user?.thana?.title }}</p>
+                    <p class="thana_name">থানাঃ {{ this.user?.thana?.title }}</p>
                 </div>
                 <div class="right">
                     <a

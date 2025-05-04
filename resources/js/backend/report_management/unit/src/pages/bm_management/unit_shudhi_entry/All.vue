@@ -4,16 +4,11 @@
             মাস: <input type="month" @change="unit_shudhi_entry_month_wise" v-model="month" ref="month" name="month">
         </div>
     </div>
-    <!-- <div class="card mb-3" v-if="month">
-        <div class="card-header">
-            <h1 class="fw-semibold">বায়তুলমাল</h1>
-        </div>
-    </div> -->
     <div class="card mb-2" v-if="month">
         <div class="card-header d-flex justify-content-between align-items-center">
             সুধী আয়ের বিবরণ
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UnitShudhiEntryCreate'}" class="text-dark">Create Entry</router-link>
+                <router-link :to="{name:'UnitShudhiEntryCreate'}" class="text-dark">সুধী আয় এন্ট্রি করুন</router-link>
             </div>
         </div>
         <div class="card-body">

@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             নতুন সুধী তৈরি করুন
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UnitShudhiAll'}" class="text-dark">সকল সুধী তালিকা</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_shudhi">

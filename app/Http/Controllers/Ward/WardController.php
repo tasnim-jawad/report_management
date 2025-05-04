@@ -1871,6 +1871,7 @@ class WardController extends Controller
             $ward_id = $org_ward_user->ward_id;
             $ward = OrgWard::where('id',$ward_id)->first();
             $month = Carbon::parse(request()->month);
+            $bangla_month = $month->clone()->locale('bn')->isoFormat('MMMM');
 
             $report_info = ReportInfo::where('org_type_id', $ward_id)
                 ->where('org_type', 'ward')
@@ -1886,25 +1887,25 @@ class WardController extends Controller
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "unsubmitted",
-                    "message" => "রিপোর্ট জমা দেওয়া হয়নি এখনো ।"
+                    "message" => "{$bangla_month} মাসের রিপোর্ট জমা দেওয়া হয়নি এখনো।"
                 ], 200);
             } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'pending') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "pending",
-                    "message" => "রিপোর্ট জমা হয়েছে । থানার আপ্রুভের জন্য অপেক্ষমাণ।"
+                    "message" => "{$bangla_month} মাসের রিপোর্ট জমা হয়েছে । ওয়ার্ডের আপ্রুভের জন্য অপেক্ষমাণ।"
                 ], 200);
             } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'rejected') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "rejected",
-                    "message" => "রিপোর্ট রিজেক্ট করা হয়েছে । ভুলগুলি ঠিক করে আবার জমা দিন ।"
+                    "message" => "{$bangla_month} মাসের রিপোর্ট রিজেক্ট করা হয়েছে । ভুলগুলি ঠিক করে আবার জমা দিন ।"
                 ], 200);
             } else if ($report_submit_status == 'submitted' &&  $report_approved_status == 'approved') {
                 return response()->json([
                     'status' => 'success',
                     'report_status' => "approved",
-                    "message" => "এ মাসের রিপোর্ট থানা গ্রহন করেছে।"
+                    "message" =>"{$bangla_month} মাসের রিপোর্ট ওয়ার্ড গ্রহন করেছে।"
                 ], 200);
             }
         }

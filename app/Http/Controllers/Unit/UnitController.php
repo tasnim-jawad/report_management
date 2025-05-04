@@ -784,8 +784,9 @@ class UnitController extends Controller
                 'errors' => $validator->errors(),
             ], 422);
         }
-        $unit_id = auth()->user()->org_unit_user->unit_id;
-
+        // $unit_id = auth()->user()->org_unit_user->unit_id;
+        $unit_id = OrgUnitUser::where('user_id', request()->user_id)->first()->unit_id;
+        // dd($unit_id);
         $start_month = request()->start_month;
         $end_month = request()->end_month;
         $org_type = 'unit';
@@ -880,7 +881,9 @@ class UnitController extends Controller
             ], 422);
         }
         // dd(OrgUnitUser::where('user_id', request()->user_id)->first()->unit_id);
-        $unit_id = auth()->user()->org_unit_user->unit_id;
+        // dd(request()->all());
+        $unit_id = OrgUnitUser::where('user_id', request()->user_id)->first()->unit_id;
+        // dd($unit_id);
 
         $start_month = request()->month;
         $end_month = request()->month;

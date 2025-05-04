@@ -7,6 +7,7 @@
         flex: 1;
     }
     .report_app_right .report_app_right_top .middle .thana,
+    .report_app_right .report_app_right_top .middle .thana_name,
     .report_app_right .report_app_right_top .middle .city_name{
         display: none;
     }

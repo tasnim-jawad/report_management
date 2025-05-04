@@ -1,10 +1,10 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Bm Entry Info
-            <!-- <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'CreateUser'}" class="text-dark">Edit</router-link>
-            </div> -->
+            সুধীর বিস্তারিত তথ্য
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UnitShudhiAll'}" class="text-dark">সকল সুধী তালিকা</router-link>
+            </div>
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap gap-2 mb-2 align-items-center table-responsive" >

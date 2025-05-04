@@ -271,7 +271,7 @@
                     <p>
                         ইউনিট: {{ this.user?.responsibility?.org_unit?.title }}
                     </p>
-                    <p>ওয়ার্ড: {{ this.user?.ward?.title }}</p>
+                    <p class="ward_name">ওয়ার্ড: {{ this.user?.ward?.title }}</p>
                 </div>
                 <div class="right">
                     <notification-button

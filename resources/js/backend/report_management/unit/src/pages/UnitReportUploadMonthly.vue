@@ -1861,14 +1861,14 @@ export default {
 
             }
         },
-        // formatBangla(number) {
-        //     return number !== null && number !== undefined ? number.toLocaleString("bn-BD") : "";
-        // },
-        formatBangla(number) {
-            if (number == 0 || number === null || number === undefined || isNaN(number)) {
+        formatBangla(value) {
+            const num = Number(value);           // "204" → 204
+
+            if (!num || !Number.isFinite(num)) { // catches 0, NaN, null, undefined, ""
                 return "";
             }
-            return number.toLocaleString("bn-BD");
+
+            return num.toLocaleString("bn-BD");  // "২০৪"
         },
         formatMonth(date) {
             return new Date(date).toLocaleString("bn-BD", { month: "long" });
