@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
-            Create User
+        <div class="card-header d-flex justify-content-between align-items-center">
+            জনশক্তি তৈরি করুন 
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UserAll'}" class="text-dark">জনশক্তি তালিকা</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_user">
@@ -57,6 +60,11 @@ export default {
                 //     name:"role",
                 // },
                 {
+                    label:"Responsibility",
+                    field_type:"select",
+                    name:"responsibility_id",
+                },
+                {
                     label:"Name",
                     name:"full_name",
                 },
@@ -82,11 +90,7 @@ export default {
                     field_type:"select",
                     name:"blood_group",
                 },
-                {
-                    label:"Responsibility",
-                    field_type:"select",
-                    name:"responsibility_id",
-                },
+                
             ],
 
 

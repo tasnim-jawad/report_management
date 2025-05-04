@@ -1,15 +1,18 @@
 <template>
-    <div class="container">
+    <!-- <div class="container">
         <div class="card mb-2">
             <div class="card-header">
                 Unit Create
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="container">
         <div class="card">
-            <div class="card-header">
-                Unit User Create
+            <div class="card-header d-flex justify-content-between align-items-center">
+                নতুন ইউনিট তৈরি করুন 
+                <div class="btn btn-info btn-sm">
+                    <router-link :to="{name:'UnitAll'}" class="text-dark">সকল ইউনিট</router-link>
+                </div>
             </div>
             <div class="card-body">
                 <form action="" id="create_unit_form">

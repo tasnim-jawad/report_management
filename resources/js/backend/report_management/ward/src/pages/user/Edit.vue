@@ -1,7 +1,10 @@
 <template>
     <div class="card mb-3" >
-        <div class="card-header">
-            <h1>Edit user</h1>
+        <div class="card-header d-flex justify-content-between align-items-center">
+            জনশক্তি তথ্য এডিট করুন
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UserAll'}" class="text-dark">জনশক্তি তালিকা</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="edit_user">

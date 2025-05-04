@@ -367,5 +367,6 @@ function convertBanglaToEnglish($input){
     
     $englishNumber = str_replace($banglaDigits, $englishDigits, $input);
     $cleanNumber = preg_replace('/\D/', '', $englishNumber);
+    
     return (int) $cleanNumber;
 }

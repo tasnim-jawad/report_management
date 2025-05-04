@@ -100,27 +100,30 @@ function ward_common_get($model, $user_id = null)
 
 function ward_common_store($bind, $class, $report_info)
 {
-
+    dd(request()->all());
     $rules = [
         'month' => ['required'],
-        'value' => ['numeric', 'nullable'],
+        // 'value' => ['numeric', 'nullable'],
     ];
 
     $messages = [
         "month.required" => ["মাস সিলেক্ট করুন"],
-        'value.numeric' => 'Only English numbers can be input.',
+        // 'value.numeric' => 'Only English numbers can be input.',
     ];
 
     // If request()->name is "montobbo", allow 'value' to be a string
-    if (request()->name === 'montobbo') {
-        $rules['value'] = ['string', 'nullable'];
-    }
+    // if (request()->name === 'montobbo') {
+    //     $rules['value'] = ['string', 'nullable'];
+    // }
 
     $bind->validate(request(), $rules, $messages);
     // dd($report_info);
     if ($report_info) {
         $col_name = request()->name;
-        $col_value = request()->value;
+        $col_value = convertBanglaToEnglish(request()->value);
+        if($col_name === 'montobbo'){
+            $col_value = request()->value;
+        }
 
         $data = $class::where('report_info_id', $report_info->id)
             // ->where('creator', auth()->user()->id)

@@ -213,6 +213,17 @@ class CalculatePreviousPresent
     private function get_ward_calculations()
     {
         return [
+            'total_muallim_man' => [
+                'table' => 'ward_department1_talimul_qurans',
+                'columns' => ['increase' => 'total_muallim_increased_man'],
+                'type' => 'increase',
+            ],
+            'total_muallim_woman' => [
+                'table' => 'ward_department1_talimul_qurans',
+                'columns' => ['increase' => 'total_muallim_increased_woman'],
+                'type' => 'increase',
+            ],
+
             'total_village_committee' => [
                 'table' => 'ward_department2_moholla_vittik_dawats',
                 'columns' => ['increase' => 'total_village_committee_increased'],

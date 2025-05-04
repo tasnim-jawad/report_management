@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
-            Create User
+        <div class="card-header d-flex justify-content-between align-items-center">
+            নতুন জনশক্তি তৈরি করুন 
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UnitJonoshoktiAll'}" class="text-dark">ইউনিটের সকল জনশক্তি</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="create_user">
@@ -31,7 +34,7 @@
                     </div>
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'responsibility_id'">
                         <select type="text" :name="field.name" class="form-control">
-                            <option value="">-- select responsibility group --</option>
+                            <option value="">-- select responsibility --</option>
                             <option v-for="(responsibility, i) in responsibilities" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
                         </select>
                     </div>

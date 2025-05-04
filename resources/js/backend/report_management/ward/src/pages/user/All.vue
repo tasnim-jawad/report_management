@@ -4,7 +4,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             জনশক্তি
             <div class="btn btn-info btn-sm">
-                <router-link :to="{name:'UserCreate'}" class="text-dark">Create User</router-link>
+                <router-link :to="{name:'UserCreate'}" class="text-dark">জনশক্তি তৈরি করুন</router-link>
             </div>
         </div>
         <div class="card-body table-responsive">

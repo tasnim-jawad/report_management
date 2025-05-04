@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
-            Edit Bm unit
+        <div class="card-header d-flex justify-content-between align-items-center">
+            ইউনিটের তথ্য এডিট করুন
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UnitAll'}" class="text-dark">সকল ইউনিট</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="edit_unit">

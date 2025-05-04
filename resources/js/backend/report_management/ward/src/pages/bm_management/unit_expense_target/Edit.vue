@@ -1,7 +1,10 @@
 <template>
     <div class="card">
-        <div class="card-header">
-            Edit Bm Category
+        <div class="card-header d-flex justify-content-between align-items-center">
+            ধার্য পুনঃনির্ধারণ করুন
+            <div class="btn btn-info btn-sm">
+                <router-link :to="{name:'UnitExpenseTargetAll'}" class="text-dark">সকল ধার্য দেখুন</router-link>
+            </div>
         </div>
         <div class="card-body">
             <form action="" @submit.prevent="edit_unit_expense_target">

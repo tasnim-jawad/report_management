@@ -96,6 +96,7 @@ class WardUnitController extends Controller
 
     public function update()
     {
+        // dd(request()->all());
         $data = OrgUnit::find(request()->id);
         if (!$data) {
             return response()->json([
@@ -109,7 +110,7 @@ class WardUnitController extends Controller
             'description' => ['required'],
             'org_type_id' => ['required'],
             'org_area_id' => ['required'],
-            'org_gender' => ['required'],
+            // 'org_gender' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -122,7 +123,7 @@ class WardUnitController extends Controller
         $data->description = request()->description;
         $data->org_type_id = request()->org_type_id;
         $data->org_area_id = request()->org_area_id;
-        $data->org_gender = request()->org_gender;
+        // $data->org_gender = request()->org_gender;
         $data->creator = auth()->user()->id;
         $data->save();
 

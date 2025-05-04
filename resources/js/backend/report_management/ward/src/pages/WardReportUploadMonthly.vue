@@ -1593,7 +1593,13 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            {{
+                                                formatBangla(
+                                                        previous_present?.total_muallim_man_present
+                                                    )
+
+                                            }}
+                                            <!-- <input
                                                 name="total_muallim_man"
                                                 :value="
                                                     formatBangla(
@@ -1609,7 +1615,7 @@
                                                 "
                                                 type="text"
                                                 class="bg-input w-100 text-center"
-                                            />
+                                            /> -->
                                             
                                             <comment-from-thana 
                                                 :table_name="'ward_department1_talimul_qurans'"
@@ -1618,7 +1624,13 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            {{
+                                                formatBangla(
+                                                        previous_present?.total_muallim_woman_present
+                                                    )
+
+                                            }}
+                                            <!-- <input
                                                 name="total_muallim_woman"
                                                 :value="
                                                     formatBangla(
@@ -1634,7 +1646,7 @@
                                                 "
                                                 type="text"
                                                 class="bg-input w-100 text-center"
-                                            />
+                                            /> -->
                                             
                                             <comment-from-thana 
                                                 :table_name="'ward_department1_talimul_qurans'"
