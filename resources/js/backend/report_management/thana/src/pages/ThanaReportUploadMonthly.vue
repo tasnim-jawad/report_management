@@ -15583,8 +15583,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="">অন্যান্য সাংগঠনিক ওয়ার্ড</td>
-                                <td colspan="6"></td>
+                                <td colspan="7" class="text-start bg-block">
+                                    <span class="ps-5">অন্যান্য সাংগঠনিক ওয়ার্ড</span>
+                                </td>
+                                <!-- <td colspan="6"></td> -->
                             </tr>
                             <tr>
                                 <td class="text-start">
@@ -18186,7 +18188,7 @@
                 </div>
 
                 <div class="paribarik mb-2">
-                    <h4 class="fs-6">৫. দাওয়াতি ও পারিবারিক ইউনিট*:</h4>
+                    <h4 class="fs-6 fw-bold">৫. দাওয়াতি ও পারিবারিক ইউনিট*:</h4>
                     <table class="text-center mb-1 table_layout_fixed">
                         <thead>
                             <tr>
@@ -33298,7 +33300,7 @@
                     <table class="text-center mb-2 table_layout_fixed">
                         <thead>
                             <tr>
-                                <th class="width-45">
+                                <th class="width-30">
                                     প্রস্তুতিমূলক কার্যক্রমের ধরন
                                 </th>
                                 <th>সংখ্যা</th>
@@ -33309,7 +33311,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">
-                                    মোট ভোট কেন্দ্র (জাতীয়/স্থানীয়)
+                                    ভোট কেন্দ্র (জাতীয়/স্থানীয়)
                                 </td>
                                 <td class="bg-calc">
                                     <div class="d-flex justify-content-center">
@@ -34849,16 +34851,16 @@
                     </table>
                 </div>
             </div>
-            <div class="baytulmal mt-5">
+            <div class="baytulmal mt-2">
                 <div class="title negative_margine">
                     <h1>বাইতুলমাল</h1>
                 </div>
-                <p class="fs-6 fw-bold">ধার্যকৃত নিছাব :</p>
+                <p class="fs-6 fw-bold mb-3">ধার্যকৃত নিছাব : ১০,০০০/-</p>
                 <table class="text-center mb-1 table_layout_fixed">
                     <thead>
                         <tr>
-                            <th class="text-center" colspan="2">আয়ের বিবরণ</th>
-                            <th class="text-center" colspan="2">জমার পরিমাণ</th>
+                            <th class="text-center fw-bold" colspan="2">আয়ের বিবরণ</th>
+                            <th class="text-center fw-bold" colspan="2">জমার পরিমাণ</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34873,7 +34875,7 @@
                                             :key="index"
                                         >
                                             <td
-                                                class="text-start px-2 w-50 border_bottom"
+                                                class="text-start px-2 width-60 border_bottom"
                                             >
                                                 {{ bm_cat.title }}
                                             </td>
@@ -34911,7 +34913,7 @@
                                             :key="index"
                                         >
                                             <td
-                                                class="text-start px-2 w-50 border_bottom"
+                                                class="text-start px-2 width-60 border_bottom"
                                             >
                                                 {{ expense_cat.title }}
                                             </td>
@@ -34941,11 +34943,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-end px-2">মোট</td>
+                            <td class="text-end px-2 width-60">মোট</td>
                             <td>
                                 {{ formatBangla(parseInt(total_income) ?? "") }}
                             </td>
-                            <td class="text-end px-2">মোট</td>
+                            <td class="text-end px-2 width-60">মোট</td>
                             <td>
                                 {{
                                     formatBangla(parseInt(total_expense) ?? "")
@@ -34953,13 +34955,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-end px-2">গত মাসের উদ্বৃত্ত</td>
+                            <td class="text-end px-2 width-60">গত মাসের উদ্বৃত্ত</td>
                             <td>
                                 {{
                                     formatBangla(parseInt(total_previous) ?? "")
                                 }}
                             </td>
-                            <td class="text-end px-2">এ মাসের উদ্বৃত্ত</td>
+                            <td class="text-end px-2 width-60">এ মাসের উদ্বৃত্ত</td>
                             <td>
                                 {{
                                     formatBangla(
@@ -34969,7 +34971,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-end px-2">সর্বমোট</td>
+                            <td class="text-end px-2 width-60">সর্বমোট</td>
                             <td>
                                 {{
                                     formatBangla(
@@ -34977,7 +34979,7 @@
                                     )
                                 }}
                             </td>
-                            <td class="text-end px-2">সর্বমোট</td>
+                            <td class="text-end px-2 width-60">সর্বমোট</td>
                             <td>
                                 {{ formatBangla(parseInt(in_total) ?? "") }}
                             </td>

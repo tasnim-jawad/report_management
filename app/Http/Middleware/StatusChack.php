@@ -45,7 +45,7 @@ class StatusChack
             return response()->json([
                 'err_message' => 'Permission denied',
                 // 'errors' => [['You do not have the necessary permissions']],
-                'errors' => [['মুরব্বী মুরব্বী উমহু হু হু হু']],
+                'errors' => [['এই মাসের রিপোর্ট গ্রহণ বন্ধ রয়েছে। অনুগ্রহ করে ঊর্ধ্বতন দায়িত্বশীলের সঙ্গে যোগাযোগ করুন।']],
             ], 403);
 
         }else if( $report_submit_status == 'submitted' &&  $report_approved_status == 'rejected'){
@@ -57,7 +57,7 @@ class StatusChack
             return response()->json([
                 'err_message' => 'Permission denied',
                 // 'errors' => [['You do not have the necessary permissions']],
-                'errors' => [['মুরব্বী মুরব্বী উমহু হু হু হু']],
+                'errors' => [['এই মাসের রিপোর্ট গ্রহণ বন্ধ রয়েছে। অনুগ্রহ করে ঊর্ধ্বতন দায়িত্বশীলের সঙ্গে যোগাযোগ করুন।']],
             ], 403);
         }
     }

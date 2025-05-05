@@ -820,8 +820,8 @@ class ThanaTotalWardSubmittedDataController extends Controller
                 // dd();
                 return response()->json([
                     'err_message' => 'Permission denied',
-                    'errors' => [['মুরব্বী মুরব্বী উমহু হু হু হু']],
-                    'message' => 'মুরব্বী মুরব্বী উমহু হু হু হু',
+                    'errors' => [['এই মাসের রিপোর্ট গ্রহণ বন্ধ রয়েছে। অনুগ্রহ করে ঊর্ধ্বতন দায়িত্বশীলের সঙ্গে যোগাযোগ করুন।']],
+                    'message' => 'এই মাসের রিপোর্ট গ্রহণ বন্ধ রয়েছে। অনুগ্রহ করে ঊর্ধ্বতন দায়িত্বশীলের সঙ্গে যোগাযোগ করুন।',
                 ], 403);
             } else if ($data) {
                 return response()->json([

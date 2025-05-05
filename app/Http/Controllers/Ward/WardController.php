@@ -2015,7 +2015,9 @@ class WardController extends Controller
             ], 422);
         }
         
-        $ward_id = auth()->user()->org_ward_user->ward_id;
+        $ward_id = OrgWardUser::where('user_id', request()->user_id)->first()->ward_id;
+        // dd($ward_id);
+        // $ward_id = auth()->user()->org_ward_user->ward_id;
 
         $start_month = request()->start_month;
         $end_month = request()->end_month;

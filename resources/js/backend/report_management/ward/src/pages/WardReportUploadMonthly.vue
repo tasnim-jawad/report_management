@@ -13622,16 +13622,25 @@ export default {
         },
 
 
-        formatBangla(number) {
-            if (
-                number == 0 ||
-                number === null ||
-                number === undefined ||
-                isNaN(number)
-            ) {
+        // formatBangla(number) {
+        //     if (
+        //         number == 0 ||
+        //         number === null ||
+        //         number === undefined ||
+        //         isNaN(number)
+        //     ) {
+        //         return "";
+        //     }
+        //     return number.toLocaleString("bn-BD");
+        // },
+        formatBangla(value) {
+            const num = Number(value);           // "204" → 204
+
+            if (!num || !Number.isFinite(num)) { // catches 0, NaN, null, undefined, ""
                 return "";
             }
-            return number.toLocaleString("bn-BD");
+
+            return num.toLocaleString("bn-BD");  // "২০৪"
         },
         
         formatMonth(date) {

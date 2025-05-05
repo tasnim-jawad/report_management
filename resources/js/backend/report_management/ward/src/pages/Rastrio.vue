@@ -504,7 +504,7 @@ export default {
                 });
         },
         get_monthly_data: function () {
-            let els = document.querySelectorAll('input[type="text"]');
+            let els = document.querySelectorAll('input[type="number"]');
             els = [...els].forEach(e => e.value = '');
 
             this.get_data_by_api('ward-rastrio1-political-communication', 1);
