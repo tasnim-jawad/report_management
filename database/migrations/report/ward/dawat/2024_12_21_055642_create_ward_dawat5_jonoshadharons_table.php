@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('report_info_id')->unsigned()->nullable();
             $table->bigInteger('total_population')->nullable();
+            $table->bigInteger('target')->nullable();
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

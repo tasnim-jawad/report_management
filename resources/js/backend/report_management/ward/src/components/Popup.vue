@@ -1,7 +1,7 @@
 <template>
     <div class="unit_info_icon" >
         <span class="i_icon" @click="toggle_popup">
-            <i class="fa fa-list" ></i>
+            <i class="fa-solid fa-caret-down" ></i>
         </span>
         <div v-if="number_of_comment" class="number_of_comments d-flex justify-content-center text-center">
             <p>{{ number_of_comment }}</p>

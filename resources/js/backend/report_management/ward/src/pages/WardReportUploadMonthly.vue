@@ -48,8 +48,8 @@
                     </p>
                     <!-- <p class="fw-bold w-25">মোট জনসংখ্যা:</p> -->
                     <div class="d-flex justify-content-start w-25">
-                        <label for="" class="fw-bold fs-6">মোট জনসংখ্যা:</label>
-                        <div class="parent_popup width-60">
+                        <label for="" class="fw-bold fs-6 text-nowrap">মোট জনসংখ্যা:</label>
+                        <div class="parent_popup">
                             <input
                                 class="border_dot bg-input ps-2 w-100"
                                 name="total_population"
@@ -69,10 +69,28 @@
                                 :column_name="'total_population'" /> -->
                         </div>
                     </div>
-                    <p class="fw-bold ps-3 w-100">
-                        টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক)
-                        :
-                    </p>
+                    <div class="fw-bold ps-3 w-100 d-flex justify-content-start">
+                        <span class="text-nowrap">টার্গেট (মাসিক/ত্রৈমাসিক / ষান্মাসিক/ নয় মাসিক/বার্ষিক):</span>
+                        <div class="parent_popup">
+                            <input
+                                class="border_dot bg-input ps-2 w-100"
+                                name="target"
+                                :value="
+                                    formatBangla(
+                                        report_sum_data
+                                            ?.ward_dawat5_jonoshadharons
+                                            ?.target ?? ''
+                                    )
+                                "
+                                @change="
+                                    data_upload('ward-dawat5-jonoshadharon')
+                                "
+                                type="text"
+                            />
+                            <!-- <comment :table_name="'ward_dawat5_jonoshadharons'"
+                                :column_name="'target'" /> -->
+                        </div>
+                    </div>
                     <p class="ps-3 font-13">
                         * দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত
                         দাওয়াত প্রদান সংখ্যা যোগ করে এখানে বসাতে হবে ।
@@ -1590,7 +1608,7 @@
                                 <td class="width-35 text-start">
                                     তা'লিমুল কুরআন : মুয়াল্লিম সংখ্যা (পু./ম.)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="d-flex">
                                         <div class="parent_popup">
                                             {{
@@ -1788,7 +1806,7 @@
                                     <td class="text-start px-2">
                                         গ্রাম/মহল্লা কমিটি সংখ্যা
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         <div>
                                             <span>{{
                                                 formatBangla(
@@ -1869,7 +1887,7 @@
                                         বিশেষ দাওয়াতের অন্তর্ভুক্ত
                                         গ্রাম/মহল্লা* সংখ্যা
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         <div>
                                             <span>{{
                                                 formatBangla(
@@ -2112,7 +2130,7 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start px-2">যুব কমিটি</td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             formatBangla(
                                                 previous_present?.total_young_committee_present
@@ -2154,7 +2172,7 @@
                                     <td class="text-start px-2">
                                         নতুন সমিতি/ক্লাব প্রতিষ্ঠা করা হয়েছে
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             formatBangla(
                                                 previous_present?.total_new_club_present
@@ -2196,7 +2214,7 @@
                                         প্রতিষ্ঠিত সমিতি/ক্লাবে দাওয়াত পৌঁছানো
                                         হয়েছে
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             formatBangla(
                                                 previous_present?.stablished_club_total_invited_present
@@ -2362,7 +2380,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             
                                             implementation_rate(
@@ -2459,7 +2477,7 @@
                                         </div>
                                     </td>
 
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             
                                                 implementation_rate(
@@ -2558,7 +2576,7 @@
                                         </div>
                                     </td>
 
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             
                                                 implementation_rate(
@@ -2676,7 +2694,7 @@
                                         </div>
                                     </td>
 
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             
                                                 implementation_rate(
@@ -2793,7 +2811,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             
                                                 implementation_rate(
@@ -2908,7 +2926,7 @@
                                             </popup>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="bg-calc">
                                         {{
                                             
                                                 implementation_rate(
@@ -3025,7 +3043,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start px-2">মসজিদ</td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.total_mosjid_present
@@ -3064,7 +3082,7 @@
                                 <td class="text-start px-2">
                                     সাধারণ দাওয়াহ্ সেন্টার
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.general_dawah_center_present
@@ -3106,7 +3124,7 @@
                                 <td class="text-start px-2">
                                     দাওয়াতের আওতাভুক্ত মসজিদ
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.dawat_included_mosjid_present
@@ -3147,7 +3165,7 @@
                                 <td class="text-start px-2">
                                     তথ্যসেবা কেন্দ্র (মসজিদভিত্তিক /সাধারণ)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div>
                                         <span>{{
                                             formatBangla(
@@ -3230,7 +3248,7 @@
                                 <td class="text-start px-2">
                                     মসজিদভিত্তিক দাওয়াহ্ সেন্টার
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             previous_present?.mosjid_wise_dawah_center_present
@@ -3268,9 +3286,9 @@
                                     </div>
                                 </td>
 
-                                <td class="text-start px-2"></td>
-                                <td></td>
-                                <td></td>
+                                <td class="text-start px-2 bg-block"></td>
+                                <td class="bg-block"></td>
+                                <td class="bg-block"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -3358,7 +3376,7 @@
                     <tbody>
                         <tr>
                             <td class="text-start px-2">পাঠাগার</td>
-                            <td>
+                            <td class="bg-calc">
                                 {{
                                     formatBangla(
                                         previous_present?.total_pathagar_present
@@ -3399,7 +3417,7 @@
                             </td>
                             <!-- <td >{{bangla($dawah_prokashona->ward_book_sales_center?? "")}}</td>
                             <td >{{bangla($dawah_prokashona->ward_book_sales_center_increase?? "")}}</td> -->
-                            <td>
+                            <td class="bg-calc">
                                 {{
                                     formatBangla(
                                         previous_present?.ward_book_sales_center_present
@@ -3440,7 +3458,7 @@
                             <td class="text-start px-2">বই</td>
                             <!-- <td >{{bangla($dawah_prokashona->books_in_pathagar?? "")}}</td>
                             <td >{{bangla($dawah_prokashona->books_in_pathagar_increase?? "")}}</td> -->
-                            <td>
+                            <td class="bg-calc">
                                 {{
                                     formatBangla(
                                         previous_present?.books_in_pathagar_present
@@ -3480,25 +3498,16 @@
                             <td class="text-start px-2">ওয়ার্ডে বই বিক্রয়</td>
                             <!-- <td >{{bangla($dawah_prokashona->ward_book_sales?? "")}}</td>
                             <td >{{bangla($dawah_prokashona->ward_book_sales_increase?? "")}}</td> -->
-                            <td>
-                                {{
-                                    formatBangla(
-                                        previous_present?.ward_book_sales_present
-                                    )
-                                }}
-                                <!-- <input name="ward_book_sales" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.ward_book_sales)"
-                                    @change="data_upload('ward-dawah-and-prokashona')" type="text"
-                                    class="bg-input w-100 text-center" /> -->
-                            </td>
+                            
                             <td>
                                 <div class="parent_popup">
                                     <input
-                                        name="ward_book_sales_increase"
+                                        name="ward_book_sales"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.ward_dawah_and_prokashonas
-                                                    ?.ward_book_sales_increase
+                                                    ?.ward_book_sales
                                             )
                                         "
                                         @change="
@@ -3510,9 +3519,19 @@
                                     
                                     <comment-from-thana 
                                         :table_name="'ward_dawah_and_prokashonas'"
-                                        :column_name="'ward_book_sales_increase'" 
+                                        :column_name="'ward_book_sales'" 
                                     />
                                 </div>
+                            </td>
+                            <td class="bg-block">
+                                <!-- {{
+                                    formatBangla(
+                                        previous_present?.ward_book_sales_present
+                                    )
+                                }} -->
+                                <!-- <input name="ward_book_sales" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.ward_book_sales)"
+                                    @change="data_upload('ward-dawah-and-prokashona')" type="text"
+                                    class="bg-input w-100 text-center" /> -->
                             </td>
 
                         </tr>
@@ -3545,7 +3564,7 @@
                                 </div>
                             </td>
 
-                            <td>
+                            <td class="bg-block">
                                 <!-- <input name="book_distribution_increase" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> -->
                             </td>
 
@@ -3584,7 +3603,7 @@
                                     </popup>
                                 </div>
                             </td>
-                            <td>
+                            <td class="bg-block">
                                 <div class="parent_popup">
                                     <!-- <input name="soft_copy_book_distribution_increase" :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.soft_copy_book_distribution_increase)" @change="data_upload('ward-dawah-and-prokashona')" type="text" class="bg-input w-100 text-center" /> -->
                                     <!-- <popup
@@ -3603,7 +3622,7 @@
                             <td class="text-start px-2">
                                 ইউনিটে বই বিলিকেন্দ্র
                             </td>
-                            <td>
+                            <td class="bg-calc">
                                 <div class="parent_popup">
                                     {{
                                         formatBangla(
@@ -3689,7 +3708,7 @@
                                     </popup>
                                 </div>
                             </td>
-                            <td>
+                            <td class="bg-block">
                                 <div class="parent_popup">
                                     <!-- <input name="dawat_link_distribution_increase"
                                         :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.dawat_link_distribution_increase)"
@@ -3739,7 +3758,7 @@
                                     </popup>
                                 </div>
                             </td>
-                            <td>
+                            <td class="bg-block">
                                 <div class="parent_popup">
                                     <!-- <input name="unit_book_distribution_increase"
                                         :value="formatBangla(report_sum_data?.ward_dawah_and_prokashonas?.unit_book_distribution_increase)"
@@ -3760,7 +3779,7 @@
                             <td class="text-start px-2">
                                 সোনার বাংলা/সংগ্রাম/পৃথিবী কত কপি চলে
                             </td>
-                            <td>
+                            <td class="bg-calc">
                                 <div>
                                     <span>{{
                                         formatBangla(
@@ -5192,7 +5211,7 @@
                                 <td class="text-start px-2">
                                     সর্বমোট সদস্য (রুকন)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon1_jonosoktis?.rokon_previous)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -5214,7 +5233,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="rokon_present" :value="formatBangla(report_sum_data?.ward_songothon1_jonosoktis?.rokon_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -5332,7 +5351,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -5350,7 +5369,7 @@
                             <tr>
                                 <td class="text-start px-2">সর্বমোট কর্মী</td>
 
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="worker_previous" :value="formatBangla(report_sum_data?.ward_songothon1_jonosoktis?.worker_previous)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -5372,7 +5391,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="worker_present" :value="formatBangla(report_sum_data?.ward_songothon1_jonosoktis?.worker_present)" @change="data_upload('ward-songothon1-jonosokti')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -5490,7 +5509,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -5527,7 +5546,7 @@
                                 <td class="text-start px-2">
                                     মোট সহযোগী সদস্য (পুরুষ)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="associate_member_man_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_previous)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -5536,7 +5555,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="associate_member_man_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_present)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -5594,7 +5613,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -5613,7 +5632,7 @@
                                 <td class="text-start px-2">
                                     মোট সহযোগী সদস্য (মহিলা)
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="associate_member_woman_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_previous)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -5622,7 +5641,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="associate_member_woman_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_present)" @change="data_upload('ward-songothon2-associate-member')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -5680,7 +5699,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -5699,7 +5718,7 @@
                                 <td class="text-start px-2">
                                     সর্বমোট সহযোগী সদস্য সংখ্যা**
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- {{ formatBangla((previous_present?.associate_member_man_previous ??
                                             0) + (previous_present?.associate_member_woman_previous ?? 0) || '')
@@ -5729,7 +5748,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -5756,7 +5775,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -5787,7 +5806,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         {{
                                             formatBangla(
@@ -5818,7 +5837,7 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -5886,7 +5905,7 @@
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
 
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="women_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -5895,7 +5914,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="women_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -5980,7 +5999,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="women_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -5989,7 +6008,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="women_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6074,7 +6093,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="women_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6083,7 +6102,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="women_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.women_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6116,9 +6135,9 @@
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="women_associate_member_gatti"
                                             :value="
                                                 formatBangla(
@@ -6137,7 +6156,7 @@
                                         <comment-from-thana 
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :column_name="'women_associate_member_gatti'" 
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
                                 <td>
@@ -6172,7 +6191,7 @@
                                     শ্রম*
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="sromojibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6181,7 +6200,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="sromojibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6266,7 +6285,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="sromojibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6275,7 +6294,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="sromojibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6360,7 +6379,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="sromojibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6369,7 +6388,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="sromojibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.sromojibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6402,9 +6421,9 @@
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="sromojibi_associate_member_gatti"
                                             :value="
                                                 formatBangla(
@@ -6423,7 +6442,7 @@
                                         <comment-from-thana 
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :column_name="'sromojibi_associate_member_gatti'" 
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
                                 <td>
@@ -6458,7 +6477,7 @@
                                     উলামা
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="ulama_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6467,7 +6486,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="ulama_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6552,7 +6571,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="ulama_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6561,7 +6580,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="ulama_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6646,7 +6665,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="ulama_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6655,7 +6674,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="ulama_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.ulama_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6688,9 +6707,9 @@
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="ulama_associate_member_gatti"
                                             :value="
                                                 formatBangla(
@@ -6709,7 +6728,7 @@
                                         <comment-from-thana 
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :column_name="'ulama_associate_member_gatti'" 
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
                                 <td>
@@ -6744,7 +6763,7 @@
                                     পেশাজীবী
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="pesha_jibi_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6753,7 +6772,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="pesha_jibi_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6838,7 +6857,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="pesha_jibi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6847,7 +6866,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="pesha_jibi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6932,7 +6951,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="pesha_jibi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6941,7 +6960,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="pesha_jibi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.pesha_jibi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -6974,9 +6993,9 @@
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="pesha_jibi_associate_member_gatti"
                                             :value="
                                                 formatBangla(
@@ -6995,7 +7014,7 @@
                                         <comment-from-thana 
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :column_name="'pesha_jibi_associate_member_gatti'" 
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
                                 <td>
@@ -7030,7 +7049,7 @@
                                     যুব
                                 </td>
                                 <td class="text-start">সদস্য (রুকন)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="jubo_rokon_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7039,7 +7058,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="jubo_rokon_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_rokon_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7124,7 +7143,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="jubo_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7133,7 +7152,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="jubo_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7218,7 +7237,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="jubo_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7227,7 +7246,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="jubo_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.jubo_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7260,9 +7279,9 @@
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="jubo_associate_member_gatti"
                                             :value="
                                                 formatBangla(
@@ -7281,7 +7300,7 @@
                                         <comment-from-thana 
                                             :table_name="'ward_songothon3_departmental_information'"
                                             :column_name="'jubo_associate_member_gatti'" 
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
                                 <td>
@@ -7316,7 +7335,7 @@
                                     ভিন্নধর্মাবলম্বী
                                 </td>
                                 <td class="text-start">কর্মী</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_kormi_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -7338,7 +7357,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_kormi_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_kormi_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -7446,7 +7465,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">সহযোগী সদস্য</td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_associate_member_previous" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_previous)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -7468,7 +7487,7 @@
                                         </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="vinno_dormalombi_associate_member_present" :value="formatBangla(report_sum_data?.ward_songothon3_departmental_information?.vinno_dormalombi_associate_member_present)" @change="data_upload('ward-songothon3-departmental-information')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -7522,8 +7541,8 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="vinno_dormalombi_associate_member_gatti"
                                         :value="
                                             formatBangla(
@@ -7539,7 +7558,7 @@
                                         "
                                         type="text"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -7598,7 +7617,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (পুরুষ)</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="general_unit_men_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7607,7 +7626,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="general_unit_men_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_men_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7689,7 +7708,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -7707,7 +7726,7 @@
                             <tr>
                                 <td class="text-start">সাধারণ ইউনিট (মহিলা)</td>
                                 
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="general_unit_women_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7716,7 +7735,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="general_unit_women_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.general_unit_women_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7798,7 +7817,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -7823,7 +7842,7 @@
                                 <td>
                                     {{bangla(implementation_rate($songothon4->ulama_unit_target, $songothon4->ulama_unit_increase))}}
                                 </td> -->
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="ulama_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7832,7 +7851,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="ulama_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.ulama_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7914,7 +7933,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -7939,7 +7958,7 @@
                                 <td>
                                     {{bangla(implementation_rate($songothon4->peshajibi_unit_target, $songothon4->peshajibi_unit_increase))}}
                                 </td> -->
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="peshajibi_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -7948,7 +7967,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="peshajibi_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.peshajibi_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8030,7 +8049,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -8055,7 +8074,7 @@
                                 <td>
                                     {{bangla(implementation_rate($songothon4->sromik_kollyan_unit_target, $songothon4->sromik_kollyan_unit_increase))}}
                                 </td> -->
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="sromik_kollyan_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8064,7 +8083,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="sromik_kollyan_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.sromik_kollyan_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8146,7 +8165,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -8171,7 +8190,7 @@
                                 <td>
                                     {{bangla(implementation_rate($songothon4->jubo_unit_target, $songothon4->jubo_unit_increase))}}
                                 </td> -->
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="jubo_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8180,7 +8199,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="jubo_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.jubo_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8262,7 +8281,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -8287,7 +8306,7 @@
                                 <td>
                                     {{bangla(implementation_rate($songothon4->media_unit_target, $songothon4->media_unit_increase))}}
                                 </td> -->
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="media_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_previous)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8296,7 +8315,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="media_unit_present" :value="formatBangla(report_sum_data?.ward_songothon4_unit_songothons?.media_unit_present)" @change="data_upload('ward-songothon4-unit-songothon')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8378,7 +8397,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -8395,7 +8414,7 @@
                             </tr>
                             <tr>
                                 <td class="text-end">সর্বমোট ইউনিট সংখ্যা</td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -8429,7 +8448,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -8463,7 +8482,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -8512,7 +8531,7 @@
                                     }}
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -8558,7 +8577,7 @@
                                     }}
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         formatBangla(
                                             Number(
@@ -8604,7 +8623,7 @@
                                     }}
                                 </td>
 
-                                <td>
+                                <td class="bg-calc">
                                     {{
                                         
                                             implementation_rate(
@@ -8718,7 +8737,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">মোট দাওয়াতি ইউনিট</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="dawati_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.dawati_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8727,7 +8746,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="dawati_unit_present" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.dawati_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8812,7 +8831,7 @@
                             </tr>
                             <tr>
                                 <td class="text-start">মোট পারিবারিক ইউনিট</td>
-                                <td>
+                                <td class="bg-calc">
                                     <!-- <input name="paribarik_unit_previous" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.paribarik_unit_previous)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
                                     {{
                                         formatBangla(
@@ -8821,7 +8840,7 @@
                                         )
                                     }}
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="paribarik_unit_present" :value="formatBangla(report_sum_data?.ward_songothon5_dawat_and_paribarik_units?.paribarik_unit_present)" @change="data_upload('ward-songothon5-dawat-and-paribarik-unit')" type="text" class="bg-input w-100 text-center" /> -->
                                         {{
@@ -10617,7 +10636,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td></td>
+                                <td class="bg-block"></td>
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
@@ -12798,7 +12817,7 @@
                         </tbody>
                     </table>
                     <div class="d-flex align-items-start gap-2">
-                        <table class="text-center mb-2 width-60">
+                        <table class="text-center mb-2 width-60 table_layout_fixed">
                             <thead>
                                 <tr>
                                     <th class="width-45">

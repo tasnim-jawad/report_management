@@ -1,0 +1,94 @@
+<template>
+    <div class="notification_icon">
+        <span class="i_icon" @click="modal_show(ward_id)">
+            <i class="fa-solid fa-bell"></i>
+        </span>
+        <div class="number_of_notifications d-flex justify-content-center text-center" v-if="number_of_notifications > 0"> 
+            <p>{{ number_of_notifications }}</p>
+        </div>
+    </div>
+</template>
+
+<script>
+import axios from 'axios';
+import { store as notification_store } from "../stores/NotificationStore";
+import { mapActions, mapWritableState } from "pinia";
+
+export default {
+    props: {
+        ward_id: {
+            type: Number,
+            required: true,
+            default: 0,
+        },
+    },
+    data() {
+        return {
+            is_popup_visible: false,
+            debounce_timer: null,
+        };
+    },
+    created:async function () {
+        if(this.ward_id){
+            await this.get_ward_notification(this.ward_id);
+            console.log("from notification",this.all_notifications);
+            
+        }
+    },
+    computed: {
+        ...mapWritableState(notification_store, {
+            all_notifications: 'all_notifications',
+            number_of_notifications: 'number_of_notifications',
+        }),
+    },
+    watch: {
+        ward_id: {
+            immediate: true,
+            handler(new_ward_id) {
+                if (new_ward_id) {
+                    this.get_ward_notification(new_ward_id).then(() => {
+                        console.log("From notification:", this.all_notifications);
+                    });
+                }
+            },
+        },
+    },
+    methods: {
+        ...mapActions(notification_store, {
+            get_ward_notification: 'get_ward_notification',
+            modal_show: 'modal_show',
+        }),
+    }
+};
+</script>
+
+<style>
+.notification_icon{
+    position: relative;
+}
+.notification_icon .i_icon{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        background-color: var(--color3);
+        position: relative;
+        z-index: 999;
+        border-radius: 5px;
+        color: white;
+    }
+.number_of_notifications{
+
+    position: absolute;
+    line-height: 11px;
+    width: 11px;
+    font-size: 9px;
+    background-color: #ff0c0c;
+    border-radius: 50%;
+    color: white;
+    top: -8px;
+    right: -7px;
+    z-index: 999;
+}
+</style>

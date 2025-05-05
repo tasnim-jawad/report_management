@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Edit Bm Expense
+            ব্যয় এডিট করুন
             <div class="btn btn-info btn-sm">
                     <router-link :to="{name:'BmExpenseAll'}" class="text-dark">ব্যয়ের বিবরণ</router-link>
                 </div>
@@ -27,7 +27,7 @@
                         <label for="">Amount</label>
                     </div>
                     <div class="form_input">
-                        <input type="text" name="amount" :value="expense_info.amount" class="form-control">
+                        <input type="number" name="amount" :value="expense_info.amount" class="form-control">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">Edit Expense</button>

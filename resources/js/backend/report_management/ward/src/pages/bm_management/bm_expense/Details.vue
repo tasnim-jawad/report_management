@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Bm Entry Info
+            ব্যয়ের বিবরণ
             <div class="d-flex gap-2">
                 <div class="btn btn-warning btn-sm">
                     <!-- <router-link :to="{name:'CreateUser'}" class="text-dark">Edit</router-link> -->

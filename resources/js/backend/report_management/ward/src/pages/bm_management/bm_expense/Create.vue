@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Create Bm Expense
+            ব্যয় এন্ট্রি করুন
             <div class="btn btn-info btn-sm">
                 <router-link :to="{name:'BmExpenseAll'}" class="text-dark">ব্যয়ের বিবরণ</router-link>
             </div>
@@ -20,7 +20,7 @@
                         </select>
                     </div>
                     <div class="form_input" v-else>
-                        <input type="text" :name="field.name" v-model="amount" class="form-control">
+                        <input :type="field.field_type" :name="field.name" v-model="amount" class="form-control">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">Create Expense</button>
@@ -45,6 +45,7 @@ export default {
                 {
                     label:"Amount",
                     name:"amount",
+                    field_type:"number",
                 },
             ],
             bm_expense_category:[],

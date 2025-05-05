@@ -8,7 +8,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             ব্যয়ের বিবরণ
             <div class="btn btn-info btn-sm" v-if="is_permitted">
-                <router-link :to="{name:'BmExpenseCreate'}" class="text-dark">Create Expense</router-link>
+                <router-link :to="{name:'BmExpenseCreate'}" class="text-dark">ব্যয় এন্ট্রি করুন</router-link>
             </div>
         </div>
         <div class="card-body">

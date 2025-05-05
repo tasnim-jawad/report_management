@@ -100,7 +100,7 @@ function ward_common_get($model, $user_id = null)
 
 function ward_common_store($bind, $class, $report_info)
 {
-    dd(request()->all());
+    // dd(request()->all());
     $rules = [
         'month' => ['required'],
         // 'value' => ['numeric', 'nullable'],

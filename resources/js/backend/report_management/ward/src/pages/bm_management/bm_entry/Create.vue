@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            Create Bm Entry
+            আয় এন্ট্রি করুন
             <div class="btn btn-info btn-sm">
                 <router-link :to="{name:'BmEntryAll'}" class="text-dark">আয়ের বিবরণ</router-link>
             </div>
@@ -32,7 +32,7 @@
                         <input type="month" :name="field.name" class="form-control">
                     </div>
                     <div class="form_input" v-else>
-                        <input type="text" :name="field.name" class="form-control" v-model="amount">
+                        <input :type="field.field_type" :name="field.name" class="form-control" v-model="amount">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm mt-3">Create Entry</button>
@@ -57,7 +57,7 @@ export default {
                 //     field_type:"select",
                 // },
                 {
-                    label:"Title",
+                    label:"Category",
                     name:"ward_bm_income_category_id",
                     field_type:"select",
                 },
@@ -69,6 +69,7 @@ export default {
                 {
                     label:"Amount",
                     name:"amount",
+                    field_type:"number",
                 },
             ],
             ward_bm_category:[],

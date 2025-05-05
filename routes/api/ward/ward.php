@@ -388,3 +388,7 @@ Route::group(['prefix' => 'comment'], function () {
     Route::post('/restore', [App\Http\Controllers\Comment\CommentController::class, 'restore']);
     Route::post('/bulk_import', [App\Http\Controllers\Comment\CommentController::class, 'bulk_import']);
 });
+
+Route::group(['prefix' => 'notification'], function () {
+    Route::get('/all-notification-for-ward', [App\Http\Controllers\Notification\NotificationController::class, 'all_notification_for_ward']);
+});

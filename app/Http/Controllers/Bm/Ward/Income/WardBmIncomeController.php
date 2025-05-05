@@ -211,9 +211,15 @@ class WardBmIncomeController extends Controller
         public function store()
         {
             $validator = Validator::make(request()->all(), [
-                'amount' => ['required'],
+                'amount' => ['required', 'numeric'],
                 'ward_bm_income_category_id' => ['required'],
                 'month' => ['required', 'date'],
+            ], [
+                'amount.required' => 'Amount is required.',
+                'amount.numeric' => 'Amount must be a number.',
+                'ward_bm_income_category_id.required' => 'Please select an category.',
+                'month.required' => 'Month is required.',
+                'month.date' => 'Please provide a valid date for the month.',
             ]);
 
             if ($validator->fails()) {
@@ -300,8 +306,12 @@ class WardBmIncomeController extends Controller
             }
 
             $validator = Validator::make(request()->all(), [
-                'amount' => ['required'],
+                'amount' => ['required', 'numeric'],
                 'ward_bm_income_category_id' => ['required'],
+            ], [
+                'amount.required' => 'Amount is required.',
+                'amount.numeric' => 'Amount must be a number.',
+                'ward_bm_income_category_id.required' => 'Please select an category.',
             ]);
 
             if ($validator->fails()) {

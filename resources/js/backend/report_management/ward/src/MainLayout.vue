@@ -231,6 +231,9 @@
                     <p class="thana_name">থানাঃ {{ this.user?.thana?.title }}</p>
                 </div>
                 <div class="right">
+                    <notification-button
+                        :ward_id="user?.responsibility?.org_ward?.id"
+                    ></notification-button>
                     <a
                         class="btn"
                         href="#"
@@ -321,14 +324,87 @@
         <!------------------------------------>
         <!-------------Modal end-------------->
         <!------------------------------------>
+
+        <!-- NOtification Modal -->
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="notification_modal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Notification
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="empty_data">
+                            <p v-if="!all_notifications.length">
+                                No new notifications found.
+                            </p>
+                        </div>
+                        <div
+                            class="all_comment"
+                            v-for="(notification, index) in all_notifications"
+                            :key="index"
+                        >
+                            <notification-dropdown
+                                :notification="notification"
+                            ></notification-dropdown>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer d-flec justify-content-between">
+                        <!-- <a href="#" class="btn btn-sm btn-primary" @click.prevent="see_all_notification">See all notification</a> -->
+                        <a
+                            class="btn btn-sm btn-primary"
+                            data-bs-dismiss="modal"
+                            @click="
+                                go_to_notification(
+                                    user?.responsibility?.org_ward?.id
+                                )
+                            "
+                        >
+                            See all notification
+                        </a>
+                        <button
+                            type="button"
+                            class="btn btn-sm btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import NotificationButton from "./components/NotificationButton.vue";
+import NotificationDropdown from "./components/NotificationDropdown.vue";
+import SidebarDropdown from "./components/SidebarDropdown.vue";
 import { store as data_store } from "./stores/ReportStore";
+import { store as notification_store } from "./stores/NotificationStore";
 import { mapActions, mapWritableState } from "pinia";
 export default {
+    components: {
+        NotificationButton,
+        NotificationDropdown,
+        SidebarDropdown,
+    },
     data: function () {
         return {
             user: [],
@@ -483,6 +559,10 @@ export default {
     },
     computed: {
         ...mapWritableState(data_store, ["month"]),
+        ...mapWritableState(notification_store, [
+            "all_notifications",
+            "number_of_notifications",
+        ]),
     },
 };
 </script>
