@@ -1815,6 +1815,7 @@ class WardController extends Controller
     // }
 
     public function is_parent_ward(){
+
         $validator = Validator::make(request()->all(), [
             'user_id' => ['required', 'exists:users,id'],
         ],
@@ -1830,10 +1831,14 @@ class WardController extends Controller
             ], 422);
         }
 
-        $is_thana_parent = OrgWardUser::where('user_id', request()->user_id)->where('is_thana_parent', 1)->exists();
-        if($is_thana_parent){
-            
-        }
+        $is_thana_parent = OrgWardUser::where('user_id', request()->user_id)->where('is_thana_parent', 1)
+                                    ->exists();
+
+        return response()->json([
+            'status' => 'success',
+            'is_parent_ward' => $is_thana_parent,
+            'message' => $is_thana_parent ? 'This is a parent ward' : 'This is a general ward',
+        ]);
 
     }
 

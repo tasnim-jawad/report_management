@@ -1,7 +1,7 @@
 <template>
 
 
-    <div id="report_uplode_body" v-if="parent_ward">
+    <div id="report_uplode_body" v-if="jami">
         <section id="heading" class="mt-3">
             <div class="report_heading position-relative mb-1">
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
@@ -26720,7 +26720,6 @@ export default {
             // thana_info: {},
             // president: {},
             joma_status: null,
-            is_parent_ward: 0,
 
             report_header: {},
             report_sum_data: {},
@@ -26806,9 +26805,13 @@ export default {
         // this.uploaded_data();
         // this.report_status();
 
+        
         try {
             await this.uploaded_data()
             await this.report_status()
+
+            const user_id = this.$route.params.user_id;
+            await this.is_ward_is_parent(user_id);
 
             // Set the values after uploaded_data() is done
             this.org_type_store = 'ward';
@@ -26864,6 +26867,9 @@ export default {
     methods: {
         ...mapActions(comment_store, {
             comment_count: 'comment_count'
+        }),
+        ...mapActions(data_store, {
+            is_ward_is_parent: 'is_ward_is_parent'
         }),
         
         uploaded_data: async function () {
@@ -27325,6 +27331,9 @@ export default {
             comment_text_store: 'comment_text',
             all_comment_store: 'all_comment',
             is_data_are_set: 'is_data_are_set',
+        }),
+        ...mapWritableState(data_store, {
+            is_parent_ward: 'is_parent_ward',
         }),
         total_dawat: function () {
             const total =
