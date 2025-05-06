@@ -45,7 +45,7 @@
                                 >ড্যাশবোর্ড
                             </router-link>
                         </li>
-                        <li>
+                        <li  v-if="!is_parent_ward">
                             <router-link :to="{ name: 'UserAll' }">
                                 <span class="icon_margin"
                                     ><i
@@ -54,7 +54,7 @@
                                 >জনশক্তি
                             </router-link>
                         </li>
-                        <li>
+                        <li  v-if="!is_parent_ward">
                             <router-link :to="{ name: 'UnitAll' }">
                                 <span class="icon_margin"
                                     ><i
@@ -63,7 +63,7 @@
                                 >ইউনিট
                             </router-link>
                         </li>
-                        <li>
+                        <li  v-if="!is_parent_ward">
                             <router-link :to="{ name: 'UnitJonoshoktiAll' }">
                                 <span class="icon_margin"
                                     ><i
@@ -72,7 +72,7 @@
                                 >ইউনিট জনশক্তি
                             </router-link>
                         </li>
-                        <li>
+                        <li  v-if="!is_parent_ward">
                             <router-link :to="{ name: 'UnitExpenseTargetAll' }">
                                 <span class="icon_margin"
                                     ><i
@@ -154,7 +154,7 @@
                                 খাত সমুূহ
                             </router-link>
                         </li> -->
-                        <li>
+                        <li  v-if="!is_parent_ward">
                             <router-link :to="{ name: 'BmEntryAll' }">
                                 <span class="icon_margin"
                                     ><i
@@ -173,7 +173,7 @@
                                 <span class="icon_margin"><i class="fa-solid fa-layer-group"></i></span>ব্যয়ের খাত সমুূহ
                             </router-link>
                         </li> -->
-                        <li>
+                        <li  v-if="!is_parent_ward">
                             <router-link :to="{ name: 'BmExpenseAll' }">
                                 <span class="icon_margin"
                                     ><i
@@ -412,7 +412,7 @@ export default {
             isWardReportPage: false,
         };
     },
-    created: function () {
+    created:async function () {
         let token = localStorage.getItem("token");
 
         if (!token) {
@@ -422,8 +422,9 @@ export default {
         let prevUrl = window.sessionStorage.getItem("prevurl");
         window.location.hash = prevUrl || "#/dashboard";
 
-        this.auth_user();
-        this.set_month();
+        await this.auth_user();
+        await this.set_month();
+        await this.is_ward_is_parent();
     },
     mounted: async function () {
         let org_type = "ward";
@@ -468,6 +469,7 @@ export default {
         ...mapActions(data_store, [
             "set_month",
             "ward_active_report_month_info",
+            "is_ward_is_parent",
         ]),
         auth_user: function () {
             axios.get("/user/ward-user-info").then((responce) => {
@@ -558,7 +560,10 @@ export default {
         },
     },
     computed: {
-        ...mapWritableState(data_store, ["month"]),
+        ...mapWritableState(data_store, [
+            "month", 
+            "is_parent_ward"
+        ]),
         ...mapWritableState(notification_store, [
             "all_notifications",
             "number_of_notifications",

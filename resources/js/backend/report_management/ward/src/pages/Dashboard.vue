@@ -7,7 +7,7 @@
             <h3> {{ report_status_message }} </h3>
         </div>
     </div>
-    <div class="card mb-3">
+    <div class="card mb-3"  v-if="!is_parent_ward">
         <div class="card-header">
             রিপোর্ট জমা দেওয়ার জন্য ইউনিটের জন্য অনুমোদিত মাস
         </div>
@@ -37,7 +37,7 @@
             </form>
         </div>
     </div> -->
-    <div class="card">
+    <div class="card" v-if="!is_parent_ward">
         <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
             All Units Status <input type="month" v-model="month" name="month">
         </div>
@@ -153,14 +153,17 @@ export default {
         }
     },
     created: function () {
-        // this.set_month()
+        this.is_ward_is_parent()
         this.report_status()
         this.user_info()
         this.ward_report_status()
         this.unit_report_joma_permitted_month()
     },
     computed: {
-        ...mapWritableState(data_store, ['month']),
+        ...mapWritableState(data_store, [
+            'month',
+            'is_parent_ward',
+        ]),
     },
     watch: {
         month: function () {
@@ -168,7 +171,10 @@ export default {
         }
     },
     methods: {
-        ...mapActions(data_store, ['set_month']),
+        ...mapActions(data_store, [
+            'set_month',
+            'is_ward_is_parent'
+        ]),
 
         report_status: async function () {
             let response = await axios.get('/ward/unit/report-status', {

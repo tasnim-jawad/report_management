@@ -5,7 +5,7 @@ export const store = defineStore(`custom_store`, {
         month: null,
         loading: true,
         ward_active_report_month_info: null,
-        is_parent_ward: 0,
+        is_parent_ward: false,
     }),
     getters: {
         $init: () => {
@@ -48,13 +48,13 @@ export const store = defineStore(`custom_store`, {
             return response.data;
         },
 
-        is_ward_is_parent: async function (user_id) {
-            let res = await axios.get("/ward/is-parent-ward", {
-                params: {
-                    user_id: user_id,
-                },
-            });
-            this.is_parent_ward = res.data.is_parent_ward;
+        is_ward_is_parent: async function () {
+            let res = await axios.get("/ward/is-parent-ward");
+            console.log("is_ward_is_parent", res.data);
+            
+            if (res.data.status == "success") {
+                this.is_parent_ward = res.data.is_parent_ward;
+            }
         },
 
     }
