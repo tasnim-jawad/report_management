@@ -34856,11 +34856,11 @@
                     <h1>বাইতুলমাল</h1>
                 </div>
                 <p class="fs-6 fw-bold mb-3">ধার্যকৃত নিছাব : ১০,০০০/-</p>
-                <table class="text-center mb-1 table_layout_fixed">
+                <table class="text-center mb-1">
                     <thead>
-                        <tr>
-                            <th class="text-center fw-bold" colspan="2">আয়ের বিবরণ</th>
-                            <th class="text-center fw-bold" colspan="2">জমার পরিমাণ</th>
+                        <tr class="">
+                            <th class="text-center fw-bold w-50" colspan="2">আয়ের বিবরণ</th>
+                            <th class="text-center fw-bold w-50" colspan="2">জমার পরিমাণ</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34943,25 +34943,25 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-end px-2 width-60">মোট</td>
-                            <td>
+                            <td class="text-end px-2 width-30">মোট</td>
+                            <td class="width-20">
                                 {{ formatBangla(parseInt(total_income) ?? "") }}
                             </td>
-                            <td class="text-end px-2 width-60">মোট</td>
-                            <td>
+                            <td class="text-end px-2 width-30">মোট</td>
+                            <td class="width-20">
                                 {{
                                     formatBangla(parseInt(total_expense) ?? "")
                                 }}
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-end px-2 width-60">গত মাসের উদ্বৃত্ত</td>
+                            <td class="text-end px-2">গত মাসের উদ্বৃত্ত</td>
                             <td>
                                 {{
                                     formatBangla(parseInt(total_previous) ?? "")
                                 }}
                             </td>
-                            <td class="text-end px-2 width-60">এ মাসের উদ্বৃত্ত</td>
+                            <td class="text-end px-2">এ মাসের উদ্বৃত্ত</td>
                             <td>
                                 {{
                                     formatBangla(
@@ -34971,7 +34971,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-end px-2 width-60">সর্বমোট</td>
+                            <td class="text-end px-2">সর্বমোট</td>
                             <td>
                                 {{
                                     formatBangla(
@@ -34979,7 +34979,7 @@
                                     )
                                 }}
                             </td>
-                            <td class="text-end px-2 width-60">সর্বমোট</td>
+                            <td class="text-end px-2">সর্বমোট</td>
                             <td>
                                 {{ formatBangla(parseInt(in_total) ?? "") }}
                             </td>

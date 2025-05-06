@@ -47,6 +47,14 @@ export const store = defineStore(`custom_store`, {
             return response.data;
         },
 
+        is_parent_ward: async function (user_id) {
+            let res = await axios.get("/ward/is-parent-ward", {
+                params: {
+                    user_id: user_id,
+                },
+            });
+        },
+
     }
 
 

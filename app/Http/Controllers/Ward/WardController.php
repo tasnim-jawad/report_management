@@ -88,6 +88,7 @@ use Illuminate\Support\Facades\Validator;
 
 class WardController extends Controller
 {
+
     // public function report()
     // {
     //     $validator = Validator::make(request()->all(), [
@@ -1812,6 +1813,29 @@ class WardController extends Controller
 
     //     ]);
     // }
+
+    public function is_parent_ward(){
+        $validator = Validator::make(request()->all(), [
+            'user_id' => ['required', 'exists:users,id'],
+        ],
+        [
+            'user_id.required' => 'User ID is required',
+            'user_id.exists' => 'User ID does not exist',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $is_thana_parent = OrgWardUser::where('user_id', request()->user_id)->where('is_thana_parent', 1)->exists();
+        if($is_thana_parent){
+            
+        }
+
+    }
 
     public function expense_category_wise()
     {

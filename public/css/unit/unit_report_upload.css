@@ -237,7 +237,8 @@ th {
 }
 
 td {
-    min-height: 20px;
+    /* min-height: 20px; */
+    height: 21px;
 }
 
 .table_layout_fixed {

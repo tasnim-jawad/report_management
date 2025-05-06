@@ -132,7 +132,8 @@ export const store = defineStore(`comment_store`, {
                 // console.log("this.all_comment_count ", this.all_comment_count);
                 
             }
-        }
+        },
+
     }
 
 
