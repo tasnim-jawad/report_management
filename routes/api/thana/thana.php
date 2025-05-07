@@ -477,6 +477,8 @@
         Route::get('/income-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'income_category_wise']);
         Route::get('/expense-category-wise', [App\Http\Controllers\Thana\ThanaController::class, 'expense_category_wise']);
 
+        Route::get('/is-parent', [App\Http\Controllers\Thana\ThanaController::class, 'is_parent']);
+
         Route::get('/check-report-info', [App\Http\Controllers\Thana\ThanaController::class, 'check_report_info']);
         Route::get('/check-report-info-in-range', [App\Http\Controllers\Thana\ThanaController::class, 'check_report_info_in_range']);
         Route::get('/uploaded-data-monthly', [App\Http\Controllers\Thana\ThanaController::class, 'report_upload_monthly']);

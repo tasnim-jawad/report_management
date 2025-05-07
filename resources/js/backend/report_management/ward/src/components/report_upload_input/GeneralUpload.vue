@@ -10619,7 +10619,8 @@
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'darsul_quran_program'"
                                             />
-                                        </div>/
+                                        </div>
+                                        <!-- /
                                         <div class="parent_popup">
                                             <input
                                                 name="sohih_tilawat_program"
@@ -10634,7 +10635,7 @@
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'sohih_tilawat_program'"
                                             />
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td class="bg-block"></td>
@@ -10658,7 +10659,8 @@
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'darsul_quran_uposthiti'"
                                             />
-                                        </div>/
+                                        </div>
+                                        <!-- /
                                         <div class="parent_popup">
                                             <input
                                                 name="sohih_tilawat_uposthiti"
@@ -10677,7 +10679,7 @@
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'sohih_tilawat_uposthiti'"
                                             />
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                             </tr>

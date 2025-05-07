@@ -9148,7 +9148,7 @@
                                         </td>
                                         <td class="bg-block p-0">
                                             <div class="parent_popup">
-                                                <input disabled
+                                                <!-- <input disabled
                                                     name="upper_leader_sofor"
                                                     :value="
                                                         formatBangla(
@@ -9168,7 +9168,7 @@
                                                 <comment-from-thana
                                                     :table_name="'ward_songothon7_sofors'"
                                                     :column_name="'upper_leader_sofor'"
-                                                />
+                                                /> -->
                                             </div>
                                         </td>
                                     </tr>
@@ -9178,7 +9178,7 @@
                                         </td>
                                         <td class="bg-block p-0">
                                             <div class="parent_popup">
-                                                <input
+                                                <!-- <input disabled
                                                     name="ward_sovapotir_sofor"
                                                     :value="
                                                         formatBangla(
@@ -9193,12 +9193,12 @@
                                                         )
                                                     "
                                                     type="text"
-                                                    class="bg-input w-100 text-center"
+                                                    class="bg-block w-100 text-center"
                                                 />
                                                 <comment-from-thana
                                                     :table_name="'ward_songothon7_sofors'"
                                                     :column_name="'ward_sovapotir_sofor'"
-                                                />
+                                                /> -->
                                             </div>
                                         </td>
                                     </tr>
@@ -9206,9 +9206,9 @@
                                         <td class="text-start px-2">
                                             ওয়ার্ড শূরা/কর্মপরিষদ/টিম সদস্যদের সফর
                                         </td>
-                                        <td>
+                                        <td class="bg-block p-0">
                                             <div class="parent_popup">
-                                                <input
+                                                <!-- <input disabled
                                                     name="word_sura_sodosso_sofor"
                                                     :value="
                                                         formatBangla(
@@ -9223,12 +9223,12 @@
                                                         )
                                                     "
                                                     type="text"
-                                                    class="bg-input w-100 text-center"
+                                                    class="bg-block w-100 text-center"
                                                 />
                                                 <comment-from-thana
                                                     :table_name="'ward_songothon7_sofors'"
                                                     :column_name="'word_sura_sodosso_sofor'"
-                                                />
+                                                /> -->
                                             </div>
                                         </td>
                                     </tr>
@@ -9411,8 +9411,8 @@
                                 <td class="text-start">
                                     ওয়ার্ড শূরা / কর্মপরিষদ / টিম বৈঠক
                                 </td>
-                                <td>
-                                    <div class="d-flex">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
                                                 name="word_sura_boithok_total"
@@ -9433,7 +9433,8 @@
                                                 :table_name="'ward_songothon9_sangothonik_boithoks'"
                                                 :column_name="'word_sura_boithok_total'"
                                             />
-                                        </div> /
+                                        </div> 
+                                        /
                                         <div class="parent_popup">
                                             <input
                                                 name="kormoporishod_boithok_total"
@@ -9476,10 +9477,10 @@
                                                 :column_name="'team_boithok_total'"
                                             />
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
-                                <td>
-                                    <div class="d-flex">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
                                                 name="word_sura_boithok_target"
@@ -9543,10 +9544,10 @@
                                                 :column_name="'team_boithok_target'"
                                             />
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
-                                <td>
-                                    <div class="d-flex">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
                                                 name="word_sura_boithok_uposthiti"
@@ -9628,7 +9629,7 @@
                                                 :column_name="'team_boithok_uposthiti'"
                                             />
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                             </tr>
 
@@ -9719,9 +9720,9 @@
                             <tr>
                                 <td class="text-start">৩.</td>
                                 <td class="text-start">মাসিক সদস্য (রুকন) বৈঠক</td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="masik_sodosso_boithok_total"
                                             :value="
                                                 formatBangla(
@@ -9741,12 +9742,12 @@
                                         <comment-from-thana
                                             :table_name="'ward_songothon9_sangothonik_boithoks'"
                                             :column_name="'masik_sodosso_boithok_total'"
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="masik_sodosso_boithok_target"
                                             :value="
                                                 formatBangla(
@@ -9766,12 +9767,12 @@
                                         <comment-from-thana
                                             :table_name="'ward_songothon9_sangothonik_boithoks'"
                                             :column_name="'masik_sodosso_boithok_target'"
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="masik_sodosso_boithok_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -9795,7 +9796,7 @@
                                         <comment-from-thana
                                             :table_name="'ward_songothon9_sangothonik_boithoks'"
                                             :column_name="'masik_sodosso_boithok_uposthiti'"
-                                        />
+                                        /> -->
                                     </div>
                                 </td>
                             </tr>
@@ -10296,8 +10297,8 @@
                                 <td class="text-start">
                                     ঊর্ধ্বতন সংগঠনের শিক্ষাশিবির/শিক্ষা বৈঠকে অংশগ্রহণকারী
                                 </td>
-                                <td>
-                                    <div class="d-flex">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
                                                 name="urdhotono_sikkha_shibir"
@@ -10329,10 +10330,10 @@
                                                 :column_name="'urdhotono_sikkha_boithok'"
                                             />
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
-                                <td>
-                                    <div class="d-flex">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
                                                 name="urdhotono_sikkha_shibir_target"
@@ -10364,10 +10365,10 @@
                                                 :column_name="'urdhotono_sikkha_boithok_target'"
                                             />
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
-                                <td>
-                                    <div class="d-flex">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
                                                 name="urdhotono_sikkha_shibir_uposthiti"
@@ -10407,7 +10408,7 @@
                                                 :column_name="'urdhotono_sikkha_boithok_uposthiti'"
                                             />
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                             </tr>
 
@@ -10619,7 +10620,8 @@
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'darsul_quran_program'"
                                             />
-                                        </div>/
+                                        </div>
+                                        <!-- /
                                         <div class="parent_popup">
                                             <input
                                                 name="sohih_tilawat_program"
@@ -10634,7 +10636,7 @@
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'sohih_tilawat_program'"
                                             />
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td class="bg-block"></td>
@@ -10658,7 +10660,8 @@
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'darsul_quran_uposthiti'"
                                             />
-                                        </div>/
+                                        </div>
+                                        <!-- /
                                         <div class="parent_popup">
                                             <input
                                                 name="sohih_tilawat_uposthiti"
@@ -10677,7 +10680,7 @@
                                                 :table_name="'ward_proshikkhon1_tarbiats'"
                                                 :column_name="'sohih_tilawat_uposthiti'"
                                             />
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                             </tr>
@@ -11815,9 +11818,9 @@
                                         <td class="text-start px-2 width-70">
                                             স্বাস্থ্যকর্মী প্রশিক্ষণ প্রোগ্রামে মোট অংশগ্রহণকারীর সংখ্যা
                                         </td>
-                                        <td>
+                                        <td class="bg-block">
                                             <div class="parent_popup">
-                                                <input
+                                                <!-- <input
                                                     name="health_worker_training_programs_attendance"
                                                     :value="
                                                         formatBangla(
@@ -11831,7 +11834,7 @@
                                                 <comment-from-thana
                                                     :table_name="'ward_shomajsheba3_health_and_family_kollans'"
                                                     :column_name="'health_worker_training_programs_attendance'"
-                                                />
+                                                /> -->
                                             </div>
                                         </td>
                                     </tr>
@@ -11897,9 +11900,9 @@
                                         <td class="text-start px-2 width-70">
                                             কতটি সামাজিক প্রতিষ্ঠান রয়েছে
                                         </td>
-                                        <td>
+                                        <td class="bg-block">
                                             <div class="parent_popup">
-                                                <input
+                                                <!-- <input
                                                     name="shamajik_protishthan_kototi"
                                                     :value="
                                                         formatBangla(
@@ -11913,7 +11916,7 @@
                                                 <comment-from-thana
                                                     :table_name="'ward_shomajsheba4_institutional_social_works'"
                                                     :column_name="'shamajik_protishthan_kototi'"
-                                                />
+                                                /> -->
                                             </div>
                                         </td>
                                     </tr>
@@ -11921,9 +11924,9 @@
                                         <td class="text-start px-2">
                                             কতটি প্রতিষ্ঠানে সামাজিক কাজ হয়েছে
                                         </td>
-                                        <td>
+                                        <td class="bg-block">
                                             <div class="parent_popup">
-                                                <input
+                                                <!-- <input
                                                     name="shamajik_protishthan_kototite_kaj_hoyeche"
                                                     :value="
                                                         formatBangla(
@@ -11937,7 +11940,7 @@
                                                 <comment-from-thana
                                                     :table_name="'ward_shomajsheba4_institutional_social_works'"
                                                     :column_name="'shamajik_protishthan_kototite_kaj_hoyeche'"
-                                                />
+                                                /> -->
                                             </div>
                                         </td>
                                     </tr>
@@ -11945,9 +11948,9 @@
                                         <td class="text-start px-2 font-13">
                                             কতটি নতুন সামাজিক প্রতিষ্ঠান চালু করা হয়েছে (প্রযোজ্য ক্ষেত্রে)
                                         </td>
-                                        <td>
+                                        <td class="bg-block">
                                             <div class="parent_popup">
-                                                <input
+                                                <!-- <input
                                                     name="new_shamajik_protishthan"
                                                     :value="
                                                         formatBangla(
@@ -11961,7 +11964,7 @@
                                                 <comment-from-thana
                                                     :table_name="'ward_shomajsheba4_institutional_social_works'"
                                                     :column_name="'new_shamajik_protishthan'"
-                                                />
+                                                /> -->
                                             </div>
                                         </td>
                                     </tr>
@@ -12670,7 +12673,7 @@
                     <h4 class="fs-6 fw-bold">
                         ৪. জাতীয় ও স্থানীয় নির্বাচনভিত্তিক কার্যক্রম:
                     </h4>
-                    <table class="text-center mb-1">
+                    <table class="text-center mb-1 table_layout_fixed">
                         <thead>
                             <tr>
                                 <th class="w-25">নির্বাচনের ধরন</th>
@@ -12684,8 +12687,8 @@
                                 <td class="text-start px-2">
                                     কাউন্সিলর/মেম্বার
                                 </td>
-                                <td>
-                                    <div class="d-flex">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex">
                                         <div class="parent_popup">
                                             <input
                                                 name="councilor_candidate"
@@ -12725,7 +12728,7 @@
                                                 :column_name="'member_candidate'"
                                             />
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="d-flex">

@@ -114,6 +114,7 @@ class LoginController extends Controller
     {
         // dd("checker check in login controller",auth()->check());
         if (auth()->check()) {
+            // dd(auth()->user()->toArray());
             return response()->json(
                 [
                     'user' => auth()->user()
@@ -121,7 +122,7 @@ class LoginController extends Controller
                 200
             );
         }
-
+        
         return response()->json([""], 403);
     }
 

@@ -18,6 +18,9 @@ class DashboardController extends Controller
     public function thana(){
         return view('dashboard.thana');
     }
+    public function parent_thana(){
+        return view('dashboard.parent_thana');
+    }
     public function admin(){
         return view('dashboard.admin');
     }

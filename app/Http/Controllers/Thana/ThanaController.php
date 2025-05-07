@@ -28,6 +28,48 @@ class ThanaController extends Controller
         return view('thana.thana_report');
     }
 
+
+    public function is_parent()
+    {
+        try {
+            $thana_user = (object) auth()->user()->org_thana_user;
+            // dd($thana_user);
+            if (!$thana_user) {
+                return response()->json([
+                    'status' => 'success',
+                    'is_parent' => false,
+                    'message' => "you are not a thana user",
+                ]);
+            }
+
+            $is_parent = $thana_user->is_parent;
+
+            if ($is_parent) {
+                return response()->json([
+                    'status' => 'success',
+                    'is_parent' => true,
+                    'message' => "you are a parent thana user",
+                ]);
+            }
+
+            return response()->json([
+                'status' => 'success',
+                'is_parent' => false,
+                'message' => "you are not a parent thana user",
+            ]);
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json([
+                'status' => 'error',
+                'message' => "something went wrong from thana/is-parent route",
+            ]);
+
+        }
+
+        
+    }
+
+
     public function expense_category_wise()
     {
         $validator = Validator::make(request()->all(), [

@@ -8,5 +8,6 @@ Route::group(['prefix' => 'dashboard', 'namespace' => '\App\Http\Controllers\Das
     Route::get('unit', 'DashboardController@unit');
     Route::get('ward', 'DashboardController@ward');
     Route::get('thana', 'DashboardController@thana');
+    Route::get('parent-thana', 'DashboardController@parent_thana');
     Route::get('admin', 'DashboardController@admin');
 });

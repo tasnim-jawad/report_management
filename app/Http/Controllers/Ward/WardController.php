@@ -1822,8 +1822,8 @@ class WardController extends Controller
 
         return response()->json([
             'status' => 'success',
-            // 'is_parent_ward' => $is_thana_parent,
-            'is_parent_ward' => true,
+            'is_parent_ward' => $is_thana_parent,
+            // 'is_parent_ward' => true,
             'message' => $is_thana_parent ? 'This is a parent ward' : 'This is a general ward',
         ]);
 
