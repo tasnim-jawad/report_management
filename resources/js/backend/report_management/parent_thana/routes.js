@@ -3,6 +3,7 @@ import main_route from "./src/routes/routes";
 import WardReportUpload from "./src/pages/WardReportUpload.vue";
 import ThanaReportUploadMonthly from "./src/pages/ThanaReportUploadMonthly.vue";
 import ThanaSumReport from "./src/pages/ThanaSumReport.vue";
+import ThanaReportCheck from "./src/pages/ThanaReportCheck.vue";
 import WardReportCheck from "./src/pages/WardReportCheck.vue";
 
 const router = createRouter({
@@ -26,6 +27,12 @@ const router = createRouter({
             name: "ThanaSumReport",
             path: "/thana-sum-report/:start_month/:end_month",
             component: ThanaSumReport,
+            props: true,
+        },
+        {
+            name: "ThanaReportCheck",
+            path: "/thana-report-check/:month/:thana_id",
+            component: ThanaReportCheck,
             props: true,
         },
         {

@@ -56,7 +56,7 @@ export default {
                 const { data } = await axios.get("/thana/check-report-info", {
                     params: { month: this.month },
                 });
-                console.log("from ward mainlayout", data);
+                console.log("from thana mainlayout", data);
 
                 if (data.data) {
                     if (this.user_id) {

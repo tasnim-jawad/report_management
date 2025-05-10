@@ -525,7 +525,7 @@ export default {
                 this.month = moment(
                     this.thana_active_report_month_info.month_year
                 ).format("YYYY-MM");
-                modalElement.show();
+                // modalElement.show();
             }
             // modalElement.show();
         }

@@ -22,12 +22,14 @@ class DateWiseReportSum
             $s_month = Carbon::parse($start_month);
             $e_month = Carbon::parse($end_month);
 
+            // Ensure $org_type_ids is always an array
+            $org_type_ids = is_array($org_type_id) ? $org_type_id : [$org_type_id];
             // Ensure $report_approved_status is always an array
             $approved_status_array = is_array($report_approved_status) ? $report_approved_status : [$report_approved_status];
             // dd($approved_status_array);
             $report_info_ids = ReportInfo::whereBetween('month_year', [$s_month->startOfMonth(), $e_month->endOfMonth()])
                 ->where('org_type', $org_type)
-                ->where('org_type_id', $org_type_id)
+                ->whereIn('org_type_id', $org_type_ids)
                 ->whereIn('report_approved_status', $approved_status_array)
                 ->pluck('id')
                 ->toArray();

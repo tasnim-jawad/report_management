@@ -35426,7 +35426,7 @@ export default {
             const start_month = this.$route.params.start_month;
             const end_month = this.$route.params.end_month;
 
-            let res = await axios.get("/thana/report/thana-report-sum", {
+            let res = await axios.get("/parent-thana/thana-report-sum", {
                 params: {
                     start_month: start_month,
                     end_month: end_month,
