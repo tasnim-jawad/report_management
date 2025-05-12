@@ -30,8 +30,8 @@
         Route::get('/report-status', [App\Http\Controllers\Parent\ParentThanaController::class, 'report_status']);
         Route::post('/change-status', [App\Http\Controllers\Parent\ParentThanaController::class, 'change_status']);
 
-        Route::post('/check_report_info_in_range', [App\Http\Controllers\Parent\ParentThanaController::class, 'check_report_info_in_range']);
-        Route::post('/thana-report-sum', [App\Http\Controllers\Parent\ParentThanaController::class, 'thana_report_sum']);
+        Route::get('/check-report-info-in-range', [App\Http\Controllers\Parent\ParentThanaController::class, 'check_report_info_in_range']);
+        Route::get('/thana-report-sum', [App\Http\Controllers\Parent\ParentThanaController::class, 'thana_report_sum']);
         // Route::post('/change-status', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'change_status']);
         // Route::post('/report-status-single-ward', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status_single_ward']);
     });

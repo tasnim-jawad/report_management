@@ -50,7 +50,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(thana, index) in approved_thana" :key="index">
-                            <td>{{ thana.thana_title }}</td>
+                            <td>{{ thana.thana_title }}  -  {{ thana.org_gender }}</td>
                             <td>
                                 <div class="d-flex gap-2 justify-content-start align-items-center">
                                     <a href="" class="btn btn-sm btn-info "
@@ -77,7 +77,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(thana, index) in rejected_thana" :key="index">
-                            <td>{{ thana.thana_title }}</td>
+                            <td>{{ thana.thana_title }}  -  {{ thana.org_gender }}</td>
                             <td>
                                 <div class="d-flex gap-2 justify-content-start align-items-center">
                                     <a href="" class="btn btn-sm btn-info "
@@ -98,7 +98,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(thana, index) in pending_thana" :key="index">
-                            <td>{{ thana.thana_title }}</td>
+                            <td>{{ thana.thana_title }}  -  {{ thana.org_gender }}</td>
                             <td>
                                 <div class="d-flex gap-2 justify-content-start align-items-center">
                                     <a href="" class="btn btn-sm btn-info "
@@ -121,7 +121,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(thana, index) in unsubmitted_thana" :key="index">
-                            <td>{{ thana.thana_title }}</td>
+                            <td>{{ thana.thana_title }}  -  {{ thana.org_gender }}</td>
                             <td></td>
                         </tr>
                     </tbody>

@@ -15,9 +15,12 @@ class CalculatePreviousPresent
         $s_month = Carbon::parse($start_month);
         $e_month = Carbon::parse($end_month);
 
+        // Ensure $org_type_ids is always an array
+        $org_type_ids = is_array($org_type_id) ? $org_type_id : [$org_type_id];
+
         $previous_month = $s_month->clone()->subMonth()->endOfMonth();
-        $total_approved_report_info_ids_previous = $this->get_approved_report_ids($previous_month, $org_type, $org_type_id);
-        $total_approved_report_info_ids_present = $this->get_approved_report_ids($e_month->clone()->endOfMonth(), $org_type, $org_type_id);
+        $total_approved_report_info_ids_previous = $this->get_approved_report_ids($previous_month, $org_type, $org_type_ids);
+        $total_approved_report_info_ids_present = $this->get_approved_report_ids($e_month->clone()->endOfMonth(), $org_type, $org_type_ids);
         // dd($total_approved_report_info_ids_previous,$total_approved_report_info_ids_present);
         $results = [];
         $parameter_function_name ="get_" . $org_type . "_calculations";
@@ -93,9 +96,9 @@ class CalculatePreviousPresent
         return (object) $results;
     }
 
-    private function get_approved_report_ids($month, $org_type, $org_type_id)
+    private function get_approved_report_ids($month, $org_type, $org_type_ids)
     {
-        return ReportInfo::where('org_type_id', $org_type_id)
+        return ReportInfo::whereIn('org_type_id', $org_type_ids)
             ->where('org_type', $org_type)
             ->where('report_approved_status', 'approved')
             ->whereDate('month_year', '<=', $month)

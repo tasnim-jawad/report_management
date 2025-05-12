@@ -19,6 +19,7 @@ use Database\Seeders\Bm\Ward\Expense\WardBmExpensesTableSeeder;
 use Database\Seeders\Bm\Ward\Expense\WardExpenseTargetsTableSeeder;
 use Database\Seeders\Bm\Ward\Income\WardBmIncomeCategoriesTableSeeder;
 use Database\Seeders\Bm\Ward\Income\WardBmIncomesTableSeeder;
+use Database\Seeders\Default\DefaultNewSetSeeder;
 use Database\Seeders\Notification\NotificationsTableSeeder;
 use Database\Seeders\Organization\OrgAreasTableSeeder;
 use Database\Seeders\Organization\OrgCitiesTableSeeder;
@@ -283,6 +284,10 @@ class DatabaseSeeder extends Seeder
 
             ThanaBmExpenseCategoriesTableSeeder::class,
             ThanaBmExpensesTableSeeder::class,
+
+
+            // set of thana and ward
+            DefaultNewSetSeeder::class,
         ]);
     }
 }

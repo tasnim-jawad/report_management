@@ -21,6 +21,8 @@ class BmReport
         $start_month_date = Carbon::parse($start_month);
         $end_month_date = Carbon::parse($end_month);
 
+        // Ensure $org_type_ids is always an array
+        $org_type_ids = is_array($org_type_id) ? $org_type_id : [$org_type_id];
         // Ensure $report_approved_status is always an array
         $approved_status_array = is_array($report_approved_status) ? $report_approved_status : [$report_approved_status];
 
@@ -40,11 +42,11 @@ class BmReport
 
         // Step 2: Fetch all relevant transactions in the given date range
         $org_type_column_name = $org_type . '_id';
-        $org_type_condition = is_array($org_type_id) ? 'whereIn' : 'where';
+        $org_type_condition = is_array($org_type_ids) ? 'whereIn' : 'where';
 
         $transactions = DB::table($transaction_table_name)
             ->whereBetween($month_column, [$start_month_date->startOfMonth(), $end_month_date->endOfMonth()])
-            ->$org_type_condition($org_type_column_name, $org_type_id)
+            ->$org_type_condition($org_type_column_name, $org_type_ids)
             ->whereIn('report_approved_status', $approved_status_array)
             ->get();
 

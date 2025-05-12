@@ -75,6 +75,7 @@ class ParentThanaController extends Controller
                     $unsubmitted_thana[] = [
                         'thana_id' => $thana->id,
                         'thana_title' => $thana->title,
+                        'org_gender' => $thana->org_gender,
                         'report_status' => "unsubmitted",
                     ];
 
@@ -82,6 +83,7 @@ class ParentThanaController extends Controller
                     $pending_thana[] = [
                         'thana_id' => $thana->id,
                         'thana_title' => $thana->title,
+                        'org_gender' => $thana->org_gender,
                         'report_status' => "pending",
                     ];
 
@@ -89,6 +91,7 @@ class ParentThanaController extends Controller
                     $rejected_thana[] = [
                         'thana_id' => $thana->id,
                         'thana_title' => $thana->title,
+                        'org_gender' => $thana->org_gender,
                         'report_status' => "rejected",
                     ];
 
@@ -97,6 +100,7 @@ class ParentThanaController extends Controller
                     $approved_thana[] = [
                         'thana_id' => $thana->id,
                         'thana_title' => $thana->title,
+                        'org_gender' => $thana->org_gender,
                         'report_status' => "approved",
                     ];
                 }
@@ -276,13 +280,13 @@ class ParentThanaController extends Controller
         $carbon_start_month = Carbon::parse($start_month);
         $query = ThanaBmIncome::query();
         $filter = $query->whereDate('month', '<=', $carbon_start_month->clone()->subMonth())
-            ->where('thana_id', $thana_id)
+            ->whereIn('thana_id', $org_type_ids)
             ->where('report_approved_status', 'approved');
         $total_previous_income = $filter->sum('amount');
 
         $query = ThanaBmExpense::query();
         $filter = $query->whereDate('date', '<=', $carbon_start_month->clone()->subMonth())
-            ->where('thana_id', $thana_id)
+            ->whereIn('thana_id', $org_type_ids)
             ->where('report_approved_status', 'approved');
         $total_previous_expense = $filter->sum('amount');
         $total_previous =  $total_previous_income - $total_previous_expense;

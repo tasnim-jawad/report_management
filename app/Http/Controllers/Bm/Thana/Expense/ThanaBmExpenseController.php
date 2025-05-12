@@ -204,11 +204,21 @@ class ThanaBmExpenseController extends Controller
             ], 422);
         }
 
+        $month = Carbon::parse(request()->month);
+        $upper_organization_id = auth()->user()->org_thana_user->city_id;
 
-        $permission  = ReportManagementControl::where('report_type', 'thana')
+        $permission = ReportManagementControl::whereYear('month_year', $month->clone()->year)
+            ->whereMonth('month_year', $month->clone()->month)
             ->where('is_active', 1)
+            ->where('report_type', 'thana')
+            ->where('upper_organization_id', $upper_organization_id)
             ->latest()
             ->first();
+
+        // $permission  = ReportManagementControl::where('report_type', 'thana')
+        //     ->where('is_active', 1)
+        //     ->latest()
+        //     ->first();
         if (!$permission) {
             return response()->json([
                 'err_message' => 'Permission denied',
@@ -216,20 +226,20 @@ class ThanaBmExpenseController extends Controller
             ], 403);
         }
 
-        $passed_date = Carbon::parse(request()->month);
-        $passed_month = $passed_date->clone()->month;
-        $passed_year = $passed_date->clone()->year;
+        // $passed_date = Carbon::parse(request()->month);
+        // $passed_month = $passed_date->clone()->month;
+        // $passed_year = $passed_date->clone()->year;
 
         $permitted_date = Carbon::parse($permission->month_year);
         $permitted_month = $permitted_date->month;
         $permitted_year = $permitted_date->year;
 
-        if ($passed_month != $permitted_month || $passed_year !=  $permitted_year) {
-            return response()->json([
-                'err_message' => 'Permission denied',
-                'errors' => [['You do not have the necessary permissions']],
-            ], 403);
-        }
+        // if ($passed_month != $permitted_month || $passed_year !=  $permitted_year) {
+        //     return response()->json([
+        //         'err_message' => 'Permission denied',
+        //         'errors' => [['You do not have the necessary permissions']],
+        //     ], 403);
+        // }
         // dd(auth()->user());
         $thana_info = (object) auth()->user()->org_thana_user;
 
