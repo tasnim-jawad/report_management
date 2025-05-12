@@ -8,6 +8,7 @@ export const store = defineStore(`custom_store`, {
         thana_user:null,
         thana_user_id: 0,
         thana_id: 0,
+        is_parent: false,
     }),
     getters: {
         $init: () => {
@@ -93,6 +94,15 @@ export const store = defineStore(`custom_store`, {
                 .catch(error => {
                     console.error('API call error:', error);
                 });
+            
+        },
+
+        is_parent_check:async function () {
+            let response = await axios.get('/thana/is-parent');
+            if (response.data.status == "success") {
+                this.is_parent = response.data.is_parent;
+            }
+            return response.data;
             
         }
 

@@ -317,6 +317,14 @@
                                 >Logout</a
                             >
                         </li>
+                        <li v-if="is_parent">
+                            <a
+                                class="dropdown-item"
+                                href="#"
+                                @click.prevent="parent_dashboard"
+                                >Parent dashboard</a
+                            >
+                        </li>
                         <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                     </ul>
@@ -495,6 +503,7 @@ export default {
         this.auth_user();
         this.set_month();
         this.set_permission_auto();
+        this.is_parent_check();
     },
     // mounted: function () {
     //     this.isUnitReportPage =
@@ -551,7 +560,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(data_store, ["set_month","set_permission_auto"]),
+        ...mapActions(data_store, ["set_month","set_permission_auto","is_parent_check"]),
         ...mapActions(notification_store, ["see_all_notification"]),
         auth_user: function () {
             axios.get("/user/thana-user-info").then((responce) => {
@@ -568,6 +577,13 @@ export default {
                 let prevUrl = window.sessionStorage.getItem("prevurl");
                 window.location.href = prevUrl || "#/dashboard";
             }
+        },
+
+        parent_dashboard: function () {
+            if (window.confirm("are you sure to go parent dashboard")) {
+                // sessionStorage.removeItem("prevurl");
+                window.location.href = "/dashboard/parent-thana";
+            } 
         },
         toggle_sidebar: function () {
             const width = window.innerWidth;
@@ -652,6 +668,7 @@ export default {
         ...mapWritableState(data_store, [
             "month",
             "thana_active_report_month_info",
+            "is_parent",
         ]),
 
         ...mapWritableState(notification_store, [

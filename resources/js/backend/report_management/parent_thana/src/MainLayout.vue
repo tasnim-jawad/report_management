@@ -297,6 +297,14 @@
                                 >Logout</a
                             >
                         </li>
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="#"
+                                @click.prevent="man_dashboard"
+                                >Man Dashboard</a
+                            >
+                        </li>
                         <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                     </ul>
@@ -548,6 +556,13 @@ export default {
                 let prevUrl = window.sessionStorage.getItem("prevurl");
                 window.location.href = prevUrl || "#/dashboard";
             }
+        },
+
+        man_dashboard: function () {
+            if (window.confirm("are you sure to go man dashboard")) {
+                // sessionStorage.removeItem("prevurl");
+                window.location.href = "/dashboard/thana";
+            } 
         },
         toggle_sidebar: function () {
             const width = window.innerWidth;
