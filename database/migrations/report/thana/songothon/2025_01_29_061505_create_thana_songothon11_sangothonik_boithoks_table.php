@@ -321,13 +321,20 @@ return new class extends Migration
             $table->bigInteger('jubok_boithok_women_target')->nullable();
             $table->bigInteger('jubok_boithok_women_uposthiti')->nullable();
 
-            // Student Daittoshil Boithok
-            $table->bigInteger('student_daittoshil_boithok_man_total')->nullable();
-            $table->bigInteger('student_daittoshil_boithok_man_target')->nullable();
-            $table->bigInteger('student_daittoshil_boithok_man_uposthiti')->nullable();
-            $table->bigInteger('student_daittoshil_boithok_women_total')->nullable();
-            $table->bigInteger('student_daittoshil_boithok_women_target')->nullable();
-            $table->bigInteger('student_daittoshil_boithok_women_uposthiti')->nullable();
+            // male_Student Daittoshil Boithok
+            $table->bigInteger('male_student_daittoshil_boithok_man_total')->nullable();
+            $table->bigInteger('male_student_daittoshil_boithok_man_target')->nullable();
+            $table->bigInteger('male_student_daittoshil_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('male_student_daittoshil_boithok_women_total')->nullable();
+            $table->bigInteger('male_student_daittoshil_boithok_women_target')->nullable();
+            $table->bigInteger('male_student_daittoshil_boithok_women_uposthiti')->nullable();
+            // female_Student Daittoshil Boithok
+            $table->bigInteger('female_student_daittoshil_boithok_man_total')->nullable();
+            $table->bigInteger('female_student_daittoshil_boithok_man_target')->nullable();
+            $table->bigInteger('female_student_daittoshil_boithok_man_uposthiti')->nullable();
+            $table->bigInteger('female_student_daittoshil_boithok_women_total')->nullable();
+            $table->bigInteger('female_student_daittoshil_boithok_women_target')->nullable();
+            $table->bigInteger('female_student_daittoshil_boithok_women_uposthiti')->nullable();
 
             // Associate Member Somabesh
             $table->bigInteger('associate_member_somabesh_man_total')->nullable();

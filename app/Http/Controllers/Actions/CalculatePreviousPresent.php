@@ -544,6 +544,98 @@ class CalculatePreviousPresent
     {
         return [
 
+            // ১. ইউনিটে নিয়মিত গ্রুপভিত্তিক দাওয়াত:
+            'dawat1_associate_members_man' => [
+                'table' => 'thana_dawat1_regular_group_wises',
+                'columns' => ['increase' => 'how_many_associate_members_created_man'],
+                'type' => 'increase',
+            ],
+            'dawat1_associate_members_woman' => [
+                'table' => 'thana_dawat1_regular_group_wises',
+                'columns' => ['increase' => 'how_many_associate_members_created_woman'],
+                'type' => 'increase',
+            ],
+
+            // ২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:
+            'dawat2_associate_members_man' => [
+                'table' => 'thana_dawat2_personal_and_targets',
+                'columns' => ['increase' => 'how_many_associate_members_created_man'],
+                'type' => 'increase',
+            ],
+            'dawat2_associate_members_woman' => [
+                'table' => 'thana_dawat2_personal_and_targets',
+                'columns' => ['increase' => 'how_many_associate_members_created_woman'],
+                'type' => 'increase',
+            ],
+
+            // ৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত
+            'dawat3_associate_members_man' => [
+                'table' => 'thana_dawat3_general_program_and_others',
+                'columns' => ['increase' => 'how_many_associate_members_created_man'],
+                'type' => 'increase',
+            ],
+            'dawat3_associate_members_woman' => [
+                'table' => 'thana_dawat3_general_program_and_others',
+                'columns' => ['increase' => 'how_many_associate_members_created_woman'],
+                'type' => 'increase',
+            ],
+
+            // ৪. গণসংযোগ ও দাওয়াতি অভিযান পালন*:
+            'gono_songjog_doshok_associate_members_created_man' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'gono_songjog_doshok_associate_members_created_man'],
+                'type' => 'increase',
+            ],
+            'gono_songjog_doshok_associate_members_created_woman' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'gono_songjog_doshok_associate_members_created_woman'],
+                'type' => 'increase',
+            ],
+            'mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man'],
+                'type' => 'increase',
+            ],
+            'mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman'],
+                'type' => 'increase',
+            ],
+            'election_how_many_associate_members_created_man' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'election_how_many_associate_members_created_man'],
+                'type' => 'increase',
+            ],
+            'election_how_many_associate_members_created_woman' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'election_how_many_associate_members_created_woman'],
+                'type' => 'increase',
+            ],
+            'peshajibi_how_many_associate_members_created_man' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'peshajibi_how_many_associate_members_created_man'],
+                'type' => 'increase',
+            ],
+            'peshajibi_how_many_associate_members_created_woman' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'peshajibi_how_many_associate_members_created_woman'],
+                'type' => 'increase',
+            ],
+            'other_how_many_associate_members_created_man' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'other_how_many_associate_members_created_man'],
+                'type' => 'increase',
+            ],
+            'other_how_many_associate_members_created_woman' => [
+                'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans',
+                'columns' => ['increase' => 'other_how_many_associate_members_created_woman'],
+                'type' => 'increase',
+            ],
+
+
+
+
+            // ১. তালিমুল কুরআনের মাধ্যমে দাওয়াত
             'total_muallim_man' => [
                 'table' => 'thana_department1_talimul_qurans',
                 'columns' => ['increase' => 'total_muallim_increased_man'],
@@ -1141,6 +1233,18 @@ class CalculatePreviousPresent
                 'type' => 'previous_present',
             ],
 
+
+            // ৮. সহযোগী ও পার্শ্ব সংগঠন বিভাগ:
+            'total_trade_union' => [
+                'table' => 'thana_songothon8_associate_and_side_organizations',
+                'columns' => ['increase' => 'total_trade_union_increase', 'decrease' => 'total_trade_union_gatti'],
+                'type' => 'previous_present',
+            ],
+            'total_societie' => [
+                'table' => 'thana_songothon8_associate_and_side_organizations',
+                'columns' => ['increase' => 'total_societie_increase', 'decrease' => 'total_societie_gatti'],
+                'type' => 'previous_present',
+            ],
 
 
 

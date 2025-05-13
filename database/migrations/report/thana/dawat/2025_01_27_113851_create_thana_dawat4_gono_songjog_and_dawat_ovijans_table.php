@@ -43,7 +43,8 @@ return new class extends Migration
             $table->bigInteger('mohanogor_declared_gonosonjog_dawati_ovi_group')->nullable();
             $table->bigInteger('mohanogor_declared_gonosonjog_dawati_ovi_attended')->nullable();
             $table->bigInteger('mohanogor_declared_gonosonjog_dawati_ovi_invited')->nullable();
-            $table->bigInteger('mohanogor_declared_gonosonjog_dawati_ovi_associated_created')->nullable();
+            $table->bigInteger('mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man')->nullable();
+            $table->bigInteger('mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman')->nullable();
 
             $table->bigInteger('election_gono_songjog_group_man')->nullable();
             $table->bigInteger('election_attended_man')->nullable();
@@ -82,7 +83,8 @@ return new class extends Migration
             $table->bigInteger('other_gono_songjog_group')->nullable();
             $table->bigInteger('other_attended')->nullable();
             $table->bigInteger('other_how_many_have_been_invited')->nullable();
-            $table->bigInteger('other_how_many_associate_members_created')->nullable();
+            $table->bigInteger('other_how_many_associate_members_created_man')->nullable();
+            $table->bigInteger('other_how_many_associate_members_created_woman')->nullable();
 
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);

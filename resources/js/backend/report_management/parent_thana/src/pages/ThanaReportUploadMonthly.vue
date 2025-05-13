@@ -36137,10 +36137,12 @@ export default {
             // }, 200);
         },
 
-        implementation_rate: function (target, achieved) {
-            if (target && achieved) {
+        implementation_rate: function (target, ...achieved_list) {
+            const numeric_target = Number(target || 0);
+            const achieved_total = achieved_list.reduce((sum, val) => sum + Number(val || 0), 0);
+            if (numeric_target && achieved_total) {
                 return (
-                    this.formatBangla(Math.floor((achieved / target) * 100)) +
+                    this.formatBangla(Math.floor((achieved_total / numeric_target) * 100)) +
                     "%"
                 );
             }

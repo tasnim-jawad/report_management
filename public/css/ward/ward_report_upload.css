@@ -141,6 +141,9 @@ ul li {
 .letter_spacing{
     letter-spacing: -1px;
 }
+.negative_margine_bottom_25px{
+    margin-bottom: -25px;
+}
 
 .font-18 {
     font-size: 18px;
@@ -154,6 +157,15 @@ ul li {
 }
 .font-14 {
     font-size: 14px;
+}
+.font-15 {
+    font-size: 15px;
+}
+.font-16 {
+    font-size: 16px;
+}
+.font-17 {
+    font-size: 17px;
 }
 .width-5 {
     width: 5%;

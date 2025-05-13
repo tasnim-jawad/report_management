@@ -145,3 +145,55 @@ average_uposthiti: {
 },
 
 // dfdlsaf
+
+
+-----------------man-----------------------
+
+thana_dawat1_regular_group_wises.how_many_associate_members_created_man
+thana_dawat2_personal_and_targets.how_many_associate_members_created_man
+thana_dawat3_general_program_and_others.how_many_associate_members_created_man
+
+thana_dawat4_gono_songjog_and_dawat_ovijans.gono_songjog_doshok_associate_members_created_man
+thana_dawat4_gono_songjog_and_dawat_ovijans.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man
+thana_dawat4_gono_songjog_and_dawat_ovijans.election_how_many_associate_members_created_man
+thana_dawat4_gono_songjog_and_dawat_ovijans.peshajibi_how_many_associate_members_created_man
+thana_dawat4_gono_songjog_and_dawat_ovijans.other_how_many_associate_members_created_man
+
+
+
+
+-----------------woman-----------------------
+
+thana_dawat1_regular_group_wises.how_many_associate_members_created_woman
+thana_dawat2_personal_and_targets.how_many_associate_members_created_woman
+thana_dawat3_general_program_and_others.how_many_associate_members_created_woman
+
+thana_dawat4_gono_songjog_and_dawat_ovijans.gono_songjog_doshok_associate_members_created_woman
+thana_dawat4_gono_songjog_and_dawat_ovijans.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman
+thana_dawat4_gono_songjog_and_dawat_ovijans.election_how_many_associate_members_created_woman
+thana_dawat4_gono_songjog_and_dawat_ovijans.peshajibi_how_many_associate_members_created_woman
+thana_dawat4_gono_songjog_and_dawat_ovijans.other_how_many_associate_members_created_woman
+
+
+
+"thana_songothon8_associate_and_side_organizations": [
+
+    "total_trade_union",
+    "total_trade_union_increase",
+    "total_trade_union_gatti",
+    "total_trust",
+    "total_trust_increase",
+    "total_trust_gatti",
+    "total_foundation",
+    "total_foundation_increase",
+    "total_foundation_gatti",
+    "total_societie",
+    "total_societie_increase",
+    "total_societie_gatti",
+    
+  ],
+
+"male_student_daittoshil_boithok_man",
+"male_student_daittoshil_boithok_women",
+"female_student_daittoshil_boithok_man",
+"female_student_daittoshil_boithok_women",
