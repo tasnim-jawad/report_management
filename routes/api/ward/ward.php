@@ -359,6 +359,7 @@ Route::group(['prefix' => 'ward'], function () {
     Route::get('/uploaded-data-monthly', [App\Http\Controllers\Ward\WardController::class, 'report_upload_monthly']);
     Route::get('/report-status', [App\Http\Controllers\Ward\WardController::class, 'report_status']);
     Route::get('/report-joma', [App\Http\Controllers\Ward\WardController::class, 'report_joma']);
+    Route::get('/self-report-return', [App\Http\Controllers\Ward\WardController::class, 'self_report_return']);
 });
 
 Route::group(['prefix' => 'ward'], function () {

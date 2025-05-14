@@ -1940,6 +1940,7 @@ class WardController extends Controller
         }
 
         $ward_id = $org_ward_user->ward_id;
+        $thana_id = $org_ward_user->thana_id;
 
         $permission  = ReportManagementControl::where('report_type', 'ward')
             ->whereYear('month_year', $month->clone()->year)
@@ -1951,6 +1952,24 @@ class WardController extends Controller
             return response()->json([
                 'err_message' => 'Permission denied',
                 'errors' => [['You do not have the necessary permissions']],
+            ], 403);
+        }
+
+        $is_thana_report_submitted = ReportInfo::where('org_type_id', $thana_id)
+            ->where('org_type', 'thana')
+            ->whereYear('month_year', $month->year)
+            ->whereMonth('month_year', $month->month)
+            ->where('report_submit_status', 'submitted')
+            ->where(function ($query){
+                $query->where('report_approved_status', 'approved')
+                    ->orWhere('report_approved_status', 'pending');
+            })  
+            ->exists();
+
+        if ($is_thana_report_submitted) {
+            return response()->json([
+                'err_message' => 'Permission denied',
+                'errors' => [['You are to late .Thana already submited there report.Now thana can not accept your report .']],
             ], 403);
         }
 
@@ -1985,7 +2004,7 @@ class WardController extends Controller
 
             return response()->json([
                 'status' => 'success',
-                'report_status' => "rejected",
+                'report_status' => "submitted",
                 "message" => "রিপোর্ট জমা করা হয়েছে ।"
             ], 200);
         } else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'rejected') {
@@ -2006,9 +2025,70 @@ class WardController extends Controller
 
             return response()->json([
                 'status' => 'success',
-                'report_status' => "rejected",
+                'report_status' => "resubmitted",
                 "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
             ], 200);
+        } else {
+            return response()->json([
+                'err_message' => 'No Content',
+                'errors' => ['name' => ['Report has no data']],
+            ], 204);
+        }
+    }
+    public function self_report_return()
+    {
+
+        $month = Carbon::parse(request()->month);
+        $org_ward_user = OrgWardUser::where('user_id', auth()->id())->first();
+
+        if (!$org_ward_user) {
+            return response()->json([
+                'err_message' => 'Ward information not found for this user.',
+            ], 404);
+        }
+
+        $ward_id = $org_ward_user->ward_id;
+        
+        // Fetch ReportInfo
+        $report_info = ReportInfo::where('org_type_id', $ward_id)
+            ->where('org_type', 'ward')
+            ->whereYear('month_year', $month->year)
+            ->whereMonth('month_year', $month->month)
+            ->first();
+
+        if (!$report_info) {
+            return response()->json([
+                'err_message' => 'Report information not found.',
+            ], 404);
+        }
+        // dd($report_info->report_submit_status,$report_info->report_approved_status);
+        if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'pending') {
+            $report_info->report_submit_status = 'unsubmitted';
+            $report_info->report_approved_status = 'pending';
+            $report_info->save();
+            // Update related BmPaid records
+            WardBmIncome::where('ward_id', $ward_id)
+                    ->whereYear('month', $month->year)
+                    ->whereMonth('month', $month->month)
+                    ->update(['report_submit_status' => 'unsubmitted','report_approved_status' => 'pending']);
+
+            // Update related BmExpense records
+            WardBmExpense::where('ward_id', $ward_id)
+                ->whereYear('date', $month->year)
+                ->whereMonth('date', $month->month)
+                ->update(['report_submit_status' => 'unsubmitted','report_approved_status' => 'pending']);
+
+            return response()->json([
+                'status' => 'success',
+                'report_status' => "unsubmitted",
+                "message" => "রিপোর্ট ফিরিয়ে আনা হয়েছে ।"
+            ], 200);
+        } else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'approved') {
+            return response()->json([
+                'err_message' => 'Permission denied',
+                'errors' => [['You can not return your report .Thana already approved your report. Now thana can not accept your report .']],
+            ], 403);
+
         } else {
             return response()->json([
                 'err_message' => 'No Content',

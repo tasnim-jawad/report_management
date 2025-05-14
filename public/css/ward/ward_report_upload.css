@@ -411,17 +411,18 @@ th {
     opacity: 0;
     overflow: hidden;
     visibility: hidden;
-    top: 0;
+    top: -3px;
     right: 0;
     transition-duration: .3s;
-    transform: translateY(0);
+    /* transition: transform 0.3s, opacity 0.3s 0.3s, visibility 0.3s 0.3s; */
+    transform: translateX(0);
 }
 .comment_data_popup.active,
 .unit_data_popup.active{
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
-    top: calc(100% + 3px);
+    transform: translateX(calc(100% + 3px));
+    /* top: calc(100% + 3px); */
     right: 0px;
 }
 .comment_data_popup table tr td,

@@ -9,6 +9,7 @@ export const store = defineStore(`custom_store`, {
         thana_user_id: 0,
         thana_id: 0,
         is_parent: false,
+        gender: null,
     }),
     getters: {
         $init: () => {
@@ -104,7 +105,21 @@ export const store = defineStore(`custom_store`, {
             }
             return response.data;
             
+        },
+
+        thana_gender: async function () {
+            try {
+                let response = await axios.get("/user/thana-user-info");
+                if (response.data?.responsibility?.org_thana?.org_gender) {
+                    this.gender = response.data.responsibility.org_thana.org_gender;
+                    console.log("gender",this.gender);
+                    
+                }
+            } catch (error) {
+                console.error("Error fetching thana user info:", error);
+            }
         }
+
 
     }
 

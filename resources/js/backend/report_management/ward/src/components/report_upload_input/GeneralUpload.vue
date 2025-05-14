@@ -13295,6 +13295,13 @@
             <a
                 href=""
                 class="btn btn-success"
+                v-else-if="joma_status == 'pending'"
+                @click.prevent="self_report_return"
+                >রিপোর্ট রিটার্ন করুন</a
+            >
+            <a
+                href=""
+                class="btn btn-success"
                 v-else-if="joma_status == 'rejected'"
                 @click.prevent="report_joma"
                 >রিপোর্ট পুনরায় জমা দিন</a
@@ -13966,6 +13973,24 @@ export default {
             } else {
                 window.toaster(
                     "রিপোর্ট জমা বন্ধ করা হয়েছে । অনুগ্রহ করে সমস্ত প্রয়োজনীয় তথ্য পূরণ করুন ",
+                    "info"
+                );
+            }
+        },
+        self_report_return: async function () {
+            if (window.confirm("আপনি কি রিপোর্ট ফিরিয়ে আনার বিষয়ে নিশ্চিত?")) {
+                const month = this.$route.params.month;
+                let response = await axios.get("/ward/self-report-return", {
+                    params: {
+                        month: month,
+                    },
+                });
+                if (response.data.status == "success") {
+                    this.report_status();
+                }
+            } else {
+                window.toaster(
+                    "রিপোর্ট ফিরিয়ে আনা হয়নি।",
                     "info"
                 );
             }

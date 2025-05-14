@@ -77,5 +77,12 @@ class ThanaBmIncomeCategoriesTableSeeder extends Seeder
             'creator' => 3,
             'status' => 1,
         ]);
+        ThanaBmIncomeCategory::create([
+            'title' => 'অন্যান্য',
+            'description' => "অন্যান্য একটি আয়ের খাত",
+
+            'creator' => 3,
+            'status' => 1,
+        ]);
     }
 }
