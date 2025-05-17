@@ -9920,7 +9920,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="women_kormi_target"
                                             :value="
                                                 formatBangla(
@@ -9945,7 +9945,7 @@
                                             :field_title="'women_kormi_target'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td class="bg-calc">
@@ -9987,10 +9987,10 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="parent_popup">
-                                            <input
+                                            <!-- <input
                                                 name="women_associate_member_increase"
                                                 :value="
                                                     formatBangla(
@@ -10015,14 +10015,14 @@
                                                 :field_title="'women_associate_member_increase'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
                                 <td class="bg-block"></td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="women_associate_member_target"
                                             :value="
                                                 formatBangla(
@@ -10047,7 +10047,7 @@
                                             :field_title="'women_associate_member_target'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td class="bg-calc">
@@ -13772,8 +13772,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="sangothonik_union_woman_increase"
                                         :value="
                                             formatBangla(
@@ -13789,7 +13789,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -13798,8 +13798,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="sangothonik_union_woman_gatti"
                                         :value="
                                             formatBangla(
@@ -13815,7 +13815,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -13824,8 +13824,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="sangothonik_union_woman_target"
                                         :value="
                                             formatBangla(
@@ -13841,7 +13841,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -14607,8 +14607,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="total_songothonik_ward_woman_increase"
                                         :value="
                                             formatBangla(
@@ -14624,7 +14624,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -14633,8 +14633,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="total_songothonik_ward_woman_gatti"
                                         :value="
                                             formatBangla(
@@ -14650,7 +14650,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -14659,8 +14659,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="total_songothonik_ward_woman_target"
                                         :value="
                                             formatBangla(
@@ -14676,7 +14676,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -15463,9 +15463,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="total_songothonik_ward_of_pouroshova_woman_increase"
                                         :value="
                                             formatBangla(
@@ -15481,7 +15481,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -15489,8 +15489,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="total_songothonik_ward_of_union_woman_increase"
                                         :value="
                                             formatBangla(
@@ -15506,7 +15506,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -15516,9 +15516,9 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="total_songothonik_ward_of_pouroshova_woman_gatti"
                                         :value="
                                             formatBangla(
@@ -15534,7 +15534,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -15542,8 +15542,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="total_songothonik_ward_of_union_woman_gatti"
                                         :value="
                                             formatBangla(
@@ -15559,7 +15559,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -15569,9 +15569,9 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="total_songothonik_ward_of_pouroshova_woman_target"
                                         :value="
                                             formatBangla(
@@ -15587,7 +15587,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -15595,8 +15595,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="total_songothonik_ward_of_union_woman_target"
                                         :value="
                                             formatBangla(
@@ -15612,7 +15612,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -16551,9 +16551,9 @@
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="general_unit_women_increase"
                                             :value="
                                                 formatBangla(
@@ -16578,12 +16578,12 @@
                                             :field_title="'general_unit_women_increase'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="general_unit_women_gatti"
                                             :value="
                                                 formatBangla(
@@ -16608,12 +16608,12 @@
                                             :field_title="'general_unit_women_gatti'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="parent_popup">
-                                        <input
+                                        <!-- <input
                                             name="general_unit_women_target"
                                             :value="
                                                 formatBangla(
@@ -16638,7 +16638,7 @@
                                             :field_title="'general_unit_women_target'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td class="bg-calc">
