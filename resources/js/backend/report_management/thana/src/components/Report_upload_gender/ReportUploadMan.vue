@@ -33502,48 +33502,48 @@
                         </tbody>
                     </table>
                     <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
-                        <popup-note
+                        <!-- <popup-note
                             :label="'কাউন্সিলর মোট প্রার্থী সংখ্যা'"
                             :thana_id="report_header?.thana_info?.id"
                             :table_name="'ward_rastrio4_election_activities'"
                             :field_title="'councilor_candidate'"
                             :month="month"
-                        />
-                        <popup-note
+                        /> -->
+                        <!-- <popup-note
                             :label="'কাউন্সিলর নির্বাচিত সংখ্যা'"
                             :thana_id="report_header?.thana_info?.id"
                             :table_name="'ward_rastrio4_election_activities'"
                             :field_title="'councilor_candidate_elected'"
                             :month="month"
-                        />
-                        <popup-note
+                        /> -->
+                        <!-- <popup-note
                             :label="'কাউন্সিলর দ্বিতীয় অবস্থান'"
                             :thana_id="report_header?.thana_info?.id"
                             :table_name="'ward_rastrio4_election_activities'"
                             :field_title="'councilor_candidate_second_position'"
                             :month="month"
-                        />
-                        <popup-note
+                        /> -->
+                        <!-- <popup-note
                             :label="'মেম্বার মোট প্রার্থী সংখ্যা'"
                             :thana_id="report_header?.thana_info?.id"
                             :table_name="'ward_rastrio4_election_activities'"
                             :field_title="'member_candidate'"
                             :month="month"
-                        />
-                        <popup-note
+                        /> -->
+                        <!-- <popup-note
                             :label="'মেম্বার নির্বাচিত সংখ্যা'"
                             :thana_id="report_header?.thana_info?.id"
                             :table_name="'ward_rastrio4_election_activities'"
                             :field_title="'member_candidate_elected'"
                             :month="month"
-                        />
-                        <popup-note
+                        /> -->
+                        <!-- <popup-note
                             :label="'মেম্বার দ্বিতীয় অবস্থান'"
                             :thana_id="report_header?.thana_info?.id"
                             :table_name="'ward_rastrio4_election_activities'"
                             :field_title="'member_candidate_second_position'"
                             :month="month"
-                        />
+                        /> -->
                     </div>
 
 
