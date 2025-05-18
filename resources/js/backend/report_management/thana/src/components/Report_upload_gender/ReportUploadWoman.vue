@@ -22568,7 +22568,7 @@
                                 <td class="text-start">
                                     উপজেলা/থানা ভিত্তিক ওয়ার্ড সভাপতি সম্মেলন
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <!-- <input
                                         name="upozila_word_sovapoti_sommelon_man_total"
@@ -22595,7 +22595,7 @@
                                     >
                                     </popup> -->
                                     <!-- / -->
-                                    <input
+                                    <!-- <input
                                         name="thana_word_sovapoti_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -22618,7 +22618,7 @@
                                         :field_title="'thana_word_sovapoti_sommelon_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -22727,7 +22727,7 @@
                                     </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <!-- <input
                                         name="upozila_word_sovapoti_sommelon_man_uposthiti"
@@ -22758,7 +22758,7 @@
                                     >
                                     </popup>
                                     / -->
-                                    <input
+                                    <!-- <input
                                         name="thana_word_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22785,7 +22785,7 @@
                                         :field_title="'thana_word_sovapoti_sommelon_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -22855,7 +22855,7 @@
                                 <td class="text-start">
                                     উপজেলা/থানা পর্যায়ে কর্মী সম্মেলন
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <!-- <input
                                         name="upozila_kormi_sommelon_man_total"
@@ -22882,7 +22882,7 @@
                                     >
                                     </popup>
                                     / -->
-                                    <input
+                                    <!-- <input
                                         name="thana_kormi_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -22905,7 +22905,7 @@
                                         :field_title="'thana_kormi_sommelon_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -23014,7 +23014,7 @@
                                     </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <!-- <input
                                         name="upozila_kormi_sommelon_man_uposthiti"
@@ -23045,7 +23045,7 @@
                                     >
                                     </popup>
                                     / -->
-                                    <input
+                                    <!-- <input
                                         name="thana_kormi_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -23072,7 +23072,7 @@
                                         :field_title="'thana_kormi_sommelon_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -23142,7 +23142,7 @@
                                 <td class="text-start">
                                     ইউনিয়ন/ওয়ার্ড পর্যায়ে কর্মী সম্মেলন
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <!-- <input
                                         name="union_kormi_sommelon_man_total"
@@ -23169,7 +23169,7 @@
                                     >
                                     </popup>
                                     / -->
-                                    <input
+                                    <!-- <input
                                         name="ward_kormi_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -23192,7 +23192,7 @@
                                         :field_title="'ward_kormi_sommelon_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -23301,7 +23301,7 @@
                                     </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <!-- <input
                                         name="union_kormi_sommelon_man_uposthiti"
@@ -23332,7 +23332,7 @@
                                     >
                                     </popup>
                                     / -->
-                                    <input
+                                    <!-- <input
                                         name="ward_kormi_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -23359,7 +23359,7 @@
                                         :field_title="'ward_kormi_sommelon_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -23430,7 +23430,7 @@
                                     উপজেলা/থানা ভিত্তিক ইউনিট সভাপতি ও
                                     সেক্রেটারি সম্মেলন
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <!-- <input
                                         name="upozila_unit_sovapoti_sommelon_man_total"
@@ -23457,7 +23457,7 @@
                                     >
                                     </popup>
                                     / -->
-                                    <input
+                                    <!-- <input
                                         name="thana_unit_sovapoti_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -23480,7 +23480,7 @@
                                         :field_title="'thana_unit_sovapoti_sommelon_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -23589,7 +23589,7 @@
                                     </popup>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                     <!-- <input
                                         name="upozila_unit_sovapoti_sommelon_man_uposthiti"
@@ -23620,34 +23620,34 @@
                                     >
                                     </popup>
                                     / -->
-                                    <input
-                                        name="thana_unit_sovapoti_sommelon_man_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_unit_sovapoti_sommelon_man
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_unit_sovapoti_sommelon_man_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'thana_unit_sovapoti_sommelon_man_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                        <!-- <input
+                                            name="thana_unit_sovapoti_sommelon_man_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.thana_unit_sovapoti_sommelon_man
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.thana_unit_sovapoti_sommelon_man_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'thana_unit_sovapoti_sommelon_man_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -23715,8 +23715,8 @@
                             <tr>
                                 <td class="">১৪.</td>
                                 <td class="text-start">উলামা বৈঠক/সমাবেশ</td>
-                                <td>
-                                    <div class="d-flex justify-content-center align-items-center">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ulama_boithok_man_total"
                                         :value="
@@ -23768,7 +23768,7 @@
                                             >
                                             </popup>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
@@ -23880,8 +23880,8 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="d-flex justify-content-center align-items-center">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="ulama_boithok_man_uposthiti"
                                         :value="
@@ -23941,7 +23941,7 @@
                                             >
                                             </popup>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
@@ -24012,8 +24012,8 @@
                                 <td class="text-start">
                                     পেশাজীবীদের নিয়ে বৈঠক
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="pesha_jibi_boithok_man_total"
                                         :value="
                                             formatBangla(
@@ -24036,7 +24036,7 @@
                                         :field_title="'pesha_jibi_boithok_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                                 <td>
                                     <input
@@ -24090,8 +24090,8 @@
                                     >
                                     </popup>
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="pesha_jibi_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -24118,7 +24118,7 @@
                                         :field_title="'pesha_jibi_boithok_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                                 <td>
                                     <input
@@ -24156,8 +24156,8 @@
                                 <td class="text-start">
                                     শ্রমিকদের নিয়ে বৈঠক/সমাবেশ
                                 </td>
-                                <td>
-                                    <div class="d-flex justify-content-center align-items-center">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex justify-content-center align-items-center">
                                     <input
                                         name="sromik_boithok_man_total"
                                         :value="
@@ -24209,7 +24209,7 @@
                                             >
                                             </popup>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
@@ -24321,8 +24321,8 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="d-flex justify-content-center align-items-center">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex justify-content-center align-items-center">
                                         <input
                                             name="sromik_boithok_man_uposthiti"
                                             :value="
@@ -24382,7 +24382,7 @@
                                             >
                                             </popup>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
@@ -24451,8 +24451,8 @@
                             <tr>
                                 <td class="">১৭.</td>
                                 <td class="text-start">যুবকদের নিয়ে বৈঠক</td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="jubok_boithok_man_total"
                                         :value="
                                             formatBangla(
@@ -24475,7 +24475,7 @@
                                         :field_title="'jubok_boithok_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                                 <td>
                                     <input
@@ -24529,8 +24529,8 @@
                                     >
                                     </popup>
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="jubok_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -24557,7 +24557,7 @@
                                         :field_title="'jubok_boithok_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                                 <td>
                                     <input
@@ -24595,10 +24595,10 @@
                                 <td class="text-start">
                                     ছাত্র/ছাত্রী দায়িত্বশীলদের সাথে বৈঠক
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="parent_popup">
-                                            <input
+                                            <!-- <input
                                                 name="male_student_daittoshil_boithok_man_total"
                                                 :value="
                                                     formatBangla(
@@ -24614,7 +24614,7 @@
                                                 "
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
-                                            />
+                                            /> -->
                                             <!-- <popup
                                                 :thana_id="report_header?.thana_info?.id"
                                                 :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -24623,9 +24623,9 @@
                                             >
                                             </popup> -->
                                         </div>
-                                        /
+                                        <!-- / -->
                                         <div class="parent_popup">
-                                            <input
+                                            <!-- <input
                                                 name="female_student_daittoshil_boithok_man_total"
                                                 :value="
                                                     formatBangla(
@@ -24641,7 +24641,7 @@
                                                 "
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
-                                            />
+                                            /> -->
                                             <!-- <popup
                                                 :thana_id="report_header?.thana_info?.id"
                                                 :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -24767,9 +24767,9 @@
                                     </div>
                                 </td>
                                 
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <input
+                                        <!-- <input
                                             name="male_student_daittoshil_boithok_man_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -24789,7 +24789,7 @@
                                             "
                                             :type="type"
                                             class="bg-input w-100 text-center"
-                                        />
+                                        /> -->
                                         <!-- <popup
                                             :thana_id="report_header?.thana_info?.id"
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -24797,8 +24797,8 @@
                                             :month="month"
                                         >
                                         </popup> -->
-                                        /
-                                        <input
+                                        <!-- / -->
+                                        <!-- <input
                                             name="female_student_daittoshil_boithok_man_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -24818,7 +24818,7 @@
                                             "
                                             :type="type"
                                             class="bg-input w-100 text-center"
-                                        />
+                                        /> -->
                                         <!-- <popup
                                             :thana_id="report_header?.thana_info?.id"
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -24895,9 +24895,9 @@
                                 <td class="text-start">
                                     সহযোগী সদস্য সমাবেশ/সম্মেলন
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="associate_member_somabesh_man_total"
                                         :value="
                                             formatBangla(
@@ -24913,7 +24913,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -24921,8 +24921,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="associate_member_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -24938,7 +24938,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -25054,9 +25054,9 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="associate_member_somabesh_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -25076,7 +25076,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -25084,8 +25084,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="associate_member_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -25105,7 +25105,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -25180,8 +25180,8 @@
                             <tr>
                                 <td class="">২০.</td>
                                 <td class="text-start">অন্যান্য</td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="others_man_total"
                                         :value="
                                             formatBangla(
@@ -25197,7 +25197,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -25258,8 +25258,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="others_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -25279,7 +25279,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -25472,8 +25472,8 @@
                                 <td class="text-start">
                                     ইউনিটে মোট তারবিয়াতী বৈঠক
                                 </td>
-                                <td>
-                                    <div class="parent_popup">
+                                <td class="bg-block">
+                                    <!-- <div class="parent_popup">
                                         <input
                                             name="unit_tarbiati_boithok_man_total"
                                             :value="
@@ -25498,7 +25498,7 @@
                                             :month="month"
                                         >
                                         </popup>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -25556,8 +25556,8 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="parent_popup">
+                                <td class="bg-block">
+                                    <!-- <div class="parent_popup">
                                         <input
                                             name="unit_tarbiati_boithok_man_uposthiti"
                                             :value="
@@ -25586,7 +25586,7 @@
                                             :month="month"
                                         >
                                         </popup>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -25627,9 +25627,9 @@
                                     উপজেলা/থানাভিত্তিক সদস্য (রুকন)
                                     শিক্ষাশিবির/শিক্ষা বৈঠক
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_vittik_rokon_shikkha_shibir_man_total"
                                         :value="
                                             formatBangla(
@@ -25645,7 +25645,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -25653,8 +25653,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="thana_vittik_rokon_shikkha_boithok_man_total"
                                         :value="
                                             formatBangla(
@@ -25670,7 +25670,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -25786,9 +25786,9 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_vittik_rokon_shikkha_shibir_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -25808,7 +25808,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -25816,7 +25816,7 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="thana_vittik_rokon_shikkha_boithok_man_uposthiti"
                                         :value="
@@ -25837,7 +25837,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -25915,9 +25915,9 @@
                                     উপজেলা/থানাভিত্তিক বাছাইকৃত কর্মীদের
                                     শিক্ষাশিবির/শিক্ষা বৈঠক
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_man_total"
                                         :value="
                                             formatBangla(
@@ -25933,7 +25933,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -25941,7 +25941,7 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="thana_vittik_selected_kormi_shikkha_boithok_man_total"
                                         :value="
@@ -25958,7 +25958,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26074,9 +26074,9 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -26096,7 +26096,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26104,7 +26104,7 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="thana_vittik_selected_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
@@ -26125,7 +26125,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26203,25 +26203,25 @@
                                     উপজেলা/থানাভিত্তিক কর্মীদের
                                     শিক্ষাশিবির/শিক্ষা বৈঠক
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
-                                        name="upozila_vittik_kormi_shikkha_shibir_man_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_kormi_shikkha_shibir_man_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                        <!-- <input
+                                            name="upozila_vittik_kormi_shikkha_shibir_man_total"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.upozila_vittik_kormi_shikkha_shibir_man_total
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon1-tarbiat'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26229,24 +26229,24 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
-                                        name="thana_vittik_kormi_shikkha_boithok_man_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_kormi_shikkha_boithok_man_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-proshikkhon1-tarbiat'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
+                                        <!-- /
+                                        <input
+                                            name="thana_vittik_kormi_shikkha_boithok_man_total"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.thana_vittik_kormi_shikkha_boithok_man_total
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-proshikkhon1-tarbiat'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26362,9 +26362,9 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_vittik_kormi_shikkha_shibir_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -26384,7 +26384,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26392,7 +26392,7 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="thana_vittik_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
@@ -26413,7 +26413,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26491,9 +26491,9 @@
                                     উপজেলা/থানাভিত্তিক সাবেক ছাত্র/ছাত্রী
                                     কর্মীদের প্রশিক্ষণ প্রোগ্রাম
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_former_Student_kormi_training_program_man_total"
                                         :value="
                                             formatBangla(
@@ -26509,7 +26509,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26517,7 +26517,7 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="thana_former_Student_kormi_training_program_man_total"
                                         :value="
@@ -26534,7 +26534,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26650,9 +26650,9 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_former_Student_kormi_training_program_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -26672,7 +26672,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26680,7 +26680,7 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="thana_former_Student_kormi_training_program_man_uposthiti"
                                         :value="
@@ -26701,7 +26701,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26779,9 +26779,9 @@
                                     পৌরসভা-ইউনিয়ন/ওয়ার্ড ভিত্তিক কর্মী শিক্ষা
                                     বৈঠক
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="pouroshova_kormi_shikkha_boithok_man_total"
                                         :value="
                                             formatBangla(
@@ -26797,7 +26797,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -26830,8 +26830,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                        <div class="parent_popup">
+                                    <!-- / -->
+                                        <!-- <div class="parent_popup">
                                             <input
                                                 name="ward_kormi_shikkha_boithok_man_total"
                                                 :value="
@@ -26856,7 +26856,7 @@
                                                 :month="month"
                                             >
                                             </popup>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
@@ -27019,9 +27019,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="pouroshova_kormi_shikkha_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -27041,7 +27041,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27078,8 +27078,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                        <div class="parent_popup">
+                                    <!-- / -->
+                                        <!-- <div class="parent_popup">
                                             <input
                                                 name="ward_kormi_shikkha_boithok_man_uposthiti"
                                                 :value="
@@ -27108,7 +27108,7 @@
                                                 :month="month"
                                             >
                                             </popup>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
@@ -27214,8 +27214,8 @@
                             <tr>
                                 <td class="">৭.</td>
                                 <td class="text-start">গণশিক্ষা বৈঠক</td>
-                                <td>
-                                    <div class="parent_popup">
+                                <td class="bg-block">
+                                    <!-- <div class="parent_popup">
                                         <input
                                             name="gono_sikkha_boithok_man_total"
                                             :value="
@@ -27240,7 +27240,7 @@
                                             :month="month"
                                         >
                                         </popup>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -27298,8 +27298,8 @@
                                     </popup>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="parent_popup">
+                                <td class="bg-block">
+                                    <!-- <div class="parent_popup">
                                         <input
                                             name="gono_sikkha_boithok_man_uposthiti"
                                             :value="
@@ -27328,7 +27328,7 @@
                                             :month="month"
                                         >
                                         </popup>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td>
                                     <div class="parent_popup">
@@ -27366,8 +27366,8 @@
                             <tr>
                                 <td class="">৮.</td>
                                 <td class="text-start">গণ নৈশ ইবাদত</td>
-                                <td>
-                                    <div class="parent_popup">
+                                <td class="bg-block">
+                                    <!-- <div class="parent_popup">
                                         <input
                                             name="gono_noisho_ibadot_man_total"
                                             :value="
@@ -27392,7 +27392,7 @@
                                             :month="month"
                                         >
                                         </popup>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td class="bg-block">
                                     <!-- <input
@@ -27420,8 +27420,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <div class="parent_popup">
+                                <td class="bg-block">
+                                    <!-- <div class="parent_popup">
                                         <input
                                             name="gono_noisho_ibadot_man_target"
                                             :value="
@@ -27446,10 +27446,10 @@
                                             :month="month"
                                         >
                                         </popup>
-                                    </div>
+                                    </div> -->
                                 </td>
-                                <td>
-                                    <div class="parent_popup">
+                                <td class="bg-block">
+                                    <!-- <div class="parent_popup">
                                         <input
                                             name="gono_noisho_ibadot_man_uposthiti"
                                             :value="
@@ -27478,7 +27478,7 @@
                                             :month="month"
                                         >
                                         </popup>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td class="bg-block">
                                     <!-- <input
@@ -27537,8 +27537,8 @@
                             <tr>
                                 <td class="">৯.</td>
                                 <td class="text-start">সদস্য (রুকন) পাঠচক্র</td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="rokon_path_cokro_man_total_group"
                                         :value="
                                             formatBangla(
@@ -27554,7 +27554,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27589,8 +27589,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="rokon_path_cokro_man_total_odhibeshon"
                                         :value="
                                             formatBangla(
@@ -27606,7 +27606,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27641,8 +27641,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="rokon_path_cokro_man_total_uposthiti"
                                         :value="
                                             formatBangla(
@@ -27662,7 +27662,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27707,9 +27707,9 @@
                                 <td class="text-start">
                                     কর্মী পাঠচক্র /আলোচনা চক্র
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <input
+                                        <!-- <input
                                             name="kormi_path_cokro_man_total_group"
                                             :value="
                                                 formatBangla(
@@ -27725,7 +27725,7 @@
                                             "
                                             :type="type"
                                             class="bg-input w-100 text-center"
-                                        />
+                                        /> -->
                                         <!-- <popup
                                             :thana_id="report_header?.thana_info?.id"
                                             :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27733,7 +27733,7 @@
                                             :month="month"
                                         >
                                         </popup> -->
-                                        /
+                                        <!-- /
                                         <div class="parent_popup">
                                             <input
                                                 name="kormi_alochona_cokro_man_total_group"
@@ -27759,7 +27759,7 @@
                                                 :month="month"
                                             >
                                             </popup>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
@@ -27817,9 +27817,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="kormi_path_cokro_man_total_odhibeshon"
                                         :value="
                                             formatBangla(
@@ -27835,7 +27835,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27843,7 +27843,7 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
+                                    <!-- /
                                         <div class="parent_popup">
                                             <input
                                                 name="kormi_alochona_cokro_man_total_odhibeshon"
@@ -27869,7 +27869,7 @@
                                                 :month="month"
                                             >
                                             </popup>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
@@ -27927,9 +27927,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="kormi_path_cokro_man_total_uposthiti"
                                         :value="
                                             formatBangla(
@@ -27949,7 +27949,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -27957,7 +27957,7 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
+                                    <!-- /
                                         <div class="parent_popup">
                                             <input
                                                 name="kormi_alochona_cokro_man_total_uposthiti"
@@ -27987,7 +27987,7 @@
                                                 :month="month"
                                             >
                                             </popup>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
@@ -28057,8 +28057,8 @@
                             <tr>
                                 <td class="">১১.</td>
                                 <td class="text-start">কুরআন স্টাডি সার্কেল</td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="quran_study_circle_man_total_group"
                                         :value="
                                             formatBangla(
@@ -28074,7 +28074,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -28109,8 +28109,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="quran_study_circle_man_total_odhibeshon"
                                         :value="
                                             formatBangla(
@@ -28126,7 +28126,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -28161,8 +28161,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="quran_study_circle_man_total_uposthiti"
                                         :value="
                                             formatBangla(
@@ -28182,7 +28182,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_proshikkhon1_tarbiats'"
@@ -28227,12 +28227,12 @@
                                 <td class="text-start">
                                     দারস/সহীহ কুরআন তিলাওয়াত অনুশীলন
                                 </td>
-                                <td class="text-start">
-                                    <div class="d-flex justify-content-center align-items-center">
-                                    <span class="font-13 text-nowrap"
+                                <td class="text-start bg-block">
+                                    <div class="d-flex justify-content-start align-items-center">
+                                    <span class="font-13 text-nowrap text-start"
                                         >প্রোগ্রাম:</span
                                     >
-                                    <div class="parent_popup">
+                                    <!-- <div class="parent_popup">
                                         <input
                                             name="darsul_quran_man_program"
                                             :value="
@@ -28257,7 +28257,7 @@
                                             :month="month"
                                         >
                                         </popup>
-                                    </div>
+                                    </div> -->
                                     <!-- /
                                     <input
                                         name="sohih_tilawat_man_program"
@@ -28383,9 +28383,9 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <div class="parent_popup">
+                                        <!-- <div class="parent_popup">
                                             <input
                                                 name="darsul_quran_man_uposthiti"
                                                 :value="
@@ -28414,7 +28414,7 @@
                                                 :month="month"
                                             >
                                             </popup>
-                                        </div>
+                                        </div> -->
                                         <!-- / -->
                                         <!-- <input
                                             name="sohih_tilawat_man_uposthiti"
@@ -32628,7 +32628,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <input readonly
                                         name="city_corporation_councilor_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -32643,7 +32643,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-block w-100 text-center"
                                     />
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
@@ -32831,7 +32831,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <input readonly
                                         name="city_corporation_councilor_candidate_man_second_position"
                                         :value="
                                             formatBangla(
@@ -32846,7 +32846,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-block w-100 text-center"
                                     />
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
@@ -33067,7 +33067,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <input readonly
                                         name="upojela_porishod_vice_chairman_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -33082,7 +33082,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-block w-100 text-center"
                                     />
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
@@ -33217,7 +33217,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <input readonly
                                         name="upojela_porishod_vice_chairman_candidate_man_second_position"
                                         :value="
                                             formatBangla(
@@ -33232,7 +33232,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-block w-100 text-center"
                                     />
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
@@ -33472,7 +33472,7 @@
                                         :month="month"
                                     ></popup> -->
                                     <!-- / -->
-                                    <input
+                                    <input readonly
                                         name="union_porishod_member_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -33487,7 +33487,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-block w-100 text-center"
                                     />
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
@@ -33547,7 +33547,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <input readonly
                                         name="union_porishod_member_candidate_man_second_position"
                                         :value="
                                             formatBangla(
@@ -33562,7 +33562,7 @@
                                             )
                                         "
                                         :type="type"
-                                        class="bg-input w-100 text-center"
+                                        class="bg-block w-100 text-center"
                                     />
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
