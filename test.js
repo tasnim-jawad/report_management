@@ -197,3 +197,13 @@ thana_dawat4_gono_songjog_and_dawat_ovijans.other_how_many_associate_members_cre
 "male_student_daittoshil_boithok_women",
 "female_student_daittoshil_boithok_man",
 "female_student_daittoshil_boithok_women",
+
+
+get_sum_total(
+    report_sum_data
+        ?.thana_songothon11_sangothonik_boithoks
+        ?.upojela_mozlishe_sura_boithok_man_target,
+    report_sum_data
+        ?.thana_songothon11_sangothonik_boithoks
+        ?.upojela_mozlishe_sura_boithok_woman_target
+)

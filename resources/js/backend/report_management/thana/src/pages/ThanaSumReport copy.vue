@@ -44,7 +44,6 @@
                         ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
                         <span>
                             <!-- {{ total_dawat }} -->
-
                             {{
                                 get_sum_total(
                                     report_sum_data?.thana_dawat1_regular_group_wises?.how_many_have_been_invited_man,
@@ -5894,6 +5893,7 @@
                 </div>
             </div>
         </section>
+        
 
         <section>
             <h1 class="font-18 fw-bold">গ) দাওয়াহ্ ও প্রকাশনা:</h1>
