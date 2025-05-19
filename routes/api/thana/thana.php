@@ -25,6 +25,8 @@
         Route::get('/report-status', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status']);
         Route::post('/change-status', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'change_status']);
         Route::post('/report-status-single-ward', [App\Http\Controllers\Thana\ThanaReportStatusController::class, 'report_status_single_ward']);
+
+        Route::get('total-approved-ward-report-data', [App\Http\Controllers\Ward\WardController::class, 'total_approved_ward_report_data']);
     });
     Route::group(['prefix' => 'parent-thana'], function () {
         Route::get('/report-status', [App\Http\Controllers\Parent\ParentThanaController::class, 'report_status']);

@@ -1737,7 +1737,7 @@
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
-                                                :table_name="'ward_dawat1_regular_group_wises'"
+                                                :table_name="'ward_dawat4_gono_songjog_and_dawat_ovijans'"
                                                 :field_title="'jela_mohanogor_declared_gonosonjog_associated_created'"
                                                 :month="month"
                                             >
@@ -3449,35 +3449,33 @@
                                                 </popup>
                                             </div>
                                             <p>/</p>
-                                            <div>
-                                                <div class="parent_popup">
-                                                    <input
-                                                        name="govment_calculated_moholla_amount"
-                                                        :value="
-                                                            formatBangla(
-                                                                report_sum_data
-                                                                    ?.thana_department2_moholla_vittik_dawats
-                                                                    ?.govment_calculated_moholla_amount
-                                                            )
-                                                        "
-                                                        @change="
-                                                            data_upload(
-                                                                'thana-department2-moholla-vittik-dawat'
-                                                            )
-                                                        "
-                                                        :type="type"
-                                                        class="bg-input w-100 text-center"
-                                                    />
-                                                    <popup
-                                                        :thana_id="
-                                                            report_header?.thana_info?.id
-                                                        "
-                                                        :table_name="'ward_department2_moholla_vittik_dawats'"
-                                                        :field_title="'govment_calculated_moholla_amount'"
-                                                        :month="month"
-                                                    >
-                                                    </popup>
-                                                </div>
+                                            <div class="parent_popup">
+                                                <input
+                                                    name="govment_calculated_moholla_amount"
+                                                    :value="
+                                                        formatBangla(
+                                                            report_sum_data
+                                                                ?.thana_department2_moholla_vittik_dawats
+                                                                ?.govment_calculated_moholla_amount
+                                                        )
+                                                    "
+                                                    @change="
+                                                        data_upload(
+                                                            'thana-department2-moholla-vittik-dawat'
+                                                        )
+                                                    "
+                                                    :type="type"
+                                                    class="bg-input w-100 text-center"
+                                                />
+                                                <popup
+                                                    :thana_id="
+                                                        report_header?.thana_info?.id
+                                                    "
+                                                    :table_name="'ward_department2_moholla_vittik_dawats'"
+                                                    :field_title="'govment_calculated_moholla_amount'"
+                                                    :month="month"
+                                                >
+                                                </popup>
                                             </div>
                                         </div>
                                     </th>
@@ -35285,6 +35283,8 @@
 import axios from "axios";
 import Popup from "../Popup.vue";
 import PopupNote from "../PopupNote.vue";
+import { store as ward_data_store } from "../../stores/TotalApprovedWardDataStore";
+import { mapWritableState , mapActions } from 'pinia';
 
 export default {
     components: { Popup, PopupNote },
@@ -35535,6 +35535,7 @@ export default {
     },
 
     created() {
+        this.ward_data();
         this.uploaded_data();
         this.income_category();
         this.expense_category();
@@ -35561,6 +35562,15 @@ export default {
        
     },
     methods: {
+        ...mapActions(ward_data_store, {
+            total_approved_ward_report_data: "total_approved_ward_report_data",
+        }),
+        
+        ward_data: async function () {
+            const month = this.$route.params.month;
+            const user_id = this.$route.params.user_id;
+            await this.total_approved_ward_report_data(month , user_id)
+        },
         uploaded_data: async function () {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;
@@ -35575,17 +35585,17 @@ export default {
             if (res.data.status == "success") {
                 // console.log("res", res.data.data.end_month);
                 (this.month = res.data.data.end_month),
-                    (this.report_header = res.data.data.report_header),
-                    (this.report_sum_data = res.data.data.report_sum_data),
-                    (this.previous_present = res.data.data.previous_present),
-                    (this.income_report = res.data.data.income_report),
-                    (this.expense_report = res.data.data.expense_report);
+                (this.report_header = res.data.data.report_header),
+                (this.report_sum_data = res.data.data.report_sum_data),
+                (this.previous_present = res.data.data.previous_present),
+                (this.income_report = res.data.data.income_report),
+                (this.expense_report = res.data.data.expense_report);
                 this.total_income = res.data.data.income_report?.total_amount;
                 this.total_expense = res.data.data.expense_report?.total_amount;
 
                 (this.total_previous = res.data.total_previous),
-                    (this.total_current_income = res.data.total_current_income),
-                    (this.in_total = res.data.in_total);
+                (this.total_current_income = res.data.total_current_income),
+                (this.in_total = res.data.in_total);
                 // console.log("this.previous_present", this.previous_present);
                 this.count_mass_communication(
                     this.report_sum_data
@@ -36449,6 +36459,20 @@ export default {
         }
     },
     computed: {
+        ...mapWritableState(ward_data_store, {
+            ward_start_month: 'start_month',
+            ward_end_month: 'end_month',
+            ward_report_header: 'report_header',
+            ward_report_sum_data: 'report_sum_data',
+            ward_previous_present: 'previous_present',
+            ward_income_report: 'income_report',
+            ward_expense_report: 'expense_report',
+            ward_total_income: 'total_income',
+            ward_total_expense: 'total_expense',
+            ward_total_previous: 'total_previous',
+            ward_total_current_income: 'total_current_income',
+            ward_in_total: 'in_total',
+        }),
         total_dawat: function () {
             const total =
                 Number(

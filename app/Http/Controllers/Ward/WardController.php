@@ -2487,6 +2487,1129 @@ class WardController extends Controller
             'in_total' => $in_total,
         ]);
     }
+    public function total_approved_ward_report_data()
+    {
+        $validator = Validator::make(request()->all(), [
+            'month' => ['required', 'date'],
+            'user_id' => ['required', 'exists:org_thana_users,user_id'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $month = Carbon::parse(request()->month);
+        $thana_id = OrgThanaUser::where('user_id', request()->user_id)->value('thana_id');
+        $thana_info = OrgThana::find($thana_id);
+        $city_info = $thana_info ? OrgCity::find($thana_info->org_city_id) : null;
+        $wards = OrgWard::where('org_thana_id', $thana_id)->get();
+
+        $report_info_ids = [];
+        $ward_ids = [];
+        $approved_ward_ids = [];
+        foreach ($wards as $ward) {
+            $ward_id = $ward->id;
+            $ward_ids[] = $ward_id;
+            $report_info = ReportInfo::where('org_type_id', $ward_id)
+                ->where('org_type', 'ward')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->where('report_approved_status', 'approved')
+                ->where('status', 1)
+                ->get()
+                ->first();
+
+            if ($report_info) {
+                $report_info_id = $report_info->id;
+                $report_info_ids[] = $report_info_id;
+                $approved_ward_ids[] = $report_info->org_type_id;
+            }
+        }
+        $ward_count = count($approved_ward_ids);
+        $ward_titles = [];
+        foreach ($approved_ward_ids as $ward_id) {
+            $ward_info = OrgWard::find($ward_id);
+            if ($ward_info) {
+                $ward_titles[] = $ward_info->title;
+            }
+        }
+
+        $start_month = request()->month;
+        $end_month = request()->month;
+        $org_type = 'ward';
+        $org_type_id = $approved_ward_ids;
+        $report_approved_status = ['approved'];   //enum('pending','approved','rejected')
+        $is_need_sum = false;
+        $reportInfoIds = $report_info_ids;
+        $dateWiseReportSum = new DateWiseReportSum();
+        $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $report_info_ids);
+
+
+        $thana_gender = $thana_info->org_gender;
+        if ($thana_gender == "men") {
+            $table_column_value = [
+                [
+                    'table' => 'thana_dawat1_regular_group_wises', 
+                    'column' => 'how_many_groups_are_out_man', 
+                    'value' => $report_sum_data->ward_dawat1_regular_group_wises
+                ],
+                [
+                    'table' => 'thana_dawat1_regular_group_wises', 
+                    'column' => 'number_of_participants_man', 
+                    'value' => $report_sum_data->ward_dawat1_regular_group_wises
+                ],
+                [
+                    'table' => 'thana_dawat1_regular_group_wises', 
+                    'column' => 'how_many_have_been_invited_man', 
+                    'value' => $report_sum_data->ward_dawat1_regular_group_wises
+                ],
+                [
+                    'table' => 'thana_dawat1_regular_group_wises', 
+                    'column' => 'how_many_associate_members_created_man', 
+                    'value' => $report_sum_data->ward_dawat1_regular_group_wises
+                ],
+
+
+                [
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'total_rokon_man', 
+                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                ],
+                [
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'total_worker_man', 
+                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                ],
+                [
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'how_many_were_give_dawat_rokon_man', 
+                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                ],
+                [
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'how_many_were_give_dawat_worker_man', 
+                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                ],
+                [
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'how_many_have_been_invited_man', 
+                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                ],
+                [
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'how_many_associate_members_created_man', 
+                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                ],
+
+                [
+                    'table' => 'thana_dawat3_general_program_and_others', 
+                    'column' => 'how_many_were_give_dawat_man', 
+                    'value' => $report_sum_data->ward_dawat3_general_program_and_others
+                ],
+                [
+                    'table' => 'thana_dawat3_general_program_and_others', 
+                    'column' => 'how_many_associate_members_created_man', 
+                    'value' => $report_sum_data->ward_dawat3_general_program_and_others
+                ],
+
+
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'gono_songjog_doshok_group_man', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'gono_songjog_doshok_attended_man', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'gono_songjog_doshok_invited_man', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'gono_songjog_doshok_associate_members_created_man', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+
+
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_group', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_attended', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_invited', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_associate_members_created', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+
+
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'election_gono_songjog_group_man', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'election_gono_songjog_attended_man', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'election_gono_songjog_invited_man', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'election_gono_songjog_associate_members_created_man', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+
+
+
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'other_gono_songjog_group', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'other_gono_songjog_attended', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'other_gono_songjog_invited', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'other_gono_songjog_associate_members_created', 
+                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                ],
+
+
+
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'teacher_rokon_man', 
+                    'value' => $report_sum_data->ward_department1_talimul_qurans->teacher_rokon
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'teacher_worker_man', 
+                    'value' => $report_sum_data
+                ],
+
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'student_rokon_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'student_worker_man', 
+                    'value' => $report_sum_data
+                ],
+
+                
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'quran_learning_total_group', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'quran_learning_total_students', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'total_moktob', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'total_moktob_students', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'how_much_learned_sohih_tilawat', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'how_much_invited_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'how_much_been_associated_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'total_muallim_increased_man', 
+                    'value' => $report_sum_data
+                ],
+
+
+
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'govment_calculated_village_amount', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'govment_calculated_moholla_amount', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'total_village_committee_increased', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'total_village_committee_increased', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'special_dawat_included_village_increased', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'special_dawat_included_moholla_increased', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'how_many_been_invited', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'how_many_associated_created', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'how_many_young_been_invited', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'how_many_young_been_associated', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'total_young_committee_increased', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'total_new_club_increased', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'stablished_club_total_increased', 
+                    'value' => $report_sum_data
+                ],
+
+
+
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'political_and_special_invited_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'political_and_special_been_associated_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'political_and_special_target_man', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'pesha_jibi_invited_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'pesha_jibi_been_associated_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'pesha_jibi_target_man', 
+                    'value' => $report_sum_data
+                ],
+
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'olama_masayekh_invited', 
+                    'value' => $report_sum_data
+                ],
+                
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'olama_masayekh_been_associated', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'olama_masayekh_target', 
+                    'value' => $report_sum_data
+                ],
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'psromo_jibi_invited_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'psromo_jibi_been_associated_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'psromo_jibi_target_man', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'prantik_jonogosti_invited', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'prantik_jonogosti_been_associated', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'prantik_jonogosti_target', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'vinno_dormalombi_invited', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'vinno_dormalombi_been_associated', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'vinno_dormalombi_target', 
+                    'value' => $report_sum_data
+                ],
+
+
+
+
+
+                [
+                    'table' => 'thana_department5_paribarik_dawats', 
+                    'column' => 'total_attended_family', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department5_paribarik_dawats', 
+                    'column' => 'how_many_new_family_invited', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'total_mosjid_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'general_dawah_center_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'dawat_included_mosjid_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'mosjid_wise_information_center_present', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'general_information_center_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'mosjid_wise_dawah_center_increase', 
+                    'value' => $report_sum_data
+                ],
+
+
+
+                [
+                    'table' => 'thana_department7_dawat_in_technologies', 
+                    'column' => 'total_well_known_man', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_department7_dawat_in_technologies', 
+                    'column' => 'total_attended_man', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'total_pathagar_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'ward_book_sales_center_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'books_in_pathagar_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'ward_book_sales', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'book_distribution', 
+                    'value' => $report_sum_data
+                ],
+
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'soft_copy_book_distribution', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'unit_book_distribution_center_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'dawat_link_distribution', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'unit_book_distribution', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'sonar_bangla_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'songram_increase', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'prithibi_increase', 
+                    'value' => $report_sum_data
+                ],
+
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'unit_masik_sadaron_sova_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'unit_masik_sadaron_sova_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'unit_masik_sadaron_sova_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'alochona_sova_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'alochona_sova_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'alochona_sova_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sudhi_somabesh_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sudhi_somabesh_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sudhi_somabesh_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'siratunnabi_mahfil_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'siratunnabi_mahfil_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'siratunnabi_mahfil_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'eid_reunion_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'eid_reunion_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'eid_reunion_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dars_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dars_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dars_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'tafsir_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'tafsir_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'tafsir_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dawati_jonosova_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dawati_jonosova_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dawati_jonosova_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_personal_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_personal_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_personal_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_samostic_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_samostic_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_samostic_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'cha_chakra_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'cha_chakra_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'cha_chakra_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'samostic_khawa_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'samostic_khawa_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'samostic_khawa_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sikkha_sofor_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sikkha_sofor_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sikkha_sofor_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'kirat_protijogita_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'kirat_protijogita_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'kirat_protijogita_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'hamd_nat_protijogita_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'hamd_nat_protijogita_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'hamd_nat_protijogita_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'others_total', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'others_target', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'others_uposthiti', 
+                    'value' => $report_sum_data
+                ],
+
+
+
+
+
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data
+                ],
+            ];
+        }else if ($thana_gender == "women"){
+            $table_column_value = [
+                [
+                    'table' => 'thana_dawat1_regular_group_wises', 
+                    'column' => 'how_many_groups_are_out_woman', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'thana_dawat1_regular_group_wises', 
+                    'column' => 'number_of_participants_woman', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'thana_dawat1_regular_group_wises', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'thana_dawat1_regular_group_wises', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+                [
+                    'table' => 'rrrrrrrrrrrrrrrr', 
+                    'column' => 'cccccccccccccccccccc', 
+                    'value' => $report_sum_data->
+                ],
+            ];
+        }
+    
+        $grouped_by_table = [];
+    
+        // Group by table and collect column => value
+        foreach ($table_column_value as $item) {
+            $grouped_by_table[$item['table']][$item['column']] = $item['value'];
+        }
+    
+        // Insert one row per table
+        foreach ($report_sum_data as $item) {
+            DB::table($item['table'])
+                ->where('id', 'report_info_id') // report_info_id 
+                ->update([
+                    $item['column'] => $item['value']
+                ]);
+        }
+
+    
+        return response()->json([
+            'status' => 'success',
+            'data' => $report_sum_data,
+        ], 200);
+    }
 
     public function report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'], $is_need_sum = true, $report_info_ids = null)
     {
