@@ -20144,10 +20144,13 @@
                                     <input
                                         name="upojela_mozlishe_sura_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man_target
+                                                    ?.upojela_mozlishe_sura_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_mozlishe_sura_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -20169,10 +20172,13 @@
                                     <input
                                         name="pourosova_mozlishe_sura_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pourosova_mozlishe_sura_boithok_man_target
+                                                    ?.pourosova_mozlishe_sura_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pourosova_mozlishe_sura_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20194,10 +20200,13 @@
                                     <input
                                         name="union_mozlishe_sura_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_mozlishe_sura_boithok_man_target
+                                                    ?.union_mozlishe_sura_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_mozlishe_sura_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20565,10 +20574,13 @@
                                     <input
                                         name="upojela_kormoporishod_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_kormoporishod_boithok_man_target
+                                                    ?.upojela_kormoporishod_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_kormoporishod_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20590,10 +20602,13 @@
                                     <input
                                         name="pourosova_kormoporishod_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pourosova_kormoporishod_boithok_man_target
+                                                    ?.pourosova_kormoporishod_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pourosova_kormoporishod_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20615,10 +20630,13 @@
                                     <input
                                         name="union_kormoporishod_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_kormoporishod_boithok_man_target
+                                                    ?.union_kormoporishod_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_kormoporishod_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20881,10 +20899,13 @@
                                     <input
                                         name="upojela_mashik_rokon_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mashik_rokon_boithok_man_target
+                                                    ?.upojela_mashik_rokon_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_mashik_rokon_boithok_woman_target,
                                             )
                                         "
                                         @change="
@@ -21023,10 +21044,13 @@
                                     <input
                                         name="upojela_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_boithok_man_target
+                                                    ?.upojela_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -21167,10 +21191,13 @@
                                     <input
                                         name="bivagio_committee_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.bivagio_committee_boithok_man_target
+                                                    ?.bivagio_committee_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.bivagio_committee_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -21469,10 +21496,13 @@
                                             <input
                                                 name="ward_boithok_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_songothon11_sangothonik_boithoks
-                                                            ?.ward_boithok_man_target
+                                                            ?.ward_boithok_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ward_boithok_women_target
                                                     )
                                                 "
                                                 @change="
@@ -21793,10 +21823,13 @@
                                     <input
                                         name="pouroshova_mashik_rokon_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pouroshova_mashik_rokon_boithok_man_target
+                                                    ?.pouroshova_mashik_rokon_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pouroshova_mashik_rokon_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -22028,10 +22061,13 @@
                                         <input
                                             name="unit_kormi_boithok_man_target"
                                             :value="
-                                                formatBangla(
+                                                get_sum_total(
                                                     report_sum_data
                                                         ?.thana_songothon11_sangothonik_boithoks
-                                                        ?.unit_kormi_boithok_man_target
+                                                        ?.unit_kormi_boithok_man_target,
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.unit_kormi_boithok_women_target
                                                 )
                                             "
                                             @change="
@@ -22333,10 +22369,13 @@
                                     <input
                                         name="barshik_rokon_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.barshik_rokon_sommelon_man_target
+                                                    ?.barshik_rokon_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.barshik_rokon_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -22678,10 +22717,13 @@
                                     <input
                                         name="thana_word_sovapoti_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_man_target
+                                                    ?.thana_word_sovapoti_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_word_sovapoti_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -22965,10 +23007,13 @@
                                     <input
                                         name="thana_kormi_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_kormi_sommelon_man_target
+                                                    ?.thana_kormi_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_kormi_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -23252,10 +23297,13 @@
                                     <input
                                         name="ward_kormi_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_kormi_sommelon_man_target
+                                                    ?.ward_kormi_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.ward_kormi_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -23540,10 +23588,13 @@
                                     <input
                                         name="thana_unit_sovapoti_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_unit_sovapoti_sommelon_man_target
+                                                    ?.thana_unit_sovapoti_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_unit_sovapoti_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -23802,10 +23853,13 @@
                                     <input
                                         name="ulama_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_boithok_man_target
+                                                    ?.ulama_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.ulama_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -23828,10 +23882,13 @@
                                             <input
                                                 name="ulama_somabesh_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_songothon11_sangothonik_boithoks
-                                                            ?.ulama_somabesh_man_target
+                                                            ?.ulama_somabesh_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ulama_somabesh_women_target
                                                     )
                                                 "
                                                 @change="
@@ -24038,10 +24095,13 @@
                                     <input
                                         name="pesha_jibi_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pesha_jibi_boithok_man_target
+                                                    ?.pesha_jibi_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pesha_jibi_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -24242,7 +24302,10 @@
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_boithok_man_target
+                                                    ?.sromik_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.sromik_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -24265,10 +24328,13 @@
                                             <input
                                                 name="sromik_somabesh_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_songothon11_sangothonik_boithoks
-                                                            ?.sromik_somabesh_man_target
+                                                            ?.sromik_somabesh_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.sromik_somabesh_women_target
                                                     )
                                                 "
                                                 @change="
@@ -24473,10 +24539,13 @@
                                     <input
                                         name="jubok_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.jubok_boithok_man_target
+                                                    ?.jubok_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.jubok_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -24681,10 +24750,13 @@
                                             <input
                                                 name="male_student_daittoshil_boithok_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_songothon11_sangothonik_boithoks
-                                                            ?.male_student_daittoshil_boithok_man_target
+                                                            ?.male_student_daittoshil_boithok_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.male_student_daittoshil_boithok_women_target
                                                     )
                                                 "
                                                 @change="
@@ -24708,10 +24780,13 @@
                                             <input
                                                 name="male_student_daittoshil_boithok_women_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_songothon11_sangothonik_boithoks
-                                                            ?.male_student_daittoshil_boithok_women_target
+                                                            ?.female_student_daittoshil_boithok_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.female_student_daittoshil_boithok_women_target
                                                     )
                                                 "
                                                 @change="
@@ -24972,10 +25047,13 @@
                                     <input
                                         name="associate_member_somabesh_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.associate_member_somabesh_man_target
+                                                    ?.associate_member_somabesh_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.associate_member_somabesh_women_target
                                             )
                                         "
                                         @change="
@@ -24997,10 +25075,13 @@
                                     <input
                                         name="associate_member_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.associate_member_sommelon_man_target
+                                                    ?.associate_member_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.associate_member_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -25202,10 +25283,13 @@
                                     <input
                                         name="others_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.others_man_target
+                                                    ?.others_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.others_women_target,
                                             )
                                         "
                                         @change="
@@ -25499,10 +25583,13 @@
                                         <input
                                             name="unit_tarbiati_boithok_man_target"
                                             :value="
-                                                formatBangla(
+                                                get_sum_total(
                                                     report_sum_data
                                                         ?.thana_proshikkhon1_tarbiats
-                                                        ?.unit_tarbiati_boithok_man_target
+                                                        ?.unit_tarbiati_boithok_man_target,
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_women_target
                                                 )
                                             "
                                             @change="
@@ -25704,10 +25791,13 @@
                                     <input
                                         name="upozila_vittik_rokon_shikkha_shibir_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_rokon_shikkha_shibir_man_target
+                                                    ?.upozila_vittik_rokon_shikkha_shibir_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.upozila_vittik_rokon_shikkha_shibir_women_target
                                             )
                                         "
                                         @change="
@@ -25729,10 +25819,13 @@
                                     <input
                                         name="thana_vittik_rokon_shikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_rokon_shikkha_boithok_man_target
+                                                    ?.thana_vittik_rokon_shikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.thana_vittik_rokon_shikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -25992,10 +26085,13 @@
                                     <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_man_target
+                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_women_target
                                             )
                                         "
                                         @change="
@@ -26017,10 +26113,13 @@
                                     <input
                                         name="thana_vittik_selected_kormi_shikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_man_target
+                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -26280,10 +26379,13 @@
                                     <input
                                         name="upozila_vittik_kormi_shikkha_shibir_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_kormi_shikkha_shibir_man_target
+                                                    ?.upozila_vittik_kormi_shikkha_shibir_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.upozila_vittik_kormi_shikkha_shibir_women_target
                                             )
                                         "
                                         @change="
@@ -26305,10 +26407,13 @@
                                     <input
                                         name="thana_vittik_kormi_shikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_kormi_shikkha_boithok_man_target
+                                                    ?.thana_vittik_kormi_shikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.thana_vittik_kormi_shikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -26568,10 +26673,13 @@
                                     <input
                                         name="upozila_former_Student_kormi_training_program_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_former_Student_kormi_training_program_man_target
+                                                    ?.upozila_former_Student_kormi_training_program_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.upozila_former_Student_kormi_training_program_women_target
                                             )
                                         "
                                         @change="
@@ -26593,10 +26701,13 @@
                                     <input
                                         name="thana_former_Student_kormi_training_program_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_former_Student_kormi_training_program_man_target
+                                                    ?.thana_former_Student_kormi_training_program_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.thana_former_Student_kormi_training_program_women_target
                                             )
                                         "
                                         @change="
@@ -26910,10 +27021,13 @@
                                     <input
                                         name="pouroshova_kormi_shikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.pouroshova_kormi_shikkha_boithok_man_target
+                                                    ?.pouroshova_kormi_shikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.pouroshova_kormi_shikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -26961,10 +27075,13 @@
                                             <input
                                                 name="ward_kormi_shikkha_boithok_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_proshikkhon1_tarbiats
-                                                            ?.ward_kormi_shikkha_boithok_man_target
+                                                            ?.ward_kormi_shikkha_boithok_man_target,
+                                                        report_sum_data
+                                                            ?.thana_proshikkhon1_tarbiats
+                                                            ?.ward_kormi_shikkha_boithok_women_target
                                                     )
                                                 "
                                                 @change="
@@ -27232,10 +27349,13 @@
                                     <input
                                         name="gono_sikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.gono_sikkha_boithok_man_target
+                                                    ?.gono_sikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.gono_sikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -27380,10 +27500,13 @@
                                         <input
                                             name="gono_noisho_ibadot_man_target"
                                             :value="
-                                                formatBangla(
+                                                get_sum_total(
                                                     report_sum_data
                                                         ?.thana_proshikkhon1_tarbiats
-                                                        ?.gono_noisho_ibadot_man_target
+                                                        ?.gono_noisho_ibadot_man_target,
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.gono_noisho_ibadot_women_target
                                                 )
                                             "
                                             @change="

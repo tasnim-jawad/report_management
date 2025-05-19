@@ -41,7 +41,32 @@
                     <p class="fw-bold w-75">
                         ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
                         <span>
-                            {{ total_dawat }}
+                            {{
+                                get_sum_total(
+                                    report_sum_data?.thana_dawat1_regular_group_wises?.how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat1_regular_group_wises?.how_many_have_been_invited_woman,
+                                    
+                                    report_sum_data?.thana_dawat2_personal_and_targets?.how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat2_personal_and_targets?.how_many_have_been_invited_woman,
+                                    
+                                    report_sum_data?.thana_dawat3_general_program_and_others?.how_many_were_give_dawat_man,
+                                    report_sum_data?.thana_dawat3_general_program_and_others?.how_many_were_give_dawat_woman,
+                                    
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_doshok_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_doshok_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_pokkho_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_pokkho_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.jela_declared_gonosonjog_dawati_ovi_invited,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.mohanogor_declared_gonosonjog_dawati_ovi_invited,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.election_how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.election_how_many_have_been_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.ulama_how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.ulama_how_many_have_been_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.peshajibi_how_many_have_been_invited_man,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.peshajibi_how_many_have_been_invited_woman,
+                                    report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.other_how_many_have_been_invited,
+                                )
+                            }}
                         </span>
                     </p>
                     <div class="fw-bold w-25 d-flex flex-wrap justify-content-start">
@@ -111,7 +136,7 @@
                     </p>
                 </div>
                 <div class="group_dawat mb-1">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ১. ইউনিটে নিয়মিত গ্রুপভিত্তিক দাওয়াত:
                     </h4>
                     <table class="text-center">
@@ -415,7 +440,7 @@
                     </table>
                 </div>
                 <div class="personal_dawat mb-1">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:
                     </h4>
                     <table class="text-center mb-1">
@@ -850,7 +875,7 @@
                     </table>
                 </div>
                 <div class="shadharon_shova mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের
                         মাধ্যমে দাওয়াত :
                     </h4>
@@ -1046,7 +1071,7 @@
                     </table>
                 </div>
                 <div class="gonoshongjog mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৪. গণসংযোগ ও দাওয়াতি অভিযান পালন*:
                     </h4>
                     <table class="text-center">
@@ -1714,12 +1739,12 @@
                                         <p>/</p> -->
                                         <div class="parent_popup">
                                             <input
-                                                name="mohanogor_declared_gonosonjog_dawati_ovi_associated_created"
+                                                name="mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man"
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
                                                             ?.thana_dawat4_gono_songjog_and_dawat_ovijans
-                                                            ?.mohanogor_declared_gonosonjog_dawati_ovi_associated_created
+                                                            ?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man
                                                     )
                                                 "
                                                 @change="
@@ -2531,12 +2556,12 @@
                                 <td>
                                     <div class="parent_popup">
                                         <input
-                                            name="other_how_many_associate_members_created"
+                                            name="other_how_many_associate_members_created_man"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
                                                         ?.thana_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.other_how_many_associate_members_created
+                                                        ?.other_how_many_associate_members_created_man
                                                 )
                                             "
                                             @change="
@@ -2571,7 +2596,7 @@
             <h1 class="font-18 fw-bold">খ) বিভাগ ভিত্তিক তথ্য :</h1>
             <div class="bivag">
                 <div class="talimul_quran mb-5 pb-5">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ১. তালিমুল কুরআনের মাধ্যমে দাওয়াত
                     </h4>
                     <table class="text-center mb-2">
@@ -3403,7 +3428,7 @@
                     </table>
                 </div>
                 <div class="moholla pt-5">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ২. গ্রাম ও মহল্লাভিত্তিক দাওয়াত
                     </h4>
                     <div class="d-flex align-items-start gap-2">
@@ -3751,7 +3776,7 @@
                     </p>
                 </div>
                 <div class="jubo mb-2">
-                    <h4 class="fs-6 fw-bold">৩. যুব সমাজের মাঝে দাওয়াত*:</h4>
+                    <h4 class="font-17 fw-bold">৩. যুব সমাজের মাঝে দাওয়াত*:</h4>
                     <div class="d-flex align-items-start gap-2">
                         <div class="left w-100">
                             <table class="text-center mb-1">
@@ -4057,7 +4082,7 @@
                     </div>
                 </div>
                 <div class="job_holder mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৪. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত
                     </h4>
                     <div class="d-flex align-items-start gap-2">
@@ -5315,7 +5340,7 @@
                     </div>
                 </div>
                 <div class="paribarik mb-2">
-                    <h4 class="fs-6 fw-bold">৫. পরিবারভিত্তিক দাওয়াত</h4>
+                    <h4 class="font-17 fw-bold">৫. পরিবারভিত্তিক দাওয়াত</h4>
                     <table class="text-center table_layout_fixed">
                         <thead>
                             <th>দাওয়াতি কাজে অংশগ্রহণকারী মোট পরিবার</th>
@@ -5390,7 +5415,7 @@
                     </table>
                 </div>
                 <div class="mosjid_dawah_center mb-1">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৬. মসজিদ/দাওয়াহ্ সেন্টার/তথ্যসেবা কেন্দ্রভিত্তিক
                         দাওয়াত
                     </h4>
@@ -5710,7 +5735,7 @@
                     </p>
                 </div>
                 <div class="tottho_projukti mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৭. তথ্যপ্রযুক্তির মাধ্যমে দাওয়াত :
                     </h4>
                     <table class="text-center table_layout_fixed">
@@ -5851,7 +5876,7 @@
                     </table>
                 </div>
                 <div class="songskriti mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৮. সাংস্কৃতিক কাজের মাধ্যমে দাওয়াত:
                     </h4>
                     <table class="text-center table_layout_fixed">
@@ -8811,7 +8836,7 @@
             <div class="songothon">
                 <h1 class="font-18 fw-bold">সংগঠন :</h1>
                 <div class="jonoshokti mb-2">
-                    <h4 class="fs-6 fw-bold">১. জনশক্তি</h4>
+                    <h4 class="font-17 fw-bold">১. জনশক্তি</h4>
                     <table class="text-center mb-1 table_layout_fixed">
                         <thead>
                             <tr>
@@ -9144,7 +9169,7 @@
 
                 
                 <div class="shohojogi mb-2">
-                    <h4 class="fs-6 fw-bold">২. সহযোগী সদস্য :</h4>
+                    <h4 class="font-17 fw-bold">২. সহযোগী সদস্য :</h4>
                     <table class="text-center mb-1">
                         <thead>
                             <tr>
@@ -9165,27 +9190,57 @@
                                     <!-- <input name="associate_member_man_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_previous)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
                                     <div class="parent_popup">
                                         {{
-                                            formatBangla(
-                                                previous_present?.associate_member_man_previous ??
-                                                    ""
+                                            get_sum_total(
+                                                previous_present?.dawat1_associate_members_man_previous,
+                                                previous_present?.dawat2_associate_members_man_previous,
+                                                previous_present?.dawat3_associate_members_man_previous,
+
+                                                previous_present?.gono_songjog_doshok_associate_members_created_man_previous,
+                                                previous_present?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man_previous,
+                                                previous_present?.election_how_many_associate_members_created_man_previous,
+                                                previous_present?.peshajibi_how_many_associate_members_created_man_previous,
+                                                previous_present?.other_how_many_associate_members_created_man_previous,
                                             )
                                         }}
+
                                     </div>
                                 </td>
                                 <td class="bg-calc">
                                     <!-- <input name="associate_member_man_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_man_present)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
                                     <div class="parent_popup">
                                         {{
-                                            formatBangla(
-                                                previous_present?.associate_member_man_present ??
-                                                    ""
+                                            get_sum_total(
+                                                previous_present?.dawat1_associate_members_man_present,
+                                                previous_present?.dawat2_associate_members_man_present,
+                                                previous_present?.dawat3_associate_members_man_present,
+
+                                                previous_present?.gono_songjog_doshok_associate_members_created_man_present,
+                                                previous_present?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man_present,
+                                                previous_present?.election_how_many_associate_members_created_man_present,
+                                                previous_present?.peshajibi_how_many_associate_members_created_man_present,
+                                                previous_present?.other_how_many_associate_members_created_man_present,
                                             )
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
-                                        <input
+
+                                        {{
+                                            get_sum_total(
+                                                report_sum_data?.thana_dawat1_regular_group_wises?.how_many_associate_members_created_man,
+                                                report_sum_data?.thana_dawat2_personal_and_targets?.how_many_associate_members_created_man,
+                                                report_sum_data?.thana_dawat3_general_program_and_others?.how_many_associate_members_created_man,
+
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_doshok_associate_members_created_man,
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man,
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.election_how_many_associate_members_created_man,
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.peshajibi_how_many_associate_members_created_man,
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.other_how_many_associate_members_created_man,
+                                            )
+                                        }}
+
+                                        <!-- <input
                                             name="associate_member_man_briddhi"
                                             :value="
                                                 formatBangla(
@@ -9210,7 +9265,7 @@
                                             :field_title="'associate_member_man_briddhi'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -9251,11 +9306,16 @@
                                                     ?.thana_songothon2_associate_members
                                                     ?.associate_member_man_target
                                             ),
-                                            Number(
-                                                report_sum_data
-                                                    ?.thana_songothon2_associate_members
-                                                    ?.associate_member_man_briddhi
-                                            )
+
+                                            report_sum_data?.thana_dawat1_regular_group_wises?.how_many_associate_members_created_man,
+                                            report_sum_data?.thana_dawat2_personal_and_targets?.how_many_associate_members_created_man,
+                                            report_sum_data?.thana_dawat3_general_program_and_others?.how_many_associate_members_created_man,
+
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_doshok_associate_members_created_man,
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man,
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.election_how_many_associate_members_created_man,
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.peshajibi_how_many_associate_members_created_man,
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.other_how_many_associate_members_created_man,
                                         )
                                     }}
                                 </td>
@@ -9268,27 +9328,56 @@
                                     <div class="parent_popup">
                                         <!-- <input name="associate_member_woman_previous" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_previous)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
-                                            formatBangla(
-                                                previous_present?.associate_member_woman_previous ??
-                                                    ""
+                                            get_sum_total(
+                                                previous_present?.dawat1_associate_members_woman_previous,
+                                                previous_present?.dawat2_associate_members_woman_previous,
+                                                previous_present?.dawat3_associate_members_woman_previous,
+
+                                                previous_present?.gono_songjog_doshok_associate_members_created_woman_previous,
+                                                previous_present?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman_previous,
+                                                previous_present?.election_how_many_associate_members_created_woman_previous,
+                                                previous_present?.peshajibi_how_many_associate_members_created_woman_previous,
+                                                previous_present?.other_how_many_associate_members_created_woman_previous,
                                             )
                                         }}
+                                        
                                     </div>
                                 </td>
                                 <td class="bg-calc">
                                     <div class="parent_popup">
                                         <!-- <input name="associate_member_woman_present" :value="formatBangla(report_sum_data?.ward_songothon2_associate_members?.associate_member_woman_present)" @change="data_upload('ward-songothon2-associate-member')" :type="type" class="bg-input w-100 text-center" /> -->
                                         {{
-                                            formatBangla(
-                                                previous_present?.associate_member_woman_present ??
-                                                    ""
+                                            get_sum_total(
+                                                previous_present?.dawat1_associate_members_woman_present,
+                                                previous_present?.dawat2_associate_members_woman_present,
+                                                previous_present?.dawat3_associate_members_woman_present,
+
+                                                previous_present?.gono_songjog_doshok_associate_members_created_woman_present,
+                                                previous_present?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman_present,
+                                                previous_present?.election_how_many_associate_members_created_woman_present,
+                                                previous_present?.peshajibi_how_many_associate_members_created_woman_present,
+                                                previous_present?.other_how_many_associate_members_created_woman_present,
                                             )
                                         }}
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-calc">
                                     <div class="parent_popup">
-                                        <input
+
+                                        {{
+                                            get_sum_total(
+                                                report_sum_data?.thana_dawat1_regular_group_wises?.how_many_associate_members_created_woman,
+                                                report_sum_data?.thana_dawat2_personal_and_targets?.how_many_associate_members_created_woman,
+                                                report_sum_data?.thana_dawat3_general_program_and_others?.how_many_associate_members_created_woman,
+
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_doshok_associate_members_created_woman,
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman,
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.election_how_many_associate_members_created_woman,
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.peshajibi_how_many_associate_members_created_woman,
+                                                report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.other_how_many_associate_members_created_woman,
+                                            )
+                                        }}
+                                        <!-- <input
                                             name="associate_member_woman_briddhi"
                                             :value="
                                                 formatBangla(
@@ -9313,7 +9402,7 @@
                                             :field_title="'associate_member_woman_briddhi'"
                                             :month="month"
                                         >
-                                        </popup>
+                                        </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -9354,11 +9443,16 @@
                                                     ?.thana_songothon2_associate_members
                                                     ?.associate_member_woman_target
                                             ),
-                                            Number(
-                                                report_sum_data
-                                                    ?.thana_songothon2_associate_members
-                                                    ?.associate_member_woman_briddhi
-                                            )
+
+                                            report_sum_data?.thana_dawat1_regular_group_wises?.how_many_associate_members_created_woman,
+                                            report_sum_data?.thana_dawat2_personal_and_targets?.how_many_associate_members_created_woman,
+                                            report_sum_data?.thana_dawat3_general_program_and_others?.how_many_associate_members_created_woman,
+
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.gono_songjog_doshok_associate_members_created_woman,
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman,
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.election_how_many_associate_members_created_woman,
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.peshajibi_how_many_associate_members_created_woman,
+                                            report_sum_data?.thana_dawat4_gono_songjog_and_dawat_ovijans?.other_how_many_associate_members_created_woman,
                                         )
                                     }}
                                 </td>
@@ -9508,7 +9602,7 @@
                     </p>
                 </div>
                 <div class="bivag_vittik mb-5">
-                    <h4 class="fs-6 fw-bold">৩. বিভাগভিত্তিক তথ্য:</h4>
+                    <h4 class="font-17 fw-bold">৩. বিভাগভিত্তিক তথ্য:</h4>
                     <table class="text-center mb-1">
                         <thead>
                             <tr>
@@ -12859,7 +12953,7 @@
                 </div>
 
                 <div class="thana_shongothon mb-2">
-                    <h4 class="fs-6">৪. সাংগঠনিক কাঠামো*:</h4>
+                    <h4 class="font-17">৪. সাংগঠনিক কাঠামো*:</h4>
                     <table class="text-center mb-2 table_layout_fixed">
                         <thead>
                             <tr>
@@ -12995,8 +13089,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="pouroshova_target"
                                         :value="
                                             formatBangla(
@@ -13012,7 +13106,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -13021,8 +13115,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td class="bg-calc">
-                                    {{
+                                <td class="bg-block">
+                                    <!-- {{
                                         implementation_rate(
                                             Number(
                                                 report_sum_data
@@ -13035,7 +13129,7 @@
                                                     ?.pouroshova_increase
                                             )
                                         )
-                                    }}
+                                    }} -->
                                 </td>
                             </tr>
                             <tr>
@@ -13301,8 +13395,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="union_target"
                                         :value="
                                             formatBangla(
@@ -13318,7 +13412,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -13327,8 +13421,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td class="bg-calc">
-                                    {{
+                                <td class="bg-block">
+                                    <!-- {{
                                         implementation_rate(
                                             Number(
                                                 report_sum_data
@@ -13341,7 +13435,7 @@
                                                     ?.union_increase
                                             )
                                         )
-                                    }}
+                                    }} -->
                                 </td>
                             </tr>
                             <tr>
@@ -14086,8 +14180,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="total_proshashonik_ward_of_city_corporation_target"
                                         :value="
                                             formatBangla(
@@ -14103,7 +14197,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -14112,8 +14206,8 @@
                                     >
                                     </popup> -->
                                 </td>
-                                <td class="bg-calc">
-                                    {{
+                                <td class="bg-block">
+                                    <!-- {{
                                         implementation_rate(
                                             Number(
                                                 report_sum_data
@@ -14126,7 +14220,7 @@
                                                     ?.total_proshashonik_ward_of_city_corporation_increase
                                             )
                                         )
-                                    }}
+                                    }} -->
                                 </td>
                             </tr>
                             <tr>
@@ -14783,9 +14877,9 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="total_proshashonik_ward_of_pouroshova_target"
                                         :value="
                                             formatBangla(
@@ -14801,7 +14895,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -14809,8 +14903,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="total_proshashonik_ward_of_union_target"
                                         :value="
                                             formatBangla(
@@ -14826,7 +14920,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon4_organizational_structures'"
@@ -14836,8 +14930,8 @@
                                     </popup> -->
                                     </div>
                                 </td>
-                                <td class="bg-calc">
-                                    {{
+                                <td class="bg-block">
+                                    <!-- {{
                                         implementation_rate(
                                             Number(
                                                 report_sum_data
@@ -14865,7 +14959,7 @@
                                                     ?.total_proshashonik_ward_of_union_increase
                                             )
                                         )
-                                    }}
+                                    }} -->
                                 </td>
                             </tr>
                             <tr>
@@ -18188,7 +18282,7 @@
                 </div>
 
                 <div class="paribarik mb-2">
-                    <h4 class="fs-6 fw-bold">৫. দাওয়াতি ও পারিবারিক ইউনিট*:</h4>
+                    <h4 class="font-17 fw-bold">৫. দাওয়াতি ও পারিবারিক ইউনিট*:</h4>
                     <table class="text-center mb-1 table_layout_fixed">
                         <thead>
                             <tr>
@@ -18436,7 +18530,7 @@
                 </div>
 
                 <div class="emarat_kayem mb-2">
-                    <h4 class="fs-6 fw-bold">৬. এমারত কায়েম:</h4>
+                    <h4 class="font-17 fw-bold">৬. এমারত কায়েম:</h4>
                     <table class="text-center mb-1 table_layout_fixed">
                         <thead>
                             <tr>
@@ -18959,7 +19053,7 @@
                 </div>
 
                 <div class="bidai_chatro mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৭. বিদায়ী ছাত্র-ছাত্রী জনশক্তির সংগঠনে যোগদান:
                     </h4>
                     <table class="text-center mb-1 table_layout_fixed">
@@ -19165,7 +19259,7 @@
                 </div>
 
                 <div class="parsho_songothon margin_bottom_170">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৮. সহযোগী ও পার্শ্ব সংগঠন বিভাগ:
                     </h4>
                     <table class="text-center mb-1 table_layout_fixed">
@@ -19174,8 +19268,14 @@
                                 <td class="text-start px-2 width-30">
                                     মোট ট্রেড ইউনিয়ন সংখ্যা
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-calc">
+                                    {{
+                                        formatBangla(
+                                            previous_present?.total_trade_union_present ??
+                                                ""
+                                        )
+                                    }}
+                                    <!-- <input
                                         name="total_trade_union"
                                         :value="
                                             formatBangla(
@@ -19191,7 +19291,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
@@ -19203,8 +19303,14 @@
                                 <td class="text-start px-2 width-30">
                                     মোট ট্রাস্ট, ফাউন্ডেশন ও সোসাইটি সংখ্যা
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-calc">
+                                    {{
+                                        formatBangla(
+                                            previous_present?.total_societie ??
+                                                ""
+                                        )
+                                    }}
+                                    <!-- <input
                                         name="total_societie"
                                         :value="
                                             formatBangla(
@@ -19220,7 +19326,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'songothon5_dawat_and_paribarik_units'"
@@ -19349,7 +19455,7 @@
                     </table>
                 </div>
                 <div class="sofor mb-2">
-                    <h4 class="fs-6 fw-bold">৯. সফর:</h4>
+                    <h4 class="font-17 fw-bold">৯. সফর:</h4>
                     <table class="text-center mb-1">
                         <tbody>
                             <tr>
@@ -19702,7 +19808,7 @@
                     </table>
                 </div>
                 <div class="yanot mb-2">
-                    <h4 class="fs-6 fw-bold">১০. ইয়ানত দাতা:</h4>
+                    <h4 class="font-17 fw-bold">১০. ইয়ানত দাতা:</h4>
                     <table class="mb-1 table_layout_fixed">
                         <thead>
                             <tr>
@@ -19841,7 +19947,7 @@
                     </table>
                 </div>
                 <div class="boithok">
-                    <h4 class="fs-6 fw-bold">১১.সাংগঠনিক সভা-সম্মেলন</h4>
+                    <h4 class="font-17 fw-bold">১১.সাংগঠনিক সভা-সম্মেলন</h4>
                     <table class="text-center mb-1 table_layout_fixed">
                         <thead>
                             <tr>
@@ -20035,10 +20141,13 @@
                                     <input
                                         name="upojela_mozlishe_sura_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mozlishe_sura_boithok_man_target
+                                                    ?.upojela_mozlishe_sura_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_mozlishe_sura_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -20060,10 +20169,13 @@
                                     <input
                                         name="pourosova_mozlishe_sura_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pourosova_mozlishe_sura_boithok_man_target
+                                                    ?.pourosova_mozlishe_sura_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pourosova_mozlishe_sura_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20085,10 +20197,13 @@
                                     <input
                                         name="union_mozlishe_sura_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_mozlishe_sura_boithok_man_target
+                                                    ?.union_mozlishe_sura_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_mozlishe_sura_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20456,10 +20571,13 @@
                                     <input
                                         name="upojela_kormoporishod_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_kormoporishod_boithok_man_target
+                                                    ?.upojela_kormoporishod_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_kormoporishod_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20481,10 +20599,13 @@
                                     <input
                                         name="pourosova_kormoporishod_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pourosova_kormoporishod_boithok_man_target
+                                                    ?.pourosova_kormoporishod_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pourosova_kormoporishod_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20506,10 +20627,13 @@
                                     <input
                                         name="union_kormoporishod_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.union_kormoporishod_boithok_man_target
+                                                    ?.union_kormoporishod_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.union_kormoporishod_boithok_women_target,
                                             )
                                         "
                                         @change="
@@ -20772,10 +20896,13 @@
                                     <input
                                         name="upojela_mashik_rokon_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_mashik_rokon_boithok_man_target
+                                                    ?.upojela_mashik_rokon_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_mashik_rokon_boithok_woman_target,
                                             )
                                         "
                                         @change="
@@ -20914,10 +21041,13 @@
                                     <input
                                         name="upojela_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.upojela_boithok_man_target
+                                                    ?.upojela_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.upojela_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -21058,10 +21188,13 @@
                                     <input
                                         name="bivagio_committee_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.bivagio_committee_boithok_man_target
+                                                    ?.bivagio_committee_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.bivagio_committee_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -21148,7 +21281,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="pouroshova_boithok_man_total"
                                         :value="
                                             formatBangla(
@@ -21164,7 +21297,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -21172,8 +21305,8 @@
                                         :month="month"
                                     >
                                     </popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_boithok_man_total"
                                         :value="
                                             formatBangla(
@@ -21189,7 +21322,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -21197,38 +21330,38 @@
                                         :month="month"
                                     >
                                 </popup>-->
-                                    /
-                                    <div class="parent_popup">
-                                        <input
-                                            name="ward_boithok_man_total"
-                                            :value="
-                                                formatBangla(
-                                                    report_sum_data
-                                                        ?.thana_songothon11_sangothonik_boithoks
-                                                        ?.ward_boithok_man_total
-                                                )
-                                            "
-                                            @change="
-                                                data_upload(
-                                                    'thana-songothon11-sangothonik-boithoks'
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="report_header?.thana_info?.id"
-                                            :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                            :field_title="'word_boithok_total'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    <!-- / -->
+                                        <div class="parent_popup">
+                                            <input
+                                                name="ward_boithok_man_total"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ward_boithok_man_total
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'word_boithok_total'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="pouroshova_boithok_women_total"
                                         :value="
                                             formatBangla(
@@ -21244,16 +21377,16 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
-                                    <popup
+                                    /> -->
+                                    <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_boithok_women_total'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
+                                    </popup> -->
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_boithok_women_total"
                                         :value="
                                             formatBangla(
@@ -21269,15 +21402,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
-                                    <popup
+                                    /> -->
+                                    <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_boithok_women_total'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
+                                    </popup> -->
+                                    <!-- / -->
                                     <input
                                         name="ward_boithok_women_total"
                                         :value="
@@ -21306,7 +21439,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <input
+                                        <!-- <input
                                             name="pouroshova_boithok_man_target"
                                             :value="
                                                 formatBangla(
@@ -21322,16 +21455,16 @@
                                             "
                                             :type="type"
                                             class="bg-input w-100 text-center"
-                                        />
-                                        <popup
+                                        /> -->
+                                        <!-- <popup
                                             :thana_id="report_header?.thana_info?.id"
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'pouroshova_boithok_man_target'"
                                             :month="month"
                                         >
-                                        </popup>
-                                        /
-                                        <input
+                                        </popup> -->
+                                        <!-- / -->
+                                        <!-- <input
                                             name="union_boithok_man_target"
                                             :value="
                                                 formatBangla(
@@ -21347,23 +21480,26 @@
                                             "
                                             :type="type"
                                             class="bg-input w-100 text-center"
-                                        />
-                                        <popup
+                                        /> -->
+                                        <!-- <popup
                                             :thana_id="report_header?.thana_info?.id"
                                             :table_name="'thana_songothon11_sangothonik_boithoks'"
                                             :field_title="'union_boithok_man_target'"
                                             :month="month"
                                         >
-                                        </popup>
-                                        /
+                                        </popup> -->
+                                        <!-- / -->
                                         <div class="parent_popup">
                                             <input
                                                 name="ward_boithok_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_songothon11_sangothonik_boithoks
-                                                            ?.ward_boithok_man_target
+                                                            ?.ward_boithok_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ward_boithok_women_target
                                                     )
                                                 "
                                                 @change="
@@ -21386,7 +21522,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="pouroshova_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21406,16 +21542,16 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
-                                    <popup
+                                    /> -->
+                                    <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_boithok_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
+                                    </popup> -->
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21435,50 +21571,50 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
-                                    <popup
+                                    /> -->
+                                    <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_boithok_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <div class="parent_popup">
-                                        <input
-                                            name="ward_boithok_man_uposthiti"
-                                            :value="
-                                                formatBangla(
-                                                    average_uposthiti
-                                                        ?.thana_songothon11_sangothonik_boithoks
-                                                        ?.ward_boithok_man
-                                                )
-                                            "
-                                            @change="
-                                                average_data_upload(
-                                                    $event,
-                                                    'thana-songothon11-sangothonik-boithoks',
-                                                    report_sum_data
-                                                        ?.thana_songothon11_sangothonik_boithoks
-                                                        ?.ward_boithok_man_total
-                                                )
-                                            "
-                                            :type="type"
-                                            class="bg-input w-100 text-center"
-                                        />
-                                        <popup
-                                            :thana_id="report_header?.thana_info?.id"
-                                            :table_name="'ward_songothon9_sangothonik_boithoks'"
-                                            :field_title="'word_boithok_uposthiti'"
-                                            :month="month"
-                                        >
-                                        </popup>
-                                    </div>
+                                    </popup> -->
+                                    <!-- / -->
+                                        <div class="parent_popup">
+                                            <input
+                                                name="ward_boithok_man_uposthiti"
+                                                :value="
+                                                    formatBangla(
+                                                        average_uposthiti
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ward_boithok_man
+                                                    )
+                                                "
+                                                @change="
+                                                    average_data_upload(
+                                                        $event,
+                                                        'thana-songothon11-sangothonik-boithoks',
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ward_boithok_man_total
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_songothon9_sangothonik_boithoks'"
+                                                :field_title="'word_boithok_uposthiti'"
+                                                :month="month"
+                                            >
+                                            </popup>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="pouroshova_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21498,16 +21634,16 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
-                                    <popup
+                                    /> -->
+                                    <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_boithok_women_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
+                                    </popup> -->
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21527,43 +21663,44 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
-                                    <popup
+                                    /> -->
+                                    <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_boithok_women_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
-                                        name="ward_boithok_women_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_boithok_women
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_boithok_women_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'ward_boithok_women_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    </popup> -->
+                                    <!-- / -->
+
+                                        <input
+                                            name="ward_boithok_women_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.ward_boithok_women
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.ward_boithok_women_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'ward_boithok_women_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup>
                                     </div>
                                 </td>
                             </tr>
@@ -21597,9 +21734,9 @@
                                         :field_title="'pouroshova_mashik_rokon_boithok_man_total'"
                                         :month="month"
                                     >
-                                    </popup
-                                    >/
-                                    <input
+                                    </popup>
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_mashik_rokon_boithok_man_total"
                                         :value="
                                             formatBangla(
@@ -21622,7 +21759,7 @@
                                         :field_title="'union_mashik_rokon_boithok_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -21651,8 +21788,8 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_mashik_rokon_boithok_women_total"
                                         :value="
                                             formatBangla(
@@ -21675,7 +21812,7 @@
                                         :field_title="'union_mashik_rokon_boithok_women_total'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -21683,10 +21820,13 @@
                                     <input
                                         name="pouroshova_mashik_rokon_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pouroshova_mashik_rokon_boithok_man_target
+                                                    ?.pouroshova_mashik_rokon_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pouroshova_mashik_rokon_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -21704,8 +21844,8 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_mashik_rokon_boithok_man_target"
                                         :value="
                                             formatBangla(
@@ -21728,7 +21868,7 @@
                                         :field_title="'union_mashik_rokon_boithok_man_target'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -21761,8 +21901,8 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_mashik_rokon_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21789,7 +21929,7 @@
                                         :field_title="'union_mashik_rokon_boithok_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                                 <td>
@@ -21822,8 +21962,8 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_mashik_rokon_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21850,7 +21990,7 @@
                                         :field_title="'union_mashik_rokon_boithok_women_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                     </div>
                                 </td>
                             </tr>
@@ -21918,10 +22058,13 @@
                                         <input
                                             name="unit_kormi_boithok_man_target"
                                             :value="
-                                                formatBangla(
+                                                get_sum_total(
                                                     report_sum_data
                                                         ?.thana_songothon11_sangothonik_boithoks
-                                                        ?.unit_kormi_boithok_man_target
+                                                        ?.unit_kormi_boithok_man_target,
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.unit_kormi_boithok_women_target
                                                 )
                                             "
                                             @change="
@@ -22014,7 +22157,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="troimasik_rokon_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -22037,9 +22180,9 @@
                                         :field_title="'troimasik_rokon_sommelon_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
+                                    </popup> -->
+                                    <!-- / -->
+                                    <!-- <input
                                         name="shanmasik_rokon_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -22062,8 +22205,8 @@
                                         :field_title="'shanmasik_rokon_sommelon_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
+                                    </popup> -->
+                                    <!-- / -->
                                     <input
                                         name="barshik_rokon_sommelon_man_total"
                                         :value="
@@ -22092,7 +22235,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="troimasik_rokon_sommelon_women_total"
                                         :value="
                                             formatBangla(
@@ -22115,9 +22258,9 @@
                                         :field_title="'troimasik_rokon_sommelon_women_total'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
+                                    </popup> -->
+                                    <!-- / -->
+                                    <!-- <input
                                         name="troimasik_rokon_sommelon_women_total"
                                         :value="
                                             formatBangla(
@@ -22140,8 +22283,8 @@
                                         :field_title="'troimasik_rokon_sommelon_women_total'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
+                                    </popup> -->
+                                    <!-- / -->
                                     <input
                                         name="troimasik_rokon_sommelon_women_total"
                                         :value="
@@ -22170,7 +22313,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="troimasik_rokon_sommelon_man_target"
                                         :value="
                                             formatBangla(
@@ -22193,9 +22336,9 @@
                                         :field_title="'troimasik_rokon_sommelon_man_target'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
+                                    </popup> -->
+                                    <!-- / -->
+                                    <!-- <input
                                         name="shanmasik_rokon_sommelon_man_target"
                                         :value="
                                             formatBangla(
@@ -22218,15 +22361,18 @@
                                         :field_title="'shanmasik_rokon_sommelon_man_target'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
+                                    </popup> -->
+                                    <!-- / -->
                                     <input
                                         name="barshik_rokon_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.barshik_rokon_sommelon_man_target
+                                                    ?.barshik_rokon_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.barshik_rokon_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -22248,7 +22394,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="troimasik_rokon_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22275,9 +22421,9 @@
                                         :field_title="'troimasik_rokon_sommelon_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
+                                    </popup> -->
+                                    <!-- / -->
+                                    <!-- <input
                                         name="shanmasik_rokon_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22304,8 +22450,8 @@
                                         :field_title="'shanmasik_rokon_sommelon_man_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
+                                    </popup> -->
+                                    <!-- / -->
                                     <input
                                         name="barshik_rokon_sommelon_man_uposthiti"
                                         :value="
@@ -22338,7 +22484,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="troimasik_rokon_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22365,9 +22511,9 @@
                                         :field_title="'troimasik_rokon_sommelon_women_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
-                                    <input
+                                    </popup> -->
+                                    <!-- / -->
+                                    <!-- <input
                                         name="shanmasik_rokon_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22394,8 +22540,8 @@
                                         :field_title="'shanmasik_rokon_sommelon_women_uposthiti'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
+                                    </popup> -->
+                                    <!-- / -->
                                     <input
                                         name="barshik_rokon_sommelon_women_uposthiti"
                                         :value="
@@ -22434,7 +22580,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_word_sovapoti_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -22457,8 +22603,8 @@
                                         :field_title="'upozila_word_sovapoti_sommelon_man_total'"
                                         :month="month"
                                     >
-                                    </popup>
-                                    /
+                                    </popup> -->
+                                    <!-- / -->
                                     <input
                                         name="thana_word_sovapoti_sommelon_man_total"
                                         :value="
@@ -22487,7 +22633,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_word_sovapoti_sommelon_women_total"
                                         :value="
                                             formatBangla(
@@ -22511,7 +22657,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_word_sovapoti_sommelon_women_total"
                                         :value="
@@ -22540,7 +22686,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_word_sovapoti_sommelon_man_target"
                                         :value="
                                             formatBangla(
@@ -22564,14 +22710,17 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_word_sovapoti_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_word_sovapoti_sommelon_man_target
+                                                    ?.thana_word_sovapoti_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_word_sovapoti_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -22593,7 +22742,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_word_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22621,7 +22770,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_word_sovapoti_sommelon_man_uposthiti"
                                         :value="
@@ -22654,7 +22803,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_word_sovapoti_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22682,7 +22831,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_word_sovapoti_sommelon_women_uposthiti"
                                         :value="
@@ -22721,7 +22870,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_kormi_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -22745,7 +22894,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_kormi_sommelon_man_total"
                                         :value="
@@ -22774,7 +22923,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_kormi_sommelon_women_total"
                                         :value="
                                             formatBangla(
@@ -22798,7 +22947,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_kormi_sommelon_women_total"
                                         :value="
@@ -22827,7 +22976,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_kormi_sommelon_man_target"
                                         :value="
                                             formatBangla(
@@ -22851,14 +23000,17 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_kormi_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_kormi_sommelon_man_target
+                                                    ?.thana_kormi_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_kormi_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -22880,7 +23032,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_kormi_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22908,7 +23060,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_kormi_sommelon_man_uposthiti"
                                         :value="
@@ -22941,7 +23093,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_kormi_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -22969,7 +23121,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_kormi_sommelon_women_uposthiti"
                                         :value="
@@ -23008,7 +23160,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="union_kormi_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -23032,7 +23184,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="ward_kormi_sommelon_man_total"
                                         :value="
@@ -23061,7 +23213,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="union_kormi_sommelon_women_total"
                                         :value="
                                             formatBangla(
@@ -23085,7 +23237,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="ward_kormi_sommelon_women_total"
                                         :value="
@@ -23114,7 +23266,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="union_kormi_sommelon_man_target"
                                         :value="
                                             formatBangla(
@@ -23138,14 +23290,17 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="ward_kormi_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ward_kormi_sommelon_man_target
+                                                    ?.ward_kormi_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.ward_kormi_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -23167,7 +23322,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="union_kormi_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -23195,7 +23350,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="ward_kormi_sommelon_man_uposthiti"
                                         :value="
@@ -23228,7 +23383,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="union_kormi_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -23256,7 +23411,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="ward_kormi_sommelon_women_uposthiti"
                                         :value="
@@ -23296,7 +23451,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_unit_sovapoti_sommelon_man_total"
                                         :value="
                                             formatBangla(
@@ -23320,7 +23475,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_unit_sovapoti_sommelon_man_total"
                                         :value="
@@ -23349,7 +23504,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_unit_sovapoti_sommelon_women_total"
                                         :value="
                                             formatBangla(
@@ -23373,7 +23528,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_unit_sovapoti_sommelon_women_total"
                                         :value="
@@ -23402,7 +23557,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_unit_sovapoti_sommelon_man_target"
                                         :value="
                                             formatBangla(
@@ -23426,14 +23581,17 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_unit_sovapoti_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.thana_unit_sovapoti_sommelon_man_target
+                                                    ?.thana_unit_sovapoti_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.thana_unit_sovapoti_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -23455,7 +23613,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_unit_sovapoti_sommelon_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -23483,7 +23641,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_unit_sovapoti_sommelon_man_uposthiti"
                                         :value="
@@ -23516,7 +23674,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upozila_unit_sovapoti_sommelon_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -23544,7 +23702,7 @@
                                         :month="month"
                                     >
                                     </popup>
-                                    /
+                                    / -->
                                     <input
                                         name="thana_unit_sovapoti_sommelon_women_uposthiti"
                                         :value="
@@ -23692,10 +23850,13 @@
                                     <input
                                         name="ulama_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.ulama_boithok_man_target
+                                                    ?.ulama_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.ulama_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -23718,10 +23879,13 @@
                                             <input
                                                 name="ulama_somabesh_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_songothon11_sangothonik_boithoks
-                                                            ?.ulama_somabesh_man_target
+                                                            ?.ulama_somabesh_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.ulama_somabesh_women_target
                                                     )
                                                 "
                                                 @change="
@@ -23928,10 +24092,13 @@
                                     <input
                                         name="pesha_jibi_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.pesha_jibi_boithok_man_target
+                                                    ?.pesha_jibi_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.pesha_jibi_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -24132,7 +24299,10 @@
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.sromik_boithok_man_target
+                                                    ?.sromik_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.sromik_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -24155,10 +24325,13 @@
                                             <input
                                                 name="sromik_somabesh_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_songothon11_sangothonik_boithoks
-                                                            ?.sromik_somabesh_man_target
+                                                            ?.sromik_somabesh_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.sromik_somabesh_women_target
                                                     )
                                                 "
                                                 @change="
@@ -24363,10 +24536,13 @@
                                     <input
                                         name="jubok_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.jubok_boithok_man_target
+                                                    ?.jubok_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.jubok_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -24452,142 +24628,304 @@
                                     ছাত্র/ছাত্রী দায়িত্বশীলদের সাথে বৈঠক
                                 </td>
                                 <td>
-                                    <input
-                                        name="student_daittoshil_boithok_man_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_man_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'student_daittoshil_boithok_man_total'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="parent_popup">
+                                            <input
+                                                name="male_student_daittoshil_boithok_man_total"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.male_student_daittoshil_boithok_man_total
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <!-- <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                                :field_title="'student_daittoshil_boithok_man_total'"
+                                                :month="month"
+                                            >
+                                            </popup> -->
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="female_student_daittoshil_boithok_man_total"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.female_student_daittoshil_boithok_man_total
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <!-- <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                                :field_title="'student_daittoshil_boithok_women_total'"
+                                                :month="month"
+                                            >
+                                            </popup> -->
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="student_daittoshil_boithok_women_total"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_women_total
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'student_daittoshil_boithok_women_total'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="parent_popup">
+                                            <input
+                                                name="male_student_daittoshil_boithok_woman_total"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.male_student_daittoshil_boithok_woman_total
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <!-- <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                                :field_title="'student_daittoshil_boithok_man_total'"
+                                                :month="month"
+                                            >
+                                            </popup> -->
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="female_student_daittoshil_boithok_woman_total"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.female_student_daittoshil_boithok_woman_total
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <!-- <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                                :field_title="'student_daittoshil_boithok_women_total'"
+                                                :month="month"
+                                            >
+                                            </popup> -->
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="student_daittoshil_boithok_man_target"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_man_target
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-songothon11-sangothonik-boithoks'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'student_daittoshil_boithok_man_target'"
-                                        :month="month"
-                                    >
-                                    </popup>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="parent_popup">
+                                            <input
+                                                name="male_student_daittoshil_boithok_man_target"
+                                                :value="
+                                                    get_sum_total(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.male_student_daittoshil_boithok_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.male_student_daittoshil_boithok_women_target
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <!-- <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                                :field_title="'student_daittoshil_boithok_man_total'"
+                                                :month="month"
+                                            >
+                                            </popup> -->
+                                        </div>
+                                        /
+                                        <div class="parent_popup">
+                                            <input
+                                                name="male_student_daittoshil_boithok_women_target"
+                                                :value="
+                                                    get_sum_total(
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.female_student_daittoshil_boithok_man_target,
+                                                        report_sum_data
+                                                            ?.thana_songothon11_sangothonik_boithoks
+                                                            ?.female_student_daittoshil_boithok_women_target
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-songothon11-sangothonik-boithoks'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <!-- <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                                :field_title="'student_daittoshil_boithok_women_total'"
+                                                :month="month"
+                                            >
+                                            </popup> -->
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                                <td>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <input
+                                            name="male_student_daittoshil_boithok_man_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.male_student_daittoshil_boithok_man
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.male_student_daittoshil_boithok_man_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <!-- <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'student_daittoshil_boithok_man_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup> -->
+                                        /
+                                        <input
+                                            name="female_student_daittoshil_boithok_man_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.female_student_daittoshil_boithok_man
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.female_student_daittoshil_boithok_man_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <!-- <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'student_daittoshil_boithok_man_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup> -->
+                                    </div>
                                 </td>
                                 <td>
-                                    <input
-                                        name="student_daittoshil_boithok_man_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_man
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_man_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'student_daittoshil_boithok_man_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup>
-                                </td>
-                                <td>
-                                    <input
-                                        name="student_daittoshil_boithok_women_uposthiti"
-                                        :value="
-                                            formatBangla(
-                                                average_uposthiti
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_women
-                                            )
-                                        "
-                                        @change="
-                                            average_data_upload(
-                                                $event,
-                                                'thana-songothon11-sangothonik-boithoks',
-                                                report_sum_data
-                                                    ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.student_daittoshil_boithok_women_total
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <!-- <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'student_daittoshil_boithok_women_uposthiti'"
-                                        :month="month"
-                                    >
-                                    </popup> -->
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <input
+                                            name="male_student_daittoshil_boithok_women_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.male_student_daittoshil_boithok_women
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.male_student_daittoshil_boithok_women_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <!-- <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'student_daittoshil_boithok_women_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup> -->
+                                        /
+                                        <input
+                                            name="female_student_daittoshil_boithok_women_uposthiti"
+                                            :value="
+                                                formatBangla(
+                                                    average_uposthiti
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.female_student_daittoshil_boithok_women
+                                                )
+                                            "
+                                            @change="
+                                                average_data_upload(
+                                                    $event,
+                                                    'thana-songothon11-sangothonik-boithoks',
+                                                    report_sum_data
+                                                        ?.thana_songothon11_sangothonik_boithoks
+                                                        ?.female_student_daittoshil_boithok_women_total
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <!-- <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'thana_songothon11_sangothonik_boithoks'"
+                                            :field_title="'student_daittoshil_boithok_women_uposthiti'"
+                                            :month="month"
+                                        >
+                                        </popup> -->
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -24706,10 +25044,13 @@
                                     <input
                                         name="associate_member_somabesh_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.associate_member_somabesh_man_target
+                                                    ?.associate_member_somabesh_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.associate_member_somabesh_women_target
                                             )
                                         "
                                         @change="
@@ -24731,10 +25072,13 @@
                                     <input
                                         name="associate_member_sommelon_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.associate_member_sommelon_man_target
+                                                    ?.associate_member_sommelon_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.associate_member_sommelon_women_target
                                             )
                                         "
                                         @change="
@@ -24936,10 +25280,13 @@
                                     <input
                                         name="others_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_songothon11_sangothonik_boithoks
-                                                    ?.others_man_target
+                                                    ?.others_man_target,
+                                                report_sum_data
+                                                    ?.thana_songothon11_sangothonik_boithoks
+                                                    ?.others_women_target,
                                             )
                                         "
                                         @change="
@@ -25144,7 +25491,7 @@
             <div class="proshikkhon mb-2">
                 <h1 class="font-18 fw-bold">প্ৰশিক্ষণ :</h1>
                 <div class="tarbiat margin_bottom_170">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ক) তারবিয়াত (নৈতিক শিক্ষা ও সাংগঠনিক প্রশিক্ষণ) :
                     </h4>
                     <table class="text-center mb-2 table_layout_fixed">
@@ -25233,10 +25580,13 @@
                                         <input
                                             name="unit_tarbiati_boithok_man_target"
                                             :value="
-                                                formatBangla(
+                                                get_sum_total(
                                                     report_sum_data
                                                         ?.thana_proshikkhon1_tarbiats
-                                                        ?.unit_tarbiati_boithok_man_target
+                                                        ?.unit_tarbiati_boithok_man_target,
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.unit_tarbiati_boithok_women_target
                                                 )
                                             "
                                             @change="
@@ -25438,10 +25788,13 @@
                                     <input
                                         name="upozila_vittik_rokon_shikkha_shibir_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_rokon_shikkha_shibir_man_target
+                                                    ?.upozila_vittik_rokon_shikkha_shibir_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.upozila_vittik_rokon_shikkha_shibir_women_target
                                             )
                                         "
                                         @change="
@@ -25463,10 +25816,13 @@
                                     <input
                                         name="thana_vittik_rokon_shikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_rokon_shikkha_boithok_man_target
+                                                    ?.thana_vittik_rokon_shikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.thana_vittik_rokon_shikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -25726,10 +26082,13 @@
                                     <input
                                         name="upozila_vittik_selected_kormi_shikkha_shibir_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_man_target
+                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.upozila_vittik_selected_kormi_shikkha_shibir_women_target
                                             )
                                         "
                                         @change="
@@ -25751,10 +26110,13 @@
                                     <input
                                         name="thana_vittik_selected_kormi_shikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_man_target
+                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.thana_vittik_selected_kormi_shikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -26014,10 +26376,13 @@
                                     <input
                                         name="upozila_vittik_kormi_shikkha_shibir_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_vittik_kormi_shikkha_shibir_man_target
+                                                    ?.upozila_vittik_kormi_shikkha_shibir_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.upozila_vittik_kormi_shikkha_shibir_women_target
                                             )
                                         "
                                         @change="
@@ -26039,10 +26404,13 @@
                                     <input
                                         name="thana_vittik_kormi_shikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_vittik_kormi_shikkha_boithok_man_target
+                                                    ?.thana_vittik_kormi_shikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.thana_vittik_kormi_shikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -26302,10 +26670,13 @@
                                     <input
                                         name="upozila_former_Student_kormi_training_program_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.upozila_former_Student_kormi_training_program_man_target
+                                                    ?.upozila_former_Student_kormi_training_program_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.upozila_former_Student_kormi_training_program_women_target
                                             )
                                         "
                                         @change="
@@ -26327,10 +26698,13 @@
                                     <input
                                         name="thana_former_Student_kormi_training_program_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.thana_former_Student_kormi_training_program_man_target
+                                                    ?.thana_former_Student_kormi_training_program_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.thana_former_Student_kormi_training_program_women_target
                                             )
                                         "
                                         @change="
@@ -26644,10 +27018,13 @@
                                     <input
                                         name="pouroshova_kormi_shikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.pouroshova_kormi_shikkha_boithok_man_target
+                                                    ?.pouroshova_kormi_shikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.pouroshova_kormi_shikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -26695,10 +27072,13 @@
                                             <input
                                                 name="ward_kormi_shikkha_boithok_man_target"
                                                 :value="
-                                                    formatBangla(
+                                                    get_sum_total(
                                                         report_sum_data
                                                             ?.thana_proshikkhon1_tarbiats
-                                                            ?.ward_kormi_shikkha_boithok_man_target
+                                                            ?.ward_kormi_shikkha_boithok_man_target,
+                                                        report_sum_data
+                                                            ?.thana_proshikkhon1_tarbiats
+                                                            ?.ward_kormi_shikkha_boithok_women_target
                                                     )
                                                 "
                                                 @change="
@@ -26966,10 +27346,13 @@
                                     <input
                                         name="gono_sikkha_boithok_man_target"
                                         :value="
-                                            formatBangla(
+                                            get_sum_total(
                                                 report_sum_data
                                                     ?.thana_proshikkhon1_tarbiats
-                                                    ?.gono_sikkha_boithok_man_target
+                                                    ?.gono_sikkha_boithok_man_target,
+                                                report_sum_data
+                                                    ?.thana_proshikkhon1_tarbiats
+                                                    ?.gono_sikkha_boithok_women_target
                                             )
                                         "
                                         @change="
@@ -27083,8 +27466,8 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="gono_noisho_ibadot_women_total"
                                         :value="
                                             formatBangla(
@@ -27100,7 +27483,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_proshikkhon1_tarbiats'"
@@ -27114,10 +27497,13 @@
                                         <input
                                             name="gono_noisho_ibadot_man_target"
                                             :value="
-                                                formatBangla(
+                                                get_sum_total(
                                                     report_sum_data
                                                         ?.thana_proshikkhon1_tarbiats
-                                                        ?.gono_noisho_ibadot_man_target
+                                                        ?.gono_noisho_ibadot_man_target,
+                                                    report_sum_data
+                                                        ?.thana_proshikkhon1_tarbiats
+                                                        ?.gono_noisho_ibadot_women_target
                                                 )
                                             "
                                             @change="
@@ -27169,8 +27555,8 @@
                                         </popup>
                                     </div>
                                 </td>
-                                <td>
-                                    <input
+                                <td class="bg-block">
+                                    <!-- <input
                                         name="gono_noisho_ibadot_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -27190,14 +27576,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
-                                    <popup
+                                    /> -->
+                                    <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'ward_proshikkhon1_tarbiats'"
                                         :field_title="'rrrrrrrrrrrrrrrrrrr'"
                                         :month="month"
                                     >
-                                    </popup>
+                                    </popup> -->
                                 </td>
                             </tr>
                         </tbody>
@@ -28310,7 +28696,7 @@
                 <div class="hrd">
                     <h4 class="font-18 fw-bold">খ) মানবসম্পদ উন্নয়ন :</h4>
                     <div class="shangothonik_karjokrom">
-                        <h4 class="fs-6 fw-bold">১. সাংগঠনিক কার্যক্রম:</h4>
+                        <h4 class="font-17 fw-bold">১. সাংগঠনিক কার্যক্রম:</h4>
                         <table class="text-center mb-1 table_layout_fixed">
                             <thead>
                                 <tr>
@@ -28330,7 +28716,7 @@
                                 <tr>
                                     <td>
                                         <div class="d-flex justify-content-center align-items-center">
-                                        <input
+                                        <!-- <input
                                             name="upojela_manobshompod_committee"
                                             :value="
                                                 formatBangla(
@@ -28346,7 +28732,7 @@
                                             "
                                             :type="type"
                                             class="bg-input w-100 text-center"
-                                        />
+                                        /> -->
                                         <!-- <popup
                                             :thana_id="
                                             report_header?.thana_info?.id
@@ -28356,7 +28742,7 @@
                                             :month="month"
                                         >
                                         </popup> -->
-                                        /
+                                        <!-- / -->
                                         <input
                                             name="thana_manobshompod_committee"
                                             :value="
@@ -28387,7 +28773,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-center align-items-center">
-                                        <input
+                                        <!-- <input
                                             name="upojela_manobshompod_committee_boithok"
                                             :value="
                                                 formatBangla(
@@ -28403,7 +28789,7 @@
                                             "
                                             :type="type"
                                             class="bg-input w-100 text-center"
-                                        />
+                                        /> -->
                                         <!-- <popup
                                             :thana_id="
                                             report_header?.thana_info?.id
@@ -28413,7 +28799,7 @@
                                             :month="month"
                                         >
                                         </popup> -->
-                                        /
+                                        <!-- / -->
                                         <input
                                             name="thana_manobshompod_committee_boithok"
                                             :value="
@@ -28476,7 +28862,7 @@
                         </table>
                     </div>
                     <div class="courses">
-                        <h4 class="fs-6 fw-bold">২. প্রশিক্ষণ কোর্স:</h4>
+                        <h4 class="font-17 fw-bold">২. প্রশিক্ষণ কোর্স:</h4>
                         <table class="text-center mb-1 table_layout_fixed">
                             <thead>
                                 <tr>
@@ -28797,7 +29183,7 @@
             <div class="shomajsheba">
                 <h1 class="font-18 fw-bold">সমাজ সংস্কার ও সমাজসেবা :</h1>
                 <div class="proshikkhito_shomajkormi mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ১. প্রশিক্ষিত সমাজকর্মী তৈরি
                         <span class="font-13"
                             >(প্রশিক্ষিত সমাজকর্মী বলতে কেন্দ্রীয় মডিউলের আলোকে
@@ -28954,7 +29340,7 @@
                     </table>
                 </div>
                 <div class="personal_shamajik_kaj mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ২. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:
                     </h4>
                     <table class="mb-1">
@@ -29025,7 +29411,7 @@
                     </table>
                 </div>
                 <div class="samostik_shamajik_kaj pt-2 mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৩. সামষ্টিক/সেবা টিমের মাধ্যমে সামাজিক কাজ (প্রযোজ্য
                         ক্ষেত্রে):
                     </h4>
@@ -30195,7 +30581,7 @@
                     </table>
                 </div>
                 <div class="pratisthanik_shamajik_kaj mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৪. প্রাতিষ্ঠানিক উদ্যোগে সামাজিক কাজ
                     </h4>
                     <table class="text-center mb-2 table_layout_fixed">
@@ -30425,7 +30811,7 @@
                     </table>
                 </div>
                 <div class="sastho_poribar margin_bottom_170 pb-5">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৫. স্বাস্থ্য ও পরিবার কল্যাণমূলক কাজ
                     </h4>
                     <table class="text-center mb-1">
@@ -30684,7 +31070,7 @@
                 </div>
             </div>
             <div class="shikkha_gobeshona mb-3">
-                <h4 class="fs-6 fw-bold">
+                <h4 class="font-17 fw-bold">
                     ৬. শিক্ষা ও গবেষণামূলক কার্যক্রম বিবরণ
                 </h4>
                 <table class="text-center mb-2 table_layout_fixed">
@@ -30919,7 +31305,7 @@
                 </table>
             </div>
             <div class="shamajik_income_expense mb-3 d-flex align-items-center">
-                <h4 class="fs-6 fw-bold">
+                <h4 class="font-17 fw-bold">
                     ৭. সামাজিক কাজের জন্য মোট আয়ের কত শতাংশ ব্যয় হয়েছে :
                 </h4>
                 <div class="box">
@@ -30953,7 +31339,7 @@
             <div class="rartrio">
                 <h1 class="font-18 fw-bold">রাষ্ট্রীয় সংস্কার ও সংশোধন :</h1>
                 <div class="rajnoitik_jogajog mb-2">
-                    <h4 class="fs-6 fw-bold">১. প্রশিক্ষিত সমাজকর্মী তৈরি <small style="font-size: 12px;" >(প্রশিক্ষিত সমাজকর্মী হতে কেন্দ্রীয় মডিউলের আলোকে সমাজকর্মী মাস্টার ট্রেইনার দ্বারা প্রশিক্ষণপ্রাপ্ত জনগণকেই বাছাই করতে হবে)</small>:</h4>
+                    <h4 class="font-17 fw-bold">১. প্রশিক্ষিত সমাজকর্মী তৈরি <small style="font-size: 12px;" >(প্রশিক্ষিত সমাজকর্মী হতে কেন্দ্রীয় মডিউলের আলোকে সমাজকর্মী মাস্টার ট্রেইনার দ্বারা প্রশিক্ষণপ্রাপ্ত জনগণকেই বাছাই করতে হবে)</small>:</h4>
                     <table class="text-center mb-2">
                         <thead>
                             <tr>
@@ -31091,7 +31477,7 @@
                     </table>
                 </div>
                 <div class="kormoshuchi_bastobayon mb-2">
-                    <h4 class="fs-6 fw-bold">২. কর্মসূচি বাস্তবায়ন</h4>
+                    <h4 class="font-17 fw-bold">২. কর্মসূচি বাস্তবায়ন</h4>
                     <table class="text-center mb-2 table_layout_fixed">
                         <thead>
                             <tr>
@@ -31521,7 +31907,7 @@
                 </div>
 
                 <div class="dibosh mb-2">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৩. জাতীয় ও আন্তর্জাতিক দিবস পালন:
                     </h4>
                     <table class="text-center mb-1">
@@ -31930,10 +32316,10 @@
                     </table>
                 </div>
                 <div class="nirbachon">
-                    <h4 class="fs-6 fw-bold">
+                    <h4 class="font-17 fw-bold">
                         ৪. জাতীয় ও স্থানীয় নির্বাচনভিত্তিক কার্যক্রম:
                     </h4>
-                    <table class="text-center mb-1">
+                    <table class="text-center mb-1 table_layout_fixed">
                         <thead>
                             <tr>
                                 <th class="width-15" rowspan="2">নির্বাচনের ধরন</th>
@@ -31979,8 +32365,8 @@
                                         :field_title="'city_corporation_total'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_total"
                                         :value="
                                             formatBangla(
@@ -31996,7 +32382,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -32030,8 +32416,8 @@
                                         :field_title="'city_corporation_total_candidate'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_total_candidate"
                                         :value="
                                             formatBangla(
@@ -32047,7 +32433,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -32081,8 +32467,8 @@
                                         :field_title="'city_corporation_total_candidate_participated'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_total_candidate_participated"
                                         :value="
                                             formatBangla(
@@ -32098,7 +32484,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -32133,8 +32519,8 @@
                                         :field_title="'city_corporation_Mayor_candidate_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_Mayor_candidate_elected"
                                         :value="
                                             formatBangla(
@@ -32150,15 +32536,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_Mayor_candidate_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    |
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_chairman_candidate_elected"
                                         :value="
                                             formatBangla(
@@ -32174,15 +32560,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_chairman_candidate_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="city_corporation_chairman_candidate_elected"
                                         :value="
                                             formatBangla(
@@ -32198,7 +32584,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -32207,9 +32593,9 @@
                                     ></popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="city_corporation_vice_chairman_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -32225,15 +32611,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_vice_chairman_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_vice_chairman_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -32249,15 +32635,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_vice_chairman_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    |
-                                    <input
+                                    <!-- | -->
+                                    <!-- <input
                                         name="city_corporation_vice_chairman_candidate_woman_elected"
                                         :value="
                                             formatBangla(
@@ -32273,15 +32659,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_vice_chairman_candidate_woman_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_vice_chairman_candidate_woman_elected"
                                         :value="
                                             formatBangla(
@@ -32297,7 +32683,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -32308,31 +32694,33 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
-                                        name="city_corporation_councilor_candidate_man_elected"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_rastrio4_election_activities
-                                                    ?.city_corporation_councilor_candidate_man_elected
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-rastrio4-election-activitie'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <!-- <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'city_corporation_councilor_candidate_man_elected'"
-                                        :month="month"
-                                    ></popup> -->
-                                    /
-                                    <input
+                                        <div class="parent_popup">
+                                            <input
+                                                name="city_corporation_councilor_candidate_man_elected"
+                                                :value="
+                                                    formatBangla(
+                                                        report_sum_data
+                                                            ?.thana_rastrio4_election_activities
+                                                            ?.city_corporation_councilor_candidate_man_elected
+                                                    )
+                                                "
+                                                @change="
+                                                    data_upload(
+                                                        'thana-rastrio4-election-activitie'
+                                                    )
+                                                "
+                                                :type="type"
+                                                class="bg-input w-100 text-center"
+                                            />
+                                            <popup
+                                                :thana_id="report_header?.thana_info?.id"
+                                                :table_name="'ward_rastrio4_election_activities'"
+                                                :field_title="'councilor_candidate_elected'"
+                                                :month="month"
+                                            ></popup>
+                                        </div>
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_councilor_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -32348,7 +32736,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -32356,31 +32744,33 @@
                                         :month="month"
                                     ></popup> -->
                                     /
-                                    <input
-                                        name="city_corporation_councilor_candidate_woman_elected"
-                                        :value="
-                                            formatBangla(
-                                                report_sum_data
-                                                    ?.thana_rastrio4_election_activities
-                                                    ?.city_corporation_councilor_candidate_woman_elected
-                                            )
-                                        "
-                                        @change="
-                                            data_upload(
-                                                'thana-rastrio4-election-activitie'
-                                            )
-                                        "
-                                        :type="type"
-                                        class="bg-input w-100 text-center"
-                                    />
-                                    <!-- <popup
-                                        :thana_id="report_header?.thana_info?.id"
-                                        :table_name="'thana_songothon11_sangothonik_boithoks'"
-                                        :field_title="'city_corporation_councilor_candidate_woman_elected'"
-                                        :month="month"
-                                    ></popup> -->
-                                    /
-                                    <input
+                                    <div class="parent_popup">
+                                        <input
+                                            name="city_corporation_councilor_candidate_woman_elected"
+                                            :value="
+                                                formatBangla(
+                                                    report_sum_data
+                                                        ?.thana_rastrio4_election_activities
+                                                        ?.city_corporation_councilor_candidate_woman_elected
+                                                )
+                                            "
+                                            @change="
+                                                data_upload(
+                                                    'thana-rastrio4-election-activitie'
+                                                )
+                                            "
+                                            :type="type"
+                                            class="bg-input w-100 text-center"
+                                        />
+                                        <popup
+                                            :thana_id="report_header?.thana_info?.id"
+                                            :table_name="'ward_rastrio4_election_activities'"
+                                            :field_title="'councilor_candidate_elected'"
+                                            :month="month"
+                                        ></popup>
+                                    </div>
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_councilor_candidate_woman_elected"
                                         :value="
                                             formatBangla(
@@ -32396,14 +32786,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_councilor_candidate_woman_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    |
+                                    <!-- |
                                     <input
                                         name="city_corporation_member_candidate_man_elected"
                                         :value="
@@ -32420,14 +32810,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_member_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="pouroshova_member_candidate_man_elected"
                                         :value="
@@ -32444,14 +32834,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_member_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="city_corporation_member_candidate_woman_elected"
                                         :value="
@@ -32468,14 +32858,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'city_corporation_member_candidate_woman_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="pouroshova_member_candidate_woman_elected"
                                         :value="
@@ -32492,7 +32882,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -32504,12 +32894,12 @@
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
                                     <input
-                                        name="city_corporation_member_candidate_man_second_position"
+                                        name="city_corporation_councilor_candidate_man_second_position"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_rastrio4_election_activities
-                                                    ?.city_corporation_member_candidate_man_second_position
+                                                    ?.city_corporation_councilor_candidate_man_second_position
                                             )
                                         "
                                         @change="
@@ -32526,8 +32916,8 @@
                                         :field_title="'city_corporation_member_candidate_man_second_position'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="pouroshova_member_candidate_man_second_position"
                                         :value="
                                             formatBangla(
@@ -32543,21 +32933,21 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'pouroshova_member_candidate_man_second_position'"
                                         :month="month"
                                     ></popup> -->
-                                    |
+                                    /
                                     <input
-                                        name="city_corporation_member_candidate_woman_second_position"
+                                        name="city_corporation_councilor_candidate_woman_second_position"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_rastrio4_election_activities
-                                                    ?.city_corporation_member_candidate_woman_second_position
+                                                    ?.city_corporation_councilor_candidate_woman_second_position
                                             )
                                         "
                                         @change="
@@ -32574,7 +32964,7 @@
                                         :field_title="'city_corporation_member_candidate_woman_second_position'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="pouroshova_member_candidate_woman_second_position"
                                         :value="
@@ -32591,7 +32981,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -32680,7 +33070,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upojela_porishod_Mayor_candidate_elected"
                                         :value="
                                             formatBangla(
@@ -32696,14 +33086,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_Mayor_candidate_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- / -->
                                     <input
                                         name="upojela_porishod_chairman_candidate_elected"
                                         :value="
@@ -32780,9 +33170,9 @@
                                     ></popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="upojela_porishod_councilor_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -32798,15 +33188,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_councilor_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="upojela_porishod_member_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -32822,15 +33212,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_member_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    |
-                                    <input
+                                    <!-- | -->
+                                    <!-- <input
                                         name="upojela_porishod_councilor_candidate_woman_elected"
                                         :value="
                                             formatBangla(
@@ -32846,14 +33236,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'upojela_porishod_councilor_candidate_woman_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="upojela_porishod_member_candidate_woman_elected"
                                         :value="
@@ -32870,7 +33260,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -33010,7 +33400,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="union_porishod_Mayor_candidate_elected"
                                         :value="
                                             formatBangla(
@@ -33026,14 +33416,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_Mayor_candidate_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- / -->
                                     <input
                                         name="union_porishod_chairman_candidate_elected"
                                         :value="
@@ -33059,9 +33449,9 @@
                                     ></popup> -->
                                     </div>
                                 </td>
-                                <td>
+                                <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="union_porishod_vice_chairman_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -33077,15 +33467,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_vice_chairman_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="union_porishod_vice_chairman_candidate_woman_elected"
                                         :value="
                                             formatBangla(
@@ -33101,7 +33491,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
@@ -33112,7 +33502,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="union_porishod_councilor_candidate_man_elected"
                                         :value="
                                             formatBangla(
@@ -33128,14 +33518,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_councilor_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- / -->
                                     <input
                                         name="union_porishod_member_candidate_man_elected"
                                         :value="
@@ -33159,8 +33549,8 @@
                                         :field_title="'union_porishod_member_candidate_man_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    |
-                                    <input
+                                    /
+                                    <!-- <input
                                         name="union_porishod_councilor_candidate_woman_elected"
                                         :value="
                                             formatBangla(
@@ -33176,14 +33566,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_songothon11_sangothonik_boithoks'"
                                         :field_title="'union_porishod_councilor_candidate_woman_elected'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- / -->
                                     <input
                                         name="union_porishod_member_candidate_woman_elected"
                                         :value="
@@ -33212,12 +33602,12 @@
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
                                     <input
-                                        name="union_porishod_vice_chairman_candidate_man_second_position"
+                                        name="union_porishod_member_candidate_man_second_position"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_rastrio4_election_activities
-                                                    ?.union_porishod_vice_chairman_candidate_man_second_position
+                                                    ?.union_porishod_member_candidate_man_second_position
                                             )
                                         "
                                         @change="
@@ -33236,12 +33626,12 @@
                                     ></popup> -->
                                     /
                                     <input
-                                        name="union_porishod_vice_chairman_candidate_woman_second_position"
+                                        name="union_porishod_member_candidate_woman_second_position"
                                         :value="
                                             formatBangla(
                                                 report_sum_data
                                                     ?.thana_rastrio4_election_activities
-                                                    ?.union_porishod_vice_chairman_candidate_woman_second_position
+                                                    ?.union_porishod_member_candidate_woman_second_position
                                             )
                                         "
                                         @change="
@@ -33264,7 +33654,7 @@
                         </tbody>
                     </table>
                     <div class="do_not_print d-flex flex-wrap gap-2 mb-2">
-                        <popup-note
+                        <!-- <popup-note
                             :label="'কাউন্সিলর মোট প্রার্থী সংখ্যা'"
                             :thana_id="report_header?.thana_info?.id"
                             :table_name="'ward_rastrio4_election_activities'"
@@ -33305,7 +33695,7 @@
                             :table_name="'ward_rastrio4_election_activities'"
                             :field_title="'member_candidate_second_position'"
                             :month="month"
-                        />
+                        /> -->
                     </div>
 
 
@@ -33405,8 +33795,8 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="d-flex justify-content-center">
+                                <td class="bg-block">
+                                    <!-- <div class="d-flex justify-content-center">
                                         <div class="parent_popup">
                                             <input
                                                 name="national_vote_kendro_target"
@@ -33462,7 +33852,7 @@
                                                 :month="month"
                                             ></popup>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                             </tr>
                             <tr>
@@ -33578,15 +33968,15 @@
                                                 :month="month"
                                             ></popup>
                                         </div> -->
-                                        /
-                                        <div class="present parent_popup">
+                                        <!-- / -->
+                                        <!-- <div class="present parent_popup">
                                             {{
                                                 formatBangla(
                                                     previous_present?.booth_vittik_unit_present ??
                                                         ""
                                                 )
                                             }}
-                                        </div>
+                                        </div> -->
                                         <!-- <div class="parent_popup">
                                             <input
                                                 name="booth_vittik_unit"
@@ -33637,9 +34027,9 @@
                                                 :month="month"
                                             ></popup>
                                         </div>
-                                        /
+                                        <!-- / -->
                                         <div class="parent_popup">
-                                            <input
+                                            <!-- <input
                                                 name="booth_vittik_unit_increase"
                                                 :value="
                                                     formatBangla(
@@ -33655,7 +34045,7 @@
                                                 "
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
-                                            />
+                                            /> -->
                                             <!-- <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
@@ -33696,9 +34086,9 @@
                                                 :month="month"
                                             ></popup>
                                         </div>
-                                        /
+                                        <!-- / -->
                                         <div class="parent_popup">
-                                            <input
+                                            <!-- <input
                                                 name="booth_vittik_unit_target"
                                                 :value="
                                                     formatBangla(
@@ -33714,7 +34104,7 @@
                                                 "
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
-                                            />
+                                            /> -->
                                             <!-- <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
@@ -33865,7 +34255,7 @@
                     </table>
                 </div>
                 <div class="media">
-                    <h4 class="fs-6 fw-bold">৫. প্রচার ও মিডিয়া:</h4>
+                    <h4 class="font-17 fw-bold">৫. প্রচার ও মিডিয়া:</h4>
                     <table class="text-center mb-2 table_layout_fixed">
                         <thead>
                             <tr>
@@ -34012,7 +34402,7 @@
                     </table>
                 </div>
                 <div class="manobadhikar margin_bottom_170 padding_bottom_100">
-                    <h4 class="fs-6 fw-bold">৬. মানবাধিকার</h4>
+                    <h4 class="font-17 fw-bold">৬. মানবাধিকার</h4>
                     <table class="text-center mb-2 table_layout_fixed">
                         <tbody>
                             <tr>
@@ -34175,7 +34565,7 @@
                     </table>
                 </div>
                 <div class="shilpo_banijjo mb-2 pt-5">
-                    <h4 class="fs-6 fw-bold">৭. শিল্প ও বাণিজ্য:</h4>
+                    <h4 class="font-17 fw-bold">৭. শিল্প ও বাণিজ্য:</h4>
                     <table class="text-center mb-2 table_layout_fixed">
                         <thead>
                             <tr>
@@ -34485,7 +34875,7 @@
                     </table>
                 </div>
                 <div class="uddogta mb-2">
-                    <h4 class="fs-6 fw-bold">৮. উদ্যোক্তা তৈরি:</h4>
+                    <h4 class="font-17 fw-bold">৮. উদ্যোক্তা তৈরি:</h4>
                     <table class="text-center mb-2 table_layout_fixed">
                         <thead>
                             <tr>
@@ -34560,7 +34950,7 @@
                                 </td>
                                 <td class="bg-calc">
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <div class="present parent_popup">
+                                        <!-- <div class="present parent_popup">
                                             {{
                                                 formatBangla(
                                                     previous_present?.sheba_uddogta_toiri_present ??
@@ -34568,7 +34958,7 @@
                                                 )
                                             }}
                                         </div>
-                                        /
+                                        / -->
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
@@ -34577,7 +34967,7 @@
                                                 )
                                             }}
                                         </div>
-                                        /
+                                        <!-- /
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
@@ -34585,8 +34975,8 @@
                                                         ""
                                                 )
                                             }}
-                                        </div>
-                                        /
+                                        </div> -->
+                                        <!-- /
                                         <div class="present parent_popup">
                                             {{
                                                 formatBangla(
@@ -34594,12 +34984,12 @@
                                                         ""
                                                 )
                                             }}
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="sheba_uddogta_toiri_increase"
                                         :value="
                                             formatBangla(
@@ -34615,14 +35005,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'sheba_uddogta_toiri_increase'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- / -->
                                     <input
                                         name="shilpo_uddogta_toiri_increase"
                                         :value="
@@ -34646,8 +35036,8 @@
                                         :field_title="'shilpo_uddogta_toiri_increase'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="banijjo_uddogta_toiri_increase"
                                         :value="
                                             formatBangla(
@@ -34663,15 +35053,15 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'banijjo_uddogta_toiri_increase'"
                                         :month="month"
                                     ></popup> -->
-                                    /
-                                    <input
+                                    <!-- / -->
+                                    <!-- <input
                                         name="other_uddogta_toiri_increase"
                                         :value="
                                             formatBangla(
@@ -34687,7 +35077,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
@@ -34698,7 +35088,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <input
+                                    <!-- <input
                                         name="sheba_uddogta_toiri_target"
                                         :value="
                                             formatBangla(
@@ -34714,14 +35104,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'sheba_uddogta_toiri_target'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- / -->
                                     <input
                                         name="shilpo_uddogta_toiri_target"
                                         :value="
@@ -34745,7 +35135,7 @@
                                         :field_title="'shilpo_uddogta_toiri_target'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="banijjo_uddogta_toiri_target"
                                         :value="
@@ -34762,14 +35152,14 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
                                         :field_title="'banijjo_uddogta_toiri_target'"
                                         :month="month"
                                     ></popup> -->
-                                    /
+                                    <!-- /
                                     <input
                                         name="other_uddogta_toiri_target"
                                         :value="
@@ -34786,7 +35176,7 @@
                                         "
                                         :type="type"
                                         class="bg-input w-100 text-center"
-                                    />
+                                    /> -->
                                     <!-- <popup
                                         :thana_id="report_header?.thana_info?.id"
                                         :table_name="'thana_rastrio8_entrepreneurial_developments'"
@@ -34864,10 +35254,10 @@
                 </div>
             </div>
             <div class="baytulmal mt-2">
-                <div class="title negative_margine">
+                <div class="title negative_margine_bottom_25px mt-5">
                     <h1>বাইতুলমাল</h1>
                 </div>
-                <p class="fs-6 fw-bold mb-3">ধার্যকৃত নিছাব : ১০,০০০/-</p>
+                <p class="font-17 fw-bold mb-3">ধার্যকৃত নিছাব : ১০,০০০/-</p>
                 <table class="text-center mb-1">
                     <thead>
                         <tr class="">
@@ -34883,34 +35273,18 @@
                                         <tr
                                             v-for="(
                                                 bm_cat, index
-                                            ) in bm_income_categories"
+                                            ) in income_report.category_wise_data"
                                             :key="index"
                                         >
                                             <td
-                                                class="text-start px-2 width-60 border_bottom"
+                                                class="text-start px-2 w-50 border_bottom"
                                             >
-                                                {{ bm_cat.title }}
+                                                {{ bm_cat.category_name }}
                                             </td>
                                             <td class="border_left_bottom">
-                                                <input
-                                                    name="bm_entry"
-                                                    :value="
-                                                        formatBangla(
-                                                            bm_categoty_amount(
-                                                                bm_cat.id
-                                                            )
-                                                        )
-                                                    "
-                                                    @change="
-                                                        income_store(
-                                                            bm_cat.id,
-                                                            $event.target.value
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />
+                                                {{ formatBangla(parseInt(bm_cat.amount) ?? "") }}
                                             </td>
+                                            
                                         </tr>
                                     </tbody>
                                 </table>
@@ -34921,33 +35295,16 @@
                                         <tr
                                             v-for="(
                                                 expense_cat, index
-                                            ) in bm_expense_categories"
+                                            ) in expense_report.category_wise_data"
                                             :key="index"
                                         >
                                             <td
-                                                class="text-start px-2 width-60 border_bottom"
+                                                class="text-start px-2 w-50 border_bottom"
                                             >
-                                                {{ expense_cat.title }}
+                                                {{ expense_cat.category_name }}
                                             </td>
                                             <td class="border_left_bottom">
-                                                <input
-                                                    name="bm_entry"
-                                                    :value="
-                                                        formatBangla(
-                                                            expense_categoty_amount(
-                                                                expense_cat.id
-                                                            )
-                                                        )
-                                                    "
-                                                    @change="
-                                                        expense_store(
-                                                            expense_cat.id,
-                                                            $event.target.value
-                                                        )
-                                                    "
-                                                    type="text"
-                                                    class="bg-input w-100 text-center"
-                                                />
+                                                {{ formatBangla(parseInt(expense_cat.amount) ?? "") }}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -34955,12 +35312,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-end px-2 width-30">মোট</td>
-                            <td class="width-20">
+                            <td class="text-end px-2">মোট</td>
+                            <td>
                                 {{ formatBangla(parseInt(total_income) ?? "") }}
                             </td>
-                            <td class="text-end px-2 width-30">মোট</td>
-                            <td class="width-20">
+                            <td class="text-end px-2">মোট</td>
+                            <td>
                                 {{
                                     formatBangla(parseInt(total_expense) ?? "")
                                 }}
