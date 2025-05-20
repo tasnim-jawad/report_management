@@ -388,7 +388,7 @@
     "member_candidate_elected",
     "member_candidate_second_position",
     "national_vote_kendro",
-    "national_vote_kendro_increase",
+    "national_vote_kendro_increase",vote_kendro_vittik_unit_target
     "national_vote_kendro_target",
     "local_vote_kendro",
     "local_vote_kendro_increase",

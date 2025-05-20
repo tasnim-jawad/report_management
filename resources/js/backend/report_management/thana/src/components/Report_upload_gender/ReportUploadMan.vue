@@ -19049,7 +19049,7 @@
                                 <td>
                                     <div class="d-flex justify-content-evenly">
                                         <div class="parent_popup">
-                                            <input readonly
+                                            <input
                                                 name="Joined_student_man_member"
                                                 :value="
                                                     formatBangla(
@@ -19064,7 +19064,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-block w-100 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :thana_id="
@@ -19078,7 +19078,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_women_member"
                                                 :value="
                                                     formatBangla(
@@ -19093,9 +19093,9 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input w-100 text-center"
+                                                class="bg-block w-100 text-center"
                                             />
-                                            <popup
+                                            <!-- <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
@@ -19103,14 +19103,14 @@
                                                 :field_title="'Joined_student_women_member'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-evenly">
                                         <div class="parent_popup">
-                                            <input readonly
+                                            <input
                                                 name="Joined_student_man_associate"
                                                 :value="
                                                     formatBangla(
@@ -19125,7 +19125,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-block w-100 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :thana_id="
@@ -19139,7 +19139,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_women_associate"
                                                 :value="
                                                     formatBangla(
@@ -19154,9 +19154,9 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input w-100 text-center"
+                                                class="bg-block w-100 text-center"
                                             />
-                                            <popup
+                                            <!-- <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
@@ -19164,14 +19164,14 @@
                                                 :field_title="'Joined_student_women_associate'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-evenly">
                                         <div class="parent_popup">
-                                            <input readonly
+                                            <input
                                                 name="Joined_student_man_worker"
                                                 :value="
                                                     formatBangla(
@@ -19186,7 +19186,7 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-block w-100 text-center"
+                                                class="bg-input w-100 text-center"
                                             />
                                             <popup
                                                 :thana_id="
@@ -19200,7 +19200,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_women_worker"
                                                 :value="
                                                     formatBangla(
@@ -19215,9 +19215,9 @@
                                                     )
                                                 "
                                                 :type="type"
-                                                class="bg-input w-100 text-center"
+                                                class="bg-block w-100 text-center"
                                             />
-                                            <popup
+                                            <!-- <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
@@ -19225,7 +19225,7 @@
                                                 :field_title="'Joined_student_women_worker'"
                                                 :month="month"
                                             >
-                                            </popup>
+                                            </popup> -->
                                         </div>
                                     </div>
                                 </td>
@@ -33874,8 +33874,8 @@
                                             ></popup>
                                         </div>
                                         <!-- / -->
-                                        <div class="parent_popup">
-                                            <!-- <input
+                                        <!-- <div class="parent_popup">
+                                            <input
                                                 name="booth_vittik_unit_increase"
                                                 :value="
                                                     formatBangla(
@@ -33891,16 +33891,16 @@
                                                 "
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
-                                            /> -->
-                                            <!-- <popup
+                                            />
+                                            <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'booth_vittik_unit_increase'"
                                                 :month="month"
-                                            ></popup> -->
-                                        </div>
+                                            ></popup>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
@@ -33933,8 +33933,8 @@
                                             ></popup>
                                         </div>
                                         <!-- / -->
-                                        <div class="parent_popup">
-                                            <!-- <input
+                                        <!-- <div class="parent_popup">
+                                            <input
                                                 name="booth_vittik_unit_target"
                                                 :value="
                                                     formatBangla(
@@ -33950,16 +33950,16 @@
                                                 "
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
-                                            /> -->
-                                            <!-- <popup
+                                            />
+                                            <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'booth_vittik_unit_target'"
                                                 :month="month"
-                                            ></popup> -->
-                                        </div>
+                                            ></popup>
+                                        </div> -->
                                     </div>
                                 </td>
                             </tr>

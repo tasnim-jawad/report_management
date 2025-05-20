@@ -2547,138 +2547,149 @@ class WardController extends Controller
         $dateWiseReportSum = new DateWiseReportSum();
         $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $report_info_ids);
 
+        $thana_report_info = ReportInfo::where('org_type_id', $thana_id)
+                ->where('org_type', 'thana')
+                ->whereYear('month_year', $month->clone()->year)
+                ->whereMonth('month_year', $month->clone()->month)
+                ->where('status', 1)
+                ->get()
+                ->first();
+        $thana_report_info_id = $thana_report_info->id;
 
+
+
+        // gender wide data push. ward data push to thana monthly report report 
         $thana_gender = $thana_info->org_gender;
         if ($thana_gender == "men") {
             $table_column_value = [
                 [
                     'table' => 'thana_dawat1_regular_group_wises', 
                     'column' => 'how_many_groups_are_out_man', 
-                    'value' => $report_sum_data->ward_dawat1_regular_group_wises
+                    'value' => $report_sum_data?->ward_dawat1_regular_group_wises?->how_many_groups_are_out
                 ],
                 [
                     'table' => 'thana_dawat1_regular_group_wises', 
                     'column' => 'number_of_participants_man', 
-                    'value' => $report_sum_data->ward_dawat1_regular_group_wises
+                    'value' => $report_sum_data?->ward_dawat1_regular_group_wises?->number_of_participants
                 ],
                 [
                     'table' => 'thana_dawat1_regular_group_wises', 
                     'column' => 'how_many_have_been_invited_man', 
-                    'value' => $report_sum_data->ward_dawat1_regular_group_wises
+                    'value' => $report_sum_data?->ward_dawat1_regular_group_wises?->how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat1_regular_group_wises', 
                     'column' => 'how_many_associate_members_created_man', 
-                    'value' => $report_sum_data->ward_dawat1_regular_group_wises
+                    'value' => $report_sum_data?->ward_dawat1_regular_group_wises?->how_many_associate_members_created
                 ],
 
 
                 [
                     'table' => 'thana_dawat2_personal_and_targets', 
                     'column' => 'total_rokon_man', 
-                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->total_rokon
                 ],
                 [
                     'table' => 'thana_dawat2_personal_and_targets', 
                     'column' => 'total_worker_man', 
-                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->total_worker
                 ],
                 [
                     'table' => 'thana_dawat2_personal_and_targets', 
                     'column' => 'how_many_were_give_dawat_rokon_man', 
-                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->how_many_were_give_dawat_rokon
                 ],
                 [
                     'table' => 'thana_dawat2_personal_and_targets', 
                     'column' => 'how_many_were_give_dawat_worker_man', 
-                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->how_many_were_give_dawat_worker
                 ],
                 [
                     'table' => 'thana_dawat2_personal_and_targets', 
                     'column' => 'how_many_have_been_invited_man', 
-                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat2_personal_and_targets', 
                     'column' => 'how_many_associate_members_created_man', 
-                    'value' => $report_sum_data->ward_dawat2_personal_and_targets
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->how_many_associate_members_created
                 ],
 
                 [
                     'table' => 'thana_dawat3_general_program_and_others', 
                     'column' => 'how_many_were_give_dawat_man', 
-                    'value' => $report_sum_data->ward_dawat3_general_program_and_others
+                    'value' => $report_sum_data?->ward_dawat3_general_program_and_others?->how_many_were_give_dawat
                 ],
                 [
                     'table' => 'thana_dawat3_general_program_and_others', 
                     'column' => 'how_many_associate_members_created_man', 
-                    'value' => $report_sum_data->ward_dawat3_general_program_and_others
+                    'value' => $report_sum_data?->ward_dawat3_general_program_and_others?->how_many_associate_members_created
                 ],
 
 
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'gono_songjog_doshok_group_man', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->total_gono_songjog_group
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'gono_songjog_doshok_attended_man', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->total_attended
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'gono_songjog_doshok_invited_man', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'gono_songjog_doshok_associate_members_created_man', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->how_many_associate_members_created
                 ],
 
 
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_group', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_group
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_attended', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_attended
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_invited', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_invited
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_associate_members_created', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_associated_created
                 ],
 
 
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'election_gono_songjog_group_man', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_gono_songjog_group
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'election_gono_songjog_attended_man', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_attended
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'election_gono_songjog_invited_man', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'election_gono_songjog_associate_members_created_man', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_how_many_associate_members_created
                 ],
 
 
@@ -2686,22 +2697,22 @@ class WardController extends Controller
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'other_gono_songjog_group', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_gono_songjog_group
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'other_gono_songjog_attended', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_attended
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'other_gono_songjog_invited', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
                     'column' => 'other_gono_songjog_associate_members_created', 
-                    'value' => $report_sum_data->ward_dawat4_gono_songjog_and_dawat_ovijans
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_how_many_associate_members_created
                 ],
 
 
@@ -2709,65 +2720,65 @@ class WardController extends Controller
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'teacher_rokon_man', 
-                    'value' => $report_sum_data->ward_department1_talimul_qurans->teacher_rokon
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->teacher_rokon
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'teacher_worker_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->teacher_worker
                 ],
 
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'student_rokon_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->student_rokon
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'student_worker_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->student_worker
                 ],
 
                 
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'quran_learning_total_group', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->quran_learning_total_group
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'quran_learning_total_students', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->quran_learning_total_students
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'total_moktob', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->total_moktob
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'total_moktob_students', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->total_moktob_students
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'how_much_learned_sohih_tilawat', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->how_much_learned_sohih_tilawat
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'how_much_invited_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->how_much_invited_man
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'how_much_been_associated_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->how_much_been_associated_man
                 ],
                 [
                     'table' => 'thana_department1_talimul_qurans', 
                     'column' => 'total_muallim_increased_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->total_muallim_increased_man
                 ],
 
 
@@ -2775,171 +2786,171 @@ class WardController extends Controller
                 [
                     'table' => 'ward_department2_moholla_vittik_dawats', 
                     'column' => 'govment_calculated_village_amount', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->govment_calculated_village_amount
                 ],
                 [
                     'table' => 'ward_department2_moholla_vittik_dawats', 
                     'column' => 'govment_calculated_moholla_amount', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->govment_calculated_moholla_amount
                 ],
                 [
                     'table' => 'ward_department2_moholla_vittik_dawats', 
                     'column' => 'total_village_committee_increased', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->total_village_committee_increased
                 ],
                 [
                     'table' => 'ward_department2_moholla_vittik_dawats', 
                     'column' => 'total_village_committee_increased', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->total_moholla_committee_increased
                 ],
                 [
                     'table' => 'ward_department2_moholla_vittik_dawats', 
                     'column' => 'special_dawat_included_village_increased', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->special_dawat_included_village_increased
                 ],
                 [
                     'table' => 'ward_department2_moholla_vittik_dawats', 
                     'column' => 'special_dawat_included_moholla_increased', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->special_dawat_included_moholla_increased
                 ],
                 [
                     'table' => 'ward_department2_moholla_vittik_dawats', 
                     'column' => 'how_many_been_invited', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->how_many_been_invited
                 ],
                 [
                     'table' => 'ward_department2_moholla_vittik_dawats', 
                     'column' => 'how_many_associated_created', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->how_many_associated_created
                 ],
 
 
                 [
                     'table' => 'thana_department3_jubo_somaj_dawats', 
                     'column' => 'how_many_young_been_invited', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->how_many_young_been_invited
                 ],
                 [
                     'table' => 'thana_department3_jubo_somaj_dawats', 
                     'column' => 'how_many_young_been_associated', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->how_many_young_been_associated
                 ],
                 [
                     'table' => 'thana_department3_jubo_somaj_dawats', 
                     'column' => 'total_young_committee_increased', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->total_young_committee_increased
                 ],
                 [
                     'table' => 'thana_department3_jubo_somaj_dawats', 
                     'column' => 'total_new_club_increased', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->total_new_club_increased
                 ],
                 [
                     'table' => 'thana_department3_jubo_somaj_dawats', 
                     'column' => 'stablished_club_total_increased', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->stablished_club_total_increased
                 ],
 
 
 
                 [
-                    'table' => 'thana_dawah_and_prokashonas', 
+                    'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'political_and_special_invited_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->political_and_special_invited
                 ],
                 [
-                    'table' => 'thana_dawah_and_prokashonas', 
+                    'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'political_and_special_been_associated_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->political_and_special_been_associated
                 ],
                 [
-                    'table' => 'thana_dawah_and_prokashonas', 
+                    'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'political_and_special_target_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->political_and_special_target
                 ],
 
 
                 [
-                    'table' => 'thana_dawah_and_prokashonas', 
+                    'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'pesha_jibi_invited_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->pesha_jibi_invited
                 ],
                 [
-                    'table' => 'thana_dawah_and_prokashonas', 
+                    'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'pesha_jibi_been_associated_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->pesha_jibi_been_associated
                 ],
                 [
-                    'table' => 'thana_dawah_and_prokashonas', 
+                    'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'pesha_jibi_target_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->pesha_jibi_target
                 ],
 
                 [
-                    'table' => 'thana_dawah_and_prokashonas', 
+                    'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'olama_masayekh_invited', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->olama_masayekh_invited
                 ],
                 
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'olama_masayekh_been_associated', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->olama_masayekh_been_associated
                 ],
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'olama_masayekh_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->olama_masayekh_target
                 ],
 
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
-                    'column' => 'psromo_jibi_invited_man', 
-                    'value' => $report_sum_data
+                    'column' => 'sromo_jibi_invited_man', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->sromo_jibi_invited
                 ],
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
-                    'column' => 'psromo_jibi_been_associated_man', 
-                    'value' => $report_sum_data
+                    'column' => 'sromo_jibi_been_associated_man', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->sromo_jibi_been_associated
                 ],
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
-                    'column' => 'psromo_jibi_target_man', 
-                    'value' => $report_sum_data
+                    'column' => 'sromo_jibi_target_man', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->sromo_jibi_target
                 ],
 
 
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'prantik_jonogosti_invited', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->prantik_jonogosti_invited
                 ],
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'prantik_jonogosti_been_associated', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->prantik_jonogosti_been_associated
                 ],
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'prantik_jonogosti_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->prantik_jonogosti_target
                 ],
 
 
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'vinno_dormalombi_invited', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->vinno_dormalombi_invited
                 ],
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'vinno_dormalombi_been_associated', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->vinno_dormalombi_been_associated
                 ],
                 [
                     'table' => 'thana_department4_different_job_holders_dawats', 
                     'column' => 'vinno_dormalombi_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->vinno_dormalombi_target
                 ],
 
 
@@ -2949,44 +2960,44 @@ class WardController extends Controller
                 [
                     'table' => 'thana_department5_paribarik_dawats', 
                     'column' => 'total_attended_family', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department5_paribarik_dawats?->total_attended_family
                 ],
                 [
                     'table' => 'thana_department5_paribarik_dawats', 
                     'column' => 'how_many_new_family_invited', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department5_paribarik_dawats?->how_many_new_family_invited
                 ],
 
 
                 [
                     'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
                     'column' => 'total_mosjid_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->total_mosjid_increase
                 ],
                 [
                     'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
                     'column' => 'general_dawah_center_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->general_dawah_center_increase
                 ],
                 [
                     'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
                     'column' => 'dawat_included_mosjid_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->dawat_included_mosjid_increase
                 ],
                 [
                     'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
-                    'column' => 'mosjid_wise_information_center_present', 
-                    'value' => $report_sum_data
+                    'column' => 'mosjid_wise_information_center_increase', 
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->mosjid_wise_information_center_increase
                 ],
                 [
                     'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
                     'column' => 'general_information_center_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->general_information_center_increase
                 ],
                 [
                     'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
                     'column' => 'mosjid_wise_dawah_center_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->mosjid_wise_dawah_center_increase
                 ],
 
 
@@ -2994,75 +3005,75 @@ class WardController extends Controller
                 [
                     'table' => 'thana_department7_dawat_in_technologies', 
                     'column' => 'total_well_known_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department7_dawat_in_technologies?->total_well_known
                 ],
                 [
                     'table' => 'thana_department7_dawat_in_technologies', 
                     'column' => 'total_attended_man', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_department7_dawat_in_technologies?->total_attended
                 ],
 
 
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'total_pathagar_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->total_pathagar_increase
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'ward_book_sales_center_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->ward_book_sales_center_increase
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'books_in_pathagar_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->books_in_pathagar_increase
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'ward_book_sales', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->ward_book_sales
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'book_distribution', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->book_distribution
                 ],
 
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'soft_copy_book_distribution', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->soft_copy_book_distribution
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'unit_book_distribution_center_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->unit_book_distribution_center_increase
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'dawat_link_distribution', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->dawat_link_distribution
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'unit_book_distribution', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->unit_book_distribution
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'sonar_bangla_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->sonar_bangla_increase
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'songram_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->songram_increase
                 ],
                 [
                     'table' => 'thana_dawah_and_prokashonas', 
                     'column' => 'prithibi_increase', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->prithibi_increase
                 ],
 
 
@@ -3070,521 +3081,2519 @@ class WardController extends Controller
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'unit_masik_sadaron_sova_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->unit_masik_sadaron_sova_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'unit_masik_sadaron_sova_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->unit_masik_sadaron_sova_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'unit_masik_sadaron_sova_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->unit_masik_sadaron_sova_uposthiti
                 ],
 
 
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'alochona_sova_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->alochona_sova_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'alochona_sova_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->alochona_sova_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'alochona_sova_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->alochona_sova_uposthiti
                 ],
 
 
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'sudhi_somabesh_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sudhi_somabesh_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'sudhi_somabesh_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sudhi_somabesh_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'sudhi_somabesh_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sudhi_somabesh_uposthiti
                 ],
 
 
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'siratunnabi_mahfil_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->siratunnabi_mahfil_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'siratunnabi_mahfil_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->siratunnabi_mahfil_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'siratunnabi_mahfil_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->siratunnabi_mahfil_uposthiti
                 ],
 
 
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'eid_reunion_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->eid_reunion_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'eid_reunion_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->eid_reunion_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'eid_reunion_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->eid_reunion_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'dars_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dars_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'dars_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dars_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'dars_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dars_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'tafsir_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->tafsir_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'tafsir_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->tafsir_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'tafsir_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->tafsir_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'dawati_jonosova_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dawati_jonosova_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'dawati_jonosova_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dawati_jonosova_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'dawati_jonosova_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dawati_jonosova_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'iftar_mahfil_personal_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_personal_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'iftar_mahfil_personal_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_personal_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'iftar_mahfil_personal_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_personal_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'iftar_mahfil_samostic_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_samostic_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'iftar_mahfil_samostic_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_samostic_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'iftar_mahfil_samostic_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_samostic_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'cha_chakra_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->cha_chakra_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'cha_chakra_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->cha_chakra_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'cha_chakra_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->cha_chakra_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'samostic_khawa_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->samostic_khawa_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'samostic_khawa_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->samostic_khawa_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'samostic_khawa_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->samostic_khawa_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'sikkha_sofor_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sikkha_sofor_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'sikkha_sofor_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sikkha_sofor_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'sikkha_sofor_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sikkha_sofor_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'kirat_protijogita_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->kirat_protijogita_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'kirat_protijogita_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->kirat_protijogita_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'kirat_protijogita_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->kirat_protijogita_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'hamd_nat_protijogita_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->hamd_nat_protijogita_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'hamd_nat_protijogita_target', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->hamd_nat_protijogita_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'hamd_nat_protijogita_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->hamd_nat_protijogita_uposthiti
                 ],
-
-
+                
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'others_total', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->others_total
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
-                    'column' => 'others_target', 
-                    'value' => $report_sum_data
+                    'column' => 'others_target',
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->others_target
                 ],
                 [
                     'table' => 'thana_kormosuci_bastobayons', 
                     'column' => 'others_uposthiti', 
-                    'value' => $report_sum_data
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->others_uposthiti
                 ],
+                
 
 
 
 
 
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'general_unit_men_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->general_unit_men_increase
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'general_unit_men_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->general_unit_men_gatti
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'general_unit_men_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->general_unit_men_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'ulama_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->ulama_unit_increase
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'ulama_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->ulama_unit_gatti
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'ulama_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->ulama_unit_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'peshajibi_unit_men_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->peshajibi_unit_increase
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'peshajibi_unit_men_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->peshajibi_unit_gatti
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'peshajibi_unit_men_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->peshajibi_unit_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'jubo_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->jubo_unit_increase
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'jubo_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->jubo_unit_gatti
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'jubo_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->jubo_unit_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'media_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->media_unit_increase
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'media_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->media_unit_gatti
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'media_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->media_unit_target
+                ],
+                
+
+
+
+
+
+                [
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'dawati_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->dawati_unit_increase
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'dawati_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->dawati_unit_gatti
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'dawati_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->dawati_unit_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'paribarik_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->paribarik_unit_increase
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'paribarik_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->paribarik_unit_gatti
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'paribarik_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->paribarik_unit_target
+                ],
+                
+
+
+                [
+                    'table' => 'thana_songothon6_bidayi_students_connects', 
+                    'column' => 'Joined_student_man_member', 
+                    'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_man_member
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon6_bidayi_students_connects', 
+                    'column' => 'Joined_student_man_associate', 
+                    'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_man_associate
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon6_bidayi_students_connects', 
+                    'column' => 'Joined_student_man_worker', 
+                    'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_man_worker
+                ],
+
+
+                [
+                    'table' => 'thana_songothon10_iyanot_data', 
+                    'column' => 'associate_member_total', 
+                    'value' => $report_sum_data?->ward_songothon8_iyanot_data?->associate_member_total
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon10_iyanot_data', 
+                    'column' => 'sudhi_total', 
+                    'value' => $report_sum_data?->ward_songothon8_iyanot_data?->sudhi_total
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon10_iyanot_data', 
+                    'column' => 'associate_member_total_iyanot_amounts', 
+                    'value' => $report_sum_data?->ward_songothon8_iyanot_data?->associate_member_total_iyanot_amounts
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data
+                    'table' => 'thana_songothon10_iyanot_data', 
+                    'column' => 'sudi_total_iyanot_amounts', 
+                    'value' => $report_sum_data?->ward_songothon8_iyanot_data?->sudi_total_iyanot_amounts
                 ],
+
+
+                
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ward_boithok_man_total', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->word_boithok_total
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ward_boithok_man_target', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->word_boithok_target
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ward_boithok_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->word_boithok_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'unit_kormi_boithok_man_total', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->unit_kormi_boithok_total
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'unit_kormi_boithok_man_target', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->unit_kormi_boithok_target
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'unit_kormi_boithok_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->unit_kormi_boithok_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ulama_somabesh_man_total', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->ulama_somabesh_total
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ulama_somabesh_man_target', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->ulama_somabesh_target
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ulama_somabesh_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->ulama_somabesh_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'sromik_somabesh_man_total', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->sromik_somabesh_total
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'sromik_somabesh_man_target', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->sromik_somabesh_target
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'sromik_somabesh_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->sromik_somabesh_uposthiti
+                ],
+                
+
+
+
+
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'unit_tarbiati_boithok_man_total', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->unit_tarbiati_boithok
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'unit_tarbiati_boithok_man_target', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->unit_tarbiati_boithok_target
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'unit_tarbiati_boithok_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->unit_tarbiati_boithok_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'ward_kormi_shikkha_boithok_man_total', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->ward_kormi_sikkha_boithok
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'ward_kormi_shikkha_boithok_man_target', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->ward_kormi_sikkha_boithok_target
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'ward_kormi_shikkha_boithok_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->ward_kormi_sikkha_boithok_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_sikkha_boithok_man_total', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_sikkha_boithok
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_sikkha_boithok_man_target', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_sikkha_boithok_target
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_sikkha_boithok_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_sikkha_boithoksthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_noisho_ibadot_man_total', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_noisho_ibadot
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_noisho_ibadot_man_target', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_noisho_ibadot_target
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_noisho_ibadot_man_uposthiti',
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_noisho_ibadot_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'kormi_alochona_cokro_man_total_group', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->alochona_chokro_group
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'kormi_alochona_cokro_man_total_odhibeshon', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->alochona_chokro_program
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'kormi_alochona_cokro_man_total_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->alochona_chokro_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'darsul_quran_man_program', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->darsul_quran_program
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'darsul_quran_man_man_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->darsul_quran_uposthiti
+                ],
+                
+
+
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'dawah_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->dawah_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'shomajkormo_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->shomajkormo_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'media_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->media_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'ict_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->ict_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'office_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->office_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'financial_management_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->financial_management_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'english_language_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->english_language_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'arabic_language_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->arabic_language_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'trade_oriented_technical_training_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->trade_oriented_technical_training_uposthiti
+                ],
+                
+
+
+                [
+                    'table' => 'thana_shomajsheba2_personal_social_works', 
+                    'column' => 'how_many_people_did', 
+                    'value' => $report_sum_data?->ward_shomajsheba1_personal_social_works?->how_many_people_did
+                ],
+                [
+                    'table' => 'thana_shomajsheba2_personal_social_works', 
+                    'column' => 'service_received_total', 
+                    'value' => $report_sum_data?->ward_shomajsheba1_personal_social_works?->service_received_total
+                ],
+
+
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'minor_unnoyonmulok_kaj',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->minor_unnoyonmulok_kaj
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'shamajik_onusthane_ongshogrohon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->shamajik_onusthane_ongshogrohon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'shamajik_onusthane_shohayota_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->shamajik_onusthane_shohayota_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'shamajik_birodh_mimangsha',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->shamajik_birodh_mimangsha
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'manobik_shohayota_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->manobik_shohayota_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'korje_hasana_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->korje_hasana_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'porishkar_poricchonnota_ovijan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->porishkar_poricchonnota_ovijan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'moshok_nidhon_ovijan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->moshok_nidhon_ovijan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'rogir_poricorja',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->rogir_poricorja
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'medical_shohayota_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->medical_shohayota_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'voluntarily_blood_donation_kotojon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->voluntarily_blood_donation_kotojon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'voluntarily_blood_donation_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->voluntarily_blood_donation_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'nobojatokke_gift_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->nobojatokke_gift_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'vrammoman_school_calu',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->vrammoman_school_calu
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'vrammoman_moktob_calu',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->vrammoman_moktob_calu
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'technical_services_kotojon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->technical_services_kotojon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'technical_services_prodan_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->technical_services_prodan_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'online_services_prodan_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->online_services_prodan_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'brikkho_ropon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->brikkho_ropon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'public_awareness_programs',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->public_awareness_programs
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'tran_bitoron',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->tran_bitoron
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'vinnodhormabolombider_service_prodan_kotojon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->vinnodhormabolombider_service_prodan_kotojon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'vinnodhormabolombider_service_prodan_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->vinnodhormabolombider_service_prodan_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'mayeter_gosol_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->mayeter_gosol_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'janajay_ongshogrohon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->janajay_ongshogrohon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'low_capital_employment_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->low_capital_employment_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'others',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->others
+                ],
+                
+
+                [
+                    'table' => 'thana_shomajsheba4_institutional_social_works', 
+                    'column' => 'social_institution_in_ward', 
+                    'value' => $report_sum_data?->ward_shomajsheba4_institutional_social_works?->shamajik_protishthan_kototi
+                ],
+                [
+                    'table' => 'thana_shomajsheba4_institutional_social_works', 
+                    'column' => 'institutional_social_work_in_ward', 
+                    'value' => $report_sum_data?->ward_shomajsheba4_institutional_social_works?->shamajik_protishthan_kototite_kaj_hoyeche
+                ],
+                [
+                    'table' => 'thana_shomajsheba4_institutional_social_works', 
+                    'column' => 'new_social_institutions_in_ward', 
+                    'value' => $report_sum_data?->ward_shomajsheba4_institutional_social_works?->new_shamajik_protishthan
+                ],
+
+                [
+                    'table' => 'thana_shomajsheba5_health_and_family_kollans', 
+                    'column' => 'health_education_training_programs_attendance', 
+                    'value' => $report_sum_data?->ward_shomajsheba3_health_and_family_kollans?->health_worker_training_programs_attendance
+                ],
+                [
+                    'table' => 'thana_shomajsheba5_health_and_family_kollans', 
+                    'column' => 'participated_in_health_care_work', 
+                    'value' => $report_sum_data?->ward_shomajsheba3_health_and_family_kollans?->participated_in_health_care_work
+                ],
+                [
+                    'table' => 'thana_shomajsheba5_health_and_family_kollans', 
+                    'column' => 'served_people', 
+                    'value' => $report_sum_data?->ward_shomajsheba3_health_and_family_kollans?->served_people
+                ],
+
+
+                [
+                    'table' => 'thana_rastrio1_political_communications', 
+                    'column' => 'rajnoitik_bekti_jogajog_koreche_kotojon', 
+                    'value' => $report_sum_data?->ward_rastrio1_political_communications?->rajnoitik_bekti_jogajog_koreche_kotojon
+                ],
+                [
+                    'table' => 'thana_rastrio1_political_communications', 
+                    'column' => 'rajnoitik_bekti_jogajog_koreche_kotojonke', 
+                    'value' => $report_sum_data?->ward_rastrio1_political_communications?->rajnoitik_bekti_jogajog_koreche_kotojonke
+                ],
+                [
+                    'table' => 'thana_rastrio1_political_communications', 
+                    'column' => 'proshoshonik_bekti_jogajog_koreche_kotojon', 
+                    'value' => $report_sum_data?->ward_rastrio1_political_communications?->proshoshonik_bekti_jogajog_koreche_kotojon
+                ],
+                [
+                    'table' => 'thana_rastrio1_political_communications', 
+                    'column' => 'proshoshonik_bekti_jogajog_koreche_kotojonke', 
+                    'value' => $report_sum_data?->ward_rastrio1_political_communications?->proshoshonik_bekti_jogajog_koreche_kotojonke
+                ],
+
+
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'centrally_announced_political_program', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->centrally_announced_political_program
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'centrally_announced_political_program_attend', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->centrally_announced_political_program_attend
+                ],
+
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_jonoshova', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_jonoshova
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_jonoshova_attend', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_jonoshova_attend
+                ],
+                
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_shomabesh', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_shomabesh
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_shomabesh_attend', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_shomabesh_attend
+                ],
+                
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_michil', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_michil
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_michil_attend', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_michil_attend
+                ],
+                
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'poster_bitoron', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->poster_bitoron
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'leaflet_bitoron', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->leaflet_bitoron
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'booklet_bitoron', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->booklet_bitoron
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'sharoklipi_bitoron', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->sharoklipi_bitoron
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'others', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->others
+                ],
+                
+
+
+
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'shadhinota_o_jatio_dibosh_total_programs', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->shadhinota_o_jatio_dibosh_total_programs
+                ],
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'shadhinota_o_jatio_dibosh_attend', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->shadhinota_o_jatio_dibosh_attend
+                ],
+
+                
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'bijoy_dibosh_total_programs', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->bijoy_dibosh_total_programs
+                ],
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'bijoy_dibosh_attend', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->bijoy_dibosh_attend
+                ],
+
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'others_total_programs', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->others_total_programs
+                ],
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'others_attend', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->others_attend
+                ],
+
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'mattrivasha_dibosh_total_programs', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->mattrivasha_dibosh_total_programs
+                ],
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'mattrivasha_dibosh_attend', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->mattrivasha_dibosh_attend
+                ],
+
+
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'city_corporation_councilor_candidate_man_elected', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->councilor_candidate_elected
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'city_corporation_councilor_candidate_man_second_position', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->councilor_candidate_second_position
+                ],
+                
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'national_vote_kendro_increase', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->national_vote_kendro_increase
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'local_vote_kendro_increase', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->local_vote_kendro_increase
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'vote_kendro_committee_increase', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->vote_kendro_committee_increase
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'vote_kendro_committee_target', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->vote_kendro_committee_target
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'vote_kendro_vittik_unit_increase', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->vote_kendro_vittik_unit_increase
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'vote_kendro_vittik_unit_target', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->vote_kendro_vittik_unit_target
+                ],
+                
+                
             ];
         }else if ($thana_gender == "women"){
             $table_column_value = [
                 [
                     'table' => 'thana_dawat1_regular_group_wises', 
                     'column' => 'how_many_groups_are_out_woman', 
-                    'value' => $report_sum_data->
+                    'value' => $report_sum_data?->ward_dawat1_regular_group_wises?->how_many_groups_are_out
                 ],
                 [
                     'table' => 'thana_dawat1_regular_group_wises', 
                     'column' => 'number_of_participants_woman', 
-                    'value' => $report_sum_data->
+                    'value' => $report_sum_data?->ward_dawat1_regular_group_wises?->number_of_participants
                 ],
                 [
                     'table' => 'thana_dawat1_regular_group_wises', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'column' => 'how_many_have_been_invited_woman', 
+                    'value' => $report_sum_data?->ward_dawat1_regular_group_wises?->how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat1_regular_group_wises', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'column' => 'how_many_associate_members_created_woman', 
+                    'value' => $report_sum_data?->ward_dawat1_regular_group_wises?->how_many_associate_members_created
+                ],
+
+
+                [
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'total_rokon_woman', 
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->total_rokon
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'total_worker_woman', 
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->total_worker
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'how_many_were_give_dawat_rokon_woman', 
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->how_many_were_give_dawat_rokon
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'how_many_were_give_dawat_worker_woman', 
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->how_many_were_give_dawat_worker
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'how_many_have_been_invited_woman', 
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->how_many_have_been_invited
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat2_personal_and_targets', 
+                    'column' => 'how_many_associate_members_created_woman', 
+                    'value' => $report_sum_data?->ward_dawat2_personal_and_targets?->how_many_associate_members_created
+                ],
+
+                [
+                    'table' => 'thana_dawat3_general_program_and_others', 
+                    'column' => 'how_many_were_give_dawat_woman', 
+                    'value' => $report_sum_data?->ward_dawat3_general_program_and_others?->how_many_were_give_dawat
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat3_general_program_and_others', 
+                    'column' => 'how_many_associate_members_created_woman', 
+                    'value' => $report_sum_data?->ward_dawat3_general_program_and_others?->how_many_associate_members_created
+                ],
+
+
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'gono_songjog_doshok_group_woman', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->total_gono_songjog_group
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'gono_songjog_doshok_attended_woman', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->total_attended
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'gono_songjog_doshok_invited_woman',
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->how_many_have_been_invited
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'gono_songjog_doshok_associate_members_created_woman', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->how_many_associate_members_created
+                ],
+
+
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_group', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_group
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_attended', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_attended
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_invited', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_invited
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_associate_members_created', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_associated_created
+                ],
+
+
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'election_gono_songjog_group_woman', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_gono_songjog_group
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'election_gono_songjog_attended_woman', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_attended
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'election_gono_songjog_invited_woman', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_how_many_have_been_invited
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'election_gono_songjog_associate_members_created_woman', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_how_many_associate_members_created
+                ],
+
+
+
+                [
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'other_gono_songjog_group', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_gono_songjog_group
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'other_gono_songjog_attended', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_attended
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'other_gono_songjog_invited', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_how_many_have_been_invited
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
+                    'column' => 'other_gono_songjog_associate_members_created', 
+                    'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_how_many_associate_members_created
+                ],
+
+
+
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'teacher_rokon_woman', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->teacher_rokon
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'teacher_worker_woman', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->teacher_worker
+                ],
+
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'student_rokon_woman', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->student_rokon
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'student_worker_woman', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->student_worker
+                ],
+
+                
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'quran_learning_total_group', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->quran_learning_total_group
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'quran_learning_total_students', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->quran_learning_total_students
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'total_moktob', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->total_moktob
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'total_moktob_students', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->total_moktob_students
                 ],
                 [
-                    'table' => 'rrrrrrrrrrrrrrrr', 
-                    'column' => 'cccccccccccccccccccc', 
-                    'value' => $report_sum_data->
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'how_much_learned_sohih_tilawat', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->how_much_learned_sohih_tilawat
                 ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'how_much_invited_woman', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->how_much_invited_woman
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'how_much_been_associated_woman', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->how_much_been_associated_woman
+                ],
+                [
+                    'table' => 'thana_department1_talimul_qurans', 
+                    'column' => 'total_muallim_increased_woman', 
+                    'value' => $report_sum_data?->ward_department1_talimul_qurans?->total_muallim_increased_woman
+                ],
+
+
+
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'govment_calculated_village_amount', 
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->govment_calculated_village_amount
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'govment_calculated_moholla_amount', 
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->govment_calculated_moholla_amount
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'total_village_committee_increased', 
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->total_village_committee_increased
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'total_village_committee_increased', 
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->total_moholla_committee_increased
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'special_dawat_included_village_increased', 
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->special_dawat_included_village_increased
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'special_dawat_included_moholla_increased', 
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->special_dawat_included_moholla_increased
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'how_many_been_invited', 
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->how_many_been_invited
+                ],
+                [
+                    'table' => 'ward_department2_moholla_vittik_dawats', 
+                    'column' => 'how_many_associated_created', 
+                    'value' => $report_sum_data?->ward_department2_moholla_vittik_dawats?->how_many_associated_created
+                ],
+
+
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'how_many_young_been_invited', 
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->how_many_young_been_invited
+                ],
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'how_many_young_been_associated', 
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->how_many_young_been_associated
+                ],
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'total_young_committee_increased', 
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->total_young_committee_increased
+                ],
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'total_new_club_increased', 
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->total_new_club_increased
+                ],
+                [
+                    'table' => 'thana_department3_jubo_somaj_dawats', 
+                    'column' => 'stablished_club_total_increased', 
+                    'value' => $report_sum_data?->ward_department3_jubo_somaj_dawats?->stablished_club_total_increased
+                ],
+
+
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'political_and_special_invited_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->political_and_special_invited
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'political_and_special_been_associated_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->political_and_special_been_associated
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'political_and_special_target_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->political_and_special_target
+                ],
+
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'pesha_jibi_invited_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->pesha_jibi_invited
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'pesha_jibi_been_associated_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->pesha_jibi_been_associated
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'pesha_jibi_target_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->pesha_jibi_target
+                ],
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'olama_masayekh_invited', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->olama_masayekh_invited
+                ],
+                
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'olama_masayekh_been_associated', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->olama_masayekh_been_associated
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'olama_masayekh_target', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->olama_masayekh_target
+                ],
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'sromo_jibi_invited_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->sromo_jibi_invited
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'sromo_jibi_been_associated_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->sromo_jibi_been_associated
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'sromo_jibi_target_woman', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->sromo_jibi_target
+                ],
+
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'prantik_jonogosti_invited', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->prantik_jonogosti_invited
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'prantik_jonogosti_been_associated', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->prantik_jonogosti_been_associated
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'prantik_jonogosti_target', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->prantik_jonogosti_target
+                ],
+
+
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'vinno_dormalombi_invited', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->vinno_dormalombi_invited
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'vinno_dormalombi_been_associated', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->vinno_dormalombi_been_associated
+                ],
+                [
+                    'table' => 'thana_department4_different_job_holders_dawats', 
+                    'column' => 'vinno_dormalombi_target', 
+                    'value' => $report_sum_data?->ward_department4_different_job_holders_dawats?->vinno_dormalombi_target
+                ],
+
+
+
+
+
+                [
+                    'table' => 'thana_department5_paribarik_dawats', 
+                    'column' => 'total_attended_family', 
+                    'value' => $report_sum_data?->ward_department5_paribarik_dawats?->total_attended_family
+                ],
+                [
+                    'table' => 'thana_department5_paribarik_dawats', 
+                    'column' => 'how_many_new_family_invited', 
+                    'value' => $report_sum_data?->ward_department5_paribarik_dawats?->how_many_new_family_invited
+                ],
+
+
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'total_mosjid_increase', 
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->total_mosjid_increase
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'general_dawah_center_increase', 
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->general_dawah_center_increase
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'dawat_included_mosjid_increase', 
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->dawat_included_mosjid_increase
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'mosjid_wise_information_center_increase', 
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->mosjid_wise_information_center_increase
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'general_information_center_increase', 
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->general_information_center_increase
+                ],
+                [
+                    'table' => 'thana_department6_mosjid_dawah_infomation_centers', 
+                    'column' => 'mosjid_wise_dawah_center_increase', 
+                    'value' => $report_sum_data?->ward_department6_mosjid_dawah_infomation_centers?->mosjid_wise_dawah_center_increase
+                ],
+
+
+
+                [
+                    'table' => 'thana_department7_dawat_in_technologies', 
+                    'column' => 'total_well_known_woman', 
+                    'value' => $report_sum_data?->ward_department7_dawat_in_technologies?->total_well_known
+                ],
+                [
+                    'table' => 'thana_department7_dawat_in_technologies', 
+                    'column' => 'total_attended_woman', 
+                    'value' => $report_sum_data?->ward_department7_dawat_in_technologies?->total_attended
+                ],
+
+
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'total_pathagar_increase', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->total_pathagar_increase
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'ward_book_sales_center_increase', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->ward_book_sales_center_increase
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'books_in_pathagar_increase', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->books_in_pathagar_increase
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'ward_book_sales', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->ward_book_sales
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'book_distribution', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->book_distribution
+                ],
+
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'soft_copy_book_distribution', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->soft_copy_book_distribution
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'unit_book_distribution_center_increase', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->unit_book_distribution_center_increase
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'dawat_link_distribution', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->dawat_link_distribution
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'unit_book_distribution', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->unit_book_distribution
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'sonar_bangla_increase', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->sonar_bangla_increase
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'songram_increase', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->songram_increase
+                ],
+                [
+                    'table' => 'thana_dawah_and_prokashonas', 
+                    'column' => 'prithibi_increase', 
+                    'value' => $report_sum_data?->ward_dawah_and_prokashonas?->prithibi_increase
+                ],
+
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'unit_masik_sadaron_sova_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->unit_masik_sadaron_sova_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'unit_masik_sadaron_sova_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->unit_masik_sadaron_sova_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'unit_masik_sadaron_sova_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->unit_masik_sadaron_sova_uposthiti
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'alochona_sova_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->alochona_sova_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'alochona_sova_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->alochona_sova_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'alochona_sova_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->alochona_sova_uposthiti
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sudhi_somabesh_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sudhi_somabesh_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sudhi_somabesh_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sudhi_somabesh_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sudhi_somabesh_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sudhi_somabesh_uposthiti
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'siratunnabi_mahfil_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->siratunnabi_mahfil_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'siratunnabi_mahfil_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->siratunnabi_mahfil_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'siratunnabi_mahfil_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->siratunnabi_mahfil_uposthiti
+                ],
+
+
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'eid_reunion_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->eid_reunion_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'eid_reunion_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->eid_reunion_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'eid_reunion_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->eid_reunion_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dars_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dars_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dars_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dars_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dars_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dars_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'tafsir_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->tafsir_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'tafsir_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->tafsir_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'tafsir_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->tafsir_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dawati_jonosova_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dawati_jonosova_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dawati_jonosova_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dawati_jonosova_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'dawati_jonosova_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->dawati_jonosova_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_personal_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_personal_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_personal_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_personal_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_personal_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_personal_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_samostic_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_samostic_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_samostic_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_samostic_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'iftar_mahfil_samostic_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->iftar_mahfil_samostic_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'cha_chakra_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->cha_chakra_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'cha_chakra_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->cha_chakra_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'cha_chakra_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->cha_chakra_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'samostic_khawa_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->samostic_khawa_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'samostic_khawa_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->samostic_khawa_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'samostic_khawa_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->samostic_khawa_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sikkha_sofor_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sikkha_sofor_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sikkha_sofor_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sikkha_sofor_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'sikkha_sofor_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->sikkha_sofor_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'kirat_protijogita_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->kirat_protijogita_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'kirat_protijogita_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->kirat_protijogita_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'kirat_protijogita_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->kirat_protijogita_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'hamd_nat_protijogita_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->hamd_nat_protijogita_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'hamd_nat_protijogita_target', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->hamd_nat_protijogita_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'hamd_nat_protijogita_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->hamd_nat_protijogita_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'others_total', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->others_total
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'others_target',
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->others_target
+                ],
+                [
+                    'table' => 'thana_kormosuci_bastobayons', 
+                    'column' => 'others_uposthiti', 
+                    'value' => $report_sum_data?->ward_kormosuci_bastobayons?->others_uposthiti
+                ],
+                
+
+
+
+
+
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'general_unit_women_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->general_unit_women_increase
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'general_unit_women_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->general_unit_women_gatti
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'general_unit_women_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->general_unit_women_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'ulama_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->ulama_unit_increase
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'ulama_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->ulama_unit_gatti
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'ulama_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->ulama_unit_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'peshajibi_unit_women_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->peshajibi_unit_increase
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'peshajibi_unit_women_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->peshajibi_unit_gatti
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'peshajibi_unit_women_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->peshajibi_unit_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'jubo_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->jubo_unit_increase
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'jubo_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->jubo_unit_gatti
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'jubo_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->jubo_unit_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'media_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->media_unit_increase
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'media_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->media_unit_gatti
+                ],
+                [
+                    'table' => 'thana_songothon4_organizational_structures', 
+                    'column' => 'media_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon4_unit_songothons?->media_unit_target
+                ],
+                
+
+
+
+
+
+                [
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'dawati_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->dawati_unit_increase
+                ],
+                [
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'dawati_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->dawati_unit_gatti
+                ],
+                [
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'dawati_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->dawati_unit_target
+                ],
+                
+                [
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'paribarik_unit_increase', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->paribarik_unit_increase
+                ],
+                [
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'paribarik_unit_gatti', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->paribarik_unit_gatti
+                ],
+                [
+                    'table' => 'thana_songothon5_dawat_and_paribarik_units', 
+                    'column' => 'paribarik_unit_target', 
+                    'value' => $report_sum_data?->ward_songothon5_dawat_and_paribarik_units?->paribarik_unit_target
+                ],
+                
+
+
+                [
+                    'table' => 'thana_songothon7_bidayi_students_connects', 
+                    'column' => 'Joined_student_women_member', 
+                    'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_women_member
+                ],
+                [
+                    'table' => 'thana_songothon7_bidayi_students_connects', 
+                    'column' => 'Joined_student_women_associate', 
+                    'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_women_associate
+                ],
+                [
+                    'table' => 'thana_songothon7_bidayi_students_connects', 
+                    'column' => 'Joined_student_women_worker', 
+                    'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_women_worker
+                ],
+
+
+                [
+                    'table' => 'thana_songothon10_iyanot_data', 
+                    'column' => 'associate_member_total', 
+                    'value' => $report_sum_data?->ward_songothon8_iyanot_data?->associate_member_total
+                ],
+                [
+                    'table' => 'thana_songothon10_iyanot_data', 
+                    'column' => 'sudhi_total', 
+                    'value' => $report_sum_data?->ward_songothon8_iyanot_data?->sudhi_total
+                ],
+                [
+                    'table' => 'thana_songothon10_iyanot_data', 
+                    'column' => 'associate_member_total_iyanot_amounts', 
+                    'value' => $report_sum_data?->ward_songothon8_iyanot_data?->associate_member_total_iyanot_amounts
+                ],
+                [
+                    'table' => 'thana_songothon10_iyanot_data', 
+                    'column' => 'sudi_total_iyanot_amounts', 
+                    'value' => $report_sum_data?->ward_songothon8_iyanot_data?->sudi_total_iyanot_amounts
+                ],
+
+
+                
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ward_boithok_women_total', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->word_boithok_total
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ward_boithok_women_target', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->word_boithok_target
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ward_boithok_women_uposthiti', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->word_boithok_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'unit_kormi_boithok_women_total', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->unit_kormi_boithok_total
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'unit_kormi_boithok_women_target', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->unit_kormi_boithok_target
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'unit_kormi_boithok_women_uposthiti', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->unit_kormi_boithok_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ulama_somabesh_women_total', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->ulama_somabesh_total
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ulama_somabesh_women_target', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->ulama_somabesh_target
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'ulama_somabesh_women_uposthiti', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->ulama_somabesh_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'sromik_somabesh_women_total', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->sromik_somabesh_total
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'sromik_somabesh_women_target', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->sromik_somabesh_target
+                ],
+                [
+                    'table' => 'thana_songothon11_sangothonik_boithoks', 
+                    'column' => 'sromik_somabesh_women_uposthiti', 
+                    'value' => $report_sum_data?->ward_songothon9_sangothonik_boithoks?->sromik_somabesh_uposthiti
+                ],
+                
+
+
+
+
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'unit_tarbiati_boithok_women_total', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->unit_tarbiati_boithok
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'unit_tarbiati_boithok_women_target', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->unit_tarbiati_boithok_target
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'unit_tarbiati_boithok_women_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->unit_tarbiati_boithok_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'ward_kormi_shikkha_boithok_women_total', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->ward_kormi_sikkha_boithok
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'ward_kormi_shikkha_boithok_women_target', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->ward_kormi_sikkha_boithok_target
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'ward_kormi_shikkha_boithok_women_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->ward_kormi_sikkha_boithok_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_sikkha_boithok_women_total', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_sikkha_boithok
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_sikkha_boithok_women_target', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_sikkha_boithok_target
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_sikkha_boithok_women_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_sikkha_boithoksthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_noisho_ibadot_women_total', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_noisho_ibadot
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_noisho_ibadot_women_target', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_noisho_ibadot_target
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'gono_noisho_ibadot_women_uposthiti',
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_noisho_ibadot_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'kormi_alochona_cokro_woman_total_group', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->alochona_chokro_group
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'kormi_alochona_cokro_woman_total_odhibeshon', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->alochona_chokro_program
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'kormi_alochona_cokro_woman_total_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->alochona_chokro_uposthiti
+                ],
+                
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'darsul_quran_woman_program', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->darsul_quran_program
+                ],
+                [
+                    'table' => 'thana_proshikkhon1_tarbiats', 
+                    'column' => 'darsul_quran_woman_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->darsul_quran_uposthiti
+                ],
+                
+
+
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'dawah_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->dawah_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'shomajkormo_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->shomajkormo_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'media_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->media_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'ict_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->ict_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'office_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->office_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'financial_management_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->financial_management_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'english_language_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->english_language_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'arabic_language_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->arabic_language_uposthiti
+                ],
+                [
+                    'table' => 'thana_proshikkhon3_manob_shompod_training_courses', 
+                    'column' => 'trade_oriented_technical_training_uposthiti', 
+                    'value' => $report_sum_data?->ward_proshikkhon2_manob_shompod_unnoyons?->trade_oriented_technical_training_uposthiti
+                ],
+                
+
+
+                [
+                    'table' => 'thana_shomajsheba2_personal_social_works', 
+                    'column' => 'how_many_people_did', 
+                    'value' => $report_sum_data?->ward_shomajsheba1_personal_social_works?->how_many_people_did
+                ],
+                [
+                    'table' => 'thana_shomajsheba2_personal_social_works', 
+                    'column' => 'service_received_total', 
+                    'value' => $report_sum_data?->ward_shomajsheba1_personal_social_works?->service_received_total
+                ],
+
+
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'minor_unnoyonmulok_kaj',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->minor_unnoyonmulok_kaj
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'shamajik_onusthane_ongshogrohon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->shamajik_onusthane_ongshogrohon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'shamajik_onusthane_shohayota_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->shamajik_onusthane_shohayota_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'shamajik_birodh_mimangsha',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->shamajik_birodh_mimangsha
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'manobik_shohayota_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->manobik_shohayota_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'korje_hasana_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->korje_hasana_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'porishkar_poricchonnota_ovijan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->porishkar_poricchonnota_ovijan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'moshok_nidhon_ovijan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->moshok_nidhon_ovijan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'rogir_poricorja',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->rogir_poricorja
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'medical_shohayota_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->medical_shohayota_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'voluntarily_blood_donation_kotojon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->voluntarily_blood_donation_kotojon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'voluntarily_blood_donation_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->voluntarily_blood_donation_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'nobojatokke_gift_prodan',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->nobojatokke_gift_prodan
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'vrammoman_school_calu',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->vrammoman_school_calu
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'vrammoman_moktob_calu',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->vrammoman_moktob_calu
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'technical_services_kotojon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->technical_services_kotojon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'technical_services_prodan_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->technical_services_prodan_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'online_services_prodan_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->online_services_prodan_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'brikkho_ropon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->brikkho_ropon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'public_awareness_programs',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->public_awareness_programs
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'tran_bitoron',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->tran_bitoron
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'vinnodhormabolombider_service_prodan_kotojon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->vinnodhormabolombider_service_prodan_kotojon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'vinnodhormabolombider_service_prodan_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->vinnodhormabolombider_service_prodan_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'mayeter_gosol_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->mayeter_gosol_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'janajay_ongshogrohon',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->janajay_ongshogrohon
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'low_capital_employment_kotojonke',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->low_capital_employment_kotojonke
+                ],
+                [
+                    'table' => 'thana_shomajsheba3_group_social_works',
+                    'column' => 'others',
+                    'value' => $report_sum_data?->ward_shomajsheba2_group_social_works?->others
+                ],
+                
+
+                [
+                    'table' => 'thana_shomajsheba4_institutional_social_works', 
+                    'column' => 'social_institution_in_ward', 
+                    'value' => $report_sum_data?->ward_shomajsheba4_institutional_social_works?->shamajik_protishthan_kototi
+                ],
+                [
+                    'table' => 'thana_shomajsheba4_institutional_social_works', 
+                    'column' => 'institutional_social_work_in_ward', 
+                    'value' => $report_sum_data?->ward_shomajsheba4_institutional_social_works?->shamajik_protishthan_kototite_kaj_hoyeche
+                ],
+                [
+                    'table' => 'thana_shomajsheba4_institutional_social_works', 
+                    'column' => 'new_social_institutions_in_ward', 
+                    'value' => $report_sum_data?->ward_shomajsheba4_institutional_social_works?->new_shamajik_protishthan
+                ],
+
+                [
+                    'table' => 'thana_shomajsheba5_health_and_family_kollans', 
+                    'column' => 'health_education_training_programs_attendance', 
+                    'value' => $report_sum_data?->ward_shomajsheba3_health_and_family_kollans?->health_worker_training_programs_attendance
+                ],
+                [
+                    'table' => 'thana_shomajsheba5_health_and_family_kollans', 
+                    'column' => 'participated_in_health_care_work', 
+                    'value' => $report_sum_data?->ward_shomajsheba3_health_and_family_kollans?->participated_in_health_care_work
+                ],
+                [
+                    'table' => 'thana_shomajsheba5_health_and_family_kollans', 
+                    'column' => 'served_people', 
+                    'value' => $report_sum_data?->ward_shomajsheba3_health_and_family_kollans?->served_people
+                ],
+
+
+                [
+                    'table' => 'thana_rastrio1_political_communications', 
+                    'column' => 'rajnoitik_bekti_jogajog_koreche_kotojon', 
+                    'value' => $report_sum_data?->ward_rastrio1_political_communications?->rajnoitik_bekti_jogajog_koreche_kotojon
+                ],
+                [
+                    'table' => 'thana_rastrio1_political_communications', 
+                    'column' => 'rajnoitik_bekti_jogajog_koreche_kotojonke', 
+                    'value' => $report_sum_data?->ward_rastrio1_political_communications?->rajnoitik_bekti_jogajog_koreche_kotojonke
+                ],
+                [
+                    'table' => 'thana_rastrio1_political_communications', 
+                    'column' => 'proshoshonik_bekti_jogajog_koreche_kotojon', 
+                    'value' => $report_sum_data?->ward_rastrio1_political_communications?->proshoshonik_bekti_jogajog_koreche_kotojon
+                ],
+                [
+                    'table' => 'thana_rastrio1_political_communications', 
+                    'column' => 'proshoshonik_bekti_jogajog_koreche_kotojonke', 
+                    'value' => $report_sum_data?->ward_rastrio1_political_communications?->proshoshonik_bekti_jogajog_koreche_kotojonke
+                ],
+
+
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'centrally_announced_political_program', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->centrally_announced_political_program
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'centrally_announced_political_program_attend', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->centrally_announced_political_program_attend
+                ],
+
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_jonoshova', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_jonoshova
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_jonoshova_attend', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_jonoshova_attend
+                ],
+                
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_shomabesh', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_shomabesh
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_shomabesh_attend', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_shomabesh_attend
+                ],
+                
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_michil', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_michil
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'locally_announced_michil_attend', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->locally_announced_michil_attend
+                ],
+                
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'poster_bitoron', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->poster_bitoron
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'leaflet_bitoron', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->leaflet_bitoron
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'booklet_bitoron', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->booklet_bitoron
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'sharoklipi_bitoron', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->sharoklipi_bitoron
+                ],
+                [
+                    'table' => 'thana_rastrio2_kormoshuchi_bastobayons', 
+                    'column' => 'others', 
+                    'value' => $report_sum_data?->ward_rastrio2_kormoshuchi_bastobayons?->others
+                ],
+                
+
+
+
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'shadhinota_o_jatio_dibosh_total_programs', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->shadhinota_o_jatio_dibosh_total_programs
+                ],
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'shadhinota_o_jatio_dibosh_attend', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->shadhinota_o_jatio_dibosh_attend
+                ],
+
+                
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'bijoy_dibosh_total_programs', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->bijoy_dibosh_total_programs
+                ],
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'bijoy_dibosh_attend', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->bijoy_dibosh_attend
+                ],
+
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'others_total_programs', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->others_total_programs
+                ],
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'others_attend', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->others_attend
+                ],
+
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'mattrivasha_dibosh_total_programs', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->mattrivasha_dibosh_total_programs
+                ],
+                [
+                    'table' => 'thana_rastrio3_dibosh_palons', 
+                    'column' => 'mattrivasha_dibosh_attend', 
+                    'value' => $report_sum_data?->ward_rastrio3_dibosh_palons?->mattrivasha_dibosh_attend
+                ],
+
+
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'city_corporation_councilor_candidate_woman_elected', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->councilor_candidate_elected
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'city_corporation_councilor_candidate_woman_second_position', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->councilor_candidate_second_position
+                ],
+                
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'national_vote_kendro_increase', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->national_vote_kendro_increase
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'local_vote_kendro_increase', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->local_vote_kendro_increase
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'vote_kendro_committee_increase', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->vote_kendro_committee_increase
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'vote_kendro_committee_target', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->vote_kendro_committee_target
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'vote_kendro_vittik_unit_increase', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->vote_kendro_vittik_unit_increase
+                ],
+                [
+                    'table' => 'thana_rastrio4_election_activities', 
+                    'column' => 'vote_kendro_vittik_unit_target', 
+                    'value' => $report_sum_data?->ward_rastrio4_election_activities?->vote_kendro_vittik_unit_target
+                ],
+                
             ];
         }
     
@@ -3596,9 +5605,9 @@ class WardController extends Controller
         }
     
         // Insert one row per table
-        foreach ($report_sum_data as $item) {
+        foreach ($grouped_by_table as $item) {
             DB::table($item['table'])
-                ->where('id', 'report_info_id') // report_info_id 
+                ->where('report_info_id', $thana_report_info_id) // report_info_id 
                 ->update([
                     $item['column'] => $item['value']
                 ]);
