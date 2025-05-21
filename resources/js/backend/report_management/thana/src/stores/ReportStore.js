@@ -118,6 +118,22 @@ export const store = defineStore(`custom_store`, {
             } catch (error) {
                 console.error("Error fetching thana user info:", error);
             }
+        },
+
+        thana_data_reset: async function (month,user_id) {
+            try {
+                let response = await axios.get("/reset/thana", {
+                    params: {
+                        month: month,
+                        user_id: user_id
+                    }
+                });
+                if (response.data) {
+                    console.log('message',response.data.message); 
+                }
+            } catch (error) {
+                console.error("Error reset thana report data:", error);
+            }
         }
 
 

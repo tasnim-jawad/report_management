@@ -10644,7 +10644,7 @@
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
-                                                :table_name="'thana_songothon3_departmental_information'"
+                                                :table_name="'ward_songothon3_departmental_information'"
                                                 :field_title="'ulama_rokon_gatti'"
                                                 :month="month"
                                             >
@@ -35267,10 +35267,16 @@
             >
             <a
                 href=""
-                class="btn btn-danger"
+                class="btn btn-danger me-2"
                 v-else-if="joma_status == 'approved'"
                 @click.prevent="report_joma"
                 >রিপোর্ট রিজেক্ট করুন</a
+            >
+            <a
+                href=""
+                class="btn btn-danger"
+                @click.prevent="reset_data"
+                >Data reset</a
             >
         </div>
         <a href="" class="print_preview" @click.prevent="print_report()"
@@ -35284,6 +35290,7 @@ import axios from "axios";
 import Popup from "../Popup.vue";
 import PopupNote from "../PopupNote.vue";
 import { store as ward_data_store } from "../../stores/TotalApprovedWardDataStore";
+import { store as data_store } from "../../stores/ReportStore";
 import { mapWritableState , mapActions } from 'pinia';
 
 export default {
@@ -35565,12 +35572,22 @@ export default {
         ...mapActions(ward_data_store, {
             total_approved_ward_report_data: "total_approved_ward_report_data",
         }),
+        ...mapActions(data_store, {
+            thana_data_reset: "thana_data_reset",
+        }),
         
         ward_data: async function () {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;
             await this.total_approved_ward_report_data(month , user_id)
         },
+
+        reset_data: async function () {
+            const month = this.$route.params.month;
+            const user_id = this.$route.params.user_id;
+            await this.thana_data_reset(month , user_id)
+        },
+
         uploaded_data: async function () {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;

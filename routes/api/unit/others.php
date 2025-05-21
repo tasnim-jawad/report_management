@@ -26,3 +26,10 @@ Route::group(['prefix' => 'notification'], function () {
 Route::group(['prefix' => 'notification-seen'], function () {
     Route::post('/mark-as-seen', [App\Http\Controllers\Notification\NotificationSeenController::class, 'mark_as_seen']);
 });
+
+
+Route::group(['prefix' => 'reset'], function () {
+    Route::get('/unit', [App\Http\Controllers\ResetData::class, 'unit_data_reset']);
+    Route::get('/ward', [App\Http\Controllers\ResetData::class, 'ward_data_reset']);
+    Route::get('/thana', [App\Http\Controllers\ResetData::class, 'thana_data_reset']);
+});

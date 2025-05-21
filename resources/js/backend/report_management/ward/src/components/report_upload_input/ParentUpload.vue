@@ -1,6 +1,5 @@
 <template>
     <div id="report_uplode_body">
-        parent upload composent true
         <section id="heading" class="mt-3">
             <div class="report_heading position-relative mb-1">
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>

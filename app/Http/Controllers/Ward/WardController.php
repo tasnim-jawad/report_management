@@ -2506,7 +2506,7 @@ class WardController extends Controller
         $thana_info = OrgThana::find($thana_id);
         $city_info = $thana_info ? OrgCity::find($thana_info->org_city_id) : null;
         $wards = OrgWard::where('org_thana_id', $thana_id)->get();
-
+        // dd($wards);
         $report_info_ids = [];
         $ward_ids = [];
         $approved_ward_ids = [];
@@ -2541,9 +2541,10 @@ class WardController extends Controller
         $end_month = request()->month;
         $org_type = 'ward';
         $org_type_id = $approved_ward_ids;
+        // dd($report_info_ids );
         $report_approved_status = ['approved'];   //enum('pending','approved','rejected')
         $is_need_sum = false;
-        $reportInfoIds = $report_info_ids;
+        // $reportInfoIds = $report_info_ids;
         $dateWiseReportSum = new DateWiseReportSum();
         $report_sum_data = $dateWiseReportSum->execute($start_month, $end_month, $org_type, $org_type_id, $report_approved_status, $report_info_ids);
 
@@ -2556,9 +2557,17 @@ class WardController extends Controller
                 ->first();
         $thana_report_info_id = $thana_report_info->id;
 
-
+        // dd($thana_report_info_id);
+        if (!is_object($report_sum_data) || empty((array) $report_sum_data)) {
+            // $report_sum_data is empty or not an object, so skip or return empty
+            return response()->json([
+                'status' => 'empty_data',
+                'data' => $report_sum_data,
+            ], 200);
+        }
 
         // gender wide data push. ward data push to thana monthly report report 
+        // dd($report_sum_data);
         $thana_gender = $thana_info->org_gender;
         if ($thana_gender == "men") {
             $table_column_value = [
@@ -2666,7 +2675,7 @@ class WardController extends Controller
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_associate_members_created', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_associated_created
                 ],
 
@@ -2678,17 +2687,17 @@ class WardController extends Controller
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'election_gono_songjog_attended_man', 
+                    'column' => 'election_attended_man', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_attended
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'election_gono_songjog_invited_man', 
+                    'column' => 'election_how_many_have_been_invited_man', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'election_gono_songjog_associate_members_created_man', 
+                    'column' => 'election_how_many_associate_members_created_man', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_how_many_associate_members_created
                 ],
 
@@ -2701,17 +2710,17 @@ class WardController extends Controller
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'other_gono_songjog_attended', 
+                    'column' => 'other_attended', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_attended
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'other_gono_songjog_invited', 
+                    'column' => 'other_how_many_have_been_invited', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'other_gono_songjog_associate_members_created', 
+                    'column' => 'other_how_many_associate_members_created_man', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_how_many_associate_members_created
                 ],
 
@@ -3463,17 +3472,17 @@ class WardController extends Controller
 
 
                 [
-                    'table' => 'thana_songothon6_bidayi_students_connects', 
+                    'table' => 'thana_songothon7_bidayi_students_connects', 
                     'column' => 'Joined_student_man_member', 
                     'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_man_member
                 ],
                 [
-                    'table' => 'thana_songothon6_bidayi_students_connects', 
+                    'table' => 'thana_songothon7_bidayi_students_connects', 
                     'column' => 'Joined_student_man_associate', 
                     'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_man_associate
                 ],
                 [
-                    'table' => 'thana_songothon6_bidayi_students_connects', 
+                    'table' => 'thana_songothon7_bidayi_students_connects', 
                     'column' => 'Joined_student_man_worker', 
                     'value' => $report_sum_data?->ward_songothon6_bidayi_students_connects?->Joined_student_man_worker
                 ],
@@ -3615,7 +3624,7 @@ class WardController extends Controller
                 [
                     'table' => 'thana_proshikkhon1_tarbiats', 
                     'column' => 'gono_sikkha_boithok_man_uposthiti', 
-                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_sikkha_boithoksthiti
+                    'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->gono_sikkha_boithok_uposthiti
                 ],
                 
                 [
@@ -3646,7 +3655,7 @@ class WardController extends Controller
                 ],
                 [
                     'table' => 'thana_proshikkhon1_tarbiats', 
-                    'column' => 'kormi_alochona_cokro_man_total_man_uposthiti', 
+                    'column' => 'kormi_alochona_cokro_man_total_uposthiti', 
                     'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->alochona_chokro_uposthiti
                 ],
                 
@@ -3657,7 +3666,7 @@ class WardController extends Controller
                 ],
                 [
                     'table' => 'thana_proshikkhon1_tarbiats', 
-                    'column' => 'darsul_quran_man_man_uposthiti', 
+                    'column' => 'darsul_quran_man_uposthiti', 
                     'value' => $report_sum_data?->ward_proshikkhon1_tarbiats?->darsul_quran_uposthiti
                 ],
                 
@@ -4184,7 +4193,7 @@ class WardController extends Controller
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_associate_members_created', 
+                    'column' => 'mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->jela_mohanogor_declared_gonosonjog_associated_created
                 ],
 
@@ -4196,17 +4205,17 @@ class WardController extends Controller
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'election_gono_songjog_attended_woman', 
+                    'column' => 'election_attended_woman', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_attended
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'election_gono_songjog_invited_woman', 
+                    'column' => 'election_how_many_have_been_invited_woman', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'election_gono_songjog_associate_members_created_woman', 
+                    'column' => 'election_how_many_associate_members_created_woman', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->election_how_many_associate_members_created
                 ],
 
@@ -4219,17 +4228,17 @@ class WardController extends Controller
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'other_gono_songjog_attended', 
+                    'column' => 'other_attended', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_attended
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'other_gono_songjog_invited', 
+                    'column' => 'other_how_many_have_been_invited', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_how_many_have_been_invited
                 ],
                 [
                     'table' => 'thana_dawat4_gono_songjog_and_dawat_ovijans', 
-                    'column' => 'other_gono_songjog_associate_members_created', 
+                    'column' => 'other_how_many_associate_members_created_woman', 
                     'value' => $report_sum_data?->ward_dawat4_gono_songjog_and_dawat_ovijans?->other_how_many_associate_members_created
                 ],
 
@@ -5596,21 +5605,15 @@ class WardController extends Controller
                 
             ];
         }
-    
-        $grouped_by_table = [];
-    
-        // Group by table and collect column => value
-        foreach ($table_column_value as $item) {
-            $grouped_by_table[$item['table']][$item['column']] = $item['value'];
-        }
-    
+
+        // dd($table_column_value);
         // Insert one row per table
-        foreach ($grouped_by_table as $item) {
-            DB::table($item['table'])
-                ->where('report_info_id', $thana_report_info_id) // report_info_id 
-                ->update([
-                    $item['column'] => $item['value']
-                ]);
+        foreach ($table_column_value as $item) {
+            $value = $item['value'] === '' ? null : $item['value'];
+                DB::table($item['table'])->updateOrInsert(
+                    ['report_info_id' => $thana_report_info_id], // condition to check existence
+                    [$item['column'] => $value] // values to update or insert
+                );
         }
 
     
@@ -5619,6 +5622,7 @@ class WardController extends Controller
             'data' => $report_sum_data,
         ], 200);
     }
+
 
     public function report_summation($start_month, $end_month, $org_type, $org_type_id, $report_approved_status = ['approved'], $is_need_sum = true, $report_info_ids = null)
     {

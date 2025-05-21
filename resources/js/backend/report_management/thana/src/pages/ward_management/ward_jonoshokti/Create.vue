@@ -125,8 +125,10 @@ export default {
             let response =await axios.get('/thana/ward/all')
             console.log("Response:",response);
             if(response && response.data && response.data.data){
-                this.wards = response.data.data
-                console.log("Wards",this.wards);
+                let all_wards = response.data.data
+                all_wards = all_wards.filter(element => element.is_thana_parent != 1);
+                this.wards = all_wards;
+                console.log("Wards", this.wards);
             }
         },
         create_user :async function(event){

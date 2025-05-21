@@ -8,63 +8,49 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class DateWiseReportSum
+class ResetAllData
 {
     public function execute(
-        $start_month = null,
-        $end_month = null,
+        $month,
         $org_type,
         $org_type_id,
-        $report_approved_status = ['approved'],
-        $report_info_ids = null // Allow passing report_info_ids directly
+        $report_info_id = null // Allow passing report_info_ids directly
     ) {
-        if (is_null($report_info_ids)) {
-            $s_month = Carbon::parse($start_month);
-            $e_month = Carbon::parse($end_month);
-
-            // Ensure $org_type_ids is always an array
-            $org_type_ids = is_array($org_type_id) ? $org_type_id : [$org_type_id];
-            // Ensure $report_approved_status is always an array
-            $approved_status_array = is_array($report_approved_status) ? $report_approved_status : [$report_approved_status];
-            // dd($approved_status_array);
-            $report_info_ids = ReportInfo::whereBetween('month_year', [$s_month->startOfMonth(), $e_month->endOfMonth()])
+        if (is_null($report_info_id)) {
+            $s_month = Carbon::parse($month);
+            $report_info = ReportInfo::whereYear('month_year', $s_month->clone()->year)
+                ->whereMonth('month_year', $s_month->clone()->month)
                 ->where('org_type', $org_type)
-                ->whereIn('org_type_id', $org_type_ids)
-                ->whereIn('report_approved_status', $approved_status_array)
-                ->pluck('id')
-                ->toArray();
+                ->where('org_type_id', $org_type_id)
+                ->first();
+            // dd($report_info);
+            $report_info_id = $report_info?->id;
         }
 
-        // Validate $report_info_ids to ensure it's an array
-        if (!is_array($report_info_ids) || empty($report_info_ids)) {
-            return $this->array_to_object([]);
-            // throw new \InvalidArgumentException('Invalid report_info_ids provided.');
-        }
-
+        // dd( $report_info_id);
 
         $table_function_name = "get_" . $org_type . "_table";
         $table_names = $this->$table_function_name();
 
-        $result = [];
         foreach ($table_names as $table_name) {
             $all_columns = DB::getSchemaBuilder()->getColumnListing($table_name);
             $selected_columns = array_slice($all_columns, 2, -4);
-
-            foreach ($selected_columns as $selected_column) {
-                if ($table_name == 'montobbos' || $table_name == 'ward_montobbos' || $table_name == 'thana_montobbos') {
-                    $text = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)
-                        ->selectRaw("GROUP_CONCAT(montobbo SEPARATOR '\n') as montobbo")
-                        ->first();
-                    // dd($report_info_ids, $table_name, $text->montobbo);
-                    $result[$table_name][$selected_column] = $text->montobbo;
-                } else {
-                    $sum = DB::table($table_name)->whereIn('report_info_id', $report_info_ids)->sum($selected_column);
-                    $result[$table_name][$selected_column] = (int) $sum == 0 ? "" : (int) $sum;
-                }
+            
+            if (empty($selected_columns)) {
+                continue;
             }
+            
+            $update_to_null_data = [];
+            foreach ($selected_columns as $selected_column) {
+                $update_to_null_data[$selected_column] = null;
+            }
+
+            DB::table($table_name)
+            ->where('report_info_id', $report_info_id)
+            ->update($update_to_null_data);
         }
-        // dd($result);
-        return $this->array_to_object($result);
+
+        return ;
     }
 
     private function array_to_object($array)
@@ -77,11 +63,6 @@ class DateWiseReportSum
 
     public function get_unit_table()
     {
-        // $tables = DB::select('SHOW TABLES');
-        // // Format the result into an array of table names
-        // $table_names = array_map(function($table) {
-        //     return current((array) $table);
-        // }, $tables);
         $table_names = [
             "dawah_and_prokashonas",
             "dawat1_regular_group_wises",
