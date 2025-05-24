@@ -170,7 +170,7 @@ class ThanaController extends Controller
 
     public function report_joma()
     {
-
+        // dd(request()->all());
         $month = Carbon::parse(request()->month);
         if(request()->thana_id){
             $thana_id = request()->thana_id;
@@ -183,6 +183,7 @@ class ThanaController extends Controller
             }
             $thana_id = $org_thana_user->thana_id;
         }
+        // dd($thana_id);
 
         $permission  = ReportManagementControl::where('report_type', 'thana')
             ->whereYear('month_year', $month->clone()->year)
@@ -196,6 +197,7 @@ class ThanaController extends Controller
                 'errors' => [['You do not have the necessary permissions']],
             ], 403);
         }
+        // dd($permission);
 
         // Fetch ReportInfo
         $report_info = ReportInfo::where('org_type_id', $thana_id)
@@ -209,7 +211,7 @@ class ThanaController extends Controller
                 'err_message' => 'Report information not found.',
             ], 404);
         }
-
+        // dd($report_info);
         if ($report_info->report_submit_status == 'unsubmitted' && $report_info->report_approved_status == 'pending') {
             $report_info->report_submit_status = 'submitted';
             $report_info->report_approved_status = 'pending';
@@ -228,7 +230,7 @@ class ThanaController extends Controller
 
             return response()->json([
                 'status' => 'success',
-                'report_status' => "submitted",
+                'report_status' => "pending",
                 "message" => "রিপোর্ট জমা করা হয়েছে ।"
             ], 200);
         } else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'rejected') {
@@ -249,7 +251,7 @@ class ThanaController extends Controller
 
             return response()->json([
                 'status' => 'success',
-                'report_status' => "submitted",
+                'report_status' => "pending",
                 "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
             ], 200);
 
@@ -257,30 +259,31 @@ class ThanaController extends Controller
         // ----------------------------------------------
         // ----------------extra added ------------------
         } 
-        // else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'pending') {
-        //     $report_info->report_submit_status = 'unsubmitted';
-        //     $report_info->report_approved_status = 'pending';
-        //     $report_info->save();
+        else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'pending') {
+            $report_info->report_submit_status = 'unsubmitted';
+            $report_info->report_approved_status = 'pending';
+            $report_info->save();
 
-        //     // Update related BmPaid records
-        //     ThanaBmIncome::where('thana_id', $thana_id)
-        //         ->whereYear('month', $month->year)
-        //         ->whereMonth('month', $month->month)
-        //         ->update(['report_approved_status' => 'pending']);
+            // Update related BmPaid records
+            ThanaBmIncome::where('thana_id', $thana_id)
+                ->whereYear('month', $month->year)
+                ->whereMonth('month', $month->month)
+                ->update(['report_approved_status' => 'pending']);
 
-        //     // Update related BmExpense records
-        //     ThanaBmExpense::where('thana_id', $thana_id)
-        //         ->whereYear('date', $month->year)
-        //         ->whereMonth('date', $month->month)
-        //         ->update(['report_approved_status' => 'pending']);
+            // Update related BmExpense records
+            ThanaBmExpense::where('thana_id', $thana_id)
+                ->whereYear('date', $month->year)
+                ->whereMonth('date', $month->month)
+                ->update(['report_approved_status' => 'pending']);
 
-        //     return response()->json([
-        //         'status' => 'success',
-        //         'report_status' => "rejected",
-        //         "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
-        //     ], 200);
-        // } 
+            return response()->json([
+                'status' => 'success',
+                'report_status' => "unsubmitted",
+                "message" => "রিপোর্ট পুনরায় জমা সম্পন্ন হয়েছে ।"
+            ], 200);
+        } 
         else {
+            // dd("else");
             return response()->json([
                 'err_message' => 'No Content',
                 'errors' => ['name' => ['Report has no data']],

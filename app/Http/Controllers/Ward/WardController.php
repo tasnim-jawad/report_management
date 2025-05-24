@@ -2004,7 +2004,7 @@ class WardController extends Controller
 
             return response()->json([
                 'status' => 'success',
-                'report_status' => "submitted",
+                'report_status' => "pending",
                 "message" => "রিপোর্ট জমা করা হয়েছে ।"
             ], 200);
         } else if ($report_info->report_submit_status == 'submitted' && $report_info->report_approved_status == 'rejected') {

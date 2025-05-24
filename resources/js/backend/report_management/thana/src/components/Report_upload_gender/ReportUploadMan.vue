@@ -35268,7 +35268,7 @@
             <a
                 href=""
                 class="btn btn-danger me-2"
-                v-else-if="joma_status == 'approved'"
+                v-else-if="joma_status == 'pending'"
                 @click.prevent="report_joma"
                 >রিপোর্ট রিজেক্ট করুন</a
             >

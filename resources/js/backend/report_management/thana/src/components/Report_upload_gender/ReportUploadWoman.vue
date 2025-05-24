@@ -174,7 +174,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_groups_are_out_woman"
                                             :value="
                                                 formatBangla(
@@ -219,7 +219,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="number_of_participants_man"
                                             :value="
                                                 formatBangla(
@@ -249,7 +249,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="number_of_participants_woman"
                                             :value="
                                                 formatBangla(
@@ -296,7 +296,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="how_many_have_been_invited_man"
                                             :value="
                                                 formatBangla(
@@ -318,7 +318,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_have_been_invited_woman"
                                             :value="
                                                 formatBangla(
@@ -363,7 +363,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="how_many_associate_members_created_man"
                                             :value="
                                                 formatBangla(
@@ -385,7 +385,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_associate_members_created_woman"
                                             :value="
                                                 formatBangla(
@@ -442,7 +442,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="total_rokon_man"
                                             :value="
                                                 formatBangla(
@@ -472,7 +472,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="total_worker_man"
                                             :value="
                                                 formatBangla(
@@ -502,7 +502,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="total_rokon_woman"
                                             :value="
                                                 formatBangla(
@@ -532,7 +532,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="total_worker_woman"
                                             :value="
                                                 formatBangla(
@@ -565,7 +565,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="how_many_were_give_dawat_rokon_man"
                                             :value="
                                                 formatBangla(
@@ -595,7 +595,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="how_many_were_give_dawat_worker_man"
                                             :value="
                                                 formatBangla(
@@ -625,7 +625,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_were_give_dawat_rokon_woman"
                                             :value="
                                                 formatBangla(
@@ -653,7 +653,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_were_give_dawat_worker_woman"
                                             :value="
                                                 formatBangla(
@@ -708,7 +708,7 @@
                                                         ?.how_many_have_been_invited_woman
                                                 )
                                         }}
-                                        <!-- <input
+                                        <!-- <input readonly
                                             class="bg-input w-100 text-center"
                                             :type="type"
                                             readonly
@@ -727,7 +727,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="how_many_have_been_invited_man"
                                             :value="
                                                 formatBangla(
@@ -757,7 +757,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_have_been_invited_woman"
                                             :value="
                                                 formatBangla(
@@ -806,7 +806,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="how_many_associate_members_created_man"
                                             :value="
                                                 formatBangla(
@@ -836,7 +836,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_associate_members_created_woman"
                                             :value="
                                                 formatBangla(
@@ -946,7 +946,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_were_give_dawat_woman"
                                             :value="
                                                 formatBangla(
@@ -988,7 +988,7 @@
                                                     ?.how_many_associate_members_created_woman
                                             )
                                     }}
-                                    <!-- <input
+                                    <!-- <input readonly
                                         class="bg-input w-100 text-center"
                                         :type="type"
                                         readonly
@@ -1006,7 +1006,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="parent_popup">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="how_many_associate_members_created_man"
                                             :value="
                                                 formatBangla(
@@ -1036,7 +1036,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_associate_members_created_woman"
                                             :value="
                                                 formatBangla(
@@ -1120,7 +1120,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="gono_songjog_doshok_group_woman"
                                                 :value="
                                                     formatBangla(
@@ -1219,7 +1219,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="gono_songjog_doshok_attended_woman"
                                                 :value="
                                                     formatBangla(
@@ -1280,7 +1280,7 @@
                                         </div>
                                         <p>/</p>
                                         <div>
-                                            <input
+                                            <input readonly
                                                 name="gono_songjog_pokkho_attended_woman"
                                                 :value="
                                                     formatBangla(
@@ -1343,7 +1343,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="gono_songjog_doshok_invited_woman"
                                                 :value="
                                                     formatBangla(
@@ -1372,7 +1372,7 @@
                                         </div>
                                         <!-- <p class="mx-1">|</p>
                                         <div>
-                                            <input
+                                            <input readonly
                                                 name="gono_songjog_pokkho_invited_man"
                                                 :value="
                                                     formatBangla(
@@ -1392,7 +1392,7 @@
                                         </div>
                                         <p>/</p>
                                         <div>
-                                            <input
+                                            <input readonly
                                                 name="gono_songjog_pokkho_invited_woman"
                                                 :value="
                                                     formatBangla(
@@ -1446,7 +1446,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="gono_songjog_doshok_associate_members_created_woman"
                                                 :value="
                                                     formatBangla(
@@ -1554,7 +1554,7 @@
                                         </div>
                                         <p>/</p> -->
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="mohanogor_declared_gonosonjog_dawati_ovi_group"
                                                 :value="
                                                     formatBangla(
@@ -1588,7 +1588,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="jela_declared_gonosonjog_dawati_ovi_attended"
                                                 :value="
                                                     formatBangla(
@@ -1617,7 +1617,7 @@
                                         </div>
                                         <p>/</p> -->
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="mohanogor_declared_gonosonjog_dawati_ovi_attended"
                                                 :value="
                                                     formatBangla(
@@ -1651,7 +1651,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="jela_declared_gonosonjog_dawati_ovi_invited"
                                                 :value="
                                                     formatBangla(
@@ -1680,7 +1680,7 @@
                                         </div>
                                         <p>/</p> -->
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="mohanogor_declared_gonosonjog_dawati_ovi_invited"
                                                 :value="
                                                     formatBangla(
@@ -1714,7 +1714,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="jela_declared_gonosonjog_dawati_ovi_associated_created"
                                                 :value="
                                                     formatBangla(
@@ -1743,13 +1743,13 @@
                                         </div>
                                         <p>/</p> -->
                                         <div class="parent_popup">
-                                            <input
-                                                name="mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man"
+                                            <input readonly
+                                                name="mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman"
                                                 :value="
                                                     formatBangla(
                                                         report_sum_data
                                                             ?.thana_dawat4_gono_songjog_and_dawat_ovijans
-                                                            ?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man
+                                                            ?.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman
                                                     )
                                                 "
                                                 @change="
@@ -1811,7 +1811,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="election_gono_songjog_group_woman"
                                                 :value="
                                                     formatBangla(
@@ -1874,7 +1874,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="election_attended_woman"
                                                 :value="
                                                     formatBangla(
@@ -1937,7 +1937,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="election_how_many_have_been_invited_woman"
                                                 :value="
                                                     formatBangla(
@@ -2000,7 +2000,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="election_how_many_associate_members_created_woman"
                                                 :value="
                                                     formatBangla(
@@ -2481,7 +2481,7 @@
                                                     .total_others
                                             )
                                         }} -->
-                                        <input
+                                        <input readonly
                                             name="other_gono_songjog_group"
                                             :value="
                                                 formatBangla(
@@ -2511,7 +2511,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="other_attended"
                                             :value="
                                                 formatBangla(
@@ -2541,7 +2541,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="other_how_many_have_been_invited"
                                             :value="
                                                 formatBangla(
@@ -2571,13 +2571,13 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
-                                            name="other_how_many_associate_members_created_man"
+                                        <input readonly
+                                            name="other_how_many_associate_members_created_woman"
                                             :value="
                                                 formatBangla(
                                                     report_sum_data
                                                         ?.thana_dawat4_gono_songjog_and_dawat_ovijans
-                                                        ?.other_how_many_associate_members_created_man
+                                                        ?.other_how_many_associate_members_created_woman
                                                 )
                                             "
                                             @change="
@@ -2664,7 +2664,7 @@
                                         <p>/</p>
                                         <div>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="teacher_rokon_woman"
                                                     :value="
                                                         formatBangla(
@@ -2729,7 +2729,7 @@
                                         <p>/</p>
                                         <div>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="teacher_worker_woman"
                                                     :value="
                                                         formatBangla(
@@ -2817,7 +2817,7 @@
                                         <p>/</p>
                                         <div>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="student_rokon_woman"
                                                     :value="
                                                         formatBangla(
@@ -2882,7 +2882,7 @@
                                         <p>/</p>
                                         <div>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="student_worker_woman"
                                                     :value="
                                                         formatBangla(
@@ -2951,7 +2951,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                           <input readonly
                                                 name="quran_learning_total_group"
                                                 :value="
                                                     formatBangla(
@@ -2981,7 +2981,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                           <input readonly
                                                 name="quran_learning_total_students"
                                                 :value="
                                                     formatBangla(
@@ -3019,7 +3019,7 @@
                                             class="d-flex justify-content-center align-items-center"
                                         >
                                             <div class="parent_popup">
-                                                <input
+                                               <input readonly
                                                     name="total_moktob"
                                                     :value="
                                                         formatBangla(
@@ -3049,7 +3049,7 @@
                                             </div>
                                             <!-- <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                               <input readonly
                                                     name="total_forkania_madrasah"
                                                     :value="
                                                         formatBangla(
@@ -3084,7 +3084,7 @@
                                             class="d-flex justify-content-center align-items-center"
                                         >
                                             <div class="parent_popup">
-                                                <input
+                                               <input readonly
                                                     name="total_moktob_students"
                                                     :value="
                                                         formatBangla(
@@ -3155,7 +3155,7 @@
                                     </td>
                                     <td class="width-30">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="how_much_learned_sohih_tilawat"
                                                 :value="
                                                     formatBangla(
@@ -3224,7 +3224,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="how_much_invited_woman"
                                                     :value="
                                                         formatBangla(
@@ -3294,7 +3294,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="how_much_been_associated_woman"
                                                     :value="
                                                         formatBangla(
@@ -3419,7 +3419,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="total_muallim_increased_woman"
                                             :value="
                                                 formatBangla(
@@ -3467,7 +3467,7 @@
                                             class="d-flex justify-content-center align-items-center"
                                         >
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="govment_calculated_village_amount"
                                                     :value="
                                                         formatBangla(
@@ -3497,7 +3497,7 @@
                                             <p>/</p>
                                             <div>
                                                 <div class="parent_popup">
-                                                    <input
+                                                    <input readonly
                                                         name="govment_calculated_moholla_amount"
                                                         :value="
                                                             formatBangla(
@@ -3563,7 +3563,7 @@
                                             class="d-flex justify-content-center align-items-center"
                                         >
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="total_village_committee_increased"
                                                     :value="
                                                         formatBangla(
@@ -3593,7 +3593,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="total_moholla_committee_increased"
                                                     :value="
                                                         formatBangla(
@@ -3657,7 +3657,7 @@
                                             class="d-flex justify-content-center align-items-center"
                                         >
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="special_dawat_included_village_increased"
                                                     :value="
                                                         formatBangla(
@@ -3686,7 +3686,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="special_dawat_included_moholla_increased"
                                                     :value="
                                                         formatBangla(
@@ -3727,7 +3727,7 @@
                                     </td>
                                     <td class="width-30">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="how_many_been_invited"
                                                 :value="
                                                     formatBangla(
@@ -3762,7 +3762,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="how_many_associated_created"
                                                 :value="
                                                     formatBangla(
@@ -3818,7 +3818,7 @@
                                         </td>
                                         <td>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="how_many_young_been_invited"
                                                     :value="
                                                         formatBangla(
@@ -3854,7 +3854,7 @@
                                         </td>
                                         <td>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="how_many_young_been_associated"
                                                     :value="
                                                         formatBangla(
@@ -3915,7 +3915,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="total_young_committee_increased"
                                                 :value="
                                                     formatBangla(
@@ -3972,7 +3972,7 @@
                                     <td>
                                         <div class="d-flex justify-content-center align-items-center">
                                             <!-- <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="total_new_somiti_increased"
                                                     :value="
                                                         formatBangla(
@@ -3992,7 +3992,7 @@
                                             </div>
                                             <p>/</p> -->
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="total_new_club_increased"
                                                     :value="
                                                         formatBangla(
@@ -4051,7 +4051,7 @@
                                     <td>
                                         <div class="d-flex justify-content-center align-items-center">
                                             <!-- <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="stablished_somiti_total_increased"
                                                     :value="
                                                         formatBangla(
@@ -4071,7 +4071,7 @@
                                             </div> -->
                                             <!-- <p>/</p> -->
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="stablished_club_total_increased"
                                                     :value="
                                                         formatBangla(
@@ -4164,7 +4164,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="political_and_special_invited_woman"
                                                     :value="
                                                         formatBangla(
@@ -4227,7 +4227,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="political_and_special_been_associated_woman"
                                                     :value="
                                                         formatBangla(
@@ -4292,7 +4292,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="political_and_special_target_woman"
                                                     :value="
                                                         formatBangla(
@@ -4393,7 +4393,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="pesha_jibi_invited_woman"
                                                     :value="
                                                         formatBangla(
@@ -4458,7 +4458,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="pesha_jibi_been_associated_woman"
                                                     :value="
                                                         formatBangla(
@@ -4523,7 +4523,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="pesha_jibi_target_woman"
                                                     :value="
                                                         formatBangla(
@@ -4591,7 +4591,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="olama_masayekh_invited"
                                                 :value="
                                                     formatBangla(
@@ -4621,7 +4621,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="olama_masayekh_been_associated"
                                                 :value="
                                                     formatBangla(
@@ -4651,7 +4651,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="olama_masayekh_target"
                                                 :value="
                                                     formatBangla(
@@ -4840,7 +4840,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="sromo_jibi_invited_woman"
                                                     :value="
                                                         formatBangla(
@@ -4905,7 +4905,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="sromo_jibi_been_associated_woman"
                                                     :value="
                                                         formatBangla(
@@ -4970,7 +4970,7 @@
                                             </div>
                                             <p>/</p>
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="sromo_jibi_target_woman"
                                                     :value="
                                                         formatBangla(
@@ -5143,7 +5143,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="prantik_jonogosti_invited"
                                                 :value="
                                                     formatBangla(
@@ -5173,7 +5173,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="prantik_jonogosti_been_associated"
                                                 :value="
                                                     formatBangla(
@@ -5203,7 +5203,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="prantik_jonogosti_target"
                                                 :value="
                                                     formatBangla(
@@ -5254,7 +5254,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vinno_dormalombi_invited"
                                                 :value="
                                                     formatBangla(
@@ -5284,7 +5284,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vinno_dormalombi_been_associated"
                                                 :value="
                                                     formatBangla(
@@ -5314,7 +5314,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vinno_dormalombi_target"
                                                 :value="
                                                     formatBangla(
@@ -5376,7 +5376,7 @@
                             <tr>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="total_attended_family"
                                             :value="
                                                 formatBangla(
@@ -5406,7 +5406,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="how_many_new_family_invited"
                                             :value="
                                                 formatBangla(
@@ -5467,7 +5467,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="total_mosjid_increase"
                                             :value="
                                                 formatBangla(
@@ -5508,7 +5508,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="general_dawah_center_increase"
                                             :value="
                                                 formatBangla(
@@ -5551,7 +5551,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="dawat_included_mosjid_increase"
                                             :value="
                                                 formatBangla(
@@ -5608,7 +5608,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="mosjid_wise_information_center_increase"
                                                 :value="
                                                     formatBangla(
@@ -5637,7 +5637,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="general_information_center_increase"
                                                 :value="
                                                     formatBangla(
@@ -5685,7 +5685,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="mosjid_wise_dawah_center_increase"
                                             :value="
                                                 formatBangla(
@@ -5725,7 +5725,7 @@
                                     }}
                                 </td>
                                 <td>
-                                    <input
+                                    <input readonly
                                         name="trained_employed_dai_increase"
                                         :value="
                                             formatBangla(
@@ -5803,7 +5803,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="total_well_known_woman"
                                                 :value="
                                                     formatBangla(
@@ -5866,7 +5866,7 @@
                                         </div>
                                         <p>/</p>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="total_attended_woman"
                                                 :value="
                                                     formatBangla(
@@ -6038,7 +6038,7 @@
                             <td>
                                 <div class="d-flex justify-content-center align-items-center">
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="total_pathagar_increase"
                                         :value="
                                             formatBangla(
@@ -6143,7 +6143,7 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="ward_book_sales_center_increase"
                                         :value="
                                             formatBangla(
@@ -6196,7 +6196,7 @@
                             <td>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="books_in_pathagar_increase"
                                             :value="
                                                 formatBangla(
@@ -6292,7 +6292,7 @@
                             <td >{{bangla($dawah_prokashona->ward_book_sales_increase?? "")}}</td> -->
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="ward_book_sales"
                                         :value="
                                             formatBangla(
@@ -6326,7 +6326,7 @@
                             <td >{{bangla($dawah_prokashona->book_distribution_increase?? "")}}</td> -->
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="book_distribution"
                                         :value="
                                             formatBangla(
@@ -6389,7 +6389,7 @@
                             <td >{{bangla($dawah_prokashona->soft_copy_book_distribution_increase?? "")}}</td> -->
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="soft_copy_book_distribution"
                                         :value="
                                             formatBangla(
@@ -6434,7 +6434,7 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="unit_book_distribution_center_increase"
                                         :value="
                                             formatBangla(
@@ -6485,7 +6485,7 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="dawat_link_distribution"
                                         :value="
                                             formatBangla(
@@ -6545,7 +6545,7 @@
                             <td class="text-start px-2">ইউনিটে বই বিলি</td>
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="unit_book_distribution"
                                         :value="
                                             formatBangla(
@@ -6652,7 +6652,7 @@
                             <td>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="sonar_bangla_increase"
                                             :value="
                                                 formatBangla(
@@ -6681,7 +6681,7 @@
                                     </div>
                                     /
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="songram_increase"
                                             :value="
                                                 formatBangla(
@@ -6710,7 +6710,7 @@
                                     </div>
                                     /
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="prithibi_increase"
                                             :value="
                                                 formatBangla(
@@ -6810,7 +6810,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_masik_sadaron_sova_total"
                                             :value="
                                                 formatBangla(
@@ -6840,7 +6840,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_masik_sadaron_sova_target"
                                             :value="
                                                 formatBangla(
@@ -6870,7 +6870,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_masik_sadaron_sova_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -6911,7 +6911,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dawati_sova_total"
                                                 :value="
                                                     formatBangla(
@@ -6930,7 +6930,7 @@
                                             />
                                         </div> -->
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="alochona_sova_total"
                                                 :value="
                                                     formatBangla(
@@ -6959,7 +6959,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sudhi_somabesh_total"
                                                 :value="
                                                     formatBangla(
@@ -6991,7 +6991,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dawati_sova_target"
                                                 :value="
                                                     formatBangla(
@@ -7011,7 +7011,7 @@
                                         </div> -->
                                         
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="alochona_sova_target"
                                                 :value="
                                                     formatBangla(
@@ -7040,7 +7040,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sudhi_somabesh_target"
                                                 :value="
                                                     formatBangla(
@@ -7072,7 +7072,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dawati_sova_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -7096,7 +7096,7 @@
                                         </div> -->
                                         
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="alochona_sova_uposthiti"
                                                 :value="
                                                 formatBangla(
@@ -7129,7 +7129,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sudhi_somabesh_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -7170,7 +7170,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="siratunnabi_mahfil_total"
                                             :value="
                                                 formatBangla(
@@ -7200,7 +7200,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="siratunnabi_mahfil_target"
                                             :value="
                                                 formatBangla(
@@ -7230,7 +7230,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="siratunnabi_mahfil_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -7268,7 +7268,7 @@
                                 <td class="text-start px-2">ঈদ পুনর্মিলনী</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="eid_reunion_total"
                                             :value="
                                                 formatBangla(
@@ -7298,7 +7298,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="eid_reunion_target"
                                             :value="
                                                 formatBangla(
@@ -7328,7 +7328,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="eid_reunion_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -7370,7 +7370,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dars_total"
                                                 :value="
                                                     formatBangla(
@@ -7399,7 +7399,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="tafsir_total"
                                                 :value="
                                                     formatBangla(
@@ -7428,7 +7428,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dawati_jonosova_total"
                                                 :value="
                                                     formatBangla(
@@ -7460,7 +7460,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dars_target"
                                                 :value="
                                                     formatBangla(
@@ -7489,7 +7489,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="tafsir_target"
                                                 :value="
                                                     formatBangla(
@@ -7518,7 +7518,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dawati_jonosova_target"
                                                 :value="
                                                     formatBangla(
@@ -7550,7 +7550,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dars_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -7583,7 +7583,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="tafsir_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -7616,7 +7616,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="dawati_jonosova_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -7658,7 +7658,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="iftar_mahfil_personal_total"
                                                 :value="
                                                     formatBangla(
@@ -7687,7 +7687,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="iftar_mahfil_samostic_total"
                                                 :value="
                                                     formatBangla(
@@ -7719,7 +7719,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="iftar_mahfil_personal_target"
                                                 :value="
                                                     formatBangla(
@@ -7748,7 +7748,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="iftar_mahfil_samostic_target"
                                                 :value="
                                                     formatBangla(
@@ -7780,7 +7780,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="iftar_mahfil_personal_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -7813,7 +7813,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="iftar_mahfil_samostic_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -7856,7 +7856,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="cha_chakra_total"
                                                 :value="
                                                     formatBangla(
@@ -7885,7 +7885,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="samostic_khawa_total"
                                                 :value="
                                                     formatBangla(
@@ -7914,7 +7914,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sikkha_sofor_total"
                                                 :value="
                                                     formatBangla(
@@ -7946,7 +7946,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="cha_chakra_target"
                                                 :value="
                                                     formatBangla(
@@ -7975,7 +7975,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="samostic_khawa_target"
                                                 :value="
                                                     formatBangla(
@@ -8004,7 +8004,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sikkha_sofor_target"
                                                 :value="
                                                     formatBangla(
@@ -8036,7 +8036,7 @@
                                 <td class="">
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="cha_chakra_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -8069,7 +8069,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="samostic_khawa_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -8102,7 +8102,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sikkha_sofor_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -8144,7 +8144,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="kirat_protijogita_total"
                                                 :value="
                                                     formatBangla(
@@ -8173,7 +8173,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="hamd_nat_protijogita_total"
                                                 :value="
                                                     formatBangla(
@@ -8205,7 +8205,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="kirat_protijogita_target"
                                                 :value="
                                                     formatBangla(
@@ -8234,7 +8234,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="hamd_nat_protijogita_target"
                                                 :value="
                                                     formatBangla(
@@ -8266,7 +8266,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="kirat_protijogita_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -8299,7 +8299,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="hamd_nat_protijogita_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -8338,7 +8338,7 @@
                                 <td class="text-start px-2">অন্যান্য</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="others_total"
                                             :value="
                                                 formatBangla(
@@ -8368,7 +8368,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="others_target"
                                             :value="
                                                 formatBangla(
@@ -8398,7 +8398,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="others_uposthiti"
                                             :value="
                                                     formatBangla(
@@ -9430,7 +9430,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <inputc readonly
                                             name="associate_member_woman_target"
                                             :value="
                                                 formatBangla(
@@ -16598,7 +16598,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="general_unit_women_increase"
                                             :value="
                                                 formatBangla(
@@ -16628,7 +16628,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="general_unit_women_gatti"
                                             :value="
                                                 formatBangla(
@@ -16658,7 +16658,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="general_unit_women_target"
                                             :value="
                                                 formatBangla(
@@ -16738,7 +16738,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="ulama_unit_increase"
                                             :value="
                                                 formatBangla(
@@ -16768,7 +16768,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="ulama_unit_gatti"
                                             :value="
                                                 formatBangla(
@@ -16798,7 +16798,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="ulama_unit_target"
                                             :value="
                                                 formatBangla(
@@ -17258,7 +17258,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="jubo_unit_increase"
                                             :value="
                                                 formatBangla(
@@ -17288,7 +17288,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="jubo_unit_gatti"
                                             :value="
                                                 formatBangla(
@@ -17318,7 +17318,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="jubo_unit_target"
                                             :value="
                                                 formatBangla(
@@ -17621,7 +17621,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="media_unit_increase"
                                             :value="
                                                 formatBangla(
@@ -17651,7 +17651,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="media_unit_gatti"
                                             :value="
                                                 formatBangla(
@@ -17681,7 +17681,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="media_unit_target"
                                             :value="
                                                 formatBangla(
@@ -18342,7 +18342,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="dawati_unit_increase"
                                             :value="
                                                 formatBangla(
@@ -18372,7 +18372,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="dawati_unit_gatti"
                                             :value="
                                                 formatBangla(
@@ -18402,7 +18402,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="dawati_unit_target"
                                             :value="
                                                 formatBangla(
@@ -18455,7 +18455,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="paribarik_unit_increase"
                                             :value="
                                                 formatBangla(
@@ -18485,7 +18485,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="paribarik_unit_gatti"
                                             :value="
                                                 formatBangla(
@@ -18515,7 +18515,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="paribarik_unit_target"
                                             :value="
                                                 formatBangla(
@@ -19096,7 +19096,7 @@
                                 <td>
                                     <div class="d-flex justify-content-evenly">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_man_member"
                                                 :value="
                                                     formatBangla(
@@ -19125,7 +19125,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_women_member"
                                                 :value="
                                                     formatBangla(
@@ -19157,7 +19157,7 @@
                                 <td>
                                     <div class="d-flex justify-content-evenly">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_man_associate"
                                                 :value="
                                                     formatBangla(
@@ -19186,7 +19186,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_women_associate"
                                                 :value="
                                                     formatBangla(
@@ -19218,7 +19218,7 @@
                                 <td>
                                     <div class="d-flex justify-content-evenly">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_man_worker"
                                                 :value="
                                                     formatBangla(
@@ -19247,7 +19247,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="Joined_student_women_worker"
                                                 :value="
                                                     formatBangla(
@@ -19846,7 +19846,7 @@
                                 <td>
                                     <div class="d-flex justify-content-evenly">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="associate_member_total"
                                                 :value="
                                                     formatBangla(
@@ -19875,7 +19875,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sudhi_total"
                                                 :value="
                                                     formatBangla(
@@ -19907,7 +19907,7 @@
                                 <td>
                                     <div class="d-flex justify-content-evenly">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="associate_member_total_iyanot_amounts"
                                                 :value="
                                                     formatBangla(
@@ -19936,7 +19936,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sudi_total_iyanot_amounts"
                                                 :value="
                                                     formatBangla(
@@ -21408,7 +21408,7 @@
                                     </popup> -->
                                     <!-- / -->
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ward_boithok_women_total"
                                                 :value="
                                                     formatBangla(
@@ -21437,7 +21437,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="pouroshova_boithok_man_target"
                                             :value="
                                                 formatBangla(
@@ -21462,7 +21462,7 @@
                                         >
                                         </popup> -->
                                         <!-- / -->
-                                        <!-- <input
+                                        <!-- <input readonly
                                             name="union_boithok_man_target"
                                             :value="
                                                 formatBangla(
@@ -21488,7 +21488,7 @@
                                         </popup> -->
                                         <!-- / -->
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ward_boithok_women_target"
                                                 :value="
                                                     formatBangla(
@@ -21517,7 +21517,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <!-- <input
+                                    <!-- <input readonly
                                         name="pouroshova_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21546,7 +21546,7 @@
                                     >
                                     </popup> -->
                                     <!-- / -->
-                                    <!-- <input
+                                    <!-- <input readonly
                                         name="union_boithok_man_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21576,7 +21576,7 @@
                                     </popup> -->
                                     <!-- / -->
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ward_boithok_man_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -21609,7 +21609,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
-                                    <!-- <input
+                                    <!-- <input readonly
                                         name="pouroshova_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21638,7 +21638,7 @@
                                     >
                                     </popup> -->
                                     <!-- / -->
-                                    <!-- <input
+                                    <!-- <input readonly
                                         name="union_boithok_women_uposthiti"
                                         :value="
                                             formatBangla(
@@ -21668,7 +21668,7 @@
                                     </popup> -->
                                     <!-- / -->
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ward_boithok_women_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -22022,7 +22022,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_kormi_boithok_women_total"
                                             :value="
                                                 formatBangla(
@@ -22050,7 +22050,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_kormi_boithok_women_target"
                                             :value="
                                                 formatBangla(
@@ -22078,7 +22078,7 @@
                                 </td>
                                 <td class="bg-block">
                                     <!-- <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_kormi_boithok_man_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -22110,7 +22110,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_kormi_boithok_women_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -23797,7 +23797,7 @@
                                     </popup>
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ulama_somabesh_women_total"
                                                 :value="
                                                     formatBangla(
@@ -23852,7 +23852,7 @@
                                         </popup>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ulama_somabesh_women_target"
                                                 :value="
                                                     formatBangla(
@@ -23974,7 +23974,7 @@
                                         </popup>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ulama_somabesh_women_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -24238,7 +24238,7 @@
                                     </popup>
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sromik_somabesh_women_total"
                                                 :value="
                                                     formatBangla(
@@ -24293,7 +24293,7 @@
                                     </popup>
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sromik_somabesh_women_target"
                                                 :value="
                                                     formatBangla(
@@ -24415,7 +24415,7 @@
                                     </popup>
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sromik_somabesh_women_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -25501,7 +25501,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_tarbiati_boithok_women_total"
                                             :value="
                                                 formatBangla(
@@ -25529,7 +25529,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_tarbiati_boithok_women_target"
                                             :value="
                                                 formatBangla(
@@ -25589,7 +25589,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="unit_tarbiati_boithok_women_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -26911,7 +26911,7 @@
                                     </popup> -->
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ward_kormi_shikkha_boithok_women_total"
                                                 :value="
                                                     formatBangla(
@@ -26991,7 +26991,7 @@
                                     </popup> -->
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ward_kormi_shikkha_boithok_women_target"
                                                 :value="
                                                     formatBangla(
@@ -27171,7 +27171,7 @@
                                     </popup> -->
                                     /
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="ward_kormi_shikkha_boithok_women_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -27243,7 +27243,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="gono_sikkha_boithok_women_total"
                                             :value="
                                                 formatBangla(
@@ -27271,7 +27271,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="gono_sikkha_boithok_women_target"
                                         :value="
                                             formatBangla(
@@ -27331,7 +27331,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="gono_sikkha_boithok_women_uposthiti"
                                             :value="
                                                 formatBangla(
@@ -27789,7 +27789,7 @@
                                     </popup> -->
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="kormi_alochona_cokro_woman_total_group"
                                                 :value="
                                                     formatBangla(
@@ -27899,7 +27899,7 @@
                                     </popup> -->
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="kormi_alochona_cokro_woman_total_odhibeshon"
                                                 :value="
                                                     formatBangla(
@@ -28021,7 +28021,7 @@
                                     </popup> -->
                                     /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="kormi_alochona_cokro_woman_total_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -28283,7 +28283,7 @@
                                         >প্রোগ্রাম:</span
                                     >
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="darsul_quran_woman_program"
                                             :value="
                                                 formatBangla(
@@ -28441,7 +28441,7 @@
                                 <td>
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="darsul_quran_woman_uposthiti"
                                                 :value="
                                                         formatBangla(
@@ -28813,7 +28813,7 @@
                                             class="d-flex justify-content-center"
                                         >
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="dawah_uposthiti"
                                                     :value="
                                                         formatBangla(
@@ -28843,7 +28843,7 @@
                                             </div>
                                             /
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="shomajkormo_uposthiti"
                                                     :value="
                                                         formatBangla(
@@ -28873,7 +28873,7 @@
                                             </div>
                                             /
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="media_uposthiti"
                                                     :value="
                                                         formatBangla(
@@ -28912,7 +28912,7 @@
                                     <td>
                                         <div class="d-flex">
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="ict_uposthiti"
                                                     :value="
                                                         formatBangla(
@@ -28942,7 +28942,7 @@
                                             </div>
                                             /
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="office_uposthiti"
                                                     :value="
                                                         formatBangla(
@@ -28972,7 +28972,7 @@
                                             </div>
                                             /
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="financial_management_uposthiti"
                                                     :value="
                                                         formatBangla(
@@ -29002,7 +29002,7 @@
                                             </div>
                                             /
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="english_language_uposthiti"
                                                     :value="
                                                         formatBangla(
@@ -29032,7 +29032,7 @@
                                             </div>
                                             /
                                             <div class="parent_popup">
-                                                <input
+                                                <input readonly
                                                     name="arabic_language_uposthiti"
                                                     :value="
                                                         formatBangla(
@@ -29069,7 +29069,7 @@
                                     </td>
                                     <td>
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="trade_oriented_technical_training_uposthiti"
                                                 :value="
                                                     formatBangla(
@@ -29283,7 +29283,7 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="how_many_people_did"
                                         :value="
                                             formatBangla(
@@ -29314,7 +29314,7 @@
                             </td>
                             <td>
                                 <div class="parent_popup">
-                                    <input
+                                    <input readonly
                                         name="service_received_total"
                                         :value="
                                             formatBangla(
@@ -29360,7 +29360,7 @@
                             <tr>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="general_service_team"
                                             :value="
                                                 formatBangla(
@@ -29390,7 +29390,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="technical_service_team"
                                             :value="
                                                 formatBangla(
@@ -29420,7 +29420,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="volunteer_team"
                                             :value="
                                                 formatBangla(
@@ -29467,7 +29467,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="minor_unnoyonmulok_kaj"
                                             :value="
                                                 formatBangla(
@@ -29539,7 +29539,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="shamajik_onusthane_ongshogrohon "
                                                 :value="
                                                     formatBangla(
@@ -29568,7 +29568,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="shamajik_onusthane_shohayota_prodan"
                                                 :value="
                                                     formatBangla(
@@ -29605,7 +29605,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="technical_services_kotojon"
                                                 :value="
                                                     formatBangla(
@@ -29634,7 +29634,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="technical_services_prodan_kotojonke"
                                                 :value="
                                                     formatBangla(
@@ -29670,7 +29670,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="shamajik_birodh_mimangsha"
                                             :value="
                                                 formatBangla(
@@ -29703,7 +29703,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="online_services_prodan_kotojonke"
                                             :value="
                                                 formatBangla(
@@ -29738,7 +29738,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="manobik_shohayota_prodan"
                                             :value="
                                                 formatBangla(
@@ -29771,7 +29771,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="brikkho_ropon"
                                             :value="
                                                 formatBangla(
@@ -29806,7 +29806,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="korje_hasana_prodan"
                                             :value="
                                                 formatBangla(
@@ -29839,7 +29839,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="public_awareness_programs"
                                             :value="
                                                 formatBangla(
@@ -29877,7 +29877,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="porishkar_poricchonnota_ovijan"
                                                 :value="
                                                     formatBangla(
@@ -29906,7 +29906,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="moshok_nidhon_ovijan"
                                                 :value="
                                                     formatBangla(
@@ -29979,7 +29979,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="rogir_poricorja"
                                                 :value="
                                                     formatBangla(
@@ -30008,7 +30008,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="medical_shohayota_prodan"
                                                 :value="
                                                     formatBangla(
@@ -30042,7 +30042,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="tran_bitoron"
                                             :value="
                                                 formatBangla(
@@ -30080,7 +30080,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="voluntarily_blood_donation_kotojon"
                                                 :value="
                                                     formatBangla(
@@ -30109,7 +30109,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="voluntarily_blood_donation_kotojonke"
                                                 :value="
                                                     formatBangla(
@@ -30147,7 +30147,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vinnodhormabolombider_service_prodan_kotojon"
                                                 :value="
                                                     formatBangla(
@@ -30176,7 +30176,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vinnodhormabolombider_service_prodan_kotojonke"
                                                 :value="
                                                     formatBangla(
@@ -30245,7 +30245,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="mayeter_gosol_kotojonke"
                                             :value="
                                                 formatBangla(
@@ -30280,7 +30280,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="nobojatokke_gift_prodan"
                                             :value="
                                                 formatBangla(
@@ -30313,7 +30313,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="janajay_ongshogrohon"
                                             :value="
                                                 formatBangla(
@@ -30382,7 +30382,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="low_capital_employment_kotojonke"
                                             :value="
                                                 formatBangla(
@@ -30420,7 +30420,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vrammoman_school_calu"
                                                 :value="
                                                     formatBangla(
@@ -30449,7 +30449,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vrammoman_moktob_calu"
                                                 :value="
                                                     formatBangla(
@@ -30481,7 +30481,7 @@
                                 <td class="text-start px-2">অন্যান্য......</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="others"
                                             :value="
                                                 formatBangla(
@@ -30571,7 +30571,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="social_institution_in_ward"
                                             :value="
                                                 formatBangla(
@@ -30642,7 +30642,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="institutional_social_work_in_ward"
                                             :value="
                                                 formatBangla(
@@ -30713,7 +30713,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="new_social_institutions_in_ward"
                                             :value="
                                                 formatBangla(
@@ -30845,7 +30845,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="health_education_training_programs_attendance"
                                             :value="
                                                 formatBangla(
@@ -30907,7 +30907,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="participated_in_health_care_work"
                                             :value="
                                                 formatBangla(
@@ -30969,7 +30969,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="served_people"
                                             :value="
                                                 formatBangla(
@@ -31286,7 +31286,7 @@
                                 <td class="text-start">রাজনৈতিক ব্যক্তিবর্গ</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="rajnoitik_bekti_jogajog_koreche_kotojon"
                                             :value="
                                                 formatBangla(
@@ -31315,7 +31315,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="rajnoitik_bekti_jogajog_koreche_kotojonke"
                                             :value="
                                                 formatBangla(
@@ -31349,7 +31349,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="proshoshonik_bekti_jogajog_koreche_kotojon"
                                             :value="
                                                 formatBangla(
@@ -31378,7 +31378,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="proshoshonik_bekti_jogajog_koreche_kotojonke"
                                             :value="
                                                 formatBangla(
@@ -31426,7 +31426,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="centrally_announced_political_program"
                                             :value="
                                                 formatBangla(
@@ -31455,7 +31455,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="centrally_announced_political_program_attend"
                                             :value="
                                                 formatBangla(
@@ -31497,7 +31497,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="locally_announced_jonoshova"
                                                 :value="
                                                     formatBangla(
@@ -31525,7 +31525,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="locally_announced_shomabesh"
                                                 :value="
                                                     formatBangla(
@@ -31553,7 +31553,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="locally_announced_michil"
                                                 :value="
                                                     formatBangla(
@@ -31586,7 +31586,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="locally_announced_jonoshova_attend"
                                                 :value="
                                                     formatBangla(
@@ -31618,7 +31618,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="locally_announced_shomabesh_attend"
                                                 :value="
                                                     formatBangla(
@@ -31650,7 +31650,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="locally_announced_michil_attend"
                                                 :value="
                                                     formatBangla(
@@ -31692,7 +31692,7 @@
                                         class="d-flex justify-content-center align-items-center"
                                     >
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="poster_bitoron"
                                                 :value="
                                                     formatBangla(
@@ -31720,7 +31720,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="leaflet_bitoron"
                                                 :value="
                                                     formatBangla(
@@ -31748,7 +31748,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="booklet_bitoron"
                                                 :value="
                                                     formatBangla(
@@ -31776,7 +31776,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="sharoklipi_bitoron"
                                                 :value="
                                                     formatBangla(
@@ -31807,7 +31807,7 @@
                                 <td class="text-start px-2">
                                     <div class="parent_popup d-flex">
                                         অন্যান্য:-
-                                        <input
+                                        <input readonly
                                             name="others"
                                             :value="
                                                 formatBangla(
@@ -31861,7 +31861,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="shadhinota_o_jatio_dibosh_total_programs"
                                             :value="
                                                 formatBangla(
@@ -31890,7 +31890,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="shadhinota_o_jatio_dibosh_attend"
                                             :value="
                                                     formatBangla(
@@ -31926,7 +31926,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="mattrivasha_dibosh_total_programs"
                                             :value="
                                                 formatBangla(
@@ -31955,7 +31955,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="mattrivasha_dibosh_attend"
                                             :value="
                                                 formatBangla(
@@ -31991,7 +31991,7 @@
                                 <td class="text-start">বিজয় দিবস</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="bijoy_dibosh_total_programs"
                                             :value="
                                                 formatBangla(
@@ -32020,7 +32020,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="bijoy_dibosh_attend"
                                             :value="
                                                 formatBangla(
@@ -32121,7 +32121,7 @@
                                 <td class="text-start">অন্যান্য</td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="others_total_programs"
                                             :value="
                                                 formatBangla(
@@ -32150,7 +32150,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="others_attend"
                                             :value="
                                                 formatBangla(
@@ -32676,7 +32676,7 @@
                                     ></popup> -->
                                     /
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="city_corporation_councilor_candidate_woman_elected"
                                             :value="
                                                 formatBangla(
@@ -32879,7 +32879,7 @@
                                     ></popup> -->
                                     /
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="city_corporation_councilor_candidate_woman_second_position"
                                             :value="
                                                 formatBangla(
@@ -33684,7 +33684,7 @@
                                 <td>
                                     <div class="d-flex justify-content-center">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="national_vote_kendro_increase"
                                                 :value="
                                                     formatBangla(
@@ -33712,7 +33712,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="local_vote_kendro_increase"
                                                 :value="
                                                     formatBangla(
@@ -33743,7 +33743,7 @@
                                 <td class="bg-block">
                                     <!-- <div class="d-flex justify-content-center">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="national_vote_kendro_target"
                                                 :value="
                                                     formatBangla(
@@ -33771,7 +33771,7 @@
                                         </div>
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="local_vote_kendro_target"
                                                 :value="
                                                     formatBangla(
@@ -33814,7 +33814,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="vote_kendro_committee_increase"
                                             :value="
                                                 formatBangla(
@@ -33843,7 +33843,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="vote_kendro_committee_target"
                                             :value="
                                                 formatBangla(
@@ -33887,7 +33887,7 @@
                                             }}
                                         </div>
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vote_kendro_vittik_unit"
                                                 :value="
                                                     formatBangla(
@@ -33923,7 +33923,7 @@
                                             }}
                                         </div> -->
                                         <!-- <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="booth_vittik_unit"
                                                 :value="
                                                     formatBangla(
@@ -33946,7 +33946,7 @@
                                 <td>
                                     <div class="d-flex justify-content-between">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vote_kendro_vittik_unit_increase"
                                                 :value="
                                                     formatBangla(
@@ -33973,8 +33973,8 @@
                                             ></popup>
                                         </div>
                                         <!-- / -->
-                                        <div class="parent_popup">
-                                            <!-- <input
+                                        <!-- <div class="parent_popup">
+                                            <input readonly
                                                 name="booth_vittik_unit_increase"
                                                 :value="
                                                     formatBangla(
@@ -33990,22 +33990,22 @@
                                                 "
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
-                                            /> -->
-                                            <!-- <popup
+                                            />
+                                            <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'booth_vittik_unit_increase'"
                                                 :month="month"
-                                            ></popup> -->
-                                        </div>
+                                            ></popup>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-between">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vote_kendro_vittik_unit_target"
                                                 :value="
                                                     formatBangla(
@@ -34032,8 +34032,8 @@
                                             ></popup>
                                         </div>
                                         <!-- / -->
-                                        <div class="parent_popup">
-                                            <!-- <input
+                                        <!-- <div class="parent_popup">
+                                            <input
                                                 name="booth_vittik_unit_target"
                                                 :value="
                                                     formatBangla(
@@ -34049,16 +34049,16 @@
                                                 "
                                                 :type="type"
                                                 class="bg-input w-100 text-center"
-                                            /> -->
-                                            <!-- <popup
+                                            />
+                                            <popup
                                                 :thana_id="
                                                 report_header?.thana_info?.id
                                             "
                                                 :table_name="'ward_rastrio4_election_activities'"
                                                 :field_title="'booth_vittik_unit_target'"
                                                 :month="month"
-                                            ></popup> -->
-                                        </div>
+                                            ></popup>
+                                        </div> -->
                                     </div>
                                 </td>
                             </tr>
@@ -34169,7 +34169,7 @@
                                         ></popup> -->
                                         /
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="ward_vittik_election_management_committee_meeting"
                                                 :value="
                                                     formatBangla(
@@ -35366,10 +35366,16 @@
             >
             <a
                 href=""
-                class="btn btn-danger"
-                v-else-if="joma_status == 'approved'"
+                class="btn btn-danger me-2"
+                v-else-if="joma_status == 'pending'"
                 @click.prevent="report_joma"
                 >রিপোর্ট রিজেক্ট করুন</a
+            >
+            <a
+                href=""
+                class="btn btn-danger"
+                @click.prevent="reset_data"
+                >Data reset</a
             >
         </div>
         <a href="" class="print_preview" @click.prevent="print_report()"
@@ -35382,6 +35388,9 @@
 import axios from "axios";
 import Popup from "../Popup.vue";
 import PopupNote from "../PopupNote.vue";
+import { store as ward_data_store } from "../../stores/TotalApprovedWardDataStore";
+import { store as data_store } from "../../stores/ReportStore";
+import { mapWritableState , mapActions } from 'pinia';
 
 export default {
     components: { Popup, PopupNote },
@@ -35632,6 +35641,7 @@ export default {
     },
 
     created() {
+        this.ward_data();
         this.uploaded_data();
         this.income_category();
         this.expense_category();
@@ -35658,6 +35668,24 @@ export default {
        
     },
     methods: {
+        ...mapActions(ward_data_store, {
+            total_approved_ward_report_data: "total_approved_ward_report_data",
+        }),
+        ...mapActions(data_store, {
+            thana_data_reset: "thana_data_reset",
+        }),
+        
+        ward_data: async function () {
+            const month = this.$route.params.month;
+            const user_id = this.$route.params.user_id;
+            await this.total_approved_ward_report_data(month , user_id)
+        },
+
+        reset_data: async function () {
+            const month = this.$route.params.month;
+            const user_id = this.$route.params.user_id;
+            await this.thana_data_reset(month , user_id)
+        },
         uploaded_data: async function () {
             const month = this.$route.params.month;
             const user_id = this.$route.params.user_id;
@@ -35732,7 +35760,7 @@ export default {
             this.mass_communication.total_mohanogon_decl_mass_comm_ovi = Number(
                 data.mohanogor_declared_gonosonjog_dawati_ovi_attended +
                     data.mohanogor_declared_gonosonjog_dawati_ovi_invited +
-                    data.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_man
+                    data.mohanogor_declared_gonosonjog_dawati_ovi_associated_crt_woman
             );
             this.mass_communication.total_election_mass_comm_week_man = Number(
                 data.election_attended_man +
@@ -35771,7 +35799,7 @@ export default {
             this.mass_communication.total_others = Number(
                 data.other_attended +
                     data.other_how_many_have_been_invited +
-                    data.other_how_many_associate_members_created_man
+                    data.other_how_many_associate_members_created_woman
             );
         },
         average_data: async function ($table_name) {
@@ -36546,6 +36574,20 @@ export default {
         }
     },
     computed: {
+        ...mapWritableState(ward_data_store, {
+            ward_start_month: 'start_month',
+            ward_end_month: 'end_month',
+            ward_report_header: 'report_header',
+            ward_report_sum_data: 'report_sum_data',
+            ward_previous_present: 'previous_present',
+            ward_income_report: 'income_report',
+            ward_expense_report: 'expense_report',
+            ward_total_income: 'total_income',
+            ward_total_expense: 'total_expense',
+            ward_total_previous: 'total_previous',
+            ward_total_current_income: 'total_current_income',
+            ward_in_total: 'in_total',
+        }),
         total_dawat: function () {
             const total =
                 Number(
