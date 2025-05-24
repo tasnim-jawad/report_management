@@ -33715,7 +33715,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="vote_kendro_committee_increase"
                                             :value="
                                                 formatBangla(
@@ -33744,7 +33744,7 @@
                                 </td>
                                 <td>
                                     <div class="parent_popup">
-                                        <input
+                                        <input readonly
                                             name="vote_kendro_committee_target"
                                             :value="
                                                 formatBangla(
@@ -33847,7 +33847,7 @@
                                 <td>
                                     <div class="d-flex justify-content-between">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vote_kendro_vittik_unit_increase"
                                                 :value="
                                                     formatBangla(
@@ -33906,7 +33906,7 @@
                                 <td>
                                     <div class="d-flex justify-content-between">
                                         <div class="parent_popup">
-                                            <input
+                                            <input readonly
                                                 name="vote_kendro_vittik_unit_target"
                                                 :value="
                                                     formatBangla(
