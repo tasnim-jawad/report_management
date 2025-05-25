@@ -157,15 +157,16 @@ function ward_common_store($bind, $class, $report_info)
 
 function calculate_average($total, $uposthiti)
 {
-    // $total = "20";
-    // $uposthiti ="40";
+    $total     = floatval($total);
+    $uposthiti = floatval($uposthiti);
+
     if ($total && $uposthiti && $total != 0) {
-        // dd(round($uposthiti / $total));
         return round($uposthiti / $total);
     }
 
     return " "; // Or any default value you'd like to return
 }
+
 function implementation_rate($target, $achieved)
 {
     if ($target && $achieved && $target != 0) {

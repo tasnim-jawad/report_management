@@ -128,7 +128,14 @@
                         </tr>
                     </tbody>
                 </table>
-                <p v-else>No units registered yet.</p>
+                <p v-if="
+                    approved_unit.length == 0 &&
+                    rejected_unit.length == 0 &&
+                    pending_unit.length == 0 &&
+                    unsubmitted_unit.length == 0"
+                    >
+                    No units registered yet.
+                </p>
             </div>
         </div>
     </div>
