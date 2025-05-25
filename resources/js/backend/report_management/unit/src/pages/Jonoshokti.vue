@@ -34,7 +34,7 @@
                                     <div class="btn btn-warning btn-sm me-2">
                                         <router-link :to="{name:'EditUser',params: { user_id: user.id }}"  class="text-dark">Edit</router-link>
                                     </div>
-                                    <div class="btn btn-danger btn-sm">
+                                    <div class="btn btn-danger btn-sm" v-if="user.org_unit_responsible[0]?.responsibility?.id !== 1">
                                         <a @click="delete_user(user.id)" class="text-dark">Delete</a>
 
                                         <form :id="'delete_user_form_'+user.id" >

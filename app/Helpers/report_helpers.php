@@ -136,8 +136,10 @@ function common_store($bind, $class, $report_info)
 
     if ($report_info) {
         $col_name = request()->name;
-        $col_value = request()->value;
-
+        $col_value = convertBanglaToEnglish(request()->value);
+        if($col_name === 'montobbo'){
+            $col_value = request()->value;
+        }
         $data = $class::where('report_info_id', $report_info->id)
             // ->where('creator', auth()->user()->id)
             ->first();

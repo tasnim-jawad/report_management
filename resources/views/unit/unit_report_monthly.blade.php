@@ -402,14 +402,14 @@
                         <td>{{ bangla($report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_target ?? '') }}
                         </td>
                         <td>
-                            @if (
-                                $report_sum_data->kormosuci_bastobayons &&
-                                    isset($report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_uposthiti) &&
-                                    isset($report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_total) &&
-                                    $report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_total != 0 &&
-                                    $report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_total != '')
-                                {{ bangla(round($report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_uposthiti / $report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_total)) }}
-                            @endif
+                            {{ 
+                                bangla(
+                                    calculate_average(
+                                        $report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_total ?? '',
+                                        $report_sum_data->kormosuci_bastobayons->unit_masik_sadaron_sova_uposthiti ?? ''
+                                    )
+                                ) 
+                            }}
                         </td>
                     </tr>
                     <tr>
@@ -426,27 +426,23 @@
                             {{ bangla($report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_target ?? '') }}
                         </td>
                         <td>
-                            @if (
-                                $report_sum_data->kormosuci_bastobayons &&
-                                    isset($report_sum_data->kormosuci_bastobayons->iftar_mahfil_personal_uposthiti) &&
-                                    isset($report_sum_data->kormosuci_bastobayons->iftar_mahfil_personal_total) &&
-                                    $report_sum_data->kormosuci_bastobayons->iftar_mahfil_personal_total != 0 &&
-                                    $report_sum_data->kormosuci_bastobayons->iftar_mahfil_personal_total != '')
-                                {{ bangla(round($report_sum_data->kormosuci_bastobayons->iftar_mahfil_personal_uposthiti / $report_sum_data->kormosuci_bastobayons->iftar_mahfil_personal_total)) }}
-                            @else
-                                {{ '  ' }}
-                            @endif
+                            {{ 
+                                bangla(
+                                    calculate_average(
+                                        $report_sum_data->kormosuci_bastobayons->iftar_mahfil_personal_total ?? '',
+                                        $report_sum_data->kormosuci_bastobayons->iftar_mahfil_personal_uposthiti ?? ''
+                                    )
+                                ) 
+                            }}
                             /
-                            @if (
-                                $report_sum_data->kormosuci_bastobayons &&
-                                    isset($report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_uposthiti) &&
-                                    isset($report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_total) &&
-                                    $report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_total != 0 &&
-                                    $report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_total != '')
-                                {{ bangla(round($report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_uposthiti / $report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_total)) }}
-                            @else
-                                {{ '  ' }}
-                            @endif
+                            {{ 
+                                bangla(
+                                    calculate_average(
+                                        $report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_total ?? '',
+                                        $report_sum_data->kormosuci_bastobayons->iftar_mahfil_samostic_uposthiti ?? ''
+                                    )
+                                ) 
+                            }}
                         </td>
                     </tr>
                     <tr>
@@ -463,38 +459,32 @@
                             {{ bangla($report_sum_data->kormosuci_bastobayons->sikkha_sofor_target ?? '  ') }}
                         </td>
                         <td>
-                            @if (
-                                $report_sum_data->kormosuci_bastobayons &&
-                                    isset($report_sum_data->kormosuci_bastobayons->cha_chakra_uposthiti) &&
-                                    isset($report_sum_data->kormosuci_bastobayons->cha_chakra_total) &&
-                                    $report_sum_data->kormosuci_bastobayons->cha_chakra_total != 0 &&
-                                    $report_sum_data->kormosuci_bastobayons->cha_chakra_total != '')
-                                {{ bangla(round($report_sum_data->kormosuci_bastobayons->cha_chakra_uposthiti / $report_sum_data->kormosuci_bastobayons->cha_chakra_total)) }}
-                            @else
-                                {{ '' }}
-                            @endif
+                            {{ 
+                                bangla(
+                                    calculate_average(
+                                        $report_sum_data->kormosuci_bastobayons->cha_chakra_total ?? '',
+                                        $report_sum_data->kormosuci_bastobayons->cha_chakra_uposthiti ?? ''
+                                    )
+                                ) 
+                            }}
                             /
-                            @if (
-                                $report_sum_data->kormosuci_bastobayons &&
-                                    isset($report_sum_data->kormosuci_bastobayons->samostic_khawa_uposthiti) &&
-                                    isset($report_sum_data->kormosuci_bastobayons->samostic_khawa_total) &&
-                                    $report_sum_data->kormosuci_bastobayons->samostic_khawa_total != 0 &&
-                                    $report_sum_data->kormosuci_bastobayons->samostic_khawa_total != '')
-                                {{ bangla(round($report_sum_data->kormosuci_bastobayons->samostic_khawa_uposthiti / $report_sum_data->kormosuci_bastobayons->samostic_khawa_total ?? 0)) }}
-                            @else
-                                {{ '' }}
-                            @endif
+                            {{ 
+                                bangla(
+                                    calculate_average(
+                                        $report_sum_data->kormosuci_bastobayons->samostic_khawa_total ?? '',
+                                        $report_sum_data->kormosuci_bastobayons->samostic_khawa_uposthiti ?? ''
+                                    )
+                                ) 
+                            }}
                             /
-                            @if (
-                                $report_sum_data->kormosuci_bastobayons &&
-                                    isset($report_sum_data->kormosuci_bastobayons->sikkha_sofor_uposthiti) &&
-                                    isset($report_sum_data->kormosuci_bastobayons->sikkha_sofor_total) &&
-                                    $report_sum_data->kormosuci_bastobayons->sikkha_sofor_total != 0 &&
-                                    $report_sum_data->kormosuci_bastobayons->sikkha_sofor_total != '')
-                                {{ bangla(round($report_sum_data->kormosuci_bastobayons->sikkha_sofor_uposthiti / $report_sum_data->kormosuci_bastobayons->sikkha_sofor_total ?? 0)) }}
-                            @else
-                                {{ '' }}
-                            @endif
+                            {{ 
+                                bangla(
+                                    calculate_average(
+                                        $report_sum_data->kormosuci_bastobayons->sikkha_sofor_total ?? '',
+                                        $report_sum_data->kormosuci_bastobayons->sikkha_sofor_uposthiti ?? ''
+                                    )
+                                ) 
+                            }}
                         </td>
                     </tr>
                 </tbody>

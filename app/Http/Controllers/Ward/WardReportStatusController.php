@@ -18,6 +18,12 @@ class WardReportStatusController extends Controller
         $ward_id = auth()->user()->org_ward_user["ward_id"];
         $ward = OrgWard::where('id',$ward_id)->first();
         $units = OrgUnit::where('org_ward_id', $ward_id)->where('org_gender',$ward->org_gender)->get();
+        if($units->isEmpty()){
+            return response()->json([
+                'status' => 'error',
+                'message' => 'No units found.',
+            ], 200);
+        }
 
         $month = request()->month;
         // dd($ward_id,$units->toArray(),$month);

@@ -90,6 +90,10 @@ class UnitExpenseTargetController extends Controller
                                     'bm_expense_category_id',
                                     DB::raw('MAX(start_from) as latest_start_from')
                                 )
+                                ->where('ward_id',$ward_info->ward_id)
+                                ->where('thana_id',$ward_info->thana_id)
+                                ->where('city_id',$ward_info->city_id)
+                                ->where('status', 1 )
                                 ->groupBy('unit_id', 'ward_id', 'thana_id', 'city_id', 'bm_expense_category_id'),
                             'latest',
                             function ($join) {
@@ -101,6 +105,10 @@ class UnitExpenseTargetController extends Controller
                                     ->on('unit_expense_targets.start_from', '=', 'latest.latest_start_from');
                             }
                         )
+                        ->where('unit_expense_targets.ward_id', $ward_info->ward_id)
+                        ->where('unit_expense_targets.thana_id', $ward_info->thana_id)
+                        ->where('unit_expense_targets.city_id', $ward_info->city_id)
+                        ->where('unit_expense_targets.status', 1)
                         ->with(['bm_expense_category', 'org_unit'])
                         ->orderBy('bm_expense_category_id', 'asc')
                         ->get();

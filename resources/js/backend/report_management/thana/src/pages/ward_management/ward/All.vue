@@ -28,7 +28,7 @@
                                     <div class="btn btn-warning btn-sm me-2">
                                         <router-link :to="{name:'WardEdit',params: { ward_id: ward.id }}"  class="text-dark">Edit</router-link>
                                     </div>
-                                    <div class="btn btn-danger btn-sm" v-if="delete_permission">
+                                    <div class="btn btn-danger btn-sm" v-if="!ward.is_thana_parent && delete_permission">
                                         <a @click="delete_ward(ward.id)" class="text-dark">Delete</a>
 
                                         <form :id="'delete_ward_form_'+ward.id" >

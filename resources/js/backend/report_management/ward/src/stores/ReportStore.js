@@ -8,9 +8,9 @@ export const store = defineStore(`custom_store`, {
         is_parent_ward: false,
     }),
     getters: {
-        $init: () => {
-            this.set_month(); // Call set_month when the store is initialized
-        }
+        // $init: () => {
+        //     this.set_month(); // Call set_month when the store is initialized
+        // }
     },
     actions: {
         set_month() {

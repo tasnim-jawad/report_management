@@ -9,7 +9,7 @@
     </div>
     <div class="card mb-3"  v-if="!is_parent_ward">
         <div class="card-header">
-            রিপোর্ট জমা দেওয়ার জন্য ইউনিটের জন্য অনুমোদিত মাস
+            রিপোর্ট জমা দেওয়ার জন্য ইউনিটসমূহের জন্য নির্ধারিত/অনুমোদিত মাস
         </div>
         <div class="card-body">
             <div class="d-flex flex-wrap justify-content-start align-items-center gap-2">
@@ -128,6 +128,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <p v-else>No units registered yet.</p>
             </div>
         </div>
     </div>
@@ -153,6 +154,7 @@ export default {
         }
     },
     created: function () {
+        this.set_month()
         this.is_ward_is_parent()
         this.report_status()
         this.user_info()
@@ -194,6 +196,8 @@ export default {
                 //     '3': this.rejected_unit,
                 //     '4': this.approved_unit,
                 // });
+            }else if(response.data.status == 'error'){
+                console.log(response.data.message);
             }
         },
         unit_report_view: function (unit_id, report_month) {
