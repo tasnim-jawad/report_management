@@ -81,7 +81,8 @@ window.render_form_errors = function (object, selector = "name") {
         if (Object.hasOwnProperty.call(object, key)) {
             const element = object[key];
             // console.log("resss",element);
-            let el = document.querySelector(`input[${selector}="${key}`);
+            // let el = document.querySelector(`input[${selector}="${key}`);
+            let el = document.querySelector(`input[${selector}="${key}"], select[${selector}="${key}"], textarea[${selector}="${key}"]`);
             if (!el) {
                 el = document.getElementById(`${key}`);
             }
@@ -91,7 +92,7 @@ window.render_form_errors = function (object, selector = "name") {
              */
             if (el) {
                 $(
-                    `<div class="text-danger mt-1">${element[0]}</div>`
+                    `<div class="text-danger axios_error mt-1">${element[0]}</div>`
                 ).insertAfter(el);
                 el.classList.add("border-danger");
             }

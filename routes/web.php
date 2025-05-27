@@ -53,26 +53,26 @@ Route::get('/db', function () {
     return response()->json($grouped);
 
 });
-Route::get('/db', function () {
-    $report_info_id = request()->report_info_id;
-    $org_type = request()->org_type;
+// Route::get('/db', function () {
+//     $report_info_id = request()->report_info_id;
+//     $org_type = request()->org_type;
 
     
 
-    $databaseName = DB::getDatabaseName();
-    $columns = DB::table('information_schema.columns')
-        ->select('TABLE_NAME', 'COLUMN_NAME')
-        ->where('TABLE_SCHEMA', $databaseName)
-        ->orderBy('TABLE_NAME')
-        ->orderBy('ORDINAL_POSITION')
-        ->get();
+//     $databaseName = DB::getDatabaseName();
+//     $columns = DB::table('information_schema.columns')
+//         ->select('TABLE_NAME', 'COLUMN_NAME')
+//         ->where('TABLE_SCHEMA', $databaseName)
+//         ->orderBy('TABLE_NAME')
+//         ->orderBy('ORDINAL_POSITION')
+//         ->get();
 
-    $grouped = [];
+//     $grouped = [];
 
-    foreach ($columns as $column) {
-        $grouped[$column->TABLE_NAME][] = $column->COLUMN_NAME;
-    }
+//     foreach ($columns as $column) {
+//         $grouped[$column->TABLE_NAME][] = $column->COLUMN_NAME;
+//     }
 
-    return response()->json($grouped);
+//     return response()->json($grouped);
 
-});
+// });

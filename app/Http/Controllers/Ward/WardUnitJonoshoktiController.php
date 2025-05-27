@@ -49,25 +49,33 @@ class WardUnitJonoshoktiController extends Controller
     }
 
     public function store(){
+        // dd("clocked");
+        $validator = Validator::make(request()->all(), [
+            'unit_id' => ['required'],
+            'responsibility_id' => ['required'],
+            'full_name' => ['required'],
+            'email' => ['required', 'unique:users', 'email'],
+            'password' => ['required'],
+        ], [
+            'unit_id.required' => 'Please select a unit.',
+            'responsibility_id.required' => 'Please select a responsibility.',
+            'full_name.required' => 'Please provide your full name.',
+            'email.required' => 'Please enter your email address.',
+            'email.unique' => 'This email is already registered. Please use a different one.',
+            'email.email' => 'Please enter a valid email address.',
+            'password.required' => 'Please set a password.',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
         DB::beginTransaction();
 
         try {
-            $validator = Validator::make(request()->all(), [
-                'unit_id' => ['required'],
-                'responsibility_id' => ['required'],
-                'full_name' => ['required'],
-                'email' => ['required', 'unique:users', 'email'],
-                'password' => ['required'],
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json([
-                    'err_message' => 'Validation error',
-                    'errors' => $validator->errors(),
-                ], 422);
-            }
-
-
             $unit_id = request()->unit_id;
             $responsibility_id = request()->responsibility_id;
 
@@ -162,11 +170,15 @@ class WardUnitJonoshoktiController extends Controller
             'unit_id' => ['required'],
             'responsibility_id' => ['required'],
             'user_id' => ['required'],
+        ], [
+            'unit_id.required' => 'Please select a unit.',
+            'responsibility_id.required' => 'Please select a responsibility.',
+            'user_id.required' => 'Please select a user.',
         ]);
 
         if ($validator->fails()) {
             return response()->json([
-                'err_message' => 'Validation error',
+                'err_message' => 'validation error',
                 'errors' => $validator->errors(),
             ], 422);
         }
@@ -219,6 +231,12 @@ class WardUnitJonoshoktiController extends Controller
             'full_name' => ['required'],
             'gender' => ['required','in:male,female'],
             'email' => ['required',Rule::unique('users')->ignore($user->id)],
+        ], [
+            'full_name.required' => 'Please provide your full name.',
+            'gender.required' => 'Please select your gender.',
+            'gender.in' => 'Gender must be either male or female.',
+            'email.required' => 'Please enter your email address.',
+            'email.unique' => 'This email is already in use. Please use a different one.',
         ]);
 
         if ($validator->fails()) {

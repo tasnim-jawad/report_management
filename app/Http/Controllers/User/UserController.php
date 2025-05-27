@@ -262,6 +262,17 @@ class UserController extends Controller
             'password' => ['required'],
             'blood_group' => ['required'],
             'creator' => ['required'],
+        ], [
+            'role.required' => 'Please select a role.',
+            'full_name.required' => 'Please provide your full name.',
+            'gender.required' => 'Please select your gender.',
+            'gender.in' => 'Gender must be either male or female.',
+            'telegram_name.required' => 'Please provide your Telegram name.',
+            'telegram_id.required' => 'Please provide your Telegram ID.',
+            'email.required' => 'Please enter your email address.',
+            'password.required' => 'Please set a password.',
+            'blood_group.required' => 'Please provide your blood group.',
+            'creator.required' => 'Creator information is required.',
         ]);
 
         if ($validator->fails()) {

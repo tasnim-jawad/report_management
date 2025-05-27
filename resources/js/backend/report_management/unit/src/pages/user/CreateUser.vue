@@ -10,7 +10,7 @@
             <form action="" @submit.prevent="create_user">
                 <div class="d-flex flex-wrap gap-2 mb-2 align-items-center" v-for="(field, index) in fields1" :key="index">
                     <div class="form_label">
-                        <label for="">{{field.label}}</label>
+                        <label :for="field.name">{{field.label}}<span class="text_color_red" v-if="field.is_required">*</span></label>
                     </div>
                     <!-- <div class="form_input" v-if="field.field_type == 'select' && field.name == 'gender'">
                         <select type="text" :name="field.name" class="form-control">
@@ -20,7 +20,7 @@
                         </select>
                     </div> -->
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'blood_group'">
-                        <select type="text" :name="field.name" class="form-control">
+                        <select :name="field.name" class="form-control">
                             <option value="">-- select blood group --</option>
                             <option value="O+">O+</option>
                             <option value="O-">O-</option>
@@ -33,7 +33,7 @@
                         </select>
                     </div>
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'responsibility_id'">
-                        <select type="text" :name="field.name" class="form-control">
+                        <select :name="field.name" class="form-control">
                             <option value="">-- select responsibility group --</option>
                             <option v-for="(responsibility, i) in responsibilities" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
 
@@ -58,6 +58,7 @@ export default {
     },
     data() {
         return {
+            // field_is_required:true,
             responsibilities:[],
             fields1:[
                 // {
@@ -65,35 +66,43 @@ export default {
                 //     name:"role",
                 // },
                 {
+                    label:"Responsibility",
+                    field_type:"select",
+                    name:"responsibility_id",
+                    is_required: false,
+                },
+                {
                     label:"Name",
                     name:"full_name",
+                    is_required:true,
                 },
                 {
                     label:"Telegram Name",
                     name:"telegram_name",
+                    is_required: false,
                 },
                 {
                     label:"Telegram id",
                     name:"telegram_id",
+                    is_required: false,
                 },
                 {
                     label:"Email",
                     name:"email",
+                    is_required:true,
                 },
                 {
                     label:"Password",
                     name:"password",
+                    is_required:true,
                 },
                 {
                     label:"Blood Group",
                     field_type:"select",
                     name:"blood_group",
+                    is_required: false,
                 },
-                {
-                    label:"Responsibility",
-                    field_type:"select",
-                    name:"responsibility_id",
-                },
+                
             ],
 
 
@@ -137,6 +146,9 @@ export default {
                     console.error("Error fetching responsibilities:", error);
                 });
         },
+        isRequired(field) {
+            return field.is_required === true;
+        }
 
     }
 }

@@ -12,6 +12,7 @@ use App\Models\Bm\Thana\Expense\ThanaBmExpense;
 use App\Models\Bm\Thana\Income\ThanaBmIncome;
 use App\Models\Bm\Ward\Expense\WardBmExpense;
 use App\Models\Bm\Ward\Income\WardBmIncome;
+use App\Models\Organization\OrgThana;
 use App\Models\Organization\OrgThanaUser;
 use App\Models\Report\ReportInfo;
 use App\Models\Report\ReportManagementControl;
@@ -26,6 +27,58 @@ class ThanaController extends Controller
     public function report()
     {
         return view('thana.thana_report');
+    }
+
+    public function thana_gender()
+    {
+        $validator = Validator::make(request()->all(), [
+            'org_type' => ['required', 'in:ward,unit'],
+            'org_type_id' => ['required', 'integer'],
+        ], 
+        [
+            'org_type.required' => 'The organization type is required.',
+            'org_type.in' => 'The organization type must be either ward or unit.',
+            'org_type_id.required' => 'The organization type ID is required.',
+            'org_type_id.integer' => 'The organization type ID must be an integer.',
+        ]
+    
+    );
+
+        if ($validator->fails()) {
+            return response()->json([
+                'err_message' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $org_type = request()->org_type;
+        $org_type_id = request()->org_type_id;
+
+        $model_name = "Org" . $org_type;
+        $data = $model_name::where('id', $org_type_id)
+            ->first();
+
+        if (!$data) {
+            return response()->json([
+                'err_message' => 'Organization not found',
+            ], 404);
+        }
+        $thana_id = $data->org_thana_id;
+
+        $thana_gender = OrgThana::where('id', $thana_id)->first();
+        $gender_value = $thana_gender->org_gender;
+
+        if ($gender_value) {
+            return response()->json([
+                'status' => 'success',
+                'gender' => $gender_value,
+            ], 200);
+        } else {
+            return response()->json([
+                'err_message' => 'Gender information not found',
+            ], 404);
+        }
+        
     }
 
 

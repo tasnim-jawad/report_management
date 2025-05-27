@@ -34,7 +34,14 @@ class WardUserController extends Controller
             'email' => ['required','unique:users'],
             'password' => ['required'],
             'responsibility_id' => ['nullable'],
+        ], [
+            'full_name.required' => 'Please provide your full name.',
+            'gender.in' => 'Please select a valid gender: male or female.',
+            'email.required' => 'We need your email address.',
+            'email.unique' => 'This email is already registered. Please use a different one.',
+            'password.required' => 'Please set a password for your account.',
         ]);
+        
 
         if ($validator->fails()) {
             return response()->json([
@@ -102,6 +109,11 @@ class WardUserController extends Controller
             'full_name' => ['required'],
             'gender' => ['sometimes','in:male,female'],
             'email' => ['required',Rule::unique('users')->ignore($user->id)],
+        ], [
+            'full_name.required' => 'Please provide your full name.',
+            'gender.in' => 'Gender must be either male or female.',
+            'email.required' => 'Please enter your email address.',
+            'email.unique' => 'This email is already in use. Please use a different one.',
         ]);
 
         if ($validator->fails()) {

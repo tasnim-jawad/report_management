@@ -20,7 +20,7 @@
                         </select>
                     </div> -->
                     <div class="form_input" v-if="field.field_type == 'select' && field.name == 'blood_group'">
-                        <select type="text" :name="field.name" class="form-control">
+                        <select :name="field.name" class="form-control">
                             <option value="">-- select blood group --</option>
                             <option value="O+">O+</option>
                             <option value="O-">O-</option>
@@ -33,13 +33,13 @@
                         </select>
                     </div>
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'responsibility_id'">
-                        <select type="text" :name="field.name" class="form-control">
+                        <select :name="field.name" class="form-control">
                             <option value="">-- select responsibility --</option>
                             <option v-for="(responsibility, i) in responsibilities" :key="i" :value="responsibility['id']" >{{responsibility["title"]}}</option>
                         </select>
                     </div>
                     <div class="form_input" v-else-if="field.field_type == 'select' && field.name == 'unit_id'">
-                        <select type="text" :name="field.name" class="form-control">
+                        <select :name="field.name" class="form-control">
                             <option value="">-- select unit --</option>
                             <option v-for="(unit, i) in units" :key="i" :value="unit['id']" >{{unit["title"]}}</option>
                         </select>
@@ -144,10 +144,25 @@ export default {
                 }
             } catch (error) {
                 // Handling error response
+                
                 if (error.response && error.response.status === 409) {
+                    // Handling conflict error (e.g. duplicate email)
                     let errMessage = error.response.data.err_message || 'An error occurred';
-                    window.toaster(errMessage, 'error');
-                    window.s_alert(errMessage, 'error');
+                    window.s_warning(errMessage, 'error');
+
+                } else if (error.response.status === 422) {
+                    const errors = error.response.data.errors;
+                    let message = '';
+
+                    for (const field in errors) {
+                        if (errors.hasOwnProperty(field)) {
+                            errors[field].forEach(msg => {
+                                message += `• ${msg}\n`;
+                            });
+                        }
+                    }
+                    window.s_warning(message.trim(), 'error');
+
                 } else {
                     // For other errors (e.g. 500, 422, etc.)
                     window.toaster('An unexpected error occurred', 'error');

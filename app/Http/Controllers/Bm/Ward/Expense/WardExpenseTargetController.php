@@ -129,11 +129,11 @@ class WardExpenseTargetController extends Controller
                                 ],
             ],
             [
-                'ward_id.required' => 'The ward field is required.',
-                'ward_bm_expense_category_id.required' => 'The expense category is required.',
-                'amount.required' => 'The amount is required.',
-                'start_from.required' => 'The start date is required.',
-                'start_from.unique' => 'This start date already exists for the selected ward and expense category.',
+                'ward_id.required' => 'Please select a ward.',
+                'ward_bm_expense_category_id.required' => 'Please choose an expense category.',
+                'amount.required' => 'Please enter the amount.',
+                'start_from.required' => 'Please select a start date.',
+                'start_from.unique' => 'A target for this ward and category already exists for the selected start date.',
             ]
     );
 
