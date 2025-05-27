@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="px-2">
-                <div class="card mb-3" v-if="month">
+                <div class="card mb-3" v-if="month && gender === `women`">
                     <div class="card-header">
                         <h3 class="fw-semibold">
                             ১. ইউনিট নিয়মিত গ্রুপ ভিত্তিক দাওয়াত: (মহিলা)
@@ -550,7 +550,7 @@ import PreviousNext from "../components/PreviousNext.vue";
 import Note from "../components/Note.vue";
 import Popup from "../components/Popup.vue";
 import { store as data_store } from "../stores/ReportStore";
-import { mapState, mapWritableState } from "pinia";
+import { mapActions, mapWritableState } from "pinia";
 export default {
     components: { FormInput, PreviousNext, Note, Popup },
     data: () => ({
@@ -934,12 +934,14 @@ export default {
             },
         ],
     }),
-    created: function () {
+    created:async function () {
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
-
+        await this.thana_gender();
+        console.log("gender from dawat", this.gender);
+        
         if (this.month != null) {
             this.get_monthly_data();
         }
@@ -952,9 +954,11 @@ export default {
         },
     },
     computed: {
-        ...mapWritableState(data_store, ["month"]),
+        ...mapWritableState(data_store, ["month","gender"]),
     },
     methods: {
+        ...mapActions(data_store, ["thana_gender"]),
+
         dawat_upload: async function (endpoint) {
             var value = event.target.value;
             var name = event.target.name;

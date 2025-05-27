@@ -32,7 +32,7 @@ class ThanaController extends Controller
     public function thana_gender()
     {
         $validator = Validator::make(request()->all(), [
-            'org_type' => ['required', 'in:ward,unit'],
+            'org_type' => ['required', 'in:,thana,ward,unit'],
             'org_type_id' => ['required', 'integer'],
         ], 
         [
@@ -53,20 +53,24 @@ class ThanaController extends Controller
 
         $org_type = request()->org_type;
         $org_type_id = request()->org_type_id;
-
+        
         $model_name = "Org" . $org_type;
-        $data = $model_name::where('id', $org_type_id)
-            ->first();
+        
+        if($org_type === 'ward' || $org_type === 'unit') {
 
-        if (!$data) {
-            return response()->json([
-                'err_message' => 'Organization not found',
-            ], 404);
+            $data = $model_name::where('id', $org_type_id)->first();
+            if (!$data) {
+                return response()->json([
+                    'err_message' => $org_type . ' not found',
+                ], 404);
+            }
+            $thana_id = $data->org_thana_id;
+        } else {
+            $thana_id = $org_type_id;
         }
-        $thana_id = $data->org_thana_id;
-
-        $thana_gender = OrgThana::where('id', $thana_id)->first();
-        $gender_value = $thana_gender->org_gender;
+        
+        $thana_info = OrgThana::where('id', $thana_id)->first();
+        $gender_value = $thana_info->org_gender;
 
         if ($gender_value) {
             return response()->json([
